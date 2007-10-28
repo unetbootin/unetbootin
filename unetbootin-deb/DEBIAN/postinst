@@ -1,0 +1,68 @@
+#!/bin/sh
+
+cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
+
+if [ -e /media/host/wubi ]; then
+
+hostosroot=$(cat /proc/mounts | grep /media/host | sed "s/\t/\n/g" | sed "s/ /\n/g" | head --lines 1 | grep /dev/)
+hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
+hostospartnum=$(expr $(echo $hostosroot | tail --bytes 2 | head --bytes 1) - 1)
+hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
+
+touch /boot/grub/menu-ubn.lst
+echo \
+"
+default 0
+timeout 0
+hiddenmenu
+
+title UNetbootin-replacewithubnversion
+root $hostosgrubnum
+kernel /wubi/boot/ubnkern
+initrd /wubi/boot/ubninit
+boot
+" > /boot/grub/menu-ubn.lst
+
+echo \
+"
+title UNetbootin-replacewithubnversion
+	root $hostosgrubnum
+configfile /wubi/boot/grub/menu-ubn.lst
+" >> /boot/grub/menu.lst
+
+else
+hostosroot=$(mount | grep " / " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)
+hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
+hostospartnum=$(expr $(echo $hostosroot | tail --bytes 2 | head --bytes 1) - 1)
+hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
+
+touch /boot/grub/menu-ubn.lst
+echo \
+"
+default 0
+timeout 0
+hiddenmenu
+
+title UNetbootin-replacewithubnversion
+root $hostosgrubnum
+kernel /boot/ubnkern
+initrd /boot/ubninit
+boot
+" > /boot/grub/menu-ubn.lst
+
+echo \
+"
+title UNetbootin-replacewithubnversion
+root $hostosgrubnum
+configfile /boot/grub/menu-ubn.lst
+" >> /boot/grub/menu.lst
+
+fi
+
+sed -i "s/$(cat /boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" /boot/grub/menu.lst
+sed -i "s/#hiddenmenu/knlknelkntxte/g" /boot/grub/menu.lst
+sed -i "s/## hiddenmenu/knlknelkntxtj/g" /boot/grub/menu.lst
+sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
+sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
+sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
+

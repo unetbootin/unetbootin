@@ -1,0 +1,10 @@
+Package: unetbootin
+Version: 1.0
+Section: base system
+Priority: optional
+Architecture: all
+Depends: 
+Installed-Size: 10
+Maintainer: Geza Kovacs <geza0kovacs@gmail.com>
+Source: unetbootin
+Description: An installer for the netboot initrd and kernels of Ubuntu and other Linux distros. Allows for installation of Ubuntu without a CD to a dedicated partition.
