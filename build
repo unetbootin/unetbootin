@@ -42,7 +42,7 @@ cp $locationhere/winbuild/nsis/user.reg $locationhere/winbuild/nsis/user.bak
 
 # Build for distros
 
-if [ "$@" = "all" ]
+if [ "$@" = "" ]
 then
 echo "Building for all distros in targetdistros file"
 targetbuildoslist="$(cat targetdistros)"

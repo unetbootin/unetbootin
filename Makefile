@@ -1,2 +1,2 @@
 all:
-	./scripts/build.sh $@
+	echo "Please use the command ./build instead"
