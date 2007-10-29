@@ -4,6 +4,16 @@ rm -r dist
 mkdir dist
 rm $(find . | grep "~")
 locationhere=$(pwd)
+
+# Extract nsis
+
+if [ ! -e ./winbuild/nsis ]
+then
+cd winbuild
+tar -jxvf nsis.tar.bz2
+cd ..
+fi
+
 export WINEPREFIX="$locationhere/winbuild/nsis"
 ubnverinit=$(bzr version-info | grep revno | sed 's/revno: //')
 
@@ -31,7 +41,12 @@ cp $locationhere/winbuild/nsis/user.reg $locationhere/winbuild/nsis/user.bak
 
 # Build for distros
 
+if [ "$@" = "" ]
+then
 targetbuildoslist="$(cat targetdistros)"
+else
+targetbuildoslist="$@"
+fi
 
 for targetbuildos in $targetbuildoslist
 do

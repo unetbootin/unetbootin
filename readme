@@ -1,0 +1,33 @@
+==ABOUT==
+
+This is the source bzr branch for UNetbootin.
+
+It is hosted at http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new
+
+It was formerly hosted at http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel
+
+Launchpad page is at https://launchpad.net/unetbootin
+
+Homepage is at http://lubi.sourceforge.net/unetbootin.html
+
+==COPYRIGHT==
+
+Licensed under the GNU GPL v2 and above, copyright Geza Kovacs (https://wiki.ubuntu.com/GezaKovacs and https://launchpad.net/~gezakovacs/)
+
+==USING==
+
+Thanks to UNetbootin's portable architecture, it is easy to add support for other distributions. If you would like to create UNetbootin packages for other distributions, first make sure you have installed the "bzr", "alien", "fakeroot", and "wine" utilities, which are installable through your package manager.
+
+Then add the name of the distribution, referred to here as {distroname}, into the file "targetdistros" in the checked-out source, add the netboot initrd and kernel, with the naming scheme "ubninit-{distroname}" and "ubnkern-{distroname}" into the "initkern" folder, then cd to the source directory, and run the command:
+
+make
+
+To make all distributions (list is located in targetdistros), use the command:
+
+make
+
+To make only a single distribution, use the command:
+
+make {distroname}
+
+Then, the "exe", "deb", "rpm", and "sh" packages for distribution will be created in the "dist" directory.
