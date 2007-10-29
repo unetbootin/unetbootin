@@ -26,6 +26,6 @@ To make all distributions (list is located in targetdistros), use the command:
 
 To make only a single distribution, use the command:
 
-./build {distroname}
+./build distro {distroname}
 
 Then, the "exe", "deb", "rpm", and "sh" packages for distribution will be created in the "dist" directory.

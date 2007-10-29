@@ -42,13 +42,18 @@ cp $locationhere/winbuild/nsis/user.reg $locationhere/winbuild/nsis/user.bak
 
 # Build for distros
 
-if [ "$@" = "" ]
+if [ "$1" != "distro" ]
 then
-echo "Building for all distros in targetdistros file"
 targetbuildoslist="$(cat targetdistros)"
+echo "Building for all distros in targetdistros file, $targetbuildoslist"
 else
-echo "Building only specified distros $@"
-targetbuildoslist="$@"
+if [ "$2" = "" ]
+then
+echo "You must specify at least one distro to build after the option distro"
+exit
+fi
+targetbuildoslist="$(echo $@ | sed s/distro//)"
+echo "Building specified distro $targetbuildoslist"
 fi
 
 for targetbuildos in $targetbuildoslist
