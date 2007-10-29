@@ -1,4 +1,2 @@
-BUILD=scripts/build.sh
-
 all:
-	@$(BUILD)
+	./scripts/build.sh $@

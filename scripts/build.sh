@@ -9,6 +9,7 @@ locationhere=$(pwd)
 
 if [ ! -e ./winbuild/nsis ]
 then
+echo "Extracting nsis..."
 cd winbuild
 tar -jxvf nsis.tar.bz2
 cd ..
@@ -41,10 +42,12 @@ cp $locationhere/winbuild/nsis/user.reg $locationhere/winbuild/nsis/user.bak
 
 # Build for distros
 
-if [ "$@" = "" ]
+if [ "$@" = "all" ]
 then
+echo "Building for all distros in targetdistros file"
 targetbuildoslist="$(cat targetdistros)"
 else
+echo "Building only specified distros $@"
 targetbuildoslist="$@"
 fi
 
