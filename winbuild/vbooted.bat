@@ -5,3 +5,4 @@ set /p vbcdid= < c:\unetbootin\bcdid
 bcdedit /set {%vbcdid%} device boot
 bcdedit /set {%vbcdid%} path \grldr.mbr
 bcdedit /displayorder {%vbcdid%} /addlast
+bcedit /timeout 30
