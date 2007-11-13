@@ -60,16 +60,16 @@ for targetbuildos in $targetbuildoslist
 do
 cd $locationhere
 ubnver=$targetbuildos\rev$ubnverinit
-mv ./initkern/ubninit-$targetbuildos ./unetbootin
-mv ./initkern/ubnkern-$targetbuildos ./unetbootin
+mv ./initkern/ubninit-$targetbuildos ./unetbootin/ubninit
+mv ./initkern/ubnkern-$targetbuildos ./unetbootin/ubnkern
 cp ./unetbootin/ubninst ./unetbootin/ubninst-orig
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin/ubninst
 cd $locationhere/makeself
 ./makeself.sh $locationhere/unetbootin $locationhere/dist/unetbootin-$ubnver.sh "UNetbootin" ./ubninst
 cd $locationhere
 mv ./unetbootin/ubninst-orig ./unetbootin/ubninst
-mv $locationhere/unetbootin/ubnkern-$targetbuildos $locationhere/unetbootin-deb/boot/ubnkern
-mv $locationhere/unetbootin/ubninit-$targetbuildos $locationhere/unetbootin-deb/boot/ubninit
+mv $locationhere/unetbootin/ubnkern $locationhere/unetbootin-deb/boot/ubnkern
+mv $locationhere/unetbootin/ubninit $locationhere/unetbootin-deb/boot/ubninit
 cp ./unetbootin-deb/DEBIAN/postinst ./unetbootin-deb/DEBIAN/postinst-orig
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin-deb/DEBIAN/postinst
 cp ./unetbootin-deb/DEBIAN/control ./unetbootin-deb/DEBIAN/control.bak
