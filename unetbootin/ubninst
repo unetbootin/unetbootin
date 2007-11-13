@@ -74,5 +74,21 @@ sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
 
+touch /usr/bin/unetbootin-uninst
+echo \
+'''
+#!/bin/sh
+if [ "$(echo $USER)" != "root" ]; then
+echo "This script must be run as root. Use 'sudo' or 'su' to become root"
+zenity --info --text="This script must be run as root. Use 'sudo' or 'su' to become root"
+exit 0
+fi
+rm /boot/ubnkern
+rm /boot/ubninit
+rm /boot/grub/menu-ubn.lst
+mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
+''' >> /usr/bin/unetbootin-uninst
+chmod +x /usr/bin/unetbootin-uninst
+
 echo "Installation complete, please reboot and select UNetbootin on the GRUB boot menu"
 zenity --info --text="Installation complete, please reboot and select UNetbootin on the GRUB menu"
