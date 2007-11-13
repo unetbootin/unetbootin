@@ -87,6 +87,7 @@ rm /boot/ubnkern
 rm /boot/ubninit
 rm /boot/grub/menu-ubn.lst
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
+rm /usr/bin/unetbootin-uninst
 ''' >> /usr/bin/unetbootin-uninst
 chmod +x /usr/bin/unetbootin-uninst
 
