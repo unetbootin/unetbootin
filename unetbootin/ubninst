@@ -88,6 +88,8 @@ rm /boot/ubninit
 rm /boot/grub/menu-ubn.lst
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
 rm /usr/bin/unetbootin-uninst
+echo "UNetbootin has been successfully uninstalled"
+zenity --info --text="UNetbootin has been successfully uninstalled"
 ''' >> /usr/bin/unetbootin-uninst
 chmod +x /usr/bin/unetbootin-uninst
 
