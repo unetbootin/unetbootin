@@ -223,12 +223,12 @@ echo "Using formatpartition=$formatpartition"
 
 echo "Using bootloader=$bootloader"
 
-if [ "$bootloader" = "grub"]
+if [ "$bootloader" = "grub" ]
 then
 echo "Using$grubfallback grubcommand=$grubcommand"
 fi
 
-if [ "$bootloader" = "lilo"]
+if [ "$bootloader" = "lilo" ]
 then
 echo "Using$grubfallback lilocommand=$lilocommand"
 fi
@@ -311,7 +311,7 @@ echo ""
 else
 mkdir $targetdir/boot
 fi
-$grubcommand $targetpartition
+$grubcommand $targetpartition --root-directory="$targetdir"
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
 cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
@@ -321,7 +321,7 @@ hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed -
 hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
-touch /boot/grub/menu-ubn.lst
+touch $targetdir/boot/grub/menu-ubn.lst
 echo \
 """
 default 0
@@ -342,7 +342,7 @@ root $hostosgrubnum
 configfile /boot/grub/menu-ubn.lst
 """ >> $targetdir/boot/grub/menu.lst
 
-sed -i "s/$(cat /boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" $targetdir/boot/grub/menu.lst
+sed -i "s/$(cat $targetdir/boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" $targetdir/boot/grub/menu.lst
 sed -i "s/#hiddenmenu/knlknelkntxte/g" $targetdir/boot/grub/menu.lst
 sed -i "s/## hiddenmenu/knlknelkntxtj/g" $targetdir/boot/grub/menu.lst
 sed -i "s/hiddenmenu/#hiddenmenu/g" $targetdir/boot/grub/menu.lst
