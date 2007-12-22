@@ -76,9 +76,9 @@ $0 installmode=tohost
 
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to any other options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=nohost
+$0 installmode=nohost targetpartition=/dev/sda1 formatpartition=yes
 
 """
 zenity --info --text="""If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
@@ -87,9 +87,9 @@ $0 installmode=tohost
 
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to any other options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=nohost"""
+$0 installmode=nohost targetpartition=/dev/sda1 formatpartition=yes"""
 exit 0
 fi
 
@@ -116,9 +116,9 @@ if [ "$proposedpartition" = "" ]
 then
 echo """
 
-Specify a partition to use for the installation. For example, to use /dev/sda1, enter, in addition to any other options:
+Specify a partition to use for the installation. For example, to use /dev/sda1, enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=/dev/sda1
+$0 targetpartition=/dev/sda1 formatpartition=yes
 
 
 
@@ -151,9 +151,9 @@ if [ "$targetpartition" = "" ]
 then
 echo """
 
-Specify a partition to use for the installation. For example, to use /dev/sda1, enter, in addition to any other options:
+Specify a partition to use for the installation. For example, to use /dev/sda1, enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=/dev/sda1
+$0 targetpartition=/dev/sda1 formatpartition=yes
 
 
 
@@ -175,15 +175,15 @@ if [ "$(echo $@ | grep 'formatpartition=')" = "" ]
 then
 echo """
 
-Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter, in addition to any other options:
+Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 formatpartition=no
+$0 targetpartition=$targetpartition formatpartition=no
 
 
 
-Otherwise, to format the target partition, erasing all data on that partition, enter, in addition to any other options:
+Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 formatpartition=yes
+$0 targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
@@ -203,15 +203,15 @@ if [ "$formatpartition" = "" ]
 then
 echo """
 
-Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter, in addition to any other options:
+Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 formatpartition=no
+$0 targetpartition=$targetpartition formatpartition=no
 
 
 
-Otherwise, to format the target partition, erasing all data on that partition, enter, in addition to any other options:
+Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 formatpartition=yes
+$0 targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
