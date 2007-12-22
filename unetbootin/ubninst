@@ -325,6 +325,8 @@ hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
 $grubcommand --root-directory="$targetdir" "hd$hostosdrivenum"
 $grubcommand --root-directory="$targetdir" "$hostosgrubnum"
+$grubcommand --root-directory="$targetdir" "$targetpartition"
+
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
 cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
@@ -334,7 +336,7 @@ touch $targetdir/boot/grub/menu-ubn.lst
 echo \
 """
 default 0
-timeout 10
+timeout 0
 
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
