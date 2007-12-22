@@ -29,11 +29,21 @@ if [ "$lilocommand" != "" ]
 then
 bootloader="lilo"
 fi
+if [ -e "/sbin/lilo" ]
+then
+bootloader="lilo"
+lilocommand="/sbin/lilo"
+fi
 
 grubcommand=$(whereis grub-install | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$grubcommand" != "" ]
 then
 bootloader="grub"
+fi
+if [ -e "/sbin/grub-install" ]
+then
+bootloader="grub"
+grubcommand="/sbin/grub-install"
 fi
 
 if [ "$bootloader" = "" ]
@@ -41,6 +51,7 @@ then
 echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails."
 bootloader="grub"
 grubcommand="/sbin/grub-install"
+grubfallback=" grub bootloader fallback"
 fi
 
 # Check if this is a host or livecd installation
@@ -211,6 +222,16 @@ echo "Using formatpartition=$formatpartition"
 # End formatpartition= check
 
 echo "Using bootloader=$bootloader"
+
+if [ "$bootloader" = "grub"]
+then
+echo "Using$grubfallback grubcommand=$grubcommand"
+fi
+
+if [ "$bootloader" = "lilo"]
+then
+echo "Using$grubfallback lilocommand=$lilocommand"
+fi
 
 # End parameter checks
 
