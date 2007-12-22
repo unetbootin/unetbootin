@@ -323,7 +323,8 @@ hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed s
 hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
-$grubcommand --root-directory="$targetdir" hd$hostospartnum
+$grubcommand --root-directory="$targetdir" "hd$hostosdrivenum"
+$grubcommand --root-directory="$targetdir" "$hostosgrubnum"
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
 cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
