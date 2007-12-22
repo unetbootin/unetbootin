@@ -30,6 +30,12 @@ then
 mke2fscommand="/sbin/mke2fs"
 fi
 
+mkdosfscommand=$(whereis mkdosfs | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$mkdosfscommand" = "" ]
+then
+mkdosfscommand="/sbin/mke2fs"
+fi
+
 lilocommand=$(whereis lilo | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$lilocommand" != "" ]
 then
@@ -268,10 +274,10 @@ then
 
 echo "Changing partition id to 83, Linux"
 
-$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 6
 
 echo "Formatting partition as ext2"
-$mke2fscommand $targetpartition
+$mkdosfscommand $targetpartition
 fi
 
 # End formatting partitions
@@ -312,22 +318,22 @@ echo ""
 else
 mkdir $targetdir/boot
 fi
-$grubcommand $targetpartition --root-directory="$targetdir"
-if [ -e $targetdir/boot/grub/menu.lst ]
-then
-cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
-fi
 
 hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
 hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
+
+$grubcommand --root-directory="$targetdir" hd$hostospartnum
+if [ -e $targetdir/boot/grub/menu.lst ]
+then
+cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
+fi
 
 touch $targetdir/boot/grub/menu-ubn.lst
 echo \
 """
 default 0
 timeout 10
-hiddenmenu
 
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
