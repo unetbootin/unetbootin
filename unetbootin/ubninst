@@ -274,10 +274,10 @@ then
 
 echo "Changing partition id to 83, Linux"
 
-$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 6
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
 
 echo "Formatting partition as ext2"
-$mkdosfscommand $targetpartition
+$mke2fscommand $targetpartition
 fi
 
 # End formatting partitions
