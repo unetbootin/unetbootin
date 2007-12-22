@@ -18,6 +18,12 @@ then
 fdiskcommand="/sbin/fdisk"
 fi
 
+sfdiskcommand=$(whereis sfdisk | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$sfdiskcommand" = "" ]
+then
+sfdiskcommand="/sbin/sfdisk"
+fi
+
 mke2fscommand=$(whereis mke2fs | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$mke2fscommand" = "" ]
 then
@@ -262,12 +268,7 @@ then
 
 echo "Changing partition id to 83, Linux"
 
-$fdiskcommand $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) << EOT
-t
-$(echo $targetpartition | tail --bytes 2 | head --bytes 1)
-83
-w
-EOT
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
 
 echo "Formatting partition as ext2"
 $mke2fscommand $targetpartition
