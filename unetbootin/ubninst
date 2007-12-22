@@ -12,6 +12,37 @@ fi
 
 # Begin parameter checks
 
+fdiskcommand=$(whereis fdisk | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$fdiskcommand" = "" ]
+then
+fdiskcommand="/sbin/fdisk"
+fi
+
+mke2fscommand=$(whereis mke2fs | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$mke2fscommand" = "" ]
+then
+mke2fscommand="/sbin/mke2fs"
+fi
+
+lilocommand=$(whereis lilo | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$lilocommand" != "" ]
+then
+bootloader="lilo"
+fi
+
+grubcommand=$(whereis grub-install | sed 's/ /\n/g' | grep /sbin | head -1)
+if [ "$grubcommand" != "" ]
+then
+bootloader="grub"
+fi
+
+if [ "$bootloader" = "" ]
+then
+echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails."
+bootloader="grub"
+grubcommand="/sbin/grub-install"
+fi
+
 # Check if this is a host or livecd installation
 
 if [ "$(echo $@ | grep 'installmode=tohost')" != "" ]
@@ -34,7 +65,7 @@ $0 installmode=tohost
 
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your bootloader or target partition, enter, in addition to any other options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to any other options:
 
 $0 installmode=nohost
 
@@ -45,7 +76,7 @@ $0 installmode=tohost
 
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your bootloader or target partition, enter, in addition to any other options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to any other options:
 
 $0 installmode=nohost"""
 exit 0
@@ -63,7 +94,7 @@ then
 
 # Check the target partition
 
-availpartitions=$(/sbin/fdisk -l | sed 's/ /\n/g' | grep /dev | sed 1d)
+availpartitions=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | sed 1d)
 
 if [ "$(echo $@ | grep 'targetpartition=')" != "" ]
 then
@@ -94,7 +125,7 @@ echo "The specified partition is invalid. Specify, after the 'targetpartition=' 
 
 $availpartitions
 
-Use the command '/sbin/fdisk -l' for details on partitions
+Use the command '$fdiskcommand -l' for details on partitions
 
 "
 exit 0
@@ -149,12 +180,12 @@ fi
 
 if [ "$(echo $@ | sed 's/ /\n/g' | grep 'formatpartition=' | sed 's/formatpartition=//g')" = "yes" ]
 then
-formatpartition=yes
+formatpartition="yes"
 fi
 
 if [ "$(echo $@ | sed 's/ /\n/g' | grep 'formatpartition=' | sed 's/formatpartition=//g')" = "no" ]
 then
-formatpartition=no
+formatpartition="no"
 fi
 
 if [ "$formatpartition" = "" ]
@@ -179,61 +210,7 @@ echo "Using formatpartition=$formatpartition"
 
 # End formatpartition= check
 
-# Begin bootloader= check
-
-if [ "$(echo $@ | grep 'bootloader=')" = "" ]
-then
-echo """
-
-Specify a bootloader to use. Either grub or lilo can be used.
-
-To use grub, enter, in addition to any other options:
-
-$0 bootloader=grub
-
-
-
-To use lilo, enter, in addition to any other options:
-
-$0 bootloader=lilo
-
-"""
-exit 0
-fi
-
-if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | sed 's/bootloader=//g')" = "grub" ]
-then
-bootloader=grub
-fi
-
-if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | sed 's/bootloader=//g')" = "lilo" ]
-then
-bootloader=lilo
-fi
-
-if [ "$bootloader" = "" ]
-then
-echo """
-
-Specify a bootloader to use. Either grub or lilo can be used.
-
-To use grub, enter, in addition to any other options:
-
-$0 bootloader=grub
-
-
-
-To use lilo, enter, in addition to any other options:
-
-$0 bootloader=lilo
-
-"""
-exit 0
-fi
-
 echo "Using bootloader=$bootloader"
-
-# End bootloader= check
 
 # End parameter checks
 
@@ -264,7 +241,7 @@ then
 
 echo "Changing partition id to 83, Linux"
 
-/sbin/fdisk $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) << EOT
+$fdiskcommand $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) << EOT
 t
 $(echo $targetpartition | tail --bytes 2 | head --bytes 1)
 83
@@ -272,7 +249,7 @@ w
 EOT
 
 echo "Formatting partition as ext2"
-/sbin/mke2fs $targetpartition
+$mke2fscommand $targetpartition
 fi
 
 # End formatting partitions
@@ -313,7 +290,7 @@ echo ""
 else
 mkdir $targetdir/boot
 fi
-grub-install $targetpartition
+$grubcommand $targetpartition
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
 cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
@@ -369,12 +346,6 @@ fi
 fi
 
 # End nohost livecd installmode
-
-# TEMPHACK stop anything from happening
-
-exit 0
-
-# END TEMPHACK
 
 # Begin tohost hard-drive installmode
 
