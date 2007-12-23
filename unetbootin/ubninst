@@ -375,7 +375,20 @@ fi
 
 if [ "$bootloader" = "lilo" ]
 then
-echo "to be completed"
+rawdrivedev=$(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))
+echo """
+boot=$rawdrivedev
+prompt
+timeout=50
+default=linux
+
+image=/boot/ubnkern
+	label=linux
+	initrd=/boot/ubninit
+	read-only
+	root=$targetpartition
+""" > $targetdir/lilo.conf
+lilo
 fi
 
 # End lilo install
