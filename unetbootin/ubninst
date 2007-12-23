@@ -331,7 +331,6 @@ echo "$hostosdrivestandalone   $(echo $targetpartition | head --bytes $(expr $(e
 
 $grubcommand --batch --device-map="$targetdir/boot/grub/device.map" << EOT
 root $hostosgrubnum
-setup $hostosgrubnum
 setup $hostosdrivestandalone
 quit
 EOT
