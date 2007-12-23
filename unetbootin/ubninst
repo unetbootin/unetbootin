@@ -47,22 +47,22 @@ bootloader="lilo"
 lilocommand="/sbin/lilo"
 fi
 
-grubcommand=$(whereis grub-install | sed 's/ /\n/g' | grep /sbin | head -1)
+grubcommand=$(whereis grub | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$grubcommand" != "" ]
 then
 bootloader="grub"
 fi
-if [ -e "/sbin/grub-install" ]
+if [ -e "/sbin/grub" ]
 then
 bootloader="grub"
-grubcommand="/sbin/grub-install"
+grubcommand="/sbin/grub"
 fi
 
 if [ "$bootloader" = "" ]
 then
 echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails."
 bootloader="grub"
-grubcommand="/sbin/grub-install"
+grubcommand="/sbin/grub"
 grubfallback=" grub bootloader fallback"
 fi
 
@@ -312,18 +312,22 @@ cp ./ubninit $targetdir/boot/
 
 if [ "$bootloader" = "grub" ]
 then
-if [ -e $targetdir/boot/grub ]
-then
-echo ""
-else
-mkdir $targetdir/boot
-fi
+cp -r /boot/grub $targetpartition/grub
+chmod -R 777 $targetpartition/grub
 
 hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed s/a/0/ | sed s/b/1/ | sed s/c/2/ | sed s/e/4/ | sed s/f/5/ | sed s/g/6/ | sed s/h/7/ | sed s/i/8/ | sed s/j/9/ | sed s/k/10/ | sed s/l/11/ | sed s/m/12/ | sed s/n/13/ | sed s/o/14/ | sed s/p/15/ | sed s/q/16/ | sed s/r/17/ | sed s/s/18/ | sed s/t/19/ | sed s/u/20/ | sed s/v/21/ | sed s/w/22/ | sed s/x/23/ | sed s/y/24/ | sed s/z/25/)
 hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
-$grubcommand --root-directory="$targetdir" --no-floppy "$(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))"
+hostosdrivestandalone="(hd$(echo $hostosdrivenum))"
+
+echo "$hostosdrivestandalone   $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))" > $targetdir/boot/grub/device.map
+
+$grubcommand --batch --device-map="$targetdir/boot/grub/device.map" << EOT
+root "$hostospartnum"
+setup "$hostosdrivestandalone"
+quit
+EOT
 
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
