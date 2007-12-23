@@ -71,6 +71,16 @@ grubcommand="/sbin/grub"
 grubfallback=" grub bootloader fallback"
 fi
 
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | head -1 | sed 's/bootloader=//g')" = "lilo" ]
+then
+bootloader="lilo"
+fi
+
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | head -1 | sed 's/bootloader=//g')" = "grub" ]
+then
+bootloader="grub"
+fi
+
 # Check if this is a host or livecd installation
 
 if [ "$(echo $@ | grep 'installmode=tohost')" != "" ]
