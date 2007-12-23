@@ -388,7 +388,7 @@ image=/boot/ubnkern
 	read-only
 	root=$targetpartition
 """ > $targetdir/lilo.conf
-lilo
+lilo -C $targetdir/lilo.conf
 fi
 
 # End lilo install
