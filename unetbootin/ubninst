@@ -312,8 +312,8 @@ cp ./ubninit $targetdir/boot/
 
 if [ "$bootloader" = "grub" ]
 then
-cp -r /boot/grub $targetpartition/grub
-chmod -R 777 $targetpartition/grub
+cp -r /boot/grub $targetdir/grub
+chmod -R 777 $targetdir/grub
 
 hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed s/a/0/ | sed s/b/1/ | sed s/c/2/ | sed s/e/4/ | sed s/f/5/ | sed s/g/6/ | sed s/h/7/ | sed s/i/8/ | sed s/j/9/ | sed s/k/10/ | sed s/l/11/ | sed s/m/12/ | sed s/n/13/ | sed s/o/14/ | sed s/p/15/ | sed s/q/16/ | sed s/r/17/ | sed s/s/18/ | sed s/t/19/ | sed s/u/20/ | sed s/v/21/ | sed s/w/22/ | sed s/x/23/ | sed s/y/24/ | sed s/z/25/)
 hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
