@@ -46,6 +46,11 @@ then
 bootloader="lilo"
 lilocommand="/sbin/lilo"
 fi
+if [ -e "/usr/sbin/lilo" ]
+then
+bootloader="lilo"
+lilocommand="/usr/sbin/lilo"
+fi
 
 grubcommand=$(whereis grub | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$grubcommand" != "" ]
@@ -57,28 +62,92 @@ then
 bootloader="grub"
 grubcommand="/sbin/grub"
 fi
+if [ -e "/usr/sbin/grub" ]
+then
+bootloader="grub"
+grubcommand="/usr/sbin/grub"
+fi
 grubinstallcommand=$(whereis grub-install | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ -e "$grubcommand-install" ]
 then
 grubinstallcommand="$grubcommand-install"
 fi
 
-if [ "$bootloader" = "" ]
-then
-echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails."
-bootloader="grub"
-grubcommand="/sbin/grub"
-grubfallback=" grub bootloader fallback"
-fi
-
 if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | head -1 | sed 's/bootloader=//g')" = "lilo" ]
 then
 bootloader="lilo"
+if [ -e "/sbin/lilo" ]
+then
+lilocommand="/sbin/lilo"
+fi
+if [ -e "/usr/sbin/lilo" ]
+then
+lilocommand="/usr/sbin/lilo"
+fi
+if [ "$lilocommand" = "" ]
+then
+lilocommand="/sbin/lilo"
+fi
 fi
 
 if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | head -1 | sed 's/bootloader=//g')" = "grub" ]
 then
 bootloader="grub"
+if [ -e "/sbin/grub" ]
+then
+grubcommand="/sbin/grub"
+fi
+if [ -e "/usr/sbin/grub" ]
+then
+grubcommand="/usr/sbin/grub"
+fi
+if [ "$grubcommand" = "" ]
+then
+grubcommand="/sbin/grub"
+fi
+if [ -e "/sbin/grub-install" ]
+then
+grubinstallcommand="/sbin/grub-install"
+fi
+if [ -e "/usr/sbin/grub-install" ]
+then
+grubinstallcommand="/usr/sbin/grub-install"
+fi
+if [ "$grubinstallcommand" = "" ]
+then
+grubinstallcommand="/sbin/grub-install"
+fi
+fi
+
+if [ "$bootloader" = "" ]
+then
+echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails or use the bootloader=lilo option to use lilo instead."
+bootloader="grub"
+if [ -e "/sbin/grub" ]
+then
+grubcommand="/sbin/grub"
+fi
+if [ -e "/usr/sbin/grub" ]
+then
+grubcommand="/usr/sbin/grub"
+fi
+if [ "$grubcommand" = "" ]
+then
+grubcommand="/sbin/grub"
+fi
+if [ -e "/sbin/grub-install" ]
+then
+grubinstallcommand="/sbin/grub-install"
+fi
+if [ -e "/usr/sbin/grub-install" ]
+then
+grubinstallcommand="/usr/sbin/grub-install"
+fi
+if [ "$grubinstallcommand" = "" ]
+then
+grubinstallcommand="/sbin/grub-install"
+fi
+grubfallback=" grub bootloader fallback"
 fi
 
 # Check if this is a host or livecd installation
