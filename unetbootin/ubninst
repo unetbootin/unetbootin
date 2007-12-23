@@ -122,7 +122,7 @@ then
 
 # Check the target partition
 
-availpartitions=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | sed 1d)
+availpartitions=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':')
 
 if [ "$(echo $@ | grep 'targetpartition=')" != "" ]
 then
