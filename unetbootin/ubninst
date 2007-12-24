@@ -1,10 +1,34 @@
 #!/bin/sh
 
+ubnappname='./unetbootin-replacewithubnversion.sh'
+
 # Check for root privs
 
 if [ "$(whoami)" != "root" ]; then
-echo "This script must be run as root. Use 'sudo' or 'su' to become root"
-zenity --info --text="This script must be run as root. Use 'sudo' or 'su' to become root"
+echo """This script must be run as root. Use 'sudo' or 'su' to become root
+
+To run with sudo, enter:
+
+sudo $ubnappname
+
+To run with su, enter:
+
+su
+$ubnappname
+
+"""
+zenity --info --text="""This script must be run as root. Use 'sudo' or 'su' to become root
+
+To run with sudo, enter:
+
+sudo $ubnappname
+
+To run with su, enter:
+
+su
+$ubnappname
+
+"""
 exit 0
 fi
 
@@ -174,17 +198,17 @@ echo """
 
 If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
 
-$0 installmode=tohost
+$ubnappname installmode=tohost
 
 
 Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 Otherwise, if you want to install to a USB drive, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 The following partitions are available for use:
 $posspartsavail
@@ -192,17 +216,17 @@ $posspartsavail
 """
 zenity --info --text="""If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
 
-$0 installmode=tohost
+$ubnappname installmode=tohost
 
 
 Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 Otherwise, if you want to install to a USB drive, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 The following partitions are available for use:
 $posspartsavail"""
@@ -232,7 +256,7 @@ echo """
 
 Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 
@@ -267,7 +291,7 @@ echo """
 
 Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 
@@ -291,13 +315,13 @@ echo """
 
 Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 targetpartition=$targetpartition formatpartition=no
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=no
 
 
 
 Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 targetpartition=$targetpartition formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
@@ -319,13 +343,13 @@ echo """
 
 Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 targetpartition=$targetpartition formatpartition=no
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=no
 
 
 
 Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 targetpartition=$targetpartition formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
@@ -479,7 +503,7 @@ echo """
 
 Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 
@@ -514,7 +538,7 @@ echo """
 
 Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
 
-$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
 
 
@@ -538,13 +562,13 @@ echo """
 
 Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 targetpartition=$targetpartition formatpartition=no
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=no
 
 
 
 Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 targetpartition=$targetpartition formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
@@ -566,13 +590,13 @@ echo """
 
 Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
 
-$0 targetpartition=$targetpartition formatpartition=no
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=no
 
 
 
 Otherwise, to format the target partition, erasing all data on that partition, enter:
 
-$0 targetpartition=$targetpartition formatpartition=yes
+$ubnappname installmode=$installmode targetpartition=$targetpartition formatpartition=yes
 
 """
 exit 0
