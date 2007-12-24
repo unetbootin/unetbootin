@@ -162,6 +162,11 @@ then
 installmode="nohost"
 fi
 
+if [ "$(echo $@ | grep 'installmode=usbdrive')" != "" ]
+then
+installmode="usbdrive"
+fi
+
 if [ "$installmode" = "" ]
 then
 echo """
@@ -176,6 +181,10 @@ Otherwise, if you are running this script from a liveCD or other live, non-hard 
 
 $0 installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
+Otherwise, if you want to install to a USB drive, enter, in addition to the targetpartition and formatpartition options:
+
+$0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+
 """
 zenity --info --text="""If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
 
@@ -185,13 +194,254 @@ $0 installmode=tohost
 
 Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
 
-$0 installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes"""
+$0 installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+
+Otherwise, if you want to install to a USB drive, enter, in addition to the targetpartition and formatpartition options:
+
+$0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes"""
 exit 0
 fi
 
 echo "Using installmode=$installmode"
 
 # End installmode= installmode check
+
+# Begin usbdrive installmode
+
+if [ "$installmode" = "usbdrive" ]
+then
+# Check the target partition
+
+availpartitions=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':')
+
+if [ "$(echo $@ | grep 'targetpartition=')" != "" ]
+then
+proposedpartition="$(echo $@ | sed 's/ /\n/g' | grep 'targetpartition=' | head -1 | sed 's/targetpartition=//g')"
+fi
+
+if [ "$proposedpartition" = "" ]
+then
+echo """
+
+Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
+
+$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+
+
+
+The following partitions are available for use:
+
+$availpartitions
+
+"""
+exit 0
+fi
+
+if [ "$(echo $availpartitions | grep $proposedpartition)" = "" ]
+then
+echo "The specified partition is invalid. Specify, after the 'targetpartition=' option, one of the following:
+
+$availpartitions
+
+Use the command '$fdiskcommand -l' for details on partitions
+
+"
+exit 0
+fi
+
+if [ "$(echo $availpartitions | grep $proposedpartition)" != "" ]
+then
+targetpartition="$proposedpartition"
+fi
+
+if [ "$targetpartition" = "" ]
+then
+echo """
+
+Specify a partition to use for the installation. For example, to use $($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1), enter, in addition to the formatpartition=yes or formatpartition=no option:
+
+$0 targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
+
+
+
+The following partitions are available for use:
+
+$availpartitions
+
+"""
+exit 0
+fi
+
+echo "Using targetpartition=$targetpartition"
+
+# End targetpartition= check
+
+# Check if partition is to be formatted or not
+
+if [ "$(echo $@ | grep 'formatpartition=')" = "" ]
+then
+echo """
+
+Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
+
+$0 targetpartition=$targetpartition formatpartition=no
+
+
+
+Otherwise, to format the target partition, erasing all data on that partition, enter:
+
+$0 targetpartition=$targetpartition formatpartition=yes
+
+"""
+exit 0
+fi
+
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'formatpartition=' | sed 's/formatpartition=//g')" = "yes" ]
+then
+formatpartition="yes"
+fi
+
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'formatpartition=' | sed 's/formatpartition=//g')" = "no" ]
+then
+formatpartition="no"
+fi
+
+if [ "$formatpartition" = "" ]
+then
+echo """
+
+Specify whether or not to format the target partition. If you have already formatted the target partition and do not want to do so again, enter:
+
+$0 targetpartition=$targetpartition formatpartition=no
+
+
+
+Otherwise, to format the target partition, erasing all data on that partition, enter:
+
+$0 targetpartition=$targetpartition formatpartition=yes
+
+"""
+exit 0
+fi
+
+echo "Using formatpartition=$formatpartition"
+
+# End formatpartition= check
+
+bootloader="grub"
+
+echo "Using bootloader=$bootloader"
+
+if [ "$bootloader" = "grub" ]
+then
+echo "Using$grubfallback grubcommand=$grubcommand"
+fi
+
+if [ "$bootloader" = "lilo" ]
+then
+echo "Using$grubfallback lilocommand=$lilocommand"
+fi
+
+# End parameter checks
+
+# Begin raw commands and code
+
+echo "Unmounting target partition"
+
+if [ -e /media ]
+then
+echo ""
+else
+mkdir /media
+fi
+
+umount $targetpartition
+if [ -e /media/ubntemp ]
+then
+umount /media/ubntemp
+fi
+umount -f $targetpartition
+if [ -e /media/ubntemp ]
+then
+umount -f /media/ubntemp
+fi
+umount -l $targetpartition
+if [ -e /media/ubntemp ]
+then
+umount -l /media/ubntemp
+fi
+
+# Begin formatting partitions
+
+if [ "$formatpartition" = "yes" ]
+then
+
+echo "Changing partition id to 83, Linux"
+
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
+
+echo "Formatting partition as ext2"
+$mke2fscommand $targetpartition
+fi
+
+# End formatting partitions
+
+if [ "$(mount | grep $targetpartition)" != "" ]
+then
+# Still mounted, could not unmount
+targetdir="$(mount | grep $targetpartition | sed 's/ /\n/g' | head -3 | tail -1)"
+else
+# Mount at /media/ubntemp
+targetdir=/media/ubntemp
+if [ -e $targetdir ]
+then
+echo ""
+else
+mkdir $targetdir
+fi
+mount $targetpartition $targetdir
+fi
+
+if [ -e $targetdir/boot ]
+then
+echo ""
+else
+mkdir $targetdir/boot
+fi
+
+cp ./ubnkern $targetdir/boot/
+cp ./ubninit $targetdir/boot/
+
+# Begin grub install
+
+hostosdrivenum=$(echo $targetpartition | tail --bytes 3 | head --bytes 1 | sed s/a/0/ | sed s/b/1/ | sed s/c/2/ | sed s/e/4/ | sed s/f/5/ | sed s/g/6/ | sed s/h/7/ | sed s/i/8/ | sed s/j/9/ | sed s/k/10/ | sed s/l/11/ | sed s/m/12/ | sed s/n/13/ | sed s/o/14/ | sed s/p/15/ | sed s/q/16/ | sed s/r/17/ | sed s/s/18/ | sed s/t/19/ | sed s/u/20/ | sed s/v/21/ | sed s/w/22/ | sed s/x/23/ | sed s/y/24/ | sed s/z/25/)
+hostospartnum=$(expr $(echo $targetpartition | tail --bytes 2 | head --bytes 1) - 1)
+hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
+
+hostosdrivestandalone="(hd$(echo $hostosdrivenum))"
+
+$grubinstallcommand --root-directory="$targetdir" $hostosdrivestandalone
+
+if [ -e $targetdir/boot/grub/menu.lst ]
+then
+rm $targetdir/boot/grub/menu.lst
+fi
+
+touch $targetdir/boot/grub/menu.lst
+echo \
+"""
+default 0
+timeout 10
+
+title UNetbootin-replacewithubnversion
+kernel /boot/ubnkern
+initrd /boot/ubninit
+boot
+""" > $targetdir/boot/grub/menu-ubn.lst
+
+fi
+
+# End usbdrive installmode
 
 # Begin nohost livecd installmode
 
