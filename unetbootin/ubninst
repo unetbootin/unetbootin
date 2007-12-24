@@ -169,7 +169,7 @@ fi
 
 if [ "$installmode" = "" ]
 then
-posspartsavail="$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':')"
+posspartsavail=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':')
 echo """
 
 If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
