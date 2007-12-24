@@ -201,7 +201,7 @@ If you are running this script from a host, hard-drive Linux install, and want t
 $ubnappname installmode=tohost
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub or bootloader=lilo), enter, in addition to the targetpartition and formatpartition options:
 
 $ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
@@ -219,7 +219,7 @@ zenity --info --text="""If you are running this script from a host, hard-drive L
 $ubnappname installmode=tohost
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition, enter, in addition to the targetpartition and formatpartition options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub or bootloader=lilo), enter, in addition to the targetpartition and formatpartition options:
 
 $ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
