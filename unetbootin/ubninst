@@ -429,6 +429,8 @@ hostosdrivestandalone="(hd$(echo $hostosdrivenum))"
 
 $grubinstallcommand --root-directory="$targetdir" $hostosdrivestandalone
 
+echo "$hostosdrivestandalone   $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))" > $targetdir/boot/grub/device.map
+
 $grubcommand --batch --device-map="$targetdir/boot/grub/device.map" << EOT
 root $hostosgrubnum
 setup $hostosdrivestandalone
