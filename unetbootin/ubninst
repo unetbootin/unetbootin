@@ -429,9 +429,15 @@ hostosdrivestandalone="(hd$(echo $hostosdrivenum))"
 
 $grubinstallcommand --root-directory="$targetdir" $hostosdrivestandalone
 
+$grubcommand --batch --device-map="$targetdir/boot/grub/device.map" << EOT
+root $hostosgrubnum
+setup $hostosdrivestandalone
+quit
+EOT
+
 if [ -e $targetdir/boot/grub/menu.lst ]
 then
-rm $targetdir/boot/grub/menu.lst
+cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
 fi
 
 touch $targetdir/boot/grub/menu.lst
