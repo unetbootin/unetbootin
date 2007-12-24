@@ -186,7 +186,8 @@ Otherwise, if you want to install to a USB drive, enter, in addition to the targ
 
 $0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
-The following partitions are available for use: $posspartsavail
+The following partitions are available for use:
+$posspartsavail
 
 """
 zenity --info --text="""If you are running this script from a host, hard-drive Linux install, and want the GRUB bootloader installed in /boot to be used, enter:
@@ -203,7 +204,8 @@ Otherwise, if you want to install to a USB drive, enter, in addition to the targ
 
 $0 installmode=usbdrive targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
-The following partitions are available for use: $posspartsavail"""
+The following partitions are available for use:
+$posspartsavail"""
 exit 0
 fi
 
