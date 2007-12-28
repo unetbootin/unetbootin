@@ -1,3 +1,4 @@
 #!/bin/sh
 
 sed -i "s/initrd \/boot\/ubninit/initrd \/boot\/ubninit root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram/g" $1
+sed -i "s/initrd \/wubi\/boot\/ubninit/initrd \/wubi\/boot\/ubninit root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram/g" $1
