@@ -122,13 +122,15 @@ sed -i "s/ubnbzrsubversionum/$ubnverinit/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./vbooted.bat
 sed -i "s/replacewithubnversion/$ubnver/g" ./menu.lst
+cd ..
 
 # exe override
 if [ -e ./override/$targetbuildos ]
 then
-./override/$targetbuildos ./menu.lst
+./override/$targetbuildos ./winbuild/menu.lst
 fi
 
+cd $locationhere/winbuild
 sed -i "s/\/boot\//\/unetbootin\//g" ./menu.lst
 wine "C:\Program Files\NSIS\makensis.exe" unetbootin.nsi
 mv setup.exe $locationhere/dist/unetbootin-$ubnver.exe
