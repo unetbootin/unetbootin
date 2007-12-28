@@ -93,7 +93,7 @@ sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin-deb/DEBIAN/postinst
 # deb and rpm override
 if [ -e ./override/$targetbuildos ]
 then
-./override/$targetbuildos ./unetbootin-deb/postinst
+./override/$targetbuildos ./unetbootin-deb/DEBIAN/postinst
 fi
 
 cp ./unetbootin-deb/DEBIAN/control ./unetbootin-deb/DEBIAN/control.bak
