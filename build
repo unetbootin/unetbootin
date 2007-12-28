@@ -129,6 +129,7 @@ then
 ./override/$targetbuildos ./menu.lst
 fi
 
+sed -i "s/\/boot\//\/unetbootin\//g" ./menu.lst
 wine "C:\Program Files\NSIS\makensis.exe" unetbootin.nsi
 mv setup.exe $locationhere/dist/unetbootin-$ubnver.exe
 mv unetbootin-orig.nsi unetbootin.nsi
