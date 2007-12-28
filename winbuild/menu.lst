@@ -14,7 +14,7 @@ default        0
 timeout 0
 hiddenmenu
 
-title UNetbootin
+title UNetbootin-replacewithubnversion
 find --set-root /unetbootin/ubnkern
 kernel /unetbootin/ubnkern find=/unetbootin/ubnkern quiet ro
 initrd /unetbootin/ubninit

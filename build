@@ -25,10 +25,14 @@ echo "Installing wine..."
 sudo apt-get update && sudo apt-get install wine
 fi
 
+# Install fakeroot
+
 if [ ! -e /usr/bin/fakeroot ]; then
 echo "Installing fakeroot..."
 sudo apt-get update && sudo apt-get install fakeroot
 fi
+
+# Install alien
 
 if [ ! -e /usr/bin/alien ]; then
 echo "Installing alien..."
@@ -60,18 +64,38 @@ for targetbuildos in $targetbuildoslist
 do
 cd $locationhere
 ubnver=$targetbuildos\rev$ubnverinit
+
+# sh build
+
 mv ./initkern/ubninit-$targetbuildos ./unetbootin/ubninit
 mv ./initkern/ubnkern-$targetbuildos ./unetbootin/ubnkern
 cp ./unetbootin/ubninst ./unetbootin/ubninst-orig
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin/ubninst
+
+# sh override
+if [ -e ./override/$targetbuildos ]
+then
+./override/$targetbuildos ./unetbootin/ubninst
+fi
+
 cd $locationhere/makeself
 ./makeself.sh $locationhere/unetbootin $locationhere/dist/unetbootin-$ubnver.sh "UNetbootin" ./ubninst
 cd $locationhere
 mv ./unetbootin/ubninst-orig ./unetbootin/ubninst
+
+# deb build
+
 mv $locationhere/unetbootin/ubnkern $locationhere/unetbootin-deb/boot/ubnkern
 mv $locationhere/unetbootin/ubninit $locationhere/unetbootin-deb/boot/ubninit
 cp ./unetbootin-deb/DEBIAN/postinst ./unetbootin-deb/DEBIAN/postinst-orig
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin-deb/DEBIAN/postinst
+
+# deb and rpm override
+if [ -e ./override/$targetbuildos ]
+then
+./override/$targetbuildos ./unetbootin-deb/postinst
+fi
+
 cp ./unetbootin-deb/DEBIAN/control ./unetbootin-deb/DEBIAN/control.bak
 sed -i "s/Version: 1.0/Version: $ubnver/" ./unetbootin-deb/DEBIAN/control
 ubnsize=$(du -ck unetbootin-deb | grep total | sed "s/ /\n/g" | sed "s/\t/\n/g" | head --lines 1)
@@ -82,18 +106,34 @@ mv ./unetbootin-deb/DEBIAN/control.bak ./unetbootin-deb/DEBIAN/control
 mv ./unetbootin-deb/DEBIAN/postinst-orig ./unetbootin-deb/DEBIAN/postinst
 mv $locationhere/unetbootin-deb/boot/ubnkern $locationhere/winbuild/ubnkern
 mv $locationhere/unetbootin-deb/boot/ubninit $locationhere/winbuild/ubninit
+
+# rpm build
+
 cd $locationhere/dist
 fakeroot alien --scripts -r unetbootin_$ubnver\_all.deb
+
+# exe build
+
 cd $locationhere/winbuild
 cp unetbootin.nsi unetbootin-orig.nsi
 cp vbooted.bat vbooted-orig.bat
+cp menu.lst menu-orig.lst
 sed -i "s/ubnbzrsubversionum/$ubnverinit/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./vbooted.bat
+sed -i "s/replacewithubnversion/$ubnver/g" ./menu.lst
+
+# exe override
+if [ -e ./override/$targetbuildos ]
+then
+./override/$targetbuildos ./menu.lst
+fi
+
 wine "C:\Program Files\NSIS\makensis.exe" unetbootin.nsi
 mv setup.exe $locationhere/dist/unetbootin-$ubnver.exe
 mv unetbootin-orig.nsi unetbootin.nsi
 mv vbooted-orig.bat vbooted.bat
+mv menu-orig.lst menu.lst
 cd $locationhere
 mv $locationhere/winbuild/ubnkern $locationhere/initkern/ubnkern-$targetbuildos
 mv $locationhere/winbuild/ubninit $locationhere/initkern/ubninit-$targetbuildos
