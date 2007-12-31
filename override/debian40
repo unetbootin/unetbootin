@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern installgui/g" $1
-sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern installgui/g" $1
+sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern video=vesa:ywrap,mtrr vga=788 installgui/g" $1
+sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern video=vesa:ywrap,mtrr vga=788 installgui/g" $1
