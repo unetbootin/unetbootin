@@ -50,6 +50,10 @@ ShowInstDetails show
 ShowUnInstDetails show
 
 Section "MainSection" SEC01
+
+; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
+; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubnkern"
+
   SetOutPath "$INSTDIR\unetbootin"
   SetOverwrite on
   File "ubnkern"

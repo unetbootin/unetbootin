@@ -1,5 +1,8 @@
 #!/bin/sh
 
+sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern vga=normal/g" $1
+sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern vga=normal/g" $1
+
 if [ "$(echo $0 | grep x64)" != "" ]
 then
 arch=amd64
@@ -7,12 +10,12 @@ else
 arch=i386
 fi
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern vga=normal/g" $1
-sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern vga=normal/g" $1
+kerndlurl="http:\/\/archive.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-$arch\/current\/images\/netboot\/ubuntu-installer\/$arch\/linux"
+initdlurl="http:\/\/archive.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-$arch\/current\/images\/netboot\/ubuntu-installer\/$arch\/initrd.gz"
 
 sed -i "s/\#rptl //g" $1
-sed -i "s/rpubnkernurl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-$arch\/current\/images\/netboot\/ubuntu-installer\/$arch\/linux/g" $1
-sed -i "s/rpubniniturl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-$arch\/current\/images\/netboot\/ubuntu-installer\/$arch\/initrd.gz/g" $1
+sed -i "s/rpubnkernurl/$kerndlurl/g" $1
+sed -i "s/rpubniniturl/$initdlurl/g" $1
 
 sed -i "s/cp \.\/ubnkern/\#/g" $1
 sed -i "s/cp \.\/ubninit/\#/g" $1
@@ -21,4 +24,7 @@ if [ "$1" = ./winbuild/menu.lst ]
 then
 sed -i 's/File "ubnkern"//g' ./winbuild/unetbootin.nsi
 sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
+sed -i 's/\; ltbe //g' ./winbuild/unetbootin.nsi
+sed -i "s/rpubnkernurl/$kerndlurl/g" ./winbuild/unetbootin.nsi
+sed -i "s/rpubniniturl/$initdlurl/g" ./winbuild/unetbootin.nsi
 fi
