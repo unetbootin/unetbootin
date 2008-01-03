@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /n/g' | grep /bin | head -1)"
+#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]
 #rptl then
 #rptl $wgetcommand rpubnkernurl -O /boot/ubnkern

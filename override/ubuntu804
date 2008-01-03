@@ -17,7 +17,3 @@ sed -i "s/rpubniniturl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/insta
 sed -i "s/cp \.\/ubnkern/\#/g" $1
 sed -i "s/cp \.\/ubninit/\#/g" $1
 
-if [ "$1" = "./unetbootin-deb/DEBIAN/postinst" ]
-then
-sed -i "s/\#rptl //g" ./unetbootin-deb/DEBIAN/postrm
-fi

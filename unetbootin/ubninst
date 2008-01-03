@@ -443,7 +443,7 @@ fi
 cp ./ubnkern $targetdir/boot/
 cp ./ubninit $targetdir/boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /n/g' | grep /bin | head -1)"
+#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]
 #rptl then
 #rptl $wgetcommand rpubnkernurl -O $targetdir/boot/ubnkern
@@ -698,7 +698,7 @@ fi
 cp ./ubnkern $targetdir/boot/
 cp ./ubninit $targetdir/boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /n/g' | grep /bin | head -1)"
+#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]
 #rptl then
 #rptl $wgetcommand rpubnkernurl -O $targetdir/boot/ubnkern
@@ -802,7 +802,7 @@ then
 cp ./ubnkern /boot/
 cp ./ubninit /boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /n/g' | grep /bin | head -1)"
+#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]
 #rptl then
 #rptl $wgetcommand rpubnkernurl -O /boot/ubnkern
