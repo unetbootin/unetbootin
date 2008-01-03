@@ -4,8 +4,8 @@ sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern vga=normal/g" $1
 sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern vga=normal/g" $1
 
 sed -i "s/\#rptl //g" $1
-sed -i "s/rpubnkernurl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-i386\/current\/images\/netboot\/ubuntu-installer\/i386\/linux/g"
-sed -i "s/rpubniniturl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-i386\/current\/images\/netboot\/ubuntu-installer\/i386\/initrd.gz/g"
+sed -i "s/rpubnkernurl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-i386\/current\/images\/netboot\/ubuntu-installer\/i386\/linux/g" $1
+sed -i "s/rpubniniturl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-i386\/current\/images\/netboot\/ubuntu-installer\/i386\/initrd.gz/g" $1
 
 sed -i "s/cp \.\/ubnkern/\#/g" $1
 sed -i "s/cp \.\/ubninit/\#/g" $1
