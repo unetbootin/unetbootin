@@ -51,9 +51,6 @@ ShowUnInstDetails show
 
 Section "MainSection" SEC01
 
-; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
-; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubnkern"
-
   SetOutPath "$INSTDIR\unetbootin"
   SetOverwrite on
   File "ubnkern"
@@ -94,6 +91,8 @@ NT:     ;use grldr and boot.ini
 
   ReadEnvStr $0 COMSPEC
   nsExec::Exec  '$0 /c "c:\unetbootin\vbooted.bat"'
+  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
+  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\grldr.mbr" '"UNetbootin-replacewithubnversion"'
   WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15
@@ -101,7 +100,8 @@ NT:     ;use grldr and boot.ini
 
 notNT:  ;use config.sys and grub.exe
 
-
+  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
+  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\config.sys" NORMAL
   FileOpen $0 "$INSTDIR\..\config.sys" a
   FileSeek $0 0 END
