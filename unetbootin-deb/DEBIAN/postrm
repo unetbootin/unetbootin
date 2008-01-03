@@ -6,3 +6,6 @@ fi
 if [ -e /boot/grub/menu-ubn.lst ]; then
 rm /boot/grub/menu-ubn.lst
 fi
+
+#rptl rm /boot/ubnkern
+#rptl rm /boot/ubninit

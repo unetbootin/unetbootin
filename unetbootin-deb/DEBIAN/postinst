@@ -1,5 +1,15 @@
 #!/bin/sh
 
+#rptl wgetcommand="$(whereis wget | sed 's/ /n/g' | grep /bin | head -1)"
+#rptl if [ "$wgetcommand" != "" ]
+#rptl then
+#rptl $wgetcommand rpubnkernurl -O /boot/ubnkern
+#rptl $wgetcommand rpubniniturl -O /boot/ubninit
+#rptl else
+#rptl curl rpubnkernurl > /boot/ubnkern
+#rptl curl rpubniniturl > /boot/ubninit
+#rptl fi
+
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 
 if [ -e /media/host/wubi ]; then
