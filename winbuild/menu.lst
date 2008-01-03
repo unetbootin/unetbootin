@@ -16,6 +16,6 @@ hiddenmenu
 
 title UNetbootin-replacewithubnversion
 find --set-root /unetbootin/ubnkern
-kernel /boot/ubnkern find=/unetbootin/ubnkern quiet ro
+kernel /boot/ubnkern
 initrd /boot/ubninit
 boot
