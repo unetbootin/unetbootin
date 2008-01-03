@@ -1,6 +1,8 @@
 #!/bin/sh
 
 ubnappname='./unetbootin-replacewithubnversion.sh'
+afterinstmessage=""
+stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $afterinstmessage"
 
 # Check for root privs
 
@@ -488,6 +490,8 @@ initrd /boot/ubninit
 boot
 """ > $targetdir/boot/grub/menu.lst
 
+echo "$stdendinstmessage"
+
 fi
 
 # End usbdrive installmode
@@ -790,6 +794,8 @@ fi
 
 # End raw commands and code
 
+echo "$stdendinstmessage"
+
 fi
 
 # End nohost livecd installmode
@@ -897,8 +903,8 @@ zenity --info --text="UNetbootin has been successfully uninstalled"
 ''' >> /usr/bin/unetbootin-uninst
 chmod +x /usr/bin/unetbootin-uninst
 
-echo "Installation complete, please reboot and select UNetbootin on the GRUB boot menu"
-zenity --info --text="Installation complete, please reboot and select UNetbootin on the GRUB menu"
+echo "$stdendinstmessage"
+zenity --info --text="$stdendinstmessage"
 
 fi
 

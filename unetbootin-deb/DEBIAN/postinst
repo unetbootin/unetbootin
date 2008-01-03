@@ -1,5 +1,8 @@
 #!/bin/sh
 
+afterinstmessage=""
+stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $afterinstmessage"
+
 #rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]
 #rptl then
@@ -76,3 +79,4 @@ sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
 
+echo "$stdendinstmessage"
