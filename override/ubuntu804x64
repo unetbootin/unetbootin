@@ -1,11 +1,1 @@
-#!/bin/sh
-
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern vga=normal/g" $1
-sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern vga=normal/g" $1
-
-sed -i "s/\#rptl //g" $1
-sed -i "s/rpubnkernurl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-amd64\/current\/images\/netboot\/ubuntu-installer\/amd64\/linux/g" $1
-sed -i "s/rpubniniturl/ftp:\/\/ftp.ubuntu.com\/ubuntu\/dists\/hardy\/main\/installer-amd64\/current\/images\/netboot\/ubuntu-installer\/amd64\/initrd.gz/g" $1
-
-sed -i "s/cp \.\/ubnkern/\#/g" $1
-sed -i "s/cp \.\/ubninit/\#/g" $1
+/home/geza/Other/Ubuntu/devel/unetbootin/override/ubuntu804
