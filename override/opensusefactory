@@ -21,7 +21,7 @@ sed -i "s/rpubniniturl/$initdlurl/g" $1
 sed -i "s/cp \.\/ubnkern/\#/g" $1
 sed -i "s/cp \.\/ubninit/\#/g" $1
 
-sed -i s/afterinstmessage=""/afterinstmessage="$fninstmesage"/g $1
+sed -i "s/Installation complete. Reboot, and select UNetbootin on the GRUB boot menu./Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $fninstmesage/g" $1
 
 if [ "$1" = ./winbuild/menu.lst ]
 then

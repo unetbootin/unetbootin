@@ -1,7 +1,6 @@
 #!/bin/sh
 
-afterinstmessage=""
-stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $afterinstmessage"
+stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu."
 
 #rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #rptl if [ "$wgetcommand" != "" ]

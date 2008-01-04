@@ -1,8 +1,7 @@
 #!/bin/sh
 
 ubnappname='./unetbootin-replacewithubnversion.sh'
-afterinstmessage=""
-stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $afterinstmessage"
+stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu."
 
 # Check for root privs
 
