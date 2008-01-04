@@ -30,5 +30,5 @@ sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
 sed -i 's/\; ltbe //g' ./winbuild/unetbootin.nsi
 sed -i "s/rpubnkernurl/$kerndlurl/g" ./winbuild/unetbootin.nsi
 sed -i "s/rpubniniturl/$initdlurl/g" ./winbuild/unetbootin.nsi
-sed -i "s/You need to reboot to complete the installation\./You need to reboot to complete the installation\. $fninstmesage/g" ./winbuild/unetbootin.nsi
+sed -i "s/You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup./You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup. $fninstmesage/g" ./winbuild/unetbootin.nsi
 fi
