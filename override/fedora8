@@ -3,6 +3,13 @@
 sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern splash=silent showopts/g" $1
 sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern splash=silent showopts/g" $1
 
+if [ "$(echo $0 | grep x64)" != "" ]
+then
+arch=x86_64
+else
+arch=i386
+fi
+
 fninstmesage="*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '\/pub\/fedora\/linux\/releases\/8\/Fedora\/$arch\/os' when asked for the folder."
 
 sed -i "s/Installation complete. Reboot, and select UNetbootin on the GRUB boot menu./Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $fninstmesage/g" $1
