@@ -12,7 +12,7 @@ fi
 
 kerndlurl="http:\/\/download.opensuse.org\/distribution\/SL-OSS-factory\/inst-source\/boot\/$arch\/loader\/linux"
 initdlurl="http:\/\/download.opensuse.org\/distribution\/SL-OSS-factory\/inst-source\/boot\/$arch\/loader\/initrd"
-fninstmesage="After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '\/distribution\/SL-OSS-factory\/inst-source' when asked for the folder."
+fninstmesage="*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '\/distribution\/SL-OSS-factory\/inst-source' when asked for the folder."
 
 sed -i "s/\#rptl //g" $1
 sed -i "s/rpubnkernurl/$kerndlurl/g" $1
