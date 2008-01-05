@@ -10,8 +10,8 @@ else
 arch=i386
 fi
 
-kerndlurl="http:\/\/mirrors.kernel.org\/centos\/5.1\/linux\/$arch\/os\/Fedora\/$arch\/isolinux\/vmlinuz"
-initdlurl="http:\/\/mirrors.kernel.org\/centos\/5.1\/linux\/$arch\/os\/Fedora\/$arch\/isolinux\/initrd.img"
+kerndlurl="http:\/\/mirrors.kernel.org\/centos\/5.1\/os\/$arch\/isolinux\/vmlinuz"
+initdlurl="http:\/\/mirrors.kernel.org\/centos\/5.1\/os\/$arch\/isolinux\/initrd.img"
 fninstmesage="*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '\/centos\/5.1\/os\/$arch' when asked for the folder."
 
 sed -i "s/\#rptl //g" $1
