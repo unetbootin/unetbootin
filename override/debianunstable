@@ -10,8 +10,10 @@ else
 arch=i386
 fi
 
-kerndlurl="http:\/\/ftp.debian.org\/debian\/dists\/unstable\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/linux"
-initdlurl="http:\/\/ftp.debian.org\/debian\/dists\/unstable\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/initrd.gz"
+debdistrel="$(echo $0 | sed s/debian//g | sed s/x64//g)"
+
+kerndlurl="http:\/\/ftp.debian.org\/debian\/dists\/$debdistrel\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/linux"
+initdlurl="http:\/\/ftp.debian.org\/debian\/dists\/$debdistrel\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/initrd.gz"
 
 sed -i "s/\#rptl //g" $1
 sed -i "s/rpubnkernurl/$kerndlurl/g" $1
