@@ -12,6 +12,20 @@ stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the G
 #rptl curl rpubniniturl > /boot/ubninit
 #rptl fi
 
+#cdtu wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
+#cdtu if [ "$wgetcommand" != "" ]
+#cdtu then
+#cdtu knurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
+#cdtu $wgetcommand $knurl -O $targetdir/boot/ubnkern
+#cdtu inurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
+#cdtu $wgetcommand $inurl -O $targetdir/boot/ubninit
+#cdtu else
+#cdtu knurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
+#cdtu curl $knurl > $targetdir/boot/ubnkern
+#cdtu inurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
+#cdtu curl $inurl > $targetdir/boot/ubninit
+#cdtu fi
+
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 
 if [ -e /media/host/wubi ]; then

@@ -1,5 +1,33 @@
 #!/bin/sh
 
+#rptl fetchinitkern1(){
+#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
+#rptl if [ "$wgetcommand" != "" ]
+#rptl then
+#rptl $wgetcommand rpubnkernurl -O $targetdir/boot/ubnkern
+#rptl $wgetcommand rpubniniturl -O $targetdir/boot/ubninit
+#rptl else
+#rptl curl rpubnkernurl > $targetdir/boot/ubnkern
+#rptl curl rpubniniturl > $targetdir/boot/ubninit
+#rptl fi
+#rptl }
+
+#cdtu fetchinitkern2() {
+#cdtu wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
+#cdtu if [ "$wgetcommand" != "" ]
+#cdtu then
+#cdtu knurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
+#cdtu $wgetcommand $knurl -O $targetdir/boot/ubnkern
+#cdtu inurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
+#cdtu $wgetcommand $inurl -O $targetdir/boot/ubninit
+#cdtu else
+#cdtu knurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
+#cdtu curl $knurl > $targetdir/boot/ubnkern
+#cdtu inurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
+#cdtu curl $inurl > $targetdir/boot/ubninit
+#cdtu fi
+#cdtu }
+
 ubnappname='./unetbootin-replacewithubnversion.sh'
 stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the GRUB boot menu."
 
@@ -444,15 +472,9 @@ fi
 cp ./ubnkern $targetdir/boot/
 cp ./ubninit $targetdir/boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
-#rptl if [ "$wgetcommand" != "" ]
-#rptl then
-#rptl $wgetcommand rpubnkernurl -O $targetdir/boot/ubnkern
-#rptl $wgetcommand rpubniniturl -O $targetdir/boot/ubninit
-#rptl else
-#rptl curl rpubnkernurl > $targetdir/boot/ubnkern
-#rptl curl rpubniniturl > $targetdir/boot/ubninit
-#rptl fi
+#rptl fetchinitkern1
+
+#cdtu fetchinitkern2
 
 # Begin grub install
 
@@ -701,15 +723,9 @@ fi
 cp ./ubnkern $targetdir/boot/
 cp ./ubninit $targetdir/boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
-#rptl if [ "$wgetcommand" != "" ]
-#rptl then
-#rptl $wgetcommand rpubnkernurl -O $targetdir/boot/ubnkern
-#rptl $wgetcommand rpubniniturl -O $targetdir/boot/ubninit
-#rptl else
-#rptl curl rpubnkernurl > $targetdir/boot/ubnkern
-#rptl curl rpubniniturl > $targetdir/boot/ubninit
-#rptl fi
+#rptl fetchinitkern1
+
+#cdtu fetchinitkern2
 
 # Begin grub install
 
@@ -807,15 +823,9 @@ then
 cp ./ubnkern /boot/
 cp ./ubninit /boot/
 
-#rptl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
-#rptl if [ "$wgetcommand" != "" ]
-#rptl then
-#rptl $wgetcommand rpubnkernurl -O /boot/ubnkern
-#rptl $wgetcommand rpubniniturl -O /boot/ubninit
-#rptl else
-#rptl curl rpubnkernurl > /boot/ubnkern
-#rptl curl rpubniniturl > /boot/ubninit
-#rptl fi
+#rptl fetchinitkern1
+
+#cdtu fetchinitkern2
 
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 

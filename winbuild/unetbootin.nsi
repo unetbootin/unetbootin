@@ -35,6 +35,9 @@ RequestExecutionLevel admin
 
 ; MUI end ------
 
+; cdtu var /GLOBAL varkernurl
+; cdtu var /GLOBAL variniturl
+
 VIAddVersionKey "ProductName" "${PRODUCT_NAME}"
 VIAddVersionKey "Comments" "Licenced under the GNU General Public License version 2 or later"
 VIAddVersionKey "LegalCopyright" "Geza Kovacs"
@@ -58,6 +61,9 @@ Section "MainSection" SEC01
   File "vbooted.bat"
   File "vbootun.bat"
   File "tr.exe"
+  ; cdtu File "curl.exe"
+  ; cdtu File "detkernloc.bat"
+  ; cdtu File "detinitloc.bat"
 
     SetOutPath "$INSTDIR"
   SetOverwrite on
@@ -91,6 +97,18 @@ NT:     ;use grldr and boot.ini
 
   ReadEnvStr $0 COMSPEC
   nsExec::Exec  '$0 /c "c:\unetbootin\vbooted.bat"'
+  ; cdtu ReadEnvStr $0 COMSPEC
+  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detkernloc.bat"'
+  ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
+  ; cdtu FileRead $4 $varkernurl
+  ; cdtu FileClose $4
+  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbootin\ubnkern"
+  ; cdtu ReadEnvStr $0 COMSPEC
+  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detinitloc.bat"'
+  ; cdtu FileOpen $4 "c:\unetbootin\initurl.txt" r
+  ; cdtu FileRead $4 $variniturl
+  ; cdtu FileClose $4
+  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
   ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
@@ -100,6 +118,18 @@ NT:     ;use grldr and boot.ini
 
 notNT:  ;use config.sys and grub.exe
 
+  ; cdtu ReadEnvStr $0 COMSPEC
+  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detkernloc.bat"'
+  ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
+  ; cdtu FileRead $4 $varkernurl
+  ; cdtu FileClose $4
+  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbootin\ubnkern"
+  ; cdtu ReadEnvStr $0 COMSPEC
+  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detinitloc.bat"'
+  ; cdtu FileOpen $4 "c:\unetbootin\initurl.txt" r
+  ; cdtu FileRead $4 $variniturl
+  ; cdtu FileClose $4
+  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
   ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\config.sys" NORMAL
@@ -165,6 +195,11 @@ Section Uninstall
   Delete "$INSTDIR\vbooted.bat"
   Delete "$INSTDIR\vbootun.bat"
   Delete "$INSTDIR\tr.exe"
+  ; cdtu Delete "$INSTDIR\curl.exe"
+  ; cdtu Delete "$INSTDIR\detkernloc.bat"
+  ; cdtu Delete "$INSTDIR\detinitloc.bat"
+  ; cdtu Delete "$INSTDIR\kernurl.txt"
+  ; cdtu Delete "$INSTDIR\initurl.txt"
 
   RMDir "$INSTDIR"
 
