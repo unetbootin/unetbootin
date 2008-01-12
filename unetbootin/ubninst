@@ -511,7 +511,20 @@ initrd /boot/ubninit
 boot
 """ > $targetdir/boot/grub/menu.lst
 
+if [ "$(cat $targetdir/boot/ubnkern)" = "" ]
+then
+echo "Installation failed, kernel was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
+
+if [ "$(cat $targetdir/boot/ubninit)" = "" ]
+then
+echo "Installation failed, initrd was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
+
 echo "$stdendinstmessage"
+zenity --info --text="$stdendinstmessage"
 
 fi
 
@@ -754,24 +767,13 @@ then
 cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
 fi
 
-touch $targetdir/boot/grub/menu-ubn.lst
 echo \
 """
-default 0
-timeout 0
-
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
 kernel /boot/ubnkern
 initrd /boot/ubninit
 boot
-""" > $targetdir/boot/grub/menu-ubn.lst
-
-echo \
-"""
-title UNetbootin-replacewithubnversion
-root $hostosgrubnum
-configfile /boot/grub/menu-ubn.lst
 """ >> $targetdir/boot/grub/menu.lst
 
 sed -i "s/$(cat $targetdir/boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" $targetdir/boot/grub/menu.lst
@@ -809,7 +811,20 @@ fi
 
 # End raw commands and code
 
+if [ "$(cat $targetdir/boot/ubnkern)" = "" ]
+then
+echo "Installation failed, kernel was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
+
+if [ "$(cat $targetdir/boot/ubninit)" = "" ]
+then
+echo "Installation failed, initrd was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
+
 echo "$stdendinstmessage"
+zenity --info --text="$stdendinstmessage"
 
 fi
 
@@ -829,69 +844,74 @@ cp ./ubninit /boot/
 
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 
-if [ -e /media/host/wubi ]; then
+if [ -e /media/host/wubi/disks ]
+then
+
+# wubi 7.04 install
 
 hostosroot=$(cat /proc/mounts | grep /media/host | sed "s/\t/\n/g" | sed "s/ /\n/g" | head --lines 1 | grep /dev/)
-hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed s/a/0/ | sed s/b/1/ | sed s/c/2/ | sed s/e/4/ | sed s/f/5/ | sed s/g/6/ | sed s/h/7/ | sed s/i/8/ | sed s/j/9/ | sed s/k/10/ | sed s/l/11/ | sed s/m/12/ | sed s/n/13/ | sed s/o/14/ | sed s/p/15/ | sed s/q/16/ | sed s/r/17/ | sed s/s/18/ | sed s/t/19/ | sed s/u/20/ | sed s/v/21/ | sed s/w/22/ | sed s/x/23/ | sed s/y/24/ | sed s/z/25/)
+hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
 hostospartnum=$(expr $(echo $hostosroot | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
-touch /boot/grub/menu-ubn.lst
-echo \
-"
-default 0
-timeout 0
-hiddenmenu
-
-title UNetbootin-replacewithubnversion
-root $hostosgrubnum
-kernel /wubi/boot/ubnkern
-initrd /wubi/boot/ubninit
-boot
-" > /boot/grub/menu-ubn.lst
-
 echo \
 "
 title UNetbootin-replacewithubnversion
-	root $hostosgrubnum
-configfile /wubi/boot/grub/menu-ubn.lst
+   root $hostosgrubnum
+   kernel /wubi/boot/ubnkern
+   initrd /wubi/boot/ubninit
+   boot
 " >> /boot/grub/menu.lst
 
-else
-hostosroot=$(mount | grep " / " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)
-hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed s/a/0/ | sed s/b/1/ | sed s/c/2/ | sed s/e/4/ | sed s/f/5/ | sed s/g/6/ | sed s/h/7/ | sed s/i/8/ | sed s/j/9/ | sed s/k/10/ | sed s/l/11/ | sed s/m/12/ | sed s/n/13/ | sed s/o/14/ | sed s/p/15/ | sed s/q/16/ | sed s/r/17/ | sed s/s/18/ | sed s/t/19/ | sed s/u/20/ | sed s/v/21/ | sed s/w/22/ | sed s/x/23/ | sed s/y/24/ | sed s/z/25/)
+instcmplt="yes"
+fi
+
+if [ -e /host/ubuntu/disks ]
+then
+
+# wubi 7.10 install
+
+hostosroot=$(echo /dev/$(file $(cat /proc/mounts | grep /host | sed "s/\t/\n/g" | sed "s/ /\n/g" | head --lines 1 | grep /dev/) | sed "s/ /\n/g" | tail -1 | sed "s/\//\n/g" | tail -1 | sed "s/'//g"))
+hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
 hostospartnum=$(expr $(echo $hostosroot | tail --bytes 2 | head --bytes 1) - 1)
 hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
 
-touch /boot/grub/menu-ubn.lst
 echo \
 "
-default 0
-timeout 0
-hiddenmenu
+title UNetbootin-replacewithubnversion
+   root $hostosgrubnum
+   kernel /ubuntu/disks/boot/ubnkern
+   initrd /ubuntu/disks/boot/ubninit
+   boot
+" >> /boot/grub/menu.lst
 
+instcmplt="yes"
+fi
+
+if [ "$instcmplt" != "yes" ]
+then
+
+# standard install
+
+hostosroot=$(mount | grep " /boot " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)
+if [ "$hostosroot" = "" ]
+then
+hostosroot=$(mount | grep " / " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)
+fi
+hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
+hostospartnum=$(expr $(echo $hostosroot | tail --bytes 2 | head --bytes 1) - 1)
+hostosgrubnum="(hd$(echo $hostosdrivenum),$(echo $hostospartnum))"
+
+echo \
+"
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
 kernel /boot/ubnkern
 initrd /boot/ubninit
 boot
-" > /boot/grub/menu-ubn.lst
-
-echo \
-"
-title UNetbootin-replacewithubnversion
-root $hostosgrubnum
-configfile /boot/grub/menu-ubn.lst
 " >> /boot/grub/menu.lst
 
 fi
-
-sed -i "s/$(cat /boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" /boot/grub/menu.lst
-sed -i "s/#hiddenmenu/knlknelkntxte/g" /boot/grub/menu.lst
-sed -i "s/## hiddenmenu/knlknelkntxtj/g" /boot/grub/menu.lst
-sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
-sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
-sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
 
 touch /usr/bin/unetbootin-uninst
 echo \
@@ -904,13 +924,31 @@ exit 0
 fi
 rm /boot/ubnkern
 rm /boot/ubninit
-rm /boot/grub/menu-ubn.lst
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
 rm /usr/bin/unetbootin-uninst
 echo "UNetbootin has been successfully uninstalled"
 zenity --info --text="UNetbootin has been successfully uninstalled"
 ''' >> /usr/bin/unetbootin-uninst
 chmod +x /usr/bin/unetbootin-uninst
+
+sed -i "s/$(cat /boot/grub/menu.lst | grep timeout | tail --lines 1)/timeout \t10/" /boot/grub/menu.lst
+sed -i "s/#hiddenmenu/knlknelkntxte/g" /boot/grub/menu.lst
+sed -i "s/## hiddenmenu/knlknelkntxtj/g" /boot/grub/menu.lst
+sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
+sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
+sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
+
+if [ "$(cat /boot/ubnkern)" = "" ]
+then
+echo "Installation failed, kernel was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
+
+if [ "$(cat /boot/ubninit)" = "" ]
+then
+echo "Installation failed, initrd was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
+exit 1
+fi
 
 echo "$stdendinstmessage"
 zenity --info --text="$stdendinstmessage"

@@ -3,9 +3,6 @@
 if [ -e /boot/grub/menu-bkubn.lst ]; then
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
 fi
-if [ -e /boot/grub/menu-ubn.lst ]; then
-rm /boot/grub/menu-ubn.lst
-fi
 
 if [ -e /boot/ubnkern ]
 then
