@@ -60,6 +60,9 @@ Section "MainSection" SEC01
   File "ubninit"
   File "vbooted.bat"
   File "vbootun.bat"
+  File "wcfged.bat"
+  File "wcfgun.bat"
+  File "config.sup"
   File "tr.exe"
   ; cdtu File "curl.exe"
   ; cdtu File "detkernloc.bat"
@@ -74,29 +77,11 @@ Section "MainSection" SEC01
   
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "C:\unetbootin\uninst.exe"
 
-    Push $0
-  ReadRegStr $0 HKLM \
-    "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
-  StrCmp $0 "" 0 IsNT_yes
-  ; we are not NT.
-  Pop $0
-  Push 0
-  Return
-
-  IsNT_yes:
-    ; NT!!!
-    Pop $0
-    Push 1
-    
-    
-
-  pop $0
-  StrCmp 1 $0 NT notNT
-
-NT:     ;use grldr and boot.ini
-
   ReadEnvStr $0 COMSPEC
   nsExec::Exec  '$0 /c "c:\unetbootin\vbooted.bat"'
+  SetFileAttributes "c:\config.sys" NORMAL
+  ReadEnvStr $0 COMSPEC
+  nsExec::Exec  '$0 /c "c:\unetbootin\wcfged.bat"'
   ; cdtu ReadEnvStr $0 COMSPEC
   ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detkernloc.bat"'
   ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
@@ -113,46 +98,7 @@ NT:     ;use grldr and boot.ini
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\grldr.mbr" '"UNetbootin-replacewithubnversion"'
-  WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15
-  goto end
-
-notNT:  ;use config.sys and grub.exe
-
-  ; cdtu ReadEnvStr $0 COMSPEC
-  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detkernloc.bat"'
-  ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
-  ; cdtu FileRead $4 $varkernurl
-  ; cdtu FileClose $4
-  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; cdtu ReadEnvStr $0 COMSPEC
-  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detinitloc.bat"'
-  ; cdtu FileOpen $4 "c:\unetbootin\initurl.txt" r
-  ; cdtu FileRead $4 $variniturl
-  ; cdtu FileClose $4
-  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
-  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
-  SetFileAttributes "$INSTDIR\..\config.sys" NORMAL
-  FileOpen $0 "$INSTDIR\..\config.sys" a
-  FileSeek $0 0 END
-  FileWrite $0 " $\n [menu]"
-  FileWrite $0 " $\n menucolor=15,0"
-  FileWrite $0 " $\n menuitem=windows,Windows"
-  FileWrite $0 " $\n menuitem=grub,UNetbootin-replacewithubnversion"
-  FileWrite $0 " $\n menudefault=windows,30"
-  FileWrite $0 " $\n [grub]"
-  FileWrite $0 " $\n device=grub.exe"
-  FileWrite $0 " $\n install=grub.exe"
-  FileWrite $0 " $\n shell=grub.exe"
-  FileWrite $0 " $\n [windows] $\n "
-  FileClose $0
-
-
-
-end:
-  
-
- 
+  WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15 
   
 SectionEnd
 
@@ -185,6 +131,8 @@ FunctionEnd
 Section Uninstall
   ReadEnvStr $0 COMSPEC
   nsExec::Exec  '$0 /c "c:\unetbootin\vbootun.bat"'
+  ReadEnvStr $0 COMSPEC
+  nsExec::Exec  '$0 /c "c:\unetbootin\wcfgun.bat"'
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\grldr"
   Delete "$INSTDIR\..\grldr.mbr"
@@ -194,6 +142,9 @@ Section Uninstall
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\vbooted.bat"
   Delete "$INSTDIR\vbootun.bat"
+  Delete "$INSTDIR\wcfged.bat"
+  Delete "$INSTDIR\wcfgun.bat"
+  Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
   ; cdtu Delete "$INSTDIR\curl.exe"
   ; cdtu Delete "$INSTDIR\detkernloc.bat"
