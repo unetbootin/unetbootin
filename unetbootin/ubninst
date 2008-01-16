@@ -523,6 +523,10 @@ echo "Installation failed, initrd was not downloaded or extracted properly, make
 exit 1
 fi
 
+umount $targetpartition
+umount -f $targetpartition
+umount -l $targetpartition
+
 echo "$stdendinstmessage"
 zenity --info --text="$stdendinstmessage"
 
@@ -724,6 +728,7 @@ else
 mkdir $targetdir
 fi
 mount $targetpartition $targetdir
+umntendinst=yes
 fi
 
 if [ -e $targetdir/boot ]
@@ -821,6 +826,13 @@ if [ "$(cat $targetdir/boot/ubninit)" = "" ]
 then
 echo "Installation failed, initrd was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
 exit 1
+fi
+
+if [ "$umntendinst" = "yes" ]
+then
+umount $targetpartition
+umount -f $targetpartition
+umount -l $targetpartition
 fi
 
 echo "$stdendinstmessage"
