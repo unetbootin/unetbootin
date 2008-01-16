@@ -2,6 +2,7 @@
 
 sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern splash=silent showopts/g" $1
 sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern splash=silent showopts/g" $1
+sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/kernel \/ubuntu\/disks\/boot\/ubnkern splash=silent showopts/g" $1
 
 if [ "$(echo $0 | grep x64)" != "" ]
 then

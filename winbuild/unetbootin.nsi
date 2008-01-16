@@ -39,7 +39,7 @@ RequestExecutionLevel admin
 ; cdtu var /GLOBAL variniturl
 
 VIAddVersionKey "ProductName" "${PRODUCT_NAME}"
-VIAddVersionKey "Comments" "Licenced under the GNU General Public License version 2 or later"
+VIAddVersionKey "Comments" "Licenced under the GNU General Public License version 2 or later. Website is at lubi.sourceforge.net"
 VIAddVersionKey "LegalCopyright" "Geza Kovacs"
 VIAddVersionKey "FileDescription" "UNetbootin, the Netboot-based Installer"
 VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
