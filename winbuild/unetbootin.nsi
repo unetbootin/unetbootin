@@ -64,17 +64,17 @@ Section "MainSection" SEC01
   File "wcfgun.bat"
   File "config.sup"
   File "tr.exe"
+  File "menu.lst"
   ; cdtu File "curl.exe"
   ; cdtu File "detkernloc.bat"
   ; cdtu File "detinitloc.bat"
 
-    SetOutPath "$INSTDIR"
+  SetOutPath "$INSTDIR"
   SetOverwrite on
-    File "grub.exe"
-  File "grldr"
-  File "grldr.mbr"
-  File "menu.lst"
-  
+  File "ubnldr.exe"
+  File "ubnldr"
+  File "ubnldr.mbr"
+
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "C:\unetbootin\uninst.exe"
 
   ReadEnvStr $0 COMSPEC
@@ -97,7 +97,7 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
-  WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\grldr.mbr" '"UNetbootin-replacewithubnversion"'
+  WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\ubnldr.mbr" '"UNetbootin-replacewithubnversion"'
   WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15 
   
 SectionEnd
@@ -134,10 +134,10 @@ Section Uninstall
   ReadEnvStr $0 COMSPEC
   nsExec::Exec  '$0 /c "c:\unetbootin\wcfgun.bat"'
   Delete "$INSTDIR\uninst.exe"
-  Delete "$INSTDIR\..\grldr"
-  Delete "$INSTDIR\..\grldr.mbr"
-  Delete "$INSTDIR\..\grub.exe"
-  Delete "$INSTDIR\..\menu.lst"
+  Delete "$INSTDIR\..\ubnldr"
+  Delete "$INSTDIR\..\ubnldr.mbr"
+  Delete "$INSTDIR\..\ubnldr.exe"
+  Delete "$INSTDIR\menu.lst"
   Delete "$INSTDIR\ubninit"
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\vbooted.bat"
@@ -155,7 +155,7 @@ Section Uninstall
   RMDir "$INSTDIR"
 
       SetFileAttributes "c:\boot.ini" NORMAL
-    DeleteINIStr "c:\boot.ini" "operating systems" "c:\grldr.mbr"
+    DeleteINIStr "c:\boot.ini" "operating systems" "c:\ubnldr.mbr"
     DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\UNetbootin"
 
 

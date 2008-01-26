@@ -4,5 +4,5 @@ menuitem=windows,Windows
 menuitem=grub,UNetbootin-replacewithubnversion
 menudefault=windows,30
 [grub]
-device=grub.exe
+device=ubnldr.exe
 [windows]
