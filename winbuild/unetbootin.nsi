@@ -65,7 +65,7 @@ Section "MainSection" SEC01
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
-  ; cdtu File "curl.exe"
+  ; cdtu File "wget.exe"
   ; cdtu File "detkernloc.bat"
   ; cdtu File "detinitloc.bat"
 
@@ -146,7 +146,7 @@ Section Uninstall
   Delete "$INSTDIR\wcfgun.bat"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
-  ; cdtu Delete "$INSTDIR\curl.exe"
+  ; cdtu Delete "$INSTDIR\wget.exe"
   ; cdtu Delete "$INSTDIR\detkernloc.bat"
   ; cdtu Delete "$INSTDIR\detinitloc.bat"
   ; cdtu Delete "$INSTDIR\kernurl.txt"

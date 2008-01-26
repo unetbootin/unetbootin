@@ -15,9 +15,9 @@ stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the G
 #cdtu wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
 #cdtu if [ "$wgetcommand" != "" ]
 #cdtu then
-#cdtu knurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
+#cdtu knurl=baseinitkernurl$($wgetcommand baseinitkernurl -O - | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
 #cdtu $wgetcommand $knurl -O $targetdir/boot/ubnkern
-#cdtu inurl=baseinitkernurl$($wgetcommand baseinitkernurl -O /dev/stdout | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
+#cdtu inurl=baseinitkernurl$($wgetcommand baseinitkernurl -O - | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
 #cdtu $wgetcommand $inurl -O $targetdir/boot/ubninit
 #cdtu else
 #cdtu knurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
