@@ -1,0 +1,18 @@
+#!/bin/sh
+
+sed -i "s/initrd \/boot\/ubninit//g" $1
+sed -i "s/kernel \/boot\/ubnkern/kernel --type=netbsd \/boot\/ubnkern/g" $1
+sed -i "s/initrd \/wubi\/boot\/ubninit//g" $1
+sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel --type=netbsd \/wubi\/boot\/ubnkern/g" $1
+sed -i "s/initrd \/ubuntu\/disks\/boot\/ubninit//g" $1
+sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/kernel --type=netbsd \/ubuntu\/disks\/boot\/ubnkern/g" $1
+
+sed -i "s/cat \/boot\/ubninit/echo something/g" $1
+sed -i "s/cat \$targetdir\/boot\/ubninit/echo something/g" $1
+
+sed -i "s/cp \.\/ubninit/\#/g" $1
+
+if [ "$1" = ./winbuild/menu.lst ]
+then
+sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
+fi
