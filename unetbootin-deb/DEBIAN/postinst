@@ -42,8 +42,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
    root $hostosgrubnum
-   kernel /boot/ubnkern #replacewfeistywub
-   initrd /boot/ubninit #replacewfeistywub
+   #replacewfeistywub kernel /boot/ubnkern
+   #replacewfeistywub initrd /boot/ubninit
    boot
 " >> /boot/grub/menu.lst
 
@@ -64,8 +64,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
    root $hostosgrubnum
-   kernel /boot/ubnkern #replacewgutsygwub
-   initrd /boot/ubninit #replacewgutsygwub
+   #replacewgutsygwub kernel /boot/ubnkern
+   #replacewgutsygwub initrd /boot/ubninit
    boot
 " >> /boot/grub/menu.lst
 
@@ -81,7 +81,6 @@ hostosroot=$(mount | grep " /boot " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /d
 if [ "$hostosroot" = "" ]
 then
 hostosroot=$(mount | grep " / " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)
-else
 grbootsup="/boot"
 fi
 hostosdrivenum=$(echo $hostosroot | tail --bytes 3 | head --bytes 1 | sed -e s/a/0/ -e s/b/1/ -e s/c/2/ -e s/e/4/ -e s/f/5/ -e s/g/6/ -e s/h/7/ -e s/i/8/ -e s/j/9/ -e s/k/10/ -e s/l/11/ -e s/m/12/ -e s/n/13/ -e s/o/14/ -e s/p/15/ -e s/q/16/ -e s/r/17/ -e s/s/18/ -e s/t/19/ -e s/u/20/ -e s/v/21/ -e s/w/22/ -e s/x/23/ -e s/y/24/ -e s/z/25/)
@@ -92,8 +91,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
-kernel /boot/ubnkern #replacewgrbootsup
-initrd /boot/ubninit #replacewgrbootsup
+#replacewgrbootsup kernel /boot/ubnkern
+#replacewgrbootsup initrd /boot/ubninit
 boot
 " >> /boot/grub/menu.lst
 
