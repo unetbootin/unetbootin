@@ -1,5 +1,4 @@
 #!/bin/sh
 
 sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern ramdisk_size=8192/g" $1
-sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern ramdisk_size=8192/g" $1
-sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/kernel \/ubuntu\/disks\/boot\/ubnkern ramdisk_size=8192/g" $1
+

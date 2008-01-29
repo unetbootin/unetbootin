@@ -78,6 +78,15 @@ then
 ./override/$targetbuildos ./unetbootin/ubninst
 fi
 
+# boot path fixes on loopmounted installs and dedicated boot partitions
+
+sed "s/\/boot\/ubnkern \#replacewgrbootsup/\$grbootsup\/ubnkern/g" ./unetbootin/ubninst
+sed "s/\/boot\/ubninit \#replacewgrbootsup/\$grbootsup\/ubninit/g" ./unetbootin/ubninst
+sed "s/\/boot\/ubnkern \#replacewfeistywub/\/wubi\/boot\/ubnkern/g" ./unetbootin/ubninst
+sed "s/\/boot\/ubninit \#replacewfeistywub/\/wubi\/boot\/ubninit/g" ./unetbootin/ubninst
+sed "s/\/boot\/ubnkern \#replacewgutsygwub/\/ubuntu\/disks\/boot\/ubnkern/g" ./unetbootin/ubninst
+sed "s/\/boot\/ubnkern \#replacewgutsygwub/\/ubuntu\/disks\/boot\/ubnkern/g" ./unetbootin/ubninst
+
 cd $locationhere/makeself
 ./makeself.sh $locationhere/unetbootin $locationhere/dist/unetbootin-$ubnver.sh "UNetbootin" ./ubninst
 cd $locationhere
@@ -95,6 +104,15 @@ if [ -e ./override/$targetbuildos ]
 then
 ./override/$targetbuildos ./unetbootin-deb/DEBIAN/postinst
 fi
+
+# boot path fixes on loopmounted installs and dedicated boot partitions
+
+sed "s/\/boot\/ubnkern \#replacewgrbootsup/\$grbootsup\/ubnkern/g" ./unetbootin-deb/DEBIAN/postinst
+sed "s/\/boot\/ubninit \#replacewgrbootsup/\$grbootsup\/ubninit/g" ./unetbootin-deb/DEBIAN/postinst
+sed "s/\/boot\/ubnkern \#replacewfeistywub/\/wubi\/boot\/ubnkern/g" ./unetbootin-deb/DEBIAN/postinst
+sed "s/\/boot\/ubninit \#replacewfeistywub/\/wubi\/boot\/ubninit/g" ./unetbootin-deb/DEBIAN/postinst
+sed "s/\/boot\/ubnkern \#replacewgutsygwub/\/ubuntu\/disks\/boot\/ubnkern/g" ./unetbootin-deb/DEBIAN/postinst
+sed "s/\/boot\/ubnkern \#replacewgutsygwub/\/ubuntu\/disks\/boot\/ubnkern/g" ./unetbootin-deb/DEBIAN/postinst
 
 cp ./unetbootin-deb/DEBIAN/control ./unetbootin-deb/DEBIAN/control.bak
 sed -i "s/Version: 1.0/Version: $ubnver/" ./unetbootin-deb/DEBIAN/control
