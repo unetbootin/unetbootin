@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern splash=silent showopts/g" $1
-
 if [ "$(echo $0 | grep x64)" != "" ]
 then
 arch=x86_64
@@ -13,21 +11,8 @@ kerndlurl="http:\/\/download.opensuse.org\/distribution\/SL-OSS-factory\/inst-so
 initdlurl="http:\/\/download.opensuse.org\/distribution\/SL-OSS-factory\/inst-source\/boot\/$arch\/loader\/initrd"
 fninstmesage="*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '\/distribution\/SL-OSS-factory\/inst-source' when asked for the folder."
 
-sed -i "s/\#rptl //g" $1
-sed -i "s/rpubnkernurl/$kerndlurl/g" $1
-sed -i "s/rpubniniturl/$initdlurl/g" $1
-
-sed -i "s/cp \.\/ubnkern/\#/g" $1
-sed -i "s/cp \.\/ubninit/\#/g" $1
-
-sed -i "s/Installation complete. Reboot, and select UNetbootin on the GRUB boot menu./Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $fninstmesage/g" $1
-
-if [ "$1" = ./winbuild/menu.lst ]
-then
-sed -i 's/File "ubnkern"//g' ./winbuild/unetbootin.nsi
-sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
-sed -i 's/\; ltbe //g' ./winbuild/unetbootin.nsi
-sed -i "s/rpubnkernurl/$kerndlurl/g" ./winbuild/unetbootin.nsi
-sed -i "s/rpubniniturl/$initdlurl/g" ./winbuild/unetbootin.nsi
-sed -i "s/You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup./You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup. $fninstmesage/g" ./winbuild/unetbootin.nsi
-fi
+./functions/kernpar $1 'splash=silent showopts'
+./functions/finmes $1 "$fninstmesage"
+./functions/nckern $1
+./functions/ncinit $1
+./functions/netbt $1 "$kerndlurl" "$initdlurl"

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=\/dev\/ram quiet vga=791/g" $1
-
 if [ "$(echo $0 | grep x64)" != "" ]
 then
 arch=x86_64
@@ -26,9 +24,6 @@ fi
 
 baseinitkernurl="http:\/\/www10.frugalware.org\/pub\/linux\/frugalware\/frugalware-$basedeselrel\/boot\/"
 
-sed -i "s/cp \.\/ubnkern/\#/g" $1
-sed -i "s/cp \.\/ubninit/\#/g" $1
-
 sed -i "s/baseinitkernurl/$baseinitkernurl/g" $1
 sed -i "s/basedeselarch/$arch/g" $1
 sed -i "s/#cdtu //g" $1
@@ -37,11 +32,13 @@ if [ "$1" = ./winbuild/menu.lst ]
 then
 cp ./winbuild/detkernloc.bat ./winbuild/detkernloc-orig.bat
 cp ./winbuild/detinitloc.bat ./winbuild/detinitloc-orig.bat
-sed -i 's/File "ubnkern"//g' ./winbuild/unetbootin.nsi
-sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
 sed -i 's/\; cdtu //g' ./winbuild/unetbootin.nsi
 sed -i "s/baseinitkernurl/$baseinitkernurl/g" ./winbuild/detkernloc.bat
 sed -i "s/baseinitkernurl/$baseinitkernurl/g" ./winbuild/detinitloc.bat
 sed -i "s/basedeselarch/$arch/g" ./winbuild/detkernloc.bat
 sed -i "s/basedeselarch/$arch/g" ./winbuild/detinitloc.bat
 fi
+
+./functions/kernpar $1 'load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=\/dev\/ram quiet vga=791'
+./functions/nckern $1
+./functions/ncinit $1

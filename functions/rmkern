@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sed -i "s/kernel \/boot\/ubnkern//g" $1
+sed -i "s/kernel \$grbootsup\/ubnkern//g" $1
+sed -i "s/kernel \/wubi\/boot\/ubnkern//g" $1
+sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern//g" $1
+sed -i "s/cat \/boot\/ubnkern/echo something/g" $1
+sed -i "s/cat \$targetdir\/boot\/ubnkern/echo something/g" $1

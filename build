@@ -1,26 +1,8 @@
 #!/bin/sh
 
-frplfwsdc() {
-sed -i "s/\#replacewgrbootsup kernel \/boot\/ubnkern/kernel \$grbootsup\/ubnkern/g" $1
-sed -i "s/\#replacewgrbootsup initrd \/boot\/ubninit/initrd \$grbootsup\/ubninit/g" $1
-sed -i "s/\#replacewfeistywub kernel \/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern/g" $1
-sed -i "s/\#replacewfeistywub initrd \/boot\/ubninit/initrd \/wubi\/boot\/ubninit/g" $1
-sed -i "s/\#replacewgutsygwub kernel \/boot\/ubnkern/kernel \/ubuntu\/disks\/boot\/ubnkern/g" $1
-sed -i "s/\#replacewgutsygwub initrd \/boot\/ubninit/initrd \/ubuntu\/disks\/boot\/ubninit/g" $1
-}
-
-cninstpreqsvapt() {
-if [ ! -e /usr/bin/$1 ]
-then
-echo "Installing $1"
-sudo apt-get update
-sudo apt-get install $1
-fi
-}
-
 rm -r dist
 mkdir dist
-rm "$(find . | grep '~')"
+rm $(find . | grep '~')
 locationhere="$(pwd)"
 
 # Extract nsis
@@ -41,7 +23,14 @@ ubnverinit=$(bzr version-info | grep revno | sed 's/revno: //')
 listofprereqstivapt="wine fakeroot alien"
 for indvprereqstivapt in $listofprereqstivapt
 do
-cninstpreqsvapt $indvprereqstivapt
+if [ "$(whereis $indvprereqstivapt | tr ' ' '\n' | grep bin)" = "" ]
+then
+echo "Installing $indvprereqstivapt"
+sudo apt-get update
+sudo apt-get install $indvprereqstivapt
+else
+echo "Found $indvprereqstivapt"
+fi
 done
 
 # Backup Wine config files
@@ -83,10 +72,6 @@ then
 ./override/$targetbuildos ./unetbootin/ubninst
 fi
 
-# boot path fixes on loopmounted installs and dedicated boot partitions
-
-frplfwsdc ./unetbootin/ubninst
-
 cd $locationhere/makeself
 ./makeself.sh $locationhere/unetbootin $locationhere/dist/unetbootin-$ubnver.sh "UNetbootin" ./ubninst
 cd $locationhere
@@ -104,10 +89,6 @@ if [ -e ./override/$targetbuildos ]
 then
 ./override/$targetbuildos ./unetbootin-deb/DEBIAN/postinst
 fi
-
-# boot path fixes on loopmounted installs and dedicated boot partitions
-
-frplfwsdc ./unetbootin-deb/DEBIAN/postinst
 
 cp ./unetbootin-deb/DEBIAN/control ./unetbootin-deb/DEBIAN/control.bak
 sed -i "s/Version: 1.0/Version: $ubnver/" ./unetbootin-deb/DEBIAN/control

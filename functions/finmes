@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sed -i "s/Installation complete. Reboot, and select UNetbootin on the GRUB boot menu./Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $2/g" $1
+
+if [ "$1" = ./winbuild/menu.lst ]
+then
+sed -i "s/You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup./You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup. $2/g" ./winbuild/unetbootin.nsi
+fi

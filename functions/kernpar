@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ "$3" != "" ]
+then
+ktypeparam="$3"
+else
+ktypeparam="kernel"
+fi
+
+if [ "$4" != "" ]
+then
+kflparam="$4"
+else
+kflparam="ubnkern"
+fi
+
+sed -i "s/kernel \/boot\/ubnkern/$ktypeparam \/boot\/$kflparam $2/g" $1
+sed -i "s/kernel \$grbootsup\/ubnkern/$ktypeparam \$grbootsup\/$kflparam $2/g" $1
+sed -i "s/kernel \/wubi\/boot\/ubnkern/$ktypeparam \/wubi\/boot\/$kflparam $2/g" $1
+sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/$ktypeparam \/ubuntu\/disks\/boot\/$kflparam $2/g" $1

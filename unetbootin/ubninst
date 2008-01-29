@@ -870,8 +870,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
    root $hostosgrubnum
-   #replacewfeistywub kernel /boot/ubnkern
-   #replacewfeistywub initrd /boot/ubninit
+   kernel /wubi/boot/ubnkern
+   initrd /wubi/boot/ubninit
    boot
 " >> /boot/grub/menu.lst
 
@@ -892,8 +892,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
    root $hostosgrubnum
-   #replacewgutsygwub kernel /boot/ubnkern
-   #replacewgutsygwub initrd /boot/ubninit
+   kernel /ubuntu/disks/boot/ubnkern
+   initrd /ubuntu/disks/boot/ubninit
    boot
 " >> /boot/grub/menu.lst
 
@@ -919,8 +919,8 @@ echo \
 "
 title UNetbootin-replacewithubnversion
 root $hostosgrubnum
-#replacewgrbootsup kernel /boot/ubnkern
-#replacewgrbootsup initrd /boot/ubninit
+kernel $grbootsup/ubnkern
+initrd $grbootsup/ubninit
 boot
 " >> /boot/grub/menu.lst
 

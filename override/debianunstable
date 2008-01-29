@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern video=vesa:ywrap,mtrr vga=788 installgui/g" $1
-
 if [ "$(echo $0 | grep x64)" != "" ]
 then
 arch=amd64
@@ -27,18 +25,7 @@ fi
 kerndlurl="http:\/\/ftp.debian.org\/debian\/dists\/$debdistrel\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/linux"
 initdlurl="http:\/\/ftp.debian.org\/debian\/dists\/$debdistrel\/main\/installer-$arch\/current\/images\/netboot\/gtk\/debian-installer\/$arch\/initrd.gz"
 
-sed -i "s/\#rptl //g" $1
-sed -i "s/rpubnkernurl/$kerndlurl/g" $1
-sed -i "s/rpubniniturl/$initdlurl/g" $1
-
-sed -i "s/cp \.\/ubnkern/\#/g" $1
-sed -i "s/cp \.\/ubninit/\#/g" $1
-
-if [ "$1" = ./winbuild/menu.lst ]
-then
-sed -i 's/File "ubnkern"//g' ./winbuild/unetbootin.nsi
-sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
-sed -i 's/\; ltbe //g' ./winbuild/unetbootin.nsi
-sed -i "s/rpubnkernurl/$kerndlurl/g" ./winbuild/unetbootin.nsi
-sed -i "s/rpubniniturl/$initdlurl/g" ./winbuild/unetbootin.nsi
-fi
+./functions/kernpar $1 'video=vesa:ywrap,mtrr vga=788 installgui'
+./functions/nckern $1
+./functions/ncinit $1
+./functions/netbt $1 "$kerndlurl" "$initdlurl"

@@ -1,4 +1,3 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern ramdisk_size=100000 init=\/etc\/init lang=us apm=power-off vga=791 nomce noapic quiet BOOT_IMAGE=knoppix/g" $1
-
+./functions/kernpar $1 'ramdisk_size=100000 init=\/etc\/init lang=us apm=power-off vga=791 nomce noapic quiet BOOT_IMAGE=knoppix'

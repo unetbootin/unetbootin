@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern splash=silent showopts/g" $1
-
 if [ "$(echo $0 | grep x64)" != "" ]
 then
 arch=x86_64
@@ -11,9 +9,5 @@ fi
 
 fninstmesage="*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '\/pub\/fedora\/linux\/releases\/8\/Fedora\/$arch\/os' when asked for the folder."
 
-sed -i "s/Installation complete. Reboot, and select UNetbootin on the GRUB boot menu./Installation complete. Reboot, and select UNetbootin on the GRUB boot menu. $fninstmesage/g" $1
-
-if [ "$1" = ./winbuild/menu.lst ]
-then
-sed -i "s/You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup./You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup. $fninstmesage/g" ./winbuild/unetbootin.nsi
-fi
+./functions/kernpar $1 'splash=silent showopts'
+./functions/finmes $1 "$fninstmesage"
