@@ -938,6 +938,10 @@ fi
 rm /boot/ubnkern
 rm /boot/ubninit
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
+if [ -e /boot/grub/grub-bkubn.conf ]
+then
+mv /boot/grub/grub-bkubn.conf /boot/grub/grub.conf
+fi
 rm /usr/bin/unetbootin-uninst
 echo "UNetbootin has been successfully uninstalled"
 zenity --info --text="UNetbootin has been successfully uninstalled"
@@ -950,6 +954,12 @@ sed -i "s/## hiddenmenu/knlknelkntxtj/g" /boot/grub/menu.lst
 sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
+
+if [ -e /boot/grub/grub.conf ]
+then
+mv /boot/grub/grub.conf /boot/grub/grub-bkubn.conf
+cat /boot/grub/menu.lst /boot/grub/grub-bkubn.conf > /boot/grub/grub.conf
+fi
 
 if [ "$(cat /boot/ubnkern)" = "" ]
 then

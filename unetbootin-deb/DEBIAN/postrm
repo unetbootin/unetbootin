@@ -12,3 +12,8 @@ if [ -e /boot/ubninit ]
 then
 rm /boot/ubninit
 fi
+
+if [ -e /boot/grub/grub-bkubn.conf ]
+then
+mv /boot/grub/grub-bkubn.conf /boot/grub/grub.conf
+fi

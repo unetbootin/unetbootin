@@ -105,6 +105,12 @@ sed -i "s/hiddenmenu/#hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxtj/## hiddenmenu/g" /boot/grub/menu.lst
 sed -i "s/knlknelkntxte/#hiddenmenu/g" /boot/grub/menu.lst
 
+if [ -e /boot/grub/grub.conf ]
+then
+mv /boot/grub/grub.conf /boot/grub/grub-bkubn.conf
+cat /boot/grub/menu.lst /boot/grub/grub-bkubn.conf > /boot/grub/grub.conf
+fi
+
 if [ "$(cat /boot/ubnkern)" = "" ]
 then
 echo "Installation failed, kernel was not downloaded or extracted properly, make sure your internet connection is working and that there is free space in /boot and try again"
