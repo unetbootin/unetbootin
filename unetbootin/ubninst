@@ -86,7 +86,7 @@ fi
 mkdosfscommand=$(whereis mkdosfs | sed 's/ /\n/g' | grep /sbin | head -1)
 if [ "$mkdosfscommand" = "" ]
 then
-mkdosfscommand="/sbin/mke2fs"
+mkdosfscommand="/sbin/mkdosfs"
 fi
 
 lilocommand=$(whereis lilo | sed 's/ /\n/g' | grep /sbin | head -1)
@@ -172,9 +172,22 @@ grubinstallcommand="/sbin/grub-install"
 fi
 fi
 
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'bootloader=' | head -1 | sed 's/bootloader=//g')" = "syslinux" ]
+then
+bootloader="syslinux"
+syslinuxcommand="$(whereis syslinux | sed 's/ /\n/g' | grep bin | head -1)"
+if [ -e "$syslinuxcommand" ]
+then
+echo ""
+else
+syslinuxcommand="/usr/bin/syslinux"
+echo "Could not find syslinux command path. Attempting to use $syslinuxcommand instead, please install syslinux if this fails or specify a different bootloader using the bootloader=grub or bootloader=lilo option instead."
+fi
+fi
+
 if [ "$bootloader" = "" ]
 then
-echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails or use the bootloader=lilo option to use lilo instead."
+echo "Could not find a valid bootloader, either lilo or grub. Attempting to use grub as a fallback, please install a bootloader if this fails or use the bootloader=lilo option to use lilo instead, or use the bootloader=syslinux to use syslinux instead."
 bootloader="grub"
 if [ -e "/sbin/grub" ]
 then
@@ -235,7 +248,7 @@ If you are running this script from a host, hard-drive Linux install, and want t
 $ubnappname installmode=tohost
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub or bootloader=lilo), enter, in addition to the targetpartition and formatpartition options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub, bootloader=lilo, or bootloader=syslinux), enter, in addition to the targetpartition and formatpartition options:
 
 $ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
@@ -253,7 +266,7 @@ zenity --info --text="""If you are running this script from a host, hard-drive L
 $ubnappname installmode=tohost
 
 
-Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub or bootloader=lilo), enter, in addition to the targetpartition and formatpartition options:
+Otherwise, if you are running this script from a liveCD or other live, non-hard drive media, or the installmode=tohost option fails, or you want to specify your target partition (targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1)) or (optionally) the bootloader (bootloader=grub, bootloader=lilo, or bootloader=syslinux), enter, in addition to the targetpartition and formatpartition options:
 
 $ubnappname installmode=nohost targetpartition=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':' | head -1) formatpartition=yes
 
@@ -412,11 +425,6 @@ then
 echo "Using$grubfallback grubcommand=$grubcommand"
 fi
 
-if [ "$bootloader" = "lilo" ]
-then
-echo "Using$grubfallback lilocommand=$lilocommand"
-fi
-
 # End parameter checks
 
 # Begin raw commands and code
@@ -451,12 +459,26 @@ fi
 if [ "$formatpartition" = "yes" ]
 then
 
-echo "Changing partition id to 83, Linux"
+echo "Changing partition id to 6, FAT16"
 
-$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 6
 
-echo "Formatting partition as ext2"
-$mke2fscommand $targetpartition
+echo "Formatting partition as FAT"
+$mkdosfscommand $targetpartition
+fi
+
+vfatfstyperev=$(vol_id $targetpartition | grep ID_FS_VERSION | sed 's/=/\n/g' | tail --lines 1 | sed s/FAT//g | tail --bytes 3 | head --bytes 2)
+
+if [ "$vfatfstyperev" = "12" ]
+then
+echo "Changing partition id to 1, FAT12"
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 1
+fi
+
+if [ "$vfatfstyperev" = "32" ]
+then
+echo "Changing partition id to b, FAT32"
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) b
 fi
 
 # End formatting partitions
@@ -692,7 +714,12 @@ fi
 
 if [ "$bootloader" = "lilo" ]
 then
-echo "Using$grubfallback lilocommand=$lilocommand"
+echo "Using lilocommand=$lilocommand"
+fi
+
+if [ "$bootloader" = "syslinux" ]
+then
+echo "Using syslinuxcommand=$syslinuxcommand"
 fi
 
 # End parameter checks
@@ -729,12 +756,26 @@ fi
 if [ "$formatpartition" = "yes" ]
 then
 
-echo "Changing partition id to 83, Linux"
+echo "Changing partition id to 6, FAT16"
 
-$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 83
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 6
 
-echo "Formatting partition as ext2"
-$mke2fscommand $targetpartition
+echo "Formatting partition as FAT"
+$mkdosfscommand $targetpartition
+fi
+
+vfatfstyperev=$(vol_id $targetpartition | grep ID_FS_VERSION | sed 's/=/\n/g' | tail --lines 1 | sed s/FAT//g | tail --bytes 3 | head --bytes 2)
+
+if [ "$vfatfstyperev" = "12" ]
+then
+echo "Changing partition id to 1, FAT12"
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) 1
+fi
+
+if [ "$vfatfstyperev" = "32" ]
+then
+echo "Changing partition id to b, FAT32"
+$sfdiskcommand --change-id $(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2)) $(echo $targetpartition | tail --bytes 2 | head --bytes 1) b
 fi
 
 # End formatting partitions
@@ -761,6 +802,13 @@ then
 echo ""
 else
 mkdir $targetdir/boot
+fi
+
+if [ -e $targetdir/boot/grub ]
+then
+echo ""
+else
+mkdir $targetdir/boot/grub
 fi
 
 cp ./ubnkern $targetdir/boot/
@@ -821,23 +869,72 @@ fi
 
 if [ "$bootloader" = "lilo" ]
 then
+
+cp ./ubnldr.exe $targetdir/boot/ubnldr.exe
+
+if [ -e $targetdir/boot/grub/menu.lst ]
+then
+cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
+fi
+
+echo \
+"""
+title UNetbootin-replacewithubnversion
+find --set-root /boot/ubnkern
+kernel /boot/ubnkern
+initrd /boot/ubninit
+boot
+""" >> $targetdir/boot/grub/menu.lst
+
 rawdrivedev=$(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))
 echo """
 boot=$rawdrivedev
 prompt
 timeout=50
-default=linux
+default=unetbootin
 
-image=$targetdir/boot/ubnkern
-	label=linux
-	initrd=$targetdir/boot/ubninit
-	read-only
+image=$targetdir/boot/ubnldr.exe
+	label=unetbootin
 	root=$targetpartition
 """ > $targetdir/lilo.conf
 lilo -C $targetdir/lilo.conf
 fi
 
 # End lilo install
+
+# Begin syslinux install
+
+if [ "$bootloader" = "syslinux" ]
+then
+
+cp ./ubnldr.exe $targetdir/boot/ubnldr.exe
+
+if [ -e $targetdir/boot/grub/menu.lst ]
+then
+cp $targetdir/boot/grub/menu.lst $targetdir/boot/grub/menu-bkubn.lst
+fi
+
+echo \
+"""
+title UNetbootin-replacewithubnversion
+find --set-root /boot/ubnkern
+kernel /boot/ubnkern
+initrd /boot/ubninit
+boot
+""" >> $targetdir/boot/grub/menu.lst
+
+rawdrivedev=$(echo $targetpartition | head --bytes $(expr $(echo $targetpartition | wc -c) - 2))
+echo """
+DEFAULT unetbootin
+
+LABEL unetbootin
+KERNEL /boot/ubnldr.exe
+""" > $targetdir/syslinux.cfg
+$syslinuxcommand -s $targetpartition
+sfdisk $rawdrivedev -A$(echo $targetpartition | tail --bytes 2 | head --bytes 1)
+fi
+
+# End syslinux install
 
 # End raw commands and code
 
@@ -962,6 +1059,7 @@ exit 0
 fi
 rm /boot/ubnkern
 rm /boot/ubninit
+rm /boot/ubnldr.exe
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
 if [ -e /boot/grub/grub-bkubn.conf ]
 then
