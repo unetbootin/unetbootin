@@ -220,6 +220,11 @@ then
 installmode="usbdrive"
 fi
 
+if [ "$(echo $@ | sed 's/ /\n/g' | grep 'forcepartition=' | head -1 | sed 's/forcepartition=//g')" = "yes" ]
+then
+forcepartition="yes"
+fi
+
 if [ "$installmode" = "" ]
 then
 posspartsavail=$($fdiskcommand -l | sed 's/ /\n/g' | grep /dev | grep -v ':')
@@ -299,6 +304,10 @@ fi
 
 if [ "$(echo $availpartitions | grep $proposedpartition)" = "" ]
 then
+if [ "$forcepartition" = "yes" ]
+then
+echo "Using forcepartition=$forcepartition"
+else
 echo "The specified partition is invalid. Specify, after the 'targetpartition=' option, one of the following:
 
 $availpartitions
@@ -308,10 +317,16 @@ Use the command '$fdiskcommand -l' for details on partitions
 "
 exit 0
 fi
+fi
 
 if [ "$(echo $availpartitions | grep $proposedpartition)" != "" ]
 then
 targetpartition="$proposedpartition"
+else
+if [ "$forcepartition" = "yes" ]
+then
+targetpartition="$proposedpartition"
+fi
 fi
 
 if [ "$targetpartition" = "" ]
@@ -569,6 +584,10 @@ fi
 
 if [ "$(echo $availpartitions | grep $proposedpartition)" = "" ]
 then
+if [ "$forcepartition" = "yes" ]
+then
+echo "Using forcepartition=$forcepartition"
+else
 echo "The specified partition is invalid. Specify, after the 'targetpartition=' option, one of the following:
 
 $availpartitions
@@ -578,10 +597,16 @@ Use the command '$fdiskcommand -l' for details on partitions
 "
 exit 0
 fi
+fi
 
 if [ "$(echo $availpartitions | grep $proposedpartition)" != "" ]
 then
 targetpartition="$proposedpartition"
+else
+if [ "$forcepartition" = "yes" ]
+then
+targetpartition="$proposedpartition"
+fi
 fi
 
 if [ "$targetpartition" = "" ]
