@@ -110,12 +110,12 @@ fakeroot alien --scripts -r unetbootin_$ubnver\_all.deb
 
 cd $locationhere/winbuild
 cp unetbootin.nsi unetbootin-orig.nsi
-cp vbooted.bat vbooted-orig.bat
+cp bootedit.bat bootedit-orig.bat
 cp config.sup config-orig.sup
 cp menu.lst menu-orig.lst
 sed -i "s/ubnbzrsubversionum/$ubnverinit/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin.nsi
-sed -i "s/replacewithubnversion/$ubnver/g" ./vbooted.bat
+sed -i "s/replacewithubnversion/$ubnver/g" ./bootedit.bat
 sed -i "s/replacewithubnversion/$ubnver/g" ./config.sup
 sed -i "s/replacewithubnversion/$ubnver/g" ./menu.lst
 cd ..
@@ -131,17 +131,9 @@ sed -i "s/\/boot\//\/unetbootin\//g" ./menu.lst
 wine "C:\Program Files\NSIS\makensis.exe" unetbootin.nsi
 mv setup.exe $locationhere/dist/unetbootin-$ubnver.exe
 mv unetbootin-orig.nsi unetbootin.nsi
-mv vbooted-orig.bat vbooted.bat
+mv bootedit-orig.bat bootedit.bat
 mv config-orig.sup config.sup
 mv menu-orig.lst menu.lst
-if [ -e ./detkernloc-orig.bat ]
-then
-mv detkernloc-orig.bat detkernloc.bat
-fi
-if [ -e ./detinitloc-orig.bat ]
-then
-mv detinitloc-orig.bat detinitloc.bat
-fi
 cd $locationhere
 mv $locationhere/winbuild/ubnkern $locationhere/initkern/ubnkern-$targetbuildos
 mv $locationhere/winbuild/ubninit $locationhere/initkern/ubninit-$targetbuildos

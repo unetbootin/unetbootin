@@ -1,4 +1,5 @@
 !define PRODUCT_NAME "UNetbootin"
+!define PROGRAM_NAME "${PRODUCT_NAME}"
 !define PRODUCT_VERSION "replacewithubnversion"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\grub.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -52,22 +53,43 @@ InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
 
+Function .onInit
+ 
+  ReadRegStr $R0 HKLM \
+  "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PROGRAM_NAME}" \
+  "UninstallString"
+  StrCmp $R0 "" done
+ 
+  MessageBox MB_OKCANCEL|MB_ICONEXCLAMATION \
+  "${PROGRAM_NAME} is already installed. $\n$\nClick `OK` to remove the \
+  previous version or `Cancel` to cancel this upgrade." \
+  IDOK uninst
+  Abort
+  
+;Run the uninstaller
+uninst:
+  ClearErrors
+  Exec $INSTDIR\unetbootin\uninst.exe
+  Abort
+
+done:
+ 
+FunctionEnd
+
 Section "MainSection" SEC01
 
   SetOutPath "$INSTDIR\unetbootin"
   SetOverwrite on
   File "ubnkern"
   File "ubninit"
-  File "vbooted.bat"
-  File "vbootun.bat"
-  File "wcfged.bat"
-  File "wcfgun.bat"
+  File "bootedit.bat"
+  File "bootundo.bat"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
   ; cdtu File "wget.exe"
-  ; cdtu File "detkernloc.bat"
-  ; cdtu File "detinitloc.bat"
+  ; isdl File "7z.dll"
+  ; isdl File "7z.exe"
 
   SetOutPath "$INSTDIR"
   SetOverwrite on
@@ -77,25 +99,19 @@ Section "MainSection" SEC01
 
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "C:\unetbootin\uninst.exe"
 
-  ReadEnvStr $0 COMSPEC
-  nsExec::Exec  '$0 /c "c:\unetbootin\vbooted.bat"'
+  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
+  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
+  ; isdl NSISdl::download isourloc "$INSTDIR\unetbootin\ubniso.iso"
+  nsExec::ExecShell "" "c:\unetbootin\bootedit.lnk"
   SetFileAttributes "c:\config.sys" NORMAL
-  ReadEnvStr $0 COMSPEC
-  nsExec::Exec  '$0 /c "c:\unetbootin\wcfged.bat"'
-  ; cdtu ReadEnvStr $0 COMSPEC
-  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detkernloc.bat"'
   ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
   ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; cdtu ReadEnvStr $0 COMSPEC
-  ; cdtu nsExec::Exec '$0 /c "c:\unetbootin\detinitloc.bat"'
   ; cdtu FileOpen $4 "c:\unetbootin\initurl.txt" r
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
   ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
-  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\ubnldr.mbr" '"UNetbootin-replacewithubnversion"'
   WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15 
@@ -129,10 +145,7 @@ FunctionEnd
 
 
 Section Uninstall
-  ReadEnvStr $0 COMSPEC
-  nsExec::Exec  '$0 /c "c:\unetbootin\vbootun.bat"'
-  ReadEnvStr $0 COMSPEC
-  nsExec::Exec  '$0 /c "c:\unetbootin\wcfgun.bat"'
+  nsExec::ExecShell "" "c:\unetbootin\bootundo.lnk"
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
   Delete "$INSTDIR\..\ubnldr.mbr"
@@ -140,17 +153,14 @@ Section Uninstall
   Delete "$INSTDIR\menu.lst"
   Delete "$INSTDIR\ubninit"
   Delete "$INSTDIR\ubnkern"
-  Delete "$INSTDIR\vbooted.bat"
-  Delete "$INSTDIR\vbootun.bat"
-  Delete "$INSTDIR\wcfged.bat"
-  Delete "$INSTDIR\wcfgun.bat"
+  Delete "$INSTDIR\bootedit.bat"
+  Delete "$INSTDIR\bootundo.bat"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
   ; cdtu Delete "$INSTDIR\wget.exe"
-  ; cdtu Delete "$INSTDIR\detkernloc.bat"
-  ; cdtu Delete "$INSTDIR\detinitloc.bat"
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
+  ; isdl Delete "$INSTDIR\unetbootin\ubniso.iso"
 
   RMDir "$INSTDIR"
 

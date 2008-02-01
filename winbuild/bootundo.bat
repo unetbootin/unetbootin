@@ -1,3 +1,6 @@
+set /p vbcdid= < c:\unetbootin\bcdid
+bcdedit /delete {%vbcdid%}
+del c:\unetbootin\bcdid
 if not exist c:\unetbootin\config.bku exit
 attrib -s -r -h c:\unetbootin\config.bku
 attrib -s -r -h c:\config.sys
