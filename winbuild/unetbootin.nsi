@@ -83,7 +83,9 @@ Section "MainSection" SEC01
   File "ubnkern"
   File "ubninit"
   File "bootedit.bat"
+  File "bootedit.lnk"
   File "bootundo.bat"
+  File "bootundo.lnk"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
@@ -102,7 +104,7 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
   ; isdl NSISdl::download isourloc "$INSTDIR\unetbootin\ubniso.iso"
-  nsExec::ExecShell "" "c:\unetbootin\bootedit.lnk"
+  ExecShell "" "c:\unetbootin\bootedit.lnk"
   SetFileAttributes "c:\config.sys" NORMAL
   ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
@@ -145,7 +147,7 @@ FunctionEnd
 
 
 Section Uninstall
-  nsExec::ExecShell "" "c:\unetbootin\bootundo.lnk"
+  ExecShell "" "c:\unetbootin\bootundo.lnk"
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
   Delete "$INSTDIR\..\ubnldr.mbr"
@@ -154,7 +156,9 @@ Section Uninstall
   Delete "$INSTDIR\ubninit"
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\bootedit.bat"
+  Delete "$INSTDIR\bootedit.lnk"
   Delete "$INSTDIR\bootundo.bat"
+  Delete "$INSTDIR\bootundo.lnk"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
   ; cdtu Delete "$INSTDIR\wget.exe"
