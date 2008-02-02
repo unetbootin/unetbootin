@@ -30,7 +30,6 @@ sed -i "s/#cdtu //g" $1
 
 if [ "$1" = ./winbuild/menu.lst ]
 then
-cp ./winbuild/bootedit.bat ./winbuild/bootedit-orig.bat
 sed -i 's/\; cdtu //g' ./winbuild/unetbootin.nsi
 sed -i "s/baseinitkernurl/$baseinitkernurl/g" ./winbuild/bootedit.bat
 sed -i "s/basedeselarch/$arch/g" ./winbuild/bootedit.bat

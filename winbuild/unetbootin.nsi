@@ -86,10 +86,10 @@ Section "MainSection" SEC01
   File "ubninit"
   File "bootedit.bat"
   File "bootedit.lnk"
-  File "booteditadm.lnk"
+  File "bootedam.lnk"
   File "bootundo.bat"
   File "bootundo.lnk"
-  File "bootundoadm.lnk"
+  File "bootunam.lnk"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
@@ -115,7 +115,7 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
   ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbtin\booteditadm.lnk"
+     ExecShell "" "c:\unetbtin\bootedam.lnk"
   ${Else}
      ExecShell "" "c:\unetbtin\bootedit.lnk"
   ${EndIf}
@@ -170,7 +170,7 @@ Section Uninstall
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
   ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbtin\bootundoadm.lnk"
+     ExecShell "" "c:\unetbtin\bootunam.lnk"
   ${Else}
      ExecShell "" "c:\unetbtin\bootundo.lnk"
   ${EndIf}
@@ -187,10 +187,10 @@ Section Uninstall
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\bootedit.bat"
   Delete "$INSTDIR\bootedit.lnk"
-  Delete "$INSTDIR\booteditadm.lnk"
+  Delete "$INSTDIR\bootedam.lnk"
   Delete "$INSTDIR\bootundo.bat"
   Delete "$INSTDIR\bootundo.lnk"
-  Delete "$INSTDIR\bootundoadm.lnk"
+  Delete "$INSTDIR\bootunam.lnk"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
   Delete "$INSTDIR\elevate.exe"
