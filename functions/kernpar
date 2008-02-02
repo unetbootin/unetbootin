@@ -18,3 +18,5 @@ sed -i "s/kernel \/boot\/ubnkern/$ktypeparam \/boot\/$kflparam $2/g" $1
 sed -i "s/kernel \$grbootsup\/ubnkern/$ktypeparam \$grbootsup\/$kflparam $2/g" $1
 sed -i "s/kernel \/wubi\/boot\/ubnkern/$ktypeparam \/wubi\/boot\/$kflparam $2/g" $1
 sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/$ktypeparam \/ubuntu\/disks\/boot\/$kflparam $2/g" $1
+sed -i "s/kernel \/unetbtin\/ubnkern/$ktypeparam \/unetbtin\/$kflparam $2/g" $1
+

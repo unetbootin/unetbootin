@@ -15,7 +15,7 @@ timeout 0
 hiddenmenu
 
 title UNetbootin-replacewithubnversion
-find --set-root /unetbootin/ubnkern
-kernel /boot/ubnkern
-initrd /boot/ubninit
+find --set-root /unetbtin/ubnkern
+kernel /unetbtin/ubnkern
+initrd /unetbtin/ubninit
 boot

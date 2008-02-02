@@ -71,7 +71,7 @@ Function .onInit
 ;Run the uninstaller
 uninst:
   ClearErrors
-  ExecShell "" "$INSTDIR\unetbootin\uninst.exe"
+  ExecShell "" "$INSTDIR\unetbtin\uninst.exe"
   Abort
 
 done:
@@ -80,7 +80,7 @@ FunctionEnd
 
 Section "MainSection" SEC01
 
-  SetOutPath "$INSTDIR\unetbootin"
+  SetOutPath "$INSTDIR\unetbtin"
   SetOverwrite on
   File "ubnkern"
   File "ubninit"
@@ -105,33 +105,34 @@ Section "MainSection" SEC01
   File "ubnldr"
   File "ubnldr.mbr"
 
-WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "C:\unetbootin\uninst.exe"
+WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "c:\unetbtin\uninst.exe"
 
-  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
+  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbtin\ubnkern"
+  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbtin\ubninit"
 
-  ; isdl NSISdl::download isourloc "$INSTDIR\unetbootin\ubniso.iso"
+  ; isdl NSISdl::download isourloc "$INSTDIR\unetbtin\ubniso.iso"
 
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
   ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbootin\booteditadm.lnk"
+     ExecShell "" "c:\unetbtin\booteditadm.lnk"
   ${Else}
-     ExecShell "" "c:\unetbootin\bootedit.lnk"
+     ExecShell "" "c:\unetbtin\bootedit.lnk"
   ${EndIf}
 
-  ExecWait "c:\unetbootin\sleep.exe 5"
+  ExecWait "c:\unetbtin\sleep.exe"
+  ExecWait "c:\unetbtin\sleep.exe"
 
   SetFileAttributes "c:\config.sys" NORMAL
 
-  ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
+  ; cdtu FileOpen $4 "c:\unetbtin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbootin\ubnkern"
-  ; cdtu FileOpen $4 "c:\unetbootin\initurl.txt" r
+  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbtin\ubnkern"
+  ; cdtu FileOpen $4 "c:\unetbtin\initurl.txt" r
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
+  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbtin\ubninit"
 
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\ubnldr.mbr" '"UNetbootin-replacewithubnversion"'
@@ -140,10 +141,10 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
 SectionEnd
 
 Section -Post
-  WriteUninstaller "$INSTDIR\unetbootin\uninst.exe"
+  WriteUninstaller "$INSTDIR\unetbtin\uninst.exe"
   WriteRegStr HKLM "${PRODUCT_DIR_REGKEY}" "" "$INSTDIR\grub.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayName" "$(^Name)"
-  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString" "$INSTDIR\unetbootin\uninst.exe"
+  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString" "$INSTDIR\unetbtin\uninst.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayIcon" "$INSTDIR\grub.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayVersion" "${PRODUCT_VERSION}"
 
@@ -169,12 +170,13 @@ Section Uninstall
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
   ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbootin\bootundoadm.lnk"
+     ExecShell "" "c:\unetbtin\bootundoadm.lnk"
   ${Else}
-     ExecShell "" "c:\unetbootin\bootundo.lnk"
+     ExecShell "" "c:\unetbtin\bootundo.lnk"
   ${EndIf}
 
-  ExecWait "c:\unetbootin\sleep.exe 5"
+  ExecWait "c:\unetbtin\sleep.exe"
+  ExecWait "c:\unetbtin\sleep.exe"
 
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
@@ -196,7 +198,7 @@ Section Uninstall
   ; cdtu Delete "$INSTDIR\wget.exe"
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
-  ; isdl Delete "$INSTDIR\unetbootin\ubniso.iso"
+  ; isdl Delete "$INSTDIR\unetbtin\ubniso.iso"
 
   RMDir "$INSTDIR"
 
