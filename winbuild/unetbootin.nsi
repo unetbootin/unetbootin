@@ -10,7 +10,6 @@ RequestExecutionLevel admin
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
-!include LogicLib.nsh
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -64,7 +63,7 @@ Function .onInit
  
   MessageBox MB_OKCANCEL|MB_ICONEXCLAMATION \
   "${PROGRAM_NAME} is already installed. $\n$\nClick `OK` to remove the \
-  previous version or `Cancel` to cancel this upgrade." \
+  previous version, then run this installer again." \
   IDOK uninst
   Abort
   
@@ -85,16 +84,11 @@ Section "MainSection" SEC01
   File "ubnkern"
   File "ubninit"
   File "bootedit.bat"
-  File "bootedit.lnk"
-  File "bootedam.lnk"
   File "bootundo.bat"
-  File "bootundo.lnk"
-  File "bootunam.lnk"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
-  File "elevate.exe"
-  File "sleep.exe"
+  File "runxfile.exe"
   ; cdtu File "wget.exe"
   ; isdl File "7z.dll"
   ; isdl File "7z.exe"
@@ -112,16 +106,7 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
 
   ; isdl NSISdl::download isourloc "$INSTDIR\unetbtin\ubniso.iso"
 
-  ReadRegStr $varwinvers HKLM \
-  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
-  ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbtin\bootedam.lnk"
-  ${Else}
-     ExecShell "" "c:\unetbtin\bootedit.lnk"
-  ${EndIf}
-
-  ExecWait "c:\unetbtin\sleep.exe"
-  ExecWait "c:\unetbtin\sleep.exe"
+  ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootedit.bat"'
 
   SetFileAttributes "c:\config.sys" NORMAL
 
@@ -167,16 +152,7 @@ FunctionEnd
 
 
 Section Uninstall
-  ReadRegStr $varwinvers HKLM \
-  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
-  ${If} $varwinvers >= 6.0
-     ExecShell "" "c:\unetbtin\bootunam.lnk"
-  ${Else}
-     ExecShell "" "c:\unetbtin\bootundo.lnk"
-  ${EndIf}
-
-  ExecWait "c:\unetbtin\sleep.exe"
-  ExecWait "c:\unetbtin\sleep.exe"
+  ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootundo.bat"'
 
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
@@ -186,15 +162,10 @@ Section Uninstall
   Delete "$INSTDIR\ubninit"
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\bootedit.bat"
-  Delete "$INSTDIR\bootedit.lnk"
-  Delete "$INSTDIR\bootedam.lnk"
   Delete "$INSTDIR\bootundo.bat"
-  Delete "$INSTDIR\bootundo.lnk"
-  Delete "$INSTDIR\bootunam.lnk"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
-  Delete "$INSTDIR\elevate.exe"
-  Delete "$INSTDIR\sleep.exe"
+  Delete "$INSTDIR\runxfile.exe"
   ; cdtu Delete "$INSTDIR\wget.exe"
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
