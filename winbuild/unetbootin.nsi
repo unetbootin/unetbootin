@@ -10,6 +10,7 @@ RequestExecutionLevel admin
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
+!include LogicLib.nsh
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -38,6 +39,7 @@ RequestExecutionLevel admin
 
 ; cdtu var /GLOBAL varkernurl
 ; cdtu var /GLOBAL variniturl
+var /GLOBAL varwinvers
 
 VIAddVersionKey "ProductName" "${PRODUCT_NAME}"
 VIAddVersionKey "Comments" "Licenced under the GNU General Public License version 2 or later. Website is at lubi.sourceforge.net"
@@ -69,7 +71,7 @@ Function .onInit
 ;Run the uninstaller
 uninst:
   ClearErrors
-  Exec $INSTDIR\unetbootin\uninst.exe
+  ExecShell "" "$INSTDIR\unetbootin\uninst.exe"
   Abort
 
 done:
@@ -84,11 +86,15 @@ Section "MainSection" SEC01
   File "ubninit"
   File "bootedit.bat"
   File "bootedit.lnk"
+  File "booteditadm.lnk"
   File "bootundo.bat"
   File "bootundo.lnk"
+  File "bootundoadm.lnk"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
+  File "elevate.exe"
+  File "sleep.exe"
   ; cdtu File "wget.exe"
   ; isdl File "7z.dll"
   ; isdl File "7z.exe"
@@ -103,9 +109,21 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
 
   ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbootin\ubnkern"
   ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbootin\ubninit"
+
   ; isdl NSISdl::download isourloc "$INSTDIR\unetbootin\ubniso.iso"
-  ExecShell "" "c:\unetbootin\bootedit.lnk"
+
+  ReadRegStr $varwinvers HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+  ${If} $varwinvers >= 6.0
+     ExecShell "" "c:\unetbootin\booteditadm.lnk"
+  ${Else}
+     ExecShell "" "c:\unetbootin\bootedit.lnk"
+  ${EndIf}
+
+  ExecWait "c:\unetbootin\sleep.exe 5"
+
   SetFileAttributes "c:\config.sys" NORMAL
+
   ; cdtu FileOpen $4 "c:\unetbootin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
@@ -114,6 +132,7 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
   ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbootin\ubninit"
+
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\ubnldr.mbr" '"UNetbootin-replacewithubnversion"'
   WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15 
@@ -147,7 +166,16 @@ FunctionEnd
 
 
 Section Uninstall
-  ExecShell "" "c:\unetbootin\bootundo.lnk"
+  ReadRegStr $varwinvers HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+  ${If} $varwinvers >= 6.0
+     ExecShell "" "c:\unetbootin\bootundoadm.lnk"
+  ${Else}
+     ExecShell "" "c:\unetbootin\bootundo.lnk"
+  ${EndIf}
+
+  ExecWait "c:\unetbootin\sleep.exe 5"
+
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
   Delete "$INSTDIR\..\ubnldr.mbr"
@@ -157,10 +185,14 @@ Section Uninstall
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\bootedit.bat"
   Delete "$INSTDIR\bootedit.lnk"
+  Delete "$INSTDIR\booteditadm.lnk"
   Delete "$INSTDIR\bootundo.bat"
   Delete "$INSTDIR\bootundo.lnk"
+  Delete "$INSTDIR\bootundoadm.lnk"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
+  Delete "$INSTDIR\elevate.exe"
+  Delete "$INSTDIR\sleep.exe"
   ; cdtu Delete "$INSTDIR\wget.exe"
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
