@@ -8,6 +8,8 @@
 SetCompressor lzma
 RequestExecutionLevel admin
 
+!addplugindir ".\plugins"
+
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
 !include LogicLib.nsh
@@ -101,6 +103,8 @@ Section "MainSection" SEC01
   ; cdtu File "dtkernlc.pif"
   ; isdl File "7z.dll"
   ; isdl File "7z.exe"
+  ; isdl File "isoexrct.bat"
+  ; isdl File "isoexrct.pif"
 
   SetOutPath "$INSTDIR"
   SetOverwrite on
@@ -110,10 +114,25 @@ Section "MainSection" SEC01
 
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "c:\unetbtin\uninst.exe"
 
-  ; ltbe NSISdl::download /TIMEOUT=9000000 rpubnkernurl "$INSTDIR\unetbtin\ubnkern"
-  ; ltbe NSISdl::download /TIMEOUT=9000000 rpubniniturl "$INSTDIR\unetbtin\ubninit"
+  ; ltbe InetLoad::load /RESUME "rpubnkernurl" "$INSTDIR\unetbtin\ubnkern"
+  ; ltbe   Pop $0
+  ; ltbe   StrCmp $0 "OK" ltbekdlok
+  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
+  ; ltbe   Abort
+  ; ltbe ltbekdlok:
+  ; ltbe InetLoad::load /RESUME "rpubniniturl" "$INSTDIR\unetbtin\ubninit"
+  ; ltbe   Pop $0
+  ; ltbe   StrCmp $0 "OK" ltbekdlok
+  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
+  ; ltbe   Abort
+  ; ltbe ltbeidlok:
 
-  ; isdl NSISdl::download isourloc "$INSTDIR\unetbtin\ubniso.iso"
+  ; isdl InetLoad::load /RESUME "isourloc" "$INSTDIR\unetbtin\ubniso.iso"
+  ; isdl   Pop $0
+  ; isdl   StrCmp $0 "OK" isdldlok
+  ; isdl   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
+  ; isdl   Abort
+  ; isdl isdldlok:
 
   ; cdtu ${If} $varwinvers >= 6.0
   ; cdtu    ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\dtkernlc.bat" runas'
@@ -123,11 +142,21 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu FileOpen $4 "c:\unetbtin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download /TIMEOUT=9000000 $varkernurl "$INSTDIR\unetbtin\ubnkern"
+  ; cdtu InetLoad::load /RESUME "$varkernurl" "$INSTDIR\unetbtin\ubnkern"
+  ; cdtu   Pop $0
+  ; cdtu   StrCmp $0 "OK" cdtukdlok
+  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
+  ; cdtu   Abort
+  ; cdtu cdtukdlok:
   ; cdtu FileOpen $4 "c:\unetbtin\initurl.txt" r
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download /TIMEOUT=9000000 $variniturl "$INSTDIR\unetbtin\ubninit"
+  ; cdtu InetLoad::load /RESUME "$variniturl" "$INSTDIR\unetbtin\ubninit"
+  ; cdtu   Pop $0
+  ; cdtu   StrCmp $0 "OK" cdtuidlok
+  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
+  ; cdtu   Abort
+  ; cdtu cdtuidlok:
 
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
@@ -205,7 +234,12 @@ Section Uninstall
   ; cdtu Delete "$INSTDIR\initurl.txt"
   ; cdtu Delete "$INSTDIR\dtkernlc.bat"
   ; cdtu Delete "$INSTDIR\dtkernlc.pif"
+  ; isdl Delete "$INSTDIR\isoexrct.bat"
+  ; isdl Delete "$INSTDIR\isoexrct.pif"
+  ; isdl Delete "$INSTDIR\7z.dll"
+  ; isdl Delete "$INSTDIR\7z.exe"
   ; isdl Delete "$INSTDIR\unetbtin\ubniso.iso"
+
 
   RMDir "$INSTDIR"
 
