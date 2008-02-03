@@ -133,6 +133,10 @@ mv unetbootin-orig.nsi unetbootin.nsi
 mv vbcdedit-orig.bat vbcdedit.bat
 mv config-orig.sup config.sup
 mv menu-orig.lst menu.lst
+if [ -e ./dtkernlc-orig.bat ]
+then
+mv dtkernlc-orig.bat dtkernlc.bat
+fi
 cd $locationhere
 mv $locationhere/winbuild/ubnkern $locationhere/initkern/ubnkern-$targetbuildos
 mv $locationhere/winbuild/ubninit $locationhere/initkern/ubninit-$targetbuildos

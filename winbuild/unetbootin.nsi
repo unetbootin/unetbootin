@@ -110,8 +110,8 @@ Section "MainSection" SEC01
 
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "c:\unetbtin\uninst.exe"
 
-  ; ltbe NSISdl::download rpubnkernurl "$INSTDIR\unetbtin\ubnkern"
-  ; ltbe NSISdl::download rpubniniturl "$INSTDIR\unetbtin\ubninit"
+  ; ltbe NSISdl::download /TIMEOUT=9000000 rpubnkernurl "$INSTDIR\unetbtin\ubnkern"
+  ; ltbe NSISdl::download /TIMEOUT=9000000 rpubniniturl "$INSTDIR\unetbtin\ubninit"
 
   ; isdl NSISdl::download isourloc "$INSTDIR\unetbtin\ubniso.iso"
 
@@ -123,11 +123,11 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu FileOpen $4 "c:\unetbtin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download $varkernurl "$INSTDIR\unetbtin\ubnkern"
+  ; cdtu NSISdl::download /TIMEOUT=9000000 $varkernurl "$INSTDIR\unetbtin\ubnkern"
   ; cdtu FileOpen $4 "c:\unetbtin\initurl.txt" r
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
-  ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbtin\ubninit"
+  ; cdtu NSISdl::download /TIMEOUT=9000000 $variniturl "$INSTDIR\unetbtin\ubninit"
 
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion

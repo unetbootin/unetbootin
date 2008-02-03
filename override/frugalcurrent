@@ -34,7 +34,6 @@ cp ./winbuild/dtkernlc.bat ./winbuild/dtkernlc-orig.bat
 sed -i 's/\; cdtu //g' ./winbuild/unetbootin.nsi
 sed -i "s/baseinitkernurl/$baseinitkernurl/g" ./winbuild/dtkernlc.bat
 sed -i "s/basedeselarch/$arch/g" ./winbuild/dtkernlc.bat
-mv ./winbuild/dtkernlc-orig.bat ./winbuild/dtkernlc.bat
 fi
 
 ./functions/kernpar $1 'load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=\/dev\/ram quiet vga=791'
