@@ -98,6 +98,7 @@ Section "MainSection" SEC01
   File "runxfile.exe"
   ; cdtu File "wget.exe"
   ; cdtu File "dtkernlc.bat"
+  ; cdtu File "dtkernlc.pif"
   ; isdl File "7z.dll"
   ; isdl File "7z.exe"
 
@@ -203,6 +204,7 @@ Section Uninstall
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
   ; cdtu Delete "$INSTDIR\dtkernlc.bat"
+  ; cdtu Delete "$INSTDIR\dtkernlc.pif"
   ; isdl Delete "$INSTDIR\unetbtin\ubniso.iso"
 
   RMDir "$INSTDIR"

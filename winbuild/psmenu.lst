@@ -1,0 +1,32 @@
+debug off
+hiddenmenu
+default 0
+timeout 0
+fallback 1
+
+title find /unetbtin/menu.lst
+	find --set-root --ignore-floppies /unetbtin/menu.lst
+	configfile /unetbtin/menu.lst
+
+title find /menu.lst
+	find --set-root --ignore-floppies /menu.lst
+	configfile /menu.lst
+
+title find /boot/grub/menu.lst
+	fallback 2
+	find --set-root --ignore-floppies /boot/grub/menu.lst
+	configfile /boot/grub/menu.lst
+
+title find /grub/menu.lst
+	fallback 3
+	find --set-root --ignore-floppies /grub/menu.lst
+	configfile /grub/menu.lst
+
+title commandline
+	commandline
+
+title reboot
+	reboot
+
+title halt
+	halt
