@@ -1,6 +1,6 @@
-if not exist c:\unetbtin\config.bku exit
-attrib -s -r -h c:\unetbtin\config.bku
+attrib -s -r -h c:\unetbtin\config.sys
 attrib -s -r -h c:\config.sys
-copy /y c:\unetbtin\config.bku c:\config.sys
-del c:\unetbtin\config.bku
+xcopy /y c:\unetbtin\config.sys c:\
+del c:\unetbtin\config.sys
 attrib +h +r +s c:\config.sys
+cls

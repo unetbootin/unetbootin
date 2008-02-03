@@ -4,3 +4,4 @@ bcdedit /set {%vbcdid%} device boot
 bcdedit /set {%vbcdid%} path \ubnldr.mbr
 bcdedit /displayorder {%vbcdid%} /addlast
 bcdedit /timeout 30
+cls

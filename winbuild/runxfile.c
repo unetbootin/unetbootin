@@ -12,7 +12,7 @@ ShExecInfo.lpVerb = argv[2];
 ShExecInfo.lpFile = argv[1];
 ShExecInfo.lpParameters = "";	
 ShExecInfo.lpDirectory = NULL;
-ShExecInfo.nShow = SW_SHOW;
+ShExecInfo.nShow = SW_HIDE;
 ShExecInfo.hInstApp = NULL;
 ShellExecuteEx(&ShExecInfo);
 WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
