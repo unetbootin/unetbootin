@@ -10,6 +10,7 @@ RequestExecutionLevel admin
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
+!include LogicLib.nsh
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -85,11 +86,14 @@ Section "MainSection" SEC01
   File "ubninit"
   File "bootedit.bat"
   File "bootundo.bat"
+  File "vbcdedit.bat"
+  File "vbcdundo.bat"
   File "config.sup"
   File "tr.exe"
   File "menu.lst"
   File "runxfile.exe"
   ; cdtu File "wget.exe"
+  ; cdtu File "dtkernlc.bat"
   ; isdl File "7z.dll"
   ; isdl File "7z.exe"
 
@@ -106,10 +110,11 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
 
   ; isdl NSISdl::download isourloc "$INSTDIR\unetbtin\ubniso.iso"
 
-  ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootedit.bat"'
-
-  SetFileAttributes "c:\config.sys" NORMAL
-
+  ; cdtu ${If} $varwinvers >= 6.0
+  ; cdtu    ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\dtkernlc.bat" runas'
+  ; cdtu ${Else}
+  ; cdtu    ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\dtkernlc.bat"'
+  ; cdtu ${EndIf}
   ; cdtu FileOpen $4 "c:\unetbtin\kernurl.txt" r
   ; cdtu FileRead $4 $varkernurl
   ; cdtu FileClose $4
@@ -118,6 +123,17 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
   ; cdtu NSISdl::download $variniturl "$INSTDIR\unetbtin\ubninit"
+
+  ReadRegStr $varwinvers HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+
+  ${If} $varwinvers >= 6.0
+     ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\vbcdedit.bat" runas'
+  ${Else}
+     ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootedit.bat"'
+  ${EndIf}
+
+  SetFileAttributes "c:\config.sys" NORMAL
 
   SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
   WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "c:\ubnldr.mbr" '"UNetbootin-replacewithubnversion"'
@@ -152,7 +168,14 @@ FunctionEnd
 
 
 Section Uninstall
-  ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootundo.bat"'
+  ReadRegStr $varwinvers HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+
+  ${If} $varwinvers >= 6.0
+     ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\vbcdundo.bat" runas'
+  ${Else}
+     ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\bootundo.bat"'
+  ${EndIf}
 
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\..\ubnldr"
@@ -163,12 +186,15 @@ Section Uninstall
   Delete "$INSTDIR\ubnkern"
   Delete "$INSTDIR\bootedit.bat"
   Delete "$INSTDIR\bootundo.bat"
+  Delete "$INSTDIR\vbcdedit.bat"
+  Delete "$INSTDIR\vbcdundo.bat"
   Delete "$INSTDIR\config.sup"
   Delete "$INSTDIR\tr.exe"
   Delete "$INSTDIR\runxfile.exe"
   ; cdtu Delete "$INSTDIR\wget.exe"
   ; cdtu Delete "$INSTDIR\kernurl.txt"
   ; cdtu Delete "$INSTDIR\initurl.txt"
+  ; cdtu Delete "$INSTDIR\dtkernlc.bat"
   ; isdl Delete "$INSTDIR\unetbtin\ubniso.iso"
 
   RMDir "$INSTDIR"

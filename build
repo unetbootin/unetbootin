@@ -110,12 +110,12 @@ fakeroot alien --scripts -r unetbootin_$ubnver\_all.deb
 
 cd $locationhere/winbuild
 cp unetbootin.nsi unetbootin-orig.nsi
-cp bootedit.bat bootedit-orig.bat
+cp vbcdedit.bat vbcdedit-orig.bat
 cp config.sup config-orig.sup
 cp menu.lst menu-orig.lst
 sed -i "s/ubnbzrsubversionum/$ubnverinit/g" ./unetbootin.nsi
 sed -i "s/replacewithubnversion/$ubnver/g" ./unetbootin.nsi
-sed -i "s/replacewithubnversion/$ubnver/g" ./bootedit.bat
+sed -i "s/replacewithubnversion/$ubnver/g" ./vbcdedit.bat
 sed -i "s/replacewithubnversion/$ubnver/g" ./config.sup
 sed -i "s/replacewithubnversion/$ubnver/g" ./menu.lst
 cd ..
@@ -130,7 +130,7 @@ cd $locationhere/winbuild
 wine "C:\Program Files\NSIS\makensis.exe" unetbootin.nsi
 mv setup.exe $locationhere/dist/unetbootin-$ubnver.exe
 mv unetbootin-orig.nsi unetbootin.nsi
-mv bootedit-orig.bat bootedit.bat
+mv vbcdedit-orig.bat vbcdedit.bat
 mv config-orig.sup config.sup
 mv menu-orig.lst menu.lst
 cd $locationhere
