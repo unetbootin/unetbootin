@@ -1,4 +1,4 @@
-if not exist c:\config.sys echo rem >> c:\config.sys
+if not exist c:\config.sys exit
 attrib -s -r -h c:\config.sys
 xcopy /y c:\config.sys c:\unetbtin\
 copy /y c:\unetbtin\config.sup + c:\unetbtin\config.sys c:\config.sys
