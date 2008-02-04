@@ -119,21 +119,20 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; ltbe InetLoad::load /RESUME "Download failed, would you like to resume" "rpubnkernurl" "$INSTDIR\unetbtin\ubnkern"
   ; ltbe   Pop $0
   ; ltbe   StrCmp $0 "OK" ltbekdlok
-  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
-  ; ltbe   Abort
+  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download rpubnkernurl to $INSTDIR\unetbtin\ubnkern and reinstall UNetbootin." /SD IDOK
   ; ltbe ltbekdlok:
+  ; cdtu IfFileExists "$INSTDIR\unetbtin\ubninit" ltbeidlok
   ; ltbe InetLoad::load /RESUME "Download failed, would you like to resume" "rpubniniturl" "$INSTDIR\unetbtin\ubninit"
   ; ltbe   Pop $0
   ; ltbe   StrCmp $0 "OK" ltbeidlok
-  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
-  ; ltbe   Abort
+  ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download rpubniniturl to $INSTDIR\unetbtin\ubninit and reinstall UNetbootin." /SD IDOK
   ; ltbe ltbeidlok:
 
+  ; isdl IfFileExists "$INSTDIR\unetbtin\ubniso.iso" isdldlok
   ; isdl InetLoad::load /RESUME "Download failed, would you like to resume" "isourloc" "$INSTDIR\unetbtin\ubniso.iso"
   ; isdl   Pop $0
   ; isdl   StrCmp $0 "OK" isdldlok
-  ; isdl   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
-  ; isdl   Abort
+  ; isdl   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download isourloc to $INSTDIR\unetbtin\ubniso.iso and reinstall UNetbootin." /SD IDOK
   ; isdl isdldlok:
 
   ; cdtu IfFileExists "$INSTDIR\unetbtin\ubnkern" cdtukdlok
@@ -148,17 +147,16 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu InetLoad::load /RESUME "Download failed, would you like to resume" "$varkernurl" "$INSTDIR\unetbtin\ubnkern"
   ; cdtu   Pop $0
   ; cdtu   StrCmp $0 "OK" cdtukdlok
-  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
-  ; cdtu   Abort
+  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download $varkernurl to $INSTDIR\unetbtin\ubnkern and reinstall UNetbootin." /SD IDOK
   ; cdtu cdtukdlok:
+  ; cdtu IfFileExists "$INSTDIR\unetbtin\ubninit" cdtuidlok
   ; cdtu FileOpen $4 "c:\unetbtin\initurl.txt" r
   ; cdtu FileRead $4 $variniturl
   ; cdtu FileClose $4
   ; cdtu InetLoad::load /RESUME "Download failed, would you like to resume" "$variniturl" "$INSTDIR\unetbtin\ubninit"
   ; cdtu   Pop $0
   ; cdtu   StrCmp $0 "OK" cdtuidlok
-  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download Error, click OK to abort installation" /SD IDOK
-  ; cdtu   Abort
+  ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download $variniturl to $INSTDIR\unetbtin\ubninit and reinstall UNetbootin." /SD IDOK
   ; cdtu cdtuidlok:
 
   ReadRegStr $varwinvers HKLM \
@@ -248,8 +246,8 @@ Section Uninstall
   ; isdl Delete "$INSTDIR\isoexrct.pif"
   ; isdl Delete "$INSTDIR\7z.dll"
   ; isdl Delete "$INSTDIR\7z.exe"
-  ; isdl Delete "$INSTDIR\unetbtin\ubniso.iso"
-
+  ; isdl Delete "$INSTDIR\ubniso.iso"
+  ; isdl Delete "$INSTDIR\..\livecd.sqfs"
 
   RMDir "$INSTDIR"
 

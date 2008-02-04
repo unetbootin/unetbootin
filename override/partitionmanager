@@ -1,5 +1,3 @@
 #!/bin/sh
 
-sed -i "s/kernel \/boot\/ubnkern/kernel \/boot\/ubnkern root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram/g" $1
-sed -i "s/kernel \/wubi\/boot\/ubnkern/kernel \/wubi\/boot\/ubnkern root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram/g" $1
-sed -i "s/kernel \/ubuntu\/disks\/boot\/ubnkern/kernel \/ubuntu\/disks\/boot\/ubnkern root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram/g" $1
+./functions/kernpar $1 'root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip xvesa toram'
