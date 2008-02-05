@@ -131,12 +131,16 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; ltbe   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download rpubniniturl to $INSTDIR\unetbtin\ubninit and reinstall UNetbootin." /SD IDOK
   ; ltbe ltbeidlok:
 
-  ; isdl IfFileExists "$EXEDIR\ubniso.iso"
-  ; isdl   CopyFiles "$EXEDIR\ubniso.iso" "$INSTDIR\unetbtin\"
-  ; isdl   isdldlok
-  ; isdl IfFileExists "$DESKTOP\ubniso.iso"
-  ; isdl   CopyFiles "$DESKTOP\ubniso.iso" "$INSTDIR\unetbtin\"
-  ; isdl   isdldlok
+  ; isdl IfFileExists "$EXEDIR\ubniso.iso" cpisofrme nisofrme
+  ; isdl cpisofrme:
+  ; isdl CopyFiles "$EXEDIR\ubniso.iso" "$INSTDIR\unetbtin\"
+  ; isdl IfFileExists "$INSTDIR\unetbtin\ubniso.iso" isdldlok
+  ; isdl nisofrme:
+  ; isdl IfFileExists "$DESKTOP\ubniso.iso" cpisofrmd nisofrmd
+  ; isdl cpisofrmd:
+  ; isdl CopyFiles "$DESKTOP\ubniso.iso" "$INSTDIR\unetbtin\"
+  ; isdl IfFileExists "$INSTDIR\unetbtin\ubniso.iso" isdldlok
+  ; isdl nisofrmd:
   ; isdl IfFileExists "$INSTDIR\unetbtin\ubniso.iso" isdldlok
   ; isdl InetLoad::load /RESUME "Download failed, would you like to resume" "isourloc" "$INSTDIR\unetbtin\ubniso.iso"
   ; isdl   Pop $0
