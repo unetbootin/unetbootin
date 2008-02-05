@@ -115,6 +115,9 @@ Section "MainSection" SEC01
 
 WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "c:\unetbtin\uninst.exe"
 
+  ReadRegStr $varwinvers HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+
   ; ltbe IfFileExists "$INSTDIR\unetbtin\ubnkern" ltbekdlok
   ; ltbe InetLoad::load /RESUME "Download failed, would you like to resume" "rpubnkernurl" "$INSTDIR\unetbtin\ubnkern"
   ; ltbe   Pop $0
@@ -140,6 +143,15 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; isdl   StrCmp $0 "OK" isdldlok
   ; isdl   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download isourloc to $INSTDIR\unetbtin\ubniso.iso and reinstall UNetbootin." /SD IDOK
   ; isdl isdldlok:
+  ; isdl ${If} $varwinvers >= 6.0
+  ; isdl    ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\isoexrct.bat" runas'
+  ; isdl ${Else}
+  ; isdl    ExecWait '"c:\unetbtin\runxfile.exe" "c:\unetbtin\isoexrct.bat"'
+  ; isdl ${EndIf}
+  ; isdl CopyFiles "$INSTDIR\unetbtin\isotemp\isolinux\vmlinuz" "$INSTDIR\unetbtin\ubnkern"
+  ; isdl CopyFiles "$INSTDIR\unetbtin\isotemp\isolinux\initrd.gz" "$INSTDIR\unetbtin\ubninit"
+  ; isdl CopyFiles "$INSTDIR\unetbtin\isotemp\livecd.sqfs" "$INSTDIR\..\livecd.sqfs"
+  ; isdl RMDir /R "$INSTDIR\unetbtin\isotemp"
 
   ; cdtu IfFileExists "$INSTDIR\unetbtin\ubnkern" cdtukdlok
   ; cdtu ${If} $varwinvers >= 6.0
@@ -164,9 +176,6 @@ WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce
   ; cdtu   StrCmp $0 "OK" cdtuidlok
   ; cdtu   MessageBox MB_OK|MB_ICONEXCLAMATION "Download failed or aborted. To undo changes, uninstall UNetbootin. Then, to retry the auto-downloader, reinstall, or to use pre-downloaded files, download $variniturl to $INSTDIR\unetbtin\ubninit and reinstall UNetbootin." /SD IDOK
   ; cdtu cdtuidlok:
-
-  ReadRegStr $varwinvers HKLM \
-  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
 
   ${If} $varwinvers >= 6.0
      ExecWait '"c:\unetbtin\emtxfile.exe" "c:\unetbtin\vbcdedit.bat" runas'
@@ -255,7 +264,7 @@ Section Uninstall
   ; isdl Delete "$INSTDIR\ubniso.iso"
   ; isdl Delete "$INSTDIR\..\livecd.sqfs"
 
-  RMDir "$INSTDIR"
+  RMDir /R "$INSTDIR"
 
       SetFileAttributes "c:\boot.ini" NORMAL
     DeleteINIStr "c:\boot.ini" "operating systems" "c:\ubnldr.mbr"
