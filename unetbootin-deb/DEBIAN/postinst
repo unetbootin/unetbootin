@@ -16,14 +16,14 @@ stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the G
 #cdtu if [ "$wgetcommand" != "" ]
 #cdtu then
 #cdtu knurl=baseinitkernurl$($wgetcommand baseinitkernurl -O - | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
-#cdtu $wgetcommand $knurl -O $targetdir/boot/ubnkern
+#cdtu $wgetcommand $knurl -O /boot/ubnkern
 #cdtu inurl=baseinitkernurl$($wgetcommand baseinitkernurl -O - | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
-#cdtu $wgetcommand $inurl -O $targetdir/boot/ubninit
+#cdtu $wgetcommand $inurl -O /boot/ubninit
 #cdtu else
 #cdtu knurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep vmlinuz | grep -v 'a href' | grep basedeselarch)
-#cdtu curl $knurl > $targetdir/boot/ubnkern
+#cdtu curl $knurl > /boot/ubnkern
 #cdtu inurl=baseinitkernurl$(curl baseinitkernurl | tr '<' '\n' | tr '>' '\n' | grep initrd | grep -v 'a href' | grep basedeselarch)
-#cdtu curl $inurl > $targetdir/boot/ubninit
+#cdtu curl $inurl > /boot/ubninit
 #cdtu fi
 
 #isdl if [ "$(mount | grep " /boot " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)" != "" ]
@@ -45,13 +45,13 @@ stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the G
 #isdl mkdir /mnt/ubniso
 #isdl fi
 #isdl mount /tmp/ubniso.iso -o loop /mnt/ubniso
-#isdl cp /mnt/ubniso/isolinux/initrd.gz
+#isdl cp /mnt/ubniso/isolinux/vmlinuz /boot/ubnkern
+#isdl cp /mnt/ubniso/isolinux/initrd.gz /boot/ubninit
 #isdl cp /mnt/ubniso/livecd.sqfs $ntargetdir/
 #isdl umount /mnt/ubniso
 #isdl umount -f /mnt/ubniso
 #isdl umount -l /mnt/ubniso
 #isdl rm -r /mnt/ubniso
-#isdl }
 
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 

@@ -33,10 +33,11 @@
 #isdl then
 #isdl if [ "$(mount | grep " /boot " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)" != "" ]
 #isdl then
-#isdl ntargetdir="/boot"
+#isdl ntargetdirb="/boot"
 #isdl fi
 #isdl else
 #isdl ntargetdir="$1"
+#isdl ntargetdirb="$1"
 #isdl fi
 #isdl if [ ! -e /tmp/ubniso.iso ]
 #isdl then
@@ -53,8 +54,9 @@
 #isdl mkdir /mnt/ubniso
 #isdl fi
 #isdl mount /tmp/ubniso.iso -o loop /mnt/ubniso
-#isdl cp /mnt/ubniso/isolinux/initrd.gz
-#isdl cp /mnt/ubniso/livecd.sqfs $ntargetdir/
+#isdl cp /mnt/ubniso/isolinux/vmlinuz $ntargetdir/boot/ubnkern
+#isdl cp /mnt/ubniso/isolinux/initrd.gz $ntargetdir/boot/ubninit
+#isdl cp /mnt/ubniso/livecd.sqfs $ntargetdirb/
 #isdl umount /mnt/ubniso
 #isdl umount -f /mnt/ubniso
 #isdl umount -l /mnt/ubniso
