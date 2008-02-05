@@ -1099,6 +1099,8 @@ fi
 rm /boot/ubnkern
 rm /boot/ubninit
 rm /boot/ubnldr.exe
+rm /boot/livecd.sqfs
+rm /livecd.sqfs
 mv /boot/grub/menu-bkubn.lst /boot/grub/menu.lst
 if [ -e /boot/grub/grub-bkubn.conf ]
 then

@@ -13,6 +13,16 @@ then
 rm /boot/ubninit
 fi
 
+if [ -e /livecd.sqfs ]
+then
+rm /livecd.sqfs
+fi
+
+if [ -e /boot/livecd.sqfs ]
+then
+rm /boot/livecd.sqfs
+fi
+
 if [ -e /boot/grub/grub-bkubn.conf ]
 then
 mv /boot/grub/grub-bkubn.conf /boot/grub/grub.conf

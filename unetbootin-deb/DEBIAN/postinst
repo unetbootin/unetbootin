@@ -26,6 +26,33 @@ stdendinstmessage="Installation complete. Reboot, and select UNetbootin on the G
 #cdtu curl $inurl > $targetdir/boot/ubninit
 #cdtu fi
 
+#isdl if [ "$(mount | grep " /boot " | sed "s/ /\n/g" | sed "s/\t/\n/g" | grep /dev | head --lines 1)" != "" ]
+#isdl then
+#isdl ntargetdir="/boot"
+#isdl fi
+#isdl if [ ! -e /tmp/ubniso.iso ]
+#isdl then
+#isdl wgetcommand="$(whereis wget | sed 's/ /\n/g' | grep /bin | head -1)"
+#isdl if [ "$wgetcommand" != "" ]
+#isdl then
+#isdl $wgetcommand isourloc -O /tmp/ubniso.iso
+#isdl else
+#isdl curl isourloc > /tmp/ubniso.iso
+#isdl fi
+#isdl fi
+#isdl if [ ! -e /mnt/ubniso ]
+#isdl then
+#isdl mkdir /mnt/ubniso
+#isdl fi
+#isdl mount /tmp/ubniso.iso -o loop /mnt/ubniso
+#isdl cp /mnt/ubniso/isolinux/initrd.gz
+#isdl cp /mnt/ubniso/livecd.sqfs $ntargetdir/
+#isdl umount /mnt/ubniso
+#isdl umount -f /mnt/ubniso
+#isdl umount -l /mnt/ubniso
+#isdl rm -r /mnt/ubniso
+#isdl }
+
 cp /boot/grub/menu.lst /boot/grub/menu-bkubn.lst
 
 if [ -e /media/host/wubi/disks ]
