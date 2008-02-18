@@ -1,0 +1,6 @@
+main.o
+moc_unetbootin.cpp
+moc_unetbootin.o
+unetbootin
+unetbootin.exe
+unetbootin.o
