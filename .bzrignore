@@ -1,2 +1,8 @@
 dist
 winbuild/nsis
+src/unetbootin/main.o
+src/unetbootin/moc_unetbootin.cpp
+src/unetbootin/moc_unetbootin.o
+src/unetbootin/unetbootin
+src/unetbootin/unetbootin.exe
+src/unetbootin/unetbootin.o

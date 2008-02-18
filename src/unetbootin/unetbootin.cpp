@@ -1,6 +1,5 @@
 #include <QtGui>
 #include "unetbootin.h"
-#include <iostream>
 
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
@@ -10,25 +9,46 @@ unetbootin::unetbootin(QWidget *parent)
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-//    QString fileName;
-    fileName = QFileDialog::getOpenFileName();
-//    std::cout << qPrintable(fileName);
-    FloppyPath->setText(fileName);
+    nameFloppy = QFileDialog::getOpenFileName();
+    FloppyPath->clear();
+    FloppyPath->insert(nameFloppy);
+    radioFloppy->setChecked(1);
 }
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-//    QString fileName;
-    fileName = QFileDialog::getOpenFileName();
-//    std::cout << qPrintable(fileName);
-    KernelPath->setText(fileName);
+    nameKernel = QFileDialog::getOpenFileName();
+    KernelPath->clear();
+    KernelPath->insert(nameKernel);
+    radioManual->setChecked(1);
 }
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-//    QString fileName;
-    fileName = QFileDialog::getOpenFileName();
-//    std::cout << qPrintable(fileName);
-    InitrdPath->setText(fileName);
+    nameInitrd = QFileDialog::getOpenFileName();
+    InitrdPath->clear();
+    InitrdPath->insert(nameInitrd);
+    radioManual->setChecked(1);
 }
 
+void unetbootin::on_cancelbutton_clicked()
+{
+    close();
+}
+
+void unetbootin::on_okbutton_clicked()
+{
+    if (radioFloppy->isChecked())
+    {
+        printf(qPrintable(nameFloppy));
+    }
+    if (radioManual->isChecked())
+    {
+        printf(qPrintable(nameKernel));
+    }
+    if (radioDistro->isChecked())
+    {
+        printf(qPrintable(nameDistro));
+    }
+    close();
+}

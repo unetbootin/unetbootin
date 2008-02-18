@@ -2,7 +2,6 @@
 #define UNETBOOTIN_H
 
 #include "ui_unetbootin.h"
-#include <string.h>
 
 class unetbootin : public QWidget, private Ui::unetbootin
 {
@@ -10,12 +9,17 @@ class unetbootin : public QWidget, private Ui::unetbootin
 
 public:
     unetbootin(QWidget *parent = 0);
-    QString fileName;
+    QString nameFloppy;
+    QString nameKernel;
+    QString nameInitrd;
+    QString nameDistro;
 
 private slots:
     void on_FloppyFileSelector_clicked();
     void on_KernelFileSelector_clicked();
     void on_InitrdFileSelector_clicked();
+    void on_cancelbutton_clicked();
+    void on_okbutton_clicked();
 };
 
 #endif

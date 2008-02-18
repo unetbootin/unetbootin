@@ -90,7 +90,7 @@
     <string>...</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label" >
+  <widget class="QLabel" name="labelkernel" >
    <property name="geometry" >
     <rect>
      <x>90</x>
@@ -103,7 +103,7 @@
     <string>Kernel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2" >
+  <widget class="QLabel" name="labelinitrd" >
    <property name="geometry" >
     <rect>
      <x>90</x>
@@ -142,7 +142,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioDistribution" >
+  <widget class="QRadioButton" name="radioDistro" >
    <property name="geometry" >
     <rect>
      <x>10</x>
@@ -155,7 +155,7 @@
     <string>Distribution:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox" >
+  <widget class="QComboBox" name="distroselect" >
    <property name="geometry" >
     <rect>
      <x>140</x>
@@ -165,7 +165,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3" >
+  <widget class="QLabel" name="intromessage" >
    <property name="geometry" >
     <rect>
      <x>20</x>
@@ -178,7 +178,7 @@
     <string>Choose a mode of operation. If unsure, select an option under "Distribution"</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton" >
+  <widget class="QPushButton" name="okbutton" >
    <property name="geometry" >
     <rect>
      <x>340</x>
@@ -191,7 +191,7 @@
     <string>OK</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2" >
+  <widget class="QPushButton" name="cancelbutton" >
    <property name="geometry" >
     <rect>
      <x>430</x>
