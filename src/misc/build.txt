@@ -1,0 +1,34 @@
+set up cross-compile environment, from http://gentoo-wiki.com/HOWTO_MinGW_and_Qt4
+
+/usr/share/qt4/mkspecs/win32-g++/qmake.conf
+
+QMAKE_CC              = i686-mingw32-gcc
+QMAKE_CXX             = i686-mingw32-g++
+QMAKE_INCDIR_QT               = /usr/i686-mingw32/Qt/include
+QMAKE_LIBDIR_QT               = /usr/i686-mingw32/Qt/lib
+QMAKE_LINK            = i686-mingw32-g++
+      QMAKE_COPY_DIR          = cp -r
+      QMAKE_COPY              = cp
+      QMAKE_DEL_FILE          = rm
+QMAKE_MOC             = $$[QT_INSTALL_BINS]/moc
+QMAKE_UIC             = $$[QT_INSTALL_BINS]/uic
+
+qmake.conf attached
+
+set up static compilation, from http://qtnode.net/wiki?title=Building_static
+
+configure -static
+make sub-src
+
+copy qt4 directory to /usr/i586-mingw32-msvc/Qt
+
+sudo cp -r ~/qt-win-opensource-src-4.3.3/qt-win-opensource-src-4.3.3/* /usr/i586-mingw32msvc/Qt/
+
+build static binary
+
+qmake -spec win32-g++
+make
+
+compress using upx:
+
+wine upx.exe -9 unetbootin-final.exe unetbootin.exe
