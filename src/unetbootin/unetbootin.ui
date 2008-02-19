@@ -9,6 +9,18 @@
     <height>283</height>
    </rect>
   </property>
+  <property name="minimumSize" >
+   <size>
+    <width>524</width>
+    <height>283</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>524</width>
+    <height>283</height>
+   </size>
+  </property>
   <property name="windowTitle" >
    <string>UNetbootin</string>
   </property>
@@ -154,6 +166,9 @@
    <property name="text" >
     <string>Distribution:</string>
    </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QComboBox" name="distroselect" >
    <property name="geometry" >
@@ -161,9 +176,119 @@
      <x>140</x>
      <y>70</y>
      <width>371</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 8.04</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 8.04 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.04</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.04 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.10 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.06</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.06 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 8</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 8 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora Rawhide</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora Rawhide x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 7 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE Factory</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE Factory x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.2 x64</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="intromessage" >
    <property name="geometry" >
@@ -171,7 +296,7 @@
      <x>20</x>
      <y>20</y>
      <width>491</width>
-     <height>31</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -182,9 +307,9 @@
    <property name="geometry" >
     <rect>
      <x>340</x>
-     <y>240</y>
+     <y>250</y>
      <width>80</width>
-     <height>29</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -195,13 +320,42 @@
    <property name="geometry" >
     <rect>
      <x>430</x>
-     <y>240</y>
+     <y>250</y>
      <width>80</width>
-     <height>29</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
     <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labeldrive" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>101</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Install to Drive:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DrivePath" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>250</y>
+     <width>31</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>C:\</string>
+   </property>
+   <property name="readOnly" >
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon Feb 18 10:44:12 2008
+** Created: Mon Feb 18 13:30:43 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -39,12 +39,16 @@ public:
     QLabel *intromessage;
     QPushButton *okbutton;
     QPushButton *cancelbutton;
+    QLabel *labeldrive;
+    QLineEdit *DrivePath;
 
     void setupUi(QWidget *unetbootin)
     {
     if (unetbootin->objectName().isEmpty())
         unetbootin->setObjectName(QString::fromUtf8("unetbootin"));
     unetbootin->resize(524, 283);
+    unetbootin->setMinimumSize(QSize(524, 283));
+    unetbootin->setMaximumSize(QSize(524, 283));
     FloppyFileSelector = new QPushButton(unetbootin);
     FloppyFileSelector->setObjectName(QString::fromUtf8("FloppyFileSelector"));
     FloppyFileSelector->setGeometry(QRect(488, 120, 25, 25));
@@ -81,18 +85,26 @@ public:
     radioDistro = new QRadioButton(unetbootin);
     radioDistro->setObjectName(QString::fromUtf8("radioDistro"));
     radioDistro->setGeometry(QRect(10, 70, 141, 25));
+    radioDistro->setChecked(true);
     distroselect = new QComboBox(unetbootin);
     distroselect->setObjectName(QString::fromUtf8("distroselect"));
-    distroselect->setGeometry(QRect(140, 70, 371, 26));
+    distroselect->setGeometry(QRect(140, 70, 371, 25));
     intromessage = new QLabel(unetbootin);
     intromessage->setObjectName(QString::fromUtf8("intromessage"));
-    intromessage->setGeometry(QRect(20, 20, 491, 31));
+    intromessage->setGeometry(QRect(20, 20, 491, 25));
     okbutton = new QPushButton(unetbootin);
     okbutton->setObjectName(QString::fromUtf8("okbutton"));
-    okbutton->setGeometry(QRect(340, 240, 80, 29));
+    okbutton->setGeometry(QRect(340, 250, 80, 25));
     cancelbutton = new QPushButton(unetbootin);
     cancelbutton->setObjectName(QString::fromUtf8("cancelbutton"));
-    cancelbutton->setGeometry(QRect(430, 240, 80, 29));
+    cancelbutton->setGeometry(QRect(430, 250, 80, 25));
+    labeldrive = new QLabel(unetbootin);
+    labeldrive->setObjectName(QString::fromUtf8("labeldrive"));
+    labeldrive->setGeometry(QRect(30, 250, 101, 25));
+    DrivePath = new QLineEdit(unetbootin);
+    DrivePath->setObjectName(QString::fromUtf8("DrivePath"));
+    DrivePath->setGeometry(QRect(140, 250, 31, 25));
+    DrivePath->setReadOnly(true);
 
     retranslateUi(unetbootin);
 
@@ -110,9 +122,36 @@ public:
     labelinitrd->setText(QApplication::translate("unetbootin", "Initrd", 0, QApplication::UnicodeUTF8));
     InitrdFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
     radioDistro->setText(QApplication::translate("unetbootin", "Distribution:", 0, QApplication::UnicodeUTF8));
+    distroselect->clear();
+    distroselect->insertItems(0, QStringList()
+     << QApplication::translate("unetbootin", "Ubuntu 7.10", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.10 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 8.04", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 8.04 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.04", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.04 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.10", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.10 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.06", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.06 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 8", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 8 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora Rawhide", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora Rawhide x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 7", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 7 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE Factory", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE Factory x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.2", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.2 x64", 0, QApplication::UnicodeUTF8)
+    );
     intromessage->setText(QApplication::translate("unetbootin", "Choose a mode of operation. If unsure, select an option under \"Distribution\"", 0, QApplication::UnicodeUTF8));
     okbutton->setText(QApplication::translate("unetbootin", "OK", 0, QApplication::UnicodeUTF8));
     cancelbutton->setText(QApplication::translate("unetbootin", "Cancel", 0, QApplication::UnicodeUTF8));
+    labeldrive->setText(QApplication::translate("unetbootin", "Install to Drive:", 0, QApplication::UnicodeUTF8));
+    DrivePath->setText(QApplication::translate("unetbootin", "C:\\", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootin);
     } // retranslateUi
 

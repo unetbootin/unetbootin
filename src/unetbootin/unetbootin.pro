@@ -8,6 +8,8 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
+CCFLAGS += -static
+CXXFLAGS += -static
 HEADERS += unetbootin.h
 FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp
