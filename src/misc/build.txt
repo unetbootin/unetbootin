@@ -31,4 +31,4 @@ make
 
 compress using upx:
 
-wine upx.exe -9 unetbootin-final.exe unetbootin.exe
+wine upx.exe -9 unetbootin.exe
