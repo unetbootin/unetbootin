@@ -48,12 +48,14 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
     QTextStream out(&file);
     out << fileurl;
     file.close();
+//    file.~QFile();
     QFile file2("outfile.txt");
     if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out2(&file2);
     out2 << targetfile;
     file2.close();
+//    file2.~QFile();
 //    TODO Replace ShellAPI with QProcess
     SHELLEXECUTEINFO ShExecInfo = {0};
     ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
@@ -71,6 +73,21 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 
 void unetbootin::on_okbutton_clicked()
 {
+    targetDrive = driveselect->currentText();
+    QString targetPath = QString("%1unetbtin\\").arg(targetDrive);
+    QDir dir;
+    dir.mkpath(targetPath);
+    QFile file;
+//    file.setFileName(QString("%1\\downlder.exe").arg(dir.currentPath()));
+    file.copy(QString("%1\\downlder.exe").arg(appDir), QString("%1\\downlder.exe").arg(targetPath));
+//    CopyFile("unetbootin.exe", "unetbootin2.exe", false);
+//    printf(qPrintable(QString("Appdir is %1").arg(appDir)));
+//    printf(qPrintable(dir.currentPath()));
+//    printf(qPrintable(app.applicationDirPath()));
+//    dir.drives();
+    dir.setCurrent(targetPath);
+//    file.~QFile();
+//    dir.~QDir();
     if (radioFloppy->isChecked())
     {
 //        printf(qPrintable(nameFloppy));
@@ -82,13 +99,6 @@ void unetbootin::on_okbutton_clicked()
     if (radioDistro->isChecked())
     {
         nameDistro = distroselect->currentText();
-        targetDrive = driveselect->currentText();
-        QString targetPath = QString("%1unetbtin\\").arg(targetDrive);
-        QDir dir;
-        dir.mkpath(targetPath);
-//        printf(qPrintable(dir.currentPath()));
-//        dir.drives();
-        dir.setCurrent(targetPath);
         if (nameDistro == "Ubuntu 7.10")
         {
             downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));

@@ -9,6 +9,7 @@ class unetbootin : public QWidget, private Ui::unetbootin
 
 public:
     unetbootin(QWidget *parent = 0);
+    QString appDir;
     QString nameFloppy;
     QString nameKernel;
     QString nameInitrd;
