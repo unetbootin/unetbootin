@@ -1,6 +1,9 @@
 #include <QtGui>
 #include "unetbootin.h"
 
+#include <windows.h>
+#include <shellapi.h>
+
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
@@ -38,18 +41,32 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
+//    TODO Replace nsis downloader with one based on QNetwork
     QFile file("dlurl.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out(&file);
     out << fileurl;
+    file.close();
     QFile file2("outfile.txt");
     if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out2(&file2);
     out2 << targetfile;
-//    QProcess downloader;
-//    downloader.waitForFinished("ls", int msecs = -1);
+    file2.close();
+//    TODO Replace ShellAPI with QProcess
+    SHELLEXECUTEINFO ShExecInfo = {0};
+    ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+    ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+    ShExecInfo.hwnd = NULL;
+    ShExecInfo.lpVerb = NULL;
+    ShExecInfo.lpFile = L"downlder.exe";
+    ShExecInfo.lpParameters = L"";
+    ShExecInfo.lpDirectory = NULL;
+    ShExecInfo.nShow = SW_SHOW;
+    ShExecInfo.hInstApp = NULL;
+    ShellExecuteEx(&ShExecInfo);
+    WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
 }
 
 void unetbootin::on_okbutton_clicked()
@@ -65,26 +82,32 @@ void unetbootin::on_okbutton_clicked()
     if (radioDistro->isChecked())
     {
         nameDistro = distroselect->currentText();
+        targetDrive = driveselect->currentText();
+        QString targetPath = QString("%1unetbtin\\").arg(targetDrive);
+        QDir dir;
+        dir.mkpath(targetPath);
+//        printf(qPrintable(dir.currentPath()));
+//        dir.drives();
+        dir.setCurrent(targetPath);
         if (nameDistro == "Ubuntu 7.10")
         {
-            QString kernurl = "http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux";
-            downloadfile(kernurl, "ubnkern");
-            QString initurl = "http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
         if (nameDistro == "Ubuntu 7.10 x64")
         {
-            QString kernurl = "http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux";
-            QString initurl = "http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
         if (nameDistro == "Ubuntu 8.04")
         {
-            QString kernurl = "http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux";
-            QString initurl = "http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
         if (nameDistro == "Ubuntu 8.04 x64")
         {
-            QString kernurl = "http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux";
-            QString initurl = "http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
 //        QString args = QApplication::arguments()[1];
 //        printf(qPrintable(args));

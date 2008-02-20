@@ -13,6 +13,7 @@ public:
     QString nameKernel;
     QString nameInitrd;
     QString nameDistro;
+    QString targetDrive;
 
 private slots:
     void on_FloppyFileSelector_clicked();

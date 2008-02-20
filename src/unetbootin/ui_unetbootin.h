@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon Feb 18 13:30:43 2008
+** Created: Tue Feb 19 15:22:27 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -40,7 +40,7 @@ public:
     QPushButton *okbutton;
     QPushButton *cancelbutton;
     QLabel *labeldrive;
-    QLineEdit *DrivePath;
+    QComboBox *driveselect;
 
     void setupUi(QWidget *unetbootin)
     {
@@ -101,10 +101,9 @@ public:
     labeldrive = new QLabel(unetbootin);
     labeldrive->setObjectName(QString::fromUtf8("labeldrive"));
     labeldrive->setGeometry(QRect(30, 250, 101, 25));
-    DrivePath = new QLineEdit(unetbootin);
-    DrivePath->setObjectName(QString::fromUtf8("DrivePath"));
-    DrivePath->setGeometry(QRect(140, 250, 31, 25));
-    DrivePath->setReadOnly(true);
+    driveselect = new QComboBox(unetbootin);
+    driveselect->setObjectName(QString::fromUtf8("driveselect"));
+    driveselect->setGeometry(QRect(140, 250, 50, 25));
 
     retranslateUi(unetbootin);
 
@@ -151,7 +150,10 @@ public:
     okbutton->setText(QApplication::translate("unetbootin", "OK", 0, QApplication::UnicodeUTF8));
     cancelbutton->setText(QApplication::translate("unetbootin", "Cancel", 0, QApplication::UnicodeUTF8));
     labeldrive->setText(QApplication::translate("unetbootin", "Install to Drive:", 0, QApplication::UnicodeUTF8));
-    DrivePath->setText(QApplication::translate("unetbootin", "C:\\", 0, QApplication::UnicodeUTF8));
+    driveselect->clear();
+    driveselect->insertItems(0, QStringList()
+     << QApplication::translate("unetbootin", "C:\\", 0, QApplication::UnicodeUTF8)
+    );
     Q_UNUSED(unetbootin);
     } // retranslateUi
 

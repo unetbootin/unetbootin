@@ -342,21 +342,20 @@
     <string>Install to Drive:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="DrivePath" >
+  <widget class="QComboBox" name="driveselect" >
    <property name="geometry" >
     <rect>
      <x>140</x>
      <y>250</y>
-     <width>31</width>
+     <width>50</width>
      <height>25</height>
     </rect>
    </property>
-   <property name="text" >
-    <string>C:\</string>
-   </property>
-   <property name="readOnly" >
-    <bool>true</bool>
-   </property>
+   <item>
+    <property name="text" >
+     <string>C:\</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
