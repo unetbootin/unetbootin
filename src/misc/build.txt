@@ -36,3 +36,7 @@ wine upx.exe -9 unetbootin.exe
 build downlder:
 
 WINEPREFIX=$(pwd)/nsis wine "C:\Program Files\NSIS\makensis.exe" downlder.nsi
+
+build booteder:
+
+WINEPREFIX=$(pwd)/nsis wine "C:\Program Files\NSIS\makensis.exe" booteder.nsi

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Tue Feb 19 15:22:27 2008
+** Created: Thu Feb 21 19:36:14 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

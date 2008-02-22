@@ -3,10 +3,11 @@ initkern/*
 winbuild/nsis
 src/unetbootin/debug
 src/unetbootin/release
+src/unetbootin/qdevelop-settings.db
 src/unetbootin/main.o
 src/unetbootin/moc_unetbootin.cpp
 src/unetbootin/moc_unetbootin.o
 src/unetbootin/unetbootin
 src/unetbootin/unetbootin.exe
 src/unetbootin/unetbootin.o
-src/downlder/nsis
+

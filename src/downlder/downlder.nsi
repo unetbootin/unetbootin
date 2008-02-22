@@ -1,5 +1,6 @@
 !define PRODUCT_NAME "UNetbootin"
 
+SetCompressor lzma
 RequestExecutionLevel admin
 
 !addplugindir ".\plugins"
