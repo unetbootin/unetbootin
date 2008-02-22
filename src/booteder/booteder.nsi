@@ -1,5 +1,4 @@
 !define PRODUCT_NAME "UNetbootin"
-!define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ubnldr.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
@@ -14,9 +13,10 @@ var /GLOBAL varwinvers
 Name "${PRODUCT_NAME}"
 OutFile "booteder.exe"
 InstallDir "$EXEDIR\.."
-InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
+
+AutoCloseWindow true
 
 Function .onInit
  
@@ -41,36 +41,65 @@ done:
  
 FunctionEnd
 
+Function GetParent
+ 
+  Exch $R0
+  Push $R1
+  Push $R2
+  Push $R3
+  
+  StrCpy $R1 0
+  StrLen $R2 $R0
+  
+  loop:
+    IntOp $R1 $R1 + 1
+    IntCmp $R1 $R2 get 0 get
+    StrCpy $R3 $R0 1 -$R1
+    StrCmp $R3 "\" get
+  Goto loop
+  
+  get:
+    StrCpy $R0 $R0 -$R1
+    
+    Pop $R3
+    Pop $R2
+    Pop $R1
+    Exch $R0
+    
+FunctionEnd
+
 Section "MainSection" SEC01
 
-WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\WIndows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "c:\unetbtin\uninst.exe"
+Push "$EXEDIR"
+Call GetParent
+Pop $R0
+
+WriteRegStr HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce "UNetbootin Uninstaller" "$R0\unetbtin\uninst.exe"
 
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
 
   ${If} $varwinvers >= 6.0
-     ExecWait '"$INSTDIR\unetbtin\emtxfile.exe" "$INSTDIR\unetbtin\vbcdedit.bat" runas'
+     ExecWait '"$R0\unetbtin\emtxfile.exe" "$R0\unetbtin\vbcdedit.bat" runas'
      IfFileExists "$INSTDIR\unetbtin\bcdid" vbtedfin
-     ExecWait '"$INSTDIR\unetbtin\runxfile.exe" "$INSTDIR\unetbtin\vbcdedit.bat" runas'
+     ExecWait '"$R0\unetbtin\runxfile.exe" "$R0\unetbtin\vbcdedit.bat" runas'
      vbtedfin:
   ${Else}
-     ExecWait '"$INSTDIR\unetbtin\runxfile.exe" "$INSTDIR\unetbtin\bootedit.bat"'
+     ExecWait '"$R0\unetbtin\runxfile.exe" "$R0\unetbtin\bootedit.bat"'
   ${EndIf}
 
-  SetFileAttributes "$INSTDIR\config.sys" NORMAL
+  SetFileAttributes "$R0\config.sys" NORMAL
 
-  SetFileAttributes "$INSTDIR\..\boot.ini" NORMAL
-  WriteIniStr "$INSTDIR\..\boot.ini" "operating systems" "$INSTDIR\ubnldr.mbr" '"UNetbootin"'
-  WriteIniStr "$INSTDIR\..\boot.ini" "boot loader" "timeout" 15 
+  SetFileAttributes "$R0\boot.ini" NORMAL
+  WriteIniStr "$R0\boot.ini" "operating systems" "$R0\ubnldr.mbr" '"UNetbootin"'
+  WriteIniStr "$R0\boot.ini" "boot loader" "timeout" 15 
   
 SectionEnd
 
 Section -Post
-  WriteUninstaller "$INSTDIR\unetbtin\uninst.exe"
-  WriteRegStr HKLM "${PRODUCT_DIR_REGKEY}" "" "$INSTDIR\ubnldr.exe"
+  WriteUninstaller "$R0\unetbtin\uninst.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayName" "UNetbootin"
-  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString" "$INSTDIR\unetbtin\uninst.exe"
-  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayIcon" "$INSTDIR\ubnldr.exe"
+  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString" "$R0\unetbtin\uninst.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayVersion" "1"
 
       MessageBox MB_YESNO|MB_ICONQUESTION "You need to reboot to complete the installation. Select the UNetbootin boot menu entry on the next bootup. Do you want to reboot now?" IDNO +2
@@ -92,7 +121,34 @@ FunctionEnd
 
 Section Uninstall
 
-StrCpy $R7 "$INSTDIR\.."
+Push $INSTDIR
+
+  Exch $R0
+  Push $R1
+  Push $R2
+  Push $R3
+  
+  StrCpy $R1 0
+  StrLen $R2 $R0
+  
+  loop:
+    IntOp $R1 $R1 + 1
+    IntCmp $R1 $R2 get 0 get
+    StrCpy $R3 $R0 1 -$R1
+    StrCmp $R3 "\" get
+  Goto loop
+  
+  get:
+    StrCpy $R0 $R0 -$R1
+    
+    Pop $R3
+    Pop $R2
+    Pop $R1
+    Exch $R0
+
+Pop $R0
+
+StrCpy "$R7" "$R0"
 
   ReadRegStr $varwinvers HKLM \
   "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
@@ -116,6 +172,5 @@ StrCpy $R7 "$INSTDIR\.."
 
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
-  DeleteRegKey HKLM "${PRODUCT_DIR_REGKEY}"
   SetAutoClose true
 SectionEnd

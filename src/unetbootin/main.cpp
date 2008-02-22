@@ -1,4 +1,6 @@
 #include <QApplication>
+#include <QSettings>
+#include <QProcess>
 #include "unetbootin.h"
 
 int main(int argc, char *argv[])
