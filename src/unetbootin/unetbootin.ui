@@ -332,28 +332,61 @@
   <widget class="QLabel" name="labeldrive" >
    <property name="geometry" >
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>250</y>
-     <width>101</width>
+     <width>41</width>
      <height>25</height>
     </rect>
    </property>
    <property name="text" >
-    <string>Install to Drive:</string>
+    <string>Drive:</string>
    </property>
   </widget>
   <widget class="QComboBox" name="driveselect" >
    <property name="geometry" >
     <rect>
-     <x>140</x>
+     <x>50</x>
      <y>250</y>
-     <width>50</width>
+     <width>51</width>
      <height>25</height>
     </rect>
    </property>
    <item>
     <property name="text" >
      <string>C:\</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="labeldrive_2" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>250</y>
+     <width>32</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Type:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="driveselect_2" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>250</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Hard Disk</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>USB Drive</string>
     </property>
    </item>
   </widget>

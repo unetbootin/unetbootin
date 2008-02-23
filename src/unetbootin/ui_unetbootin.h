@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Thu Feb 21 19:36:14 2008
+** Created: Fri Feb 22 16:26:17 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -41,6 +41,8 @@ public:
     QPushButton *cancelbutton;
     QLabel *labeldrive;
     QComboBox *driveselect;
+    QLabel *labeldrive_2;
+    QComboBox *driveselect_2;
 
     void setupUi(QWidget *unetbootin)
     {
@@ -100,10 +102,16 @@ public:
     cancelbutton->setGeometry(QRect(430, 250, 80, 25));
     labeldrive = new QLabel(unetbootin);
     labeldrive->setObjectName(QString::fromUtf8("labeldrive"));
-    labeldrive->setGeometry(QRect(30, 250, 101, 25));
+    labeldrive->setGeometry(QRect(10, 250, 41, 25));
     driveselect = new QComboBox(unetbootin);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
-    driveselect->setGeometry(QRect(140, 250, 50, 25));
+    driveselect->setGeometry(QRect(50, 250, 51, 25));
+    labeldrive_2 = new QLabel(unetbootin);
+    labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
+    labeldrive_2->setGeometry(QRect(140, 250, 32, 25));
+    driveselect_2 = new QComboBox(unetbootin);
+    driveselect_2->setObjectName(QString::fromUtf8("driveselect_2"));
+    driveselect_2->setGeometry(QRect(180, 250, 91, 25));
 
     retranslateUi(unetbootin);
 
@@ -149,10 +157,16 @@ public:
     intromessage->setText(QApplication::translate("unetbootin", "Choose a mode of operation. If unsure, select an option under \"Distribution\"", 0, QApplication::UnicodeUTF8));
     okbutton->setText(QApplication::translate("unetbootin", "OK", 0, QApplication::UnicodeUTF8));
     cancelbutton->setText(QApplication::translate("unetbootin", "Cancel", 0, QApplication::UnicodeUTF8));
-    labeldrive->setText(QApplication::translate("unetbootin", "Install to Drive:", 0, QApplication::UnicodeUTF8));
+    labeldrive->setText(QApplication::translate("unetbootin", "Drive:", 0, QApplication::UnicodeUTF8));
     driveselect->clear();
     driveselect->insertItems(0, QStringList()
      << QApplication::translate("unetbootin", "C:\\", 0, QApplication::UnicodeUTF8)
+    );
+    labeldrive_2->setText(QApplication::translate("unetbootin", "Type:", 0, QApplication::UnicodeUTF8));
+    driveselect_2->clear();
+    driveselect_2->insertItems(0, QStringList()
+     << QApplication::translate("unetbootin", "Hard Disk", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "USB Drive", 0, QApplication::UnicodeUTF8)
     );
     Q_UNUSED(unetbootin);
     } // retranslateUi

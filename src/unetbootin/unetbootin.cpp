@@ -11,19 +11,6 @@
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
-	QSettings chkinst("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-//	if (chkinst.contains("UninstallString"))
-//	{
-//		QProcess uninst;
-//		QVariant uninstvar = chkinst.value("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin");
-//		QString uninstpath = uninstvar.value<QString>();
-//		QString uninstpath = uninstvar.toString();
-//		printf(qPrintable(uninstpath));
-//		uninst.start(uninstpath);
-//		uninst.waitForFinished(-1);
-//		uninst.~QProcess();
-//	}
-//	chkinst.~QSettings();
     setupUi(this);
 }
 
