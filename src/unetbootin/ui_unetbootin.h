@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Fri Feb 22 19:48:58 2008
+** Created: Fri Feb 22 23:17:54 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -42,7 +42,7 @@ public:
     QLabel *labeldrive;
     QComboBox *driveselect;
     QLabel *labeldrive_2;
-    QComboBox *driveselect_2;
+    QComboBox *typeselect;
 
     void setupUi(QWidget *unetbootin)
     {
@@ -105,15 +105,20 @@ public:
     labeldrive->setGeometry(QRect(10, 250, 41, 25));
     driveselect = new QComboBox(unetbootin);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
+    driveselect->setEnabled(false);
     driveselect->setGeometry(QRect(50, 250, 51, 25));
     labeldrive_2 = new QLabel(unetbootin);
     labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
     labeldrive_2->setGeometry(QRect(140, 250, 32, 25));
-    driveselect_2 = new QComboBox(unetbootin);
-    driveselect_2->setObjectName(QString::fromUtf8("driveselect_2"));
-    driveselect_2->setGeometry(QRect(180, 250, 91, 25));
+    typeselect = new QComboBox(unetbootin);
+    typeselect->setObjectName(QString::fromUtf8("typeselect"));
+    typeselect->setEnabled(false);
+    typeselect->setGeometry(QRect(180, 250, 91, 25));
 
     retranslateUi(unetbootin);
+
+    distroselect->setCurrentIndex(2);
+
 
     QMetaObject::connectSlotsByName(unetbootin);
     } // setupUi
@@ -131,26 +136,26 @@ public:
     radioDistro->setText(QApplication::translate("unetbootin", "Distribution:", 0, QApplication::UnicodeUTF8));
     distroselect->clear();
     distroselect->insertItems(0, QStringList()
-     << QApplication::translate("unetbootin", "Ubuntu 7.10", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 7.10 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 8.04", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 8.04 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.10", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.10 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 7.04", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 7.04 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 6.10", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 6.10 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 6.06", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Ubuntu 6.06 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 9 Alpha", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 9 Alpha x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Fedora 8", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Fedora 8 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora Rawhide", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora Rawhide x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Fedora 7", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Fedora 7 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.3", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE Factory", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE Factory x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE 10.2", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE 10.2 x64", 0, QApplication::UnicodeUTF8)
     );
@@ -163,8 +168,8 @@ public:
      << QApplication::translate("unetbootin", "C:", 0, QApplication::UnicodeUTF8)
     );
     labeldrive_2->setText(QApplication::translate("unetbootin", "Type:", 0, QApplication::UnicodeUTF8));
-    driveselect_2->clear();
-    driveselect_2->insertItems(0, QStringList()
+    typeselect->clear();
+    typeselect->insertItems(0, QStringList()
      << QApplication::translate("unetbootin", "Hard Disk", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "USB Drive", 0, QApplication::UnicodeUTF8)
     );

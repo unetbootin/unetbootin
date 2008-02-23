@@ -179,16 +179,9 @@
      <height>25</height>
     </rect>
    </property>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10 x64</string>
-    </property>
-   </item>
+   <property name="currentIndex" >
+    <number>2</number>
+   </property>
    <item>
     <property name="text" >
      <string>Ubuntu 8.04</string>
@@ -197,6 +190,16 @@
    <item>
     <property name="text" >
      <string>Ubuntu 8.04 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10 x64</string>
     </property>
    </item>
    <item>
@@ -231,22 +234,22 @@
    </item>
    <item>
     <property name="text" >
+     <string>Fedora 9 Alpha</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 9 Alpha x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
      <string>Fedora 8</string>
     </property>
    </item>
    <item>
     <property name="text" >
      <string>Fedora 8 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora Rawhide</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora Rawhide x64</string>
     </property>
    </item>
    <item>
@@ -261,22 +264,22 @@
    </item>
    <item>
     <property name="text" >
-     <string>openSUSE 10.3</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.3 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
      <string>openSUSE Factory</string>
     </property>
    </item>
    <item>
     <property name="text" >
      <string>openSUSE Factory x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3 x64</string>
     </property>
    </item>
    <item>
@@ -343,6 +346,9 @@
    </property>
   </widget>
   <widget class="QComboBox" name="driveselect" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="geometry" >
     <rect>
      <x>50</x>
@@ -370,7 +376,10 @@
     <string>Type:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="driveselect_2" >
+  <widget class="QComboBox" name="typeselect" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="geometry" >
     <rect>
      <x>180</x>

@@ -83,6 +83,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 
 void unetbootin::on_okbutton_clicked()
 {
+	QString kernelLine("kernel /unetbtin/ubnkern");
+	QString kernelOpts;
+	QString initrdLine("initrd /unetbtin/ubninit");
+	QString initrdOpts;
+	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
     targetPath = QString("%1\\unetbtin\\").arg(targetDrive);
     QFile file;
@@ -134,25 +139,137 @@ void unetbootin::on_okbutton_clicked()
     if (radioDistro->isChecked())
     {
         nameDistro = distroselect->currentText();
-        if (nameDistro == "Ubuntu 7.10")
-        {
-            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
-            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
-        }
-        if (nameDistro == "Ubuntu 7.10 x64")
-        {
-            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
-            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
-        }
         if (nameDistro == "Ubuntu 8.04")
         {
+        	kernelOpts = "vga=normal";
             downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
             downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
         if (nameDistro == "Ubuntu 8.04 x64")
         {
+        	kernelOpts = "vga=normal";
             downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
             downloadfile("http://archive.ubuntu.com/ubuntu/dists/hardy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 7.10")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 7.10 x64")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 7.04")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/feisty/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/feisty/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 7.04 x64")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/feisty/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/feisty/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 6.10")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/edgy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/edgy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 6.10 x64")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/edgy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/edgy/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 6.06")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/dapper/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/dapper/main/installer-i386/current/images/netboot/ubuntu-installer/i386/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Ubuntu 6.06 x64")
+        {
+        	kernelOpts = "vga=normal";
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/dapper/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://archive.ubuntu.com/ubuntu/dists/dapper/main/installer-amd64/current/images/netboot/ubuntu-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 9 Alpha")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/i386/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/i386/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 9 Alpha x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 8")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/i386/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/i386/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 8 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 7")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/i386/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/i386/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "Fedora 7 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE Factory")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE Factory x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE 10.3")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE 10.3 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE 10.2")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "openSUSE 10.2 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
         }
 //        QString args = QApplication::arguments()[1];
 //        printf(qPrintable(args));
@@ -164,15 +281,34 @@ void unetbootin::on_okbutton_clicked()
 //            QUrl kernurl("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux")
 //        }
     }
-    QProcess inprocess;
-    inprocess.start(QString("%1booteder.exe").arg(targetPath));
-    inprocess.waitForFinished(-1);
-    QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-    install.setValue("Location", targetDrive);
-    install.setValue("DisplayName", "UNetbootin");
-    install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
-    QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-    runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
-//    inprocess.~QProcess();
+    if (installType == "Hard Disk")
+    {
+    	QFile menulst(QString("%1menu.lst").arg(targetPath));
+    	if (!menulst.open(QIODevice::WriteOnly | QIODevice::Text))
+		return;
+		QTextStream menulstout(&menulst);
+		QString menulstxt = QString("default 0\n"
+		"timeout 3\n"
+		"title UNetbootin\n"
+		"find --set-root /unetbtin/ubnkern\n"
+		"%1 %2\n"
+		"%3 %4\n"
+		"boot").arg(kernelLine, kernelOpts, initrdLine, initrdOpts);
+		menulstout << menulstxt << endl;
+    	QProcess inprocess;
+    	inprocess.start(QString("%1booteder.exe").arg(targetPath));
+    	inprocess.waitForFinished(-1);
+    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+    	install.setValue("Location", targetDrive);
+    	install.setValue("DisplayName", "UNetbootin");
+    	install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
+    	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
+    	runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
+//		inprocess.~QProcess();
+   	}
 //    close();
+//	if (installType == "USB Drive")
+//	{
+//		TODO
+//	}
 }

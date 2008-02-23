@@ -16,6 +16,7 @@ public:
     QString nameDistro;
     QString targetDrive;
     QString targetPath;
+    QString installType;
 
 private slots:
     void on_FloppyFileSelector_clicked();
