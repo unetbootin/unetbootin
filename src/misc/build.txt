@@ -29,6 +29,10 @@ build static binary
 qmake -spec win32-g++
 make
 
+add in manifest:
+
+mt.exe -manifest unetbootin.exe.manifest -outputresource:unetbootin.exe;#1
+
 compress using upx:
 
 wine upx.exe -9 unetbootin.exe
