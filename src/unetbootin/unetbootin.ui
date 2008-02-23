@@ -353,7 +353,7 @@
    </property>
    <item>
     <property name="text" >
-     <string>C:\</string>
+     <string>C:</string>
     </property>
    </item>
   </widget>

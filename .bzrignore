@@ -10,4 +10,4 @@ src/unetbootin/moc_unetbootin.o
 src/unetbootin/unetbootin
 src/unetbootin/unetbootin.exe
 src/unetbootin/unetbootin.o
-
+src/unetbootin/qrc_unetbootin.cpp

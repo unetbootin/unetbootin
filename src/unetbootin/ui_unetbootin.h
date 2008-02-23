@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Fri Feb 22 16:26:17 2008
+** Created: Fri Feb 22 19:48:58 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -160,7 +160,7 @@ public:
     labeldrive->setText(QApplication::translate("unetbootin", "Drive:", 0, QApplication::UnicodeUTF8));
     driveselect->clear();
     driveselect->insertItems(0, QStringList()
-     << QApplication::translate("unetbootin", "C:\\", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "C:", 0, QApplication::UnicodeUTF8)
     );
     labeldrive_2->setText(QApplication::translate("unetbootin", "Type:", 0, QApplication::UnicodeUTF8));
     driveselect_2->clear();
