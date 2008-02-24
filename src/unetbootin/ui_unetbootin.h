@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Fri Feb 22 23:17:54 2008
+** Created: Sat Feb 23 16:05:03 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -112,7 +112,7 @@ public:
     labeldrive_2->setGeometry(QRect(140, 250, 32, 25));
     typeselect = new QComboBox(unetbootin);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
-    typeselect->setEnabled(false);
+    typeselect->setEnabled(true);
     typeselect->setGeometry(QRect(180, 250, 91, 25));
 
     retranslateUi(unetbootin);

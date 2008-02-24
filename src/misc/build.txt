@@ -35,7 +35,7 @@ mt.exe -manifest unetbootin.exe.manifest -outputresource:unetbootin.exe;#1
 
 compress using upx:
 
-wine upx.exe -9 unetbootin.exe
+./upx --lzma unetbootin.exe
 
 build downlder:
 

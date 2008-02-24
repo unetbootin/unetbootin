@@ -3,6 +3,7 @@
 #include <QTextStream>
 #include <QProcess>
 #include <QSettings>
+#include <QSysInfo>
 #include "unetbootin.h"
 
 //#include <windows.h>
@@ -304,6 +305,27 @@ void unetbootin::on_okbutton_clicked()
     	install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
     	runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
+		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
+		if (wvr == QSysInfo::WV_DOS_based)
+		{
+//			TODO
+		}
+		else if (wvr == QSysInfo::WV_NT_based)
+		{
+			if (wvr == QSysInfo::WV_NT || wvr == QSysInfo::WV_2000 || wvr == QSysInfo::WV_XP || wvr == QSysInfo::WV_2003 )
+			{
+//				TODO
+			}
+			else if (wvr == QSysInfo::WV_VISTA)
+			{
+//				TODO
+			}
+			else
+			{
+//				TODO
+			}
+//			TODO
+		}
 //		inprocess.~QProcess();
    	}
 //    close();
