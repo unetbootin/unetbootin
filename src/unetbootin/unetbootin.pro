@@ -8,3 +8,4 @@ FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp
 RESOURCES += unetbootin.qrc
 QMAKE_LFLAGS += -Wl,-subsystem,windows
+RC_FILE += ubnembed.rc
