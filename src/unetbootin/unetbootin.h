@@ -25,6 +25,7 @@ private slots:
     void on_cancelbutton_clicked();
     void downloadfile(QString fileurl, QString targetfile);
     void on_okbutton_clicked();
+    void runinst();
 };
 
 #endif

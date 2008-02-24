@@ -3,6 +3,7 @@
 rvern="r$(bzr version-info | grep revno | sed 's/revno: //')"
 #qmake -spec win32-g++
 make clean
+rm release/*
 make
 xdelta patch unetbootin.xdelta release/unetbootin.exe release/unetbootin-$rvern.exe
 ./upx --lzma release/unetbootin-$rvern.exe

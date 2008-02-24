@@ -84,6 +84,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 
 void unetbootin::on_okbutton_clicked()
 {
+	runinst();
+}
+
+void unetbootin::runinst()
+{
 	QString kernelLine("kernel /unetbtin/ubnkern");
 	QString kernelOpts;
 	QString initrdLine("initrd /unetbtin/ubninit");
@@ -102,7 +107,7 @@ void unetbootin::on_okbutton_clicked()
     file.copy(":/booteder.exe", QString("%1booteder.exe").arg(targetPath));
     file.copy(":/emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
     file.copy(":/runxfile.exe", QString("%1runxfile.exe").arg(targetPath));
-    file.copy(":/tr.exe", QString("%1downlder.exe").arg(targetPath));
+    file.copy(":/tr.exe", QString("%1tr.exe").arg(targetPath));
     file.copy(":/ubnldr.exe", QString("%1\\ubnldr.exe").arg(targetDrive));
     file.copy(":/ubnldr", QString("%1\\ubnldr").arg(targetDrive));
     file.copy(":/ubnldr.mbr", QString("%1\\ubnldr.mbr").arg(targetDrive));
@@ -135,7 +140,7 @@ void unetbootin::on_okbutton_clicked()
     {
     	file.copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
     	file.copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
-//        printf(qPrintable(nameKernel));
+		kernelOpts = OptionEnter->text();
     }
     if (radioDistro->isChecked())
     {
