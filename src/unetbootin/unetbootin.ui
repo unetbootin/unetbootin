@@ -477,6 +477,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="unetbootin.qrc" />
+ </resources>
  <connections/>
 </ui>

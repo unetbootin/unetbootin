@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QSettings>
 #include <QProcess>
+#include <QMessageBox>
 #include "unetbootin.h"
 
 int main(int argc, char *argv[])
@@ -10,12 +11,26 @@ int main(int argc, char *argv[])
 	if (chkinst.contains("Location"))
 	{
 //		/*
-		QProcess uninst;
-		QVariant uninstvar(QVariant::String);
-		uninstvar = chkinst.value("Location");
-		QString uninstpath = uninstvar.value<QString>();
-		uninst.start(QString("%1\\unetbtin\\booteder.exe").arg(uninstpath));
-		uninst.waitForFinished(-1);
+		QMessageBox msgBox;
+		msgBox.setWindowTitle("UNetbootin Uninstaller");
+		msgBox.setText("UNetbootin is currently installed. Remove the existing version?");
+ 		msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+ 		switch (msgBox.exec())
+ 		{
+ 			case QMessageBox::Ok:
+ 			{
+ 				QProcess uninst;
+				QVariant uninstvar(QVariant::String);
+				uninstvar = chkinst.value("Location");
+				QString uninstpath = uninstvar.value<QString>();
+				uninst.start(QString("%1\\unetbtin\\booteder.exe").arg(uninstpath));
+				uninst.waitForFinished(-1);
+			}
+			case QMessageBox::Cancel:
+				break;
+	 		default:
+				break;
+ 		}
 //		*/
 //		chkinst.clear();
 		return 0;

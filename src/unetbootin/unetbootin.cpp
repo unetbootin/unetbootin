@@ -47,13 +47,13 @@ void unetbootin::on_cancelbutton_clicked()
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
 //    TODO Replace nsis downloader with one based on QNetwork
-    QFile file("dlurl.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    QFile file1("dlurl.txt");
+    if (!file1.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
-    QTextStream out(&file);
-    out << fileurl;
-    file.close();
-//    file.~QFile();
+    QTextStream out1(&file1);
+    out1 << fileurl;
+    file1.close();
+//    file1.~QFile();
     QFile file2("outfile.txt");
     if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
@@ -121,6 +121,7 @@ void unetbootin::runinst()
     file.copy(":/vbcdundo.pif", QString("%1vbcdundo.pif").arg(targetPath));
     file.copy(":/config.sup", QString("%1config.sup").arg(targetPath));
     file.copy(":/menu.lst", QString("%1menu.lst").arg(targetPath));
+    file.close();
 //    CopyFile("unetbootin.exe", "unetbootin2.exe", false);
 //    printf(qPrintable(QString("Appdir is %1").arg(appDir)));
 //    printf(qPrintable(dir.currentPath()));

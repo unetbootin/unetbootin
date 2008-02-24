@@ -1,22 +1,22 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource>
-<file>booteder.exe</file>
-<file>bootedit.bat</file>
-<file>bootedit.pif</file>
-<file>bootundo.bat</file>
-<file>bootundo.pif</file>
-<file>config.sup</file>
-<file>downlder.exe</file>
-<file>emtxfile.exe</file>
-<file>memdisk</file>
-<file>runxfile.exe</file>
-<file>tr.exe</file>
-<file>ubnldr</file>
-<file>ubnldr.exe</file>
-<file>ubnldr.mbr</file>
-<file>vbcdedit.bat</file>
-<file>vbcdedit.pif</file>
-<file>vbcdundo.bat</file>
-<file>vbcdundo.pif</file>
-</qresource>
+<RCC>
+    <qresource prefix="/" >
+        <file>booteder.exe</file>
+        <file>bootedit.bat</file>
+        <file>bootedit.pif</file>
+        <file>bootundo.bat</file>
+        <file>bootundo.pif</file>
+        <file>config.sup</file>
+        <file>downlder.exe</file>
+        <file>emtxfile.exe</file>
+        <file>memdisk</file>
+        <file>runxfile.exe</file>
+        <file>tr.exe</file>
+        <file>ubnldr</file>
+        <file>ubnldr.exe</file>
+        <file>ubnldr.mbr</file>
+        <file>vbcdedit.bat</file>
+        <file>vbcdedit.pif</file>
+        <file>vbcdundo.bat</file>
+        <file>vbcdundo.pif</file>
+    </qresource>
 </RCC>
