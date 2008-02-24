@@ -1,0 +1,4 @@
+;!@Install@!UTF-8!
+RunProgram="unetbtin.exe"
+;!@InstallEnd@!
+

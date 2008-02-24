@@ -4,6 +4,7 @@
 #include <QProcess>
 #include <QSettings>
 #include <QSysInfo>
+#include <QMessageBox>
 #include "unetbootin.h"
 
 //#include <windows.h>
@@ -17,7 +18,7 @@ unetbootin::unetbootin(QWidget *parent)
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-    nameFloppy = QFileDialog::getOpenFileName();
+    nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     FloppyPath->clear();
     FloppyPath->insert(nameFloppy);
     radioFloppy->setChecked(1);
@@ -25,7 +26,7 @@ void unetbootin::on_FloppyFileSelector_clicked()
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-    nameKernel = QFileDialog::getOpenFileName();
+    nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     KernelPath->clear();
     KernelPath->insert(nameKernel);
     radioManual->setChecked(1);
@@ -33,7 +34,7 @@ void unetbootin::on_KernelFileSelector_clicked()
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-    nameInitrd = QFileDialog::getOpenFileName();
+    nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     InitrdPath->clear();
     InitrdPath->insert(nameInitrd);
     radioManual->setChecked(1);
@@ -53,14 +54,15 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
     QTextStream out1(&file1);
     out1 << fileurl;
     file1.close();
-//    file1.~QFile();
+//	file1.~QFile();
     QFile file2("outfile.txt");
     if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out2(&file2);
     out2 << targetfile;
     file2.close();
-//    file2.~QFile();
+//	delete file2;
+//	file2.~QFile();
     QProcess dlprocess;
     dlprocess.start(QString("%1downlder.exe").arg(targetPath));
     dlprocess.waitForFinished(-1);
@@ -96,32 +98,35 @@ void unetbootin::runinst()
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
     targetPath = QString("%1\\unetbtin\\").arg(targetDrive);
-    QFile file;
+//	QFile file;
     QDir dir;
     dir.mkpath(targetPath);
 //    QSettings ubnset("UNetbootin");
 //    ubnset.setValue("location", QString("%1uninst.exe").arg(targetPath));
 //    ubnset.~QSettings();
 //    file.setFileName(QString("%1\\downlder.exe").arg(dir.currentPath()));
-    file.copy(":/downlder.exe", QString("%1downlder.exe").arg(targetPath));
-    file.copy(":/booteder.exe", QString("%1booteder.exe").arg(targetPath));
-    file.copy(":/emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
-    file.copy(":/runxfile.exe", QString("%1runxfile.exe").arg(targetPath));
-    file.copy(":/tr.exe", QString("%1tr.exe").arg(targetPath));
-    file.copy(":/ubnldr.exe", QString("%1\\ubnldr.exe").arg(targetDrive));
-    file.copy(":/ubnldr", QString("%1\\ubnldr").arg(targetDrive));
-    file.copy(":/ubnldr.mbr", QString("%1\\ubnldr.mbr").arg(targetDrive));
-    file.copy(":/bootedit.bat", QString("%1bootedit.bat").arg(targetPath));
-    file.copy(":/bootedit.pif", QString("%1bootedit.pif").arg(targetPath));
-    file.copy(":/bootundo.bat", QString("%1bootundo.bat").arg(targetPath));
-    file.copy(":/bootundo.pif", QString("%1bootundo.pif").arg(targetPath));
-    file.copy(":/vbcdedit.bat", QString("%1vbcdedit.bat").arg(targetPath));
-    file.copy(":/vbcdedit.pif", QString("%1vbcdedit.pif").arg(targetPath));
-    file.copy(":/vbcdundo.bat", QString("%1vbcdundo.bat").arg(targetPath));
-    file.copy(":/vbcdundo.pif", QString("%1vbcdundo.pif").arg(targetPath));
-    file.copy(":/config.sup", QString("%1config.sup").arg(targetPath));
-    file.copy(":/menu.lst", QString("%1menu.lst").arg(targetPath));
-    file.close();
+//	QMessageBox::information(this, "information", QString("appDir is %1").arg(dir.currentPath()));
+//	QMessageBox::information(this, "information", QString("realLocation is %1").arg(dir.absoluteFilePath(":/downlder.exe")));
+    QFile::copy(QString("%1downlder.exe").arg(appDir), QString("%1downlder.exe").arg(targetPath));
+    QFile::copy(QString("%1booteder.exe").arg(appDir), QString("%1booteder.exe").arg(targetPath));
+    QFile::copy(QString("%1emtxfile.exe").arg(appDir), QString("%1emtxfile.exe").arg(targetPath));
+    QFile::copy(QString("%1runxfile.exe").arg(appDir), QString("%1runxfile.exe").arg(targetPath));
+    QFile::copy(QString("%1tr.exe").arg(appDir), QString("%1tr.exe").arg(targetPath));
+    QFile::copy(QString("%1ubnldr.exe").arg(appDir), QString("%1\\ubnldr.exe").arg(targetDrive));
+    QFile::copy(QString("%1ubnldr").arg(appDir), QString("%1\\ubnldr").arg(targetDrive));
+    QFile::copy(QString("%1ubnldr.mbr").arg(appDir), QString("%1\\ubnldr.mbr").arg(targetDrive));
+    QFile::copy(QString("%1bootedit.bat").arg(appDir), QString("%1bootedit.bat").arg(targetPath));
+    QFile::copy(QString("%1bootedit.pif").arg(appDir), QString("%1bootedit.pif").arg(targetPath));
+    QFile::copy(QString("%1bootundo.bat").arg(appDir), QString("%1bootundo.bat").arg(targetPath));
+    QFile::copy(QString("%1bootundo.pif").arg(appDir), QString("%1bootundo.pif").arg(targetPath));
+    QFile::copy(QString("%1vbcdedit.bat").arg(appDir), QString("%1vbcdedit.bat").arg(targetPath));
+    QFile::copy(QString("%1vbcdedit.pif").arg(appDir), QString("%1vbcdedit.pif").arg(targetPath));
+    QFile::copy(QString("%1vbcdundo.bat").arg(appDir), QString("%1vbcdundo.bat").arg(targetPath));
+    QFile::copy(QString("%1vbcdundo.pif").arg(appDir), QString("%1vbcdundo.pif").arg(targetPath));
+    QFile::copy(QString("%1config.sup").arg(appDir), QString("%1config.sup").arg(targetPath));
+    QFile::copy(QString("%1menu.lst").arg(appDir), QString("%1menu.lst").arg(targetPath));
+	QFile::copy(QString("%1unetbtin.exe").arg(appDir), QString("%1unetbtin.exe").arg(targetPath));
+//    file.close();
 //    CopyFile("unetbootin.exe", "unetbootin2.exe", false);
 //    printf(qPrintable(QString("Appdir is %1").arg(appDir)));
 //    printf(qPrintable(dir.currentPath()));
@@ -133,14 +138,14 @@ void unetbootin::runinst()
 //    dir.~QDir();
     if (radioFloppy->isChecked())
     {
-    	file.copy(":/memdisk", QString("%1ubnkern").arg(targetPath));
-    	file.copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+    	QFile::copy(":/memdisk", QString("%1ubnkern").arg(targetPath));
+    	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
 //        printf(qPrintable(nameFloppy));
     }
     if (radioManual->isChecked())
     {
-    	file.copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
-    	file.copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
+    	QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
+    	QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
 		kernelOpts = OptionEnter->text();
     }
     if (radioDistro->isChecked())
@@ -339,4 +344,5 @@ void unetbootin::runinst()
 //	{
 //		TODO
 //	}
+//	Q_CLEANUP_RESOURCE(unetbootin);
 }
