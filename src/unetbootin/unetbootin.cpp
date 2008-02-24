@@ -7,9 +7,6 @@
 #include <QMessageBox>
 #include "unetbootin.h"
 
-//#include <windows.h>
-//#include <shellapi.h>
-
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
@@ -47,41 +44,21 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
-//    TODO Replace nsis downloader with one based on QNetwork
     QFile file1("dlurl.txt");
     if (!file1.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out1(&file1);
     out1 << fileurl;
     file1.close();
-//	file1.~QFile();
     QFile file2("outfile.txt");
     if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
     return;
     QTextStream out2(&file2);
     out2 << targetfile;
     file2.close();
-//	delete file2;
-//	file2.~QFile();
     QProcess dlprocess;
     dlprocess.start(QString("%1downlder.exe").arg(targetPath));
     dlprocess.waitForFinished(-1);
-//    dlprocess.~QProcess();
-//    TODO Replace ShellAPI with QProcess
-/*
-    SHELLEXECUTEINFO ShExecInfo = {0};
-    ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-    ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-    ShExecInfo.hwnd = NULL;
-    ShExecInfo.lpVerb = NULL;
-    ShExecInfo.lpFile = L"downlder.exe";
-    ShExecInfo.lpParameters = L"";
-    ShExecInfo.lpDirectory = NULL;
-    ShExecInfo.nShow = SW_SHOW;
-    ShExecInfo.hInstApp = NULL;
-    ShellExecuteEx(&ShExecInfo);
-    WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
-*/
 }
 
 void unetbootin::on_okbutton_clicked()
@@ -98,15 +75,8 @@ void unetbootin::runinst()
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
     targetPath = QString("%1\\unetbtin\\").arg(targetDrive);
-//	QFile file;
     QDir dir;
     dir.mkpath(targetPath);
-//    QSettings ubnset("UNetbootin");
-//    ubnset.setValue("location", QString("%1uninst.exe").arg(targetPath));
-//    ubnset.~QSettings();
-//    file.setFileName(QString("%1\\downlder.exe").arg(dir.currentPath()));
-//	QMessageBox::information(this, "information", QString("appDir is %1").arg(dir.currentPath()));
-//	QMessageBox::information(this, "information", QString("realLocation is %1").arg(dir.absoluteFilePath(":/downlder.exe")));
     QFile::copy(QString("%1downlder.exe").arg(appDir), QString("%1downlder.exe").arg(targetPath));
     QFile::copy(QString("%1booteder.exe").arg(appDir), QString("%1booteder.exe").arg(targetPath));
     QFile::copy(QString("%1emtxfile.exe").arg(appDir), QString("%1emtxfile.exe").arg(targetPath));
@@ -126,21 +96,12 @@ void unetbootin::runinst()
     QFile::copy(QString("%1config.sup").arg(appDir), QString("%1config.sup").arg(targetPath));
     QFile::copy(QString("%1menu.lst").arg(appDir), QString("%1menu.lst").arg(targetPath));
 	QFile::copy(QString("%1unetbtin.exe").arg(appDir), QString("%1unetbtin.exe").arg(targetPath));
-//    file.close();
-//    CopyFile("unetbootin.exe", "unetbootin2.exe", false);
-//    printf(qPrintable(QString("Appdir is %1").arg(appDir)));
-//    printf(qPrintable(dir.currentPath()));
-//    printf(qPrintable(app.applicationDirPath()));
-//    dir.drives();
     dir.setCurrent(targetPath);
     close();
-//    file.~QFile();
-//    dir.~QDir();
     if (radioFloppy->isChecked())
     {
-    	QFile::copy(":/memdisk", QString("%1ubnkern").arg(targetPath));
+    	QFile::copy(QString("%1memdisk").arg(appDir), QString("%1ubnkern").arg(targetPath));
     	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
-//        printf(qPrintable(nameFloppy));
     }
     if (radioManual->isChecked())
     {
@@ -283,15 +244,6 @@ void unetbootin::runinst()
             downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
             downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
         }
-//        QString args = QApplication::arguments()[1];
-//        printf(qPrintable(args));
-//        for (int i = 0; i < args.size(); ++i)
-//            printf(args.at(i).toLocal8Bit().constData());
-//        printf(qPrintable(nameDistro));
-//        if (nameDistro == "Ubuntu 7.10")
-//        {
-//            QUrl kernurl("http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/netboot/ubuntu-installer/i386/linux")
-//        }
     }
     if (installType == "Hard Disk")
     {
@@ -316,6 +268,7 @@ void unetbootin::runinst()
     	install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
     	runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
+    	/*
 		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
 		if (wvr == QSysInfo::WV_DOS_based)
 		{
@@ -337,12 +290,12 @@ void unetbootin::runinst()
 			}
 //			TODO
 		}
-//		inprocess.~QProcess();
+		   	*/
    	}
-//    close();
-//	if (installType == "USB Drive")
-//	{
-//		TODO
-//	}
-//	Q_CLEANUP_RESOURCE(unetbootin);
+/*
+	if (installType == "USB Drive")
+	{
+		TODO
+	}
+*/
 }

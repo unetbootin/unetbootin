@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 //		chkinst.clear();
 		return 0;
 	}
-//	Q_INIT_RESOURCE(unetbootin);
     unetbootin unetbootin;
     unetbootin.show();
     unetbootin.appDir = QString("%1\\").arg(app.applicationDirPath());

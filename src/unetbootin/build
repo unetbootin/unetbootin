@@ -2,7 +2,7 @@
 
 #rvern="r$(bzr version-info | grep revno | sed 's/revno: //')"
 #qmake -spec win32-g++
-make clean
+#make clean
 rm release/*
 make
 cd release
