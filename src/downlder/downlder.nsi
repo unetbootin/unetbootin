@@ -4,6 +4,29 @@ SetCompressor lzma
 RequestExecutionLevel admin
 
 !addplugindir ".\plugins"
+!include "MUI.nsh"
+
+!define MUI_ABORTWARNING
+!define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
+!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
+
+
+!insertmacro MUI_LANGUAGE "English" ;first language is the default language
+
+; Instfiles page
+!insertmacro MUI_PAGE_INSTFILES
+
+!insertmacro MUI_PAGE_FINISH
+
+
+; Uninstaller pages
+!insertmacro MUI_UNPAGE_INSTFILES
+
+; Reserve files
+!insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
+
+
+!insertmacro MUI_UNPAGE_FINISH
 
 var /GLOBAL vardldurl
 var /GLOBAL varoutloc

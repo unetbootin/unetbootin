@@ -7,14 +7,37 @@ RequestExecutionLevel admin
 
 !addplugindir ".\plugins"
 !include LogicLib.nsh
+!include "MUI.nsh"
+
+!define MUI_ABORTWARNING
+!define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
+!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
+
+
+!insertmacro MUI_LANGUAGE "English" ;first language is the default language
+
+; Instfiles page
+!insertmacro MUI_PAGE_INSTFILES
+
+!insertmacro MUI_PAGE_FINISH
+
+
+; Uninstaller pages
+!insertmacro MUI_UNPAGE_INSTFILES
+
+; Reserve files
+!insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
+
+
+!insertmacro MUI_UNPAGE_FINISH
 
 var /GLOBAL varwinvers
 
 Name "${PRODUCT_NAME}"
 OutFile "booteder.exe"
 InstallDir "$EXEDIR\.."
-ShowInstDetails show
-ShowUnInstDetails show
+ShowInstDetails hide
+ShowUnInstDetails hide
 
 AutoCloseWindow true
 
@@ -79,7 +102,7 @@ Pop $R0
 
   ${If} $varwinvers >= 6.0
      ExecWait '"$R0\unetbtin\emtxfile.exe" "$R0\unetbtin\vbcdedit.bat" runas'
-     IfFileExists "$INSTDIR\unetbtin\bcdid" vbtedfin
+     IfFileExists "$R0\unetbtin\bcdid" vbtedfin
      ExecWait '"$R0\unetbtin\runxfile.exe" "$R0\unetbtin\vbcdedit.bat" runas'
      vbtedfin:
   ${Else}
@@ -152,7 +175,7 @@ StrCpy "$R7" "$R0"
      ExecWait '"$R7\unetbtin\emtxfile.exe" "$R7\unetbtin\vbcdundo.bat" runas'
      ExecWait '"$R7\unetbtin\runxfile.exe" "$R7\unetbtin\vbcdundo.bat" runas'
   ${Else}
-     ExecWait '"$INSTDIR\runxfile.exe" "$INSTDIR\unetbtin\bootundo.bat"'
+     ExecWait '"$R7\runxfile.exe" "$R7\unetbtin\bootundo.bat"'
   ${EndIf}
 
   Delete "$R7\ubnldr"
