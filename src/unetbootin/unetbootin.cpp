@@ -244,6 +244,30 @@ void unetbootin::runinst()
             downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
             downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
         }
+        if (nameDistro == "CentOS 5")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://isoredirect.centos.org/centos/5/os/i386/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://isoredirect.centos.org/centos/5/os/i386/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "CentOS 5 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://isoredirect.centos.org/centos/5/os/x86_64/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://isoredirect.centos.org/centos/5/os/x86_64/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "CentOS 4")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://isoredirect.centos.org/centos/4/os/i386/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://isoredirect.centos.org/centos/4/os/i386/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
+        if (nameDistro == "CentOS 4 x64")
+        {
+        	kernelOpts = "splash=silent showopts";
+            downloadfile("http://isoredirect.centos.org/centos/4/os/x86_64/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
+            downloadfile("http://isoredirect.centos.org/centos/4/os/x86_64/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+        }
         if (nameDistro == "Debian Stable")
         {
         	kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";

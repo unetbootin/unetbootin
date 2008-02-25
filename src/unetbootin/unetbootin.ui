@@ -330,6 +330,26 @@
    </item>
    <item>
     <property name="text" >
+     <string>CentOS 5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>CentOS 5 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>CentOS 4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>CentOS 4 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
      <string>Debian Stable</string>
     </property>
    </item>
