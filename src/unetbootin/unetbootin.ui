@@ -328,6 +328,36 @@
      <string>openSUSE 10.2 x64</string>
     </property>
    </item>
+   <item>
+    <property name="text" >
+     <string>Debian Stable</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Debian Stable x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Debian Testing</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Debian Testing x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Debian Unstable</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Debian Unstable x64</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="intromessage" >
    <property name="geometry" >

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun Feb 24 14:43:26 2008
+** Created: Sun Feb 24 16:03:04 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -177,6 +177,12 @@ public:
      << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE 10.2", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE 10.2 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Stable", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Stable x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Testing", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Testing x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Unstable", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Debian Unstable x64", 0, QApplication::UnicodeUTF8)
     );
     distroselect->setToolTip(QApplication::translate("unetbootin", "Select from a list of supported distributions", 0, QApplication::UnicodeUTF8));
     intromessage->setText(QApplication::translate("unetbootin", "Choose a mode of operation. If unsure, select an option under \"Distribution\"", 0, QApplication::UnicodeUTF8));
