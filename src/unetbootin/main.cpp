@@ -10,14 +10,19 @@ int main(int argc, char *argv[])
     QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	if (chkinst.contains("Location"))
 	{
-		QMessageBox msgBox;
-		msgBox.setWindowTitle("UNetbootin Uninstaller");
-		msgBox.setText("UNetbootin is currently installed. Remove the existing version?");
- 		msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
- 		switch (msgBox.exec())
+		QMessageBox uninstmsgb;
+		uninstmsgb.setWindowTitle("UNetbootin Uninstaller");
+		uninstmsgb.setText("UNetbootin is currently installed. Remove the existing version?");
+ 		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+ 		switch (uninstmsgb.exec())
  		{
  			case QMessageBox::Ok:
  			{
+ 				QSettings autostrt("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
+ 				if (autostrt.contains("UNetbootin Uninstaller"))
+ 				{
+ 					autostrt.remove("UNetbootin Uninstaller");
+				}
  				QProcess uninst;
 				QVariant uninstvar(QVariant::String);
 				uninstvar = chkinst.value("Location");

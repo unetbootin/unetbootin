@@ -6,6 +6,7 @@
 #include <QSysInfo>
 #include <QMessageBox>
 #include "unetbootin.h"
+#include <windows.h>
 
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
@@ -45,20 +46,30 @@ void unetbootin::on_cancelbutton_clicked()
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
     QFile file1("dlurl.txt");
-    if (!file1.open(QIODevice::WriteOnly | QIODevice::Text))
-    return;
+    file1.open(QIODevice::WriteOnly, QIODevice::Text);
     QTextStream out1(&file1);
     out1 << fileurl;
     file1.close();
     QFile file2("outfile.txt");
-    if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
-    return;
+    file2.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out2(&file2);
     out2 << targetfile;
     file2.close();
     QProcess dlprocess;
     dlprocess.start(QString("%1downlder.exe").arg(targetPath));
     dlprocess.waitForFinished(-1);
+}
+
+void unetbootin::sysreboot()
+{
+	HANDLE hToken;
+	TOKEN_PRIVILEGES tkp;
+	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken);
+	LookupPrivilegeValue(NULL, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid);
+	tkp.PrivilegeCount = 1;
+	tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
+	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 }
 
 void unetbootin::on_okbutton_clicked()
@@ -68,9 +79,12 @@ void unetbootin::on_okbutton_clicked()
 
 void unetbootin::runinst()
 {
-	QString kernelLine("kernel /unetbtin/ubnkern");
+	QString kernelLine("kernel");
+	QString kernelParam;
+	QString kernelLoc("/unetbtin/ubnkern");
 	QString kernelOpts;
-	QString initrdLine("initrd /unetbtin/ubninit");
+	QString initrdLine("initrd");
+	QString initrdLoc("/unetbtin/ubninit");
 	QString initrdOpts;
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
@@ -304,35 +318,72 @@ void unetbootin::runinst()
             downloadfile("http://ftp.debian.org/debian/dists/unstable/main/installer-amd64/current/images/netboot/gtk/debian-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
             downloadfile("http://ftp.debian.org/debian/dists/unstable/main/installer-amd64/current/images/netboot/gtk/debian-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
         }
+        if (nameDistro == "NetBSD 4.0")
+        {
+        	kernelParam = "--type=netbsd";
+        	initrdLine = "";
+        	initrdOpts = "";
+        	initrdLoc = "";
+            downloadfile("http://ftp.netbsd.org/pub/NetBSD/NetBSD-4.0/i386/binary/kernel/netbsd-INSTALL.gz", QString("%1ubnkern").arg(targetPath));
+        }
     }
     if (installType == "Hard Disk")
     {
     	QFile menulst(QString("%1menu.lst").arg(targetPath));
-    	if (!menulst.open(QIODevice::WriteOnly | QIODevice::Text))
-		return;
+    	menulst.open(QIODevice::WriteOnly, QIODevice::Text);
 		QTextStream menulstout(&menulst);
 		QString menulstxt = QString("default 0\n"
 		"timeout 3\n"
 		"title UNetbootin\n"
 		"find --set-root /unetbtin/ubnkern\n"
-		"%1 %2\n"
-		"%3 %4\n"
-		"boot").arg(kernelLine, kernelOpts, initrdLine, initrdOpts);
+		"%1 %2 %3 %4\n"
+		"%5 %6 %7\n"
+		"boot").arg(kernelLine, kernelParam, kernelOpts, kernelLoc, initrdLine, initrdOpts, initrdLoc);
 		menulstout << menulstxt << endl;
-    	QProcess inprocess;
-    	inprocess.start(QString("%1booteder.exe").arg(targetPath));
-    	inprocess.waitForFinished(-1);
+		menulst.close();
+//		QProcess inprocess;
+//		inprocess.start(QString("%1booteder.exe").arg(targetPath));
+//		inprocess.waitForFinished(-1);
     	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
     	install.setValue("Location", targetDrive);
     	install.setValue("DisplayName", "UNetbootin");
     	install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
     	runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
-    	/*
+    	QMessageBox rebootmsgb;
+    	rebootmsgb.setWindowTitle("Reboot Now?");
+		rebootmsgb.setText("After rebooting, select the UNetbootin menu entry to boot.\nReboot now?");
+ 		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+ 		switch (rebootmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+ 			{
+ 				unetbootin::sysreboot();
+			}
+			case QMessageBox::Cancel:
+				break;
+	 		default:
+				break;
+ 		}
 		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
 		if (wvr == QSysInfo::WV_DOS_based)
 		{
-//			TODO
+			QFile::copy(QString("%1\\config.sys").arg(targetDrive), QString("%1config.sys").arg(targetPath));
+			QFile configsysFile(QString("%1\\config.sys"));
+			configsysFile.open(QIODevice::ReadWrite, QIODevice::Text);
+			configsysFile.setPermissions(QFile::WriteOther);
+			QTextStream configsysOut(&configsysFile);
+			QString configsysText = configsysOut.readAll();
+			configsysText.prepend("[menu]\n"
+			"menucolor=15,0\n"
+			"menuitem=windows,Windows\n"
+			"menuitem=grub,UNetbootin\n"
+			"menudefault=windows,30\n"
+			"[grub]\n"
+			"device=ubnldr.exe\n"
+			"[windows]\n");
+			configsysOut << configsysText << endl;
+			configsysFile.close();
 		}
 		else if (wvr == QSysInfo::WV_NT_based)
 		{
@@ -350,7 +401,6 @@ void unetbootin::runinst()
 			}
 //			TODO
 		}
-		   	*/
    	}
 /*
 	if (installType == "USB Drive")
