@@ -43,10 +43,15 @@ void unetbootin::on_cancelbutton_clicked()
     close();
 }
 
+void unetbootin::on_okbutton_clicked()
+{
+	runinst();
+}
+
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
     QFile file1("dlurl.txt");
-    file1.open(QIODevice::WriteOnly, QIODevice::Text);
+    file1.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out1(&file1);
     out1 << fileurl;
     file1.close();
@@ -72,9 +77,36 @@ void unetbootin::sysreboot()
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 }
 
-void unetbootin::on_okbutton_clicked()
+void unetbootin::configsysEdit()
 {
-	runinst();
+	QFile::copy(QString("%1\\config.sys").arg(targetDrive), QString("%1config.sys").arg(targetPath));
+	QFile configsysFile(QString("%1\\config.sys").arg(targetDrive));
+	configsysFile.open(QIODevice::ReadWrite | QIODevice::Text);
+	configsysFile.setPermissions(QFile::WriteOther);
+	configsysFile.close();
+	QTextStream configsysOut(&configsysFile);
+	QString configsysText = "[menu]\n"
+	"menucolor=15,0\n"
+	"menuitem=windows,Windows\n"
+	"menuitem=grub,UNetbootin\n"
+	"menudefault=windows,30\n"
+	"[grub]\n"
+	"device=ubnldr.exe\n"
+	"[windows]\n";
+	configsysText.append(configsysOut.readAll());
+	printf(qPrintable(configsysText));
+	configsysOut << configsysText << endl;
+	configsysFile.close();
+}
+
+void unetbootin::bootiniEdit()
+{
+//	TODO
+}
+
+void unetbootin::vistabcdEdit()
+{
+//	TODO
 }
 
 void unetbootin::runinst()
@@ -330,7 +362,7 @@ void unetbootin::runinst()
     if (installType == "Hard Disk")
     {
     	QFile menulst(QString("%1menu.lst").arg(targetPath));
-    	menulst.open(QIODevice::WriteOnly, QIODevice::Text);
+    	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
 		QTextStream menulstout(&menulst);
 		QString menulstxt = QString("default 0\n"
 		"timeout 3\n"
@@ -338,7 +370,7 @@ void unetbootin::runinst()
 		"find --set-root /unetbtin/ubnkern\n"
 		"%1 %2 %3 %4\n"
 		"%5 %6 %7\n"
-		"boot").arg(kernelLine, kernelParam, kernelOpts, kernelLoc, initrdLine, initrdOpts, initrdLoc);
+		"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
 		menulstout << menulstxt << endl;
 		menulst.close();
 //		QProcess inprocess;
@@ -347,10 +379,30 @@ void unetbootin::runinst()
     	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
     	install.setValue("Location", targetDrive);
     	install.setValue("DisplayName", "UNetbootin");
-    	install.setValue("UninstallString", QString("%1uninst.exe").arg(targetPath));
+    	install.setValue("UninstallString", QString("%1unetbtin.exe").arg(targetPath));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-    	runonce.setValue("UNetbootin Uninstaller", QString("%1uninst.exe").arg(targetPath));
-    	QMessageBox rebootmsgb;
+    	runonce.setValue("UNetbootin Uninstaller", QString("%1unetbtin.exe").arg(targetPath));
+ 		}
+		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
+		if (wvr == QSysInfo::WV_32s || wvr == QSysInfo::WV_95 || wvr == QSysInfo::WV_98 || wvr == QSysInfo::WV_Me)
+		{
+			configsysEdit();
+		}
+		else if (wvr == QSysInfo::WV_NT || wvr == QSysInfo::WV_2000 || wvr == QSysInfo::WV_XP || wvr == QSysInfo::WV_2003 )
+		{
+			bootiniEdit();
+		}
+		else if (wvr == QSysInfo::WV_VISTA)
+		{
+			vistabcdEdit();
+		}
+		else
+		{
+			configsysEdit();
+			bootiniEdit();
+			vistabcdEdit();
+		}
+		QMessageBox rebootmsgb;
     	rebootmsgb.setWindowTitle("Reboot Now?");
 		rebootmsgb.setText("After rebooting, select the UNetbootin menu entry to boot.\nReboot now?");
  		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
@@ -364,44 +416,7 @@ void unetbootin::runinst()
 				break;
 	 		default:
 				break;
- 		}
-		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
-		if (wvr == QSysInfo::WV_DOS_based)
-		{
-			QFile::copy(QString("%1\\config.sys").arg(targetDrive), QString("%1config.sys").arg(targetPath));
-			QFile configsysFile(QString("%1\\config.sys"));
-			configsysFile.open(QIODevice::ReadWrite, QIODevice::Text);
-			configsysFile.setPermissions(QFile::WriteOther);
-			QTextStream configsysOut(&configsysFile);
-			QString configsysText = configsysOut.readAll();
-			configsysText.prepend("[menu]\n"
-			"menucolor=15,0\n"
-			"menuitem=windows,Windows\n"
-			"menuitem=grub,UNetbootin\n"
-			"menudefault=windows,30\n"
-			"[grub]\n"
-			"device=ubnldr.exe\n"
-			"[windows]\n");
-			configsysOut << configsysText << endl;
-			configsysFile.close();
-		}
-		else if (wvr == QSysInfo::WV_NT_based)
-		{
-			if (wvr == QSysInfo::WV_NT || wvr == QSysInfo::WV_2000 || wvr == QSysInfo::WV_XP || wvr == QSysInfo::WV_2003 )
-			{
-//				TODO
-			}
-			else if (wvr == QSysInfo::WV_VISTA)
-			{
-//				TODO
-			}
-			else
-			{
-//				TODO
-			}
-//			TODO
-		}
-   	}
+   		}
 /*
 	if (installType == "USB Drive")
 	{

@@ -23,9 +23,12 @@ private slots:
     void on_KernelFileSelector_clicked();
     void on_InitrdFileSelector_clicked();
     void on_cancelbutton_clicked();
+    void on_okbutton_clicked();
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
-    void on_okbutton_clicked();
+    void configsysEdit();
+    void bootiniEdit();
+    void vistabcdEdit();
     void runinst();
 };
 

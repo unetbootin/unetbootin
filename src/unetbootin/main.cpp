@@ -27,15 +27,15 @@ int main(int argc, char *argv[])
 				QVariant uninstvar(QVariant::String);
 				uninstvar = chkinst.value("Location");
 				QString uninstpath = uninstvar.value<QString>();
-				uninst.start(QString("%1\\unetbtin\\uninst.exe").arg(uninstpath));
+				uninst.start(QString("%1\\unetbtin\\unetbtin.exe").arg(uninstpath));
 				uninst.waitForFinished(-1);
+				chkinst.clear();
 			}
 			case QMessageBox::Cancel:
 				break;
 	 		default:
 				break;
  		}
-//		chkinst.clear();
 		return 0;
 	}
     unetbootin unetbootin;
