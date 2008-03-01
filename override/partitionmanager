@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./functions/kernpar $1 'root=\/dev\/ram0 init=\/linuxrc ramdisk_size=100000 skip'
+./functions/kernpar $1 'noapic root=\/dev\/ram0 init=\/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram'
