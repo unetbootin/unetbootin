@@ -50,12 +50,12 @@ void unetbootin::on_okbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
-    QFile file1("dlurl.txt");
+    QFile file1(QString("%1dlurl.txt").arg(targetPath));
     file1.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out1(&file1);
     out1 << fileurl;
     file1.close();
-    QFile file2("outfile.txt");
+    QFile file2(QString("%1outfile.txt").arg(targetPath));
     file2.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out2(&file2);
     out2 << targetfile;
@@ -79,24 +79,29 @@ void unetbootin::sysreboot()
 
 void unetbootin::configsysEdit()
 {
-	QFile::copy(QString("%1\\config.sys").arg(targetDrive), QString("%1config.sys").arg(targetPath));
-	QFile configsysFile(QString("%1\\config.sys").arg(targetDrive));
+	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
+	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
+	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
+	QFile configsysFile(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)));
+	confignwFile.open(QIODevice::ReadWrite | QIODevice::Text);
 	configsysFile.open(QIODevice::ReadWrite | QIODevice::Text);
-	configsysFile.setPermissions(QFile::WriteOther);
-	configsysFile.close();
+	configsysFile.setPermissions(QFile::ReadOther | QFile::WriteOther);
+	QTextStream confignwOut(&confignwFile);
 	QTextStream configsysOut(&configsysFile);
-	QString configsysText = "[menu]\n"
+	QString configsysText = QString("[menu]\n"
 	"menucolor=15,0\n"
 	"menuitem=windows,Windows\n"
 	"menuitem=grub,UNetbootin\n"
 	"menudefault=windows,30\n"
 	"[grub]\n"
 	"device=ubnldr.exe\n"
-	"[windows]\n";
-	configsysText.append(configsysOut.readAll());
-	printf(qPrintable(configsysText));
-	configsysOut << configsysText << endl;
-	configsysFile.close();
+	"[windows]\n%1").arg(configsysOut.readAll());
+	confignwOut << configsysText << endl;
+	if (!QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive))))
+	{
+		configsysFile.remove();
+		QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)));
+	}
 }
 
 void unetbootin::bootiniEdit()
@@ -120,33 +125,44 @@ void unetbootin::runinst()
 	QString initrdOpts;
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
-    targetPath = QString("%1\\unetbtin\\").arg(targetDrive);
+    targetPath = QDir::toNativeSeparators(QString("%1/unetbtin/").arg(targetDrive));
     QDir dir;
     dir.mkpath(targetPath);
-    QFile::copy(QString("%1downlder.exe").arg(appDir), QString("%1downlder.exe").arg(targetPath));
-    QFile::copy(QString("%1booteder.exe").arg(appDir), QString("%1booteder.exe").arg(targetPath));
-    QFile::copy(QString("%1emtxfile.exe").arg(appDir), QString("%1emtxfile.exe").arg(targetPath));
-    QFile::copy(QString("%1runxfile.exe").arg(appDir), QString("%1runxfile.exe").arg(targetPath));
-    QFile::copy(QString("%1tr.exe").arg(appDir), QString("%1tr.exe").arg(targetPath));
-    QFile::copy(QString("%1ubnldr.exe").arg(appDir), QString("%1\\ubnldr.exe").arg(targetDrive));
-    QFile::copy(QString("%1ubnldr").arg(appDir), QString("%1\\ubnldr").arg(targetDrive));
-    QFile::copy(QString("%1ubnldr.mbr").arg(appDir), QString("%1\\ubnldr.mbr").arg(targetDrive));
-    QFile::copy(QString("%1bootedit.bat").arg(appDir), QString("%1bootedit.bat").arg(targetPath));
-    QFile::copy(QString("%1bootedit.pif").arg(appDir), QString("%1bootedit.pif").arg(targetPath));
-    QFile::copy(QString("%1bootundo.bat").arg(appDir), QString("%1bootundo.bat").arg(targetPath));
-    QFile::copy(QString("%1bootundo.pif").arg(appDir), QString("%1bootundo.pif").arg(targetPath));
-    QFile::copy(QString("%1vbcdedit.bat").arg(appDir), QString("%1vbcdedit.bat").arg(targetPath));
-    QFile::copy(QString("%1vbcdedit.pif").arg(appDir), QString("%1vbcdedit.pif").arg(targetPath));
-    QFile::copy(QString("%1vbcdundo.bat").arg(appDir), QString("%1vbcdundo.bat").arg(targetPath));
-    QFile::copy(QString("%1vbcdundo.pif").arg(appDir), QString("%1vbcdundo.pif").arg(targetPath));
-    QFile::copy(QString("%1config.sup").arg(appDir), QString("%1config.sup").arg(targetPath));
-    QFile::copy(QString("%1menu.lst").arg(appDir), QString("%1menu.lst").arg(targetPath));
-	QFile::copy(QString("%1unetbtin.exe").arg(appDir), QString("%1unetbtin.exe").arg(targetPath));
-    dir.setCurrent(targetPath);
+	QDir copyFileListD(":/");
+	QStringList copyFileList = copyFileListD.entryList(QDir::Files);
+	for (int i = 0; i < copyFileList.size(); ++i)
+	{
+		QFile::copy(QString(":/%1").arg(copyFileList.at(i)), QString("%1%2").arg(targetPath).arg(copyFileList.at(i)));
+		QFile::setPermissions(QString("%1%2").arg(targetPath).arg(copyFileList.at(i)), QFile::ReadOther | QFile::WriteOther);
+	}
+	/*
+	QFile::copy(":/booteder.exe", QString("%1booteder.exe").arg(targetPath));
+	QFile::copy(":/bootedit.bat", QString("%1bootedit.bat").arg(targetPath));
+	QFile::copy(":/bootedit.pif", QString("%1bootedit.pif").arg(targetPath));
+	QFile::copy(":/bootundo.bat", QString("%1bootundo.bat").arg(targetPath));
+	QFile::copy(":/bootundo.pif", QString("%1bootundo.pif").arg(targetPath));
+	QFile::copy(":/config.sup", QString("%1config.sup").arg(targetPath));
+	QFile::copy(":/downlder.exe", QString("%1downlder.exe").arg(targetPath));
+	QFile::copy(":/emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
+	QFile::copy(":/memdisk", QString("%1memdisk").arg(targetPath));
+	QFile::copy(":/runxfile.exe", QString("%1runxfile.exe").arg(targetPath));
+	QFile::copy(":/tr.exe", QString("%1tr.exe").arg(targetPath));
+	QFile::copy(":/ubnldr", QString("%1ubnldr").arg(targetPath));
+	QFile::copy(":/ubnldr.exe", QString("%1ubnldr.exe").arg(targetPath));
+	QFile::copy(":/ubnldr.mbr", QString("%1ubnldr.mbr").arg(targetPath));
+	QFile::copy(":/vbcdedit.bat", QString("%1vbcdedit.bat").arg(targetPath));
+	QFile::copy(":/vbcdedit.pif", QString("%1vbcdedit.pif").arg(targetPath));
+	QFile::copy(":/vbcdundo.bat", QString("%1vbcdundo.bat").arg(targetPath));
+	QFile::copy(":/vbcdundo.pif", QString("%1vbcdundo.pif").arg(targetPath));
+	*/
+	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(targetDrive)));
+    QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr").arg(targetDrive)));
+    QFile::copy(QString("%1ubnldr.mbr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(targetDrive)));
     close();
     if (radioFloppy->isChecked())
     {
-    	QFile::copy(QString("%1memdisk").arg(appDir), QString("%1ubnkern").arg(targetPath));
+    	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
     	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
     }
     if (radioManual->isChecked())
@@ -379,10 +395,9 @@ void unetbootin::runinst()
     	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
     	install.setValue("Location", targetDrive);
     	install.setValue("DisplayName", "UNetbootin");
-    	install.setValue("UninstallString", QString("%1unetbtin.exe").arg(targetPath));
+    	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-    	runonce.setValue("UNetbootin Uninstaller", QString("%1unetbtin.exe").arg(targetPath));
- 		}
+    	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
 		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
 		if (wvr == QSysInfo::WV_32s || wvr == QSysInfo::WV_95 || wvr == QSysInfo::WV_98 || wvr == QSysInfo::WV_Me)
 		{
@@ -417,6 +432,7 @@ void unetbootin::runinst()
 	 		default:
 				break;
    		}
+  	}
 /*
 	if (installType == "USB Drive")
 	{

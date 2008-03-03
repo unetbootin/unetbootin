@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = unetbtin
+TARGET = unetbootin
 DEPENDPATH += .
 INCLUDEPATH += .
 CONFIG += static release
@@ -8,3 +8,4 @@ FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp
 QMAKE_LFLAGS += -Wl,-subsystem,windows
 RC_FILE += ubnembed.rc
+RESOURCES += unetbootin.qrc

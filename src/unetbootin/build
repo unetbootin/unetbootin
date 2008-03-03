@@ -3,8 +3,10 @@
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
 make
-cd release
-../upx --lzma unetbtin.exe
-7z a unetbtin.7z unetbtin.exe ../booteder.exe ../bootedit.bat ../bootedit.pif ../bootundo.pif ../config.sup ../downlder.exe ../emtxfile.exe ../memdisk ../runxfile.exe ../tr.exe ../ubnldr ../ubnldr.exe ../ubnldr.mbr ../vbcdedit.bat ../vbcdedit.pif ../vbcdundo.bat ../vbcdundo.pif
-cat ../7zS.sfx ../7zconfig.txt unetbtin.7z > unetbootin$rvern.exe
-cd ..
+mv release/unetbootin.exe release/unetbootin$rvern.exe
+./upx --lzma release/unetbootin$rvern.exe
+#cd release
+#../upx --lzma unetbtin.exe
+#7z a unetbtin.7z unetbtin.exe ../booteder.exe ../bootedit.bat ../bootedit.pif ../bootundo.pif ../config.sup ../downlder.exe ../emtxfile.exe ../memdisk ../runxfile.exe ../tr.exe ../ubnldr ../ubnldr.exe ../ubnldr.mbr ../vbcdedit.bat ../vbcdedit.pif ../vbcdundo.bat ../vbcdundo.pif
+#cat ../7zS.sfx ../7zconfig.txt unetbtin.7z > unetbootin$rvern.exe
+#cd ..
