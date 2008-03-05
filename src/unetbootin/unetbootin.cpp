@@ -6,8 +6,6 @@
 #include <QSysInfo>
 #include <QMessageBox>
 #include "unetbootin.h"
-//#include "datastor.h"
-#include "datastor.cpp"
 #include <windows.h>
 
 unetbootin::unetbootin(QWidget *parent)
@@ -127,8 +125,18 @@ void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 
 void unetbootin::wInstfiles()
 {
-	#include "datastor.cpp"
-	instIndvfl(QString("ubnldr"), QByteArray::fromRawData(ubnldr, sizeof(ubnldr)));
+	#include "ubnldr.cpp"
+	instIndvfl(QString("ubnldr"), ubnldr);
+	#include "ubnldrexe.cpp"
+	instIndvfl(QString("ubnldr.exe"), ubnldrexe);
+	#include "ubnldrmbr.cpp"
+	instIndvfl(QString("ubnldr.mbr"), ubnldrmbr);
+	#include "memdisk.cpp"
+	instIndvfl(QString("memdisk"), memdisk);
+	#include "downlderexe.cpp"
+	instIndvfl(QString("downlder.exe"), downlderexe);
+	#include "bootederexe.cpp"
+	instIndvfl(QString("booteder.exe"), bootederexe);
 }
 
 void unetbootin::runinst()
@@ -146,78 +154,6 @@ void unetbootin::runinst()
 	QDir dir;
     dir.mkpath(targetPath);
 	wInstfiles();
-	QFile dstFile(QString("%1%2").arg(targetPath).arg("ubnldr"));
-	dstFile.open(QIODevice::ReadWrite);
-	dstFile.write(ubnldr);
-	dstFile.close();
-    /*
-//	QDir copyFileListD(":/");
-//	QStringList copyFileList = copyFileListD.entryList(QDir::Files);
-//	QListIterator<QString> copyFileListI(copyFileList);
-	while (copyFileListI.hasNext())
-	{
-		char ch;
-		while (!QFile(QString(":/%1").arg(copyFileListI.next())).atEnd())
-		{
-			QFile(QString(":/%1").arg(copyFileListI.next())).getChar(&ch);
-			QFile(QString("%1%2").arg(targetPath).arg(copyFileListI.next())).putChar(ch);
-		}
-	}
-//	QStringList copyFileList;
-//	copyFileList << "ubnldr";
-//	QFile srcFile;
-	QFile dstFile;
-//	QDataStream byteCopyFiles;
-//	char ch;
-	for (int i = 0; i < copyFileList.size(); ++i)
-	{
-//		srcFile.setFileName(QString(":/%1").arg(copyFileList.at(i)));
-		dstFile.setFileName(QString("%1%2").arg(targetPath).arg(copyFileList.at(i)));
-//		srcFile.open(QIODevice::ReadWrite);
-		dstFile.open(QIODevice::ReadWrite);
-//		byteCopyFiles.setDevice(&QFile(QString(":/%1").arg(copyFileList.at(i))));
-//		char ch;
-//		QByteArray bts;
-//		QFile(QString(":/%1").arg(copyFileList.at(i))).open(QIODevice::ReadWrite);
-//		QFile(QString("%1%2").arg(targetPath).arg(copyFileList.at(i))).open(QIODevice::ReadWrite);
-//		while (!QFile(QString(":/%1").arg(copyFileList.at(i))).atEnd())
-//		{
-//		QFile(QString(":/%1").arg(copyFileList.at(i))).read();
-//		QFile(QString("%1%2").arg(targetPath).arg(copyFileList.at(i))).write(QFile(QString(":/%1").arg(copyFileList.at(i))).readAll());
-		while(!srcFile.atEnd())
-		{
-//			srcFile.getChar(&ch);
-			dstFile.putChar(ch);
- 		}
-//		dstFile.write(srcFile.readAll());
-		srcFile.close();
-		dstFile.close();
-//		}
-	
-//		QFile::copy(QString(":/%1").arg(copyFileList.at(i)), QString("%1%2").arg(targetPath).arg(copyFileList.at(i)));
-		QFile::setPermissions(QString("%1%2").arg(targetPath).arg(copyFileList.at(i)), QFile::ReadOther | QFile::WriteOther);
-	}
-	*/
-	/*
-	QFile::copy(":/booteder.exe", QString("%1booteder.exe").arg(targetPath));
-	QFile::copy(":/bootedit.bat", QString("%1bootedit.bat").arg(targetPath));
-	QFile::copy(":/bootedit.pif", QString("%1bootedit.pif").arg(targetPath));
-	QFile::copy(":/bootundo.bat", QString("%1bootundo.bat").arg(targetPath));
-	QFile::copy(":/bootundo.pif", QString("%1bootundo.pif").arg(targetPath));
-	QFile::copy(":/config.sup", QString("%1config.sup").arg(targetPath));
-	QFile::copy(":/downlder.exe", QString("%1downlder.exe").arg(targetPath));
-	QFile::copy(":/emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
-	QFile::copy(":/memdisk", QString("%1memdisk").arg(targetPath));
-	QFile::copy(":/runxfile.exe", QString("%1runxfile.exe").arg(targetPath));
-	QFile::copy(":/tr.exe", QString("%1tr.exe").arg(targetPath));
-	QFile::copy(":/ubnldr", QString("%1ubnldr").arg(targetPath));
-	QFile::copy(":/ubnldr.exe", QString("%1ubnldr.exe").arg(targetPath));
-	QFile::copy(":/ubnldr.mbr", QString("%1ubnldr.mbr").arg(targetPath));
-	QFile::copy(":/vbcdedit.bat", QString("%1vbcdedit.bat").arg(targetPath));
-	QFile::copy(":/vbcdedit.pif", QString("%1vbcdedit.pif").arg(targetPath));
-	QFile::copy(":/vbcdundo.bat", QString("%1vbcdundo.bat").arg(targetPath));
-	QFile::copy(":/vbcdundo.pif", QString("%1vbcdundo.pif").arg(targetPath));
-	*/
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
 	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(targetDrive)));
     QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr").arg(targetDrive)));

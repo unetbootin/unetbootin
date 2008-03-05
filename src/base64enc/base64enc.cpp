@@ -9,6 +9,6 @@ int main(int argc, char *argv[])
 	QFile outFile(QString("%1.cpp").arg(argv[2]));
 	outFile.open(QIODevice::ReadWrite);
 	QTextStream output(&outFile);
-	output << "QByteArray " << argv[2] << " = QByteArray::fromBase64(\"" << b64Data << "\");" << endl;
+	output << "QByteArray " << argv[2] << " = qUncompress(QByteArray::fromBase64(\"" << b64Data << "\"));" << endl;
 	outFile.close();
 }
