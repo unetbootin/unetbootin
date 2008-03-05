@@ -30,6 +30,8 @@ private slots:
     void configsysEdit();
     void bootiniEdit();
     void vistabcdEdit();
+    void instIndvfl(QString dstfName, QByteArray qbav);
+    void wInstfiles();
     void runinst();
 };
 

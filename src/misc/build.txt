@@ -44,3 +44,7 @@ WINEPREFIX=$(pwd)/nsis wine "C:\Program Files\NSIS\makensis.exe" downlder.nsi
 build booteder:
 
 WINEPREFIX=$(pwd)/nsis wine "C:\Program Files\NSIS\makensis.exe" booteder.nsi
+
+build base64 encoded zlib compressed files:
+
+./base64enc ubnldr.exe ubnldrexe
