@@ -7,6 +7,7 @@
 #include <QSysInfo>
 #include <QStringList>
 #include "unetbootin.h"
+#include <windows.h>
 
 void configsysUndo(QString uninstPathL)
 {
@@ -15,6 +16,10 @@ void configsysUndo(QString uninstPathL)
 		QFile::remove(QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)));
 		QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)));
 	}
+//	QProcess ucfgsattrib;
+//	ucfgsattrib.start(QDir::toNativeSeparators(QString("attrib +h +s +r %1/config.sys").arg(uninstPathL)));
+//	ucfgsattrib.waitForFinished(-1);
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
 }
 
 void bootiniUndo(QString uninstPathL)
@@ -33,6 +38,7 @@ void clearOutDir(QString pDirToDel)
 	QStringList rmfileList = dirToDel.entryList(QDir::Files);
 	for (int i = 0; i < rmfileList.size(); ++i)
 	{
+		QFile::setPermissions(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))), QFile::WriteOther);
 		QFile::remove(QDir::toNativeSeparators(QString("%1/%2").arg(pDirToDel).arg(rmfileList.at(i))));
 	}
 	dirToDel.rmdir(pDirToDel);
@@ -49,16 +55,15 @@ void ubnUninst()
 	QVariant uninstvar(QVariant::String);
 	uninstvar = chkinstL.value("Location");
 	QString uninstPath = uninstvar.value<QString>();
-	QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
-	if (wvr == QSysInfo::WV_32s || wvr == QSysInfo::WV_95 || wvr == QSysInfo::WV_98 || wvr == QSysInfo::WV_Me)
+	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysUndo(uninstPath);
 	}
-	else if (wvr == QSysInfo::WV_NT || wvr == QSysInfo::WV_2000 || wvr == QSysInfo::WV_XP || wvr == QSysInfo::WV_2003 )
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
 	{
 		bootiniUndo(uninstPath);
 	}
-	else if (wvr == QSysInfo::WV_VISTA)
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
 	{
 		vistabcdUndo(uninstPath);
 	}

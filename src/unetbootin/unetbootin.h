@@ -27,6 +27,7 @@ private slots:
     void on_okbutton_clicked();
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
+//	void callexternapp(QString execFile, QString execParm, QString execVerb);
     void configsysEdit();
     void bootiniEdit();
     void vistabcdEdit();

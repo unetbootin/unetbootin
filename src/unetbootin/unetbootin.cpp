@@ -76,16 +76,63 @@ void unetbootin::sysreboot()
 	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 }
+/*
+
+void unetbootin::callexternapp(QString execFile, QString execParm, QString execVerb)
+{
+//	const char* execParmL = execParm.constData();
+//	const char* execFileL = execFile.constData();
+//	const char* execVerbL = execVerb.constData();
+//	LPCTSTR execFileL, execParamsL, execVerbL;
+//	LPWSTR execFileL, execParmL, execVerbL;
+//	wchar_t* execFileL = LPWSTR(execFile.utf16());
+//	wchar_t* execParmL = {};
+//	wchar_t* execVerbL = {};
+//	execFile.toWCharArray(execFileL);
+//	execParm.toWCharArray(execParmL);
+//	execVerb.toWCharArray(execVerbL);
+	SHELLEXECUTEINFO ShExecInfo = {0};
+	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+	ShExecInfo.hwnd = NULL;
+	ShExecInfo.lpVerb = LPCTSTR(execVerbL);
+//	ShExecInfo.lpVerb = LPCTSTR(execVerbL.utf16);
+//	ShExecInfo.lpFile = LPCTSTR(execFile.toAscii().constData());
+	ShExecInfo.lpFile = LPCTSTR(execFileL);
+//	ShExecInfo.lpFile = L"notepad";
+	ShExecInfo.lpParameters = LPCTSTR(execParmL);	
+	ShExecInfo.lpDirectory = NULL;
+//	ShExecInfo.nShow = SW_HIDE;
+	ShExecInfo.nShow = SW_SHOW;
+	ShExecInfo.hInstApp = NULL;
+	ShellExecuteEx(&ShExecInfo);
+	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
+}
+
+*/
 
 void unetbootin::configsysEdit()
 {
+//	QFile wldEditF(QString("%1wldedit.bat").arg(targetPath));
+//	wldEditF.open(QIODevice::ReadWrite | QIODevice::Text);
+//	QTextStream wldEditS(&wldEditF);
+//	wldEditS << QDir::toNativeSeparators(QString("attrib -h -s -r %1/config.sys").arg(targetDrive)) << endl;
+//	wldEditF.close();
+//	callexternapp(QString("%1wldedit.bat").arg(targetPath), "", "");
+//	CString str(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit());
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
+//	callexternapp(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit(), "", "");
+//	callexternapp("notepad", "", "");
+//	QProcess cfgsattrib;
+//	cfgsattrib.start(QString("%1runxfile.exe %1wldedit.bat").arg(targetPath));
+//	cfgsattrib.start(QDir::toNativeSeparators(QString("attrib -h -s -r %1/config.sys").arg(targetDrive)));
+//	cfgsattrib.waitForFinished(-1);
 	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
 	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
 	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
 	QFile configsysFile(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)));
 	confignwFile.open(QIODevice::ReadWrite | QIODevice::Text);
-	configsysFile.open(QIODevice::ReadWrite | QIODevice::Text);
-	configsysFile.setPermissions(QFile::ReadOther | QFile::WriteOther);
+	configsysFile.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream confignwOut(&confignwFile);
 	QTextStream configsysOut(&configsysFile);
 	QString configsysText = QString("[menu]\n"
@@ -137,6 +184,10 @@ void unetbootin::wInstfiles()
 	instIndvfl(QString("downlder.exe"), downlderexe);
 	#include "bootederexe.cpp"
 	instIndvfl(QString("booteder.exe"), bootederexe);
+//	#include "runxfileexe.cpp"
+//	instIndvfl(QString("runxfile.exe"), runxfileexe);
+	#include "emtxfileexe.cpp"
+	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
 }
 
 void unetbootin::runinst()
@@ -198,16 +249,15 @@ void unetbootin::runinst()
     	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
     	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
     	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
-		QSysInfo::WinVersion wvr = QSysInfo::WindowsVersion;
-		if (wvr == QSysInfo::WV_32s || wvr == QSysInfo::WV_95 || wvr == QSysInfo::WV_98 || wvr == QSysInfo::WV_Me)
+		if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 		{
 			configsysEdit();
 		}
-		else if (wvr == QSysInfo::WV_NT || wvr == QSysInfo::WV_2000 || wvr == QSysInfo::WV_XP || wvr == QSysInfo::WV_2003 )
+		else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
 		{
 			bootiniEdit();
 		}
-		else if (wvr == QSysInfo::WV_VISTA)
+		else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
 		{
 			vistabcdEdit();
 		}
