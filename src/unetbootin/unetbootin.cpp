@@ -1,7 +1,6 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
-#include <QProcess>
 #include <QSettings>
 #include <QSysInfo>
 #include <QMessageBox>
@@ -60,9 +59,10 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
     QTextStream out2(&file2);
     out2 << targetfile;
     file2.close();
-    QProcess dlprocess;
-    dlprocess.start(QString("%1downlder.exe").arg(targetPath));
-    dlprocess.waitForFinished(-1);
+    callexternapp(QString("%1downlder.exe").arg(targetPath), "");
+//	QProcess dlprocess;
+//	dlprocess.start(QString("%1downlder.exe").arg(targetPath));
+//	dlprocess.waitForFinished(-1);
 }
 
 void unetbootin::sysreboot()
@@ -103,8 +103,8 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 //	ShExecInfo.lpParameters = LPCTSTR(execParmL);
 	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
 	ShExecInfo.lpDirectory = NULL;
-//	ShExecInfo.nShow = SW_HIDE;
-	ShExecInfo.nShow = SW_SHOW;
+	ShExecInfo.nShow = SW_HIDE;
+//	ShExecInfo.nShow = SW_SHOW;
 	ShExecInfo.hInstApp = NULL;
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
@@ -160,8 +160,19 @@ void unetbootin::vistabcdEdit()
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
-	vbcdEditS1 << QDir::toNativeSeparators(QString("bcdedit /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(targetPath)) << endl;
+	vbcdEditS1 << QString("bcdedit /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(QDir::toNativeSeparators(targetPath)) << endl;
 	vbcdEditF1.close();
+	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
+	bool arch64 = false;
+	if (QFile::exists(QString("%1tmpbcdid").arg(targetPath)))
+	{
+		arch64 = true;
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	}
+/*
 	SYSTEM_INFO sysinfo;
 	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
 	{
@@ -169,34 +180,50 @@ void unetbootin::vistabcdEdit()
 	}
 	else
 	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 	}
+*/
 	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
 	vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream vbcdTmpInS(&vbcdTmpInF);
 	QString vbcdIdTL = vbcdTmpInS.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
 	vbcdTmpInF.close();
+	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+    vdtistor.setValue("Arch", arch64);
+    vdtistor.setValue("Bcdid", vbcdIdTL);
+/*
 	QFile vbcdSIDF(QString("%1bcdid").arg(targetPath));
 	vbcdSIDF.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdSIDS(&vbcdSIDF);
 	vbcdSIDS << vbcdIdTL;
 	vbcdSIDF.close();
+*/
 	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
 	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS2(&vbcdEditF2);
-	vbcdEditS2 << QDir::toNativeSeparators(QString("bcdedit /set {%1} device boot\n"
+	vbcdEditS2 << QString("bcdedit /set {%1} device boot\n"
 	"bcdedit /set {%1} path \\ubnldr.mbr\n"
 	"bcdedit /displayorder {%1} /addlast\n"
-	"bcdedit /timeout 30").arg(vbcdIdTL)) << endl;
+	"bcdedit /timeout 30").arg(vbcdIdTL) << endl;
 	vbcdEditF2.close();
+	if (arch64)
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
+	}
+/*
 	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
 	{
 		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
 	}
 	else
 	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat").arg(targetPath));
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
 	}
+*/
 //	IsWow64Process();
 //	if (IsWow64Process())
 //	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));

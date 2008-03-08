@@ -18,13 +18,6 @@ public:
     QString targetDrive;
     QString targetPath;
     QString installType;
-
-private slots:
-    void on_FloppyFileSelector_clicked();
-    void on_KernelFileSelector_clicked();
-    void on_InitrdFileSelector_clicked();
-    void on_cancelbutton_clicked();
-    void on_okbutton_clicked();
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
@@ -34,6 +27,13 @@ private slots:
     void instIndvfl(QString dstfName, QByteArray qbav);
     void wInstfiles();
     void runinst();
+
+private slots:
+    void on_FloppyFileSelector_clicked();
+    void on_KernelFileSelector_clicked();
+    void on_InitrdFileSelector_clicked();
+    void on_cancelbutton_clicked();
+    void on_okbutton_clicked();
 };
 
 #endif

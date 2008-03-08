@@ -1,6 +1,5 @@
 #include <QApplication>
 #include <QSettings>
-#include <QProcess>
 #include <QMessageBox>
 #include <QFile>
 #include <QDir>
@@ -29,7 +28,24 @@ void bootiniUndo(QString uninstPathL)
 
 void vistabcdUndo(QString uninstPathL)
 {
-//	TODO
+	QSettings vdtustor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	QVariant archvarL(QVariant::Bool);
+	archvarL = vdtustor.value("Arch");
+	bool arch64L = archvarL.value<bool>();
+	QVariant bcdidvarL(QVariant::String);
+	bcdidvarL = vdtustor.value("Bcdid");
+	QString bcdidL = bcdidvarL.value<QString>();
+	unetbootin uexecRunL;
+	if (arch64L)
+	{
+//		uexecRunL.callexternapp("", "");
+	}
+	else
+	{
+//		uexecRunL.callexternapp("", "");
+	}
+	
+
 }
 
 void clearOutDir(QString pDirToDel)
