@@ -33,19 +33,18 @@ void vistabcdUndo(QString uninstPathL)
 	archvarL = vdtustor.value("Arch");
 	bool arch64L = archvarL.value<bool>();
 	QVariant bcdidvarL(QVariant::String);
-	bcdidvarL = vdtustor.value("Bcdid");
-	QString bcdidL = bcdidvarL.value<QString>();
+//	bcdidvarL = vdtustor.value("Bcdid");
+//	QString bcdidL = bcdidvarL.value<QString>();
 	unetbootin uexecRunL;
 	if (arch64L)
 	{
-//		uexecRunL.callexternapp("", "");
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/unetbtin/vbcdedit.bat runas").arg(uninstPathL)));
 	}
 	else
 	{
-//		uexecRunL.callexternapp("", "");
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/vbcdedit.bat").arg(uninstPathL)), "");
 	}
-	
-
+	vdtustor.remove("Arch");
 }
 
 void clearOutDir(QString pDirToDel)

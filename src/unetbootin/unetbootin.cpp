@@ -190,14 +190,7 @@ void unetbootin::vistabcdEdit()
 	vbcdTmpInF.close();
 	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
     vdtistor.setValue("Arch", arch64);
-    vdtistor.setValue("Bcdid", vbcdIdTL);
-/*
-	QFile vbcdSIDF(QString("%1bcdid").arg(targetPath));
-	vbcdSIDF.open(QIODevice::ReadWrite | QIODevice::Text);
-	QTextStream vbcdSIDS(&vbcdSIDF);
-	vbcdSIDS << vbcdIdTL;
-	vbcdSIDF.close();
-*/
+//	vdtistor.setValue("Bcdid", vbcdIdTL);
 	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
 	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS2(&vbcdEditF2);
@@ -214,6 +207,11 @@ void unetbootin::vistabcdEdit()
 	{
 		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
 	}
+	QFile vbcdundoF(QString("%1vbcdundo.bat").arg(targetPath));
+	vbcdundoF.open(QIODevice::ReadWrite | QIODevice::Text);
+	QTextStream vbcdundoS(&vbcdundoF);
+	vbcdundoS << QString("bcdedit /delete {%1}").arg(vbcdIdTL) << endl;
+	vbcdundoF.close();
 /*
 	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
 	{
