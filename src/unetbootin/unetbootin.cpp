@@ -76,9 +76,8 @@ void unetbootin::sysreboot()
 	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 }
-/*
 
-void unetbootin::callexternapp(QString execFile, QString execParm, QString execVerb)
+void unetbootin::callexternapp(QString execFile, QString execParm)
 {
 //	const char* execParmL = execParm.constData();
 //	const char* execFileL = execFile.constData();
@@ -95,12 +94,14 @@ void unetbootin::callexternapp(QString execFile, QString execParm, QString execV
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 	ShExecInfo.hwnd = NULL;
-	ShExecInfo.lpVerb = LPCTSTR(execVerbL);
-//	ShExecInfo.lpVerb = LPCTSTR(execVerbL.utf16);
+//	ShExecInfo.lpVerb = LPCTSTR(execVerbL);
+	ShExecInfo.lpVerb = L"runas";
 //	ShExecInfo.lpFile = LPCTSTR(execFile.toAscii().constData());
-	ShExecInfo.lpFile = LPCTSTR(execFileL);
+//	ShExecInfo.lpFile = LPCTSTR(execFileL);
 //	ShExecInfo.lpFile = L"notepad";
-	ShExecInfo.lpParameters = LPCTSTR(execParmL);	
+	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
+//	ShExecInfo.lpParameters = LPCTSTR(execParmL);
+	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
 	ShExecInfo.lpDirectory = NULL;
 //	ShExecInfo.nShow = SW_HIDE;
 	ShExecInfo.nShow = SW_SHOW;
@@ -108,8 +109,6 @@ void unetbootin::callexternapp(QString execFile, QString execParm, QString execV
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
 }
-
-*/
 
 void unetbootin::configsysEdit()
 {
@@ -158,7 +157,49 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
-//	TODO
+	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
+	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
+	QTextStream vbcdEditS1(&vbcdEditF1);
+	vbcdEditS1 << QDir::toNativeSeparators(QString("bcdedit /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(targetPath)) << endl;
+	vbcdEditF1.close();
+	SYSTEM_INFO sysinfo;
+	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
+	{
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	}
+	else
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
+	}
+	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
+	vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream vbcdTmpInS(&vbcdTmpInF);
+	QString vbcdIdTL = vbcdTmpInS.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
+	vbcdTmpInF.close();
+	QFile vbcdSIDF(QString("%1bcdid").arg(targetPath));
+	vbcdSIDF.open(QIODevice::ReadWrite | QIODevice::Text);
+	QTextStream vbcdSIDS(&vbcdSIDF);
+	vbcdSIDS << vbcdIdTL;
+	vbcdSIDF.close();
+	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
+	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
+	QTextStream vbcdEditS2(&vbcdEditF2);
+	vbcdEditS2 << QDir::toNativeSeparators(QString("bcdedit /set {%1} device boot\n"
+	"bcdedit /set {%1} path \\ubnldr.mbr\n"
+	"bcdedit /displayorder {%1} /addlast\n"
+	"bcdedit /timeout 30").arg(vbcdIdTL)) << endl;
+	vbcdEditF2.close();
+	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
+	{
+		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
+	}
+	else
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat").arg(targetPath));
+	}
+//	IsWow64Process();
+//	if (IsWow64Process())
+//	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
 }
 
 void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
