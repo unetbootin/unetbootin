@@ -2,6 +2,11 @@
 #define UNETBOOTIN_H
 
 #include "ui_unetbootin.h"
+#ifdef Q_OS_WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <shellapi.h>
+#endif
 
 class unetbootin : public QWidget, private Ui::unetbootin
 {
@@ -21,6 +26,7 @@ public:
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
+//	bool isWinArch64Bit();
     void configsysEdit();
     void bootiniEdit();
     void vistabcdEdit();

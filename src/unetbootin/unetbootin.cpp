@@ -5,7 +5,6 @@
 #include <QSysInfo>
 #include <QMessageBox>
 #include "unetbootin.h"
-#include <windows.h>
 
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
@@ -65,6 +64,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 //	dlprocess.waitForFinished(-1);
 }
 
+#ifdef Q_OS_WIN32
+
 void unetbootin::sysreboot()
 {
 	HANDLE hToken;
@@ -109,6 +110,22 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
 }
+
+/*
+bool unetbootin::isWinArch64Bit()
+{
+	SYSTEM_INFO sysinfo;
+	GetSystemInfo(&sysinfo);
+	if (sysinfo.dwProcessorType = PROCESSOR_ARCHITECTURE_AMD64)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+*/
 
 void unetbootin::configsysEdit()
 {
@@ -157,11 +174,29 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
+//	#undef _WIN32_WINNT
+//	#define _WIN32_WINNT 0x0501
+//	BOOL isWinArch64;
+//	IsWow64Process(GetCurrentProcess(), &isWinArch64);
+//	Wow64DisableWow64FsRedirection();
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
-	vbcdEditS1 << QString("bcdedit /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(QDir::toNativeSeparators(targetPath)) << endl;
+//	vbcdEditS1 << QString("%2 /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(QDir::toNativeSeparators(targetPath)).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
+	vbcdEditS1 << QString("bcdedit /create /d \"UNetbootin\" /application bootsector > %1tmpbcdid").arg(targetPath) << endl;
 	vbcdEditF1.close();
+//	callexternapp(getenv("COMSPEC"), QString("/c %1vbcdedit.bat").arg(targetPath));
+/*
+	if (isWinArch64)
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	}
+*/
+/*
 	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 	bool arch64 = false;
 	if (QFile::exists(QString("%1tmpbcdid").arg(targetPath)))
@@ -172,33 +207,85 @@ void unetbootin::vistabcdEdit()
 	{
 		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
 	}
+*/
+
 /*
 	SYSTEM_INFO sysinfo;
-	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
-	}
-	else
+	GetSystemInfo(&sysinfo);
+	if (sysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
 	{
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 	}
+	else
+	{
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	}
 */
+/*
+	if (isWinArch64)
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	}
+*/
+	bool warch64;
+	callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
 	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
 	vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream vbcdTmpInS(&vbcdTmpInF);
+	if (vbcdTmpInS.readAll().contains("{") && vbcdTmpInS.readAll().contains("}") && vbcdTmpInS.readAll().contains("-"))
+	{
+		warch64 = false;
+	}
+	else
+	{
+		warch64 = true;
+		vbcdTmpInF.close();
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
+		vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
+	}
 	QString vbcdIdTL = vbcdTmpInS.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
 	vbcdTmpInF.close();
 	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-    vdtistor.setValue("Arch", arch64);
+	vdtistor.setValue("WArch64", warch64);
 //	vdtistor.setValue("Bcdid", vbcdIdTL);
 	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
 	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS2(&vbcdEditF2);
+/*
+	vbcdEditS2 << QString("%2 /set {%1} device boot\n"
+	"%2 /set {%1} path \\ubnldr.mbr\n"
+	"%2 /displayorder {%1} /addlast\n"
+	"%2 /timeout 30").arg(vbcdIdTL).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
+*/
 	vbcdEditS2 << QString("bcdedit /set {%1} device boot\n"
 	"bcdedit /set {%1} path \\ubnldr.mbr\n"
 	"bcdedit /displayorder {%1} /addlast\n"
 	"bcdedit /timeout 30").arg(vbcdIdTL) << endl;
 	vbcdEditF2.close();
+//	callexternapp(getenv("COMSPEC"), QString("/c %1vbcdedt2.bat").arg(targetPath));
+/*
+	if (isWinArch64)
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
+	}
+*/
+	if (warch64)
+	{
+		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
+	}
+	else
+	{
+		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
+	}
+/*
 	if (arch64)
 	{
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
@@ -207,33 +294,28 @@ void unetbootin::vistabcdEdit()
 	{
 		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
 	}
+*/
 	QFile vbcdundoF(QString("%1vbcdundo.bat").arg(targetPath));
 	vbcdundoF.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdundoS(&vbcdundoF);
+//	vbcdundoS << QString("%2 /delete {%1}").arg(vbcdIdTL).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
 	vbcdundoS << QString("bcdedit /delete {%1}").arg(vbcdIdTL) << endl;
 	vbcdundoF.close();
 /*
-	if (sysinfo.wProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
-	}
-	else
+	if (sysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
 	{
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
 	}
+	else
+	{
+		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
+	}
 */
-//	IsWow64Process();
-//	if (IsWow64Process())
-//	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
-}
-
-void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
-{
-	QFile dstFile;
-	dstFile.setFileName(QString("%1%2").arg(targetPath).arg(dstfName));
-	dstFile.open(QIODevice::ReadWrite);
-	dstFile.write(qbav);
-	dstFile.close();
+/*
+	IsWow64Process();
+	if (IsWow64Process())
+	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
+*/
 }
 
 void unetbootin::wInstfiles()
@@ -256,6 +338,17 @@ void unetbootin::wInstfiles()
 	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
 }
 
+#endif
+
+void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
+{
+	QFile dstFile;
+	dstFile.setFileName(QString("%1%2").arg(targetPath).arg(dstfName));
+	dstFile.open(QIODevice::ReadWrite);
+	dstFile.write(qbav);
+	dstFile.close();
+}
+
 void unetbootin::runinst()
 {
 	QString kernelLine("kernel");
@@ -271,6 +364,10 @@ void unetbootin::runinst()
 	QDir dir;
     dir.mkpath(targetPath);
 	wInstfiles();
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+	}
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
 	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(targetDrive)));
     QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr").arg(targetDrive)));
