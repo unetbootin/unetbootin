@@ -236,19 +236,23 @@ void unetbootin::vistabcdEdit()
 	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
 	vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream vbcdTmpInS(&vbcdTmpInF);
-	if (vbcdTmpInS.readAll().contains("{") && vbcdTmpInS.readAll().contains("}") && vbcdTmpInS.readAll().contains("-"))
+	QString qstmpvbcdin = vbcdTmpInS.readAll();
+	vbcdTmpInF.close();
+	QString vbcdIdTL;
+	if (qstmpvbcdin.contains("{") && qstmpvbcdin.contains("}") && qstmpvbcdin.contains("-"))
 	{
 		warch64 = false;
+		vbcdIdTL = qstmpvbcdin.replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
 	}
 	else
 	{
 		warch64 = true;
-		vbcdTmpInF.close();
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 		vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
+		QTextStream vbcdTmpInS2(&vbcdTmpInF);
+		vbcdIdTL = vbcdTmpInS2.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
+		vbcdTmpInF.close();
 	}
-	QString vbcdIdTL = vbcdTmpInS.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
-	vbcdTmpInF.close();
 	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	vdtistor.setValue("WArch64", warch64);
 //	vdtistor.setValue("Bcdid", vbcdIdTL);
@@ -369,6 +373,7 @@ void unetbootin::runinst()
 		QFile::remove(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
 	}
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+	QFile::setPermissions(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
 	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(targetDrive)));
     QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr").arg(targetDrive)));
     QFile::copy(QString("%1ubnldr.mbr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(targetDrive)));
