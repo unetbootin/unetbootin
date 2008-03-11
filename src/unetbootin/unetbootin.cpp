@@ -1,9 +1,3 @@
-#include <QFile>
-#include <QFileDialog>
-#include <QTextStream>
-#include <QSettings>
-#include <QSysInfo>
-#include <QMessageBox>
 #include "unetbootin.h"
 
 unetbootin::unetbootin(QWidget *parent)
@@ -62,6 +56,52 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 //	QProcess dlprocess;
 //	dlprocess.start(QString("%1downlder.exe").arg(targetPath));
 //	dlprocess.waitForFinished(-1);
+/*
+	QProgressDialog dlprogress(this);
+	dlprogress.setCancelButtonText("Cancel");
+	dlprogress.setRange(0, 97979);
+	dlprogress.setWindowTitle("Downloading...");
+*/
+/*
+	dloutdest = new QFile(targetfile);
+	dloutdest->open(QFile::ReadWrite);
+	QUrl dlurl(fileurl);
+	QFileInfo dlfileinf(dlurl.path());
+	QString dlfilename(dlfileinf.fileName());
+//	http = new QHttp(this);
+//	connect();
+	connect(http, SIGNAL(done(bool)), this, SLOT(instDetType()));
+	http->setHost(dlurl.host());
+	http->get(fileurl, dloutdest);
+//	QHttp http;
+//	http.setHost(dlurl.host());
+//	http.get(dlurl.path(), &dloutdest);
+//	http.get(fileurl, &dloutdest);
+	dloutdest->close();
+*/
+/*
+	QUrl url(fileurl);
+	QFile outfile(targetfile);
+	outfile.open(QIODevice::ReadWrite);
+	QHttp http;
+	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
+	http.setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
+	http.get(url.path(), &outfile);
+*/
+/*
+	QHttp *http = new QHttp();
+	QUrl *url=new QUrl(fileurl);
+	QFileInfo fileinfo(url->path());
+	QFile *file = new QFile(fileinfo.fileName());
+	file->open(QIODevice::WriteOnly);
+	http->setHost(url->host(),80);
+	http->get(url->path(),file);
+*/
+//	Sleep(5000);
+//	QByteArray dlcontent = http.readAll();
+//	outfile.write(dlcontent);
+//	connect(&http, SIGNAL(requestFinished(int,bool)), this, SLOT(httpDone(int,bool)));
+//	outfile.close();
 }
 
 #ifdef Q_OS_WIN32
@@ -382,79 +422,94 @@ void unetbootin::runinst()
     {
     	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
     	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+    	instDetType();
     }
     if (radioManual->isChecked())
     {
     	QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
     	QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
 		kernelOpts = OptionEnter->text();
+		instDetType();
     }
     if (radioDistro->isChecked())
     {
         nameDistro = distroselect->currentText();
 		#include "distrolst.cpp"
+		instDetType();
     }
+}
+
+void unetbootin::instDetType()
+{
     if (installType == "Hard Disk")
     {
-    	QFile menulst(QString("%1menu.lst").arg(targetPath));
-    	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
-		QTextStream menulstout(&menulst);
-		QString menulstxt = QString("default 0\n"
-		"timeout 3\n"
-		"title UNetbootin\n"
-		"find --set-root /unetbtin/ubnkern\n"
-		"%1 %2 %3 %4\n"
-		"%5 %6 %7\n"
-		"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
-		menulstout << menulstxt << endl;
-		menulst.close();
+    	runinsthdd();
+   	}
+   	if (installType == "USB Drive")
+	{
+		runinstusb();
+	}
+}
+
+void unetbootin::runinsthdd()
+{
+   	QFile menulst(QString("%1menu.lst").arg(targetPath));
+   	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream menulstout(&menulst);
+	QString menulstxt = QString("default 0\n"
+	"timeout 3\n"
+	"title UNetbootin\n"
+	"find --set-root /unetbtin/ubnkern\n"
+	"%1 %2 %3 %4\n"
+	"%5 %6 %7\n"
+	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
+	menulstout << menulstxt << endl;
+	menulst.close();
 //		QProcess inprocess;
 //		inprocess.start(QString("%1booteder.exe").arg(targetPath));
 //		inprocess.waitForFinished(-1);
-    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-    	install.setValue("Location", targetDrive);
-    	install.setValue("DisplayName", "UNetbootin");
-    	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
-    	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-    	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
-		if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
+   	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+   	install.setValue("Location", targetDrive);
+   	install.setValue("DisplayName", "UNetbootin");
+   	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+   	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
+   	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
+	{
+		configsysEdit();
+	}
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
+	{
+		bootiniEdit();
+	}
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
+	{
+		vistabcdEdit();
+	}
+	else
+	{
+		configsysEdit();
+		bootiniEdit();
+		vistabcdEdit();
+	}
+	QMessageBox rebootmsgb;
+   	rebootmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
+	rebootmsgb.setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+		switch (rebootmsgb.exec())
 		{
-			configsysEdit();
+			case QMessageBox::Ok:
+			{
+				unetbootin::sysreboot();
 		}
-		else if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
-		{
-			bootiniEdit();
-		}
-		else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
-		{
-			vistabcdEdit();
-		}
-		else
-		{
-			configsysEdit();
-			bootiniEdit();
-			vistabcdEdit();
-		}
-		QMessageBox rebootmsgb;
-    	rebootmsgb.setWindowTitle("Reboot Now?");
-		rebootmsgb.setText("After rebooting, select the UNetbootin menu entry to boot.\nReboot now?");
- 		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
- 		switch (rebootmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
- 			{
- 				unetbootin::sysreboot();
-			}
-			case QMessageBox::Cancel:
-				break;
-	 		default:
-				break;
+		case QMessageBox::Cancel:
+			break;
+ 		default:
+			break;
    		}
   	}
-/*
-	if (installType == "USB Drive")
-	{
-		TODO
-	}
-*/
+
+void unetbootin::runinstusb()
+{
+//	TODO
 }

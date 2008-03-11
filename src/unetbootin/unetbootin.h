@@ -1,6 +1,10 @@
 #ifndef UNETBOOTIN_H
 #define UNETBOOTIN_H
 
+#include <QtCore>
+#include <QtGui>
+#include <QtNetwork>
+
 #include "ui_unetbootin.h"
 #ifdef Q_OS_WIN32
 #define WIN32_LEAN_AND_MEAN
@@ -23,6 +27,8 @@ public:
     QString targetDrive;
     QString targetPath;
     QString installType;
+    QString postinstmsg;
+    QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
@@ -33,6 +39,9 @@ public:
     void instIndvfl(QString dstfName, QByteArray qbav);
     void wInstfiles();
     void runinst();
+    void instDetType();
+    void runinsthdd();
+    void runinstusb();
 
 private slots:
     void on_FloppyFileSelector_clicked();

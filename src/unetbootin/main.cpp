@@ -1,10 +1,3 @@
-#include <QApplication>
-#include <QSettings>
-#include <QMessageBox>
-#include <QFile>
-#include <QDir>
-#include <QSysInfo>
-#include <QStringList>
 #include "unetbootin.h"
 
 void configsysUndo(QString uninstPathL)
@@ -121,8 +114,8 @@ void ubnUninst()
 	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(uninstPath)));
 	chkinstL.clear();
 	QMessageBox finmsgb;
-	finmsgb.setWindowTitle("Uninstallation Complete");
-	finmsgb.setText("UNetbootin has been uninstalled.");
+	finmsgb.setWindowTitle(QObject::tr("Uninstallation Complete"));
+	finmsgb.setText(QObject::tr("UNetbootin has been uninstalled."));
  	finmsgb.setStandardButtons(QMessageBox::Ok);
  	switch (finmsgb.exec())
  	{
@@ -135,13 +128,16 @@ void ubnUninst()
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+	QApplication app(argc, argv);
+	QTranslator translator;
+	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
+	app.installTranslator(&translator);
     QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	if (chkinst.contains("Location"))
 	{
 		QMessageBox uninstmsgb;
-		uninstmsgb.setWindowTitle("UNetbootin Uninstaller");
-		uninstmsgb.setText("UNetbootin is currently installed. Remove the existing version?");
+		uninstmsgb.setWindowTitle(QObject::tr("UNetbootin Uninstaller"));
+		uninstmsgb.setText(QObject::tr("UNetbootin is currently installed. Remove the existing version?"));
  		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
  		switch (uninstmsgb.exec())
  		{
