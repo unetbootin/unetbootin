@@ -15,7 +15,12 @@ void configsysUndo(QString uninstPathL)
 
 void bootiniUndo(QString uninstPathL)
 {
-//	TODO
+	if (!QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL))))
+		{
+			QFile::remove(QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)));
+			QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)));
+		}
+	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)).utf16()), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
 }
 
 void vistabcdUndo(QString uninstPathL)
@@ -128,7 +133,7 @@ void ubnUninst()
 
 int main(int argc, char *argv[])
 {
-	QApplication app(argc, argv);
+	QApplication app(argc, argv, true);
 	QTranslator translator;
 	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
 	app.installTranslator(&translator);

@@ -42,6 +42,7 @@ void unetbootin::on_okbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
+/*
     QFile file1(QString("%1dlurl.txt").arg(targetPath));
     file1.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out1(&file1);
@@ -53,6 +54,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
     out2 << targetfile;
     file2.close();
     callexternapp(QString("%1downlder.exe").arg(targetPath), "");
+*/
 //	QProcess dlprocess;
 //	dlprocess.start(QString("%1downlder.exe").arg(targetPath));
 //	dlprocess.waitForFinished(-1);
@@ -102,6 +104,25 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 //	outfile.write(dlcontent);
 //	connect(&http, SIGNAL(requestFinished(int,bool)), this, SLOT(httpDone(int,bool)));
 //	outfile.close();
+	QHttp dlhttp;
+	QUrl dlurl(fileurl);
+	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
+	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2").arg(fileurl).arg(targetfile));
+	QObject::connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+	QObject::connect(&dlhttp, SIGNAL(updateDataReadProgress(int, int)), &dlprogress, SLOT(dlprogressupdate(int, int, fileurl, targetfile)));
+	QFile dloutfile(targetfile);
+	dloutfile.open(QIODevice::WriteOnly);
+	dlhttp.setHost(dlurl.host());
+	dlhttp.get(dlurl.path(), &dloutfile);
+	dlprogress.exec();
+	dlhttp.close();
+}
+
+void unetbootin::dlprogressupdate(int dlbytes, int maxbytes, QString sourcefile, QString destinfile)
+{
+	dlprogress.setValue(dlbytes);
+	dlprogress.setMaximum(maxbytes);
+	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nCopied: %3 of %4").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 }
 
 #ifdef Q_OS_WIN32
@@ -209,7 +230,49 @@ void unetbootin::configsysEdit()
 
 void unetbootin::bootiniEdit()
 {
-//	TODO
+	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)).utf16()), FILE_ATTRIBUTE_NORMAL);
+	QFile::copy(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)), QString("%1boot.ini").arg(targetPath));
+	QFile::copy(QDir::toNativeSeparators(QString("%1/bootnw.ini").arg(targetDrive)), QString("%1bootnw.txt").arg(targetPath));
+	QFile bootnwFile(QString("%1bootnw.txt").arg(targetPath));
+	QFile bootiniFile(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)));
+	bootnwFile.open(QIODevice::ReadWrite | QIODevice::Text);
+	bootiniFile.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream bootnwOut(&bootnwFile);
+	QTextStream bootiniOut(&bootiniFile);
+	QStringList bootiniCurTextL;
+	bool btihasreplacedtimeout = false;
+	while (!bootiniOut.atEnd())
+	{
+		QString bootiniCurLine = bootiniOut.readLine();
+		if (!btihasreplacedtimeout)
+		{
+			if (bootiniCurLine.contains("timeout", Qt::CaseInsensitive))
+			{
+				bootiniCurTextL.append("timeout=15");
+				btihasreplacedtimeout = true;
+			}
+			else
+			{
+				bootiniCurTextL.append(bootiniCurLine);
+			}
+		}
+		else
+		{
+			bootiniCurTextL.append(bootiniCurLine);
+		}
+	}
+	QString bootiniCurText = bootiniCurTextL.join("\n");
+//	QStringList bootiniCurTextL = bootiniOut.readAll().split("\n");
+//	int bootiniCurTextI = bootiniCurTextL.indexOf("timeout", Qt::CaseInsensitive);
+//	bootiniCurTextL[bootiniCurTextI] = QString("timeout=15");
+//	QString bootiniCurText = bootiniCurTextL.join("\n");
+	QString bootiniText = QString("%1\n%2=\"UNetbootin\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(targetDrive)));
+	bootnwOut << bootiniText << endl;
+	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive))))
+	{
+		bootiniFile.remove();
+		QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)));
+	}
 }
 
 void unetbootin::vistabcdEdit()
@@ -372,12 +435,6 @@ void unetbootin::wInstfiles()
 	instIndvfl(QString("ubnldr.mbr"), ubnldrmbr);
 	#include "memdisk.cpp"
 	instIndvfl(QString("memdisk"), memdisk);
-	#include "downlderexe.cpp"
-	instIndvfl(QString("downlder.exe"), downlderexe);
-	#include "bootederexe.cpp"
-	instIndvfl(QString("booteder.exe"), bootederexe);
-//	#include "runxfileexe.cpp"
-//	instIndvfl(QString("runxfile.exe"), runxfileexe);
 	#include "emtxfileexe.cpp"
 	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
 }
@@ -395,13 +452,10 @@ void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 
 void unetbootin::runinst()
 {
-	QString kernelLine("kernel");
-	QString kernelParam;
-	QString kernelLoc("/unetbtin/ubnkern");
-	QString kernelOpts;
-	QString initrdLine("initrd");
-	QString initrdLoc("/unetbtin/ubninit");
-	QString initrdOpts;
+	kernelLine = "kernel";
+	kernelLoc = "/unetbtin/ubnkern";
+	initrdLine = "initrd";
+	initrdLoc = "/unetbtin/ubninit";
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
     targetPath = QDir::toNativeSeparators(QString("%1/unetbtin/").arg(targetDrive));

@@ -29,10 +29,10 @@ public:
     QString installType;
     QString postinstmsg;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
+    QProgressDialog dlprogress;
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
-//	bool isWinArch64Bit();
     void configsysEdit();
     void bootiniEdit();
     void vistabcdEdit();
@@ -49,6 +49,7 @@ private slots:
     void on_InitrdFileSelector_clicked();
     void on_cancelbutton_clicked();
     void on_okbutton_clicked();
+    void dlprogressupdate(int dlbytes, int maxbytes, QString sourcefile, QString destinfile);
 };
 
 #endif
