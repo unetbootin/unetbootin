@@ -104,12 +104,14 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 //	outfile.write(dlcontent);
 //	connect(&http, SIGNAL(requestFinished(int,bool)), this, SLOT(httpDone(int,bool)));
 //	outfile.close();
+	sourcefile = fileurl;
+	destinfile = targetfile;
 	QHttp dlhttp;
 	QUrl dlurl(fileurl);
 	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
 	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2").arg(fileurl).arg(targetfile));
-	QObject::connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
-	QObject::connect(&dlhttp, SIGNAL(updateDataReadProgress(int, int)), &dlprogress, SLOT(dlprogressupdate(int, int, fileurl, targetfile)));
+	connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+	connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
 	QFile dloutfile(targetfile);
 	dloutfile.open(QIODevice::WriteOnly);
 	dlhttp.setHost(dlurl.host());
@@ -118,11 +120,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dlhttp.close();
 }
 
-void unetbootin::dlprogressupdate(int dlbytes, int maxbytes, QString sourcefile, QString destinfile)
+void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
 	dlprogress.setValue(dlbytes);
 	dlprogress.setMaximum(maxbytes);
-	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nCopied: %3 of %4").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nCopied: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 }
 
 #ifdef Q_OS_WIN32

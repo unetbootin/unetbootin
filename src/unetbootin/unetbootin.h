@@ -28,6 +28,7 @@ public:
     QString targetPath;
     QString installType;
     QString postinstmsg;
+    QString sourcefile, destinfile;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
     QProgressDialog dlprogress;
     void downloadfile(QString fileurl, QString targetfile);
@@ -49,7 +50,9 @@ private slots:
     void on_InitrdFileSelector_clicked();
     void on_cancelbutton_clicked();
     void on_okbutton_clicked();
-    void dlprogressupdate(int dlbytes, int maxbytes, QString sourcefile, QString destinfile);
+
+public slots:
+	void dlprogressupdate(int dlbytes, int maxbytes);
 };
 
 #endif
