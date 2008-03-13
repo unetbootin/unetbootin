@@ -73,6 +73,7 @@ if (nameDistro == "Fedora 9 Alpha")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/i386/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/i386/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Alpha/Fedora/i386/os' when asked for the folder.");
 }
 
 if (nameDistro == "Fedora 9 Alpha x64")
@@ -80,6 +81,7 @@ if (nameDistro == "Fedora 9 Alpha x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Alpha/Fedora/x86_64/os' when asked for the folder.");
 }
 
 if (nameDistro == "Fedora 8")
@@ -95,6 +97,7 @@ if (nameDistro == "Fedora 8 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/8/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/8/Fedora/x86_64/os' when asked for the folder.");
 }
 
 if (nameDistro == "Fedora 7")
@@ -102,6 +105,7 @@ if (nameDistro == "Fedora 7")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/i386/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/i386/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/7/Fedora/i386/os' when asked for the folder.");
 }
 
 if (nameDistro == "Fedora 7 x64")
@@ -109,6 +113,7 @@ if (nameDistro == "Fedora 7 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/x86_64/os/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Fedora/x86_64/os/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/7/Fedora/x86_64/os' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE Factory")
@@ -116,6 +121,7 @@ if (nameDistro == "openSUSE Factory")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/SL-OSS-factory/inst-source' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE Factory x64")
@@ -123,6 +129,7 @@ if (nameDistro == "openSUSE Factory x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/SL-OSS-factory/inst-source' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE 10.3")
@@ -130,6 +137,7 @@ if (nameDistro == "openSUSE 10.3")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/10.3/repo/oss' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE 10.3 x64")
@@ -137,6 +145,7 @@ if (nameDistro == "openSUSE 10.3 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/10.3/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/10.3/repo/oss' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE 10.2")
@@ -144,6 +153,7 @@ if (nameDistro == "openSUSE 10.2")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/i386/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/i386/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/10.2/repo/oss' when asked for the folder.");
 }
 
 if (nameDistro == "openSUSE 10.2 x64")
@@ -151,6 +161,7 @@ if (nameDistro == "openSUSE 10.2 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://download.opensuse.org/distribution/10.2/repo/oss/boot/x86_64/loader/initrd", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/10.2/repo/oss' when asked for the folder.");
 }
 
 if (nameDistro == "CentOS 5")
@@ -158,6 +169,7 @@ if (nameDistro == "CentOS 5")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://isoredirect.centos.org/centos/5/os/i386/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://isoredirect.centos.org/centos/5/os/i386/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/5/os/i386' when asked for the folder.");
 }
 
 if (nameDistro == "CentOS 5 x64")
@@ -165,6 +177,7 @@ if (nameDistro == "CentOS 5 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://isoredirect.centos.org/centos/5/os/x86_64/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://isoredirect.centos.org/centos/5/os/x86_64/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/5/os/x86_64' when asked for the folder.");
 }
 
 if (nameDistro == "CentOS 4")
@@ -172,6 +185,7 @@ if (nameDistro == "CentOS 4")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://isoredirect.centos.org/centos/4/os/i386/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://isoredirect.centos.org/centos/4/os/i386/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/4/os/i386' when asked for the folder.");
 }
 
 if (nameDistro == "CentOS 4 x64")
@@ -179,6 +193,7 @@ if (nameDistro == "CentOS 4 x64")
 	kernelOpts = "splash=silent showopts";
 	downloadfile("http://isoredirect.centos.org/centos/4/os/x86_64/images/pxeboot/vmlinuz", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://isoredirect.centos.org/centos/4/os/x86_64/images/pxeboot/initrd.img", QString("%1ubninit").arg(targetPath));
+	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/4/os/x86_64' when asked for the folder.");
 }
 
 if (nameDistro == "Debian Stable")
@@ -221,6 +236,18 @@ if (nameDistro == "Debian Unstable x64")
 	kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";
 	downloadfile("http://ftp.debian.org/debian/dists/unstable/main/installer-amd64/current/images/netboot/gtk/debian-installer/amd64/linux", QString("%1ubnkern").arg(targetPath));
 	downloadfile("http://ftp.debian.org/debian/dists/unstable/main/installer-amd64/current/images/netboot/gtk/debian-installer/amd64/initrd.gz", QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "FreeBSD 7.0")
+{
+	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
+	downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-7.0.img.gz", QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "FreeBSD 7.0 x64")
+{
+	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
+	downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-7.0-x64.img.gz", QString("%1ubninit").arg(targetPath));
 }
 
 if (nameDistro == "NetBSD 4.0")

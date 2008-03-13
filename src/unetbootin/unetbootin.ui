@@ -378,6 +378,21 @@
      <string>Debian Unstable x64</string>
     </property>
    </item>
+   <item>
+    <property name="text" >
+     <string>FreeBSD 7.0</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>FreeBSD 7.0 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>NetBSD 4.0</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="intromessage" >
    <property name="geometry" >
