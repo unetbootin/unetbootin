@@ -29,6 +29,7 @@ public:
     QString targetDrive;
     QString targetPath;
     QString installType;
+    QString installDir;
     QString postinstmsg;
     QString sourcefile, destinfile;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;

@@ -5,6 +5,14 @@ unetbootin::unetbootin(QWidget *parent)
 {
     setupUi(this);
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+/*
+    #ifdef Q_OS_WIN32
+    if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
+	{
+		typeselect->removeItem(1);
+	}
+	#endif
+*/
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -17,6 +25,7 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 	if (typeselectIndex == 1)
 	{
 		driveselect->clear();
+		#ifdef Q_OS_WIN32
 		QFileInfoList extdrivesList = QDir::drives();
 		for (int i = 0; i < extdrivesList.size(); ++i)
 		{
@@ -25,6 +34,10 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 				driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
 			}
 		}
+		#endif
+		#ifdef Q_OS_UNIX
+		// TODO drive detection via fdisk -l
+		#endif
 	}
 }
 
@@ -100,7 +113,7 @@ void unetbootin::sysreboot()
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 	#endif
 	#ifdef Q_OS_UNIX
-	callexternapp("init 6 &", "");
+	callexternapp("init", "6 &");
 	#endif
 }
 
@@ -268,6 +281,8 @@ void unetbootin::wInstfiles()
 	instIndvfl(QString("ubnldr.mbr"), ubnldrmbr);
 	#include "emtxfileexe.cpp"
 	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
+	#include "syslinuxexe.cpp"
+	instIndvfl(QString("syslinux.exe"), syslinuxexe);
 	#endif
 }
 
@@ -282,13 +297,35 @@ void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 
 void unetbootin::runinst()
 {
-	kernelLine = "kernel";
-	kernelLoc = "/unetbtin/ubnkern";
-	initrdLine = "initrd";
-	initrdLoc = "/unetbtin/ubninit";
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
-    targetPath = QDir::toNativeSeparators(QString("%1unetbtin/").arg(targetDrive));
+	#ifdef Q_OS_WIN32
+	if (installType == "Hard Disk")
+	{
+		installDir = QDir::toNativeSeparators("unetbtin/");
+	}
+	if (installType == "USB Drive")
+	{
+		// TODO change to drive mountpoint
+		installDir = "";
+	}
+	#endif
+	#ifdef Q_OS_UNIX
+	if (installType == "Hard Disk")
+	{
+		installDir = QDir::toNativeSeparators("boot/");
+	}
+	if (installType == "USB Drive")
+	{
+		// TODO change to drive mountpoint
+		installDir = "";
+	}
+	#endif
+	kernelLine = "kernel";
+	kernelLoc = QString("/%1ubnkern").arg(installDir);
+	initrdLine = "initrd";
+	initrdLoc = QString("/%1ubninit").arg(installDir);
+    targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
 	QDir dir;
     dir.mkpath(targetPath);
 	wInstfiles();
@@ -343,10 +380,10 @@ void unetbootin::runinsthdd()
 	QString menulstxt = QString("default 0\n"
 	"timeout 3\n"
 	"title UNetbootin\n"
-	"find --set-root /unetbtin/ubnkern\n"
+	"find --set-root /%8ubnkern\n"
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
+	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts, installDir);
 	menulstout << menulstxt << endl;
 	menulst.close();
    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
@@ -394,5 +431,14 @@ void unetbootin::runinsthdd()
 
 void unetbootin::runinstusb()
 {
-//	TODO
+	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
+   	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream syslinuxcfgout(&syslinuxcfg);
+	QString syslinuxcfgtxt = QString("default unetbootin\n"
+	"label unetbootin\n"
+	"	kernel %1\n"
+	"	append initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
+	syslinuxcfgout << syslinuxcfgtxt << endl;
+	syslinuxcfg.close();
+	callexternapp(QString("%1syslinux").arg(targetPath), QString("-ma").arg(targetDrive));
 }
