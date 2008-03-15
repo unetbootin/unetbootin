@@ -45,6 +45,7 @@ public:
     void runinstusb();
 
 private slots:
+	void on_typeselect_currentIndexChanged(int typeselectIndex);
     void on_FloppyFileSelector_clicked();
     void on_KernelFileSelector_clicked();
     void on_InitrdFileSelector_clicked();

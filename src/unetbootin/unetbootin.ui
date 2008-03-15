@@ -451,7 +451,7 @@
   </widget>
   <widget class="QComboBox" name="driveselect" >
    <property name="enabled" >
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry" >
     <rect>
@@ -464,11 +464,6 @@
    <property name="toolTip" >
     <string>Select the target drive to install to</string>
    </property>
-   <item>
-    <property name="text" >
-     <string>C:</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="labeldrive_2" >
    <property name="geometry" >
@@ -488,7 +483,7 @@
   </widget>
   <widget class="QComboBox" name="typeselect" >
    <property name="enabled" >
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry" >
     <rect>

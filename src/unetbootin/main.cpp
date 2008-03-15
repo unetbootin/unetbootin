@@ -2,25 +2,25 @@
 
 void configsysUndo(QString uninstPathL)
 {
-	if (!QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL))))
+	if (!QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)));
-		QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)));
+		QFile::remove(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
+		QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
 	}
 //	QProcess ucfgsattrib;
-//	ucfgsattrib.start(QDir::toNativeSeparators(QString("attrib +h +s +r %1/config.sys").arg(uninstPathL)));
+//	ucfgsattrib.start(QDir::toNativeSeparators(QString("attrib +h +s +r %1config.sys").arg(uninstPathL)));
 //	ucfgsattrib.waitForFinished(-1);
-	SetFileAttributesA(QDir::toNativeSeparators(QString("%1/config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
 }
 
 void bootiniUndo(QString uninstPathL)
 {
-	if (!QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL))))
+	if (!QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL))))
 		{
-			QFile::remove(QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)));
-			QFile::copy(QDir::toNativeSeparators(QString("%1/unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)));
+			QFile::remove(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
+			QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/boot.ini").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)));
 		}
-	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1/boot.ini").arg(uninstPathL)).utf16()), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
+	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1boot.ini").arg(uninstPathL)).utf16()), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
 }
 
 void vistabcdUndo(QString uninstPathL)
@@ -35,11 +35,11 @@ void vistabcdUndo(QString uninstPathL)
 	unetbootin uexecRunL;
 	if (warch64L)
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
 	}
 	else
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
 	}
 	vdtustor.remove("WArch64");
 //	BOOL isWinArch64;
@@ -48,11 +48,11 @@ void vistabcdUndo(QString uninstPathL)
 	unetbootin uexecRunL;
 	if (isWinArch64)
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
 	}
 	else
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
 	}
 */
 /*
@@ -61,15 +61,15 @@ void vistabcdUndo(QString uninstPathL)
 	GetSystemInfo(&usysinfo);
 	if (usysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
 	}
 	else
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1/unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
+		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
 	}
 */
 //	unetbootin uexecRunL;
-//	uexecRunL.callexternapp(getenv("COMSPEC"), QDir::toNativeSeparators(QString("/c %1/unetbtin/vbcdundo.bat").arg(uninstPathL)));
+//	uexecRunL.callexternapp(getenv("COMSPEC"), QDir::toNativeSeparators(QString("/c %1unetbtin/vbcdundo.bat").arg(uninstPathL)));
 }
 
 void clearOutDir(QString pDirToDel)
@@ -113,10 +113,10 @@ void ubnUninst()
 		bootiniUndo(uninstPath);
 		vistabcdUndo(uninstPath);
 	}
-	clearOutDir(QDir::toNativeSeparators(QString("%1/unetbtin").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnldr").arg(uninstPath)));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(uninstPath)));
+	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
+	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(uninstPath)));
 	chkinstL.clear();
 	QMessageBox finmsgb;
 	finmsgb.setWindowTitle(QObject::tr("Uninstallation Complete"));
@@ -158,8 +158,8 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	unetbootin unetbootin;
+	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
+	unetbootin.appLoc = app.applicationFilePath();
     unetbootin.show();
-    unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
-    unetbootin.appLoc = app.applicationFilePath();
     return app.exec();
 }

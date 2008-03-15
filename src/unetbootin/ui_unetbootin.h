@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Wed Mar 12 21:24:25 2008
+** Created: Fri Mar 14 20:07:00 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -107,14 +107,14 @@ public:
     labeldrive->setGeometry(QRect(10, 260, 41, 25));
     driveselect = new QComboBox(unetbootin);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
-    driveselect->setEnabled(false);
+    driveselect->setEnabled(true);
     driveselect->setGeometry(QRect(50, 260, 51, 25));
     labeldrive_2 = new QLabel(unetbootin);
     labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
     labeldrive_2->setGeometry(QRect(140, 260, 32, 25));
     typeselect = new QComboBox(unetbootin);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
-    typeselect->setEnabled(false);
+    typeselect->setEnabled(true);
     typeselect->setGeometry(QRect(180, 260, 91, 25));
     OptionEnter = new QLineEdit(unetbootin);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
@@ -197,10 +197,6 @@ public:
     cancelbutton->setText(QApplication::translate("unetbootin", "Cancel", 0, QApplication::UnicodeUTF8));
     labeldrive->setToolTip(QApplication::translate("unetbootin", "Select the target drive to install to", 0, QApplication::UnicodeUTF8));
     labeldrive->setText(QApplication::translate("unetbootin", "Drive:", 0, QApplication::UnicodeUTF8));
-    driveselect->clear();
-    driveselect->insertItems(0, QStringList()
-     << QApplication::translate("unetbootin", "C:", 0, QApplication::UnicodeUTF8)
-    );
     driveselect->setToolTip(QApplication::translate("unetbootin", "Select the target drive to install to", 0, QApplication::UnicodeUTF8));
     labeldrive_2->setToolTip(QApplication::translate("unetbootin", "Select the installation target type", 0, QApplication::UnicodeUTF8));
     labeldrive_2->setText(QApplication::translate("unetbootin", "Type:", 0, QApplication::UnicodeUTF8));

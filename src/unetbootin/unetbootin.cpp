@@ -4,6 +4,30 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
+    driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+//	driveselect->setCurrentIndex(0);
+}
+
+void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
+{
+	if (typeselectIndex == 0)
+	{
+		driveselect->clear();
+		driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+	}
+	if (typeselectIndex == 1)
+	{
+		driveselect->clear();
+		QFileInfoList extdrivesList = QDir::drives();
+		for (int i = 0; i < extdrivesList.size(); ++i)
+		{
+			if (QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()) != QDir::toNativeSeparators(QDir::rootPath().toUpper()))
+			{
+				driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+			}
+		}
+//		driveselect->addItem(QDir::toNativeSeparators(QDir::drives()).toUpper());
+	}
 }
 
 void unetbootin::on_FloppyFileSelector_clicked()
@@ -201,21 +225,21 @@ void unetbootin::configsysEdit()
 //	QFile wldEditF(QString("%1wldedit.bat").arg(targetPath));
 //	wldEditF.open(QIODevice::ReadWrite | QIODevice::Text);
 //	QTextStream wldEditS(&wldEditF);
-//	wldEditS << QDir::toNativeSeparators(QString("attrib -h -s -r %1/config.sys").arg(targetDrive)) << endl;
+//	wldEditS << QDir::toNativeSeparators(QString("attrib -h -s -r %1config.sys").arg(targetDrive)) << endl;
 //	wldEditF.close();
 //	callexternapp(QString("%1wldedit.bat").arg(targetPath), "", "");
 //	CString str(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit());
-	SetFileAttributesA(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
 //	callexternapp(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit(), "", "");
 //	callexternapp("notepad", "", "");
 //	QProcess cfgsattrib;
 //	cfgsattrib.start(QString("%1runxfile.exe %1wldedit.bat").arg(targetPath));
-//	cfgsattrib.start(QDir::toNativeSeparators(QString("attrib -h -s -r %1/config.sys").arg(targetDrive)));
+//	cfgsattrib.start(QDir::toNativeSeparators(QString("attrib -h -s -r %1config.sys").arg(targetDrive)));
 //	cfgsattrib.waitForFinished(-1);
-	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
-	QFile::copy(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
+	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
+	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
 	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
-	QFile configsysFile(QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)));
+	QFile configsysFile(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)));
 	confignwFile.open(QIODevice::ReadWrite | QIODevice::Text);
 	configsysFile.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream confignwOut(&confignwFile);
@@ -229,20 +253,20 @@ void unetbootin::configsysEdit()
 	"device=ubnldr.exe\n"
 	"[windows]\n%1").arg(configsysOut.readAll());
 	confignwOut << configsysText << endl;
-	if (!QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive))))
+	if (!QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive))))
 	{
 		configsysFile.remove();
-		QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/config.sys").arg(targetDrive)));
+		QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)));
 	}
 }
 
 void unetbootin::bootiniEdit()
 {
-	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)).utf16()), FILE_ATTRIBUTE_NORMAL);
-	QFile::copy(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)), QString("%1boot.ini").arg(targetPath));
-	QFile::copy(QDir::toNativeSeparators(QString("%1/bootnw.ini").arg(targetDrive)), QString("%1bootnw.txt").arg(targetPath));
+	SetFileAttributesW(LPWSTR(QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive)).utf16()), FILE_ATTRIBUTE_NORMAL);
+	QFile::copy(QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive)), QString("%1boot.ini").arg(targetPath));
+	QFile::copy(QDir::toNativeSeparators(QString("%1bootnw.ini").arg(targetDrive)), QString("%1bootnw.txt").arg(targetPath));
 	QFile bootnwFile(QString("%1bootnw.txt").arg(targetPath));
-	QFile bootiniFile(QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)));
+	QFile bootiniFile(QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive)));
 	bootnwFile.open(QIODevice::ReadWrite | QIODevice::Text);
 	bootiniFile.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream bootnwOut(&bootnwFile);
@@ -274,12 +298,12 @@ void unetbootin::bootiniEdit()
 //	int bootiniCurTextI = bootiniCurTextL.indexOf("timeout", Qt::CaseInsensitive);
 //	bootiniCurTextL[bootiniCurTextI] = QString("timeout=15");
 //	QString bootiniCurText = bootiniCurTextL.join("\n");
-	QString bootiniText = QString("%1\n%2=\"UNetbootin\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(targetDrive)));
+	QString bootiniText = QString("%1\n%2=\"UNetbootin\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
 	bootnwOut << bootiniText << endl;
-	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive))))
+	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive))))
 	{
 		bootiniFile.remove();
-		QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1/boot.ini").arg(targetDrive)));
+		QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive)));
 	}
 }
 
@@ -466,19 +490,19 @@ void unetbootin::runinst()
 	initrdLoc = "/unetbtin/ubninit";
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
-    targetPath = QDir::toNativeSeparators(QString("%1/unetbtin/").arg(targetDrive));
+    targetPath = QDir::toNativeSeparators(QString("%1unetbtin/").arg(targetDrive));
 	QDir dir;
     dir.mkpath(targetPath);
 	wInstfiles();
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive))))
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	}
-	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
-	QFile::setPermissions(QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
-	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.exe").arg(targetDrive)));
-    QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr").arg(targetDrive)));
-    QFile::copy(QString("%1ubnldr.mbr").arg(targetPath), QDir::toNativeSeparators(QString("%1/ubnldr.mbr").arg(targetDrive)));
+	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
+	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
+    QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
+    QFile::copy(QString("%1ubnldr.mbr").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
     close();
     if (radioFloppy->isChecked())
     {
@@ -533,9 +557,9 @@ void unetbootin::runinsthdd()
    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
    	install.setValue("Location", targetDrive);
    	install.setValue("DisplayName", "UNetbootin");
-   	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+   	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
    	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-   	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1/unetbtin.exe").arg(targetDrive)));
+   	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysEdit();
