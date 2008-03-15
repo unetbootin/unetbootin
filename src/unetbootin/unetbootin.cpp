@@ -87,10 +87,9 @@ void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 }
 
-#ifdef Q_OS_WIN32
-
 void unetbootin::sysreboot()
 {
+	#ifdef Q_OS_WIN32
 	HANDLE hToken;
 	TOKEN_PRIVILEGES tkp;
 	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken);
@@ -99,10 +98,15 @@ void unetbootin::sysreboot()
 	tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
 	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
+	#endif
+	#ifdef Q_OS_UNIX
+	callexternapp("init 6 &", "");
+	#endif
 }
 
 void unetbootin::callexternapp(QString execFile, QString execParm)
 {
+	#ifdef Q_OS_WIN32
 	SHELLEXECUTEINFO ShExecInfo = {0};
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
@@ -115,7 +119,15 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	ShExecInfo.hInstApp = NULL;
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
+	#endif
+	#ifdef Q_OS_UNIX
+	QProcess lnexternapp;
+	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
+	lnexternapp.waitForFinished(-1);
+	#endif
 }
+
+#ifdef Q_OS_WIN32
 
 void unetbootin::configsysEdit()
 {
@@ -241,21 +253,23 @@ void unetbootin::vistabcdEdit()
 	vbcdundoF.close();
 }
 
+#endif
+
 void unetbootin::wInstfiles()
 {
 	#include "ubnldr.cpp"
 	instIndvfl(QString("ubnldr"), ubnldr);
+	#include "memdisk.cpp"
+	instIndvfl(QString("memdisk"), memdisk);
+	#ifdef Q_OS_WIN32
 	#include "ubnldrexe.cpp"
 	instIndvfl(QString("ubnldr.exe"), ubnldrexe);
 	#include "ubnldrmbr.cpp"
 	instIndvfl(QString("ubnldr.mbr"), ubnldrmbr);
-	#include "memdisk.cpp"
-	instIndvfl(QString("memdisk"), memdisk);
 	#include "emtxfileexe.cpp"
 	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
+	#endif
 }
-
-#endif
 
 void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 {
@@ -341,6 +355,7 @@ void unetbootin::runinsthdd()
    	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
    	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
    	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	#ifdef Q_OS_WIN32
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysEdit();
@@ -359,6 +374,7 @@ void unetbootin::runinsthdd()
 		bootiniEdit();
 		vistabcdEdit();
 	}
+	#endif
 	QMessageBox rebootmsgb;
    	rebootmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
 	rebootmsgb.setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));

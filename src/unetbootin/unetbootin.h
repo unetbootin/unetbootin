@@ -11,6 +11,8 @@
 #include <windows.h>
 #include <shellapi.h>
 #endif
+#ifdef Q_OS_UNIX
+#endif
 
 class unetbootin : public QWidget, private Ui::unetbootin
 {

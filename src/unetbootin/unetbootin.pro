@@ -6,7 +6,6 @@ CONFIG += release static
 HEADERS += unetbootin.h
 FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp distrolst.cpp
-QMAKE_LFLAGS += -Wl,-subsystem,windows
 RC_FILE += ubnembed.rc
 QT += core gui network
 TRANSLATIONS += unetbootin_es.ts

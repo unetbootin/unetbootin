@@ -1,5 +1,7 @@
 #include "unetbootin.h"
 
+#ifdef Q_OS_WIN32
+
 void configsysUndo(QString uninstPathL)
 {
 	if (!QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL))))
@@ -38,6 +40,8 @@ void vistabcdUndo(QString uninstPathL)
 	vdtustor.remove("WArch64");
 }
 
+#endif
+
 void clearOutDir(QString pDirToDel)
 {
 	QDir dirToDel(pDirToDel);
@@ -61,6 +65,7 @@ void ubnUninst()
 	QVariant uninstvar(QVariant::String);
 	uninstvar = chkinstL.value("Location");
 	QString uninstPath = uninstvar.value<QString>();
+	#ifdef Q_OS_WIN32
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysUndo(uninstPath);
@@ -79,6 +84,7 @@ void ubnUninst()
 		bootiniUndo(uninstPath);
 		vistabcdUndo(uninstPath);
 	}
+	#endif
 	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
