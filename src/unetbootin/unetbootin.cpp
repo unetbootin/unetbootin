@@ -5,7 +5,6 @@ unetbootin::unetbootin(QWidget *parent)
 {
     setupUi(this);
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
-//	driveselect->setCurrentIndex(0);
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -26,7 +25,6 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 				driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
 			}
 		}
-//		driveselect->addItem(QDir::toNativeSeparators(QDir::drives()).toUpper());
 	}
 }
 
@@ -66,68 +64,6 @@ void unetbootin::on_okbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
-/*
-    QFile file1(QString("%1dlurl.txt").arg(targetPath));
-    file1.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream out1(&file1);
-    out1 << fileurl;
-    file1.close();
-    QFile file2(QString("%1outfile.txt").arg(targetPath));
-    file2.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream out2(&file2);
-    out2 << targetfile;
-    file2.close();
-    callexternapp(QString("%1downlder.exe").arg(targetPath), "");
-*/
-//	QProcess dlprocess;
-//	dlprocess.start(QString("%1downlder.exe").arg(targetPath));
-//	dlprocess.waitForFinished(-1);
-/*
-	QProgressDialog dlprogress(this);
-	dlprogress.setCancelButtonText("Cancel");
-	dlprogress.setRange(0, 97979);
-	dlprogress.setWindowTitle("Downloading...");
-*/
-/*
-	dloutdest = new QFile(targetfile);
-	dloutdest->open(QFile::ReadWrite);
-	QUrl dlurl(fileurl);
-	QFileInfo dlfileinf(dlurl.path());
-	QString dlfilename(dlfileinf.fileName());
-//	http = new QHttp(this);
-//	connect();
-	connect(http, SIGNAL(done(bool)), this, SLOT(instDetType()));
-	http->setHost(dlurl.host());
-	http->get(fileurl, dloutdest);
-//	QHttp http;
-//	http.setHost(dlurl.host());
-//	http.get(dlurl.path(), &dloutdest);
-//	http.get(fileurl, &dloutdest);
-	dloutdest->close();
-*/
-/*
-	QUrl url(fileurl);
-	QFile outfile(targetfile);
-	outfile.open(QIODevice::ReadWrite);
-	QHttp http;
-	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
-	http.setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
-	http.get(url.path(), &outfile);
-*/
-/*
-	QHttp *http = new QHttp();
-	QUrl *url=new QUrl(fileurl);
-	QFileInfo fileinfo(url->path());
-	QFile *file = new QFile(fileinfo.fileName());
-	file->open(QIODevice::WriteOnly);
-	http->setHost(url->host(),80);
-	http->get(url->path(),file);
-*/
-//	Sleep(5000);
-//	QByteArray dlcontent = http.readAll();
-//	outfile.write(dlcontent);
-//	connect(&http, SIGNAL(requestFinished(int,bool)), this, SLOT(httpDone(int,bool)));
-//	outfile.close();
 	sourcefile = fileurl;
 	destinfile = targetfile;
 	QHttp dlhttp;
@@ -140,12 +76,6 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dloutfile.open(QIODevice::WriteOnly);
 	dlhttp.setHost(dlurl.host());
 	dlhttp.get(dlurl.path(), &dloutfile);
-/*
-	QHttpRequestHeader dlheader;
-	dlheader.setRequest("GET", dlurl.path(), 1, 1);
-	dlheader.setValue("Host", dlurl.host());
-	dlhttp.request(dlheader, 0, &dloutfile);
-*/
 	dlprogress.exec();
 	dlhttp.close();
 }
@@ -173,69 +103,23 @@ void unetbootin::sysreboot()
 
 void unetbootin::callexternapp(QString execFile, QString execParm)
 {
-//	const char* execParmL = execParm.constData();
-//	const char* execFileL = execFile.constData();
-//	const char* execVerbL = execVerb.constData();
-//	LPCTSTR execFileL, execParamsL, execVerbL;
-//	LPWSTR execFileL, execParmL, execVerbL;
-//	wchar_t* execFileL = LPWSTR(execFile.utf16());
-//	wchar_t* execParmL = {};
-//	wchar_t* execVerbL = {};
-//	execFile.toWCharArray(execFileL);
-//	execParm.toWCharArray(execParmL);
-//	execVerb.toWCharArray(execVerbL);
 	SHELLEXECUTEINFO ShExecInfo = {0};
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 	ShExecInfo.hwnd = NULL;
-//	ShExecInfo.lpVerb = LPCTSTR(execVerbL);
 	ShExecInfo.lpVerb = L"runas";
-//	ShExecInfo.lpFile = LPCTSTR(execFile.toAscii().constData());
-//	ShExecInfo.lpFile = LPCTSTR(execFileL);
-//	ShExecInfo.lpFile = L"notepad";
 	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
-//	ShExecInfo.lpParameters = LPCTSTR(execParmL);
 	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
 	ShExecInfo.lpDirectory = NULL;
 	ShExecInfo.nShow = SW_HIDE;
-//	ShExecInfo.nShow = SW_SHOW;
 	ShExecInfo.hInstApp = NULL;
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
 }
 
-/*
-bool unetbootin::isWinArch64Bit()
-{
-	SYSTEM_INFO sysinfo;
-	GetSystemInfo(&sysinfo);
-	if (sysinfo.dwProcessorType = PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-*/
-
 void unetbootin::configsysEdit()
 {
-//	QFile wldEditF(QString("%1wldedit.bat").arg(targetPath));
-//	wldEditF.open(QIODevice::ReadWrite | QIODevice::Text);
-//	QTextStream wldEditS(&wldEditF);
-//	wldEditS << QDir::toNativeSeparators(QString("attrib -h -s -r %1config.sys").arg(targetDrive)) << endl;
-//	wldEditF.close();
-//	callexternapp(QString("%1wldedit.bat").arg(targetPath), "", "");
-//	CString str(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit());
 	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
-//	callexternapp(QString("%1wldedit.bat").arg(targetPath).toLocal8Bit(), "", "");
-//	callexternapp("notepad", "", "");
-//	QProcess cfgsattrib;
-//	cfgsattrib.start(QString("%1runxfile.exe %1wldedit.bat").arg(targetPath));
-//	cfgsattrib.start(QDir::toNativeSeparators(QString("attrib -h -s -r %1config.sys").arg(targetDrive)));
-//	cfgsattrib.waitForFinished(-1);
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
 	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
@@ -294,10 +178,6 @@ void unetbootin::bootiniEdit()
 		}
 	}
 	QString bootiniCurText = bootiniCurTextL.join("\n");
-//	QStringList bootiniCurTextL = bootiniOut.readAll().split("\n");
-//	int bootiniCurTextI = bootiniCurTextL.indexOf("timeout", Qt::CaseInsensitive);
-//	bootiniCurTextL[bootiniCurTextI] = QString("timeout=15");
-//	QString bootiniCurText = bootiniCurTextL.join("\n");
 	QString bootiniText = QString("%1\n%2=\"UNetbootin\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
 	bootnwOut << bootiniText << endl;
 	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive))))
@@ -309,63 +189,11 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
-//	#undef _WIN32_WINNT
-//	#define _WIN32_WINNT 0x0501
-//	BOOL isWinArch64;
-//	IsWow64Process(GetCurrentProcess(), &isWinArch64);
-//	Wow64DisableWow64FsRedirection();
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
-//	vbcdEditS1 << QString("%2 /create /d \"UNetbootin\" /application bootsector >> %1tmpbcdid").arg(QDir::toNativeSeparators(targetPath)).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
 	vbcdEditS1 << QString("bcdedit /create /d \"UNetbootin\" /application bootsector > %1tmpbcdid").arg(targetPath) << endl;
 	vbcdEditF1.close();
-//	callexternapp(getenv("COMSPEC"), QString("/c %1vbcdedit.bat").arg(targetPath));
-/*
-	if (isWinArch64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
-	}
-*/
-/*
-	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
-	bool arch64 = false;
-	if (QFile::exists(QString("%1tmpbcdid").arg(targetPath)))
-	{
-		arch64 = true;
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
-	}
-*/
-
-/*
-	SYSTEM_INFO sysinfo;
-	GetSystemInfo(&sysinfo);
-	if (sysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
-	}
-*/
-/*
-	if (isWinArch64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
-	}
-*/
 	bool warch64;
 	callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
 	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
@@ -390,32 +218,14 @@ void unetbootin::vistabcdEdit()
 	}
 	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	vdtistor.setValue("WArch64", warch64);
-//	vdtistor.setValue("Bcdid", vbcdIdTL);
 	QFile vbcdEditF2(QString("%1vbcdedt2.bat").arg(targetPath));
 	vbcdEditF2.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS2(&vbcdEditF2);
-/*
-	vbcdEditS2 << QString("%2 /set {%1} device boot\n"
-	"%2 /set {%1} path \\ubnldr.mbr\n"
-	"%2 /displayorder {%1} /addlast\n"
-	"%2 /timeout 30").arg(vbcdIdTL).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
-*/
 	vbcdEditS2 << QString("bcdedit /set {%1} device boot\n"
 	"bcdedit /set {%1} path \\ubnldr.mbr\n"
 	"bcdedit /displayorder {%1} /addlast\n"
 	"bcdedit /timeout 30").arg(vbcdIdTL) << endl;
 	vbcdEditF2.close();
-//	callexternapp(getenv("COMSPEC"), QString("/c %1vbcdedt2.bat").arg(targetPath));
-/*
-	if (isWinArch64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
-	}
-*/
 	if (warch64)
 	{
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
@@ -424,37 +234,11 @@ void unetbootin::vistabcdEdit()
 	{
 		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
 	}
-/*
-	if (arch64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
-	}
-*/
 	QFile vbcdundoF(QString("%1vbcdundo.bat").arg(targetPath));
 	vbcdundoF.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdundoS(&vbcdundoF);
-//	vbcdundoS << QString("%2 /delete {%1}").arg(vbcdIdTL).arg(QDir::toNativeSeparators(QString("%1/System32/bcdedit.exe").arg(getenv("WINDIR")))) << endl;
 	vbcdundoS << QString("bcdedit /delete {%1}").arg(vbcdIdTL) << endl;
 	vbcdundoF.close();
-/*
-	if (sysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedt2.bat runas").arg(targetPath));
-	}
-	else
-	{
-		callexternapp(QString("%1vbcdedt2.bat").arg(targetPath), "");
-	}
-*/
-/*
-	IsWow64Process();
-	if (IsWow64Process())
-	callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat").arg(targetPath));
-*/
 }
 
 void unetbootin::wInstfiles()
@@ -551,9 +335,6 @@ void unetbootin::runinsthdd()
 	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
 	menulstout << menulstxt << endl;
 	menulst.close();
-//		QProcess inprocess;
-//		inprocess.start(QString("%1booteder.exe").arg(targetPath));
-//		inprocess.waitForFinished(-1);
    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
    	install.setValue("Location", targetDrive);
    	install.setValue("DisplayName", "UNetbootin");

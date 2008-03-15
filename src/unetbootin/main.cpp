@@ -7,9 +7,6 @@ void configsysUndo(QString uninstPathL)
 		QFile::remove(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
 		QFile::copy(QDir::toNativeSeparators(QString("%1unetbtin/config.sys").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)));
 	}
-//	QProcess ucfgsattrib;
-//	ucfgsattrib.start(QDir::toNativeSeparators(QString("attrib +h +s +r %1config.sys").arg(uninstPathL)));
-//	ucfgsattrib.waitForFinished(-1);
 	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(uninstPathL)).toLocal8Bit(), FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_ARCHIVE);
 }
 
@@ -29,9 +26,6 @@ void vistabcdUndo(QString uninstPathL)
 	QVariant warch64varL(QVariant::Bool);
 	warch64varL = vdtustor.value("WArch64");
 	bool warch64L = warch64varL.value<bool>();
-//	QVariant bcdidvarL(QVariant::String);
-//	bcdidvarL = vdtustor.value("Bcdid");
-//	QString bcdidL = bcdidvarL.value<QString>();
 	unetbootin uexecRunL;
 	if (warch64L)
 	{
@@ -42,34 +36,6 @@ void vistabcdUndo(QString uninstPathL)
 		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
 	}
 	vdtustor.remove("WArch64");
-//	BOOL isWinArch64;
-//	IsWow64Process(GetCurrentProcess(), &isWinArch64);
-/*
-	unetbootin uexecRunL;
-	if (isWinArch64)
-	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
-	}
-	else
-	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
-	}
-*/
-/*
-	unetbootin uexecRunL;
-	SYSTEM_INFO usysinfo;
-	GetSystemInfo(&usysinfo);
-	if (usysinfo.wProcessorArchitecture = PROCESSOR_ARCHITECTURE_AMD64)
-	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
-	}
-	else
-	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
-	}
-*/
-//	unetbootin uexecRunL;
-//	uexecRunL.callexternapp(getenv("COMSPEC"), QDir::toNativeSeparators(QString("/c %1unetbtin/vbcdundo.bat").arg(uninstPathL)));
 }
 
 void clearOutDir(QString pDirToDel)
