@@ -1,5 +1,14 @@
 #include "unetbootin.h"
 
+#include "ubnldr.cpp"
+#include "memdisk.cpp"
+#ifdef Q_OS_WIN32
+#include "ubnldrexe.cpp"
+#include "ubnldrmbr.cpp"
+#include "emtxfileexe.cpp"
+#include "syslinuxexe.cpp"
+#endif
+
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
@@ -124,7 +133,14 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
 	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 	ShExecInfo.hwnd = NULL;
-	ShExecInfo.lpVerb = L"runas";
+	if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
+	{
+		ShExecInfo.lpVerb = NULL;
+	}
+	else
+	{
+		ShExecInfo.lpVerb = L"runas";
+	}
 	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
 	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
 	ShExecInfo.lpDirectory = NULL;
@@ -214,6 +230,7 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
+	instIndvfl(QString("%1emtxfile.exe").arg(targetPath), emtxfileexe);
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
@@ -268,28 +285,10 @@ void unetbootin::vistabcdEdit()
 
 #endif
 
-void unetbootin::wInstfiles()
-{
-	#include "ubnldr.cpp"
-	instIndvfl(QString("ubnldr"), ubnldr);
-	#include "memdisk.cpp"
-	instIndvfl(QString("memdisk"), memdisk);
-	#ifdef Q_OS_WIN32
-	#include "ubnldrexe.cpp"
-	instIndvfl(QString("ubnldr.exe"), ubnldrexe);
-	#include "ubnldrmbr.cpp"
-	instIndvfl(QString("ubnldr.mbr"), ubnldrmbr);
-	#include "emtxfileexe.cpp"
-	instIndvfl(QString("emtxfile.exe"), emtxfileexe);
-	#include "syslinuxexe.cpp"
-	instIndvfl(QString("syslinux.exe"), syslinuxexe);
-	#endif
-}
-
 void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 {
 	QFile dstFile;
-	dstFile.setFileName(QString("%1%2").arg(targetPath).arg(dstfName));
+	dstFile.setFileName(dstfName);
 	dstFile.open(QIODevice::ReadWrite);
 	dstFile.write(qbav);
 	dstFile.close();
@@ -321,27 +320,26 @@ void unetbootin::runinst()
 		installDir = "";
 	}
 	#endif
+	#ifdef Q_OS_WIN32
+	targetDev = QString("%1").arg(targetDrive).remove("\\");
+	#endif
+	#ifdef Q_OS_UNIX
+	targetDev = "/dev/sda1"; // TODO USB device detection
+	#endif
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(installDir);
 	initrdLine = "initrd";
 	initrdLoc = QString("/%1ubninit").arg(installDir);
     targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
-	QDir dir;
-    dir.mkpath(targetPath);
-	wInstfiles();
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
-	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-	}
-	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
-	QFile::copy(QString("%1ubnldr.exe").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
-    QFile::copy(QString("%1ubnldr").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
-    QFile::copy(QString("%1ubnldr.mbr").arg(targetPath), QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
+    QDir dir;
+    if (!dir.exists(targetPath))
+    {
+	    dir.mkpath(targetPath);
+   	}
     close();
     if (radioFloppy->isChecked())
     {
-    	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
+    	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
     	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
     	instDetType();
     }
@@ -374,6 +372,17 @@ void unetbootin::instDetType()
 
 void unetbootin::runinsthdd()
 {
+	#ifdef Q_OS_WIN32
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	}
+	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
+	instIndvfl(QString("%1ubnldr").arg(targetDrive), ubnldr);
+	instIndvfl(QString("%1ubnldr.mbr").arg(targetDrive), ubnldrmbr);
+    instIndvfl(QString("%1ubnldr.exe").arg(targetDrive), ubnldrexe);
+    #endif
    	QFile menulst(QString("%1menu.lst").arg(targetPath));
    	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream menulstout(&menulst);
@@ -431,6 +440,7 @@ void unetbootin::runinsthdd()
 
 void unetbootin::runinstusb()
 {
+	instIndvfl(QString("%1syslinux.exe").arg(targetPath), syslinuxexe);
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
@@ -440,5 +450,20 @@ void unetbootin::runinstusb()
 	"	append initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
-	callexternapp(QString("%1syslinux").arg(targetPath), QString("-ma").arg(targetDrive));
+	callexternapp(QString("%1syslinux").arg(targetPath), QString("-ma %1").arg(targetDev));
+	QMessageBox usbfinstmsgb;
+   	usbfinstmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
+	usbfinstmsgb.setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
+	usbfinstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+	switch (usbfinstmsgb.exec())
+	{
+		case QMessageBox::Ok:
+		{
+			unetbootin::sysreboot();
+		}
+		case QMessageBox::Cancel:
+			break;
+ 		default:
+			break;
+   	}
 }

@@ -6,6 +6,7 @@
 #include <QtNetwork>
 
 #include "ui_unetbootin.h"
+
 #ifdef Q_OS_WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -30,9 +31,11 @@ public:
     QString targetPath;
     QString installType;
     QString installDir;
+    QString targetDev;
     QString postinstmsg;
     QString sourcefile, destinfile;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
+//	QByteArray memdisk, ubnldr, ubnldrexe, ubnldrmbr, syslinuxexe;
     QProgressDialog dlprogress;
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
@@ -41,7 +44,6 @@ public:
     void bootiniEdit();
     void vistabcdEdit();
     void instIndvfl(QString dstfName, QByteArray qbav);
-    void wInstfiles();
     void runinst();
     void instDetType();
     void runinsthdd();

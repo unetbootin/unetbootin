@@ -240,13 +240,13 @@ if (nameDistro == "Debian Unstable x64")
 
 if (nameDistro == "FreeBSD 7.0")
 {
-	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
+	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
 	downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-7.0.img.gz", QString("%1ubninit").arg(targetPath));
 }
 
 if (nameDistro == "FreeBSD 7.0 x64")
 {
-	QFile::copy(QString("%1memdisk").arg(targetPath), QString("%1ubnkern").arg(targetPath));
+	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
 	downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-7.0-x64.img.gz", QString("%1ubninit").arg(targetPath));
 }
 
