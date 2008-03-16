@@ -14,14 +14,6 @@ unetbootin::unetbootin(QWidget *parent)
 {
     setupUi(this);
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
-/*
-    #ifdef Q_OS_WIN32
-    if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
-	{
-		typeselect->removeItem(1);
-	}
-	#endif
-*/
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -86,6 +78,10 @@ void unetbootin::on_okbutton_clicked()
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
+	if (QFile::exists(targetfile))
+	{
+		QFile::remove(targetfile);
+	}
 	sourcefile = fileurl;
 	destinfile = targetfile;
 	QHttp dlhttp;
@@ -94,19 +90,30 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
 	connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
 	connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
-	QTemporaryFile dloutfile(QDir::toNativeSeparators(QString("%1/unXXXXXX.tmp").arg(QDir::tempPath())));
-	dloutfile.open();
+	QFile dloutfile;
+	if (installType == "USB Drive")
+	{
+		if (QFile::exists(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath()))))
+		{
+			QFile::remove(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+		}
+		dloutfile.setFileName(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+	}
+	else
+	{
+		dloutfile.setFileName(targetfile);
+	}
+	dloutfile.open(QIODevice::WriteOnly);
 	dlhttp.setHost(dlurl.host());
 	dlhttp.get(dlurl.path(), &dloutfile);
 	dlprogress.exec();
 	dlhttp.close();
-	if (QFile::exists(targetfile))
-	{
-		QFile::remove(targetfile);
-	}
-	dloutfile.copy(targetfile);
 	dloutfile.close();
-	dloutfile.deleteLater();
+	if (installType == "USB Drive")
+	{
+		QFile::copy(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())), targetfile);
+		QFile::remove(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+	}
 }
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
@@ -468,17 +475,13 @@ void unetbootin::runinsthdd()
 void unetbootin::runinstusb()
 {
 	#ifdef Q_OS_WIN32
-/*
-	QTemporaryFile syslinuxexeTF(QDir::toNativeSeparators(QString("%1/unXXXXXX.exe").arg(QDir::tempPath())));
-	syslinuxexeTF.open();
-	syslinuxexeTF.write(syslinuxexe);
-	QString syslinuxexeTFL = syslinuxexeTF.fileName();
-	syslinuxexeTF.close();
-*/
-	instIndvfl(QString("%1syslinux.exe").arg(targetPath), syslinuxexe);
-	callexternapp(QString("%1syslinux.exe").arg(targetPath), QString("-ma %1").arg(targetDev));
-//	callexternapp(syslinuxexeTFL, QString("-ma %1").arg(targetDev));
-//	syslinuxexeTF.deleteLater();
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath()))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
+	}
+	instIndvfl(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), syslinuxexe);
+	callexternapp(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), QString("-ma %1").arg(targetDev));
+	QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
 	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
 	{
@@ -490,7 +493,7 @@ void unetbootin::runinstusb()
 	QString syslinuxcfgtxt = QString("default unetbootin\n"
 	"label unetbootin\n"
 	"\tkernel %1\n"
-	"\tappend initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
+	"\tappend initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
 	QMessageBox usbfinstmsgb;
