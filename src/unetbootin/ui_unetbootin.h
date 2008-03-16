@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Fri Mar 14 20:07:00 2008
+** Created: Sat Mar 15 20:29:26 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -125,7 +125,7 @@ public:
 
     retranslateUi(unetbootin);
 
-    distroselect->setCurrentIndex(2);
+    distroselect->setCurrentIndex(32);
 
 
     QMetaObject::connectSlotsByName(unetbootin);
@@ -155,28 +155,6 @@ public:
     radioDistro->setText(QApplication::translate("unetbootin", "Distribution:", 0, QApplication::UnicodeUTF8));
     distroselect->clear();
     distroselect->insertItems(0, QStringList()
-     << QApplication::translate("unetbootin", "Ubuntu 8.04", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 8.04 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 7.10", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 7.10 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 7.04", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 7.04 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 6.10", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 6.10 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 6.06", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Ubuntu 6.06 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 9 Alpha", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 9 Alpha x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 8", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 8 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 7", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "Fedora 7 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE Factory", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE Factory x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.3", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.2", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "openSUSE 10.2 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "CentOS 5", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "CentOS 5 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "CentOS 4", 0, QApplication::UnicodeUTF8)
@@ -187,9 +165,36 @@ public:
      << QApplication::translate("unetbootin", "Debian Testing x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Debian Unstable", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "Debian Unstable x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora Rawhide", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora Rawhide x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 9 Alpha", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 9 Alpha x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 8", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 8 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 7", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Fedora 7 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "FreeBSD 7.0", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "FreeBSD 7.0 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "FreeBSD 6.3", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "FreeBSD 6.3 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "NetBSD 4.0", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE Factory", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE Factory x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.3 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.2", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "openSUSE 10.2 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Parted Magic 2.1", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 8.04", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 8.04 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.10", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.10 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.04", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 7.04 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.10", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.10 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.06", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Ubuntu 6.06 x64", 0, QApplication::UnicodeUTF8)
     );
     distroselect->setToolTip(QApplication::translate("unetbootin", "Select from a list of supported distributions", 0, QApplication::UnicodeUTF8));
     intromessage->setText(QApplication::translate("unetbootin", "Choose a mode of operation. If unsure, select an option under \"Distribution\"", 0, QApplication::UnicodeUTF8));

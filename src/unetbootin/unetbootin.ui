@@ -216,118 +216,8 @@
     <string>Select from a list of supported distributions</string>
    </property>
    <property name="currentIndex" >
-    <number>2</number>
+    <number>32</number>
    </property>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 8.04</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 8.04 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.04</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.04 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.10</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.10 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.06</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.06 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 9 Alpha</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 9 Alpha x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 8</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 8 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 7</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 7 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE Factory</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE Factory x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.3</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.3 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.2 x64</string>
-    </property>
-   </item>
    <item>
     <property name="text" >
      <string>CentOS 5</string>
@@ -380,6 +270,46 @@
    </item>
    <item>
     <property name="text" >
+     <string>Fedora Rawhide</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora Rawhide x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 9 Alpha</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 9 Alpha x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 8</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 8 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fedora 7 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
      <string>FreeBSD 7.0</string>
     </property>
    </item>
@@ -390,7 +320,102 @@
    </item>
    <item>
     <property name="text" >
+     <string>FreeBSD 6.3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>FreeBSD 6.3 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
      <string>NetBSD 4.0</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE Factory</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE Factory x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.3 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>openSUSE 10.2 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Parted Magic 2.1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 8.04</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 8.04 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.10 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.04</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 7.04 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.10 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.06</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ubuntu 6.06 x64</string>
     </property>
    </item>
   </widget>

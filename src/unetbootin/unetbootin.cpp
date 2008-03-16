@@ -1,10 +1,10 @@
 #include "unetbootin.h"
 
-#include "ubnldr.cpp"
 #include "memdisk.cpp"
 #ifdef Q_OS_WIN32
-#include "ubnldrexe.cpp"
+#include "ubnldr.cpp"
 #include "ubnldrmbr.cpp"
+#include "ubnldrexe.cpp"
 #include "emtxfileexe.cpp"
 #include "syslinuxexe.cpp"
 #endif
@@ -94,12 +94,19 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
 	connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
 	connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
-	QFile dloutfile(targetfile);
-	dloutfile.open(QIODevice::WriteOnly);
+	QTemporaryFile dloutfile(QDir::toNativeSeparators(QString("%1/unXXXXXX.tmp").arg(QDir::tempPath())));
+	dloutfile.open();
 	dlhttp.setHost(dlurl.host());
 	dlhttp.get(dlurl.path(), &dloutfile);
 	dlprogress.exec();
 	dlhttp.close();
+	if (QFile::exists(targetfile))
+	{
+		QFile::remove(targetfile);
+	}
+	dloutfile.copy(targetfile);
+	dloutfile.close();
+	dloutfile.deleteLater();
 }
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
@@ -289,7 +296,7 @@ void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
 {
 	QFile dstFile;
 	dstFile.setFileName(dstfName);
-	dstFile.open(QIODevice::ReadWrite);
+	dstFile.open(QIODevice::WriteOnly);
 	dstFile.write(qbav);
 	dstFile.close();
 }
@@ -301,7 +308,7 @@ void unetbootin::runinst()
 	#ifdef Q_OS_WIN32
 	if (installType == "Hard Disk")
 	{
-		installDir = QDir::toNativeSeparators("unetbtin/");
+		installDir = "unetbtin/";
 	}
 	if (installType == "USB Drive")
 	{
@@ -312,7 +319,7 @@ void unetbootin::runinst()
 	#ifdef Q_OS_UNIX
 	if (installType == "Hard Disk")
 	{
-		installDir = QDir::toNativeSeparators("boot/");
+		installDir = "boot/";
 	}
 	if (installType == "USB Drive")
 	{
@@ -336,6 +343,14 @@ void unetbootin::runinst()
     {
 	    dir.mkpath(targetPath);
    	}
+   	if (QFile::exists(QString("%1ubnkern").arg(targetPath)))
+   	{
+   		QFile::remove(QString("%1ubnkern").arg(targetPath));
+  	}
+  	if (QFile::exists(QString("%1ubninit").arg(targetPath)))
+   	{
+   		QFile::remove(QString("%1ubninit").arg(targetPath));
+  	}
     close();
     if (radioFloppy->isChecked())
     {
@@ -379,8 +394,20 @@ void unetbootin::runinsthdd()
 	}
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
+	}
 	instIndvfl(QString("%1ubnldr").arg(targetDrive), ubnldr);
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
+	}
 	instIndvfl(QString("%1ubnldr.mbr").arg(targetDrive), ubnldrmbr);
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
+	}
     instIndvfl(QString("%1ubnldr.exe").arg(targetDrive), ubnldrexe);
     #endif
    	QFile menulst(QString("%1menu.lst").arg(targetPath));
@@ -389,10 +416,10 @@ void unetbootin::runinsthdd()
 	QString menulstxt = QString("default 0\n"
 	"timeout 3\n"
 	"title UNetbootin\n"
-	"find --set-root /%8ubnkern\n"
+	"find --set-root %3\n"
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts, installDir);
+	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
 	menulstout << menulstxt << endl;
 	menulst.close();
    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
@@ -440,17 +467,32 @@ void unetbootin::runinsthdd()
 
 void unetbootin::runinstusb()
 {
+	#ifdef Q_OS_WIN32
+/*
+	QTemporaryFile syslinuxexeTF(QDir::toNativeSeparators(QString("%1/unXXXXXX.exe").arg(QDir::tempPath())));
+	syslinuxexeTF.open();
+	syslinuxexeTF.write(syslinuxexe);
+	QString syslinuxexeTFL = syslinuxexeTF.fileName();
+	syslinuxexeTF.close();
+*/
 	instIndvfl(QString("%1syslinux.exe").arg(targetPath), syslinuxexe);
+	callexternapp(QString("%1syslinux.exe").arg(targetPath), QString("-ma %1").arg(targetDev));
+//	callexternapp(syslinuxexeTFL, QString("-ma %1").arg(targetDev));
+//	syslinuxexeTF.deleteLater();
+	#endif
+	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
+	{
+		QFile::remove(QString("%1syslinux.cfg").arg(targetPath));
+	}
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
 	QString syslinuxcfgtxt = QString("default unetbootin\n"
 	"label unetbootin\n"
-	"	kernel %1\n"
-	"	append initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
+	"\tkernel %1\n"
+	"\tappend initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
-	callexternapp(QString("%1syslinux").arg(targetPath), QString("-ma %1").arg(targetDev));
 	QMessageBox usbfinstmsgb;
    	usbfinstmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
 	usbfinstmsgb.setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
