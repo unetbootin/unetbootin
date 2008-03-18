@@ -91,6 +91,7 @@ void ubnUninst()
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(uninstPath)));
 	chkinstL.clear();
 	QMessageBox finmsgb;
+	finmsgb.setIcon(QMessageBox::Information);
 	finmsgb.setWindowTitle(QObject::tr("Uninstallation Complete"));
 	finmsgb.setText(QObject::tr("UNetbootin has been uninstalled."));
  	finmsgb.setStandardButtons(QMessageBox::Ok);
@@ -113,6 +114,7 @@ int main(int argc, char *argv[])
 	if (chkinst.contains("Location"))
 	{
 		QMessageBox uninstmsgb;
+		uninstmsgb.setIcon(QMessageBox::Information);
 		uninstmsgb.setWindowTitle(QObject::tr("UNetbootin Uninstaller"));
 		uninstmsgb.setText(QObject::tr("UNetbootin is currently installed. Remove the existing version?"));
  		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);

@@ -35,14 +35,23 @@ public:
     QString postinstmsg;
     QString sourcefile, destinfile;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
-//	QByteArray memdisk, ubnldr, ubnldrexe, ubnldrmbr, syslinuxexe;
     QProgressDialog dlprogress;
+    #ifdef Q_OS_UNIX
+    QString fdiskcommand;
+    QString syslinuxcommand;
+    QString mssyscommand;
+    #endif
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
+	#ifdef Q_OS_UNIX
+    QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
+    #endif
+	#ifdef Q_OS_WIN32
     void configsysEdit();
     void bootiniEdit();
     void vistabcdEdit();
+    #endif
     void instIndvfl(QString dstfName, QByteArray qbav);
     void runinst();
     void instDetType();

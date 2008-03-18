@@ -482,7 +482,7 @@
     <rect>
      <x>50</x>
      <y>260</y>
-     <width>51</width>
+     <width>91</width>
      <height>25</height>
     </rect>
    </property>
@@ -493,7 +493,7 @@
   <widget class="QLabel" name="labeldrive_2" >
    <property name="geometry" >
     <rect>
-     <x>140</x>
+     <x>170</x>
      <y>260</y>
      <width>32</width>
      <height>25</height>
@@ -512,7 +512,7 @@
    </property>
    <property name="geometry" >
     <rect>
-     <x>180</x>
+     <x>210</x>
      <y>260</y>
      <width>91</width>
      <height>25</height>

@@ -14,16 +14,23 @@ unetbootin::unetbootin(QWidget *parent)
 {
     setupUi(this);
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+	#ifdef Q_OS_UNIX
+	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
+	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
+	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
+	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
+	typeselect->removeItem(typeselect->findText("Hard Disk"));
+	#endif
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 {
-	if (typeselectIndex == 0)
+	if (typeselectIndex == typeselect->findText("Hard Disk"))
 	{
 		driveselect->clear();
 		driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	}
-	if (typeselectIndex == 1)
+	if (typeselectIndex == typeselect->findText("USB Drive"))
 	{
 		driveselect->clear();
 		#ifdef Q_OS_WIN32
@@ -37,7 +44,17 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 		}
 		#endif
 		#ifdef Q_OS_UNIX
-		// TODO drive detection via fdisk -l
+		QProcess fdisklusbdevs;
+		fdisklusbdevs.start(QString("%1 -l").arg(fdiskcommand));
+		fdisklusbdevs.waitForFinished(-1);
+		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+		for (int i = 0; i < usbdevsL.size(); ++i)
+		{
+			if (!usbdevsL.at(i).contains(":"))
+			{
+				driveselect->addItem(usbdevsL.at(i));
+			}
+		}
 		#endif
 	}
 }
@@ -169,6 +186,39 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	lnexternapp.waitForFinished(-1);
 	#endif
 }
+
+#ifdef Q_OS_UNIX
+
+QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename)
+{
+	QProcess whereiscommand;
+	whereiscommand.start(QString("whereis %1").arg(commandtolocate));
+	whereiscommand.waitForFinished(-1);
+	QString commandbinpath = QString(whereiscommand.readAll());
+	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
+	for (int i = 0; i < commandbinpathL.size(); ++i)
+	{
+		if (commandbinpathL.at(i).contains("bin/"))
+		{
+			return commandbinpathL.at(i);
+		}
+	}
+	QMessageBox errorcmdnotfoundmsgbx;
+	errorcmdnotfoundmsgbx.setIcon(QMessageBox::Warning);
+	errorcmdnotfoundmsgbx.setWindowTitle(QString(QObject::tr("%1 not found")).arg(commandtolocate));
+	errorcmdnotfoundmsgbx.setText(QString(QObject::tr("%1 not found. This is required for %2 install mode.\nInstall the \"%3\" package or your distribution's equivalent.")).arg(commandtolocate, reqforinstallmode, packagename));
+	errorcmdnotfoundmsgbx.setStandardButtons(QMessageBox::Ok);
+	switch (errorcmdnotfoundmsgbx.exec())
+	{
+		case QMessageBox::Ok:
+			break;
+		default:
+			break;
+	}
+ 	return "ERROR";
+}
+
+#endif
 
 #ifdef Q_OS_WIN32
 
@@ -338,7 +388,7 @@ void unetbootin::runinst()
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
 	#endif
 	#ifdef Q_OS_UNIX
-	targetDev = "/dev/sda1"; // TODO USB device detection
+	targetDev = driveselect->currentText();
 	#endif
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(installDir);
@@ -456,6 +506,7 @@ void unetbootin::runinsthdd()
 	}
 	#endif
 	QMessageBox rebootmsgb;
+	rebootmsgb.setIcon(QMessageBox::Information);
    	rebootmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
 	rebootmsgb.setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
@@ -483,6 +534,9 @@ void unetbootin::runinstusb()
 	callexternapp(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), QString("-ma %1").arg(targetDev));
 	QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
 	#endif
+	#ifdef Q_OS_UNIX
+	callexternapp(syslinuxcommand, targetDev);
+	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
 	{
 		QFile::remove(QString("%1syslinux.cfg").arg(targetPath));
@@ -497,6 +551,7 @@ void unetbootin::runinstusb()
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
 	QMessageBox usbfinstmsgb;
+	usbfinstmsgb.setIcon(QMessageBox::Information);
    	usbfinstmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
 	usbfinstmsgb.setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
 	usbfinstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);

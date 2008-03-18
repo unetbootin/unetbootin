@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sat Mar 15 20:29:26 2008
+** Created: Mon Mar 17 14:41:03 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -108,14 +108,14 @@ public:
     driveselect = new QComboBox(unetbootin);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
     driveselect->setEnabled(true);
-    driveselect->setGeometry(QRect(50, 260, 51, 25));
+    driveselect->setGeometry(QRect(50, 260, 91, 25));
     labeldrive_2 = new QLabel(unetbootin);
     labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
-    labeldrive_2->setGeometry(QRect(140, 260, 32, 25));
+    labeldrive_2->setGeometry(QRect(170, 260, 32, 25));
     typeselect = new QComboBox(unetbootin);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
     typeselect->setEnabled(true);
-    typeselect->setGeometry(QRect(180, 260, 91, 25));
+    typeselect->setGeometry(QRect(210, 260, 91, 25));
     OptionEnter = new QLineEdit(unetbootin);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
     OptionEnter->setGeometry(QRect(140, 210, 341, 25));
