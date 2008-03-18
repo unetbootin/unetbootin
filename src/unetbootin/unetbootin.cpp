@@ -16,6 +16,7 @@ unetbootin::unetbootin(QWidget *parent)
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
+	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
@@ -184,6 +185,7 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	QProcess lnexternapp;
 	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
 	lnexternapp.waitForFinished(-1);
+	printf(qPrintable(QString(lnexternapp.readAll())));
 	#endif
 }
 
@@ -216,6 +218,46 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 			break;
 	}
  	return "ERROR";
+}
+
+QString unetbootin::locatemountpoint(QString devicenode)
+{
+//	bool foundmountpoint;
+	QString curprocmountLS;
+	QFile procmountsF("/proc/mounts");
+	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream procmountsS(&procmountsF);
+	QStringList procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
+	if (procmountsL.isEmpty())
+	{
+		// TODO device not mounted, must mount
+		return "/media/disk2";
+	}
+	else
+	{
+		return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
+	}
+//	printf(qPrintable(procmountsS.readAll()));
+//	QStringList procmountsL;
+/*
+	while (!procmountsS.atEnd())
+	{
+		curprocmountLS = procmountsS.readLine();
+		if (curprocmountLS.contains(devicenode))
+		{
+			foundmountpoint = true;
+			break;
+		}
+	}
+*/
+//	printf(qPrintable(curprocmountLS));
+/*
+	if (foundmountpoint == true)
+	{
+		return curprocmountLS.replace("\t", " ").split(" ").filter("/").at(1);
+	}
+*/
+//	return "/media/disk3";
 }
 
 #endif
@@ -372,8 +414,10 @@ void unetbootin::runinst()
 		// TODO change to drive mountpoint
 		installDir = "";
 	}
+	targetDev = QString("%1").arg(targetDrive).remove("\\");
 	#endif
 	#ifdef Q_OS_UNIX
+	targetDev = driveselect->currentText();
 	if (installType == "Hard Disk")
 	{
 		installDir = "boot/";
@@ -382,13 +426,8 @@ void unetbootin::runinst()
 	{
 		// TODO change to drive mountpoint
 		installDir = "";
+		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 	}
-	#endif
-	#ifdef Q_OS_WIN32
-	targetDev = QString("%1").arg(targetDrive).remove("\\");
-	#endif
-	#ifdef Q_OS_UNIX
-	targetDev = driveselect->currentText();
 	#endif
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(installDir);
@@ -536,6 +575,8 @@ void unetbootin::runinstusb()
 	#endif
 	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);
+	callexternapp(mssyscommand, QString("-s %1").arg(QString(targetDev).remove(-1, 1)));
+	callexternapp(sfdiskcommand, QString("%1 -A%2").arg(QString(targetDev).remove(-1, 1), QString(targetDev).at(targetDev.size() - 1)));
 	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
 	{

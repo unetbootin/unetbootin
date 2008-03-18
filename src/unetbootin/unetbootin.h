@@ -38,14 +38,16 @@ public:
     QProgressDialog dlprogress;
     #ifdef Q_OS_UNIX
     QString fdiskcommand;
-    QString syslinuxcommand;
+    QString sfdiskcommand;
     QString mssyscommand;
+    QString syslinuxcommand;
     #endif
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
 	#ifdef Q_OS_UNIX
     QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
+    QString locatemountpoint(QString devicenode);
     #endif
 	#ifdef Q_OS_WIN32
     void configsysEdit();
