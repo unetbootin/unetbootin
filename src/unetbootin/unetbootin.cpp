@@ -19,8 +19,6 @@ unetbootin::unetbootin(QWidget *parent)
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
-	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
-	typeselect->removeItem(typeselect->findText("Hard Disk"));
 	#endif
 }
 
@@ -219,9 +217,25 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
  	return "ERROR";
 }
 
+QString unetbootin::locatedevicenode(QString mountpoint)
+{
+	QFile procmountsF("/proc/mounts");
+	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream procmountsS(&procmountsF);
+	QStringList rawdeviceL = procmountsS.readAll().replace("\t", " ").split("\n").filter("/dev/").filter(QString(" %1 ").arg(mountpoint));
+	if (rawdeviceL.isEmpty())
+	{
+		return "NOT FOUND";
+	}
+	else
+	{
+		QFileInfo rawdeviceFI(rawdeviceL.at(0).split(" ").at(0));
+		return rawdeviceFI.canonicalFilePath();
+	}
+}
+
 QString unetbootin::locatemountpoint(QString devicenode)
 {
-	QString curprocmountLS;
 	QFile procmountsF("/proc/mounts");
 	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream procmountsS(&procmountsF);
@@ -403,13 +417,23 @@ void unetbootin::runinst()
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
 	#endif
 	#ifdef Q_OS_UNIX
-	targetDev = driveselect->currentText();
 	if (installType == "Hard Disk")
 	{
-		installDir = "boot/";
+		QString devnboot = locatedevicenode("/boot");
+		if (devnboot == "NOT FOUND")
+		{
+			installDir = "boot/";
+			targetDev = locatedevicenode("/");
+		}
+		else
+		{
+			installDir = "";
+			targetDev = devnboot;
+		}
 	}
 	if (installType == "USB Drive")
 	{
+		targetDev = driveselect->currentText();
 		installDir = "";
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 		if (targetDrive == "INSTALL ABORTED/")

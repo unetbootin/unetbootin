@@ -4,6 +4,12 @@ rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
 qmake -spec win32-g++ "QMAKE_LFLAGS += -Wl,-subsystem,windows"
 make
-mv release/unetbootin.exe release/unetbootin$rvern.exe
-./upx --lzma release/unetbootin$rvern.exe
+mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
+./upx --lzma release/unetbootin-windows-$rvern.exe
+qmake
+make
+mv unetbootin release/unetbootin-linux-$rvern
+./upx --lzma release/unetbootin-linux-$rvern.exe
+printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://lubi.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
+zip release/unetbootin-source-$rvern.zip *.cpp *.h *.pro *.ui *.ts build Makefile Makefile.Release README.TXT
 

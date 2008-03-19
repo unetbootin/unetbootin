@@ -36,7 +36,6 @@ public:
     QString sourcefile, destinfile;
     QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
     QProgressDialog dlprogress;
-    bool bquitapplication;
     #ifdef Q_OS_UNIX
     QString fdiskcommand;
     QString sfdiskcommand;
@@ -48,6 +47,7 @@ public:
 	void callexternapp(QString execFile, QString execParm);
 	#ifdef Q_OS_UNIX
     QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
+    QString locatedevicenode(QString mountpoint);
     QString locatemountpoint(QString devicenode);
     #endif
 	#ifdef Q_OS_WIN32
