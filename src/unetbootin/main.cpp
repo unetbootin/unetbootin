@@ -132,8 +132,6 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	unetbootin unetbootin;
-//	unetbootin.connect(&unetbootin, SIGNAL(abortquitapplication()), &unetbootin, SLOT(close()));
-//	unetbootin.connect(&unetbootin, SIGNAL(abortquitapplication()), &app, SLOT(quit()));
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
     unetbootin.show();

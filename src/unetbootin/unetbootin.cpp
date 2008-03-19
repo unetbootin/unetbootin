@@ -13,15 +13,12 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-//	connect(this, SIGNAL(abortquitapplication()), this, SLOT(hide()));
-//	connect(this, SIGNAL(abortquitapplication()), this, SLOT(close()));
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
-//	gnomemountcommand = locatecommand("gnome-mount", "USB Drive", "gnome-mount");
 	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	typeselect->removeItem(typeselect->findText("Hard Disk"));
 	#endif
@@ -229,7 +226,6 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream procmountsS(&procmountsF);
 	QStringList procmountsL;
-//	bool abortinstcancel = false;
 	while (true)
 	{
 		procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
@@ -242,25 +238,11 @@ QString unetbootin::locatemountpoint(QString devicenode)
 		errordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 		switch (errordevnotmountedmsgbx.exec())
 		{
-//			case QMessageBox::Ok:
-//				break;
 			case QMessageBox::Cancel:
-//				QMetaObject::invokeMethod(unetbootin, quit());
-//				app->closeAllWindows();
-//				bquitapplication = true;
-//				unetbootin::hide();
-//				abortquitapplication();
-//				sleep(10);
+			{
 				return "INSTALL ABORTED";
-//				break;
-//			default:
-//				break;
+			}
 		}
-//		if (abortinstcancel)
-//		{
-//			abortquitapplication();
-//			break;
-//		}
 	}
 	return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
 }
@@ -416,7 +398,6 @@ void unetbootin::runinst()
 	}
 	if (installType == "USB Drive")
 	{
-		// TODO change to drive mountpoint
 		installDir = "";
 	}
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
@@ -429,7 +410,6 @@ void unetbootin::runinst()
 	}
 	if (installType == "USB Drive")
 	{
-		// TODO change to drive mountpoint
 		installDir = "";
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 		if (targetDrive == "INSTALL ABORTED/")

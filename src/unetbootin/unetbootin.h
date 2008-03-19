@@ -42,9 +42,7 @@ public:
     QString sfdiskcommand;
     QString mssyscommand;
     QString syslinuxcommand;
-//	QString gnomemountcommand;
     #endif
-//	void quitapplication();
     void downloadfile(QString fileurl, QString targetfile);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
@@ -73,9 +71,6 @@ private slots:
 
 public slots:
 	void dlprogressupdate(int dlbytes, int maxbytes);
-
-//signals:
-//	void abortquitapplication();
 };
 
 #endif
