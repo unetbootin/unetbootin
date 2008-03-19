@@ -13,12 +13,15 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
+//	connect(this, SIGNAL(abortquitapplication()), this, SLOT(hide()));
+//	connect(this, SIGNAL(abortquitapplication()), this, SLOT(close()));
     driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
+//	gnomemountcommand = locatecommand("gnome-mount", "USB Drive", "gnome-mount");
 	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	typeselect->removeItem(typeselect->findText("Hard Disk"));
 	#endif
@@ -185,7 +188,6 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	QProcess lnexternapp;
 	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
 	lnexternapp.waitForFinished(-1);
-	printf(qPrintable(QString(lnexternapp.readAll())));
 	#endif
 }
 
@@ -222,42 +224,45 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 
 QString unetbootin::locatemountpoint(QString devicenode)
 {
-//	bool foundmountpoint;
 	QString curprocmountLS;
 	QFile procmountsF("/proc/mounts");
 	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream procmountsS(&procmountsF);
-	QStringList procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
-	if (procmountsL.isEmpty())
+	QStringList procmountsL;
+//	bool abortinstcancel = false;
+	while (true)
 	{
-		// TODO device not mounted, must mount
-		return "/media/disk2";
-	}
-	else
-	{
-		return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
-	}
-//	printf(qPrintable(procmountsS.readAll()));
-//	QStringList procmountsL;
-/*
-	while (!procmountsS.atEnd())
-	{
-		curprocmountLS = procmountsS.readLine();
-		if (curprocmountLS.contains(devicenode))
-		{
-			foundmountpoint = true;
+		procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
+		if (!procmountsL.isEmpty())
 			break;
+		QMessageBox errordevnotmountedmsgbx;
+		errordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
+		errordevnotmountedmsgbx.setWindowTitle(QString(QObject::tr("%1 not mounted")).arg(devicenode));
+		errordevnotmountedmsgbx.setText(QString(QObject::tr("%1 is not mounted. Mount it and press the \"OK\" button to proceed with installation, or press the \"Cancel\" button to abort.")).arg(devicenode));
+		errordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+		switch (errordevnotmountedmsgbx.exec())
+		{
+//			case QMessageBox::Ok:
+//				break;
+			case QMessageBox::Cancel:
+//				QMetaObject::invokeMethod(unetbootin, quit());
+//				app->closeAllWindows();
+//				bquitapplication = true;
+//				unetbootin::hide();
+//				abortquitapplication();
+//				sleep(10);
+				return "INSTALL ABORTED";
+//				break;
+//			default:
+//				break;
 		}
+//		if (abortinstcancel)
+//		{
+//			abortquitapplication();
+//			break;
+//		}
 	}
-*/
-//	printf(qPrintable(curprocmountLS));
-/*
-	if (foundmountpoint == true)
-	{
-		return curprocmountLS.replace("\t", " ").split(" ").filter("/").at(1);
-	}
-*/
-//	return "/media/disk3";
+	return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
 }
 
 #endif
@@ -427,6 +432,11 @@ void unetbootin::runinst()
 		// TODO change to drive mountpoint
 		installDir = "";
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
+		if (targetDrive == "INSTALL ABORTED/")
+		{
+			this->close();
+			return;
+		}
 	}
 	#endif
 	kernelLine = "kernel";
