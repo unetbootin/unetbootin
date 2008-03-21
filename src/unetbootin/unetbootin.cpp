@@ -268,35 +268,18 @@ QString unetbootin::getGrubNotation(QString devicenode)
 
 int unetbootin::letterToNumber(QChar lettertoconvert)
 {
-//	int i = 0;
 	if (lettertoconvert.isLower())
 	{
-		/*
-		for (char c = 'a'; c < 'z' + 1; ++c)
-		{
-			if (lettertoconvert.toAscii() == c)
-				break;
-			++i;
-		}
-		*/
-//		return (int)(lettertoconvert.toAscii() - 'a');
-//		return int(lettertoconvert.toAscii() - 'a');
 		return static_cast<int>(lettertoconvert.toAscii() - 'a');
 	}
 	if (lettertoconvert.isUpper())
 	{
-		/*
-		for (char c = 'A'; c < 'Z' + 1; ++c)
-		{
-			if (lettertoconvert.toAscii() == c)
-				break;
-			++i;
-		}
-		*/
 		return static_cast<int>(lettertoconvert.toAscii() - 'A');
 	}
-//	return i;
-	return 999;
+	else
+	{
+		return 999;
+	}
 }
 
 int unetbootin::getDiskNumber(QString devicenode)
@@ -368,21 +351,15 @@ void unetbootin::bootiniEdit()
 	QTextStream bootnwOut(&bootnwFile);
 	QTextStream bootiniOut(&bootiniFile);
 	QStringList bootiniCurTextL;
-	bool btihasreplacedtimeout = false;
+	bool btimustreplacetimeout = true;
+	QRegExp btichkistimeout("\\s{0,}timeout.{0,}", Qt::CaseInsensitive);
 	while (!bootiniOut.atEnd())
 	{
 		QString bootiniCurLine = bootiniOut.readLine();
-		if (!btihasreplacedtimeout)
+		if (btimustreplacetimeout && btichkistimeout.exactMatch(bootiniCurLine))
 		{
-			if (bootiniCurLine.contains("timeout", Qt::CaseInsensitive))
-			{
-				bootiniCurTextL.append("timeout=15");
-				btihasreplacedtimeout = true;
-			}
-			else
-			{
-				bootiniCurTextL.append(bootiniCurLine);
-			}
+			bootiniCurTextL.append("timeout=15");
+			btimustreplacetimeout = false;
 		}
 		else
 		{
@@ -590,16 +567,44 @@ void unetbootin::runinsthdd()
    	#endif
    	#ifdef Q_OS_UNIX
    	menulst.setFileName("/boot/grub/menu.lst");
-   	menulst.copy(QString("%1.bak").arg(menulst.fileName()));
+   	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
+   		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
+   	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
+   	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
+   	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
+   	QTextStream bkmenulstout(&bkmenulst);
    	#endif
-	menulst.open(QIODevice::ReadWrite | QIODevice::Text);
+	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream menulstout(&menulst);
 	#ifdef Q_OS_UNIX
-	QString ecurmenulst(menulstout.readAll());
+	QRegExp mlstchkistimeout("\\s{0,}timeout\\s{1,}\\d{1,}.{0,}", Qt::CaseInsensitive);
+	QRegExp mlstchkishiddenmenu("\\s{0,}hiddenmenu.{0,}", Qt::CaseInsensitive);
+	QStringList ecurmenulstTextL;
+	bool mlstmustreplacetimeout = true;
+	bool mlstmustreplacehiddenmenu = true;
+	while (!bkmenulstout.atEnd())
+	{
+		QString menulstCurLine = bkmenulstout.readLine();
+		if (mlstmustreplacetimeout && mlstchkishiddenmenu.exactMatch(menulstCurLine))
+		{
+			ecurmenulstTextL.append("#hiddenmenu");
+			mlstmustreplacetimeout = false;
+		}
+		else if (mlstmustreplacehiddenmenu && mlstchkistimeout.exactMatch(menulstCurLine))
+		{
+			ecurmenulstTextL.append("timeout\t\t15");
+			mlstmustreplacehiddenmenu = false;
+		}
+		else
+		{
+			ecurmenulstTextL.append(menulstCurLine);
+		}
+	}
+	QString ecurmenulstText = ecurmenulstTextL.join("\n");
     #endif
 	QString menulstxt = QString(
 	#ifdef Q_OS_UNIX
-	"%9\n"
+	"%9\n\n"
 	#endif
 	#ifdef Q_OS_WIN32
 	"default 0\n"
@@ -616,7 +621,7 @@ void unetbootin::runinsthdd()
 	"%5 %6 %7\n"
 	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts
 	#ifdef Q_OS_UNIX
-	, getGrubNotation(targetDev), ecurmenulst
+	, getGrubNotation(targetDev), ecurmenulstText
 	#endif
 	);
 	menulstout << menulstxt << endl;
@@ -646,6 +651,10 @@ void unetbootin::runinsthdd()
 		bootiniEdit();
 		vistabcdEdit();
 	}
+	#endif
+	#ifdef Q_OS_UNIX
+	QSettings install(QSettings::SystemScope, "UNetbootin");
+	install.setValue("Location", "/");
 	#endif
 	QMessageBox rebootmsgb;
 	rebootmsgb.setIcon(QMessageBox::Information);

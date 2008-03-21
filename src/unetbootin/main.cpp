@@ -56,6 +56,22 @@ void clearOutDir(QString pDirToDel)
 
 void ubnUninst()
 {
+	#ifdef Q_OS_UNIX
+	QSettings chkinstL(QSettings::SystemScope, "UNetbootin");
+	if (QFile::exists("/boot/ubninit"))
+		QFile::remove("/boot/ubninit");
+	if (QFile::exists("/boot/ubnkern"))
+		QFile::remove("/boot/ubnkern");
+	if (QFile::exists("/boot/grub/menu.lst.bak"))
+	{
+		if (QFile::exists("/boot/grub/menu.lst"))
+		{
+			QFile::remove("/boot/grub/menu.lst");
+		}
+		QFile::rename("/boot/grub/menu.lst.bak", "/boot/grub/menu.lst");
+	}
+	#endif
+	#ifdef Q_OS_WIN32
 	QSettings autostrt("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
  	if (autostrt.contains("UNetbootin Uninstaller"))
  	{
@@ -65,7 +81,6 @@ void ubnUninst()
 	QVariant uninstvar(QVariant::String);
 	uninstvar = chkinstL.value("Location");
 	QString uninstPath = uninstvar.value<QString>();
-	#ifdef Q_OS_WIN32
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysUndo(uninstPath);
@@ -84,11 +99,11 @@ void ubnUninst()
 		bootiniUndo(uninstPath);
 		vistabcdUndo(uninstPath);
 	}
-	#endif
 	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(uninstPath)));
+	#endif
 	chkinstL.clear();
 	QMessageBox finmsgb;
 	finmsgb.setIcon(QMessageBox::Information);
@@ -110,7 +125,12 @@ int main(int argc, char *argv[])
 	QTranslator translator;
 	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
 	app.installTranslator(&translator);
+	#ifdef Q_OS_WIN32
     QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	#endif
+	#ifdef Q_OS_UNIX
+	QSettings chkinst(QSettings::SystemScope, "UNetbootin");
+	#endif
 	if (chkinst.contains("Location"))
 	{
 		QMessageBox uninstmsgb;
