@@ -261,6 +261,70 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
 }
 
+QString unetbootin::getGrubNotation(QString devicenode)
+{
+	return QString("(hd%1,%2)").arg(getDiskNumber(devicenode)).arg(getPartitionNumber(devicenode));
+}
+
+int unetbootin::letterToNumber(QChar lettertoconvert)
+{
+//	int i = 0;
+	if (lettertoconvert.isLower())
+	{
+		/*
+		for (char c = 'a'; c < 'z' + 1; ++c)
+		{
+			if (lettertoconvert.toAscii() == c)
+				break;
+			++i;
+		}
+		*/
+//		return (int)(lettertoconvert.toAscii() - 'a');
+//		return int(lettertoconvert.toAscii() - 'a');
+		return static_cast<int>(lettertoconvert.toAscii() - 'a');
+	}
+	if (lettertoconvert.isUpper())
+	{
+		/*
+		for (char c = 'A'; c < 'Z' + 1; ++c)
+		{
+			if (lettertoconvert.toAscii() == c)
+				break;
+			++i;
+		}
+		*/
+		return static_cast<int>(lettertoconvert.toAscii() - 'A');
+	}
+//	return i;
+	return 999;
+}
+
+int unetbootin::getDiskNumber(QString devicenode)
+{
+	QChar disknumchar(devicenode.at(devicenode.size() - 2));
+	if (disknumchar.isLetter())
+	{
+		return letterToNumber(disknumchar);
+	}
+	else
+	{
+		return disknumchar.digitValue() - 1;
+	}
+}
+
+int unetbootin::getPartitionNumber(QString devicenode)
+{
+	QChar partitionchar(devicenode.at(devicenode.size() - 1));
+	if (partitionchar.isLetter())
+	{
+		return letterToNumber(partitionchar);
+	}
+	else
+	{
+		return partitionchar.digitValue() - 1;
+	}
+}
+
 #endif
 
 #ifdef Q_OS_WIN32
@@ -518,27 +582,52 @@ void unetbootin::runinsthdd()
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
 	}
-    instIndvfl(QString("%1ubnldr.exe").arg(targetDrive), ubnldrexe);
-    #endif
-   	QFile menulst(QString("%1menu.lst").arg(targetPath));
-   	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
+	instIndvfl(QString("%1ubnldr.exe").arg(targetDrive), ubnldrexe);
+	#endif
+   	QFile menulst;
+   	#ifdef Q_OS_WIN32
+   	menulst.setFileName(QString("%1menu.lst").arg(targetPath));
+   	#endif
+   	#ifdef Q_OS_UNIX
+   	menulst.setFileName("/boot/grub/menu.lst");
+   	menulst.copy(QString("%1.bak").arg(menulst.fileName()));
+   	#endif
+	menulst.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream menulstout(&menulst);
-	QString menulstxt = QString("default 0\n"
-	"timeout 3\n"
+	#ifdef Q_OS_UNIX
+	QString ecurmenulst(menulstout.readAll());
+    #endif
+	QString menulstxt = QString(
+	#ifdef Q_OS_UNIX
+	"%9\n"
+	#endif
+	#ifdef Q_OS_WIN32
+	"default 0\n"
+	"timeout 3"
+	#endif
 	"title UNetbootin\n"
+	#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
+	#endif
+	#ifdef Q_OS_UNIX
+	"root %8\n"
+	#endif
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts);
+	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts
+	#ifdef Q_OS_UNIX
+	, getGrubNotation(targetDev), ecurmenulst
+	#endif
+	);
 	menulstout << menulstxt << endl;
 	menulst.close();
+	#ifdef Q_OS_WIN32
    	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
    	install.setValue("Location", targetDrive);
    	install.setValue("DisplayName", "UNetbootin");
    	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
    	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
    	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-	#ifdef Q_OS_WIN32
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysEdit();

@@ -49,6 +49,10 @@ public:
     QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
     QString locatedevicenode(QString mountpoint);
     QString locatemountpoint(QString devicenode);
+    QString getGrubNotation(QString devicenode);
+    int letterToNumber(QChar lettertoconvert);
+    int getDiskNumber(QString devicenode);
+    int getPartitionNumber(QString devicenode);
     #endif
 	#ifdef Q_OS_WIN32
     void configsysEdit();
