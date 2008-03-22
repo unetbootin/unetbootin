@@ -132,6 +132,18 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	}
 }
 
+QString unetbootin::downloadpagecontents(QString pageurl)
+{
+	QUrl pgurl(pageurl);
+	QHttp pghttp;
+	QEventLoop pgwait;
+	connect(&pghttp, SIGNAL(done(bool)), &pgwait, SLOT(quit()));
+	pghttp.setHost(pgurl.host());
+	pghttp.get(pgurl.path());
+	pgwait.exec();
+	return QString(pghttp.readAll());
+}
+
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
 	dlprogress.setValue(dlbytes);
@@ -502,7 +514,7 @@ void unetbootin::runinst()
    	{
    		QFile::remove(QString("%1ubninit").arg(targetPath));
   	}
-    close();
+	hide();
     if (radioFloppy->isChecked())
     {
     	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);

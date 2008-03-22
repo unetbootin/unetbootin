@@ -160,6 +160,72 @@ if (nameDistro == "FreeBSD 6.3 x64")
 	downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-6.3-x64.img.gz", QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "Frugalware Stable")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-stable/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}i686")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}i686.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Frugalware Stable x64")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-stable/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}x86_64")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}x86_64.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Frugalware Testing")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-testing/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}i686")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}i686.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Frugalware Testing x64")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-testing/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}x86_64")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}x86_64.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Frugalware Current")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-current/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}i686")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}i686.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Frugalware Current x64")
+{
+	QString pageurl = "http://www10.frugalware.org/pub/linux/frugalware/frugalware-current/boot/";
+	QString pagecontents = downloadpagecontents(pageurl);
+	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}x86_64")).at(0);
+	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}x86_64.img.gz")).at(0);	
+	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=41864 rw root=/dev/ram quiet vga=791";
+	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+}
+
 if (nameDistro == "NetBSD 4.0")
 {
 	kernelParam = "--type=netbsd";

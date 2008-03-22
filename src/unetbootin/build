@@ -9,7 +9,7 @@ mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 qmake
 make
 mv unetbootin release/unetbootin-linux-$rvern
-./upx --lzma release/unetbootin-linux-$rvern.exe
+./upx --lzma release/unetbootin-linux-$rvern
 printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://lubi.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
 zip release/unetbootin-source-$rvern.zip *.cpp *.h *.pro *.ui *.ts build Makefile Makefile.Release README.TXT
 

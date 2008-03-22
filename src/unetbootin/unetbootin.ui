@@ -216,7 +216,7 @@
     <string>Select from a list of supported distributions</string>
    </property>
    <property name="currentIndex" >
-    <number>32</number>
+    <number>38</number>
    </property>
    <item>
     <property name="text" >
@@ -326,6 +326,36 @@
    <item>
     <property name="text" >
      <string>FreeBSD 6.3 x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Stable</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Stable x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Testing</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Testing x64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Frugalware Current x64</string>
     </property>
    </item>
    <item>
@@ -562,8 +592,5 @@
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="unetbootin.qrc" />
- </resources>
  <connections/>
 </ui>

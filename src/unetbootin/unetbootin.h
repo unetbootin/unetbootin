@@ -43,6 +43,7 @@ public:
     QString syslinuxcommand;
     #endif
     void downloadfile(QString fileurl, QString targetfile);
+    QString downloadpagecontents(QString pageurl);
     void sysreboot();
 	void callexternapp(QString execFile, QString execParm);
 	#ifdef Q_OS_UNIX

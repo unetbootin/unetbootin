@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon Mar 17 14:41:03 2008
+** Created: Fri Mar 21 20:38:51 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -125,7 +125,7 @@ public:
 
     retranslateUi(unetbootin);
 
-    distroselect->setCurrentIndex(32);
+    distroselect->setCurrentIndex(38);
 
 
     QMetaObject::connectSlotsByName(unetbootin);
@@ -177,6 +177,12 @@ public:
      << QApplication::translate("unetbootin", "FreeBSD 7.0 x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "FreeBSD 6.3", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "FreeBSD 6.3 x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Stable", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Stable x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Testing", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Testing x64", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Current", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Frugalware Current x64", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "NetBSD 4.0", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE Factory", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "openSUSE Factory x64", 0, QApplication::UnicodeUTF8)
