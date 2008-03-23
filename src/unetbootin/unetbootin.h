@@ -27,6 +27,8 @@ public:
     QString nameKernel;
     QString nameInitrd;
     QString nameDistro;
+    QString nameVersion;
+    bool isarch64;
     QString targetDrive;
     QString targetPath;
     QString installType;
@@ -67,6 +69,7 @@ public:
     void runinstusb();
 
 private slots:
+	void on_distroselect_currentIndexChanged(int distroselectIndex);
 	void on_typeselect_currentIndexChanged(int typeselectIndex);
     void on_FloppyFileSelector_clicked();
     void on_KernelFileSelector_clicked();

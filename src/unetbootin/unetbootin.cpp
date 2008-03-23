@@ -13,13 +13,34 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-    driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+	distroselect->addItem("CentOS", (QStringList() << "5" << "4" << "4_x64" << "5" << "5_x64"));
+	distroselect->addItem("Debian", (QStringList() << "Stable" << "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
+	distroselect->addItem("Fedora", (QStringList() << "8" << "7" << "7_x64" << "8" << "8_x64" << "9 Alpha" << "9 Alpha_x64" << "Rawhide" << "Rawhide_x64"));
+	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << "6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
+	distroselect->addItem("Frugalware", (QStringList() << "Stable" << "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("NetBSD", (QStringList() << "4.0" << "4.0"));
+	distroselect->addItem("openSUSE", (QStringList() << "10.3" << "10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
+	distroselect->addItem("PartedMagic", (QStringList() << "2.1" << "2.1"));
+	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << "6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
+	distroselect->setCurrentIndex(distroselect->findText("Ubuntu"));
+	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	#endif
+}
+
+void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
+{
+	dverselect->clear();
+	QStringList dverL = distroselect->itemData(distroselectIndex).value<QStringList>();
+	for (int i = 1; i < dverL.size(); ++i)
+	{
+		dverselect->addItem(dverL.at(i));
+	}
+	dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -531,6 +552,16 @@ void unetbootin::runinst()
     if (radioDistro->isChecked())
     {
         nameDistro = distroselect->currentText();
+        nameVersion = dverselect->currentText();
+        if (nameVersion.contains("_x64"))
+        {
+        	nameVersion.remove("_x64");
+        	isarch64 = true;
+       	}
+       	else
+       	{
+       		isarch64 = false;
+      	}
 		#include "distrolst.cpp"
 		instDetType();
     }

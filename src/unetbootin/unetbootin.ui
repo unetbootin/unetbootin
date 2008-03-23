@@ -208,7 +208,7 @@
     <rect>
      <x>140</x>
      <y>50</y>
-     <width>371</width>
+     <width>182</width>
      <height>25</height>
     </rect>
    </property>
@@ -216,238 +216,8 @@
     <string>Select from a list of supported distributions</string>
    </property>
    <property name="currentIndex" >
-    <number>38</number>
+    <number>-1</number>
    </property>
-   <item>
-    <property name="text" >
-     <string>CentOS 5</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>CentOS 5 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>CentOS 4</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>CentOS 4 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Stable</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Stable x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Testing</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Testing x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Unstable</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Debian Unstable x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora Rawhide</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora Rawhide x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 9 Alpha</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 9 Alpha x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 8</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 8 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 7</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Fedora 7 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>FreeBSD 7.0</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>FreeBSD 7.0 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>FreeBSD 6.3</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>FreeBSD 6.3 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Stable</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Stable x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Testing</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Testing x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Current</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Frugalware Current x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>NetBSD 4.0</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE Factory</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE Factory x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.3</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.3 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.2</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>openSUSE 10.2 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Parted Magic 2.1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 8.04</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 8.04 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.10 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.04</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 7.04 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.10</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.10 x64</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.06</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>Ubuntu 6.06 x64</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="intromessage" >
    <property name="geometry" >
@@ -591,6 +361,26 @@
     <string>Option</string>
    </property>
   </widget>
+  <widget class="QComboBox" name="dverselect" >
+   <property name="geometry" >
+    <rect>
+     <x>330</x>
+     <y>50</y>
+     <width>182</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip" >
+    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select the distribution version&lt;/p>&lt;/body>&lt;/html></string>
+   </property>
+   <property name="currentIndex" >
+    <number>-1</number>
+   </property>
+  </widget>
  </widget>
+ <resources/>
  <connections/>
 </ui>
