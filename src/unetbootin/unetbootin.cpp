@@ -20,7 +20,7 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("Frugalware", (QStringList() << "Stable" << "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << "4.0"));
 	distroselect->addItem("openSUSE", (QStringList() << "10.3" << "10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
-	distroselect->addItem("PartedMagic", (QStringList() << "2.1" << "2.1"));
+	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << "2.1"));
 	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << "6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
 	distroselect->setCurrentIndex(distroselect->findText("Ubuntu"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());

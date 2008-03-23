@@ -115,6 +115,14 @@ if (nameDistro == "NetBSD")
 
 if (nameDistro == "openSUSE")
 {
+	if (isarch64)
+	{
+		cpuarch = "x86_64";
+	}
+	else
+	{
+		cpuarch = "i386";
+	}
 	if (relname == "factory")
 	{
 		downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
@@ -149,6 +157,26 @@ if (nameDistro == "Ubuntu")
 	else
 	{
 		cpuarch = "i386";
+	}
+	if (relname == "8.04")
+	{
+		relname = "hardy";
+	}
+	if (relname == "7.10")
+	{
+		relname = "gutsy";
+	}
+	if (relname == "7.04")
+	{
+		relname = "feisty";
+	}
+	if (relname == "6.10")
+	{
+		relname = "edgy";
+	}
+	if (relname == "6.06")
+	{
+		relname = "dapper";
 	}
 	downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
 	downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
