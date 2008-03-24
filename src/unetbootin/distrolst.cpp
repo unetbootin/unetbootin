@@ -74,7 +74,7 @@ if (nameDistro == "FreeBSD")
 		cpuarch = "";
 	}
 	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
-	downloadfile(QString("http://superb-east.dl.sourceforge.net/sourceforge/lubi/freebsd-%1%2.img.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/freebsd-%1%2.img.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 }
 
 if (nameDistro == "Frugalware")
@@ -142,8 +142,8 @@ if (nameDistro == "Parted Magic")
 {
 	if (relname == "2.1")
 	{
-		downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/partedmagic-2.1-kernel", QString("%1ubnkern").arg(targetPath));
-		downloadfile("http://superb-east.dl.sourceforge.net/sourceforge/lubi/partedmagic-2.1-initrd", QString("%1ubninit").arg(targetPath));
+		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-kernel", QString("%1ubnkern").arg(targetPath));
+		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-initrd", QString("%1ubninit").arg(targetPath));
 	}
 	kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";
 }

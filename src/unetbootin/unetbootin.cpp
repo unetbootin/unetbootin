@@ -144,6 +144,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dlhttp.setHost(dlurl.host());
 	dlhttp.get(dlurl.path(), &dloutfile);
 	dlprogress.exec();
+	QHttpResponseHeader dlresponse(dlhttp.lastResponse());
+	if (dlresponse.statusCode() == 302)
+	{
+		downloadfile(dlresponse.value("location"), targetfile);
+	}
 	dlhttp.close();
 	dloutfile.close();
 	if (installType == "USB Drive")
@@ -162,6 +167,11 @@ QString unetbootin::downloadpagecontents(QString pageurl)
 	pghttp.setHost(pgurl.host());
 	pghttp.get(pgurl.path());
 	pgwait.exec();
+	QHttpResponseHeader pgresponse(pghttp.lastResponse());
+	if (pgresponse.statusCode() == 302)
+	{
+		downloadpagecontents(pgresponse.value("location"));
+	}
 	return QString(pghttp.readAll());
 }
 
