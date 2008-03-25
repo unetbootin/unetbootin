@@ -79,6 +79,7 @@ private slots:
 
 public slots:
 	void dlprogressupdate(int dlbytes, int maxbytes);
+	void dlprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 };
 
 #endif

@@ -121,12 +121,26 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	}
 	sourcefile = fileurl;
 	destinfile = targetfile;
-	QHttp dlhttp;
 	QUrl dlurl(fileurl);
+	bool isftp = false;
+	if (dlurl.scheme() == "ftp")
+	{
+		isftp = true;
+	}
+	QHttp dlhttp;
+	QFtp dlftp;
 	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
 	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
-	connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
-	connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
+	if (isftp)
+	{
+		connect(&dlftp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+		connect(&dlftp, SIGNAL(dataTransferProgress(qint64, qint64)), this, SLOT(dlprogressupdate64(qint64, qint64)));
+	}
+	else
+	{
+		connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+		connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
+	}
 	QFile dloutfile;
 	if (installType == "USB Drive")
 	{
@@ -141,21 +155,54 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		dloutfile.setFileName(targetfile);
 	}
 	dloutfile.open(QIODevice::WriteOnly);
-	dlhttp.setHost(dlurl.host());
-	dlhttp.get(dlurl.path(), &dloutfile);
-	dlprogress.exec();
-	QHttpResponseHeader dlresponse(dlhttp.lastResponse());
-	if (dlresponse.statusCode() == 302)
+	if (isftp)
 	{
-		downloadfile(dlresponse.value("location"), targetfile);
+		dlftp.connectToHost(dlurl.host());
+		dlftp.login();
+		dlftp.get(dlurl.path(), &dloutfile);
 	}
-	dlhttp.close();
+	else
+	{
+		dlhttp.setHost(dlurl.host());
+		dlhttp.get(dlurl.path(), &dloutfile);
+	}
+	dlprogress.exec();
+	if (!isftp)
+	{
+		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
+		if (dlresponse.statusCode() == 302)
+		{
+			downloadfile(dlresponse.value("location"), targetfile);
+		}
+	}
+	if (isftp)
+	{
+		dlftp.close();
+	}
+	else
+	{
+		dlhttp.close();
+	}
 	dloutfile.close();
 	if (installType == "USB Drive")
 	{
 		QFile::copy(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())), targetfile);
 		QFile::remove(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
 	}
+}
+
+void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
+{
+	dlprogress.setValue(dlbytes);
+	dlprogress.setMaximum(maxbytes);
+	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+}
+
+void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
+{
+	dlprogress.setValue(dlbytes);
+	dlprogress.setMaximum(maxbytes);
+	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 }
 
 QString unetbootin::downloadpagecontents(QString pageurl)
@@ -170,16 +217,12 @@ QString unetbootin::downloadpagecontents(QString pageurl)
 	QHttpResponseHeader pgresponse(pghttp.lastResponse());
 	if (pgresponse.statusCode() == 302)
 	{
-		downloadpagecontents(pgresponse.value("location"));
+		return downloadpagecontents(pgresponse.value("location"));
 	}
-	return QString(pghttp.readAll());
-}
-
-void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
-{
-	dlprogress.setValue(dlbytes);
-	dlprogress.setMaximum(maxbytes);
-	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+	else
+	{
+		return QString(pghttp.readAll());
+	}
 }
 
 void unetbootin::sysreboot()
