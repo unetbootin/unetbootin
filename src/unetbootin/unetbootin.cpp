@@ -13,16 +13,56 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-	distroselect->addItem("CentOS", (QStringList() << "5" << "4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("Debian", (QStringList() << "Stable" << "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
-	distroselect->addItem("Fedora", (QStringList() << "8" << "7" << "7_x64" << "8" << "8_x64" << "9 Alpha" << "9 Alpha_x64" << "Rawhide" << "Rawhide_x64"));
-	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << "6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
-	distroselect->addItem("Frugalware", (QStringList() << "Stable" << "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("NetBSD", (QStringList() << "4.0" << "4.0"));
-	distroselect->addItem("openSUSE", (QStringList() << "10.3" << "10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
-	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << "2.1"));
-	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << "6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
-	distroselect->setCurrentIndex(distroselect->findText("Ubuntu"));
+    distroselect->addItem("== Select Distro ==", (QStringList() << "== Select Version ==" << 
+    tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
+		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
+		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
+	"== Select Version =="));
+	distroselect->addItem("CentOS", (QStringList() << "5" << 
+	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org/</a><br/>"
+		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+	"4" << "4_x64" << "5" << "5_x64"));
+	distroselect->addItem("Debian", (QStringList() << "Stable" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
+		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
+		"<b>Install Notes:</b> The default version allows for installation over FTP. Pre-partitioning may be helpful but is not required.") << 
+	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
+	distroselect->addItem("Fedora", (QStringList() << "8" << 
+	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
+	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
+	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+	"7" << "7_x64" << "8" << "8_x64" << "9 Alpha" << "9 Alpha_x64" << "Rawhide" << "Rawhide_x64"));
+	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
+		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+	"6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
+	distroselect->addItem("Frugalware", (QStringList() << "Stable" << 
+	tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
+		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
+		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
+		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
+		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand") << 
+	"4.0"));
+	distroselect->addItem("openSUSE", (QStringList() << "10.3" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
+		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
+	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << 
+	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
+		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
+		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") << 
+	"2.1"));
+	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
+		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
+		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. Pre-partitioning is required if installing via Live mode.") << 
+	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
@@ -36,11 +76,12 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 {
 	dverselect->clear();
 	QStringList dverL = distroselect->itemData(distroselectIndex).value<QStringList>();
-	for (int i = 1; i < dverL.size(); ++i)
+	for (int i = 2; i < dverL.size(); ++i)
 	{
 		dverselect->addItem(dverL.at(i));
 	}
 	dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
+	intromessage->setText(dverL.at(1));
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -110,7 +151,55 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-	runinst();
+	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distro =="))
+	{
+		QMessageBox notenoughinputmsgb;
+		notenoughinputmsgb.setIcon(QMessageBox::Information);
+		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a distro"));
+		notenoughinputmsgb.setText(QObject::tr("You must select a distribution to load."));
+ 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (notenoughinputmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
+	else if (radioFloppy->isChecked() && FloppyPath->text() == "")
+	{
+		QMessageBox notenoughinputmsgb;
+		notenoughinputmsgb.setIcon(QMessageBox::Information);
+		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a floppy image file"));
+		notenoughinputmsgb.setText(QObject::tr("You must select a floppy image file to load."));
+ 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (notenoughinputmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
+	else if (radioManual->isChecked() && KernelPath->text() == "")
+	{
+		QMessageBox notenoughinputmsgb;
+		notenoughinputmsgb.setIcon(QMessageBox::Information);
+		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a kernel and/or initrd file"));
+		notenoughinputmsgb.setText(QObject::tr("You must select a kernel and/or initrd file to load."));
+ 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (notenoughinputmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
+	else
+	{
+		runinst();
+	}
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
