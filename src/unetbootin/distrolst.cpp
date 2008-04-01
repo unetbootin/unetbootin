@@ -96,6 +96,20 @@ if (nameDistro == "Frugalware")
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";
 }
 
+if (nameDistro == "Mandriva")
+{
+	if (isarch64)
+	{
+		cpuarch = "x86_64";
+	}
+	else
+	{
+		cpuarch = "i586";
+	}
+	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
+	downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+}
+
 if (nameDistro == "NetBSD")
 {
 	if (isarch64)

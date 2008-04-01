@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sat Mar 29 00:41:39 2008
+** Created: Mon Mar 31 23:03:57 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -47,6 +47,8 @@ public:
     QLabel *labeloption;
     QComboBox *dverselect;
     QTextBrowser *intromessage;
+    QComboBox *diskimagetype;
+    QPushButton *CfgFileSelector;
 
     void setupUi(QWidget *unetbootin)
     {
@@ -61,53 +63,53 @@ public:
     FloppyFileSelector->setAcceptDrops(false);
     FloppyPath = new QLineEdit(unetbootin);
     FloppyPath->setObjectName(QString::fromUtf8("FloppyPath"));
-    FloppyPath->setGeometry(QRect(140, 180, 341, 25));
+    FloppyPath->setGeometry(QRect(190, 180, 291, 25));
     radioFloppy = new QRadioButton(unetbootin);
     radioFloppy->setObjectName(QString::fromUtf8("radioFloppy"));
-    radioFloppy->setGeometry(QRect(10, 180, 121, 25));
+    radioFloppy->setGeometry(QRect(10, 180, 101, 25));
     radioManual = new QRadioButton(unetbootin);
     radioManual->setObjectName(QString::fromUtf8("radioManual"));
-    radioManual->setGeometry(QRect(10, 220, 71, 25));
+    radioManual->setGeometry(QRect(10, 220, 81, 25));
     KernelPath = new QLineEdit(unetbootin);
     KernelPath->setObjectName(QString::fromUtf8("KernelPath"));
-    KernelPath->setGeometry(QRect(140, 220, 341, 25));
+    KernelPath->setGeometry(QRect(190, 220, 291, 25));
     KernelFileSelector = new QPushButton(unetbootin);
     KernelFileSelector->setObjectName(QString::fromUtf8("KernelFileSelector"));
     KernelFileSelector->setGeometry(QRect(488, 220, 25, 25));
     KernelFileSelector->setAcceptDrops(false);
     labelkernel = new QLabel(unetbootin);
     labelkernel->setObjectName(QString::fromUtf8("labelkernel"));
-    labelkernel->setGeometry(QRect(90, 220, 41, 25));
+    labelkernel->setGeometry(QRect(110, 220, 61, 25));
     labelinitrd = new QLabel(unetbootin);
     labelinitrd->setObjectName(QString::fromUtf8("labelinitrd"));
-    labelinitrd->setGeometry(QRect(90, 250, 41, 25));
+    labelinitrd->setGeometry(QRect(110, 250, 61, 25));
     InitrdFileSelector = new QPushButton(unetbootin);
     InitrdFileSelector->setObjectName(QString::fromUtf8("InitrdFileSelector"));
     InitrdFileSelector->setGeometry(QRect(488, 250, 25, 25));
     InitrdFileSelector->setAcceptDrops(false);
     InitrdPath = new QLineEdit(unetbootin);
     InitrdPath->setObjectName(QString::fromUtf8("InitrdPath"));
-    InitrdPath->setGeometry(QRect(140, 250, 341, 25));
+    InitrdPath->setGeometry(QRect(190, 250, 291, 25));
     radioDistro = new QRadioButton(unetbootin);
     radioDistro->setObjectName(QString::fromUtf8("radioDistro"));
-    radioDistro->setGeometry(QRect(10, 20, 121, 25));
+    radioDistro->setGeometry(QRect(10, 20, 111, 25));
     radioDistro->setChecked(true);
     distroselect = new QComboBox(unetbootin);
     distroselect->setObjectName(QString::fromUtf8("distroselect"));
-    distroselect->setGeometry(QRect(140, 20, 182, 25));
+    distroselect->setGeometry(QRect(110, 20, 200, 25));
     okbutton = new QPushButton(unetbootin);
     okbutton->setObjectName(QString::fromUtf8("okbutton"));
-    okbutton->setGeometry(QRect(340, 320, 80, 25));
+    okbutton->setGeometry(QRect(343, 320, 80, 25));
     cancelbutton = new QPushButton(unetbootin);
     cancelbutton->setObjectName(QString::fromUtf8("cancelbutton"));
-    cancelbutton->setGeometry(QRect(430, 320, 80, 25));
+    cancelbutton->setGeometry(QRect(433, 320, 80, 25));
     labeldrive = new QLabel(unetbootin);
     labeldrive->setObjectName(QString::fromUtf8("labeldrive"));
-    labeldrive->setGeometry(QRect(180, 320, 41, 25));
+    labeldrive->setGeometry(QRect(150, 320, 41, 25));
     driveselect = new QComboBox(unetbootin);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
     driveselect->setEnabled(true);
-    driveselect->setGeometry(QRect(220, 320, 91, 25));
+    driveselect->setGeometry(QRect(190, 320, 111, 25));
     labeldrive_2 = new QLabel(unetbootin);
     labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
     labeldrive_2->setGeometry(QRect(10, 320, 32, 25));
@@ -117,20 +119,28 @@ public:
     typeselect->setGeometry(QRect(50, 320, 91, 25));
     OptionEnter = new QLineEdit(unetbootin);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
-    OptionEnter->setGeometry(QRect(140, 280, 341, 25));
+    OptionEnter->setGeometry(QRect(190, 280, 291, 25));
     labeloption = new QLabel(unetbootin);
     labeloption->setObjectName(QString::fromUtf8("labeloption"));
-    labeloption->setGeometry(QRect(90, 280, 49, 25));
+    labeloption->setGeometry(QRect(110, 280, 61, 25));
     dverselect = new QComboBox(unetbootin);
     dverselect->setObjectName(QString::fromUtf8("dverselect"));
-    dverselect->setGeometry(QRect(330, 20, 182, 25));
+    dverselect->setGeometry(QRect(313, 20, 200, 25));
     intromessage = new QTextBrowser(unetbootin);
     intromessage->setObjectName(QString::fromUtf8("intromessage"));
-    intromessage->setGeometry(QRect(10, 60, 501, 101));
+    intromessage->setGeometry(QRect(9, 60, 503, 101));
     intromessage->setFrameShape(QFrame::NoFrame);
     intromessage->setFrameShadow(QFrame::Plain);
     intromessage->setLineWidth(0);
     intromessage->setOpenExternalLinks(true);
+    diskimagetype = new QComboBox(unetbootin);
+    diskimagetype->setObjectName(QString::fromUtf8("diskimagetype"));
+    diskimagetype->setEnabled(true);
+    diskimagetype->setGeometry(QRect(110, 180, 71, 25));
+    CfgFileSelector = new QPushButton(unetbootin);
+    CfgFileSelector->setObjectName(QString::fromUtf8("CfgFileSelector"));
+    CfgFileSelector->setGeometry(QRect(488, 280, 25, 25));
+    CfgFileSelector->setAcceptDrops(false);
 
     retranslateUi(unetbootin);
 
@@ -147,22 +157,25 @@ public:
     FloppyFileSelector->setToolTip(QApplication::translate("unetbootin", "Select disk image file", 0, QApplication::UnicodeUTF8));
     FloppyFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
     FloppyPath->setToolTip(QApplication::translate("unetbootin", "Specify a floppy or hard disk image file to load", 0, QApplication::UnicodeUTF8));
-    radioFloppy->setToolTip(QApplication::translate("unetbootin", "Specify a floppy or hard disk image file to load", 0, QApplication::UnicodeUTF8));
-    radioFloppy->setText(QApplication::translate("unetbootin", "Floppy Image:", 0, QApplication::UnicodeUTF8));
+    radioFloppy->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Specify a disk image file to load</p></body></html>", 0, QApplication::UnicodeUTF8));
+    radioFloppy->setText(QApplication::translate("unetbootin", "Disk Image", 0, QApplication::UnicodeUTF8));
     radioManual->setToolTip(QApplication::translate("unetbootin", "Manually specify a kernel and initrd to load", 0, QApplication::UnicodeUTF8));
-    radioManual->setText(QApplication::translate("unetbootin", "Manual:", 0, QApplication::UnicodeUTF8));
+    radioManual->setText(QApplication::translate("unetbootin", "Custom", 0, QApplication::UnicodeUTF8));
     KernelPath->setToolTip(QApplication::translate("unetbootin", "Specify a kernel file to load", 0, QApplication::UnicodeUTF8));
     KernelFileSelector->setToolTip(QApplication::translate("unetbootin", "Select kernel file", 0, QApplication::UnicodeUTF8));
     KernelFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
     labelkernel->setToolTip(QApplication::translate("unetbootin", "Specify a kernel file to load", 0, QApplication::UnicodeUTF8));
-    labelkernel->setText(QApplication::translate("unetbootin", "Kernel", 0, QApplication::UnicodeUTF8));
+    labelkernel->setText(QApplication::translate("unetbootin", "Kernel:", 0, QApplication::UnicodeUTF8));
     labelinitrd->setToolTip(QApplication::translate("unetbootin", "Specify an initrd file to load", 0, QApplication::UnicodeUTF8));
-    labelinitrd->setText(QApplication::translate("unetbootin", "Initrd", 0, QApplication::UnicodeUTF8));
+    labelinitrd->setText(QApplication::translate("unetbootin", "Initrd:", 0, QApplication::UnicodeUTF8));
     InitrdFileSelector->setToolTip(QApplication::translate("unetbootin", "Select initrd file", 0, QApplication::UnicodeUTF8));
     InitrdFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
     InitrdPath->setToolTip(QApplication::translate("unetbootin", "Specify an initrd file to load", 0, QApplication::UnicodeUTF8));
     radioDistro->setToolTip(QApplication::translate("unetbootin", "Select from a list of supported distributions", 0, QApplication::UnicodeUTF8));
-    radioDistro->setText(QApplication::translate("unetbootin", "Distribution:", 0, QApplication::UnicodeUTF8));
+    radioDistro->setText(QApplication::translate("unetbootin", "Distribution", 0, QApplication::UnicodeUTF8));
     distroselect->setToolTip(QApplication::translate("unetbootin", "Select from a list of supported distributions", 0, QApplication::UnicodeUTF8));
     okbutton->setText(QApplication::translate("unetbootin", "OK", 0, QApplication::UnicodeUTF8));
     cancelbutton->setText(QApplication::translate("unetbootin", "Cancel", 0, QApplication::UnicodeUTF8));
@@ -179,11 +192,27 @@ public:
     typeselect->setToolTip(QApplication::translate("unetbootin", "Select the installation target type", 0, QApplication::UnicodeUTF8));
     OptionEnter->setToolTip(QApplication::translate("unetbootin", "Specify parameters and options to pass to the kernel", 0, QApplication::UnicodeUTF8));
     labeloption->setToolTip(QApplication::translate("unetbootin", "Specify parameters and options to pass to the kernel", 0, QApplication::UnicodeUTF8));
-    labeloption->setText(QApplication::translate("unetbootin", "Option", 0, QApplication::UnicodeUTF8));
+    labeloption->setText(QApplication::translate("unetbootin", "Options:", 0, QApplication::UnicodeUTF8));
     dverselect->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the distribution version</p></body></html>", 0, QApplication::UnicodeUTF8));
+    diskimagetype->clear();
+    diskimagetype->insertItems(0, QStringList()
+     << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "HDD", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "ISO", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "WIM", 0, QApplication::UnicodeUTF8)
+    );
+    diskimagetype->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the disk image type</p></body></html>", 0, QApplication::UnicodeUTF8));
+    CfgFileSelector->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select syslinux.cfg or isolinux.cfg file</p></body></html>", 0, QApplication::UnicodeUTF8));
+    CfgFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootin);
     } // retranslateUi
 

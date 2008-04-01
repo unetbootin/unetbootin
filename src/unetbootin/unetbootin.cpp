@@ -13,6 +13,8 @@ unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
+    diskimagetype->removeItem(diskimagetype->findText("WIM"));
+    diskimagetype->removeItem(diskimagetype->findText("ISO"));
     distroselect->addItem("== Select Distro ==", (QStringList() << "== Select Version ==" << 
     tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
@@ -30,8 +32,8 @@ unetbootin::unetbootin(QWidget *parent)
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
 	distroselect->addItem("Fedora", (QStringList() << "8" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
-	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
-	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
 	"7" << "7_x64" << "8" << "8_x64" << "9 Alpha" << "9 Alpha_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
@@ -43,6 +45,11 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("Mandriva", (QStringList() << "2008.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
+		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
+		"<b>Install Notes:</b> The default option allows for installation only via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>. You will need to pre-partition your disk using Parted Magic beforehand.") << 
+	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
@@ -61,7 +68,7 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
-		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. Pre-partitioning is required if installing via Live mode.") << 
+		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP.") << 
 	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
@@ -122,7 +129,7 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-    nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+    QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     FloppyPath->clear();
     FloppyPath->insert(nameFloppy);
     radioFloppy->setChecked(1);
@@ -130,7 +137,7 @@ void unetbootin::on_FloppyFileSelector_clicked()
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-    nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+    QString nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     KernelPath->clear();
     KernelPath->insert(nameKernel);
     radioManual->setChecked(1);
@@ -138,9 +145,17 @@ void unetbootin::on_KernelFileSelector_clicked()
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-    nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+    QString nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
     InitrdPath->clear();
     InitrdPath->insert(nameInitrd);
+    radioManual->setChecked(1);
+}
+
+void unetbootin::on_CfgFileSelector_clicked()
+{
+    QString nameCfg = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+    OptionEnter->clear();
+    OptionEnter->insert(getcfgkernargs(nameCfg));
     radioManual->setChecked(1);
 }
 
@@ -170,8 +185,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox notenoughinputmsgb;
 		notenoughinputmsgb.setIcon(QMessageBox::Information);
-		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a floppy image file"));
-		notenoughinputmsgb.setText(QObject::tr("You must select a floppy image file to load."));
+		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a disk image file"));
+		notenoughinputmsgb.setText(QObject::tr("You must select a disk image file to load."));
  		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (notenoughinputmsgb.exec())
  		{
@@ -200,6 +215,35 @@ void unetbootin::on_okbutton_clicked()
 	{
 		runinst();
 	}
+}
+
+/*
+void unetbootin::extractiso(QString isofile, QString exoutputdir)
+{
+	
+}
+
+void unetbootin::extractkernel(QString isofile, QString kernoutputfile)
+{
+	
+}
+*/
+
+QString unetbootin::getcfgkernargs(QString cfgfile)
+{
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine();
+		if (cfgfileCL.contains("append", Qt::CaseInsensitive))
+		{
+			break;
+		}
+	}
+	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive));
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
@@ -621,15 +665,18 @@ void unetbootin::runinst()
 {
 	installType = typeselect->currentText();
     targetDrive = driveselect->currentText();
+    QString ginstallDir;
+    QString installDir;
 	#ifdef Q_OS_WIN32
 	if (installType == "Hard Disk")
 	{
-		installDir = "unetbtin/";
+		ginstallDir = "unetbtin/";
 	}
 	if (installType == "USB Drive")
 	{
-		installDir = "";
+		ginstallDir = "";
 	}
+	installDir = ginstallDir;
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
 	#endif
 	#ifdef Q_OS_UNIX
@@ -638,19 +685,22 @@ void unetbootin::runinst()
 		QString devnboot = locatedevicenode("/boot");
 		if (devnboot == "NOT FOUND")
 		{
-			installDir = "boot/";
+			ginstallDir = "boot/";
+			installDir = ginstallDir;
 			targetDev = locatedevicenode("/");
 		}
 		else
 		{
-			installDir = "";
+			ginstallDir = "";
+			installDir = "boot/";
 			targetDev = devnboot;
 		}
 	}
 	if (installType == "USB Drive")
 	{
 		targetDev = driveselect->currentText();
-		installDir = "";
+		ginstallDir = "";
+		installDir = ginstallDir;
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 		if (targetDrive == "INSTALL ABORTED/")
 		{
@@ -660,9 +710,9 @@ void unetbootin::runinst()
 	}
 	#endif
 	kernelLine = "kernel";
-	kernelLoc = QString("/%1ubnkern").arg(installDir);
+	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
-	initrdLoc = QString("/%1ubninit").arg(installDir);
+	initrdLoc = QString("/%1ubninit").arg(ginstallDir);
     targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
     QDir dir;
     if (!dir.exists(targetPath))
@@ -680,8 +730,15 @@ void unetbootin::runinst()
 	hide();
     if (radioFloppy->isChecked())
     {
-    	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
-    	QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+    	if (diskimagetype->currentIndex() == diskimagetype->findText("Floppy") || diskimagetype->findText("HDD"))
+    	{
+    		instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
+    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+   		}
+		if (diskimagetype->currentIndex() == diskimagetype->findText("ISO"))
+    	{
+    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+   		}
     	instDetType();
     }
     if (radioManual->isChecked())
@@ -793,7 +850,7 @@ void unetbootin::runinsthdd()
 	#endif
 	#ifdef Q_OS_WIN32
 	"default 0\n"
-	"timeout 3"
+	"timeout 3\n"
 	#endif
 	"title UNetbootin\n"
 	#ifdef Q_OS_WIN32

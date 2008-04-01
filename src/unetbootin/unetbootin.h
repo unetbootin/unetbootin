@@ -23,16 +23,12 @@ public:
     unetbootin(QWidget *parent = 0);
     QString appDir;
     QString appLoc;
-    QString nameFloppy;
-    QString nameKernel;
-    QString nameInitrd;
     QString nameDistro;
     QString nameVersion;
     bool isarch64;
     QString targetDrive;
     QString targetPath;
     QString installType;
-    QString installDir;
     QString targetDev;
     QString postinstmsg;
     QString sourcefile, destinfile;
@@ -44,6 +40,9 @@ public:
     QString mssyscommand;
     QString syslinuxcommand;
     #endif
+    void extractiso(QString isofile, QString exoutputdir);
+    void extractkernel(QString isofile, QString kernoutputfile);
+    QString getcfgkernargs(QString cfgfile);
     void downloadfile(QString fileurl, QString targetfile);
     QString downloadpagecontents(QString pageurl);
     void sysreboot();
@@ -74,6 +73,7 @@ private slots:
     void on_FloppyFileSelector_clicked();
     void on_KernelFileSelector_clicked();
     void on_InitrdFileSelector_clicked();
+    void on_CfgFileSelector_clicked();
     void on_cancelbutton_clicked();
     void on_okbutton_clicked();
 
