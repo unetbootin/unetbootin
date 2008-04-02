@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon Mar 31 23:03:57 2008
+** Created: Tue Apr 1 13:55:08 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -130,8 +130,6 @@ public:
     intromessage->setObjectName(QString::fromUtf8("intromessage"));
     intromessage->setGeometry(QRect(9, 60, 503, 101));
     intromessage->setFrameShape(QFrame::NoFrame);
-    intromessage->setFrameShadow(QFrame::Plain);
-    intromessage->setLineWidth(0);
     intromessage->setOpenExternalLinks(true);
     diskimagetype = new QComboBox(unetbootin);
     diskimagetype->setObjectName(QString::fromUtf8("diskimagetype"));
@@ -197,6 +195,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the distribution version</p></body></html>", 0, QApplication::UnicodeUTF8));
+    intromessage->setStyleSheet(QApplication::translate("unetbootin", "background: transparent;", 0, QApplication::UnicodeUTF8));
     diskimagetype->clear();
     diskimagetype->insertItems(0, QStringList()
      << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)

@@ -379,14 +379,11 @@ p, li { white-space: pre-wrap; }
      <height>101</height>
     </rect>
    </property>
+   <property name="styleSheet" >
+    <string>background: transparent;</string>
+   </property>
    <property name="frameShape" >
     <enum>QFrame::NoFrame</enum>
-   </property>
-   <property name="frameShadow" >
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth" >
-    <number>0</number>
    </property>
    <property name="openExternalLinks" >
     <bool>true</bool>

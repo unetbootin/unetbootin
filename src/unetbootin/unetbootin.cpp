@@ -15,7 +15,7 @@ unetbootin::unetbootin(QWidget *parent)
     setupUi(this);
     diskimagetype->removeItem(diskimagetype->findText("WIM"));
     diskimagetype->removeItem(diskimagetype->findText("ISO"));
-    distroselect->addItem("== Select Distro ==", (QStringList() << "== Select Version ==" << 
+    distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
     tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
@@ -166,7 +166,7 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distro =="))
+	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
 	{
 		QMessageBox notenoughinputmsgb;
 		notenoughinputmsgb.setIcon(QMessageBox::Information);
