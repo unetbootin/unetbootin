@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>7z.dll</file>
+        <file>7z.exe</file>
+        <file>syslinux.exe</file>
+        <file>ubnldr</file>
+        <file>ubnldr.exe</file>
+        <file>ubnldr.mbr</file>
+    </qresource>
+</RCC>

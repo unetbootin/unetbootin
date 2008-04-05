@@ -451,6 +451,8 @@ p, li { white-space: pre-wrap; }
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="unetbootin-windows.qrc" />
+ </resources>
  <connections/>
 </ui>

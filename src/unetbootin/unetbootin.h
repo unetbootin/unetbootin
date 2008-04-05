@@ -39,6 +39,7 @@ public:
     QString sfdiskcommand;
     QString mssyscommand;
     QString syslinuxcommand;
+    QString sevzcommand;
     #endif
     void extractiso(QString isofile, QString exoutputdir);
     void extractkernel(QString isofile, QString kernoutputfile);
@@ -61,7 +62,7 @@ public:
     void bootiniEdit();
     void vistabcdEdit();
     #endif
-    void instIndvfl(QString dstfName, QByteArray qbav);
+    void instIndvfl(QString srcfName, QString dstfName);
     void runinst();
     void instDetType();
     void runinsthdd();

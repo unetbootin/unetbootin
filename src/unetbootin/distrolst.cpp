@@ -73,7 +73,7 @@ if (nameDistro == "FreeBSD")
 	{
 		cpuarch = "";
 	}
-	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/freebsd-%1%2.img.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 }
 
@@ -106,7 +106,7 @@ if (nameDistro == "Mandriva")
 	{
 		cpuarch = "i586";
 	}
-	instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
 	downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 }
 

@@ -12,4 +12,7 @@ src/unetbootin/unetbootin
 src/unetbootin/unetbootin.exe
 src/unetbootin/unetbootin.o
 src/unetbootin/upx
-
+src/unetbootin/7z.dll
+src/unetbootin/7z.exe
+src/unetbootin/sevenzip.exe
+src/unetbootin/qrc_unetbootin.cpp

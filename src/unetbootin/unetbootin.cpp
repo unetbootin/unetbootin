@@ -1,20 +1,10 @@
 #include "unetbootin.h"
 
-#include "memdisk.cpp"
-#ifdef Q_OS_WIN32
-#include "ubnldr.cpp"
-#include "ubnldrmbr.cpp"
-#include "ubnldrexe.cpp"
-#include "emtxfileexe.cpp"
-#include "syslinuxexe.cpp"
-#endif
-
 unetbootin::unetbootin(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
     diskimagetype->removeItem(diskimagetype->findText("WIM"));
-    diskimagetype->removeItem(diskimagetype->findText("ISO"));
     distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
     tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
@@ -76,6 +66,7 @@ unetbootin::unetbootin(QWidget *parent)
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
+	sevzcommand = locatecommand("7z", "either", "p7zip-full");
 	#endif
 }
 
@@ -220,9 +211,9 @@ void unetbootin::on_okbutton_clicked()
 /*
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
-	
+	printf(getenv("COMSPEC"));
+//	callexternapp("");
 }
-
 void unetbootin::extractkernel(QString isofile, QString kernoutputfile)
 {
 	
@@ -597,7 +588,7 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
-	instIndvfl(QString("%1emtxfile.exe").arg(targetPath), emtxfileexe);
+	instIndvfl("emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
@@ -652,13 +643,15 @@ void unetbootin::vistabcdEdit()
 
 #endif
 
-void unetbootin::instIndvfl(QString dstfName, QByteArray qbav)
+void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 {
-	QFile dstFile;
-	dstFile.setFileName(dstfName);
-	dstFile.open(QIODevice::WriteOnly);
-	dstFile.write(qbav);
-	dstFile.close();
+	QFile dstF(dstfName);
+	dstF.open(QIODevice::WriteOnly);
+	QFile srcF(QString(":/%1").arg(srcfName));
+	srcF.open(QIODevice::ReadOnly);
+	dstF.write(srcF.readAll());
+	dstF.close();
+	srcF.close();
 }
 
 void unetbootin::runinst()
@@ -732,12 +725,13 @@ void unetbootin::runinst()
     {
     	if (diskimagetype->currentIndex() == diskimagetype->findText("Floppy") || diskimagetype->findText("HDD"))
     	{
-    		instIndvfl(QString("%1ubnkern").arg(targetPath), memdisk);
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
     		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
 		if (diskimagetype->currentIndex() == diskimagetype->findText("ISO"))
     	{
-    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+//			extractiso(FloppyPath->text(), "");
+//    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
     	instDetType();
     }
@@ -791,17 +785,17 @@ void unetbootin::runinsthdd()
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
 	}
-	instIndvfl(QString("%1ubnldr").arg(targetDrive), ubnldr);
+	instIndvfl("ubnldr", QString("%1ubnldr").arg(targetDrive));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive))))
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
 	}
-	instIndvfl(QString("%1ubnldr.mbr").arg(targetDrive), ubnldrmbr);
+	instIndvfl("ubnldr.mbr", QString("%1ubnldr.mbr").arg(targetDrive));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive))))
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
 	}
-	instIndvfl(QString("%1ubnldr.exe").arg(targetDrive), ubnldrexe);
+	instIndvfl("ubnldr.exe", QString("%1ubnldr.exe").arg(targetDrive));
 	#endif
    	QFile menulst;
    	#ifdef Q_OS_WIN32
@@ -923,7 +917,7 @@ void unetbootin::runinstusb()
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
 	}
-	instIndvfl(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), syslinuxexe);
+	instIndvfl("syslinux.exe", QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
 	callexternapp(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), QString("-ma %1").arg(targetDev));
 	QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
 	#endif
