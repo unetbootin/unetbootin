@@ -389,7 +389,7 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QComboBox" name="diskimagetype" >
+  <widget class="QComboBox" name="diskimagetypeselect" >
    <property name="enabled" >
     <bool>true</bool>
    </property>

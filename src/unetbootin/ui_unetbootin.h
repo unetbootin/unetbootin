@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Fri Apr 4 17:15:27 2008
+** Created: Sat Apr 5 10:52:01 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -47,7 +47,7 @@ public:
     QLabel *labeloption;
     QComboBox *dverselect;
     QTextBrowser *intromessage;
-    QComboBox *diskimagetype;
+    QComboBox *diskimagetypeselect;
     QPushButton *CfgFileSelector;
 
     void setupUi(QWidget *unetbootin)
@@ -131,10 +131,10 @@ public:
     intromessage->setGeometry(QRect(9, 60, 503, 101));
     intromessage->setFrameShape(QFrame::NoFrame);
     intromessage->setOpenExternalLinks(true);
-    diskimagetype = new QComboBox(unetbootin);
-    diskimagetype->setObjectName(QString::fromUtf8("diskimagetype"));
-    diskimagetype->setEnabled(true);
-    diskimagetype->setGeometry(QRect(110, 180, 71, 25));
+    diskimagetypeselect = new QComboBox(unetbootin);
+    diskimagetypeselect->setObjectName(QString::fromUtf8("diskimagetypeselect"));
+    diskimagetypeselect->setEnabled(true);
+    diskimagetypeselect->setGeometry(QRect(110, 180, 71, 25));
     CfgFileSelector = new QPushButton(unetbootin);
     CfgFileSelector->setObjectName(QString::fromUtf8("CfgFileSelector"));
     CfgFileSelector->setGeometry(QRect(488, 280, 25, 25));
@@ -196,14 +196,14 @@ public:
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the distribution version</p></body></html>", 0, QApplication::UnicodeUTF8));
     intromessage->setStyleSheet(QApplication::translate("unetbootin", "background: transparent;", 0, QApplication::UnicodeUTF8));
-    diskimagetype->clear();
-    diskimagetype->insertItems(0, QStringList()
+    diskimagetypeselect->clear();
+    diskimagetypeselect->insertItems(0, QStringList()
      << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "HDD", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "ISO", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "WIM", 0, QApplication::UnicodeUTF8)
     );
-    diskimagetype->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+    diskimagetypeselect->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the disk image type</p></body></html>", 0, QApplication::UnicodeUTF8));

@@ -1,12 +1,13 @@
 #include "unetbootin.h"
 
 unetbootin::unetbootin(QWidget *parent)
-    : QWidget(parent)
+	: QWidget(parent)
 {
-    setupUi(this);
-    diskimagetype->removeItem(diskimagetype->findText("WIM"));
-    distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
-    tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
+	setupUi(this);
+//	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
+	diskimagetypeselect->removeItem(diskimagetypeselect->findText("WIM"));
+	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
+	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
@@ -80,6 +81,7 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 	}
 	dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
 	intromessage->setText(dverL.at(1));
+	radioDistro->setChecked(true);
 }
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
@@ -118,41 +120,51 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 	}
 }
 
+void unetbootin::on_dverselect_currentIndexChanged()
+{
+	radioDistro->setChecked(true);
+}
+
+void unetbootin::on_diskimagetypeselect_currentIndexChanged()
+{
+	radioFloppy->setChecked(true);
+}
+
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-    QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    FloppyPath->clear();
-    FloppyPath->insert(nameFloppy);
-    radioFloppy->setChecked(1);
+	QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	FloppyPath->clear();
+	FloppyPath->insert(nameFloppy);
+	radioFloppy->setChecked(true);
 }
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-    QString nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    KernelPath->clear();
-    KernelPath->insert(nameKernel);
-    radioManual->setChecked(1);
+	QString nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	KernelPath->clear();
+	KernelPath->insert(nameKernel);
+	radioManual->setChecked(true);
 }
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-    QString nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    InitrdPath->clear();
-    InitrdPath->insert(nameInitrd);
-    radioManual->setChecked(1);
+	QString nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	InitrdPath->clear();
+	InitrdPath->insert(nameInitrd);
+	radioManual->setChecked(true);
 }
 
 void unetbootin::on_CfgFileSelector_clicked()
 {
-    QString nameCfg = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-    OptionEnter->clear();
-    OptionEnter->insert(getcfgkernargs(nameCfg));
-    radioManual->setChecked(1);
+	QString nameCfg = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	OptionEnter->clear();
+	OptionEnter->insert(getcfgkernargs(nameCfg));
+	radioManual->setChecked(true);
 }
 
 void unetbootin::on_cancelbutton_clicked()
 {
-    close();
+	close();
 }
 
 void unetbootin::on_okbutton_clicked()
@@ -208,12 +220,109 @@ void unetbootin::on_okbutton_clicked()
 	}
 }
 
+QStringList unetbootin::listarchiveconts(QString archivefile)
+{
+	#ifdef Q_OS_WIN32
+	if (sevzcommand == "")
+	{
+		installsvzip();
+	}
+	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
+	QFile tmplsF(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
+	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream tmplsS(&tmplsF);
+	#endif
+	#ifdef Q_OS_UNIX
+	QProcess sevzlcommand;
+	sevzlcommand.start(QString("%1 -bd l %2").arg(sevzcommand, archivefile));
+	sevzlcommand.waitForFinished(-1);
+	QByteArray sevzlcommandout = sevzlcommand.readAll();
+	QTextStream tmplsS(&sevzlcommandout);
+	#endif
+	QString tmplsL;
+	QStringList tmplsSL;
+	bool archiveconts = false;
+	while (!tmplsS.atEnd())
+	{
+		tmplsL = tmplsS.readLine();
+		if (archiveconts)
+		{
+			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			{
+				break;
+			}
+			else
+			{
+				tmplsSL.append(tmplsL.remove(0, 53));
+			}
+		}
+		else
+		{
+			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			{
+				archiveconts = true;
+			}
+		}
+	}
+	#ifdef Q_OS_WIN32
+	tmplsF.close();
+	QFile::remove(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
+	#endif
+	return tmplsSL;
+}
+
 /*
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
-{
-	printf(getenv("COMSPEC"));
+{	
+	#ifdef Q_OS_WIN32
+	if (sevzcommand == "")
+	{
+		installsvzip();
+	}
+	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd l \"%2\" > \"%3\"").arg(sevzcommand).arg(isofile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
+	QFile tmplsF(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
+	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream tmplsS(&tmplsF);
+	QString tmplsL;
+	QStringList tmplsSL;
+	bool archiveconts = false;
+	while (!tmplsS.atEnd())
+	{
+		tmplsL = tmplsS.readLine();
+		if (archiveconts)
+		{
+			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			{
+				break;
+			}
+			else
+			{
+				tmplsSL.append(tmplsL.remove(0, 53));
+			}
+		}
+		else
+		{
+			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			{
+				archiveconts = true;
+			}
+		}
+	}
+	tmplsF.close();
+	QFile lsoF(QDir::toNativeSeparators(QString("%1/ubnlso.txt").arg(QDir::tempPath())));
+	lsoF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream lsoS(&lsoF);
+	for (int i = 0; i < tmplsSL.size(); ++i)
+	{
+		lsoS << tmplsSL.at(i) << endl;
+	}
+	lsoF.close();
+	#endif
 //	callexternapp("");
 }
+*/
+
+/*
 void unetbootin::extractkernel(QString isofile, QString kernoutputfile)
 {
 	
@@ -522,6 +631,21 @@ int unetbootin::getPartitionNumber(QString devicenode)
 
 #ifdef Q_OS_WIN32
 
+void unetbootin::installsvzip()
+{
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+	}
+	instIndvfl("7z.dll", QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+	if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+	{
+		QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+	}
+	instIndvfl("7z.exe", QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+	sevzcommand = QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()));
+}
+
 void unetbootin::configsysEdit()
 {
 	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
@@ -657,9 +781,9 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 void unetbootin::runinst()
 {
 	installType = typeselect->currentText();
-    targetDrive = driveselect->currentText();
-    QString ginstallDir;
-    QString installDir;
+	targetDrive = driveselect->currentText();
+	QString ginstallDir;
+	QString installDir;
 	#ifdef Q_OS_WIN32
 	if (installType == "Hard Disk")
 	{
@@ -706,11 +830,11 @@ void unetbootin::runinst()
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
 	initrdLoc = QString("/%1ubninit").arg(ginstallDir);
-    targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
-    QDir dir;
-    if (!dir.exists(targetPath))
-    {
-	    dir.mkpath(targetPath);
+	targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
+	QDir dir;
+	if (!dir.exists(targetPath))
+	{
+		dir.mkpath(targetPath);
    	}
    	if (QFile::exists(QString("%1ubnkern").arg(targetPath)))
    	{
@@ -721,50 +845,56 @@ void unetbootin::runinst()
    		QFile::remove(QString("%1ubninit").arg(targetPath));
   	}
 	hide();
-    if (radioFloppy->isChecked())
-    {
-    	if (diskimagetype->currentIndex() == diskimagetype->findText("Floppy") || diskimagetype->findText("HDD"))
-    	{
+	if (radioFloppy->isChecked())
+	{
+		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("Floppy") || diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("HDD"))
+		{
 			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
-    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
-		if (diskimagetype->currentIndex() == diskimagetype->findText("ISO"))
-    	{
-//			extractiso(FloppyPath->text(), "");
-//    		QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
+		{
+			QStringList lfiles = listarchiveconts(FloppyPath->text());
+			for (int i = 0; i < lfiles.size(); ++i)
+			{
+				printf(qPrintable(lfiles.at(i)));
+				printf("\r\n");
+			}
+//			extractiso(FloppyPath->text(), "meo");
+//			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
-    	instDetType();
-    }
-    if (radioManual->isChecked())
-    {
-    	QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
-    	QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
+		instDetType();
+	}
+	if (radioManual->isChecked())
+	{
+		QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
+		QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
 		kernelOpts = OptionEnter->text();
 		instDetType();
-    }
-    if (radioDistro->isChecked())
-    {
-        nameDistro = distroselect->currentText();
-        nameVersion = dverselect->currentText();
-        if (nameVersion.contains("_x64"))
-        {
-        	nameVersion.remove("_x64");
-        	isarch64 = true;
-       	}
-       	else
-       	{
-       		isarch64 = false;
-      	}
+	}
+	if (radioDistro->isChecked())
+	{
+		nameDistro = distroselect->currentText();
+		nameVersion = dverselect->currentText();
+		if (nameVersion.contains("_x64"))
+		{
+			nameVersion.remove("_x64");
+			isarch64 = true;
+	   	}
+	   	else
+	   	{
+	   		isarch64 = false;
+	  	}
 		#include "distrolst.cpp"
 		instDetType();
-    }
+	}
 }
 
 void unetbootin::instDetType()
 {
-    if (installType == "Hard Disk")
-    {
-    	runinsthdd();
+	if (installType == "Hard Disk")
+	{
+		runinsthdd();
    	}
    	if (installType == "USB Drive")
 	{
@@ -837,7 +967,7 @@ void unetbootin::runinsthdd()
 		}
 	}
 	QString ecurmenulstText = ecurmenulstTextL.join("\n");
-    #endif
+	#endif
 	QString menulstxt = QString(
 	#ifdef Q_OS_UNIX
 	"%9\n\n"

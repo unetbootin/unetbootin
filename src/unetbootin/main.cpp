@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
 	app.installTranslator(&translator);
 	#ifdef Q_OS_WIN32
-    QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	#endif
 	#ifdef Q_OS_UNIX
 	QSettings chkinst(QSettings::SystemScope, "UNetbootin");
@@ -154,6 +154,6 @@ int main(int argc, char *argv[])
 	unetbootin unetbootin;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
-    unetbootin.show();
-    return app.exec();
+	unetbootin.show();
+	return app.exec();
 }
