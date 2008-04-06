@@ -242,7 +242,6 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	QString tmplsL;
 	QStringList tmplsSLF;
 	QStringList tmplsSLD;
-//	bool archiveconts = false;
 	while (!tmplsS.atEnd())
 	{
 		tmplsL = tmplsS.readLine();
@@ -258,26 +257,6 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 				tmplsSLF.append(tmplsL.remove("Path = "));
 			}
 		}
-		/*
-		if (archiveconts)
-		{
-			if (tmplsL.contains("------------"))
-			{
-				break;
-			}
-			else
-			{
-				tmplsSL.append(tmplsL.remove(0, 53));
-			}
-		}
-		else
-		{
-			if (tmplsL.contains("------------"))
-			{
-				archiveconts = true;
-			}
-		}
-		*/
 	}
 	#ifdef Q_OS_WIN32
 	tmplsF.close();
@@ -306,7 +285,7 @@ void unetbootin::extractfile(QString filepath, QString destinfile, QString archi
 
 void unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
 {
-	QStringList kernelnames = QStringList() << "vmlinuz" << "linux";
+	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "linux";
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
@@ -317,57 +296,73 @@ void unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStr
 	}
 }
 
-
-/*
-void unetbootin::extractiso(QString isofile, QString exoutputdir)
-{	
-	#ifdef Q_OS_WIN32
-	if (sevzcommand == "")
+void unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+{
+	QStringList kernelnames = QStringList() << "initrd.gz" << "initrd.img";
+	for (int i = 0; i < kernelnames.size(); ++i)
 	{
-		installsvzip();
-	}
-	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd l \"%2\" > \"%3\"").arg(sevzcommand).arg(isofile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
-	QFile tmplsF(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
-	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
-	QTextStream tmplsS(&tmplsF);
-	QString tmplsL;
-	QStringList tmplsSL;
-	bool archiveconts = false;
-	while (!tmplsS.atEnd())
-	{
-		tmplsL = tmplsS.readLine();
-		if (archiveconts)
+		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
-			{
-				break;
-			}
-			else
-			{
-				tmplsSL.append(tmplsL.remove(0, 53));
-			}
-		}
-		else
-		{
-			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
-			{
-				archiveconts = true;
-			}
+			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
+			break;
 		}
 	}
-	tmplsF.close();
-	QFile lsoF(QDir::toNativeSeparators(QString("%1/ubnlso.txt").arg(QDir::tempPath())));
-	lsoF.open(QIODevice::WriteOnly | QIODevice::Text);
-	QTextStream lsoS(&lsoF);
-	for (int i = 0; i < tmplsSL.size(); ++i)
-	{
-		lsoS << tmplsSL.at(i) << endl;
-	}
-	lsoF.close();
-	#endif
-//	callexternapp("");
 }
-*/
+
+QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
+{
+	QStringList kernelnames = QStringList() << "syslinux.cfg" << "isolinux.cfg";
+	for (int i = 0; i < kernelnames.size(); ++i)
+	{
+		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
+		{
+			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())), archivefile);
+			break;
+		}
+	}
+	QString excfg = getcfgkernargs(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())));
+	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg")));
+	return excfg;
+}
+
+void unetbootin::extractiso(QString isofile, QString exoutputdir)
+{
+	QPair<QStringList, QStringList> listfiledirpair = listarchiveconts(isofile);
+	kernelOpts = extractcfg(isofile, listfiledirpair.first);
+	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfiledirpair.first);
+	extractinitrd(isofile, QString("%1ubninit").arg(targetPath), listfiledirpair.first);
+	QStringList createdpaths = makepathtree(targetDrive, listfiledirpair.second);
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1/ubnfilel.txt").arg(targetPath)));
+	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream ubnfilelS(&ubnfilelF);
+	for (int i = 0; i < listfiledirpair.first.size(); ++i)
+	{
+		ubnfilelS << listfiledirpair.first.at(i) << endl;
+	}
+	ubnfilelF.close();
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1/ubnpathl.txt").arg(targetPath)));
+	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream ubnpathlS(&ubnpathlF);
+	for (int i = createdpaths.size() - 1; i > -1; i--)
+	{
+		ubnpathlS << createdpaths.at(i) << endl;
+	}
+	ubnpathlF.close();
+}
+
+QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
+{
+	QStringList createdpaths;
+	QDir dir(dirmkpathw);
+	for (int i = 0; i < pathlist.size(); ++i)
+	{
+		if (dir.mkdir(pathlist.at(i)))
+		{
+			createdpaths.append(pathlist.at(i));
+		}
+	}
+	return createdpaths;
+}
 
 QString unetbootin::getcfgkernargs(QString cfgfile)
 {
@@ -383,7 +378,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile)
 			break;
 		}
 	}
-	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive));
+	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive));
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
@@ -894,19 +889,7 @@ void unetbootin::runinst()
    		}
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
 		{
-			QPair<QStringList, QStringList> lfdpair = listarchiveconts(FloppyPath->text());
-			/*
-			QStringList lfiles = lfdpair.first;
-			for (int i = 0; i < lfiles.size(); ++i)
-			{
-				printf(qPrintable(lfiles.at(i)));
-				printf("\r\n");
-			}
-			*/
-//			extractfile("casper/vmlinuz", QString("%1somekern").arg(targetPath), FloppyPath->text());
-			extractkernel(FloppyPath->text(), QString("%1somekernel").arg(targetPath), lfdpair.first);
-//			extractiso(FloppyPath->text(), "something");
-//			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+			extractiso(FloppyPath->text(), targetPath);
    		}
 		instDetType();
 	}

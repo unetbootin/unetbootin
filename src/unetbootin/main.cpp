@@ -58,17 +58,19 @@ void ubnUninst()
 {
 	#ifdef Q_OS_UNIX
 	QSettings chkinstL(QSettings::SystemScope, "UNetbootin");
-	if (QFile::exists("/boot/ubninit"))
-		QFile::remove("/boot/ubninit");
-	if (QFile::exists("/boot/ubnkern"))
-		QFile::remove("/boot/ubnkern");
-	if (QFile::exists("/boot/grub/menu.lst.bak"))
+	QString uninstPath = "/";
+	QString uninstsubDir = QDir::toNativeSeparators(QString("%1boot/").arg(uninstPath));
+	if (QFile::exists(QString("%1ubninit").arg(uninstsubDir))
+		QFile::remove(QString("%1ubninit").arg(uninstsubDir));
+	if (QFile::exists(QString("%1ubnkern").arg(uninstsubDir)))
+		QFile::remove(QString("%1ubnkern").arg(uninstsubDir));
+	if (QFile::exists(QString("%1grub/menu.lst.bak").arg(uninstsubDir)))
 	{
-		if (QFile::exists("/boot/grub/menu.lst"))
+		if (QFile::exists(QString("%1grub/menu.lst").arg(uninstsubDir)))
 		{
-			QFile::remove("/boot/grub/menu.lst");
+			QFile::remove(QString("%1grub/menu.lst").arg(uninstsubDir));
 		}
-		QFile::rename("/boot/grub/menu.lst.bak", "/boot/grub/menu.lst");
+		QFile::rename(QString("%1grub/menu.lst.bak").arg(uninstsubDir), QString("%1grub/menu.lst").arg(uninstsubDir));
 	}
 	#endif
 	#ifdef Q_OS_WIN32
@@ -81,6 +83,7 @@ void ubnUninst()
 	QVariant uninstvar(QVariant::String);
 	uninstvar = chkinstL.value("Location");
 	QString uninstPath = uninstvar.value<QString>();
+	QString uninstsubDir = QDir::toNativeSeparators(QString("%1unetbtin/").arg(uninstPath));
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysUndo(uninstPath);
@@ -99,6 +102,31 @@ void ubnUninst()
 		bootiniUndo(uninstPath);
 		vistabcdUndo(uninstPath);
 	}
+	#endif
+	if (QFile::exists(QString("%1ubnfilel.txt").arg(uninstsubDir)))
+	{
+		QFile ubnfilelF(QString("%1ubnfilel.txt").arg(uninstsubDir));
+		ubnfilelF.open(QIODevice::ReadOnly | QIODevice::Text);
+		QTextStream ubnfilelS(&ubnfilelF);
+		while (!ubnfilelS.atEnd())
+		{
+			QFile::remove(QString("%1%2").arg(uninstsubDir).arg(ubnfilelS.readLine()));
+		}
+		ubnfilelF.close();
+	}
+	if (QFile::exists(QString("%1ubnpathl.txt").arg(uninstsubDir)))
+	{
+		QFile ubnpathlF(QString("%1ubnpathl.txt").arg(uninstsubDir));
+		ubnpathlF.open(QIODevice::ReadOnly | QIODevice::Text);
+		QTextStream ubnpathlS(&ubnpathlF);
+		QDir unrdir(uninstsubDir);
+		while (!ubnpathlS.atEnd())
+		{
+			unrdir.rmdir(QString("%1%2").arg(uninstsubDir).arg(QDir::toNativeSeparators(ubnpathlS.readLine())));
+		}
+		ubnpathlF.close();
+	}
+	#ifdef Q_OS_WIN32
 	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(uninstPath)));
 	QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(uninstPath)));
