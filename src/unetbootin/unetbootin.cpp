@@ -4,7 +4,6 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
-//	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
 	diskimagetypeselect->removeItem(diskimagetypeselect->findText("WIM"));
 	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
 	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
@@ -265,13 +264,11 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	return qMakePair(tmplsSLF, tmplsSLD);
 }
 
-void unetbootin::extractfile(QString filepath, QString destinfile, QString archivefile)
+bool unetbootin::extractfile(QString filepath, QString destinfile, QString archivefile)
 {
-	QFileInfo destinfileFI(destinfile);
-	QString destindir = destinfileFI.dir().canonicalPath();
-	QString destinfilename = QString("%1/%2").arg(destindir).arg(destinfileFI.fileName());
-	QFileInfo filepathFI(filepath);
-	QString filepathfilename = QString("%1/%2").arg(destindir).arg(filepathFI.fileName());
+	QString destindir = QFileInfo(destinfile).dir().absolutePath();
+	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfile).fileName());
+	QString filepathfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(filepath).fileName());
 	#ifdef Q_OS_WIN32
 	if (sevzcommand == "")
 	{
@@ -279,34 +276,40 @@ void unetbootin::extractfile(QString filepath, QString destinfile, QString archi
 	}
 	#endif
 	callexternapp(sevzcommand, QString("-bd  -aos -o\"%1\" e \"%2\" \"%3\"").arg(QDir::toNativeSeparators(destindir), QDir::toNativeSeparators(archivefile), QDir::toNativeSeparators(filepath)));
-	QFile::rename(filepathfilename, destinfilename);
+	if (QFileInfo(filepathfilename).absoluteFilePath() == QFileInfo(destinfilename).absoluteFilePath())
+	{
+		return true;
+	}
+	else
+	{
+		return QFile::rename(filepathfilename, destinfilename);
+	}
 }
 
-
-void unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
 {
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "linux";
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
-			break;
+			return extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
+	return false;
 }
 
-void unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
 {
 	QStringList kernelnames = QStringList() << "initrd.gz" << "initrd.img";
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
-			break;
+			return extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
+	return false;
 }
 
 QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
@@ -321,7 +324,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		}
 	}
 	QString excfg = getcfgkernargs(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg")));
+	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())));
 	return excfg;
 }
 
@@ -332,15 +335,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfiledirpair.first);
 	extractinitrd(isofile, QString("%1ubninit").arg(targetPath), listfiledirpair.first);
 	QStringList createdpaths = makepathtree(targetDrive, listfiledirpair.second);
-	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1/ubnfilel.txt").arg(targetPath)));
-	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
-	QTextStream ubnfilelS(&ubnfilelF);
-	for (int i = 0; i < listfiledirpair.first.size(); ++i)
-	{
-		ubnfilelS << listfiledirpair.first.at(i) << endl;
-	}
-	ubnfilelF.close();
-	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1/ubnpathl.txt").arg(targetPath)));
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(targetPath)));
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnpathlS(&ubnpathlF);
 	for (int i = createdpaths.size() - 1; i > -1; i--)
@@ -348,6 +343,15 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		ubnpathlS << createdpaths.at(i) << endl;
 	}
 	ubnpathlF.close();
+	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfiledirpair.first);
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
+	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream ubnfilelS(&ubnfilelF);
+	for (int i = 0; i < extractedfiles.size(); ++i)
+	{
+		ubnfilelS << extractedfiles.at(i) << endl;
+	}
+	ubnfilelF.close();
 }
 
 QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
@@ -362,6 +366,19 @@ QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
 		}
 	}
 	return createdpaths;
+}
+
+QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QStringList filelist)
+{
+	QStringList extractedfiles;
+	for (int i = 0; i < filelist.size(); ++i)
+	{
+		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
+		{
+			extractedfiles.append(filelist.at(i));
+		}
+	}
+	return extractedfiles;
 }
 
 QString unetbootin::getcfgkernargs(QString cfgfile)
@@ -583,8 +600,7 @@ QString unetbootin::locatedevicenode(QString mountpoint)
 	}
 	else
 	{
-		QFileInfo rawdeviceFI(rawdeviceL.at(0).split(" ").at(0));
-		return rawdeviceFI.canonicalFilePath();
+		return QFileInfo(rawdeviceL.at(0).split(" ").at(0)).canonicalFilePath();
 	}
 }
 
@@ -890,6 +906,14 @@ void unetbootin::runinst()
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
 		{
 			extractiso(FloppyPath->text(), targetPath);
+			if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+			{
+				QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+			}
+			if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+			{
+				QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+			}
    		}
 		instDetType();
 	}
@@ -914,6 +938,14 @@ void unetbootin::runinst()
 	   		isarch64 = false;
 	  	}
 		#include "distrolst.cpp"
+		if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+		{
+			QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+		}
+		if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+		{
+			QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+		}
 		instDetType();
 	}
 }

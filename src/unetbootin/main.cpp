@@ -110,7 +110,7 @@ void ubnUninst()
 		QTextStream ubnfilelS(&ubnfilelF);
 		while (!ubnfilelS.atEnd())
 		{
-			QFile::remove(QString("%1%2").arg(uninstsubDir).arg(ubnfilelS.readLine()));
+			QFile::remove(QString("%1%2").arg(uninstPath).arg(ubnfilelS.readLine()));
 		}
 		ubnfilelF.close();
 	}
@@ -119,10 +119,10 @@ void ubnUninst()
 		QFile ubnpathlF(QString("%1ubnpathl.txt").arg(uninstsubDir));
 		ubnpathlF.open(QIODevice::ReadOnly | QIODevice::Text);
 		QTextStream ubnpathlS(&ubnpathlF);
-		QDir unrdir(uninstsubDir);
+		QDir unrdir(uninstPath);
 		while (!ubnpathlS.atEnd())
 		{
-			unrdir.rmdir(QString("%1%2").arg(uninstsubDir).arg(QDir::toNativeSeparators(ubnpathlS.readLine())));
+			unrdir.rmdir(ubnpathlS.readLine());
 		}
 		ubnpathlF.close();
 	}

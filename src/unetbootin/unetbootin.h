@@ -42,12 +42,13 @@ public:
 	QString syslinuxcommand;
 	#endif
 	QPair<QStringList, QStringList> listarchiveconts(QString archivefile);
-	void extractfile(QString filepath, QString destinfile, QString archivefile);
-	void extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);
-	void extractinitrd(QString archivefile, QString initoutputfile, QStringList archivefileconts);
+	bool extractfile(QString filepath, QString destinfile, QString archivefile);
+	bool extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);
+	bool extractinitrd(QString archivefile, QString initoutputfile, QStringList archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
+	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QStringList filelist);
 	QString getcfgkernargs(QString cfgfile);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
