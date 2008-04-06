@@ -371,13 +371,21 @@ QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
 QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QStringList filelist)
 {
 	QStringList extractedfiles;
+	QProgressDialog xprogress;
+	xprogress.setWindowTitle(QObject::tr("Extracting..."));
+	xprogress.setMaximum(filelist.size());
+	xprogress.setMinimum(0);
+	xprogress.setValue(0);
 	for (int i = 0; i < filelist.size(); ++i)
 	{
+		xprogress.setLabelText(QObject::tr("Extracting files, please wait...\nArchive: %1\nSource: %2\nDestination: %3\nExtracted: %4 of %5 files").arg(archivefile).arg(filelist.at(i)).arg(QString("%1%2").arg(dirxfilesto).arg(filelist.at(i))).arg(i).arg(filelist.size()));
 		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
 		{
 			extractedfiles.append(filelist.at(i));
 		}
+		xprogress.setValue(i);
 	}
+	xprogress.close();
 	return extractedfiles;
 }
 
