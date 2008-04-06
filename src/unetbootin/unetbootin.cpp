@@ -25,7 +25,7 @@ unetbootin::unetbootin(QWidget *parent)
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "9 Alpha" << "9 Alpha_x64" << "Rawhide" << "Rawhide_x64"));
+	"7" << "7_x64" << "8" << "8_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -220,34 +220,48 @@ void unetbootin::on_okbutton_clicked()
 	}
 }
 
-QStringList unetbootin::listarchiveconts(QString archivefile)
+QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile)
 {
 	#ifdef Q_OS_WIN32
 	if (sevzcommand == "")
 	{
 		installsvzip();
 	}
-	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
+	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd -slt l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
 	QFile tmplsF(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
 	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream tmplsS(&tmplsF);
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess sevzlcommand;
-	sevzlcommand.start(QString("%1 -bd l %2").arg(sevzcommand, archivefile));
+	sevzlcommand.start(QString("%1 -bd -slt l %2").arg(sevzcommand, archivefile));
 	sevzlcommand.waitForFinished(-1);
 	QByteArray sevzlcommandout = sevzlcommand.readAll();
 	QTextStream tmplsS(&sevzlcommandout);
 	#endif
 	QString tmplsL;
-	QStringList tmplsSL;
-	bool archiveconts = false;
+	QStringList tmplsSLF;
+	QStringList tmplsSLD;
+//	bool archiveconts = false;
 	while (!tmplsS.atEnd())
 	{
 		tmplsL = tmplsS.readLine();
+		if (tmplsL.contains("Path = "))
+		{
+			QString tmplsN = tmplsS.readLine();
+			if (tmplsN.contains("Folder = 1") || tmplsN.contains("Folder = +"))
+			{
+				tmplsSLD.append(tmplsL.remove("Path = "));
+			}
+			else
+			{
+				tmplsSLF.append(tmplsL.remove("Path = "));
+			}
+		}
+		/*
 		if (archiveconts)
 		{
-			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			if (tmplsL.contains("------------"))
 			{
 				break;
 			}
@@ -258,18 +272,51 @@ QStringList unetbootin::listarchiveconts(QString archivefile)
 		}
 		else
 		{
-			if (tmplsL == "------------------- ----- ------------ ------------  ------------------------")
+			if (tmplsL.contains("------------"))
 			{
 				archiveconts = true;
 			}
 		}
+		*/
 	}
 	#ifdef Q_OS_WIN32
 	tmplsF.close();
 	QFile::remove(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
 	#endif
-	return tmplsSL;
+	return qMakePair(tmplsSLF, tmplsSLD);
 }
+
+void unetbootin::extractfile(QString filepath, QString destinfile, QString archivefile)
+{
+	QFileInfo destinfileFI(destinfile);
+	QString destindir = destinfileFI.dir().canonicalPath();
+	QString destinfilename = QString("%1/%2").arg(destindir).arg(destinfileFI.fileName());
+	QFileInfo filepathFI(filepath);
+	QString filepathfilename = QString("%1/%2").arg(destindir).arg(filepathFI.fileName());
+	#ifdef Q_OS_WIN32
+	if (sevzcommand == "")
+	{
+		installsvzip();
+	}
+	#endif
+	callexternapp(sevzcommand, QString("-bd  -aos -o\"%1\" e \"%2\" \"%3\"").arg(QDir::toNativeSeparators(destindir), QDir::toNativeSeparators(archivefile), QDir::toNativeSeparators(filepath)));
+	QFile::rename(filepathfilename, destinfilename);
+}
+
+
+void unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+{
+	QStringList kernelnames = QStringList() << "vmlinuz" << "linux";
+	for (int i = 0; i < kernelnames.size(); ++i)
+	{
+		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
+		{
+			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
+			break;
+		}
+	}
+}
+
 
 /*
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
@@ -319,13 +366,6 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	lsoF.close();
 	#endif
 //	callexternapp("");
-}
-*/
-
-/*
-void unetbootin::extractkernel(QString isofile, QString kernoutputfile)
-{
-	
 }
 */
 
@@ -854,13 +894,18 @@ void unetbootin::runinst()
    		}
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
 		{
-			QStringList lfiles = listarchiveconts(FloppyPath->text());
+			QPair<QStringList, QStringList> lfdpair = listarchiveconts(FloppyPath->text());
+			/*
+			QStringList lfiles = lfdpair.first;
 			for (int i = 0; i < lfiles.size(); ++i)
 			{
 				printf(qPrintable(lfiles.at(i)));
 				printf("\r\n");
 			}
-//			extractiso(FloppyPath->text(), "meo");
+			*/
+//			extractfile("casper/vmlinuz", QString("%1somekern").arg(targetPath), FloppyPath->text());
+			extractkernel(FloppyPath->text(), QString("%1somekernel").arg(targetPath), lfdpair.first);
+//			extractiso(FloppyPath->text(), "something");
 //			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
 		instDetType();

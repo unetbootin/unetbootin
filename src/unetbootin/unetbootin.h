@@ -41,9 +41,10 @@ public:
 	QString mssyscommand;
 	QString syslinuxcommand;
 	#endif
-	QStringList listarchiveconts(QString archivefile);
+	QPair<QStringList, QStringList> listarchiveconts(QString archivefile);
+	void extractfile(QString filepath, QString destinfile, QString archivefile);
+	void extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);
 	void extractiso(QString isofile, QString exoutputdir);
-	void extractkernel(QString isofile, QString kernoutputfile);
 	QString getcfgkernargs(QString cfgfile);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);

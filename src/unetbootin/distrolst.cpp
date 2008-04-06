@@ -48,11 +48,11 @@ if (nameDistro == "Fedora")
 		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
 		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/development/%1/os' when asked for the folder.").arg(cpuarch);
 	}
-	else if (relname == "9 alpha")
+	else if (relname == "9 beta")
 	{
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Alpha/Fedora/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Alpha/Fedora/%1/os' when asked for the folder.").arg(cpuarch);
+		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os' when asked for the folder.").arg(cpuarch);
 	}
 	else
 	{
