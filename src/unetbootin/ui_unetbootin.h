@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun Apr 6 20:19:49 2008
+** Created: Mon Apr 7 00:49:38 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -201,8 +201,8 @@ public:
     intromessage->setStyleSheet(QApplication::translate("unetbootin", "background: transparent;", 0, QApplication::UnicodeUTF8));
     diskimagetypeselect->clear();
     diskimagetypeselect->insertItems(0, QStringList()
-     << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "ISO", 0, QApplication::UnicodeUTF8)
+     << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)
     );
     diskimagetypeselect->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

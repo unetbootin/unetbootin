@@ -113,6 +113,7 @@ void ubnUninst()
 			QFile::remove(QString("%1%2").arg(uninstPath).arg(ubnfilelS.readLine()));
 		}
 		ubnfilelF.close();
+		QFile::remove(QString("%1ubnfilel.txt").arg(uninstsubDir));
 	}
 	if (QFile::exists(QString("%1ubnpathl.txt").arg(uninstsubDir)))
 	{
@@ -125,6 +126,7 @@ void ubnUninst()
 			unrdir.rmdir(ubnpathlS.readLine());
 		}
 		ubnpathlF.close();
+		QFile::remove(QString("%1ubnpathl.txt").arg(uninstsubDir));
 	}
 	#ifdef Q_OS_WIN32
 	clearOutDir(QDir::toNativeSeparators(QString("%1unetbtin").arg(uninstPath)));

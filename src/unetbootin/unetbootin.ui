@@ -412,12 +412,12 @@ p, li { white-space: pre-wrap; }
    </property>
    <item>
     <property name="text" >
-     <string>Floppy</string>
+     <string>ISO</string>
     </property>
    </item>
    <item>
     <property name="text" >
-     <string>ISO</string>
+     <string>Floppy</string>
     </property>
    </item>
   </widget>

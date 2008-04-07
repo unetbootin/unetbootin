@@ -1,7 +1,8 @@
 <RCC>
     <qresource prefix="/" >
-        <file>7z.dll</file>
-        <file>7z.exe</file>
+        <file>emtxfile.exe</file>
+        <file>sevnz.dll</file>
+        <file>sevnz.exe</file>
         <file>syslinux.exe</file>
         <file>ubnldr</file>
         <file>ubnldr.exe</file>

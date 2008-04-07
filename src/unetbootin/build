@@ -1,10 +1,12 @@
 #!/bin/sh
 
-if [ ! -f "7z.dll" ] || [ ! -f "7z.exe" ]
+if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
 then
 svloc=$(wget "http://7-zip.org/" -O - | grep --ignore-case "a href=\"http://downloads.sourceforge.net/sevenzip/" | grep -v ".msi" | grep -v "x64" | head --lines 1 | tr "<" "\n" | tr ">" "\n" | tr "\"" "\n" | grep "http://downloads.sourceforge.net/sevenzip/")
 wget "$svloc" -O sevenzip.exe
 7z e sevenzip.exe 7z.exe 7z.dll
+mv 7z.exe sevnz.exe
+mv 7z.dll sevnz.dll
 fi
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*

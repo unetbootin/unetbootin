@@ -108,6 +108,12 @@ if (nameDistro == "Frugalware")
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";
 }
 
+if (nameDistro == "Linux Mint")
+{
+	downloadfile(QString("http://ftp.cc.uoc.gr/mirrors/linux/linuxmint/%1/LinuxMint-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
 if (nameDistro == "Mandriva")
 {
 	if (isarch64)

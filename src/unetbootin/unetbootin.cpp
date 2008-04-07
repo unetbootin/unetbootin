@@ -34,6 +34,11 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("Linux Mint", (QStringList() << "4.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
+		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
+		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
+	"3.1" << "4.0"));
 	distroselect->addItem("Mandriva", (QStringList() << "2008.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
@@ -71,7 +76,7 @@ unetbootin::unetbootin(QWidget *parent)
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	sevzcommand = locatecommand("7z", "either", "p7zip-full");
-	ubntmpf = QDir::tempPath();
+	ubntmpf = "/tmp/";
 	#endif
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
@@ -140,11 +145,11 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 void unetbootin::on_FloppyFileSelector_clicked()
 {
 	QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
-	if (QFileInfo(nameFloppy).suffix() == "iso")
+	if (QFileInfo(nameFloppy).completeSuffix().contains("iso"))
 	{
 		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
 	}
-	if (QFileInfo(nameFloppy).suffix() == "img")
+	if (QFileInfo(nameFloppy).completeSuffix().contains("img"))
 	{
 		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
 	}
@@ -242,7 +247,7 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	{
 		installsvzip();
 	}
-	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd -slt l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QString("%1ubntmpls.txt").arg(ubntmpf)));
+	callexternapp(getenv("COMSPEC"), QString("/c \"\"%1\" -bd -slt l \"%2\" > \"%3\"\"").arg(sevzcommand).arg(archivefile).arg(QString("%1ubntmpls.txt").arg(ubntmpf)));
 	QFile tmplsF(QString("%1ubntmpls.txt").arg(ubntmpf));
 	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream tmplsS(&tmplsF);
@@ -707,17 +712,17 @@ int unetbootin::getPartitionNumber(QString devicenode)
 
 void unetbootin::installsvzip()
 {
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+	if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+		QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 	}
-	instIndvfl("7z.dll", QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+	instIndvfl("sevnz.dll", QString("%1\\7z.dll").arg(ubntmpf));
+	if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+		QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
 	}
-	instIndvfl("7z.exe", QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
-	sevzcommand = QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()));
+	instIndvfl("sevnz.exe", QString("%1sevnz.exe").arg(ubntmpf));
+	sevzcommand = QString("%1sevnz.exe").arg(ubntmpf);
 }
 
 void unetbootin::configsysEdit()
@@ -909,15 +914,15 @@ void unetbootin::runinst()
 	if (!dir.exists(targetPath))
 	{
 		dir.mkpath(targetPath);
-   	}
-   	if (QFile::exists(QString("%1ubnkern").arg(targetPath)))
-   	{
-   		QFile::remove(QString("%1ubnkern").arg(targetPath));
-  	}
-  	if (QFile::exists(QString("%1ubninit").arg(targetPath)))
-   	{
-   		QFile::remove(QString("%1ubninit").arg(targetPath));
-  	}
+	}
+	if (QFile::exists(QString("%1ubnkern").arg(targetPath)))
+	{
+		QFile::remove(QString("%1ubnkern").arg(targetPath));
+	}
+	if (QFile::exists(QString("%1ubninit").arg(targetPath)))
+	{
+		QFile::remove(QString("%1ubninit").arg(targetPath));
+	}
 	hide();
 	if (radioFloppy->isChecked())
 	{
@@ -929,13 +934,13 @@ void unetbootin::runinst()
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
 		{
 			extractiso(FloppyPath->text(), targetPath);
-			if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+			if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 			{
-				QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+				QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
 			}
-			if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+			if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 			{
-				QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+				QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 			}
    		}
 		instDetType();
@@ -970,13 +975,13 @@ void unetbootin::runinst()
 	   		isarch64 = false;
 	  	}
 		#include "distrolst.cpp"
-		if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath()))))
+		if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 		{
-			QFile::remove(QDir::toNativeSeparators(QString("%1/7z.exe").arg(QDir::tempPath())));
+			QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
 		}
-		if (QFile::exists(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath()))))
+		if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 		{
-			QFile::remove(QDir::toNativeSeparators(QString("%1/7z.dll").arg(QDir::tempPath())));
+			QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 		}
 		instDetType();
 	}
