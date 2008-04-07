@@ -60,7 +60,7 @@ void ubnUninst()
 	QSettings chkinstL(QSettings::SystemScope, "UNetbootin");
 	QString uninstPath = "/";
 	QString uninstsubDir = QDir::toNativeSeparators(QString("%1boot/").arg(uninstPath));
-	if (QFile::exists(QString("%1ubninit").arg(uninstsubDir))
+	if (QFile::exists(QString("%1ubninit").arg(uninstsubDir)))
 		QFile::remove(QString("%1ubninit").arg(uninstsubDir));
 	if (QFile::exists(QString("%1ubnkern").arg(uninstsubDir)))
 		QFile::remove(QString("%1ubnkern").arg(uninstsubDir));

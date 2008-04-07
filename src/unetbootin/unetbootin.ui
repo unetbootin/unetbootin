@@ -53,7 +53,10 @@
     </rect>
    </property>
    <property name="toolTip" >
-    <string>Specify a floppy or hard disk image file to load</string>
+    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Specify a floppy/hard disk image, or CD image (ISO) file to load&lt;/p>&lt;/body>&lt;/html></string>
    </property>
   </widget>
   <widget class="QRadioButton" name="radioFloppy" >
@@ -414,17 +417,7 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <property name="text" >
-     <string>HDD</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
      <string>ISO</string>
-    </property>
-   </item>
-   <item>
-    <property name="text" >
-     <string>WIM</string>
     </property>
    </item>
   </widget>

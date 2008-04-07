@@ -23,9 +23,11 @@ public:
 	unetbootin(QWidget *parent = 0);
 	QString appDir;
 	QString appLoc;
+	QString ubntmpf;
 	QString nameDistro;
 	QString nameVersion;
 	bool isarch64;
+	bool islivecd;
 	QString targetDrive;
 	QString targetPath;
 	QString installType;

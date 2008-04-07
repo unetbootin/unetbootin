@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sat Apr 5 23:15:47 2008
+** Created: Sun Apr 6 20:19:49 2008
 **      by: Qt User Interface Compiler version 4.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -154,7 +154,10 @@ public:
     unetbootin->setWindowTitle(QApplication::translate("unetbootin", "UNetbootin", 0, QApplication::UnicodeUTF8));
     FloppyFileSelector->setToolTip(QApplication::translate("unetbootin", "Select disk image file", 0, QApplication::UnicodeUTF8));
     FloppyFileSelector->setText(QApplication::translate("unetbootin", "...", 0, QApplication::UnicodeUTF8));
-    FloppyPath->setToolTip(QApplication::translate("unetbootin", "Specify a floppy or hard disk image file to load", 0, QApplication::UnicodeUTF8));
+    FloppyPath->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Specify a floppy/hard disk image, or CD image (ISO) file to load</p></body></html>", 0, QApplication::UnicodeUTF8));
     radioFloppy->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
@@ -199,9 +202,7 @@ public:
     diskimagetypeselect->clear();
     diskimagetypeselect->insertItems(0, QStringList()
      << QApplication::translate("unetbootin", "Floppy", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "HDD", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootin", "ISO", 0, QApplication::UnicodeUTF8)
-     << QApplication::translate("unetbootin", "WIM", 0, QApplication::UnicodeUTF8)
     );
     diskimagetypeselect->setToolTip(QApplication::translate("unetbootin", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

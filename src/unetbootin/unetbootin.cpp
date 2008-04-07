@@ -4,7 +4,6 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
-	diskimagetypeselect->removeItem(diskimagetypeselect->findText("WIM"));
 	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
 	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
@@ -23,8 +22,8 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("Fedora", (QStringList() << "8" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
+	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -55,11 +54,16 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") << 
 	"2.1"));
+	distroselect->addItem("PCLinuxOS", (QStringList() << "2007" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
+		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
+		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
+	"2007" << "2008 Gnome" << "2008 Minime"));
 	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
-		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP.") << 
-	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "7.04" << "7.04_x64" << "7.10" << "7.10_x64" << "8.04" << "8.04_x64"));
+		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
+	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
@@ -67,6 +71,10 @@ unetbootin::unetbootin(QWidget *parent)
 	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	sevzcommand = locatecommand("7z", "either", "p7zip-full");
+	ubntmpf = QDir::tempPath();
+	#endif
+	#ifdef Q_OS_WIN32
+	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
 }
 
@@ -132,6 +140,14 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 void unetbootin::on_FloppyFileSelector_clicked()
 {
 	QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	if (QFileInfo(nameFloppy).suffix() == "iso")
+	{
+		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
+	}
+	if (QFileInfo(nameFloppy).suffix() == "img")
+	{
+		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
+	}
 	FloppyPath->clear();
 	FloppyPath->insert(nameFloppy);
 	radioFloppy->setChecked(true);
@@ -226,8 +242,8 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	{
 		installsvzip();
 	}
-	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd -slt l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath()))));
-	QFile tmplsF(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
+	callexternapp(getenv("COMSPEC"), QString("/c \"%1\" -bd -slt l \"%2\" > \"%3\"").arg(sevzcommand).arg(archivefile).arg(QString("%1ubntmpls.txt").arg(ubntmpf)));
+	QFile tmplsF(QString("%1ubntmpls.txt").arg(ubntmpf));
 	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream tmplsS(&tmplsF);
 	#endif
@@ -259,7 +275,7 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	}
 	#ifdef Q_OS_WIN32
 	tmplsF.close();
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubntmpls.txt").arg(QDir::tempPath())));
+	QFile::remove(QString("%1ubntmpls.txt").arg(ubntmpf));
 	#endif
 	return qMakePair(tmplsSLF, tmplsSLD);
 }
@@ -301,7 +317,7 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStr
 
 bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
 {
-	QStringList kernelnames = QStringList() << "initrd.gz" << "initrd.img";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd";
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
@@ -319,12 +335,12 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())), archivefile);
+			extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), QString("%1ubnctemp.cfg").arg(ubntmpf), archivefile);
 			break;
 		}
 	}
-	QString excfg = getcfgkernargs(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/ubnctemp.cfg").arg(QDir::tempPath())));
+	QString excfg = getcfgkernargs(QString("%1ubnctemp.cfg").arg(ubntmpf));
+	QFile::remove(QString("%1ubnctemp.cfg").arg(ubntmpf));
 	return excfg;
 }
 
@@ -332,10 +348,10 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
 	QPair<QStringList, QStringList> listfiledirpair = listarchiveconts(isofile);
 	kernelOpts = extractcfg(isofile, listfiledirpair.first);
-	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfiledirpair.first);
-	extractinitrd(isofile, QString("%1ubninit").arg(targetPath), listfiledirpair.first);
+	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfiledirpair.first);
+	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfiledirpair.first);
 	QStringList createdpaths = makepathtree(targetDrive, listfiledirpair.second);
-	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(targetPath)));
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnpathlS(&ubnpathlF);
 	for (int i = createdpaths.size() - 1; i > -1; i--)
@@ -344,7 +360,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	ubnpathlF.close();
 	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfiledirpair.first);
-	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
 	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnfilelS(&ubnfilelF);
 	for (int i = 0; i < extractedfiles.size(); ++i)
@@ -437,11 +453,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	QFile dloutfile;
 	if (installType == "USB Drive")
 	{
-		if (QFile::exists(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath()))))
+		if (QFile::exists(QString("%1ubndlout.tmp").arg(ubntmpf)))
 		{
-			QFile::remove(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+			QFile::remove(QString("%1ubndlout.tmp").arg(ubntmpf));
 		}
-		dloutfile.setFileName(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+		dloutfile.setFileName(QString("%1ubndlout.tmp").arg(ubntmpf));
 	}
 	else
 	{
@@ -479,8 +495,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dloutfile.close();
 	if (installType == "USB Drive")
 	{
-		QFile::copy(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())), targetfile);
-		QFile::remove(QDir::toNativeSeparators(QString("%1/ubndlout.tmp").arg(QDir::tempPath())));
+		QFile::rename(QString("%1ubndlout.tmp").arg(ubntmpf), targetfile);
 	}
 }
 
@@ -936,6 +951,15 @@ void unetbootin::runinst()
 	{
 		nameDistro = distroselect->currentText();
 		nameVersion = dverselect->currentText();
+		if (nameVersion.contains("_Live"))
+		{
+			nameVersion.remove("_Live");
+			islivecd = true;
+		}
+		else
+		{
+			islivecd = false;
+		}
 		if (nameVersion.contains("_x64"))
 		{
 			nameVersion.remove("_x64");
@@ -1111,13 +1135,13 @@ void unetbootin::runinsthdd()
 void unetbootin::runinstusb()
 {
 	#ifdef Q_OS_WIN32
-	if (QFile::exists(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath()))))
+	if (QFile::exists(QString("%1syslinux.exe").arg(ubntmpf)))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
+		QFile::remove(QString("%1syslinux.exe").arg(ubntmpf));
 	}
-	instIndvfl("syslinux.exe", QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
-	callexternapp(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())), QString("-ma %1").arg(targetDev));
-	QFile::remove(QDir::toNativeSeparators(QString("%1/syslinux.exe").arg(QDir::tempPath())));
+	instIndvfl("syslinux.exe", QString("%1syslinux.exe").arg(ubntmpf));
+	callexternapp(QString("%1syslinux.exe").arg(ubntmpf), QString("-ma %1").arg(targetDev));
+	QFile::remove(QString("%1syslinux.exe").arg(ubntmpf));
 	#endif
 	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);

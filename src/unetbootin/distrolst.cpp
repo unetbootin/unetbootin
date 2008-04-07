@@ -42,25 +42,37 @@ if (nameDistro == "Fedora")
 	{
 		cpuarch = "i386";
 	}
-	if (relname == "rawhide")
+	if (islivecd)
 	{
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/development/%1/os' when asked for the folder.").arg(cpuarch);
-	}
-	else if (relname == "9 beta")
-	{
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os' when asked for the folder.").arg(cpuarch);
+		if (!isarch64)
+		{
+			cpuarch = "i686";
+		}
+		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
 	else
 	{
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder.").arg(relname, cpuarch);
+		if (relname == "rawhide")
+		{
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/development/%1/os' when asked for the folder.").arg(cpuarch);
+		}
+		else if (relname == "9 beta")
+		{
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os' when asked for the folder.").arg(cpuarch);
+		}
+		else
+		{
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Fedora/%2/os/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder.").arg(relname, cpuarch);
+		}
+		kernelOpts = "splash=silent showopts";
 	}
-	kernelOpts = "splash=silent showopts";
 }
 
 if (nameDistro == "FreeBSD")
@@ -162,6 +174,23 @@ if (nameDistro == "Parted Magic")
 	kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";
 }
 
+if (nameDistro == "PCLinuxOS")
+{
+	if (relname == "2007")
+	{
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-2007.iso", QString("%1ubniso.iso").arg(ubntmpf));
+	}
+	if (relname == "2008 gnome")
+	{
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclos-gnome2008.iso", QString("%1ubniso.iso").arg(ubntmpf));
+	}
+	if (relname == "2008 minime")
+	{
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-minime-2008.iso", QString("%1ubniso.iso").arg(ubntmpf));
+	}
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
 if (nameDistro == "Ubuntu")
 {
 	if (isarch64)
@@ -172,27 +201,16 @@ if (nameDistro == "Ubuntu")
 	{
 		cpuarch = "i386";
 	}
-	if (relname == "8.04")
+	if (islivecd)
 	{
-		relname = "hardy";
+		downloadfile(QString("http://releases.ubuntu.com/%1/ubuntu-%1-desktop-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
-	if (relname == "7.10")
+	else
 	{
-		relname = "gutsy";
+		relname.replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		kernelOpts = "vga=normal";
 	}
-	if (relname == "7.04")
-	{
-		relname = "feisty";
-	}
-	if (relname == "6.10")
-	{
-		relname = "edgy";
-	}
-	if (relname == "6.06")
-	{
-		relname = "dapper";
-	}
-	downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-	kernelOpts = "vga=normal";
 }
