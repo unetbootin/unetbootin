@@ -1,6 +1,20 @@
 QString cpuarch;
 QString relname = nameVersion.toLower();
 
+if (nameDistro == "Arch Linux")
+{
+	if (isarch64)
+	{
+		cpuarch = "x86_64";
+	}
+	else
+	{
+		cpuarch = "i686";
+	}
+	downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}"))), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
 if (nameDistro == "CentOS")
 {
 	if (isarch64)
@@ -100,9 +114,12 @@ if (nameDistro == "Frugalware")
 		cpuarch = "i686";
 	}
 	QString pageurl = QString("http://www10.frugalware.org/pub/linux/frugalware/frugalware-%1/boot/").arg(relname);
-	QString pagecontents = downloadpagecontents(pageurl);
-	QString kernpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}vmlinuz.{0,}"+cpuarch)).at(0);
-	QString initpartname = pagecontents.replace("<", "\n").replace(">", "\n").split("\n").filter(QRegExp("^\\s{0,}initrd.{0,}"+cpuarch+".img.gz")).at(0);
+	QStringList pagecontents = downloadpagecontents(pageurl).replace("<", "\n").replace(">", "\n").split("\n");
+	QString kernpartname, initpartname;
+	if (!pagecontents.filter(QRegExp("^\\s{0,}vmlinuz.{0,}"+cpuarch)).isEmpty())
+		kernpartname = pagecontents.filter(QRegExp("^\\s{0,}vmlinuz.{0,}"+cpuarch)).at(0);
+	if (!pagecontents.filter(QRegExp("^\\s{0,}initrd.{0,}"+cpuarch+".img.gz")).isEmpty())
+		initpartname = pagecontents.filter(QRegExp("^\\s{0,}initrd.{0,}"+cpuarch+".img.gz")).at(0);
 	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
 	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";

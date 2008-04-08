@@ -9,6 +9,11 @@ unetbootin::unetbootin(QWidget *parent)
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
+	distroselect->addItem("Arch Linux", (QStringList() << "2007.08-2" << 
+	tr("<b>Homepage:</b> <a href=\"http://wwww.archlinux.org/\">http://wwww.archlinux.org/</a><br/>"
+		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
+		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
+	"2007.08-2"));
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
 	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org/</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
@@ -144,7 +149,7 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-	QString nameFloppy = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso"))
 	{
 		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
@@ -160,7 +165,7 @@ void unetbootin::on_FloppyFileSelector_clicked()
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-	QString nameKernel = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	QString nameKernel = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
 	KernelPath->clear();
 	KernelPath->insert(nameKernel);
 	radioManual->setChecked(true);
@@ -168,7 +173,7 @@ void unetbootin::on_KernelFileSelector_clicked()
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-	QString nameInitrd = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	QString nameInitrd = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
 	InitrdPath->clear();
 	InitrdPath->insert(nameInitrd);
 	radioManual->setChecked(true);
@@ -805,10 +810,13 @@ void unetbootin::vistabcdEdit()
 	QString qstmpvbcdin = vbcdTmpInS.readAll();
 	vbcdTmpInF.close();
 	QString vbcdIdTL;
+	QStringList vbcdIdTLSL;
 	if (qstmpvbcdin.contains("{") && qstmpvbcdin.contains("}") && qstmpvbcdin.contains("-"))
 	{
 		warch64 = false;
-		vbcdIdTL = qstmpvbcdin.replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
+		vbcdIdTLSL = qstmpvbcdin.replace("{", "\n").replace("}", "\n").split("\n").filter("-");
+		if (!vbcdIdTLSL.isEmpty())
+			vbcdIdTL = vbcdIdTLSL.at(0);
 	}
 	else
 	{
@@ -816,7 +824,9 @@ void unetbootin::vistabcdEdit()
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 		vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 		QTextStream vbcdTmpInS2(&vbcdTmpInF);
-		vbcdIdTL = vbcdTmpInS2.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-")[0];
+		vbcdIdTLSL = vbcdTmpInS2.readAll().replace("{", "\n").replace("}", "\n").split("\n").filter("-");
+		if (!vbcdIdTLSL.isEmpty())
+			vbcdIdTL = vbcdIdTLSL.at(0);
 		vbcdTmpInF.close();
 	}
 	QSettings vdtistor("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
@@ -1160,8 +1170,12 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
-	QString syslinuxcfgtxt = QString("default unetbootin\n"
+	QString syslinuxcfgtxt = QString("prompt 1\n"
+	"timeout 10\n"
+	"menu title UNetbootin\n"
+	"default unetbootin\n"
 	"label unetbootin\n"
+	"\tmenu label UNetbootin\n"
 	"\tkernel %1\n"
 	"\tappend initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;

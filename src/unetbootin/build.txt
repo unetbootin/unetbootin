@@ -1,0 +1,34 @@
+== Build System ==
+
+I build on Ubuntu with mingw32, though it will likely also work on Windows with mingw32 as well. If building on Windows, you can skip steps 2 and 3.
+
+== Prerequisites ==
+
+qmake
+libqt4-dev
+
+== Instructions ==
+
+1) Build a statically linked Qt4 for Windows (instructions from http://doc.trolltech.com/4.3/deployment-windows.html#static-linking and http://qtnode.net/wiki?title=Building_static )
+
+cd C:\Qt4
+configure -static
+make sub-src
+
+2) Set up cross-compile environment (instructions from http://gentoo-wiki.com/HOWTO_MinGW_and_Qt4 )
+
+If cross-compiling on Ubuntu, simply copy the file qmake.conf to /usr/share/qt4/mkspecs/win32-g++/qmake.conf
+
+3) Copy over your statically linked Windows qt4 install directory to /usr/i586-mingw32msvc/Qt/
+
+4) Go to the directory containing the source files (unetbootin.cpp, main.cpp, unetbootin.pro, etc.), and run "./build" to automate steps 4 and 5, or to do it manually, run the following commands:
+
+qmake -spec win32-g++ "RESOURCES += unetbootin-windows.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
+
+make
+
+5) You should now have a Windows .exe file at release/unetbootin.exe
+
+To reduce file size, compress the executable using upx ( http://upx.sourceforge.net/ )
+
+./upx --lzma ./unetbootin.exe
