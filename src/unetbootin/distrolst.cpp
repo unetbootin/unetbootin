@@ -11,7 +11,7 @@ if (nameDistro == "Arch Linux")
 	{
 		cpuarch = "i686";
 	}
-	downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}"))), QString("%1ubniso.iso").arg(ubntmpf));
+	downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 
@@ -29,6 +29,12 @@ if (nameDistro == "CentOS")
 	downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 	postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/%1/os/%2' when asked for the folder.").arg(nameVersion, cpuarch);
 	kernelOpts = "splash=silent showopts";
+}
+
+if (nameDistro == "Damn Small Linux")
+{
+	downloadfile(QString("ftp://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 
 if (nameDistro == "Debian")
@@ -141,8 +147,16 @@ if (nameDistro == "Mandriva")
 	{
 		cpuarch = "i586";
 	}
-	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+	if (islivecd)
+	{
+		downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/iso/%1/mandriva-linux-%3-one-GNOME-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	}
+	else
+	{
+		instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+	}
 }
 
 if (nameDistro == "NetBSD")
@@ -172,19 +186,27 @@ if (nameDistro == "openSUSE")
 	{
 		cpuarch = "i386";
 	}
-	if (relname == "factory")
+	if (islivecd)
 	{
-		downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/initrd").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/SL-OSS-factory/inst-source' when asked for the folder.");
+		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
 	else
 	{
-		downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/initrd").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-		postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/%1/repo/oss' when asked for the folder.").arg(relname);
+		if (relname == "factory")
+		{
+			downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/initrd").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/SL-OSS-factory/inst-source' when asked for the folder.");
+		}
+		else
+		{
+			downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.opensuse.org/distribution/%1/repo/oss/boot/%2/loader/initrd").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/%1/repo/oss' when asked for the folder.").arg(relname);
+			}
+		kernelOpts = "splash=silent showopts";
 	}
-	kernelOpts = "splash=silent showopts";
 }
 
 if (nameDistro == "Parted Magic")

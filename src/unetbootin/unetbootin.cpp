@@ -10,15 +10,20 @@ unetbootin::unetbootin(QWidget *parent)
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
 	distroselect->addItem("Arch Linux", (QStringList() << "2007.08-2" << 
-	tr("<b>Homepage:</b> <a href=\"http://wwww.archlinux.org/\">http://wwww.archlinux.org/</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://wwww.archlinux.org/\">http://wwww.archlinux.org</a><br/>"
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
-	"2007.08-2"));
+	"2007.08-2" << "2007.08-2_x64"));
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
-	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org/</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
+	distroselect->addItem("Damn Small Linux", (QStringList() << "4.2.5" << 
+	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
+		"<b>Description:</b> Damn Small Linux is a minimalist distribution with a total size of 50 MB.<br/>"
+		"<b>Install Notes:</b> The default version loads the entire system into RAM and boots from memory, so installation is not required.") << 
+	"4.2.5"));
 	distroselect->addItem("Debian", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
@@ -28,7 +33,7 @@ unetbootin::unetbootin(QWidget *parent)
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
+	"7" << "7_x64" << "8" << "8_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -47,8 +52,8 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("Mandriva", (QStringList() << "2008.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
-		"<b>Install Notes:</b> The default option allows for installation only via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>. You will need to pre-partition your disk using Parted Magic beforehand.") << 
-	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64"));
+		"<b>Install Notes:</b> The default option allows for installation only via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
+	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64" << "2008.0_Live"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
@@ -57,8 +62,8 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("openSUSE", (QStringList() << "10.3" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
-	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
+	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "10.3_Live" << "10.3_Live_x64" << "Factory" << "Factory_x64"));
 	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
@@ -1170,12 +1175,8 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
-	QString syslinuxcfgtxt = QString("prompt 1\n"
-	"timeout 10\n"
-	"menu title UNetbootin\n"
-	"default unetbootin\n"
+	QString syslinuxcfgtxt = QString("default unetbootin\n"
 	"label unetbootin\n"
-	"\tmenu label UNetbootin\n"
 	"\tkernel %1\n"
 	"\tappend initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
