@@ -155,6 +155,27 @@ int main(int argc, char *argv[])
 	QTranslator translator;
 	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
 	app.installTranslator(&translator);
+	#ifdef Q_OS_UNIX
+	QProcess whoamip;
+	whoamip.start("whoami");
+	whoamip.waitForFinished();
+	if (QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
+	{
+		QMessageBox rootmsgb;
+		rootmsgb.setIcon(QMessageBox::Warning);
+		rootmsgb.setWindowTitle(QObject::tr("Must run as root"));
+		rootmsgb.setTextFormat(Qt::RichText);
+		rootmsgb.setText(QObject::tr("UNetbootin must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()));
+		rootmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (rootmsgb.exec())
+		{
+			case QMessageBox::Ok:
+				break;
+			default:
+				break;
+		}
+	}
+	#endif
 	#ifdef Q_OS_WIN32
 	QSettings chkinst("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
 	#endif

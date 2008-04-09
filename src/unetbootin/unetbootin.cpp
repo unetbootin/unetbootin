@@ -49,11 +49,11 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
 	"3.1" << "4.0"));
-	distroselect->addItem("Mandriva", (QStringList() << "2008.0" << 
+	distroselect->addItem("Mandriva", (QStringList() << "2008.1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
 		"<b>Install Notes:</b> The default option allows for installation only via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64" << "2008.0_Live"));
+	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64" << "2008.0_Live" << "2008.1" << "2008.1_x64" << "2008.1_Live"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"

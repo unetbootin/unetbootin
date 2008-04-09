@@ -149,13 +149,20 @@ if (nameDistro == "Mandriva")
 	}
 	if (islivecd)
 	{
-		downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/iso/%1/mandriva-linux-%3-one-GNOME-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+		if (relname == "2008.0")
+		{
+			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-%3-one-GNOME-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+		}
+		else if (relname == "2008.1")
+		{
+			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-one-%3-spring-GNOME-int-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+		}
 		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
 	else
 	{
 		instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("ftp://mirrors.kernel.org/mandrake/Mandrakelinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 	}
 }
 
