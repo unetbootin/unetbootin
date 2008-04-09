@@ -33,7 +33,7 @@ unetbootin::unetbootin(QWidget *parent)
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
+	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -63,7 +63,7 @@ unetbootin::unetbootin(QWidget *parent)
 	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "10.3_Live" << "10.3_Live_x64" << "Factory" << "Factory_x64"));
+	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
 	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
@@ -434,7 +434,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile)
 			break;
 		}
 	}
-	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive));
+	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=UUID=%1").arg(devuuid));
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
@@ -601,13 +601,13 @@ QString unetbootin::getuuid(QString voldrive)
 	voldrive.append("\\");
 	char outpvn[256];
 	GetVolumeNameForVolumeMountPointA(voldrive.toAscii(), outpvn, 256);
-	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$"));
+	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$")).remove("\r").remove("\n");
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess volidp;
 	volidp.start(QString("vol_id -u %1").arg(voldrive));
 	volidp.waitForFinished(-1);
-	return volidp.readAll();
+	return QString(volidp.readAll()).remove("\r").remove("\n");
 	#endif
 }
 
