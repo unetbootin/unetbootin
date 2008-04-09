@@ -188,7 +188,7 @@ if (nameDistro == "openSUSE")
 	}
 	if (islivecd)
 	{
-		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
 		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
 	else

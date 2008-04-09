@@ -595,6 +595,22 @@ void unetbootin::callexternapp(QString execFile, QString execParm)
 	#endif
 }
 
+QString unetbootin::getuuid(QString voldrive)
+{
+	#ifdef Q_OS_WIN32
+	voldrive.append("\\");
+	char outpvn[256];
+	GetVolumeNameForVolumeMountPointA(voldrive.toAscii(), outpvn, 256);
+	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$"));
+	#endif
+	#ifdef Q_OS_UNIX
+	QProcess volidp;
+	volidp.start(QString("vol_id -u %1").arg(voldrive));
+	volidp.waitForFinished(-1);
+	return volidp.readAll();
+	#endif
+}
+
 #ifdef Q_OS_UNIX
 
 QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename)
@@ -920,6 +936,7 @@ void unetbootin::runinst()
 		}
 	}
 	#endif
+	devuuid = getuuid(targetDev);
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
