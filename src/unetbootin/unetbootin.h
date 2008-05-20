@@ -13,7 +13,11 @@
 #include <windows.h>
 #include <shellapi.h>
 #endif
-#ifdef Q_OS_UNIX
+
+#ifdef AUTOSUPERGRUBDISK
+#define UNETBOOTINB "Auto Super Grub Disk"
+#else
+#define UNETBOOTINB "UNetbootin"
 #endif
 
 class unetbootin : public QWidget, private Ui::unetbootin

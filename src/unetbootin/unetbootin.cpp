@@ -4,6 +4,19 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+	#ifdef AUTOSUPERGRUBDISK
+	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
+	QFile asgdDescF(":/asgd-en.htm");
+	asgdDescF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream asgdDescS(&asgdDescF);
+	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 
+	asgdDescS.readAll() << 
+//	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org/\">http://www.supergrubdisk.org</a><br/>"
+//		"<b>Description:</b> Super Grub Disk allows you to repair your GRUB install and can also perform other bootloader-related tasks.<br/>"
+//		"<b>Install Notes:</b> This version loads the \"Auto Super Grub Disk\", which performs the GRUB MBR installation automatically.") << 
+	"1.0"));
+	#endif
+	#ifndef AUTOSUPERGRUBDISK
 	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
 	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
@@ -79,6 +92,7 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
 	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64"));
+	#endif
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");

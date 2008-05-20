@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>sevnz.dll</file>
+        <file>sevnz.exe</file>
+    </qresource>
+</RCC>

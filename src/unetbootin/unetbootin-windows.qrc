@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/" >
         <file>emtxfile.exe</file>
-        <file>sevnz.dll</file>
-        <file>sevnz.exe</file>
         <file>syslinux.exe</file>
         <file>ubnldr</file>
         <file>ubnldr.exe</file>

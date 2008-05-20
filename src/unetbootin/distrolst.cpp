@@ -1,6 +1,18 @@
 QString cpuarch;
 QString relname = nameVersion.toLower();
 
+#ifdef AUTOSUPERGRUBDISK
+
+if (nameDistro == "Auto Super Grub Disk")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	instIndvfl("asgd.img", QString("%1ubninit").arg(targetPath));
+}
+
+#endif
+
+#ifndef AUTOSUPERGRUBDISK
+
 if (nameDistro == "Arch Linux")
 {
 	if (isarch64)
@@ -266,3 +278,5 @@ if (nameDistro == "Ubuntu")
 		kernelOpts = "vga=normal";
 	}
 }
+
+#endif

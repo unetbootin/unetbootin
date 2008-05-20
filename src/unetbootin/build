@@ -10,7 +10,7 @@ mv 7z.dll sevnz.dll
 fi
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
-qmake -spec win32-g++ "RESOURCES += unetbootin-windows.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
+qmake -spec win32-g++ "RESOURCES += unetbootin-windows.qrc unetbootin-sevnz.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
 make
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 ./upx --lzma release/unetbootin-windows-$rvern.exe
@@ -18,6 +18,6 @@ qmake
 make
 mv unetbootin release/unetbootin-linux-$rvern
 ./upx --lzma release/unetbootin-linux-$rvern
-printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://lubi.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
+printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
 zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
 
