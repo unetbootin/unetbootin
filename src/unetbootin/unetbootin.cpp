@@ -97,7 +97,7 @@ unetbootin::unetbootin(QWidget *parent)
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
-	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
+	mssyscommand = locatecommand("install-mbr", "USB Drive", "mbr");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	sevzcommand = locatecommand("7z", "either", "p7zip-full");
 	ubntmpf = "/tmp/";
@@ -1196,7 +1196,7 @@ void unetbootin::runinstusb()
 	#endif
 	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);
-	callexternapp(mssyscommand, QString("-s %1").arg(QString(targetDev).remove(-1, 1)));
+	callexternapp(mssyscommand, QString("%1").arg(QString(targetDev).remove(-1, 1)));
 	callexternapp(sfdiskcommand, QString("%1 -A%2").arg(QString(targetDev).remove(-1, 1), QString(targetDev).at(targetDev.size() - 1)));
 	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))

@@ -149,6 +149,23 @@ void ubnUninst()
  	}
 }
 
+QString checkforgraphicalsu(QString graphicalsu)
+{
+	QProcess whereiscommand;
+	whereiscommand.start(QString("whereis %1").arg(graphicalsu));
+	whereiscommand.waitForFinished(-1);
+	QString commandbinpath = QString(whereiscommand.readAll());
+	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
+	for (int i = 0; i < commandbinpathL.size(); ++i)
+	{
+		if (commandbinpathL.at(i).contains("bin/"))
+		{
+			return commandbinpathL.at(i);
+		}
+	}
+	return "REQCNOTFOUND";
+}
+
 int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv, true);
@@ -161,6 +178,18 @@ int main(int argc, char *argv[])
 	whoamip.waitForFinished();
 	if (QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
 	{
+		QString gksulocation = checkforgraphicalsu("gksu");
+		if (gksulocation != "REQCNOTFOUND")
+		{
+			QProcess::startDetached(QString("%1 %2").arg(gksulocation, app.applicationFilePath()));
+			return 0;
+		}
+		QString kdesulocation = checkforgraphicalsu("kdesu");
+		if (kdesulocation != "REQCNOTFOUND")
+		{
+			QProcess::startDetached(QString("%1 %2").arg(kdesulocation, app.applicationFilePath()));
+			return 0;
+		}
 		QMessageBox rootmsgb;
 		rootmsgb.setIcon(QMessageBox::Warning);
 		rootmsgb.setWindowTitle(QObject::tr("Must run as root"));
