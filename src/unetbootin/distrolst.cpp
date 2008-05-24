@@ -45,7 +45,7 @@ if (nameDistro == "CentOS")
 
 if (nameDistro == "Damn Small Linux")
 {
-	downloadfile(QString("ftp://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	downloadfile(QString("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 
@@ -80,7 +80,14 @@ if (nameDistro == "Fedora")
 		{
 			cpuarch = "i686";
 		}
-		downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		if (relname == "8")
+		{
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		}
+		else
+		{
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		}
 		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 	}
 	else
@@ -90,12 +97,6 @@ if (nameDistro == "Fedora")
 			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
 			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/development/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
 			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/development/%1/os' when asked for the folder.").arg(cpuarch);
-		}
-		else if (relname == "9 beta")
-		{
-			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/vmlinuz").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os/images/pxeboot/initrd.img").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = QObject::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.fedora.redhat.com' when prompted for a server, and enter '/pub/fedora/linux/releases/test/9-Beta/Fedora/%1/os' when asked for the folder.").arg(cpuarch);
 		}
 		else
 		{

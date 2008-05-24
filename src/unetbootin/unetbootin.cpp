@@ -32,21 +32,21 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "4.2.5" << 
+	distroselect->addItem("Damn Small Linux", (QStringList() << "4.3" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution with a total size of 50 MB.<br/>"
 		"<b>Install Notes:</b> The default version loads the entire system into RAM and boots from memory, so installation is not required.") << 
-	"4.2.5"));
+	"4.3"));
 	distroselect->addItem("Debian", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
 		"<b>Install Notes:</b> The default version allows for installation over FTP. Pre-partitioning may be helpful but is not required.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
-	distroselect->addItem("Fedora", (QStringList() << "8" << 
+	distroselect->addItem("Fedora", (QStringList() << "9" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9 Beta" << "9 Beta_x64" << "Rawhide" << "Rawhide_x64"));
+	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9" << "9_x64" << "9_Live" << "9_Live_x64" << "Rawhide" << "Rawhide_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -87,11 +87,11 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
 		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
 	"2007" << "2008 Gnome" << "2008 Minime"));
-	distroselect->addItem("Ubuntu", (QStringList() << "7.10" << 
+	distroselect->addItem("Ubuntu", (QStringList() << "8.04" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64"));
+	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64" << "8.04_Live" << "8.04_Live_x64"));
 	#endif
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
@@ -144,7 +144,7 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 		QProcess fdisklusbdevs;
 		fdisklusbdevs.start(QString("%1 -l").arg(fdiskcommand));
 		fdisklusbdevs.waitForFinished(-1);
-		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split("\n").filter("FAT").join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
 		for (int i = 0; i < usbdevsL.size(); ++i)
 		{
 			if (!usbdevsL.at(i).contains(":"))
