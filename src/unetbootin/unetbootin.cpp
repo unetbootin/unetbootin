@@ -97,6 +97,7 @@ unetbootin::unetbootin(QWidget *parent)
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
+	volidcommand = locatecommand("vol_id", "either", "udev");
 //	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	sevzcommand = locatecommand("7z", "either", "p7zip-full");
@@ -144,13 +145,19 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 		QProcess fdisklusbdevs;
 		fdisklusbdevs.start(QString("%1 -l").arg(fdiskcommand));
 		fdisklusbdevs.waitForFinished(-1);
-		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split("\n").filter("FAT").join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
 		for (int i = 0; i < usbdevsL.size(); ++i)
 		{
-			if (!usbdevsL.at(i).contains(":"))
+			if (usbdevsL.at(i).contains(":"))
 			{
-				driveselect->addItem(usbdevsL.at(i));
+				QProcess testvfat;
+				testvfat.start(QString("%1 -t %2").arg(volidcommand, QString(usbdevsL.at(i)).remove(":")));
+				testvfat.waitForFinished(-1);
+				if (!QString(testvfat.readAll()).contains("vfat"))
+					continue;
 			}
+			
+			driveselect->addItem(QString(usbdevsL.at(i)).remove(":"));
 		}
 		#endif
 	}
@@ -213,6 +220,21 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
+	if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText() == "")
+	{
+		QMessageBox notenoughinputmsgb;
+		notenoughinputmsgb.setIcon(QMessageBox::Information);
+		notenoughinputmsgb.setWindowTitle(QObject::tr("Insert a USB flash drive"));
+		notenoughinputmsgb.setText(QObject::tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32 or build a new disklabel."));
+ 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (notenoughinputmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
 	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
 	{
 		QMessageBox notenoughinputmsgb;
@@ -919,6 +941,7 @@ void unetbootin::runinst()
 	}
 	installDir = ginstallDir;
 	targetDev = QString("%1").arg(targetDrive).remove("\\");
+	rawtargetDev = targetDev;
 	#endif
 	#ifdef Q_OS_UNIX
 	if (installType == "Hard Disk")
@@ -949,6 +972,7 @@ void unetbootin::runinst()
 			return;
 		}
 	}
+	rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
 	#endif
 	devuuid = getuuid(targetDev);
 	kernelLine = "kernel";
@@ -1196,15 +1220,18 @@ void unetbootin::runinstusb()
 	#endif
 	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);
-//	callexternapp(mssyscommand, QString("-s %1").arg(QString(targetDev).remove(-1, 1)));
-	callexternapp(sfdiskcommand, QString("%1 -A%2").arg(QString(targetDev).remove(-1, 1), QString(targetDev).at(targetDev.size() - 1)));
-	QFile usbmbrF(QString(targetDev).remove(-1, 1));
-	QFile mbrbinF(":/mbr.bin");
-	usbmbrF.open(QIODevice::WriteOnly);
-	mbrbinF.open(QIODevice::ReadOnly);
-	usbmbrF.write(mbrbinF.readAll());
-	mbrbinF.close();
-	usbmbrF.close();
+	if (rawtargetDev != targetDev)
+	{
+//		callexternapp(mssyscommand, QString("-s %1").arg(rawtargetDev));
+		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
+		QFile usbmbrF(rawtargetDev);
+		QFile mbrbinF(":/mbr.bin");
+		usbmbrF.open(QIODevice::WriteOnly);
+		mbrbinF.open(QIODevice::ReadOnly);
+		usbmbrF.write(mbrbinF.readAll());
+		mbrbinF.close();
+		usbmbrF.close();
+	}
 	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
 	{

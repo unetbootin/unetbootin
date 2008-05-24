@@ -37,6 +37,7 @@ public:
 	QString targetPath;
 	QString installType;
 	QString targetDev;
+	QString rawtargetDev;
 	QString devuuid;
 	QString postinstmsg;
 	QString sourcefile, destinfile;
@@ -46,7 +47,8 @@ public:
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
 	QString sfdiskcommand;
-	QString mssyscommand;
+	QString volidcommand;
+//	QString mssyscommand;
 	QString syslinuxcommand;
 	#endif
 	QPair<QStringList, QStringList> listarchiveconts(QString archivefile);
