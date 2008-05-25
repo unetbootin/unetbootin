@@ -1,0 +1,7 @@
+#!/bin/sh
+
+qtwind="$(pwd)/qt4-win"
+qtx11d="$(pwd)/qt4-x11"
+mingwb="i586-mingw32msvc"
+
+qmake -spec $qtx11d/mkspecs/linux-g++ "QMAKE_INCDIR_QT = $qtx11d/include" "QMAKE_LIBDIR_QT = $qtx11d/lib" "$@"

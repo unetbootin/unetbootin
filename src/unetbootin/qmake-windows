@@ -1,0 +1,7 @@
+#!/bin/sh
+
+qtwind="$(pwd)/qt4-win"
+qtx11d="$(pwd)/qt4-x11"
+mingwb="i586-mingw32msvc"
+
+qmake -spec win32-g++ "QMAKE_CC = $mingwb-gcc" "QMAKE_CXX = $mingwb-g++" "QMAKE_INCDIR_QT = $qtwind/include" "QMAKE_LIBDIR_QT = $qtwind/lib" "QMAKE_LINK = $mingwb-g++" "QMAKE_COPY_DIR = cp -r" "QMAKE_COPY = cp" "QMAKE_COPY_DIR = cp -r" "QMAKE_MOVE = mv" "QMAKE_DEL_FILE = rm" "QMAKE_CHK_DIR_EXISTS = test -d" "QMAKE_MOC = \$\$[QT_INSTALL_BINS]/moc" "QMAKE_UIC = \$\$[QT_INSTALL_BINS]/uic" "QMAKE_RC = $mingwb-windres" "RESOURCES += unetbootin-windows.qrc" "QMAKE_LFLAGS += -Wl,-subsystem,windows" "RC_FILE += ubnembed.rc" "$@"

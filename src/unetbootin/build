@@ -10,11 +10,13 @@ mv 7z.dll sevnz.dll
 fi
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
-qmake -spec win32-g++ "RESOURCES += unetbootin-windows.qrc unetbootin-sevnz.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
+#qmake -spec win32-static "RESOURCES += unetbootin-windows.qrc unetbootin-sevnz.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
+./qmake-windows "RESOURCES += unetbootin-sevnz.qrc"
 make
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 ./upx --lzma release/unetbootin-windows-$rvern.exe
-qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+#qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+./qmake-linux "RESOURCES += unetbootin-linux.qrc"
 make
 mv unetbootin release/unetbootin-linux-$rvern
 ./upx --lzma release/unetbootin-linux-$rvern
