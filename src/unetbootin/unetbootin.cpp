@@ -137,7 +137,10 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 		{
 			if (QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()) != QDir::toNativeSeparators(QDir::rootPath().toUpper()))
 			{
-				driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+				if (GetDriveType(LPWSTR(extdrivesList.at(i).path().toUpper().utf16())) == 2)
+				{
+					driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+				}
 			}
 		}
 		#endif
@@ -313,6 +316,8 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 		tmplsL = tmplsS.readLine();
 		if (tmplsL.contains("Path = "))
 		{
+			if (tmplsL.contains("Path = [BOOT]"))
+				continue;
 			QString tmplsN = tmplsS.readLine();
 			if (tmplsN.contains("Folder = 1") || tmplsN.contains("Folder = +"))
 			{
