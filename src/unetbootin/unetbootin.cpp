@@ -640,9 +640,12 @@ QString unetbootin::getuuid(QString voldrive)
 {
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
-	char outpvn[256];
-	GetVolumeNameForVolumeMountPointA(voldrive.toAscii(), outpvn, 256);
-	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$")).remove("\r").remove("\n");
+//	char outpvn[256];
+//	GetVolumeNameForVolumeMountPointA(voldrive.toAscii(), outpvn, 256);
+//	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$")).remove("\r").remove("\n");
+	DWORD volserialnum;
+	GetVolumeInformation(LPWSTR(voldrive.utf16()), NULL, NULL, &volserialnum, NULL, NULL, NULL, NULL);
+	return QString::number(volserialnum, 16);
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess volidp;
