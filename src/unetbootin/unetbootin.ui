@@ -28,6 +28,9 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" native="1" name="firstlayer" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="geometry" >
     <rect>
      <x>0</x>
@@ -283,9 +286,6 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QComboBox" name="driveselect" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
     <property name="geometry" >
      <rect>
       <x>190</x>
@@ -315,9 +315,6 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QComboBox" name="typeselect" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
     <property name="geometry" >
      <rect>
       <x>50</x>
@@ -408,9 +405,6 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QComboBox" name="diskimagetypeselect" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
     <property name="geometry" >
      <rect>
       <x>110</x>
@@ -460,6 +454,9 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
   <widget class="QWidget" native="1" name="secondlayer" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="geometry" >
     <rect>
      <x>0</x>
@@ -629,66 +626,137 @@ p, li { white-space: pre-wrap; }
      <string>1. Downloading Files</string>
     </property>
    </widget>
-   <widget class="QWidget" native="1" name="rebootwidget" >
+  </widget>
+  <widget class="QWidget" native="1" name="thirdlayer" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>524</width>
+     <height>360</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <widget class="QPushButton" name="fexitbutton" >
     <property name="geometry" >
      <rect>
-      <x>0</x>
-      <y>150</y>
-      <width>521</width>
-      <height>201</height>
+      <x>420</x>
+      <y>320</y>
+      <width>100</width>
+      <height>29</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="fexitbutton" >
-     <property name="geometry" >
-      <rect>
-       <x>410</x>
-       <y>170</y>
-       <width>100</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text" >
-      <string>Exit</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="frebootbutton" >
-     <property name="geometry" >
-      <rect>
-       <x>300</x>
-       <y>170</y>
-       <width>100</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text" >
-      <string>Reboot Now</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="rebootmsgtext" >
-     <property name="geometry" >
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>501</width>
-       <height>151</height>
-      </rect>
-     </property>
-     <property name="styleSheet" >
-      <string>background: transparent;</string>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="lineWidth" >
-      <number>0</number>
-     </property>
-     <property name="openExternalLinks" >
-      <bool>true</bool>
-     </property>
-    </widget>
+    <property name="text" >
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="frebootbutton" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>320</y>
+      <width>100</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Reboot Now</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="rebootmsgtext" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>501</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet" >
+     <string>background: transparent;</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>0</number>
+    </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fsdesc1" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>1. Downloading Files (Done)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fsdesc2" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>2. Extracting and Copying Files (Done)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fsdesc3" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>3. Installing Bootloader (Done)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fsdesc5" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fsdesc4" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>&lt;b>4. Installation Complete, Reboot (Current)&lt;/b></string>
+    </property>
    </widget>
   </widget>
  </widget>

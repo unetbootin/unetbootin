@@ -4,7 +4,11 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+	thirdlayer->setEnabled(false);
+	thirdlayer->hide();
+	secondlayer->setEnabled(false);
 	secondlayer->hide();
+	firstlayer->setEnabled(true);
 	firstlayer->show();
 	#ifdef AUTOSUPERGRUBDISK
 	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
@@ -976,9 +980,10 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 
 void unetbootin::runinst()
 {
+	firstlayer->setEnabled(false);
 	firstlayer->hide();
+	secondlayer->setEnabled(true);
 	secondlayer->show();
-	rebootwidget->hide();
 	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
 	tprogress->setValue(0);
 	installType = typeselect->currentText();
@@ -1301,15 +1306,10 @@ void unetbootin::runinstusb()
 
 void unetbootin::fininstall()
 {
-	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
-	tprogress->hide();
-	pdesc5->hide();
-	pdesc4->hide();
-	pdesc3->hide();
-	pdesc2->hide();
-	pdesc1->hide();
-	rebootwidget->show();
+	secondlayer->setEnabled(false);
+	secondlayer->hide();
+	thirdlayer->setEnabled(true);
+	thirdlayer->show();
 	if (installType == "Hard Disk")
 	{
 		rebootmsgtext->setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon May 26 13:17:13 2008
+** Created: Mon May 26 14:11:57 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -63,10 +63,15 @@ public:
     QLabel *sdesc3;
     QLabel *sdesc2;
     QLabel *sdesc1;
-    QWidget *rebootwidget;
+    QWidget *thirdlayer;
     QPushButton *fexitbutton;
     QPushButton *frebootbutton;
     QTextBrowser *rebootmsgtext;
+    QLabel *fsdesc1;
+    QLabel *fsdesc2;
+    QLabel *fsdesc3;
+    QLabel *fsdesc5;
+    QLabel *fsdesc4;
 
     void setupUi(QWidget *unetbootinui)
     {
@@ -78,6 +83,7 @@ public:
     unetbootinui->setAutoFillBackground(true);
     firstlayer = new QWidget(unetbootinui);
     firstlayer->setObjectName(QString::fromUtf8("firstlayer"));
+    firstlayer->setEnabled(false);
     firstlayer->setGeometry(QRect(0, 0, 524, 360));
     firstlayer->setAutoFillBackground(true);
     FloppyFileSelector = new QPushButton(firstlayer);
@@ -131,14 +137,12 @@ public:
     labeldrive->setGeometry(QRect(150, 320, 41, 25));
     driveselect = new QComboBox(firstlayer);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
-    driveselect->setEnabled(true);
     driveselect->setGeometry(QRect(190, 320, 111, 25));
     labeldrive_2 = new QLabel(firstlayer);
     labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
     labeldrive_2->setGeometry(QRect(10, 320, 32, 25));
     typeselect = new QComboBox(firstlayer);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
-    typeselect->setEnabled(true);
     typeselect->setGeometry(QRect(50, 320, 91, 25));
     OptionEnter = new QLineEdit(firstlayer);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
@@ -156,7 +160,6 @@ public:
     intromessage->setOpenExternalLinks(true);
     diskimagetypeselect = new QComboBox(firstlayer);
     diskimagetypeselect->setObjectName(QString::fromUtf8("diskimagetypeselect"));
-    diskimagetypeselect->setEnabled(true);
     diskimagetypeselect->setGeometry(QRect(110, 180, 71, 25));
     CfgFileSelector = new QPushButton(firstlayer);
     CfgFileSelector->setObjectName(QString::fromUtf8("CfgFileSelector"));
@@ -164,6 +167,7 @@ public:
     CfgFileSelector->setAcceptDrops(false);
     secondlayer = new QWidget(unetbootinui);
     secondlayer->setObjectName(QString::fromUtf8("secondlayer"));
+    secondlayer->setEnabled(false);
     secondlayer->setGeometry(QRect(0, 0, 524, 360));
     secondlayer->setAutoFillBackground(true);
     tprogress = new QProgressBar(secondlayer);
@@ -205,22 +209,39 @@ public:
     sdesc1 = new QLabel(secondlayer);
     sdesc1->setObjectName(QString::fromUtf8("sdesc1"));
     sdesc1->setGeometry(QRect(10, 10, 501, 20));
-    rebootwidget = new QWidget(secondlayer);
-    rebootwidget->setObjectName(QString::fromUtf8("rebootwidget"));
-    rebootwidget->setGeometry(QRect(0, 150, 521, 201));
-    fexitbutton = new QPushButton(rebootwidget);
+    thirdlayer = new QWidget(unetbootinui);
+    thirdlayer->setObjectName(QString::fromUtf8("thirdlayer"));
+    thirdlayer->setEnabled(false);
+    thirdlayer->setGeometry(QRect(0, 0, 524, 360));
+    thirdlayer->setAutoFillBackground(true);
+    fexitbutton = new QPushButton(thirdlayer);
     fexitbutton->setObjectName(QString::fromUtf8("fexitbutton"));
-    fexitbutton->setGeometry(QRect(410, 170, 100, 29));
-    frebootbutton = new QPushButton(rebootwidget);
+    fexitbutton->setGeometry(QRect(420, 320, 100, 29));
+    frebootbutton = new QPushButton(thirdlayer);
     frebootbutton->setObjectName(QString::fromUtf8("frebootbutton"));
-    frebootbutton->setGeometry(QRect(300, 170, 100, 29));
-    rebootmsgtext = new QTextBrowser(rebootwidget);
+    frebootbutton->setGeometry(QRect(310, 320, 100, 29));
+    rebootmsgtext = new QTextBrowser(thirdlayer);
     rebootmsgtext->setObjectName(QString::fromUtf8("rebootmsgtext"));
-    rebootmsgtext->setGeometry(QRect(10, 10, 501, 151));
+    rebootmsgtext->setGeometry(QRect(20, 160, 501, 151));
     rebootmsgtext->setFrameShape(QFrame::NoFrame);
     rebootmsgtext->setFrameShadow(QFrame::Plain);
     rebootmsgtext->setLineWidth(0);
     rebootmsgtext->setOpenExternalLinks(true);
+    fsdesc1 = new QLabel(thirdlayer);
+    fsdesc1->setObjectName(QString::fromUtf8("fsdesc1"));
+    fsdesc1->setGeometry(QRect(20, 20, 501, 20));
+    fsdesc2 = new QLabel(thirdlayer);
+    fsdesc2->setObjectName(QString::fromUtf8("fsdesc2"));
+    fsdesc2->setGeometry(QRect(20, 50, 501, 20));
+    fsdesc3 = new QLabel(thirdlayer);
+    fsdesc3->setObjectName(QString::fromUtf8("fsdesc3"));
+    fsdesc3->setGeometry(QRect(20, 80, 501, 20));
+    fsdesc5 = new QLabel(thirdlayer);
+    fsdesc5->setObjectName(QString::fromUtf8("fsdesc5"));
+    fsdesc5->setGeometry(QRect(20, 140, 501, 20));
+    fsdesc4 = new QLabel(thirdlayer);
+    fsdesc4->setObjectName(QString::fromUtf8("fsdesc4"));
+    fsdesc4->setGeometry(QRect(20, 110, 501, 20));
 
     retranslateUi(unetbootinui);
 
@@ -308,6 +329,11 @@ public:
     fexitbutton->setText(QApplication::translate("unetbootinui", "Exit", 0, QApplication::UnicodeUTF8));
     frebootbutton->setText(QApplication::translate("unetbootinui", "Reboot Now", 0, QApplication::UnicodeUTF8));
     rebootmsgtext->setStyleSheet(QApplication::translate("unetbootinui", "background: transparent;", 0, QApplication::UnicodeUTF8));
+    fsdesc1->setText(QApplication::translate("unetbootinui", "1. Downloading Files (Done)", 0, QApplication::UnicodeUTF8));
+    fsdesc2->setText(QApplication::translate("unetbootinui", "2. Extracting and Copying Files (Done)", 0, QApplication::UnicodeUTF8));
+    fsdesc3->setText(QApplication::translate("unetbootinui", "3. Installing Bootloader (Done)", 0, QApplication::UnicodeUTF8));
+    fsdesc5->setText(QString());
+    fsdesc4->setText(QApplication::translate("unetbootinui", "<b>4. Installation Complete, Reboot (Current)</b>", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootinui);
     } // retranslateUi
 
