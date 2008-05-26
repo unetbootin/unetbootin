@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun May 25 23:04:15 2008
+** Created: Mon May 26 13:17:13 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -63,10 +63,10 @@ public:
     QLabel *sdesc3;
     QLabel *sdesc2;
     QLabel *sdesc1;
-    QTextBrowser *rebootmsgtext;
-    QWidget *widget;
+    QWidget *rebootwidget;
     QPushButton *fexitbutton;
     QPushButton *frebootbutton;
+    QTextBrowser *rebootmsgtext;
 
     void setupUi(QWidget *unetbootinui)
     {
@@ -205,22 +205,22 @@ public:
     sdesc1 = new QLabel(secondlayer);
     sdesc1->setObjectName(QString::fromUtf8("sdesc1"));
     sdesc1->setGeometry(QRect(10, 10, 501, 20));
-    rebootmsgtext = new QTextBrowser(secondlayer);
+    rebootwidget = new QWidget(secondlayer);
+    rebootwidget->setObjectName(QString::fromUtf8("rebootwidget"));
+    rebootwidget->setGeometry(QRect(0, 150, 521, 201));
+    fexitbutton = new QPushButton(rebootwidget);
+    fexitbutton->setObjectName(QString::fromUtf8("fexitbutton"));
+    fexitbutton->setGeometry(QRect(410, 170, 100, 29));
+    frebootbutton = new QPushButton(rebootwidget);
+    frebootbutton->setObjectName(QString::fromUtf8("frebootbutton"));
+    frebootbutton->setGeometry(QRect(300, 170, 100, 29));
+    rebootmsgtext = new QTextBrowser(rebootwidget);
     rebootmsgtext->setObjectName(QString::fromUtf8("rebootmsgtext"));
-    rebootmsgtext->setGeometry(QRect(10, 161, 501, 151));
+    rebootmsgtext->setGeometry(QRect(10, 10, 501, 151));
     rebootmsgtext->setFrameShape(QFrame::NoFrame);
     rebootmsgtext->setFrameShadow(QFrame::Plain);
     rebootmsgtext->setLineWidth(0);
     rebootmsgtext->setOpenExternalLinks(true);
-    widget = new QWidget(secondlayer);
-    widget->setObjectName(QString::fromUtf8("widget"));
-    widget->setGeometry(QRect(290, 310, 231, 51));
-    fexitbutton = new QPushButton(widget);
-    fexitbutton->setObjectName(QString::fromUtf8("fexitbutton"));
-    fexitbutton->setGeometry(QRect(120, 10, 100, 29));
-    frebootbutton = new QPushButton(widget);
-    frebootbutton->setObjectName(QString::fromUtf8("frebootbutton"));
-    frebootbutton->setGeometry(QRect(10, 10, 100, 29));
 
     retranslateUi(unetbootinui);
 
@@ -305,9 +305,9 @@ public:
     sdesc3->setText(QApplication::translate("unetbootinui", "3. Installing Bootloader", 0, QApplication::UnicodeUTF8));
     sdesc2->setText(QApplication::translate("unetbootinui", "2. Extracting and Copying Files", 0, QApplication::UnicodeUTF8));
     sdesc1->setText(QApplication::translate("unetbootinui", "1. Downloading Files", 0, QApplication::UnicodeUTF8));
-    rebootmsgtext->setStyleSheet(QApplication::translate("unetbootinui", "background: transparent;", 0, QApplication::UnicodeUTF8));
     fexitbutton->setText(QApplication::translate("unetbootinui", "Exit", 0, QApplication::UnicodeUTF8));
     frebootbutton->setText(QApplication::translate("unetbootinui", "Reboot Now", 0, QApplication::UnicodeUTF8));
+    rebootmsgtext->setStyleSheet(QApplication::translate("unetbootinui", "background: transparent;", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootinui);
     } // retranslateUi
 

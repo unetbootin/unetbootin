@@ -29,68 +29,68 @@ unetbootin::unetbootin(QWidget *parent)
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
 	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "4.3" << 
+	distroselect->addItem("Damn Small Linux", (QStringList() << "4.3_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution with a total size of 50 MB.<br/>"
-		"<b>Install Notes:</b> The default version loads the entire system into RAM and boots from memory, so installation is not required.") << 
-	"4.3"));
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
+	"4.3_Live"));
 	distroselect->addItem("Debian", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
-		"<b>Install Notes:</b> The default version allows for installation over FTP. Pre-partitioning may be helpful but is not required.") << 
+		"<b>Install Notes:</b> The default version allows for installation over FTP.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
-	distroselect->addItem("Fedora", (QStringList() << "9" << 
+	distroselect->addItem("Fedora", (QStringList() << "9_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"7" << "7_x64" << "8" << "8_x64" << "8_Live" << "8_Live_x64" << "9" << "9_x64" << "9_Live" << "9_Live_x64" << "Rawhide" << "Rawhide_x64"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
+	"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
 	distroselect->addItem("Frugalware", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
-		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand.") << 
+		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("Linux Mint", (QStringList() << "4.0" << 
+	distroselect->addItem("Linux Mint", (QStringList() << "4.0_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
-		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
-	"3.1" << "4.0"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
+	"3.1_Live" << "4.0_Live"));
 	distroselect->addItem("Mandriva", (QStringList() << "2008.1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
-		"<b>Install Notes:</b> The default option allows for installation only via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"2007.1" << "2007.1_x64" << "2008.0" << "2008.0_x64" << "2008.0_Live" << "2008.1" << "2008.1_x64" << "2008.1_Live"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over the internet (FTP) pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
+	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
-		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files. You may need to pre-partition your disk using Parted Magic beforehand") << 
+		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") << 
 	"4.0"));
 	distroselect->addItem("openSUSE", (QStringList() << "10.3" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
-	distroselect->addItem("Parted Magic", (QStringList() << "2.1" << 
+	distroselect->addItem("Parted Magic", (QStringList() << "2.1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") << 
-	"2.1"));
-	distroselect->addItem("PCLinuxOS", (QStringList() << "2007" << 
+	"2.1_Live"));
+	distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
-		"<b>Install Notes:</b> The default version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your disk using PartedMagic beforehand.") << 
-	"2007" << "2008 Gnome" << "2008 Minime"));
-	distroselect->addItem("Ubuntu", (QStringList() << "8.04" << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
+	"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
+	distroselect->addItem("Ubuntu", (QStringList() << "8.04_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
-		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
-	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64" << "8.04_Live" << "8.04_Live_x64"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
+	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64"));
 	#endif
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
@@ -1081,6 +1081,11 @@ void unetbootin::runinst()
 		else
 		{
 			islivecd = false;
+		}
+		if (nameVersion.contains("_NetInstall"))
+		{
+			nameVersion.remove("_NetInstall");
+			isnetinstall = true;
 		}
 		if (nameVersion.contains("_x64"))
 		{

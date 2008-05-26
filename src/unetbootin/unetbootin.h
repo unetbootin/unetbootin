@@ -33,6 +33,7 @@ public:
 	QString nameVersion;
 	bool isarch64;
 	bool islivecd;
+	bool isnetinstall;
 	QString targetDrive;
 	QString targetPath;
 	QString installType;
