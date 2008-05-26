@@ -20,7 +20,7 @@
 #define UNETBOOTINB "UNetbootin"
 #endif
 
-class unetbootin : public QWidget, private Ui::unetbootin
+class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
 
@@ -48,7 +48,6 @@ public:
 	QString fdiskcommand;
 	QString sfdiskcommand;
 	QString volidcommand;
-//	QString mssyscommand;
 	QString syslinuxcommand;
 	#endif
 	QPair<QStringList, QStringList> listarchiveconts(QString archivefile);

@@ -4,6 +4,7 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+	secondlayer->hide();
 	#ifdef AUTOSUPERGRUBDISK
 	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
 	QFile asgdDescF(":/asgd-en.htm");
@@ -11,9 +12,6 @@ unetbootin::unetbootin(QWidget *parent)
 	QTextStream asgdDescS(&asgdDescF);
 	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 
 	asgdDescS.readAll() << 
-//	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org/\">http://www.supergrubdisk.org</a><br/>"
-//		"<b>Description:</b> Super Grub Disk allows you to repair your GRUB install and can also perform other bootloader-related tasks.<br/>"
-//		"<b>Install Notes:</b> This version loads the \"Auto Super Grub Disk\", which performs the GRUB MBR installation automatically.") << 
 	"1.0"));
 	#endif
 	#ifndef AUTOSUPERGRUBDISK
@@ -93,12 +91,10 @@ unetbootin::unetbootin(QWidget *parent)
 		"<b>Install Notes:</b> Kubuntu and other official Ubuntu derivatives can be installed as well. The default version allows for installation over FTP. The Live version allows for booting in Live mode. If installing from Live mode, you will need to pre-partition your hard drive using Parted Magic beforehand.") << 
 	"6.06" << "6.06_x64" << "6.10" << "6.10_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04" << "7.04_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10" << "7.10_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04" << "8.04_x64" << "8.04_Live" << "8.04_Live_x64"));
 	#endif
-	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
 	volidcommand = locatecommand("vol_id", "either", "udev");
-//	mssyscommand = locatecommand("ms-sys", "USB Drive", "ms-sys");
 	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
 	sevzcommand = locatecommand("7z", "either", "p7zip-full");
 	ubntmpf = "/tmp/";
@@ -106,6 +102,7 @@ unetbootin::unetbootin(QWidget *parent)
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
+	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 }
 
 void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
@@ -225,12 +222,12 @@ void unetbootin::on_okbutton_clicked()
 {
 	if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText() == "")
 	{
-		QMessageBox notenoughinputmsgb;
-		notenoughinputmsgb.setIcon(QMessageBox::Information);
-		notenoughinputmsgb.setWindowTitle(QObject::tr("Insert a USB flash drive"));
-		notenoughinputmsgb.setText(QObject::tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32 or build a new disklabel."));
- 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (notenoughinputmsgb.exec())
+		QMessageBox unotenoughinputmsgb;
+		unotenoughinputmsgb.setIcon(QMessageBox::Information);
+		unotenoughinputmsgb.setWindowTitle(QObject::tr("Insert a USB flash drive"));
+		unotenoughinputmsgb.setText(QObject::tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32."));
+ 		unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (unotenoughinputmsgb.exec())
  		{
  			case QMessageBox::Ok:
 				break;
@@ -238,14 +235,31 @@ void unetbootin::on_okbutton_clicked()
 				break;
  		}
 	}
+	#ifdef Q_OS_UNIX
+	else if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText() != "" && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
+	{
+		QMessageBox merrordevnotmountedmsgbx;
+		merrordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
+		merrordevnotmountedmsgbx.setWindowTitle(QString(QObject::tr("%1 not mounted")).arg(driveselect->currentText()));
+		merrordevnotmountedmsgbx.setText(QString(QObject::tr("You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.")).arg(driveselect->currentText()));
+		merrordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok);
+		switch (merrordevnotmountedmsgbx.exec())
+		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+		}
+	}
+	#endif
 	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
 	{
-		QMessageBox notenoughinputmsgb;
-		notenoughinputmsgb.setIcon(QMessageBox::Information);
-		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a distro"));
-		notenoughinputmsgb.setText(QObject::tr("You must select a distribution to load."));
- 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (notenoughinputmsgb.exec())
+		QMessageBox dnotenoughinputmsgb;
+		dnotenoughinputmsgb.setIcon(QMessageBox::Information);
+		dnotenoughinputmsgb.setWindowTitle(QObject::tr("Select a distro"));
+		dnotenoughinputmsgb.setText(QObject::tr("You must select a distribution to load."));
+ 		dnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (dnotenoughinputmsgb.exec())
  		{
  			case QMessageBox::Ok:
 				break;
@@ -255,12 +269,12 @@ void unetbootin::on_okbutton_clicked()
 	}
 	else if (radioFloppy->isChecked() && FloppyPath->text() == "")
 	{
-		QMessageBox notenoughinputmsgb;
-		notenoughinputmsgb.setIcon(QMessageBox::Information);
-		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a disk image file"));
-		notenoughinputmsgb.setText(QObject::tr("You must select a disk image file to load."));
- 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (notenoughinputmsgb.exec())
+		QMessageBox fnotenoughinputmsgb;
+		fnotenoughinputmsgb.setIcon(QMessageBox::Information);
+		fnotenoughinputmsgb.setWindowTitle(QObject::tr("Select a disk image file"));
+		fnotenoughinputmsgb.setText(QObject::tr("You must select a disk image file to load."));
+ 		fnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (fnotenoughinputmsgb.exec())
  		{
  			case QMessageBox::Ok:
 				break;
@@ -270,12 +284,12 @@ void unetbootin::on_okbutton_clicked()
 	}
 	else if (radioManual->isChecked() && KernelPath->text() == "")
 	{
-		QMessageBox notenoughinputmsgb;
-		notenoughinputmsgb.setIcon(QMessageBox::Information);
-		notenoughinputmsgb.setWindowTitle(QObject::tr("Select a kernel and/or initrd file"));
-		notenoughinputmsgb.setText(QObject::tr("You must select a kernel and/or initrd file to load."));
- 		notenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (notenoughinputmsgb.exec())
+		QMessageBox knotenoughinputmsgb;
+		knotenoughinputmsgb.setIcon(QMessageBox::Information);
+		knotenoughinputmsgb.setWindowTitle(QObject::tr("Select a kernel and/or initrd file"));
+		knotenoughinputmsgb.setText(QObject::tr("You must select a kernel and/or initrd file to load."));
+ 		knotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (knotenoughinputmsgb.exec())
  		{
  			case QMessageBox::Ok:
 				break;
@@ -640,9 +654,6 @@ QString unetbootin::getuuid(QString voldrive)
 {
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
-//	char outpvn[256];
-//	GetVolumeNameForVolumeMountPointA(voldrive.toAscii(), outpvn, 256);
-//	return QString(outpvn).remove(QRegExp("^.{0,}\\{")).remove(QRegExp("\\}.{0,}$")).remove("\r").remove("\n");
 	DWORD volserialnum;
 	GetVolumeInformation(LPWSTR(voldrive.utf16()), NULL, NULL, &volserialnum, NULL, NULL, NULL, NULL);
 	return QString::number(volserialnum, 16);
@@ -708,25 +719,22 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream procmountsS(&procmountsF);
 	QStringList procmountsL;
-	while (true)
+	procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
+	if (procmountsL.isEmpty())
 	{
-		procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
-		if (!procmountsL.isEmpty())
-			break;
-		QMessageBox errordevnotmountedmsgbx;
-		errordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
-		errordevnotmountedmsgbx.setWindowTitle(QString(QObject::tr("%1 not mounted")).arg(devicenode));
-		errordevnotmountedmsgbx.setText(QString(QObject::tr("%1 is not mounted. Mount it and press the \"OK\" button to proceed with installation, or press the \"Cancel\" button to abort.")).arg(devicenode));
-		errordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-		switch (errordevnotmountedmsgbx.exec())
+		return "NOT MOUNTED";
+	}
+	else
+	{
+		if (procmountsL.at(0).split("\t").join(" ").split(" ").size() >= 2)
 		{
-			case QMessageBox::Cancel:
-			{
-				return "INSTALL ABORTED";
-			}
+			return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
+		}
+		else
+		{
+			return "NOT MOUNTED";
 		}
 	}
-	return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
 }
 
 QString unetbootin::getGrubNotation(QString devicenode)
@@ -974,11 +982,6 @@ void unetbootin::runinst()
 		ginstallDir = "";
 		installDir = ginstallDir;
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
-		if (targetDrive == "INSTALL ABORTED/")
-		{
-			this->close();
-			return;
-		}
 	}
 	rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
 	#endif
@@ -1230,7 +1233,6 @@ void unetbootin::runinstusb()
 	callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
 	{
-//		callexternapp(mssyscommand, QString("-s %1").arg(rawtargetDev));
 		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
 		QFile usbmbrF(rawtargetDev);
 		QFile mbrbinF(":/mbr.bin");
