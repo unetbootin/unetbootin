@@ -179,18 +179,14 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 		}
 		#endif
 		#ifdef Q_OS_UNIX
-		QProcess fdisklusbdevs;
-		fdisklusbdevs.start(QString("%1 -l").arg(fdiskcommand));
-		fdisklusbdevs.waitForFinished(-1);
-		QStringList usbdevsL = QString(fdisklusbdevs.readAll()).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+		QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+		QStringList usbdevsL = QString(fdisklusbdevsS).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
 		for (int i = 0; i < usbdevsL.size(); ++i)
 		{
 			if (usbdevsL.at(i).contains(":"))
 			{
-				QProcess testvfat;
-				testvfat.start(QString("%1 -t %2").arg(volidcommand, QString(usbdevsL.at(i)).remove(":")));
-				testvfat.waitForFinished(-1);
-				if (!QString(testvfat.readAll()).contains("vfat"))
+				QString testvfatS = callexternapp(volidcommand, QString("-t %2").arg(QString(usbdevsL.at(i)).remove(":")));
+				if (!QString(testvfatS).contains("vfat"))
 					continue;
 			}
 			
@@ -363,10 +359,7 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	QTextStream tmplsS(&tmplsF);
 	#endif
 	#ifdef Q_OS_UNIX
-	QProcess sevzlcommand;
-	sevzlcommand.start(QString("%1 -bd -slt l %2").arg(sevzcommand, archivefile));
-	sevzlcommand.waitForFinished(-1);
-	QByteArray sevzlcommandout = sevzlcommand.readAll();
+	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l %2").arg(archivefile));
 	QTextStream tmplsS(&sevzlcommandout);
 	#endif
 	QString tmplsL;
@@ -719,10 +712,8 @@ QString unetbootin::getuuid(QString voldrive)
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QProcess volidp;
-	volidp.start(QString("vol_id -u %1").arg(voldrive));
-	volidp.waitForFinished(-1);
-	return QString(volidp.readAll()).remove("\r").remove("\n");
+	QString volidpS = callexternapp(volidcommand, QString("-u %1").arg(voldrive));
+	return QString(volidpS).remove("\r").remove("\n");
 	#endif
 }
 
@@ -730,10 +721,7 @@ QString unetbootin::getuuid(QString voldrive)
 
 QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename)
 {
-	QProcess whereiscommand;
-	whereiscommand.start(QString("whereis %1").arg(commandtolocate));
-	whereiscommand.waitForFinished(-1);
-	QString commandbinpath = QString(whereiscommand.readAll());
+	QString commandbinpath = callexternapp("whereis", commandtolocate);
 	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
 	for (int i = 0; i < commandbinpathL.size(); ++i)
 	{
