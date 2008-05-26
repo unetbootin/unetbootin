@@ -572,7 +572,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text" >
-     <string>Rebooting</string>
+     <string>4. Installation Complete, Reboot</string>
     </property>
    </widget>
    <widget class="QLabel" name="sdesc3" >
@@ -585,7 +585,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text" >
-     <string>Installing Bootloader</string>
+     <string>3. Installing Bootloader</string>
     </property>
    </widget>
    <widget class="QLabel" name="sdesc2" >
@@ -598,7 +598,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text" >
-     <string>Extracting and Copying Files</string>
+     <string>2. Extracting and Copying Files</string>
     </property>
    </widget>
    <widget class="QLabel" name="sdesc1" >
@@ -611,7 +611,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text" >
-     <string>Downloading Files</string>
+     <string>1. Downloading Files</string>
     </property>
    </widget>
   </widget>

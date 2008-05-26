@@ -42,7 +42,7 @@ public:
 	QString postinstmsg;
 	QString sourcefile, destinfile;
 	QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
-	QProgressDialog dlprogress;
+//	QProgressDialog dlprogress;
 	QString sevzcommand;
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;

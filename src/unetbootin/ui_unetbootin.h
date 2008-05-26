@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun May 25 17:13:34 2008
+** Created: Sun May 25 19:13:55 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -276,10 +276,10 @@ public:
     pdesc2->setText(QString());
     pdesc1->setText(QString());
     sdesc5->setText(QString());
-    sdesc4->setText(QApplication::translate("unetbootinui", "Rebooting", 0, QApplication::UnicodeUTF8));
-    sdesc3->setText(QApplication::translate("unetbootinui", "Installing Bootloader", 0, QApplication::UnicodeUTF8));
-    sdesc2->setText(QApplication::translate("unetbootinui", "Extracting and Copying Files", 0, QApplication::UnicodeUTF8));
-    sdesc1->setText(QApplication::translate("unetbootinui", "Downloading Files", 0, QApplication::UnicodeUTF8));
+    sdesc4->setText(QApplication::translate("unetbootinui", "4. Installation Complete, Reboot", 0, QApplication::UnicodeUTF8));
+    sdesc3->setText(QApplication::translate("unetbootinui", "3. Installing Bootloader", 0, QApplication::UnicodeUTF8));
+    sdesc2->setText(QApplication::translate("unetbootinui", "2. Extracting and Copying Files", 0, QApplication::UnicodeUTF8));
+    sdesc1->setText(QApplication::translate("unetbootinui", "1. Downloading Files", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootinui);
     } // retranslateUi
 

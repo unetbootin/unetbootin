@@ -5,6 +5,7 @@ unetbootin::unetbootin(QWidget *parent)
 {
 	setupUi(this);
 	secondlayer->hide();
+	firstlayer->show();
 	#ifdef AUTOSUPERGRUBDISK
 	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
 	QFile asgdDescF(":/asgd-en.htm");
@@ -508,16 +509,23 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	}
 	QHttp dlhttp;
 	QFtp dlftp;
-	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
-	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
+	QEventLoop dlewait;
+//	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
+//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
+	pdesc4->setText(QObject::tr("Downloading files, plese wait..."));
+	pdesc3->setText(QObject::tr("<b>Source:</b> %1").arg(fileurl));
+	pdesc2->setText(QObject::tr("<b>Destination:</b> %1").arg(targetfile));
+	pdesc1->setText(QObject::tr("<b>Downloaded:</b> 0 bytes"));
 	if (isftp)
 	{
-		connect(&dlftp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+//		connect(&dlftp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(close()));
 		connect(&dlftp, SIGNAL(dataTransferProgress(qint64, qint64)), this, SLOT(dlprogressupdate64(qint64, qint64)));
 	}
 	else
 	{
-		connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+//		connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
+		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(close()));
 		connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
 	}
 	QFile dloutfile;
@@ -545,7 +553,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		dlhttp.setHost(dlurl.host());
 		dlhttp.get(dlurl.path(), &dloutfile);
 	}
-	dlprogress.exec();
+	dlewait.exec();
+//	dlprogress.exec();
 	if (!isftp)
 	{
 		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
@@ -571,16 +580,22 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
-	dlprogress.setValue(dlbytes);
-	dlprogress.setMaximum(maxbytes);
-	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+//	dlprogress.setValue(dlbytes);
+//	dlprogress.setMaximum(maxbytes);
+	tprogress->setValue(dlbytes);
+	tprogress->setMaximum(maxbytes);
+//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
 void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
-	dlprogress.setValue(dlbytes);
-	dlprogress.setMaximum(maxbytes);
-	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+//	dlprogress.setValue(dlbytes);
+//	dlprogress.setMaximum(maxbytes);
+	tprogress->setValue(dlbytes);
+	tprogress->setMaximum(maxbytes);
+//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
+	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
 QString unetbootin::downloadpagecontents(QString pageurl)
@@ -942,6 +957,9 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 
 void unetbootin::runinst()
 {
+	firstlayer->hide();
+	secondlayer->show();
+	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
 	installType = typeselect->currentText();
 	targetDrive = driveselect->currentText();
 	QString ginstallDir;
@@ -1004,7 +1022,6 @@ void unetbootin::runinst()
 	{
 		QFile::remove(QString("%1ubninit").arg(targetPath));
 	}
-	hide();
 	if (radioFloppy->isChecked())
 	{
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("Floppy") || diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("HDD"))
