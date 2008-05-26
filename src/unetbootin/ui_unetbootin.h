@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun May 25 19:13:55 2008
+** Created: Sun May 25 20:45:22 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -169,18 +169,23 @@ public:
     pdesc5 = new QLabel(secondlayer);
     pdesc5->setObjectName(QString::fromUtf8("pdesc5"));
     pdesc5->setGeometry(QRect(10, 160, 501, 20));
+    pdesc5->setOpenExternalLinks(true);
     pdesc4 = new QLabel(secondlayer);
     pdesc4->setObjectName(QString::fromUtf8("pdesc4"));
     pdesc4->setGeometry(QRect(10, 190, 501, 20));
+    pdesc4->setOpenExternalLinks(true);
     pdesc3 = new QLabel(secondlayer);
     pdesc3->setObjectName(QString::fromUtf8("pdesc3"));
     pdesc3->setGeometry(QRect(10, 220, 501, 20));
+    pdesc3->setOpenExternalLinks(true);
     pdesc2 = new QLabel(secondlayer);
     pdesc2->setObjectName(QString::fromUtf8("pdesc2"));
     pdesc2->setGeometry(QRect(10, 250, 501, 20));
+    pdesc2->setOpenExternalLinks(true);
     pdesc1 = new QLabel(secondlayer);
     pdesc1->setObjectName(QString::fromUtf8("pdesc1"));
     pdesc1->setGeometry(QRect(10, 280, 501, 20));
+    pdesc1->setOpenExternalLinks(true);
     sdesc5 = new QLabel(secondlayer);
     sdesc5->setObjectName(QString::fromUtf8("sdesc5"));
     sdesc5->setGeometry(QRect(10, 130, 501, 20));

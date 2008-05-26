@@ -496,6 +496,9 @@ p, li { white-space: pre-wrap; }
     <property name="text" >
      <string/>
     </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="pdesc4" >
     <property name="geometry" >
@@ -508,6 +511,9 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text" >
      <string/>
+    </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="pdesc3" >
@@ -522,6 +528,9 @@ p, li { white-space: pre-wrap; }
     <property name="text" >
      <string/>
     </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="pdesc2" >
     <property name="geometry" >
@@ -535,6 +544,9 @@ p, li { white-space: pre-wrap; }
     <property name="text" >
      <string/>
     </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="pdesc1" >
     <property name="geometry" >
@@ -547,6 +559,9 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text" >
      <string/>
+    </property>
+    <property name="openExternalLinks" >
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="sdesc5" >

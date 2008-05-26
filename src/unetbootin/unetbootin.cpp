@@ -417,6 +417,9 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
+	sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+	tprogress->setValue(0);
 	QPair<QStringList, QStringList> listfiledirpair = listarchiveconts(isofile);
 	kernelOpts = extractcfg(isofile, listfiledirpair.first);
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfiledirpair.first);
@@ -459,20 +462,25 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 {
 	QStringList extractedfiles;
 	QProgressDialog xprogress;
-	xprogress.setWindowTitle(QObject::tr("Extracting..."));
-	xprogress.setMaximum(filelist.size());
-	xprogress.setMinimum(0);
-	xprogress.setValue(0);
+	tprogress->setMaximum(filelist.size());
+	tprogress->setMinimum(0);
+	tprogress->setValue(0);
+	pdesc5->setText(QObject::tr("Extracting files, please wait..."));
+	pdesc4->setText(QObject::tr("<b>Archive:</b> %1").arg(archivefile));
+	pdesc3->setText(QObject::tr("<b>Source:</b>"));
+	pdesc2->setText(QObject::tr("<b>Destination:</b>"));
+	pdesc1->setText(QObject::tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
 	for (int i = 0; i < filelist.size(); ++i)
 	{
-		xprogress.setLabelText(QObject::tr("Extracting files, please wait...\nArchive: %1\nSource: %2\nDestination: %3\nExtracted: %4 of %5 files").arg(archivefile).arg(filelist.at(i)).arg(QString("%1%2").arg(dirxfilesto).arg(filelist.at(i))).arg(i).arg(filelist.size()));
+		pdesc3->setText(QObject::tr("<b>Source:</b> %1").arg(filelist.at(i)));
+		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
+		pdesc1->setText(QObject::tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
+		tprogress->setValue(i);
 		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
 		{
 			extractedfiles.append(filelist.at(i));
 		}
-		xprogress.setValue(i);
 	}
-	xprogress.close();
 	return extractedfiles;
 }
 
@@ -510,22 +518,19 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	QHttp dlhttp;
 	QFtp dlftp;
 	QEventLoop dlewait;
-//	dlprogress.setWindowTitle(QObject::tr("Downloading..."));
-//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: 0 bytes").arg(fileurl).arg(targetfile));
+	pdesc5->setText("");
 	pdesc4->setText(QObject::tr("Downloading files, plese wait..."));
-	pdesc3->setText(QObject::tr("<b>Source:</b> %1").arg(fileurl));
+	pdesc3->setText(QObject::tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
 	pdesc2->setText(QObject::tr("<b>Destination:</b> %1").arg(targetfile));
 	pdesc1->setText(QObject::tr("<b>Downloaded:</b> 0 bytes"));
 	if (isftp)
 	{
-//		connect(&dlftp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
-		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(close()));
+		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
 		connect(&dlftp, SIGNAL(dataTransferProgress(qint64, qint64)), this, SLOT(dlprogressupdate64(qint64, qint64)));
 	}
 	else
 	{
-//		connect(&dlhttp, SIGNAL(done(bool)), &dlprogress, SLOT(close()));
-		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(close()));
+		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
 		connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
 	}
 	QFile dloutfile;
@@ -554,7 +559,6 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		dlhttp.get(dlurl.path(), &dloutfile);
 	}
 	dlewait.exec();
-//	dlprogress.exec();
 	if (!isftp)
 	{
 		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
@@ -576,25 +580,24 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	{
 		QFile::rename(QString("%1ubndlout.tmp").arg(ubntmpf), targetfile);
 	}
+	pdesc4->setText("");
+	pdesc3->setText("");
+	pdesc2->setText("");
+	pdesc1->setText("");
+	tprogress->setValue(0);
 }
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
-//	dlprogress.setValue(dlbytes);
-//	dlprogress.setMaximum(maxbytes);
 	tprogress->setValue(dlbytes);
 	tprogress->setMaximum(maxbytes);
-//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
 void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
-//	dlprogress.setValue(dlbytes);
-//	dlprogress.setMaximum(maxbytes);
 	tprogress->setValue(dlbytes);
 	tprogress->setMaximum(maxbytes);
-//	dlprogress.setLabelText(QObject::tr("Downloading files, please wait...\nSource: %1\nDestination: %2\nDownloaded: %3 of %4 bytes").arg(sourcefile).arg(destinfile).arg(dlbytes).arg(maxbytes));
 	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
@@ -960,6 +963,7 @@ void unetbootin::runinst()
 	firstlayer->hide();
 	secondlayer->show();
 	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
+	tprogress->setValue(0);
 	installType = typeselect->currentText();
 	targetDrive = driveselect->currentText();
 	QString ginstallDir;
@@ -1073,6 +1077,20 @@ void unetbootin::runinst()
 	   		isarch64 = false;
 	  	}
 		#include "distrolst.cpp"
+		if (!sdesc1->text().contains("(Done)"))
+		{
+			sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		}
+		if (sdesc2->text().contains("(Current)"))
+		{
+			sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		}
+		else
+		{
+			sdesc2->setText(QString("%1 (Done)").arg(sdesc2->text()));
+		}
+		sdesc3->setText(QString("<b>%1 (Current)</b>").arg(sdesc3->text()));
+		tprogress->setValue(0);
 		if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 		{
 			QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
