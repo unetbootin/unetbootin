@@ -629,6 +629,67 @@ p, li { white-space: pre-wrap; }
      <string>1. Downloading Files</string>
     </property>
    </widget>
+   <widget class="QWidget" native="1" name="rebootwidget" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>150</y>
+      <width>521</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="fexitbutton" >
+     <property name="geometry" >
+      <rect>
+       <x>410</x>
+       <y>170</y>
+       <width>100</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="frebootbutton" >
+     <property name="geometry" >
+      <rect>
+       <x>300</x>
+       <y>170</y>
+       <width>100</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Reboot Now</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="rebootmsgtext" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>501</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="styleSheet" >
+      <string>background: transparent;</string>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth" >
+      <number>0</number>
+     </property>
+     <property name="openExternalLinks" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources>

@@ -42,7 +42,6 @@ public:
 	QString postinstmsg;
 	QString sourcefile, destinfile;
 	QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
-//	QProgressDialog dlprogress;
 	QString sevzcommand;
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
@@ -84,6 +83,7 @@ public:
 	void instDetType();
 	void runinsthdd();
 	void runinstusb();
+	void fininstall();
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
@@ -96,6 +96,8 @@ private slots:
 	void on_CfgFileSelector_clicked();
 	void on_cancelbutton_clicked();
 	void on_okbutton_clicked();
+	void on_frebootbutton_clicked();
+	void on_fexitbutton_clicked();
 
 public slots:
 	void dlprogressupdate(int dlbytes, int maxbytes);

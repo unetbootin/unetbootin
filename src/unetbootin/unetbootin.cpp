@@ -304,6 +304,16 @@ void unetbootin::on_okbutton_clicked()
 	}
 }
 
+void unetbootin::on_fexitbutton_clicked()
+{
+	close();
+}
+
+void unetbootin::on_frebootbutton_clicked()
+{
+	sysreboot();
+}
+
 QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile)
 {
 	#ifdef Q_OS_WIN32
@@ -481,6 +491,12 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 			extractedfiles.append(filelist.at(i));
 		}
 	}
+	pdesc5->setText("");
+	pdesc4->setText("");
+	pdesc3->setText("");
+	pdesc2->setText("");
+	pdesc1->setText("");
+	tprogress->setValue(0);
 	return extractedfiles;
 }
 
@@ -962,6 +978,7 @@ void unetbootin::runinst()
 {
 	firstlayer->hide();
 	secondlayer->show();
+	rebootwidget->hide();
 	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
 	tprogress->setValue(0);
 	installType = typeselect->currentText();
@@ -1045,16 +1062,14 @@ void unetbootin::runinst()
 				QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 			}
    		}
-		instDetType();
 	}
-	if (radioManual->isChecked())
+	else if (radioManual->isChecked())
 	{
 		QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
 		QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
 		kernelOpts = OptionEnter->text();
-		instDetType();
 	}
-	if (radioDistro->isChecked())
+	else if (radioDistro->isChecked())
 	{
 		nameDistro = distroselect->currentText();
 		nameVersion = dverselect->currentText();
@@ -1077,20 +1092,6 @@ void unetbootin::runinst()
 	   		isarch64 = false;
 	  	}
 		#include "distrolst.cpp"
-		if (!sdesc1->text().contains("(Done)"))
-		{
-			sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-		}
-		if (sdesc2->text().contains("(Current)"))
-		{
-			sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-		}
-		else
-		{
-			sdesc2->setText(QString("%1 (Done)").arg(sdesc2->text()));
-		}
-		sdesc3->setText(QString("<b>%1 (Current)</b>").arg(sdesc3->text()));
-		tprogress->setValue(0);
 		if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 		{
 			QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
@@ -1099,8 +1100,22 @@ void unetbootin::runinst()
 		{
 			QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 		}
-		instDetType();
 	}
+	if (!sdesc1->text().contains("(Done)"))
+	{
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	}
+	if (sdesc2->text().contains("(Current)"))
+	{
+		sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	}
+	else
+	{
+		sdesc2->setText(QString("%1 (Done)").arg(sdesc2->text()));
+	}
+	sdesc3->setText(QString("<b>%1 (Current)</b>").arg(sdesc3->text()));
+	tprogress->setValue(0);
+	instDetType();
 }
 
 void unetbootin::instDetType()
@@ -1235,22 +1250,7 @@ void unetbootin::runinsthdd()
 	QSettings install(QSettings::SystemScope, "UNetbootin");
 	install.setValue("Location", "/");
 	#endif
-	QMessageBox rebootmsgb;
-	rebootmsgb.setIcon(QMessageBox::Information);
-   	rebootmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
-	rebootmsgb.setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
-		rebootmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-		switch (rebootmsgb.exec())
-		{
-			case QMessageBox::Ok:
-			{
-				unetbootin::sysreboot();
-		}
-		case QMessageBox::Cancel:
-			break;
- 		default:
-			break;
-   		}
+	fininstall();
   	}
 
 void unetbootin::runinstusb()
@@ -1291,20 +1291,26 @@ void unetbootin::runinstusb()
 	"\tappend initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
-	QMessageBox usbfinstmsgb;
-	usbfinstmsgb.setIcon(QMessageBox::Information);
-   	usbfinstmsgb.setWindowTitle(QObject::tr("Reboot Now?"));
-	usbfinstmsgb.setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
-	usbfinstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-	switch (usbfinstmsgb.exec())
+	fininstall();
+}
+
+void unetbootin::fininstall()
+{
+	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
+	tprogress->hide();
+	pdesc5->hide();
+	pdesc4->hide();
+	pdesc3->hide();
+	pdesc2->hide();
+	pdesc1->hide();
+	rebootwidget->show();
+	if (installType == "Hard Disk")
 	{
-		case QMessageBox::Ok:
-		{
-			unetbootin::sysreboot();
-		}
-		case QMessageBox::Cancel:
-			break;
- 		default:
-			break;
-   	}
+		rebootmsgtext->setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
+	}
+	if (installType == "USB Drive")
+	{
+		rebootmsgtext->setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
+	}
 }
