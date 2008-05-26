@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon May 26 14:11:57 2008
+** Created: Mon May 26 15:18:14 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -80,12 +80,10 @@ public:
     unetbootinui->resize(524, 360);
     unetbootinui->setMinimumSize(QSize(524, 360));
     unetbootinui->setMaximumSize(QSize(524, 360));
-    unetbootinui->setAutoFillBackground(true);
     firstlayer = new QWidget(unetbootinui);
     firstlayer->setObjectName(QString::fromUtf8("firstlayer"));
     firstlayer->setEnabled(false);
     firstlayer->setGeometry(QRect(0, 0, 524, 360));
-    firstlayer->setAutoFillBackground(true);
     FloppyFileSelector = new QPushButton(firstlayer);
     FloppyFileSelector->setObjectName(QString::fromUtf8("FloppyFileSelector"));
     FloppyFileSelector->setGeometry(QRect(488, 180, 25, 25));
@@ -169,7 +167,6 @@ public:
     secondlayer->setObjectName(QString::fromUtf8("secondlayer"));
     secondlayer->setEnabled(false);
     secondlayer->setGeometry(QRect(0, 0, 524, 360));
-    secondlayer->setAutoFillBackground(true);
     tprogress = new QProgressBar(secondlayer);
     tprogress->setObjectName(QString::fromUtf8("tprogress"));
     tprogress->setGeometry(QRect(10, 320, 501, 23));
@@ -213,7 +210,6 @@ public:
     thirdlayer->setObjectName(QString::fromUtf8("thirdlayer"));
     thirdlayer->setEnabled(false);
     thirdlayer->setGeometry(QRect(0, 0, 524, 360));
-    thirdlayer->setAutoFillBackground(true);
     fexitbutton = new QPushButton(thirdlayer);
     fexitbutton->setObjectName(QString::fromUtf8("fexitbutton"));
     fexitbutton->setGeometry(QRect(420, 320, 100, 29));

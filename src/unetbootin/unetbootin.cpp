@@ -694,7 +694,15 @@ QString unetbootin::getuuid(QString voldrive)
 	voldrive.append("\\");
 	DWORD volserialnum;
 	GetVolumeInformation(LPWSTR(voldrive.utf16()), NULL, NULL, &volserialnum, NULL, NULL, NULL, NULL);
-	return QString::number(volserialnum, 16);
+	QString tvolsernum = QString::number(volserialnum, 16).toUpper();
+	if (tvolsernum.size() == 8)
+	{
+		return QString("%1-%2").arg(tvolsernum.left(4), tvolsernum.right(4));
+	}
+	else
+	{
+		return tvolsernum;
+	}
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess volidp;

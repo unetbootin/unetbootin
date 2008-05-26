@@ -24,9 +24,6 @@
   <property name="windowTitle" >
    <string>UNetbootin</string>
   </property>
-  <property name="autoFillBackground" >
-   <bool>true</bool>
-  </property>
   <widget class="QWidget" native="1" name="firstlayer" >
    <property name="enabled" >
     <bool>false</bool>
@@ -38,9 +35,6 @@
      <width>524</width>
      <height>360</height>
     </rect>
-   </property>
-   <property name="autoFillBackground" >
-    <bool>true</bool>
    </property>
    <widget class="QPushButton" name="FloppyFileSelector" >
     <property name="geometry" >
@@ -465,9 +459,6 @@ p, li { white-space: pre-wrap; }
      <height>360</height>
     </rect>
    </property>
-   <property name="autoFillBackground" >
-    <bool>true</bool>
-   </property>
    <widget class="QProgressBar" name="tprogress" >
     <property name="geometry" >
      <rect>
@@ -638,9 +629,6 @@ p, li { white-space: pre-wrap; }
      <width>524</width>
      <height>360</height>
     </rect>
-   </property>
-   <property name="autoFillBackground" >
-    <bool>true</bool>
    </property>
    <widget class="QPushButton" name="fexitbutton" >
     <property name="geometry" >
