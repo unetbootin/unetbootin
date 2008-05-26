@@ -20,6 +20,15 @@
 #define UNETBOOTINB "UNetbootin"
 #endif
 
+class callexternappT : public QThread
+{
+public:
+	QString execFile;
+	QString execParm;
+	QString retnValu;
+	void run();
+};
+
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
@@ -62,7 +71,7 @@ public:
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
 	void sysreboot();
-	void callexternapp(QString execFile, QString execParm);
+	QString callexternapp(QString xexecFile, QString xexecParm);
 	QString getuuid(QString voldrive);
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);

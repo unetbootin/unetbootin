@@ -1,5 +1,37 @@
 #include "unetbootin.h"
 
+void callexternappT::run()
+{
+	#ifdef Q_OS_WIN32
+	SHELLEXECUTEINFO ShExecInfo = {0};
+	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+	ShExecInfo.hwnd = NULL;
+	if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
+	{
+		ShExecInfo.lpVerb = NULL;
+	}
+	else
+	{
+		ShExecInfo.lpVerb = L"runas";
+	}
+	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
+	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
+	ShExecInfo.lpDirectory = NULL;
+	ShExecInfo.nShow = SW_HIDE;
+	ShExecInfo.hInstApp = NULL;
+	ShellExecuteEx(&ShExecInfo);
+	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
+	retnValu = "";
+	#endif
+	#ifdef Q_OS_UNIX
+	QProcess lnexternapp;
+	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
+	lnexternapp.waitForFinished(-1);
+	retnValu = QString(lnexternapp.readAll());
+	#endif
+}
+
 unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
@@ -658,34 +690,16 @@ void unetbootin::sysreboot()
 	#endif
 }
 
-void unetbootin::callexternapp(QString execFile, QString execParm)
+QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 {
-	#ifdef Q_OS_WIN32
-	SHELLEXECUTEINFO ShExecInfo = {0};
-	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-	ShExecInfo.hwnd = NULL;
-	if (QSysInfo::WindowsVersion == QSysInfo::WV_NT || QSysInfo::WindowsVersion == QSysInfo::WV_2000 || QSysInfo::WindowsVersion == QSysInfo::WV_XP || QSysInfo::WindowsVersion == QSysInfo::WV_2003 )
-	{
-		ShExecInfo.lpVerb = NULL;
-	}
-	else
-	{
-		ShExecInfo.lpVerb = L"runas";
-	}
-	ShExecInfo.lpFile = LPWSTR(execFile.utf16());
-	ShExecInfo.lpParameters = LPWSTR(execParm.utf16());
-	ShExecInfo.lpDirectory = NULL;
-	ShExecInfo.nShow = SW_HIDE;
-	ShExecInfo.hInstApp = NULL;
-	ShellExecuteEx(&ShExecInfo);
-	WaitForSingleObject(ShExecInfo.hProcess,INFINITE);
-	#endif
-	#ifdef Q_OS_UNIX
-	QProcess lnexternapp;
-	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
-	lnexternapp.waitForFinished(-1);
-	#endif
+	QEventLoop cxaw;
+	callexternappT cxat;
+	connect(&cxat, SIGNAL(finished()), &cxaw, SLOT(quit()));
+	cxat.execFile = xexecFile;
+	cxat.execParm = xexecParm;
+	cxat.start();
+	cxaw.exec();
+	return cxat.retnValu;
 }
 
 QString unetbootin::getuuid(QString voldrive)
