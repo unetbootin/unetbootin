@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Mon May 26 15:56:19 2008
+** Created: Mon May 26 17:47:10 2008
 **      by: Qt User Interface Compiler version 4.3.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -225,19 +225,19 @@ public:
     rebootmsgtext->setOpenExternalLinks(true);
     fsdesc1 = new QLabel(thirdlayer);
     fsdesc1->setObjectName(QString::fromUtf8("fsdesc1"));
-    fsdesc1->setGeometry(QRect(20, 20, 501, 20));
+    fsdesc1->setGeometry(QRect(10, 10, 501, 20));
     fsdesc2 = new QLabel(thirdlayer);
     fsdesc2->setObjectName(QString::fromUtf8("fsdesc2"));
-    fsdesc2->setGeometry(QRect(20, 50, 501, 20));
+    fsdesc2->setGeometry(QRect(10, 40, 501, 20));
     fsdesc3 = new QLabel(thirdlayer);
     fsdesc3->setObjectName(QString::fromUtf8("fsdesc3"));
-    fsdesc3->setGeometry(QRect(20, 80, 501, 20));
+    fsdesc3->setGeometry(QRect(10, 70, 501, 20));
     fsdesc5 = new QLabel(thirdlayer);
     fsdesc5->setObjectName(QString::fromUtf8("fsdesc5"));
-    fsdesc5->setGeometry(QRect(20, 140, 501, 20));
+    fsdesc5->setGeometry(QRect(10, 130, 501, 20));
     fsdesc4 = new QLabel(thirdlayer);
     fsdesc4->setObjectName(QString::fromUtf8("fsdesc4"));
-    fsdesc4->setGeometry(QRect(20, 110, 501, 20));
+    fsdesc4->setGeometry(QRect(10, 100, 501, 20));
 
     retranslateUi(unetbootinui);
 
