@@ -346,7 +346,7 @@ void unetbootin::on_frebootbutton_clicked()
 	sysreboot();
 }
 
-QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile)
+QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts(QString archivefile)
 {
 	#ifdef Q_OS_WIN32
 	if (sevzcommand == "")
@@ -365,6 +365,7 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	QString tmplsL;
 	QStringList tmplsSLF;
 	QStringList tmplsSLD;
+	QStringList tmplsSLFS;
 	while (!tmplsS.atEnd())
 	{
 		tmplsL = tmplsS.readLine();
@@ -380,6 +381,19 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 			else
 			{
 				tmplsSLF.append(tmplsL.remove("Path = "));
+				QString tmplsFS = QString(tmplsS.readLine()).remove("Size = ").trimmed();
+				if (tmplsFS.size() <= 4)
+				{
+					tmplsSLFS.append(QString("%1 B").arg(tmplsFS));
+				}
+				else if (tmplsFS.size() <= 7)
+				{
+					tmplsSLFS.append(QString("%1 KB").arg(tmplsFS.toInt() / 1024));
+				}
+				else
+				{
+					tmplsSLFS.append(QString("%1 MB").arg(tmplsFS.toInt() / 1048576));
+				}
 			}
 		}
 	}
@@ -387,7 +401,8 @@ QPair<QStringList, QStringList> unetbootin::listarchiveconts(QString archivefile
 	tmplsF.close();
 	QFile::remove(QString("%1ubntmpls.txt").arg(ubntmpf));
 	#endif
-	return qMakePair(tmplsSLF, tmplsSLD);
+	QPair<QStringList, QStringList> qpFS = qMakePair(tmplsSLF, tmplsSLFS);
+	return qMakePair(qpFS, tmplsSLD);
 }
 
 bool unetbootin::extractfile(QString filepath, QString destinfile, QString archivefile)
@@ -459,7 +474,8 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
 	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
 	tprogress->setValue(0);
-	QPair<QStringList, QStringList> listfiledirpair = listarchiveconts(isofile);
+	QPair<QPair<QStringList, QStringList>, QStringList> listfilesizedirpair = listarchiveconts(isofile);
+	QPair<QStringList, QStringList> listfiledirpair = qMakePair(listfilesizedirpair.first.first, listfilesizedirpair.second);
 	kernelOpts = extractcfg(isofile, listfiledirpair.first);
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfiledirpair.first);
 	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfiledirpair.first);
@@ -472,7 +488,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		ubnpathlS << createdpaths.at(i) << endl;
 	}
 	ubnpathlF.close();
-	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfiledirpair.first);
+	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first);
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
 	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnfilelS(&ubnfilelF);
@@ -497,8 +513,9 @@ QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
 	return createdpaths;
 }
 
-QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QStringList filelist)
+QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QStringList> filesizelist)
 {
+	QStringList filelist = filesizelist.first;
 	QStringList extractedfiles;
 	QProgressDialog xprogress;
 	tprogress->setMaximum(filelist.size());
@@ -512,7 +529,7 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	for (int i = 0; i < filelist.size(); ++i)
 	{
 		pdesc3->setText(QObject::tr("<b>Source:</b> %1").arg(filelist.at(i)));
-		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
+		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2 (%3)").arg(dirxfilesto).arg(filelist.at(i)).arg(filesizelist.second.at(i)));
 		pdesc1->setText(QObject::tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
 		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))

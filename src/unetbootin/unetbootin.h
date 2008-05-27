@@ -59,14 +59,14 @@ public:
 	QString volidcommand;
 	QString syslinuxcommand;
 	#endif
-	QPair<QStringList, QStringList> listarchiveconts(QString archivefile);
+	QPair<QPair<QStringList, QStringList>, QStringList> listarchiveconts(QString archivefile);
 	bool extractfile(QString filepath, QString destinfile, QString archivefile);
 	bool extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);
 	bool extractinitrd(QString archivefile, QString initoutputfile, QStringList archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
-	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QStringList filelist);
+	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QStringList> filesizelist);
 	QString getcfgkernargs(QString cfgfile);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
