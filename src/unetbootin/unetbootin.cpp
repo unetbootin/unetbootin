@@ -714,14 +714,14 @@ QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 
 QString unetbootin::getdevluid(QString voldrive)
 {
-	QString labelS = getlabel(voldrive);
-	if (labelS == "None")
+	QString uuidS = getuuid(voldrive);
+	if (uuidS == "None")
 	{
-		return QString("UUID=%1").arg(getuuid(voldrive));
+		return QString("LABEL=%1").arg(getlabel(voldrive));
 	}
 	else
 	{
-		return QString("LABEL=%1").arg(labelS);
+		return QString("UUID=%1").arg(uuidS);
 	}
 }
 
