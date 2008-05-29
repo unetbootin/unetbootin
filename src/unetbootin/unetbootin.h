@@ -48,6 +48,8 @@ public:
 	QString installType;
 	QString targetDev;
 	QString rawtargetDev;
+	QString devluid;
+	QString devlabel;
 	QString devuuid;
 	QString postinstmsg;
 	QString sourcefile, destinfile;
@@ -72,6 +74,8 @@ public:
 	QString downloadpagecontents(QString pageurl);
 	void sysreboot();
 	QString callexternapp(QString xexecFile, QString xexecParm);
+	QString getdevluid(QString voldrive);
+	QString getlabel(QString voldrive);
 	QString getuuid(QString voldrive);
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);

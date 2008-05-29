@@ -3,3 +3,37 @@
 
 APP_MANIFEST RT_MANIFEST unetbootin.exe.manifest
 
+1 VERSIONINFO
+FILEVERSION 1,1,1,1
+PRODUCTVERSION 1,1,1,1
+{
+ BLOCK "StringFileInfo"
+  {
+  BLOCK "040904E4"
+   {
+VALUE "CompanyName", "Geza Kovacs"
+
+VALUE "FileVersion", " "
+
+VALUE "FileDescription", "UNetbootin - Universal Netboot Installer - http://unetbootin.sourceforge.net"
+
+VALUE "InternalName", "UNetbootin - Universal Netboot Installer"
+
+VALUE "LegalCopyright", "Copyright - Geza Kovacs - License - GNU GPL v2+"
+
+VALUE "LegalTrademarks", " "
+
+VALUE "OriginalFilename", "unetbootin.exe"
+
+VALUE "ProductName", "UNetbootin - Universal Netboot Installer"
+
+VALUE "ProductVersion", " "
+
+   }
+  }
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 1033, 1252
+ }
+}
+

@@ -269,7 +269,7 @@ void unetbootin::on_okbutton_clicked()
  		}
 	}
 	#ifdef Q_OS_UNIX
-	else if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText() != "" && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
+	else if (typeselect->currentIndex() == typeselect->findText("USB Drive") && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
 	{
 		QMessageBox merrordevnotmountedmsgbx;
 		merrordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
@@ -285,7 +285,7 @@ void unetbootin::on_okbutton_clicked()
 		}
 	}
 	#endif
-	if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
+	else if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
 	{
 		QMessageBox dnotenoughinputmsgb;
 		dnotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -528,8 +528,8 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	pdesc1->setText(QObject::tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
 	for (int i = 0; i < filelist.size(); ++i)
 	{
-		pdesc3->setText(QObject::tr("<b>Source:</b> %1").arg(filelist.at(i)));
-		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2 (%3)").arg(dirxfilesto).arg(filelist.at(i)).arg(filesizelist.second.at(i)));
+		pdesc3->setText(QObject::tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(filesizelist.second.at(i)));
+		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
 		pdesc1->setText(QObject::tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
 		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
@@ -560,7 +560,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile)
 			break;
 		}
 	}
-	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=UUID=%1").arg(devuuid));
+	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid));
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
@@ -712,12 +712,58 @@ QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 	return cxat.retnValu;
 }
 
+QString unetbootin::getdevluid(QString voldrive)
+{
+	QString labelS = getlabel(voldrive);
+	if (labelS == "None")
+	{
+		return QString("UUID=%1").arg(getuuid(voldrive));
+	}
+	else
+	{
+		return QString("LABEL=%1").arg(labelS);
+	}
+}
+
+QString unetbootin::getlabel(QString voldrive)
+{
+	#ifdef Q_OS_WIN32
+	voldrive.append("\\");
+	wchar_t vollabel[50];
+	GetVolumeInformation(LPWSTR(voldrive.utf16()), vollabel, 50, NULL, NULL, NULL, NULL, NULL);
+	QString vollabelS = QString::fromWCharArray(vollabel);
+	if (vollabelS.isEmpty())
+	{
+		return "None";
+	}
+	else
+	{
+		return vollabelS;
+	}
+	#endif
+	#ifdef Q_OS_UNIX
+	QString volidpS = QString(callexternapp(volidcommand, QString("-l %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	if (volidpS.isEmpty())
+	{
+		return "None";
+	}
+	else
+	{
+		return volidpS;
+	}
+	#endif
+}
+
 QString unetbootin::getuuid(QString voldrive)
 {
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
 	DWORD volserialnum;
 	GetVolumeInformation(LPWSTR(voldrive.utf16()), NULL, NULL, &volserialnum, NULL, NULL, NULL, NULL);
+	if (!volserialnum >= 1)
+	{
+		return "None";
+	}
 	QString tvolsernum = QString::number(volserialnum, 16).toUpper();
 	if (tvolsernum.size() == 8)
 	{
@@ -729,8 +775,15 @@ QString unetbootin::getuuid(QString voldrive)
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QString volidpS = callexternapp(volidcommand, QString("-u %1").arg(voldrive));
-	return QString(volidpS).remove("\r").remove("\n");
+	QString volidpS = QString(callexternapp(volidcommand, QString("-u %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	if (volidpS.isEmpty())
+	{
+		return "None";
+	}
+	else
+	{
+		return volidpS;
+	}
 	#endif
 }
 
@@ -1056,7 +1109,7 @@ void unetbootin::runinst()
 	}
 	rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
 	#endif
-	devuuid = getuuid(targetDev);
+	devluid = getdevluid(targetDev);
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
