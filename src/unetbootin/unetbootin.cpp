@@ -58,12 +58,12 @@ unetbootin::unetbootin(QWidget *parent)
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
 	distroselect->addItem("Arch Linux", (QStringList() << "2007.08-2" << 
-	tr("<b>Homepage:</b> <a href=\"http://wwww.archlinux.org/\">http://wwww.archlinux.org</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
 	"2007.08-2" << "2007.08-2_x64"));
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
-	tr("<b>Homepage:</b> <a href=\"http://wwww.centos.org/\">http://wwww.centos.org</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
@@ -587,7 +587,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	pdesc1->setText(QObject::tr("<b>Downloaded:</b> 0 bytes"));
 	if (isftp)
 	{
-		connect(&dlhttp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
+		connect(&dlftp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
 		connect(&dlftp, SIGNAL(dataTransferProgress(qint64, qint64)), this, SLOT(dlprogressupdate64(qint64, qint64)));
 	}
 	else
