@@ -65,10 +65,7 @@
      </rect>
     </property>
     <property name="toolTip" >
-     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Specify a floppy/hard disk image, or CD image (ISO) file to load&lt;/p>&lt;/body>&lt;/html></string>
+     <string>Specify a floppy/hard disk image, or CD image (ISO) file to load</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioFloppy" >
@@ -81,10 +78,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="toolTip" >
-     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Specify a disk image file to load&lt;/p>&lt;/body>&lt;/html></string>
+     <string>Specify a disk image file to load</string>
     </property>
     <property name="text" >
      <string>Disk Image</string>
@@ -292,7 +286,7 @@ p, li { white-space: pre-wrap; }
      <string>Select the target drive to install to</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labeldrive_2" >
+   <widget class="QLabel" name="labeltype" >
     <property name="geometry" >
      <rect>
       <x>10</x>
@@ -370,10 +364,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="toolTip" >
-     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select the distribution version&lt;/p>&lt;/body>&lt;/html></string>
+     <string>Select the distribution version</string>
     </property>
     <property name="currentIndex" >
      <number>-1</number>
@@ -408,10 +399,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="toolTip" >
-     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select the disk image type&lt;/p>&lt;/body>&lt;/html></string>
+     <string>Select the disk image type</string>
     </property>
     <item>
      <property name="text" >
@@ -437,10 +425,7 @@ p, li { white-space: pre-wrap; }
      <bool>false</bool>
     </property>
     <property name="toolTip" >
-     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select syslinux.cfg or isolinux.cfg file&lt;/p>&lt;/body>&lt;/html></string>
+     <string>Select syslinux.cfg or isolinux.cfg file</string>
     </property>
     <property name="text" >
      <string>...</string>

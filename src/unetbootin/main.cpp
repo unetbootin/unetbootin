@@ -179,8 +179,11 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv, true);
 	QTranslator translator;
-	translator.load(QDir::toNativeSeparators(QString("%1/unetbootin_%2").arg(app.applicationDirPath()).arg(QLocale::system().name())));
-	app.installTranslator(&translator);
+	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(QLocale::system().name())))
+	{
+		translator.load(QString(":/unetbootin_%1.qm").arg(QLocale::system().name()));
+		app.installTranslator(&translator);
+	}
 	#ifdef Q_OS_UNIX
 	QProcess whoamip;
 	whoamip.start("whoami");

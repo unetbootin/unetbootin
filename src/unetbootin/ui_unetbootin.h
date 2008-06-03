@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sat May 31 17:11:43 2008
+** Created: Tue Jun 3 13:15:57 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -45,7 +45,7 @@ public:
     QPushButton *cancelbutton;
     QLabel *labeldrive;
     QComboBox *driveselect;
-    QLabel *labeldrive_2;
+    QLabel *labeltype;
     QComboBox *typeselect;
     QLineEdit *OptionEnter;
     QLabel *labeloption;
@@ -138,9 +138,9 @@ public:
     driveselect = new QComboBox(firstlayer);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
     driveselect->setGeometry(QRect(190, 320, 111, 25));
-    labeldrive_2 = new QLabel(firstlayer);
-    labeldrive_2->setObjectName(QString::fromUtf8("labeldrive_2"));
-    labeldrive_2->setGeometry(QRect(10, 320, 32, 25));
+    labeltype = new QLabel(firstlayer);
+    labeltype->setObjectName(QString::fromUtf8("labeltype"));
+    labeltype->setGeometry(QRect(10, 320, 32, 25));
     typeselect = new QComboBox(firstlayer);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
     typeselect->setGeometry(QRect(50, 320, 91, 25));
@@ -261,18 +261,12 @@ public:
     FloppyFileSelector->setText(QApplication::translate("unetbootinui", "...", 0, QApplication::UnicodeUTF8));
 
 #ifndef QT_NO_TOOLTIP
-    FloppyPath->setToolTip(QApplication::translate("unetbootinui", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Specify a floppy/hard disk image, or CD image (ISO) file to load</p></body></html>", 0, QApplication::UnicodeUTF8));
+    FloppyPath->setToolTip(QApplication::translate("unetbootinui", "Specify a floppy/hard disk image, or CD image (ISO) file to load", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
 
 #ifndef QT_NO_TOOLTIP
-    radioFloppy->setToolTip(QApplication::translate("unetbootinui", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Specify a disk image file to load</p></body></html>", 0, QApplication::UnicodeUTF8));
+    radioFloppy->setToolTip(QApplication::translate("unetbootinui", "Specify a disk image file to load", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
     radioFloppy->setText(QApplication::translate("unetbootinui", "Disk Image", 0, QApplication::UnicodeUTF8));
@@ -342,10 +336,10 @@ public:
 
 
 #ifndef QT_NO_TOOLTIP
-    labeldrive_2->setToolTip(QApplication::translate("unetbootinui", "Select the installation target type", 0, QApplication::UnicodeUTF8));
+    labeltype->setToolTip(QApplication::translate("unetbootinui", "Select the installation target type", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
-    labeldrive_2->setText(QApplication::translate("unetbootinui", "Type:", 0, QApplication::UnicodeUTF8));
+    labeltype->setText(QApplication::translate("unetbootinui", "Type:", 0, QApplication::UnicodeUTF8));
     typeselect->insertItems(0, QStringList()
      << QApplication::translate("unetbootinui", "Hard Disk", 0, QApplication::UnicodeUTF8)
      << QApplication::translate("unetbootinui", "USB Drive", 0, QApplication::UnicodeUTF8)
@@ -368,10 +362,7 @@ public:
     labeloption->setText(QApplication::translate("unetbootinui", "Options:", 0, QApplication::UnicodeUTF8));
 
 #ifndef QT_NO_TOOLTIP
-    dverselect->setToolTip(QApplication::translate("unetbootinui", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the distribution version</p></body></html>", 0, QApplication::UnicodeUTF8));
+    dverselect->setToolTip(QApplication::translate("unetbootinui", "Select the distribution version", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
     intromessage->setStyleSheet(QApplication::translate("unetbootinui", "background: transparent;", 0, QApplication::UnicodeUTF8));
@@ -381,18 +372,12 @@ public:
     );
 
 #ifndef QT_NO_TOOLTIP
-    diskimagetypeselect->setToolTip(QApplication::translate("unetbootinui", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the disk image type</p></body></html>", 0, QApplication::UnicodeUTF8));
+    diskimagetypeselect->setToolTip(QApplication::translate("unetbootinui", "Select the disk image type", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
 
 #ifndef QT_NO_TOOLTIP
-    CfgFileSelector->setToolTip(QApplication::translate("unetbootinui", "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select syslinux.cfg or isolinux.cfg file</p></body></html>", 0, QApplication::UnicodeUTF8));
+    CfgFileSelector->setToolTip(QApplication::translate("unetbootinui", "Select syslinux.cfg or isolinux.cfg file", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
     CfgFileSelector->setText(QApplication::translate("unetbootinui", "...", 0, QApplication::UnicodeUTF8));

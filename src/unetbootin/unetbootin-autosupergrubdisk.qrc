@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/" >
-        <file>asgd-en.htm</file>
-        <file>asgd-es.htm</file>
+        <file>asgd_en.htm</file>
+        <file>asgd_es.htm</file>
         <file>asgd.img</file>
     </qresource>
 </RCC>

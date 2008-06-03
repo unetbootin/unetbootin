@@ -52,8 +52,18 @@ unetbootin::unetbootin(QWidget *parent)
 	firstlayer->setEnabled(true);
 	firstlayer->show();
 	#ifdef AUTOSUPERGRUBDISK
-	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
-	QFile asgdDescF(":/asgd-en.htm");
+	this->setWindowTitle(tr("Auto Super Grub Disk"));
+//	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
+	intromessage->resize(intromessage->width(), intromessage->height() + 100);
+	QFile asgdDescF;
+	if (QFile::exists(QString(":/asgd_%1.htm").arg(QLocale::system().name())))
+	{
+		asgdDescF.setFileName(QString(":/asgd_%1.htm").arg(QLocale::system().name()));
+	}
+	else
+	{
+		asgdDescF.setFileName(":/asgd_en.htm");
+	}
 	asgdDescF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream asgdDescS(&asgdDescF);
 	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 

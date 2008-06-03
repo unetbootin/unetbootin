@@ -2,7 +2,6 @@
 
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
-#qmake -spec win32-static "DEFINES += AUTOSUPERGRUBDISK" "RESOURCES += unetbootin-windows.qrc unetbootin-autosupergrubdisk.qrc" "RC_FILE += ubnembed.rc" "QMAKE_LFLAGS += -Wl,-subsystem,windows"
 ./qmake-windows "DEFINES += AUTOSUPERGRUBDISK" "RESOURCES += unetbootin-autosupergrubdisk.qrc"
 make
 mv release/unetbootin.exe release/unetbootin-autosupergrubdisk-$rvern.exe
