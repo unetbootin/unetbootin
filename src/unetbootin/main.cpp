@@ -179,9 +179,9 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv, true);
 	QTranslator translator;
-	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(QLocale::system().name())))
+	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}")))))
 	{
-		translator.load(QString(":/unetbootin_%1.qm").arg(QLocale::system().name()));
+		translator.load(QString(":/unetbootin_%1.qm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}"))));
 		app.installTranslator(&translator);
 	}
 	#ifdef Q_OS_UNIX

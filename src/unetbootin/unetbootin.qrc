@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/" >
         <file>memdisk</file>
+        <file>unetbootin_es.qm</file>
     </qresource>
 </RCC>

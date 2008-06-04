@@ -18,4 +18,7 @@ src/unetbootin/qrc_unetbootin-linux.cpp
 src/unetbootin/sevnz.dll
 src/unetbootin/sevnz.exe
 src/unetbootin/asgd.img
-
+src/unetbootin/Makefile
+src/unetbootin/Makefile.Release
+src/unetbootin/Makefile.Debug
+src/unetbootin/*.qm

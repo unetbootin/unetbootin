@@ -10,6 +10,8 @@ mv 7z.dll sevnz.dll
 fi
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
+lupdate unetbootin.pro
+lrelease unetbootin.pro
 ./qmake-windows "RESOURCES += unetbootin-sevnz.qrc"
 make
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe

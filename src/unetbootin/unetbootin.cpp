@@ -45,20 +45,23 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
-	thirdlayer->setEnabled(false);
-	thirdlayer->hide();
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
 	firstlayer->setEnabled(true);
 	firstlayer->show();
 	#ifdef AUTOSUPERGRUBDISK
 	this->setWindowTitle(tr("Auto Super Grub Disk"));
-//	diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
-	intromessage->resize(intromessage->width(), intromessage->height() + 100);
+	optionslayer->setEnabled(false);
+	optionslayer->hide();
+	radioFloppy->setEnabled(false);
+	radioFloppy->hide();
+	radioManual->setEnabled(false);
+	radioManual->hide();
+	intromessage->resize(intromessage->width(), intromessage->height() + 150);
 	QFile asgdDescF;
-	if (QFile::exists(QString(":/asgd_%1.htm").arg(QLocale::system().name())))
+	if (QFile::exists(QString(":/asgd_%1.htm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}")))))
 	{
-		asgdDescF.setFileName(QString(":/asgd_%1.htm").arg(QLocale::system().name()));
+		asgdDescF.setFileName(QString(":/asgd_%1.htm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}"))));
 	}
 	else
 	{
@@ -71,6 +74,8 @@ unetbootin::unetbootin(QWidget *parent)
 	"1.0"));
 	#endif
 	#ifndef AUTOSUPERGRUBDISK
+	optionslayer->setEnabled(true);
+	optionslayer->show();
 	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
 	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
@@ -1083,6 +1088,10 @@ void unetbootin::runinst()
 	firstlayer->hide();
 	secondlayer->setEnabled(true);
 	secondlayer->show();
+	rebootlayer->setEnabled(false);
+	rebootlayer->hide();
+	progresslayer->setEnabled(true);
+	progresslayer->show();
 	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
 	tprogress->setValue(0);
 	installType = typeselect->currentText();
@@ -1405,10 +1414,12 @@ void unetbootin::runinstusb()
 
 void unetbootin::fininstall()
 {
-	secondlayer->setEnabled(false);
-	secondlayer->hide();
-	thirdlayer->setEnabled(true);
-	thirdlayer->show();
+	progresslayer->setEnabled(false);
+	progresslayer->hide();
+	rebootlayer->setEnabled(true);
+	rebootlayer->show();
+	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
 	if (installType == "Hard Disk")
 	{
 		rebootmsgtext->setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
