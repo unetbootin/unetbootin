@@ -147,7 +147,7 @@ void ubnUninst()
 	QMessageBox finmsgb;
 	finmsgb.setIcon(QMessageBox::Information);
 	finmsgb.setWindowTitle(QObject::tr("Uninstallation Complete"));
-	finmsgb.setText(QObject::tr("UNetbootin has been uninstalled."));
+	finmsgb.setText(QObject::tr(UNETBOOTINB" has been uninstalled."));
  	finmsgb.setStandardButtons(QMessageBox::Ok);
  	switch (finmsgb.exec())
  	{
@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
 		rootmsgb.setIcon(QMessageBox::Warning);
 		rootmsgb.setWindowTitle(QObject::tr("Must run as root"));
 		rootmsgb.setTextFormat(Qt::RichText);
-		rootmsgb.setText(QObject::tr("UNetbootin must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()));
+		rootmsgb.setText(QObject::tr(UNETBOOTINB" must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()));
 		rootmsgb.setStandardButtons(QMessageBox::Ok);
 		switch (rootmsgb.exec())
 		{
@@ -227,8 +227,8 @@ int main(int argc, char *argv[])
 	{
 		QMessageBox uninstmsgb;
 		uninstmsgb.setIcon(QMessageBox::Information);
-		uninstmsgb.setWindowTitle(QObject::tr("UNetbootin Uninstaller"));
-		uninstmsgb.setText(QObject::tr("UNetbootin is currently installed. Remove the existing version?"));
+		uninstmsgb.setWindowTitle(QObject::tr(UNETBOOTINB" Uninstaller"));
+		uninstmsgb.setText(QObject::tr(UNETBOOTINB" is currently installed. Remove the existing version?"));
  		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
  		switch (uninstmsgb.exec())
  		{

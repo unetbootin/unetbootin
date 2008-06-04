@@ -25,7 +25,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifdef AUTOSUPERGRUBDISK
 #define UNETBOOTINB "Auto Super Grub Disk"
-#else
+#endif
+
+#ifndef UNETBOOTINB
+#define STDUNETBOOTIN
 #define UNETBOOTINB "UNetbootin"
 #endif
 

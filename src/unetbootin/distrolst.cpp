@@ -20,7 +20,7 @@ if (nameDistro == "Auto Super Grub Disk")
 
 #endif
 
-#ifndef AUTOSUPERGRUBDISK
+#ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")
 {

@@ -50,7 +50,7 @@ unetbootin::unetbootin(QWidget *parent)
 	firstlayer->setEnabled(true);
 	firstlayer->show();
 	#ifdef AUTOSUPERGRUBDISK
-	this->setWindowTitle(tr("Auto Super Grub Disk"));
+	this->setWindowTitle(UNETBOOTINB);
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
 	radioFloppy->setEnabled(false);
@@ -73,7 +73,7 @@ unetbootin::unetbootin(QWidget *parent)
 	asgdDescS.readAll() << 
 	"1.0"));
 	#endif
-	#ifndef AUTOSUPERGRUBDISK
+	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();
 	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
@@ -163,7 +163,13 @@ unetbootin::unetbootin(QWidget *parent)
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
+	#ifdef AUTOSUPERGRUBDISK
+	typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
+	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+	#endif
+	#ifdef STDUNETBOOTIN
 	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
+	#endif
 }
 
 void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
@@ -959,7 +965,7 @@ void unetbootin::configsysEdit()
 	QString configsysText = QString("[menu]\n"
 	"menucolor=15,0\n"
 	"menuitem=windows,Windows\n"
-	"menuitem=grub,UNetbootin\n"
+	"menuitem=grub,"UNETBOOTINB"\n"
 	"menudefault=windows,30\n"
 	"[grub]\n"
 	"device=ubnldr.exe\n"
@@ -1000,7 +1006,7 @@ void unetbootin::bootiniEdit()
 		}
 	}
 	QString bootiniCurText = bootiniCurTextL.join("\n");
-	QString bootiniText = QString("%1\n%2=\"UNetbootin\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
+	QString bootiniText = QString("%1\n%2=\""UNETBOOTINB"\"").arg(bootiniCurText).arg(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
 	bootnwOut << bootiniText << endl;
 	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive))))
 	{
@@ -1015,7 +1021,7 @@ void unetbootin::vistabcdEdit()
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
-	vbcdEditS1 << QString("bcdedit /create /d \"UNetbootin\" /application bootsector > %1tmpbcdid").arg(targetPath) << endl;
+	vbcdEditS1 << QString("bcdedit /create /d \""UNETBOOTINB"\" /application bootsector > %1tmpbcdid").arg(targetPath) << endl;
 	vbcdEditF1.close();
 	bool warch64;
 	callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
@@ -1322,7 +1328,7 @@ void unetbootin::runinsthdd()
 	"default 0\n"
 	"timeout 3\n"
 	#endif
-	"title UNetbootin\n"
+	"title "UNETBOOTINB"\n"
 	#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
 	#endif
@@ -1419,10 +1425,10 @@ void unetbootin::fininstall()
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
 	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
 	if (installType == "Hard Disk")
 	{
-		rebootmsgtext->setText(QObject::tr("After rebooting, select the UNetbootin menu entry to boot.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgtext->setText(QObject::tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 	}
 	if (installType == "USB Drive")
 	{
