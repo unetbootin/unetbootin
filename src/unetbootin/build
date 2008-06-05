@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mingwb="i586-mingw32msvc"
 if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
 then
 svloc=$(wget "http://7-zip.org/" -O - | grep --ignore-case "a href=\"http://downloads.sourceforge.net/sevenzip/" | grep -v ".msi" | grep -v "x64" | head --lines 1 | tr "<" "\n" | tr ">" "\n" | tr "\"" "\n" | grep "http://downloads.sourceforge.net/sevenzip/")
@@ -14,10 +15,12 @@ lupdate unetbootin.pro
 lrelease unetbootin.pro
 ./qmake-windows "RESOURCES += unetbootin-sevnz.qrc"
 make
+$mingwb-strip --strip-all release/unetbootin.exe
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 ./upx --lzma release/unetbootin-windows-$rvern.exe
 ./qmake-linux "RESOURCES += unetbootin-linux.qrc"
 make
+$mingwb-strip --strip-all unetbootin
 mv unetbootin release/unetbootin-linux-$rvern
 ./upx --lzma release/unetbootin-linux-$rvern
 printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT

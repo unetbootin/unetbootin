@@ -1,11 +1,13 @@
 #!/bin/sh
 
+mingwb="i586-mingw32msvc"
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
 lupdate unetbootin.pro
 lrelease unetbootin.pro
 ./qmake-windows "DEFINES += AUTOSUPERGRUBDISK" "RESOURCES += unetbootin-autosupergrubdisk.qrc"
 make
+$mingwb-strip --strip-all release/unetbootin.exe
 mv release/unetbootin.exe release/unetbootin-autosupergrubdisk-$rvern.exe
 ./upx --lzma release/unetbootin-autosupergrubdisk-$rvern.exe
 qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
