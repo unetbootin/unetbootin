@@ -346,11 +346,6 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="226"/>
-        <source>background-color: transparent;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="263"/>
         <source>Select disk image file</source>
         <translation type="unfinished"></translation>
@@ -453,11 +448,6 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="669"/>
         <source>Reboot Now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="682"/>
-        <source>background: transparent;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

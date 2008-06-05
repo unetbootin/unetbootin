@@ -223,7 +223,7 @@
      </rect>
     </property>
     <property name="styleSheet" >
-     <string>background-color: transparent;</string>
+     <string notr="true" >background-color: transparent;</string>
     </property>
     <property name="frameShape" >
      <enum>QFrame::NoFrame</enum>
@@ -679,7 +679,7 @@
       </rect>
      </property>
      <property name="styleSheet" >
-      <string>background: transparent;</string>
+      <string notr="true" >background-color: transparent;</string>
      </property>
      <property name="frameShape" >
       <enum>QFrame::NoFrame</enum>

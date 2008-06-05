@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Tue Jun 3 16:36:34 2008
+** Created: Wed Jun 4 20:28:34 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -120,6 +120,7 @@ public:
     intromessage = new QTextBrowser(firstlayer);
     intromessage->setObjectName(QString::fromUtf8("intromessage"));
     intromessage->setGeometry(QRect(9, 60, 503, 101));
+    intromessage->setStyleSheet(QString::fromUtf8("background-color: transparent;"));
     intromessage->setFrameShape(QFrame::NoFrame);
     intromessage->setFrameShadow(QFrame::Plain);
     intromessage->setOpenExternalLinks(true);
@@ -227,6 +228,7 @@ public:
     rebootmsgtext = new QTextBrowser(rebootlayer);
     rebootmsgtext->setObjectName(QString::fromUtf8("rebootmsgtext"));
     rebootmsgtext->setGeometry(QRect(20, 10, 501, 151));
+    rebootmsgtext->setStyleSheet(QString::fromUtf8("background-color: transparent;"));
     rebootmsgtext->setFrameShape(QFrame::NoFrame);
     rebootmsgtext->setFrameShadow(QFrame::Plain);
     rebootmsgtext->setLineWidth(0);
@@ -300,7 +302,6 @@ public:
     dverselect->setToolTip(QApplication::translate("unetbootinui", "Select the distribution version", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
-    intromessage->setStyleSheet(QApplication::translate("unetbootinui", "background-color: transparent;", 0, QApplication::UnicodeUTF8));
 
 #ifndef QT_NO_TOOLTIP
     FloppyFileSelector->setToolTip(QApplication::translate("unetbootinui", "Select disk image file", 0, QApplication::UnicodeUTF8));
@@ -384,7 +385,6 @@ public:
     sdesc1->setText(QApplication::translate("unetbootinui", "1. Downloading Files", 0, QApplication::UnicodeUTF8));
     fexitbutton->setText(QApplication::translate("unetbootinui", "Exit", 0, QApplication::UnicodeUTF8));
     frebootbutton->setText(QApplication::translate("unetbootinui", "Reboot Now", 0, QApplication::UnicodeUTF8));
-    rebootmsgtext->setStyleSheet(QApplication::translate("unetbootinui", "background: transparent;", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(unetbootinui);
     } // retranslateUi
 
