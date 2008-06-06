@@ -1,6 +1,16 @@
 <RCC>
     <qresource prefix="/" >
         <file>memdisk</file>
+        <file>unetbootin_be.qm</file>
+        <file>unetbootin_de.qm</file>
         <file>unetbootin_es.qm</file>
+        <file>unetbootin_fr.qm</file>
+        <file>unetbootin_hu.qm</file>
+        <file>unetbootin_it.qm</file>
+        <file>unetbootin_ja.qm</file>
+        <file>unetbootin_ru.qm</file>
+        <file>unetbootin_uk.qm</file>
+        <file>unetbootin_vn.qm</file>
+        <file>unetbootin_zh.qm</file>
     </qresource>
 </RCC>

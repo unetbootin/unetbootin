@@ -45,12 +45,16 @@ unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+}
+
+void unetbootin::ubninitialize()
+{
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
 	firstlayer->setEnabled(true);
 	firstlayer->show();
-	#ifdef AUTOSUPERGRUBDISK
 	this->setWindowTitle(UNETBOOTINB);
+	#ifdef AUTOSUPERGRUBDISK
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
 	radioFloppy->setEnabled(false);
@@ -59,9 +63,9 @@ unetbootin::unetbootin(QWidget *parent)
 	radioManual->hide();
 	intromessage->resize(intromessage->width(), intromessage->height() + 150);
 	QFile asgdDescF;
-	if (QFile::exists(QString(":/asgd_%1.htm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}")))))
+	if (QFile::exists(QString(":/asgd_%1.htm").arg(appNlang)))
 	{
-		asgdDescF.setFileName(QString(":/asgd_%1.htm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}"))));
+		asgdDescF.setFileName(QString(":/asgd_%1.htm").arg(appNlang));
 	}
 	else
 	{

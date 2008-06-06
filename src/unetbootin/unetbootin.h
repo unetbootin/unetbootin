@@ -47,6 +47,7 @@ class unetbootin : public QWidget, private Ui::unetbootinui
 
 public:
 	unetbootin(QWidget *parent = 0);
+	QString appNlang;
 	QString appDir;
 	QString appLoc;
 	QString ubntmpf;
@@ -73,6 +74,7 @@ public:
 	QString volidcommand;
 	QString syslinuxcommand;
 	#endif
+	void ubninitialize();	
 	QPair<QPair<QStringList, QStringList>, QStringList> listarchiveconts(QString archivefile);
 	bool extractfile(QString filepath, QString destinfile, QString archivefile);
 	bool extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);

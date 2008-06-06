@@ -179,10 +179,24 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv, true);
 	QTranslator translator;
-	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}")))))
+	QString tnapplang;
+	QStringList ubnappargs = app.arguments().filter(QRegExp("lang=\\w{2,}"));
+	if (!ubnappargs.isEmpty())
 	{
-		translator.load(QString(":/unetbootin_%1.qm").arg(QLocale::system().name().remove(QRegExp("_\\S{0,}"))));
+		tnapplang = ubnappargs.at(0).simplified().remove("lang=").left(2);
+	}
+	else
+	{
+		tnapplang = QLocale::system().name().remove(QRegExp("_\\S{0,}")).simplified();
+	}
+	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(tnapplang)))
+	{
+		translator.load(QString(":/unetbootin_%1.qm").arg(tnapplang));
 		app.installTranslator(&translator);
+	}
+	else
+	{
+		tnapplang = "en";
 	}
 	#ifdef Q_OS_UNIX
 	QProcess whoamip;
@@ -244,8 +258,10 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	unetbootin unetbootin;
+	unetbootin.appNlang = tnapplang;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
+	unetbootin.ubninitialize();
 	unetbootin.show();
 	return app.exec();
 }

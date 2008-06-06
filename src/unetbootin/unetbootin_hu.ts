@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="es">
+<!DOCTYPE TS><TS version="1.1">
 <context>
     <name>QObject</name>
-    <message>
-        <location filename="main.cpp" line="149"/>
-        <source>Uninstallation Complete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1435"/>
-        <source>After rebooting, select the </source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="distrolst.cpp" line="51"/>
         <source>
@@ -40,6 +30,11 @@
         <location filename="distrolst.cpp" line="235"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="149"/>
+        <source>Uninstallation Complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -171,6 +166,11 @@
         <location filename="unetbootin.cpp" line="840"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1435"/>
+        <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
