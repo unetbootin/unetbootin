@@ -439,11 +439,47 @@ QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts
 	return qMakePair(qpFS, tmplsSLD);
 }
 
-bool unetbootin::extractfile(QString filepath, QString destinfile, QString archivefile)
+bool unetbootin::overwritefileprompt(QString ovwfileloc)
 {
-	QString destindir = QFileInfo(destinfile).dir().absolutePath();
-	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfile).fileName());
+	if (overwriteall)
+	{
+		QFile::remove(ovwfileloc);
+		return true;
+	}
+	QMessageBox overwritefilemsgbx;
+	overwritefilemsgbx.setIcon(QMessageBox::Warning);
+	overwritefilemsgbx.setWindowTitle(QString(QObject::tr("%1 exists, overwrite?")).arg(ovwfileloc));
+	overwritefilemsgbx.setText(QString(QObject::tr("The file %1 already exists. Press 'Yes to All' to overwrite it and not be prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to retain your existing version. If in doubt, press 'Yes to All'.")).arg(ovwfileloc));
+	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No);
+	switch (overwritefilemsgbx.exec())
+	{
+		case QMessageBox::Yes:
+		{
+			QFile::remove(ovwfileloc);
+			return true;
+		}
+		case QMessageBox::YesToAll:
+		{
+			QFile::remove(ovwfileloc);
+			overwriteall = true;
+			return true;
+		}
+		case QMessageBox::No:
+			return false;
+		default:
+			return false;
+	}
+}
+
+bool unetbootin::extractfile(QString filepath, QString destinfileL, QString archivefile)
+{
+	QString destindir = QFileInfo(destinfileL).dir().absolutePath();
+	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfileL).fileName());
 	QString filepathfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(filepath).fileName());
+	if (QFile::exists(filepathfilename))
+		overwritefileprompt(filepathfilename);
+	if (QFile::exists(destinfilename))	
+		overwritefileprompt(destinfilename);
 	#ifdef Q_OS_WIN32
 	if (sevzcommand == "")
 	{
@@ -636,7 +672,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
 	if (QFile::exists(targetfile))
 	{
-		QFile::remove(targetfile);
+		if (!overwritefileprompt(targetfile))
+			return;
 	}
 	sourcefile = fileurl;
 	destinfile = targetfile;
@@ -1118,6 +1155,11 @@ void unetbootin::vistabcdEdit()
 
 void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 {
+	if (QFile::exists(dstfName))
+	{
+		if (!overwritefileprompt(dstfName))
+			return;
+	}
 	QFile dstF(dstfName);
 	dstF.open(QIODevice::WriteOnly);
 	QFile srcF(QString(":/%1").arg(srcfName));
@@ -1195,11 +1237,11 @@ void unetbootin::runinst()
 	}
 	if (QFile::exists(QString("%1ubnkern").arg(targetPath)))
 	{
-		QFile::remove(QString("%1ubnkern").arg(targetPath));
+		overwritefileprompt(QString("%1ubnkern").arg(targetPath));
 	}
 	if (QFile::exists(QString("%1ubninit").arg(targetPath)))
 	{
-		QFile::remove(QString("%1ubninit").arg(targetPath));
+		overwritefileprompt(QString("%1ubninit").arg(targetPath));
 	}
 	if (radioFloppy->isChecked())
 	{
@@ -1304,17 +1346,17 @@ void unetbootin::runinsthdd()
 	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
+		overwritefileprompt(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
 	}
 	instIndvfl("ubnldr", QString("%1ubnldr").arg(targetDrive));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
+		overwritefileprompt(QDir::toNativeSeparators(QString("%1ubnldr.mbr").arg(targetDrive)));
 	}
 	instIndvfl("ubnldr.mbr", QString("%1ubnldr.mbr").arg(targetDrive));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
+		overwritefileprompt(QDir::toNativeSeparators(QString("%1ubnldr.exe").arg(targetDrive)));
 	}
 	instIndvfl("ubnldr.exe", QString("%1ubnldr.exe").arg(targetDrive));
 	#endif
@@ -1443,7 +1485,7 @@ void unetbootin::runinstusb()
 	#endif
 	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
 	{
-		QFile::remove(QString("%1syslinux.cfg").arg(targetPath));
+		overwritefileprompt(QString("%1syslinux.cfg").arg(targetPath));
 	}
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);

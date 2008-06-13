@@ -56,6 +56,7 @@ public:
 	bool isarch64;
 	bool islivecd;
 	bool isnetinstall;
+	bool overwriteall;
 	QString targetDrive;
 	QString targetPath;
 	QString installType;
@@ -76,7 +77,8 @@ public:
 	#endif
 	void ubninitialize();	
 	QPair<QPair<QStringList, QStringList>, QStringList> listarchiveconts(QString archivefile);
-	bool extractfile(QString filepath, QString destinfile, QString archivefile);
+	bool overwritefileprompt(QString ovwfileloc);	
+	bool extractfile(QString filepath, QString destinfileL, QString archivefile);
 	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts);
 	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QStringList> archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
