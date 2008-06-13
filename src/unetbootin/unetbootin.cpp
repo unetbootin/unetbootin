@@ -95,11 +95,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "4.3_Live" << 
+	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution with a total size of 50 MB.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
-	"4.3_Live"));
+	"4.4_Live"));
 	distroselect->addItem("Debian", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
@@ -120,11 +120,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("Linux Mint", (QStringList() << "4.0_Live" << 
+	distroselect->addItem("Linux Mint", (QStringList() << "5_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
-	"3.1_Live" << "4.0_Live"));
+	"3.1_Live" << "4.0_Live" << "5_Live"));
 	distroselect->addItem("Mandriva", (QStringList() << "2008.1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
@@ -461,27 +461,63 @@ bool unetbootin::extractfile(QString filepath, QString destinfile, QString archi
 	}
 }
 
-bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
 {
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "linux";
+	QStringList narchivefileconts;
+	for (int i = 0; i < archivefileconts.second.size(); ++i)
+	{
+		if (archivefileconts.first.at(i).contains("isolinux.cfg") || archivefileconts.first.at(i).contains("isolinux.bin") || archivefileconts.first.at(i).contains(".jpg") || archivefileconts.first.at(i).contains(".png") || archivefileconts.first.at(i).contains(".pdf") || archivefileconts.first.at(i).contains(".txt") || archivefileconts.first.at(i).contains(".pcx") || archivefileconts.first.at(i).contains(".rle") || archivefileconts.first.at(i).contains(".fnt") || archivefileconts.first.at(i).contains(".msg") || archivefileconts.first.at(i).contains(".cat"))
+		{
+			continue;
+		}
+		if (archivefileconts.second.at(i).contains("MB"))
+		{
+			if (archivefileconts.second.at(i).size() <= 5)
+				narchivefileconts.append(archivefileconts.first.at(i));
+		}
+		if (archivefileconts.second.at(i).contains("KB"))
+		{
+			if (archivefileconts.second.at(i).size() >= 6)
+				narchivefileconts.append(archivefileconts.first.at(i));
+		}
+	}
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
-		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
+		if (!narchivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			return extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
+			return extractfile(narchivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
 	return false;
 }
 
-bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QStringList archivefileconts)
+bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
 {
-	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot";
+	QStringList narchivefileconts;
+	for (int i = 0; i < archivefileconts.second.size(); ++i)
+	{
+		if (archivefileconts.first.at(i).contains(".jpg") || archivefileconts.first.at(i).contains(".png") || archivefileconts.first.at(i).contains(".pdf") || archivefileconts.first.at(i).contains(".txt") || archivefileconts.first.at(i).contains(".pcx") || archivefileconts.first.at(i).contains(".rle") || archivefileconts.first.at(i).contains(".fnt") || archivefileconts.first.at(i).contains(".msg") || archivefileconts.first.at(i).contains(".cat"))
+		{
+			continue;
+		}
+		if (archivefileconts.second.at(i).contains("MB"))
+		{
+			if (archivefileconts.second.at(i).size() <= 5)
+				narchivefileconts.append(archivefileconts.first.at(i));
+		}
+		if (archivefileconts.second.at(i).contains("KB"))
+		{
+			if (archivefileconts.second.at(i).size() >= 6)
+				narchivefileconts.append(archivefileconts.first.at(i));
+		}
+	}
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
-		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
+		if (!narchivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
-			return extractfile(archivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
+			return extractfile(narchivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
 	return false;
@@ -509,11 +545,10 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QStringList>, QStringList> listfilesizedirpair = listarchiveconts(isofile);
-	QPair<QStringList, QStringList> listfiledirpair = qMakePair(listfilesizedirpair.first.first, listfilesizedirpair.second);
-	kernelOpts = extractcfg(isofile, listfiledirpair.first);
-	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfiledirpair.first);
-	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfiledirpair.first);
-	QStringList createdpaths = makepathtree(targetDrive, listfiledirpair.second);
+	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
+	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
+	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
+	QStringList createdpaths = makepathtree(targetDrive, listfilesizedirpair.second);
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnpathlS(&ubnpathlF);

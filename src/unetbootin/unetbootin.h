@@ -77,8 +77,8 @@ public:
 	void ubninitialize();	
 	QPair<QPair<QStringList, QStringList>, QStringList> listarchiveconts(QString archivefile);
 	bool extractfile(QString filepath, QString destinfile, QString archivefile);
-	bool extractkernel(QString archivefile, QString kernoutputfile, QStringList archivefileconts);
-	bool extractinitrd(QString archivefile, QString initoutputfile, QStringList archivefileconts);
+	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts);
+	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QStringList> archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
