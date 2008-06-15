@@ -155,7 +155,7 @@ if (nameDistro == "Frugalware")
 
 if (nameDistro == "Linux Mint")
 {
-	downloadfile(QString("ftp://mirrors.secution.com/linuxmint.com/%1/LinuxMint-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	downloadfile(QString("ftp://mirrors.secution.com/linuxmint.com/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 
@@ -262,6 +262,12 @@ if (nameDistro == "PCLinuxOS")
 	{
 		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-minime-2008.iso", QString("%1ubniso.iso").arg(ubntmpf));
 	}
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
+if (nameDistro == "Puppy Linux")
+{
+	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 

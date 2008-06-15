@@ -54,6 +54,7 @@ void unetbootin::ubninitialize()
 	firstlayer->setEnabled(true);
 	firstlayer->show();
 	this->setWindowTitle(UNETBOOTINB);
+	overwriteall = false;
 	#ifdef AUTOSUPERGRUBDISK
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
@@ -97,7 +98,7 @@ void unetbootin::ubninitialize()
 	"4" << "4_x64" << "5" << "5_x64"));
 	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
-		"<b>Description:</b> Damn Small Linux is a minimalist distribution with a total size of 50 MB.<br/>"
+		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
 	"4.4_Live"));
 	distroselect->addItem("Debian", (QStringList() << "Stable" << 
@@ -120,11 +121,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("Linux Mint", (QStringList() << "5_Live" << 
+	distroselect->addItem("Linux Mint", (QStringList() << "5-r1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
-	"3.1_Live" << "4.0_Live" << "5_Live"));
+	"3.1_Live" << "4.0_Live" << "5-r1_Live"));
 	distroselect->addItem("Mandriva", (QStringList() << "2008.1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
@@ -150,6 +151,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
 	"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
+	distroselect->addItem("Puppy Linux", (QStringList() << "4.00-k2.6.21.7-seamonkey_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
+		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
+	"4.00-k2.6.21.7-seamonkey_Live"));
 	distroselect->addItem("Ubuntu", (QStringList() << "8.04_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
@@ -499,6 +505,7 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 
 bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
 {
+	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "linux";
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
@@ -522,14 +529,17 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	{
 		if (!narchivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
+			pdesc1->setText(QString("Copying kernel file from %1").arg(narchivefileconts.filter(kernelnames.at(i)).at(0)));
 			return extractfile(narchivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
+	pdesc1->setText("");
 	return false;
 }
 
 bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
 {
+	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot";
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
@@ -553,9 +563,11 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	{
 		if (!narchivefileconts.filter(kernelnames.at(i)).isEmpty())
 		{
+			pdesc1->setText(QString("Copying initrd file from %1").arg(narchivefileconts.filter(kernelnames.at(i)).at(0)));
 			return extractfile(narchivefileconts.filter(kernelnames.at(i)).at(0), kernoutputfile, archivefile);
 		}
 	}
+	pdesc1->setText("");
 	return false;
 }
 
