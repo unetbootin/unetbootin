@@ -116,11 +116,26 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
+	distroselect->addItem("FreeDOS", (QStringList() << "1.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/>"
+		"<b>Description:</b> FreeDOS is a free MS-DOS compatible operating system.<br/>"
+		"<b>Install Notes:</b> See the <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for installation details.") << 
+	"1.0"));
 	distroselect->addItem("Frugalware", (QStringList() << "Stable" << 
 	tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("GAG", (QStringList() << "4.9" << 
+	tr("<b>Homepage:</b> <a href=\"http://gag.sourceforge.net/\">http://gag.sourceforge.net</a><br/>"
+		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
+		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") << 
+	"4.9"));
+	distroselect->addItem("Gujin", (QStringList() << "2.4" << 
+	tr("<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/>"
+		"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
+		"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") << 
+	"2.4"));
 	distroselect->addItem("Linux Mint", (QStringList() << "5-r1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
@@ -157,6 +172,16 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
 	"4.00-k2.6.21.7-seamonkey_Live"));
+	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" << 
+	tr("<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/>"
+		"<b>Description:</b> Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.<br/>"
+		"<b>Install Notes:</b> SBM simply boots and runs; no installation is required to use it.") << 
+	"3.7"));
+	distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
+		"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
+		"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") << 
+	"Latest"));
 	distroselect->addItem("Ubuntu", (QStringList() << "8.04_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
@@ -785,7 +810,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	if (!isftp)
 	{
 		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
-		if (dlresponse.statusCode() == 302)
+		if (dlresponse.statusCode() == 301 || dlresponse.statusCode() == 302 || dlresponse.statusCode() == 303 || dlresponse.statusCode() == 307)
 		{
 			downloadfile(dlresponse.value("location"), targetfile);
 		}

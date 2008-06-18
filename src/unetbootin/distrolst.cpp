@@ -131,6 +131,12 @@ if (nameDistro == "FreeBSD")
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/freebsd-%1%2.img.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "FreeDOS")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/%1/fdboot.img").arg(relname), QString("%1ubninit").arg(targetPath));
+}
+
 if (nameDistro == "Frugalware")
 {
 	if (isarch64)
@@ -151,6 +157,18 @@ if (nameDistro == "Frugalware")
 	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
 	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";
+}
+
+if (nameDistro == "GAG")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gag-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Gujin")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gujin-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
 if (nameDistro == "Linux Mint")
@@ -274,6 +292,18 @@ if (nameDistro == "Puppy Linux")
 {
 	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
+if (nameDistro == "Smart Boot Manager")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/sbm-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
+}
+
+if (nameDistro == "Super Grub Disk")
+{
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://lubi.sourceforge.net/sgd-latest.img").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
 if (nameDistro == "Ubuntu")
