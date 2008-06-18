@@ -85,6 +85,7 @@ public:
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QStringList> filesizelist);
+	QString getgrubcfgargs(QString cfgfile);
 	QString getcfgkernargs(QString cfgfile);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
