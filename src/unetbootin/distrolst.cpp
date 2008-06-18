@@ -244,8 +244,13 @@ if (nameDistro == "Parted Magic")
 	{
 		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-kernel", QString("%1ubnkern").arg(targetPath));
 		downloadfile("http://downloads.sourceforge.net/sourceforge/lubi/partedmagic-2.1-initrd", QString("%1ubninit").arg(targetPath));
+		kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";	
 	}
-	kernelOpts = "noapic root=/dev/ram0 init=/linuxrc ramdisk_size=200000 keymap=us liveusb vga=791 quiet toram";
+	else
+	{
+		downloadfile(QString("http://exo.enarel.eu/mirror/partedmagic/pmagic-pxe-%1.zip").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	}
 }
 
 if (nameDistro == "PCLinuxOS")

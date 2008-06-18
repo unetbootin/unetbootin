@@ -126,11 +126,12 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
 	"3.1_Live" << "4.0_Live" << "5-r1_Live"));
-	distroselect->addItem("Mandriva", (QStringList() << "2008.1_Live" << 
+	distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over the internet (FTP) pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
-	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
+	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
+//	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
@@ -141,11 +142,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
-	distroselect->addItem("Parted Magic", (QStringList() << "2.1_Live" << 
+	distroselect->addItem("Parted Magic", (QStringList() << "2.2_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") << 
-	"2.1_Live"));
+	"2.1_Live" << "2.2_Live"));
 	distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
@@ -248,12 +249,12 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
-	if (QFileInfo(nameFloppy).completeSuffix().contains("iso"))
+	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("Disk Images")+" (*.iso *.img *.img.gz *.flp *.flp.gz)"));
+	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
 		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
 	}
-	if (QFileInfo(nameFloppy).completeSuffix().contains("img"))
+	if (QFileInfo(nameFloppy).completeSuffix().contains("img", Qt::CaseInsensitive) || QFileInfo(nameFloppy).completeSuffix().contains("flp", Qt::CaseInsensitive))
 	{
 		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
 	}
@@ -264,7 +265,7 @@ void unetbootin::on_FloppyFileSelector_clicked()
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-	QString nameKernel = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
+	QString nameKernel = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Kernel File"), QDir::homePath()));
 	KernelPath->clear();
 	KernelPath->insert(nameKernel);
 	radioManual->setChecked(true);
@@ -272,7 +273,7 @@ void unetbootin::on_KernelFileSelector_clicked()
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-	QString nameInitrd = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, "Open File", QDir::homePath()));
+	QString nameInitrd = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Initrd File"), QDir::homePath()));
 	InitrdPath->clear();
 	InitrdPath->insert(nameInitrd);
 	radioManual->setChecked(true);
@@ -280,7 +281,7 @@ void unetbootin::on_InitrdFileSelector_clicked()
 
 void unetbootin::on_CfgFileSelector_clicked()
 {
-	QString nameCfg = QFileDialog::getOpenFileName(this, "Open File", QDir::homePath());
+	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath(), tr("Syslinux or GRUB Config")+" (*.cfg *.lst *.conf)");
 	OptionEnter->clear();
 	OptionEnter->insert(getcfgkernargs(nameCfg));
 	radioManual->setChecked(true);
@@ -573,7 +574,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 
 QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
 {
-	QStringList kernelnames = QStringList() << "syslinux.cfg" << "isolinux.cfg";
+	QStringList kernelnames = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu.lst" << "grub.conf";
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		if (!archivefileconts.filter(kernelnames.at(i)).isEmpty())
@@ -668,16 +669,35 @@ QString unetbootin::getcfgkernargs(QString cfgfile)
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream cfgfileS(&cfgfileF);
+	bool issyslinuxcfg = false;
+	bool isgrubcfg = false;
 	QString cfgfileCL;
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine();
-		if (cfgfileCL.contains("append", Qt::CaseInsensitive))
+		if (cfgfileCL.contains(QRegExp("^\\s{0,}append", Qt::CaseInsensitive)))
 		{
+			issyslinuxcfg = true;
+			break;
+		}
+		else if (cfgfileCL.contains(QRegExp("^\\s{0,}kernel", Qt::CaseInsensitive)))
+		{
+			isgrubcfg = true;
 			break;
 		}
 	}
-	return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid));
+	if (issyslinuxcfg)
+	{
+		return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{0,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid));
+	}
+	else if (isgrubcfg)
+	{
+		return cfgfileCL.remove(QRegExp("\\s{0,}kernel\\s{0,}\\S{0,}\\s{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid));
+	}
+	else
+	{
+		return "";
+	}
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
