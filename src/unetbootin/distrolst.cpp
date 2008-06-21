@@ -36,6 +36,12 @@ if (nameDistro == "Arch Linux")
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 
+if (nameDistro == "BackTrack")
+{
+	downloadfile(QString("http://www.remote-exploit.org/cgi-bin/fileget?version=bt%1-usb").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
 if (nameDistro == "CentOS")
 {
 	if (isarch64)
@@ -68,9 +74,18 @@ if (nameDistro == "Debian")
 	{
 		cpuarch = "i386";
 	}
-	downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/gtk/debian-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/gtk/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-	kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";
+	if (islivecd)
+	{
+		relname.replace("unstable", "sid").replace("testing", "lenny").replace("stable", "etch");
+		downloadfile(QString("http://live.debian.net/cdimage/%1-builds/current/%2/debian-live-%1-%2-gnome-desktop.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	}
+	else
+	{
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/gtk/debian-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/gtk/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";
+	}
 }
 
 if (nameDistro == "Fedora")
@@ -221,6 +236,13 @@ if (nameDistro == "NetBSD")
 	initrdLine = "";
 	initrdOpts = "";
 	initrdLoc = "";
+}
+
+if (nameDistro == "NTPasswd")
+{
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/ntpasswd-%1-kernel").arg(relname), QString("%1ubnkern").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/ntpasswd-%1-initrd.gz").arg(relname), QString("%1ubninit").arg(targetPath));
+	kernelOpts = "rw vga=1 init=/linuxrc";
 }
 
 if (nameDistro == "openSUSE")

@@ -66,7 +66,6 @@ public:
 	QString devlabel;
 	QString devuuid;
 	QString postinstmsg;
-	QString sourcefile, destinfile;
 	QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
 	QString sevzcommand;
 	#ifdef Q_OS_UNIX
@@ -75,16 +74,17 @@ public:
 	QString volidcommand;
 	QString syslinuxcommand;
 	#endif
-	void ubninitialize();	
-	QPair<QPair<QStringList, QStringList>, QStringList> listarchiveconts(QString archivefile);
+	void ubninitialize();
+	QString displayfisize(quint64 fisize);
+	QPair<QPair<QStringList, QList<quint64> >, QStringList> listarchiveconts(QString archivefile);
 	bool overwritefileprompt(QString ovwfileloc);	
 	bool extractfile(QString filepath, QString destinfileL, QString archivefile);
-	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts);
-	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QStringList> archivefileconts);
+	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
+	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
-	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QStringList> filesizelist);
+	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
 	QString getgrubcfgargs(QString cfgfile);
 	QString getcfgkernargs(QString cfgfile);
 	void downloadfile(QString fileurl, QString targetfile);

@@ -91,6 +91,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
 	"2007.08-2" << "2007.08-2_x64"));
+	distroselect->addItem("BackTrack", (QStringList() << "3" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
+		"<b>Description:</b> BackTrack is a distribution focused on network analysis and pentration testing.<br/>"
+		"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") << 
+	"3"));
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
@@ -99,17 +104,17 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
 	"4.4_Live"));
-	distroselect->addItem("Debian", (QStringList() << "Stable" << 
+	distroselect->addItem("Debian", (QStringList() << "Stable_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
-		"<b>Install Notes:</b> The default version allows for installation over FTP.") << 
-	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Unstable" << "Unstable_x64"));
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") << 
+	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
 	distroselect->addItem("Fedora", (QStringList() << "9_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
@@ -139,12 +144,12 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Linux Mint", (QStringList() << "5-r1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"3.1_Live" << "4.0_Live" << "5-r1_Live"));
 	distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
 	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
 //	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
@@ -152,11 +157,16 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
 		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") << 
 	"4.0"));
-	distroselect->addItem("openSUSE", (QStringList() << "10.3" << 
+	distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" << 
+	tr("<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/>"
+		"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"
+		"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it.") << 
+	"2008.05.26"));
+	distroselect->addItem("openSUSE", (QStringList() << "11.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
-	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "Factory" << "Factory_x64"));
+	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "11.0" << "11.0_x64" << "Factory" << "Factory_x64"));
 	distroselect->addItem("Parted Magic", (QStringList() << "2.2_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
@@ -165,12 +175,12 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
 	distroselect->addItem("Puppy Linux", (QStringList() << "4.00-k2.6.21.7-seamonkey_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
 	"4.00-k2.6.21.7-seamonkey_Live"));
 	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" << 
 	tr("<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/>"
@@ -185,7 +195,7 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Ubuntu", (QStringList() << "8.04_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64"));
 	#endif
 	#ifdef Q_OS_UNIX
@@ -417,7 +427,23 @@ void unetbootin::on_frebootbutton_clicked()
 	sysreboot();
 }
 
-QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts(QString archivefile)
+QString unetbootin::displayfisize(quint64 fisize)
+{
+	if (fisize < 10000)
+	{
+		return QString("%1 B").arg(fisize);
+	}
+	else if (fisize < 10240000)
+	{
+		return QString("%1 KB").arg(fisize / 1024);
+	}
+	else
+	{
+		return QString("%1 MB").arg(fisize / 1048576);
+	}
+}
+
+QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchiveconts(QString archivefile)
 {
 	#ifdef Q_OS_WIN32
 	if (sevzcommand == "")
@@ -436,7 +462,7 @@ QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts
 	QString tmplsL;
 	QStringList tmplsSLF;
 	QStringList tmplsSLD;
-	QStringList tmplsSLFS;
+	QList<quint64> tmplsSLFS;
 	while (!tmplsS.atEnd())
 	{
 		tmplsL = tmplsS.readLine();
@@ -453,18 +479,7 @@ QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts
 			{
 				tmplsSLF.append(tmplsL.remove("Path = "));
 				QString tmplsFS = QString(tmplsS.readLine()).remove("Size = ").trimmed();
-				if (tmplsFS.size() <= 4)
-				{
-					tmplsSLFS.append(QString("%1 B").arg(tmplsFS));
-				}
-				else if (tmplsFS.size() <= 7)
-				{
-					tmplsSLFS.append(QString("%1 KB").arg(tmplsFS.toInt() / 1024));
-				}
-				else
-				{
-					tmplsSLFS.append(QString("%1 MB").arg(tmplsFS.toInt() / 1048576));
-				}
+				tmplsSLFS.append(tmplsFS.toULongLong());				
 			}
 		}
 	}
@@ -472,8 +487,7 @@ QPair<QPair<QStringList, QStringList>, QStringList> unetbootin::listarchiveconts
 	tmplsF.close();
 	QFile::remove(QString("%1ubntmpls.txt").arg(ubntmpf));
 	#endif
-	QPair<QStringList, QStringList> qpFS = qMakePair(tmplsSLF, tmplsSLFS);
-	return qMakePair(qpFS, tmplsSLD);
+	return qMakePair(qMakePair(tmplsSLF, tmplsSLFS), tmplsSLD);
 }
 
 bool unetbootin::overwritefileprompt(QString ovwfileloc)
@@ -534,26 +548,20 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 	}
 }
 
-bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
+bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "linux" << "bsd" << "unix";
+	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux";
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains("isolinux.cfg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("isolinux.bin", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		if (archivefileconts.first.at(i).contains("isolinux.cfg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("isolinux.bin", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
-		if (archivefileconts.second.at(i).contains("MB"))
+		if (archivefileconts.second.at(i) > 614400 && archivefileconts.second.at(i) < 20971520) // between 600 KB and 20 MB
 		{
-			if (archivefileconts.second.at(i).size() <= 5)
-				narchivefileconts.append(archivefileconts.first.at(i));
-		}
-		if (archivefileconts.second.at(i).contains("KB"))
-		{
-			if (archivefileconts.second.at(i).size() >= 6)
-				narchivefileconts.append(archivefileconts.first.at(i));
+			narchivefileconts.append(archivefileconts.first.at(i));
 		}
 	}
 	for (int i = 0; i < kernelnames.size(); ++i)
@@ -568,26 +576,20 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	return false;
 }
 
-bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QStringList> archivefileconts)
+bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << ".igz" << ".cgz";
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		if (archivefileconts.first.at(i).contains(archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || ".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
-		if (archivefileconts.second.at(i).contains("MB"))
+		if (archivefileconts.second.at(i) > 256000 && archivefileconts.second.at(i) < 209715200) // between 250 KB and 200 MB
 		{
-			if (archivefileconts.second.at(i).size() <= 5)
-				narchivefileconts.append(archivefileconts.first.at(i));
-		}
-		if (archivefileconts.second.at(i).contains("KB"))
-		{
-			if (archivefileconts.second.at(i).size() >= 6)
-				narchivefileconts.append(archivefileconts.first.at(i));
+			narchivefileconts.append(archivefileconts.first.at(i));
 		}
 	}
 	for (int i = 0; i < kernelnames.size(); ++i)
@@ -643,7 +645,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
 	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
 	tprogress->setValue(0);
-	QPair<QPair<QStringList, QStringList>, QStringList> listfilesizedirpair = listarchiveconts(isofile);
+	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
 	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
@@ -681,7 +683,7 @@ QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
 	return createdpaths;
 }
 
-QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QStringList> filesizelist)
+QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist)
 {
 	QStringList filelist = filesizelist.first;
 	QStringList extractedfiles;
@@ -696,7 +698,7 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	pdesc1->setText(QObject::tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
 	for (int i = 0; i < filelist.size(); ++i)
 	{
-		pdesc3->setText(QObject::tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(filesizelist.second.at(i)));
+		pdesc3->setText(QObject::tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(displayfisize(filesizelist.second.at(i))));
 		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
 		pdesc1->setText(QObject::tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
@@ -752,11 +754,8 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
 	if (QFile::exists(targetfile))
 	{
-		if (!overwritefileprompt(targetfile))
-			return;
+		QFile::remove(targetfile);
 	}
-	sourcefile = fileurl;
-	destinfile = targetfile;
 	QUrl dlurl(fileurl);
 	bool isftp = false;
 	if (dlurl.scheme() == "ftp")
@@ -804,14 +803,19 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	else
 	{
 		dlhttp.setHost(dlurl.host());
-		dlhttp.get(dlurl.path(), &dloutfile);
+		QHttpRequestHeader dlrequest("GET", dlurl.path());
+		dlrequest.setValue("HOST", dlurl.host());
+		dlhttp.request(dlrequest, 0, &dloutfile);
 	}
 	dlewait.exec();
 	if (!isftp)
 	{
 		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
-		if (dlresponse.statusCode() == 301 || dlresponse.statusCode() == 302 || dlresponse.statusCode() == 303 || dlresponse.statusCode() == 307)
+		int dlrstatus = dlresponse.statusCode();
+		if (dlrstatus >= 300 && dlrstatus < 400 && dlresponse.hasKey("location"))
 		{
+			dloutfile.close();
+			dloutfile.remove();
 			downloadfile(dlresponse.value("location"), targetfile);
 		}
 	}
@@ -859,7 +863,8 @@ QString unetbootin::downloadpagecontents(QString pageurl)
 	pghttp.get(pgurl.path());
 	pgwait.exec();
 	QHttpResponseHeader pgresponse(pghttp.lastResponse());
-	if (pgresponse.statusCode() == 302)
+	int pgrstatus = pgresponse.statusCode();
+	if (pgrstatus >= 300 && pgrstatus < 400 && pgresponse.hasKey("location"))
 	{
 		return downloadpagecontents(pgresponse.value("location"));
 	}
