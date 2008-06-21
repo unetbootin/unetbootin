@@ -41,6 +41,16 @@ void callexternappT::run()
 	#endif
 }
 
+ubngetrequestheader::ubngetrequestheader(QString urhost, QString urpath)
+{
+	this->setRequest("GET", urpath);
+	this->setValue("HOST", urhost);
+	this->setValue("User-Agent", "UNetbootin/1.1.1");
+//	this->setValue("User-Agent", "Wget/1.10.2");
+	this->setValue("Accept", "*/*");
+	this->setValue("Connection", "Keep-Alive");
+}
+
 unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
@@ -770,6 +780,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	pdesc3->setText(QObject::tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
 	pdesc2->setText(QObject::tr("<b>Destination:</b> %1").arg(targetfile));
 	pdesc1->setText(QObject::tr("<b>Downloaded:</b> 0 bytes"));
+	QString realupath = QString(fileurl).remove(0, fileurl.indexOf(QString("://%1").arg(dlurl.host())) + QString("://%1").arg(dlurl.host()).length());
 	if (isftp)
 	{
 		connect(&dlftp, SIGNAL(done(bool)), &dlewait, SLOT(quit()));
@@ -798,13 +809,12 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	{
 		dlftp.connectToHost(dlurl.host());
 		dlftp.login();
-		dlftp.get(dlurl.path(), &dloutfile);
+		dlftp.get(realupath, &dloutfile);
 	}
 	else
 	{
 		dlhttp.setHost(dlurl.host());
-		QHttpRequestHeader dlrequest("GET", dlurl.path());
-		dlrequest.setValue("HOST", dlurl.host());
+		ubngetrequestheader dlrequest(dlurl.host(), realupath);
 		dlhttp.request(dlrequest, 0, &dloutfile);
 	}
 	dlewait.exec();
@@ -812,11 +822,11 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	{
 		QHttpResponseHeader dlresponse(dlhttp.lastResponse());
 		int dlrstatus = dlresponse.statusCode();
-		if (dlrstatus >= 300 && dlrstatus < 400 && dlresponse.hasKey("location"))
+		if (dlrstatus >= 300 && dlrstatus < 400 && dlresponse.hasKey("Location"))
 		{
 			dloutfile.close();
 			dloutfile.remove();
-			downloadfile(dlresponse.value("location"), targetfile);
+			downloadfile(dlresponse.value("Location"), targetfile);
 		}
 	}
 	if (isftp)
@@ -860,13 +870,15 @@ QString unetbootin::downloadpagecontents(QString pageurl)
 	QEventLoop pgwait;
 	connect(&pghttp, SIGNAL(done(bool)), &pgwait, SLOT(quit()));
 	pghttp.setHost(pgurl.host());
-	pghttp.get(pgurl.path());
+	QString realpgupath = QString(pageurl).remove(0, pageurl.indexOf(QString("://%1").arg(pgurl.host())) + QString("://%1").arg(pgurl.host()).length());
+	ubngetrequestheader pgrequest(pgurl.host(), realpgupath);
+	pghttp.request(pgrequest);
 	pgwait.exec();
 	QHttpResponseHeader pgresponse(pghttp.lastResponse());
 	int pgrstatus = pgresponse.statusCode();
-	if (pgrstatus >= 300 && pgrstatus < 400 && pgresponse.hasKey("location"))
+	if (pgrstatus >= 300 && pgrstatus < 400 && pgresponse.hasKey("Location"))
 	{
-		return downloadpagecontents(pgresponse.value("location"));
+		return downloadpagecontents(pgresponse.value("Location"));
 	}
 	else
 	{

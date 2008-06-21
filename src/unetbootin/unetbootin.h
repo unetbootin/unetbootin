@@ -41,6 +41,12 @@ public:
 	void run();
 };
 
+class ubngetrequestheader : public QHttpRequestHeader
+{
+public:
+	ubngetrequestheader(QString urhost, QString urpath);
+};
+
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
