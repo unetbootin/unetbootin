@@ -47,6 +47,12 @@ public:
 	ubngetrequestheader(QString urhost, QString urpath);
 };
 
+class randtmpfile : public QFile
+{
+public:
+	randtmpfile(QString rfpath, QString rfextn);
+};
+
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
@@ -92,7 +98,7 @@ public:
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
 	QString getgrubcfgargs(QString cfgfile);
-	QString getcfgkernargs(QString cfgfile);
+	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
 	void sysreboot();

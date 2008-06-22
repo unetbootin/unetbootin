@@ -51,6 +51,17 @@ ubngetrequestheader::ubngetrequestheader(QString urhost, QString urpath)
 	this->setValue("Connection", "Keep-Alive");
 }
 
+randtmpfile::randtmpfile(QString rfpath, QString rfextn)
+{
+	qsrand((unsigned int)time(0));
+	QString basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
+	while (QFile::exists(basefn))
+	{
+		basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
+	}
+	this->setFileName(basefn);
+}
+
 unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
@@ -328,7 +339,7 @@ void unetbootin::on_CfgFileSelector_clicked()
 {
 	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath());
 	OptionEnter->clear();
-	QString cfgoptstxt = getcfgkernargs(nameCfg);
+	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList());
 	if (cfgoptstxt == "")
 	{
 		cfgoptstxt = getgrubcfgargs(nameCfg);
@@ -635,7 +646,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		if (!archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).isEmpty())
 		{
 			extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(0), QString("%1ubnctemp.cfg").arg(ubntmpf), archivefile);
-			syslinuxpcfg = getcfgkernargs(QString("%1ubnctemp.cfg").arg(ubntmpf));
+			syslinuxpcfg = getcfgkernargs(QString("%1ubnctemp.cfg").arg(ubntmpf), archivefile, archivefileconts);
 			QFile::remove(QString("%1ubnctemp.cfg").arg(ubntmpf));
 			break;
 		}
@@ -735,15 +746,19 @@ QString unetbootin::getgrubcfgargs(QString cfgfile)
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
 		if (cfgfileCL.contains(QRegExp("^\\s{0,}kernel\\s{1,}", Qt::CaseInsensitive)))
 		{
-			return cfgfileCL.remove(QRegExp("\\s{0,}kernel\\s{1,}\\S{0,}\\s{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+			return QString(cfgfileCL).remove(QRegExp("\\s{0,}kernel\\s{1,}\\S{0,}\\s{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 		}
 	}
 	return "";
 }
 
-QString unetbootin::getcfgkernargs(QString cfgfile)
+QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
 {
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -752,9 +767,39 @@ QString unetbootin::getcfgkernargs(QString cfgfile)
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (!archivefileconts.isEmpty() && cfgfileCL.contains(QRegExp("^\\s{0,}include\\s{1,}", Qt::CaseInsensitive)))
+		{
+			QString includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^\\s{0,}include\\s{1,}", Qt::CaseInsensitive)).trimmed());
+			if (includesfile.startsWith(QDir::toNativeSeparators("/")))
+			{
+				includesfile = includesfile.right(includesfile.size() - 1).trimmed();
+			}
+			QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+			if (!includesfileL.isEmpty())
+			{
+				for (int i = 0; i < includesfileL.size(); ++i)
+				{
+					randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
+//					QFile tmpoutputcfgf(QString("%1ubnctmp2.lst").arg(ubntmpf));
+//					QTemporaryFile tmpoutputcfgf("unXXXXXX.cfg");
+//					tmpoutputcfgf.setAutoRemove(false);
+					extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
+					QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+					QFile::remove(tmpoutputcfgf.fileName());
+					if (!extractcfgtmp.isEmpty())
+					{
+						return extractcfgtmp;
+					}
+				}
+			}
+		}
 		if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
 		{
-			return cfgfileCL.remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+			return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 		}
 	}
 	return "";
