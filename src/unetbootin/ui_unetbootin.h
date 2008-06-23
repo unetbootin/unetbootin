@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Wed Jun 4 23:04:43 2008
+** Created: Sun Jun 22 20:47:46 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
@@ -54,6 +55,8 @@ public:
     QPushButton *CfgFileSelector;
     QLineEdit *OptionEnter;
     QLabel *labeloption;
+    QCheckBox *showalldrivescheckbox;
+    QCheckBox *formatdrivecheckbox;
     QWidget *secondlayer;
     QWidget *progresslayer;
     QProgressBar *tprogress;
@@ -83,13 +86,14 @@ public:
     firstlayer->setObjectName(QString::fromUtf8("firstlayer"));
     firstlayer->setEnabled(false);
     firstlayer->setGeometry(QRect(0, 0, 524, 360));
+    firstlayer->setAutoFillBackground(true);
     radioDistro = new QRadioButton(firstlayer);
     radioDistro->setObjectName(QString::fromUtf8("radioDistro"));
     radioDistro->setGeometry(QRect(10, 20, 111, 25));
     radioDistro->setChecked(true);
     radioFloppy = new QRadioButton(firstlayer);
     radioFloppy->setObjectName(QString::fromUtf8("radioFloppy"));
-    radioFloppy->setGeometry(QRect(10, 180, 101, 25));
+    radioFloppy->setGeometry(QRect(10, 180, 81, 25));
     radioManual = new QRadioButton(firstlayer);
     radioManual->setObjectName(QString::fromUtf8("radioManual"));
     radioManual->setGeometry(QRect(10, 220, 81, 25));
@@ -98,22 +102,22 @@ public:
     distroselect->setGeometry(QRect(110, 20, 200, 25));
     okbutton = new QPushButton(firstlayer);
     okbutton->setObjectName(QString::fromUtf8("okbutton"));
-    okbutton->setGeometry(QRect(343, 320, 80, 25));
+    okbutton->setGeometry(QRect(343, 325, 80, 25));
     cancelbutton = new QPushButton(firstlayer);
     cancelbutton->setObjectName(QString::fromUtf8("cancelbutton"));
-    cancelbutton->setGeometry(QRect(433, 320, 80, 25));
+    cancelbutton->setGeometry(QRect(433, 325, 80, 25));
     labeldrive = new QLabel(firstlayer);
     labeldrive->setObjectName(QString::fromUtf8("labeldrive"));
-    labeldrive->setGeometry(QRect(150, 320, 41, 25));
+    labeldrive->setGeometry(QRect(150, 325, 41, 25));
     driveselect = new QComboBox(firstlayer);
     driveselect->setObjectName(QString::fromUtf8("driveselect"));
-    driveselect->setGeometry(QRect(190, 320, 111, 25));
+    driveselect->setGeometry(QRect(190, 325, 111, 25));
     labeltype = new QLabel(firstlayer);
     labeltype->setObjectName(QString::fromUtf8("labeltype"));
-    labeltype->setGeometry(QRect(10, 320, 32, 25));
+    labeltype->setGeometry(QRect(10, 325, 32, 25));
     typeselect = new QComboBox(firstlayer);
     typeselect->setObjectName(QString::fromUtf8("typeselect"));
-    typeselect->setGeometry(QRect(50, 320, 91, 25));
+    typeselect->setGeometry(QRect(50, 325, 91, 25));
     dverselect = new QComboBox(firstlayer);
     dverselect->setObjectName(QString::fromUtf8("dverselect"));
     dverselect->setGeometry(QRect(313, 20, 200, 25));
@@ -127,47 +131,53 @@ public:
     optionslayer = new QWidget(firstlayer);
     optionslayer->setObjectName(QString::fromUtf8("optionslayer"));
     optionslayer->setEnabled(false);
-    optionslayer->setGeometry(QRect(100, 170, 521, 141));
+    optionslayer->setGeometry(QRect(100, 170, 521, 121));
     FloppyFileSelector = new QPushButton(optionslayer);
     FloppyFileSelector->setObjectName(QString::fromUtf8("FloppyFileSelector"));
     FloppyFileSelector->setGeometry(QRect(388, 10, 25, 25));
     FloppyFileSelector->setAcceptDrops(false);
     diskimagetypeselect = new QComboBox(optionslayer);
     diskimagetypeselect->setObjectName(QString::fromUtf8("diskimagetypeselect"));
-    diskimagetypeselect->setGeometry(QRect(10, 10, 71, 25));
+    diskimagetypeselect->setGeometry(QRect(0, 10, 51, 25));
     FloppyPath = new QLineEdit(optionslayer);
     FloppyPath->setObjectName(QString::fromUtf8("FloppyPath"));
-    FloppyPath->setGeometry(QRect(90, 10, 291, 25));
+    FloppyPath->setGeometry(QRect(60, 10, 321, 25));
     KernelPath = new QLineEdit(optionslayer);
     KernelPath->setObjectName(QString::fromUtf8("KernelPath"));
-    KernelPath->setGeometry(QRect(90, 50, 291, 25));
+    KernelPath->setGeometry(QRect(60, 50, 111, 25));
     KernelFileSelector = new QPushButton(optionslayer);
     KernelFileSelector->setObjectName(QString::fromUtf8("KernelFileSelector"));
-    KernelFileSelector->setGeometry(QRect(388, 50, 25, 25));
+    KernelFileSelector->setGeometry(QRect(180, 50, 25, 25));
     KernelFileSelector->setAcceptDrops(false);
     labelkernel = new QLabel(optionslayer);
     labelkernel->setObjectName(QString::fromUtf8("labelkernel"));
-    labelkernel->setGeometry(QRect(10, 50, 61, 25));
+    labelkernel->setGeometry(QRect(0, 50, 51, 25));
     labelinitrd = new QLabel(optionslayer);
     labelinitrd->setObjectName(QString::fromUtf8("labelinitrd"));
-    labelinitrd->setGeometry(QRect(10, 80, 61, 25));
+    labelinitrd->setGeometry(QRect(230, 50, 41, 25));
     InitrdFileSelector = new QPushButton(optionslayer);
     InitrdFileSelector->setObjectName(QString::fromUtf8("InitrdFileSelector"));
-    InitrdFileSelector->setGeometry(QRect(388, 80, 25, 25));
+    InitrdFileSelector->setGeometry(QRect(388, 50, 25, 25));
     InitrdFileSelector->setAcceptDrops(false);
     InitrdPath = new QLineEdit(optionslayer);
     InitrdPath->setObjectName(QString::fromUtf8("InitrdPath"));
-    InitrdPath->setGeometry(QRect(90, 80, 291, 25));
+    InitrdPath->setGeometry(QRect(270, 50, 111, 25));
     CfgFileSelector = new QPushButton(optionslayer);
     CfgFileSelector->setObjectName(QString::fromUtf8("CfgFileSelector"));
-    CfgFileSelector->setGeometry(QRect(388, 110, 25, 25));
+    CfgFileSelector->setGeometry(QRect(388, 90, 25, 25));
     CfgFileSelector->setAcceptDrops(false);
     OptionEnter = new QLineEdit(optionslayer);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
-    OptionEnter->setGeometry(QRect(90, 110, 291, 25));
+    OptionEnter->setGeometry(QRect(60, 90, 321, 25));
     labeloption = new QLabel(optionslayer);
     labeloption->setObjectName(QString::fromUtf8("labeloption"));
-    labeloption->setGeometry(QRect(10, 110, 61, 25));
+    labeloption->setGeometry(QRect(0, 90, 61, 25));
+    showalldrivescheckbox = new QCheckBox(firstlayer);
+    showalldrivescheckbox->setObjectName(QString::fromUtf8("showalldrivescheckbox"));
+    showalldrivescheckbox->setGeometry(QRect(10, 295, 251, 25));
+    formatdrivecheckbox = new QCheckBox(firstlayer);
+    formatdrivecheckbox->setObjectName(QString::fromUtf8("formatdrivecheckbox"));
+    formatdrivecheckbox->setGeometry(QRect(260, 295, 251, 25));
     secondlayer = new QWidget(unetbootinui);
     secondlayer->setObjectName(QString::fromUtf8("secondlayer"));
     secondlayer->setEnabled(false);
@@ -233,6 +243,8 @@ public:
     rebootmsgtext->setFrameShadow(QFrame::Plain);
     rebootmsgtext->setLineWidth(0);
     rebootmsgtext->setOpenExternalLinks(true);
+    secondlayer->raise();
+    firstlayer->raise();
 
     retranslateUi(unetbootinui);
 
@@ -257,7 +269,7 @@ public:
     radioFloppy->setToolTip(QApplication::translate("unetbootinui", "Specify a disk image file to load", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
 
-    radioFloppy->setText(QApplication::translate("unetbootinui", "Disk Image", 0, QApplication::UnicodeUTF8));
+    radioFloppy->setText(QApplication::translate("unetbootinui", "Diskimage", 0, QApplication::UnicodeUTF8));
 
 #ifndef QT_NO_TOOLTIP
     radioManual->setToolTip(QApplication::translate("unetbootinui", "Manually specify a kernel and initrd to load", 0, QApplication::UnicodeUTF8));
@@ -373,6 +385,26 @@ public:
 #endif // QT_NO_TOOLTIP
 
     labeloption->setText(QApplication::translate("unetbootinui", "Options:", 0, QApplication::UnicodeUTF8));
+
+#ifndef QT_NO_TOOLTIP
+    showalldrivescheckbox->setToolTip(QApplication::translate("unetbootinui", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-weight:600;\">potentially dangerous</span> option will show all drives in the drop-down box titled \"Drives\". Enable this only if you know what you're doing; if you use this option, the installation will likely fail, or can lead to system boot issues.</p></body></html>", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+
+    showalldrivescheckbox->setText(QApplication::translate("unetbootinui", "Show All Drives (Use with Care)", 0, QApplication::UnicodeUTF8));
+
+#ifndef QT_NO_TOOLTIP
+    formatdrivecheckbox->setToolTip(QApplication::translate("unetbootinui", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-weight:600;\">potentially dangerous</span> option will format the selected drive, wiping out all data on it. It shouldn't be necessary if you're using a standard USB drive.</p></body></html>", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+
+    formatdrivecheckbox->setText(QApplication::translate("unetbootinui", "Format Drive (Wipes Out Data)", 0, QApplication::UnicodeUTF8));
     pdesc5->setText(QString());
     pdesc4->setText(QString());
     pdesc3->setText(QString());

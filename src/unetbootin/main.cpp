@@ -37,14 +37,13 @@ void vistabcdUndo(QString uninstPathL)
 	QVariant warch64varL(QVariant::Bool);
 	warch64varL = vdtustor.value("WArch64");
 	bool warch64L = warch64varL.value<bool>();
-	unetbootin uexecRunL;
 	if (warch64L)
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
+		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/emtxfile.exe").arg(uninstPathL)), QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat runas").arg(uninstPathL)));
 	}
 	else
 	{
-		uexecRunL.callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
+		unetbootin::callexternapp(QDir::toNativeSeparators(QString("%1unetbtin/vbcdundo.bat").arg(uninstPathL)), "");
 	}
 	vdtustor.remove("WArch64");
 }

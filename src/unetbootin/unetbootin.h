@@ -51,6 +51,7 @@ class randtmpfile : public QFile
 {
 public:
 	randtmpfile(QString rfpath, QString rfextn);
+	static QString getrandfilename(QString rfpath, QString rfextn);
 };
 
 class unetbootin : public QWidget, private Ui::unetbootinui
@@ -102,10 +103,14 @@ public:
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
 	void sysreboot();
-	QString callexternapp(QString xexecFile, QString xexecParm);
+	static QString callexternapp(QString xexecFile, QString xexecParm);
 	QString getdevluid(QString voldrive);
 	QString getlabel(QString voldrive);
 	QString getuuid(QString voldrive);
+	void refreshdriveslist();
+	QStringList listcurdrives();
+	QStringList listsanedrives();
+	QStringList listalldrives();
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
 	QString locatedevicenode(QString mountpoint);
@@ -122,6 +127,7 @@ public:
 	void vistabcdEdit();
 	#endif
 	void instIndvfl(QString srcfName, QString dstfName);
+	QString instTempfl(QString srcfName, QString dstfType);
 	void runinst();
 	void instDetType();
 	void runinsthdd();
@@ -130,6 +136,7 @@ public:
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
+	void on_showalldrivescheckbox_clicked();
 	void on_typeselect_currentIndexChanged(int typeselectIndex);
 	void on_dverselect_currentIndexChanged();
 	void on_diskimagetypeselect_currentIndexChanged();

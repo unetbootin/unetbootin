@@ -278,6 +278,12 @@ if (nameDistro == "openSUSE")
 	}
 }
 
+if (nameDistro == "Ophcrack")
+{
+	downloadfile(QString("http://downloads.sourceforge.net/ophcrack/ophcrack-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
 if (nameDistro == "Parted Magic")
 {
 	if (relname == "2.1")
@@ -313,6 +319,12 @@ if (nameDistro == "PCLinuxOS")
 if (nameDistro == "Puppy Linux")
 {
 	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
+	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+}
+
+if (nameDistro == "Slax")
+{
+	downloadfile("http://www.slax.org/get_slax.php?download=iso", QString("%1ubniso.iso").arg(ubntmpf));
 	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
 }
 

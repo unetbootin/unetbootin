@@ -53,13 +53,19 @@ ubngetrequestheader::ubngetrequestheader(QString urhost, QString urpath)
 
 randtmpfile::randtmpfile(QString rfpath, QString rfextn)
 {
+	QString basefn = getrandfilename(rfpath, rfextn);
+	this->setFileName(basefn);
+}
+
+QString randtmpfile::getrandfilename(QString rfpath, QString rfextn)
+{
 	qsrand((unsigned int)time(0));
 	QString basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
 	while (QFile::exists(basefn))
 	{
 		basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
 	}
-	this->setFileName(basefn);
+	return basefn;
 }
 
 unetbootin::unetbootin(QWidget *parent)
@@ -76,6 +82,8 @@ void unetbootin::ubninitialize()
 	firstlayer->show();
 	this->setWindowTitle(UNETBOOTINB);
 	overwriteall = false;
+	formatdrivecheckbox->setEnabled(false);
+	formatdrivecheckbox->hide();
 	#ifdef AUTOSUPERGRUBDISK
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
@@ -83,7 +91,7 @@ void unetbootin::ubninitialize()
 	radioFloppy->hide();
 	radioManual->setEnabled(false);
 	radioManual->hide();
-	intromessage->resize(intromessage->width(), intromessage->height() + 150);
+	intromessage->resize(intromessage->width(), intromessage->height() + 135);
 	QFile asgdDescF;
 	if (QFile::exists(QString(":/asgd_%1.htm").arg(appNlang)))
 	{
@@ -163,7 +171,7 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") << 
 	"2.4"));
 	distroselect->addItem("Linux Mint", (QStringList() << "5-r1_Live" << 
-	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"3.1_Live" << "4.0_Live" << "5-r1_Live"));
@@ -188,6 +196,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "11.0" << "11.0_x64" << "Factory" << "Factory_x64"));
+	distroselect->addItem("Ophcrack", (QStringList() << "XP-LiveCD-2.0" << 
+	tr("<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/>"
+		"<b>Description:</b> Ophcrack can crack Windows passwords.<br/>"
+		"<b>Install Notes:</b> Ophcrack is booted and run in live mode; no installation is required to use it.") << 
+	"XP-LiveCD-2.0" << "Vista-LiveCD-2.0"));
 	distroselect->addItem("Parted Magic", (QStringList() << "2.2_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
@@ -203,6 +216,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
 	"4.00-k2.6.21.7-seamonkey_Live"));
+	distroselect->addItem("Slax", (QStringList() << "Latest" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\"http://www.slax.org</a><br/>"
+		"<b>Description:</b> Slax is a Slackware-based distribution.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"Latest"));
 	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" << 
 	tr("<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/>"
 		"<b>Description:</b> Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.<br/>"
@@ -252,25 +270,51 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 	radioDistro->setChecked(true);
 }
 
-void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
+void unetbootin::on_showalldrivescheckbox_clicked()
 {
-	if (typeselectIndex == typeselect->findText("Hard Disk"))
+	refreshdriveslist();
+}
+
+void unetbootin::refreshdriveslist()
+{
+	driveselect->clear();
+	QStringList driveslist = listcurdrives();
+	for (int i = 0; i < driveslist.size(); ++i)
 	{
-		driveselect->clear();
-		driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+		driveselect->addItem(driveslist.at(i));
 	}
-	if (typeselectIndex == typeselect->findText("USB Drive"))
+}
+
+QStringList unetbootin::listcurdrives()
+{
+	if (showalldrivescheckbox->isChecked())
 	{
-		driveselect->clear();
+		return listalldrives();
+	}
+	else
+	{
+		return listsanedrives();
+	}
+}
+
+QStringList unetbootin::listsanedrives()
+{
+	QStringList fulldrivelist;
+	if (typeselect->currentText() == "Hard Disk")
+	{
+		fulldrivelist.append(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
+	}
+	else if (typeselect->currentText() == "USB Drive")
+	{
 		#ifdef Q_OS_WIN32
 		QFileInfoList extdrivesList = QDir::drives();
 		for (int i = 0; i < extdrivesList.size(); ++i)
 		{
-			if (QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()) != QDir::toNativeSeparators(QDir::rootPath().toUpper()))
+			if (QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()) != QDir::toNativeSeparators(QDir::rootPath().toUpper()) && !QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()).contains("A:") && !QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()).contains("B:"))
 			{
 				if (GetDriveType(LPWSTR(extdrivesList.at(i).path().toUpper().utf16())) == 2)
 				{
-					driveselect->addItem(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+					fulldrivelist.append(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
 				}
 			}
 		}
@@ -286,11 +330,46 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 				if (!QString(testvfatS).contains("vfat"))
 					continue;
 			}
-			
-			driveselect->addItem(QString(usbdevsL.at(i)).remove(":"));
+			fulldrivelist.append(QString(usbdevsL.at(i)).remove(":"));
 		}
 		#endif
 	}
+	return fulldrivelist;
+}
+
+
+QStringList unetbootin::listalldrives()
+{
+	QStringList fulldrivelist;
+	#ifdef Q_OS_WIN32
+	QFileInfoList extdrivesList = QDir::drives();
+	for (int i = 0; i < extdrivesList.size(); ++i)
+	{
+		fulldrivelist.append(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
+	}
+	#endif
+	#ifdef Q_OS_UNIX
+	QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+	fulldrivelist = QString(fdisklusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/").replaceInStrings(":", "");
+	#endif
+	return fulldrivelist;
+}
+
+void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
+{
+	showalldrivescheckbox->setChecked(false);
+	formatdrivecheckbox->setChecked(false);
+	if (typeselectIndex == typeselect->findText("Hard Disk"))
+	{
+		showalldrivescheckbox->setEnabled(false);
+		formatdrivecheckbox->setEnabled(false);
+	}
+	if (typeselectIndex == typeselect->findText("USB Drive"))
+	{
+		showalldrivescheckbox->setEnabled(true);
+//		formatdrivecheckbox->setEnabled(true);
+	}
+	refreshdriveslist();
 }
 
 void unetbootin::on_dverselect_currentIndexChanged()
@@ -340,7 +419,7 @@ void unetbootin::on_CfgFileSelector_clicked()
 	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath());
 	OptionEnter->clear();
 	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList());
-	if (cfgoptstxt == "")
+	if (cfgoptstxt.isEmpty())
 	{
 		cfgoptstxt = getgrubcfgargs(nameCfg);
 	}
@@ -355,7 +434,7 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-	if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText() == "")
+	if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText().isEmpty())
 	{
 		QMessageBox unotenoughinputmsgb;
 		unotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -402,7 +481,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
  		}
 	}
-	else if (radioFloppy->isChecked() && FloppyPath->text() == "")
+	else if (radioFloppy->isChecked() && FloppyPath->text().isEmpty())
 	{
 		QMessageBox fnotenoughinputmsgb;
 		fnotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -417,7 +496,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
  		}
 	}
-	else if (radioManual->isChecked() && KernelPath->text() == "")
+	else if (radioManual->isChecked() && KernelPath->text().isEmpty())
 	{
 		QMessageBox knotenoughinputmsgb;
 		knotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -467,7 +546,7 @@ QString unetbootin::displayfisize(quint64 fisize)
 QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchiveconts(QString archivefile)
 {
 	#ifdef Q_OS_WIN32
-	if (sevzcommand == "")
+	if (sevzcommand.isEmpty())
 	{
 		installsvzip();
 	}
@@ -553,7 +632,7 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 	if (QFile::exists(destinfilename))	
 		overwritefileprompt(destinfilename);
 	#ifdef Q_OS_WIN32
-	if (sevzcommand == "")
+	if (sevzcommand.isEmpty())
 	{
 		installsvzip();
 	}
@@ -630,28 +709,41 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	QString grubpcfg;
 	QString syslinuxpcfg;
 	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
+	QStringList mlstfoundfiles;
 	for (int i = 0; i < grubcfgtypes.size(); ++i)
 	{
 		if (!archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).isEmpty())
 		{
-			extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(0), QString("%1ubnctemp.lst").arg(ubntmpf), archivefile);
-			grubpcfg = getgrubcfgargs(QString("%1ubnctemp.lst").arg(ubntmpf));
-			QFile::remove(QString("%1ubnctemp.lst").arg(ubntmpf));
-			break;
+			for (int j = 0; j < mlstfoundfiles.size(); ++j)
+			{
+				randtmpfile mlstftf(ubntmpf, "lst");
+				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
+				grubpcfg = getgrubcfgargs(mlstftf.fileName());
+				mlstftf.remove();
+				if (!grubpcfg.isEmpty())
+					break;
+			}
 		}
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
+	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
-		if (!archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).isEmpty())
+		lcfgfoundfiles = archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive);
+		if (!lcfgfoundfiles.isEmpty())
 		{
-			extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(0), QString("%1ubnctemp.cfg").arg(ubntmpf), archivefile);
-			syslinuxpcfg = getcfgkernargs(QString("%1ubnctemp.cfg").arg(ubntmpf), archivefile, archivefileconts);
-			QFile::remove(QString("%1ubnctemp.cfg").arg(ubntmpf));
-			break;
+			for (int j = 0; j < lcfgfoundfiles.size(); ++j)
+			{
+				randtmpfile ccfgftf(ubntmpf, "cfg");
+				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
+				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts);
+				ccfgftf.remove();
+				if (!syslinuxpcfg.isEmpty())
+					break;
+			}
 		}
 	}
-	if (syslinuxpcfg == "")
+	if (syslinuxpcfg.isEmpty())
 	{
 		return grubpcfg;
 	}
@@ -784,12 +876,9 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 				for (int i = 0; i < includesfileL.size(); ++i)
 				{
 					randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
-//					QFile tmpoutputcfgf(QString("%1ubnctmp2.lst").arg(ubntmpf));
-//					QTemporaryFile tmpoutputcfgf("unXXXXXX.cfg");
-//					tmpoutputcfgf.setAutoRemove(false);
 					extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
 					QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
-					QFile::remove(tmpoutputcfgf.fileName());
+					tmpoutputcfgf.remove();
 					if (!extractcfgtmp.isEmpty())
 					{
 						return extractcfgtmp;
@@ -839,11 +928,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	QFile dloutfile;
 	if (installType == "USB Drive")
 	{
-		if (QFile::exists(QString("%1ubndlout.tmp").arg(ubntmpf)))
-		{
-			QFile::remove(QString("%1ubndlout.tmp").arg(ubntmpf));
-		}
-		dloutfile.setFileName(QString("%1ubndlout.tmp").arg(ubntmpf));
+		dloutfile.setFileName(randtmpfile::getrandfilename(ubntmpf, "tmp"));
 	}
 	else
 	{
@@ -885,7 +970,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	dloutfile.close();
 	if (installType == "USB Drive")
 	{
-		QFile::rename(QString("%1ubndlout.tmp").arg(ubntmpf), targetfile);
+		dloutfile.rename(targetfile);
 	}
 	pdesc4->setText("");
 	pdesc3->setText("");
@@ -1311,6 +1396,13 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	srcF.close();
 }
 
+QString unetbootin::instTempfl(QString srcfName, QString dstfType)
+{
+	QString dstfName = randtmpfile::getrandfilename(ubntmpf, dstfType);
+	instIndvfl(srcfName, dstfName);
+	return dstfName;
+}
+
 void unetbootin::runinst()
 {
 	firstlayer->setEnabled(false);
@@ -1603,13 +1695,9 @@ void unetbootin::runinsthdd()
 void unetbootin::runinstusb()
 {
 	#ifdef Q_OS_WIN32
-	if (QFile::exists(QString("%1syslinux.exe").arg(ubntmpf)))
-	{
-		QFile::remove(QString("%1syslinux.exe").arg(ubntmpf));
-	}
-	instIndvfl("syslinux.exe", QString("%1syslinux.exe").arg(ubntmpf));
-	callexternapp(QString("%1syslinux.exe").arg(ubntmpf), QString("-ma %1").arg(targetDev));
-	QFile::remove(QString("%1syslinux.exe").arg(ubntmpf));
+	QString sysltfloc = instTempfl("syslinux.exe", "exe");
+	callexternapp(sysltfloc, QString("-ma %1").arg(targetDev));
+	QFile::remove(sysltfloc);
 	#endif
 	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);

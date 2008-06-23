@@ -36,6 +36,9 @@
      <height>360</height>
     </rect>
    </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
    <widget class="QRadioButton" name="radioDistro" >
     <property name="geometry" >
      <rect>
@@ -60,7 +63,7 @@
      <rect>
       <x>10</x>
       <y>180</y>
-      <width>101</width>
+      <width>81</width>
       <height>25</height>
      </rect>
     </property>
@@ -68,7 +71,7 @@
      <string>Specify a disk image file to load</string>
     </property>
     <property name="text" >
-     <string>Disk Image</string>
+     <string>Diskimage</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioManual" >
@@ -107,7 +110,7 @@
     <property name="geometry" >
      <rect>
       <x>343</x>
-      <y>320</y>
+      <y>325</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -120,7 +123,7 @@
     <property name="geometry" >
      <rect>
       <x>433</x>
-      <y>320</y>
+      <y>325</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -133,7 +136,7 @@
     <property name="geometry" >
      <rect>
       <x>150</x>
-      <y>320</y>
+      <y>325</y>
       <width>41</width>
       <height>25</height>
      </rect>
@@ -149,7 +152,7 @@
     <property name="geometry" >
      <rect>
       <x>190</x>
-      <y>320</y>
+      <y>325</y>
       <width>111</width>
       <height>25</height>
      </rect>
@@ -162,7 +165,7 @@
     <property name="geometry" >
      <rect>
       <x>10</x>
-      <y>320</y>
+      <y>325</y>
       <width>32</width>
       <height>25</height>
      </rect>
@@ -178,7 +181,7 @@
     <property name="geometry" >
      <rect>
       <x>50</x>
-      <y>320</y>
+      <y>325</y>
       <width>91</width>
       <height>25</height>
      </rect>
@@ -244,7 +247,7 @@
       <x>100</x>
       <y>170</y>
       <width>521</width>
-      <height>141</height>
+      <height>121</height>
      </rect>
     </property>
     <widget class="QPushButton" name="FloppyFileSelector" >
@@ -269,9 +272,9 @@
     <widget class="QComboBox" name="diskimagetypeselect" >
      <property name="geometry" >
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>10</y>
-       <width>71</width>
+       <width>51</width>
        <height>25</height>
       </rect>
      </property>
@@ -292,9 +295,9 @@
     <widget class="QLineEdit" name="FloppyPath" >
      <property name="geometry" >
       <rect>
-       <x>90</x>
+       <x>60</x>
        <y>10</y>
-       <width>291</width>
+       <width>321</width>
        <height>25</height>
       </rect>
      </property>
@@ -305,9 +308,9 @@
     <widget class="QLineEdit" name="KernelPath" >
      <property name="geometry" >
       <rect>
-       <x>90</x>
+       <x>60</x>
        <y>50</y>
-       <width>291</width>
+       <width>111</width>
        <height>25</height>
       </rect>
      </property>
@@ -318,7 +321,7 @@
     <widget class="QPushButton" name="KernelFileSelector" >
      <property name="geometry" >
       <rect>
-       <x>388</x>
+       <x>180</x>
        <y>50</y>
        <width>25</width>
        <height>25</height>
@@ -337,9 +340,9 @@
     <widget class="QLabel" name="labelkernel" >
      <property name="geometry" >
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>50</y>
-       <width>61</width>
+       <width>51</width>
        <height>25</height>
       </rect>
      </property>
@@ -353,9 +356,9 @@
     <widget class="QLabel" name="labelinitrd" >
      <property name="geometry" >
       <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>61</width>
+       <x>230</x>
+       <y>50</y>
+       <width>41</width>
        <height>25</height>
       </rect>
      </property>
@@ -370,7 +373,7 @@
      <property name="geometry" >
       <rect>
        <x>388</x>
-       <y>80</y>
+       <y>50</y>
        <width>25</width>
        <height>25</height>
       </rect>
@@ -388,9 +391,9 @@
     <widget class="QLineEdit" name="InitrdPath" >
      <property name="geometry" >
       <rect>
-       <x>90</x>
-       <y>80</y>
-       <width>291</width>
+       <x>270</x>
+       <y>50</y>
+       <width>111</width>
        <height>25</height>
       </rect>
      </property>
@@ -402,7 +405,7 @@
      <property name="geometry" >
       <rect>
        <x>388</x>
-       <y>110</y>
+       <y>90</y>
        <width>25</width>
        <height>25</height>
       </rect>
@@ -420,9 +423,9 @@
     <widget class="QLineEdit" name="OptionEnter" >
      <property name="geometry" >
       <rect>
-       <x>90</x>
-       <y>110</y>
-       <width>291</width>
+       <x>60</x>
+       <y>90</y>
+       <width>321</width>
        <height>25</height>
       </rect>
      </property>
@@ -433,8 +436,8 @@
     <widget class="QLabel" name="labeloption" >
      <property name="geometry" >
       <rect>
-       <x>10</x>
-       <y>110</y>
+       <x>0</x>
+       <y>90</y>
        <width>61</width>
        <height>25</height>
       </rect>
@@ -446,6 +449,46 @@
       <string>Options:</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QCheckBox" name="showalldrivescheckbox" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>295</y>
+      <width>251</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip" >
+     <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This &lt;span style=" font-weight:600;">potentially dangerous&lt;/span> option will show all drives in the drop-down box titled "Drives". Enable this only if you know what you're doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p>&lt;/body>&lt;/html></string>
+    </property>
+    <property name="text" >
+     <string>Show All Drives (Use with Care)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="formatdrivecheckbox" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>295</y>
+      <width>251</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip" >
+     <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This &lt;span style=" font-weight:600;">potentially dangerous&lt;/span> option will format the selected drive, wiping out all data on it. It shouldn't be necessary if you're using a standard USB drive.&lt;/p>&lt;/body>&lt;/html></string>
+    </property>
+    <property name="text" >
+     <string>Format Drive (Wipes Out Data)</string>
+    </property>
    </widget>
   </widget>
   <widget class="QWidget" native="1" name="secondlayer" >
@@ -696,6 +739,8 @@
     </widget>
    </widget>
   </widget>
+  <zorder>secondlayer</zorder>
+  <zorder>firstlayer</zorder>
  </widget>
  <resources>
   <include location="unetbootin-windows.qrc" />
