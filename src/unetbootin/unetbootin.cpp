@@ -60,7 +60,7 @@ randtmpfile::randtmpfile(QString rfpath, QString rfextn)
 QString randtmpfile::getrandfilename(QString rfpath, QString rfextn)
 {
 	qsrand((unsigned int)time(0));
-	QString basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
+	QString basefn = QString("%1un%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
 	while (QFile::exists(basefn))
 	{
 		basefn = QString("%1%2.%3").arg(rfpath).arg(qrand() % 999999).arg(rfextn);
@@ -217,8 +217,8 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
 	"4.00-k2.6.21.7-seamonkey_Live"));
 	distroselect->addItem("Slax", (QStringList() << "Latest" << 
-	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\"http://www.slax.org</a><br/>"
-		"<b>Description:</b> Slax is a Slackware-based distribution.<br/>"
+	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
+		"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"Latest"));
 	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" << 
@@ -236,6 +236,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64"));
+	distroselect->addItem("Zenwalk", (QStringList() << "5.2" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/>"
+		"<b>Description:</b> Zenwalk is a Slackware-based distribution featuring the XFCE desktop.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"5.2"));
 	#endif
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
@@ -326,8 +331,7 @@ QStringList unetbootin::listsanedrives()
 		{
 			if (usbdevsL.at(i).contains(":"))
 			{
-				QString testvfatS = callexternapp(volidcommand, QString("-t %2").arg(QString(usbdevsL.at(i)).remove(":")));
-				if (!QString(testvfatS).contains("vfat"))
+				if (!QString(callexternapp(volidcommand, QString("-t %2").arg(QString(usbdevsL.at(i)).remove(":")))).contains("vfat"))
 					continue;
 			}
 			fulldrivelist.append(QString(usbdevsL.at(i)).remove(":"));
@@ -563,6 +567,8 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	QStringList tmplsSLF;
 	QStringList tmplsSLD;
 	QList<quint64> tmplsSLFS;
+	QString tmplsN;
+	QString tmplsFS;
 	while (!tmplsS.atEnd())
 	{
 		tmplsL = tmplsS.readLine();
@@ -570,7 +576,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 		{
 			if (tmplsL.contains("Path = [BOOT]"))
 				continue;
-			QString tmplsN = tmplsS.readLine();
+			tmplsN = tmplsS.readLine();
 			if (tmplsN.contains("Folder = 1") || tmplsN.contains("Folder = +"))
 			{
 				tmplsSLD.append(tmplsL.remove("Path = "));
@@ -578,7 +584,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 			else
 			{
 				tmplsSLF.append(tmplsL.remove("Path = "));
-				QString tmplsFS = QString(tmplsS.readLine()).remove("Size = ").trimmed();
+				tmplsFS = QString(tmplsS.readLine()).remove("Size = ").trimmed();
 				tmplsSLFS.append(tmplsFS.toULongLong());				
 			}
 		}
@@ -724,6 +730,8 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 					break;
 			}
 		}
+		if (!grubpcfg.isEmpty())
+			break;
 	}
 	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
@@ -742,6 +750,8 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 					break;
 			}
 		}
+		if (!syslinuxpcfg.isEmpty())
+			break;
 	}
 	if (syslinuxpcfg.isEmpty())
 	{
@@ -856,39 +866,56 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream cfgfileS(&cfgfileF);
 	QString cfgfileCL;
+	QString includesfile;
+	QString searchincfrs;
 	while (!cfgfileS.atEnd())
 	{
-		cfgfileCL = cfgfileS.readLine();
+		cfgfileCL = cfgfileS.readLine().trimmed();
 		if (cfgfileCL.contains("#"))
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
-		if (!archivefileconts.isEmpty() && cfgfileCL.contains(QRegExp("^\\s{0,}include\\s{1,}", Qt::CaseInsensitive)))
+		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\w{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
-			QString includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^\\s{0,}include\\s{1,}", Qt::CaseInsensitive)).trimmed());
-			if (includesfile.startsWith(QDir::toNativeSeparators("/")))
-			{
-				includesfile = includesfile.right(includesfile.size() - 1).trimmed();
-			}
-			QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
-			if (!includesfileL.isEmpty())
-			{
-				for (int i = 0; i < includesfileL.size(); ++i)
-				{
-					randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
-					extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-					QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
-					tmpoutputcfgf.remove();
-					if (!extractcfgtmp.isEmpty())
-					{
-						return extractcfgtmp;
-					}
-				}
-			}
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts);
+			if (!searchincfrs.isEmpty())
+				return searchincfrs;
 		}
-		if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
+		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\w{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		{
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^append\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts);
+			if (!searchincfrs.isEmpty())
+				return searchincfrs;
+		}
+		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
 		{
 			return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+		}
+	}
+	return "";
+}
+
+QString unetbootin::searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts)
+{
+	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
+	{
+		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
+	}
+	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	if (!includesfileL.isEmpty())
+	{
+		for (int i = 0; i < includesfileL.size(); ++i)
+		{
+			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
+			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
+			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+			tmpoutputcfgf.remove();
+			if (!extractcfgtmp.isEmpty())
+			{
+				return extractcfgtmp;
+			}
 		}
 	}
 	return "";
@@ -1295,9 +1322,10 @@ void unetbootin::bootiniEdit()
 	QStringList bootiniCurTextL;
 	bool btimustreplacetimeout = true;
 	QRegExp btichkistimeout("\\s{0,}timeout.{0,}", Qt::CaseInsensitive);
+	QString bootiniCurLine;
 	while (!bootiniOut.atEnd())
 	{
-		QString bootiniCurLine = bootiniOut.readLine();
+		bootiniCurLine = bootiniOut.readLine();
 		if (btimustreplacetimeout && btichkistimeout.exactMatch(bootiniCurLine))
 		{
 			bootiniCurTextL.append("timeout=15");
@@ -1615,9 +1643,10 @@ void unetbootin::runinsthdd()
 	QStringList ecurmenulstTextL;
 	bool mlstmustreplacetimeout = true;
 	bool mlstmustreplacehiddenmenu = true;
+	QString menulstCurLine;
 	while (!bkmenulstout.atEnd())
 	{
-		QString menulstCurLine = bkmenulstout.readLine();
+		menulstCurLine = bkmenulstout.readLine();
 		if (mlstmustreplacetimeout && mlstchkishiddenmenu.exactMatch(menulstCurLine))
 		{
 			ecurmenulstTextL.append("#hiddenmenu");

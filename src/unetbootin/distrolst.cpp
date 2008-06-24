@@ -7,6 +7,7 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License at <http://www.gnu.org/licenses/> for more details.
 */
 
+QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
 QString cpuarch;
 QString relname = nameVersion.toLower();
 
@@ -32,14 +33,14 @@ if (nameDistro == "Arch Linux")
 	{
 		cpuarch = "i686";
 	}
-	downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "BackTrack")
 {
-	downloadfile(QString("http://www.remote-exploit.org/cgi-bin/fileget?version=bt%1-usb").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("http://www.remote-exploit.org/cgi-bin/fileget?version=bt%1-usb").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "CentOS")
@@ -60,8 +61,8 @@ if (nameDistro == "CentOS")
 
 if (nameDistro == "Damn Small Linux")
 {
-	downloadfile(QString("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Debian")
@@ -77,8 +78,8 @@ if (nameDistro == "Debian")
 	if (islivecd)
 	{
 		relname.replace("unstable", "sid").replace("testing", "lenny").replace("stable", "etch");
-		downloadfile(QString("http://live.debian.net/cdimage/%1-builds/current/%2/debian-live-%1-%2-gnome-desktop.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		downloadfile(QString("http://live.debian.net/cdimage/%1-builds/current/%2/debian-live-%1-%2-gnome-desktop.iso").arg(relname, cpuarch), isotmpf);
+		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
@@ -106,13 +107,13 @@ if (nameDistro == "Fedora")
 		}
 		if (relname == "8")
 		{
-			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), isotmpf);
 		}
 		else
 		{
-			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
+			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live.iso").arg(relname, cpuarch), isotmpf);
 		}
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
@@ -188,8 +189,8 @@ if (nameDistro == "Gujin")
 
 if (nameDistro == "Linux Mint")
 {
-	downloadfile(QString("ftp://mirrors.secution.com/linuxmint.com/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("ftp://mirrors.secution.com/linuxmint.com/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Mandriva")
@@ -206,13 +207,13 @@ if (nameDistro == "Mandriva")
 	{
 		if (relname == "2008.0")
 		{
-			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-%3-one-GNOME-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-%3-one-GNOME-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), isotmpf);
 		}
 		else if (relname == "2008.1")
 		{
-			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-one-%3-spring-GNOME-int-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), QString("%1ubniso.iso").arg(ubntmpf));
+			downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/iso/%1/mandriva-linux-one-%3-spring-GNOME-int-cdrom-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("\\.\\d{0,}$"))), isotmpf);
 		}
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
@@ -257,8 +258,8 @@ if (nameDistro == "openSUSE")
 	}
 	if (islivecd)
 	{
-		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-Live-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		downloadfile(QString("http://download.opensuse.org/distribution/%1/iso/cd/openSUSE-%1-GM-GNOME-Live-%2.iso").arg(relname, cpuarch), isotmpf);
+		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
@@ -280,8 +281,8 @@ if (nameDistro == "openSUSE")
 
 if (nameDistro == "Ophcrack")
 {
-	downloadfile(QString("http://downloads.sourceforge.net/ophcrack/ophcrack-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("http://downloads.sourceforge.net/ophcrack/ophcrack-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Parted Magic")
@@ -294,8 +295,8 @@ if (nameDistro == "Parted Magic")
 	}
 	else
 	{
-		downloadfile(QString("http://exo.enarel.eu/mirror/partedmagic/pmagic-pxe-%1.zip").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		downloadfile(QString("http://exo.enarel.eu/mirror/partedmagic/pmagic-pxe-%1.zip").arg(relname), isotmpf);
+		extractiso(isotmpf, targetPath);
 	}
 }
 
@@ -303,29 +304,29 @@ if (nameDistro == "PCLinuxOS")
 {
 	if (relname == "2007")
 	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-2007.iso", QString("%1ubniso.iso").arg(ubntmpf));
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-2007.iso", isotmpf);
 	}
 	if (relname == "2008 gnome")
 	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclos-gnome2008.iso", QString("%1ubniso.iso").arg(ubntmpf));
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclos-gnome2008.iso", isotmpf);
 	}
 	if (relname == "2008 minime")
 	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-minime-2008.iso", QString("%1ubniso.iso").arg(ubntmpf));
+		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-minime-2008.iso", isotmpf);
 	}
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Puppy Linux")
 {
-	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Slax")
 {
-	downloadfile("http://www.slax.org/get_slax.php?download=iso", QString("%1ubniso.iso").arg(ubntmpf));
-	extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+	downloadfile("http://www.slax.org/get_slax.php?download=iso", isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Smart Boot Manager")
@@ -352,8 +353,8 @@ if (nameDistro == "Ubuntu")
 	}
 	if (islivecd)
 	{
-		downloadfile(QString("http://releases.ubuntu.com/%1/ubuntu-%1-desktop-%2.iso").arg(relname, cpuarch), QString("%1ubniso.iso").arg(ubntmpf));
-		extractiso(QString("%1ubniso.iso").arg(ubntmpf), targetPath);
+		downloadfile(QString("http://releases.ubuntu.com/%1/ubuntu-%1-desktop-%2.iso").arg(relname, cpuarch), isotmpf);
+		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
@@ -362,6 +363,12 @@ if (nameDistro == "Ubuntu")
 		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 		kernelOpts = "vga=normal";
 	}
+}
+
+if (nameDistro == "Zenwalk")
+{
+	downloadfile(QString("ftp://zenwalk.mirrors.tds.net/pub/linux/zenlive/zenwalk-live-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 #endif

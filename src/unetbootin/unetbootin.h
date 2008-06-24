@@ -100,6 +100,7 @@ public:
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
 	QString getgrubcfgargs(QString cfgfile);
 	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
+	QString searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
 	void sysreboot();
