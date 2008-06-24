@@ -181,6 +181,20 @@ if (nameDistro == "GAG")
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gag-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "Gentoo")
+{
+	if (isarch64)
+	{
+		cpuarch = "amd64";
+	}
+	else
+	{
+		cpuarch = "x86";
+	}
+	downloadfile(QString("http://bouncer.gentoo.org/fetch/gentoo-%1-livecd/%2/").arg(relname, cpuarch), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "Gujin")
 {
 	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));

@@ -135,11 +135,12 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
 	"4.4_Live"));
-	distroselect->addItem("Debian", (QStringList() << "Stable_Live" << 
+	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") << 
-	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
+	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Unstable_NetInstall" << "Unstable_NetInstall_x64"));
+//	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
 	distroselect->addItem("Fedora", (QStringList() << "9_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
@@ -160,11 +161,16 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("GAG", (QStringList() << "4.9" << 
-	tr("<b>Homepage:</b> <a href=\"http://gag.sourceforge.net/\">http://gag.sourceforge.net</a><br/>"
-		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
-		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") << 
-	"4.9"));
+	distroselect->addItem("Gentoo", (QStringList() << "2007.0_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
+		"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"2007.0_Live" << "2007.0_Live_x64" << "2008.0_Beta2_Live" << "2008.0_Beta2_x64_Live"));
+//	distroselect->addItem("GAG", (QStringList() << "4.9" << 
+//	tr("<b>Homepage:</b> <a href=\"http://gag.sourceforge.net/\">http://gag.sourceforge.net</a><br/>"
+//		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
+//		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") << 
+//	"4.9"));
 	distroselect->addItem("Gujin", (QStringList() << "2.4" << 
 	tr("<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/>"
 		"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
@@ -661,7 +667,7 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains("isolinux.cfg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("isolinux.bin", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		if (archivefileconts.first.at(i).contains("isolinux.cfg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("isolinux.bin", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("system.map", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".efimg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
@@ -689,7 +695,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	QStringList narchivefileconts;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains(archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || ".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		if (archivefileconts.first.at(i).contains(archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("system.map", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".efimg", Qt::CaseInsensitive) || ".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
@@ -718,13 +724,14 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	QStringList mlstfoundfiles;
 	for (int i = 0; i < grubcfgtypes.size(); ++i)
 	{
-		if (!archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).isEmpty())
+		mlstfoundfiles = archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive);
+		if (!mlstfoundfiles.isEmpty())
 		{
 			for (int j = 0; j < mlstfoundfiles.size(); ++j)
 			{
 				randtmpfile mlstftf(ubntmpf, "lst");
 				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
-				grubpcfg = getgrubcfgargs(mlstftf.fileName());
+				grubpcfg = getgrubcfgargs(mlstftf.fileName()).trimmed();
 				mlstftf.remove();
 				if (!grubpcfg.isEmpty())
 					break;
@@ -744,7 +751,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts);
+				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
 				ccfgftf.remove();
 				if (!syslinuxpcfg.isEmpty())
 					break;
@@ -847,14 +854,14 @@ QString unetbootin::getgrubcfgargs(QString cfgfile)
 	QString cfgfileCL;
 	while (!cfgfileS.atEnd())
 	{
-		cfgfileCL = cfgfileS.readLine();
+		cfgfileCL = cfgfileS.readLine().trimmed();
 		if (cfgfileCL.contains("#"))
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
-		if (cfgfileCL.contains(QRegExp("^\\s{0,}kernel\\s{1,}", Qt::CaseInsensitive)))
+		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
-			return QString(cfgfileCL).remove(QRegExp("\\s{0,}kernel\\s{1,}\\S{0,}\\s{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+			return QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 		}
 	}
 	return "";
@@ -875,17 +882,17 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
-		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\w{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
-		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\w{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^append\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
@@ -910,7 +917,7 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 		{
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts).trimmed();
 			tmpoutputcfgf.remove();
 			if (!extractcfgtmp.isEmpty())
 			{
