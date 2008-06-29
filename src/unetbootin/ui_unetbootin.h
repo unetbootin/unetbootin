@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'unetbootin.ui'
 **
-** Created: Sun Jun 22 20:47:46 2008
+** Created: Sun Jun 29 15:52:27 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -43,9 +43,11 @@ public:
     QComboBox *dverselect;
     QTextBrowser *intromessage;
     QWidget *optionslayer;
+    QWidget *diskimagelayer;
     QPushButton *FloppyFileSelector;
     QComboBox *diskimagetypeselect;
     QLineEdit *FloppyPath;
+    QWidget *customlayer;
     QLineEdit *KernelPath;
     QPushButton *KernelFileSelector;
     QLabel *labelkernel;
@@ -93,7 +95,7 @@ public:
     radioDistro->setChecked(true);
     radioFloppy = new QRadioButton(firstlayer);
     radioFloppy->setObjectName(QString::fromUtf8("radioFloppy"));
-    radioFloppy->setGeometry(QRect(10, 180, 81, 25));
+    radioFloppy->setGeometry(QRect(10, 180, 87, 25));
     radioManual = new QRadioButton(firstlayer);
     radioManual->setObjectName(QString::fromUtf8("radioManual"));
     radioManual->setGeometry(QRect(10, 220, 81, 25));
@@ -132,46 +134,52 @@ public:
     optionslayer->setObjectName(QString::fromUtf8("optionslayer"));
     optionslayer->setEnabled(false);
     optionslayer->setGeometry(QRect(100, 170, 521, 121));
-    FloppyFileSelector = new QPushButton(optionslayer);
+    diskimagelayer = new QWidget(optionslayer);
+    diskimagelayer->setObjectName(QString::fromUtf8("diskimagelayer"));
+    diskimagelayer->setGeometry(QRect(0, 0, 521, 40));
+    FloppyFileSelector = new QPushButton(diskimagelayer);
     FloppyFileSelector->setObjectName(QString::fromUtf8("FloppyFileSelector"));
     FloppyFileSelector->setGeometry(QRect(388, 10, 25, 25));
     FloppyFileSelector->setAcceptDrops(false);
-    diskimagetypeselect = new QComboBox(optionslayer);
+    diskimagetypeselect = new QComboBox(diskimagelayer);
     diskimagetypeselect->setObjectName(QString::fromUtf8("diskimagetypeselect"));
     diskimagetypeselect->setGeometry(QRect(0, 10, 51, 25));
-    FloppyPath = new QLineEdit(optionslayer);
+    FloppyPath = new QLineEdit(diskimagelayer);
     FloppyPath->setObjectName(QString::fromUtf8("FloppyPath"));
     FloppyPath->setGeometry(QRect(60, 10, 321, 25));
-    KernelPath = new QLineEdit(optionslayer);
+    customlayer = new QWidget(optionslayer);
+    customlayer->setObjectName(QString::fromUtf8("customlayer"));
+    customlayer->setGeometry(QRect(0, 40, 521, 81));
+    KernelPath = new QLineEdit(customlayer);
     KernelPath->setObjectName(QString::fromUtf8("KernelPath"));
-    KernelPath->setGeometry(QRect(60, 50, 111, 25));
-    KernelFileSelector = new QPushButton(optionslayer);
+    KernelPath->setGeometry(QRect(60, 10, 111, 25));
+    KernelFileSelector = new QPushButton(customlayer);
     KernelFileSelector->setObjectName(QString::fromUtf8("KernelFileSelector"));
-    KernelFileSelector->setGeometry(QRect(180, 50, 25, 25));
+    KernelFileSelector->setGeometry(QRect(180, 10, 25, 25));
     KernelFileSelector->setAcceptDrops(false);
-    labelkernel = new QLabel(optionslayer);
+    labelkernel = new QLabel(customlayer);
     labelkernel->setObjectName(QString::fromUtf8("labelkernel"));
-    labelkernel->setGeometry(QRect(0, 50, 51, 25));
-    labelinitrd = new QLabel(optionslayer);
+    labelkernel->setGeometry(QRect(0, 10, 51, 25));
+    labelinitrd = new QLabel(customlayer);
     labelinitrd->setObjectName(QString::fromUtf8("labelinitrd"));
-    labelinitrd->setGeometry(QRect(230, 50, 41, 25));
-    InitrdFileSelector = new QPushButton(optionslayer);
+    labelinitrd->setGeometry(QRect(230, 10, 41, 25));
+    InitrdFileSelector = new QPushButton(customlayer);
     InitrdFileSelector->setObjectName(QString::fromUtf8("InitrdFileSelector"));
-    InitrdFileSelector->setGeometry(QRect(388, 50, 25, 25));
+    InitrdFileSelector->setGeometry(QRect(388, 10, 25, 25));
     InitrdFileSelector->setAcceptDrops(false);
-    InitrdPath = new QLineEdit(optionslayer);
+    InitrdPath = new QLineEdit(customlayer);
     InitrdPath->setObjectName(QString::fromUtf8("InitrdPath"));
-    InitrdPath->setGeometry(QRect(270, 50, 111, 25));
-    CfgFileSelector = new QPushButton(optionslayer);
+    InitrdPath->setGeometry(QRect(270, 10, 111, 25));
+    CfgFileSelector = new QPushButton(customlayer);
     CfgFileSelector->setObjectName(QString::fromUtf8("CfgFileSelector"));
-    CfgFileSelector->setGeometry(QRect(388, 90, 25, 25));
+    CfgFileSelector->setGeometry(QRect(388, 50, 25, 25));
     CfgFileSelector->setAcceptDrops(false);
-    OptionEnter = new QLineEdit(optionslayer);
+    OptionEnter = new QLineEdit(customlayer);
     OptionEnter->setObjectName(QString::fromUtf8("OptionEnter"));
-    OptionEnter->setGeometry(QRect(60, 90, 321, 25));
-    labeloption = new QLabel(optionslayer);
+    OptionEnter->setGeometry(QRect(60, 50, 321, 25));
+    labeloption = new QLabel(customlayer);
     labeloption->setObjectName(QString::fromUtf8("labeloption"));
-    labeloption->setGeometry(QRect(0, 90, 61, 25));
+    labeloption->setGeometry(QRect(0, 50, 61, 25));
     showalldrivescheckbox = new QCheckBox(firstlayer);
     showalldrivescheckbox->setObjectName(QString::fromUtf8("showalldrivescheckbox"));
     showalldrivescheckbox->setGeometry(QRect(10, 295, 251, 25));

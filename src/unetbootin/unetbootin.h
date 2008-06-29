@@ -27,6 +27,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define UNETBOOTINB "Auto Super Grub Disk"
 #endif
 
+#ifdef EEEPCLOS
+#define UNETBOOTINB "UNetbootin-EeePCLinuxOS"
+#endif
+
 #ifndef UNETBOOTINB
 #define STDUNETBOOTIN
 #define UNETBOOTINB "UNetbootin"

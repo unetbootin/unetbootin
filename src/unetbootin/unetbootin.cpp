@@ -107,6 +107,25 @@ void unetbootin::ubninitialize()
 	asgdDescS.readAll() << 
 	"1.0"));
 	#endif
+	#ifdef EEEPCLOS
+	optionslayer->setEnabled(true);
+	optionslayer->show();
+	customlayer->setEnabled(false);
+	customlayer->hide();
+	radioManual->setEnabled(false);
+	radioManual->hide();
+	diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
+	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
+	intromessage->resize(intromessage->width(), intromessage->height() + 80);
+	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" << 
+	tr("<img src=\":/eeepclos.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/>"
+		"<b>Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.<br/>"
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+	"pre2008_Live"));
+	if (diskimagetypeselect->findText("Floppy") != -1)
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText("Floppy"));
+	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();
@@ -260,11 +279,17 @@ void unetbootin::ubninitialize()
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
 	#ifdef AUTOSUPERGRUBDISK
-	typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
+	if (typeselect->findText("Hard Disk") != -1)
+		typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#endif
+	#ifdef EEEPCLOS
+	if (typeselect->findText("USB Drive") != -1)
+		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
+	#endif
 	#ifdef STDUNETBOOTIN
-	typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
+	if (typeselect->findText("USB Drive") != -1)
+		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	#endif
 }
 
@@ -276,7 +301,8 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 	{
 		dverselect->addItem(dverL.at(i));
 	}
-	dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
+	if (dverselect->findText(dverL.at(0)) != -1)
+		dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
 	intromessage->setText(dverL.at(1));
 	radioDistro->setChecked(true);
 }
@@ -397,11 +423,13 @@ void unetbootin::on_FloppyFileSelector_clicked()
 	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath()));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
-		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
+		if (diskimagetypeselect->findText("ISO") != -1)
+			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
 	}
 	if (QFileInfo(nameFloppy).completeSuffix().contains("img", Qt::CaseInsensitive) || QFileInfo(nameFloppy).completeSuffix().contains("flp", Qt::CaseInsensitive))
 	{
-		diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
+		if (diskimagetypeselect->findText("Floppy") != -1)
+			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
 	}
 	FloppyPath->clear();
 	FloppyPath->insert(nameFloppy);

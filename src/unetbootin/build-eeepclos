@@ -5,16 +5,16 @@ rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 rm release/*
 lupdate unetbootin.pro
 lrelease unetbootin.pro
-./qmake-windows "DEFINES += AUTOSUPERGRUBDISK" "RESOURCES += unetbootin-autosupergrubdisk.qrc"
+./qmake-windows "DEFINES += EEEPCLOS" "RESOURCES += unetbootin-eeepclos.qrc"
 make
 $mingwb-strip --strip-all release/unetbootin.exe
-mv release/unetbootin.exe release/unetbootin-autosupergrubdisk-$rvern.exe
-./upx --lzma release/unetbootin-autosupergrubdisk-$rvern.exe
-#./qmake-linux "DEFINES += AUTOSUPERGRUBDISK" "RESOURCES += unetbootin-autosupergrubdisk.qrc unetbootin-linux.qrc"
-#make
-#$mingwb-strip --strip-all unetbootin
-#mv unetbootin release/unetbootin-autosupergrubdisk-$rvern
-#./upx --lzma release/unetbootin-autosupergrubdisk-$rvern
+mv release/unetbootin.exe release/unetbootin-eeepclos-$rvern.exe
+./upx --lzma release/unetbootin-eeepclos-$rvern.exe
+./qmake-linux "DEFINES += EEEPCLOS" "RESOURCES += unetbootin-eeepclos.qrc unetbootin-linux.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-eeepclos-$rvern
+./upx --lzma release/unetbootin-eeepclos-$rvern
 qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
 printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
 zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)

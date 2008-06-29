@@ -21,6 +21,16 @@ if (nameDistro == "Auto Super Grub Disk")
 
 #endif
 
+#ifdef EEEPCLOS
+
+if (nameDistro == "EeePCLinuxOS")
+{
+	downloadfile(QString("http://lubi.sourceforge.net/eeepclos-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")
