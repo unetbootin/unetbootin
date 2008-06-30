@@ -31,6 +31,16 @@ if (nameDistro == "EeePCLinuxOS")
 
 #endif
 
+#ifdef EEEUBUNTU
+
+if (nameDistro == "Ubuntu Eee")
+{
+	downloadfile(QString("http://lubi.sourceforge.net/ubuntu-eee-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")

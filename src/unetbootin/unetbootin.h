@@ -25,15 +25,29 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifdef AUTOSUPERGRUBDISK
 #define UNETBOOTINB "Auto Super Grub Disk"
+#define NOEXTERN
+//#define NOISO
+#define HDDINSTALL
 #endif
 
 #ifdef EEEPCLOS
 #define UNETBOOTINB "UNetbootin-EeePCLinuxOS"
+#define NOMANUAL
+#define NOFLOPPY
+#define USBINSTALL
+#endif
+
+#ifdef EEEUBUNTU
+#define UNETBOOTINB "UNetbootin-Ubuntu Eee"
+#define NOMANUAL
+#define NOFLOPPY
+#define USBINSTALL
 #endif
 
 #ifndef UNETBOOTINB
-#define STDUNETBOOTIN
 #define UNETBOOTINB "UNetbootin"
+#define STDUNETBOOTIN
+#define USBINSTALL
 #endif
 
 class callexternappT : public QThread

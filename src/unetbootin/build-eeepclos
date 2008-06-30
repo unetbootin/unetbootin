@@ -2,6 +2,8 @@
 
 mingwb="i586-mingw32msvc"
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+make clean
+rm Makefile*
 rm release/*
 lupdate unetbootin.pro
 lrelease unetbootin.pro

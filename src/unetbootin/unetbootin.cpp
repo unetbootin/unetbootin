@@ -84,7 +84,7 @@ void unetbootin::ubninitialize()
 	overwriteall = false;
 	formatdrivecheckbox->setEnabled(false);
 	formatdrivecheckbox->hide();
-	#ifdef AUTOSUPERGRUBDISK
+	#ifdef NOEXTERN
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
 	radioFloppy->setEnabled(false);
@@ -92,6 +92,23 @@ void unetbootin::ubninitialize()
 	radioManual->setEnabled(false);
 	radioManual->hide();
 	intromessage->resize(intromessage->width(), intromessage->height() + 135);
+	#endif
+	#ifdef NOMANUAL
+	optionslayer->setEnabled(true);
+	optionslayer->show();
+	customlayer->setEnabled(false);
+	customlayer->hide();
+	radioManual->setEnabled(false);
+	radioManual->hide();
+	diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
+	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
+	intromessage->resize(intromessage->width(), intromessage->height() + 80);
+	#endif
+	#ifdef NOFLOPPY
+	if (diskimagetypeselect->findText("Floppy") != -1)
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText("Floppy"));
+	#endif
+	#ifdef AUTOSUPERGRUBDISK
 	QFile asgdDescF;
 	if (QFile::exists(QString(":/asgd_%1.htm").arg(appNlang)))
 	{
@@ -108,23 +125,20 @@ void unetbootin::ubninitialize()
 	"1.0"));
 	#endif
 	#ifdef EEEPCLOS
-	optionslayer->setEnabled(true);
-	optionslayer->show();
-	customlayer->setEnabled(false);
-	customlayer->hide();
-	radioManual->setEnabled(false);
-	radioManual->hide();
-	diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
-	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
-	intromessage->resize(intromessage->width(), intromessage->height() + 80);
 	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" << 
 	tr("<img src=\":/eeepclos.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/>"
 		"<b>Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.<br/>"
 		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
 	"pre2008_Live"));
-	if (diskimagetypeselect->findText("Floppy") != -1)
-		diskimagetypeselect->removeItem(diskimagetypeselect->findText("Floppy"));
+	#endif
+	#ifdef EEEUBUNTU
+	distroselect->addItem("Ubuntu Eee", (QStringList() << "8.04" << 
+	tr("<img src=\":/eeeubuntu.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
+		"<b>Description:</b> Ubuntu Eee is a user-friendly Ubuntu based distribution for the EeePC.<br/>"
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+	"8.04"));
 	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
@@ -278,16 +292,12 @@ void unetbootin::ubninitialize()
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
-	#ifdef AUTOSUPERGRUBDISK
+	#ifdef HDDINSTALL
 	if (typeselect->findText("Hard Disk") != -1)
 		typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
 	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	#endif
-	#ifdef EEEPCLOS
-	if (typeselect->findText("USB Drive") != -1)
-		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
-	#endif
-	#ifdef STDUNETBOOTIN
+	#ifdef USBINSTALL
 	if (typeselect->findText("USB Drive") != -1)
 		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	#endif
