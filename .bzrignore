@@ -13,9 +13,8 @@ src/unetbootin/unetbootin.exe
 src/unetbootin/unetbootin.o
 src/unetbootin/upx
 src/unetbootin/sevenzip.exe
-src/unetbootin/qrc_unetbootin.cpp
-src/unetbootin/qrc_unetbootin-linux.cpp
-src/unetbootin/qrc_unetbootin-eeepclos.cpp
+src/unetbootin/qrc_unetbootin*.cpp
+src/unetbootin/ui_unetbootin.h
 src/unetbootin/sevnz.dll
 src/unetbootin/sevnz.exe
 src/unetbootin/asgd.img

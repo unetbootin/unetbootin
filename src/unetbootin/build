@@ -15,12 +15,12 @@ rm Makefile*
 rm release/*
 lupdate unetbootin.pro
 lrelease unetbootin.pro
-./qmake-windows "RESOURCES += unetbootin-sevnz.qrc"
+./qmake-windows
 make
 $mingwb-strip --strip-all release/unetbootin.exe
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 ./upx --lzma release/unetbootin-windows-$rvern.exe
-./qmake-linux "RESOURCES += unetbootin-linux.qrc"
+./qmake-linux
 make
 $mingwb-strip --strip-all unetbootin
 mv unetbootin release/unetbootin-linux-$rvern

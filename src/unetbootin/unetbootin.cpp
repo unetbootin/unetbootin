@@ -84,15 +84,6 @@ void unetbootin::ubninitialize()
 	overwriteall = false;
 	formatdrivecheckbox->setEnabled(false);
 	formatdrivecheckbox->hide();
-	#ifdef NOEXTERN
-	optionslayer->setEnabled(false);
-	optionslayer->hide();
-	radioFloppy->setEnabled(false);
-	radioFloppy->hide();
-	radioManual->setEnabled(false);
-	radioManual->hide();
-	intromessage->resize(intromessage->width(), intromessage->height() + 135);
-	#endif
 	#ifdef NOMANUAL
 	optionslayer->setEnabled(true);
 	optionslayer->show();
@@ -104,9 +95,22 @@ void unetbootin::ubninitialize()
 	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
 	intromessage->resize(intromessage->width(), intromessage->height() + 80);
 	#endif
+	#ifdef NOEXTERN
+	optionslayer->setEnabled(false);
+	optionslayer->hide();
+	radioFloppy->setEnabled(false);
+	radioFloppy->hide();
+	radioManual->setEnabled(false);
+	radioManual->hide();
+	intromessage->resize(intromessage->width(), intromessage->height() + 135);
+	#endif
 	#ifdef NOFLOPPY
 	if (diskimagetypeselect->findText("Floppy") != -1)
 		diskimagetypeselect->removeItem(diskimagetypeselect->findText("Floppy"));
+	#endif
+	#ifdef NOISO
+	if (diskimagetypeselect->findText("ISO") != -1)
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
 	#endif
 	#ifdef AUTOSUPERGRUBDISK
 	QFile asgdDescF;
@@ -148,11 +152,12 @@ void unetbootin::ubninitialize()
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
-	distroselect->addItem("Arch Linux", (QStringList() << "2007.08-2" << 
+	distroselect->addItem("Arch Linux", (QStringList() << "2008.06" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
-	"2007.08-2" << "2007.08-2_x64"));
+	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
+//	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
 	distroselect->addItem("BackTrack", (QStringList() << "3" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
 		"<b>Description:</b> BackTrack is a distribution focused on network analysis and pentration testing.<br/>"
@@ -163,11 +168,16 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4_Live" << 
+	distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
+		"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
+		"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it.") << 
+	"1.1.0-8"));
+	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4.2_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
-	"4.4_Live"));
+	"4.4.2_Live"));
 	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
@@ -292,14 +302,11 @@ void unetbootin::ubninitialize()
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
+	if (typeselect->findText("USB Drive") != -1)
+		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	#ifdef HDDINSTALL
 	if (typeselect->findText("Hard Disk") != -1)
 		typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
-	driveselect->addItem(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
-	#endif
-	#ifdef USBINSTALL
-	if (typeselect->findText("USB Drive") != -1)
-		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
 	#endif
 }
 
@@ -559,6 +566,51 @@ void unetbootin::on_okbutton_clicked()
 				break;
  		}
 	}
+	else if (radioFloppy->isChecked() && !QFile::exists(FloppyPath->text()))
+	{
+		QMessageBox ffnotexistsmsgb;
+		ffnotexistsmsgb.setIcon(QMessageBox::Information);
+		ffnotexistsmsgb.setWindowTitle(QObject::tr("Diskimage file not found"));
+		ffnotexistsmsgb.setText(QObject::tr("The specified diskimage file %1 does not exist.").arg(FloppyPath->text()));
+ 		ffnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (ffnotexistsmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
+	else if (radioManual->isChecked() && !QFile::exists(KernelPath->text()))
+	{
+		QMessageBox kfnotexistsmsgb;
+		kfnotexistsmsgb.setIcon(QMessageBox::Information);
+		kfnotexistsmsgb.setWindowTitle(QObject::tr("Kernel file not found"));
+		kfnotexistsmsgb.setText(QObject::tr("The specified kernel file %1 does not exist.").arg(KernelPath->text()));
+ 		kfnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (kfnotexistsmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
+	else if (radioManual->isChecked() && InitrdPath->text().trimmed() != "" && !QFile::exists(InitrdPath->text()))
+	{
+		QMessageBox ifnotexistsmsgb;
+		ifnotexistsmsgb.setIcon(QMessageBox::Information);
+		ifnotexistsmsgb.setWindowTitle(QObject::tr("Initrd file not found"));
+		ifnotexistsmsgb.setText(QObject::tr("The specified initrd file %1 does not exist.").arg(InitrdPath->text()));
+ 		ifnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+ 		switch (ifnotexistsmsgb.exec())
+ 		{
+ 			case QMessageBox::Ok:
+				break;
+	 		default:
+				break;
+ 		}
+	}
 	else
 	{
 		runinst();
@@ -703,9 +755,11 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux";
 	QStringList narchivefileconts;
+	QString curarcitm;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains("isolinux.cfg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("isolinux.bin", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("system.map", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".efimg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
+		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
@@ -716,10 +770,13 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	}
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
-		if (!narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).isEmpty())
+		for (int j = 0; j < narchivefileconts.size(); ++j)
 		{
-			pdesc1->setText(QString("Copying kernel file from %1").arg(narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).at(0)));
-			return extractfile(narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).at(0), kernoutputfile, archivefile);
+			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i)))
+			{
+				pdesc1->setText(QString("Copying kernel file from %1").arg(narchivefileconts.at(j)));
+				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
+			}
 		}
 	}
 	pdesc1->setText("");
@@ -729,11 +786,13 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << ".igz" << ".cgz";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initrd" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << ".igz" << ".cgz" << ".img";
 	QStringList narchivefileconts;
+	QString curarcitm;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		if (archivefileconts.first.at(i).contains(archivefileconts.first.at(i).contains("memtest", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains("system.map", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".efimg", Qt::CaseInsensitive) || ".jpg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".png", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pdf", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".txt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".pcx", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".rle", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".fnt", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".msg", Qt::CaseInsensitive) || archivefileconts.first.at(i).contains(".cat", Qt::CaseInsensitive))
+		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
+		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive))
 		{
 			continue;
 		}
@@ -744,10 +803,13 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	}
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
-		if (!narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).isEmpty())
+		for (int j = 0; j < narchivefileconts.size(); ++j)
 		{
-			pdesc1->setText(QString("Copying initrd file from %1").arg(narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).at(0)));
-			return extractfile(narchivefileconts.filter(kernelnames.at(i), Qt::CaseInsensitive).at(0), kernoutputfile, archivefile);
+			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i)))
+			{
+				pdesc1->setText(QString("Copying initrd file from %1").arg(narchivefileconts.at(j)));
+				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
+			}
 		}
 	}
 	pdesc1->setText("");

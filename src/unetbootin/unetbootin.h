@@ -34,20 +34,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define UNETBOOTINB "UNetbootin-EeePCLinuxOS"
 #define NOMANUAL
 #define NOFLOPPY
-#define USBINSTALL
+//#define USBINSTALL
 #endif
 
 #ifdef EEEUBUNTU
 #define UNETBOOTINB "UNetbootin-Ubuntu Eee"
 #define NOMANUAL
 #define NOFLOPPY
-#define USBINSTALL
+//#define USBINSTALL
 #endif
 
 #ifndef UNETBOOTINB
 #define UNETBOOTINB "UNetbootin"
 #define STDUNETBOOTIN
-#define USBINSTALL
+//#define USBINSTALL
 #endif
 
 class callexternappT : public QThread
