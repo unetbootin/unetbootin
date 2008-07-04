@@ -68,6 +68,14 @@ QString randtmpfile::getrandfilename(QString rfpath, QString rfextn)
 	return basefn;
 }
 
+void nDirListStor::sAppendSelfUrlInfoList(QUrlInfo curDirUrl)
+{
+	if (curDirUrl.isValid() && curDirUrl.isReadable() && curDirUrl.isFile() && curDirUrl.size() > nMinFileSizeBytes && curDirUrl.size() < nMaxFileSizeBytes)
+	{
+		nDirFileListSL.append(curDirUrl.name());
+	}
+}
+
 unetbootin::unetbootin(QWidget *parent)
 	: QWidget(parent)
 {
@@ -493,8 +501,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox unotenoughinputmsgb;
 		unotenoughinputmsgb.setIcon(QMessageBox::Information);
-		unotenoughinputmsgb.setWindowTitle(QObject::tr("Insert a USB flash drive"));
-		unotenoughinputmsgb.setText(QObject::tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32."));
+		unotenoughinputmsgb.setWindowTitle(tr("Insert a USB flash drive"));
+		unotenoughinputmsgb.setText(tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32."));
  		unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (unotenoughinputmsgb.exec())
  		{
@@ -509,8 +517,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox merrordevnotmountedmsgbx;
 		merrordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
-		merrordevnotmountedmsgbx.setWindowTitle(QString(QObject::tr("%1 not mounted")).arg(driveselect->currentText()));
-		merrordevnotmountedmsgbx.setText(QString(QObject::tr("You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.")).arg(driveselect->currentText()));
+		merrordevnotmountedmsgbx.setWindowTitle(QString(tr("%1 not mounted")).arg(driveselect->currentText()));
+		merrordevnotmountedmsgbx.setText(QString(tr("You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.")).arg(driveselect->currentText()));
 		merrordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok);
 		switch (merrordevnotmountedmsgbx.exec())
 		{
@@ -525,8 +533,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox dnotenoughinputmsgb;
 		dnotenoughinputmsgb.setIcon(QMessageBox::Information);
-		dnotenoughinputmsgb.setWindowTitle(QObject::tr("Select a distro"));
-		dnotenoughinputmsgb.setText(QObject::tr("You must select a distribution to load."));
+		dnotenoughinputmsgb.setWindowTitle(tr("Select a distro"));
+		dnotenoughinputmsgb.setText(tr("You must select a distribution to load."));
  		dnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (dnotenoughinputmsgb.exec())
  		{
@@ -540,8 +548,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox fnotenoughinputmsgb;
 		fnotenoughinputmsgb.setIcon(QMessageBox::Information);
-		fnotenoughinputmsgb.setWindowTitle(QObject::tr("Select a disk image file"));
-		fnotenoughinputmsgb.setText(QObject::tr("You must select a disk image file to load."));
+		fnotenoughinputmsgb.setWindowTitle(tr("Select a disk image file"));
+		fnotenoughinputmsgb.setText(tr("You must select a disk image file to load."));
  		fnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (fnotenoughinputmsgb.exec())
  		{
@@ -555,8 +563,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox knotenoughinputmsgb;
 		knotenoughinputmsgb.setIcon(QMessageBox::Information);
-		knotenoughinputmsgb.setWindowTitle(QObject::tr("Select a kernel and/or initrd file"));
-		knotenoughinputmsgb.setText(QObject::tr("You must select a kernel and/or initrd file to load."));
+		knotenoughinputmsgb.setWindowTitle(tr("Select a kernel and/or initrd file"));
+		knotenoughinputmsgb.setText(tr("You must select a kernel and/or initrd file to load."));
  		knotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (knotenoughinputmsgb.exec())
  		{
@@ -570,8 +578,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox ffnotexistsmsgb;
 		ffnotexistsmsgb.setIcon(QMessageBox::Information);
-		ffnotexistsmsgb.setWindowTitle(QObject::tr("Diskimage file not found"));
-		ffnotexistsmsgb.setText(QObject::tr("The specified diskimage file %1 does not exist.").arg(FloppyPath->text()));
+		ffnotexistsmsgb.setWindowTitle(tr("Diskimage file not found"));
+		ffnotexistsmsgb.setText(tr("The specified diskimage file %1 does not exist.").arg(FloppyPath->text()));
  		ffnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (ffnotexistsmsgb.exec())
  		{
@@ -585,8 +593,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox kfnotexistsmsgb;
 		kfnotexistsmsgb.setIcon(QMessageBox::Information);
-		kfnotexistsmsgb.setWindowTitle(QObject::tr("Kernel file not found"));
-		kfnotexistsmsgb.setText(QObject::tr("The specified kernel file %1 does not exist.").arg(KernelPath->text()));
+		kfnotexistsmsgb.setWindowTitle(tr("Kernel file not found"));
+		kfnotexistsmsgb.setText(tr("The specified kernel file %1 does not exist.").arg(KernelPath->text()));
  		kfnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (kfnotexistsmsgb.exec())
  		{
@@ -600,8 +608,8 @@ void unetbootin::on_okbutton_clicked()
 	{
 		QMessageBox ifnotexistsmsgb;
 		ifnotexistsmsgb.setIcon(QMessageBox::Information);
-		ifnotexistsmsgb.setWindowTitle(QObject::tr("Initrd file not found"));
-		ifnotexistsmsgb.setText(QObject::tr("The specified initrd file %1 does not exist.").arg(InitrdPath->text()));
+		ifnotexistsmsgb.setWindowTitle(tr("Initrd file not found"));
+		ifnotexistsmsgb.setText(tr("The specified initrd file %1 does not exist.").arg(InitrdPath->text()));
  		ifnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
  		switch (ifnotexistsmsgb.exec())
  		{
@@ -701,8 +709,8 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 	}
 	QMessageBox overwritefilemsgbx;
 	overwritefilemsgbx.setIcon(QMessageBox::Warning);
-	overwritefilemsgbx.setWindowTitle(QString(QObject::tr("%1 exists, overwrite?")).arg(ovwfileloc));
-	overwritefilemsgbx.setText(QString(QObject::tr("The file %1 already exists. Press 'Yes to All' to overwrite it and not be prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to retain your existing version. If in doubt, press 'Yes to All'.")).arg(ovwfileloc));
+	overwritefilemsgbx.setWindowTitle(QString(tr("%1 exists, overwrite?")).arg(ovwfileloc));
+	overwritefilemsgbx.setText(QString(tr("The file %1 already exists. Press 'Yes to All' to overwrite it and not be prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to retain your existing version. If in doubt, press 'Yes to All'.")).arg(ovwfileloc));
 	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No);
 	switch (overwritefilemsgbx.exec())
 	{
@@ -921,16 +929,16 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	tprogress->setMaximum(filelist.size());
 	tprogress->setMinimum(0);
 	tprogress->setValue(0);
-	pdesc5->setText(QObject::tr("Extracting files, please wait..."));
-	pdesc4->setText(QObject::tr("<b>Archive:</b> %1").arg(archivefile));
-	pdesc3->setText(QObject::tr("<b>Source:</b>"));
-	pdesc2->setText(QObject::tr("<b>Destination:</b>"));
-	pdesc1->setText(QObject::tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
+	pdesc5->setText(tr("Extracting files, please wait..."));
+	pdesc4->setText(tr("<b>Archive:</b> %1").arg(archivefile));
+	pdesc3->setText(tr("<b>Source:</b>"));
+	pdesc2->setText(tr("<b>Destination:</b>"));
+	pdesc1->setText(tr("<b>Extracted:</b> 0 of %1 files").arg(filelist.size()));
 	for (int i = 0; i < filelist.size(); ++i)
 	{
-		pdesc3->setText(QObject::tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(displayfisize(filesizelist.second.at(i))));
-		pdesc2->setText(QObject::tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
-		pdesc1->setText(QObject::tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
+		pdesc3->setText(tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(displayfisize(filesizelist.second.at(i))));
+		pdesc2->setText(tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
+		pdesc1->setText(tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
 		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
 		{
@@ -1044,10 +1052,10 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	QFtp dlftp;
 	QEventLoop dlewait;
 	pdesc5->setText("");
-	pdesc4->setText(QObject::tr("Downloading files, plese wait..."));
-	pdesc3->setText(QObject::tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
-	pdesc2->setText(QObject::tr("<b>Destination:</b> %1").arg(targetfile));
-	pdesc1->setText(QObject::tr("<b>Downloaded:</b> 0 bytes"));
+	pdesc4->setText(tr("Downloading files, plese wait..."));
+	pdesc3->setText(tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
+	pdesc2->setText(tr("<b>Destination:</b> %1").arg(targetfile));
+	pdesc1->setText(tr("<b>Downloaded:</b> 0 bytes"));
 	QString realupath = QString(fileurl).remove(0, fileurl.indexOf(QString("://%1").arg(dlurl.host())) + QString("://%1").arg(dlurl.host()).length());
 	if (isftp)
 	{
@@ -1117,14 +1125,14 @@ void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
 	tprogress->setValue(dlbytes);
 	tprogress->setMaximum(maxbytes);
-	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
+	pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
 void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
 	tprogress->setValue(dlbytes);
 	tprogress->setMaximum(maxbytes);
-	pdesc1->setText(QObject::tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
+	pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
 }
 
 QString unetbootin::downloadpagecontents(QString pageurl)
@@ -1148,6 +1156,52 @@ QString unetbootin::downloadpagecontents(QString pageurl)
 	{
 		return QString(pghttp.readAll());
 	}
+}
+
+QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
+{
+	QUrl ldfDirUrl(ldfDirStringUrl);
+	QFtp ldfFtp;
+	QEventLoop ldfWait;
+	nDirListStor nDirListStorL;
+	nDirListStorL.nMinFileSizeBytes = ldfMinSize;
+	nDirListStorL.nMaxFileSizeBytes = ldfMaxSize;
+	connect(&ldfFtp, SIGNAL(done(bool)), &ldfWait, SLOT(quit()));
+	connect(&ldfFtp, SIGNAL(listInfo(QUrlInfo)), &nDirListStorL, SLOT(sAppendSelfUrlInfoList(QUrlInfo)));
+	ldfFtp.connectToHost(ldfDirUrl.host());
+	ldfFtp.login();
+	ldfFtp.list(ldfDirUrl.path());
+	ldfWait.exec();
+	ldfFtp.close();
+	return nDirListStorL.nDirFileListSL;
+}
+
+QString unetbootin::fileFilterFtpDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+{
+	if (!ldfDirStringUrl.endsWith('/'))
+		ldfDirStringUrl += '/';
+	return ldfDirStringUrl+filterBestMatch(lstFtpDirFiles(ldfDirStringUrl, ldfMinSize, ldfMaxSize), ldfFileMatchExp);
+}
+
+QString unetbootin::filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList)
+{
+	QString hRegxMatchString;
+	int hRegxMatch = 0;
+	for (int i = 0; i < ufStringList.size(); ++i)
+	{
+		int regxmatches = 0;
+		for (int j = 0; j < filterExpList.size(); ++j)
+		{
+			if (ufStringList.at(i).contains(filterExpList.at(j)))
+				++regxmatches;
+		}
+		if (regxmatches > hRegxMatch)
+		{
+			hRegxMatchString = ufStringList.at(i);
+			hRegxMatch = regxmatches;
+		}
+	}
+	return hRegxMatchString;
 }
 
 void unetbootin::sysreboot()
@@ -1269,8 +1323,8 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 	}
 	QMessageBox errorcmdnotfoundmsgbx;
 	errorcmdnotfoundmsgbx.setIcon(QMessageBox::Warning);
-	errorcmdnotfoundmsgbx.setWindowTitle(QString(QObject::tr("%1 not found")).arg(commandtolocate));
-	errorcmdnotfoundmsgbx.setText(QString(QObject::tr("%1 not found. This is required for %2 install mode.\nInstall the \"%3\" package or your distribution's equivalent.")).arg(commandtolocate, reqforinstallmode, packagename));
+	errorcmdnotfoundmsgbx.setWindowTitle(QString(tr("%1 not found")).arg(commandtolocate));
+	errorcmdnotfoundmsgbx.setText(QString(tr("%1 not found. This is required for %2 install mode.\nInstall the \"%3\" package or your distribution's equivalent.")).arg(commandtolocate, reqforinstallmode, packagename));
 	errorcmdnotfoundmsgbx.setStandardButtons(QMessageBox::Ok);
 	switch (errorcmdnotfoundmsgbx.exec())
 	{
@@ -1875,10 +1929,10 @@ void unetbootin::fininstall()
 	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
 	if (installType == "Hard Disk")
 	{
-		rebootmsgtext->setText(QObject::tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 	}
 	if (installType == "USB Drive")
 	{
-		rebootmsgtext->setText(QObject::tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
 	}
 }

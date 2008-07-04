@@ -98,7 +98,7 @@ if (nameDistro == "CloneZilla")
 
 if (nameDistro == "Damn Small Linux")
 {
-	downloadfile(QString("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/dsl-%1-initrd.iso").arg(relname), isotmpf);
+	downloadfile(fileFilterFtpDir("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/", 3072000, 1048576000, QList<QRegExp>() << QRegExp("^dsl") << QRegExp(".iso$") << QRegExp("initrd") << QRegExp("initrd.iso$") << QRegExp("^dsl-\\S{1,}-initrd.iso$")), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 

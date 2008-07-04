@@ -13,6 +13,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <QtCore>
 #include <QtGui>
 #include <QtNetwork>
+//#include <QtDebug>
 
 #include "ui_unetbootin.h"
 
@@ -72,6 +73,19 @@ public:
 	static QString getrandfilename(QString rfpath, QString rfextn);
 };
 
+class nDirListStor : public QObject
+{
+	Q_OBJECT
+
+public:
+	QStringList nDirFileListSL;
+	int nMinFileSizeBytes;
+	int nMaxFileSizeBytes;
+
+public slots:
+	void sAppendSelfUrlInfoList(QUrlInfo curDirUrl);
+};
+
 class unetbootin : public QWidget, private Ui::unetbootinui
 {
 	Q_OBJECT
@@ -121,6 +135,9 @@ public:
 	QString searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
+	QStringList lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);
+	QString fileFilterFtpDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
+	QString filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
 	void sysreboot();
 	static QString callexternapp(QString xexecFile, QString xexecParm);
 	QString getdevluid(QString voldrive);
