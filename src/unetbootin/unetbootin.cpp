@@ -160,10 +160,10 @@ void unetbootin::ubninitialize()
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
 	"== Select Version =="));
-	distroselect->addItem("Arch Linux", (QStringList() << "2008.06" << 
+	distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
-		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") << 
+		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.") << 
 	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
 	distroselect->addItem("BackTrack", (QStringList() << "3" << 
@@ -181,17 +181,22 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
 		"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it.") << 
 	"1.1.0-8"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "4.4.2_Live" << 
+	distroselect->addItem("Damn Small Linux", (QStringList() << "Latest_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
-	"4.4.2_Live"));
+	"Latest_Live"));
 	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") << 
 	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Unstable_NetInstall" << "Unstable_NetInstall_x64"));
 //	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
+	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
+		"<b>Description:</b> FaunOS is a distribution based on Arch Linux.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"shadow-0.5.4-stable"));
 	distroselect->addItem("Fedora", (QStringList() << "9_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
@@ -268,11 +273,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
-	distroselect->addItem("Puppy Linux", (QStringList() << "4.00-k2.6.21.7-seamonkey_Live" << 
+	distroselect->addItem("Puppy Linux", (QStringList() << "Latest_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
-	"4.00-k2.6.21.7-seamonkey_Live"));
+	"Latest_Live"));
 	distroselect->addItem("Slax", (QStringList() << "Latest" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 		"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
@@ -292,7 +297,7 @@ void unetbootin::ubninitialize()
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
-	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64"));
+	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64"));
 	distroselect->addItem("Zenwalk", (QStringList() << "5.2" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/>"
 		"<b>Description:</b> Zenwalk is a Slackware-based distribution featuring the XFCE desktop.<br/>"
@@ -664,7 +669,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	QTextStream tmplsS(&tmplsF);
 	#endif
 	#ifdef Q_OS_UNIX
-	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l %2").arg(archivefile));
+	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l \"%2\"").arg(archivefile));
 	QTextStream tmplsS(&sevzlcommandout);
 	#endif
 	QString tmplsL;
@@ -1038,6 +1043,8 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
+	if (fileurl.isEmpty())
+		return;
 	if (QFile::exists(targetfile))
 	{
 		QFile::remove(targetfile);
@@ -1176,32 +1183,83 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 	return nDirListStorL.nDirFileListSL;
 }
 
-QString unetbootin::fileFilterFtpDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
+{
+	QStringList relativefilelinksL;
+	QStringList relativelinksL = downloadpagecontents(ldfDirStringUrl).replace(">", ">\n").replace("<", "\n<").split("\n").filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">")).replaceInStrings("<a href=\"", "").replaceInStrings("\">", "");
+	for (int i = 0; i < relativelinksL.size(); ++i)
+	{
+		if (!relativelinksL.at(i).endsWith('/'))
+			relativefilelinksL.append(relativelinksL.at(i));
+	}
+	return relativefilelinksL;
+}
+
+QStringList unetbootin::lstNetDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize)
 {
 	if (!ldfDirStringUrl.endsWith('/'))
 		ldfDirStringUrl += '/';
-	return ldfDirStringUrl+filterBestMatch(lstFtpDirFiles(ldfDirStringUrl, ldfMinSize, ldfMaxSize), ldfFileMatchExp);
+	if (ldfDirStringUrl.startsWith("ftp"))
+	{
+		return lstFtpDirFiles(ldfDirStringUrl, ldfMinSize, ldfMaxSize);
+	}
+	else
+	{
+		return lstHttpDirFiles(ldfDirStringUrl);
+	}
 }
 
-QString unetbootin::filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList)
+QPair<QString, int> unetbootin::weightedFilterNetDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
 {
+	if (!ldfDirStringUrl.endsWith('/'))
+		ldfDirStringUrl += '/';
+	pdesc1->setText(tr("Searching in <a href=\"%1\">%1</a>").arg(ldfDirStringUrl));
+	QPair<QString, int> relativeFileUrl = filterBestMatch(lstNetDirFiles(ldfDirStringUrl, ldfMinSize, ldfMaxSize), ldfFileMatchExp);
+	if (relativeFileUrl.first.startsWith('/'))
+		ldfDirStringUrl = ldfDirStringUrl.left(ldfDirStringUrl.indexOf('/', 8));
+	pdesc2->setText(tr("%1/%2 matches in <a href=\"%3\">%3</a>").arg(relativeFileUrl.second).arg(ldfFileMatchExp.size()).arg(ldfDirStringUrl));
+	return qMakePair(ldfDirStringUrl+relativeFileUrl.first, relativeFileUrl.second);
+}
+
+QString unetbootin::fileFilterNetDir(QStringList ldfDirStringUrlList, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp)
+{
+	QPair<QString, int> curRemoteFileUrlSP;
+	int hRegxMatch = 0;
 	QString hRegxMatchString;
+	for (int i = 0; i < ldfDirStringUrlList.size(); ++i)
+	{
+		curRemoteFileUrlSP = weightedFilterNetDir(ldfDirStringUrlList.at(i), ldfMinSize, ldfMaxSize, ldfFileMatchExp);
+		if (curRemoteFileUrlSP.second == ldfFileMatchExp.size())
+			return curRemoteFileUrlSP.first;
+		if (curRemoteFileUrlSP.second > hRegxMatch)
+		{
+			hRegxMatch = curRemoteFileUrlSP.second;
+			hRegxMatchString = curRemoteFileUrlSP.first;
+		}
+	}
+	return hRegxMatchString;
+}
+
+QPair<QString, int> unetbootin::filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList)
+{
+	QString hRegxMatchString, hRegxMatchStringEnd;
 	int hRegxMatch = 0;
 	for (int i = 0; i < ufStringList.size(); ++i)
 	{
 		int regxmatches = 0;
+		hRegxMatchStringEnd = ufStringList.at(i).right(ufStringList.at(i).size() - ufStringList.at(i).lastIndexOf('/') - 1);
 		for (int j = 0; j < filterExpList.size(); ++j)
 		{
-			if (ufStringList.at(i).contains(filterExpList.at(j)))
+			if (hRegxMatchStringEnd.contains(filterExpList.at(j)))
 				++regxmatches;
 		}
-		if (regxmatches > hRegxMatch)
+		if (regxmatches >= hRegxMatch)
 		{
 			hRegxMatchString = ufStringList.at(i);
 			hRegxMatch = regxmatches;
 		}
 	}
-	return hRegxMatchString;
+	return qMakePair(hRegxMatchString, hRegxMatch);
 }
 
 void unetbootin::sysreboot()

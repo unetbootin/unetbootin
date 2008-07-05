@@ -98,7 +98,27 @@ if (nameDistro == "CloneZilla")
 
 if (nameDistro == "Damn Small Linux")
 {
-	downloadfile(fileFilterFtpDir("ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/", 3072000, 1048576000, QList<QRegExp>() << QRegExp("^dsl") << QRegExp(".iso$") << QRegExp("initrd") << QRegExp("initrd.iso$") << QRegExp("^dsl-\\S{1,}-initrd.iso$")), isotmpf);
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"ftp://ibiblio.org/pub/Linux/distributions/damnsmall/current/" << 
+	"http://ibiblio.org/pub/Linux/distributions/damnsmall/current/" << 
+	"ftp://gd.tuwien.ac.at/opsys/linux/damnsmall/current/" << 
+	"http://gd.tuwien.ac.at/opsys/linux/damnsmall/current/" << 
+	"ftp://ftp.is.co.za/linux/distributions/damnsmall/current/" << 
+//	"ftp://ftp.belnet.be/packages/damnsmalllinux/current/" << 
+	"http://ftp.belnet.be/packages/damnsmalllinux/current/" << 
+	"ftp://ftp.heanet.ie/mirrors/damnsmalllinux.org/current/" << 
+	"http://ftp.heanet.ie/mirrors/damnsmalllinux.org/current/"
+//	"ftp://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/" << 
+//	"http://ftp.oss.cc.gatech.edu/pub/linux/distributions/damnsmall/current/" <<
+//	"ftp://ftp.planetmirror.com/pub/damnsmall/current/" <<
+//	"http://planetmirror.com/pub/damnsmall/current/" <<
+	, 3072000, 1048576000, QList<QRegExp>() << 
+	QRegExp("^dsl", Qt::CaseInsensitive) << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("initrd", Qt::CaseInsensitive) << 
+	QRegExp("initrd.iso$", Qt::CaseInsensitive) << 
+	QRegExp("^dsl-\\S{1,}-initrd.iso$", Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
@@ -124,6 +144,12 @@ if (nameDistro == "Debian")
 		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/gtk/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 		kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";
 	}
+}
+
+if (nameDistro == "FaunOS")
+{
+	downloadfile(QString("http://download.faunos.com/FaunOS-%1/FaunOS-%1-dvd.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "Fedora")
@@ -200,15 +226,36 @@ if (nameDistro == "Frugalware")
 	{
 		cpuarch = "i686";
 	}
-	QString pageurl = QString("http://www10.frugalware.org/pub/linux/frugalware/frugalware-%1/boot/").arg(relname);
-	QStringList pagecontents = downloadpagecontents(pageurl).replace("<", "\n").replace(">", "\n").split("\n");
-	QString kernpartname, initpartname;
-	if (!pagecontents.filter(QRegExp("^\\s{0,}vmlinuz.{0,}"+cpuarch)).isEmpty())
-		kernpartname = pagecontents.filter(QRegExp("^\\s{0,}vmlinuz.{0,}"+cpuarch)).at(0);
-	if (!pagecontents.filter(QRegExp("^\\s{0,}initrd.{0,}"+cpuarch+".img.gz")).isEmpty())
-		initpartname = pagecontents.filter(QRegExp("^\\s{0,}initrd.{0,}"+cpuarch+".img.gz")).at(0);
-	downloadfile(QString("%1%2").arg(pageurl, kernpartname), QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("%1%2").arg(pageurl, initpartname), QString("%1ubninit").arg(targetPath));
+	QStringList frugalwaremirrorsL = QStringList() <<
+//	"ftp://ftp5.frugalware.org/packages/frugalware/pub/frugalware-"+relname+"/boot/" <<
+//	"http://www5.frugalware.org/packages/frugalware/pub/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp8.frugalware.org/distro/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www8.frugalware.org/distro/frugalware/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp10.frugalware.org/pub/linux/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www10.frugalware.org/pub/linux/frugalware/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www12.frugalware.org/mirrors/ftp.frugalware.org/pub/frugalware/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
+	"http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp2.frugalware.org/frugalware/pub/frugalware/frugalware-"+relname+"/boot/" <<
+	"ftp://ftp3.frugalware.org/mirrors/frugalware/pub/frugalware/frugalware-"+relname+"/boot/";
+	downloadfile(fileFilterNetDir(frugalwaremirrorsL
+	, 307200, 104857600, QList<QRegExp>() << 
+	QRegExp("vmlinuz", Qt::CaseInsensitive) <<
+	QRegExp("^vmlinuz-", Qt::CaseInsensitive) <<
+	QRegExp(cpuarch, Qt::CaseInsensitive) <<
+	QRegExp("-"+cpuarch+"$", Qt::CaseInsensitive) <<
+	QRegExp("^vmlinuz-\\S{1,}-"+cpuarch+"$", Qt::CaseInsensitive)
+	), QString("%1ubnkern").arg(targetPath));
+	downloadfile(fileFilterNetDir(frugalwaremirrorsL
+	, 3145728, 1048576000, QList<QRegExp>() << 
+	QRegExp("initrd", Qt::CaseInsensitive) <<
+	QRegExp("^initrd-", Qt::CaseInsensitive) <<
+	QRegExp(cpuarch, Qt::CaseInsensitive) <<
+	QRegExp("-"+cpuarch+".img", Qt::CaseInsensitive) <<
+	QRegExp("-"+cpuarch+".img.gz$", Qt::CaseInsensitive) <<
+	QRegExp("^initrd-\\S{0,}"+cpuarch+".img.gz$", Qt::CaseInsensitive)
+	), QString("%1ubninit").arg(targetPath));
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";
 }
 
@@ -370,7 +417,16 @@ if (nameDistro == "PCLinuxOS")
 
 if (nameDistro == "Puppy Linux")
 {
-	downloadfile(QString("ftp://ibiblio.org/pub/linux/distributions/puppylinux/puppy-%1.iso").arg(relname), isotmpf);
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"ftp://ibiblio.org/pub/linux/distributions/puppylinux/" << 
+	"http://distro.ibiblio.org/pub/linux/distributions/puppylinux/" <<
+	"ftp://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/" << 
+	"http://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/"
+	, 61440000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("^puppy-\\d{1,}\\S{1,}.iso$", Qt::CaseInsensitive) << 
+	QRegExp("^puppy-4\\S{1,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
@@ -404,7 +460,23 @@ if (nameDistro == "Ubuntu")
 	}
 	if (islivecd)
 	{
-		downloadfile(QString("http://releases.ubuntu.com/%1/ubuntu-%1-desktop-%2.iso").arg(relname, cpuarch), isotmpf);
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"http://releases.ubuntu.com/"+relname << 
+		"http://releases.ubuntu.com/releases/"+relname <<
+		"ftp://releases.ubuntu.com/releases/.pool/" << 
+		"http://mirrors.gigenet.com/ubuntu/"+relname <<
+		"http://mirrors.easynews.com/linux/ubuntu-releases/"+relname <<
+		"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<
+		"http://ftp.wayne.edu/linux_distributions/ubuntu/"+relname <<
+		"http://ubuntu.mirrors.proxad.net/"+relname
+		, 524288000, 1048576000, QList<QRegExp>() << 
+		QRegExp(".iso$", Qt::CaseInsensitive) << 
+		QRegExp(cpuarch+".iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+		QRegExp("ubuntu\\S{0,}"+relname+"\\S{0,}desktop\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) << 
+		QRegExp("ubuntu-"+relname+"\\S{0,}-desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+		), isotmpf);
 		extractiso(isotmpf, targetPath);
 	}
 	else
