@@ -113,12 +113,12 @@ void unetbootin::ubninitialize()
 	intromessage->resize(intromessage->width(), intromessage->height() + 135);
 	#endif
 	#ifdef NOFLOPPY
-	if (diskimagetypeselect->findText("Floppy") != -1)
-		diskimagetypeselect->removeItem(diskimagetypeselect->findText("Floppy"));
+	if (diskimagetypeselect->findText(tr("Floppy")) != -1)
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("Floppy")));
 	#endif
 	#ifdef NOISO
-	if (diskimagetypeselect->findText("ISO") != -1)
-		diskimagetypeselect->removeItem(diskimagetypeselect->findText("ISO"));
+	if (diskimagetypeselect->findText(tr("ISO")) != -1)
+		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("ISO")));
 	#endif
 	#ifdef AUTOSUPERGRUBDISK
 	QFile asgdDescF;
@@ -135,6 +135,11 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 
 	asgdDescS.readAll() << 
 	"1.0"));
+	distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
+		"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
+		"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") << 
+	"Latest"));
 	#endif
 	#ifdef EEEPCLOS
 	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" << 
@@ -305,21 +310,21 @@ void unetbootin::ubninitialize()
 	"5.2"));
 	#endif
 	#ifdef Q_OS_UNIX
-	fdiskcommand = locatecommand("fdisk", "either", "util-linux");
-	sfdiskcommand = locatecommand("sfdisk", "either", "util-linux");
-	volidcommand = locatecommand("vol_id", "either", "udev");
-	syslinuxcommand = locatecommand("syslinux", "USB Drive", "syslinux");
-	sevzcommand = locatecommand("7z", "either", "p7zip-full");
+	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+	sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
+	volidcommand = locatecommand("vol_id", tr("either"), "udev");
+	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
+	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
 	ubntmpf = "/tmp/";
 	#endif
 	#ifdef Q_OS_WIN32
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
 	#endif
-	if (typeselect->findText("USB Drive") != -1)
-		typeselect->setCurrentIndex(typeselect->findText("USB Drive"));
+	if (typeselect->findText(tr("USB Drive")) != -1)
+		typeselect->setCurrentIndex(typeselect->findText(tr("USB Drive")));
 	#ifdef HDDINSTALL
-	if (typeselect->findText("Hard Disk") != -1)
-		typeselect->setCurrentIndex(typeselect->findText("Hard Disk"));
+	if (typeselect->findText(tr("Hard Disk")) != -1)
+		typeselect->setCurrentIndex(typeselect->findText(tr("Hard Disk")));
 	#endif
 }
 
@@ -367,11 +372,11 @@ QStringList unetbootin::listcurdrives()
 QStringList unetbootin::listsanedrives()
 {
 	QStringList fulldrivelist;
-	if (typeselect->currentText() == "Hard Disk")
+	if (typeselect->currentText() == tr("Hard Disk"))
 	{
 		fulldrivelist.append(QDir::toNativeSeparators(QDir::rootPath()).toUpper());
 	}
-	else if (typeselect->currentText() == "USB Drive")
+	else if (typeselect->currentText() == tr("USB Drive"))
 	{
 		#ifdef Q_OS_WIN32
 		QFileInfoList extdrivesList = QDir::drives();
@@ -425,12 +430,12 @@ void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 {
 	showalldrivescheckbox->setChecked(false);
 	formatdrivecheckbox->setChecked(false);
-	if (typeselectIndex == typeselect->findText("Hard Disk"))
+	if (typeselectIndex == typeselect->findText(tr("Hard Disk")))
 	{
 		showalldrivescheckbox->setEnabled(false);
 		formatdrivecheckbox->setEnabled(false);
 	}
-	if (typeselectIndex == typeselect->findText("USB Drive"))
+	if (typeselectIndex == typeselect->findText(tr("USB Drive")))
 	{
 		showalldrivescheckbox->setEnabled(true);
 //		formatdrivecheckbox->setEnabled(true);
@@ -453,13 +458,13 @@ void unetbootin::on_FloppyFileSelector_clicked()
 	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath()));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
-		if (diskimagetypeselect->findText("ISO") != -1)
-			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("ISO"));
+		if (diskimagetypeselect->findText(tr("ISO")) != -1)
+			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText(tr("ISO")));
 	}
 	if (QFileInfo(nameFloppy).completeSuffix().contains("img", Qt::CaseInsensitive) || QFileInfo(nameFloppy).completeSuffix().contains("flp", Qt::CaseInsensitive))
 	{
-		if (diskimagetypeselect->findText("Floppy") != -1)
-			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText("Floppy"));
+		if (diskimagetypeselect->findText(tr("Floppy")) != -1)
+			diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText(tr("Floppy")));
 	}
 	FloppyPath->clear();
 	FloppyPath->insert(nameFloppy);
@@ -502,7 +507,7 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-	if (typeselect->currentIndex() == typeselect->findText("USB Drive") && driveselect->currentText().isEmpty())
+	if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty())
 	{
 		QMessageBox unotenoughinputmsgb;
 		unotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -518,7 +523,7 @@ void unetbootin::on_okbutton_clicked()
  		}
 	}
 	#ifdef Q_OS_UNIX
-	else if (typeselect->currentIndex() == typeselect->findText("USB Drive") && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
+	else if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
 	{
 		QMessageBox merrordevnotmountedmsgbx;
 		merrordevnotmountedmsgbx.setIcon(QMessageBox::Warning);
@@ -1075,7 +1080,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		connect(&dlhttp, SIGNAL(dataReadProgress(int, int)), this, SLOT(dlprogressupdate(int, int)));
 	}
 	QFile dloutfile;
-	if (installType == "USB Drive")
+	if (installType == tr("USB Drive"))
 	{
 		dloutfile.setFileName(randtmpfile::getrandfilename(ubntmpf, "tmp"));
 	}
@@ -1117,7 +1122,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		dlhttp.close();
 	}
 	dloutfile.close();
-	if (installType == "USB Drive")
+	if (installType == tr("USB Drive"))
 	{
 		dloutfile.rename(targetfile);
 	}
@@ -1667,11 +1672,11 @@ void unetbootin::runinst()
 	QString ginstallDir;
 	QString installDir;
 	#ifdef Q_OS_WIN32
-	if (installType == "Hard Disk")
+	if (installType == tr("Hard Disk"))
 	{
 		ginstallDir = "unetbtin/";
 	}
-	if (installType == "USB Drive")
+	if (installType == tr("USB Drive"))
 	{
 		ginstallDir = "";
 	}
@@ -1680,7 +1685,7 @@ void unetbootin::runinst()
 	rawtargetDev = targetDev;
 	#endif
 	#ifdef Q_OS_UNIX
-	if (installType == "Hard Disk")
+	if (installType == tr("Hard Disk"))
 	{
 		QString devnboot = locatedevicenode("/boot");
 		if (devnboot == "NOT FOUND")
@@ -1696,7 +1701,7 @@ void unetbootin::runinst()
 			targetDev = devnboot;
 		}
 	}
-	if (installType == "USB Drive")
+	if (installType == tr("USB Drive"))
 	{
 		targetDev = driveselect->currentText();
 		ginstallDir = "";
@@ -1726,12 +1731,12 @@ void unetbootin::runinst()
 	}
 	if (radioFloppy->isChecked())
 	{
-		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("Floppy") || diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("HDD"))
+		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("Floppy")))
 		{
 			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
 			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
    		}
-		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText("ISO"))
+		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("ISO")))
 		{
 			extractiso(FloppyPath->text(), targetPath);
 			if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
@@ -1806,11 +1811,11 @@ void unetbootin::runinst()
 
 void unetbootin::instDetType()
 {
-	if (installType == "Hard Disk")
+	if (installType == tr("Hard Disk"))
 	{
 		runinsthdd();
    	}
-   	if (installType == "USB Drive")
+   	if (installType == tr("USB Drive"))
 	{
 		runinstusb();
 	}
@@ -1985,11 +1990,11 @@ void unetbootin::fininstall()
 	rebootlayer->show();
 	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
 	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
-	if (installType == "Hard Disk")
+	if (installType == tr("Hard Disk"))
 	{
 		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
 	}
-	if (installType == "USB Drive")
+	if (installType == tr("USB Drive"))
 	{
 		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
 	}
