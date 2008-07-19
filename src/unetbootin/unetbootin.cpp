@@ -135,15 +135,10 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 
 	asgdDescS.readAll() << 
 	"1.0"));
-	distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" << 
-	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
-		"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
-		"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") << 
-	"Latest"));
 	#endif
 	#ifdef EEEPCLOS
 	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" << 
-	tr("<img src=\":/eeepclos.png\" /><br/>"
+	tr("<img src=\":/eeepclos.jpg\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/>"
 		"<b>Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.<br/>"
 		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
