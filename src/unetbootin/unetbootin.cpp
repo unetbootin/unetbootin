@@ -152,6 +152,14 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
 	"8.04"));
 	#endif
+	#ifdef ELIVE
+	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" << 
+	tr("<img src=\":/elive.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
+		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
+	"Unstable_Live"));
+	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();

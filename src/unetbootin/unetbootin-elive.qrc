@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>elive.png</file>
+    </qresource>
+</RCC>

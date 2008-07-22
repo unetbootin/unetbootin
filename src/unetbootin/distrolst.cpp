@@ -41,6 +41,23 @@ if (nameDistro == "Ubuntu Eee")
 
 #endif
 
+#ifdef ELIVE
+
+if (nameDistro == "Elive")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://elive.leviathan-avc.com/development/" << 
+	"http://elive.cmhacks.com/development/" << 
+	"http://elive.icedslash.com/isos/development/"
+	, 524288000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("elive\\S{0,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+mingwb="i586-mingw32msvc"
+rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+make clean
+rm Makefile*
+rm release/*
+lupdate unetbootin.pro
+lrelease unetbootin.pro
+./qmake-windows "DEFINES += ELIVE" "RESOURCES += unetbootin-elive.qrc"
+make
+$mingwb-strip --strip-all release/unetbootin.exe
+mv release/unetbootin.exe release/unetbootin-elive-windows-$rvern.exe
+./upx --lzma release/unetbootin-elive-windows-$rvern.exe
+./qmake-linux "DEFINES += ELIVE" "RESOURCES += unetbootin-elive.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-elive-linux-$rvern
+./upx --lzma release/unetbootin-elive-linux-$rvern
+qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
+zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
+
