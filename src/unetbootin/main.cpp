@@ -188,9 +188,12 @@ int main(int argc, char *argv[])
 	{
 		tnapplang = QLocale::system().name().remove(QRegExp("_\\S{0,}")).simplified();
 	}
-	if (QFile::exists(QString(":/unetbootin_%1.qm").arg(tnapplang)))
+	if (QFile::exists(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)) && translator.load(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)))
 	{
-		translator.load(QString(":/unetbootin_%1.qm").arg(tnapplang));
+		app.installTranslator(&translator);
+	}
+	else if (QFile::exists(QString(":/unetbootin_%1.qm").arg(tnapplang)) && translator.load(QString(":/unetbootin_%1.qm").arg(tnapplang)))
+	{
 		app.installTranslator(&translator);
 	}
 	else

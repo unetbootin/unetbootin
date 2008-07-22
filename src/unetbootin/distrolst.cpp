@@ -146,6 +146,33 @@ if (nameDistro == "Debian")
 	}
 }
 
+if (nameDistro == "Dreamlinux")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"ftp://ftp.nluug.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
+	"http://ftp.nluug.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
+	"ftp://ftp.surfnet.nl/pub/os/Linux/distr/dreamlinux/stable/" << 
+	"http://ftp.surfnet.nl/pub/os/Linux/distr/dreamlinux/stable/"
+	, 524288000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("DL\\S{0,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+if (nameDistro == "Elive")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://elive.leviathan-avc.com/development/" << 
+	"http://elive.cmhacks.com/development/" << 
+	"http://elive.icedslash.com/isos/development/"
+	, 524288000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("elive\\S{0,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "FaunOS")
 {
 	downloadfile(QString("http://download.faunos.com/FaunOS-%1/FaunOS-%1-dvd.iso").arg(relname), isotmpf);
@@ -433,6 +460,12 @@ if (nameDistro == "Puppy Linux")
 if (nameDistro == "Slax")
 {
 	downloadfile("http://www.slax.org/get_slax.php?download=iso", isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+if (nameDistro == "SliTaz")
+{
+	downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
