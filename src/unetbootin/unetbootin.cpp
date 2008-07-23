@@ -327,6 +327,7 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"5.2"));
 	#endif
+	#include "customdistselect.cpp"
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
@@ -349,10 +350,13 @@ void unetbootin::ubninitialize()
 void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 {
 	dverselect->clear();
+	if (distroselectIndex == -1)
+		return;
 	QStringList dverL = distroselect->itemData(distroselectIndex).value<QStringList>();
 	for (int i = 2; i < dverL.size(); ++i)
 	{
-		dverselect->addItem(dverL.at(i));
+		if (!dverL.at(i).contains("someotherversion"))
+			dverselect->addItem(dverL.at(i));
 	}
 	if (dverselect->findText(dverL.at(0)) != -1)
 		dverselect->setCurrentIndex(dverselect->findText(dverL.at(0)));
@@ -1800,7 +1804,10 @@ void unetbootin::runinst()
 	   	{
 	   		isarch64 = false;
 	  	}
-		#include "distrolst.cpp"
+	  	QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
+		QString cpuarch;
+		QString relname = nameVersion.toLower();
+		#include "customdistrolst.cpp"
 		if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 		{
 			QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));

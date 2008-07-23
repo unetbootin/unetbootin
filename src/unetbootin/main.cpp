@@ -177,6 +177,7 @@ QString checkforgraphicalsu(QString graphicalsu)
 int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv, true);
+	QTranslator custranldr;
 	QTranslator translator;
 	QString tnapplang;
 	QStringList ubnappargs = app.arguments().filter(QRegExp("lang=\\w{2,}"));
@@ -187,6 +188,20 @@ int main(int argc, char *argv[])
 	else
 	{
 		tnapplang = QLocale::system().name().remove(QRegExp("_\\S{0,}")).simplified();
+	}
+	QDir applocdir(app.applicationDirPath());
+	QStringList applocfiles = applocdir.entryList(QStringList() << "*.qm", QDir::Files);
+	if (!applocfiles.isEmpty())
+	{
+		QString custqmfilepath = applocfiles.at(0);
+		if (!applocfiles.filter("unetbootin").isEmpty())
+		{
+			custqmfilepath = applocfiles.filter("unetbootin").at(0);
+			if (!applocfiles.filter("unetbootin").filter(tnapplang).isEmpty())
+				custqmfilepath = applocfiles.filter("unetbootin").filter(tnapplang).at(0);
+		}
+		if (custranldr.load(custqmfilepath, app.applicationDirPath()))
+			app.installTranslator(&custranldr);
 	}
 	if (QFile::exists(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)) && translator.load(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)))
 	{
@@ -200,6 +215,7 @@ int main(int argc, char *argv[])
 	{
 		tnapplang = "en";
 	}
+	app.installTranslator(&translator);
 	#ifdef Q_OS_UNIX
 	QProcess whoamip;
 	whoamip.start("whoami");

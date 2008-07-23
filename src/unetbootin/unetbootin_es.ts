@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="es">
 <context>
+    <name>@default</name>
+    <message>
+        <location filename="distrolst.cpp" line="102"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="227"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="233"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="408"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
+        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="414"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="main.cpp" line="148"/>
@@ -21,34 +54,34 @@
         <location filename="distrolst.cpp" line="106"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
+        <translation type="obsolete">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="231"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
+        <translation type="obsolete">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="237"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
+        <translation type="obsolete">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="412"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
+        <translation type="obsolete">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="418"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
+        <translation type="obsolete">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="223"/>
+        <location filename="main.cpp" line="239"/>
         <source>Must run as root</source>
         <translation>Se debe ejecutar como superusuario (root)</translation>
     </message>
@@ -380,236 +413,236 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="476"/>
+        <location filename="unetbootin.cpp" line="480"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="494"/>
+        <location filename="unetbootin.cpp" line="498"/>
         <source>Open Kernel File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="502"/>
+        <location filename="unetbootin.cpp" line="506"/>
         <source>Open Initrd File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="510"/>
+        <location filename="unetbootin.cpp" line="514"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="532"/>
+        <location filename="unetbootin.cpp" line="536"/>
         <source>Insert a USB flash drive</source>
         <translation>Inserta un pendrive (unidad USB)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="533"/>
+        <location filename="unetbootin.cpp" line="537"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>No se encontró ningun pendrive (unidad USB). Si has introducido ya un pendrive, prueba a reformatearlo como FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
+        <location filename="unetbootin.cpp" line="552"/>
         <source>%1 not mounted</source>
         <translation>%1 no está montado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="549"/>
+        <location filename="unetbootin.cpp" line="553"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Primero debes montar el pendrive: %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quites y vuelvas a insertar el pendrive.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
+        <location filename="unetbootin.cpp" line="568"/>
         <source>Select a distro</source>
         <translation>Selecciona una distribución</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="565"/>
+        <location filename="unetbootin.cpp" line="569"/>
         <source>You must select a distribution to load.</source>
         <translation>Debes seleccionar una distribución para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="583"/>
         <source>Select a disk image file</source>
         <translation>Selecciona un fichero de imagen de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="580"/>
+        <location filename="unetbootin.cpp" line="584"/>
         <source>You must select a disk image file to load.</source>
         <translation>Debes seleccionar un fichero de imagen de disco para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="594"/>
+        <location filename="unetbootin.cpp" line="598"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Selecciona un kernel y/o un fichero initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="595"/>
+        <location filename="unetbootin.cpp" line="599"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Debes seleccionar un kernel y/o un fichero initrd para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="609"/>
+        <location filename="unetbootin.cpp" line="613"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="610"/>
+        <location filename="unetbootin.cpp" line="614"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="628"/>
         <source>Kernel file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="625"/>
+        <location filename="unetbootin.cpp" line="629"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="643"/>
         <source>Initrd file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="644"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="740"/>
+        <location filename="unetbootin.cpp" line="744"/>
         <source>%1 exists, overwrite?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="741"/>
+        <location filename="unetbootin.cpp" line="745"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="960"/>
+        <location filename="unetbootin.cpp" line="964"/>
         <source>Extracting files, please wait...</source>
         <translation>Extrayendo ficheros, por favor espere...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="961"/>
+        <location filename="unetbootin.cpp" line="965"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="962"/>
+        <location filename="unetbootin.cpp" line="966"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Fuente:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="963"/>
+        <location filename="unetbootin.cpp" line="967"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="964"/>
+        <location filename="unetbootin.cpp" line="968"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="967"/>
+        <location filename="unetbootin.cpp" line="971"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Fuente:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="968"/>
+        <location filename="unetbootin.cpp" line="972"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="969"/>
+        <location filename="unetbootin.cpp" line="973"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1085"/>
+        <location filename="unetbootin.cpp" line="1089"/>
         <source>Downloading files, plese wait...</source>
         <translation>Descargando ficheros, por favor espere...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1086"/>
+        <location filename="unetbootin.cpp" line="1090"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Fuente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1087"/>
+        <location filename="unetbootin.cpp" line="1091"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1088"/>
+        <location filename="unetbootin.cpp" line="1092"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Descargado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1165"/>
+        <location filename="unetbootin.cpp" line="1169"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1239"/>
+        <location filename="unetbootin.cpp" line="1243"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1243"/>
+        <location filename="unetbootin.cpp" line="1247"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1407"/>
+        <location filename="unetbootin.cpp" line="1411"/>
         <source>%1 not found</source>
         <translation>%1 no encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1408"/>
+        <location filename="unetbootin.cpp" line="1412"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 no encontrado. Este se requiere para el modo de instalación %2.
 Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2013"/>
+        <location filename="unetbootin.cpp" line="2020"/>
         <source>After rebooting, select the </source>
         <translation>Después de reiniciar, selecciona el</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2017"/>
+        <location filename="unetbootin.cpp" line="2024"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
 ¿Reiniciar ahora?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="335"/>
+        <location filename="unetbootin.cpp" line="336"/>
         <source>either</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2015"/>
+        <location filename="unetbootin.cpp" line="2022"/>
         <source>USB Drive</source>
         <translation>Unidad USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2011"/>
+        <location filename="unetbootin.cpp" line="2018"/>
         <source>Hard Disk</source>
         <translation>Disco Duro</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1752"/>
+        <location filename="unetbootin.cpp" line="1756"/>
         <source>Floppy</source>
         <translation>Disquete</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1757"/>
+        <location filename="unetbootin.cpp" line="1761"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>

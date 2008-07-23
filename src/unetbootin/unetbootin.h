@@ -58,6 +58,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
+class customver : public QObject
+{
+	Q_OBJECT
+};
+
 class callexternappT : public QThread
 {
 public:
