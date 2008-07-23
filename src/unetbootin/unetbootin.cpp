@@ -355,7 +355,7 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 	QStringList dverL = distroselect->itemData(distroselectIndex).value<QStringList>();
 	for (int i = 2; i < dverL.size(); ++i)
 	{
-		if (!dverL.at(i).contains("someotherversion"))
+		if (!dverL.at(i).contains("someotherversion") && !dverL.at(i).isEmpty())
 			dverselect->addItem(dverL.at(i));
 	}
 	if (dverselect->findText(dverL.at(0)) != -1)
