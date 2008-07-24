@@ -364,6 +364,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="19"/>
+        <source>someotherversion1-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="19"/>
+        <source>someotherversion1-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="19"/>
+        <source>someotherversion1-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="19"/>
+        <source>someotherversion1-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="19"/>
         <source>someotherversion1-5_Live</source>
         <translation></translation>
     </message>
@@ -388,8 +408,8 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="customdistselect.cpp" line="82"/>
-        <source>someotherversion6_Live_x64</source>
+        <location filename="customdistselect.cpp" line="19"/>
+        <source>someotherversion1-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -524,6 +544,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="26"/>
+        <source>someotherversion2-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="26"/>
+        <source>someotherversion2-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="26"/>
+        <source>someotherversion2-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="26"/>
+        <source>someotherversion2-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="26"/>
         <source>someotherversion2-5_Live</source>
         <translation></translation>
     </message>
@@ -545,6 +585,11 @@
     <message>
         <location filename="customdistselect.cpp" line="26"/>
         <source>someotherversion2-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="26"/>
+        <source>someotherversion2-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -679,6 +724,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="34"/>
+        <source>someotherversion3-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="34"/>
+        <source>someotherversion3-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="34"/>
+        <source>someotherversion3-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="34"/>
+        <source>someotherversion3-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="34"/>
         <source>someotherversion3-5_Live</source>
         <translation></translation>
     </message>
@@ -700,6 +765,11 @@
     <message>
         <location filename="customdistselect.cpp" line="34"/>
         <source>someotherversion3-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="34"/>
+        <source>someotherversion3-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -834,6 +904,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="42"/>
+        <source>someotherversion4-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="42"/>
+        <source>someotherversion4-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="42"/>
+        <source>someotherversion4-5</source>
+        <translation>dapper</translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="42"/>
+        <source>someotherversion4-5_x64</source>
+        <translation>dapper_x64</translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="42"/>
         <source>someotherversion4-5_Live</source>
         <translation></translation>
     </message>
@@ -845,16 +935,21 @@
     <message>
         <location filename="customdistselect.cpp" line="42"/>
         <source>someotherversion4-6</source>
-        <translation>dapper</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="customdistselect.cpp" line="42"/>
         <source>someotherversion4-6_x64</source>
-        <translation>dapper_x64</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="customdistselect.cpp" line="42"/>
         <source>someotherversion4-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="42"/>
+        <source>someotherversion4-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -989,6 +1084,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="50"/>
+        <source>someotherversion5-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="50"/>
+        <source>someotherversion5-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="50"/>
+        <source>someotherversion5-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="50"/>
+        <source>someotherversion5-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="50"/>
         <source>someotherversion5-5_Live</source>
         <translation></translation>
     </message>
@@ -1010,6 +1125,11 @@
     <message>
         <location filename="customdistselect.cpp" line="50"/>
         <source>someotherversion5-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="50"/>
+        <source>someotherversion5-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -1144,6 +1264,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="58"/>
+        <source>someotherversion6-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="58"/>
+        <source>someotherversion6-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="58"/>
+        <source>someotherversion6-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="58"/>
+        <source>someotherversion6-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="58"/>
         <source>someotherversion6-5_Live</source>
         <translation></translation>
     </message>
@@ -1165,6 +1305,11 @@
     <message>
         <location filename="customdistselect.cpp" line="58"/>
         <source>someotherversion6-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="58"/>
+        <source>someotherversion6-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -1299,6 +1444,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="66"/>
+        <source>someotherversion7-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="66"/>
+        <source>someotherversion7-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="66"/>
+        <source>someotherversion7-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="66"/>
+        <source>someotherversion7-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="66"/>
         <source>someotherversion7-5_Live</source>
         <translation></translation>
     </message>
@@ -1320,6 +1485,11 @@
     <message>
         <location filename="customdistselect.cpp" line="66"/>
         <source>someotherversion7-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="66"/>
+        <source>someotherversion7-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -1454,6 +1624,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="74"/>
+        <source>someotherversion8-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="74"/>
+        <source>someotherversion8-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="74"/>
+        <source>someotherversion8-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="74"/>
+        <source>someotherversion8-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="74"/>
         <source>someotherversion8-5_Live</source>
         <translation></translation>
     </message>
@@ -1475,6 +1665,11 @@
     <message>
         <location filename="customdistselect.cpp" line="74"/>
         <source>someotherversion8-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="74"/>
+        <source>someotherversion8-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -1609,6 +1804,26 @@
     </message>
     <message>
         <location filename="customdistselect.cpp" line="82"/>
+        <source>someotherversion9-4_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="82"/>
+        <source>someotherversion9-4_Live_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="82"/>
+        <source>someotherversion9-5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="82"/>
+        <source>someotherversion9-5_x64</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="82"/>
         <source>someotherversion9-5_Live</source>
         <translation></translation>
     </message>
@@ -1630,6 +1845,11 @@
     <message>
         <location filename="customdistselect.cpp" line="82"/>
         <source>someotherversion9-6_Live</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="customdistselect.cpp" line="82"/>
+        <source>someotherversion9-6_Live_x64</source>
         <translation></translation>
     </message>
     <message>
@@ -1691,136 +1911,6 @@
         <location filename="customdistselect.cpp" line="82"/>
         <source>someotherversion9-9_Live_x64</source>
         <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="19"/>
-        <source>someotherversion1-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="26"/>
-        <source>someotherversion2-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="34"/>
-        <source>someotherversion3-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="42"/>
-        <source>someotherversion4-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="50"/>
-        <source>someotherversion5-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="58"/>
-        <source>someotherversion6-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="74"/>
-        <source>someotherversion8-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="82"/>
-        <source>someotherversion9-5_x64</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="19"/>
-        <source>someotherversion1-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="19"/>
-        <source>someotherversion1-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="26"/>
-        <source>someotherversion2-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="26"/>
-        <source>someotherversion2-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="34"/>
-        <source>someotherversion3-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="34"/>
-        <source>someotherversion3-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="42"/>
-        <source>someotherversion4-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="42"/>
-        <source>someotherversion4-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="50"/>
-        <source>someotherversion5-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="50"/>
-        <source>someotherversion5-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="58"/>
-        <source>someotherversion6-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="58"/>
-        <source>someotherversion6-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="66"/>
-        <source>someotherversion7-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="66"/>
-        <source>someotherversion7-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="74"/>
-        <source>someotherversion8-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="74"/>
-        <source>someotherversion8-4_Live_x64</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="82"/>
-        <source>someotherversion9-4_Live</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="customdistselect.cpp" line="82"/>
-        <source>someotherversion9-4_Live_x64</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
