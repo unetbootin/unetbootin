@@ -145,8 +145,8 @@ void ubnUninst()
 	chkinstL.clear();
 	QMessageBox finmsgb;
 	finmsgb.setIcon(QMessageBox::Information);
-	finmsgb.setWindowTitle(QObject::tr("Uninstallation Complete"));
-	finmsgb.setText(QObject::tr(UNETBOOTINB" has been uninstalled."));
+	finmsgb.setWindowTitle(uninstaller::tr("Uninstallation Complete"));
+	finmsgb.setText(uninstaller::tr("%1 has been uninstalled.").arg(UNETBOOTINB));
  	finmsgb.setStandardButtons(QMessageBox::Ok);
  	switch (finmsgb.exec())
  	{
@@ -236,9 +236,9 @@ int main(int argc, char *argv[])
 		}
 		QMessageBox rootmsgb;
 		rootmsgb.setIcon(QMessageBox::Warning);
-		rootmsgb.setWindowTitle(QObject::tr("Must run as root"));
+		rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
 		rootmsgb.setTextFormat(Qt::RichText);
-		rootmsgb.setText(QObject::tr(UNETBOOTINB" must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()));
+		rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
 		rootmsgb.setStandardButtons(QMessageBox::Ok);
 		switch (rootmsgb.exec())
 		{
@@ -259,8 +259,8 @@ int main(int argc, char *argv[])
 	{
 		QMessageBox uninstmsgb;
 		uninstmsgb.setIcon(QMessageBox::Information);
-		uninstmsgb.setWindowTitle(QObject::tr(UNETBOOTINB" Uninstaller"));
-		uninstmsgb.setText(QObject::tr(UNETBOOTINB" is currently installed. Remove the existing version?"));
+		uninstmsgb.setWindowTitle(uninstaller::tr("%1 Uninstaller").arg(UNETBOOTINB));
+		uninstmsgb.setText(uninstaller::tr("%1 is currently installed. Remove the existing version?").arg(UNETBOOTINB));
  		uninstmsgb.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
  		switch (uninstmsgb.exec())
  		{

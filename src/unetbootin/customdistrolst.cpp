@@ -11,49 +11,135 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 {
 	if (isarch64)
 	{
-		cpuarch = customver::tr("amd64");
+		if (!customver::tr("amd64").isEmpty())
+			cpuarch = customver::tr("amd64");
+		else
+			cpuarch = "amd64";
 	}
 	else
 	{
-		cpuarch = customver::tr("i386");
+		if (!customver::tr("i386").isEmpty())
+			cpuarch = customver::tr("i386");
+		else
+			cpuarch = "i386";
 	}
 	if (nameDistro == customver::tr("Distro Name 1"))
 	{
-		downloadfile(customver::tr("http://distro1site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro1format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro1site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro1site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 2"))
 	{
-		downloadfile(customver::tr("http://distro2site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro2format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro2site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro2site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 3"))
 	{
-		downloadfile(customver::tr("http://distro3site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro3format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro3site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro3site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 4"))
 	{
-		downloadfile(customver::tr("http://distro4site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro4format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro4site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro4site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 5"))
 	{
-		downloadfile(customver::tr("http://distro5site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro5format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro5site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro5site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 6"))
 	{
-		downloadfile(customver::tr("http://distro6site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro6format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro6site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro6site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 7"))
 	{
-		downloadfile(customver::tr("http://distro7site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro7format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro7site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro7site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 8"))
 	{
-		downloadfile(customver::tr("http://distro8site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro8format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro8site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro8site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
 	if (nameDistro == customver::tr("Distro Name 9"))
 	{
-		downloadfile(customver::tr("http://distro9site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+		if (customver::tr("distro9format-iso").contains("img"))
+		{
+			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+			downloadfile(customver::tr("http://distro9site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), QString("%1ubninit").arg(targetPath));
+		}
+		else
+		{
+			downloadfile(customver::tr("http://distro9site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
 	}
-	extractiso(isotmpf, targetPath);
 }
 else
 {

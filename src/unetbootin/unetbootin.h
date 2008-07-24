@@ -63,6 +63,11 @@ class customver : public QObject
 	Q_OBJECT
 };
 
+class uninstaller : public QObject
+{
+	Q_OBJECT
+};
+
 class callexternappT : public QThread
 {
 public:
