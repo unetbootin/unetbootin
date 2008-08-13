@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="hu">
-<defaultcodec></defaultcodec>
 <context>
     <name>QObject</name>
     <message>
@@ -629,6 +628,11 @@ Reboot now?</source>
         <translation>Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1
 Újrainditás most?</translation>
     </message>
+    <message>
+        <location filename="unetbootin.cpp" line="152"/>
+        <source>&lt;img src=&quot;:/eeeubuntu.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is a user-friendly Ubuntu based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>unetbootinui</name>
@@ -859,22 +863,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="239"/>
+        <location filename="main.cpp" line="245"/>
         <source>Must run as root</source>
         <translation>Ezt a programot &apos;root&apos; (rendszergazda) felhasználóként kell futatni</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="241"/>
+        <location filename="main.cpp" line="247"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="262"/>
+        <location filename="main.cpp" line="268"/>
         <source>%1 Uninstaller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="263"/>
+        <location filename="main.cpp" line="269"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation type="unfinished"></translation>
     </message>

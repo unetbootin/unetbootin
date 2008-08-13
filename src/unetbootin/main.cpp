@@ -234,6 +234,12 @@ int main(int argc, char *argv[])
 			QProcess::startDetached(QString("%1 %2").arg(kdesulocation, app.applicationFilePath()));
 			return 0;
 		}
+		QString gnomesulocation = checkforgraphicalsu("gnomesu");
+		if (gnomesulocation != "REQCNOTFOUND")
+		{
+			QProcess::startDetached(QString("%1 %2").arg(gnomesulocation, app.applicationFilePath()));
+			return 0;
+		}
 		QMessageBox rootmsgb;
 		rootmsgb.setIcon(QMessageBox::Warning);
 		rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
