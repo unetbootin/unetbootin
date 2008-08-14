@@ -22,3 +22,6 @@ src/unetbootin/Makefile
 src/unetbootin/Makefile.Release
 src/unetbootin/Makefile.Debug
 src/unetbootin/*.qm
+src/unetbootin/.cdtproject
+src/unetbootin/.project
+src/unetbootin/.settings

@@ -148,6 +148,7 @@ public:
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
 	QString getgrubcfgargs(QString cfgfile);
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
 	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QString searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);

@@ -1007,6 +1007,54 @@ QString unetbootin::getgrubcfgargs(QString cfgfile)
 	return "";
 }
 
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getgrubcfgargsL(QString cfgfile)
+{
+	QPair<QStringList, QStringList> kernelandinitrd;
+	QPair<QStringList, QStringList> titleandparams;
+	int curindex = 0;
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+//	bool kernelpassed = false;
+	kernelandinitrd.first.append("/ubnkern");
+	kernelandinitrd.second.append("/ubninit");
+	titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+	titleandparams.second.append("");
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine().trimmed();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (cfgfileCL.contains(QRegExp("^title\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+//			if (kernelpassed)
+//			{
+//				
+//			}
+			titleandparams.first[curindex] = QString(cfgfileCL).remove("title", Qt::CaseInsensitive).trimmed();
+		}
+		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+			{
+				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+			}
+//			kernelandinitrd.first[curindex] = "/ubnkern"; // TODO
+//			kernelandinitrd.second[curindex] = "/ubninit"; // TODO
+//			kernelpassed = true;
+			++curindex;
+			kernelandinitrd.first.append("/ubnkern");
+			kernelandinitrd.second.append("/ubninit");
+			titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+			titleandparams.second.append("");
+		}
+	}
+	return qMakePair(kernelandinitrd, titleandparams);
+}
+
 QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
 {
 	QFile cfgfileF(cfgfile);
