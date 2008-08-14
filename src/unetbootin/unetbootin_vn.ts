@@ -158,12 +158,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2146"/>
+        <location filename="unetbootin.cpp" line="2166"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2142"/>
+        <location filename="unetbootin.cpp" line="2162"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -394,12 +394,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2144"/>
+        <location filename="unetbootin.cpp" line="2164"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2148"/>
+        <location filename="unetbootin.cpp" line="2168"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished"></translation>

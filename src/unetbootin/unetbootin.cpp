@@ -2030,7 +2030,7 @@ void unetbootin::runinsthdd()
 	#endif
 	#ifdef Q_OS_WIN32
 	"default 0\n"
-	"timeout 3\n"
+	"timeout 10\n"
 	#endif
 	"title "UNETBOOTINB"\n"
 	#ifdef Q_OS_WIN32
@@ -2041,11 +2041,31 @@ void unetbootin::runinsthdd()
 	#endif
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts
+	"boot\n").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts
 	#ifdef Q_OS_UNIX
 	, getGrubNotation(targetDev), ecurmenulstText
 	#endif
 	);
+	if (!extraoptionsPL.first.first.isEmpty())
+	{
+		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
+		{
+			menulstxt.append(QString("\ntitle %1\n"
+			#ifdef Q_OS_WIN32
+			"find --set-root %2\n"
+			#endif
+			#ifdef Q_OS_UNIX
+			"root %5\n"
+			#endif
+			"kernel %2 %4\n"
+			"initrd %3\n"
+			"boot\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i))
+			#ifdef Q_OS_UNIX
+			, getGrubNotation(targetDev)
+			#endif
+			);
+		}
+	}
 	menulstout << menulstxt << endl;
 	menulst.close();
 	#ifdef Q_OS_WIN32
