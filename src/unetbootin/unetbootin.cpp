@@ -915,6 +915,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > grubpcfgPL;
 //	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > combinedcfgPL;
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > filteredcfgPL;
 	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
 	QStringList mlstfoundfiles;
 	for (int i = 0; i < grubcfgtypes.size(); ++i)
@@ -969,7 +970,19 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		return syslinuxpcfg;
 	}
 	*/
-	return combinedcfgPL;
+	for (int i = 0; i < combinedcfgPL.first.first.size(); ++i)
+	{
+		if (combinedcfgPL.first.first.at(i) == kernelLoc && combinedcfgPL.first.second.at(i) == initrdLoc && combinedcfgPL.second.first.at(i).contains("Untitled Entry") && combinedcfgPL.second.second.at(i).isEmpty())
+			continue;
+		else
+		{
+			filteredcfgPL.first.first.append(combinedcfgPL.first.first.at(i));
+			filteredcfgPL.first.second.append(combinedcfgPL.first.second.at(i));
+			filteredcfgPL.second.first.append(combinedcfgPL.second.first.at(i));
+			filteredcfgPL.second.second.append(combinedcfgPL.second.second.at(i));
+		}
+	}
+	return filteredcfgPL;
 }
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
@@ -1080,8 +1093,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	QTextStream cfgfileS(&cfgfileF);
 	QString cfgfileCL;
 //	bool kernelpassed = false;
-	kernelandinitrd.first.append("/ubnkern");
-	kernelandinitrd.second.append("/ubninit");
+	kernelandinitrd.first.append(kernelLoc);
+	kernelandinitrd.second.append(initrdLoc);
 	titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
 	titleandparams.second.append("");
 	while (!cfgfileS.atEnd())
@@ -1105,12 +1118,12 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			}
-//			kernelandinitrd.first[curindex] = "/ubnkern"; // TODO
-//			kernelandinitrd.second[curindex] = "/ubninit"; // TODO
+//			kernelandinitrd.first[curindex] = kernelLoc; // TODO
+//			kernelandinitrd.second[curindex] = initrdLoc; // TODO
 //			kernelpassed = true;
 			++curindex;
-			kernelandinitrd.first.append("/ubnkern");
-			kernelandinitrd.second.append("/ubninit");
+			kernelandinitrd.first.append(kernelLoc);
+			kernelandinitrd.second.append(initrdLoc);
 			titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
 			titleandparams.second.append("");
 		}
@@ -2059,11 +2072,11 @@ void unetbootin::runinsthdd()
 			#endif
 			"kernel %2 %4\n"
 			"initrd %3\n"
-			"boot\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i))
+			"boot\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)
 			#ifdef Q_OS_UNIX
 			, getGrubNotation(targetDev)
 			#endif
-			);
+			));
 		}
 	}
 	menulstout << menulstxt << endl;
