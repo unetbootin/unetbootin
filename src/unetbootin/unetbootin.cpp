@@ -910,6 +910,68 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	}
 }
 
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::extractcfgL(QString archivefile, QStringList archivefileconts)
+{
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > grubpcfgPL;
+//	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > combinedcfgPL;
+	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
+	QStringList mlstfoundfiles;
+	for (int i = 0; i < grubcfgtypes.size(); ++i)
+	{
+		mlstfoundfiles = archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive);
+		if (!mlstfoundfiles.isEmpty())
+		{
+			for (int j = 0; j < mlstfoundfiles.size(); ++j)
+			{
+				randtmpfile mlstftf(ubntmpf, "lst");
+				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
+				grubpcfgPL = getgrubcfgargsL(mlstftf.fileName());
+				mlstftf.remove();
+				combinedcfgPL.first.first += grubpcfgPL.first.first;
+				combinedcfgPL.first.second += grubpcfgPL.first.second;
+				combinedcfgPL.second.first += grubpcfgPL.second.first;
+				combinedcfgPL.second.second += grubpcfgPL.second.second;
+//				if (!grubpcfg.isEmpty())
+//					break;
+			}
+		}
+//		if (!grubpcfg.isEmpty())
+//			break;
+	}
+	/*
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
+	QStringList lcfgfoundfiles;
+	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
+	{
+		lcfgfoundfiles = archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive);
+		if (!lcfgfoundfiles.isEmpty())
+		{
+			for (int j = 0; j < lcfgfoundfiles.size(); ++j)
+			{
+				randtmpfile ccfgftf(ubntmpf, "cfg");
+				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
+				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
+				ccfgftf.remove();
+				if (!syslinuxpcfg.isEmpty())
+					break;
+			}
+		}
+		if (!syslinuxpcfg.isEmpty())
+			break;
+	}
+	if (syslinuxpcfg.isEmpty())
+	{
+		return grubpcfg;
+	}
+	else
+	{
+		return syslinuxpcfg;
+	}
+	*/
+	return combinedcfgPL;
+}
+
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
 	sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
@@ -917,6 +979,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
+	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
 	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
 	QStringList createdpaths = makepathtree(targetDrive, listfilesizedirpair.second);
@@ -1048,7 +1111,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			++curindex;
 			kernelandinitrd.first.append("/ubnkern");
 			kernelandinitrd.second.append("/ubninit");
-			titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+			titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
 			titleandparams.second.append("");
 		}
 	}
@@ -2052,7 +2115,16 @@ void unetbootin::runinstusb()
 	"timeout 100\n\n"
 	"label Default\n"
 	"kernel %1\n"
-	"append initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
+	"append initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
+	if (!extraoptionsPL.first.first.isEmpty())
+	{
+		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
+		{
+			syslinuxcfgtxt.append(QString("\nlabel %1\n"
+			"kernel %2\n"
+			"append initrd=%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)));
+		}
+	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
 	instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
