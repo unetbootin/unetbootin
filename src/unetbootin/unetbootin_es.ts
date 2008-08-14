@@ -610,12 +610,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2020"/>
+        <location filename="unetbootin.cpp" line="2024"/>
         <source>After rebooting, select the </source>
         <translation>Después de reiniciar, selecciona el</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2024"/>
+        <location filename="unetbootin.cpp" line="2028"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
@@ -627,12 +627,12 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2022"/>
+        <location filename="unetbootin.cpp" line="2026"/>
         <source>USB Drive</source>
         <translation>Unidad USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2018"/>
+        <location filename="unetbootin.cpp" line="2022"/>
         <source>Hard Disk</source>
         <translation>Disco Duro</translation>
     </message>

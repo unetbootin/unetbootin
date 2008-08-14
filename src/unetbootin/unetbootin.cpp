@@ -1998,12 +1998,16 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
-	QString syslinuxcfgtxt = QString("default unetbootin\n"
-	"label unetbootin\n"
-	"\tkernel %1\n"
-	"\tappend initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
+	QString syslinuxcfgtxt = QString("default menu.c32\n"
+	"prompt 0\n"
+	"menu title UNetbootin\n"
+	"timeout 100\n\n"
+	"label Default\n"
+	"kernel %1\n"
+	"append initrd=%2 %3").arg(kernelLoc, initrdLoc, kernelOpts);
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
+	instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
 	fininstall();
 }
 

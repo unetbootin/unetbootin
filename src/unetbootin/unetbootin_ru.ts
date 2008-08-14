@@ -158,12 +158,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2022"/>
+        <location filename="unetbootin.cpp" line="2026"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2018"/>
+        <location filename="unetbootin.cpp" line="2022"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -394,12 +394,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2020"/>
+        <location filename="unetbootin.cpp" line="2024"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2024"/>
+        <location filename="unetbootin.cpp" line="2028"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished"></translation>
