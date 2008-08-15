@@ -1139,14 +1139,14 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		}
 		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
-			kernelandinitrd.second[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			kernelandinitrd.second[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^initrd", Qt::CaseInsensitive)).trimmed());
 			if (kernelandinitrd.second.at(curindex).isEmpty())
 				kernelandinitrd.second[curindex] = initrdLoc;
 			continue;
 		}
 //		if (cfgfileCL.contains(QRegExp("^module\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 //		{
-//			kernelandinitrd.second[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+//			kernelandinitrd.second[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^module", Qt::CaseInsensitive)).trimmed());
 //			if (kernelandinitrd.second.at(curindex).isEmpty())
 //				kernelandinitrd.second[curindex] = initrdLoc;
 //		}
@@ -1165,7 +1165,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			}
-			kernelandinitrd.first[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
 			if (kernelandinitrd.first.at(curindex).isEmpty())
 				kernelandinitrd.first[curindex] = kernelLoc;
 			kernelpassed = true;
@@ -1272,20 +1272,24 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			}
 			continue;
 		}
-//		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
-//		{
-//			return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
-//		}
-		
-		
-		
 		if (cfgfileCL.contains(QRegExp("^menu label\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
-			titleandparams.first[curindex] = QString(cfgfileCL).remove("menu label", Qt::CaseInsensitive).trimmed();
+			titleandparams.first[curindex] = QString(cfgfileCL).remove(QRegExp("^menu label", Qt::CaseInsensitive)).trimmed();
 			continue;
 		}
-		
-		
+		if (cfgfileCL.contains(QRegExp("^append\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			QString appendoptsL = QString(cfgfileCL).remove(QRegExp("^append", Qt::CaseInsensitive)).trimmed();
+			if (appendoptsL.contains(QRegExp("initrd=\\S{0,}", Qt::CaseInsensitive)))
+			{
+				kernelandinitrd.second[curindex] = getFirstTextBlock(QString(appendoptsL).remove(QRegExp(".{0,}initrd=", Qt::CaseInsensitive)));
+				appendoptsL = QString(appendoptsL).remove(QRegExp("initrd=\\S{0,}", Qt::CaseInsensitive));
+				if (kernelandinitrd.second.at(curindex).isEmpty())
+					kernelandinitrd.second[curindex] = initrdLoc;
+			}
+			titleandparams.second[curindex] = QString(appendoptsL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+			continue;
+		}
 		if (cfgfileCL.contains(QRegExp("^label\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			if (kernelpassed)
@@ -1297,12 +1301,9 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				titleandparams.second.append("");
 				kernelpassed = false;
 			}
-			titleandparams.first[curindex] = QString(cfgfileCL).remove("label", Qt::CaseInsensitive).trimmed();
+			titleandparams.first[curindex] = QString(cfgfileCL).remove(QRegExp("^label", Qt::CaseInsensitive)).trimmed();
 			continue;
 		}
-		
-		
-		
 		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			if (kernelpassed)
@@ -1314,24 +1315,12 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				titleandparams.second.append("");
 //				kernelpassed = false;
 			}
-//			if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
-//			{
-//				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
-//			}
-			kernelandinitrd.first[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
 			if (kernelandinitrd.first.at(curindex).isEmpty())
 				kernelandinitrd.first[curindex] = kernelLoc;
 			kernelpassed = true;
 			continue;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	return qMakePair(kernelandinitrd, titleandparams);
 }
@@ -2347,7 +2336,7 @@ void unetbootin::runinstusb()
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
 		{
 			syslinuxcfgtxt.append(QString("\nlabel %5\n"
-			"\nmenu label %1\n"
+			"menu label %1\n"
 			"kernel %2\n"
 			"append initrd=%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i)));
 		}
