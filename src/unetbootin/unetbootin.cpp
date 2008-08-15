@@ -332,7 +332,9 @@ void unetbootin::ubninitialize()
 	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
 	volidcommand = locatecommand("vol_id", tr("either"), "udev");
-	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
+	locatecommand("mtools", tr("USB Drive"), "mtools");
+	syslinuxcommand = "/usr/bin/ubnsylnx";
+//	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
 	ubntmpf = "/tmp/";
 	#endif
@@ -2303,6 +2305,9 @@ void unetbootin::runinstusb()
 	QFile::remove(sysltfloc);
 	#endif
 	#ifdef Q_OS_UNIX
+	if (QFile::exists(syslinuxcommand))
+		QFile::remove(syslinuxcommand);
+	instIndvfl("ubnsylnx", syslinuxcommand);
 	callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
 	{
