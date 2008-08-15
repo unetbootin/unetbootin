@@ -1227,6 +1227,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 
 QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts)
 {
+	/*
 	QString cfgfiledir;
 	if (cfgfile.contains(QDir::toNativeSeparators("/")))
 		cfgfiledir = QDir::fromNativeSeparators(QString(cfgfile).left(cfgfile.lastIndexOf(QDir::toNativeSeparators("/")) + 1));
@@ -1237,6 +1238,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (!cfgfiledir.endsWith('/'))
 			cfgfiledir = QString("%1/").arg(cfgfiledir);
 	}
+	*/
 	QPair<QStringList, QStringList> kernelandinitrd;
 	QPair<QStringList, QStringList> titleandparams;
 	int curindex = 0;
@@ -1296,10 +1298,10 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				kernelandinitrd.second[curindex] = getFirstTextBlock(QString(appendoptsL).remove(QRegExp(".{0,}initrd=", Qt::CaseInsensitive)));
 				appendoptsL = QString(appendoptsL).remove(QRegExp("initrd=\\S{0,}", Qt::CaseInsensitive));
-				if (kernelandinitrd.second.at(curindex).isEmpty())
+				if (kernelandinitrd.second.at(curindex).isEmpty() || !kernelandinitrd.second.at(curindex).contains('/'))
 					kernelandinitrd.second[curindex] = initrdLoc;
-				else if (!kernelandinitrd.second.at(curindex).contains('/'))
-					kernelandinitrd.second[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.second.at(curindex));
+//				else if (!kernelandinitrd.second.at(curindex).contains('/'))
+//					kernelandinitrd.second[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.second.at(curindex));
 			}
 			titleandparams.second[curindex] = QString(appendoptsL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			continue;
@@ -1330,10 +1332,10 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //				kernelpassed = false;
 			}
 			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
-			if (kernelandinitrd.first.at(curindex).isEmpty())
+			if (kernelandinitrd.first.at(curindex).isEmpty() || !kernelandinitrd.first.at(curindex).contains('/'))
 				kernelandinitrd.first[curindex] = kernelLoc;
-			else if (!kernelandinitrd.first.at(curindex).contains('/'))
-				kernelandinitrd.first[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.first.at(curindex));
+//			else if (!kernelandinitrd.first.at(curindex).contains('/'))
+//				kernelandinitrd.first[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.first.at(curindex));
 			kernelpassed = true;
 			continue;
 		}
