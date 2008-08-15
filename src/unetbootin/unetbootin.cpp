@@ -1088,11 +1088,11 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	QPair<QStringList, QStringList> kernelandinitrd;
 	QPair<QStringList, QStringList> titleandparams;
 	int curindex = 0;
+	bool kernelpassed = false;
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream cfgfileS(&cfgfileF);
 	QString cfgfileCL;
-//	bool kernelpassed = false;
 	kernelandinitrd.first.append(kernelLoc);
 	kernelandinitrd.second.append(initrdLoc);
 	titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
@@ -1106,29 +1106,62 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		}
 		if (cfgfileCL.contains(QRegExp("^title\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
-//			if (kernelpassed)
-//			{
-//				
-//			}
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+				titleandparams.second.append("");
+				kernelpassed = false;
+			}
 			titleandparams.first[curindex] = QString(cfgfileCL).remove("title", Qt::CaseInsensitive).trimmed();
 		}
+		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			kernelandinitrd.second[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			if (kernelandinitrd.second.at(curindex).isEmpty())
+				kernelandinitrd.second[curindex] = initrdLoc;
+		}
+//		if (cfgfileCL.contains(QRegExp("^module\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+//		{
+//			kernelandinitrd.second[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+//			if (kernelandinitrd.second.at(curindex).isEmpty())
+//				kernelandinitrd.second[curindex] = initrdLoc;
+//		}
 		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+				titleandparams.second.append("");
+//				kernelpassed = false;
+			}
 			if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 			{
 				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			}
-//			kernelandinitrd.first[curindex] = kernelLoc; // TODO
-//			kernelandinitrd.second[curindex] = initrdLoc; // TODO
-//			kernelpassed = true;
-			++curindex;
-			kernelandinitrd.first.append(kernelLoc);
-			kernelandinitrd.second.append(initrdLoc);
-			titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
-			titleandparams.second.append("");
+			kernelandinitrd.first[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			if (kernelandinitrd.first.at(curindex).isEmpty())
+				kernelandinitrd.first[curindex] = kernelLoc;
+			kernelpassed = true;
 		}
 	}
 	return qMakePair(kernelandinitrd, titleandparams);
+}
+
+QString unetbootin::getFirstTextBlock(QString fulltext)
+{
+	QStringList textblockL = fulltext.split(QRegExp("\\s{1,}")).filter(QRegExp("\\S{1,}"));
+	if (textblockL.isEmpty())
+		return "";
+	else
+	{
+		return textblockL.at(0);
+	}
 }
 
 QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
@@ -2146,7 +2179,7 @@ void unetbootin::runinstusb()
 	"prompt 0\n"
 	"menu title UNetbootin\n"
 	"timeout 100\n\n"
-	"label Default\n"
+	"label UNetbootin Default\n"
 	"kernel %1\n"
 	"append initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
 	if (!extraoptionsPL.first.first.isEmpty())

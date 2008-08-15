@@ -151,6 +151,7 @@ public:
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
 	QString getgrubcfgargs(QString cfgfile);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
+	QString getFirstTextBlock(QString fulltext);
 	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QString searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);
