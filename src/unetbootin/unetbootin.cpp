@@ -912,8 +912,9 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 
 QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::extractcfgL(QString archivefile, QStringList archivefileconts)
 {
+	pdesc1->setText(QString("Extracting bootloader configuration"));
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > grubpcfgPL;
-//	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > combinedcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > filteredcfgPL;
 	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
@@ -940,7 +941,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	/*
+	
 	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
@@ -952,15 +953,20 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
+				syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
 				ccfgftf.remove();
-				if (!syslinuxpcfg.isEmpty())
-					break;
+				combinedcfgPL.first.first += syslinuxpcfgPL.first.first;
+				combinedcfgPL.first.second += syslinuxpcfgPL.first.second;
+				combinedcfgPL.second.first += syslinuxpcfgPL.second.first;
+				combinedcfgPL.second.second += syslinuxpcfgPL.second.second;
+//				if (!syslinuxpcfg.isEmpty())
+//					break;
 			}
 		}
-		if (!syslinuxpcfg.isEmpty())
-			break;
+//		if (!syslinuxpcfg.isEmpty())
+//			break;
 	}
+	/*
 	if (syslinuxpcfg.isEmpty())
 	{
 		return grubpcfg;
@@ -972,8 +978,21 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	*/
 	for (int i = 0; i < combinedcfgPL.first.first.size(); ++i)
 	{
+		bool isduplicate = false;
+		for (int j = 0; j < filteredcfgPL.second.first.size(); ++j)
+		{
+			if (filteredcfgPL.second.first.at(j) == combinedcfgPL.second.first.at(i))
+			{
+				isduplicate = true;
+				break;
+			}
+		}
+		if (isduplicate)
+			break;
 		if (combinedcfgPL.first.first.at(i) == kernelLoc && combinedcfgPL.first.second.at(i) == initrdLoc && combinedcfgPL.second.first.at(i).contains("Untitled Entry") && combinedcfgPL.second.second.at(i).isEmpty())
 			continue;
+//		else if (filteredcfgPL.second.first.contains(combinedcfgPL.second.first.at(i)))
+//			continue;
 		else
 		{
 			filteredcfgPL.first.first.append(combinedcfgPL.first.first.at(i));
@@ -1095,7 +1114,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	QString cfgfileCL;
 	kernelandinitrd.first.append(kernelLoc);
 	kernelandinitrd.second.append(initrdLoc);
-	titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+	titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
 	titleandparams.second.append("");
 	while (!cfgfileS.atEnd())
 	{
@@ -1111,17 +1130,19 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				++curindex;
 				kernelandinitrd.first.append(kernelLoc);
 				kernelandinitrd.second.append(initrdLoc);
-				titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+				titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
 				titleandparams.second.append("");
 				kernelpassed = false;
 			}
 			titleandparams.first[curindex] = QString(cfgfileCL).remove("title", Qt::CaseInsensitive).trimmed();
+			continue;
 		}
 		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			kernelandinitrd.second[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
 			if (kernelandinitrd.second.at(curindex).isEmpty())
 				kernelandinitrd.second[curindex] = initrdLoc;
+			continue;
 		}
 //		if (cfgfileCL.contains(QRegExp("^module\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 //		{
@@ -1136,7 +1157,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				++curindex;
 				kernelandinitrd.first.append(kernelLoc);
 				kernelandinitrd.second.append(initrdLoc);
-				titleandparams.first.append(QString("Grub Entry %1").arg(curindex));
+				titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
 				titleandparams.second.append("");
 //				kernelpassed = false;
 			}
@@ -1148,6 +1169,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			if (kernelandinitrd.first.at(curindex).isEmpty())
 				kernelandinitrd.first[curindex] = kernelLoc;
 			kernelpassed = true;
+			continue;
 		}
 	}
 	return qMakePair(kernelandinitrd, titleandparams);
@@ -1201,6 +1223,119 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 	return "";
 }
 
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts)
+{
+	QPair<QStringList, QStringList> kernelandinitrd;
+	QPair<QStringList, QStringList> titleandparams;
+	int curindex = 0;
+	bool kernelpassed = false;
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+	kernelandinitrd.first.append(kernelLoc);
+	kernelandinitrd.second.append(initrdLoc);
+	titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
+	titleandparams.second.append("");
+	QString includesfile;
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchincfrs;
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine().trimmed();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		{
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts);
+			if (!searchincfrs.first.first.isEmpty())
+			{
+				kernelandinitrd.first += searchincfrs.first.first;
+				kernelandinitrd.second += searchincfrs.first.second;
+				titleandparams.first += searchincfrs.second.first;
+				titleandparams.second += searchincfrs.second.second;
+			}
+			continue;
+		}
+		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
+		{
+			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^append\\s{1,}", Qt::CaseInsensitive))).trimmed();
+			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts);
+			if (!searchincfrs.first.first.isEmpty())
+			{
+				kernelandinitrd.first += searchincfrs.first.first;
+				kernelandinitrd.second += searchincfrs.first.second;
+				titleandparams.first += searchincfrs.second.first;
+				titleandparams.second += searchincfrs.second.second;
+			}
+			continue;
+		}
+//		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
+//		{
+//			return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+//		}
+		
+		
+		
+		if (cfgfileCL.contains(QRegExp("^menu label\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			titleandparams.first[curindex] = QString(cfgfileCL).remove("menu label", Qt::CaseInsensitive).trimmed();
+			continue;
+		}
+		
+		
+		if (cfgfileCL.contains(QRegExp("^label\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Untitled Entry Syslinux %1").arg(curindex));
+				titleandparams.second.append("");
+				kernelpassed = false;
+			}
+			titleandparams.first[curindex] = QString(cfgfileCL).remove("label", Qt::CaseInsensitive).trimmed();
+			continue;
+		}
+		
+		
+		
+		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Untitled Entry Syslinux %1").arg(curindex));
+				titleandparams.second.append("");
+//				kernelpassed = false;
+			}
+//			if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+//			{
+//				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+//			}
+			kernelandinitrd.first[curindex] = getFirstTextBlock(cfgfileCL.remove(0, 6).trimmed());
+			if (kernelandinitrd.first.at(curindex).isEmpty())
+				kernelandinitrd.first[curindex] = kernelLoc;
+			kernelpassed = true;
+			continue;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	return qMakePair(kernelandinitrd, titleandparams);
+}
+
 QString unetbootin::searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts)
 {
 	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
@@ -1223,6 +1358,30 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 		}
 	}
 	return "";
+}
+
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts)
+{
+	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
+	{
+		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
+	}
+	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	if (!includesfileL.isEmpty())
+	{
+		for (int i = 0; i < includesfileL.size(); ++i)
+		{
+			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
+			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
+			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getcfgkernargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+			tmpoutputcfgf.remove();
+			if (!extractcfgtmp.first.first.isEmpty())
+			{
+				return extractcfgtmp;
+			}
+		}
+	}
+	return QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> >();
 }
 
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
@@ -2078,7 +2237,7 @@ void unetbootin::runinsthdd()
 	"default 0\n"
 	"timeout 10\n"
 	#endif
-	"title "UNETBOOTINB"\n"
+	"\ntitle "UNETBOOTINB"\n"
 	#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
 	#endif
@@ -2105,7 +2264,7 @@ void unetbootin::runinsthdd()
 			#endif
 			"kernel %2 %4\n"
 			"initrd %3\n"
-			"boot\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)
+			"boot\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^"), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)
 			#ifdef Q_OS_UNIX
 			, getGrubNotation(targetDev)
 			#endif
@@ -2179,16 +2338,18 @@ void unetbootin::runinstusb()
 	"prompt 0\n"
 	"menu title UNetbootin\n"
 	"timeout 100\n\n"
-	"label UNetbootin Default\n"
+	"label unetbootindefault\n"
+	"menu label Default\n"
 	"kernel %1\n"
 	"append initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
 	if (!extraoptionsPL.first.first.isEmpty())
 	{
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
 		{
-			syslinuxcfgtxt.append(QString("\nlabel %1\n"
+			syslinuxcfgtxt.append(QString("\nlabel %5\n"
+			"\nmenu label %1\n"
 			"kernel %2\n"
-			"append initrd=%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)));
+			"append initrd=%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i)));
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
