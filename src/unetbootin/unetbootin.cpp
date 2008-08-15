@@ -1227,6 +1227,16 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 
 QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts)
 {
+	QString cfgfiledir;
+	if (cfgfile.contains(QDir::toNativeSeparators("/")))
+		cfgfiledir = QDir::fromNativeSeparators(QString(cfgfile).left(cfgfile.lastIndexOf(QDir::toNativeSeparators("/")) + 1));
+	if (!cfgfiledir.isEmpty())
+	{
+		if (!cfgfiledir.startsWith('/'))
+			cfgfiledir = QString("/%1").arg(cfgfiledir);
+		if (!cfgfiledir.endsWith('/'))
+			cfgfiledir = QString("%1/").arg(cfgfiledir);
+	}
 	QPair<QStringList, QStringList> kernelandinitrd;
 	QPair<QStringList, QStringList> titleandparams;
 	int curindex = 0;
@@ -1288,6 +1298,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				appendoptsL = QString(appendoptsL).remove(QRegExp("initrd=\\S{0,}", Qt::CaseInsensitive));
 				if (kernelandinitrd.second.at(curindex).isEmpty())
 					kernelandinitrd.second[curindex] = initrdLoc;
+				else if (!kernelandinitrd.second.at(curindex).contains('/'))
+					kernelandinitrd.second[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.second.at(curindex));
 			}
 			titleandparams.second[curindex] = QString(appendoptsL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			continue;
@@ -1320,6 +1332,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
 			if (kernelandinitrd.first.at(curindex).isEmpty())
 				kernelandinitrd.first[curindex] = kernelLoc;
+			else if (!kernelandinitrd.first.at(curindex).contains('/'))
+				kernelandinitrd.first[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.first.at(curindex));
 			kernelpassed = true;
 			continue;
 		}
@@ -2161,7 +2175,7 @@ void unetbootin::runinsthdd()
 		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	}
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::WriteOther);
+	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive))))
 	{
 		overwritefileprompt(QDir::toNativeSeparators(QString("%1ubnldr").arg(targetDrive)));
@@ -2308,6 +2322,8 @@ void unetbootin::runinstusb()
 	if (QFile::exists(syslinuxcommand))
 		QFile::remove(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
+	QFile::setPermissions(syslinuxcommand, QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
+//	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
 	callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
 	{

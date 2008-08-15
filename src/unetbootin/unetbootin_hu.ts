@@ -265,22 +265,22 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="480"/>
+        <location filename="unetbootin.cpp" line="482"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="498"/>
+        <location filename="unetbootin.cpp" line="500"/>
         <source>Open Kernel File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="506"/>
+        <location filename="unetbootin.cpp" line="508"/>
         <source>Open Initrd File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="514"/>
+        <location filename="unetbootin.cpp" line="516"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -375,12 +375,12 @@ Reboot now?</source>
         <translation>*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/%1/repo/oss&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2061"/>
+        <location filename="unetbootin.cpp" line="2077"/>
         <source>Floppy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2066"/>
+        <location filename="unetbootin.cpp" line="2082"/>
         <source>ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -425,204 +425,204 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="336"/>
+        <location filename="unetbootin.cpp" line="338"/>
         <source>either</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2362"/>
+        <location filename="unetbootin.cpp" line="2383"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2358"/>
+        <location filename="unetbootin.cpp" line="2379"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="536"/>
+        <location filename="unetbootin.cpp" line="538"/>
         <source>Insert a USB flash drive</source>
         <translation>Kérem rakja a USB-lemezet a szamítógépbe</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="537"/>
+        <location filename="unetbootin.cpp" line="539"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 rendszerre.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="552"/>
+        <location filename="unetbootin.cpp" line="554"/>
         <source>%1 not mounted</source>
         <translation>%1 kötet nem csatolt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="553"/>
+        <location filename="unetbootin.cpp" line="555"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és visszarakod a USB-lemezet.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="568"/>
+        <location filename="unetbootin.cpp" line="570"/>
         <source>Select a distro</source>
         <translation>Vállasztja ki a kívánt operációs rendszert</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="569"/>
+        <location filename="unetbootin.cpp" line="571"/>
         <source>You must select a distribution to load.</source>
         <translation>Még nem választott ki egy operációs rendszert.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="583"/>
+        <location filename="unetbootin.cpp" line="585"/>
         <source>Select a disk image file</source>
         <translation>Vállasztja ki a kívánt CD/lemez kép fájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="584"/>
+        <location filename="unetbootin.cpp" line="586"/>
         <source>You must select a disk image file to load.</source>
         <translation>Még nem választotta ki a CD/lemez kép fájlt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="598"/>
+        <location filename="unetbootin.cpp" line="600"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Kérem vállasztja ki a kernel vagz initrd fájlokat</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="599"/>
+        <location filename="unetbootin.cpp" line="601"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Még nem választotta ki a kernel vagy initrd fájlt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="613"/>
+        <location filename="unetbootin.cpp" line="615"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="614"/>
+        <location filename="unetbootin.cpp" line="616"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="628"/>
+        <location filename="unetbootin.cpp" line="630"/>
         <source>Kernel file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="629"/>
+        <location filename="unetbootin.cpp" line="631"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="643"/>
+        <location filename="unetbootin.cpp" line="645"/>
         <source>Initrd file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="644"/>
+        <location filename="unetbootin.cpp" line="646"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="744"/>
+        <location filename="unetbootin.cpp" line="746"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 létezik, felülírás?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="745"/>
+        <location filename="unetbootin.cpp" line="747"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1059"/>
+        <location filename="unetbootin.cpp" line="1061"/>
         <source>Extracting files, please wait...</source>
         <translation>Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1060"/>
+        <location filename="unetbootin.cpp" line="1062"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1061"/>
+        <location filename="unetbootin.cpp" line="1063"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1062"/>
+        <location filename="unetbootin.cpp" line="1064"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1063"/>
+        <location filename="unetbootin.cpp" line="1065"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; 0, %1 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1066"/>
+        <location filename="unetbootin.cpp" line="1068"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1067"/>
+        <location filename="unetbootin.cpp" line="1069"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1068"/>
+        <location filename="unetbootin.cpp" line="1070"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; %1, %2 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1394"/>
+        <location filename="unetbootin.cpp" line="1410"/>
         <source>Downloading files, plese wait...</source>
         <translation>Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1395"/>
+        <location filename="unetbootin.cpp" line="1411"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1396"/>
+        <location filename="unetbootin.cpp" line="1412"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1397"/>
+        <location filename="unetbootin.cpp" line="1413"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1474"/>
+        <location filename="unetbootin.cpp" line="1490"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; %1, %2 bájtbol</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1548"/>
+        <location filename="unetbootin.cpp" line="1564"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1552"/>
+        <location filename="unetbootin.cpp" line="1568"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1716"/>
+        <location filename="unetbootin.cpp" line="1732"/>
         <source>%1 not found</source>
         <translation>%1 nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1717"/>
+        <location filename="unetbootin.cpp" line="1733"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2360"/>
+        <location filename="unetbootin.cpp" line="2381"/>
         <source>After rebooting, select the </source>
         <translation>Újrainditás után vállasztja a (sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2364"/>
+        <location filename="unetbootin.cpp" line="2385"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1
