@@ -52,6 +52,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
+#ifdef SLITAZ
+#define UNETBOOTINB "SliTaz Installer"
+#define NOMANUAL
+#define NOFLOPPY
+//#define USBINSTALL
+#endif
+
 #ifndef UNETBOOTINB
 #define UNETBOOTINB "UNetbootin"
 #define STDUNETBOOTIN

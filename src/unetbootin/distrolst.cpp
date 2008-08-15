@@ -54,6 +54,16 @@ if (nameDistro == "Elive")
 
 #endif
 
+#ifdef SLITAZ
+
+if (nameDistro == "SliTaz")
+{
+	downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")

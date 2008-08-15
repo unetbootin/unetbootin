@@ -160,6 +160,14 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
 	"Unstable_Live"));
 	#endif
+	#ifdef SLITAZ
+	distroselect->addItem("SliTaz", (QStringList() << "Stable" << 
+	tr("<img src=\":/slitaz.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
+		"<b>Description:</b> SliTaz is a lightweight, desktop-oriented micro distribution.<br/>"
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
+	"Stable" << "Cooking"));
+	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();
