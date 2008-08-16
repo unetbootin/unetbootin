@@ -153,6 +153,7 @@ public:
 	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgL(QString archivefile, QStringList archivefileconts);
+	QString getfullarchivepath(QString relativefilepath, QStringList archivefile);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
 	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);

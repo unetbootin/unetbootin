@@ -449,10 +449,10 @@ if (nameDistro == "Parted Magic")
 		"http://fulloffacts.com/get/partedmagic/" <<
 		"http://www.digitalincursion.net/partedmagic/"
 		, 10485760, 209715200, QList<QRegExp>() << 
-		QRegExp("^pmagic-", Qt::CaseInsensitive) << 
+		QRegExp("^pmagic", Qt::CaseInsensitive) << 
+		QRegExp("pxe", Qt::CaseInsensitive) << 
 		QRegExp("-pxe", Qt::CaseInsensitive) << 
-		QRegExp("^pmagic-pxe", Qt::CaseInsensitive) << 
-		QRegExp("^pmagc-pxe\\S{0,}.zip$", Qt::CaseInsensitive)
+		QRegExp("^pmagic-pxe", Qt::CaseInsensitive)
 		), isotmpf);
 		extractiso(isotmpf, targetPath);
 	}

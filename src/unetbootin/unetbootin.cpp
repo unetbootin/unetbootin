@@ -951,7 +951,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	
 	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
@@ -1005,13 +1004,53 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //			continue;
 		else
 		{
-			filteredcfgPL.first.first.append(combinedcfgPL.first.first.at(i));
-			filteredcfgPL.first.second.append(combinedcfgPL.first.second.at(i));
+			if (combinedcfgPL.first.first.at(i).isEmpty())
+				filteredcfgPL.first.first.append(kernelLoc);
+			else
+			{
+				QString indvkrnloc = getfullarchivepath(combinedcfgPL.first.first.at(i), archivefileconts);
+				if (indvkrnloc.isEmpty())
+					filteredcfgPL.first.first.append(kernelLoc);
+				else
+					filteredcfgPL.first.first.append(indvkrnloc);
+			}
+//			filteredcfgPL.first.first.append(combinedcfgPL.first.first.at(i));
+			if (combinedcfgPL.first.second.at(i).isEmpty())
+				filteredcfgPL.first.second.append(kernelLoc);
+			else
+			{
+				QString indvitrloc = getfullarchivepath(combinedcfgPL.first.second.at(i), archivefileconts);
+				if (indvitrloc.isEmpty())
+					filteredcfgPL.first.second.append(initrdLoc);
+				else
+					filteredcfgPL.first.second.append(indvitrloc);
+			}
+//			filteredcfgPL.first.second.append(combinedcfgPL.first.second.at(i));
 			filteredcfgPL.second.first.append(combinedcfgPL.second.first.at(i));
 			filteredcfgPL.second.second.append(combinedcfgPL.second.second.at(i));
 		}
 	}
 	return filteredcfgPL;
+}
+
+QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList archivefile)
+{
+	relativefilepath = QDir::fromNativeSeparators(relativefilepath);
+//	if (!relativefilepath.startsWith('/'))
+//		relativefilepath = QString("/%1").arg(relativefilepath);
+//	if (!relativefilepath.endsWith('/'))
+//		relativefilepath = QString("%1/").arg(relativefilepath);
+	for (int i = 0; i < archivefile.size(); ++i)
+	{
+		QString curarchiveitem = QDir::fromNativeSeparators(archivefile.at(i));
+		if (!curarchiveitem.startsWith('/'))
+			curarchiveitem = QString("/%1").arg(curarchiveitem);
+//		if (!curarchiveitem.endsWith('/'))
+//			curarchiveitem = QString("%1/").arg(curarchiveitem);
+		if (curarchiveitem.contains(relativefilepath))
+			return curarchiveitem;
+	}
+	return "";
 }
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
@@ -1150,8 +1189,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			kernelandinitrd.second[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^initrd", Qt::CaseInsensitive)).trimmed());
-			if (kernelandinitrd.second.at(curindex).isEmpty())
-				kernelandinitrd.second[curindex] = initrdLoc;
+//			if (kernelandinitrd.second.at(curindex).isEmpty())
+//				kernelandinitrd.second[curindex] = initrdLoc;
 			continue;
 		}
 //		if (cfgfileCL.contains(QRegExp("^module\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
@@ -1176,8 +1215,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
 			}
 			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
-			if (kernelandinitrd.first.at(curindex).isEmpty())
-				kernelandinitrd.first[curindex] = kernelLoc;
+//			if (kernelandinitrd.first.at(curindex).isEmpty())
+//				kernelandinitrd.first[curindex] = kernelLoc;
 			kernelpassed = true;
 			continue;
 		}
@@ -1306,8 +1345,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				kernelandinitrd.second[curindex] = getFirstTextBlock(QString(appendoptsL).remove(QRegExp(".{0,}initrd=", Qt::CaseInsensitive)));
 				appendoptsL = QString(appendoptsL).remove(QRegExp("initrd=\\S{0,}", Qt::CaseInsensitive));
-				if (kernelandinitrd.second.at(curindex).isEmpty() || !kernelandinitrd.second.at(curindex).contains('/'))
-					kernelandinitrd.second[curindex] = initrdLoc;
+//				if (kernelandinitrd.second.at(curindex).isEmpty())
+//					kernelandinitrd.second[curindex] = initrdLoc;
 //				else if (!kernelandinitrd.second.at(curindex).contains('/'))
 //					kernelandinitrd.second[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.second.at(curindex));
 			}
@@ -1340,8 +1379,8 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //				kernelpassed = false;
 			}
 			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
-			if (kernelandinitrd.first.at(curindex).isEmpty() || !kernelandinitrd.first.at(curindex).contains('/'))
-				kernelandinitrd.first[curindex] = kernelLoc;
+//			if (kernelandinitrd.first.at(curindex).isEmpty())
+//				kernelandinitrd.first[curindex] = kernelLoc;
 //			else if (!kernelandinitrd.first.at(curindex).contains('/'))
 //				kernelandinitrd.first[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.first.at(curindex));
 			kernelpassed = true;
@@ -1544,7 +1583,7 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 {
 	QStringList relativefilelinksL;
-	QStringList relativelinksL = downloadpagecontents(ldfDirStringUrl).replace(">", ">\n").replace("<", "\n<").split("\n").filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">")).replaceInStrings("<a href=\"", "").replaceInStrings("\">", "");
+	QStringList relativelinksL = downloadpagecontents(ldfDirStringUrl).replace(">", ">\n").replace("<", "\n<").split("\n").filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">", Qt::CaseInsensitive)).replaceInStrings(QRegExp("<a href=\"", Qt::CaseInsensitive), "").replaceInStrings("\">", "");
 	for (int i = 0; i < relativelinksL.size(); ++i)
 	{
 		if (!relativelinksL.at(i).endsWith('/'))
