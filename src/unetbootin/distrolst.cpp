@@ -443,7 +443,17 @@ if (nameDistro == "Parted Magic")
 	}
 	else
 	{
-		downloadfile(QString("http://exo.enarel.eu/mirror/partedmagic/pmagic-pxe-%1.zip").arg(relname), isotmpf);
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"http://partedmagic.com/downloads/stable/" << 
+		"http://exo.enarel.eu/mirror/partedmagic/" << 
+		"http://fulloffacts.com/get/partedmagic/" <<
+		"http://www.digitalincursion.net/partedmagic/"
+		, 10485760, 209715200, QList<QRegExp>() << 
+		QRegExp("^pmagic-", Qt::CaseInsensitive) << 
+		QRegExp("-pxe", Qt::CaseInsensitive) << 
+		QRegExp("^pmagic-pxe", Qt::CaseInsensitive) << 
+		QRegExp("^pmagc-pxe\\S{0,}.zip$", Qt::CaseInsensitive)
+		), isotmpf);
 		extractiso(isotmpf, targetPath);
 	}
 }
