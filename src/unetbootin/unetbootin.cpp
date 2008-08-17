@@ -2115,6 +2115,7 @@ void unetbootin::runinst()
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
+	slinitrdLine = "initrd=";
 	initrdLoc = QString("/%1ubninit").arg(ginstallDir);
 	targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
 	QDir dir;
@@ -2409,7 +2410,7 @@ void unetbootin::runinstusb()
 	"label unetbootindefault\n"
 	"menu label Default\n"
 	"kernel %1\n"
-	"append initrd=%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts);
+	"append %4%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts, slinitrdLine);
 	if (!extraoptionsPL.first.first.isEmpty())
 	{
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
@@ -2417,7 +2418,7 @@ void unetbootin::runinstusb()
 			syslinuxcfgtxt.append(QString("\nlabel %5\n"
 			"menu label %1\n"
 			"kernel %2\n"
-			"append initrd=%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i)));
+			"append %5%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i), slinitrdLine));
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;

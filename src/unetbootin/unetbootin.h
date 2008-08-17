@@ -136,6 +136,7 @@ public:
 	QString devuuid;
 	QString postinstmsg;
 	QString kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts;
+	QString slinitrdLine;
 	QString sevzcommand;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
 	#ifdef Q_OS_UNIX

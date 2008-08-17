@@ -62,6 +62,7 @@ if (nameDistro == "SliTaz")
 	{
 		instIndvfl("gpxe", QString("%1ubnkern").arg(targetPath));
 		kernelOpts = "url=http://mirror.slitaz.org/pxe/pxelinux.0";
+		slinitrdLine = "";
 		initrdLine = "";
 		initrdOpts = "";
 		initrdLoc = "";
@@ -396,6 +397,7 @@ if (nameDistro == "NetBSD")
 	}
 	downloadfile(QString("http://ftp.netbsd.org/pub/NetBSD/NetBSD-%1/%2/binary/kernel/netbsd-INSTALL.gz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
 	kernelParam = "--type=netbsd";
+	slinitrdLine = "";
 	initrdLine = "";
 	initrdOpts = "";
 	initrdLoc = "";
