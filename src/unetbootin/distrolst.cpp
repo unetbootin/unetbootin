@@ -60,8 +60,13 @@ if (nameDistro == "SliTaz")
 {
 	if (relname == "webboot")
 	{
-		downloadfile("http://mirror.slitaz.org/boot/slitaz-boot.iso", isotmpf);
-		extractiso(isotmpf, targetPath);
+		instIndvfl("gpxe", QString("%1ubnkern").arg(targetPath));
+		kernelOpts = "url=http://mirror.slitaz.org/pxe/pxelinux.0";
+		initrdLine = "";
+		initrdOpts = "";
+		initrdLoc = "";
+//		downloadfile("http://mirror.slitaz.org/boot/slitaz-boot.iso", isotmpf);
+//		extractiso(isotmpf, targetPath);
 	}
 	else
 	{
