@@ -2418,7 +2418,7 @@ void unetbootin::runinstusb()
 			syslinuxcfgtxt.append(QString("\nlabel %5\n"
 			"menu label %1\n"
 			"kernel %2\n"
-			"append %5%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i), slinitrdLine));
+			"append %6%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i), slinitrdLine));
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
