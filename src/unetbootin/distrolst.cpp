@@ -58,8 +58,17 @@ if (nameDistro == "Elive")
 
 if (nameDistro == "SliTaz")
 {
-	downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
-	extractiso(isotmpf, targetPath);
+	if (relname == "webboot")
+	{
+		downloadfile("http://mirror.slitaz.org/boot/slitaz-boot.iso", isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
+	else
+	{
+		downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
+
 }
 
 #endif

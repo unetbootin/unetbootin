@@ -166,7 +166,7 @@ void unetbootin::ubninitialize()
 		"<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
 		"<b>Description:</b> SliTaz is a lightweight, desktop-oriented micro distribution.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
-	"Stable" << "Cooking"));
+	"Stable" << "Cooking" << "Webboot"));
 	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
@@ -1767,15 +1767,18 @@ QString unetbootin::getuuid(QString voldrive)
 
 QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename)
 {
-	QString commandbinpath = callexternapp("whereis", commandtolocate);
-	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
-	for (int i = 0; i < commandbinpathL.size(); ++i)
-	{
-		if (commandbinpathL.at(i).contains("bin/"))
-		{
-			return commandbinpathL.at(i);
-		}
-	}
+	QString commandbinpath = callexternapp("which", commandtolocate);
+	if (!commandbinpath.isEmpty() && QFile::exists(commandbinpath))
+		return commandbinpath;
+//	QString commandbinpath = callexternapp("whereis", commandtolocate);
+//	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
+//	for (int i = 0; i < commandbinpathL.size(); ++i)
+//	{
+//		if (commandbinpathL.at(i).contains("bin/"))
+//		{
+//			return commandbinpathL.at(i);
+//		}
+//	}
 	QMessageBox errorcmdnotfoundmsgbx;
 	errorcmdnotfoundmsgbx.setIcon(QMessageBox::Warning);
 	errorcmdnotfoundmsgbx.setWindowTitle(QString(tr("%1 not found")).arg(commandtolocate));
@@ -1788,7 +1791,7 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 		default:
 			break;
 	}
- 	return "ERROR";
+ 	return commandtolocate;
 }
 
 QString unetbootin::locatedevicenode(QString mountpoint)

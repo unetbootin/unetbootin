@@ -158,22 +158,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2432"/>
+        <location filename="unetbootin.cpp" line="2435"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2428"/>
+        <location filename="unetbootin.cpp" line="2431"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2126"/>
+        <location filename="unetbootin.cpp" line="2129"/>
         <source>Floppy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2131"/>
+        <location filename="unetbootin.cpp" line="2134"/>
         <source>ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -383,53 +383,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1781"/>
+        <location filename="unetbootin.cpp" line="1784"/>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1782"/>
+        <location filename="unetbootin.cpp" line="1785"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2430"/>
+        <location filename="unetbootin.cpp" line="2433"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2434"/>
+        <location filename="unetbootin.cpp" line="2437"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="112"/>
+        <location filename="distrolst.cpp" line="121"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="237"/>
+        <location filename="distrolst.cpp" line="246"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="243"/>
+        <location filename="distrolst.cpp" line="252"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="418"/>
+        <location filename="distrolst.cpp" line="427"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="424"/>
+        <location filename="distrolst.cpp" line="433"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation type="unfinished"></translation>
