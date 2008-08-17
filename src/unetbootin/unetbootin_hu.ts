@@ -375,12 +375,12 @@ Reboot now?</source>
         <translation>*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/%1/repo/oss&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2129"/>
+        <location filename="unetbootin.cpp" line="2135"/>
         <source>Floppy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2134"/>
+        <location filename="unetbootin.cpp" line="2140"/>
         <source>ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -430,12 +430,12 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2435"/>
+        <location filename="unetbootin.cpp" line="2441"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2431"/>
+        <location filename="unetbootin.cpp" line="2437"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -530,99 +530,99 @@ Reboot now?</source>
         <translation>A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1108"/>
+        <location filename="unetbootin.cpp" line="1114"/>
         <source>Extracting files, please wait...</source>
         <translation>Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1109"/>
+        <location filename="unetbootin.cpp" line="1115"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1110"/>
+        <location filename="unetbootin.cpp" line="1116"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1111"/>
+        <location filename="unetbootin.cpp" line="1117"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1112"/>
+        <location filename="unetbootin.cpp" line="1118"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; 0, %1 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1115"/>
+        <location filename="unetbootin.cpp" line="1121"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1116"/>
+        <location filename="unetbootin.cpp" line="1122"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1117"/>
+        <location filename="unetbootin.cpp" line="1123"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; %1, %2 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1459"/>
+        <location filename="unetbootin.cpp" line="1465"/>
         <source>Downloading files, plese wait...</source>
         <translation>Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1460"/>
+        <location filename="unetbootin.cpp" line="1466"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1461"/>
+        <location filename="unetbootin.cpp" line="1467"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1462"/>
+        <location filename="unetbootin.cpp" line="1468"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1539"/>
+        <location filename="unetbootin.cpp" line="1545"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; %1, %2 bájtbol</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1613"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1623"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1784"/>
+        <location filename="unetbootin.cpp" line="1790"/>
         <source>%1 not found</source>
         <translation>%1 nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1785"/>
+        <location filename="unetbootin.cpp" line="1791"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2433"/>
+        <location filename="unetbootin.cpp" line="2439"/>
         <source>After rebooting, select the </source>
         <translation>Újrainditás után vállasztja a (sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2437"/>
+        <location filename="unetbootin.cpp" line="2443"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1

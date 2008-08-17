@@ -780,9 +780,15 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfileL).fileName());
 	QString filepathfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(filepath).fileName());
 	if (QFile::exists(filepathfilename))
-		overwritefileprompt(filepathfilename);
-	if (QFile::exists(destinfilename))	
-		overwritefileprompt(destinfilename);
+	{
+		if (!overwritefileprompt(filepathfilename))
+			return false;
+	}
+	if (QFile::exists(destinfilename))
+	{
+		if (!overwritefileprompt(destinfilename))
+			return false;
+	}
 	#ifdef Q_OS_WIN32
 	if (sevzcommand.isEmpty())
 	{
@@ -1767,7 +1773,7 @@ QString unetbootin::getuuid(QString voldrive)
 
 QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename)
 {
-	QString commandbinpath = callexternapp("which", commandtolocate);
+	QString commandbinpath = callexternapp("which", commandtolocate).trimmed();
 	if (!commandbinpath.isEmpty() && QFile::exists(commandbinpath))
 		return commandbinpath;
 //	QString commandbinpath = callexternapp("whereis", commandtolocate);
