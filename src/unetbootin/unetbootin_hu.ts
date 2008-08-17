@@ -235,57 +235,57 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="264"/>
+        <location filename="unetbootin.cpp" line="269"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="275"/>
+        <location filename="unetbootin.cpp" line="280"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="285"/>
+        <location filename="unetbootin.cpp" line="290"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="295"/>
+        <location filename="unetbootin.cpp" line="300"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="325"/>
+        <location filename="unetbootin.cpp" line="330"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="300"/>
+        <location filename="unetbootin.cpp" line="305"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="490"/>
+        <location filename="unetbootin.cpp" line="500"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="508"/>
+        <location filename="unetbootin.cpp" line="518"/>
         <source>Open Kernel File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="516"/>
+        <location filename="unetbootin.cpp" line="526"/>
         <source>Open Initrd File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="524"/>
+        <location filename="unetbootin.cpp" line="534"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="320"/>
+        <location filename="unetbootin.cpp" line="325"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -295,12 +295,12 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="269"/>
+        <location filename="unetbootin.cpp" line="274"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="330"/>
+        <location filename="unetbootin.cpp" line="335"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -315,12 +315,12 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="305"/>
+        <location filename="unetbootin.cpp" line="310"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="280"/>
+        <location filename="unetbootin.cpp" line="285"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -330,17 +330,17 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="290"/>
+        <location filename="unetbootin.cpp" line="295"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="310"/>
+        <location filename="unetbootin.cpp" line="315"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="335"/>
+        <location filename="unetbootin.cpp" line="345"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -375,12 +375,12 @@ Reboot now?</source>
         <translation>*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/%1/repo/oss&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2136"/>
+        <location filename="unetbootin.cpp" line="2146"/>
         <source>Floppy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2141"/>
+        <location filename="unetbootin.cpp" line="2151"/>
         <source>ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -420,209 +420,209 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="315"/>
+        <location filename="unetbootin.cpp" line="320"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="346"/>
+        <location filename="unetbootin.cpp" line="356"/>
         <source>either</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2442"/>
+        <location filename="unetbootin.cpp" line="2452"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2438"/>
+        <location filename="unetbootin.cpp" line="2448"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="546"/>
+        <location filename="unetbootin.cpp" line="556"/>
         <source>Insert a USB flash drive</source>
         <translation>Kérem rakja a USB-lemezet a szamítógépbe</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="547"/>
+        <location filename="unetbootin.cpp" line="557"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 rendszerre.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="562"/>
+        <location filename="unetbootin.cpp" line="572"/>
         <source>%1 not mounted</source>
         <translation>%1 kötet nem csatolt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="563"/>
+        <location filename="unetbootin.cpp" line="573"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és visszarakod a USB-lemezet.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="578"/>
+        <location filename="unetbootin.cpp" line="588"/>
         <source>Select a distro</source>
         <translation>Vállasztja ki a kívánt operációs rendszert</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="589"/>
         <source>You must select a distribution to load.</source>
         <translation>Még nem választott ki egy operációs rendszert.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="593"/>
+        <location filename="unetbootin.cpp" line="603"/>
         <source>Select a disk image file</source>
         <translation>Vállasztja ki a kívánt CD/lemez kép fájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="594"/>
+        <location filename="unetbootin.cpp" line="604"/>
         <source>You must select a disk image file to load.</source>
         <translation>Még nem választotta ki a CD/lemez kép fájlt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="618"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Kérem vállasztja ki a kernel vagz initrd fájlokat</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="609"/>
+        <location filename="unetbootin.cpp" line="619"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Még nem választotta ki a kernel vagy initrd fájlt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="623"/>
+        <location filename="unetbootin.cpp" line="633"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="634"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="638"/>
+        <location filename="unetbootin.cpp" line="648"/>
         <source>Kernel file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="649"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="653"/>
+        <location filename="unetbootin.cpp" line="663"/>
         <source>Initrd file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="654"/>
+        <location filename="unetbootin.cpp" line="664"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="754"/>
+        <location filename="unetbootin.cpp" line="764"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 létezik, felülírás?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="755"/>
+        <location filename="unetbootin.cpp" line="765"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1114"/>
+        <location filename="unetbootin.cpp" line="1124"/>
         <source>Extracting files, please wait...</source>
         <translation>Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1115"/>
+        <location filename="unetbootin.cpp" line="1125"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1116"/>
+        <location filename="unetbootin.cpp" line="1126"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1117"/>
+        <location filename="unetbootin.cpp" line="1127"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1118"/>
+        <location filename="unetbootin.cpp" line="1128"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; 0, %1 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1121"/>
+        <location filename="unetbootin.cpp" line="1131"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1122"/>
+        <location filename="unetbootin.cpp" line="1132"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1123"/>
+        <location filename="unetbootin.cpp" line="1133"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Kicsomagolt:&lt;/b&gt; %1, %2 fájlból</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1465"/>
+        <location filename="unetbootin.cpp" line="1475"/>
         <source>Downloading files, plese wait...</source>
         <translation>Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1466"/>
+        <location filename="unetbootin.cpp" line="1476"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1467"/>
+        <location filename="unetbootin.cpp" line="1477"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1468"/>
+        <location filename="unetbootin.cpp" line="1478"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1545"/>
+        <location filename="unetbootin.cpp" line="1555"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Letöltött:&lt;/b&gt; %1, %2 bájtbol</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1629"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1623"/>
+        <location filename="unetbootin.cpp" line="1633"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1790"/>
+        <location filename="unetbootin.cpp" line="1800"/>
         <source>%1 not found</source>
         <translation>%1 nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1791"/>
+        <location filename="unetbootin.cpp" line="1801"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2440"/>
+        <location filename="unetbootin.cpp" line="2450"/>
         <source>After rebooting, select the </source>
         <translation>Újrainditás után vállasztja a (sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2444"/>
+        <location filename="unetbootin.cpp" line="2454"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1
@@ -636,6 +636,16 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="168"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="340"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="264"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

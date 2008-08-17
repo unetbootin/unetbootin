@@ -576,7 +576,116 @@ if (nameDistro == "Ubuntu")
 		}
 		else
 		{
-			relname.replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+			relname.replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+			kernelOpts = "vga=normal";
+		}
+	}
+}
+
+if (nameDistro == "Kubuntu")
+{
+	if (isarch64)
+	{
+		cpuarch = "amd64";
+	}
+	else
+	{
+		cpuarch = "i386";
+	}
+	if (relname == "daily")
+	{
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"http://cdimage.ubuntu.com/kubuntu/daily-live/current/"
+		, 61440000, 1048576000, QList<QRegExp>() << 
+		QRegExp(".iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop\\S{0,}.iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+		), isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
+	else
+	{
+		if (islivecd)
+		{
+			downloadfile(fileFilterNetDir(QStringList() << 
+			"http://releases.ubuntu.com/kubuntu/"+relname << 
+			"http://releases.ubuntu.com/releases/kubuntu/"+relname <<
+//			"ftp://releases.ubuntu.com/releases/.pool/" << 
+			"http://mirrors.gigenet.com/ubuntu/kubuntu/"+relname <<
+			"http://mirrors.easynews.com/linux/ubuntu-releases/kubuntu/"+relname <<
+			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/kubuntu/"+relname <<
+			"http://ftp.wayne.edu/linux_distributions/ubuntu/kubuntu/"+relname <<
+			"http://ubuntu.mirrors.proxad.net/kubuntu/"+relname
+			, 524288000, 1048576000, QList<QRegExp>() << 
+			QRegExp(".iso$", Qt::CaseInsensitive) << 
+			QRegExp(cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("kubuntu\\S{0,}"+relname+"\\S{0,}desktop\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) << 
+			QRegExp("kubuntu-"+relname+"\\S{0,}-desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+			), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
+		else
+		{
+			relname.replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+			kernelOpts = "vga=normal";
+		}
+	}
+}
+
+if (nameDistro == "Xubuntu")
+{
+	if (isarch64)
+	{
+		cpuarch = "amd64";
+	}
+	else
+	{
+		cpuarch = "i386";
+	}
+	if (relname == "daily")
+	{
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"http://cdimage.ubuntu.com/xubuntu/daily-live/current/"
+		, 61440000, 1048576000, QList<QRegExp>() << 
+		QRegExp(".iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop\\S{0,}.iso$", Qt::CaseInsensitive) << 
+		QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+		), isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
+	else
+	{
+		if (islivecd)
+		{
+			downloadfile(fileFilterNetDir(QStringList() << 
+			"http://cdimage.ubuntu.com/xubuntu/releases/"+relname+"/release/" <<
+			"http://mirror.csclub.uwaterloo.ca/xubuntu-releases/"+relname+"/release/" <<
+			"http://nl.archive.ubuntu.com/ubuntu-cdimage-xubuntu/releases/"+relname+"/release/" <<
+			"http://se.archive.ubuntu.com/mirror/cdimage.ubuntu.com/xubuntu/releases/"+relname+"/release/" <<
+			"http://mirror.anl.gov/pub/ubuntu-iso/CDs-Xubuntu/"+relname+"/release/" <<
+			"http://mirror.yandex.ru/ubuntu-cdimage/xubuntu/releases/"+relname+"/release/" <<
+			"http://www.mirrorservice.org/sites/cdimage.ubuntu.com/cdimage/xubuntu/releases/"+relname+"/release/" <<
+			"http://ubuntu.univ-nantes.fr/ubuntu-cd/xubuntu/"+relname+"/release/" <<
+			"ftp://ftp.free.fr/mirrors/ftp.xubuntu.com/releases/"+relname+"/release/"
+			, 524288000, 1048576000, QList<QRegExp>() << 
+			QRegExp(".iso$", Qt::CaseInsensitive) << 
+			QRegExp(cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) << 
+			QRegExp("xubuntu\\S{0,}"+relname+"\\S{0,}desktop\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) << 
+			QRegExp("xubuntu-"+relname+"\\S{0,}-desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+			), isotmpf);
+			extractiso(isotmpf, targetPath);
+		}
+		else
+		{
+			relname.replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
 			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
 			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 			kernelOpts = "vga=normal";
