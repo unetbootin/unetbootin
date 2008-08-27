@@ -184,7 +184,7 @@ void unetbootin::ubninitialize()
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
 	distroselect->addItem("BackTrack", (QStringList() << "3" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
-		"<b>Description:</b> BackTrack is a distribution focused on network analysis and pentration testing.<br/>"
+		"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 		"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") << 
 	"3"));
 	distroselect->addItem("CentOS", (QStringList() << "5" << 
@@ -261,7 +261,7 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Kubuntu", (QStringList() << "8.04_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/>"
 		"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.") << 
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
 	distroselect->addItem("Linux Mint", (QStringList() << "5-r1_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
