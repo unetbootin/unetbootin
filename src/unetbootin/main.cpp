@@ -180,7 +180,8 @@ int main(int argc, char *argv[])
 	QTranslator custranldr;
 	QTranslator translator;
 	QString tnapplang;
-	QStringList ubnappargs = app.arguments().filter(QRegExp("lang=\\w{2,}"));
+	QStringList allappargs = app.arguments();
+	QStringList ubnappargs = allappargs.filter(QRegExp("lang=\\w{2,}"));
 	if (!ubnappargs.isEmpty())
 	{
 		tnapplang = ubnappargs.at(0).simplified().remove("lang=").left(2);
@@ -220,24 +221,24 @@ int main(int argc, char *argv[])
 	QProcess whoamip;
 	whoamip.start("whoami");
 	whoamip.waitForFinished();
-	if (QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
+	if (!allappargs.contains("rootcheck=no") && QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
 	{
 		QString gksulocation = checkforgraphicalsu("gksu");
 		if (gksulocation != "REQCNOTFOUND")
 		{
-			QProcess::startDetached(QString("%1 %2").arg(gksulocation, app.applicationFilePath()));
+			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(gksulocation, allappargs.join(" ")));
 			return 0;
 		}
 		QString kdesulocation = checkforgraphicalsu("kdesu");
 		if (kdesulocation != "REQCNOTFOUND")
 		{
-			QProcess::startDetached(QString("%1 %2").arg(kdesulocation, app.applicationFilePath()));
+			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(kdesulocation, allappargs.join(" ")));
 			return 0;
 		}
 		QString gnomesulocation = checkforgraphicalsu("gnomesu");
 		if (gnomesulocation != "REQCNOTFOUND")
 		{
-			QProcess::startDetached(QString("%1 %2").arg(gnomesulocation, app.applicationFilePath()));
+			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(gnomesulocation, allappargs.join(" ")));
 			return 0;
 		}
 		QMessageBox rootmsgb;
