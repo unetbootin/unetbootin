@@ -92,6 +92,10 @@ void unetbootin::ubninitialize()
 	overwriteall = false;
 	formatdrivecheckbox->setEnabled(false);
 	formatdrivecheckbox->hide();
+	typeselect->addItem(tr("Hard Disk"));
+	typeselect->addItem(tr("USB Drive"));
+	diskimagetypeselect->addItem(tr("ISO"));
+	diskimagetypeselect->addItem(tr("Floppy"));
 	#ifdef NOMANUAL
 	optionslayer->setEnabled(true);
 	optionslayer->show();

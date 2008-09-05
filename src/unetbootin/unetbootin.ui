@@ -189,16 +189,6 @@
     <property name="toolTip" >
      <string>Select the installation target type</string>
     </property>
-    <item>
-     <property name="text" >
-      <string>Hard Disk</string>
-     </property>
-    </item>
-    <item>
-     <property name="text" >
-      <string>USB Drive</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="dverselect" >
     <property name="geometry" >
@@ -290,16 +280,6 @@
       <property name="toolTip" >
        <string>Select the disk image type</string>
       </property>
-      <item>
-       <property name="text" >
-        <string>ISO</string>
-       </property>
-      </item>
-      <item>
-       <property name="text" >
-        <string>Floppy</string>
-       </property>
-      </item>
      </widget>
      <widget class="QLineEdit" name="FloppyPath" >
       <property name="geometry" >
