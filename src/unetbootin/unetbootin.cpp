@@ -150,10 +150,14 @@ void unetbootin::ubninitialize()
 	#endif
 	#ifdef EEEUBUNTU
 	distroselect->addItem("Ubuntu Eee", (QStringList() << "8.04" << 
-	tr("<img src=\":/eeeubuntu.png\" /><br/>"
+	tr("<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
-		"<b>Description:</b> Ubuntu Eee is a user-friendly Ubuntu based distribution for the EeePC.<br/>"
+		"<b>Description:</b> Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).<br/>"
 		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+//	tr("<img src=\":/eeeubuntu.png\" /><br/>"
+//		"<b>Homepage:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
+//		"<b>Description:</b> Ubuntu Eee is a user-friendly Ubuntu based distribution for the EeePC.<br/>"
+//		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
 	"8.04"));
 	#endif
 	#ifdef ELIVE
