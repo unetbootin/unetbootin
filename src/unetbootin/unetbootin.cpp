@@ -2479,7 +2479,7 @@ void unetbootin::runinstusb()
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 	syslinuxcfg.close();
-	instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
+	instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
 	fininstall();
 }
 
