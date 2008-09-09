@@ -385,22 +385,22 @@ Reboot now?</source>
         <translation>любой</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2460"/>
+        <location filename="unetbootin.cpp" line="2498"/>
         <source>USB Drive</source>
         <translation>USB-накопитель</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2456"/>
+        <location filename="unetbootin.cpp" line="2494"/>
         <source>Hard Disk</source>
         <translation>Жесткий диск</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2154"/>
+        <location filename="unetbootin.cpp" line="2192"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2159"/>
+        <location filename="unetbootin.cpp" line="2197"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -535,99 +535,99 @@ Reboot now?</source>
         <translation type="unfinished">Файл %1 уже существует. Нажмитe &quot;Да для Всех&quot;, чтобы переписать его без дальнейших подтверждений, щелкните &quot;Да&quot;, чтобы перписать файлы в индивидуальном порядке. Выберите &quot;Нет&quot;, чтобы оставить существующую версию. Если сомневаетесь, жмите &quot;Да для Всех&quot;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1132"/>
+        <location filename="unetbootin.cpp" line="1170"/>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">Извлечение файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1133"/>
+        <location filename="unetbootin.cpp" line="1171"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Архив:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1134"/>
+        <location filename="unetbootin.cpp" line="1172"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1135"/>
+        <location filename="unetbootin.cpp" line="1173"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1136"/>
+        <location filename="unetbootin.cpp" line="1174"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; 0 of %1 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1139"/>
+        <location filename="unetbootin.cpp" line="1177"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1140"/>
+        <location filename="unetbootin.cpp" line="1178"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1141"/>
+        <location filename="unetbootin.cpp" line="1179"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; %1 из %2 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1483"/>
+        <location filename="unetbootin.cpp" line="1521"/>
         <source>Downloading files, plese wait...</source>
         <translation type="unfinished">Загрузка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1484"/>
+        <location filename="unetbootin.cpp" line="1522"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1485"/>
+        <location filename="unetbootin.cpp" line="1523"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1486"/>
+        <location filename="unetbootin.cpp" line="1524"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; 0 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1563"/>
+        <location filename="unetbootin.cpp" line="1601"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; %1 из %2 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1637"/>
+        <location filename="unetbootin.cpp" line="1675"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">Поиск в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1641"/>
+        <location filename="unetbootin.cpp" line="1679"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished">%1/%2 совпадает в &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1808"/>
+        <location filename="unetbootin.cpp" line="1846"/>
         <source>%1 not found</source>
         <translation type="unfinished">%1 не найдено</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1809"/>
+        <location filename="unetbootin.cpp" line="1847"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished">%1 не найден. Это необходимо для режима установки %2.
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2458"/>
+        <location filename="unetbootin.cpp" line="2496"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2462"/>
+        <location filename="unetbootin.cpp" line="2500"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Установите загрузку с USB-устройств в загрузочном меню BIOS после перезагрузки.%1

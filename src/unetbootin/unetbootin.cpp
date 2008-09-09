@@ -1059,6 +1059,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 
 QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList archivefile)
 {
+	QStringList pfoundmatches;
 	relativefilepath = QDir::fromNativeSeparators(relativefilepath);
 //	if (!relativefilepath.startsWith('/'))
 //		relativefilepath = QString("/%1").arg(relativefilepath);
@@ -1072,9 +1073,46 @@ QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList arc
 //		if (!curarchiveitem.endsWith('/'))
 //			curarchiveitem = QString("%1/").arg(curarchiveitem);
 		if (curarchiveitem.contains(relativefilepath))
-			return curarchiveitem;
+			pfoundmatches.append(curarchiveitem);
 	}
-	return "";
+	if (pfoundmatches.isEmpty())
+		return "";
+	else
+	{
+		return filteroutlist(pfoundmatches, QList<QRegExp>()
+		<< QRegExp(".html$", Qt::CaseInsensitive)
+		<< QRegExp(".pdf$", Qt::CaseInsensitive)
+		<< QRegExp(".jpg$", Qt::CaseInsensitive)
+		<< QRegExp(".png$", Qt::CaseInsensitive)
+		<< QRegExp(".sig$", Qt::CaseInsensitive)
+		);
+	}
+}
+
+QString unetbootin::filteroutlist(QStringList listofdata, QList<QRegExp> listofmatches)
+{
+	if (listofdata.isEmpty())
+		return "";
+	if (listofmatches.isEmpty())
+		return listofdata.at(0);
+	if (listofdata.size() == 1)
+		return listofdata.at(0);
+	QStringList newlistofdata;
+	for (int i = 0; i < listofdata.size(); ++i)
+	{
+		if (!listofdata.at(i).contains(listofmatches.at(0)))
+			newlistofdata.append(listofdata.at(i));
+	}
+//	QStringList newlistofdata = QStringList(listofdata).filter(listofmatches.at(0));
+	listofmatches.removeAt(0);
+	if (newlistofdata.isEmpty())
+	{
+		return filteroutlist(listofdata, listofmatches);
+	}
+	else
+	{
+		return filteroutlist(newlistofdata, listofmatches);
+	}
 }
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
@@ -2421,7 +2459,7 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
    	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
-	QString syslinuxcfgtxt = QString("default menu.c32\n"
+	QString syslinuxcfgtxt = QString("default vesamenu.c32\n"
 	"prompt 0\n"
 	"menu title UNetbootin\n"
 	"timeout 100\n\n"
