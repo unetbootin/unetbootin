@@ -13,8 +13,22 @@ static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp("isolinux.bin$", Qt::CaseInsensitive)
 << QRegExp("isolinux.cfg$", Qt::CaseInsensitive)
 << QRegExp("memtest$", Qt::CaseInsensitive)
+<< QRegExp("memtest.bin$", Qt::CaseInsensitive)
 << QRegExp("memtest86$", Qt::CaseInsensitive)
+<< QRegExp("memtest86.bin$", Qt::CaseInsensitive)
+<< QRegExp("memtest+$", Qt::CaseInsensitive)
+<< QRegExp("memtest+.bin$", Qt::CaseInsensitive)
+<< QRegExp("memtest86+$", Qt::CaseInsensitive)
+<< QRegExp("memtest86+.bin$", Qt::CaseInsensitive)
+<< QRegExp("memtestplus$", Qt::CaseInsensitive)
+<< QRegExp("memtestplus.bin$", Qt::CaseInsensitive)
+<< QRegExp("memtest86plus$", Qt::CaseInsensitive)
+<< QRegExp("memtest86plus.bin$", Qt::CaseInsensitive)
 << QRegExp("mt86plus$", Qt::CaseInsensitive)
+<< QRegExp("mt86+$", Qt::CaseInsensitive)
+<< QRegExp("mt86.bin$", Qt::CaseInsensitive)
+<< QRegExp("mt86plus.bin$", Qt::CaseInsensitive)
+<< QRegExp("mt86+.bin$", Qt::CaseInsensitive)
 << QRegExp("system.map$", Qt::CaseInsensitive)
 << QRegExp(".efimg$", Qt::CaseInsensitive)
 << QRegExp(".html$", Qt::CaseInsensitive)
@@ -870,7 +884,11 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
 		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
-		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive) || curarcitm.contains(".tar", Qt::CaseInsensitive) || curarcitm.contains(".psd", Qt::CaseInsensitive) || curarcitm.contains(".xcf", Qt::CaseInsensitive) || curarcitm.contains(".bmp", Qt::CaseInsensitive) || curarcitm.contains(".svg", Qt::CaseInsensitive))
+//		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive) || curarcitm.contains(".tar", Qt::CaseInsensitive) || curarcitm.contains(".psd", Qt::CaseInsensitive) || curarcitm.contains(".xcf", Qt::CaseInsensitive) || curarcitm.contains(".bmp", Qt::CaseInsensitive) || curarcitm.contains(".svg", Qt::CaseInsensitive))
+//		{
+//			continue;
+//		}
+		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypeskernelRL).isEmpty())
 		{
 			continue;
 		}
@@ -903,7 +921,11 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
 		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
-		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive) || curarcitm.contains(".tar", Qt::CaseInsensitive) || curarcitm.contains(".psd", Qt::CaseInsensitive) || curarcitm.contains(".xcf", Qt::CaseInsensitive) || curarcitm.contains(".bmp", Qt::CaseInsensitive) || curarcitm.contains(".svg", Qt::CaseInsensitive))
+//		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive) || curarcitm.contains(".tar", Qt::CaseInsensitive) || curarcitm.contains(".psd", Qt::CaseInsensitive) || curarcitm.contains(".xcf", Qt::CaseInsensitive) || curarcitm.contains(".bmp", Qt::CaseInsensitive) || curarcitm.contains(".svg", Qt::CaseInsensitive))
+//		{
+//			continue;
+//		}
+		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypesinitrdRL).isEmpty())
 		{
 			continue;
 		}
@@ -1120,13 +1142,20 @@ QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList arc
 	}
 }
 
+QString unetbootin::filteroutlist(QString listofdata, QList<QRegExp> listofmatches)
+{
+	if (listofdata.isEmpty())
+		return "";
+	return filteroutlist(QStringList() << listofdata, listofmatches);
+}
+
 QString unetbootin::filteroutlist(QStringList listofdata, QList<QRegExp> listofmatches)
 {
 	if (listofdata.isEmpty())
 		return "";
-	QStringList datalist = filteroutlistL(listofdata, listofmatches);
-	if (!datalist.isEmpty())
-		return datalist
+	QStringList fldatalist = filteroutlistL(listofdata, listofmatches);
+	if (!fldatalist.isEmpty())
+		return fldatalist.at(0);
 	else
 		return "";
 }
@@ -1136,7 +1165,7 @@ QStringList unetbootin::filteroutlistL(QStringList listofdata, QList<QRegExp> li
 	if (listofdata.isEmpty())
 		return QStringList();
 	if (listofmatches.isEmpty())
-		return listofdata.at(0);
+		return listofdata;
 	if (listofdata.size() == 1)
 		return listofdata;
 	QStringList newlistofdata;

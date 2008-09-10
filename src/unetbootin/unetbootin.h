@@ -155,6 +155,7 @@ public:
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgL(QString archivefile, QStringList archivefileconts);
 	QString getfullarchivepath(QString relativefilepath, QStringList archivefile);
+	QString filteroutlist(QString listofdata, QList<QRegExp> listofmatches);
 	QString filteroutlist(QStringList listofdata, QList<QRegExp> listofmatches);
 	QStringList filteroutlistL(QStringList listofdata, QList<QRegExp> listofmatches);
 	void extractiso(QString isofile, QString exoutputdir);
