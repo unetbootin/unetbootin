@@ -879,24 +879,26 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 {
 	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux";
+	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
 	{
-		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
+//		curarcitm = archivefileconts.first.at(i).right(archivefileconts.first.at(i).size() - archivefileconts.first.at(i).lastIndexOf(QDir::toNativeSeparators("/")) - 1);
 //		if (curarcitm.contains("isolinux", Qt::CaseInsensitive) || curarcitm.contains("memtest", Qt::CaseInsensitive) || curarcitm.contains("system.map", Qt::CaseInsensitive) || curarcitm.contains(".efimg", Qt::CaseInsensitive) || curarcitm.contains(".jpg", Qt::CaseInsensitive) || curarcitm.contains(".png", Qt::CaseInsensitive) || curarcitm.contains(".pdf", Qt::CaseInsensitive) || curarcitm.contains(".txt", Qt::CaseInsensitive) || curarcitm.contains(".pcx", Qt::CaseInsensitive) || curarcitm.contains(".rle", Qt::CaseInsensitive) || curarcitm.contains(".fnt", Qt::CaseInsensitive) || curarcitm.contains(".msg", Qt::CaseInsensitive) || curarcitm.contains(".cat", Qt::CaseInsensitive) || curarcitm.contains(".tar", Qt::CaseInsensitive) || curarcitm.contains(".psd", Qt::CaseInsensitive) || curarcitm.contains(".xcf", Qt::CaseInsensitive) || curarcitm.contains(".bmp", Qt::CaseInsensitive) || curarcitm.contains(".svg", Qt::CaseInsensitive))
 //		{
 //			continue;
 //		}
-		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypeskernelRL).isEmpty())
-		{
-			continue;
-		}
+//		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypeskernelRL).isEmpty())
+//		{
+//			continue;
+//		}
 		if (archivefileconts.second.at(i) > 614400 && archivefileconts.second.at(i) < 20971520) // between 600 KB and 20 MB
 		{
-			narchivefileconts.append(archivefileconts.first.at(i));
+			tnarchivefileconts.append(archivefileconts.first.at(i));
 		}
 	}
+	narchivefileconts = filteroutlistL(tnarchivefileconts, ignoredtypesbothRL+ignoredtypeskernelRL);
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		for (int j = 0; j < narchivefileconts.size(); ++j)
@@ -916,6 +918,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz";
+	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
 	for (int i = 0; i < archivefileconts.second.size(); ++i)
@@ -925,15 +928,16 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 //		{
 //			continue;
 //		}
-		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypesinitrdRL).isEmpty())
-		{
-			continue;
-		}
+//		if (filteroutlist(curarcitm, ignoredtypesbothRL+ignoredtypesinitrdRL).isEmpty())
+//		{
+//			continue;
+//		}
 		if (archivefileconts.second.at(i) > 256000 && archivefileconts.second.at(i) < 209715200) // between 250 KB and 200 MB
 		{
-			narchivefileconts.append(archivefileconts.first.at(i));
+			tnarchivefileconts.append(archivefileconts.first.at(i));
 		}
 	}
+	narchivefileconts = filteroutlistL(tnarchivefileconts, ignoredtypesbothRL+ignoredtypesinitrdRL);
 	for (int i = 0; i < kernelnames.size(); ++i)
 	{
 		for (int j = 0; j < narchivefileconts.size(); ++j)
