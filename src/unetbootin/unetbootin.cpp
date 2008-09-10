@@ -9,6 +9,43 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #include "unetbootin.h"
 
+static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
+<< QRegExp("isolinux.bin$", Qt::CaseInsensitive)
+<< QRegExp("isolinux.cfg$", Qt::CaseInsensitive)
+<< QRegExp("memtest$", Qt::CaseInsensitive)
+<< QRegExp("memtest86$", Qt::CaseInsensitive)
+<< QRegExp("mt86plus$", Qt::CaseInsensitive)
+<< QRegExp("system.map$", Qt::CaseInsensitive)
+<< QRegExp(".efimg$", Qt::CaseInsensitive)
+<< QRegExp(".html$", Qt::CaseInsensitive)
+<< QRegExp(".jpg$", Qt::CaseInsensitive)
+<< QRegExp(".png$", Qt::CaseInsensitive)
+<< QRegExp(".pdf$", Qt::CaseInsensitive)
+<< QRegExp(".pcx$", Qt::CaseInsensitive)
+<< QRegExp(".rle$", Qt::CaseInsensitive)
+<< QRegExp(".fnt$", Qt::CaseInsensitive)
+<< QRegExp(".psd$", Qt::CaseInsensitive)
+<< QRegExp(".xcf$", Qt::CaseInsensitive)
+<< QRegExp(".bmp$", Qt::CaseInsensitive)
+<< QRegExp(".svg$", Qt::CaseInsensitive)
+<< QRegExp(".md5$", Qt::CaseInsensitive)
+<< QRegExp(".md5sum$", Qt::CaseInsensitive)
+<< QRegExp(".sha1$", Qt::CaseInsensitive)
+<< QRegExp(".sha1sum$", Qt::CaseInsensitive)
+<< QRegExp(".c32$", Qt::CaseInsensitive)
+<< QRegExp(".sig$", Qt::CaseInsensitive)
+<< QRegExp(".msg$", Qt::CaseInsensitive)
+<< QRegExp(".cat$", Qt::CaseInsensitive)
+<< QRegExp(".txt$", Qt::CaseInsensitive)
+<< QRegExp(".tar$", Qt::CaseInsensitive);
+
+static const QList<QRegExp> ignoredtypeskernelRL = QList<QRegExp>()
+<< QRegExp("initrd.gz$", Qt::CaseInsensitive)
+<< QRegExp("initrd.img$", Qt::CaseInsensitive);
+
+static const QList<QRegExp> ignoredtypesinitrdRL = QList<QRegExp>()
+<< QRegExp("bzImage$", Qt::CaseInsensitive);
+
 void callexternappT::run()
 {
 	#ifdef Q_OS_WIN32
@@ -1079,13 +1116,7 @@ QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList arc
 		return "";
 	else
 	{
-		return filteroutlist(pfoundmatches, QList<QRegExp>()
-		<< QRegExp(".html$", Qt::CaseInsensitive)
-		<< QRegExp(".pdf$", Qt::CaseInsensitive)
-		<< QRegExp(".jpg$", Qt::CaseInsensitive)
-		<< QRegExp(".png$", Qt::CaseInsensitive)
-		<< QRegExp(".sig$", Qt::CaseInsensitive)
-		);
+		return filteroutlist(pfoundmatches, ignoredtypesbothRL);
 	}
 }
 
@@ -1093,10 +1124,21 @@ QString unetbootin::filteroutlist(QStringList listofdata, QList<QRegExp> listofm
 {
 	if (listofdata.isEmpty())
 		return "";
+	QStringList datalist = filteroutlistL(listofdata, listofmatches);
+	if (!datalist.isEmpty())
+		return datalist
+	else
+		return "";
+}
+
+QStringList unetbootin::filteroutlistL(QStringList listofdata, QList<QRegExp> listofmatches)
+{
+	if (listofdata.isEmpty())
+		return QStringList();
 	if (listofmatches.isEmpty())
 		return listofdata.at(0);
 	if (listofdata.size() == 1)
-		return listofdata.at(0);
+		return listofdata;
 	QStringList newlistofdata;
 	for (int i = 0; i < listofdata.size(); ++i)
 	{
@@ -1107,11 +1149,11 @@ QString unetbootin::filteroutlist(QStringList listofdata, QList<QRegExp> listofm
 	listofmatches.removeAt(0);
 	if (newlistofdata.isEmpty())
 	{
-		return filteroutlist(listofdata, listofmatches);
+		return filteroutlistL(listofdata, listofmatches);
 	}
 	else
 	{
-		return filteroutlist(newlistofdata, listofmatches);
+		return filteroutlistL(newlistofdata, listofmatches);
 	}
 }
 
