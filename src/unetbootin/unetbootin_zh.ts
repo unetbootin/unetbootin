@@ -153,12 +153,12 @@
         <translation>两者任选其一</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2590"/>
+        <location filename="unetbootin.cpp" line="2593"/>
         <source>USB Drive</source>
         <translation>USB 驱动器</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2586"/>
+        <location filename="unetbootin.cpp" line="2589"/>
         <source>Hard Disk</source>
         <translation>硬盘</translation>
     </message>
@@ -440,12 +440,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2588"/>
+        <location filename="unetbootin.cpp" line="2591"/>
         <source>After rebooting, select the </source>
         <translation>重启后，选择</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2592"/>
+        <location filename="unetbootin.cpp" line="2595"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重启后，在BIOS启动菜单里选择 USB 启动选项。%1

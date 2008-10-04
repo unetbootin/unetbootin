@@ -158,12 +158,12 @@
         <translation>cada(um)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2590"/>
+        <location filename="unetbootin.cpp" line="2593"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2586"/>
+        <location filename="unetbootin.cpp" line="2589"/>
         <source>Hard Disk</source>
         <translation>Disco Rígido</translation>
     </message>
@@ -395,12 +395,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2588"/>
+        <location filename="unetbootin.cpp" line="2591"/>
         <source>After rebooting, select the </source>
         <translation>Após a reinicialização, selecione o</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2592"/>
+        <location filename="unetbootin.cpp" line="2595"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Após reiniciar, selecione a opção &apos;USB boot&apos; no menu de boot da BIOS. %1

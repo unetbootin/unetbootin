@@ -153,12 +153,12 @@
         <translation>sia</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2590"/>
+        <location filename="unetbootin.cpp" line="2593"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2586"/>
+        <location filename="unetbootin.cpp" line="2589"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -435,12 +435,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuzione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2588"/>
+        <location filename="unetbootin.cpp" line="2591"/>
         <source>After rebooting, select the </source>
         <translation>Dopo il riavvio selezionare il(sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2592"/>
+        <location filename="unetbootin.cpp" line="2595"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)

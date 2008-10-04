@@ -2537,6 +2537,9 @@ void unetbootin::runinstusb()
 		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
 		QFile usbmbrF(rawtargetDev);
 		QFile mbrbinF(":/mbr.bin");
+		#ifdef NOSTATIC
+		mbrbinF.setFileName("/usr/lib/syslinux/mbr.bin");
+		#endif
 		usbmbrF.open(QIODevice::WriteOnly);
 		mbrbinF.open(QIODevice::ReadOnly);
 		usbmbrF.write(mbrbinF.readAll());

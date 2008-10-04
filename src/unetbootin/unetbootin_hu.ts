@@ -562,12 +562,12 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2590"/>
+        <location filename="unetbootin.cpp" line="2593"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2586"/>
+        <location filename="unetbootin.cpp" line="2589"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -709,12 +709,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2588"/>
+        <location filename="unetbootin.cpp" line="2591"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Újrainditás után vállasztja a (sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2592"/>
+        <location filename="unetbootin.cpp" line="2595"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1

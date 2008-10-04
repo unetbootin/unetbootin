@@ -1,5 +1,5 @@
 Package: unetbootin
-Version: 286
+Version: 287
 Section: base system
 Priority: optional
 Architecture: amd64
