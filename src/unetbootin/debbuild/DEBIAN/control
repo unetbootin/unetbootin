@@ -1,9 +1,9 @@
 Package: unetbootin
-Version: 285
+Version: 286
 Section: base system
 Priority: optional
 Architecture: amd64
-Depends: syslinux,p7zip-full,libqt4-gui,libqt4-network
+Depends: syslinux,p7zip-full,libqt4-gui,libqt4-network|libqt4-core
 Recommends: udev
 Installed-Size: 500
 Maintainer: Geza Kovacs <geza0kovacs@gmail.com>
