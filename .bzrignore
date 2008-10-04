@@ -25,3 +25,5 @@ src/unetbootin/*.qm
 src/unetbootin/.cdtproject
 src/unetbootin/.project
 src/unetbootin/.settings
+src/unetbootin/unetbootin_*.deb
+src/unetbootin/debbuild/usr/bin/unetbootin
