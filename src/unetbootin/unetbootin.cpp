@@ -411,6 +411,9 @@ void unetbootin::ubninitialize()
 	volidcommand = locatecommand("vol_id", tr("either"), "udev");
 	locatecommand("mtools", tr("USB Drive"), "mtools");
 	syslinuxcommand = "/usr/bin/ubnsylnx";
+	#ifdef NOSTATIC
+	syslinuxcommand = "/usr/bin/syslinux";
+	#endif
 //	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
 	ubntmpf = "/tmp/";
@@ -2174,6 +2177,18 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	QFile dstF(dstfName);
 	dstF.open(QIODevice::WriteOnly);
 	QFile srcF(QString(":/%1").arg(srcfName));
+	#ifdef NOSTATIC
+	if (srcfName == "memdisk")
+		srcF.setFileName("/usr/lib/syslinux/memdisk");
+	else if (srcfName == "vesamenu.c32")
+		srcF.setFileName("/usr/lib/syslinux/vesamenu.c32");
+	else if (srcfName == "mbr.bin")
+		srcF.setFileName("/usr/lib/syslinux/mbr.bin");
+	else if (srcfName == "ubnsylnx")
+		srcF.setFileName("/usr/bin/syslinux");
+//	else
+//		srcF.setFileName(QString("/usr/lib/unetbootin/%1").arg(srcfName));
+	#endif
 	srcF.open(QIODevice::ReadOnly);
 	dstF.write(srcF.readAll());
 	dstF.close();
@@ -2508,12 +2523,14 @@ void unetbootin::runinstusb()
 	callexternapp(sysltfloc, QString("-ma %1").arg(targetDev));
 	QFile::remove(sysltfloc);
 	#endif
-	#ifdef Q_OS_UNIX
+	#ifdef STATICLINUX
 	if (QFile::exists(syslinuxcommand))
 		QFile::remove(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
 	QFile::setPermissions(syslinuxcommand, QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
 //	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
+	#endif
+	#ifdef Q_OS_UNIX
 	callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
 	{

@@ -1,0 +1,11 @@
+Package: unetbootin
+Version: 283
+Section: base system
+Priority: optional
+Architecture: amd64
+Depends: syslinux,p7zip-full
+Installed-Size: 800
+Maintainer: Geza Kovacs <geza0kovacs@gmail.com>
+Source: unetbootin
+Description: UNetbootin can create live USB drives for a variety of distributions.
+	Website is at http://unetbootin.sourceforge.net/

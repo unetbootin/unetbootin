@@ -1,0 +1,18 @@
+#!/bin/sh
+
+rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+make clean
+rm Makefile*
+rm release/*
+lupdate unetbootin.pro
+lrelease unetbootin.pro
+qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
+make
+strip --strip-all unetbootin
+#mv unetbootin release/unetbootin-linux-$rvern
+#./upx --lzma release/unetbootin-linux-$rvern
+#printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
+#zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
+mv unetbootin debbuild/usr/bin/unetbootin
+dpkg-deb -b debbuild
+mv debbuild.deb unetbootin_$rvern\_amd64.deb
