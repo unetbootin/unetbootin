@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=UNetbootin
+Comment=Tool for creating Live USB drives
+Categories=Application;System;
+Exec=/usr/bin/unetbootin
+Terminal=false
+Type=Application
+Name[en_US]=UNetbootin
+GenericName[en_US]=UNetbootin
+Comment[en_US]=Tool for creating Live USB drives
