@@ -408,7 +408,10 @@ void unetbootin::ubninitialize()
 	#ifdef Q_OS_UNIX
 	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
 	sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
-	volidcommand = locatecommand("vol_id", tr("either"), "udev");
+	if (QFile::exists("/lib/udev/vol_id"))
+		volidcommand = "/lib/udev/vol_id";
+	else
+		volidcommand = locatecommand("vol_id", tr("either"), "udev");
 	locatecommand("mtools", tr("USB Drive"), "mtools");
 	syslinuxcommand = "/usr/bin/ubnsylnx";
 	#ifdef NOSTATIC

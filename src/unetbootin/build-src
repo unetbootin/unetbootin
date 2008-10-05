@@ -6,6 +6,6 @@ zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
 cp unetbootin.pro unetbootin-pro.bak
 sed -i '/^RESOURCES/d' unetbootin.pro
 echo "DEFINES += NOSTATIC" >> unetbootin.pro
-tar -cvzf release/unetbootin-source-$rvern.tar.gz $(bzr ls --versioned | grep '\.cpp$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.ui$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.pro$') $(bzr ls --versioned | grep '\.ts$') debbuild INSTALL README.TXT
+tar -cvzf release/unetbootin-source-$rvern.tar.gz $(bzr ls --versioned | grep '\.cpp$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.ui$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.pro$') $(bzr ls --versioned | grep '\.ts$') debbuild build-nostatic INSTALL README.TXT --exclude "debbuild/usr/share/unetbootin/*" --exclude "debbuild/usr/bin/*"
 mv unetbootin-pro.bak unetbootin.pro
 

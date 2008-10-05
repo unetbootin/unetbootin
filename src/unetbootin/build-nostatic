@@ -1,18 +1,41 @@
 #!/bin/sh
 
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+if [ "$rvern" = "" ]
+then
+rvern="$(pwd | sed 's/\//\n/g' | grep 'unetbootin-source-' | sed s/unetbootin-source-// )"
+fi
+
+if [ "$(uname -m)" = "x86_64" ]
+then
+archname="amd64"
+else
+archname="i386"
+fi
+
 make clean
 rm Makefile*
 rm release/*
+cp unetbootin.pro unetbootin-pro.bak
+sed -i '/^RESOURCES/d' unetbootin.pro
 lupdate unetbootin.pro
 lrelease unetbootin.pro
 qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
+mv unetbootin-pro.bak unetbootin.pro
 strip --strip-all unetbootin
 #mv unetbootin release/unetbootin-linux-$rvern
 #./upx --lzma release/unetbootin-linux-$rvern
 #printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
 #zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
 mv unetbootin debbuild/usr/bin/unetbootin
+cp unetbootin_*.qm debbuild/usr/share/unetbootin/
+cp debbuild/DEBIAN/control ./control-bak
+sed -i "s/amd64/$archname/" debbuild/DEBIAN/control
+debinstalledsize="$(du -ck debbuild | grep total | sed 's/ /\n/g' | sed 's/\t/\n/g' | head --lines 1)"
+sed -i "s/287/$rvern/" debbuild/DEBIAN/control
+sed -i "s/500/$debinstalledsize/" debbuild/DEBIAN/control
 dpkg-deb -b debbuild
-mv debbuild.deb unetbootin_$rvern\_amd64.deb
+mv debbuild.deb unetbootin_$rvern\_$archname.deb
+mv ./control-bak debbuild/DEBIAN/control
+

@@ -3,9 +3,11 @@
 # you will need "qmake" and "libqt4-dev" to build this
 # details at http://unetbootin.wiki.sourceforge.net/compile
 
+cp unetbootin.pro unetbootin-pro.bak
 sed -i '/^RESOURCES/d' unetbootin.pro
 lupdate unetbootin.pro
 lrelease unetbootin.pro
 qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
+mv unetbootin-pro.bak unetbootin.pro
 

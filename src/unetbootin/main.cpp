@@ -212,6 +212,10 @@ int main(int argc, char *argv[])
 	{
 		app.installTranslator(&translator);
 	}
+	else if (QFile::exists(QString("/usr/share/unetbootin/unetbootin_%1.qm").arg(tnapplang)) && translator.load(QString("/usr/share/unetbootin/unetbootin_%1.qm").arg(tnapplang)))
+	{
+		app.installTranslator(&translator);
+	}
 	else
 	{
 		tnapplang = "en";
