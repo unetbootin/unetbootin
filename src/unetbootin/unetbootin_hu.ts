@@ -497,8 +497,8 @@ Reboot now?</source>
     <message>
         <location filename="distrolst.cpp" line="434"/>
         <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <translation>*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/SL-OSS-factory/inst-source&apos; mappával.</translation>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation type="unfinished">*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/SL-OSS-factory/inst-source&apos; mappával.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="440"/>

@@ -216,8 +216,8 @@
     <message>
         <location filename="distrolst.cpp" line="434"/>
         <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <translation>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation type="unfinished">
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.opensuse.org&apos;，当询问文件夹时输入&apos;/distribution/SL-OSS-factory/inst-source&apos;。</translation>
     </message>
     <message>

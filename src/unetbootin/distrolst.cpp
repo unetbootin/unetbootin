@@ -429,9 +429,9 @@ if (nameDistro == "openSUSE")
 	{
 		if (relname == "factory")
 		{
-			downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/boot/%1/loader/initrd").arg(cpuarch), QString("%1ubninit").arg(targetPath));
-			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/distribution/SL-OSS-factory/inst-source' when asked for the folder.");
+			downloadfile(QString("http://download.opensuse.org/factory/repo/oss/boot/%1/loader/linux").arg(cpuarch), QString("%1ubnkern").arg(targetPath));
+			downloadfile(QString("http://download.opensuse.org/factory/repo/oss/boot/%1/loader/initrd").arg(cpuarch), QString("%1ubninit").arg(targetPath));
+			postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'download.opensuse.org' when prompted for a server, and enter '/factory/repo/oss' when asked for the folder.");
 		}
 		else
 		{

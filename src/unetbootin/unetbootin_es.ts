@@ -774,8 +774,8 @@ Reboot now?</source>
     <message>
         <location filename="distrolst.cpp" line="434"/>
         <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <translation>*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation type="unfinished">*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="440"/>
