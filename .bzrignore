@@ -28,3 +28,5 @@ src/unetbootin/.settings
 src/unetbootin/unetbootin_*.deb
 src/unetbootin/debbuild/usr/bin/unetbootin
 src/unetbootin/debbuild/usr/share/unetbootin/*
+src/unetbootin/release/*
+src/unetbootin/unetbootin-pro.bak

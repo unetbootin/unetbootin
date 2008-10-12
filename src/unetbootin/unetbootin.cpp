@@ -2465,11 +2465,11 @@ void unetbootin::runinsthdd()
 	#endif
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot\n").arg(kernelLine, kernelParam, kernelLoc, kernelOpts, initrdLine, initrdLoc, initrdOpts
+	"boot\n").arg(kernelLine).arg(kernelParam).arg(kernelLoc).arg(kernelOpts).arg(initrdLine).arg(initrdLoc).arg(initrdOpts)
 	#ifdef Q_OS_UNIX
-	, getGrubNotation(targetDev), ecurmenulstText
+	.arg(getGrubNotation(targetDev)).arg(ecurmenulstText)
 	#endif
-	);
+	;
 	if (!extraoptionsPL.first.first.isEmpty())
 	{
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
