@@ -160,18 +160,13 @@ void ubnUninst()
 QString checkforgraphicalsu(QString graphicalsu)
 {
 	QProcess whereiscommand;
-	whereiscommand.start(QString("whereis %1").arg(graphicalsu));
+	whereiscommand.start(QString("which %1").arg(graphicalsu));
 	whereiscommand.waitForFinished(-1);
-	QString commandbinpath = QString(whereiscommand.readAll());
-	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
-	for (int i = 0; i < commandbinpathL.size(); ++i)
-	{
-		if (commandbinpathL.at(i).contains("bin/"))
-		{
-			return commandbinpathL.at(i);
-		}
-	}
-	return "REQCNOTFOUND";
+	QString commandbinpath = QString(whereiscommand.readAll()).trimmed();
+	if (!commandbinpath.isEmpty() && QFile::exists(commandbinpath))
+		return commandbinpath;
+	else
+		return "REQCNOTFOUND";
 }
 
 int main(int argc, char *argv[])
