@@ -406,8 +406,14 @@ void unetbootin::ubninitialize()
 	#endif
 	#include "customdistselect.cpp"
 	#ifdef Q_OS_UNIX
-	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
-	sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
+	if (QFile::exists("/sbin/fdisk"))
+		fdiskcommand = "/sbin/fdisk";
+	else
+		fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+	if (QFile::exists("/sbin/sfdisk"))
+		sfdiskcommand = "/sbin/sfdisk";
+	else
+		sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
 	if (QFile::exists("/lib/udev/vol_id"))
 		volidcommand = "/lib/udev/vol_id";
 	else
