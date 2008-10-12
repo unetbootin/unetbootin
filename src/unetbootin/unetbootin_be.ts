@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
+    <name></name>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="236"/>
@@ -434,6 +437,11 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="207"/>
+        <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
@@ -442,11 +450,6 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="207"/>
-        <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -659,22 +662,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation type="unfinished"></translation>
     </message>

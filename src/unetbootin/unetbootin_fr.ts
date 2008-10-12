@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fr">
 <context>
+    <name></name>
+    <message>
+        <location filename="unetbootin.cpp" line="2592"/>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Disque dur</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2594"/>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Après le redémarrage, choisir le</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2596"/>
+        <source>USB Drive</source>
+        <translation type="obsolete">Disque USB</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2598"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Après le redémarrage, choisir l&apos;option de démarrage sur USB dans le BIOS.%1
+Redémarrer maintenant ?</translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="236"/>
@@ -442,13 +467,13 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
-        <translation>Après le redémarrage, choisir le</translation>
+        <translation type="unfinished">Après le redémarrage, choisir le</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Après le redémarrage, choisir l&apos;option de démarrage sur USB dans le BIOS.%1
+        <translation type="unfinished">Après le redémarrage, choisir l&apos;option de démarrage sur USB dans le BIOS.%1
 Redémarrer maintenant ?</translation>
     </message>
     <message>
@@ -674,22 +699,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1  a été désinstallé.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>Seul root peut le lancer</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 doit être utilisé par root. Refermez et recommencez avec &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt; ou &lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Désinstallation</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 est actuellement installé. Supprimer la version existante ?</translation>
     </message>

@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="zh">
 <context>
+    <name></name>
+    <message>
+        <location filename="unetbootin.cpp" line="2592"/>
+        <source>Hard Disk</source>
+        <translation type="obsolete">硬盘</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2594"/>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">重启后，选择</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2596"/>
+        <source>USB Drive</source>
+        <translation type="obsolete">USB 驱动器</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2598"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">重启后，在BIOS启动菜单里选择 USB 启动选项。%1
+现在是否重启？</translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="236"/>
@@ -442,13 +467,13 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
-        <translation>重启后，选择</translation>
+        <translation type="unfinished">重启后，选择</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>重启后，在BIOS启动菜单里选择 USB 启动选项。%1
+        <translation type="unfinished">重启后，在BIOS启动菜单里选择 USB 启动选项。%1
 现在是否重启？</translation>
     </message>
     <message>
@@ -666,22 +691,22 @@ p, li { white-space: pre-wrap; }
         <translation>已经卸载 %1 。</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>必须以root的身份运行</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>必须以root的身份运行 %2。关闭它，并且选择二者之一重新运行：&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation>卸载 %1</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 已经安装。是否移除现有的版本？</translation>
     </message>

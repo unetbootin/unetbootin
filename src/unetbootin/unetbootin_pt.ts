@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pt">
 <context>
+    <name></name>
+    <message>
+        <location filename="unetbootin.cpp" line="2592"/>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Disco Rígido</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2594"/>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Após a reinicialização, selecione o</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2596"/>
+        <source>USB Drive</source>
+        <translation type="obsolete">Disco USB</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2598"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Após reiniciar, selecione a opção &apos;USB boot&apos; no menu de boot da BIOS. %1
+Quer reinicializar agora?</translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="236"/>
@@ -397,13 +422,13 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
-        <translation>Após a reinicialização, selecione o</translation>
+        <translation type="unfinished">Após a reinicialização, selecione o</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Após reiniciar, selecione a opção &apos;USB boot&apos; no menu de boot da BIOS. %1
+        <translation type="unfinished">Após reiniciar, selecione a opção &apos;USB boot&apos; no menu de boot da BIOS. %1
 Quer reinicializar agora?</translation>
     </message>
     <message>
@@ -696,22 +721,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 foi desinstalado.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>Deve ser executado pelo root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 Deve ser executado pelo root. Feche, e re-execute usando: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Desinstalador</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 atualmente está instalado. Remover a versão que existe?</translation>
     </message>

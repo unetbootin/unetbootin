@@ -140,12 +140,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2458"/>
+        <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
         <translation type="obsolete">Újrainditás után vállasztja a (sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2462"/>
+        <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="obsolete">Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1
@@ -1010,22 +1010,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>Ezt a programot &apos;root&apos; (rendszergazda) felhasználóként kell futatni</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation type="unfinished"></translation>
     </message>

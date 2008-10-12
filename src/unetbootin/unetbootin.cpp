@@ -2477,11 +2477,11 @@ void unetbootin::runinsthdd()
 			#endif
 			"kernel %2 %4\n"
 			"initrd %3\n"
-			"boot\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^"), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i)
+			"boot\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^")).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i))
 			#ifdef Q_OS_UNIX
-			, getGrubNotation(targetDev)
+			.arg(getGrubNotation(targetDev))
 			#endif
-			));
+			);
 		}
 	}
 	menulstout << menulstxt << endl;
@@ -2572,7 +2572,7 @@ void unetbootin::runinstusb()
 			syslinuxcfgtxt.append(QString("\nlabel %5\n"
 			"menu label %1\n"
 			"kernel %2\n"
-			"append %6%3 %4\n").arg(extraoptionsPL.second.first.at(i), extraoptionsPL.first.first.at(i), extraoptionsPL.first.second.at(i), extraoptionsPL.second.second.at(i), QString("ubnentry%1").arg(i), slinitrdLine));
+			"append %6%3 %4\n").arg(extraoptionsPL.second.first.at(i)).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i)).arg(QString("ubnentry%1").arg(i)).arg(slinitrdLine));
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;

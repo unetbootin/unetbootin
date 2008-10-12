@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="it">
 <context>
+    <name></name>
+    <message>
+        <location filename="unetbootin.cpp" line="2592"/>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Disco rigido</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2594"/>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Dopo il riavvio selezionare il(sp)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2596"/>
+        <source>USB Drive</source>
+        <translation type="obsolete">Disco USB</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2598"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)
+Riavviare adesso?</translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="236"/>
@@ -437,13 +462,13 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
-        <translation>Dopo il riavvio selezionare il(sp)</translation>
+        <translation type="unfinished">Dopo il riavvio selezionare il(sp)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)
+        <translation type="unfinished">Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)
 Riavviare adesso?</translation>
     </message>
     <message>
@@ -669,22 +694,22 @@ p, li { white-space: pre-wrap; }(new line)
         <translation>%1 è stato disinstallato.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>Deve essere lanciato come root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 deve essere lanciato come root. Chiuderlo e rilanciarlo usando o &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;oppure:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation>%1 disinstallatore</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 è attualmente installato. Rimuovere la versione attuale?</translation>
     </message>

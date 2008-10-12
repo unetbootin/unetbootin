@@ -245,6 +245,12 @@ int main(int argc, char *argv[])
 			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(gnomesulocation, allappargs.join(" ")));
 			return 0;
 		}
+		QString kdesudolocation = checkforgraphicalsu("kdesudo");
+		if (kdesudolocation != "REQCNOTFOUND")
+		{
+			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(kdesudolocation, allappargs.join(" ")));
+			return 0;
+		}
 		QMessageBox rootmsgb;
 		rootmsgb.setIcon(QMessageBox::Warning);
 		rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));

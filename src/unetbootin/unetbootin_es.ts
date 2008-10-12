@@ -3,12 +3,12 @@
 <context>
     <name></name>
     <message>
-        <location filename="unetbootin.cpp" line="2456"/>
+        <location filename="unetbootin.cpp" line="2592"/>
         <source>Hard Disk</source>
         <translation type="obsolete">Disco Duro</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2460"/>
+        <location filename="unetbootin.cpp" line="2596"/>
         <source>USB Drive</source>
         <translation type="obsolete">Unidad USB</translation>
     </message>
@@ -150,12 +150,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2458"/>
+        <location filename="unetbootin.cpp" line="2594"/>
         <source>After rebooting, select the </source>
         <translation type="obsolete">Después de reiniciar, selecciona el</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2462"/>
+        <location filename="unetbootin.cpp" line="2598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="obsolete">Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
@@ -1118,22 +1118,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="250"/>
+        <location filename="main.cpp" line="256"/>
         <source>Must run as root</source>
         <translation>Se debe ejecutar como superusuario (root)</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="252"/>
+        <location filename="main.cpp" line="258"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="273"/>
+        <location filename="main.cpp" line="279"/>
         <source>%1 Uninstaller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="280"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation type="unfinished"></translation>
     </message>
