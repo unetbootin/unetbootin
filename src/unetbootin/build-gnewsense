@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mingwb="i586-mingw32msvc"
+rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+make clean
+rm Makefile*
+rm release/*
+lupdate unetbootin.pro
+lrelease unetbootin.pro
+./qmake-windows "DEFINES += GNEWSENSE" "RESOURCES += unetbootin-gnewsense.qrc"
+make
+$mingwb-strip --strip-all release/unetbootin.exe
+mv release/unetbootin.exe release/unetbootin-gnewsense-windows-$rvern.exe
+./upx --lzma release/unetbootin-gnewsense-windows-$rvern.exe
+./qmake-linux "DEFINES += GNEWSENSE" "RESOURCES += unetbootin-gnewsense.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-gnewsense-linux-$rvern
+./upx --lzma release/unetbootin-gnewsense-linux-$rvern
+qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+

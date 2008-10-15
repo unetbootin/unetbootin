@@ -1,13 +1,72 @@
-== Build System ==
+See http://unetbootin.wiki.sourceforge.net/compile for build instructions
 
-I build on Ubuntu with mingw32, though it will likely also work on Windows with mingw32 as well. If building on Windows, you can skip steps 2 and 3.
+Building a Dynamically Linked Version
 
-== Prerequisites ==
+Dynamically linked builds are most useful for packaging into Linux distributions. If you are attempting to standalone version for deployment on Windows, go to the statically linked section.
 
-qmake
+Prerequisites
+
+Latest "clean" tarball at http://unetbootin.sourceforge.net/unetbootin-source-clean-latest.tar.gz
 libqt4-dev
+g++
 
-== Instructions ==
+Instructions
+
+1. Extract the tarball and cd to it
+
+2. Run either the "INSTALL" script, or the following commands:
+
+sed -i '/^RESOURCES/d' unetbootin.pro
+lupdate unetbootin.pro
+lrelease unetbootin.pro
+qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
+make
+
+
+3. A dynamically linked executable which you can package will then be generated at "unetbootin"
+
+4. If building a package, place the unetbootin_*.qm files in the /usr/share/unetbootin/ directory to enable the usage of localization.
+
+5. If building a package, add "syslinux", "p7zip-full", "libqt4-core" (libQtCore.so.4), "libqt4-gui" (libQtGui.so.4), and "libqt4-network" (libQtNetwork.so.4) as dependencies.
+
+Building a Statically Linked Version
+
+Statically linked builds are most useful for standalone deployment, not packaging. They are the type that is available for download on the website.
+
+Build System
+
+I build on Ubuntu with g++ and mingw32, though it should work on other distributions as well.
+
+Prerequisites
+
+Latest source zip package at http://unetbootin.sourceforge.net/unetbootin-source-latest.zip
+libqt4-dev
+mingw32
+g++
+
+Instructions (Simple)
+
+These instructions use pre-compiled versions of static Qt4 for Windows and Linux. If you'd like to build statically linked versions of Qt4 yourself, use the manual instructions instead.
+
+1. Go to http://launchpad.net/unetbootin/+download and download these files:
+
+qt4-win.7z http://launchpad.net/unetbootin/trunk/trunk/+download/qt4-win.7z
+
+qt4-x11-glibc23.7z http://launchpad.net/unetbootin/trunk/trunk/+download/qt4-x11-glibc23.7z
+
+Or if you can handle a GLIBC 2.4 dependency:
+
+qt4-x11.7z http://launchpad.net/unetbootin/trunk/trunk/+download/qt4-x11.7z
+
+2. Extract those files using 7-zip http://www.7-zip.org/ or p7zip-full on Linux, to get the directories "qt4-win" and "qt4-x11"
+
+3. Move the qt4-win and qt4-x11 directories into the UNetbootin build directory (the same directory containing the files unetbootin.cpp and unetbootin.pro, which is src/unetbootin in the bzr branch).
+
+4. cd to the UNetbootin build directory, and run the script "./build"
+
+5. Statically linked UNetbootin binaries should be generated in the release subdirectory.
+
+Instructions (Manual)
 
 1) Build a statically linked Qt4 for Windows (instructions from http://doc.trolltech.com/4.3/deployment-windows.html#static-linking and http://qtnode.net/wiki?title=Building_static )
 
@@ -32,3 +91,4 @@ make
 To reduce file size, compress the executable using upx ( http://upx.sourceforge.net/ )
 
 ./upx --lzma ./unetbootin.exe
+

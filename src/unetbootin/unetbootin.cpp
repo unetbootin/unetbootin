@@ -219,6 +219,14 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
 	"Unstable_Live"));
 	#endif
+	#ifdef GNEWSENSE
+	distroselect->addItem("gNewSense", (QStringList() << "deltah-2.1" << 
+	tr("<img src=\":/gnewsense.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
+		"<b>Description:</b> gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.<br/>"
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+	"deltah-2.1"));
+	#endif
 	#ifdef SLITAZ
 	distroselect->addItem("SliTaz", (QStringList() << "Stable" << 
 	tr("<img src=\":/slitaz.png\" /><br/>"

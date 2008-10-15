@@ -54,6 +54,16 @@ if (nameDistro == "Elive")
 
 #endif
 
+#ifdef GNEWSENSE
+
+if (nameDistro == "gNewSense")
+{
+	downloadfile(QString("http://cdimage.gnewsense.org/gnewsense-livecd-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef SLITAZ
 
 if (nameDistro == "SliTaz")
