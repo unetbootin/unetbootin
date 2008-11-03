@@ -512,9 +512,24 @@ QStringList unetbootin::listsanedrives()
 			}
 		}
 		#endif
-		#ifdef Q_OS_UNIX
-		QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
-		QStringList usbdevsL = QString(fdisklusbdevsS).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+                #ifdef Q_OS_UNIX
+                QDir devlstdir("/dev/disk/by-id/");
+                QFileInfoList usbfileinfoL = devlstdir.entryInfoList(QDir::NoDotAndDotDot|QDir::Files);
+                for (int i = 0; i < usbfileinfoL.size(); ++i)
+                {
+//                    if (usbfileinfoL.at(i).contains(QRegExp("^usb-\\S{1,}-part\\d{1,}$")))
+//                    {
+//                        fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+//                    }
+                    if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
+                    {
+                        if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains("vfat"))
+                            fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+                    }
+                }
+                /*
+                QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+                QStringList usbdevsL = QString(fdisklusbdevsS).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
 		for (int i = 0; i < usbdevsL.size(); ++i)
 		{
 			if (usbdevsL.at(i).contains(":"))
@@ -523,7 +538,8 @@ QStringList unetbootin::listsanedrives()
 					continue;
 			}
 			fulldrivelist.append(QString(usbdevsL.at(i)).remove(":"));
-		}
+                }
+                */
 		#endif
 	}
 	return fulldrivelist;

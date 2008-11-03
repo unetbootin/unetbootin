@@ -178,22 +178,22 @@ Reboot now?</source>
         <translation>两者任选其一</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2610"/>
+        <location filename="unetbootin.cpp" line="2626"/>
         <source>USB Drive</source>
         <translation>USB 驱动器</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2606"/>
+        <location filename="unetbootin.cpp" line="2622"/>
         <source>Hard Disk</source>
         <translation>硬盘</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2299"/>
+        <location filename="unetbootin.cpp" line="2315"/>
         <source>Floppy</source>
         <translation>软盘</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2304"/>
+        <location filename="unetbootin.cpp" line="2320"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -268,209 +268,209 @@ Reboot now?</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Kubuntu 是一个致力于 KDE 桌面的官方认可的 Ubuntu 衍生品。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。NetInstall 版本允许通过 FTP 安装，并且能够安装 Xubuntu 和其他官方认可的 Ubuntu 衍生品。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="595"/>
         <source>Open Disk Image File</source>
         <translation>打开磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="597"/>
+        <location filename="unetbootin.cpp" line="613"/>
         <source>Open Kernel File</source>
         <translation>打开内核文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="605"/>
+        <location filename="unetbootin.cpp" line="621"/>
         <source>Open Initrd File</source>
         <translation>打开 Initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="613"/>
+        <location filename="unetbootin.cpp" line="629"/>
         <source>Open Bootloader Config File</source>
         <translation>打开引导载入配置文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="635"/>
+        <location filename="unetbootin.cpp" line="651"/>
         <source>Insert a USB flash drive</source>
         <translation>插入USB闪存驱动器</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="636"/>
+        <location filename="unetbootin.cpp" line="652"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>没有发现USB闪存驱动器。如果你插入USB驱动器，尝试重新格式化为FAT32格式。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="651"/>
+        <location filename="unetbootin.cpp" line="667"/>
         <source>%1 not mounted</source>
         <translation>%1 没有挂载</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="652"/>
+        <location filename="unetbootin.cpp" line="668"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>你必须首先挂载USB驱动器 %1 作为挂载点。大部分发行版本将在你移除并且重新插入USB驱动器后自动执行该操作。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="667"/>
+        <location filename="unetbootin.cpp" line="683"/>
         <source>Select a distro</source>
         <translation>选择一个发行版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="668"/>
+        <location filename="unetbootin.cpp" line="684"/>
         <source>You must select a distribution to load.</source>
         <translation>你必须选择加载一个发行版本。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="698"/>
         <source>Select a disk image file</source>
         <translation>选择一个磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="683"/>
+        <location filename="unetbootin.cpp" line="699"/>
         <source>You must select a disk image file to load.</source>
         <translation>你必须选择加载一个磁盘镜像文件。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="697"/>
+        <location filename="unetbootin.cpp" line="713"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>选择一个内核 和/或 initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="698"/>
+        <location filename="unetbootin.cpp" line="714"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>你必须选择加载一个内核 和/或 initrd 文件。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="728"/>
         <source>Diskimage file not found</source>
         <translation>没有找到磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="713"/>
+        <location filename="unetbootin.cpp" line="729"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>指定的磁盘镜像文件 %1 不存在。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="727"/>
+        <location filename="unetbootin.cpp" line="743"/>
         <source>Kernel file not found</source>
         <translation>内核文件没有找到</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="728"/>
+        <location filename="unetbootin.cpp" line="744"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>指定内核文件 %1 不存在。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="758"/>
         <source>Initrd file not found</source>
         <translation>没有找到 Initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="743"/>
+        <location filename="unetbootin.cpp" line="759"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>指定 initrd 文件 %1 不存在。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="843"/>
+        <location filename="unetbootin.cpp" line="859"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 已经存在，是否覆盖？</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="844"/>
+        <location filename="unetbootin.cpp" line="860"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>文件 %1 已经存在。单击 &apos;Yes to All&apos; 进行覆盖并且不再提示， &apos;Yes&apos; 覆盖单个文件， 而 &apos;No&apos; 保留你现在的版本。 如果不能确定，单击 &apos;Yes to All&apos;。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1265"/>
+        <location filename="unetbootin.cpp" line="1281"/>
         <source>Extracting files, please wait...</source>
         <translation>正在抽取文件，请稍等……</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1266"/>
+        <location filename="unetbootin.cpp" line="1282"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;存档：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1267"/>
+        <location filename="unetbootin.cpp" line="1283"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1268"/>
+        <location filename="unetbootin.cpp" line="1284"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1269"/>
+        <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1272"/>
+        <location filename="unetbootin.cpp" line="1288"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1273"/>
+        <location filename="unetbootin.cpp" line="1289"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1274"/>
+        <location filename="unetbootin.cpp" line="1290"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1616"/>
+        <location filename="unetbootin.cpp" line="1632"/>
         <source>Downloading files, plese wait...</source>
         <translation>正在下载文件，请稍等……</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1633"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1634"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1635"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1696"/>
+        <location filename="unetbootin.cpp" line="1712"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;下载：&lt;/b&gt; %1 of %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1770"/>
+        <location filename="unetbootin.cpp" line="1786"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1774"/>
+        <location filename="unetbootin.cpp" line="1790"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1941"/>
+        <location filename="unetbootin.cpp" line="1957"/>
         <source>%1 not found</source>
         <translation>%1 没有找到</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1942"/>
+        <location filename="unetbootin.cpp" line="1958"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 没有找到。该安装模式需要 %2。
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2608"/>
+        <location filename="unetbootin.cpp" line="2624"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">重启后，选择</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2612"/>
+        <location filename="unetbootin.cpp" line="2628"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">重启后，在BIOS启动菜单里选择 USB 启动选项。%1
@@ -480,6 +480,11 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="207"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
         <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Ubuntu Eee 不仅是为华硕 EeePC 优化的 Ubuntu。它是一个采用 Netbook Remix 界面，支持替代最好的可见软件的开源替代品的操作系统（例如 Skype 由 Ekiga 替代）。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 在继续安装前确定安装介质为空并且被格式化。</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="227"/>
+        <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

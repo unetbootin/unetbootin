@@ -147,7 +147,7 @@ public:
 	QString sevzcommand;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
 	#ifdef Q_OS_UNIX
-	QString fdiskcommand;
+        QString fdiskcommand;
 	QString sfdiskcommand;
 	QString volidcommand;
 	QString syslinuxcommand;

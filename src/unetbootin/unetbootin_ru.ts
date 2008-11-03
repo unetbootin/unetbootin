@@ -385,22 +385,22 @@ Reboot now?</source>
         <translation>любой</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2610"/>
+        <location filename="unetbootin.cpp" line="2626"/>
         <source>USB Drive</source>
         <translation>USB-накопитель</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2606"/>
+        <location filename="unetbootin.cpp" line="2622"/>
         <source>Hard Disk</source>
         <translation>Жесткий диск</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2299"/>
+        <location filename="unetbootin.cpp" line="2315"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2304"/>
+        <location filename="unetbootin.cpp" line="2320"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -425,209 +425,209 @@ Reboot now?</source>
         <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="595"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished">Открыть файл образа диска</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="597"/>
+        <location filename="unetbootin.cpp" line="613"/>
         <source>Open Kernel File</source>
         <translation type="unfinished">Открыть файл ядра</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="605"/>
+        <location filename="unetbootin.cpp" line="621"/>
         <source>Open Initrd File</source>
         <translation type="unfinished">Открыть файл Initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="613"/>
+        <location filename="unetbootin.cpp" line="629"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished">Окрыть файл конфигурации загрузчика</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="635"/>
+        <location filename="unetbootin.cpp" line="651"/>
         <source>Insert a USB flash drive</source>
         <translation type="unfinished">Подключить флэш-накопитель USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="636"/>
+        <location filename="unetbootin.cpp" line="652"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation type="unfinished">Не найдено USB-накопителей. Если устройство подключено, попробуйте переформатировать его в FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="651"/>
+        <location filename="unetbootin.cpp" line="667"/>
         <source>%1 not mounted</source>
         <translation type="unfinished">%1 не примонтирован</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="652"/>
+        <location filename="unetbootin.cpp" line="668"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation type="unfinished">Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. Большинство дистрибутивов делают это автоматически после переподключения USB-накопителя.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="667"/>
+        <location filename="unetbootin.cpp" line="683"/>
         <source>Select a distro</source>
         <translation type="unfinished">Выберите дистрибутив</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="668"/>
+        <location filename="unetbootin.cpp" line="684"/>
         <source>You must select a distribution to load.</source>
         <translation type="unfinished">Необходимо выбрать дистрибутив для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="698"/>
         <source>Select a disk image file</source>
         <translation type="unfinished">Выберите файл образа диска</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="683"/>
+        <location filename="unetbootin.cpp" line="699"/>
         <source>You must select a disk image file to load.</source>
         <translation type="unfinished">Необходимо выбрать файл образа диска для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="697"/>
+        <location filename="unetbootin.cpp" line="713"/>
         <source>Select a kernel and/or initrd file</source>
         <translation type="unfinished">Выберите ядро и/или файл initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="698"/>
+        <location filename="unetbootin.cpp" line="714"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation type="unfinished">Необходимо выбрать ядро и/или файл initrd для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="728"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished">Файл образа диска не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="713"/>
+        <location filename="unetbootin.cpp" line="729"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл образа диска %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="727"/>
+        <location filename="unetbootin.cpp" line="743"/>
         <source>Kernel file not found</source>
         <translation type="unfinished">Файл ядра не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="728"/>
+        <location filename="unetbootin.cpp" line="744"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл ядра %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="758"/>
         <source>Initrd file not found</source>
         <translation type="unfinished">Файл inird не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="743"/>
+        <location filename="unetbootin.cpp" line="759"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл initrd %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="843"/>
+        <location filename="unetbootin.cpp" line="859"/>
         <source>%1 exists, overwrite?</source>
         <translation type="unfinished">%1 уже существует, переписать?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="844"/>
+        <location filename="unetbootin.cpp" line="860"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="unfinished">Файл %1 уже существует. Нажмитe &quot;Да для Всех&quot;, чтобы переписать его без дальнейших подтверждений, щелкните &quot;Да&quot;, чтобы перписать файлы в индивидуальном порядке. Выберите &quot;Нет&quot;, чтобы оставить существующую версию. Если сомневаетесь, жмите &quot;Да для Всех&quot;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1265"/>
+        <location filename="unetbootin.cpp" line="1281"/>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">Извлечение файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1266"/>
+        <location filename="unetbootin.cpp" line="1282"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Архив:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1267"/>
+        <location filename="unetbootin.cpp" line="1283"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1268"/>
+        <location filename="unetbootin.cpp" line="1284"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1269"/>
+        <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; 0 of %1 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1272"/>
+        <location filename="unetbootin.cpp" line="1288"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1273"/>
+        <location filename="unetbootin.cpp" line="1289"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1274"/>
+        <location filename="unetbootin.cpp" line="1290"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; %1 из %2 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1616"/>
+        <location filename="unetbootin.cpp" line="1632"/>
         <source>Downloading files, plese wait...</source>
         <translation type="unfinished">Загрузка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1633"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1634"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1635"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; 0 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1696"/>
+        <location filename="unetbootin.cpp" line="1712"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; %1 из %2 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1770"/>
+        <location filename="unetbootin.cpp" line="1786"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">Поиск в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1774"/>
+        <location filename="unetbootin.cpp" line="1790"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished">%1/%2 совпадает в &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1941"/>
+        <location filename="unetbootin.cpp" line="1957"/>
         <source>%1 not found</source>
         <translation type="unfinished">%1 не найдено</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1942"/>
+        <location filename="unetbootin.cpp" line="1958"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished">%1 не найден. Это необходимо для режима установки %2.
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2608"/>
+        <location filename="unetbootin.cpp" line="2624"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2612"/>
+        <location filename="unetbootin.cpp" line="2628"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Установите загрузку с USB-устройств в загрузочном меню BIOS после перезагрузки.%1
@@ -682,6 +682,11 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="331"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Kubuntu - официальный вариант Ubuntu, использует в качестве графической среды KDE.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP, в том числе установку Xubuntu и других официальных модификаций Ubuntu.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="227"/>
+        <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
