@@ -427,9 +427,11 @@ void unetbootin::ubninitialize()
 	else
 		volidcommand = locatecommand("vol_id", tr("either"), "udev");
 	locatecommand("mtools", tr("USB Drive"), "mtools");
-	syslinuxcommand = "/usr/bin/ubnsylnx";
+        syslinuxcommand = "/usr/bin/ubnsylnx";
+        extlinuxcommand = "/usr/bin/ubnexlnx";
 	#ifdef NOSTATIC
-	syslinuxcommand = "/usr/bin/syslinux";
+        syslinuxcommand = "/usr/bin/syslinux";
+        extlinuxcommand = "/usr/bin/extlinux";
 	#endif
 //	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
@@ -523,7 +525,7 @@ QStringList unetbootin::listsanedrives()
 //                    }
                     if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
                     {
-                        if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains("vfat"))
+                        if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3)")))
                             fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
                     }
                 }
@@ -2560,11 +2562,24 @@ void unetbootin::runinstusb()
 	if (QFile::exists(syslinuxcommand))
 		QFile::remove(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
-	QFile::setPermissions(syslinuxcommand, QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
+        QFile::setPermissions(syslinuxcommand, QFile::ReadOther|QFile::WriteOwner|QFile::ExeOther);
 //	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
+        if (QFile::exists(extlinuxcommand))
+                QFile::remove(extlinuxcommand);
+        instIndvfl("ubnexlnx", extlinuxcommand);
+        QFile::setPermissions(extlinuxcommand, QFile::ReadOther|QFile::WriteOwner|QFile::ExeOther);
 	#endif
 	#ifdef Q_OS_UNIX
-	callexternapp(syslinuxcommand, targetDev);
+        if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3)")))
+        {
+            isext2 = true;
+            callexternapp(extlinuxcommand, QString("-i %1").arg(targetPath));
+        }
+        else
+        {
+            isext2 = false;
+            callexternapp(syslinuxcommand, targetDev);
+        }
 	if (rawtargetDev != targetDev)
 	{
 		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
@@ -2606,8 +2621,12 @@ void unetbootin::runinstusb()
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
-	syslinuxcfg.close();
-	instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
+        syslinuxcfg.close();
+        #ifdef Q_OS_UNIX
+        if (isext2)
+            QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.cfg").arg(targetPath));
+        #endif
+        instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
 	fininstall();
 }
 

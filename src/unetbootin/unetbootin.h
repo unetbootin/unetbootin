@@ -150,7 +150,9 @@ public:
         QString fdiskcommand;
 	QString sfdiskcommand;
 	QString volidcommand;
-	QString syslinuxcommand;
+        QString syslinuxcommand;
+        QString extlinuxcommand;
+        bool isext2;
 	#endif
 	void ubninitialize();
 	QString displayfisize(quint64 fisize);
