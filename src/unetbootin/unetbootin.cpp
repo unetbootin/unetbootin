@@ -2562,12 +2562,12 @@ void unetbootin::runinstusb()
 	if (QFile::exists(syslinuxcommand))
 		QFile::remove(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
-        QFile::setPermissions(syslinuxcommand, QFile::ReadOther|QFile::WriteOwner|QFile::ExeOther);
+        QFile::setPermissions(syslinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 //	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
         if (QFile::exists(extlinuxcommand))
                 QFile::remove(extlinuxcommand);
         instIndvfl("ubnexlnx", extlinuxcommand);
-        QFile::setPermissions(extlinuxcommand, QFile::ReadOther|QFile::WriteOwner|QFile::ExeOther);
+        QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 	#endif
 	#ifdef Q_OS_UNIX
         if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3)")))
@@ -2624,7 +2624,7 @@ void unetbootin::runinstusb()
         syslinuxcfg.close();
         #ifdef Q_OS_UNIX
         if (isext2)
-            QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.cfg").arg(targetPath));
+            QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
         #endif
         instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
 	fininstall();
