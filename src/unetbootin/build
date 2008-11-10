@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mingwb="i586-mingw32msvc"
+mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
 if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
 then
 svloc=$(wget "http://7-zip.org/" -O - | grep --ignore-case "a href=\"http://downloads.sourceforge.net/sevenzip/" | grep -v ".msi" | grep -v "x64" | head --lines 1 | tr "<" "\n" | tr ">" "\n" | tr "\"" "\n" | grep "http://downloads.sourceforge.net/sevenzip/")
@@ -13,8 +13,8 @@ rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 make clean
 rm Makefile*
 rm release/*
-lupdate unetbootin.pro
-lrelease unetbootin.pro
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
 ./qmake-windows
 make
 $mingwb-strip --strip-all release/unetbootin.exe

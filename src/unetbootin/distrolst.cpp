@@ -15,6 +15,12 @@ if (nameDistro == "Auto Super Grub Disk")
 	instIndvfl("asgd.img", QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "Super Grub Disk")
+{
+        instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+        instIndvfl("sgd.img", QString("%1ubninit").arg(targetPath));
+}
+
 #endif
 
 #ifdef EEEPCLOS

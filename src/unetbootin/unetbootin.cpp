@@ -175,7 +175,12 @@ void unetbootin::ubninitialize()
 	if (diskimagetypeselect->findText(tr("ISO")) != -1)
 		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("ISO")));
 	#endif
-	#ifdef AUTOSUPERGRUBDISK
+        #ifdef AUTOSUPERGRUBDISK
+        distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" <<
+        tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
+                "<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
+                "<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") <<
+        "Latest"));
 	QFile asgdDescF;
 	if (QFile::exists(QString(":/asgd_%1.htm").arg(appNlang)))
 	{

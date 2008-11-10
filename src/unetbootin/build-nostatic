@@ -18,9 +18,9 @@ rm Makefile*
 rm release/*
 cp unetbootin.pro unetbootin-pro.bak
 sed -i '/^RESOURCES/d' unetbootin.pro
-lupdate unetbootin.pro
-lrelease unetbootin.pro
-qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
+qmake-qt4 "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
 mv unetbootin-pro.bak unetbootin.pro
 strip --strip-all unetbootin

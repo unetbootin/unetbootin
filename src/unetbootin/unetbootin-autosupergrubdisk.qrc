@@ -2,6 +2,7 @@
     <qresource prefix="/" >
         <file>asgd_en.htm</file>
         <file>asgd_es.htm</file>
+        <file>sgd.img</file>
         <file>asgd.img</file>
         <file>asgd1.png</file>
         <file>asgd2.png</file>

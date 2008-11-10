@@ -1,12 +1,12 @@
 #!/bin/sh
 
-mingwb="i586-mingw32msvc"
+mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
 rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
 make clean
 rm Makefile*
 rm release/*
-lupdate unetbootin.pro
-lrelease unetbootin.pro
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
 ./qmake-windows "DEFINES += EEEPCLOS" "RESOURCES += unetbootin-eeepclos.qrc"
 make
 $mingwb-strip --strip-all release/unetbootin.exe
@@ -17,5 +17,5 @@ make
 $mingwb-strip --strip-all unetbootin
 mv unetbootin release/unetbootin-eeepclos-linux-$rvern
 ./upx --lzma release/unetbootin-eeepclos-linux-$rvern
-qmake -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+qmake-qt4 -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
 

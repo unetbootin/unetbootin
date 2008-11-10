@@ -30,3 +30,4 @@ src/unetbootin/debbuild/usr/share/unetbootin/*
 src/unetbootin/release/*
 src/unetbootin/unetbootin-pro.bak
 src/unetbootin/unetbootin.pro.user
+src/unetbootin/sgd.img

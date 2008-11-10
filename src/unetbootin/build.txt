@@ -17,9 +17,9 @@ Instructions
 2. Run either the "INSTALL" script, or the following commands:
 
 sed -i '/^RESOURCES/d' unetbootin.pro
-lupdate unetbootin.pro
-lrelease unetbootin.pro
-qmake "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
+qmake-qt4 "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
 
 
@@ -76,9 +76,9 @@ make sub-src
 
 2) Set up cross-compile environment (instructions from http://gentoo-wiki.com/HOWTO_MinGW_and_Qt4 )
 
-If cross-compiling on Ubuntu, simply copy the file qmake.conf to /usr/share/qt4/mkspecs/win32-g++/qmake.conf
+If cross-compiling on Ubuntu, simply copy the file qmake-qt4.conf to /usr/share/qt4/mkspecs/win32-g++/qmake-qt4.conf
 
-3) Copy over your statically linked Windows qt4 install directory to /usr/i586-mingw32msvc/Qt/
+3) Copy over your statically linked Windows qt4 install directory to /usr/$(ls /usr/ | grep mingw32 | head --lines 1)/Qt/
 
 4) Go to the directory containing the source files (unetbootin.cpp, main.cpp, unetbootin.pro, etc.), and run "./build" to automate steps 4 and 5, or to do it manually, run the following commands:
 
