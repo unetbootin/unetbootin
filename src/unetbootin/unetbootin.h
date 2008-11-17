@@ -13,6 +13,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <QtCore>
 #include <QtGui>
 #include <QtNetwork>
+#include <time.h>
 //#include <QtDebug>
 
 #include "ui_unetbootin.h"
