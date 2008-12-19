@@ -253,6 +253,10 @@ if (nameDistro == "Fedora")
 		{
 			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), isotmpf);
 		}
+                if (relname == "10")
+                {
+                    downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/F%1-%2-Live.iso").arg(relname, cpuarch), isotmpf);
+                }
 		else
 		{
 			downloadfile(QString("http://download.fedora.redhat.com/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live.iso").arg(relname, cpuarch), isotmpf);
@@ -368,7 +372,7 @@ if (nameDistro == "Gujin")
 
 if (nameDistro == "Linux Mint")
 {
-	downloadfile(QString("ftp://mirrors.secution.com/linuxmint.com/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), isotmpf);
+        downloadfile(QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
