@@ -380,7 +380,12 @@ void unetbootin::ubninitialize()
 	tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
-	"Latest_Live"));
+        "Latest_Live"));
+        distroselect->addItem("Sabayon Linux", (QStringList() << "4-LiteMCE" <<
+        tr("<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/>"
+                "<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
+                "<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. LiteMCE is 2 GB, while the standard version is over 4 GB.") <<
+        "4-LiteMCE" << "4-LiteMCE_x64" << "4" << "4_x64"));
 	distroselect->addItem("Slax", (QStringList() << "Latest_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 		"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
@@ -1446,7 +1451,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 		}
 		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
 		{
-			return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).trimmed();
+                        return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
 		}
 	}
 	return "";

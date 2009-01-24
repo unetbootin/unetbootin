@@ -290,7 +290,7 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Parted Magic включает в себя диспетчер разделов GParted и друние утилиты для изменения размеров, копирования (в том числе и резервного) и управления дисковыми разделами.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Установка не требуется, поскольку Parted Magic загружается и работает в режиме Live mode.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="402"/>
+        <location filename="unetbootin.cpp" line="407"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Загрузчик Super Grub Disk, который также может выполнять различные действия по восстановлению MBR и загрузочных записей.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Установка SGD не требуется, поскольку он предназначен только для запуска процесса загрузки.</translation>
     </message>
@@ -300,7 +300,7 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; PCLinuxOS - ориентированный на пользователя дистрибутив, основанный на Mandriva.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="397"/>
+        <location filename="unetbootin.cpp" line="402"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Smart Boot Manager - загрузчик, позволяющий обойти некоторые ограничения и ошибки, связанные с BIOS.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Установка SBM не требуется, поскольку он предназначен только для запуска процесса загрузки.</translation>
     </message>
@@ -315,7 +315,7 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Mandriva - ориентированный на пользователя дистрибутив, ранее известный как Mandrake Linux.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку через Интернет (FTP) или через предварительно загруженные &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Бесплатные&quot; образы ISO&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="407"/>
+        <location filename="unetbootin.cpp" line="412"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Ubuntu - ориентированный на пользователя дистрибутив, основанный на Debian. В настоящее время является самым популярным дистрибутивом Linux для настольных систем.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP, в том числе установку Kubuntu и других официальных модификаций Ubuntu.</translation>
     </message>
@@ -350,12 +350,12 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Ophcrack используется для взлома паролей Windows.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Установка не требуется, поскольку Ophcracks загружается и работает в режиме Live mode.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="387"/>
+        <location filename="unetbootin.cpp" line="392"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Slax - основанный на Slackware дистрибутив c установленным KDE.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="417"/>
+        <location filename="unetbootin.cpp" line="422"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Zenwalk -  основанный на Slackware дистрибутив c установленным XFCE.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. </translation>
     </message>
@@ -380,27 +380,27 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; FaunOS - основанный на Arch Linux дистрибутив.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="442"/>
+        <location filename="unetbootin.cpp" line="447"/>
         <source>either</source>
         <translation>любой</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2650"/>
+        <location filename="unetbootin.cpp" line="2655"/>
         <source>USB Drive</source>
         <translation>USB-накопитель</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2646"/>
+        <location filename="unetbootin.cpp" line="2651"/>
         <source>Hard Disk</source>
         <translation>Жесткий диск</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2322"/>
+        <location filename="unetbootin.cpp" line="2327"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2327"/>
+        <location filename="unetbootin.cpp" line="2332"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -415,7 +415,7 @@ Reboot now?</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live предусматривает загрузку в режима Live mode . Версия Unstable не поддерживает установку на жесткие диски, хотя &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Версия Stable&lt;/a&gt; (не свободно загружаемая) - поддерживает.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="392"/>
+        <location filename="unetbootin.cpp" line="397"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; SliTaz - облегченный, ориентированный на настольные системы, микродистрибутив.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; В версии Live система целиком загружается в оперативную память и , затем,  запускается оттуда, поэтому установка не обязательна.</translation>
     </message>
@@ -425,209 +425,209 @@ Reboot now?</source>
         <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="602"/>
+        <location filename="unetbootin.cpp" line="607"/>
         <source>Open Disk Image File</source>
         <translation type="unfinished">Открыть файл образа диска</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="620"/>
+        <location filename="unetbootin.cpp" line="625"/>
         <source>Open Kernel File</source>
         <translation type="unfinished">Открыть файл ядра</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="628"/>
+        <location filename="unetbootin.cpp" line="633"/>
         <source>Open Initrd File</source>
         <translation type="unfinished">Открыть файл Initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="636"/>
+        <location filename="unetbootin.cpp" line="641"/>
         <source>Open Bootloader Config File</source>
         <translation type="unfinished">Окрыть файл конфигурации загрузчика</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="658"/>
+        <location filename="unetbootin.cpp" line="663"/>
         <source>Insert a USB flash drive</source>
         <translation type="unfinished">Подключить флэш-накопитель USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="659"/>
+        <location filename="unetbootin.cpp" line="664"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation type="unfinished">Не найдено USB-накопителей. Если устройство подключено, попробуйте переформатировать его в FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="674"/>
+        <location filename="unetbootin.cpp" line="679"/>
         <source>%1 not mounted</source>
         <translation type="unfinished">%1 не примонтирован</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="675"/>
+        <location filename="unetbootin.cpp" line="680"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation type="unfinished">Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. Большинство дистрибутивов делают это автоматически после переподключения USB-накопителя.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="690"/>
+        <location filename="unetbootin.cpp" line="695"/>
         <source>Select a distro</source>
         <translation type="unfinished">Выберите дистрибутив</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="691"/>
+        <location filename="unetbootin.cpp" line="696"/>
         <source>You must select a distribution to load.</source>
         <translation type="unfinished">Необходимо выбрать дистрибутив для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="705"/>
+        <location filename="unetbootin.cpp" line="710"/>
         <source>Select a disk image file</source>
         <translation type="unfinished">Выберите файл образа диска</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="706"/>
+        <location filename="unetbootin.cpp" line="711"/>
         <source>You must select a disk image file to load.</source>
         <translation type="unfinished">Необходимо выбрать файл образа диска для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="720"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>Select a kernel and/or initrd file</source>
         <translation type="unfinished">Выберите ядро и/или файл initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="721"/>
+        <location filename="unetbootin.cpp" line="726"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation type="unfinished">Необходимо выбрать ядро и/или файл initrd для загрузки.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="735"/>
+        <location filename="unetbootin.cpp" line="740"/>
         <source>Diskimage file not found</source>
         <translation type="unfinished">Файл образа диска не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="736"/>
+        <location filename="unetbootin.cpp" line="741"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл образа диска %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="750"/>
+        <location filename="unetbootin.cpp" line="755"/>
         <source>Kernel file not found</source>
         <translation type="unfinished">Файл ядра не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="751"/>
+        <location filename="unetbootin.cpp" line="756"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл ядра %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="765"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>Initrd file not found</source>
         <translation type="unfinished">Файл inird не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="766"/>
+        <location filename="unetbootin.cpp" line="771"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation type="unfinished">Указанный файл initrd %1 не существует.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="866"/>
+        <location filename="unetbootin.cpp" line="871"/>
         <source>%1 exists, overwrite?</source>
         <translation type="unfinished">%1 уже существует, переписать?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="867"/>
+        <location filename="unetbootin.cpp" line="872"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="unfinished">Файл %1 уже существует. Нажмитe &quot;Да для Всех&quot;, чтобы переписать его без дальнейших подтверждений, щелкните &quot;Да&quot;, чтобы перписать файлы в индивидуальном порядке. Выберите &quot;Нет&quot;, чтобы оставить существующую версию. Если сомневаетесь, жмите &quot;Да для Всех&quot;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1288"/>
+        <location filename="unetbootin.cpp" line="1293"/>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">Извлечение файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1289"/>
+        <location filename="unetbootin.cpp" line="1294"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Архив:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1290"/>
+        <location filename="unetbootin.cpp" line="1295"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1291"/>
+        <location filename="unetbootin.cpp" line="1296"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1292"/>
+        <location filename="unetbootin.cpp" line="1297"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; 0 of %1 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1295"/>
+        <location filename="unetbootin.cpp" line="1300"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1296"/>
+        <location filename="unetbootin.cpp" line="1301"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1297"/>
+        <location filename="unetbootin.cpp" line="1302"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation type="unfinished">&lt;b&gt;Извлечено:&lt;/b&gt; %1 из %2 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1639"/>
+        <location filename="unetbootin.cpp" line="1644"/>
         <source>Downloading files, plese wait...</source>
         <translation type="unfinished">Загрузка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1640"/>
+        <location filename="unetbootin.cpp" line="1645"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">&lt;b&gt;Источник:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1641"/>
+        <location filename="unetbootin.cpp" line="1646"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation type="unfinished">&lt;b&gt;Назначение:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1642"/>
+        <location filename="unetbootin.cpp" line="1647"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; 0 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1719"/>
+        <location filename="unetbootin.cpp" line="1724"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="unfinished">&lt;b&gt;Загружено:&lt;/b&gt; %1 из %2 байт</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1793"/>
+        <location filename="unetbootin.cpp" line="1798"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished">Поиск в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1797"/>
+        <location filename="unetbootin.cpp" line="1802"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished">%1/%2 совпадает в &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1964"/>
+        <location filename="unetbootin.cpp" line="1969"/>
         <source>%1 not found</source>
         <translation type="unfinished">%1 не найдено</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1965"/>
+        <location filename="unetbootin.cpp" line="1970"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation type="unfinished">%1 не найден. Это необходимо для режима установки %2.
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2653"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2657"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Установите загрузку с USB-устройств в загрузочном меню BIOS после перезагрузки.%1
@@ -641,28 +641,28 @@ Reboot now?</source>
 *ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;mirrors.kernel.org&apos; для имени сервера, и  &apos;/centos/%1/os/%2&apos; - для имени каталога.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="268"/>
+        <location filename="distrolst.cpp" line="272"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.fedora.redhat.com&apos; для имени сервера, и  &apos;/pub/fedora/linux/development/%1/os&apos; - для имени каталога.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="274"/>
+        <location filename="distrolst.cpp" line="278"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.fedora.redhat.com&apos; для имени сервера, и  &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; - для имени каталога.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="450"/>
+        <location filename="distrolst.cpp" line="454"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation type="unfinished">
 *ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.opensuse.org&apos; для имени сервера, и  &apos;/distribution/SL-OSS-factory/inst-sources&apos; - для имени каталога.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="456"/>
+        <location filename="distrolst.cpp" line="460"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -674,7 +674,7 @@ Reboot now?</source>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; SliTaz - облегченный, ориентированный на настольные системы, микродистрибутив..&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; В версии Live система целиком загружается в оперативную память и , затем,  запускается оттуда, поэтому установка не обязательна. Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="412"/>
+        <location filename="unetbootin.cpp" line="417"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Xubuntu - официальный вариант Ubuntu, использует в качестве графической среды XFCE.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP, в том числе установку Kubuntu и других официальных модификаций Ubuntu.</translation>
     </message>
@@ -686,6 +686,11 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="232"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="387"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. LiteMCE is 2 GB, while the standard version is over 4 GB.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

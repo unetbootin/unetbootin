@@ -526,6 +526,43 @@ if (nameDistro == "Puppy Linux")
 	extractiso(isotmpf, targetPath);
 }
 
+if (nameDistro == "Sabayon Linux")
+{
+        if (isarch64)
+        {
+                cpuarch = "x86_64";
+        }
+        else
+        {
+                cpuarch = "x86";
+        }
+        QString relnamenum = nameVersion;
+        QString relnamepart = "";
+        if (nameVersion.contains('-'))
+        {
+            relnamenum = nameVersion.section('-', 0, 0);
+            relnamepart = nameVersion.section('-', -1, -1);
+        }
+        downloadfile(fileFilterNetDir(QStringList() <<
+        "http://cross-lfs.sabayonlinux.org/" <<
+        "http://mirror.cs.vt.edu/pub/SabayonLinux/" <<
+        "http://mirror.umoss.org/sabayonlinux/" <<
+        "http://distro.ibiblio.org/pub/linux/distributions/sabayonlinux/" <<
+        "http://ftp.nluug.nl/pub/os/Linux/distr/sabayonlinux/" <<
+        "http://mirror.aarnet.edu.au/pub/SabayonLinux/" <<
+        "http://na.mirror.garr.it/mirrors/sabayonlinux/" <<
+        "http://cesium.di.uminho.pt/pub/sabayon/" <<
+        "http://ftp.fsn.hu/pub/linux/distributions/sabayon/"
+        , 61440000, 2147483647, QList<QRegExp>() << // need to store as unsigned long long to use FTP (HTTP doesn't check size)
+        QRegExp(".iso$", Qt::CaseInsensitive) <<
+        QRegExp("^Sabayon-Linux-\\S{1,}.iso$", Qt::CaseInsensitive) <<
+        QRegExp("^Sabayon-Linux-"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+        QRegExp("^Sabayon-Linux-"+cpuarch+"-"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+        QRegExp("^Sabayon-Linux-"+cpuarch+"-"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}.iso$", Qt::CaseInsensitive)
+        ), isotmpf);
+        extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "Slax")
 {
 	downloadfile("http://www.slax.org/get_slax.php?download=iso", isotmpf);
