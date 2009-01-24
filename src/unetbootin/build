@@ -9,7 +9,7 @@ wget "$svloc" -O sevenzip.exe
 mv 7z.exe sevnz.exe
 mv 7z.dll sevnz.dll
 fi
-rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+rvern="$(bzr revno)"
 make clean
 rm Makefile*
 rm release/*
