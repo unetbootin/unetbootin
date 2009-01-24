@@ -384,8 +384,8 @@ void unetbootin::ubninitialize()
         distroselect->addItem("Sabayon Linux", (QStringList() << "4-LiteMCE" <<
         tr("<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/>"
                 "<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
-                "<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. LiteMCE is 2 GB, while the standard version is over 4 GB.") <<
-        "4-LiteMCE" << "4-LiteMCE_x64" << "4" << "4_x64"));
+                "<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB.") <<
+        "4-LiteMCE" << "4-LiteMCE_x64"));
 	distroselect->addItem("Slax", (QStringList() << "Latest_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 		"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
