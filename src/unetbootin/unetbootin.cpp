@@ -2224,11 +2224,11 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	QFile srcF(QString(":/%1").arg(srcfName));
 	#ifdef NOSTATIC
 	if (srcfName == "memdisk")
-		srcF.setFileName("/usr/lib/syslinux/memdisk");
+                srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
 	else if (srcfName == "vesamenu.c32")
-		srcF.setFileName("/usr/lib/syslinux/vesamenu.c32");
+                srcF.setFileName(QFile::exists("/usr/share/syslinux/vesamenu.c32") ? "/usr/share/syslinux/vesamenu.c32" : "/usr/lib/syslinux/vesamenu.c32");
 	else if (srcfName == "mbr.bin")
-		srcF.setFileName("/usr/lib/syslinux/mbr.bin");
+                srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 	else if (srcfName == "ubnsylnx")
 		srcF.setFileName("/usr/bin/syslinux");
 //	else

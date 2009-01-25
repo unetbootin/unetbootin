@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+rvern="$(bzr revno)"
 if [ "$rvern" = "" ]
 then
 rvern="$(pwd | sed 's/\//\n/g' | grep 'unetbootin-source-' | sed s/unetbootin-source-// )"

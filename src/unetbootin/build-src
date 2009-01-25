@@ -1,11 +1,11 @@
 #!/bin/sh
 
-rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+rvern="$(bzr revno)"
 printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n\r\nBuild instructions at http://unetbootin.wiki.sourceforge.net/compile\r\n\r\nsed -i '/^RESOURCES/d' unetbootin.pro\r\nlupdate-qt4 unetbootin.pro\r\nlrelease-qt4 unetbootin.pro\r\nqmake-qt4 \"DEFINES += NOSTATIC\" \"RESOURCES -= unetbootin.qrc\"\r\nmake\r\n" > README.TXT
 zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
 cp unetbootin.pro unetbootin-pro.bak
 sed -i '/^RESOURCES/d' unetbootin.pro
 echo "DEFINES += NOSTATIC" >> unetbootin.pro
-tar -cvzf release/unetbootin-source-$rvern.tar.gz $(bzr ls --versioned | grep '\.cpp$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.ui$') $(bzr ls --versioned | grep '\.pro$') $(bzr ls --versioned | grep '\.ts$') debbuild build-nostatic INSTALL README.TXT --exclude "debbuild/usr/share/unetbootin/*" --exclude "debbuild/usr/bin/*"
+tar -cvzf release/unetbootin-source-$rvern.tar.gz $(bzr ls --versioned | grep '\.cpp$') $(bzr ls --versioned | grep '\.h$') $(bzr ls --versioned | grep '\.ui$') $(bzr ls --versioned | grep '\.pro$') $(bzr ls --versioned | grep '\.ts$') unetbootin.desktop build-nostatic INSTALL README.TXT
 mv unetbootin-pro.bak unetbootin.pro
 
