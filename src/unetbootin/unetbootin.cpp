@@ -51,7 +51,8 @@ static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp(".msg$", Qt::CaseInsensitive)
 << QRegExp(".cat$", Qt::CaseInsensitive)
 << QRegExp(".txt$", Qt::CaseInsensitive)
-<< QRegExp(".tar$", Qt::CaseInsensitive);
+<< QRegExp(".tar$", Qt::CaseInsensitive)
+<< QRegExp("system.map", Qt::CaseInsensitive);
 
 static const QList<QRegExp> ignoredtypeskernelRL = QList<QRegExp>()
 << QRegExp("initrd.gz$", Qt::CaseInsensitive)
