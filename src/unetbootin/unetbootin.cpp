@@ -2013,7 +2013,7 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	{
 		if (procmountsL.at(0).split("\t").join(" ").split(" ").size() >= 2)
 		{
-			return procmountsL.at(0).split("\t").join(" ").split(" ").at(1);
+                        return procmountsL.at(0).split("\t").join(" ").split(" ")[1].replace("\\040", " ");
 		}
 		else
 		{
