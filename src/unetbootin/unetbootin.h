@@ -149,6 +149,7 @@ public:
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
 	#ifdef Q_OS_UNIX
         QString fdiskcommand;
+        QString dfcommand;
 	QString sfdiskcommand;
 	QString volidcommand;
         QString syslinuxcommand;

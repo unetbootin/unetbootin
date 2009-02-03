@@ -430,7 +430,11 @@ void unetbootin::ubninitialize()
 	if (QFile::exists("/sbin/fdisk"))
 		fdiskcommand = "/sbin/fdisk";
 	else
-		fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+                fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+        if (QFile::exists("/bin/df"))
+                dfcommand = "/bin/df";
+        else
+                dfcommand = locatecommand("df", tr("either"), "util-linux");
 	if (QFile::exists("/sbin/sfdisk"))
 		sfdiskcommand = "/sbin/sfdisk";
 	else
@@ -572,8 +576,15 @@ QStringList unetbootin::listalldrives()
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
-	fulldrivelist = QString(fdisklusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/").replaceInStrings(":", "");
+        QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+        QString dflusbdevsS = callexternapp(dfcommand, "");
+        fulldrivelist = QString(dflusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+        QStringList fulldrivelist2 = QString(fdisklusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/").replaceInStrings(":", "");
+        for (int i = 0; i < fulldrivelist2.size(); ++i)
+        {
+            if (!fulldrivelist.contains(fulldrivelist2.at(i)))
+                fulldrivelist.append(fulldrivelist2.at(i));
+        }
 	#endif
 	return fulldrivelist;
 }
