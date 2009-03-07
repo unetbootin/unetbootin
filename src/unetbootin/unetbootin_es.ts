@@ -311,6 +311,11 @@ Reboot now?</source>
         <translation type="obsolete">Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
 ¿Reiniciar ahora?</translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="219"/>
+        <source>LeftToRight</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>unetbootin</name>

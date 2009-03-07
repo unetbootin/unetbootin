@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="nb_NO">
 <context>
+    <name>QObject</name>
+    <message>
+        <location filename="main.cpp" line="219"/>
+        <source>LeftToRight</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="250"/>

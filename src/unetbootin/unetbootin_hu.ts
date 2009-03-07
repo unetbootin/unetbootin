@@ -279,6 +279,11 @@ Reboot now?</source>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation type="obsolete">A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
+    <message>
+        <location filename="main.cpp" line="219"/>
+        <source>LeftToRight</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>unetbootin</name>
