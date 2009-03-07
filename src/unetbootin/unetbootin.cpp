@@ -349,6 +349,11 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
 	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
 //	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
+	distroselect->addItem("MEPIS", (QStringList() << "SimplyMEPIS" <<
+	tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org/</a><br/>"
+		"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
+		"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched.") << 
+        "SimplyMEPIS" << "SimplyMEPIS_x64" << "AntiX"));
 	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
@@ -1258,6 +1263,13 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
+	if (listfilesizedirpair.first.first.size() == 1)
+	{
+		QString subarchivename = listfilesizedirpair.first.first.at(0);
+		randtmpfile tmpoutsubarchive(ubntmpf, subarchivename.right(3));
+		extractfile(listfilesizedirpair.first.first.at(0), tmpoutsubarchive.fileName(), isofile);
+		return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
+	}
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
