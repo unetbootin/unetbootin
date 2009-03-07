@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
+qtx11d="$(pwd)/qt4-x11"
 if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
 then
 svloc=$(wget "http://7-zip.org/" -O - | grep --ignore-case "a href=\"http://downloads.sourceforge.net/sevenzip/" | grep -v ".msi" | grep -v "x64" | head --lines 1 | tr "<" "\n" | tr ">" "\n" | tr "\"" "\n" | grep "http://downloads.sourceforge.net/sevenzip/")
@@ -13,8 +14,8 @@ rvern="$(bzr revno)"
 make clean
 rm Makefile*
 rm release/*
-lupdate-qt4 unetbootin.pro
-lrelease-qt4 unetbootin.pro
+$qtx11d/bin/lupdate unetbootin.pro
+$qtx11d/bin/lrelease unetbootin.pro
 ./qmake-windows
 make
 $mingwb-strip --strip-all release/unetbootin.exe
