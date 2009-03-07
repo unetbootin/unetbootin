@@ -119,7 +119,7 @@ Riavviare adesso?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva è una distribuzione di facile uso precedentemente conosciuta come Mandrake Linux.&lt;br/&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt; La versione Netinstall permette l&apos;installazione da internet (FTP) o da un file immagine ISO liberamente scaricabile da internet &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="423"/>
+        <location filename="unetbootin.cpp" line="428"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Ubuntu è una distribuzione di facile uso basata su Debian È attualmente la distribuzione Linux desktop più popolare.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione. La versione Netinstall permette l&apos;installazione da internet (FTP), e può installare Kubuntu ed altre derivate di Ubuntu.</translation>
     </message>
@@ -159,7 +159,7 @@ Riavviare adesso?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Slax è una distribuzione basata su Slackware con KDE.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="433"/>
+        <location filename="unetbootin.cpp" line="438"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Zenwalk è una distribuzione basata su Slackware con XFCE.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
     </message>
@@ -179,42 +179,42 @@ Riavviare adesso?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS è una distribuzione basata su Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="443"/>
-        <location filename="unetbootin.cpp" line="447"/>
-        <location filename="unetbootin.cpp" line="451"/>
-        <location filename="unetbootin.cpp" line="455"/>
-        <location filename="unetbootin.cpp" line="464"/>
+        <location filename="unetbootin.cpp" line="448"/>
+        <location filename="unetbootin.cpp" line="452"/>
+        <location filename="unetbootin.cpp" line="456"/>
+        <location filename="unetbootin.cpp" line="460"/>
+        <location filename="unetbootin.cpp" line="469"/>
         <source>either</source>
         <translation>sia</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="150"/>
-        <location filename="unetbootin.cpp" line="456"/>
-        <location filename="unetbootin.cpp" line="470"/>
-        <location filename="unetbootin.cpp" line="471"/>
-        <location filename="unetbootin.cpp" line="529"/>
-        <location filename="unetbootin.cpp" line="611"/>
-        <location filename="unetbootin.cpp" line="683"/>
-        <location filename="unetbootin.cpp" line="699"/>
-        <location filename="unetbootin.cpp" line="1691"/>
-        <location filename="unetbootin.cpp" line="1733"/>
-        <location filename="unetbootin.cpp" line="2302"/>
-        <location filename="unetbootin.cpp" line="2327"/>
-        <location filename="unetbootin.cpp" line="2445"/>
-        <location filename="unetbootin.cpp" line="2686"/>
+        <location filename="unetbootin.cpp" line="461"/>
+        <location filename="unetbootin.cpp" line="475"/>
+        <location filename="unetbootin.cpp" line="476"/>
+        <location filename="unetbootin.cpp" line="534"/>
+        <location filename="unetbootin.cpp" line="616"/>
+        <location filename="unetbootin.cpp" line="688"/>
+        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="1696"/>
+        <location filename="unetbootin.cpp" line="1738"/>
+        <location filename="unetbootin.cpp" line="2307"/>
+        <location filename="unetbootin.cpp" line="2332"/>
+        <location filename="unetbootin.cpp" line="2450"/>
+        <location filename="unetbootin.cpp" line="2691"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="149"/>
-        <location filename="unetbootin.cpp" line="473"/>
-        <location filename="unetbootin.cpp" line="474"/>
-        <location filename="unetbootin.cpp" line="525"/>
-        <location filename="unetbootin.cpp" line="606"/>
-        <location filename="unetbootin.cpp" line="2298"/>
-        <location filename="unetbootin.cpp" line="2311"/>
-        <location filename="unetbootin.cpp" line="2441"/>
-        <location filename="unetbootin.cpp" line="2682"/>
+        <location filename="unetbootin.cpp" line="478"/>
+        <location filename="unetbootin.cpp" line="479"/>
+        <location filename="unetbootin.cpp" line="530"/>
+        <location filename="unetbootin.cpp" line="611"/>
+        <location filename="unetbootin.cpp" line="2303"/>
+        <location filename="unetbootin.cpp" line="2316"/>
+        <location filename="unetbootin.cpp" line="2446"/>
+        <location filename="unetbootin.cpp" line="2687"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -222,9 +222,9 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="152"/>
         <location filename="unetbootin.cpp" line="174"/>
         <location filename="unetbootin.cpp" line="175"/>
-        <location filename="unetbootin.cpp" line="639"/>
-        <location filename="unetbootin.cpp" line="640"/>
-        <location filename="unetbootin.cpp" line="2358"/>
+        <location filename="unetbootin.cpp" line="644"/>
+        <location filename="unetbootin.cpp" line="645"/>
+        <location filename="unetbootin.cpp" line="2363"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
@@ -232,9 +232,9 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="151"/>
         <location filename="unetbootin.cpp" line="178"/>
         <location filename="unetbootin.cpp" line="179"/>
-        <location filename="unetbootin.cpp" line="634"/>
-        <location filename="unetbootin.cpp" line="635"/>
-        <location filename="unetbootin.cpp" line="2363"/>
+        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="2368"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -294,7 +294,7 @@ Riavviare adesso?</translation>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz è una micro distreibuzione leggera orientata a l desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia dalla memoria, perciò l&apos;installazione non viene richiesta ma è opzionale. Questo installatore è basato su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="428"/>
+        <location filename="unetbootin.cpp" line="433"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu è una distribuzione ufficialmente derivata da Ubuntu con XFCE.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.  La versione Netinstall permette l&apos;installazione da internet (FTP), e può installare Kubuntu ed altre derivate di Ubuntu.</translation>
     </message>
@@ -304,210 +304,225 @@ Riavviare adesso?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.  La versione Netinstall permette l&apos;installazione da internet (FTP), e può installare Xubuntu ed altre derivate di Ubuntu.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="631"/>
+        <location filename="unetbootin.cpp" line="332"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="358"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="423"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="636"/>
         <source>Open Disk Image File</source>
         <translation>Aprire file immagine disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="649"/>
+        <location filename="unetbootin.cpp" line="654"/>
         <source>Open Kernel File</source>
         <translation>Aprire Kernel File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="657"/>
+        <location filename="unetbootin.cpp" line="662"/>
         <source>Open Initrd File</source>
         <translation>Aprire Initrd File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
+        <location filename="unetbootin.cpp" line="670"/>
         <source>Open Bootloader Config File</source>
         <translation>Aprire Bootloader Config File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="687"/>
+        <location filename="unetbootin.cpp" line="692"/>
         <source>Insert a USB flash drive</source>
         <translation>Inserire un USB flash drive</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="688"/>
+        <location filename="unetbootin.cpp" line="693"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Non sono stati trovati USB flash drives, Se avete già inserito un USB flash drive provate a riformattarlo come FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="703"/>
+        <location filename="unetbootin.cpp" line="708"/>
         <source>%1 not mounted</source>
         <translation>%1 non montato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="709"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Dovete prima montare l&apos;USB drive %1 in un mountpoint. La maggior parte delle distribuzioni lo fa automaticamente dopo la rimozione ed il reinserimento dell&apos;USB flash drive.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="719"/>
+        <location filename="unetbootin.cpp" line="724"/>
         <source>Select a distro</source>
         <translation>Selezionare una distribuzione</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="720"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>You must select a distribution to load.</source>
         <translation>Dovete selezionare una distribuzione da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="734"/>
+        <location filename="unetbootin.cpp" line="739"/>
         <source>Select a disk image file</source>
         <translation>Selezionare un file immagine di disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="735"/>
+        <location filename="unetbootin.cpp" line="740"/>
         <source>You must select a disk image file to load.</source>
         <translation>Dovete selezionare un file immagine di disco da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="749"/>
+        <location filename="unetbootin.cpp" line="754"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Selezionare un kernel e/o un file initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="750"/>
+        <location filename="unetbootin.cpp" line="755"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Dovete selezionare un kernel e/o un file initrd da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="764"/>
+        <location filename="unetbootin.cpp" line="769"/>
         <source>Diskimage file not found</source>
         <translation>file immagine di disco non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="765"/>
+        <location filename="unetbootin.cpp" line="770"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Il file immagine di disco %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="779"/>
+        <location filename="unetbootin.cpp" line="784"/>
         <source>Kernel file not found</source>
         <translation>File kernel non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="780"/>
+        <location filename="unetbootin.cpp" line="785"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Il file kernel %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="794"/>
+        <location filename="unetbootin.cpp" line="799"/>
         <source>Initrd file not found</source>
         <translation>File initrd non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="795"/>
+        <location filename="unetbootin.cpp" line="800"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Il file initrd %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="895"/>
+        <location filename="unetbootin.cpp" line="900"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 esiste già, lo sovrascrivo?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="896"/>
+        <location filename="unetbootin.cpp" line="901"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Il file %1 esiste già. Cliccare su &apos;Yes to All&apos; per sovrascriverlo e non essere più avvertito, su &apos;Yes&apos; per sovrascrivere i file individualmente, e su &apos;No&apos; per mantenere il file esistente. Nel dubbio cliccare su &apos;Yes to All&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1324"/>
+        <location filename="unetbootin.cpp" line="1329"/>
         <source>Extracting files, please wait...</source>
         <translation>Estrazione file in corso, attendere prego...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1325"/>
+        <location filename="unetbootin.cpp" line="1330"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archivio:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1326"/>
+        <location filename="unetbootin.cpp" line="1331"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Sorgentee:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1327"/>
+        <location filename="unetbootin.cpp" line="1332"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1328"/>
+        <location filename="unetbootin.cpp" line="1333"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Estratti:&lt;/b&gt; 0 di %1 file</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1331"/>
+        <location filename="unetbootin.cpp" line="1336"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Sorgente:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1332"/>
+        <location filename="unetbootin.cpp" line="1337"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1333"/>
+        <location filename="unetbootin.cpp" line="1338"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Estratti:&lt;/b&gt; %1 di %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1675"/>
+        <location filename="unetbootin.cpp" line="1680"/>
         <source>Downloading files, plese wait...</source>
         <translation>Scaricamento file in corso, attendere prego...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1676"/>
+        <location filename="unetbootin.cpp" line="1681"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Sorgente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1677"/>
+        <location filename="unetbootin.cpp" line="1682"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1678"/>
+        <location filename="unetbootin.cpp" line="1683"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Scaricati:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1748"/>
-        <location filename="unetbootin.cpp" line="1755"/>
+        <location filename="unetbootin.cpp" line="1753"/>
+        <location filename="unetbootin.cpp" line="1760"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Scaricati:&lt;/b&gt; %1 di %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1829"/>
+        <location filename="unetbootin.cpp" line="1834"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Ricerca in corso su &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1833"/>
+        <location filename="unetbootin.cpp" line="1838"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 corrispondenze in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2000"/>
+        <location filename="unetbootin.cpp" line="2005"/>
         <source>%1 not found</source>
         <translation>%1 non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2001"/>
+        <location filename="unetbootin.cpp" line="2006"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 non trovato. Questo è necessario per %2 install mode.(new line)
 Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuzione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2684"/>
+        <location filename="unetbootin.cpp" line="2689"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Dopo il riavvio selezionare il(sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2688"/>
+        <location filename="unetbootin.cpp" line="2693"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)
@@ -525,7 +540,8 @@ Riavviare adesso?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="398"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB.</source>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB.</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>
