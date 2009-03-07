@@ -216,6 +216,8 @@ int main(int argc, char *argv[])
 		tnapplang = "en";
 	}
 	app.installTranslator(&translator);
+	if (tnapplang == "he" || tnapplang == "ar")
+		app.setLayoutDirection(Qt::RightToLeft);
 	#ifdef Q_OS_UNIX
 	QProcess whoamip;
 	whoamip.start("whoami");

@@ -747,22 +747,22 @@ p, li { white-space: pre-wrap; }(new line)
         <translation>%1 è stato disinstallato.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="251"/>
+        <location filename="main.cpp" line="253"/>
         <source>Must run as root</source>
         <translation>Deve essere lanciato come root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="253"/>
+        <location filename="main.cpp" line="255"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 deve essere lanciato come root. Chiuderlo e rilanciarlo usando o &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;oppure:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="274"/>
+        <location filename="main.cpp" line="276"/>
         <source>%1 Uninstaller</source>
         <translation>%1 disinstallatore</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="275"/>
+        <location filename="main.cpp" line="277"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 è attualmente installato. Rimuovere la versione attuale?</translation>
     </message>
