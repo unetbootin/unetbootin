@@ -328,6 +328,11 @@ void unetbootin::ubninitialize()
 //		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
 //		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") << 
 //	"4.9"));
+	distroselect->addItem("gNewSense", (QStringList() << "Latest_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
+		"<b>Description:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"Latest_Live"));
 	distroselect->addItem("Gujin", (QStringList() << "2.4" << 
 	tr("<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/>"
 		"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
@@ -350,7 +355,7 @@ void unetbootin::ubninitialize()
 	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
 //	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
 	distroselect->addItem("MEPIS", (QStringList() << "SimplyMEPIS" <<
-	tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org/</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/>"
 		"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
 		"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched.") << 
         "SimplyMEPIS" << "SimplyMEPIS_x64" << "AntiX"));

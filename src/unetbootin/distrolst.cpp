@@ -364,6 +364,21 @@ if (nameDistro == "Gentoo")
 	extractiso(isotmpf, targetPath);
 }
 
+if (nameDistro == "gNewSense")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://cdimage.gnewsense.org/" << 
+	"http://heanet.archive.gnewsense.org/gnewsense/cdimage/" <<
+	"http://mirror.softwarelibre.nl/gnewsense/cdimage/"
+	, 61440000, 1048576000, QList<QRegExp>() << 
+	QRegExp("gnewsense\\S{0,}livecd\\S{0,}.iso$", Qt::CaseInsensitive) << 
+	QRegExp("livecd\\S{0,}.iso$", Qt::CaseInsensitive) <<
+	QRegExp("gnewsense\\S{0,}.iso$", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "Gujin")
 {
 	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
@@ -403,6 +418,48 @@ if (nameDistro == "Mandriva")
 		instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
 		downloadfile(QString("ftp://ftp.free.fr/mirrors/ftp.mandriva.com/MandrivaLinux/official/%1/%2/install/images/all.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 	}
+}
+
+if (nameDistro == "MEPIS")
+{
+	if (isarch64)
+	{
+		cpuarch = "64";
+	}
+	else
+	{
+		cpuarch = "32";
+	}
+	if (relname == "antix")
+	{
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/antix/" << 
+		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/antix/" <<
+		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/antix/" << 
+		"http://ftp.uwsg.indiana.edu/linux/mepis/released/antix/" <<
+		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/antix/" <<
+		"http://mirror.cs.vt.edu/pub/MEPIS/antix/"
+		, 61440000, 1048576000, QList<QRegExp>() << 
+		QRegExp("antiX\\S{0,}.iso$", Qt::CaseInsensitive) << 
+		QRegExp(".iso$", Qt::CaseInsensitive)
+		), isotmpf);
+	}
+	else
+	{
+		downloadfile(fileFilterNetDir(QStringList() << 
+		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/" << 
+		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/" <<
+		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/" << 
+		"http://ftp.uwsg.indiana.edu/linux/mepis/released/" <<
+		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/" <<
+		"http://mirror.cs.vt.edu/pub/MEPIS/"
+		, 61440000, 1048576000, QList<QRegExp>() << 
+		QRegExp("MEPIS\\S{0,}.iso$", Qt::CaseInsensitive) << 
+		QRegExp(".iso$", Qt::CaseInsensitive) << 
+		QRegExp("\\S{0,}"+cpuarch+".iso$", Qt::CaseInsensitive)
+		), isotmpf);
+	}
+	extractiso(isotmpf, targetPath);
 }
 
 if (nameDistro == "NetBSD")
@@ -466,48 +523,6 @@ if (nameDistro == "openSUSE")
 if (nameDistro == "Ophcrack")
 {
 	downloadfile(QString("http://downloads.sourceforge.net/ophcrack/ophcrack-%1.iso").arg(relname), isotmpf);
-	extractiso(isotmpf, targetPath);
-}
-
-if (nameDistro == "SimplyMEPIS")
-{
-	if (isarch64)
-	{
-		cpuarch = "64";
-	}
-	else
-	{
-		cpuarch = "32";
-	}
-	if (relname == "antix")
-	{
-		downloadfile(fileFilterNetDir(QStringList() << 
-		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/antix/" << 
-		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/antix/" <<
-		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/antix/" << 
-		"http://ftp.uwsg.indiana.edu/linux/mepis/released/antix/" <<
-		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/antix/" <<
-		"http://mirror.cs.vt.edu/pub/MEPIS/antix/"
-		, 61440000, 1048576000, QList<QRegExp>() << 
-		QRegExp("antiX\\S{0,}.iso$", Qt::CaseInsensitive) << 
-		QRegExp(".iso$", Qt::CaseInsensitive)
-		), isotmpf);
-	}
-	else
-	{
-		downloadfile(fileFilterNetDir(QStringList() << 
-		"ftp://ftp.ibiblio.org/pub/linux/distributions/mepis/released/" << 
-		"http://distro.ibiblio.org/pub/linux/distributions/mepis/released/" <<
-		"ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/mepis/released/" << 
-		"http://ftp.uwsg.indiana.edu/linux/mepis/released/" <<
-		"ftp://ftp.ussg.iu.edu/pub/linux/mepis/released/" <<
-		"http://mirror.cs.vt.edu/pub/MEPIS/"
-		, 61440000, 1048576000, QList<QRegExp>() << 
-		QRegExp("MEPIS\\S{0,}.iso$", Qt::CaseInsensitive) << 
-		QRegExp(".iso$", Qt::CaseInsensitive) << 
-		QRegExp("\\S{0,}"+cpuarch+".iso$", Qt::CaseInsensitive)
-		), isotmpf);
-	}
 	extractiso(isotmpf, targetPath);
 }
 

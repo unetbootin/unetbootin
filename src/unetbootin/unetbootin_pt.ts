@@ -68,43 +68,43 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Frugalware é uma distribuição de uso geral, baseada no Linux Slackware, direcionada a usuários avançados.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão normal permite ambos, instalação direto da internet usando FTP ou instalação off-line usando arquivos ISO descarregados previamente.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="332"/>
+        <location filename="unetbootin.cpp" line="337"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Gujin é um gerenciador de inicialização (boot) gráfico capaz de inicializar/gerenciar multiplos volumes e arquivos.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; Gujin simplesmente inicializa e executa, não é necessário instalá-lo para ser usado.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="342"/>
+        <location filename="unetbootin.cpp" line="347"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Linux Mint é uma distribuição Linux fácil de usar, baseada no Ubuntu, e inclui software e codecs proprietários em sua instalação normal.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="358"/>
+        <location filename="unetbootin.cpp" line="363"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; NetBSD é um sistema operacional estilo-Unix focado em portabilidade.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt;A versão normal permite ambos, instalação direto da internet usando FTP ou instalação off-line usando arquivos ISO descarregados previamente.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="368"/>
+        <location filename="unetbootin.cpp" line="373"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; openSUSE é uma distribuição Linux de uso amigável, patrocinado pela Novell.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão normal permite ambos, instalação direto da internet usando FTP ou instalação off-line usando arquivos ISO descarregados previamente.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="378"/>
+        <location filename="unetbootin.cpp" line="383"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Parted Magic inclui o gerenciador de partições GParted e outros utilitários de sistema que permitem copiar, fazer backup, redimensionar e manipular partições em disco.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; Parted Magic inicializa um modo Live; não é necessário instalar no disco rígido.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="183"/>
-        <location filename="unetbootin.cpp" line="413"/>
+        <location filename="unetbootin.cpp" line="418"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Super Grub Disk é um carregador de inicializacão (boot) específico para promover trabalhos de recuperação em bootloader e no MBR.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; SGD inicializa e auto-executa; não é necessário instalar o programa para se usar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="383"/>
+        <location filename="unetbootin.cpp" line="388"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; PCLinuxOS é uma distribuição de uso amigável, baseado no Mandriva.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="408"/>
+        <location filename="unetbootin.cpp" line="413"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Smart Boot Manager é um carregador de inicialização (boot) que permite superar alguns casos de limitações ou problemas em BIOS.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; SBM inicializa e auto-executa; não é necessário instalar o programa para se usar.</translation>
     </message>
@@ -114,12 +114,12 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; FreeDOS é um sistema compatível com MS-DOS completamente gratuito.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; Veja o &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; para detalhes de instalação.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="347"/>
+        <location filename="unetbootin.cpp" line="352"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Mandriva é uma distribuição amigável, conhecida anteriormente como Mandrake Linux.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão NetInstall permite instalar via de internet usando FTP ou usando arquivsos &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt; &quot;Gratuitos&quot; ISO imagens&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="418"/>
+        <location filename="unetbootin.cpp" line="423"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Ubuntu é uma distribuição amigável, baseada no Debian. Atualmente é o Linux desktop mais popular.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).  A versão NetInstall permite instalação usando FTP, e pode também instalar o Kubuntu e outros derivados oficiais do Ubuntu.</translation>
     </message>
@@ -133,12 +133,12 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Fedora é uma distribuição desenvolvida pela comunidade e patrocinada pela RedHat, que objetiva sempre incluir as últimas novidades do mundo do software livre/aberto.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt;A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão normal permite ambos, instalação direto da internet usando FTP ou instalação off-line usando arquivos ISO descarregados previamente.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="388"/>
+        <location filename="unetbootin.cpp" line="393"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Puppy Linux é uma distribuição superleve desenhada para uso em computadores antigos.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live carrega o sistema inteiro na RAM e inicializa a partir da memória, assim, uma instalacão não é obrigatória e sim optativa.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="363"/>
+        <location filename="unetbootin.cpp" line="368"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; O Offline NT Password and Registry Editor consegue resetar (reset) senhas e registros (registry) de Windows 2000 até o Vista.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; NTPasswd inicializa e executa em modo Live; não é necessário instalar para usar.</translation>
     </message>
@@ -148,17 +148,17 @@ Quer reinicializar agora?</translation>
         <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Kubuntu é uma distribuição oficial derivada do Ubuntu, usando o desktop KDE.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão NetInstall permite instalação usando FTP, e pode também instalar o Kubuntu e outros derivados oficiais do Ubuntu.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="373"/>
+        <location filename="unetbootin.cpp" line="378"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Ophcrack consegue (crack) &apos;abrir&apos; senhas de Windows.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; Ophcrack inicializa e executa em modo Live; não é necessário instalar para usar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="398"/>
+        <location filename="unetbootin.cpp" line="403"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Slax é uma distribuição baseada no Slackware, usando o desktop KDE.&lt;br/&gt;&lt;b&gt;Notas de Instalacão:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="428"/>
+        <location filename="unetbootin.cpp" line="433"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Zenwalk é uma distribuição baseada no Slackware e usa o desktop XFCE.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).</translation>
     </message>
@@ -182,42 +182,42 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; FaunOS é uma distribuição baseada no Arch Linux.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="438"/>
-        <location filename="unetbootin.cpp" line="442"/>
-        <location filename="unetbootin.cpp" line="446"/>
-        <location filename="unetbootin.cpp" line="450"/>
-        <location filename="unetbootin.cpp" line="459"/>
+        <location filename="unetbootin.cpp" line="443"/>
+        <location filename="unetbootin.cpp" line="447"/>
+        <location filename="unetbootin.cpp" line="451"/>
+        <location filename="unetbootin.cpp" line="455"/>
+        <location filename="unetbootin.cpp" line="464"/>
         <source>either</source>
         <translation>cada(um)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="150"/>
-        <location filename="unetbootin.cpp" line="451"/>
-        <location filename="unetbootin.cpp" line="465"/>
-        <location filename="unetbootin.cpp" line="466"/>
-        <location filename="unetbootin.cpp" line="524"/>
-        <location filename="unetbootin.cpp" line="606"/>
-        <location filename="unetbootin.cpp" line="678"/>
-        <location filename="unetbootin.cpp" line="694"/>
-        <location filename="unetbootin.cpp" line="1686"/>
-        <location filename="unetbootin.cpp" line="1728"/>
-        <location filename="unetbootin.cpp" line="2297"/>
-        <location filename="unetbootin.cpp" line="2322"/>
-        <location filename="unetbootin.cpp" line="2440"/>
-        <location filename="unetbootin.cpp" line="2681"/>
+        <location filename="unetbootin.cpp" line="456"/>
+        <location filename="unetbootin.cpp" line="470"/>
+        <location filename="unetbootin.cpp" line="471"/>
+        <location filename="unetbootin.cpp" line="529"/>
+        <location filename="unetbootin.cpp" line="611"/>
+        <location filename="unetbootin.cpp" line="683"/>
+        <location filename="unetbootin.cpp" line="699"/>
+        <location filename="unetbootin.cpp" line="1691"/>
+        <location filename="unetbootin.cpp" line="1733"/>
+        <location filename="unetbootin.cpp" line="2302"/>
+        <location filename="unetbootin.cpp" line="2327"/>
+        <location filename="unetbootin.cpp" line="2445"/>
+        <location filename="unetbootin.cpp" line="2686"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="149"/>
-        <location filename="unetbootin.cpp" line="468"/>
-        <location filename="unetbootin.cpp" line="469"/>
-        <location filename="unetbootin.cpp" line="520"/>
-        <location filename="unetbootin.cpp" line="601"/>
-        <location filename="unetbootin.cpp" line="2293"/>
-        <location filename="unetbootin.cpp" line="2306"/>
-        <location filename="unetbootin.cpp" line="2436"/>
-        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="473"/>
+        <location filename="unetbootin.cpp" line="474"/>
+        <location filename="unetbootin.cpp" line="525"/>
+        <location filename="unetbootin.cpp" line="606"/>
+        <location filename="unetbootin.cpp" line="2298"/>
+        <location filename="unetbootin.cpp" line="2311"/>
+        <location filename="unetbootin.cpp" line="2441"/>
+        <location filename="unetbootin.cpp" line="2682"/>
         <source>Hard Disk</source>
         <translation>Disco Rígido</translation>
     </message>
@@ -225,9 +225,9 @@ Quer reinicializar agora?</translation>
         <location filename="unetbootin.cpp" line="152"/>
         <location filename="unetbootin.cpp" line="174"/>
         <location filename="unetbootin.cpp" line="175"/>
-        <location filename="unetbootin.cpp" line="634"/>
-        <location filename="unetbootin.cpp" line="635"/>
-        <location filename="unetbootin.cpp" line="2353"/>
+        <location filename="unetbootin.cpp" line="639"/>
+        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="2358"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
@@ -235,9 +235,9 @@ Quer reinicializar agora?</translation>
         <location filename="unetbootin.cpp" line="151"/>
         <location filename="unetbootin.cpp" line="178"/>
         <location filename="unetbootin.cpp" line="179"/>
-        <location filename="unetbootin.cpp" line="629"/>
-        <location filename="unetbootin.cpp" line="630"/>
-        <location filename="unetbootin.cpp" line="2358"/>
+        <location filename="unetbootin.cpp" line="634"/>
+        <location filename="unetbootin.cpp" line="635"/>
+        <location filename="unetbootin.cpp" line="2363"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -252,7 +252,7 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que usa o gerenciador de janela Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live. A versão INstável não suporta instalação para disco rígido, entretanto, a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão ESTÁVEL&lt;/a&gt; (não é gratuito/livre) suporta.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="403"/>
+        <location filename="unetbootin.cpp" line="408"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; SliTaz é uma distribuição superleve, orientada para desktop.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live carrega o sistema inteiro na RAM e inicializa a partir da memória, assim, uma instalacão não é obrigatória e sim optativa.</translation>
     </message>
@@ -262,210 +262,210 @@ Quer reinicializar agora?</translation>
         <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que usa o gerenciador de janela Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão Instável, e não a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão Estável&lt;/a&gt; será instalada. Este instalador é baseado no &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="626"/>
+        <location filename="unetbootin.cpp" line="631"/>
         <source>Open Disk Image File</source>
         <translation>Abrir Arquivo de Imagem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="644"/>
+        <location filename="unetbootin.cpp" line="649"/>
         <source>Open Kernel File</source>
         <translation>Abrir Arquivo de Kernel</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="652"/>
+        <location filename="unetbootin.cpp" line="657"/>
         <source>Open Initrd File</source>
         <translation>Abrir Arquivo de Initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="660"/>
+        <location filename="unetbootin.cpp" line="665"/>
         <source>Open Bootloader Config File</source>
         <translation>Abrir Arquivo de Configuração de Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="687"/>
         <source>Insert a USB flash drive</source>
         <translation>Insira um Dispositivo de Disco USB Flash</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="683"/>
+        <location filename="unetbootin.cpp" line="688"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nenhum dispositivo de USB Flash foi encontrado. Tente re-inserir, e persistindo o problema, tente re-formatar o mesmo no modo FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="698"/>
+        <location filename="unetbootin.cpp" line="703"/>
         <source>%1 not mounted</source>
         <translation>%1 não montado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="699"/>
+        <location filename="unetbootin.cpp" line="704"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>É necessário montar o dispositivo USB %1 em um subdiretório qualquer (mountpoint). Muitas distribuições fazem a auto-montagem, basta que se retire e re-insira o dispositivo USB.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="714"/>
+        <location filename="unetbootin.cpp" line="719"/>
         <source>Select a distro</source>
         <translation>Selecione uma distribuição</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="715"/>
+        <location filename="unetbootin.cpp" line="720"/>
         <source>You must select a distribution to load.</source>
         <translation>É necessário selecionar uma distribuição para carregar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="729"/>
+        <location filename="unetbootin.cpp" line="734"/>
         <source>Select a disk image file</source>
         <translation>Selecione um arquivo de imagem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="730"/>
+        <location filename="unetbootin.cpp" line="735"/>
         <source>You must select a disk image file to load.</source>
         <translation>É necessário selecionar um arquivo de imagem de disco para carregar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="744"/>
+        <location filename="unetbootin.cpp" line="749"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Selecione um arquivo de kernel e/ou initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="745"/>
+        <location filename="unetbootin.cpp" line="750"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>É necessário selecionar um arquivo de kernel e/ou arquivo de initrd para carregar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="759"/>
+        <location filename="unetbootin.cpp" line="764"/>
         <source>Diskimage file not found</source>
         <translation>Arquivo de Imagem de Disco não encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="760"/>
+        <location filename="unetbootin.cpp" line="765"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>O arquivo de imagem de disco %1 especificado, não existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="774"/>
+        <location filename="unetbootin.cpp" line="779"/>
         <source>Kernel file not found</source>
         <translation>Arquivo de Kernel não encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="775"/>
+        <location filename="unetbootin.cpp" line="780"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>O arquivo de kernel %1 especificado, não existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="789"/>
+        <location filename="unetbootin.cpp" line="794"/>
         <source>Initrd file not found</source>
         <translation>Arquivo de initrd não encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="790"/>
+        <location filename="unetbootin.cpp" line="795"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>O arquivo de initrd %1 especificado, não existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="890"/>
+        <location filename="unetbootin.cpp" line="895"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 existe, escrever em cima?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="891"/>
+        <location filename="unetbootin.cpp" line="896"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>O arquivo %1 já existe. Pressione &apos;Yes to All (Sim para Todos)&apos; para escrever em cima e não ser perguntado novamente. &apos;Yes (Sim)&apos; para escrever em cima individualmente (um a um), e &apos;No (Não)&apos; para manter a versão existente. No caso de dúvida, pressione &apos;Yes to All (Sim para Todos).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1319"/>
+        <location filename="unetbootin.cpp" line="1324"/>
         <source>Extracting files, please wait...</source>
         <translation>Extraindo arquivos, aguarde por favor...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1320"/>
+        <location filename="unetbootin.cpp" line="1325"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Arquivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1321"/>
+        <location filename="unetbootin.cpp" line="1326"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Fonte:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1322"/>
+        <location filename="unetbootin.cpp" line="1327"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1323"/>
+        <location filename="unetbootin.cpp" line="1328"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Extraído(s):&lt;/b&gt; 0 de um total de %1 arquivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1326"/>
+        <location filename="unetbootin.cpp" line="1331"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Fonte:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1327"/>
+        <location filename="unetbootin.cpp" line="1332"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1328"/>
+        <location filename="unetbootin.cpp" line="1333"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Extraído:&lt;/b&gt; %1 de um total de %2 arquivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1670"/>
+        <location filename="unetbootin.cpp" line="1675"/>
         <source>Downloading files, plese wait...</source>
         <translation>Descarregando arquivos, aguarde por favor...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1671"/>
+        <location filename="unetbootin.cpp" line="1676"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Fonte:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1672"/>
+        <location filename="unetbootin.cpp" line="1677"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1673"/>
+        <location filename="unetbootin.cpp" line="1678"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Descarregado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1743"/>
-        <location filename="unetbootin.cpp" line="1750"/>
+        <location filename="unetbootin.cpp" line="1748"/>
+        <location filename="unetbootin.cpp" line="1755"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Descarregado:&lt;/b&gt; %1 do total de %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1824"/>
+        <location filename="unetbootin.cpp" line="1829"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Pesquisando em &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1828"/>
+        <location filename="unetbootin.cpp" line="1833"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 incidências (acertos) em &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1995"/>
+        <location filename="unetbootin.cpp" line="2000"/>
         <source>%1 not found</source>
         <translation>%1 não encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1996"/>
+        <location filename="unetbootin.cpp" line="2001"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 não encontrado. Este é necessário para instalação do tipo %2.
 Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição).</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2679"/>
+        <location filename="unetbootin.cpp" line="2684"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Após a reinicialização, selecione o</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2683"/>
+        <location filename="unetbootin.cpp" line="2688"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Após reiniciar, selecione a opção &apos;USB boot&apos; no menu de boot da BIOS. %1
@@ -493,14 +493,14 @@ Quer reinicializar agora?</translation>
 *IMPORTANTE* Após reinicializar, ignore as mensagens de erros, e, mantenha a seleção caso houver mensagem pedindo um CD. Vá até o menu principal, selecione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Network (rede)&apos; como sendo a fonte, escolha &apos;HTTP&apos; como sendo o protocolo, entre com &apos;download.fedora.redhat.com&apos; quando perguntado sobre o servidor, e, entre com &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;  quando perguntado sobre pasta (folder).</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="454"/>
+        <location filename="distrolst.cpp" line="511"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation type="unfinished">
 *IMPORTANTE* Após reinicializar, ignore as mensagens de erros, e, mantenha a seleção caso houver mensagem pedindo um CD. Vá até o menu principal, selecione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Network (rede)&apos; como sendo a fonte, escolha &apos;HTTP&apos; como sendo o protocolo, entre com &apos;download.opensuse.org&apos; quando perguntado sobre o servidor, e, entre com &apos;/distribution/SL-OSS-factory/inst-source&apos; quando perguntado sobre pasta (folder).</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="460"/>
+        <location filename="distrolst.cpp" line="517"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -512,7 +512,7 @@ Quer reinicializar agora?</translation>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; SliTaz é uma distribuição superleve, orientada para desktop.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live carrega o sistema inteiro na RAM e inicializa a partir da memória, assim, uma instalacão não é obrigatória e sim optativa. Este instalador é baseado no &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="423"/>
+        <location filename="unetbootin.cpp" line="428"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Xubuntu é uma distribuição oficial derivada do Ubuntu, usando o desktop XFCE.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão NetInstall permite instalação usando FTP, e pode também instalar o Kubuntu e outros derivados oficiais do Ubuntu.</translation>
     </message>
@@ -527,7 +527,7 @@ Quer reinicializar agora?</translation>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; CloneZilla é uma distribuição própria para se criar backup de disco e imagens de disco.&lt;br/&gt;&lt;b&gt;Notas de Instalacão:&lt;/b&gt; CloneZilla inicaliza e executa em modo Live; não é necessário instalá-lo para usar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="337"/>
+        <location filename="unetbootin.cpp" line="342"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Kubuntu é uma distribuição oficial derivada do Ubuntu, usando o desktop KDE.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão NetInstall permite instalação usando FTP, e pode também instalar o Kubuntu e outros derivados oficiais do Ubuntu.</translation>
     </message>
@@ -537,7 +537,7 @@ Quer reinicializar agora?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="393"/>
+        <location filename="unetbootin.cpp" line="398"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB.</source>
         <translation type="unfinished"></translation>
     </message>
