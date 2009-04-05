@@ -2632,7 +2632,7 @@ void unetbootin::runinstusb()
 		QFile usbmbrF(rawtargetDev);
 		QFile mbrbinF(":/mbr.bin");
 		#ifdef NOSTATIC
-		mbrbinF.setFileName("/usr/lib/syslinux/mbr.bin");
+		mbrbinF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 		#endif
 		usbmbrF.open(QIODevice::WriteOnly);
 		mbrbinF.open(QIODevice::ReadOnly);
