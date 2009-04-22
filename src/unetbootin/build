@@ -21,6 +21,7 @@ make
 $mingwb-strip --strip-all release/unetbootin.exe
 mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
 ./upx --lzma release/unetbootin-windows-$rvern.exe
+make clean
 ./qmake-linux
 make
 $mingwb-strip --strip-all unetbootin
