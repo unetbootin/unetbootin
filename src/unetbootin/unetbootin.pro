@@ -20,5 +20,6 @@ TRANSLATIONS += unetbootin_es.ts \
  unetbootin_uk.ts \
  unetbootin_be.ts \
  unetbootin_pt.ts \
- unetbootin_nb.ts
+ unetbootin_nb.ts \
+ unetbootin_ca.ts
 RESOURCES += unetbootin.qrc
