@@ -7,7 +7,8 @@ HEADERS += unetbootin.h
 FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp distrolst.cpp
 QT += core gui network
-TRANSLATIONS += unetbootin_es.ts \
+TRANSLATIONS += unetbootin.ts \
+ unetbootin_es.ts \
  unetbootin_ru.ts \
  unetbootin_de.ts \
  unetbootin_he.ts \
