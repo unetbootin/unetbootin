@@ -1,5 +1,7 @@
 #!/bin/bash
 
+lupdate unetbootin.pro
+lrelease unetbootin.pro
 cd ../../po
 for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do ts2po $x $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
 ts2po -P ../src/unetbootin/unetbootin.ts unetbootin.pot
