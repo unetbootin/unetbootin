@@ -17,7 +17,7 @@ TRANSLATIONS += unetbootin.ts \
  unetbootin_zh.ts \
  unetbootin_fr.ts \
  unetbootin_ja.ts \
- unetbootin_vn.ts \
+ unetbootin_vi.ts \
  unetbootin_uk.ts \
  unetbootin_be.ts \
  unetbootin_pt.ts \
