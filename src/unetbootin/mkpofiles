@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for x in $(ls unetbootin_*.ts | grep -v custom); do ts2po $x $(echo $x | 
-sed s/ts/po/ | sed s/unetbootin_//) ; done
-ts2po -P unetbootin.ts unetbootin.pot
-tar -cvzf release/unetbootin-po-translations.tar.gz $(ls *.po) unetbootin.pot
+cd ../../unetbootin-po
+for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do ts2po $x $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
+ts2po -P ../src/unetbootin/unetbootin.ts unetbootin-po.pot
+cd ..
+tar -cvzf src/unetbootin/release/unetbootin-po-translations.tar.gz unetbootin-po
+cd src/unetbootin
