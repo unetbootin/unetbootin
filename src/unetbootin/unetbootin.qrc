@@ -12,10 +12,11 @@
         <file>unetbootin_it.qm</file>
         <file>unetbootin_ja.qm</file>
         <file>unetbootin_nb.qm</file>
+        <file>unetbootin_nl.qm</file>
         <file>unetbootin_pt.qm</file>
         <file>unetbootin_ru.qm</file>
         <file>unetbootin_uk.qm</file>
         <file>unetbootin_vi.qm</file>
-        <file>unetbootin_zh.qm</file>
+        <file>unetbootin_zh_CN.qm</file>
     </qresource>
 </RCC>
