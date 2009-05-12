@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ../../po
+for x in $(ls *.po); do python2.5 /usr/bin/po2ts $x -o ../src/unetbootin/unetbootin_$(echo $x | sed "s/po/ts/") -t unetbootin.pot; done
+cd ../src/unetbootin
