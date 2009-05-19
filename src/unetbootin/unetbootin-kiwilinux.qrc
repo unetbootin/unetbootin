@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>kiwi_logo_ro.png</file>
+    </qresource>
+</RCC>
+

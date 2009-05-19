@@ -396,6 +396,10 @@ Reboot now?</source>
         <translation>Kies, na het herstarten, in je BIOS de optie &apos;USB boot&apos; %1
 Nu herstarten?</translation>
     </message>
+    <message>
+        <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi e un sistem de operare adaptat pentru utilizatorii din RomÃ¢nia. &lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>unetbootinui</name>

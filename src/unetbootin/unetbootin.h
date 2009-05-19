@@ -60,6 +60,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
+#ifdef KIWILINUX
+#define UNETBOOTINB "Kiwi pe USB"
+#define NOMANUAL
+#define NOFLOPPY
+//#define USBINSTALL
+#endif
+
 #ifdef SLITAZ
 #define UNETBOOTINB "SliTaz Installer"
 #define NOMANUAL

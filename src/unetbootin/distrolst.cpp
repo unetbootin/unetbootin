@@ -70,6 +70,18 @@ if (nameDistro == "gNewSense")
 
 #endif
 
+#ifdef KIWILINUX
+
+if (nameDistro == "Kiwi Linux")
+{
+        downloadfile(QString("http://depo.osn.ro/content/distributii/linux/romanesti/kiwilinux-%1.iso").arg(relname), isotmpf);
+        extractiso(isotmpf, targetPath);
+
+}
+
+#endif
+
+
 #ifdef SLITAZ
 
 if (nameDistro == "SliTaz")

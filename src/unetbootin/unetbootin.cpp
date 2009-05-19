@@ -227,6 +227,18 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
 	"Unstable_Live"));
 	#endif
+
+        #ifdef KIWILINUX
+        distroselect->addItem("Kiwi Linux", (QStringList() << "9.04" <<
+        tr("<img src=\":/kiwi_logo_ro.png\" /><br/>"
+        "<b>Homepage:</b> <a href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/>"
+        "<b>Description:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.<br/>"
+        "<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
+        "9.04"));
+        #endif
+
+
+
 	#ifdef GNEWSENSE
 	distroselect->addItem("gNewSense", (QStringList() << "deltah-2.1" << 
 	tr("<img src=\":/gnewsense.png\" /><br/>"

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mingwb="i586-mingw32msvc"
+rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+make clean
+rm Makefile*
+rm release/*
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
+./qmake-windows "DEFINES += KIWILINUX" "RESOURCES += unetbootin-kiwilinux.qrc"
+make
+$mingwb-strip --strip-all release/unetbootin.exe
+mv release/unetbootin.exe release/unetbootin-kiwilinux-windows-$rvern.exe
+./upx --lzma release/unetbootin-kiwilinux-windows-$rvern.exe
+./qmake-linux "DEFINES += KIWILINUX" "RESOURCES += unetbootin-kiwilinux.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-kiwilinux-linux-$rvern
+./upx --lzma release/unetbootin-kiwilinux-linux-$rvern
+qmake-qt4 -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+
