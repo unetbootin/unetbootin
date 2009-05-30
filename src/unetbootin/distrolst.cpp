@@ -788,6 +788,11 @@ if (nameDistro == "xPUD")
 	QRegExp("xpud-\\d{1,}\\S{0,}.iso$", Qt::CaseInsensitive) <<
 	QRegExp(".iso$", Qt::CaseInsensitive)
 	), isotmpf);
+	initrdLoc = "";
+	kernelLoc = "/boot/xpud";
+	initrdOpts = "";
+	initrdLine = "";
+	slinitrdLine = "";
 	extractiso(isotmpf, targetPath);
 }
 
