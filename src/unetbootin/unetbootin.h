@@ -120,6 +120,7 @@ public:
 	QStringList nDirFileListSL;
 	int nMinFileSizeBytes;
 	int nMaxFileSizeBytes;
+	bool searchsymlinks;
 
 public slots:
 	void sAppendSelfUrlInfoList(QUrlInfo curDirUrl);
@@ -141,6 +142,7 @@ public:
 	bool islivecd;
 	bool isnetinstall;
 	bool overwriteall;
+	bool searchsymlinks;
 	QString targetDrive;
 	QString targetPath;
 	QString installType;

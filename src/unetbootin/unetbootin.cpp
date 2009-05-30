@@ -128,6 +128,10 @@ void nDirListStor::sAppendSelfUrlInfoList(QUrlInfo curDirUrl)
 	{
 		nDirFileListSL.append(curDirUrl.name());
 	}
+	else if (this->searchsymlinks && curDirUrl.isReadable() && curDirUrl.isSymLink())
+	{
+		nDirFileListSL.append(curDirUrl.name());
+	}
 }
 
 unetbootin::unetbootin(QWidget *parent)
@@ -138,6 +142,7 @@ unetbootin::unetbootin(QWidget *parent)
 
 void unetbootin::ubninitialize()
 {
+	this->searchsymlinks = false;
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
 	firstlayer->setEnabled(true);
@@ -450,6 +455,11 @@ void unetbootin::ubninitialize()
 	tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/>"
 		"<b>Description:</b> Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+	"Latest_Live"));
+	distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/>"
+		"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
+		"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") << 
 	"Latest_Live"));
 	distroselect->addItem("Ubuntu", (QStringList() << "9.04_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
@@ -1311,8 +1321,34 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	{
 		QString subarchivename = listfilesizedirpair.first.first.at(0);
 		randtmpfile tmpoutsubarchive(ubntmpf, subarchivename.right(3));
-		extractfile(listfilesizedirpair.first.first.at(0), tmpoutsubarchive.fileName(), isofile);
+		pdesc1->setText(tr("<b>Extracting compressed iso:</b> %1").arg(subarchivename));
+		extractfile(subarchivename, tmpoutsubarchive.fileName(), isofile);
 		return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
+	}
+	QFileInfo isofileFI(isofile);
+	qint64 isofileSize = isofileFI.size();
+	if (listfilesizedirpair.first.first.size() < 10 && isofileSize > 12)
+	{
+		bool foundiso = false;
+		quint64 isofileSizeOneFourth = isofileSize / 4;
+		quint64 isofileSizeThreeFourth = isofileSizeOneFourth * 3;
+		for (int i = 0; i < listfilesizedirpair.first.first.size() && i < listfilesizedirpair.first.second.size(); ++i)
+		{
+			if (listfilesizedirpair.first.first.at(i).contains(QRegExp(".iso$", Qt::CaseInsensitive)))
+			{
+				if (foundiso)
+					break;
+				foundiso = true;
+				if (listfilesizedirpair.first.second.at(i) > isofileSizeThreeFourth)
+				{
+					QString subarchivename = listfilesizedirpair.first.first.at(i);
+					randtmpfile tmpoutsubarchive(ubntmpf, subarchivename.right(3));
+					pdesc1->setText(tr("<b>Extracting compressed iso:</b> %1").arg(subarchivename));
+					extractfile(subarchivename, tmpoutsubarchive.fileName(), isofile);
+					return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
+				}
+			}
+		}
 	}
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
@@ -1825,6 +1861,7 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 	nDirListStor nDirListStorL;
 	nDirListStorL.nMinFileSizeBytes = ldfMinSize;
 	nDirListStorL.nMaxFileSizeBytes = ldfMaxSize;
+	nDirListStorL.searchsymlinks = this->searchsymlinks;
 	connect(&ldfFtp, SIGNAL(done(bool)), &ldfWait, SLOT(quit()));
 	connect(&ldfFtp, SIGNAL(listInfo(QUrlInfo)), &nDirListStorL, SLOT(sAppendSelfUrlInfoList(QUrlInfo)));
 	ldfFtp.connectToHost(ldfDirUrl.host());

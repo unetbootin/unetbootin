@@ -228,8 +228,8 @@ if (nameDistro == "Dreamlinux")
 
 if (nameDistro == "Dr.Web AntiVirus")
 {
+	this->searchsymlinks = true;
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://ftp.drweb.com/pub/drweb/livecd/" << 
 	"ftp://ftp.drweb.com/pub/drweb/livecd/"
 	, 9288000, 1048576000, QList<QRegExp>() << 
 	QRegExp(".iso$", Qt::CaseInsensitive) << 
@@ -412,7 +412,7 @@ if (nameDistro == "gNewSense")
 if (nameDistro == "Kaspersky Rescue Disk")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://ftp.kaspersky.com/devbuilds/RescueDisk/" << 
+	"http://ftp.kaspersky.com/devbuilds/RescueDisk/" <<
 	"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
 	, 9288000, 1048576000, QList<QRegExp>() << 
 	QRegExp(".iso$", Qt::CaseInsensitive) << 
@@ -581,6 +581,7 @@ if (nameDistro == "Parted Magic")
 		downloadfile(fileFilterNetDir(QStringList() << 
 		"http://exo.enarel.eu/mirror/partedmagic/" << 
 		"ftp://ftp.mirrorservice.org/sites/ftp.sourceforge.net/pub/sourceforge/p/pa/partedmagic/" <<
+		"http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/p/pa/partedmagic/" <<
 		"http://fulloffacts.com/get/partedmagic/" <<
 		"http://www.digitalincursion.net/partedmagic/"
 		, 10485760, 209715200, QList<QRegExp>() << 
@@ -694,6 +695,20 @@ if (nameDistro == "Super Ubuntu")
 	, 61440000, 2147483647, QList<QRegExp>() << 
 	QRegExp("super\\S{0,}ubuntu\\S{0,}.iso$", Qt::CaseInsensitive) << 
 	QRegExp("super\\S{0,}ubuntu", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+if (nameDistro == "SystemRescueCD")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"ftp://ftp.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/sy/systemrescuecd/" <<
+	"http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/sy/systemrescuecd/"
+	, 9440000, 1147483647, QList<QRegExp>() << 
+	QRegExp("systemrescuecd\\S{0,}.iso$", Qt::CaseInsensitive) << 
+	QRegExp("x86", Qt::CaseInsensitive) <<
+	QRegExp("systemrescuecd-x86\\S{0,}.iso$", Qt::CaseInsensitive) << 
 	QRegExp(".iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf, targetPath);
