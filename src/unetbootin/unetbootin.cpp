@@ -1256,7 +1256,7 @@ QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList arc
 			curarchiveitem = QString("/%1").arg(curarchiveitem);
 //		if (!curarchiveitem.endsWith('/'))
 //			curarchiveitem = QString("%1/").arg(curarchiveitem);
-		if (curarchiveitem.contains(relativefilepath))
+		if (curarchiveitem.contains(QRegExp(relativefilepath+"$", Qt::CaseInsensitive)))
 			pfoundmatches.append(curarchiveitem);
 	}
 	if (pfoundmatches.isEmpty())
