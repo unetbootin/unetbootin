@@ -1,187 +1,584 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-29 01:24-0400\n"
-"PO-Revision-Date: 2009-05-22 05:35+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2009-05-30 11:33-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-05-22 05:44+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Generator: Translate Toolkit 1.2.1\n"
+
+#. (obsolete)
+#: #1
+msgctxt "#1"
+msgid "USB Drive"
+msgstr "USB-накопитель"
+
+#. (obsolete)
+#: #2
+msgctxt "#2"
+msgid "Open Disk Image File"
+msgstr "Открыть файл образа диска"
+
+#. (obsolete)
+#: #3
+msgctxt "#3"
+msgid "ISO"
+msgstr "ISO"
+
+#. (obsolete)
+#: #4
+msgctxt "#4"
+msgid "Floppy"
+msgstr "Floppy"
+
+#. (obsolete)
+#: #5
+msgctxt "#5"
+msgid "Open Kernel File"
+msgstr "Открыть файл ядра"
+
+#. (obsolete)
+#: #6
+msgctxt "#6"
+msgid "Open Initrd File"
+msgstr "Открыть файл Initrd"
+
+#. (obsolete)
+#: #7
+msgctxt "#7"
+msgid "Open Bootloader Config File"
+msgstr "Окрыть файл конфигурации загрузчика"
+
+#. (obsolete)
+#: #8
+msgctxt "#8"
+msgid "Insert a USB flash drive"
+msgstr "Подключить флэш-накопитель USB"
+
+#. (obsolete)
+#: #9
+msgctxt "#9"
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr ""
+"Не найдено USB-накопителей. Если устройство подключено, попробуйте "
+"переформатировать его в FAT32."
+
+#. (obsolete)
+#: #10
+msgctxt "#10"
+msgid "%1 not mounted"
+msgstr "%1 не примонтирован"
+
+#. (obsolete)
+#: #11
+msgctxt "#11"
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr ""
+"Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. "
+"Большинство дистрибутивов делают это автоматически после переподключения "
+"USB-накопителя."
+
+#. (obsolete)
+#: #12
+msgctxt "#12"
+msgid "Select a distro"
+msgstr "Выберите дистрибутив"
+
+#. (obsolete)
+#: #13
+msgctxt "#13"
+msgid "You must select a distribution to load."
+msgstr "Необходимо выбрать дистрибутив для загрузки."
+
+#. (obsolete)
+#: #14
+msgctxt "#14"
+msgid "Select a disk image file"
+msgstr "Выберите файл образа диска"
+
+#. (obsolete)
+#: #15
+msgctxt "#15"
+msgid "You must select a disk image file to load."
+msgstr "Необходимо выбрать файл образа диска для загрузки."
+
+#. (obsolete)
+#: #16
+msgctxt "#16"
+msgid "Select a kernel and/or initrd file"
+msgstr "Выберите ядро и/или файл initrd"
+
+#. (obsolete)
+#: #17
+msgctxt "#17"
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "Необходимо выбрать ядро и/или файл initrd для загрузки."
+
+#. (obsolete)
+#: #18
+msgctxt "#18"
+msgid "Diskimage file not found"
+msgstr "Файл образа диска не найден"
+
+#. (obsolete)
+#: #19
+msgctxt "#19"
+msgid "The specified diskimage file %1 does not exist."
+msgstr "Указанный файл образа диска %1 не существует."
+
+#. (obsolete)
+#: #20
+msgctxt "#20"
+msgid "Kernel file not found"
+msgstr "Файл ядра не найден"
+
+#. (obsolete)
+#: #21
+msgctxt "#21"
+msgid "The specified kernel file %1 does not exist."
+msgstr "Указанный файл ядра %1 не существует."
+
+#. (obsolete)
+#: #22
+msgctxt "#22"
+msgid "Initrd file not found"
+msgstr "Файл inird не найден"
+
+#. (obsolete)
+#: #23
+msgctxt "#23"
+msgid "The specified initrd file %1 does not exist."
+msgstr "Указанный файл initrd %1 не существует."
+
+#. (obsolete)
+#: #24
+msgctxt "#24"
+msgid "%1 exists, overwrite?"
+msgstr "%1 уже существует, переписать?"
+
+#. (obsolete)
+#: #25
+msgctxt "#25"
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"Файл %1 уже существует. Нажмитe \"Да для Всех\", чтобы переписать его без "
+"дальнейших подтверждений, щелкните \"Да\", чтобы перписать файлы в "
+"индивидуальном порядке. Выберите \"Нет\", чтобы оставить существующую версию. "
+"Если сомневаетесь, жмите \"Да для Всех\"."
+
+#. (obsolete)
+#: #26
+msgctxt "#26"
+msgid "Extracting files, please wait..."
+msgstr "Извлечение файлов, пожалуйста, подождите..."
+
+#. (obsolete)
+#: #27
+msgctxt "#27"
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Архив:</b> %1"
+
+#. (obsolete)
+#: #28
+msgctxt "#28"
+msgid "<b>Source:</b>"
+msgstr "<b>Источник:</b>"
+
+#. (obsolete)
+#: #29
+msgctxt "#29"
+msgid "<b>Destination:</b>"
+msgstr "<b>Назначение:</b>"
+
+#. (obsolete)
+#: #30
+msgctxt "#30"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Извлечено:</b> 0 of %1 файлов"
+
+#. (obsolete)
+#: #31
+msgctxt "#31"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Источник:</b> %1 (%2)"
+
+#. (obsolete)
+#: #32
+msgctxt "#32"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Назначение:</b> %1%2"
+
+#. (obsolete)
+#: #33
+msgctxt "#33"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Извлечено:</b> %1 из %2 файлов"
+
+#. (obsolete)
+#: #34
+msgctxt "#34"
+msgid "Downloading files, plese wait..."
+msgstr "Загрузка файлов, пожалуйста, подождите..."
+
+#. (obsolete)
+#: #35
+msgctxt "#35"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Источник:</b> <a href=\"%1\">%1</a>"
+
+#. (obsolete)
+#: #36
+msgctxt "#36"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Назначение:</b> %1"
+
+#. (obsolete)
+#: #37
+msgctxt "#37"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Загружено:</b> 0 байт"
+
+#. (obsolete)
+#: #38
+msgctxt "#38"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Загружено:</b> %1 из %2 байт"
+
+#. (obsolete)
+#: #39
+msgctxt "#39"
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "Поиск в <a href=\"%1\">%1</a>"
+
+#. (obsolete)
+#: #40
+msgctxt "#40"
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 совпадает в <a href=\"%3\">%3</a>"
+
+#. (obsolete)
+#: #41
+msgctxt "#41"
+msgid "%1 not found"
+msgstr "%1 не найдено"
+
+#. (obsolete)
+#: #42
+msgctxt "#42"
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 не найден. Это необходимо для режима установки %2.\n"
+"Установите пакет \"%3\" или его эквивалент в используемом дистрибутиве."
+
+#. (obsolete)
+#: #43
+msgctxt "#43"
+msgid "After rebooting, select the "
+msgstr "После перезагрузки выберите "
+
+#. (obsolete)
+#: #44
+msgctxt "#44"
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"Установите загрузку с USB-устройств в загрузочном меню BIOS после "
+"перезагрузки.%1\n"
+"Перезагрузить сейчас?"
+
+#: QObject#1
+msgid "LeftToRight"
+msgstr ""
 
 #: unetbootin#1
 msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'mirrors.kernel.org' when prompted for a server, and enter "
-"'/centos/%1/os/%2' when asked for the folder."
-msgstr ""
-"\n"
-"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
-"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
-"'Start Installation' в главном меню. Выберите 'Network' в качестве "
-"источника, укажите 'HTTP' в качестве протокола, введите  "
-"'mirrors.kernel.org' для имени сервера, и  '/centos/%1/os/%2' - для имени "
-"каталога."
-
-#: unetbootin#2
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/development/%1/os' when asked for the folder."
-msgstr ""
-"\n"
-"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
-"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
-"'Start Installation' в главном меню. Выберите 'Network' в качестве "
-"источника, укажите 'HTTP' в качестве протокола, введите  "
-"'download.fedora.redhat.com' для имени сервера, и  "
-"'/pub/fedora/linux/development/%1/os' - для имени каталога."
-
-#: unetbootin#3
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-msgstr ""
-"\n"
-"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
-"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
-"'Start Installation' в главном меню. Выберите 'Network' в качестве "
-"источника, укажите 'HTTP' в качестве протокола, введите  "
-"'download.fedora.redhat.com' для имени сервера, и  "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' - для имени каталога."
-
-#: unetbootin#5
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/distribution/%1/repo/oss' when asked for the folder."
-msgstr ""
-"\n"
-"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
-"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
-"'Start Installation' в главном меню. Выберите 'Network' в качестве "
-"источника, укажите 'HTTP' в качестве протокола, введите  "
-"'download.opensuse.org' для имени сервера, и  '/distribution/%1/repo/oss' - "
-"для имени каталога."
-
-#: unetbootin#10
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
-">Description:</b> Super Grub Disk is a bootloader which can perform a "
-"variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
-"simply boots and runs; no installation is required to use it."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
-">Описание:</b> Загрузчик Super Grub Disk, который также может выполнять "
-"различные действия по восстановлению MBR и загрузочных "
-"записей.<br/><b>Примечания к установке:</b>Установка SGD не требуется, "
-"поскольку он предназначен только для запуска процесса загрузки."
-
-#: unetbootin#11
-msgid ""
-"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
-"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
-"media is empty and formatted before proceeding with install."
-msgstr ""
-"<img src=\":/eeepclos.png\" /><br/><b>Домашняя страница:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"Описание:</b> EeePCLinuxOS - ориентированный на пользователя дистрибутив, "
-"основанный на PCLinuxOS и предназначенный для использования на "
-"EeePC.<br/><b>Примечания к установке:</b> До начала установки убедитесь, что "
-"установочный носитель не содержит данных и отформатирован."
-
-#: unetbootin#13
-msgid ""
-"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
-"window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched. "
-"The Unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
-"installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-msgstr ""
-"<img src=\":/elive.png\" /><br/><b>Домашняя страница:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Описание:<"
-"/b> основанный на Debian дистрибутив с установленным в качестве оконного "
-"менеджера Enlightenment.<br/><b>Примечания к установке:</b> Live версия "
-"позволяет загрузиться в режиме Live Mode, откуда можно запустить установку "
-"системы. Устанавливается версия Unstable, а не <a "
-"href=\"http://www.elivecd.org/Download/Stable\">версия Stable</a> . Этот "
-"установщик основан на <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#: unetbootin#15
-msgid ""
-"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
-"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
-"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-msgstr ""
-"<img src=\":/slitaz.png\" /><br/><b>Домашняя страница:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Описан"
-"ие:</b> SliTaz - облегченный, ориентированный на настольные системы, "
-"микродистрибутив..<br/><b>Примечания к установке:</b> В версии Live система "
-"целиком загружается в оперативную память и , затем,  запускается оттуда, "
-"поэтому установка не обязательна. Этот установщик основан на <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#: unetbootin#16
-msgid ""
-"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
-"the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
-"version to download from the list above, or manually specify files to load "
+"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the "
+"Universal Netboot Installer. Usage:<ol><li>Select a distribution and version "
+"to download from the list above, or manually specify files to load "
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
 "Добро пожаловать в <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
-"Netboot Installer. Использование: <ol><li>Выберите дистрибутив операционной "
-"системы и его версию для загрузки из списка, или укажите файлы вручную "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal Netboot "
+"Installer. Использование: <ol><li>Выберите дистрибутив операционной системы "
+"и его версию для загрузки из списка, или укажите файлы вручную "
 "ниже.</li><li>Выберите тип установки и нажмите OK для начала "
 "установки.</li></ol>"
 
-#: unetbootin#17
+#: unetbootin#2
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-"ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-"flexibility.<br/><b>Install Notes:</b> The default version allows for "
-"installation over the internet (FTP). If interested in a LiveUSB version, "
-"see FaunOS."
+"<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.or"
+"g</a><br/><b>Description:</b> Arch Linux is a lightweight distribution "
+"optimized for speed and flexibility.<br/><b>Install Notes:</b> The default "
+"version allows for installation over the internet (FTP). If interested in a "
+"LiveUSB version, see FaunOS."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.archlinux.org/\">http://www.arc"
+"hlinux.org</a><br/><b>Описание:</b> Arch Linux -  облегченный дистрибутив, "
+"оптимизированный для быстрой и гибкой работы.<br/><b>Примечания к "
+"установке:</b> Версия по умолчанию позволяет производить установку через "
+"Интернет (FTP). Если необходима версия LiveUSB, обратитесь к описанию "
+"FaunOS."
+
+#: unetbootin#3
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><"
+"br/><b>Description:</b> CentOS is a free Red Hat Enterprise Linux "
+"clone.<br/><b>Install Notes:</b> The default version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
 msgstr ""
 "<b>Домашняя страница:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Описан"
-"ие:</b> Arch Linux -  облегченный дистрибутив, оптимизированный для быстрой "
-"и гибкой работы.<br/><b>Примечания к установке:</b> Версия по умолчанию "
-"позволяет производить установку через Интернет (FTP). Если необходима версия "
-"LiveUSB, обратитесь к описанию FaunOS."
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Описание:</b> "
+"CentOS является бесплатным аналогом  Red Hat Enterprise "
+"Linux.<br/><b>Примечания к установке:</b> Версия по умолчанию позволяет "
+"производить установку как через Интернет (FTP), так и с предварительно "
+"загруженных образов ISO."
+
+#: unetbootin#4
+msgid ""
+"<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux."
+"org</a><br/><b>Description:</b> Damn Small Linux is a minimalist "
+"distribution designed for older computers.<br/><b>Install Notes:</b> The "
+"Live version loads the entire system into RAM and boots from memory, so "
+"installation is not required but optional."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsm"
+"alllinux.org</a><br/><b>Описание:</b> Damn Small Linux - минималистский "
+"дистрибутив, разработанный для более ранних компьютеров.<br/><b>Примечания к "
+"установке:</b>В версии Live система целиком загружается в оперативную "
+"память и , затем,  запускается оттуда, поэтому установка не обязательна."
+
+#: unetbootin#5
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><"
+"br/><b>Description:</b> Debian is a community-developed Linux distribution "
+"that supports a wide variety of architectures and offers a large repository "
+"of packages.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Описание:</b> "
+"Debian  - разрабатываемый сообществом дистрибутив Linux, поддерживающий "
+"множество архитектур и имеющий большое хранилище пакетов.<br/><b>Примечания "
+"к установке:</b> Live версия позволяет загрузиться в режиме Live Mode, "
+"откуда можно запустить установку системы. Версия NetInstall предусматривает "
+"установку по FTP."
+
+#: unetbootin#6
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a"
+"><br/><b>Description:</b> FreeBSD is a general-purpose Unix-like operating "
+"system designed for scalability and performance.<br/><b>Install Notes:</b> "
+"The default version allows for both installation over the internet (FTP), or "
+"offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.freebsd.org/\">http://www.freeb"
+"sd.org</a><br/><b>Описание:</b> FreeBSD - универсальная операционная система "
+"семейства Unix, ориентированная на масштабируемость и высокую "
+"производительность.<br/><b>Примечания к установке:</b> Версия по умолчанию "
+"позволяет производить установку как через Интернет (FTP), так и автономно, с "
+"предварительно загруженных образов ISO."
+
+#: unetbootin#7
+msgid ""
+"<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><"
+"br/><b>Description:</b> Frugalware is a general-purpose Slackware-based "
+"distro for advanced users.<br/><b>Install Notes:</b> The default option "
+"allows for both installation over the internet (FTP), or offline "
+"installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Описание:</b> "
+"Frugalware - основанный на Slackware дистрибутив широкого применения для "
+"опытных пользователей.<br/><b>Примечания к установке:</b> Версия по "
+"умолчанию позволяет производить установку как через Интернет (FTP), так и "
+"автономно, с предварительно загруженных образов ISO."
+
+#: unetbootin#8
+msgid ""
+"<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.source"
+"forge.net</a><br/><b>Description:</b> Gujin is a graphical boot manager "
+"which can bootstrap various volumes and files.<br/><b>Install Notes:</b> "
+"Gujin simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://gujin.sourceforge.net/\">http://guj"
+"in.sourceforge.net</a><br/><b>Описание:</b> Gujin является графическим "
+"диспетчером загрузки, с помощью которого можно производить начальную "
+"загрузку с различных дисков и файлов.<br/><b>Примечания к установке:</b> "
+"Установка Gujin не требуется, поскольку он предназначен только для запуска "
+"процесса загрузки."
+
+#: unetbootin#9
+msgid ""
+"<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br"
+"/><b>Description:</b> Linux Mint is a user-friendly Ubuntu-based "
+"distribution which includes additional proprietary codecs and other software "
+"by default.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Описание:</b> "
+"Linux Mint - удобный в использовании дистрибутив, основанный на Ubuntu. По "
+"умолчанию включает в себя дополнительные закрытые кодеки и другое "
+"программное обеспечение.<br/><b>Примечания к установке:</b> Live версия "
+"позволяет загрузиться в режиме Live Mode, откуда можно запустить установку "
+"системы. "
+
+#: unetbootin#10
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><"
+"br/><b>Description:</b> NetBSD is a Unix-like operating system which focuses "
+"on portability.<br/><b>Install Notes:</b>The default version allows for "
+"both installation over the internet (FTP), or using pre-downloaded "
+"installation ISO files."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Описание:</b> "
+"NetBSD - операционная система семейства Unix, ориентированная на "
+"мобильность.<br/><b>Примечания к установке:</b> Версия по умолчанию "
+"позволяет производить установку как через Интернет (FTP), так и автономно, с "
+"предварительно загруженных образов ISO."
+
+#: unetbootin#11
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org<"
+"/a><br/><b>Description:</b> openSUSE is a user-friendly Novell sponsored "
+"distribution.<br/><b>Install Notes:</b> The default version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.opensuse.org/\">http://www.open"
+"suse.org</a><br/><b>Описание:</b> openSUSE - ориентированный на пользователя "
+"дистрибутив, поддерживаемый Novell.<br/><b>Примечания к установке:</b> "
+"Версия по умолчанию позволяет производить установку как через Интернет "
+"(FTP), так и автономно, с предварительно загруженных образов ISO."
+
+#: unetbootin#12
+msgid ""
+"<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a"
+"><br/><b>Description:</b> Parted Magic includes the GParted partition "
+"manager and other system utilities which can resize, copy, backup, and "
+"manipulate disk partitions.<br/><b>Install Notes:</b> Parted Magic is booted "
+"and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://partedmagic.com/\">http://partedmag"
+"ic.com</a><br/><b>Описание:</b> Parted Magic включает в себя диспетчер "
+"разделов GParted и друние утилиты для изменения размеров, копирования (в том "
+"числе и резервного) и управления дисковыми разделами.<br/><b>Примечания к "
+"установке:</b> Установка не требуется, поскольку Parted Magic загружается и "
+"работает в режиме Live mode."
+
+#: unetbootin#13
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrub"
+"disk.org</a><br/><b>Description:</b> Super Grub Disk is a bootloader which "
+"can perform a variety of MBR and bootloader recovery tasks.<br/><b>Install "
+"Notes:</b> SGD simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.supergrubdisk.org\">http://www."
+"supergrubdisk.org</a><br/><b>Описание:</b> Загрузчик Super Grub Disk, "
+"который также может выполнять различные действия по восстановлению MBR и "
+"загрузочных записей.<br/><b>Примечания к установке:</b>Установка SGD не "
+"требуется, поскольку он предназначен только для запуска процесса загрузки."
+
+#: unetbootin#14
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.co"
+"m</a><br/><b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pcl"
+"inuxos.com</a><br/><b>Описание:</b> PCLinuxOS - ориентированный на "
+"пользователя дистрибутив, основанный на Mandriva.<br/><b>Примечания к "
+"установке:</b> Live версия позволяет загрузиться в режиме Live Mode, откуда "
+"можно запустить установку системы. "
+
+#: unetbootin#15
+msgid ""
+"<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://bt"
+"mgr.sourceforge.net/about.html</a><br/><b>Description:</b> Smart Boot "
+"Manager is a bootloader which can overcome some boot-related BIOS "
+"limitations and bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; "
+"no installation is required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">"
+"http://btmgr.sourceforge.net/about.html</a><br/><b>Описание:</b> Smart Boot "
+"Manager - загрузчик, позволяющий обойти некоторые ограничения и ошибки, "
+"связанные с BIOS.<br/><b>Примечания к установке:</b> Установка SBM не "
+"требуется, поскольку он предназначен только для запуска процесса загрузки."
+
+#: unetbootin#16
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.freedos.org/\">http://www.freedos.org</a"
+"><br/><b>Description:</b> FreeDOS is a free MS-DOS compatible operating "
+"system.<br/><b>Install Notes:</b> See the <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
+"installation details."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.freedos.org/\">http://www.freed"
+"os.org</a><br/><b>Описание:</b> FreeDOS - свободная, совместимая с MS-DOS "
+"операционная система.<br/><b>Примечания к установке:</b> Обратитесь к <a "
+"href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">руководству</a> для "
+"просмотра деталей по установке."
+
+#: unetbootin#17
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/"
+"</a><br/><b>Description:</b> Mandriva is a user-friendly distro formerly "
+"known as Mandrake Linux.<br/><b>Install Notes:</b> The Live version allows "
+"for booting in Live mode, from which the installer can optionally be "
+"launched. The NetInstall version allows for installation over the internet "
+"(FTP) or via pre-downloaded <a "
+"href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.mandriva.com/\">http://www.mand"
+"riva.com/</a><br/><b>Описание:</b> Mandriva - ориентированный на "
+"пользователя дистрибутив, ранее известный как Mandrake "
+"Linux.<br/><b>Примечания к установке:</b> Live версия позволяет загрузиться "
+"в режиме Live Mode, откуда можно запустить установку системы. Версия "
+"NetInstall предусматривает установку через Интернет (FTP) или через "
+"предварительно загруженные <a "
+"href=\"http://www.mandriva.com/en/download\">\"Бесплатные\" образы ISO</a>."
 
 #: unetbootin#18
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><"
+"br/><b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. "
+"It is currently the most popular Linux desktop distribution.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched. The NetInstall version allows for "
+"installation over FTP, and can install Kubuntu and other official Ubuntu "
+"derivatives."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Описание:</b> "
+"Ubuntu - ориентированный на пользователя дистрибутив, основанный на Debian. "
+"В настоящее время является самым популярным дистрибутивом Linux для "
+"настольных систем.<br/><b>Примечания к установке:</b> Live версия позволяет "
+"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
+"Версия NetInstall предусматривает установку по FTP, в том числе установку "
+"Kubuntu и других официальных модификаций Ubuntu."
+
+#: unetbootin#19
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.remote-"
 "exploit.org/backtrack.html\">http://www.remote-"
@@ -197,23 +594,143 @@ msgstr ""
 "несанкционированного доступа.<br/><b>Примечания к установке:</b>Установка не "
 "требуется, поскольку BackTrack загружается и работает в режиме Live mode."
 
-#: unetbootin#19
+#: unetbootin#20
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
-"</b> CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install "
-"Notes:</b> The default version allows for both installation over the "
-"internet (FTP), or offline installation using pre-downloaded installation "
-"ISO files."
+"<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.or"
+"g</a><br/><b>Description:</b> Fedora is a Red Hat sponsored community "
+"distribution which showcases the latest cutting-edge free/open-source "
+"software.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for both installation over the internet (FTP), or "
+"offline installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://fedoraproject.org/\">http://fedorap"
+"roject.org</a><br/><b>Описание:</b> Fedora - поддерживаемый сообществом Red "
+"Hat дистрибутив, демонстрирующий новейшее свободное программное "
+"обеспечение.<br/><b>Примечания к установке:</b>  Live версия позволяет "
+"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
+"Версия NetInstall предусматривает установку через Интернет (FTP) или через "
+"предварительно загруженные  образы ISO."
+
+#: unetbootin#21
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux."
+"com</a><br/><b>Description:</b> Puppy Linux is a lightweight distribution "
+"designed for older computers.<br/><b>Install Notes:</b> The Live version "
+"loads the entire system into RAM and boots from memory, so installation is "
+"not required but optional."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.puppylinux.com/\">http://www.pu"
+"ppylinux.com</a><br/><b>Описание:</b> Puppy Linux - облегченный дистрибутив, "
+"разработанный для более ранних компьютеров<br/><b>Примечания к "
+"установке:</b> В версии Live система целиком загружается в оперативную "
+"память и , затем,  запускается оттуда, поэтому установка не обязательна."
+
+#: unetbootin#22
+msgid ""
+"<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.ht"
+"ml\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Descript"
+"ion:</b> The Offline NT Password and Registry Editor can reset Windows "
+"passwords and edit the registry on Windows 2000-Vista.<br/><b>Install "
+"Notes:</b> NTPasswd is booted and run in live mode; no installation is "
+"required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bo"
+"otdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b"
+">Описание:</b> Offline NT Password and Registry Editor позволяет сбросить "
+"пароли Windows и редактировать реестр операционных систем Windows "
+"2000-Vista.<br/><b>Примечания к установке:</b> Установка не требуется, "
+"поскольку NTPasswd загружается и работает в режиме Live mode."
+
+#: unetbootin#23
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><"
+"br/><b>Description:</b> Gentoo is a flexible source-based distribution "
+"designed for advanced users.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
 msgstr ""
 "<b>Домашняя страница:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Описание:</b"
-"> CentOS является бесплатным аналогом  Red Hat Enterprise "
-"Linux.<br/><b>Примечания к установке:</b> Версия по умолчанию позволяет "
-"производить установку как через Интернет (FTP), так и с предварительно "
-"загруженных образов ISO."
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Описание:</b> "
+"Gentoo - гибкий, базирующийся на исходных текстах программ, дистрибутив, "
+"ориентированный на опытных пользователей.<br/><b>Примечания к установке:</b> "
+"Live версия позволяет загрузиться в режиме Live Mode, откуда можно "
+"запустить установку системы. "
 
-#: unetbootin#20
+#: unetbootin#24
+msgid ""
+"<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack."
+"sourceforge.net</a><br/><b>Description:</b> Ophcrack can crack Windows "
+"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://"
+"ophcrack.sourceforge.net</a><br/><b>Описание:</b> Ophcrack используется для "
+"взлома паролей Windows.<br/><b>Примечания к установке:</b> Установка не "
+"требуется, поскольку Ophcracks загружается и работает в режиме Live mode."
+
+#: unetbootin#25
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b> "
+"Slax is a Slackware-based distribution featuring the KDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Домашняя страница:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Описание:</b> "
+"Slax - основанный на Slackware дистрибутив c установленным "
+"KDE.<br/><b>Примечания к установке:</b> Live версия позволяет загрузиться в "
+"режиме Live Mode, откуда можно запустить установку системы. "
+
+#: unetbootin#26
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a"
+"><br/><b>Description:</b> Zenwalk is a Slackware-based distribution "
+"featuring the XFCE desktop.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwa"
+"lk.org</a><br/><b>Описание:</b> Zenwalk -  основанный на Slackware "
+"дистрибутив c установленным XFCE.<br/><b>Примечания к установке:</b> Live "
+"версия позволяет загрузиться в режиме Live Mode, откуда можно запустить "
+"установку системы. "
+
+#: unetbootin#27
+msgid ""
+"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a href=\"http://www.eeepcl"
+"inuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
+"EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
+"EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeepclos.png\" /><br/><b>Домашняя страница:</b> <a href=\"http://w"
+"ww.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Описание:</b> "
+"EeePCLinuxOS - ориентированный на пользователя дистрибутив, основанный на "
+"PCLinuxOS и предназначенный для использования на EeePC.<br/><b>Примечания к "
+"установке:</b> До начала установки убедитесь, что установочный носитель не "
+"содержит данных и отформатирован."
+
+#: unetbootin#28
+#, fuzzy
+msgid ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
+"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
+"interface, which favors the best software available instead of open source "
+"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
+"sure install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeeubuntu.png\" /><br/><b>Домашняя страница:</b> <a "
+"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Описание:</b> Ubuntu Eee ориентированный на пользователя "
+"дистрибутив, основанный на Ubuntu и предназначенный для использования на "
+"EeePC.<br/><b>Примечания к установке:</b> До начала установки убедитесь, что "
+"установочный носитель не содержит данных и отформатирован."
+
+#: unetbootin#29
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.remote-"
 "exploit.org/backtrack.html\">http://www.remote-"
@@ -229,452 +746,611 @@ msgstr ""
 "дисков.<br/><b>Примечания к установке:</b> Установка не требуется, поскольку "
 "CloneZilla загружается и работает в режиме Live mode."
 
-#: unetbootin#21
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
-"ription:</b> Damn Small Linux is a minimalist distribution designed for "
-"older computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Опис"
-"ание:</b> Damn Small Linux - минималистский дистрибутив, разработанный для "
-"более ранних компьютеров.<br/><b>Примечания к установке:</b>В версии Live "
-"система целиком загружается в оперативную память и , затем,  запускается "
-"оттуда, поэтому установка не обязательна."
-
-#: unetbootin#22
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
-"</b> Debian is a community-developed Linux distribution that supports a wide "
-"variety of architectures and offers a large repository of "
-"packages.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Описание:</b"
-"> Debian  - разрабатываемый сообществом дистрибутив Linux, поддерживающий "
-"множество архитектур и имеющий большое хранилище пакетов.<br/><b>Примечания "
-"к установке:</b> Live версия позволяет загрузиться в режиме Live Mode, "
-"откуда можно запустить установку системы. Версия NetInstall предусматривает "
-"установку по FTP."
-
-#: unetbootin#23
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
-"b>Description:</b> Dreamlinux is a user-friendly Debian-based "
-"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
-"b>Описание:</b> Dreamlinux - ориентированный на пользователя дистрибутив, "
-"основанный на Debian.<br/><b>Примечания к установке:</b>   Live версия "
-"позволяет загрузиться в режиме Live Mode, откуда можно запустить установку "
-"системы."
-
-#: unetbootin#24
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
-"window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode. The Unstable version does not support Hard Drive "
-"installations, though the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not "
-"freely downloadable) does."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Описание:<"
-"/b> Elive - основанный на Debian дистрибутив с установленным в качестве "
-"оконного менеджера Enlightenment.<br/><b>Примечания к установке:</b> Версия "
-"Live предусматривает загрузку в режима Live mode . Версия Unstable не "
-"поддерживает установку на жесткие диски, хотя <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Версия Stable</a> (не "
-"свободно загружаемая) - поддерживает."
-
-#: unetbootin#25
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:"
-"</b> FaunOS is a distribution based on Arch Linux.<br/><b>Install Notes:</b> "
-"The Live version allows for booting in Live mode, from which the installer "
-"can optionally be launched."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Описание:</b"
-"> FaunOS - основанный на Arch Linux дистрибутив.<br/><b>Примечания к "
-"установке:</b> Live версия позволяет загрузиться в режиме Live Mode, откуда "
-"можно запустить установку системы."
-
-#: unetbootin#26
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
-"ption:</b> Fedora is a Red Hat sponsored community distribution which "
-"showcases the latest cutting-edge free/open-source software.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched. The NetInstall version allows for both "
-"installation over the internet (FTP), or offline installation using pre-"
-"downloaded installation ISO files."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Описан"
-"ие:</b> Fedora - поддерживаемый сообществом Red Hat дистрибутив, "
-"демонстрирующий новейшее свободное программное "
-"обеспечение.<br/><b>Примечания к установке:</b>  Live версия позволяет "
-"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
-"Версия NetInstall предусматривает установку через Интернет (FTP) или через "
-"предварительно загруженные  образы ISO."
-
-#: unetbootin#27
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
-"n:</b> FreeBSD is a general-purpose Unix-like operating system designed for "
-"scalability and performance.<br/><b>Install Notes:</b> The default version "
-"allows for both installation over the internet (FTP), or offline "
-"installation using pre-downloaded installation ISO files."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Описание:<"
-"/b> FreeBSD - универсальная операционная система семейства Unix, "
-"ориентированная на масштабируемость и высокую "
-"производительность.<br/><b>Примечания к установке:</b> Версия по умолчанию "
-"позволяет производить установку как через Интернет (FTP), так и автономно, с "
-"предварительно загруженных образов ISO."
-
-#: unetbootin#28
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
-"n:</b> FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
-"Notes:</b> See the <a href=\"http://fd-"
-"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
-"installation details."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Описание:<"
-"/b> FreeDOS - свободная, совместимая с MS-DOS операционная "
-"система.<br/><b>Примечания к установке:</b> Обратитесь к <a href=\"http://fd-"
-"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">руководству</a> для "
-"просмотра деталей по установке."
-
-#: unetbootin#29
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
-"</b> Frugalware is a general-purpose Slackware-based distro for advanced "
-"users.<br/><b>Install Notes:</b> The default option allows for both "
-"installation over the internet (FTP), or offline installation using pre-"
-"downloaded installation ISO files."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Описание:</b"
-"> Frugalware - основанный на Slackware дистрибутив широкого применения для "
-"опытных пользователей.<br/><b>Примечания к установке:</b> Версия по "
-"умолчанию позволяет производить установку как через Интернет (FTP), так и "
-"автономно, с предварительно загруженных образов ISO."
-
 #: unetbootin#30
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
-"</b> Gentoo is a flexible source-based distribution designed for advanced "
-"users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
+"<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><"
+"br/><b>Description:</b> FaunOS is a distribution based on Arch "
+"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
 "mode, from which the installer can optionally be launched."
 msgstr ""
 "<b>Домашняя страница:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Описание:</b"
-"> Gentoo - гибкий, базирующийся на исходных текстах программ, дистрибутив, "
-"ориентированный на опытных пользователей.<br/><b>Примечания к установке:</b> "
-"Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить "
-"установку системы."
+"href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Описание:</b> "
+"FaunOS - основанный на Arch Linux дистрибутив.<br/><b>Примечания к "
+"установке:</b> Live версия позволяет загрузиться в режиме Live Mode, откуда "
+"можно запустить установку системы."
+
+#: unetbootin#31
+msgid "either"
+msgstr "любой"
 
 #: unetbootin#32
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
-"b>Description:</b> Gujin is a graphical boot manager which can bootstrap "
-"various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
-"runs; no installation is required to use it."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
-"b>Описание:</b> Gujin является графическим диспетчером загрузки, с помощью "
-"которого можно производить начальную загрузку с различных дисков и "
-"файлов.<br/><b>Примечания к установке:</b> Установка Gujin не требуется, "
-"поскольку он предназначен только для запуска процесса загрузки."
+msgctxt "unetbootin#32"
+msgid "USB Drive"
+msgstr "USB-накопитель"
 
 #: unetbootin#33
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
-"n:</b> Kubuntu is an official Ubuntu derivative featuring the KDE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Xubuntu "
-"and other official Ubuntu derivatives."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Описание:<"
-"/b> Kubuntu - официальный вариант Ubuntu, использует в качестве графической "
-"среды KDE.<br/><b>Примечания к установке:</b> Live версия позволяет "
-"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
-"Версия NetInstall предусматривает установку по FTP, в том числе установку "
-"Xubuntu и других официальных модификаций Ubuntu."
+msgctxt "unetbootin#33"
+msgid "Hard Disk"
+msgstr "Жесткий диск"
 
 #: unetbootin#34
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
-"b> Linux Mint is a user-friendly Ubuntu-based distribution which includes "
-"additional proprietary codecs and other software by default.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Описание:</b> "
-"Linux Mint - удобный в использовании дистрибутив, основанный на Ubuntu. По "
-"умолчанию включает в себя дополнительные закрытые кодеки и другое "
-"программное обеспечение.<br/><b>Примечания к установке:</b> Live версия "
-"позволяет загрузиться в режиме Live Mode, откуда можно запустить установку "
-"системы."
+msgctxt "unetbootin#34"
+msgid "Floppy"
+msgstr "Floppy"
 
 #: unetbootin#35
+msgctxt "unetbootin#35"
+msgid "ISO"
+msgstr "ISO"
+
+#: unetbootin#36
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
-"tion:</b> Mandriva is a user-friendly distro formerly known as Mandrake "
-"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
-"mode, from which the installer can optionally be launched. The NetInstall "
-"version allows for installation over the internet (FTP) or via pre-"
-"downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
-"image files</a>."
+"<b>Homepage:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlin"
+"ux.com.br</a><br/><b>Description:</b> Dreamlinux is a user-friendly Debian-"
+"based distribution.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Описани"
-"е:</b> Mandriva - ориентированный на пользователя дистрибутив, ранее "
-"известный как Mandrake Linux.<br/><b>Примечания к установке:</b> Live версия "
-"позволяет загрузиться в режиме Live Mode, откуда можно запустить установку "
-"системы. Версия NetInstall предусматривает установку через Интернет (FTP) "
-"или через предварительно загруженные <a "
-"href=\"http://www.mandriva.com/en/download\">\"Бесплатные\" образы ISO</a>."
+"<b>Домашняя страница:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www"
+".dreamlinux.com.br</a><br/><b>Описание:</b> Dreamlinux - ориентированный на "
+"пользователя дистрибутив, основанный на Debian.<br/><b>Примечания к "
+"установке:</b>   Live версия позволяет загрузиться в режиме Live Mode, "
+"откуда можно запустить установку системы."
 
 #: unetbootin#37
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
-"</b> NetBSD is a Unix-like operating system which focuses on "
-"portability.<br/><b>Install Notes:</b>The default version allows for both "
-"installation over the internet (FTP), or using pre-downloaded installation "
-"ISO files."
+"<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a"
+"><br/><b>Description:</b> Elive is a Debian-based distribution featuring the "
+"Enlightenment window manager.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode. The Unstable version does not support Hard "
+"Drive installations, though the <a "
+"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not freely "
+"downloadable) does."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Описание:</b"
-"> NetBSD - операционная система семейства Unix, ориентированная на "
-"мобильность.<br/><b>Примечания к установке:</b> Версия по умолчанию "
-"позволяет производить установку как через Интернет (FTP), так и автономно, с "
-"предварительно загруженных образов ISO."
+"<b>Домашняя страница:</b> <a href=\"http://www.elivecd.org/\">http://www.elive"
+"cd.org</a><br/><b>Описание:</b> Elive - основанный на Debian дистрибутив с "
+"установленным в качестве оконного менеджера Enlightenment.<br/><b>Примечания "
+"к установке:</b> Версия Live предусматривает загрузку в режима Live mode . "
+"Версия Unstable не поддерживает установку на жесткие диски, хотя <a "
+"href=\"http://www.elivecd.org/Download/Stable\">Версия Stable</a> (не свободно "
+"загружаемая) - поддерживает."
 
 #: unetbootin#38
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
-"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
-"Offline NT Password and Registry Editor can reset Windows passwords and edit "
-"the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd is "
-"booted and run in live mode; no installation is required to use it."
+"<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/e"
+"n</a><br/><b>Description:</b> SliTaz is a lightweight, desktop-oriented "
+"micro distribution.<br/><b>Install Notes:</b> The Live version loads the "
+"entire system into RAM and boots from memory, so installation is not "
+"required but optional."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
-"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Описание:</b> Offline NT "
-"Password and Registry Editor позволяет сбросить пароли Windows и "
-"редактировать реестр операционных систем Windows 2000-"
-"Vista.<br/><b>Примечания к установке:</b> Установка не требуется, поскольку "
-"NTPasswd загружается и работает в режиме Live mode."
+"<b>Домашняя страница:</b> <a href=\"http://www.slitaz.org/en/\">http://www.sli"
+"taz.org/en</a><br/><b>Описание:</b> SliTaz - облегченный, ориентированный на "
+"настольные системы, микродистрибутив.<br/><b>Примечания к установке:</b> В "
+"версии Live система целиком загружается в оперативную память и , затем,  "
+"запускается оттуда, поэтому установка не обязательна."
 
 #: unetbootin#39
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
-"ion:</b> openSUSE is a user-friendly Novell sponsored "
-"distribution.<br/><b>Install Notes:</b> The default version allows for both "
-"installation over the internet (FTP), or offline installation using pre-"
-"downloaded installation ISO files."
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a href=\"http://www.elivecd.o"
+"rg/\">http://www.elivecd.org</a><br/><b>Description:</b> Elive is a Debian-"
+"based distribution featuring the Enlightenment window "
+"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The Unstable "
+"version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
+"version</a> is installed. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Описание"
-":</b> openSUSE - ориентированный на пользователя дистрибутив, поддерживаемый "
-"Novell.<br/><b>Примечания к установке:</b> Версия по умолчанию позволяет "
-"производить установку как через Интернет (FTP), так и автономно, с "
-"предварительно загруженных образов ISO."
+"<img src=\":/elive.png\" /><br/><b>Домашняя страница:</b> <a href=\"http://www."
+"elivecd.org/\">http://www.elivecd.org</a><br/><b>Описание:</b> основанный на "
+"Debian дистрибутив с установленным в качестве оконного менеджера "
+"Enlightenment.<br/><b>Примечания к установке:</b> Live версия позволяет "
+"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
+"Устанавливается версия Unstable, а не <a "
+"href=\"http://www.elivecd.org/Download/Stable\">версия Stable</a> . Этот "
+"установщик основан на <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #: unetbootin#40
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
-"<br/><b>Description:</b> Ophcrack can crack Windows "
-"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
-"mode; no installation is required to use it."
+"<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.or"
+"g</a><br/><b>Description:</b> gNewSense is an FSF-endorsed distribution "
+"based on Ubuntu with all non-free components removed.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
-"<br/><b>Описание:</b> Ophcrack используется для взлома паролей "
-"Windows.<br/><b>Примечания к установке:</b> Установка не требуется, "
-"поскольку Ophcracks загружается и работает в режиме Live mode."
 
 #: unetbootin#41
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
-"n:</b> Parted Magic includes the GParted partition manager and other system "
-"utilities which can resize, copy, backup, and manipulate disk "
-"partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
-"mode; no installation is required to use it."
+"<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br"
+"/><b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a "
+"user-friendly version based on KDE, while AntiX is a lightweight version "
+"for older computers.<br/><b>Install Notes:</b> MEPIS supports booting in "
+"Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Описание:<"
-"/b> Parted Magic включает в себя диспетчер разделов GParted и друние утилиты "
-"для изменения размеров, копирования (в том числе и резервного) и управления "
-"дисковыми разделами.<br/><b>Примечания к установке:</b> Установка не "
-"требуется, поскольку Parted Magic загружается и работает в режиме Live mode."
 
 #: unetbootin#42
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
-"ption:</b> PCLinuxOS is a user-friendly Mandriva-based "
-"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which the installer can optionally be launched."
+"<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://ha"
+"cktolive.org/wiki/Super_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is "
+"an unofficial derivative of Ubuntu which includes additional software by "
+"default. Requires a 2GB USB drive to install.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which the installer can "
+"optionally be launched."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Описан"
-"ие:</b> PCLinuxOS - ориентированный на пользователя дистрибутив, основанный "
-"на Mandriva.<br/><b>Примечания к установке:</b> Live версия позволяет "
-"загрузиться в режиме Live Mode, откуда можно запустить установку системы."
 
 #: unetbootin#43
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
-"ription:</b> Puppy Linux is a lightweight distribution designed for older "
-"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Опис"
-"ание:</b> Puppy Linux - облегченный дистрибутив, разработанный для более "
-"ранних компьютеров<br/><b>Примечания к установке:</b> В версии Live система "
-"целиком загружается в оперативную память и , затем,  запускается оттуда, "
-"поэтому установка не обязательна."
+#, fuzzy
+msgctxt "unetbootin#43"
+msgid "Open Disk Image File"
+msgstr "Открыть файл образа диска"
+
+#: unetbootin#44
+#, fuzzy
+msgctxt "unetbootin#44"
+msgid "Open Kernel File"
+msgstr "Открыть файл ядра"
 
 #: unetbootin#45
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
-" Slax is a Slackware-based distribution featuring the KDE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Описание:</b> "
-"Slax - основанный на Slackware дистрибутив c установленным "
-"KDE.<br/><b>Примечания к установке:</b> Live версия позволяет загрузиться в "
-"режиме Live Mode, откуда можно запустить установку системы."
+#, fuzzy
+msgctxt "unetbootin#45"
+msgid "Open Initrd File"
+msgstr "Открыть файл Initrd"
 
 #: unetbootin#46
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
-"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
-"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Описан"
-"ие:</b> SliTaz - облегченный, ориентированный на настольные системы, "
-"микродистрибутив.<br/><b>Примечания к установке:</b> В версии Live система "
-"целиком загружается в оперативную память и , затем,  запускается оттуда, "
-"поэтому установка не обязательна."
+#, fuzzy
+msgctxt "unetbootin#46"
+msgid "Open Bootloader Config File"
+msgstr "Окрыть файл конфигурации загрузчика"
 
 #: unetbootin#47
+#, fuzzy
+msgctxt "unetbootin#47"
+msgid "Insert a USB flash drive"
+msgstr "Подключить флэш-накопитель USB"
+
+#: unetbootin#48
+#, fuzzy
+msgctxt "unetbootin#48"
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
-"/about.html</a><br/><b>Description:</b> Smart Boot Manager is a bootloader "
-"which can overcome some boot-related BIOS limitations and "
-"bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
-"is required to use it."
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
-"/about.html</a><br/><b>Описание:</b> Smart Boot Manager - загрузчик, "
-"позволяющий обойти некоторые ограничения и ошибки, связанные с "
-"BIOS.<br/><b>Примечания к установке:</b> Установка SBM не требуется, "
-"поскольку он предназначен только для запуска процесса загрузки."
+"Не найдено USB-накопителей. Если устройство подключено, попробуйте "
+"переформатировать его в FAT32."
 
 #: unetbootin#49
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
-"</b> Ubuntu is a user-friendly Debian-based distribution. It is currently "
-"the most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
-"Live version allows for booting in Live mode, from which the installer can "
-"optionally be launched. The NetInstall version allows for installation over "
-"FTP, and can install Kubuntu and other official Ubuntu derivatives."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Описание:</b"
-"> Ubuntu - ориентированный на пользователя дистрибутив, основанный на "
-"Debian. В настоящее время является самым популярным дистрибутивом Linux для "
-"настольных систем.<br/><b>Примечания к установке:</b> Live версия позволяет "
-"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
-"Версия NetInstall предусматривает установку по FTP, в том числе установку "
-"Kubuntu и других официальных модификаций Ubuntu."
+#, fuzzy
+msgctxt "unetbootin#49"
+msgid "%1 not mounted"
+msgstr "%1 не примонтирован"
 
 #: unetbootin#50
+#, fuzzy
+msgctxt "unetbootin#50"
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
-"n:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Kubuntu "
-"and other official Ubuntu derivatives."
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Описание:<"
-"/b> Xubuntu - официальный вариант Ubuntu, использует в качестве графической "
-"среды XFCE.<br/><b>Примечания к установке:</b> Live версия позволяет "
-"загрузиться в режиме Live Mode, откуда можно запустить установку системы. "
-"Версия NetInstall предусматривает установку по FTP, в том числе установку "
-"Kubuntu и других официальных модификаций Ubuntu."
+"Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. "
+"Большинство дистрибутивов делают это автоматически после переподключения "
+"USB-накопителя."
 
 #: unetbootin#51
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
-"n:</b> Zenwalk is a Slackware-based distribution featuring the XFCE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Домашняя страница:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Описание:<"
-"/b> Zenwalk -  основанный на Slackware дистрибутив c установленным "
-"XFCE.<br/><b>Примечания к установке:</b> Live версия позволяет загрузиться в "
-"режиме Live Mode, откуда можно запустить установку системы."
+#, fuzzy
+msgctxt "unetbootin#51"
+msgid "Select a distro"
+msgstr "Выберите дистрибутив"
 
 #: unetbootin#52
-msgid "either"
-msgstr "любой"
+#, fuzzy
+msgctxt "unetbootin#52"
+msgid "You must select a distribution to load."
+msgstr "Необходимо выбрать дистрибутив для загрузки."
+
+#: unetbootin#53
+#, fuzzy
+msgctxt "unetbootin#53"
+msgid "Select a disk image file"
+msgstr "Выберите файл образа диска"
+
+#: unetbootin#54
+#, fuzzy
+msgctxt "unetbootin#54"
+msgid "You must select a disk image file to load."
+msgstr "Необходимо выбрать файл образа диска для загрузки."
+
+#: unetbootin#55
+#, fuzzy
+msgctxt "unetbootin#55"
+msgid "Select a kernel and/or initrd file"
+msgstr "Выберите ядро и/или файл initrd"
+
+#: unetbootin#56
+#, fuzzy
+msgctxt "unetbootin#56"
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "Необходимо выбрать ядро и/или файл initrd для загрузки."
+
+#: unetbootin#57
+#, fuzzy
+msgctxt "unetbootin#57"
+msgid "Diskimage file not found"
+msgstr "Файл образа диска не найден"
+
+#: unetbootin#58
+#, fuzzy
+msgctxt "unetbootin#58"
+msgid "The specified diskimage file %1 does not exist."
+msgstr "Указанный файл образа диска %1 не существует."
+
+#: unetbootin#59
+#, fuzzy
+msgctxt "unetbootin#59"
+msgid "Kernel file not found"
+msgstr "Файл ядра не найден"
+
+#: unetbootin#60
+#, fuzzy
+msgctxt "unetbootin#60"
+msgid "The specified kernel file %1 does not exist."
+msgstr "Указанный файл ядра %1 не существует."
+
+#: unetbootin#61
+#, fuzzy
+msgctxt "unetbootin#61"
+msgid "Initrd file not found"
+msgstr "Файл inird не найден"
+
+#: unetbootin#62
+#, fuzzy
+msgctxt "unetbootin#62"
+msgid "The specified initrd file %1 does not exist."
+msgstr "Указанный файл initrd %1 не существует."
+
+#: unetbootin#63
+#, fuzzy
+msgctxt "unetbootin#63"
+msgid "%1 exists, overwrite?"
+msgstr "%1 уже существует, переписать?"
+
+#: unetbootin#64
+#, fuzzy
+msgctxt "unetbootin#64"
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"Файл %1 уже существует. Нажмитe \"Да для Всех\", чтобы переписать его без "
+"дальнейших подтверждений, щелкните \"Да\", чтобы перписать файлы в "
+"индивидуальном порядке. Выберите \"Нет\", чтобы оставить существующую версию. "
+"Если сомневаетесь, жмите \"Да для Всех\"."
+
+#: unetbootin#65
+#, fuzzy
+msgctxt "unetbootin#65"
+msgid "Extracting files, please wait..."
+msgstr "Извлечение файлов, пожалуйста, подождите..."
+
+#: unetbootin#66
+#, fuzzy
+msgctxt "unetbootin#66"
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Архив:</b> %1"
+
+#: unetbootin#67
+#, fuzzy
+msgctxt "unetbootin#67"
+msgid "<b>Source:</b>"
+msgstr "<b>Источник:</b>"
+
+#: unetbootin#68
+#, fuzzy
+msgctxt "unetbootin#68"
+msgid "<b>Destination:</b>"
+msgstr "<b>Назначение:</b>"
+
+#: unetbootin#69
+#, fuzzy
+msgctxt "unetbootin#69"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Извлечено:</b> 0 of %1 файлов"
+
+#: unetbootin#70
+#, fuzzy
+msgctxt "unetbootin#70"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Источник:</b> %1 (%2)"
+
+#: unetbootin#71
+#, fuzzy
+msgctxt "unetbootin#71"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Назначение:</b> %1%2"
+
+#: unetbootin#72
+#, fuzzy
+msgctxt "unetbootin#72"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Извлечено:</b> %1 из %2 файлов"
+
+#: unetbootin#73
+#, fuzzy
+msgctxt "unetbootin#73"
+msgid "Downloading files, plese wait..."
+msgstr "Загрузка файлов, пожалуйста, подождите..."
+
+#: unetbootin#74
+#, fuzzy
+msgctxt "unetbootin#74"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Источник:</b> <a href=\"%1\">%1</a>"
+
+#: unetbootin#75
+#, fuzzy
+msgctxt "unetbootin#75"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Назначение:</b> %1"
+
+#: unetbootin#76
+#, fuzzy
+msgctxt "unetbootin#76"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Загружено:</b> 0 байт"
+
+#: unetbootin#77
+#, fuzzy
+msgctxt "unetbootin#77"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Загружено:</b> %1 из %2 байт"
+
+#: unetbootin#78
+#, fuzzy
+msgctxt "unetbootin#78"
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "Поиск в <a href=\"%1\">%1</a>"
+
+#: unetbootin#79
+#, fuzzy
+msgctxt "unetbootin#79"
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 совпадает в <a href=\"%3\">%3</a>"
+
+#: unetbootin#80
+#, fuzzy
+msgctxt "unetbootin#80"
+msgid "%1 not found"
+msgstr "%1 не найдено"
+
+#: unetbootin#81
+#, fuzzy
+msgctxt "unetbootin#81"
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 не найден. Это необходимо для режима установки %2.\n"
+"Установите пакет \"%3\" или его эквивалент в используемом дистрибутиве."
+
+#: unetbootin#82
+#, fuzzy
+msgctxt "unetbootin#82"
+msgid "After rebooting, select the "
+msgstr "После перезагрузки выберите "
+
+#: unetbootin#83
+#, fuzzy
+msgctxt "unetbootin#83"
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"Установите загрузку с USB-устройств в загрузочном меню BIOS после "
+"перезагрузки.%1\n"
+"Перезагрузить сейчас?"
+
+#: unetbootin#84
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, "
+"enter 'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+"\n"
+"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
+"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
+"'Start Installation' в главном меню. Выберите 'Network' в качестве "
+"источника, укажите 'HTTP' в качестве протокола, введите  "
+"'mirrors.kernel.org' для имени сервера, и  '/centos/%1/os/%2' - для имени "
+"каталога."
+
+#: unetbootin#85
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, "
+"enter 'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+"\n"
+"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
+"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
+"'Start Installation' в главном меню. Выберите 'Network' в качестве "
+"источника, укажите 'HTTP' в качестве протокола, введите  "
+"'download.fedora.redhat.com' для имени сервера, и  "
+"'/pub/fedora/linux/development/%1/os' - для имени каталога."
+
+#: unetbootin#86
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, "
+"enter 'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+"\n"
+"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
+"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
+"'Start Installation' в главном меню. Выберите 'Network' в качестве "
+"источника, укажите 'HTTP' в качестве протокола, введите  "
+"'download.fedora.redhat.com' для имени сервера, и  "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' - для имени каталога."
+
+#: unetbootin#87
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, "
+"enter 'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
+"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
+"'Start Installation' в главном меню. Выберите 'Network' в качестве "
+"источника, укажите 'HTTP' в качестве протокола, введите  "
+"'download.opensuse.org' для имени сервера, и  '/distribution/SL-OSS-factory"
+"/inst-sources' - для имени каталога."
+
+#: unetbootin#88
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, "
+"enter 'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об "
+"ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите "
+"'Start Installation' в главном меню. Выберите 'Network' в качестве "
+"источника, укажите 'HTTP' в качестве протокола, введите  "
+"'download.opensuse.org' для имени сервера, и  '/distribution/%1/repo/oss' - "
+"для имени каталога."
+
+#: unetbootin#89
+msgid ""
+"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a href=\"http://www.slitaz.o"
+"rg/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> SliTaz is a "
+"lightweight, desktop-oriented micro distribution.<br/><b>Install Notes:</b> "
+"The Live version loads the entire system into RAM and boots from memory, so "
+"installation is not required but optional. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>Домашняя страница:</b> <a href=\"http://www"
+".slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Описание:</b> SliTaz - "
+"облегченный, ориентированный на настольные системы, "
+"микродистрибутив..<br/><b>Примечания к установке:</b> В версии Live система "
+"целиком загружается в оперативную память и , затем,  запускается оттуда, "
+"поэтому установка не обязательна. Этот установщик основан на <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+
+#: unetbootin#90
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a"
+"><br/><b>Description:</b> Xubuntu is an official Ubuntu derivative featuring "
+"the XFCE desktop.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched. "
+"The NetInstall version allows for installation over FTP, and can install "
+"Kubuntu and other official Ubuntu derivatives."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubun"
+"tu.org</a><br/><b>Описание:</b> Xubuntu - официальный вариант Ubuntu, "
+"использует в качестве графической среды XFCE.<br/><b>Примечания к "
+"установке:</b> Live версия позволяет загрузиться в режиме Live Mode, откуда "
+"можно запустить установку системы. Версия NetInstall предусматривает "
+"установку по FTP, в том числе установку Kubuntu и других официальных "
+"модификаций Ubuntu."
+
+#: unetbootin#91
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a"
+"><br/><b>Description:</b> Kubuntu is an official Ubuntu derivative featuring "
+"the KDE desktop.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched. "
+"The NetInstall version allows for installation over FTP, and can install "
+"Xubuntu and other official Ubuntu derivatives."
+msgstr ""
+"<b>Домашняя страница:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubun"
+"tu.org</a><br/><b>Описание:</b> Kubuntu - официальный вариант Ubuntu, "
+"использует в качестве графической среды KDE.<br/><b>Примечания к "
+"установке:</b> Live версия позволяет загрузиться в режиме Live Mode, откуда "
+"можно запустить установку системы. Версия NetInstall предусматривает "
+"установку по FTP, в том числе установку Xubuntu и других официальных "
+"модификаций Ubuntu."
+
+#: unetbootin#92
+msgid ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
+"ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
+"a high-quality GNU/Linux distribution that extends and improves Ubuntu to "
+"create a completely free operating system without any binary blobs or "
+"package trees that contain proprietary software.<br/><b>Install Notes:</b> "
+"Make sure install media is empty and formatted before proceeding with "
+"install."
+msgstr ""
+
+#: unetbootin#93
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
+"nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "
+"distribution which features the Entropy binary package manager in addition "
+"to the source-based Portage.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 "
+"GB USB drive"
+msgstr ""
+
+#: unetbootin#94
+msgid ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a href=\"http://www.ki"
+"wilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> Kiwi "
+"Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and "
+"English speaking users.<br/><b>Install Notes:</b> Make sure install media is "
+"empty and formatted before proceeding with install."
+msgstr ""
+
+#: unetbootin#95
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
+"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+
+#: unetbootin#96
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedr"
+"web.com/livecd</a><br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus "
+"emergency kit to restore a system that broke due to malware.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which "
+"malware scans can be launched."
+msgstr ""
+
+#: unetbootin#97
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
+"F-Secure Rescue CD detects and removes malware from your Windows "
+"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which malware scans can be launched."
+msgstr ""
+
+#: unetbootin#98
+msgid ""
+"<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">ht"
+"tp://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
+"Kaspersky Rescue Disk detects and removes malware from your Windows "
+"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which malware scans can be launched."
+msgstr ""
 
 #: unetbootinui#1
 msgid "UNetbootin"
@@ -728,125 +1404,86 @@ msgstr "Тип диска для установки"
 msgid "Type:"
 msgstr "Тип:"
 
+#. (obsolete)
 #: unetbootinui#14
+msgctxt "unetbootinui#14"
+msgid "Hard Disk"
+msgstr "Жесткий Диск"
+
+#. (obsolete)
+#: unetbootinui#15
+msgctxt "unetbootinui#15"
+msgid "USB Drive"
+msgstr "USB-накопитель"
+
+#: unetbootinui#16
 msgid "Select the distribution version"
 msgstr "Версия дистрибутива"
 
-#: unetbootinui#15
+#: unetbootinui#17
 msgid "Select disk image file"
 msgstr "Файл образа диска"
 
-#: unetbootinui#16
+#: unetbootinui#18
 msgid "..."
 msgstr "..."
 
-#: unetbootinui#17
+#: unetbootinui#19
 msgid "Select the disk image type"
 msgstr "Тип образа диска"
 
-#: unetbootinui#18
+#. (obsolete)
+#: unetbootinui#20
+msgctxt "unetbootinui#20"
+msgid "ISO"
+msgstr "ISO"
+
+#. (obsolete)
+#: unetbootinui#21
+msgctxt "unetbootinui#21"
+msgid "Floppy"
+msgstr "Floppy"
+
+#: unetbootinui#22
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 "Файл образа дискеты/жесткого диска, или образ CD-диска (ISO) для загрузки"
 
-#: unetbootinui#19
+#: unetbootinui#23
 msgid "Specify a kernel file to load"
 msgstr "Файл ядра для загрузки"
 
-#: unetbootinui#20
+#: unetbootinui#24
 msgid "Select kernel file"
 msgstr "Файл ядра"
 
-#: unetbootinui#21
+#: unetbootinui#25
 msgid "Kernel:"
 msgstr "Ядро:"
 
-#: unetbootinui#22
+#: unetbootinui#26
 msgid "Specify an initrd file to load"
 msgstr "Файл initrd для загрузки"
 
-#: unetbootinui#23
+#: unetbootinui#27
 msgid "Initrd:"
 msgstr "Initrd:"
 
-#: unetbootinui#24
+#: unetbootinui#28
 msgid "Select initrd file"
 msgstr "Файл initrd"
 
-#: unetbootinui#25
+#: unetbootinui#29
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr "Файл syslinux.cfg или isolinux.cfg"
 
-#: unetbootinui#26
+#: unetbootinui#30
 msgid "Specify parameters and options to pass to the kernel"
 msgstr "Параметры и опции, передаваемые ядру"
 
-#: unetbootinui#27
+#: unetbootinui#31
 msgid "Options:"
 msgstr "Опции:"
-
-#: unetbootinui#28
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will show all drives in "
-"the drop-down box titled \"Drives\". Enable this only if you know what "
-"you're doing; if you use this option, the installation will likely fail, or "
-"can lead to system boot issues.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-"
-"space: pre-wrap; }</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\"><p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">Если эта <span style=\" font-"
-"weight:600;\">потенциально опасная</span> опция включена, будут показаны все "
-"диски в раскрывающемся списке \"Диск:\". Рекомендуется включать эту опцию "
-"только при полной уверенности в совершаемых действиях. С большой "
-"вероятностью установка не удастся, или приведет к проблемам с загрузкой "
-"системы.</p></body></html>"
-
-#: unetbootinui#29
-msgid "Show All Drives (Use with Care)"
-msgstr "Показать все диски (осторожно!)"
-
-#: unetbootinui#30
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will format the selected "
-"drive, wiping out all data on it. It shouldn't be necessary if you're using "
-"a standard USB drive.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-"
-"space: pre-wrap; }</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\"><p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">При использовании этой  <span style=\" font-"
-"weight:600;\">потенциально опасной</span> опции диск будет отформатирован и "
-"вся информация на нем будет потеряна. В этом нет необходимости, если "
-"используется USB-накопитель.</p></body></html>"
-
-#: unetbootinui#31
-msgid "Format Drive (Wipes Out Data)"
-msgstr "Форматировать диск (удаляет все данные)"
 
 #: unetbootinui#32
 msgid "4. Installation Complete, Reboot"
@@ -871,6 +1508,66 @@ msgstr "Выход"
 #: unetbootinui#37
 msgid "Reboot Now"
 msgstr "Перезагрузить сейчас"
+
+#: unetbootinui#38
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will show all drives in the "
+"drop-down box titled \"Drives\". Enable this only if you know what you're "
+"doing; if you use this option, the installation will likely fail, or can "
+"lead to system boot issues.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body style=\" "
+"font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
+"style:normal;\"><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Если эта "
+"<span style=\" font-weight:600;\">потенциально опасная</span> опция включена, "
+"будут показаны все диски в раскрывающемся списке \"Диск:\". Рекомендуется "
+"включать эту опцию только при полной уверенности в совершаемых действиях. С "
+"большой вероятностью установка не удастся, или приведет к проблемам с "
+"загрузкой системы.</p></body></html>"
+
+#: unetbootinui#39
+msgid "Show All Drives (Use with Care)"
+msgstr "Показать все диски (осторожно!)"
+
+#: unetbootinui#40
+msgid "Format Drive (Wipes Out Data)"
+msgstr "Форматировать диск (удаляет все данные)"
+
+#: unetbootinui#41
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will format the selected "
+"drive, wiping out all data on it. It shouldn't be necessary if you're using "
+"a standard USB drive.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body style=\" "
+"font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
+"style:normal;\"><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">При "
+"использовании этой  <span style=\" font-weight:600;\">потенциально "
+"опасной</span> опции диск будет отформатирован и вся информация на нем будет "
+"потеряна. В этом нет необходимости, если используется "
+"USB-накопитель.</p></body></html>"
 
 #: uninstaller#1
 msgid "Uninstallation Complete"
@@ -899,514 +1596,3 @@ msgstr "%1 Удаление"
 #: uninstaller#6
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr "%1 установлено на данный момент. Удалить текущую версию?"
-
-#: QObject#1
-msgid "LeftToRight"
-msgstr "LeftToRight"
-
-#: unetbootin#4
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/factory/repo/oss' when asked for the folder."
-msgstr ""
-
-#: unetbootin#6
-msgid "Hard Disk"
-msgstr "Жёсткий диск"
-
-#: unetbootin#7
-msgid "USB Drive"
-msgstr "USB диск"
-
-#: unetbootin#8
-msgid "ISO"
-msgstr "ISO"
-
-#: unetbootin#9
-msgid "Floppy"
-msgstr "Флоппи-диск"
-
-#: unetbootin#12
-msgid ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
-"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
-"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
-"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
-"interface, which favors the best software available instead of open source "
-"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
-"sure install media is empty and formatted before proceeding with install."
-msgstr ""
-
-#: unetbootin#14
-msgid ""
-"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
-"ption:</b> gNewSense is a high-quality GNU/Linux distribution that extends "
-"and improves Ubuntu to create a completely free operating system without any "
-"binary blobs or package trees that contain proprietary "
-"software.<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
-msgstr ""
-
-#: unetbootin#31
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
-"ption:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with "
-"all non-free components removed.<br/><b>Install Notes:</b> The Live version "
-"allows for booting in Live mode, from which the installer can optionally be "
-"launched."
-msgstr ""
-
-#: unetbootin#36
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
-"b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
-"version based on KDE, while AntiX is a lightweight version for older "
-"computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
-"from which the installer can optionally be launched."
-msgstr ""
-
-#: unetbootin#44
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
-"Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which "
-"features the Entropy binary package manager in addition to the source-based "
-"Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The LiteMCE "
-"edition is 2 GB, while the full edition will need an 8 GB USB drive"
-msgstr ""
-
-#: unetbootin#48
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-"uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
-"derivative of Ubuntu which includes additional software by default. Requires "
-"a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
-"allows for booting in Live mode, from which the installer can optionally be "
-"launched."
-msgstr ""
-
-#: unetbootin#53
-msgid "Open Disk Image File"
-msgstr "Открыть файл образа диска"
-
-#: unetbootin#54
-msgid "Open Kernel File"
-msgstr "Открыть файл ядра"
-
-#: unetbootin#55
-msgid "Open Initrd File"
-msgstr "Открыть файл Initrd"
-
-#: unetbootin#56
-msgid "Open Bootloader Config File"
-msgstr "Открыть файл конфигурации загрузчика"
-
-#: unetbootin#57
-msgid "Insert a USB flash drive"
-msgstr "Вставьте USB флэшку"
-
-#: unetbootin#58
-msgid ""
-"No USB flash drives were found. If you have already inserted a USB drive, "
-"try reformatting it as FAT32."
-msgstr ""
-"Не найдено ни одного USB накопителя. Если вы его уже подсоединили, "
-"попробуйте переформатировать его в FAT32."
-
-#: unetbootin#59
-msgid "%1 not mounted"
-msgstr "%1 не смонтирован"
-
-#: unetbootin#60
-msgid ""
-"You must first mount the USB drive %1 to a mountpoint. Most distributions "
-"will do this automatically after you remove and reinsert the USB drive."
-msgstr ""
-"Вначале нужно примонитровать USB накопитель %1. Многие дистрибутивы сделают "
-"это автоматически, если вынуть и вставить обратно USB накопитель."
-
-#: unetbootin#61
-msgid "Select a distro"
-msgstr "Выберите дистрибутив"
-
-#: unetbootin#62
-msgid "You must select a distribution to load."
-msgstr "Вы должны выбрать дистрибутив для загрузки"
-
-#: unetbootin#63
-msgid "Select a disk image file"
-msgstr "Выберите файл образа диска"
-
-#: unetbootin#64
-msgid "You must select a disk image file to load."
-msgstr "Вы должны выбрать файл образа диска для загрузки."
-
-#: unetbootin#65
-msgid "Select a kernel and/or initrd file"
-msgstr "Выберите ядро и/или файл initrd"
-
-#: unetbootin#66
-msgid "You must select a kernel and/or initrd file to load."
-msgstr "Вы должны выбрать ядро и/или файл initrd для загрузки"
-
-#: unetbootin#67
-msgid "Diskimage file not found"
-msgstr "Файл образа диска не найден"
-
-#: unetbootin#68
-msgid "The specified diskimage file %1 does not exist."
-msgstr "Заданный файл образа диска %1 не существует."
-
-#: unetbootin#69
-msgid "Kernel file not found"
-msgstr "Файл ядра не найден"
-
-#: unetbootin#70
-msgid "The specified kernel file %1 does not exist."
-msgstr "Заданный файл ядра %1 не существует."
-
-#: unetbootin#71
-msgid "Initrd file not found"
-msgstr "Файл initrd не найден"
-
-#: unetbootin#72
-msgid "The specified initrd file %1 does not exist."
-msgstr ""
-
-#: unetbootin#73
-msgid "%1 exists, overwrite?"
-msgstr "%1 существует, переписать?"
-
-#: unetbootin#74
-msgid ""
-"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-"retain your existing version. If in doubt, press 'Yes to All'."
-msgstr ""
-"Файо %1 уже существует. Нажмите 'Да для всех', чтобы переписать его и не "
-"спрашивать больше, 'Да', чтобы выборочно переписать файлы и 'Нет' оставить "
-"существующую версию. Если сомневаетесь, нажмите 'Да для всех."
-
-#: unetbootin#75
-msgid "Extracting files, please wait..."
-msgstr "Распаковка файлов, пожалуйста подождите..."
-
-#: unetbootin#76
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Архив:</b> %1"
-
-#: unetbootin#77
-msgid "<b>Source:</b>"
-msgstr "<b>Источник:</b>"
-
-#: unetbootin#78
-msgid "<b>Destination:</b>"
-msgstr "<b>Назначение:</b>"
-
-#: unetbootin#79
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Распаковано:</b> 0 of %1 файлов"
-
-#: unetbootin#80
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Источник:</b> %1 (%2)"
-
-#: unetbootin#81
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Назначение:</b> %1%2"
-
-#: unetbootin#82
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Распаковано:</b> %1 of %2 файлов"
-
-#: unetbootin#83
-msgid "Downloading files, plese wait..."
-msgstr "Загрузка файлов, пожалуйста ждите..."
-
-#: unetbootin#84
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Источник:</b> <a href=\"%1\">%1</a>"
-
-#: unetbootin#85
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Назначение:</b> %1"
-
-#: unetbootin#86
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Загружено:</b> 0 bytes"
-
-#: unetbootin#87
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Загружено:</b> %1 of %2 bytes"
-
-#: unetbootin#88
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
-
-#: unetbootin#89
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
-
-#: unetbootin#90
-msgid "%1 not found"
-msgstr ""
-
-#: unetbootin#91
-msgid ""
-"%1 not found. This is required for %2 install mode.\n"
-"Install the \"%3\" package or your distribution's equivalent."
-msgstr ""
-
-#: unetbootin#92
-msgid "After rebooting, select the "
-msgstr "После перезагрузки выберите "
-
-#: unetbootin#93
-msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-"Reboot now?"
-msgstr ""
-"После перезагрузки выберите в BIOS опцию загрузки с USB.%1\n"
-"Перезагрузить прямо сейчас ?"
-
-#~ msgctxt "#3"
-#~ msgid "ISO"
-#~ msgstr "ISO"
-
-#~ msgctxt "#4"
-#~ msgid "Floppy"
-#~ msgstr "Floppy"
-
-#~ msgctxt "unetbootinui#14"
-#~ msgid "Hard Disk"
-#~ msgstr "Жесткий Диск"
-
-#~ msgctxt "unetbootinui#15"
-#~ msgid "USB Drive"
-#~ msgstr "USB-накопитель"
-
-#~ msgctxt "#1"
-#~ msgid "USB Drive"
-#~ msgstr "USB-накопитель"
-
-#~ msgctxt "#2"
-#~ msgid "Open Disk Image File"
-#~ msgstr "Открыть файл образа диска"
-
-#~ msgctxt "#5"
-#~ msgid "Open Kernel File"
-#~ msgstr "Открыть файл ядра"
-
-#~ msgctxt "#6"
-#~ msgid "Open Initrd File"
-#~ msgstr "Открыть файл Initrd"
-
-#~ msgctxt "#7"
-#~ msgid "Open Bootloader Config File"
-#~ msgstr "Окрыть файл конфигурации загрузчика"
-
-#~ msgctxt "#8"
-#~ msgid "Insert a USB flash drive"
-#~ msgstr "Подключить флэш-накопитель USB"
-
-#~ msgctxt "#9"
-#~ msgid ""
-#~ "No USB flash drives were found. If you have already inserted a USB drive, "
-#~ "try reformatting it as FAT32."
-#~ msgstr ""
-#~ "Не найдено USB-накопителей. Если устройство подключено, попробуйте "
-#~ "переформатировать его в FAT32."
-
-#~ msgctxt "#10"
-#~ msgid "%1 not mounted"
-#~ msgstr "%1 не примонтирован"
-
-#~ msgctxt "#11"
-#~ msgid ""
-#~ "You must first mount the USB drive %1 to a mountpoint. Most distributions "
-#~ "will do this automatically after you remove and reinsert the USB drive."
-#~ msgstr ""
-#~ "Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. "
-#~ "Большинство дистрибутивов делают это автоматически после переподключения USB-"
-#~ "накопителя."
-
-#~ msgctxt "#12"
-#~ msgid "Select a distro"
-#~ msgstr "Выберите дистрибутив"
-
-#~ msgctxt "#13"
-#~ msgid "You must select a distribution to load."
-#~ msgstr "Необходимо выбрать дистрибутив для загрузки."
-
-#~ msgctxt "#14"
-#~ msgid "Select a disk image file"
-#~ msgstr "Выберите файл образа диска"
-
-#~ msgctxt "#15"
-#~ msgid "You must select a disk image file to load."
-#~ msgstr "Необходимо выбрать файл образа диска для загрузки."
-
-#~ msgctxt "#16"
-#~ msgid "Select a kernel and/or initrd file"
-#~ msgstr "Выберите ядро и/или файл initrd"
-
-#~ msgctxt "#17"
-#~ msgid "You must select a kernel and/or initrd file to load."
-#~ msgstr "Необходимо выбрать ядро и/или файл initrd для загрузки."
-
-#~ msgctxt "#18"
-#~ msgid "Diskimage file not found"
-#~ msgstr "Файл образа диска не найден"
-
-#~ msgctxt "#19"
-#~ msgid "The specified diskimage file %1 does not exist."
-#~ msgstr "Указанный файл образа диска %1 не существует."
-
-#~ msgctxt "#20"
-#~ msgid "Kernel file not found"
-#~ msgstr "Файл ядра не найден"
-
-#~ msgctxt "#21"
-#~ msgid "The specified kernel file %1 does not exist."
-#~ msgstr "Указанный файл ядра %1 не существует."
-
-#~ msgctxt "#22"
-#~ msgid "Initrd file not found"
-#~ msgstr "Файл inird не найден"
-
-#~ msgctxt "#23"
-#~ msgid "The specified initrd file %1 does not exist."
-#~ msgstr "Указанный файл initrd %1 не существует."
-
-#~ msgctxt "#24"
-#~ msgid "%1 exists, overwrite?"
-#~ msgstr "%1 уже существует, переписать?"
-
-#~ msgctxt "#25"
-#~ msgid ""
-#~ "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-#~ "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-#~ "retain your existing version. If in doubt, press 'Yes to All'."
-#~ msgstr ""
-#~ "Файл %1 уже существует. Нажмитe \"Да для Всех\", чтобы переписать его без "
-#~ "дальнейших подтверждений, щелкните \"Да\", чтобы перписать файлы в "
-#~ "индивидуальном порядке. Выберите \"Нет\", чтобы оставить существующую "
-#~ "версию. Если сомневаетесь, жмите \"Да для Всех\"."
-
-#~ msgctxt "#26"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Извлечение файлов, пожалуйста, подождите..."
-
-#~ msgctxt "#27"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Архив:</b> %1"
-
-#~ msgctxt "#28"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Источник:</b>"
-
-#~ msgctxt "#29"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Назначение:</b>"
-
-#~ msgctxt "#30"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Извлечено:</b> 0 of %1 файлов"
-
-#~ msgctxt "#31"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Источник:</b> %1 (%2)"
-
-#~ msgctxt "#32"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Назначение:</b> %1%2"
-
-#~ msgctxt "#33"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Извлечено:</b> %1 из %2 файлов"
-
-#~ msgctxt "#34"
-#~ msgid "Downloading files, plese wait..."
-#~ msgstr "Загрузка файлов, пожалуйста, подождите..."
-
-#~ msgctxt "#35"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Источник:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#36"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Назначение:</b> %1"
-
-#~ msgctxt "#37"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Загружено:</b> 0 байт"
-
-#~ msgctxt "#38"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Загружено:</b> %1 из %2 байт"
-
-#~ msgctxt "#39"
-#~ msgid "Searching in <a href=\"%1\">%1</a>"
-#~ msgstr "Поиск в <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#40"
-#~ msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-#~ msgstr "%1/%2 совпадает в <a href=\"%3\">%3</a>"
-
-#~ msgctxt "#41"
-#~ msgid "%1 not found"
-#~ msgstr "%1 не найдено"
-
-#~ msgctxt "#42"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 не найден. Это необходимо для режима установки %2.\n"
-#~ "Установите пакет \"%3\" или его эквивалент в используемом дистрибутиве."
-
-#~ msgctxt "#43"
-#~ msgid "After rebooting, select the "
-#~ msgstr "После перезагрузки выберите "
-
-#~ msgctxt "#44"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Установите загрузку с USB-устройств в загрузочном меню BIOS после "
-#~ "перезагрузки.%1\n"
-#~ "Перезагрузить сейчас?"
-
-#~ msgctxt "unetbootin#32"
-#~ msgid "USB Drive"
-#~ msgstr "USB-накопитель"
-
-#~ msgctxt "unetbootin#33"
-#~ msgid "Hard Disk"
-#~ msgstr "Жесткий диск"
-
-#~ msgctxt "unetbootin#34"
-#~ msgid "Floppy"
-#~ msgstr "Floppy"
-
-#~ msgctxt "unetbootin#35"
-#~ msgid "ISO"
-#~ msgstr "ISO"
-
-#~ msgctxt "unetbootinui#20"
-#~ msgid "ISO"
-#~ msgstr "ISO"
-
-#~ msgctxt "unetbootinui#21"
-#~ msgid "Floppy"
-#~ msgstr "Floppy"

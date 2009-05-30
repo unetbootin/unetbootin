@@ -226,6 +226,18 @@ if (nameDistro == "Dreamlinux")
 	extractiso(isotmpf, targetPath);
 }
 
+if (nameDistro == "Dr.Web AntiVirus")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://ftp.drweb.com/pub/drweb/livecd/" << 
+	"ftp://ftp.drweb.com/pub/drweb/livecd/"
+	, 9288000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("DrWeb\\S{0,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "Elive")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
@@ -356,6 +368,12 @@ if (nameDistro == "Frugalware")
 	kernelOpts = "load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=100000 rw root=/dev/ram quiet vga=791";
 }
 
+if (nameDistro == "F-Secure Rescue CD")
+{
+	downloadfile("http://unetbootin.sourceforge.net/f-secure-rescue-cd.zip", isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "GAG")
 {
 	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
@@ -387,6 +405,18 @@ if (nameDistro == "gNewSense")
 	QRegExp("livecd\\S{0,}.iso$", Qt::CaseInsensitive) <<
 	QRegExp("gnewsense\\S{0,}.iso$", Qt::CaseInsensitive) <<
 	QRegExp(".iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+if (nameDistro == "Kaspersky Rescue Disk")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://ftp.kaspersky.com/devbuilds/RescueDisk/" << 
+	"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
+	, 9288000, 1048576000, QList<QRegExp>() << 
+	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }

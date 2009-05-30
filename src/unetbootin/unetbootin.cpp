@@ -300,6 +300,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Dreamlinux is a user-friendly Debian-based distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
 	"Latest_Live"));
+	distroselect->addItem("Dr.Web AntiVirus", (QStringList() << "Latest_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/>"
+		"<b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+	"Latest_Live"));
 	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
@@ -330,6 +335,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
+	distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/>"
+		"<b>Description:</b> F-Secure Rescue CD detects and removes malware from your Windows installation.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+	"Latest_Live"));
 	distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" << 
 	tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
 		"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"
@@ -350,6 +360,11 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
 		"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") << 
 	"2.4"));
+	distroselect->addItem("Kaspersky Rescue Disk", (QStringList() << "Latest_Live" << 
+	tr("<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/>"
+		"<b>Description:</b> Kaspersky Rescue Disk detects and removes malware from your Windows installation.<br/>"
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+	"Latest_Live"));
         distroselect->addItem("Kubuntu", (QStringList() << "9.04_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/>"
 		"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
@@ -972,7 +987,7 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux";
+	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
@@ -997,7 +1012,7 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	{
 		for (int j = 0; j < narchivefileconts.size(); ++j)
 		{
-			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i)))
+			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i), Qt::CaseInsensitive))
 			{
 				pdesc1->setText(QString("Copying kernel file from %1").arg(narchivefileconts.at(j)));
 				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
@@ -1011,7 +1026,7 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz" << "initram" << "initr" << "init" << "ram";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
@@ -1036,7 +1051,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	{
 		for (int j = 0; j < narchivefileconts.size(); ++j)
 		{
-			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i)))
+			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i), Qt::CaseInsensitive))
 			{
 				pdesc1->setText(QString("Copying initrd file from %1").arg(narchivefileconts.at(j)));
 				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
