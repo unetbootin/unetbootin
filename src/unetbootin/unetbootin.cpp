@@ -1245,13 +1245,17 @@ QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList arc
 {
 	QStringList pfoundmatches;
 	relativefilepath = QDir::fromNativeSeparators(relativefilepath);
-//	if (!relativefilepath.startsWith('/'))
-//		relativefilepath = QString("/%1").arg(relativefilepath);
+	if (relativefilepath.endsWith('/'))
+		relativefilepath = relativefilepath.left(relativefilepath.size()-1);
+	if (!relativefilepath.startsWith('/'))
+		relativefilepath = QString("/%1").arg(relativefilepath);
 //	if (!relativefilepath.endsWith('/'))
 //		relativefilepath = QString("%1/").arg(relativefilepath);
 	for (int i = 0; i < archivefile.size(); ++i)
 	{
 		QString curarchiveitem = QDir::fromNativeSeparators(archivefile.at(i));
+		if (curarchiveitem.endsWith('/'))
+			curarchiveitem = curarchiveitem.left(curarchiveitem.size()-1);
 		if (!curarchiveitem.startsWith('/'))
 			curarchiveitem = QString("/%1").arg(curarchiveitem);
 //		if (!curarchiveitem.endsWith('/'))

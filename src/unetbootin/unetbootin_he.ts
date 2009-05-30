@@ -175,12 +175,12 @@
         <location filename="unetbootin.cpp" line="658"/>
         <location filename="unetbootin.cpp" line="730"/>
         <location filename="unetbootin.cpp" line="746"/>
-        <location filename="unetbootin.cpp" line="1766"/>
-        <location filename="unetbootin.cpp" line="1808"/>
-        <location filename="unetbootin.cpp" line="2378"/>
-        <location filename="unetbootin.cpp" line="2403"/>
-        <location filename="unetbootin.cpp" line="2521"/>
-        <location filename="unetbootin.cpp" line="2762"/>
+        <location filename="unetbootin.cpp" line="1770"/>
+        <location filename="unetbootin.cpp" line="1812"/>
+        <location filename="unetbootin.cpp" line="2382"/>
+        <location filename="unetbootin.cpp" line="2407"/>
+        <location filename="unetbootin.cpp" line="2525"/>
+        <location filename="unetbootin.cpp" line="2766"/>
         <source>USB Drive</source>
         <translation>כונן USB</translation>
     </message>
@@ -190,10 +190,10 @@
         <location filename="unetbootin.cpp" line="521"/>
         <location filename="unetbootin.cpp" line="572"/>
         <location filename="unetbootin.cpp" line="653"/>
-        <location filename="unetbootin.cpp" line="2374"/>
-        <location filename="unetbootin.cpp" line="2387"/>
-        <location filename="unetbootin.cpp" line="2517"/>
-        <location filename="unetbootin.cpp" line="2758"/>
+        <location filename="unetbootin.cpp" line="2378"/>
+        <location filename="unetbootin.cpp" line="2391"/>
+        <location filename="unetbootin.cpp" line="2521"/>
+        <location filename="unetbootin.cpp" line="2762"/>
         <source>Hard Disk</source>
         <translation>כונן קשיח</translation>
     </message>
@@ -203,7 +203,7 @@
         <location filename="unetbootin.cpp" line="180"/>
         <location filename="unetbootin.cpp" line="686"/>
         <location filename="unetbootin.cpp" line="687"/>
-        <location filename="unetbootin.cpp" line="2434"/>
+        <location filename="unetbootin.cpp" line="2438"/>
         <source>Floppy</source>
         <translation>דיסקט</translation>
     </message>
@@ -213,7 +213,7 @@
         <location filename="unetbootin.cpp" line="184"/>
         <location filename="unetbootin.cpp" line="681"/>
         <location filename="unetbootin.cpp" line="682"/>
-        <location filename="unetbootin.cpp" line="2439"/>
+        <location filename="unetbootin.cpp" line="2443"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -440,94 +440,94 @@
         <translation>הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1324"/>
-        <location filename="unetbootin.cpp" line="1346"/>
+        <location filename="unetbootin.cpp" line="1328"/>
+        <location filename="unetbootin.cpp" line="1350"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1399"/>
+        <location filename="unetbootin.cpp" line="1403"/>
         <source>Extracting files, please wait...</source>
         <translation>הקבצים בחילוץ, נא להמתין...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1400"/>
+        <location filename="unetbootin.cpp" line="1404"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1401"/>
+        <location filename="unetbootin.cpp" line="1405"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;מקור:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1402"/>
+        <location filename="unetbootin.cpp" line="1406"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;יעד:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1403"/>
+        <location filename="unetbootin.cpp" line="1407"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1406"/>
+        <location filename="unetbootin.cpp" line="1410"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1407"/>
+        <location filename="unetbootin.cpp" line="1411"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1408"/>
+        <location filename="unetbootin.cpp" line="1412"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1750"/>
+        <location filename="unetbootin.cpp" line="1754"/>
         <source>Downloading files, plese wait...</source>
         <translation>קבצים בהורדה, אנא המתן...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1751"/>
+        <location filename="unetbootin.cpp" line="1755"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1752"/>
+        <location filename="unetbootin.cpp" line="1756"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1753"/>
+        <location filename="unetbootin.cpp" line="1757"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1823"/>
-        <location filename="unetbootin.cpp" line="1830"/>
+        <location filename="unetbootin.cpp" line="1827"/>
+        <location filename="unetbootin.cpp" line="1834"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;הורדו:&lt;/b&gt; %1 מתוך %2 בתים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1905"/>
+        <location filename="unetbootin.cpp" line="1909"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1909"/>
+        <location filename="unetbootin.cpp" line="1913"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2076"/>
+        <location filename="unetbootin.cpp" line="2080"/>
         <source>%1 not found</source>
         <translation>%1 לא נמצא</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2077"/>
+        <location filename="unetbootin.cpp" line="2081"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
@@ -539,12 +539,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu Eee אינה רק מותאמת עבור Asus Eee PC. זוהי מערכת הפעלה, באמצעות מנשק ה־Netbook Remix, המעדיף את התוכנה הטובה ביותר הזמינה על פני חלופות הקוד הפתוח (לדוגמה: Skype על פני Ekiga). &lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא כי מדיית ההתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2760"/>
+        <location filename="unetbootin.cpp" line="2764"/>
         <source>After rebooting, select the </source>
         <translation>לאחר האתחול, יש לבחור ב</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2764"/>
+        <location filename="unetbootin.cpp" line="2768"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
