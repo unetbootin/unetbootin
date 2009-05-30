@@ -175,15 +175,27 @@ int main(int argc, char *argv[])
 	QTranslator custranldr;
 	QTranslator translator;
 	QString tnapplang;
+	QString tnappcoun;
+	QString clangcode;
 	QStringList allappargs = app.arguments();
 	QStringList ubnappargs = allappargs.filter(QRegExp("lang=\\w{2,}"));
 	if (!ubnappargs.isEmpty())
 	{
-		tnapplang = ubnappargs.at(0).simplified().remove("lang=").left(2);
+		clangcode = ubnappargs.at(0).simplified().remove("lang=");
+		tnapplang = clangcode.left(2);
+		if (clangcode.contains('_') && clangcode.size() == 5)
+		{
+			tnappcoun = clangcode.section('_', -1, -1);
+		}
 	}
 	else
 	{
-		tnapplang = QLocale::system().name().remove(QRegExp("_\\S{0,}")).simplified();
+		clangcode = QLocale::system().name();
+		tnapplang = clangcode.left(2);
+		if (clangcode.contains('_') && clangcode.size() == 5)
+		{
+			tnappcoun = clangcode.section('_', -1, -1);
+		}
 	}
 	QDir applocdir(app.applicationDirPath());
 	QStringList applocfiles = applocdir.entryList(QStringList() << "*.qm", QDir::Files);
@@ -194,12 +206,28 @@ int main(int argc, char *argv[])
 		{
 			custqmfilepath = applocfiles.filter("unetbootin").at(0);
 			if (!applocfiles.filter("unetbootin").filter(tnapplang).isEmpty())
+			{
 				custqmfilepath = applocfiles.filter("unetbootin").filter(tnapplang).at(0);
+				if (!tnappcoun.isEmpty() && !applocfiles.filter("unetbootin").filter(tnapplang).filter(tnappcoun).isEmpty())
+					custqmfilepath = applocfiles.filter("unetbootin").filter(tnapplang).filter(tnappcoun).at(0);
+			}
 		}
 		if (custranldr.load(custqmfilepath, app.applicationDirPath()))
 			app.installTranslator(&custranldr);
 	}
-	if (QFile::exists(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)) && translator.load(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)))
+	if (!tnappcoun.isEmpty() && QFile::exists(QString("%1/unetbootin_%2_%3.qm").arg(app.applicationDirPath()).arg(tnapplang).arg(tnappcoun)) && translator.load(QString("%1/unetbootin_%2_%3.qm").arg(app.applicationDirPath()).arg(tnapplang).arg(tnappcoun)))
+	{
+		app.installTranslator(&translator);
+	}
+	else if (!tnappcoun.isEmpty() && QFile::exists(QString(":/unetbootin_%1_%2.qm").arg(tnapplang).arg(tnappcoun)) && translator.load(QString(":/unetbootin_%1_%2.qm").arg(tnapplang).arg(tnappcoun)))
+	{
+		app.installTranslator(&translator);
+	}
+	else if (!tnappcoun.isEmpty() && QFile::exists(QString("/usr/share/unetbootin/unetbootin_%1_%2.qm").arg(tnapplang).arg(tnappcoun)) && translator.load(QString("/usr/share/unetbootin/unetbootin_%1_%2.qm").arg(tnapplang).arg(tnappcoun)))
+	{
+		app.installTranslator(&translator);
+	}
+	else if (QFile::exists(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)) && translator.load(QString("%1/unetbootin_%2.qm").arg(app.applicationDirPath(), tnapplang)))
 	{
 		app.installTranslator(&translator);
 	}
@@ -214,6 +242,8 @@ int main(int argc, char *argv[])
 	else
 	{
 		tnapplang = "en";
+		tnappcoun = "US";
+		clangcode = "en_US";
 	}
 	app.installTranslator(&translator);
 	if (QObject::tr("LeftToRight") == "RightToLeft")

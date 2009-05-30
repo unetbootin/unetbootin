@@ -25,7 +25,7 @@ Redémarrer maintenant ?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="219"/>
+        <location filename="main.cpp" line="249"/>
         <source>LeftToRight</source>
         <translation type="unfinished"></translation>
     </message>
@@ -310,7 +310,8 @@ Redémarrer maintenant ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="233"/>
-        <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi e un sistem de operare adaptat pentru utilizatorii din RomÃ¢nia. &lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <oldsource>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi e un sistem de operare adaptat pentru utilizatorii din RomÃ¢nia. &lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -780,22 +781,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1  a été désinstallé.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="253"/>
+        <location filename="main.cpp" line="283"/>
         <source>Must run as root</source>
         <translation>Seul root peut le lancer</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="255"/>
+        <location filename="main.cpp" line="285"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 doit être utilisé par root. Refermez et recommencez avec &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt; ou &lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="276"/>
+        <location filename="main.cpp" line="306"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Désinstallation</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="277"/>
+        <location filename="main.cpp" line="307"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 est actuellement installé. Supprimer la version existante ?</translation>
     </message>
