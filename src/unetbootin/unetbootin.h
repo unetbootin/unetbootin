@@ -74,6 +74,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
+#ifdef XPUD
+#define UNETBOOTINB "xPUD USB Installer"
+#define NOMANUAL
+#define NOFLOPPY
+//#define USBINSTALL
+#define NOEXTRACTKERNEL
+#define NOEXTRACTINITRD
+#define NODEFAULTBOOT
+#define NODEFAULTKERNEL
+#define NOINITRD
+#endif
+
 #ifndef UNETBOOTINB
 #define UNETBOOTINB "UNetbootin"
 #define STDUNETBOOTIN

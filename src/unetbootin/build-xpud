@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
+rvern="$(bzr revno)"
+make clean
+rm Makefile*
+rm release/*
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
+./qmake-windows "DEFINES += XPUD" "RESOURCES += unetbootin-xpud.qrc"
+make
+$mingwb-strip --strip-all release/unetbootin.exe
+mv release/unetbootin.exe release/unetbootin-xpud-windows-$rvern.exe
+./upx --lzma release/unetbootin-xpud-windows-$rvern.exe
+./qmake-linux "DEFINES += XPUD" "RESOURCES += unetbootin-xpud.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-xpud-linux-$rvern
+./upx --lzma release/unetbootin-xpud-linux-$rvern
+qmake-qt4 -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+

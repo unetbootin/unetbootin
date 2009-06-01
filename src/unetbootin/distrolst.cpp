@@ -107,6 +107,24 @@ if (nameDistro == "SliTaz")
 
 #endif
 
+#ifdef XPUD
+
+if (nameDistro == "xPUD")
+{
+	downloadfile(fileFilterNetDir(QStringList() << 
+	"http://download.xpud.org/" <<
+	"http://ftp.ubuntu-tw.org/mirror/xpud.org/download/"
+	, 5440000, 544000000, QList<QRegExp>() << 
+	QRegExp("xpud\\S{0,}.iso$", Qt::CaseInsensitive) << 
+	QRegExp("xpud-\\S{0,}.iso$", Qt::CaseInsensitive) << 
+	QRegExp("xpud-\\d{1,}\\S{0,}.iso$", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive)
+	), isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
+
 #ifdef STDUNETBOOTIN
 
 if (nameDistro == "Arch Linux")

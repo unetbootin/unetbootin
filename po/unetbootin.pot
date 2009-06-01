@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-30 11:33-0700\n"
+"POT-Creation-Date: 2009-05-31 20:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -487,6 +487,15 @@ msgstr ""
 
 #: unetbootin#53
 msgid ""
+"<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org"
+"</a><br/><b>Description:</b> SystemRescueCD includes various partition "
+"management and data recovery and backup tools.<br/><b>Install Notes:</b> "
+"SystemRescueCD is booted and run in live mode; no installation is required "
+"to use it."
+msgstr ""
+
+#: unetbootin#54
+msgid ""
 "<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><"
 "br/><b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. "
 "It is currently the most popular Linux desktop distribution.<br/><b>Install "
@@ -496,7 +505,7 @@ msgid ""
 "derivatives."
 msgstr ""
 
-#: unetbootin#54
+#: unetbootin#55
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a"
 "><br/><b>Description:</b> Xubuntu is an official Ubuntu derivative featuring "
@@ -506,7 +515,7 @@ msgid ""
 "Kubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#55
+#: unetbootin#56
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
@@ -515,7 +524,7 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#56
+#: unetbootin#57
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a"
 "><br/><b>Description:</b> Zenwalk is a Slackware-based distribution "
@@ -524,180 +533,184 @@ msgid ""
 "launched."
 msgstr ""
 
-#: unetbootin#57
+#: unetbootin#58
 msgid "either"
 msgstr ""
 
-#: unetbootin#58
+#: unetbootin#59
 msgid "Open Disk Image File"
 msgstr ""
 
-#: unetbootin#59
+#: unetbootin#60
 msgid "Open Kernel File"
 msgstr ""
 
-#: unetbootin#60
+#: unetbootin#61
 msgid "Open Initrd File"
 msgstr ""
 
-#: unetbootin#61
+#: unetbootin#62
 msgid "Open Bootloader Config File"
 msgstr ""
 
-#: unetbootin#62
+#: unetbootin#63
 msgid "Insert a USB flash drive"
 msgstr ""
 
-#: unetbootin#63
+#: unetbootin#64
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
 
-#: unetbootin#64
+#: unetbootin#65
 msgid "%1 not mounted"
 msgstr ""
 
-#: unetbootin#65
+#: unetbootin#66
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
 
-#: unetbootin#66
+#: unetbootin#67
 msgid "Select a distro"
 msgstr ""
 
-#: unetbootin#67
+#: unetbootin#68
 msgid "You must select a distribution to load."
 msgstr ""
 
-#: unetbootin#68
+#: unetbootin#69
 msgid "Select a disk image file"
 msgstr ""
 
-#: unetbootin#69
+#: unetbootin#70
 msgid "You must select a disk image file to load."
 msgstr ""
 
-#: unetbootin#70
+#: unetbootin#71
 msgid "Select a kernel and/or initrd file"
 msgstr ""
 
-#: unetbootin#71
+#: unetbootin#72
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
 
-#: unetbootin#72
+#: unetbootin#73
 msgid "Diskimage file not found"
 msgstr ""
 
-#: unetbootin#73
+#: unetbootin#74
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
-#: unetbootin#74
+#: unetbootin#75
 msgid "Kernel file not found"
 msgstr ""
 
-#: unetbootin#75
+#: unetbootin#76
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
-#: unetbootin#76
+#: unetbootin#77
 msgid "Initrd file not found"
 msgstr ""
 
-#: unetbootin#77
+#: unetbootin#78
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
-#: unetbootin#78
+#: unetbootin#79
 msgid "%1 exists, overwrite?"
 msgstr ""
 
-#: unetbootin#79
+#: unetbootin#80
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
 
-#: unetbootin#80
-msgid "Extracting files, please wait..."
-msgstr ""
-
 #: unetbootin#81
-msgid "<b>Archive:</b> %1"
+msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #: unetbootin#82
-msgid "<b>Source:</b>"
+msgid "Extracting files, please wait..."
 msgstr ""
 
 #: unetbootin#83
-msgid "<b>Destination:</b>"
+msgid "<b>Archive:</b> %1"
 msgstr ""
 
 #: unetbootin#84
-msgid "<b>Extracted:</b> 0 of %1 files"
+msgid "<b>Source:</b>"
 msgstr ""
 
 #: unetbootin#85
-msgid "<b>Source:</b> %1 (%2)"
+msgid "<b>Destination:</b>"
 msgstr ""
 
 #: unetbootin#86
-msgid "<b>Destination:</b> %1%2"
+msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 
 #: unetbootin#87
-msgid "<b>Extracted:</b> %1 of %2 files"
+msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 
 #: unetbootin#88
-msgid "Downloading files, plese wait..."
+msgid "<b>Destination:</b> %1%2"
 msgstr ""
 
 #: unetbootin#89
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr ""
 
 #: unetbootin#90
-msgid "<b>Destination:</b> %1"
+msgid "Downloading files, plese wait..."
 msgstr ""
 
 #: unetbootin#91
-msgid "<b>Downloaded:</b> 0 bytes"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #: unetbootin#92
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgid "<b>Destination:</b> %1"
 msgstr ""
 
 #: unetbootin#93
-msgid "Searching in <a href=\"%1\">%1</a>"
+msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 
 #: unetbootin#94
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgstr ""
 
 #: unetbootin#95
-msgid "%1 not found"
+msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
 #: unetbootin#96
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr ""
+
+#: unetbootin#97
+msgid "%1 not found"
+msgstr ""
+
+#: unetbootin#98
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
 
-#: unetbootin#97
+#: unetbootin#99
 msgid "After rebooting, select the "
 msgstr ""
 
-#: unetbootin#98
+#: unetbootin#100
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"

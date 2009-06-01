@@ -260,6 +260,14 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
 	"Stable" << "Cooking" << "Webboot"));
 	#endif
+	#ifdef XPUD
+	distroselect->addItem("xPUD", (QStringList() << "Latest_Live" <<
+	tr("<img src=\":/xpud.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
+		"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") << 
+	"Latest_Live"));
+	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();
@@ -1238,6 +1246,16 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			filteredcfgPL.second.second.append(combinedcfgPL.second.second.at(i));
 		}
 	}
+#ifdef NOINITRD
+	for (int i = 0; i < combinedcfgPL.first.second.size(); ++i)
+	{
+		combinedcfgPL.first.second[i] = "";
+	}
+	for (int i = 0; i < combinedcfgPL.second.second.size(); ++i)
+	{
+		combinedcfgPL.second.second[i] = "";
+	}
+#endif
 	return filteredcfgPL;
 }
 
@@ -1356,8 +1374,12 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
+#ifndef NOEXTRACTKERNEL
 	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
+#endif
+#ifndef NOEXTRACTINITRD
 	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
+#endif
 	QStringList createdpaths = makepathtree(targetDrive, listfilesizedirpair.second);
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
@@ -2419,6 +2441,15 @@ void unetbootin::runinst()
 	initrdLine = "initrd";
 	slinitrdLine = "initrd=";
 	initrdLoc = QString("/%1ubninit").arg(ginstallDir);
+#ifdef NOINITRD
+	initrdLoc = "";
+	initrdOpts = "";
+	initrdLine = "";
+	slinitrdLine = "";
+#endif
+#ifdef NODEFAULTKERNEL
+	kernelLoc = "";
+#endif
 	targetPath = QDir::toNativeSeparators(QString("%1%2").arg(targetDrive).arg(installDir));
 	QDir dir;
 	if (!dir.exists(targetPath))
@@ -2603,6 +2634,7 @@ void unetbootin::runinsthdd()
 	"default 0\n"
 	"timeout 10\n"
 	#endif
+#ifndef NODEFAULTBOOT
 	"\ntitle "UNETBOOTINB"\n"
 	#ifdef Q_OS_WIN32
 	"find --set-root %3\n"
@@ -2612,7 +2644,10 @@ void unetbootin::runinsthdd()
 	#endif
 	"%1 %2 %3 %4\n"
 	"%5 %6 %7\n"
-	"boot\n").arg(kernelLine).arg(kernelParam).arg(kernelLoc).arg(kernelOpts).arg(initrdLine).arg(initrdLoc).arg(initrdOpts)
+	"boot\n"
+#endif
+	).arg(kernelLine).arg(kernelParam).arg(kernelLoc).arg(kernelOpts).arg(initrdLine).arg(initrdLoc).arg(initrdOpts)
+
 	#ifdef Q_OS_UNIX
 	.arg(getGrubNotation(targetDev)).arg(ecurmenulstText)
 	#endif
@@ -2727,10 +2762,14 @@ void unetbootin::runinstusb()
 	"prompt 0\n"
 	"menu title UNetbootin\n"
 	"timeout 100\n\n"
+#ifndef NODEFAULTBOOT
 	"label unetbootindefault\n"
 	"menu label Default\n"
 	"kernel %1\n"
-	"append %4%2 %3\n").arg(kernelLoc, initrdLoc, kernelOpts, slinitrdLine);
+	"append %4%2 %3\n"
+#endif
+	).arg(kernelLoc, initrdLoc, kernelOpts, slinitrdLine);
+
 	if (!extraoptionsPL.first.first.isEmpty())
 	{
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)

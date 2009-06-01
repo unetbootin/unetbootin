@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-30 11:33-0700\n"
+"POT-Creation-Date: 2009-05-31 20:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -753,6 +753,15 @@ msgstr ""
 
 #: unetbootin#54
 msgid ""
+"<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org"
+"</a><br/><b>Description:</b> SystemRescueCD includes various partition "
+"management and data recovery and backup tools.<br/><b>Install Notes:</b> "
+"SystemRescueCD is booted and run in live mode; no installation is required "
+"to use it."
+msgstr ""
+
+#: unetbootin#55
+msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
 "xPUD is a lightweight distribution featuring a simple kiosk-like interface "
@@ -760,27 +769,27 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#55
+#: unetbootin#56
 msgid "Open Disk Image File"
 msgstr "Ouvrir le disque du fichier image"
 
-#: unetbootin#56
+#: unetbootin#57
 msgid "Open Kernel File"
 msgstr "Ouvrie le fichier du noyau"
 
-#: unetbootin#57
+#: unetbootin#58
 msgid "Open Initrd File"
 msgstr "Ouvrir l'initrd"
 
-#: unetbootin#58
+#: unetbootin#59
 msgid "Open Bootloader Config File"
 msgstr "Ouvrir le fichier de configuration du gestionnaire de démarrage"
 
-#: unetbootin#59
+#: unetbootin#60
 msgid "Insert a USB flash drive"
 msgstr "Insérer un disque USB"
 
-#: unetbootin#60
+#: unetbootin#61
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -788,11 +797,11 @@ msgstr ""
 "Aucun disque USB détecté. Si vous l'avez déjà connecté, essayez de le "
 "reformater en FAT 32."
 
-#: unetbootin#61
+#: unetbootin#62
 msgid "%1 not mounted"
 msgstr "%1 n'est pas monté"
 
-#: unetbootin#62
+#: unetbootin#63
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -800,59 +809,59 @@ msgstr ""
 "Vous devez d'abord monter le disque USB %1sur un point de montage. La "
 "plupart des distributions le font automatiquement à la connexion."
 
-#: unetbootin#63
+#: unetbootin#64
 msgid "Select a distro"
 msgstr "Choisir une distribution"
 
-#: unetbootin#64
+#: unetbootin#65
 msgid "You must select a distribution to load."
 msgstr "Vous devez choisir une distribution à charger."
 
-#: unetbootin#65
+#: unetbootin#66
 msgid "Select a disk image file"
 msgstr "Choisir un fichier image"
 
-#: unetbootin#66
+#: unetbootin#67
 msgid "You must select a disk image file to load."
 msgstr "Vous devez choisir une image à charger."
 
-#: unetbootin#67
+#: unetbootin#68
 msgid "Select a kernel and/or initrd file"
 msgstr "Choisir un noyau  et-ou un initrd"
 
-#: unetbootin#68
+#: unetbootin#69
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "Vous devez choisir un noyau et-ou un initrd"
 
-#: unetbootin#69
+#: unetbootin#70
 msgid "Diskimage file not found"
 msgstr "Le fichier image est introuvable"
 
-#: unetbootin#70
+#: unetbootin#71
 msgid "The specified diskimage file %1 does not exist."
 msgstr "L'image %1 choisie n'existe pas"
 
-#: unetbootin#71
+#: unetbootin#72
 msgid "Kernel file not found"
 msgstr "Noyau introuvable"
 
-#: unetbootin#72
+#: unetbootin#73
 msgid "The specified kernel file %1 does not exist."
 msgstr "Le noyau %1 choisi n'existe pas."
 
-#: unetbootin#73
+#: unetbootin#74
 msgid "Initrd file not found"
 msgstr "Initrd introuvable"
 
-#: unetbootin#74
+#: unetbootin#75
 msgid "The specified initrd file %1 does not exist."
 msgstr "L'initrd %1 n'existe pas."
 
-#: unetbootin#75
+#: unetbootin#76
 msgid "%1 exists, overwrite?"
 msgstr "%1 existe, écraser ?"
 
-#: unetbootin#76
+#: unetbootin#77
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -862,71 +871,75 @@ msgstr ""
 "être questionné à ce sujet, 'Oui' pour écraser isolément et 'Non' pour "
 "garder la version existante.  Dans le doute,  'Oui à tout'."
 
-#: unetbootin#77
+#: unetbootin#78
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr ""
+
+#: unetbootin#79
 msgid "Extracting files, please wait..."
 msgstr "Extraction des fichiers, patientez..."
 
-#: unetbootin#78
+#: unetbootin#80
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archive:</b> %1"
 
-#: unetbootin#79
+#: unetbootin#81
 msgid "<b>Source:</b>"
 msgstr "<b>Source:</b>"
 
-#: unetbootin#80
+#: unetbootin#82
 msgid "<b>Destination:</b>"
 msgstr "<b>Destination:</b>"
 
-#: unetbootin#81
+#: unetbootin#83
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Extrait :</b> 0 de %1 fichiers"
 
-#: unetbootin#82
+#: unetbootin#84
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Source:</b> %1 (%2)"
 
-#: unetbootin#83
+#: unetbootin#85
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Destination:</b> %1%2"
 
-#: unetbootin#84
+#: unetbootin#86
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extrait :</b> %1 de %2 fichiers"
 
-#: unetbootin#85
+#: unetbootin#87
 msgid "Downloading files, plese wait..."
 msgstr "Teléchargement des fichiers, patientez..."
 
-#: unetbootin#86
+#: unetbootin#88
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Source:</b> <a href=\"%1\">%1</a>"
 
-#: unetbootin#87
+#: unetbootin#89
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Destination:</b> %1"
 
-#: unetbootin#88
+#: unetbootin#90
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Téléchargé :</b> 0 bytes"
 
-#: unetbootin#89
+#: unetbootin#91
 msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgstr "<b>Téléchargé :</b> %1 of %2 bytes"
 
-#: unetbootin#90
+#: unetbootin#92
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Recherche dans <a href=\"%1\">%1</a>"
 
-#: unetbootin#91
+#: unetbootin#93
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 trouvé(s) dans <a href=\"%3\">%3</a>"
 
-#: unetbootin#92
+#: unetbootin#94
 msgid "%1 not found"
 msgstr "%1 introuvable"
 
-#: unetbootin#93
+#: unetbootin#95
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -934,15 +947,15 @@ msgstr ""
 "%1introuvable. Nécessaire pour le mode d'installation %2.￼\n"
 "Installation du paquet \"%3\"  ou l'équivalent de votre distribution"
 
-#: unetbootin#94
+#: unetbootin#96
 #, fuzzy
-msgctxt "unetbootin#94"
+msgctxt "unetbootin#96"
 msgid "After rebooting, select the "
 msgstr "Après le redémarrage, choisir le"
 
-#: unetbootin#95
+#: unetbootin#97
 #, fuzzy
-msgctxt "unetbootin#95"
+msgctxt "unetbootin#97"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -950,7 +963,7 @@ msgstr ""
 "Après le redémarrage, choisir l'option de démarrage sur USB dans le BIOS.%1\n"
 "Redémarrer maintenant ?"
 
-#: unetbootin#96
+#: unetbootin#98
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -970,7 +983,7 @@ msgstr ""
 "Assurez vous que le support d'installation est vide et formaté avant "
 "l'installation."
 
-#: unetbootin#97
+#: unetbootin#99
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -981,7 +994,7 @@ msgid ""
 "install."
 msgstr ""
 
-#: unetbootin#98
+#: unetbootin#100
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
 "nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "

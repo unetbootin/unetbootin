@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-30 11:33-0700\n"
+"POT-Creation-Date: 2009-05-31 20:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1007,6 +1007,19 @@ msgid ""
 "Kaspersky Rescue Disk detects and removes malware from your Windows "
 "installation.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which malware scans can be launched."
+msgstr ""
+
+#: unetbootin#99
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org"
+"</a><br/><b>Description:</b> SystemRescueCD includes various partition "
+"management and data recovery and backup tools.<br/><b>Install Notes:</b> "
+"SystemRescueCD is booted and run in live mode; no installation is required "
+"to use it."
+msgstr ""
+
+#: unetbootin#100
+msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #: unetbootinui#1
