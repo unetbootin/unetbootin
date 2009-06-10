@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 10:05-0700\n"
+"POT-Creation-Date: 2009-06-10 11:09-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,8 +264,8 @@ msgstr ""
 "\n"
 "            "
 
+#. (obsolete)
 #: unetbootin#20
-#, fuzzy
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.remote-"
 "exploit.org/backtrack.html\">http://www.remote-"
@@ -883,8 +883,8 @@ msgstr ""
 "\n"
 "            "
 
+#. (obsolete)
 #: unetbootin#83
-#, fuzzy
 msgid "Downloading files, plese wait..."
 msgstr ""
 "\n"
@@ -1029,6 +1029,18 @@ msgid ""
 "xPUD is a lightweight distribution featuring a simple kiosk-like interface "
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
+msgstr ""
+
+#: unetbootin#102
+msgid ""
+"<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a>"
+"<br/><b>Description:</b> CloneZilla is a distribution used for disk backup "
+"and imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+
+#: unetbootin#103
+msgid "Downloading files, please wait..."
 msgstr ""
 
 #: unetbootinui#1

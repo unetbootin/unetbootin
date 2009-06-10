@@ -170,8 +170,9 @@ Redémarrer maintenant ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="296"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; CloneZilla est une distribution utilisée pour la sauvegarde et la prise d&apos;image de disques.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; CloneZilla démarre et fonctionne de façon autonome, nul besoin de l&apos;installer.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</oldsource>
+        <translation type="unfinished">&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; CloneZilla est une distribution utilisée pour la sauvegarde et la prise d&apos;image de disques.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; CloneZilla démarre et fonctionne de façon autonome, nul besoin de l&apos;installer.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="327"/>
@@ -517,8 +518,9 @@ Redémarrer maintenant ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1776"/>
-        <source>Downloading files, plese wait...</source>
-        <translation>Teléchargement des fichiers, patientez...</translation>
+        <source>Downloading files, please wait...</source>
+        <oldsource>Downloading files, plese wait...</oldsource>
+        <translation type="unfinished">Teléchargement des fichiers, patientez...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1777"/>

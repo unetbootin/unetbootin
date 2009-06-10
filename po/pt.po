@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 10:05-0700\n"
+"POT-Creation-Date: 2009-06-10 11:09-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -464,6 +464,7 @@ msgstr ""
 "Ubuntu.<br/><b>Notas de Instalacão:</b> Certifique-se de que a mídia que "
 "será instalada está formatada e vazia, antes de proceder a instalação."
 
+#. (obsolete)
 #: unetbootin#29
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.remote-"
@@ -749,6 +750,7 @@ msgstr "<b>Destino:</b> %1%2"
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extraído:</b> %1 de um total de %2 arquivos"
 
+#. (obsolete)
 #: unetbootin#73
 msgid "Downloading files, plese wait..."
 msgstr "Descarregando arquivos, aguarde por favor..."
@@ -1064,6 +1066,18 @@ msgid ""
 "xPUD is a lightweight distribution featuring a simple kiosk-like interface "
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
+msgstr ""
+
+#: unetbootin#104
+msgid ""
+"<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a>"
+"<br/><b>Description:</b> CloneZilla is a distribution used for disk backup "
+"and imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+
+#: unetbootin#105
+msgid "Downloading files, please wait..."
 msgstr ""
 
 #: unetbootinui#1

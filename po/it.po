@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 10:05-0700\n"
+"POT-Creation-Date: 2009-06-10 11:09-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -436,13 +436,12 @@ msgstr ""
 "formattato prima di procedere con l'installazione."
 
 #: unetbootin#28
+#, fuzzy
 msgid ""
-"<b>Homepage:</b> <a href=\"http://www.remote-"
-"exploit.org/backtrack.html\">http://www.remote-"
-"exploit.org/backtrack.html</a><br/><b>Description:</b> CloneZilla is a "
-"distribution used for disk backup and imaging.<br/><b>Install Notes:</b> "
-"CloneZilla is booted and run in live mode; no installation is required to "
-"use it."
+"<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a>"
+"<br/><b>Description:</b> CloneZilla is a distribution used for disk backup "
+"and imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
+"mode; no installation is required to use it."
 msgstr ""
 "<b>Homepage:</b> <a href=\"http://www.remote-"
 "exploit.org/backtrack.html\">http://www.remote-"
@@ -914,7 +913,8 @@ msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Estratti:</b> %1 di %2 files"
 
 #: unetbootin#88
-msgid "Downloading files, plese wait..."
+#, fuzzy
+msgid "Downloading files, please wait..."
 msgstr "Scaricamento file in corso, attendere prego..."
 
 #: unetbootin#89

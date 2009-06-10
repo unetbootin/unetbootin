@@ -149,8 +149,9 @@
     </message>
     <message>
         <location filename="unetbootin.cpp" line="296"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; CloneZilla הינה הפצה המשמשת לגיבוי ודימוי של כוננים&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; CloneZilla מתאתחלת ומופעלת במצב חי; לא נדרשת התקנה כדי להשתמש בה.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</oldsource>
+        <translation type="unfinished">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; CloneZilla הינה הפצה המשמשת לגיבוי ודימוי של כוננים&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; CloneZilla מתאתחלת ומופעלת במצב חי; לא נדרשת התקנה כדי להשתמש בה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="327"/>
@@ -492,8 +493,9 @@
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1776"/>
-        <source>Downloading files, plese wait...</source>
-        <translation>קבצים בהורדה, אנא המתן...</translation>
+        <source>Downloading files, please wait...</source>
+        <oldsource>Downloading files, plese wait...</oldsource>
+        <translation type="unfinished">קבצים בהורדה, אנא המתן...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1777"/>

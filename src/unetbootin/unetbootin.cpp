@@ -293,7 +293,7 @@ void unetbootin::ubninitialize()
 		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
 	"4" << "4_x64" << "5" << "5_x64"));
 	distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" << 
-	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
+	tr("<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/>"
 		"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
 		"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it.") << 
 	"1.1.0-8"));
@@ -1773,7 +1773,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	QFtp dlftp;
 	QEventLoop dlewait;
 	pdesc5->setText("");
-	pdesc4->setText(tr("Downloading files, plese wait..."));
+	pdesc4->setText(tr("Downloading files, please wait..."));
 	pdesc3->setText(tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(fileurl));
 	pdesc2->setText(tr("<b>Destination:</b> %1").arg(targetfile));
 	pdesc1->setText(tr("<b>Downloaded:</b> 0 bytes"));
