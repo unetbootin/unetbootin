@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 20:10-0700\n"
+"POT-Creation-Date: 2009-06-10 10:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -637,6 +637,15 @@ msgstr ""
 
 #: unetbootin#48
 msgid ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
+"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+
+#: unetbootin#49
+msgid ""
 "<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedr"
 "web.com/livecd</a><br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus "
 "emergency kit to restore a system that broke due to malware.<br/><b>Install "
@@ -644,7 +653,7 @@ msgid ""
 "malware scans can be launched."
 msgstr ""
 
-#: unetbootin#49
+#: unetbootin#50
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
@@ -653,7 +662,7 @@ msgid ""
 "in Live mode, from which malware scans can be launched."
 msgstr ""
 
-#: unetbootin#50
+#: unetbootin#51
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.or"
 "g</a><br/><b>Description:</b> gNewSense is an FSF-endorsed distribution "
@@ -662,7 +671,7 @@ msgid ""
 "installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#51
+#: unetbootin#52
 msgid ""
 "<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">ht"
 "tp://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
@@ -671,7 +680,7 @@ msgid ""
 "in Live mode, from which malware scans can be launched."
 msgstr ""
 
-#: unetbootin#52
+#: unetbootin#53
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br"
 "/><b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a "
@@ -680,7 +689,7 @@ msgid ""
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#53
+#: unetbootin#54
 msgid ""
 "<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://ha"
 "cktolive.org/wiki/Super_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is "
@@ -690,7 +699,7 @@ msgid ""
 "optionally be launched."
 msgstr ""
 
-#: unetbootin#54
+#: unetbootin#55
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org"
 "</a><br/><b>Description:</b> SystemRescueCD includes various partition "
@@ -699,7 +708,7 @@ msgid ""
 "to use it."
 msgstr ""
 
-#: unetbootin#55
+#: unetbootin#56
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
@@ -708,27 +717,27 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#56
+#: unetbootin#57
 msgid "Open Disk Image File"
 msgstr "פתיחת קובץ דמות תקליטור"
 
-#: unetbootin#57
+#: unetbootin#58
 msgid "Open Kernel File"
 msgstr "פתיחת קובץ ליבה"
 
-#: unetbootin#58
+#: unetbootin#59
 msgid "Open Initrd File"
 msgstr "פתיחת קובץ Initrd"
 
-#: unetbootin#59
+#: unetbootin#60
 msgid "Open Bootloader Config File"
 msgstr "פתיחת קובץ תצורת איתחול"
 
-#: unetbootin#60
+#: unetbootin#61
 msgid "Insert a USB flash drive"
 msgstr "יש לחבר כונן הבזק USB"
 
-#: unetbootin#61
+#: unetbootin#62
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -736,11 +745,11 @@ msgstr ""
 "לא נמצאו כונני הבזק USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו "
 "כ־FAT32."
 
-#: unetbootin#62
+#: unetbootin#63
 msgid "%1 not mounted"
 msgstr "%1 אינו נעגן"
 
-#: unetbootin#63
+#: unetbootin#64
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -748,59 +757,59 @@ msgstr ""
 "ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רב ההפצות יעשו זאת אוטומטית "
 "לאחר הסרה וחיבור מחדש של כונן ה־USB."
 
-#: unetbootin#64
+#: unetbootin#65
 msgid "Select a distro"
 msgstr "יש לבחור הפצה"
 
-#: unetbootin#65
+#: unetbootin#66
 msgid "You must select a distribution to load."
 msgstr "יש לבחור הפצה לטעינה."
 
-#: unetbootin#66
+#: unetbootin#67
 msgid "Select a disk image file"
 msgstr "יש לבחור קובץ דמות תקליטור"
 
-#: unetbootin#67
+#: unetbootin#68
 msgid "You must select a disk image file to load."
 msgstr "יש לבחור קובץ דמות לטעינה."
 
-#: unetbootin#68
+#: unetbootin#69
 msgid "Select a kernel and/or initrd file"
 msgstr "יש לבחור ליבה ו/או קובץ initrd"
 
-#: unetbootin#69
+#: unetbootin#70
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "יש לבחור ליבה ו/או קובץ initrd לטעינה."
 
-#: unetbootin#70
+#: unetbootin#71
 msgid "Diskimage file not found"
 msgstr "קובץ דמות התקליטור לא נמצא"
 
-#: unetbootin#71
+#: unetbootin#72
 msgid "The specified diskimage file %1 does not exist."
 msgstr "קובץ דמות התקליטור שצויין %1 אינו קיים."
 
-#: unetbootin#72
+#: unetbootin#73
 msgid "Kernel file not found"
 msgstr "קובץ הליבה לא נמצא"
 
-#: unetbootin#73
+#: unetbootin#74
 msgid "The specified kernel file %1 does not exist."
 msgstr "קובץ הליבה שצויין %1 לא נמצא."
 
-#: unetbootin#74
+#: unetbootin#75
 msgid "Initrd file not found"
 msgstr "קובץ ה־initrd לא נמצא"
 
-#: unetbootin#75
+#: unetbootin#76
 msgid "The specified initrd file %1 does not exist."
 msgstr "קובץ ה־initrd שצויין %1 לא נמצא."
 
-#: unetbootin#76
+#: unetbootin#77
 msgid "%1 exists, overwrite?"
 msgstr "%1 קיים, לשכתב?"
 
-#: unetbootin#77
+#: unetbootin#78
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -810,75 +819,75 @@ msgstr ""
 "שוב,'כן' כדי לשכתב קבצים באופן יחידני, ו־'לא' כדי לשמור על הגירסה הנוכחית. "
 "אם קיים ספק, יש לבחור ב־'כן להכל'."
 
-#: unetbootin#78
+#: unetbootin#79
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
-#: unetbootin#79
+#: unetbootin#80
 msgid "Extracting files, please wait..."
 msgstr "הקבצים בחילוץ, נא להמתין..."
 
-#: unetbootin#80
+#: unetbootin#81
 msgid "<b>Archive:</b> %1"
 msgstr "<b>ארכיון:</b> %1"
 
-#: unetbootin#81
+#: unetbootin#82
 msgid "<b>Source:</b>"
 msgstr "<b>מקור:</b>"
 
-#: unetbootin#82
+#: unetbootin#83
 msgid "<b>Destination:</b>"
 msgstr "<b>יעד:</b>"
 
-#: unetbootin#83
+#: unetbootin#84
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>חולצו:</b> 0 מתוך %1 קבצים"
 
-#: unetbootin#84
+#: unetbootin#85
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>מקור:</b> %1 (%2)"
 
-#: unetbootin#85
+#: unetbootin#86
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>יעד:</b> %1%2"
 
-#: unetbootin#86
+#: unetbootin#87
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>חולצו:</b> %1 מתוך %2 קבצים"
 
-#: unetbootin#87
+#: unetbootin#88
 msgid "Downloading files, plese wait..."
 msgstr "קבצים בהורדה, אנא המתן..."
 
-#: unetbootin#88
+#: unetbootin#89
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>מקור:</b> <a href=\"%1\">%1</a>"
 
-#: unetbootin#89
+#: unetbootin#90
 msgid "<b>Destination:</b> %1"
 msgstr "<b>יעד:</b> %1"
 
-#: unetbootin#90
+#: unetbootin#91
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>הורדו:</b> 0 בתים"
 
-#: unetbootin#91
+#: unetbootin#92
 msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgstr "<b>הורדו:</b> %1 מתוך %2 בתים"
 
-#: unetbootin#92
+#: unetbootin#93
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "חיפוש תחת <a href=\"%1\">%1</a>"
 
-#: unetbootin#93
+#: unetbootin#94
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 התאמות תחת <a href=\"%3\">%3</a>"
 
-#: unetbootin#94
+#: unetbootin#95
 msgid "%1 not found"
 msgstr "%1 לא נמצא"
 
-#: unetbootin#95
+#: unetbootin#96
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -886,7 +895,7 @@ msgstr ""
 "%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.\n"
 "יש להתקין את החבילה \"%3\" או המקבילה להפצה שנבחרה."
 
-#: unetbootin#96
+#: unetbootin#97
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -904,11 +913,11 @@ msgstr ""
 "<br/><b>הערות התקנה:</b> יש לוודא כי מדיית ההתקנה ריקה ומפורמטת בטרם המשך "
 "ההתקנה."
 
-#: unetbootin#97
+#: unetbootin#98
 msgid "After rebooting, select the "
 msgstr "לאחר האתחול, יש לבחור ב"
 
-#: unetbootin#98
+#: unetbootin#99
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -916,7 +925,7 @@ msgstr ""
 "לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1\n"
 "האם לאתחל כאת?"
 
-#: unetbootin#99
+#: unetbootin#100
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -932,7 +941,7 @@ msgstr ""
 "כתמים בינאריים או עצי חבילות המכילים תוכנה קניינית.<br/><b>הערות התקנה:</b> "
 "יש לוודא כי מדיית ההתקנה ריקה ומפורמטת בטרם המשך ההתקנה."
 
-#: unetbootin#100
+#: unetbootin#101
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"

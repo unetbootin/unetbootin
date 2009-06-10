@@ -9,6 +9,7 @@ SOURCES += main.cpp unetbootin.cpp distrolst.cpp
 QT += core gui network
 TRANSLATIONS += unetbootin.ts \
  unetbootin_es.ts \
+ unetbootin_el.ts \
  unetbootin_ru.ts \
  unetbootin_ro.ts \
  unetbootin_tr.ts \
