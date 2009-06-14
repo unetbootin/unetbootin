@@ -183,12 +183,12 @@ void unetbootin::ubninitialize()
 	if (diskimagetypeselect->findText(tr("ISO")) != -1)
 		diskimagetypeselect->removeItem(diskimagetypeselect->findText(tr("ISO")));
 	#endif
-        #ifdef AUTOSUPERGRUBDISK
-        distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" <<
-        tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
-                "<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
-                "<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") <<
-        "Latest"));
+		#ifdef AUTOSUPERGRUBDISK
+		distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" <<
+		tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
+				"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
+				"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") <<
+		"Latest"));
 	QFile asgdDescF;
 	if (QFile::exists(QString(":/asgd_%1.htm").arg(appNlang)))
 	{
@@ -200,64 +200,64 @@ void unetbootin::ubninitialize()
 	}
 	asgdDescF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream asgdDescS(&asgdDescF);
-	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" << 
-	asgdDescS.readAll() << 
+	distroselect->addItem("Auto Super Grub Disk", (QStringList() << "1.0" <<
+	asgdDescS.readAll() <<
 	"1.0"));
 	#endif
 	#ifdef EEEPCLOS
-	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" << 
+	distroselect->addItem("EeePCLinuxOS", (QStringList() << "pre2008_Live" <<
 	tr("<img src=\":/eeepclos.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/>"
 		"<b>Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.<br/>"
-		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
 	"pre2008_Live"));
 	#endif
 	#ifdef EEEUBUNTU
-	distroselect->addItem("Ubuntu Eee", (QStringList() << "8.04" << 
+	distroselect->addItem("Ubuntu Eee", (QStringList() << "8.04" <<
 	tr("<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
 		"<b>Description:</b> Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).<br/>"
-		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
 //	tr("<img src=\":/eeeubuntu.png\" /><br/>"
 //		"<b>Homepage:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/>"
 //		"<b>Description:</b> Ubuntu Eee is a user-friendly Ubuntu based distribution for the EeePC.<br/>"
-//		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+//		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
 	"8.04"));
 	#endif
 	#ifdef ELIVE
-	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" << 
+	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" <<
 	tr("<img src=\":/elive.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is installed. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") <<
 	"Unstable_Live"));
 	#endif
 
-        #ifdef KIWILINUX
-        distroselect->addItem("Kiwi Linux", (QStringList() << "9.04" <<
-        tr("<img src=\":/kiwi_logo_ro.png\" /><br/>"
-        "<b>Homepage:</b> <a href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/>"
-        "<b>Description:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.<br/>"
-        "<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
-        "9.04"));
-        #endif
+		#ifdef KIWILINUX
+		distroselect->addItem("Kiwi Linux", (QStringList() << "9.04" <<
+		tr("<img src=\":/kiwi_logo_ro.png\" /><br/>"
+		"<b>Homepage:</b> <a href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/>"
+		"<b>Description:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.<br/>"
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
+		"9.04"));
+		#endif
 
 
 
 	#ifdef GNEWSENSE
-	distroselect->addItem("gNewSense", (QStringList() << "deltah-2.1" << 
+	distroselect->addItem("gNewSense", (QStringList() << "deltah-2.1" <<
 	tr("<img src=\":/gnewsense.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
 		"<b>Description:</b> gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.<br/>"
-		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") << 
+		"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
 	"deltah-2.1"));
 	#endif
 	#ifdef SLITAZ
-	distroselect->addItem("SliTaz", (QStringList() << "Stable" << 
+	distroselect->addItem("SliTaz", (QStringList() << "Stable" <<
 	tr("<img src=\":/slitaz.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
 		"<b>Description:</b> SliTaz is a lightweight, desktop-oriented micro distribution.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>.") <<
 	"Stable" << "Cooking" << "Webboot"));
 	#endif
 	#ifdef XPUD
@@ -265,229 +265,229 @@ void unetbootin::ubninitialize()
 	tr("<img src=\":/xpud.png\" /><br/>"
 		"<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
 		"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") <<
 	"Latest_Live"));
 	#endif
 	#ifdef STDUNETBOOTIN
 	optionslayer->setEnabled(true);
 	optionslayer->show();
-	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" << 
+	distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" <<
 	tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 		"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
-		"<li>Select an installation type, and press OK to begin installing.</li></ol>") << 
+		"<li>Select an installation type, and press OK to begin installing.</li></ol>") <<
 	"== Select Version =="));
-	distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" << 
+	distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 		"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
-		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.") << 
+		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.") <<
 	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
-	distroselect->addItem("BackTrack", (QStringList() << "3" << 
+	distroselect->addItem("BackTrack", (QStringList() << "3" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
 		"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
-		"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
 	"3"));
-	distroselect->addItem("CentOS", (QStringList() << "5" << 
+	distroselect->addItem("CentOS", (QStringList() << "5" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
 	"4" << "4_x64" << "5" << "5_x64"));
-	distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" << 
+	distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" <<
 	tr("<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/>"
 		"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
-		"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> CloneZilla is booted and run in live mode; no installation is required to use it.") <<
 	"1.1.0-8"));
-	distroselect->addItem("Damn Small Linux", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Damn Small Linux", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/>"
 		"<b>Description:</b> Damn Small Linux is a minimalist distribution designed for older computers.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") <<
 	"Latest_Live"));
-	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" << 
+	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") <<
 	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Unstable_NetInstall" << "Unstable_NetInstall_x64"));
 //	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
-	distroselect->addItem("Dreamlinux", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Dreamlinux", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/>"
 		"<b>Description:</b> Dreamlinux is a user-friendly Debian-based distribution.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("Dr.Web AntiVirus", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Dr.Web AntiVirus", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/>"
 		"<b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" << 
+	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not freely downloadable) does.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not freely downloadable) does.") <<
 	"Unstable_Live"));
-	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" << 
+	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
 		"<b>Description:</b> FaunOS is a distribution based on Arch Linux.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"shadow-0.5.4-stable"));
-        distroselect->addItem("Fedora", (QStringList() << "10_Live" <<
+		distroselect->addItem("Fedora", (QStringList() << "10_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
-        "7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "10_NetInstall" << "10_NetInstall_x64" << "10_Live" << "10_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
-	distroselect->addItem("FreeBSD", (QStringList() << "7.0" << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
+		"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "10_NetInstall" << "10_NetInstall_x64" << "10_Live" << "10_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+	distroselect->addItem("FreeBSD", (QStringList() << "7.0" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
 	"6.3" << "6.3_x64" << "7.0" << "7.0_x64"));
-	distroselect->addItem("FreeDOS", (QStringList() << "1.0" << 
+	distroselect->addItem("FreeDOS", (QStringList() << "1.0" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/>"
 		"<b>Description:</b> FreeDOS is a free MS-DOS compatible operating system.<br/>"
-		"<b>Install Notes:</b> See the <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for installation details.") << 
+		"<b>Install Notes:</b> See the <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for installation details.") <<
 	"1.0"));
-	distroselect->addItem("Frugalware", (QStringList() << "Stable" << 
+	distroselect->addItem("Frugalware", (QStringList() << "Stable" <<
 	tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
-		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
+		"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
 	"Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-	distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/>"
 		"<b>Description:</b> F-Secure Rescue CD detects and removes malware from your Windows installation.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" << 
+	distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
 		"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"2007.0_Live" << "2007.0_Live_x64" << "2008.0_Live" << "2008.0_x64_Live"));
-//	distroselect->addItem("GAG", (QStringList() << "4.9" << 
+//	distroselect->addItem("GAG", (QStringList() << "4.9" <<
 //	tr("<b>Homepage:</b> <a href=\"http://gag.sourceforge.net/\">http://gag.sourceforge.net</a><br/>"
 //		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
-//		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") << 
+//		"<b>Install Notes:</b> GAG simply boots and runs; no installation is required to use it.") <<
 //	"4.9"));
-	distroselect->addItem("gNewSense", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("gNewSense", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/>"
 		"<b>Description:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("Gujin", (QStringList() << "2.4" << 
+	distroselect->addItem("Gujin", (QStringList() << "2.4" <<
 	tr("<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/>"
 		"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
-		"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") << 
+		"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") <<
 	"2.4"));
-	distroselect->addItem("Kaspersky Rescue Disk", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Kaspersky Rescue Disk", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/>"
 		"<b>Description:</b> Kaspersky Rescue Disk detects and removes malware from your Windows installation.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
 	"Latest_Live"));
-        distroselect->addItem("Kubuntu", (QStringList() << "9.04_Live" <<
+		distroselect->addItem("Kubuntu", (QStringList() << "9.04_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/>"
 		"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.") <<
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_Live" << "9.04_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
-        distroselect->addItem("Linux Mint", (QStringList() << "6_Live" <<
+		distroselect->addItem("Linux Mint", (QStringList() << "6_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 		"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
-        "3.1_Live" << "4.0_Live" << "5-r1_Live" << "6_Live"));
-	distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
+		"3.1_Live" << "4.0_Live" << "5-r1_Live" << "6_Live"));
+	distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 		"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") <<
 	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
 //	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
 	distroselect->addItem("MEPIS", (QStringList() << "SimplyMEPIS" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/>"
 		"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
-		"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched.") << 
-        "SimplyMEPIS" << "SimplyMEPIS_x64" << "AntiX"));
-	distroselect->addItem("NetBSD", (QStringList() << "4.0" << 
+		"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched.") <<
+		"SimplyMEPIS" << "SimplyMEPIS_x64" << "AntiX"));
+	distroselect->addItem("NetBSD", (QStringList() << "4.0" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 		"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
-		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") << 
+		"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") <<
 	"4.0"));
-	distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" << 
+	distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" <<
 	tr("<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/>"
 		"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"
-		"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it.") <<
 	"2008.05.26"));
-        distroselect->addItem("openSUSE", (QStringList() << "11.1" <<
+		distroselect->addItem("openSUSE", (QStringList() << "11.1" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 		"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
-		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") << 
-        "10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "11.0" << "11.0_x64" << "11.1" << "11.1_x64" << "Factory" << "Factory_x64"));
-	distroselect->addItem("Ophcrack", (QStringList() << "XP-LiveCD-2.0" << 
+		"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
+		"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "11.0" << "11.0_x64" << "11.1" << "11.1_x64" << "Factory" << "Factory_x64"));
+	distroselect->addItem("Ophcrack", (QStringList() << "XP-LiveCD-2.0" <<
 	tr("<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/>"
 		"<b>Description:</b> Ophcrack can crack Windows passwords.<br/>"
-		"<b>Install Notes:</b> Ophcrack is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> Ophcrack is booted and run in live mode; no installation is required to use it.") <<
 	"XP-LiveCD-2.0" << "Vista-LiveCD-2.0"));
-	distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 		"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
-		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
 	"2.1_Live" << "Latest_Live"));
-	distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" << 
+	distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 		"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
-	distroselect->addItem("Puppy Linux", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Puppy Linux", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 		"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
-        "Latest_Live"));
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") <<
+		"Latest_Live"));
 	distroselect->addItem("Sabayon Linux", (QStringList() << "4-LiteMCE" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/>"
 		"<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive") <<
 		"4-LiteMCE" << "4-LiteMCE_x64" << "4" << "4_x64"));
-	distroselect->addItem("Slax", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Slax", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 		"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("SliTaz", (QStringList() << "Stable_Live" << 
+	distroselect->addItem("SliTaz", (QStringList() << "Stable_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/>"
 		"<b>Description:</b> SliTaz is a lightweight, desktop-oriented micro distribution.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") <<
 	"Stable_Live" << "Cooking_Live"));
-	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" << 
+	distroselect->addItem("Smart Boot Manager", (QStringList() << "3.7" <<
 	tr("<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/>"
 		"<b>Description:</b> Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.<br/>"
-		"<b>Install Notes:</b> SBM simply boots and runs; no installation is required to use it.") << 
+		"<b>Install Notes:</b> SBM simply boots and runs; no installation is required to use it.") <<
 	"3.7"));
-	distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" << 
+	distroselect->addItem("Super Grub Disk", (QStringList() << "Latest" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/>"
 		"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
-		"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") << 
+		"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") <<
 	"Latest"));
-	distroselect->addItem("Super Ubuntu", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("Super Ubuntu", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/>"
 		"<b>Description:</b> Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"Latest_Live"));
-	distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" << 
+	distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/>"
 		"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
-		"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") << 
+		"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") <<
 	"Latest_Live"));
 	distroselect->addItem("Ubuntu", (QStringList() << "9.04_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") <<
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_Live" << "9.04_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
 	distroselect->addItem("xPUD", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
 		"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
-		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") << 
+		"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") <<
 	"Latest_Live"));
 	distroselect->addItem("Xubuntu", (QStringList() << "9.04_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/>"
 		"<b>Description:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") <<
 	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_Live" << "9.04_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
-	distroselect->addItem("Zenwalk", (QStringList() << "5.2" << 
+	distroselect->addItem("Zenwalk", (QStringList() << "5.2" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/>"
 		"<b>Description:</b> Zenwalk is a Slackware-based distribution featuring the XFCE desktop.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") << 
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"5.2"));
 	#endif
 	#include "customdistselect.cpp"
@@ -495,11 +495,11 @@ void unetbootin::ubninitialize()
 	if (QFile::exists("/sbin/fdisk"))
 		fdiskcommand = "/sbin/fdisk";
 	else
-                fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
-        if (QFile::exists("/bin/df"))
-                dfcommand = "/bin/df";
-        else
-                dfcommand = locatecommand("df", tr("either"), "util-linux");
+				fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+		if (QFile::exists("/bin/df"))
+				dfcommand = "/bin/df";
+		else
+				dfcommand = locatecommand("df", tr("either"), "util-linux");
 	if (QFile::exists("/sbin/sfdisk"))
 		sfdiskcommand = "/sbin/sfdisk";
 	else
@@ -518,11 +518,11 @@ void unetbootin::ubninitialize()
 	else
 		blkidcommand = "/sbin/blkid";
 	locatecommand("mtools", tr("USB Drive"), "mtools");
-        syslinuxcommand = "/usr/bin/ubnsylnx";
-        extlinuxcommand = "/usr/bin/ubnexlnx";
+		syslinuxcommand = "/usr/bin/ubnsylnx";
+		extlinuxcommand = "/usr/bin/ubnexlnx";
 	#ifdef NOSTATIC
-        syslinuxcommand = "/usr/bin/syslinux";
-        extlinuxcommand = "/usr/bin/extlinux";
+		syslinuxcommand = "/usr/bin/syslinux";
+		extlinuxcommand = "/usr/bin/extlinux";
 	#endif
 //	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
@@ -605,21 +605,21 @@ QStringList unetbootin::listsanedrives()
 			}
 		}
 		#endif
-                #ifdef Q_OS_UNIX
-                QDir devlstdir("/dev/disk/by-id/");
-                QFileInfoList usbfileinfoL = devlstdir.entryInfoList(QDir::NoDotAndDotDot|QDir::Files);
-                for (int i = 0; i < usbfileinfoL.size(); ++i)
-                {
+				#ifdef Q_OS_UNIX
+				QDir devlstdir("/dev/disk/by-id/");
+				QFileInfoList usbfileinfoL = devlstdir.entryInfoList(QDir::NoDotAndDotDot|QDir::Files);
+				for (int i = 0; i < usbfileinfoL.size(); ++i)
+				{
 //                    if (usbfileinfoL.at(i).contains(QRegExp("^usb-\\S{1,}-part\\d{1,}$")))
 //                    {
 //                        fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 //                    }
-                    if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
-                    {
+					if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
+					{
 						if (!volidcommand.isEmpty())
 						{
-						    if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4)")))
-						        fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+							if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4)")))
+								fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 						}
 						else
 						{
@@ -630,11 +630,11 @@ QStringList unetbootin::listsanedrives()
 									fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 							}
 						}
-                    }
-                }
-                /*
-                QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
-                QStringList usbdevsL = QString(fdisklusbdevsS).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+					}
+				}
+				/*
+				QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+				QStringList usbdevsL = QString(fdisklusbdevsS).split("\n").filter(QRegExp("\\.{0,}FAT|Disk\\.{0,}")).join("\n").split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
 		for (int i = 0; i < usbdevsL.size(); ++i)
 		{
 			if (usbdevsL.at(i).contains(":"))
@@ -643,8 +643,8 @@ QStringList unetbootin::listsanedrives()
 					continue;
 			}
 			fulldrivelist.append(QString(usbdevsL.at(i)).remove(":"));
-                }
-                */
+				}
+				*/
 		#endif
 	}
 	return fulldrivelist;
@@ -662,15 +662,15 @@ QStringList unetbootin::listalldrives()
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-        QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
-        QString dflusbdevsS = callexternapp(dfcommand, "");
-        fulldrivelist = QString(dflusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
-        QStringList fulldrivelist2 = QString(fdisklusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/").replaceInStrings(":", "");
-        for (int i = 0; i < fulldrivelist2.size(); ++i)
-        {
-            if (!fulldrivelist.contains(fulldrivelist2.at(i)))
-                fulldrivelist.append(fulldrivelist2.at(i));
-        }
+		QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
+		QString dflusbdevsS = callexternapp(dfcommand, "");
+		fulldrivelist = QString(dflusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
+		QStringList fulldrivelist2 = QString(fdisklusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/").replaceInStrings(":", "");
+		for (int i = 0; i < fulldrivelist2.size(); ++i)
+		{
+			if (!fulldrivelist.contains(fulldrivelist2.at(i)))
+				fulldrivelist.append(fulldrivelist2.at(i));
+		}
 	#endif
 	return fulldrivelist;
 }
@@ -762,14 +762,14 @@ void unetbootin::on_okbutton_clicked()
 		unotenoughinputmsgb.setIcon(QMessageBox::Information);
 		unotenoughinputmsgb.setWindowTitle(tr("Insert a USB flash drive"));
 		unotenoughinputmsgb.setText(tr("No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32."));
- 		unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (unotenoughinputmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		unotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (unotenoughinputmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	#ifdef Q_OS_UNIX
 	else if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
@@ -781,9 +781,9 @@ void unetbootin::on_okbutton_clicked()
 		merrordevnotmountedmsgbx.setStandardButtons(QMessageBox::Ok);
 		switch (merrordevnotmountedmsgbx.exec())
 		{
- 			case QMessageBox::Ok:
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
 		}
 	}
@@ -794,14 +794,14 @@ void unetbootin::on_okbutton_clicked()
 		dnotenoughinputmsgb.setIcon(QMessageBox::Information);
 		dnotenoughinputmsgb.setWindowTitle(tr("Select a distro"));
 		dnotenoughinputmsgb.setText(tr("You must select a distribution to load."));
- 		dnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (dnotenoughinputmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		dnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (dnotenoughinputmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else if (radioFloppy->isChecked() && FloppyPath->text().isEmpty())
 	{
@@ -809,14 +809,14 @@ void unetbootin::on_okbutton_clicked()
 		fnotenoughinputmsgb.setIcon(QMessageBox::Information);
 		fnotenoughinputmsgb.setWindowTitle(tr("Select a disk image file"));
 		fnotenoughinputmsgb.setText(tr("You must select a disk image file to load."));
- 		fnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (fnotenoughinputmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		fnotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (fnotenoughinputmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else if (radioManual->isChecked() && KernelPath->text().isEmpty())
 	{
@@ -824,14 +824,14 @@ void unetbootin::on_okbutton_clicked()
 		knotenoughinputmsgb.setIcon(QMessageBox::Information);
 		knotenoughinputmsgb.setWindowTitle(tr("Select a kernel and/or initrd file"));
 		knotenoughinputmsgb.setText(tr("You must select a kernel and/or initrd file to load."));
- 		knotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (knotenoughinputmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		knotenoughinputmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (knotenoughinputmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else if (radioFloppy->isChecked() && !QFile::exists(FloppyPath->text()))
 	{
@@ -839,14 +839,14 @@ void unetbootin::on_okbutton_clicked()
 		ffnotexistsmsgb.setIcon(QMessageBox::Information);
 		ffnotexistsmsgb.setWindowTitle(tr("Diskimage file not found"));
 		ffnotexistsmsgb.setText(tr("The specified diskimage file %1 does not exist.").arg(FloppyPath->text()));
- 		ffnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (ffnotexistsmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		ffnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (ffnotexistsmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else if (radioManual->isChecked() && !QFile::exists(KernelPath->text()))
 	{
@@ -854,14 +854,14 @@ void unetbootin::on_okbutton_clicked()
 		kfnotexistsmsgb.setIcon(QMessageBox::Information);
 		kfnotexistsmsgb.setWindowTitle(tr("Kernel file not found"));
 		kfnotexistsmsgb.setText(tr("The specified kernel file %1 does not exist.").arg(KernelPath->text()));
- 		kfnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (kfnotexistsmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		kfnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (kfnotexistsmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else if (radioManual->isChecked() && InitrdPath->text().trimmed() != "" && !QFile::exists(InitrdPath->text()))
 	{
@@ -869,14 +869,14 @@ void unetbootin::on_okbutton_clicked()
 		ifnotexistsmsgb.setIcon(QMessageBox::Information);
 		ifnotexistsmsgb.setWindowTitle(tr("Initrd file not found"));
 		ifnotexistsmsgb.setText(tr("The specified initrd file %1 does not exist.").arg(InitrdPath->text()));
- 		ifnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
- 		switch (ifnotexistsmsgb.exec())
- 		{
- 			case QMessageBox::Ok:
+		ifnotexistsmsgb.setStandardButtons(QMessageBox::Ok);
+		switch (ifnotexistsmsgb.exec())
+		{
+			case QMessageBox::Ok:
 				break;
-	 		default:
+			default:
 				break;
- 		}
+		}
 	}
 	else
 	{
@@ -948,7 +948,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 			{
 				tmplsSLF.append(tmplsL.remove("Path = "));
 				tmplsFS = QString(tmplsS.readLine()).remove("Size = ").trimmed();
-				tmplsSLFS.append(tmplsFS.toULongLong());				
+				tmplsSLFS.append(tmplsFS.toULongLong());
 			}
 		}
 	}
@@ -1483,7 +1483,7 @@ QString unetbootin::getgrubcfgargs(QString cfgfile)
 		}
 		if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
-                        return QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
+						return QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
 		}
 	}
 	return "";
@@ -1550,7 +1550,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			}
 			if (cfgfileCL.contains(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 			{
-                                titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
+								titleandparams.second[curindex] = QString(cfgfileCL).remove(QRegExp("^kernel\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
 			}
 			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^kernel", Qt::CaseInsensitive)).trimmed());
 //			if (kernelandinitrd.first.at(curindex).isEmpty())
@@ -1604,7 +1604,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 		}
 		else if (cfgfileCL.contains(QRegExp("^\\s{0,}append\\s{1,}", Qt::CaseInsensitive)))
 		{
-                        return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
+						return QString(cfgfileCL).remove(QRegExp("\\s{0,}append\\s{1,}", Qt::CaseInsensitive)).remove(QRegExp("\\s{0,1}initrd=\\S{0,}", Qt::CaseInsensitive)).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
 		}
 	}
 	return "";
@@ -1688,7 +1688,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //				else if (!kernelandinitrd.second.at(curindex).contains('/'))
 //					kernelandinitrd.second[curindex] = QString("%1%2").arg(cfgfiledir, kernelandinitrd.second.at(curindex));
 			}
-                        titleandparams.second[curindex] = QString(appendoptsL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
+						titleandparams.second[curindex] = QString(appendoptsL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
 			continue;
 		}
 		if (cfgfileCL.contains(QRegExp("^label\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
@@ -2148,7 +2148,7 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 		default:
 			break;
 	}
- 	return commandtolocate;
+	return commandtolocate;
 }
 
 QString unetbootin::locatedevicenode(QString mountpoint)
@@ -2182,7 +2182,7 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	{
 		if (procmountsL.at(0).split("\t").join(" ").split(" ").size() >= 2)
 		{
-                        return procmountsL.at(0).split("\t").join(" ").split(" ")[1].replace("\\040", " ");
+						return procmountsL.at(0).split("\t").join(" ").split(" ")[1].replace("\\040", " ");
 		}
 		else
 		{
@@ -2194,6 +2194,11 @@ QString unetbootin::locatemountpoint(QString devicenode)
 QString unetbootin::getGrubNotation(QString devicenode)
 {
 	return QString("(hd%1,%2)").arg(getDiskNumber(devicenode)).arg(getPartitionNumber(devicenode));
+}
+
+QString unetbootin::getGrub2Notation(QString devicenode)
+{
+	return QString("(hd%1,%2)").arg(getDiskNumber(devicenode)).arg(getPartitionNumber(devicenode)+1);
 }
 
 int unetbootin::letterToNumber(QChar lettertoconvert)
@@ -2396,11 +2401,11 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	QFile srcF(QString(":/%1").arg(srcfName));
 	#ifdef NOSTATIC
 	if (srcfName == "memdisk")
-                srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
+				srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
 	else if (srcfName == "vesamenu.c32")
-                srcF.setFileName(QFile::exists("/usr/share/syslinux/vesamenu.c32") ? "/usr/share/syslinux/vesamenu.c32" : "/usr/lib/syslinux/vesamenu.c32");
+				srcF.setFileName(QFile::exists("/usr/share/syslinux/vesamenu.c32") ? "/usr/share/syslinux/vesamenu.c32" : "/usr/lib/syslinux/vesamenu.c32");
 	else if (srcfName == "mbr.bin")
-                srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
+				srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 	else if (srcfName == "ubnsylnx")
 		srcF.setFileName("/usr/bin/syslinux");
 //	else
@@ -2509,7 +2514,7 @@ void unetbootin::runinst()
 		{
 			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
 			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
-   		}
+		}
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("ISO")))
 		{
 			extractiso(FloppyPath->text(), targetPath);
@@ -2521,7 +2526,7 @@ void unetbootin::runinst()
 			{
 				QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
 			}
-   		}
+		}
 	}
 	else if (radioManual->isChecked())
 	{
@@ -2551,12 +2556,12 @@ void unetbootin::runinst()
 		{
 			nameVersion.remove("_x64");
 			isarch64 = true;
-	   	}
-	   	else
-	   	{
-	   		isarch64 = false;
-	  	}
-	  	QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
+		}
+		else
+		{
+			isarch64 = false;
+		}
+		QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
 		QString cpuarch;
 		QString relname = nameVersion.toLower();
 		#include "customdistrolst.cpp"
@@ -2591,15 +2596,77 @@ void unetbootin::instDetType()
 	if (installType == tr("Hard Disk"))
 	{
 		runinsthdd();
-   	}
-   	if (installType == tr("USB Drive"))
+	}
+	if (installType == tr("USB Drive"))
 	{
 		runinstusb();
 	}
 }
 
+void unetbootin::writegrub2cfg()
+{
+	QFile menulst;
+	menulst.setFileName("/boot/grub/grub.cfg");
+	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
+		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
+	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
+	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
+	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream bkmenulstout(&bkmenulst);
+	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream menulstout(&menulst);
+	QRegExp mlstchkistimeout("\\s{0,}set\\s{1,}timeout=\\d{1,}.{0,}", Qt::CaseInsensitive);
+	QStringList ecurmenulstTextL;
+	bool mlstmustreplacetimeout = true;
+	while (!bkmenulstout.atEnd())
+	{
+		menulstCurLine = bkmenulstout.readLine();
+		if (mlstmustreplacetimeout && mlstchkistimeout.exactMatch(menulstCurLine))
+		{
+			ecurmenulstTextL.append("set timeout=15");
+			mlstmustreplacetimeout = false;
+		}
+		else
+		{
+			ecurmenulstTextL.append(menulstCurLine);
+		}
+	}
+	QString ecurmenulstText = ecurmenulstTextL.join("\n");
+	QString menulstxt = QString(
+	"%9\n\n"
+#ifndef NODEFAULTBOOT
+	"\nmenuentry \""UNETBOOTINB"\" {\n"
+	"set root=%8\n"
+	"%1 %2 %3 %4\n"
+	"%5 %6 %7\n"
+	"}\n"
+#endif
+	).arg(kernelLine.replace("kernel", "linux")).arg(kernelParam).arg(kernelLoc).arg(kernelOpts).arg(initrdLine).arg(initrdLoc).arg(initrdOpts)
+	.arg(getGrub2Notation(targetDev)).arg(ecurmenulstText)
+	;
+	if (!extraoptionsPL.first.first.isEmpty())
+	{
+		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
+		{
+			menulstxt.append(QString("\nmenuentry \"%1\" {\n"
+			"set root=%5\n"
+			"linux %2 %4\n"
+			"initrd %3\n"
+			"}\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^")).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i))
+			.arg(getGrubNotation(targetDev))
+			);
+		}
+	}
+	menulstout << menulstxt << endl;
+	menulst.close();
+}
+
 void unetbootin::runinsthdd()
 {
+	#ifdef Q_OS_UNIX
+	if (QFile::exists("/boot/grub/grub.cfg"))
+		writegrub2cfg();
+	#endif
 	#ifdef Q_OS_WIN32
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
 	{
@@ -2623,19 +2690,19 @@ void unetbootin::runinsthdd()
 	}
 	instIndvfl("ubnldr.exe", QString("%1ubnldr.exe").arg(targetDrive));
 	#endif
-   	QFile menulst;
-   	#ifdef Q_OS_WIN32
-   	menulst.setFileName(QString("%1menu.lst").arg(targetPath));
-   	#endif
-   	#ifdef Q_OS_UNIX
-   	menulst.setFileName("/boot/grub/menu.lst");
-   	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
-   		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
-   	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
-   	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
-   	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
-   	QTextStream bkmenulstout(&bkmenulst);
-   	#endif
+	QFile menulst;
+	#ifdef Q_OS_WIN32
+	menulst.setFileName(QString("%1menu.lst").arg(targetPath));
+	#endif
+	#ifdef Q_OS_UNIX
+	menulst.setFileName("/boot/grub/menu.lst");
+	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
+		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
+	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
+	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
+	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream bkmenulstout(&bkmenulst);
+	#endif
 	menulst.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream menulstout(&menulst);
 	#ifdef Q_OS_UNIX
@@ -2648,15 +2715,15 @@ void unetbootin::runinsthdd()
 	while (!bkmenulstout.atEnd())
 	{
 		menulstCurLine = bkmenulstout.readLine();
-		if (mlstmustreplacetimeout && mlstchkishiddenmenu.exactMatch(menulstCurLine))
+		if (mlstmustreplacehiddenmenu && mlstchkishiddenmenu.exactMatch(menulstCurLine))
 		{
 			ecurmenulstTextL.append("#hiddenmenu");
-			mlstmustreplacetimeout = false;
+			mlstmustreplacehiddenmenu = false;
 		}
-		else if (mlstmustreplacehiddenmenu && mlstchkistimeout.exactMatch(menulstCurLine))
+		else if (mlstmustreplacetimeout && mlstchkistimeout.exactMatch(menulstCurLine))
 		{
 			ecurmenulstTextL.append("timeout\t\t15");
-			mlstmustreplacehiddenmenu = false;
+			mlstmustreplacetimeout = false;
 		}
 		else
 		{
@@ -2714,12 +2781,12 @@ void unetbootin::runinsthdd()
 	menulstout << menulstxt << endl;
 	menulst.close();
 	#ifdef Q_OS_WIN32
-   	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
-   	install.setValue("Location", targetDrive);
-   	install.setValue("DisplayName", "UNetbootin");
-   	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
-   	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
-   	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	QSettings install("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\UNetbootin", QSettings::NativeFormat);
+	install.setValue("Location", targetDrive);
+	install.setValue("DisplayName", "UNetbootin");
+	install.setValue("UninstallString", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+	QSettings runonce("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);
+	runonce.setValue("UNetbootin Uninstaller", QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	if (QSysInfo::WindowsVersion == QSysInfo::WV_32s || QSysInfo::WindowsVersion == QSysInfo::WV_95 || QSysInfo::WindowsVersion == QSysInfo::WV_98 || QSysInfo::WindowsVersion == QSysInfo::WV_Me)
 	{
 		configsysEdit();
@@ -2744,7 +2811,7 @@ void unetbootin::runinsthdd()
 	install.setValue("Location", "/");
 	#endif
 	fininstall();
-  	}
+}
 
 void unetbootin::runinstusb()
 {
@@ -2757,12 +2824,12 @@ void unetbootin::runinstusb()
 	if (QFile::exists(syslinuxcommand))
 		QFile::remove(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
-        QFile::setPermissions(syslinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
+		QFile::setPermissions(syslinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 //	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
-        if (QFile::exists(extlinuxcommand))
-                QFile::remove(extlinuxcommand);
-        instIndvfl("ubnexlnx", extlinuxcommand);
-        QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
+		if (QFile::exists(extlinuxcommand))
+				QFile::remove(extlinuxcommand);
+		instIndvfl("ubnexlnx", extlinuxcommand);
+		QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 	#endif
 	#ifdef Q_OS_UNIX
 		isext2 = false;
@@ -2799,12 +2866,17 @@ void unetbootin::runinstusb()
 		usbmbrF.close();
 	}
 	#endif
-	if (QFile::exists(QString("%1syslinux.cfg").arg(targetPath)))
+	QString syslinuxcfgname = QString("%1syslinux.cfg").arg(targetPath);
+	#ifdef Q_OS_UNIX
+	if (isext2)
+		syslinuxcfgname = QString("%1extlinux.cfg").arg(targetPath);
+	#endif
+	if (QFile::exists(syslinuxcfgname))
 	{
-		overwritefileprompt(QString("%1syslinux.cfg").arg(targetPath));
+		overwritefileprompt(syslinuxcfgname);
 	}
-	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
-   	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
+	QFile syslinuxcfg(syslinuxcfgname);
+	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
 	QString syslinuxcfgtxt = QString("default vesamenu.c32\n"
 	"prompt 0\n"
@@ -2829,12 +2901,12 @@ void unetbootin::runinstusb()
 		}
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
-        syslinuxcfg.close();
-        #ifdef Q_OS_UNIX
-        if (isext2)
-            QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
-        #endif
-        instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
+		syslinuxcfg.close();
+		#ifdef Q_OS_UNIX
+		if (isext2)
+			QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
+		#endif
+		instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
 	fininstall();
 }
 

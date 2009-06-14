@@ -223,6 +223,7 @@ public:
 	QString locatedevicenode(QString mountpoint);
 	QString locatemountpoint(QString devicenode);
 	QString getGrubNotation(QString devicenode);
+	QString getGrub2Notation(QString devicenode);
 	int letterToNumber(QChar lettertoconvert);
 	int getDiskNumber(QString devicenode);
 	int getPartitionNumber(QString devicenode);
@@ -237,6 +238,7 @@ public:
 	QString instTempfl(QString srcfName, QString dstfType);
 	void runinst();
 	void instDetType();
+	void writegrub2cfg();
 	void runinsthdd();
 	void runinstusb();
 	void fininstall();
