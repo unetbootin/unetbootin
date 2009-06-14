@@ -8,6 +8,9 @@ FORMS += unetbootin.ui
 SOURCES += main.cpp unetbootin.cpp distrolst.cpp
 QT += core gui network
 TRANSLATIONS += unetbootin.ts \
+ unetbootin_ar.ts \
+ unetbootin_pt_BR.ts \
+ unetbootin_cs.ts \
  unetbootin_es.ts \
  unetbootin_el.ts \
  unetbootin_ru.ts \
@@ -18,6 +21,7 @@ TRANSLATIONS += unetbootin.ts \
  unetbootin_hu.ts \
  unetbootin_it.ts \
  unetbootin_zh_CN.ts \
+ unetbootin_zh_TW.ts \
  unetbootin_fr.ts \
  unetbootin_ja.ts \
  unetbootin_vi.ts \

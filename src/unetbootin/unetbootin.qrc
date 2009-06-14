@@ -2,8 +2,10 @@
     <qresource prefix="/" >
         <file>memdisk</file>
         <file>vesamenu.c32</file>
+        <file>unetbootin_ar.qm</file>
         <file>unetbootin_be.qm</file>
         <file>unetbootin_ca.qm</file>
+        <file>unetbootin_cs.qm</file>
         <file>unetbootin_de.qm</file>
         <file>unetbootin_el.qm</file>
         <file>unetbootin_es.qm</file>
@@ -15,11 +17,13 @@
         <file>unetbootin_nb.qm</file>
         <file>unetbootin_nl.qm</file>
         <file>unetbootin_pt.qm</file>
+        <file>unetbootin_pt_BR.qm</file>
         <file>unetbootin_ro.qm</file>
         <file>unetbootin_ru.qm</file>
         <file>unetbootin_tr.qm</file>
         <file>unetbootin_uk.qm</file>
         <file>unetbootin_vi.qm</file>
         <file>unetbootin_zh_CN.qm</file>
+        <file>unetbootin_zh_TW.qm</file>
     </qresource>
 </RCC>
