@@ -172,6 +172,7 @@ public:
         QString fdiskcommand;
         QString dfcommand;
 	QString sfdiskcommand;
+	QString blkidcommand;
 	QString volidcommand;
         QString syslinuxcommand;
         QString extlinuxcommand;

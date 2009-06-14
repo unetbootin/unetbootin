@@ -507,7 +507,16 @@ void unetbootin::ubninitialize()
 	if (QFile::exists("/lib/udev/vol_id"))
 		volidcommand = "/lib/udev/vol_id";
 	else
-		volidcommand = locatecommand("vol_id", tr("either"), "udev");
+		volidcommand = locatecommand("vol_id", tr("either"), "silent");
+	if (volidcommand.isEmpty())
+	{
+		if (QFile::exists("/sbin/blkid"))
+			blkidcommand = "/sbin/blkid";
+		else
+			blkidcommand = locatecommand("blkid", tr("either"), "e2fsprogs");
+	}
+	else
+		blkidcommand = "/sbin/blkid";
 	locatecommand("mtools", tr("USB Drive"), "mtools");
         syslinuxcommand = "/usr/bin/ubnsylnx";
         extlinuxcommand = "/usr/bin/ubnexlnx";
@@ -607,8 +616,20 @@ QStringList unetbootin::listsanedrives()
 //                    }
                     if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
                     {
-                        if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3)")))
-                            fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+						if (!volidcommand.isEmpty())
+						{
+						    if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4)")))
+						        fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+						}
+						else
+						{
+							QString tstrblk = QString(callexternapp(blkidcommand, QString("-s TYPE %2").arg(usbfileinfoL.at(i).canonicalFilePath())));
+							if (tstrblk.contains('='))
+							{
+								if (tstrblk.section('=', -1, -1).remove('"').contains(QRegExp("(vfat|ext2|ext3|ext4)")))
+									fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
+							}
+						}
                     }
                 }
                 /*
@@ -2036,7 +2057,15 @@ QString unetbootin::getlabel(QString voldrive)
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QString volidpS = QString(callexternapp(volidcommand, QString("-l %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	QString volidpS = "";
+	if (!volidcommand.isEmpty())
+		volidpS = QString(callexternapp(volidcommand, QString("-l %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	else
+	{
+		QString tstrblk = QString(callexternapp(blkidcommand, QString("-s LABEL %1").arg(voldrive)));
+		if (tstrblk.contains('='))
+			volidpS = tstrblk.section('=', -1, -1).remove('"').remove("\r").remove("\n").trimmed();
+	}
 	if (volidpS.isEmpty())
 	{
 		return "None";
@@ -2069,7 +2098,15 @@ QString unetbootin::getuuid(QString voldrive)
 	}
 	#endif
 	#ifdef Q_OS_UNIX
-	QString volidpS = QString(callexternapp(volidcommand, QString("-u %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	QString volidpS = "";
+	if (!volidcommand.isEmpty())
+		volidpS = QString(callexternapp(volidcommand, QString("-u %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
+	else
+	{
+		QString tstrblk = QString(callexternapp(volidcommand, QString("-s UUID %1").arg(voldrive)));
+		if (tstrblk.contains('='))
+			volidpS = tstrblk.section('=', -1, -1).remove('"').remove("\r").remove("\n").trimmed();
+	}
 	if (volidpS.isEmpty())
 	{
 		return "None";
@@ -2088,6 +2125,8 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 	QString commandbinpath = callexternapp("which", commandtolocate).trimmed();
 	if (!commandbinpath.isEmpty() && QFile::exists(commandbinpath))
 		return commandbinpath;
+	if (packagename == "silent")
+		return "";
 //	QString commandbinpath = callexternapp("whereis", commandtolocate);
 //	QStringList commandbinpathL = commandbinpath.split(" ").join("\n").split("\t").join("\n").split("\n");
 //	for (int i = 0; i < commandbinpathL.size(); ++i)
@@ -2726,16 +2765,25 @@ void unetbootin::runinstusb()
         QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 	#endif
 	#ifdef Q_OS_UNIX
-        if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3)")))
-        {
-            isext2 = true;
-            callexternapp(extlinuxcommand, QString("-i %1").arg(targetPath));
-        }
-        else
-        {
-            isext2 = false;
-            callexternapp(syslinuxcommand, targetDev);
-        }
+		isext2 = false;
+		if (!volidcommand.isEmpty())
+		{
+			if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3)")))
+				isext2 = true;
+		}
+		else
+		{
+			QString tstrblk = callexternapp(volidcommand, QString("-s TYPE %2").arg(targetDev));
+			if (tstrblk.contains('='))
+			{
+				if (tstrblk.contains(QRegExp("(ext2|ext3|ext4)")))
+					isext2 = true;
+			}
+		}
+		if (isext2)
+			callexternapp(extlinuxcommand, QString("-i %1").arg(targetPath));
+		else
+			callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
 	{
 		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
