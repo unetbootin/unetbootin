@@ -184,38 +184,39 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="502"/>
         <location filename="unetbootin.cpp" line="506"/>
         <location filename="unetbootin.cpp" line="510"/>
-        <location filename="unetbootin.cpp" line="519"/>
+        <location filename="unetbootin.cpp" line="516"/>
+        <location filename="unetbootin.cpp" line="528"/>
         <source>either</source>
         <translation>sia</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
-        <location filename="unetbootin.cpp" line="511"/>
-        <location filename="unetbootin.cpp" line="525"/>
-        <location filename="unetbootin.cpp" line="526"/>
-        <location filename="unetbootin.cpp" line="584"/>
-        <location filename="unetbootin.cpp" line="666"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="754"/>
-        <location filename="unetbootin.cpp" line="1792"/>
-        <location filename="unetbootin.cpp" line="1834"/>
-        <location filename="unetbootin.cpp" line="2404"/>
-        <location filename="unetbootin.cpp" line="2429"/>
-        <location filename="unetbootin.cpp" line="2556"/>
-        <location filename="unetbootin.cpp" line="2805"/>
+        <location filename="unetbootin.cpp" line="520"/>
+        <location filename="unetbootin.cpp" line="534"/>
+        <location filename="unetbootin.cpp" line="535"/>
+        <location filename="unetbootin.cpp" line="593"/>
+        <location filename="unetbootin.cpp" line="687"/>
+        <location filename="unetbootin.cpp" line="759"/>
+        <location filename="unetbootin.cpp" line="775"/>
+        <location filename="unetbootin.cpp" line="1813"/>
+        <location filename="unetbootin.cpp" line="1855"/>
+        <location filename="unetbootin.cpp" line="2443"/>
+        <location filename="unetbootin.cpp" line="2468"/>
+        <location filename="unetbootin.cpp" line="2595"/>
+        <location filename="unetbootin.cpp" line="2853"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="154"/>
-        <location filename="unetbootin.cpp" line="528"/>
-        <location filename="unetbootin.cpp" line="529"/>
-        <location filename="unetbootin.cpp" line="580"/>
-        <location filename="unetbootin.cpp" line="661"/>
-        <location filename="unetbootin.cpp" line="2400"/>
-        <location filename="unetbootin.cpp" line="2413"/>
-        <location filename="unetbootin.cpp" line="2552"/>
-        <location filename="unetbootin.cpp" line="2801"/>
+        <location filename="unetbootin.cpp" line="537"/>
+        <location filename="unetbootin.cpp" line="538"/>
+        <location filename="unetbootin.cpp" line="589"/>
+        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="2439"/>
+        <location filename="unetbootin.cpp" line="2452"/>
+        <location filename="unetbootin.cpp" line="2591"/>
+        <location filename="unetbootin.cpp" line="2849"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -223,9 +224,9 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="157"/>
         <location filename="unetbootin.cpp" line="179"/>
         <location filename="unetbootin.cpp" line="180"/>
-        <location filename="unetbootin.cpp" line="694"/>
-        <location filename="unetbootin.cpp" line="695"/>
-        <location filename="unetbootin.cpp" line="2469"/>
+        <location filename="unetbootin.cpp" line="715"/>
+        <location filename="unetbootin.cpp" line="716"/>
+        <location filename="unetbootin.cpp" line="2508"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
@@ -233,9 +234,9 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="156"/>
         <location filename="unetbootin.cpp" line="183"/>
         <location filename="unetbootin.cpp" line="184"/>
-        <location filename="unetbootin.cpp" line="689"/>
-        <location filename="unetbootin.cpp" line="690"/>
-        <location filename="unetbootin.cpp" line="2474"/>
+        <location filename="unetbootin.cpp" line="710"/>
+        <location filename="unetbootin.cpp" line="711"/>
+        <location filename="unetbootin.cpp" line="2513"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -356,217 +357,217 @@ Riavviare adesso?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="686"/>
+        <location filename="unetbootin.cpp" line="707"/>
         <source>Open Disk Image File</source>
         <translation>Aprire file immagine disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>Open Kernel File</source>
         <translation>Aprire Kernel File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="733"/>
         <source>Open Initrd File</source>
         <translation>Aprire Initrd File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="720"/>
+        <location filename="unetbootin.cpp" line="741"/>
         <source>Open Bootloader Config File</source>
         <translation>Aprire Bootloader Config File</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="763"/>
         <source>Insert a USB flash drive</source>
         <translation>Inserire un USB flash drive</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="743"/>
+        <location filename="unetbootin.cpp" line="764"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Non sono stati trovati USB flash drives, Se avete già inserito un USB flash drive provate a riformattarlo come FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="758"/>
+        <location filename="unetbootin.cpp" line="779"/>
         <source>%1 not mounted</source>
         <translation>%1 non montato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="759"/>
+        <location filename="unetbootin.cpp" line="780"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Dovete prima montare l&apos;USB drive %1 in un mountpoint. La maggior parte delle distribuzioni lo fa automaticamente dopo la rimozione ed il reinserimento dell&apos;USB flash drive.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="774"/>
+        <location filename="unetbootin.cpp" line="795"/>
         <source>Select a distro</source>
         <translation>Selezionare una distribuzione</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="775"/>
+        <location filename="unetbootin.cpp" line="796"/>
         <source>You must select a distribution to load.</source>
         <translation>Dovete selezionare una distribuzione da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="789"/>
+        <location filename="unetbootin.cpp" line="810"/>
         <source>Select a disk image file</source>
         <translation>Selezionare un file immagine di disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="790"/>
+        <location filename="unetbootin.cpp" line="811"/>
         <source>You must select a disk image file to load.</source>
         <translation>Dovete selezionare un file immagine di disco da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="804"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Selezionare un kernel e/o un file initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="805"/>
+        <location filename="unetbootin.cpp" line="826"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Dovete selezionare un kernel e/o un file initrd da caricare.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="819"/>
+        <location filename="unetbootin.cpp" line="840"/>
         <source>Diskimage file not found</source>
         <translation>file immagine di disco non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="820"/>
+        <location filename="unetbootin.cpp" line="841"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Il file immagine di disco %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="834"/>
+        <location filename="unetbootin.cpp" line="855"/>
         <source>Kernel file not found</source>
         <translation>File kernel non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="835"/>
+        <location filename="unetbootin.cpp" line="856"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Il file kernel %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="849"/>
+        <location filename="unetbootin.cpp" line="870"/>
         <source>Initrd file not found</source>
         <translation>File initrd non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="850"/>
+        <location filename="unetbootin.cpp" line="871"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Il file initrd %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="950"/>
+        <location filename="unetbootin.cpp" line="971"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 esiste già, lo sovrascrivo?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="951"/>
+        <location filename="unetbootin.cpp" line="972"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Il file %1 esiste già. Cliccare su &apos;Yes to All&apos; per sovrascriverlo e non essere più avvertito, su &apos;Yes&apos; per sovrascrivere i file individualmente, e su &apos;No&apos; per mantenere il file esistente. Nel dubbio cliccare su &apos;Yes to All&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1346"/>
-        <location filename="unetbootin.cpp" line="1368"/>
+        <location filename="unetbootin.cpp" line="1367"/>
+        <location filename="unetbootin.cpp" line="1389"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1425"/>
+        <location filename="unetbootin.cpp" line="1446"/>
         <source>Extracting files, please wait...</source>
         <translation>Estrazione file in corso, attendere prego...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1426"/>
+        <location filename="unetbootin.cpp" line="1447"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archivio:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1427"/>
+        <location filename="unetbootin.cpp" line="1448"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Sorgentee:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1428"/>
+        <location filename="unetbootin.cpp" line="1449"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1429"/>
+        <location filename="unetbootin.cpp" line="1450"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Estratti:&lt;/b&gt; 0 di %1 file</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1432"/>
+        <location filename="unetbootin.cpp" line="1453"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Sorgente:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1433"/>
+        <location filename="unetbootin.cpp" line="1454"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1434"/>
+        <location filename="unetbootin.cpp" line="1455"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Estratti:&lt;/b&gt; %1 di %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1776"/>
+        <location filename="unetbootin.cpp" line="1797"/>
         <source>Downloading files, please wait...</source>
         <oldsource>Downloading files, plese wait...</oldsource>
         <translation type="unfinished">Scaricamento file in corso, attendere prego...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1777"/>
+        <location filename="unetbootin.cpp" line="1798"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Sorgente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1778"/>
+        <location filename="unetbootin.cpp" line="1799"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destinazione:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1779"/>
+        <location filename="unetbootin.cpp" line="1800"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Scaricati:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1849"/>
-        <location filename="unetbootin.cpp" line="1856"/>
+        <location filename="unetbootin.cpp" line="1870"/>
+        <location filename="unetbootin.cpp" line="1877"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;Scaricati:&lt;/b&gt; %1 di %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1931"/>
+        <location filename="unetbootin.cpp" line="1952"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Ricerca in corso su &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1935"/>
+        <location filename="unetbootin.cpp" line="1956"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 corrispondenze in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2102"/>
+        <location filename="unetbootin.cpp" line="2141"/>
         <source>%1 not found</source>
         <translation>%1 non trovato</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2103"/>
+        <location filename="unetbootin.cpp" line="2142"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 non trovato. Questo è necessario per %2 install mode.(new line)
 Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuzione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2803"/>
+        <location filename="unetbootin.cpp" line="2851"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Dopo il riavvio selezionare il(sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2807"/>
+        <location filename="unetbootin.cpp" line="2855"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)

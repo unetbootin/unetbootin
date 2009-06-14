@@ -560,147 +560,147 @@ Voleu reiniciar el sistema ara?</translation>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="763"/>
         <source>Insert a USB flash drive</source>
         <translation>Connecteu un llàpis de memòria</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="743"/>
+        <location filename="unetbootin.cpp" line="764"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>No s&apos;han trobat unitats USB flash. Si je l&apos;heu introduït, proveu de reformatar la unitat com a FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="758"/>
+        <location filename="unetbootin.cpp" line="779"/>
         <source>%1 not mounted</source>
         <translation>%1 no s&apos;ha muntat</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="759"/>
+        <location filename="unetbootin.cpp" line="780"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Primer heu de muntar el llàpis de memòria %1 en algun punt de muntatge. Algunes distribucións ho fan automàticament si el retireu i el torneu a inserir.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="774"/>
+        <location filename="unetbootin.cpp" line="795"/>
         <source>Select a distro</source>
         <translation>Seleccioneu una distribució</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="775"/>
+        <location filename="unetbootin.cpp" line="796"/>
         <source>You must select a distribution to load.</source>
         <translation>Heu de seleccionar la distribució que voleu carregar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="789"/>
+        <location filename="unetbootin.cpp" line="810"/>
         <source>Select a disk image file</source>
         <translation>Seleccioneu un fitxer imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="790"/>
+        <location filename="unetbootin.cpp" line="811"/>
         <source>You must select a disk image file to load.</source>
         <translation>Heu de seleccionar un fitxer imatge de disc per poder carregar-lo.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="804"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Seleccioneu un nucli (kernel) i/o un fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="805"/>
+        <location filename="unetbootin.cpp" line="826"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Heu de seleccionar un nucli (kernel) i/o un fitxer initrd per poder-los carregar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1346"/>
-        <location filename="unetbootin.cpp" line="1368"/>
+        <location filename="unetbootin.cpp" line="1367"/>
+        <location filename="unetbootin.cpp" line="1389"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1425"/>
+        <location filename="unetbootin.cpp" line="1446"/>
         <source>Extracting files, please wait...</source>
         <translation>S&apos;estan extraient fitxers, espereu...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1426"/>
+        <location filename="unetbootin.cpp" line="1447"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Fitxer:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1427"/>
+        <location filename="unetbootin.cpp" line="1448"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1428"/>
+        <location filename="unetbootin.cpp" line="1449"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destinació:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1429"/>
+        <location filename="unetbootin.cpp" line="1450"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;S&apos;han extret:&lt;/b&gt; 0 de %1 fitxers</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1432"/>
+        <location filename="unetbootin.cpp" line="1453"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1433"/>
+        <location filename="unetbootin.cpp" line="1454"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destinació:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1434"/>
+        <location filename="unetbootin.cpp" line="1455"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;S&apos;han extret:&lt;/b&gt; %1 de %2 fitxers</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1776"/>
+        <location filename="unetbootin.cpp" line="1797"/>
         <source>Downloading files, please wait...</source>
         <oldsource>Downloading files, plese wait...</oldsource>
         <translation type="unfinished">S&apos;estan descarregant fitxers, espereu...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1777"/>
+        <location filename="unetbootin.cpp" line="1798"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1778"/>
+        <location filename="unetbootin.cpp" line="1799"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destinació:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1779"/>
+        <location filename="unetbootin.cpp" line="1800"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;S&apos;han baixat:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1849"/>
-        <location filename="unetbootin.cpp" line="1856"/>
+        <location filename="unetbootin.cpp" line="1870"/>
+        <location filename="unetbootin.cpp" line="1877"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation>&lt;b&gt;S&apos;han baixat:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2102"/>
+        <location filename="unetbootin.cpp" line="2141"/>
         <source>%1 not found</source>
         <translation>No s&apos;ha trobat %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2103"/>
+        <location filename="unetbootin.cpp" line="2142"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>No s&apos;ha trobat %1. Es requereix pel mode d&apos;instal·lació %2.
 Instal·leu el paquet &quot;%3&quot; o l&apos;equivalent de la vostra distribució.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2803"/>
+        <location filename="unetbootin.cpp" line="2851"/>
         <source>After rebooting, select the </source>
         <translation>Després de reiniciar, seleccioneu el</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2807"/>
+        <location filename="unetbootin.cpp" line="2855"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Després de reiniciar, seleccioneu l&apos;opció USB del menú d&apos;arrencada de la BIOS.%1
@@ -711,38 +711,39 @@ Voleu reiniciar el sistema ara?</translation>
         <location filename="unetbootin.cpp" line="502"/>
         <location filename="unetbootin.cpp" line="506"/>
         <location filename="unetbootin.cpp" line="510"/>
-        <location filename="unetbootin.cpp" line="519"/>
+        <location filename="unetbootin.cpp" line="516"/>
+        <location filename="unetbootin.cpp" line="528"/>
         <source>either</source>
         <translation>o bé</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
-        <location filename="unetbootin.cpp" line="511"/>
-        <location filename="unetbootin.cpp" line="525"/>
-        <location filename="unetbootin.cpp" line="526"/>
-        <location filename="unetbootin.cpp" line="584"/>
-        <location filename="unetbootin.cpp" line="666"/>
-        <location filename="unetbootin.cpp" line="738"/>
-        <location filename="unetbootin.cpp" line="754"/>
-        <location filename="unetbootin.cpp" line="1792"/>
-        <location filename="unetbootin.cpp" line="1834"/>
-        <location filename="unetbootin.cpp" line="2404"/>
-        <location filename="unetbootin.cpp" line="2429"/>
-        <location filename="unetbootin.cpp" line="2556"/>
-        <location filename="unetbootin.cpp" line="2805"/>
+        <location filename="unetbootin.cpp" line="520"/>
+        <location filename="unetbootin.cpp" line="534"/>
+        <location filename="unetbootin.cpp" line="535"/>
+        <location filename="unetbootin.cpp" line="593"/>
+        <location filename="unetbootin.cpp" line="687"/>
+        <location filename="unetbootin.cpp" line="759"/>
+        <location filename="unetbootin.cpp" line="775"/>
+        <location filename="unetbootin.cpp" line="1813"/>
+        <location filename="unetbootin.cpp" line="1855"/>
+        <location filename="unetbootin.cpp" line="2443"/>
+        <location filename="unetbootin.cpp" line="2468"/>
+        <location filename="unetbootin.cpp" line="2595"/>
+        <location filename="unetbootin.cpp" line="2853"/>
         <source>USB Drive</source>
         <translation>Unitat USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="154"/>
-        <location filename="unetbootin.cpp" line="528"/>
-        <location filename="unetbootin.cpp" line="529"/>
-        <location filename="unetbootin.cpp" line="580"/>
-        <location filename="unetbootin.cpp" line="661"/>
-        <location filename="unetbootin.cpp" line="2400"/>
-        <location filename="unetbootin.cpp" line="2413"/>
-        <location filename="unetbootin.cpp" line="2552"/>
-        <location filename="unetbootin.cpp" line="2801"/>
+        <location filename="unetbootin.cpp" line="537"/>
+        <location filename="unetbootin.cpp" line="538"/>
+        <location filename="unetbootin.cpp" line="589"/>
+        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="2439"/>
+        <location filename="unetbootin.cpp" line="2452"/>
+        <location filename="unetbootin.cpp" line="2591"/>
+        <location filename="unetbootin.cpp" line="2849"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -750,9 +751,9 @@ Voleu reiniciar el sistema ara?</translation>
         <location filename="unetbootin.cpp" line="157"/>
         <location filename="unetbootin.cpp" line="179"/>
         <location filename="unetbootin.cpp" line="180"/>
-        <location filename="unetbootin.cpp" line="694"/>
-        <location filename="unetbootin.cpp" line="695"/>
-        <location filename="unetbootin.cpp" line="2469"/>
+        <location filename="unetbootin.cpp" line="715"/>
+        <location filename="unetbootin.cpp" line="716"/>
+        <location filename="unetbootin.cpp" line="2508"/>
         <source>Floppy</source>
         <translation>Disquet</translation>
     </message>
@@ -760,9 +761,9 @@ Voleu reiniciar el sistema ara?</translation>
         <location filename="unetbootin.cpp" line="156"/>
         <location filename="unetbootin.cpp" line="183"/>
         <location filename="unetbootin.cpp" line="184"/>
-        <location filename="unetbootin.cpp" line="689"/>
-        <location filename="unetbootin.cpp" line="690"/>
-        <location filename="unetbootin.cpp" line="2474"/>
+        <location filename="unetbootin.cpp" line="710"/>
+        <location filename="unetbootin.cpp" line="711"/>
+        <location filename="unetbootin.cpp" line="2513"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -837,72 +838,72 @@ Voleu reiniciar el sistema ara?</translation>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="686"/>
+        <location filename="unetbootin.cpp" line="707"/>
         <source>Open Disk Image File</source>
         <translation>Obre el fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>Open Kernel File</source>
         <translation>Obre el fitxer de nucli</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="733"/>
         <source>Open Initrd File</source>
         <translation>Obre el fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="720"/>
+        <location filename="unetbootin.cpp" line="741"/>
         <source>Open Bootloader Config File</source>
         <translation>Obre el fitxer de configuració del carregador d&apos;arrencada</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="819"/>
+        <location filename="unetbootin.cpp" line="840"/>
         <source>Diskimage file not found</source>
         <translation>No s&apos;ha trobat el fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="820"/>
+        <location filename="unetbootin.cpp" line="841"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>El fitxer d&apos;imatge de disc %1 no existeix.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="834"/>
+        <location filename="unetbootin.cpp" line="855"/>
         <source>Kernel file not found</source>
         <translation>No s&apos;ha trobat el fitxer del nucli</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="835"/>
+        <location filename="unetbootin.cpp" line="856"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>El fitxer del nucli especificat %1 no existeix.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="849"/>
+        <location filename="unetbootin.cpp" line="870"/>
         <source>Initrd file not found</source>
         <translation>No s&apos;ha trobat el fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="850"/>
+        <location filename="unetbootin.cpp" line="871"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>El fitxer initrd especificat %1 no existeix.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="950"/>
+        <location filename="unetbootin.cpp" line="971"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 ja existeix. El voleu sobreescriure?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="951"/>
+        <location filename="unetbootin.cpp" line="972"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>El fitxer %1 ja existeix. Premeu &apos;Sí a tot&apos; per sobreescriure&apos;l i evitar ser preguntat de nou, &apos;Sí&apos; per sobreescriure fitxers individualment, i &apos;No&apos; per conservar la versió existent. En cas de dubte premeu &apos;Sí a tot&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1931"/>
+        <location filename="unetbootin.cpp" line="1952"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>S&apos;està cercant &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1935"/>
+        <location filename="unetbootin.cpp" line="1956"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 coincidències de &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>

@@ -2103,7 +2103,7 @@ QString unetbootin::getuuid(QString voldrive)
 		volidpS = QString(callexternapp(volidcommand, QString("-u %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
 	else
 	{
-		QString tstrblk = QString(callexternapp(volidcommand, QString("-s UUID %1").arg(voldrive)));
+		QString tstrblk = QString(callexternapp(blkidcommand, QString("-s UUID %1").arg(voldrive)));
 		if (tstrblk.contains('='))
 			volidpS = tstrblk.section('=', -1, -1).remove('"').remove("\r").remove("\n").trimmed();
 	}
@@ -2773,7 +2773,7 @@ void unetbootin::runinstusb()
 		}
 		else
 		{
-			QString tstrblk = callexternapp(volidcommand, QString("-s TYPE %2").arg(targetDev));
+			QString tstrblk = callexternapp(blkidcommand, QString("-s TYPE %2").arg(targetDev));
 			if (tstrblk.contains('='))
 			{
 				if (tstrblk.contains(QRegExp("(ext2|ext3|ext4)")))
