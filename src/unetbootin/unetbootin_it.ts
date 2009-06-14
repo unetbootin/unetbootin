@@ -25,7 +25,7 @@ Riavviare adesso?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="249"/>
+        <location filename="main.cpp" line="257"/>
         <source>LeftToRight</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,10 +200,10 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="775"/>
         <location filename="unetbootin.cpp" line="1813"/>
         <location filename="unetbootin.cpp" line="1855"/>
-        <location filename="unetbootin.cpp" line="2443"/>
-        <location filename="unetbootin.cpp" line="2468"/>
-        <location filename="unetbootin.cpp" line="2595"/>
-        <location filename="unetbootin.cpp" line="2853"/>
+        <location filename="unetbootin.cpp" line="2448"/>
+        <location filename="unetbootin.cpp" line="2473"/>
+        <location filename="unetbootin.cpp" line="2600"/>
+        <location filename="unetbootin.cpp" line="2935"/>
         <source>USB Drive</source>
         <translation>Disco USB</translation>
     </message>
@@ -213,10 +213,10 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="538"/>
         <location filename="unetbootin.cpp" line="589"/>
         <location filename="unetbootin.cpp" line="682"/>
-        <location filename="unetbootin.cpp" line="2439"/>
-        <location filename="unetbootin.cpp" line="2452"/>
-        <location filename="unetbootin.cpp" line="2591"/>
-        <location filename="unetbootin.cpp" line="2849"/>
+        <location filename="unetbootin.cpp" line="2444"/>
+        <location filename="unetbootin.cpp" line="2457"/>
+        <location filename="unetbootin.cpp" line="2596"/>
+        <location filename="unetbootin.cpp" line="2931"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -226,7 +226,7 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="180"/>
         <location filename="unetbootin.cpp" line="715"/>
         <location filename="unetbootin.cpp" line="716"/>
-        <location filename="unetbootin.cpp" line="2508"/>
+        <location filename="unetbootin.cpp" line="2513"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
@@ -236,7 +236,7 @@ Riavviare adesso?</translation>
         <location filename="unetbootin.cpp" line="184"/>
         <location filename="unetbootin.cpp" line="710"/>
         <location filename="unetbootin.cpp" line="711"/>
-        <location filename="unetbootin.cpp" line="2513"/>
+        <location filename="unetbootin.cpp" line="2518"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -562,12 +562,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuzione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2851"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished">Dopo il riavvio selezionare il(sp)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2855"/>
+        <location filename="unetbootin.cpp" line="2937"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished">Dopo il riavvio selezionare l&apos;opzione USB boot nel menù del BIOS.%1(new line)
@@ -805,32 +805,32 @@ p, li { white-space: pre-wrap; }(new line)
 <context>
     <name>uninstaller</name>
     <message>
-        <location filename="main.cpp" line="148"/>
+        <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
         <translation>Disinstallazione completata</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="149"/>
+        <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
         <translation>%1 è stato disinstallato.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="283"/>
+        <location filename="main.cpp" line="291"/>
         <source>Must run as root</source>
         <translation>Deve essere lanciato come root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="285"/>
+        <location filename="main.cpp" line="293"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 deve essere lanciato come root. Chiuderlo e rilanciarlo usando o &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;oppure:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="306"/>
+        <location filename="main.cpp" line="314"/>
         <source>%1 Uninstaller</source>
         <translation>%1 disinstallatore</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="307"/>
+        <location filename="main.cpp" line="315"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 è attualmente installato. Rimuovere la versione attuale?</translation>
     </message>

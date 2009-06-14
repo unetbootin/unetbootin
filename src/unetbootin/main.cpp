@@ -80,6 +80,14 @@ void ubnUninst()
 		}
 		QFile::rename(QString("%1grub/menu.lst.bak").arg(uninstsubDir), QString("%1grub/menu.lst").arg(uninstsubDir));
 	}
+	if (QFile::exists(QString("%1grub/grub.cfg.bak").arg(uninstsubDir)))
+	{
+		if (QFile::exists(QString("%1grub/grub.cfg").arg(uninstsubDir)))
+		{
+			QFile::remove(QString("%1grub/grub.cfg").arg(uninstsubDir));
+		}
+		QFile::rename(QString("%1grub/grub.cfg.bak").arg(uninstsubDir), QString("%1grub/grub.cfg").arg(uninstsubDir));
+	}
 	#endif
 	#ifdef Q_OS_WIN32
 	QSettings autostrt("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce", QSettings::NativeFormat);

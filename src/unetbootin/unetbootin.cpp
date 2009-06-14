@@ -2618,6 +2618,7 @@ void unetbootin::writegrub2cfg()
 	QRegExp mlstchkistimeout("\\s{0,}set\\s{1,}timeout=\\d{1,}.{0,}", Qt::CaseInsensitive);
 	QStringList ecurmenulstTextL;
 	bool mlstmustreplacetimeout = true;
+	QString menulstCurLine;
 	while (!bkmenulstout.atEnd())
 	{
 		menulstCurLine = bkmenulstout.readLine();
@@ -2636,9 +2637,9 @@ void unetbootin::writegrub2cfg()
 	"%9\n\n"
 #ifndef NODEFAULTBOOT
 	"\nmenuentry \""UNETBOOTINB"\" {\n"
-	"set root=%8\n"
-	"%1 %2 %3 %4\n"
-	"%5 %6 %7\n"
+	"\tset root=%8\n"
+	"\t%1 %2 %3 %4\n"
+	"\t%5 %6 %7\n"
 	"}\n"
 #endif
 	).arg(kernelLine.replace("kernel", "linux")).arg(kernelParam).arg(kernelLoc).arg(kernelOpts).arg(initrdLine).arg(initrdLoc).arg(initrdOpts)
@@ -2649,9 +2650,9 @@ void unetbootin::writegrub2cfg()
 		for (int i = 0; i < extraoptionsPL.first.first.size(); ++i)
 		{
 			menulstxt.append(QString("\nmenuentry \"%1\" {\n"
-			"set root=%5\n"
-			"linux %2 %4\n"
-			"initrd %3\n"
+			"\tset root=%5\n"
+			"\tlinux %2 %4\n"
+			"\tinitrd %3\n"
 			"}\n").arg(QString(extraoptionsPL.second.first.at(i)).remove("^")).arg(extraoptionsPL.first.first.at(i)).arg(extraoptionsPL.first.second.at(i)).arg(extraoptionsPL.second.second.at(i))
 			.arg(getGrubNotation(targetDev))
 			);
@@ -2664,8 +2665,17 @@ void unetbootin::writegrub2cfg()
 void unetbootin::runinsthdd()
 {
 	#ifdef Q_OS_UNIX
-	if (QFile::exists("/boot/grub/grub.cfg"))
+	if (QFile::exists("/boot/grub/grub.cfg")) // has grub2
+	{
 		writegrub2cfg();
+		if (!QFile::exists("/boot/grub/menu.lst")) // grub2-only
+		{
+			QSettings install(QSettings::SystemScope, "UNetbootin");
+			install.setValue("Location", "/");
+			fininstall();
+			return;
+		}
+	}
 	#endif
 	#ifdef Q_OS_WIN32
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
