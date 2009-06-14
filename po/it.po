@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 11:09-0700\n"
+"POT-Creation-Date: 2009-06-14 11:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -450,6 +450,7 @@ msgstr ""
 "partizioni.<br/><b>Install Notes:</b> CloneZilla viene avviato e lanciato in "
 "modo Live, non è necessaria nessuna installazione per usarlo."
 
+#. (obsolete)
 #: unetbootin#29
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><"

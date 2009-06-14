@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 11:09-0700\n"
+"POT-Creation-Date: 2009-06-14 11:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -900,14 +900,6 @@ msgstr ""
 
 #: unetbootin#22
 msgid ""
-"<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><"
-"br/><b>Description:</b> FaunOS is a distribution based on Arch "
-"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
-"mode, from which the installer can optionally be launched."
-msgstr ""
-
-#: unetbootin#23
-msgid ""
 "<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.or"
 "g</a><br/><b>Description:</b> Fedora is a Red Hat sponsored community "
 "distribution which showcases the latest cutting-edge free/open-source "
@@ -925,7 +917,7 @@ msgstr ""
 "(FTP), o instalación offline usando las imagenes ISO descargadas previamente "
 "or offline installation using pre-downloaded installation ISO files."
 
-#: unetbootin#24
+#: unetbootin#23
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.freedos.org/\">http://www.freedos.org</a"
 "><br/><b>Description:</b> FreeDOS is a free MS-DOS compatible operating "
@@ -934,7 +926,7 @@ msgid ""
 "installation details."
 msgstr ""
 
-#: unetbootin#25
+#: unetbootin#24
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><"
 "br/><b>Description:</b> Gentoo is a flexible source-based distribution "
@@ -943,7 +935,7 @@ msgid ""
 "launched."
 msgstr ""
 
-#: unetbootin#26
+#: unetbootin#25
 msgid ""
 "<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http://gujin.source"
 "forge.net</a><br/><b>Description:</b> Gujin is a graphical boot manager "
@@ -951,7 +943,7 @@ msgid ""
 "Gujin simply boots and runs; no installation is required to use it."
 msgstr ""
 
-#: unetbootin#27
+#: unetbootin#26
 msgid ""
 "<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br"
 "/><b>Description:</b> Linux Mint is a user-friendly Ubuntu-based "
@@ -965,7 +957,7 @@ msgstr ""
 "otro software por defecto.<br/><b>Notas de instalaci&oacute;n:</b> La "
 "versi&oacute;n live permite arrancar en modo live (vivo)."
 
-#: unetbootin#28
+#: unetbootin#27
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/"
 "</a><br/><b>Description:</b> Mandriva is a user-friendly distro formerly "
@@ -984,7 +976,7 @@ msgstr ""
 "href=\"http://www.mandriva.com/en/download\">Ficheros de imagen ISO "
 "\"Free\"</a>."
 
-#: unetbootin#29
+#: unetbootin#28
 msgid ""
 "<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.ht"
 "ml\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Descript"
@@ -994,7 +986,7 @@ msgid ""
 "required to use it."
 msgstr ""
 
-#: unetbootin#30
+#: unetbootin#29
 msgid ""
 "<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack."
 "sourceforge.net</a><br/><b>Description:</b> Ophcrack can crack Windows "
@@ -1002,7 +994,7 @@ msgid ""
 "mode; no installation is required to use it."
 msgstr ""
 
-#: unetbootin#31
+#: unetbootin#30
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.co"
 "m</a><br/><b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based "
@@ -1015,7 +1007,7 @@ msgstr ""
 "instalaci&oacute;n</b> La versi&oacute;n live permite arrancar en modo live "
 "(vivo)."
 
-#: unetbootin#32
+#: unetbootin#31
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux."
 "com</a><br/><b>Description:</b> Puppy Linux is a lightweight distribution "
@@ -1024,7 +1016,7 @@ msgid ""
 "not required but optional."
 msgstr ""
 
-#: unetbootin#33
+#: unetbootin#32
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b> "
@@ -1033,7 +1025,7 @@ msgid ""
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#34
+#: unetbootin#33
 msgid ""
 "<b>Homepage:</b> <a href=\"http://btmgr.sourceforge.net/about.html\">http://bt"
 "mgr.sourceforge.net/about.html</a><br/><b>Description:</b> Smart Boot "
@@ -1042,7 +1034,7 @@ msgid ""
 "no installation is required to use it."
 msgstr ""
 
-#: unetbootin#35
+#: unetbootin#34
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http://www.supergrub"
 "disk.org</a><br/><b>Description:</b> Super Grub Disk is a bootloader which "
@@ -1050,7 +1042,7 @@ msgid ""
 "Notes:</b> SGD simply boots and runs; no installation is required to use it."
 msgstr ""
 
-#: unetbootin#36
+#: unetbootin#35
 msgid ""
 "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a href=\"http://www.ki"
 "wilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> Kiwi "
@@ -1059,7 +1051,7 @@ msgid ""
 "empty and formatted before proceeding with install."
 msgstr ""
 
-#: unetbootin#37
+#: unetbootin#36
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
@@ -1068,7 +1060,7 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#38
+#: unetbootin#37
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">http://www.freedr"
 "web.com/livecd</a><br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus "
@@ -1077,7 +1069,7 @@ msgid ""
 "malware scans can be launched."
 msgstr ""
 
-#: unetbootin#39
+#: unetbootin#38
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
@@ -1086,7 +1078,7 @@ msgid ""
 "in Live mode, from which malware scans can be launched."
 msgstr ""
 
-#: unetbootin#40
+#: unetbootin#39
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.gnewsense.org/\">http://www.gnewsense.or"
 "g</a><br/><b>Description:</b> gNewSense is an FSF-endorsed distribution "
@@ -1095,7 +1087,7 @@ msgid ""
 "installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#41
+#: unetbootin#40
 msgid ""
 "<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">ht"
 "tp://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
@@ -1104,7 +1096,7 @@ msgid ""
 "in Live mode, from which malware scans can be launched."
 msgstr ""
 
-#: unetbootin#42
+#: unetbootin#41
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br"
 "/><b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a "
@@ -1113,7 +1105,7 @@ msgid ""
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#43
+#: unetbootin#42
 msgid ""
 "<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://ha"
 "cktolive.org/wiki/Super_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is "
@@ -1123,7 +1115,7 @@ msgid ""
 "optionally be launched."
 msgstr ""
 
-#: unetbootin#44
+#: unetbootin#43
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org"
 "</a><br/><b>Description:</b> SystemRescueCD includes various partition "
@@ -1132,7 +1124,7 @@ msgid ""
 "to use it."
 msgstr ""
 
-#: unetbootin#45
+#: unetbootin#44
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><"
 "br/><b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. "
@@ -1150,7 +1142,7 @@ msgstr ""
 "(vivo). La versi&oacute;n Netinstall permite instalaciones por FTP y puede "
 "instalar Kubuntu y otras derivadas oficiales de Ubuntu."
 
-#: unetbootin#46
+#: unetbootin#45
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
@@ -1159,7 +1151,7 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#47
+#: unetbootin#46
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a"
 "><br/><b>Description:</b> Zenwalk is a Slackware-based distribution "
@@ -1168,15 +1160,15 @@ msgid ""
 "launched."
 msgstr ""
 
-#: unetbootin#48
+#: unetbootin#47
 #, fuzzy
-msgctxt "unetbootin#48"
+msgctxt "unetbootin#47"
 msgid "Insert a USB flash drive"
 msgstr "Inserta un pendrive (unidad USB)"
 
-#: unetbootin#49
+#: unetbootin#48
 #, fuzzy
-msgctxt "unetbootin#49"
+msgctxt "unetbootin#48"
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -1184,15 +1176,15 @@ msgstr ""
 "No se encontró ningun pendrive (unidad USB). Si has introducido ya un "
 "pendrive, prueba a reformatearlo como FAT32."
 
-#: unetbootin#50
+#: unetbootin#49
 #, fuzzy
-msgctxt "unetbootin#50"
+msgctxt "unetbootin#49"
 msgid "%1 not mounted"
 msgstr "%1 no está montado"
 
-#: unetbootin#51
+#: unetbootin#50
 #, fuzzy
-msgctxt "unetbootin#51"
+msgctxt "unetbootin#50"
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -1201,132 +1193,132 @@ msgstr ""
 "distribuciones harán esto automáticamente cuando quites y vuelvas a insertar "
 "el pendrive."
 
+#: unetbootin#51
+#, fuzzy
+msgctxt "unetbootin#51"
+msgid "Select a distro"
+msgstr "Selecciona una distribución"
+
 #: unetbootin#52
 #, fuzzy
 msgctxt "unetbootin#52"
-msgid "Select a distro"
-msgstr "Selecciona una distribución"
+msgid "You must select a distribution to load."
+msgstr "Debes seleccionar una distribución para cargar."
 
 #: unetbootin#53
 #, fuzzy
 msgctxt "unetbootin#53"
-msgid "You must select a distribution to load."
-msgstr "Debes seleccionar una distribución para cargar."
+msgid "Select a disk image file"
+msgstr "Selecciona un fichero de imagen de disco"
 
 #: unetbootin#54
 #, fuzzy
 msgctxt "unetbootin#54"
-msgid "Select a disk image file"
-msgstr "Selecciona un fichero de imagen de disco"
+msgid "You must select a disk image file to load."
+msgstr "Debes seleccionar un fichero de imagen de disco para cargar."
 
 #: unetbootin#55
 #, fuzzy
 msgctxt "unetbootin#55"
-msgid "You must select a disk image file to load."
-msgstr "Debes seleccionar un fichero de imagen de disco para cargar."
+msgid "Select a kernel and/or initrd file"
+msgstr "Selecciona un kernel y/o un fichero initrd"
 
 #: unetbootin#56
 #, fuzzy
 msgctxt "unetbootin#56"
-msgid "Select a kernel and/or initrd file"
-msgstr "Selecciona un kernel y/o un fichero initrd"
-
-#: unetbootin#57
-#, fuzzy
-msgctxt "unetbootin#57"
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "Debes seleccionar un kernel y/o un fichero initrd para cargar."
 
-#: unetbootin#58
+#: unetbootin#57
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
+
+#: unetbootin#58
+#, fuzzy
+msgctxt "unetbootin#58"
+msgid "Extracting files, please wait..."
+msgstr "Extrayendo ficheros, por favor espere..."
 
 #: unetbootin#59
 #, fuzzy
 msgctxt "unetbootin#59"
-msgid "Extracting files, please wait..."
-msgstr "Extrayendo ficheros, por favor espere..."
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Archivo:</b> %1"
 
 #: unetbootin#60
 #, fuzzy
 msgctxt "unetbootin#60"
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Archivo:</b> %1"
+msgid "<b>Source:</b>"
+msgstr "<b>Fuente:</b>"
 
 #: unetbootin#61
 #, fuzzy
 msgctxt "unetbootin#61"
-msgid "<b>Source:</b>"
-msgstr "<b>Fuente:</b>"
+msgid "<b>Destination:</b>"
+msgstr "<b>Destino:</b>"
 
 #: unetbootin#62
 #, fuzzy
 msgctxt "unetbootin#62"
-msgid "<b>Destination:</b>"
-msgstr "<b>Destino:</b>"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Extraido:</b> 0 de %1 archivos"
 
 #: unetbootin#63
 #, fuzzy
 msgctxt "unetbootin#63"
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Extraido:</b> 0 de %1 archivos"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Fuente:</b> %1 (%2)"
 
 #: unetbootin#64
 #, fuzzy
 msgctxt "unetbootin#64"
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Fuente:</b> %1 (%2)"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Destino:</b> %1%2"
 
 #: unetbootin#65
 #, fuzzy
 msgctxt "unetbootin#65"
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Destino:</b> %1%2"
-
-#: unetbootin#66
-#, fuzzy
-msgctxt "unetbootin#66"
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extraido:</b> %1 de %2 archivos"
 
-#: unetbootin#67
+#: unetbootin#66
 #, fuzzy
 msgid "Downloading files, please wait..."
 msgstr "Descargando ficheros, por favor espere..."
 
+#: unetbootin#67
+#, fuzzy
+msgctxt "unetbootin#67"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Fuente:</b> <a href=\"%1\">%1</a>"
+
 #: unetbootin#68
 #, fuzzy
 msgctxt "unetbootin#68"
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Fuente:</b> <a href=\"%1\">%1</a>"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Destino:</b> %1"
 
 #: unetbootin#69
 #, fuzzy
 msgctxt "unetbootin#69"
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Destino:</b> %1"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Descargado:</b> 0 bytes"
 
 #: unetbootin#70
 #, fuzzy
 msgctxt "unetbootin#70"
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Descargado:</b> 0 bytes"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Descargados:</b> %1 de %2 bytes"
 
 #: unetbootin#71
 #, fuzzy
 msgctxt "unetbootin#71"
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Descargados:</b> %1 de %2 bytes"
+msgid "%1 not found"
+msgstr "%1 no encontrado"
 
 #: unetbootin#72
 #, fuzzy
 msgctxt "unetbootin#72"
-msgid "%1 not found"
-msgstr "%1 no encontrado"
-
-#: unetbootin#73
-#, fuzzy
-msgctxt "unetbootin#73"
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -1334,15 +1326,15 @@ msgstr ""
 "%1 no encontrado. Este se requiere para el modo de instalación %2.\n"
 "Instala el paquete \"%3\" o el equivalente en tu distribución."
 
-#: unetbootin#74
+#: unetbootin#73
 #, fuzzy
-msgctxt "unetbootin#74"
+msgctxt "unetbootin#73"
 msgid "After rebooting, select the "
 msgstr "Después de reiniciar, selecciona el"
 
-#: unetbootin#75
+#: unetbootin#74
 #, fuzzy
-msgctxt "unetbootin#75"
+msgctxt "unetbootin#74"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1351,31 +1343,31 @@ msgstr ""
 "de arranque de la bios. %1\n"
 "¿Reiniciar ahora?"
 
-#: unetbootin#76
+#: unetbootin#75
 msgid "either"
 msgstr ""
 
-#: unetbootin#77
-msgctxt "unetbootin#77"
+#: unetbootin#76
+msgctxt "unetbootin#76"
 msgid "USB Drive"
 msgstr "Unidad USB"
 
-#: unetbootin#78
-msgctxt "unetbootin#78"
+#: unetbootin#77
+msgctxt "unetbootin#77"
 msgid "Hard Disk"
 msgstr "Disco Duro"
 
-#: unetbootin#79
-msgctxt "unetbootin#79"
+#: unetbootin#78
+msgctxt "unetbootin#78"
 msgid "Floppy"
 msgstr "Disquete"
 
-#: unetbootin#80
-msgctxt "unetbootin#80"
+#: unetbootin#79
+msgctxt "unetbootin#79"
 msgid "ISO"
 msgstr "ISO"
 
-#: unetbootin#81
+#: unetbootin#80
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlin"
 "ux.com.br</a><br/><b>Description:</b> Dreamlinux is a user-friendly Debian-"
@@ -1383,7 +1375,7 @@ msgid ""
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#82
+#: unetbootin#81
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a"
 "><br/><b>Description:</b> Elive is a Debian-based distribution featuring the "
@@ -1394,7 +1386,7 @@ msgid ""
 "downloadable) does."
 msgstr ""
 
-#: unetbootin#83
+#: unetbootin#82
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/e"
 "n</a><br/><b>Description:</b> SliTaz is a lightweight, desktop-oriented "
@@ -1403,7 +1395,7 @@ msgid ""
 "required but optional."
 msgstr ""
 
-#: unetbootin#84
+#: unetbootin#83
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a href=\"http://www.elivecd.o"
 "rg/\">http://www.elivecd.org</a><br/><b>Description:</b> Elive is a Debian-"
@@ -1415,8 +1407,8 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
-#: unetbootin#85
-msgctxt "unetbootin#85"
+#: unetbootin#84
+msgctxt "unetbootin#84"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1432,8 +1424,8 @@ msgstr ""
 "por un servidor, y pon \"/centos/%1/os%2\" cuando te pregunten por el "
 "directorio."
 
-#: unetbootin#86
-msgctxt "unetbootin#86"
+#: unetbootin#85
+msgctxt "unetbootin#85"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1449,8 +1441,8 @@ msgstr ""
 "pregunten por un servidor, y pon \"/pub/fedora/linux/development/%1/os\" "
 "cuando te pregunten por el directorio."
 
-#: unetbootin#87
-msgctxt "unetbootin#87"
+#: unetbootin#86
+msgctxt "unetbootin#86"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1467,7 +1459,7 @@ msgstr ""
 "\"/pub/fedora/linux/releases/%1/Fedora/%2/os\" cuando te pregunten por el "
 "directorio."
 
-#: unetbootin#88
+#: unetbootin#87
 #, fuzzy
 msgid ""
 "\n"
@@ -1484,8 +1476,8 @@ msgstr ""
 "pregunten por un servidor, y pon \"/distribution/SL-OSS-factory/inst-source\" "
 "cuando te pregunten por el directorio."
 
-#: unetbootin#89
-msgctxt "unetbootin#89"
+#: unetbootin#88
+msgctxt "unetbootin#88"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1501,7 +1493,7 @@ msgstr ""
 "pregunten por un servidor, y pon \"/distribution/%1/repo/oss\" cuando te "
 "pregunten por el directorio."
 
-#: unetbootin#90
+#: unetbootin#89
 msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a href=\"http://www.slitaz.o"
 "rg/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> SliTaz is a "
@@ -1511,7 +1503,7 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
-#: unetbootin#91
+#: unetbootin#90
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a"
 "><br/><b>Description:</b> Xubuntu is an official Ubuntu derivative featuring "
@@ -1521,7 +1513,7 @@ msgid ""
 "Kubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#92
+#: unetbootin#91
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a"
 "><br/><b>Description:</b> Kubuntu is an official Ubuntu derivative featuring "
@@ -1531,66 +1523,66 @@ msgid ""
 "Xubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#93
+#: unetbootin#92
 msgid "Open Disk Image File"
 msgstr ""
 
-#: unetbootin#94
+#: unetbootin#93
 msgid "Open Kernel File"
 msgstr ""
 
-#: unetbootin#95
+#: unetbootin#94
 msgid "Open Initrd File"
 msgstr ""
 
-#: unetbootin#96
+#: unetbootin#95
 msgid "Open Bootloader Config File"
 msgstr ""
 
-#: unetbootin#97
+#: unetbootin#96
 msgid "Diskimage file not found"
 msgstr ""
 
-#: unetbootin#98
+#: unetbootin#97
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
-#: unetbootin#99
+#: unetbootin#98
 msgid "Kernel file not found"
 msgstr ""
 
-#: unetbootin#100
+#: unetbootin#99
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
-#: unetbootin#101
+#: unetbootin#100
 msgid "Initrd file not found"
 msgstr ""
 
-#: unetbootin#102
+#: unetbootin#101
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
-#: unetbootin#103
+#: unetbootin#102
 msgid "%1 exists, overwrite?"
 msgstr ""
 
-#: unetbootin#104
+#: unetbootin#103
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
 
-#: unetbootin#105
+#: unetbootin#104
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
-#: unetbootin#106
+#: unetbootin#105
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
-#: unetbootin#107
+#: unetbootin#106
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -1601,7 +1593,7 @@ msgid ""
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
 
-#: unetbootin#108
+#: unetbootin#107
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -1612,7 +1604,7 @@ msgid ""
 "install."
 msgstr ""
 
-#: unetbootin#109
+#: unetbootin#108
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
 "nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "
