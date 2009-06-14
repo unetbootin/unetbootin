@@ -2,6 +2,105 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="he_IL">
 <context>
+    <name></name>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">הקבצים בחילוץ, נא להמתין...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">קבצים בהורדה, אנא המתן...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">כונן USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;הורדו:&lt;/b&gt; %1 מתוך %2 בתים</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 לא נמצא</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
+יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">כונן קשיח</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">דיסקט</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">לאחר האתחול, יש לבחור ב</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
+האם לאתחל כאת?</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -331,40 +430,36 @@
         <translation>הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Extracting files, please wait...</source>
-        <translation>הקבצים בחילוץ, נא להמתין...</translation>
+        <translation type="unfinished">הקבצים בחילוץ, נא להמתין...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
+        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
+        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
@@ -373,36 +468,36 @@
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
+        <translation type="unfinished">&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;הורדו:&lt;/b&gt; %1 מתוך %2 בתים</translation>
+        <translation type="unfinished">&lt;b&gt;הורדו:&lt;/b&gt; %1 מתוך %2 בתים</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 לא נמצא</translation>
+        <translation type="unfinished">%1 לא נמצא</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
+        <translation type="unfinished">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
 יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
     </message>
     <message>
@@ -411,12 +506,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>לאחר האתחול, יש לבחור ב</translation>
+        <translation type="unfinished">לאחר האתחול, יש לבחור ב</translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
+        <translation type="unfinished">לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
 האם לאתחל כאת?</translation>
     </message>
     <message>
@@ -426,6 +521,18 @@ Reboot now?</source>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation type="unfinished">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Sabayon Linux הינה הפצה מבוססת ג&apos;נטו ב־DVD חי המציגה אתמנהל החבילות הבינאריות Entropy בנוסף ל־Portage מבוסס המקורות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה. מהדורת ה־LiteMCE הינה בגודל 2 ג&quot;ב.</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -2,6 +2,109 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name></name>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Rozbalování ISO obrazu:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Rozbalování souborů, prosíme čekejte...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Zdroj:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Cíl:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Rozbaleno:&lt;/b&gt; 0 z %1 souborů</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Zdroj:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Cíl:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Rozbaleno:&lt;/b&gt; %1 z %2 souborů</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Stahhování souborů, prosíme čekejte...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Zdroj:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Cíl:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Staženo:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Mechanika USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Staženo:&lt;/b&gt; %1 z %2 bajtů</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Vyhledávání &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 suhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 nenalezen</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">
+            </translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Pevný disk</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Disketa</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Po restartu zvolte </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1
+Restartovat nyní</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -369,71 +472,71 @@
     </message>
     <message>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Rozbalování ISO obrazu:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Rozbalování ISO obrazu:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
-        <translation>Rozbalování souborů, prosíme čekejte...</translation>
+        <translation type="unfinished">Rozbalování souborů, prosíme čekejte...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Zdroj:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Zdroj:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Cíl:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Cíl:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Rozbaleno:&lt;/b&gt; 0 z %1 souborů</translation>
+        <translation type="unfinished">&lt;b&gt;Rozbaleno:&lt;/b&gt; 0 z %1 souborů</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Zdroj:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Zdroj:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Cíl:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Cíl:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Rozbaleno:&lt;/b&gt; %1 z %2 souborů</translation>
+        <translation type="unfinished">&lt;b&gt;Rozbaleno:&lt;/b&gt; %1 z %2 souborů</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
-        <translation>Stahhování souborů, prosíme čekejte...</translation>
+        <translation type="unfinished">Stahhování souborů, prosíme čekejte...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Zdroj:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Zdroj:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Cíl:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Cíl:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Staženo:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Staženo:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;Staženo:&lt;/b&gt; %1 z %2 bajtů</translation>
+        <translation type="unfinished">&lt;b&gt;Staženo:&lt;/b&gt; %1 z %2 bajtů</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Vyhledávání &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Vyhledávání &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 suhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 suhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 nenalezen</translation>
+        <translation type="unfinished">%1 nenalezen</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
@@ -443,13 +546,21 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>Po restartu zvolte </translation>
+        <translation type="unfinished">Po restartu zvolte </translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1
+        <translation type="unfinished">Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1
 Restartovat nyní</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

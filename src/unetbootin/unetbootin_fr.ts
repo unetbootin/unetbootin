@@ -21,6 +21,84 @@ Reboot now?</source>
         <translation type="obsolete">Après le redémarrage, choisir l&apos;option de démarrage sur USB dans le BIOS.%1
 Redémarrer maintenant ?</translation>
     </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Extraction des fichiers, patientez...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Source:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Extrait :&lt;/b&gt; 0 de %1 fichiers</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Extrait :&lt;/b&gt; %1 de %2 fichiers</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Teléchargement des fichiers, patientez...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Téléchargé :&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Téléchargé :&lt;/b&gt; %1 of %2 bytes</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Recherche dans &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 trouvé(s) dans &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 introuvable</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1introuvable. Nécessaire pour le mode d&apos;installation %2.￼
+Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distribution</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">disquette</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -356,40 +434,36 @@ Redémarrer maintenant ?</translation>
         <translation>Le fichier %1 existe déjà. Cliquer &apos;Oui à tout&apos; pour l&apos;écraser et ne plus être questionné à ce sujet, &apos;Oui&apos; pour écraser isolément et &apos;Non&apos; pour garder la version existante.  Dans le doute,  &apos;Oui à tout&apos;.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Extracting files, please wait...</source>
-        <translation>Extraction des fichiers, patientez...</translation>
+        <translation type="unfinished">Extraction des fichiers, patientez...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Source:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Extrait :&lt;/b&gt; 0 de %1 fichiers</translation>
+        <translation type="unfinished">&lt;b&gt;Extrait :&lt;/b&gt; 0 de %1 fichiers</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Extrait :&lt;/b&gt; %1 de %2 fichiers</translation>
+        <translation type="unfinished">&lt;b&gt;Extrait :&lt;/b&gt; %1 de %2 fichiers</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
@@ -398,36 +472,36 @@ Redémarrer maintenant ?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Téléchargé :&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Téléchargé :&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;Téléchargé :&lt;/b&gt; %1 of %2 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Téléchargé :&lt;/b&gt; %1 of %2 bytes</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Recherche dans &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Recherche dans &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 trouvé(s) dans &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 trouvé(s) dans &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 introuvable</translation>
+        <translation type="unfinished">%1 introuvable</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1introuvable. Nécessaire pour le mode d&apos;installation %2.￼
+        <translation type="unfinished">%1introuvable. Nécessaire pour le mode d&apos;installation %2.￼
 Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distribution</translation>
     </message>
     <message>
@@ -450,6 +524,18 @@ Redémarrer maintenant ?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

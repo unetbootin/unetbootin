@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 11:20-0700\n"
+"POT-Creation-Date: 2009-06-14 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,6 +11,178 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.2.1\n"
+
+#. (obsolete)
+#: #1
+msgctxt "#1"
+msgid "Extracting files, please wait..."
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #2
+msgctxt "#2"
+msgid "<b>Archive:</b> %1"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #3
+msgctxt "#3"
+msgid "<b>Source:</b>"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #4
+msgctxt "#4"
+msgid "<b>Destination:</b>"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #5
+msgctxt "#5"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #6
+msgctxt "#6"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #7
+msgctxt "#7"
+msgid "<b>Destination:</b> %1%2"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #8
+msgctxt "#8"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #9
+msgctxt "#9"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #10
+msgctxt "#10"
+msgid "<b>Destination:</b> %1"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #11
+msgctxt "#11"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #12
+msgctxt "#12"
+msgid "USB Drive"
+msgstr "Disc USB"
+
+#. (obsolete)
+#: #13
+msgctxt "#13"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #14
+msgctxt "#14"
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #15
+msgctxt "#15"
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #16
+msgctxt "#16"
+msgid "%1 not found"
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #17
+msgctxt "#17"
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #18
+msgctxt "#18"
+msgid "Hard Disk"
+msgstr "Disc dur"
+
+#. (obsolete)
+#: #19
+msgctxt "#19"
+msgid "Floppy"
+msgstr "Dischetă"
+
+#. (obsolete)
+#: #20
+msgctxt "#20"
+msgid "ISO"
+msgstr "ISO"
+
+#. (obsolete)
+#: #21
+msgctxt "#21"
+msgid "After rebooting, select the "
+msgstr ""
+"\n"
+"            "
+
+#. (obsolete)
+#: #22
+msgctxt "#22"
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"\n"
+"            "
 
 #: QObject#1
 msgid "LeftToRight"
@@ -102,18 +274,22 @@ msgstr ""
 "'/distribution/%1/repo/oss' când vi se va cere dosarul."
 
 #: unetbootin#6
+msgctxt "unetbootin#6"
 msgid "Hard Disk"
 msgstr "Disc dur"
 
 #: unetbootin#7
+msgctxt "unetbootin#7"
 msgid "USB Drive"
 msgstr "Disc USB"
 
 #: unetbootin#8
+msgctxt "unetbootin#8"
 msgid "ISO"
 msgstr "ISO"
 
 #: unetbootin#9
+msgctxt "unetbootin#9"
 msgid "Floppy"
 msgstr "Dischetă"
 
@@ -829,6 +1005,7 @@ msgstr ""
 
 #: unetbootin#75
 #, fuzzy
+msgctxt "unetbootin#75"
 msgid "Extracting files, please wait..."
 msgstr ""
 "\n"
@@ -836,6 +1013,7 @@ msgstr ""
 
 #: unetbootin#76
 #, fuzzy
+msgctxt "unetbootin#76"
 msgid "<b>Archive:</b> %1"
 msgstr ""
 "\n"
@@ -843,6 +1021,7 @@ msgstr ""
 
 #: unetbootin#77
 #, fuzzy
+msgctxt "unetbootin#77"
 msgid "<b>Source:</b>"
 msgstr ""
 "\n"
@@ -850,6 +1029,7 @@ msgstr ""
 
 #: unetbootin#78
 #, fuzzy
+msgctxt "unetbootin#78"
 msgid "<b>Destination:</b>"
 msgstr ""
 "\n"
@@ -857,6 +1037,7 @@ msgstr ""
 
 #: unetbootin#79
 #, fuzzy
+msgctxt "unetbootin#79"
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 "\n"
@@ -864,6 +1045,7 @@ msgstr ""
 
 #: unetbootin#80
 #, fuzzy
+msgctxt "unetbootin#80"
 msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 "\n"
@@ -871,6 +1053,7 @@ msgstr ""
 
 #: unetbootin#81
 #, fuzzy
+msgctxt "unetbootin#81"
 msgid "<b>Destination:</b> %1%2"
 msgstr ""
 "\n"
@@ -878,6 +1061,7 @@ msgstr ""
 
 #: unetbootin#82
 #, fuzzy
+msgctxt "unetbootin#82"
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr ""
 "\n"
@@ -892,6 +1076,7 @@ msgstr ""
 
 #: unetbootin#84
 #, fuzzy
+msgctxt "unetbootin#84"
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 "\n"
@@ -899,6 +1084,7 @@ msgstr ""
 
 #: unetbootin#85
 #, fuzzy
+msgctxt "unetbootin#85"
 msgid "<b>Destination:</b> %1"
 msgstr ""
 "\n"
@@ -906,6 +1092,7 @@ msgstr ""
 
 #: unetbootin#86
 #, fuzzy
+msgctxt "unetbootin#86"
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 "\n"
@@ -913,6 +1100,7 @@ msgstr ""
 
 #: unetbootin#87
 #, fuzzy
+msgctxt "unetbootin#87"
 msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgstr ""
 "\n"
@@ -920,6 +1108,7 @@ msgstr ""
 
 #: unetbootin#88
 #, fuzzy
+msgctxt "unetbootin#88"
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 "\n"
@@ -927,6 +1116,7 @@ msgstr ""
 
 #: unetbootin#89
 #, fuzzy
+msgctxt "unetbootin#89"
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 "\n"
@@ -934,6 +1124,7 @@ msgstr ""
 
 #: unetbootin#90
 #, fuzzy
+msgctxt "unetbootin#90"
 msgid "%1 not found"
 msgstr ""
 "\n"
@@ -941,6 +1132,7 @@ msgstr ""
 
 #: unetbootin#91
 #, fuzzy
+msgctxt "unetbootin#91"
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -950,6 +1142,7 @@ msgstr ""
 
 #: unetbootin#92
 #, fuzzy
+msgctxt "unetbootin#92"
 msgid "After rebooting, select the "
 msgstr ""
 "\n"
@@ -957,6 +1150,7 @@ msgstr ""
 
 #: unetbootin#93
 #, fuzzy
+msgctxt "unetbootin#93"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1019,10 +1213,6 @@ msgid ""
 msgstr ""
 
 #: unetbootin#100
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
-
-#: unetbootin#101
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
@@ -1031,7 +1221,7 @@ msgid ""
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
 
-#: unetbootin#102
+#: unetbootin#101
 msgid ""
 "<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a>"
 "<br/><b>Description:</b> CloneZilla is a distribution used for disk backup "
@@ -1039,7 +1229,22 @@ msgid ""
 "mode; no installation is required to use it."
 msgstr ""
 
+#: unetbootin#102
+msgid "%1 is out of space, abort installation?"
+msgstr ""
+
 #: unetbootin#103
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+
+#: unetbootin#104
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr ""
+
+#: unetbootin#105
 msgid "Downloading files, please wait..."
 msgstr ""
 

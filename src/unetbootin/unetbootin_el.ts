@@ -2,6 +2,99 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="el_GR">
 <context>
+    <name></name>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Εξαγωγή αρχείων, παρακαλω περιμένετε...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Προς:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Προς:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Καταφώρτωση αρχείων, παρακαλώ περιμένετε...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Προς:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Δισκος USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; %1 of %2 bytes</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 είναι όμοια στο &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Σκληρός Δίσκος</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Δισκέτα</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Αφού κανετε επανεκήνηση, επιλέξτε το</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -325,40 +418,36 @@
         <translation>Το αρχείο %1 υπάρχει ήδη. Πατίστε &apos;Ναι σε Όλα&apos; για να γράψετε απο πάνω του και δεν θα σας ξαναρωτησει στα υπόλοιπα, &apos;Ναι&apos; για να γράψει απο πανω μονο το συγεκριμμένο αρχειο, και &apos;Όχι&apos; για να διατηρήσετε την υπάρχουσα έκδωση. &apos;Αμα δεν είστε σιγουροι, πατήστε &apos;Ναι σε &apos;Ολα&apos;.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Extracting files, please wait...</source>
-        <translation>Εξαγωγή αρχείων, παρακαλω περιμένετε...</translation>
+        <translation type="unfinished">Εξαγωγή αρχείων, παρακαλω περιμένετε...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Προς:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
+        <translation type="unfinished">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Προς:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
+        <translation type="unfinished">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
@@ -367,36 +456,36 @@
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Προς:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; %1 of %2 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; %1 of %2 bytes</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 είναι όμοια στο &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 είναι όμοια στο &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 δεν βρέθηκε</translation>
+        <translation type="unfinished">%1 δεν βρέθηκε</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
+        <translation type="unfinished">%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
@@ -404,12 +493,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>Αφού κανετε επανεκήνηση, επιλέξτε το</translation>
+        <translation type="unfinished">Αφού κανετε επανεκήνηση, επιλέξτε το</translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;</translation>
+        <translation type="unfinished">Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
@@ -418,6 +507,18 @@ Reboot now?</source>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -123,6 +123,10 @@ Reboot now?</source>
         <translation type="obsolete">Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1
 Újrainditás most?</translation>
     </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Fájlok letöltése, kérem várjon...</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -554,10 +558,6 @@ Reboot now?</source>
         <translation type="unfinished">A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Extracting files, please wait...</source>
         <translation type="unfinished">Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
@@ -683,14 +683,6 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -700,6 +692,26 @@ Reboot now?</source>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

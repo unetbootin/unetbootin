@@ -2,6 +2,104 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="de">
 <context>
+    <name></name>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Extrahiere Datien, bitte warten...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Quelle:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Ziel:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Extrahiert:&lt;/b&gt; 0 von %1 Dateien</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Quelle:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Ziel:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Extrahiert:&lt;/b&gt; %1 von %2 Dateien</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Lade Dateien herunter, bitte warten...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Quelle:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Ziel:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Heruntergeladen:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">USB Laufwerk</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Heruntergeladen:&lt;/b&gt; %1 von %2 Bytes</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Suche in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 Übereinstimmungen in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 nicht gefunden</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 nicht gefunden. Dies wird benötigt für %2 Installationsmodus. Installieren Sie das Paket &quot;%3&quot; oder das entsprechende Paket aus ihrer Distribution.</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Festplatte</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Diskette</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Nach dem Neustart, wähle</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1
+Jetzt neustarten?</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -330,40 +428,36 @@
         <translation>Die Datei %1 existiert bereits. Drücke &apos;Ja, alle&apos; um sie zu überschreiben und nicht wieder hierzu gefragt zu werden, &apos;Ja&apos; um individuell die Dateien zu überschreiben, und &apos;Nein&apos; um ihre bestehende Version zu behalten. Im Zweifelsfall, &apos;Ja, alle&apos; drücken.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Extracting files, please wait...</source>
-        <translation>Extrahiere Datien, bitte warten...</translation>
+        <translation type="unfinished">Extrahiere Datien, bitte warten...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Quelle:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Quelle:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Ziel:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Ziel:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Extrahiert:&lt;/b&gt; 0 von %1 Dateien</translation>
+        <translation type="unfinished">&lt;b&gt;Extrahiert:&lt;/b&gt; 0 von %1 Dateien</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Quelle:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Quelle:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Ziel:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Ziel:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Extrahiert:&lt;/b&gt; %1 von %2 Dateien</translation>
+        <translation type="unfinished">&lt;b&gt;Extrahiert:&lt;/b&gt; %1 von %2 Dateien</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
@@ -372,36 +466,36 @@
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Quelle:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Quelle:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Ziel:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Ziel:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Heruntergeladen:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Heruntergeladen:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;Heruntergeladen:&lt;/b&gt; %1 von %2 Bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Heruntergeladen:&lt;/b&gt; %1 von %2 Bytes</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Suche in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Suche in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 Übereinstimmungen in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 Übereinstimmungen in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 nicht gefunden</translation>
+        <translation type="unfinished">%1 nicht gefunden</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 nicht gefunden. Dies wird benötigt für %2 Installationsmodus. Installieren Sie das Paket &quot;%3&quot; oder das entsprechende Paket aus ihrer Distribution.</translation>
+        <translation type="unfinished">%1 nicht gefunden. Dies wird benötigt für %2 Installationsmodus. Installieren Sie das Paket &quot;%3&quot; oder das entsprechende Paket aus ihrer Distribution.</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
@@ -409,12 +503,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>Nach dem Neustart, wähle</translation>
+        <translation type="unfinished">Nach dem Neustart, wähle</translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1
+        <translation type="unfinished">Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1
 Jetzt neustarten?</translation>
     </message>
     <message>
@@ -423,6 +517,18 @@ Jetzt neustarten?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

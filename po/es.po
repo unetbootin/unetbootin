@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 11:20-0700\n"
+"POT-Creation-Date: 2009-06-14 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,6 +215,12 @@ msgstr ""
 "Después de reiniciar, seleccionar la opción de arranque por USB en el menú "
 "de arranque de la bios. %1\n"
 "¿Reiniciar ahora?"
+
+#. (obsolete)
+#: #32
+msgctxt "#32"
+msgid "Downloading files, please wait..."
+msgstr "Descargando ficheros, por favor espere..."
 
 #. (obsolete)
 #: @default#1
@@ -1230,95 +1236,92 @@ msgid "You must select a kernel and/or initrd file to load."
 msgstr "Debes seleccionar un kernel y/o un fichero initrd para cargar."
 
 #: unetbootin#57
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+#, fuzzy
+msgctxt "unetbootin#57"
+msgid "Extracting files, please wait..."
+msgstr "Extrayendo ficheros, por favor espere..."
 
 #: unetbootin#58
 #, fuzzy
 msgctxt "unetbootin#58"
-msgid "Extracting files, please wait..."
-msgstr "Extrayendo ficheros, por favor espere..."
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Archivo:</b> %1"
 
 #: unetbootin#59
 #, fuzzy
 msgctxt "unetbootin#59"
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Archivo:</b> %1"
+msgid "<b>Source:</b>"
+msgstr "<b>Fuente:</b>"
 
 #: unetbootin#60
 #, fuzzy
 msgctxt "unetbootin#60"
-msgid "<b>Source:</b>"
-msgstr "<b>Fuente:</b>"
+msgid "<b>Destination:</b>"
+msgstr "<b>Destino:</b>"
 
 #: unetbootin#61
 #, fuzzy
 msgctxt "unetbootin#61"
-msgid "<b>Destination:</b>"
-msgstr "<b>Destino:</b>"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Extraido:</b> 0 de %1 archivos"
 
 #: unetbootin#62
 #, fuzzy
 msgctxt "unetbootin#62"
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Extraido:</b> 0 de %1 archivos"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Fuente:</b> %1 (%2)"
 
 #: unetbootin#63
 #, fuzzy
 msgctxt "unetbootin#63"
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Fuente:</b> %1 (%2)"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Destino:</b> %1%2"
 
 #: unetbootin#64
 #, fuzzy
 msgctxt "unetbootin#64"
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Destino:</b> %1%2"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Extraido:</b> %1 de %2 archivos"
 
 #: unetbootin#65
 #, fuzzy
 msgctxt "unetbootin#65"
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Extraido:</b> %1 de %2 archivos"
+msgid "Downloading files, please wait..."
+msgstr "Descargando ficheros, por favor espere..."
 
 #: unetbootin#66
 #, fuzzy
-msgid "Downloading files, please wait..."
-msgstr "Descargando ficheros, por favor espere..."
+msgctxt "unetbootin#66"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Fuente:</b> <a href=\"%1\">%1</a>"
 
 #: unetbootin#67
 #, fuzzy
 msgctxt "unetbootin#67"
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Fuente:</b> <a href=\"%1\">%1</a>"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Destino:</b> %1"
 
 #: unetbootin#68
 #, fuzzy
 msgctxt "unetbootin#68"
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Destino:</b> %1"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Descargado:</b> 0 bytes"
 
 #: unetbootin#69
 #, fuzzy
 msgctxt "unetbootin#69"
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Descargado:</b> 0 bytes"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Descargados:</b> %1 de %2 bytes"
 
 #: unetbootin#70
 #, fuzzy
 msgctxt "unetbootin#70"
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Descargados:</b> %1 de %2 bytes"
+msgid "%1 not found"
+msgstr "%1 no encontrado"
 
 #: unetbootin#71
 #, fuzzy
 msgctxt "unetbootin#71"
-msgid "%1 not found"
-msgstr "%1 no encontrado"
-
-#: unetbootin#72
-#, fuzzy
-msgctxt "unetbootin#72"
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -1326,15 +1329,15 @@ msgstr ""
 "%1 no encontrado. Este se requiere para el modo de instalación %2.\n"
 "Instala el paquete \"%3\" o el equivalente en tu distribución."
 
-#: unetbootin#73
+#: unetbootin#72
 #, fuzzy
-msgctxt "unetbootin#73"
+msgctxt "unetbootin#72"
 msgid "After rebooting, select the "
 msgstr "Después de reiniciar, selecciona el"
 
-#: unetbootin#74
+#: unetbootin#73
 #, fuzzy
-msgctxt "unetbootin#74"
+msgctxt "unetbootin#73"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1343,31 +1346,31 @@ msgstr ""
 "de arranque de la bios. %1\n"
 "¿Reiniciar ahora?"
 
-#: unetbootin#75
+#: unetbootin#74
 msgid "either"
 msgstr ""
 
-#: unetbootin#76
-msgctxt "unetbootin#76"
+#: unetbootin#75
+msgctxt "unetbootin#75"
 msgid "USB Drive"
 msgstr "Unidad USB"
 
-#: unetbootin#77
-msgctxt "unetbootin#77"
+#: unetbootin#76
+msgctxt "unetbootin#76"
 msgid "Hard Disk"
 msgstr "Disco Duro"
 
-#: unetbootin#78
-msgctxt "unetbootin#78"
+#: unetbootin#77
+msgctxt "unetbootin#77"
 msgid "Floppy"
 msgstr "Disquete"
 
-#: unetbootin#79
-msgctxt "unetbootin#79"
+#: unetbootin#78
+msgctxt "unetbootin#78"
 msgid "ISO"
 msgstr "ISO"
 
-#: unetbootin#80
+#: unetbootin#79
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlin"
 "ux.com.br</a><br/><b>Description:</b> Dreamlinux is a user-friendly Debian-"
@@ -1375,7 +1378,7 @@ msgid ""
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 
-#: unetbootin#81
+#: unetbootin#80
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a"
 "><br/><b>Description:</b> Elive is a Debian-based distribution featuring the "
@@ -1386,7 +1389,7 @@ msgid ""
 "downloadable) does."
 msgstr ""
 
-#: unetbootin#82
+#: unetbootin#81
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/e"
 "n</a><br/><b>Description:</b> SliTaz is a lightweight, desktop-oriented "
@@ -1395,7 +1398,7 @@ msgid ""
 "required but optional."
 msgstr ""
 
-#: unetbootin#83
+#: unetbootin#82
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a href=\"http://www.elivecd.o"
 "rg/\">http://www.elivecd.org</a><br/><b>Description:</b> Elive is a Debian-"
@@ -1407,8 +1410,8 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
-#: unetbootin#84
-msgctxt "unetbootin#84"
+#: unetbootin#83
+msgctxt "unetbootin#83"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1424,8 +1427,8 @@ msgstr ""
 "por un servidor, y pon \"/centos/%1/os%2\" cuando te pregunten por el "
 "directorio."
 
-#: unetbootin#85
-msgctxt "unetbootin#85"
+#: unetbootin#84
+msgctxt "unetbootin#84"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1441,8 +1444,8 @@ msgstr ""
 "pregunten por un servidor, y pon \"/pub/fedora/linux/development/%1/os\" "
 "cuando te pregunten por el directorio."
 
-#: unetbootin#86
-msgctxt "unetbootin#86"
+#: unetbootin#85
+msgctxt "unetbootin#85"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1459,7 +1462,7 @@ msgstr ""
 "\"/pub/fedora/linux/releases/%1/Fedora/%2/os\" cuando te pregunten por el "
 "directorio."
 
-#: unetbootin#87
+#: unetbootin#86
 #, fuzzy
 msgid ""
 "\n"
@@ -1476,8 +1479,8 @@ msgstr ""
 "pregunten por un servidor, y pon \"/distribution/SL-OSS-factory/inst-source\" "
 "cuando te pregunten por el directorio."
 
-#: unetbootin#88
-msgctxt "unetbootin#88"
+#: unetbootin#87
+msgctxt "unetbootin#87"
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1493,7 +1496,7 @@ msgstr ""
 "pregunten por un servidor, y pon \"/distribution/%1/repo/oss\" cuando te "
 "pregunten por el directorio."
 
-#: unetbootin#89
+#: unetbootin#88
 msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a href=\"http://www.slitaz.o"
 "rg/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> SliTaz is a "
@@ -1503,7 +1506,7 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
-#: unetbootin#90
+#: unetbootin#89
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a"
 "><br/><b>Description:</b> Xubuntu is an official Ubuntu derivative featuring "
@@ -1513,7 +1516,7 @@ msgid ""
 "Kubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#91
+#: unetbootin#90
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a"
 "><br/><b>Description:</b> Kubuntu is an official Ubuntu derivative featuring "
@@ -1523,66 +1526,58 @@ msgid ""
 "Xubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#92
+#: unetbootin#91
 msgid "Open Disk Image File"
 msgstr ""
 
-#: unetbootin#93
+#: unetbootin#92
 msgid "Open Kernel File"
 msgstr ""
 
-#: unetbootin#94
+#: unetbootin#93
 msgid "Open Initrd File"
 msgstr ""
 
-#: unetbootin#95
+#: unetbootin#94
 msgid "Open Bootloader Config File"
 msgstr ""
 
-#: unetbootin#96
+#: unetbootin#95
 msgid "Diskimage file not found"
 msgstr ""
 
-#: unetbootin#97
+#: unetbootin#96
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
-#: unetbootin#98
+#: unetbootin#97
 msgid "Kernel file not found"
 msgstr ""
 
-#: unetbootin#99
+#: unetbootin#98
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
-#: unetbootin#100
+#: unetbootin#99
 msgid "Initrd file not found"
 msgstr ""
 
-#: unetbootin#101
+#: unetbootin#100
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
-#: unetbootin#102
+#: unetbootin#101
 msgid "%1 exists, overwrite?"
 msgstr ""
 
-#: unetbootin#103
+#: unetbootin#102
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
 
-#: unetbootin#104
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
-
-#: unetbootin#105
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
-
-#: unetbootin#106
+#: unetbootin#103
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -1593,7 +1588,7 @@ msgid ""
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
 
-#: unetbootin#107
+#: unetbootin#104
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -1604,7 +1599,7 @@ msgid ""
 "install."
 msgstr ""
 
-#: unetbootin#108
+#: unetbootin#105
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
 "nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "
@@ -1613,6 +1608,29 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 "
 "GB USB drive"
+msgstr ""
+
+#: unetbootin#106
+msgid "%1 is out of space, abort installation?"
+msgstr ""
+
+#: unetbootin#107
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+
+#: unetbootin#108
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr ""
+
+#: unetbootin#109
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr ""
+
+#: unetbootin#110
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #: unetbootinui#1

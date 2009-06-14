@@ -142,6 +142,7 @@ unetbootin::unetbootin(QWidget *parent)
 
 void unetbootin::ubninitialize()
 {
+	this->ignoreoutofspace = false;
 	this->searchsymlinks = false;
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
@@ -991,8 +992,40 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 	}
 }
 
+bool unetbootin::ignoreoutofspaceprompt(QString destindir)
+{
+	QMessageBox overwritefilemsgbx;
+	overwritefilemsgbx.setIcon(QMessageBox::Warning);
+	overwritefilemsgbx.setWindowTitle(QString(tr("%1 is out of space, abort installation?")).arg(destindir));
+	overwritefilemsgbx.setText(QString(tr("The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to ignore this error and attempt to continue installation, and 'No to All' to ignore all out-of-space errors.")).arg(destindir));
+	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No);
+	switch (overwritefilemsgbx.exec())
+	{
+		case QMessageBox::Yes:
+		{
+			QApplication::quit();
+			return false;
+		}
+		case QMessageBox::No:
+		{
+			return true;
+		}
+		case QMessageBox::NoToAll:
+		{
+			this->ignoreoutofspace = true;
+			return true;
+		}
+		default:
+			return true;
+	}
+}
+
 bool unetbootin::extractfile(QString filepath, QString destinfileL, QString archivefile)
 {
+	#ifdef Q_OS_UNIX
+	if (installType != tr("USB Drive") && filepath.contains("boot/grub")) // don't nuke grub config
+		return false;
+	#endif
 	QString destindir = QFileInfo(destinfileL).dir().absolutePath();
 	QString destinfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(destinfileL).fileName());
 	QString filepathfilename = QString("%1/%2").arg(destindir).arg(QFileInfo(filepath).fileName());
@@ -1013,14 +1046,47 @@ bool unetbootin::extractfile(QString filepath, QString destinfileL, QString arch
 	}
 	#endif
 	callexternapp(sevzcommand, QString("-bd  -aos -o\"%1\" e \"%2\" \"%3\"").arg(QDir::toNativeSeparators(destindir), QDir::toNativeSeparators(archivefile), QDir::toNativeSeparators(filepath)));
+	int retv;
 	if (QFileInfo(filepathfilename).absoluteFilePath() == QFileInfo(destinfilename).absoluteFilePath())
 	{
-		return true;
+		retv = true;
 	}
 	else
 	{
-		return QFile::rename(filepathfilename, destinfilename);
+		retv = QFile::rename(filepathfilename, destinfilename);
 	}
+	this->checkifoutofspace(destindir);
+	return retv;
+}
+
+bool unetbootin::checkifoutofspace(QString destindir)
+{
+	if  (ignoreoutofspace == true)
+		return false;
+	bool outofspace = false;
+	#ifdef Q_OS_UNIX
+	struct statfs diskstatS;
+	if (!statfs(QString(destindir+"/.").toLocal8Bit(), &diskstatS))
+	{
+		if (diskstatS.f_bavail * diskstatS.f_bfree < 1024)
+			outofspace = true;
+	}
+	#endif
+	#ifdef Q_OS_WIN32
+	ULARGE_INTEGER FreeBytesAvailable;
+	ULARGE_INTEGER TotalNumberOfBytes;
+	ULARGE_INTEGER TotalNumberOfFreeBytes;
+	if (GetDiskFreeSpaceExA(destindir.toLocal8Bit(), &FreeBytesAvailable, &TotalNumberOfBytes, &TotalNumberOfFreeBytes))
+	{
+		if (FreeBytesAvailable.QuadPart < 1024)
+			outofspace = true;
+	}
+	#endif
+	if (outofspace == true)
+	{
+		return !ignoreoutofspaceprompt(destindir);
+	}
+	return false;
 }
 
 bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
@@ -2603,6 +2669,8 @@ void unetbootin::instDetType()
 	}
 }
 
+#ifdef Q_OS_UNIX
+
 void unetbootin::writegrub2cfg()
 {
 	QFile menulst;
@@ -2661,6 +2729,8 @@ void unetbootin::writegrub2cfg()
 	menulstout << menulstxt << endl;
 	menulst.close();
 }
+
+#endif
 
 void unetbootin::runinsthdd()
 {

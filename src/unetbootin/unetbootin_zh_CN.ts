@@ -2,6 +2,109 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name></name>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">正在抽取文件，请稍等……</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;存档：&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">正在下载文件，请稍候……</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">USB设备</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;下载：&lt;/b&gt; %1 of %2 bytes</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 没有找到</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 没有找到。该安装模式需要 %2。
+安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">硬盘</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">软盘</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">重启动后，请选择 </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">重启动后，请在BIOS的启动菜单里，选择USB启动选项。
+立即重启动？</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -346,87 +449,95 @@
     </message>
     <message>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
-        <translation>正在抽取文件，请稍等……</translation>
+        <translation type="unfinished">正在抽取文件，请稍等……</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;存档：&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;存档：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;来源：&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;目标：&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
+        <translation type="unfinished">&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
+        <translation type="unfinished">&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
-        <translation>正在下载文件，请稍候……</translation>
+        <translation type="unfinished">正在下载文件，请稍候……</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;目标：&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;下载：&lt;/b&gt; %1 of %2 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;下载：&lt;/b&gt; %1 of %2 bytes</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 没有找到</translation>
+        <translation type="unfinished">%1 没有找到</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 没有找到。该安装模式需要 %2。
+        <translation type="unfinished">%1 没有找到。该安装模式需要 %2。
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>重启动后，请选择 </translation>
+        <translation type="unfinished">重启动后，请选择 </translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。
+        <translation type="unfinished">重启动后，请在BIOS的启动菜单里，选择USB启动选项。
 立即重启动？</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

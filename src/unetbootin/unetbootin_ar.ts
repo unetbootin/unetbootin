@@ -2,6 +2,108 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ar_SY">
 <context>
+    <name></name>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">يتم إستخراج الملفات, انتظر من فضلك...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">ّذاكرة يو إس بي</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;تم تنزيل:&lt;/b&gt; %1 من %2 بايت</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">لم يتم العثور %1</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">القرص الصلب</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">قرص فلوبي</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ملف آي إس أو</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
+هل تريد إعادة التشغيل الأن؟</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>LeftToRight</source>
@@ -346,86 +448,94 @@
     </message>
     <message>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
-        <translation>يتم إستخراج الملفات, انتظر من فضلك...</translation>
+        <translation type="unfinished">يتم إستخراج الملفات, انتظر من فضلك...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+        <translation type="unfinished">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
+        <translation type="unfinished">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
     </message>
     <message>
         <source>Downloading files, please wait...</source>
-        <translation>يتم تنزيل الملفات, إنتظر من فضلك...</translation>
+        <translation type="unfinished">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
+        <translation type="unfinished">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; %1 من %2 بايت</translation>
+        <translation type="unfinished">&lt;b&gt;تم تنزيل:&lt;/b&gt; %1 من %2 بايت</translation>
     </message>
     <message>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>لم يتم العثور %1</translation>
+        <translation type="unfinished">لم يتم العثور %1</translation>
     </message>
     <message>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
+        <translation type="unfinished">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
         <source>After rebooting, select the </source>
-        <translation>بعد إعادة التشغيل قم بإختيار </translation>
+        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
+        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
 هل تريد إعادة التشغيل الأن؟</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

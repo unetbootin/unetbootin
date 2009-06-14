@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 11:20-0700\n"
+"POT-Creation-Date: 2009-06-14 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,6 +210,12 @@ msgid ""
 msgstr ""
 "Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1\n"
 "Újrainditás most?"
+
+#. (obsolete)
+#: #30
+msgctxt "#30"
+msgid "Downloading files, please wait..."
+msgstr "Fájlok letöltése, kérem várjon..."
 
 #. (obsolete)
 #: QObject#1
@@ -1139,95 +1145,92 @@ msgstr ""
 "akkor vállasztja az 'Igen, mindent' vállasztékot."
 
 #: unetbootin#66
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+#, fuzzy
+msgctxt "unetbootin#66"
+msgid "Extracting files, please wait..."
+msgstr "Fájlok kicsomagolása, kérem várjon..."
 
 #: unetbootin#67
 #, fuzzy
 msgctxt "unetbootin#67"
-msgid "Extracting files, please wait..."
-msgstr "Fájlok kicsomagolása, kérem várjon..."
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Archívum:</b> %1"
 
 #: unetbootin#68
 #, fuzzy
 msgctxt "unetbootin#68"
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Archívum:</b> %1"
+msgid "<b>Source:</b>"
+msgstr "<b>Forrás:</b>"
 
 #: unetbootin#69
 #, fuzzy
 msgctxt "unetbootin#69"
-msgid "<b>Source:</b>"
-msgstr "<b>Forrás:</b>"
+msgid "<b>Destination:</b>"
+msgstr "<b>Cél:</b>"
 
 #: unetbootin#70
 #, fuzzy
 msgctxt "unetbootin#70"
-msgid "<b>Destination:</b>"
-msgstr "<b>Cél:</b>"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Kicsomagolt:</b> 0, %1 fájlból"
 
 #: unetbootin#71
 #, fuzzy
 msgctxt "unetbootin#71"
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Kicsomagolt:</b> 0, %1 fájlból"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Forrás:</b> %1 (%2)"
 
 #: unetbootin#72
 #, fuzzy
 msgctxt "unetbootin#72"
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Forrás:</b> %1 (%2)"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Cél:</b> %1%2"
 
 #: unetbootin#73
 #, fuzzy
 msgctxt "unetbootin#73"
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Cél:</b> %1%2"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Kicsomagolt:</b> %1, %2 fájlból"
 
 #: unetbootin#74
 #, fuzzy
 msgctxt "unetbootin#74"
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Kicsomagolt:</b> %1, %2 fájlból"
+msgid "Downloading files, please wait..."
+msgstr "Fájlok letöltése, kérem várjon..."
 
 #: unetbootin#75
 #, fuzzy
-msgid "Downloading files, please wait..."
-msgstr "Fájlok letöltése, kérem várjon..."
+msgctxt "unetbootin#75"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Forrás:</b> <a href=\"%1\">%1</a>"
 
 #: unetbootin#76
 #, fuzzy
 msgctxt "unetbootin#76"
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Forrás:</b> <a href=\"%1\">%1</a>"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Cél:</b> %1"
 
 #: unetbootin#77
 #, fuzzy
 msgctxt "unetbootin#77"
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Cél:</b> %1"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Letöltött:</b> 0 bájt"
 
 #: unetbootin#78
 #, fuzzy
 msgctxt "unetbootin#78"
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Letöltött:</b> 0 bájt"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Letöltött:</b> %1, %2 bájtbol"
 
 #: unetbootin#79
 #, fuzzy
 msgctxt "unetbootin#79"
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Letöltött:</b> %1, %2 bájtbol"
+msgid "%1 not found"
+msgstr "%1 nem található"
 
 #: unetbootin#80
 #, fuzzy
 msgctxt "unetbootin#80"
-msgid "%1 not found"
-msgstr "%1 nem található"
-
-#: unetbootin#81
-#, fuzzy
-msgctxt "unetbootin#81"
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -1235,15 +1238,15 @@ msgstr ""
 "%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.\n"
 "Kérem telepítse a \"%3\" csomagot, vagy az ön rendszeréhez megfelelő csomagot."
 
-#: unetbootin#82
+#: unetbootin#81
 #, fuzzy
-msgctxt "unetbootin#82"
+msgctxt "unetbootin#81"
 msgid "After rebooting, select the "
 msgstr "Újrainditás után vállasztja a (sp)"
 
-#: unetbootin#83
+#: unetbootin#82
 #, fuzzy
-msgctxt "unetbootin#83"
+msgctxt "unetbootin#82"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1251,7 +1254,7 @@ msgstr ""
 "Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1\n"
 "Újrainditás most?"
 
-#: unetbootin#84
+#: unetbootin#83
 msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a href=\"http://www.slitaz.o"
 "rg/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> SliTaz is a "
@@ -1261,7 +1264,7 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
-#: unetbootin#85
+#: unetbootin#84
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a"
 "><br/><b>Description:</b> Xubuntu is an official Ubuntu derivative featuring "
@@ -1271,7 +1274,7 @@ msgid ""
 "Kubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#86
+#: unetbootin#85
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a"
 "><br/><b>Description:</b> Kubuntu is an official Ubuntu derivative featuring "
@@ -1281,55 +1284,47 @@ msgid ""
 "Xubuntu and other official Ubuntu derivatives."
 msgstr ""
 
-#: unetbootin#87
+#: unetbootin#86
 msgid "Open Disk Image File"
 msgstr ""
 
-#: unetbootin#88
+#: unetbootin#87
 msgid "Open Kernel File"
 msgstr ""
 
-#: unetbootin#89
+#: unetbootin#88
 msgid "Open Initrd File"
 msgstr ""
 
-#: unetbootin#90
+#: unetbootin#89
 msgid "Open Bootloader Config File"
 msgstr ""
 
-#: unetbootin#91
+#: unetbootin#90
 msgid "Diskimage file not found"
 msgstr ""
 
-#: unetbootin#92
+#: unetbootin#91
 msgid "The specified diskimage file %1 does not exist."
 msgstr ""
 
-#: unetbootin#93
+#: unetbootin#92
 msgid "Kernel file not found"
 msgstr ""
 
-#: unetbootin#94
+#: unetbootin#93
 msgid "The specified kernel file %1 does not exist."
 msgstr ""
 
-#: unetbootin#95
+#: unetbootin#94
 msgid "Initrd file not found"
 msgstr ""
 
-#: unetbootin#96
+#: unetbootin#95
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 
-#: unetbootin#97
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
-
-#: unetbootin#98
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
-
-#: unetbootin#99
+#: unetbootin#96
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -1340,7 +1335,7 @@ msgid ""
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
 
-#: unetbootin#100
+#: unetbootin#97
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -1351,7 +1346,7 @@ msgid ""
 "install."
 msgstr ""
 
-#: unetbootin#101
+#: unetbootin#98
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
 "nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "
@@ -1360,6 +1355,29 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 "
 "GB USB drive"
+msgstr ""
+
+#: unetbootin#99
+msgid "%1 is out of space, abort installation?"
+msgstr ""
+
+#: unetbootin#100
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+
+#: unetbootin#101
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr ""
+
+#: unetbootin#102
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr ""
+
+#: unetbootin#103
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #: unetbootinui#1

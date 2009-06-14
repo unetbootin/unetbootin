@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 11:20-0700\n"
+"POT-Creation-Date: 2009-06-14 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,6 +11,153 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.2.1\n"
+
+#. (obsolete)
+#: #1
+msgctxt "#1"
+msgid "Extracting files, please wait..."
+msgstr "Extrahiere Datien, bitte warten..."
+
+#. (obsolete)
+#: #2
+msgctxt "#2"
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Archiv:</b> %1"
+
+#. (obsolete)
+#: #3
+msgctxt "#3"
+msgid "<b>Source:</b>"
+msgstr "<b>Quelle:</b>"
+
+#. (obsolete)
+#: #4
+msgctxt "#4"
+msgid "<b>Destination:</b>"
+msgstr "<b>Ziel:</b>"
+
+#. (obsolete)
+#: #5
+msgctxt "#5"
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Extrahiert:</b> 0 von %1 Dateien"
+
+#. (obsolete)
+#: #6
+msgctxt "#6"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Quelle:</b> %1 (%2)"
+
+#. (obsolete)
+#: #7
+msgctxt "#7"
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Ziel:</b> %1%2"
+
+#. (obsolete)
+#: #8
+msgctxt "#8"
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Extrahiert:</b> %1 von %2 Dateien"
+
+#. (obsolete)
+#: #9
+msgctxt "#9"
+msgid "Downloading files, please wait..."
+msgstr "Lade Dateien herunter, bitte warten..."
+
+#. (obsolete)
+#: #10
+msgctxt "#10"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Quelle:</b> <a href=\"%1\">%1</a>"
+
+#. (obsolete)
+#: #11
+msgctxt "#11"
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Ziel:</b> %1"
+
+#. (obsolete)
+#: #12
+msgctxt "#12"
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Heruntergeladen:</b> 0 bytes"
+
+#. (obsolete)
+#: #13
+msgctxt "#13"
+msgid "USB Drive"
+msgstr "USB Laufwerk"
+
+#. (obsolete)
+#: #14
+msgctxt "#14"
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Heruntergeladen:</b> %1 von %2 Bytes"
+
+#. (obsolete)
+#: #15
+msgctxt "#15"
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "Suche in <a href=\"%1\">%1</a>"
+
+#. (obsolete)
+#: #16
+msgctxt "#16"
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 Übereinstimmungen in <a href=\"%3\">%3</a>"
+
+#. (obsolete)
+#: #17
+msgctxt "#17"
+msgid "%1 not found"
+msgstr "%1 nicht gefunden"
+
+#. (obsolete)
+#: #18
+msgctxt "#18"
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 nicht gefunden. Dies wird benötigt für %2 Installationsmodus. "
+"Installieren Sie das Paket \"%3\" oder das entsprechende Paket aus ihrer "
+"Distribution."
+
+#. (obsolete)
+#: #19
+msgctxt "#19"
+msgid "Hard Disk"
+msgstr "Festplatte"
+
+#. (obsolete)
+#: #20
+msgctxt "#20"
+msgid "Floppy"
+msgstr "Diskette"
+
+#. (obsolete)
+#: #21
+msgctxt "#21"
+msgid "ISO"
+msgstr "ISO"
+
+#. (obsolete)
+#: #22
+msgctxt "#22"
+msgid "After rebooting, select the "
+msgstr "Nach dem Neustart, wähle"
+
+#. (obsolete)
+#: #23
+msgctxt "#23"
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1\n"
+"Jetzt neustarten?"
 
 #: QObject#1
 msgid "LeftToRight"
@@ -451,18 +598,22 @@ msgid "either"
 msgstr "entweder"
 
 #: unetbootin#31
+msgctxt "unetbootin#31"
 msgid "USB Drive"
 msgstr "USB Laufwerk"
 
 #: unetbootin#32
+msgctxt "unetbootin#32"
 msgid "Hard Disk"
 msgstr "Festplatte"
 
 #: unetbootin#33
+msgctxt "unetbootin#33"
 msgid "Floppy"
 msgstr "Diskette"
 
 #: unetbootin#34
+msgctxt "unetbootin#34"
 msgid "ISO"
 msgstr "ISO"
 
@@ -831,75 +982,104 @@ msgstr ""
 "Zweifelsfall, 'Ja, alle' drücken."
 
 #: unetbootin#79
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
-
-#: unetbootin#80
+#, fuzzy
+msgctxt "unetbootin#79"
 msgid "Extracting files, please wait..."
 msgstr "Extrahiere Datien, bitte warten..."
 
-#: unetbootin#81
+#: unetbootin#80
+#, fuzzy
+msgctxt "unetbootin#80"
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archiv:</b> %1"
 
-#: unetbootin#82
+#: unetbootin#81
+#, fuzzy
+msgctxt "unetbootin#81"
 msgid "<b>Source:</b>"
 msgstr "<b>Quelle:</b>"
 
-#: unetbootin#83
+#: unetbootin#82
+#, fuzzy
+msgctxt "unetbootin#82"
 msgid "<b>Destination:</b>"
 msgstr "<b>Ziel:</b>"
 
-#: unetbootin#84
+#: unetbootin#83
+#, fuzzy
+msgctxt "unetbootin#83"
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Extrahiert:</b> 0 von %1 Dateien"
 
-#: unetbootin#85
+#: unetbootin#84
+#, fuzzy
+msgctxt "unetbootin#84"
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Quelle:</b> %1 (%2)"
 
-#: unetbootin#86
+#: unetbootin#85
+#, fuzzy
+msgctxt "unetbootin#85"
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Ziel:</b> %1%2"
 
-#: unetbootin#87
+#: unetbootin#86
+#, fuzzy
+msgctxt "unetbootin#86"
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extrahiert:</b> %1 von %2 Dateien"
 
-#: unetbootin#88
+#: unetbootin#87
 #, fuzzy
+msgctxt "unetbootin#87"
 msgid "Downloading files, please wait..."
 msgstr "Lade Dateien herunter, bitte warten..."
 
-#: unetbootin#89
+#: unetbootin#88
+#, fuzzy
+msgctxt "unetbootin#88"
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Quelle:</b> <a href=\"%1\">%1</a>"
 
-#: unetbootin#90
+#: unetbootin#89
+#, fuzzy
+msgctxt "unetbootin#89"
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Ziel:</b> %1"
 
-#: unetbootin#91
+#: unetbootin#90
+#, fuzzy
+msgctxt "unetbootin#90"
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Heruntergeladen:</b> 0 bytes"
 
-#: unetbootin#92
+#: unetbootin#91
+#, fuzzy
+msgctxt "unetbootin#91"
 msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgstr "<b>Heruntergeladen:</b> %1 von %2 Bytes"
 
-#: unetbootin#93
+#: unetbootin#92
+#, fuzzy
+msgctxt "unetbootin#92"
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Suche in <a href=\"%1\">%1</a>"
 
-#: unetbootin#94
+#: unetbootin#93
+#, fuzzy
+msgctxt "unetbootin#93"
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 Übereinstimmungen in <a href=\"%3\">%3</a>"
 
-#: unetbootin#95
+#: unetbootin#94
+#, fuzzy
+msgctxt "unetbootin#94"
 msgid "%1 not found"
 msgstr "%1 nicht gefunden"
 
-#: unetbootin#96
+#: unetbootin#95
+#, fuzzy
+msgctxt "unetbootin#95"
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -908,7 +1088,7 @@ msgstr ""
 "Installieren Sie das Paket \"%3\" oder das entsprechende Paket aus ihrer "
 "Distribution."
 
-#: unetbootin#97
+#: unetbootin#96
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
@@ -919,11 +1099,15 @@ msgid ""
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
 
-#: unetbootin#98
+#: unetbootin#97
+#, fuzzy
+msgctxt "unetbootin#97"
 msgid "After rebooting, select the "
 msgstr "Nach dem Neustart, wähle"
 
-#: unetbootin#99
+#: unetbootin#98
+#, fuzzy
+msgctxt "unetbootin#98"
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -931,7 +1115,7 @@ msgstr ""
 "Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1\n"
 "Jetzt neustarten?"
 
-#: unetbootin#100
+#: unetbootin#99
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a href=\"http://www.gnews"
 "ense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> gNewSense is "
@@ -942,7 +1126,7 @@ msgid ""
 "install."
 msgstr ""
 
-#: unetbootin#101
+#: unetbootin#100
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonli"
 "nux.org</a><br/><b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD "
@@ -951,6 +1135,21 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 "
 "GB USB drive"
+msgstr ""
+
+#: unetbootin#101
+msgid "%1 is out of space, abort installation?"
+msgstr ""
+
+#: unetbootin#102
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+
+#: unetbootin#103
+msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #: unetbootinui#1
