@@ -154,9 +154,8 @@
         <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CloneZillaer en distribusjon laget for sikkerhetskopiering og harddiskbilder.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; CloneZilla booter i live mode; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="327"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FaunOSer en distribusjon basert på Arch Linux.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen starter opp i live mode, hvorfra installasjonsprogrammat kan bli startet.</translation>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FaunOSer en distribusjon basert på Arch Linux.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen starter opp i live mode, hvorfra installasjonsprogrammat kan bli startet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="498"/>

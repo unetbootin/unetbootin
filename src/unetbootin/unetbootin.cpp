@@ -323,16 +323,16 @@ void unetbootin::ubninitialize()
 		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not freely downloadable) does.") <<
 	"Unstable_Live"));
-	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" <<
-	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
-		"<b>Description:</b> FaunOS is a distribution based on Arch Linux.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-	"shadow-0.5.4-stable"));
-		distroselect->addItem("Fedora", (QStringList() << "10_Live" <<
+//	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" <<
+//	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
+//		"<b>Description:</b> FaunOS is a distribution based on Arch Linux.<br/>"
+//		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
+//	"shadow-0.5.4-stable"));
+		distroselect->addItem("Fedora", (QStringList() << "11_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 		"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-		"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "10_NetInstall" << "10_NetInstall_x64" << "10_Live" << "10_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+		"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "10_NetInstall" << "10_NetInstall_x64" << "10_Live" << "10_Live_x64" << "11_NetInstall" << "11_NetInstall_x64" << "11_Live" << "11_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 	distroselect->addItem("FreeBSD", (QStringList() << "7.0" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 		"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
