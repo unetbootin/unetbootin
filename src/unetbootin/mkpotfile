@@ -1,0 +1,23 @@
+#!/bin/sh
+
+potext=$(lconvert -i unetbootin.ts -if ts -of po)
+lineno=$(echo "$potext" | grep -n Header | sed "s/:/\n/" | head --lines 1)
+trimmedtext=$(echo "$potext" | tail --lines $(expr $(echo "$potext" | wc --lines) - $lineno))
+potgendate=$(date +"%Y-%m-%d %R%z")
+qtversion=$(qmake --version | tail --lines 1 | sed "s/ /\n/g" | grep "\.")
+/bin/echo -e \
+"#, fuzzy\n"\
+"msgid \"\"\n"\
+"msgstr \"\"\n"\
+"\"Project-Id-Version: PACKAGE VERSION\\\n\"\n"\
+"\"Report-Msgid-Bugs-To: \\\n\"\n"\
+"\"POT-Creation-Date: $potgendate\\\n\"\n"\
+"\"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\\n\"\n"\
+"\"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\\n\"\n"\
+"\"Language-Team: LANGUAGE <LL@li.org>\\\n\"\n"\
+"\"MIME-Version: 1.0\\\n\"\n"\
+"\"Content-Type: text/plain; charset=UTF-8\\\n\"\n"\
+"\"Content-Transfer-Encoding: 8bit\\\n\"\n"\
+"\"X-Generator: lconvert $qtversion\\\n"\
+"$trimmedtext"\
+> ../../po/unetbootin.pot

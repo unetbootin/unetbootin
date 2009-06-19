@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ "$1" == 0 ]
+then
+echo "need to specify location of launchpad-exports.tar.gz"
+exit 0
+fi
+
+origdir=$(pwd)
+
+cd ../../po
+tpofiles=$(tar -atf $1 | grep "\.po$")
+for x in $tpofiles
+do
+tar -axf $1 $x --to-stdout > $(echo $x | sed "s/unetbootin-/\n/" | tail --lines 1)
+done
+
+cd $origdir
+./mktsfiles
+./mkpotfile
