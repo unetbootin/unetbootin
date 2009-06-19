@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_TW">
+<TS version="2.0" language="pl_PL">
 <context>
     <name></name>
     <message>
         <source></source>
-        <translation>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
+        <translatorcomment>Polish translation for unetbootin
+Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+This file is distributed under the same license as the unetbootin package.
+FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
+
+</translatorcomment>
+        <translation>Project-Id-Version: unetbootin
+Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2009-06-14 14:14-0700
-PO-Revision-Date: 2009-06-14 22:27+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
+PO-Revision-Date: 2009-05-25 12:02+0000
+Last-Translator: Krzysztof Piszczek &lt;Unknown&gt;
+Language-Team: Polish &lt;pl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -19,144 +25,46 @@ X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">硬碟</translation>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation type="obsolete">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;mirrors.kernel.org&apos; przy pytaniu o serwer oraz wpisz &apos;/centos/%1/os/%2&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">隨身碟</translation>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation type="obsolete">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/development/%1/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation type="obsolete">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <source>Floppy</source>
-        <translation type="obsolete">磁片</translation>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation type="obsolete">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.opensuse.org&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/factory/repo/oss&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <source>Open Disk Image File</source>
-        <translation type="obsolete">開啟映像檔</translation>
-    </message>
-    <message>
-        <source>Open Kernel File</source>
-        <translation type="obsolete">開啟核心檔案</translation>
-    </message>
-    <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">開啟 Initrd 檔案</translation>
-    </message>
-    <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">開啟開機管理設定檔</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">插入 USB 隨身碟</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">找不到 USB 隨身碟。如果已經插入，試著格式化成 FAT32 檔案系統。</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 尚未掛載</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">你必須先將 USB 隨身碟 %1 掛載起來。大部分的系統會在你移除並重新插入 USB 隨身碟後自動掛載。</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">選擇一個發行套件</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">你必須選擇一個發行套件</translation>
-    </message>
-    <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">選擇一個映像檔</translation>
-    </message>
-    <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">你必須選擇一個映像檔</translation>
-    </message>
-    <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">選擇一個核心或 initrd 檔</translation>
-    </message>
-    <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">你必須選擇一個核心或 initrd 檔案</translation>
-    </message>
-    <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">找不到映像檔</translation>
-    </message>
-    <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">指定的映像檔 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">找不到核心檔案</translation>
-    </message>
-    <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">指定的核心檔案 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">找不到 initrd 檔</translation>
-    </message>
-    <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">指定的 initrd 檔案 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 已經存在，要覆寫嗎？</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <comment>#14</comment>
-        <translation type="obsolete">隨身碟</translation>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation type="obsolete">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.opensuse.org&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/distribution/%1/repo/oss&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>Hard Disk</source>
-        <comment>#20</comment>
-        <translation type="obsolete">硬碟</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <comment>#21</comment>
-        <translation type="obsolete">磁片</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <comment>#22</comment>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <comment>unetbootin#6</comment>
-        <translation type="obsolete">硬碟</translation>
+        <translation type="obsolete">Dysk twardy</translation>
     </message>
     <message>
         <source>USB Drive</source>
-        <comment>unetbootin#7</comment>
-        <translation type="obsolete">隨身碟</translation>
+        <translation type="obsolete">Napęd USB</translation>
     </message>
     <message>
         <source>ISO</source>
-        <comment>unetbootin#8</comment>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <comment>unetbootin#9</comment>
-        <translation type="obsolete">磁片</translation>
+        <translation type="obsolete">Plik ISO</translation>
     </message>
 </context>
 <context>
@@ -171,43 +79,48 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;mirrors.kernel.org&apos; przy pytaniu o serwer oraz wpisz &apos;/centos/%1/os/%2&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/development/%1/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.opensuse.org&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/factory/repo/oss&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+*WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Start Instalacji&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.opensuse.org&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/distribution/%1/repo/oss&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
         <source>Hard Disk</source>
-        <translation type="unfinished">硬碟</translation>
+        <translation type="unfinished">Dysk twardy</translation>
     </message>
     <message>
         <source>USB Drive</source>
-        <translation type="unfinished">隨身碟</translation>
+        <translation type="unfinished">Napęd USB</translation>
     </message>
     <message>
         <source>ISO</source>
-        <translation type="unfinished">ISO</translation>
+        <translation type="unfinished">Plik ISO</translation>
     </message>
     <message>
         <source>Floppy</source>
-        <translation type="unfinished">磁片</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
@@ -407,87 +320,87 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <source>Open Disk Image File</source>
-        <translation type="unfinished">開啟映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Kernel File</source>
-        <translation type="unfinished">開啟核心檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Initrd File</source>
-        <translation type="unfinished">開啟 Initrd 檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">開啟開機管理設定檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">插入 USB 隨身碟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">找不到 USB 隨身碟。如果已經插入，試著格式化成 FAT32 檔案系統。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 尚未掛載</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">你必須先將 USB 隨身碟 %1 掛載起來。大部分的系統會在你移除並重新插入 USB 隨身碟後自動掛載。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a distro</source>
-        <translation type="unfinished">選擇一個發行套件</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">你必須選擇一個發行套件</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a disk image file</source>
-        <translation type="unfinished">選擇一個映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">你必須選擇一個映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">選擇一個核心或 initrd 檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">你必須選擇一個核心或 initrd 檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">找不到映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">指定的映像檔 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Kernel file not found</source>
-        <translation type="unfinished">找不到核心檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">指定的核心檔案 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Initrd file not found</source>
-        <translation type="unfinished">找不到 initrd 檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">指定的 initrd 檔案 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 已經存在，要覆寫嗎？</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>

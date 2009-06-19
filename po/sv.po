@@ -1,11 +1,16 @@
+# Swedish translation for unetbootin
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the unetbootin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: unetbootin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2009-06-14 14:14-0700\n"
-"PO-Revision-Date: 2009-06-14 22:28+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2009-06-16 12:39+0000\n"
+"Last-Translator: nairobie <samuel.ostman@gmail.com>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,6 +95,12 @@ msgid ""
 "variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
 "simply boots and runs; no installation is required to use it."
 msgstr ""
+"<b>Hemsida:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Beskrivning:</b> Super Grub Disk är en bootloader som kan utföra ett "
+"flertal MBR och bootloader "
+"återställningsåtgärder.<br/><b>Installationsanteckningar:</b> Med SGD "
+"fungerar dina uppstarter direkt utan krav på installation."
 
 #: unetbootin#11
 msgid ""
@@ -99,6 +110,12 @@ msgid ""
 "distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
 "media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/eeepclos.png\" /><br/><b>Hemsida:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Beskrivning:</b> EeePCLinuxOS är en användarvänlig PCLinuxOS baserad "
+"distribution för din EeePC.<br/><b>Installationsanteckningar:</b> "
+"Kontrollera att installationsmediet är tomt och formaterat innan du "
+"fortsätter installationen."
 
 #: unetbootin#12
 msgid ""
@@ -110,6 +127,15 @@ msgid ""
 "alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Hemsida:</b> <a "
+"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Beskrivning:</b> Ubuntu Eee är inte endast ett Ubuntu "
+"optimerat för Asus Eee PC. Det är ett operativsystem som använder Netbook "
+"Remix gränssnittet som innehåller den bästa mjukvaran istället för "
+"öppenkällkods alternativ tex Skype instället för "
+"Ekiga).<br/><b>Installationsanteckningar:</b> Kontrollera att "
+"installationsmediet är tomt och formaterat innan du fortsätter "
+"installationen."
 
 #: unetbootin#13
 msgid ""
@@ -172,12 +198,6 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Üdvözölünk a <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> "
-"Univerzális Hálozati Installálóhoz. Használati utasitások:<ol><li>A fenti "
-"listábol vállasztja ki az operációs rendszert és változatát amelyet a "
-"program letöltsön, vagy az alatti részben szabja meg melyik fájlokat "
-"használjon a program.</li><li>Vállasztja ki a telepítés típust, és "
-"kattintson az 'Indítás' gombot hogy elkezdődjön a telepítés.</li></ol>"
 
 #: unetbootin#19
 msgid ""
@@ -188,11 +208,6 @@ msgid ""
 "installation over the internet (FTP). If interested in a LiveUSB version, "
 "see FaunOS."
 msgstr ""
-"<b>Honlap:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
-":</b> Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és "
-"rugalmasságot hangsúlyozza.<br/><b>Telepítési jegyzetek:</b> Az "
-"alapváltozatot interneten keresztül lehet telepíteni (FTP)."
 
 #: unetbootin#20
 msgid ""
@@ -213,12 +228,6 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
-"<b>Honlap:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Leírás:</b> "
-"A CentOS rendszer a Red Hat Enterprise Linux rendszer ingyen hasonmása. "
-"Vállalkozási alkalmazásokra célszerű.<br/><b>Telepítési jegyzetek:</b> Az "
-"alapváltozatot interneten keresztül (FTP) vagy már letöltött ISO "
-"lemezképekkel lehet telepíteni."
 
 #: unetbootin#22
 msgid ""
@@ -238,12 +247,6 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
-"<b>Honlap:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Leír"
-"ás:</b> A Damn Small Linux egy lekicsinyített, minimalista rendszer ami az "
-"öregebb számítógépekre van tervezve.<br/><b>Telepítési jegyzetek:</b> A Live "
-"('élő') változat az egész rendszert RAM-ba tölti, és a memoriából fut, ezert "
-"nem kötelező a telepítes."
 
 #: unetbootin#24
 msgid ""
@@ -255,14 +258,6 @@ msgid ""
 "Live mode, from which the installer can optionally be launched. The "
 "NetInstall version allows for installation over FTP."
 msgstr ""
-"<b>Honlap:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Leírás:</b> "
-"A Debian rendszert egy nagy felhasználóközösség fejlezti, ezert sok "
-"szamítógépfajtát támogat, és széles a programcsomagok "
-"vállasztéka.<br/><b>Telepítési jegyzetek:</b> A 'Live' változatot 'élő' "
-"módban lehet tölteni (a rendszer memoriábol fut), és innen el lehet indítani "
-"a telepítőt. A 'NetInstall' változattal interneten keresztül lehet "
-"telepíteni (FTP)."
 
 #: unetbootin#25
 msgid ""
@@ -780,7 +775,7 @@ msgstr ""
 
 #: unetbootin#101
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "%1 har slut på utrymme, vill du avbryta installationen?"
 
 #: unetbootin#102
 msgid ""
@@ -791,7 +786,7 @@ msgstr ""
 
 #: unetbootinui#1
 msgid "UNetbootin"
-msgstr ""
+msgstr "UNetbootin"
 
 #: unetbootinui#2
 msgid "Select from a list of supported distributions"
@@ -799,7 +794,7 @@ msgstr ""
 
 #: unetbootinui#3
 msgid "Distribution"
-msgstr ""
+msgstr "Distribution"
 
 #: unetbootinui#4
 msgid "Specify a disk image file to load"
@@ -811,91 +806,93 @@ msgstr ""
 
 #: unetbootinui#6
 msgid "Manually specify a kernel and initrd to load"
-msgstr ""
+msgstr "Ange kärna samt initrd manuellt"
 
 #: unetbootinui#7
 msgid "Custom"
-msgstr ""
+msgstr "Anpassad"
 
 #: unetbootinui#8
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: unetbootinui#9
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: unetbootinui#10
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Ange målenhet för installerationen"
 
 #: unetbootinui#11
 msgid "Drive:"
-msgstr ""
+msgstr "Målenhet:"
 
 #: unetbootinui#12
 msgid "Select the installation target type"
-msgstr ""
+msgstr "Ange typ för installationsmål"
 
 #: unetbootinui#13
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: unetbootinui#14
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Välj distributionsversion"
 
 #: unetbootinui#15
 msgid "Select disk image file"
-msgstr ""
+msgstr "Välj avbildsfil"
 
 #: unetbootinui#16
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: unetbootinui#17
 msgid "Select the disk image type"
-msgstr ""
+msgstr "Välj avbildsfilsformat"
 
 #: unetbootinui#18
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
+"Ange en diskett/hårddisk avbildningsfil eller CD-avbildningsfil (ISO) att "
+"använda"
 
 #: unetbootinui#19
 msgid "Specify a kernel file to load"
-msgstr ""
+msgstr "Ange en kärn-avbildsfil att använda"
 
 #: unetbootinui#20
 msgid "Select kernel file"
-msgstr ""
+msgstr "Välj kärna"
 
 #: unetbootinui#21
 msgid "Kernel:"
-msgstr ""
+msgstr "Kärna:"
 
 #: unetbootinui#22
 msgid "Specify an initrd file to load"
-msgstr ""
+msgstr "Ange en initrd fil att använda"
 
 #: unetbootinui#23
 msgid "Initrd:"
-msgstr ""
+msgstr "Initrd:"
 
 #: unetbootinui#24
 msgid "Select initrd file"
-msgstr ""
+msgstr "Välj initrd fil"
 
 #: unetbootinui#25
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr ""
+msgstr "Välj syslinux.cfg eller isolinux.cfg fil"
 
 #: unetbootinui#26
 msgid "Specify parameters and options to pass to the kernel"
-msgstr ""
+msgstr "Ange parametrar och flaggor att skicka till kärnan"
 
 #: unetbootinui#27
 msgid "Options:"
-msgstr ""
+msgstr "Alternativ:"
 
 #: unetbootinui#28
 msgid ""
@@ -916,7 +913,7 @@ msgstr ""
 
 #: unetbootinui#29
 msgid "Show All Drives (Use with Care)"
-msgstr ""
+msgstr "Visa alla diskar (använd varsamt)"
 
 #: unetbootinui#30
 msgid ""
@@ -936,523 +933,58 @@ msgstr ""
 
 #: unetbootinui#31
 msgid "Format Drive (Wipes Out Data)"
-msgstr ""
+msgstr "Formatera diskar (Raderar all data)"
 
 #: unetbootinui#32
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Installationen är färdig, Starta om datorn"
 
 #: unetbootinui#33
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Installerar uppstartshanterare"
 
 #: unetbootinui#34
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Extracting and Copying Files"
 
 #: unetbootinui#35
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Laddar ner filer"
 
 #: unetbootinui#36
 msgid "Exit"
-msgstr "Kilépés"
+msgstr "Avsluta"
 
 #: unetbootinui#37
 msgid "Reboot Now"
-msgstr ""
+msgstr "Starta om nu"
 
 #: uninstaller#1
 msgid "Uninstallation Complete"
-msgstr ""
+msgstr "Avinstallationen utfördes"
 
 #: uninstaller#2
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "%1 har installerats."
 
 #: uninstaller#3
 msgid "Must run as root"
-msgstr ""
+msgstr "Det krävs att du kör programmet som root-användare"
 
 #: uninstaller#4
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su -c '%1'</b>"
 msgstr ""
+"%2 Det krävs att du kör programmet som root-användare. Avsluta programmet "
+"och starta om det med antingen:<br/><b>sudo %1</b><br/>eller:<br/><b>su -c "
+"'%1'</b>"
 
 #: uninstaller#5
 msgid "%1 Uninstaller"
-msgstr ""
+msgstr "%1 Avinstallerare"
 
 #: uninstaller#6
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr ""
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP)."
-#~ msgstr ""
-#~ "<b>Honlap:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
-#~ ":</b> Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és "
-#~ "rugalmasságot hangsúlyozza.<br/><b>Telepítési jegyzetek:</b> Az "
-#~ "alapváltozatot interneten keresztül lehet telepíteni (FTP)."
-
-#~ msgctxt "uninstaller#1"
-#~ msgid "Uninstallation Complete"
-#~ msgstr "Kész a program eltávolítása"
-
-#~ msgctxt "uninstaller#3"
-#~ msgid "Must run as root"
-#~ msgstr "Ezt a programot 'root' (rendszergazda) felhasználóként kell futatni"
-
-#~ msgctxt "#1"
-#~ msgid "Insert a USB flash drive"
-#~ msgstr "Kérem rakja a USB-lemezet a szamítógépbe"
-
-#~ msgctxt "#2"
-#~ msgid ""
-#~ "No USB flash drives were found. If you have already inserted a USB drive, "
-#~ "try reformatting it as FAT32."
-#~ msgstr ""
-#~ "Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a "
-#~ "számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 "
-#~ "rendszerre."
-
-#~ msgctxt "#3"
-#~ msgid "%1 not mounted"
-#~ msgstr "%1 kötet nem csatolt"
-
-#~ msgctxt "#4"
-#~ msgid ""
-#~ "You must first mount the USB drive %1 to a mountpoint. Most distributions "
-#~ "will do this automatically after you remove and reinsert the USB drive."
-#~ msgstr ""
-#~ "Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb "
-#~ "esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és "
-#~ "visszarakod a USB-lemezet."
-
-#~ msgctxt "#5"
-#~ msgid "Select a distro"
-#~ msgstr "Vállasztja ki a kívánt operációs rendszert"
-
-#~ msgctxt "#6"
-#~ msgid "You must select a distribution to load."
-#~ msgstr "Még nem választott ki egy operációs rendszert."
-
-#~ msgctxt "#7"
-#~ msgid "Select a disk image file"
-#~ msgstr "Vállasztja ki a kívánt CD/lemez kép fájlt"
-
-#~ msgctxt "#8"
-#~ msgid "You must select a disk image file to load."
-#~ msgstr "Még nem választotta ki a CD/lemez kép fájlt."
-
-#~ msgctxt "#9"
-#~ msgid "Select a kernel and/or initrd file"
-#~ msgstr "Kérem vállasztja ki a kernel vagz initrd fájlokat"
-
-#~ msgctxt "#10"
-#~ msgid "You must select a kernel and/or initrd file to load."
-#~ msgstr "Még nem választotta ki a kernel vagy initrd fájlt."
-
-#~ msgctxt "#11"
-#~ msgid "%1 exists, overwrite?"
-#~ msgstr "%1 létezik, felülírás?"
-
-#~ msgctxt "#12"
-#~ msgid ""
-#~ "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-#~ "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-#~ "retain your existing version. If in doubt, press 'Yes to All'."
-#~ msgstr ""
-#~ "A %1 fájl már létezik. Vállasztja az 'Igen, mindent' ha át akarja írni az "
-#~ "összes létező fájlokat, 'Igen' ha csak bizonyos fájlokat akar átírni, es "
-#~ "'Nem' ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, "
-#~ "akkor vállasztja az 'Igen, mindent' vállasztékot."
-
-#~ msgctxt "#13"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Fájlok kicsomagolása, kérem várjon..."
-
-#~ msgctxt "#14"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Archívum:</b> %1"
-
-#~ msgctxt "#15"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Forrás:</b>"
-
-#~ msgctxt "#16"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Cél:</b>"
-
-#~ msgctxt "#17"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Kicsomagolt:</b> 0, %1 fájlból"
-
-#~ msgctxt "#18"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Forrás:</b> %1 (%2)"
-
-#~ msgctxt "#19"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Cél:</b> %1%2"
-
-#~ msgctxt "#20"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Kicsomagolt:</b> %1, %2 fájlból"
-
-#~ msgctxt "#21"
-#~ msgid "Downloading files, plese wait..."
-#~ msgstr "Fájlok letöltése, kérem várjon..."
-
-#~ msgctxt "#22"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Forrás:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#23"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Cél:</b> %1"
-
-#~ msgctxt "#24"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Letöltött:</b> 0 bájt"
-
-#~ msgctxt "#25"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Letöltött:</b> %1, %2 bájtbol"
-
-#~ msgctxt "#26"
-#~ msgid "%1 not found"
-#~ msgstr "%1 nem található"
-
-#~ msgctxt "#27"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.\n"
-#~ "Kérem telepítse a \"%3\" csomagot, vagy az ön rendszeréhez megfelelő "
-#~ "csomagot."
-
-#~ msgctxt "#28"
-#~ msgid "After rebooting, select the "
-#~ msgstr "Újrainditás után vállasztja a (sp) "
-
-#~ msgctxt "#29"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1\n"
-#~ "Újrainditás most?"
-
-#~ msgctxt "QObject#1"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'mirrors.kernel.org' when prompted for a server, and enter "
-#~ "'/centos/%1/os/%2' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'mirrors.kernel.org' szerverrel , és '/centos/%1/os/%2' "
-#~ "mappával."
-
-#~ msgctxt "QObject#2"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.fedora.redhat.com' when prompted for a server, and enter "
-#~ "'/pub/fedora/linux/development/%1/os' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.fedora.redhat.com' szerverrel , és "
-#~ "'/pub/fedora/linux/development/%1/os' mappával."
-
-#~ msgctxt "QObject#3"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.fedora.redhat.com' when prompted for a server, and enter "
-#~ "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.fedora.redhat.com' szerverrel , és "
-#~ "'/pub/fedora/linux/releases/%1/Fedora/%2/os' mappával."
-
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.opensuse.org' when prompted for a server, and enter "
-#~ "'/distribution/SL-OSS-factory/inst-source' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.opensuse.org' szerverrel , és '/distribution/SL-OSS-"
-#~ "factory/inst-source' mappával."
-
-#~ msgctxt "QObject#5"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.opensuse.org' when prompted for a server, and enter "
-#~ "'/distribution/%1/repo/oss' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.opensuse.org' szerverrel , és "
-#~ "'/distribution/%1/repo/oss' mappával."
-
-#~ msgctxt "QObject#6"
-#~ msgid "Uninstallation Complete"
-#~ msgstr "Kész a program eltávolítása"
-
-#~ msgctxt "QObject#7"
-#~ msgid "Must run as root"
-#~ msgstr "Ezt a programot 'root' (rendszergazda) felhasználóként kell futatni"
-
-#~ msgctxt "QObject#8"
-#~ msgid "Insert a USB flash drive"
-#~ msgstr "Kérem rakja a USB-lemezet a szamítógépbe"
-
-#~ msgctxt "QObject#9"
-#~ msgid ""
-#~ "No USB flash drives were found. If you have already inserted a USB drive, "
-#~ "try reformatting it as FAT32."
-#~ msgstr ""
-#~ "Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a "
-#~ "számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 "
-#~ "rendszerre."
-
-#~ msgctxt "QObject#10"
-#~ msgid "%1 not mounted"
-#~ msgstr "%1 kötet nem csatolt"
-
-#~ msgctxt "QObject#11"
-#~ msgid ""
-#~ "You must first mount the USB drive %1 to a mountpoint. Most distributions "
-#~ "will do this automatically after you remove and reinsert the USB drive."
-#~ msgstr ""
-#~ "Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb "
-#~ "esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és "
-#~ "visszarakod a USB-lemezet."
-
-#~ msgctxt "QObject#12"
-#~ msgid "Select a distro"
-#~ msgstr "Vállasztja ki a kívánt operációs rendszert"
-
-#~ msgctxt "QObject#13"
-#~ msgid "You must select a distribution to load."
-#~ msgstr "Még nem választott ki egy operációs rendszert."
-
-#~ msgctxt "QObject#14"
-#~ msgid "Select a disk image file"
-#~ msgstr "Vállasztja ki a kívánt CD/lemez kép fájlt"
-
-#~ msgctxt "QObject#15"
-#~ msgid "You must select a disk image file to load."
-#~ msgstr "Még nem választotta ki a CD/lemez kép fájlt."
-
-#~ msgctxt "QObject#16"
-#~ msgid "Select a kernel and/or initrd file"
-#~ msgstr "Kérem vállasztja ki a kernel vagz initrd fájlokat"
-
-#~ msgctxt "QObject#17"
-#~ msgid "You must select a kernel and/or initrd file to load."
-#~ msgstr "Még nem választotta ki a kernel vagy initrd fájlt."
-
-#~ msgctxt "QObject#18"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Fájlok kicsomagolása, kérem várjon..."
-
-#~ msgctxt "QObject#19"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Archívum:</b> %1"
-
-#~ msgctxt "QObject#20"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Forrás:</b>"
-
-#~ msgctxt "QObject#21"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Cél:</b>"
-
-#~ msgctxt "QObject#22"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Kicsomagolt:</b> 0, %1 fájlból"
-
-#~ msgctxt "QObject#23"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Forrás:</b> %1 (%2)"
-
-#~ msgctxt "QObject#24"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Cél:</b> %1%2"
-
-#~ msgctxt "QObject#25"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Kicsomagolt:</b> %1, %2 fájlból"
-
-#~ msgctxt "QObject#26"
-#~ msgid "Downloading files, plese wait..."
-#~ msgstr "Fájlok letöltése, kérem várjon..."
-
-#~ msgctxt "QObject#27"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Forrás:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "QObject#28"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Cél:</b> %1"
-
-#~ msgctxt "QObject#29"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Letöltött:</b> 0 bájt"
-
-#~ msgctxt "QObject#30"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Letöltött:</b> %1, %2 bájtbol"
-
-#~ msgctxt "QObject#31"
-#~ msgid "%1 not found"
-#~ msgstr "%1 nem található"
-
-#~ msgctxt "QObject#32"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 nem található. Ez a fájl szükséges a %2 telepítés módszerhez.\n"
-#~ "Kérem telepítse a \"%3\" csomagot, vagy az ön rendszeréhez megfelelő "
-#~ "csomagot."
-
-#~ msgctxt "QObject#33"
-#~ msgid "After rebooting, select the "
-#~ msgstr "Újrainditás után vállasztja a (sp) "
-
-#~ msgctxt "QObject#34"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Újrainditás után, vállasztja a USB-lemezről inditást a BIOS menüből.%1\n"
-#~ "Újrainditás most?"
-
-#~ msgctxt "QObject#35"
-#~ msgid "%1 exists, overwrite?"
-#~ msgstr "%1 létezik, felülírás?"
-
-#~ msgctxt "QObject#36"
-#~ msgid ""
-#~ "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-#~ "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-#~ "retain your existing version. If in doubt, press 'Yes to All'."
-#~ msgstr ""
-#~ "A %1 fájl már létezik. Vállasztja az 'Igen, mindent' ha át akarja írni az "
-#~ "összes létező fájlokat, 'Igen' ha csak bizonyos fájlokat akar átírni, es "
-#~ "'Nem' ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, "
-#~ "akkor vállasztja az 'Igen, mindent' vállasztékot."
-
-#~ msgctxt "unetbootin#27"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'mirrors.kernel.org' when prompted for a server, and enter "
-#~ "'/centos/%1/os/%2' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'mirrors.kernel.org' szerverrel , és '/centos/%1/os/%2' "
-#~ "mappával."
-
-#~ msgctxt "unetbootin#28"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.fedora.redhat.com' when prompted for a server, and enter "
-#~ "'/pub/fedora/linux/development/%1/os' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.fedora.redhat.com' szerverrel , és "
-#~ "'/pub/fedora/linux/development/%1/os' mappával."
-
-#~ msgctxt "unetbootin#29"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.fedora.redhat.com' when prompted for a server, and enter "
-#~ "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.fedora.redhat.com' szerverrel , és "
-#~ "'/pub/fedora/linux/releases/%1/Fedora/%2/os' mappával."
-
-#~ msgctxt "unetbootin#31"
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start Installation' "
-#~ "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-#~ "'download.opensuse.org' when prompted for a server, and enter "
-#~ "'/distribution/%1/repo/oss' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem "
-#~ "kell figyelembe venni. Ha a program CD-t kér, vállasztja a 'Back (Vissza)' "
-#~ "parancsot. Ezután lépjen vissza a főmenübe, vállasztja a 'Start Installation "
-#~ "(Telepítés Inditás)' parancsot, 'Network (Hálozat)' forrással, HTTP "
-#~ "protokollal, 'download.opensuse.org' szerverrel , és "
-#~ "'/distribution/%1/repo/oss' mappával."
-
-#~ msgctxt "#30"
-#~ msgid "Downloading files, please wait..."
-#~ msgstr "Fájlok letöltése, kérem várjon..."
+"%1 är redan installerad, vill du avinstallera den installerade versionen?"

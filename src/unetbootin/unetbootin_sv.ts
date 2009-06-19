@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_TW">
+<TS version="2.0" language="sv_SE">
 <context>
     <name></name>
     <message>
         <source></source>
-        <translation>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
+        <translatorcomment>Swedish translation for unetbootin
+Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+This file is distributed under the same license as the unetbootin package.
+FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
+
+</translatorcomment>
+        <translation>Project-Id-Version: unetbootin
+Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2009-06-14 14:14-0700
-PO-Revision-Date: 2009-06-14 22:27+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
+PO-Revision-Date: 2009-06-16 12:39+0000
+Last-Translator: nairobie &lt;samuel.ostman@gmail.com&gt;
+Language-Team: Swedish &lt;sv@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -19,144 +25,172 @@ X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">硬碟</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
+        <translation type="obsolete">&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Super Grub Disk är en bootloader som kan utföra ett flertal MBR och bootloader återställningsåtgärder.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Med SGD fungerar dina uppstarter direkt utan krav på installation.</translation>
     </message>
     <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">隨身碟</translation>
+        <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; EeePCLinuxOS är en användarvänlig PCLinuxOS baserad distribution för din EeePC.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
+        <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Ubuntu Eee är inte endast ett Ubuntu optimerat för Asus Eee PC. Det är ett operativsystem som använder Netbook Remix gränssnittet som innehåller den bästa mjukvaran istället för öppenkällkods alternativ tex Skype instället för Ekiga).&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
-        <source>Floppy</source>
-        <translation type="obsolete">磁片</translation>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="obsolete">%1 har slut på utrymme, vill du avbryta installationen?</translation>
     </message>
     <message>
-        <source>Open Disk Image File</source>
-        <translation type="obsolete">開啟映像檔</translation>
+        <source>UNetbootin</source>
+        <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
-        <source>Open Kernel File</source>
-        <translation type="obsolete">開啟核心檔案</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Distribution</translation>
     </message>
     <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">開啟 Initrd 檔案</translation>
+        <source>Manually specify a kernel and initrd to load</source>
+        <translation type="obsolete">Ange kärna samt initrd manuellt</translation>
     </message>
     <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">開啟開機管理設定檔</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Anpassad</translation>
     </message>
     <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">插入 USB 隨身碟</translation>
+        <source>OK</source>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">找不到 USB 隨身碟。如果已經插入，試著格式化成 FAT32 檔案系統。</translation>
+        <source>Cancel</source>
+        <translation type="obsolete">Avbryt</translation>
     </message>
     <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 尚未掛載</translation>
+        <source>Select the target drive to install to</source>
+        <translation type="obsolete">Ange målenhet för installerationen</translation>
     </message>
     <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">你必須先將 USB 隨身碟 %1 掛載起來。大部分的系統會在你移除並重新插入 USB 隨身碟後自動掛載。</translation>
+        <source>Drive:</source>
+        <translation type="obsolete">Målenhet:</translation>
     </message>
     <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">選擇一個發行套件</translation>
+        <source>Select the installation target type</source>
+        <translation type="obsolete">Ange typ för installationsmål</translation>
     </message>
     <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">你必須選擇一個發行套件</translation>
+        <source>Type:</source>
+        <translation type="obsolete">Typ:</translation>
     </message>
     <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">選擇一個映像檔</translation>
+        <source>Select the distribution version</source>
+        <translation type="obsolete">Välj distributionsversion</translation>
     </message>
     <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">你必須選擇一個映像檔</translation>
+        <source>Select disk image file</source>
+        <translation type="obsolete">Välj avbildsfil</translation>
     </message>
     <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">選擇一個核心或 initrd 檔</translation>
+        <source>...</source>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">你必須選擇一個核心或 initrd 檔案</translation>
+        <source>Select the disk image type</source>
+        <translation type="obsolete">Välj avbildsfilsformat</translation>
     </message>
     <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">找不到映像檔</translation>
+        <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
+        <translation type="obsolete">Ange en diskett/hårddisk avbildningsfil eller CD-avbildningsfil (ISO) att använda</translation>
     </message>
     <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">指定的映像檔 %1 不存在。</translation>
+        <source>Specify a kernel file to load</source>
+        <translation type="obsolete">Ange en kärn-avbildsfil att använda</translation>
     </message>
     <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">找不到核心檔案</translation>
+        <source>Select kernel file</source>
+        <translation type="obsolete">Välj kärna</translation>
     </message>
     <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">指定的核心檔案 %1 不存在。</translation>
+        <source>Kernel:</source>
+        <translation type="obsolete">Kärna:</translation>
     </message>
     <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">找不到 initrd 檔</translation>
+        <source>Specify an initrd file to load</source>
+        <translation type="obsolete">Ange en initrd fil att använda</translation>
     </message>
     <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">指定的 initrd 檔案 %1 不存在。</translation>
+        <source>Initrd:</source>
+        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 已經存在，要覆寫嗎？</translation>
+        <source>Select initrd file</source>
+        <translation type="obsolete">Välj initrd fil</translation>
     </message>
     <message>
-        <source>USB Drive</source>
-        <comment>#14</comment>
-        <translation type="obsolete">隨身碟</translation>
+        <source>Select syslinux.cfg or isolinux.cfg file</source>
+        <translation type="obsolete">Välj syslinux.cfg eller isolinux.cfg fil</translation>
     </message>
     <message>
-        <source>Hard Disk</source>
-        <comment>#20</comment>
-        <translation type="obsolete">硬碟</translation>
+        <source>Specify parameters and options to pass to the kernel</source>
+        <translation type="obsolete">Ange parametrar och flaggor att skicka till kärnan</translation>
     </message>
     <message>
-        <source>Floppy</source>
-        <comment>#21</comment>
-        <translation type="obsolete">磁片</translation>
+        <source>Options:</source>
+        <translation type="obsolete">Alternativ:</translation>
     </message>
     <message>
-        <source>ISO</source>
-        <comment>#22</comment>
-        <translation type="obsolete">ISO</translation>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Visa alla diskar (använd varsamt)</translation>
     </message>
     <message>
-        <source>Hard Disk</source>
-        <comment>unetbootin#6</comment>
-        <translation type="obsolete">硬碟</translation>
+        <source>Format Drive (Wipes Out Data)</source>
+        <translation type="obsolete">Formatera diskar (Raderar all data)</translation>
     </message>
     <message>
-        <source>USB Drive</source>
-        <comment>unetbootin#7</comment>
-        <translation type="obsolete">隨身碟</translation>
+        <source>4. Installation Complete, Reboot</source>
+        <translation type="obsolete">4. Installationen är färdig, Starta om datorn</translation>
     </message>
     <message>
-        <source>ISO</source>
-        <comment>unetbootin#8</comment>
-        <translation type="obsolete">ISO</translation>
+        <source>3. Installing Bootloader</source>
+        <translation type="obsolete">3. Installerar uppstartshanterare</translation>
     </message>
     <message>
-        <source>Floppy</source>
-        <comment>unetbootin#9</comment>
-        <translation type="obsolete">磁片</translation>
+        <source>2. Extracting and Copying Files</source>
+        <translation type="obsolete">2. Extracting and Copying Files</translation>
+    </message>
+    <message>
+        <source>1. Downloading Files</source>
+        <translation type="obsolete">1. Laddar ner filer</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="obsolete">Avsluta</translation>
+    </message>
+    <message>
+        <source>Reboot Now</source>
+        <translation type="obsolete">Starta om nu</translation>
+    </message>
+    <message>
+        <source>Uninstallation Complete</source>
+        <translation type="obsolete">Avinstallationen utfördes</translation>
+    </message>
+    <message>
+        <source>%1 has been uninstalled.</source>
+        <translation type="obsolete">%1 har installerats.</translation>
+    </message>
+    <message>
+        <source>Must run as root</source>
+        <translation type="obsolete">Det krävs att du kör programmet som root-användare</translation>
+    </message>
+    <message>
+        <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
+        <translation type="obsolete">%2 Det krävs att du kör programmet som root-användare. Avsluta programmet och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>%1 Uninstaller</source>
+        <translation type="obsolete">%1 Avinstallerare</translation>
+    </message>
+    <message>
+        <source>%1 is currently installed. Remove the existing version?</source>
+        <translation type="obsolete">%1 är redan installerad, vill du avinstallera den installerade versionen?</translation>
     </message>
 </context>
 <context>
@@ -195,31 +229,31 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <source>Hard Disk</source>
-        <translation type="unfinished">硬碟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>USB Drive</source>
-        <translation type="unfinished">隨身碟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>ISO</source>
-        <translation type="unfinished">ISO</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Floppy</source>
-        <translation type="unfinished">磁片</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Super Grub Disk är en bootloader som kan utföra ett flertal MBR och bootloader återställningsåtgärder.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Med SGD fungerar dina uppstarter direkt utan krav på installation.</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; EeePCLinuxOS är en användarvänlig PCLinuxOS baserad distribution för din EeePC.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hemsida:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Ubuntu Eee är inte endast ett Ubuntu optimerat för Asus Eee PC. Det är ett operativsystem som använder Netbook Remix gränssnittet som innehåller den bästa mjukvaran istället för öppenkällkods alternativ tex Skype instället för Ekiga).&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
@@ -407,87 +441,87 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <source>Open Disk Image File</source>
-        <translation type="unfinished">開啟映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Kernel File</source>
-        <translation type="unfinished">開啟核心檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Initrd File</source>
-        <translation type="unfinished">開啟 Initrd 檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">開啟開機管理設定檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">插入 USB 隨身碟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">找不到 USB 隨身碟。如果已經插入，試著格式化成 FAT32 檔案系統。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 尚未掛載</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">你必須先將 USB 隨身碟 %1 掛載起來。大部分的系統會在你移除並重新插入 USB 隨身碟後自動掛載。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a distro</source>
-        <translation type="unfinished">選擇一個發行套件</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">你必須選擇一個發行套件</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a disk image file</source>
-        <translation type="unfinished">選擇一個映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">你必須選擇一個映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">選擇一個核心或 initrd 檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">你必須選擇一個核心或 initrd 檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">找不到映像檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">指定的映像檔 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Kernel file not found</source>
-        <translation type="unfinished">找不到核心檔案</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">指定的核心檔案 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Initrd file not found</source>
-        <translation type="unfinished">找不到 initrd 檔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">指定的 initrd 檔案 %1 不存在。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 已經存在，要覆寫嗎？</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
@@ -495,7 +529,7 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <source>%1 is out of space, abort installation?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 har slut på utrymme, vill du avbryta installationen?</translation>
     </message>
     <message>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
@@ -620,7 +654,7 @@ Reboot now?</source>
     <name>unetbootinui</name>
     <message>
         <source>UNetbootin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UNetbootin</translation>
     </message>
     <message>
         <source>Select from a list of supported distributions</source>
@@ -628,7 +662,7 @@ Reboot now?</source>
     </message>
     <message>
         <source>Distribution</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Distribution</translation>
     </message>
     <message>
         <source>Specify a disk image file to load</source>
@@ -640,91 +674,91 @@ Reboot now?</source>
     </message>
     <message>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange kärna samt initrd manuellt</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anpassad</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
         <source>Select the target drive to install to</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange målenhet för installerationen</translation>
     </message>
     <message>
         <source>Drive:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Målenhet:</translation>
     </message>
     <message>
         <source>Select the installation target type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange typ för installationsmål</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Typ:</translation>
     </message>
     <message>
         <source>Select the distribution version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj distributionsversion</translation>
     </message>
     <message>
         <source>Select disk image file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj avbildsfil</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Select the disk image type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj avbildsfilsformat</translation>
     </message>
     <message>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange en diskett/hårddisk avbildningsfil eller CD-avbildningsfil (ISO) att använda</translation>
     </message>
     <message>
         <source>Specify a kernel file to load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange en kärn-avbildsfil att använda</translation>
     </message>
     <message>
         <source>Select kernel file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj kärna</translation>
     </message>
     <message>
         <source>Kernel:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kärna:</translation>
     </message>
     <message>
         <source>Specify an initrd file to load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange en initrd fil att använda</translation>
     </message>
     <message>
         <source>Initrd:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Initrd:</translation>
     </message>
     <message>
         <source>Select initrd file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj initrd fil</translation>
     </message>
     <message>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj syslinux.cfg eller isolinux.cfg fil</translation>
     </message>
     <message>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ange parametrar och flaggor att skicka till kärnan</translation>
     </message>
     <message>
         <source>Options:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alternativ:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -736,7 +770,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa alla diskar (använd varsamt)</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -748,58 +782,58 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Formatera diskar (Raderar all data)</translation>
     </message>
     <message>
         <source>4. Installation Complete, Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4. Installationen är färdig, Starta om datorn</translation>
     </message>
     <message>
         <source>3. Installing Bootloader</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3. Installerar uppstartshanterare</translation>
     </message>
     <message>
         <source>2. Extracting and Copying Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2. Extracting and Copying Files</translation>
     </message>
     <message>
         <source>1. Downloading Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1. Laddar ner filer</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avsluta</translation>
     </message>
     <message>
         <source>Reboot Now</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Starta om nu</translation>
     </message>
 </context>
 <context>
     <name>uninstaller</name>
     <message>
         <source>Uninstallation Complete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avinstallationen utfördes</translation>
     </message>
     <message>
         <source>%1 has been uninstalled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 har installerats.</translation>
     </message>
     <message>
         <source>Must run as root</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Det krävs att du kör programmet som root-användare</translation>
     </message>
     <message>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 Det krävs att du kör programmet som root-användare. Avsluta programmet och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>%1 Uninstaller</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Avinstallerare</translation>
     </message>
     <message>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 är redan installerad, vill du avinstallera den installerade versionen?</translation>
     </message>
 </context>
 </TS>

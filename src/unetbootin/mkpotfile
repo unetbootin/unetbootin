@@ -1,5 +1,7 @@
 #!/bin/sh
 
+lupdate unetbootin.pro
+lrelease unetbootin.pro
 potext=$(lconvert -i unetbootin.ts -if ts -of po)
 lineno=$(echo "$potext" | grep -n Header | sed "s/:/\n/" | head --lines 1)
 trimmedtext=$(echo "$potext" | tail --lines $(expr $(echo "$potext" | wc --lines) - $lineno))
