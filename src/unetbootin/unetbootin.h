@@ -148,6 +148,8 @@ class unetbootin : public QWidget, private Ui::unetbootinui
 
 public:
 	unetbootin(QWidget *parent = 0);
+	QString trcurrent;
+	QString trdone;
 	QString appNlang;
 	QString appDir;
 	QString appLoc;

@@ -553,6 +553,38 @@ Reboot now?</translation>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>unetbootinui</name>

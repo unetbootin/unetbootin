@@ -1422,8 +1422,11 @@ QStringList unetbootin::filteroutlistL(QStringList listofdata, QList<QRegExp> li
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
-	sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-	sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+	if (!sdesc2->text().contains("(Current)"))
+	{
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+	}
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
 	if (listfilesizedirpair.first.first.size() == 1)
@@ -2492,6 +2495,8 @@ QString unetbootin::instTempfl(QString srcfName, QString dstfType)
 
 void unetbootin::runinst()
 {
+	this->trcurrent = tr("(Current)");
+	this->trdone = tr("(Done)");
 	firstlayer->setEnabled(false);
 	firstlayer->hide();
 	secondlayer->setEnabled(true);
@@ -2500,7 +2505,7 @@ void unetbootin::runinst()
 	rebootlayer->hide();
 	progresslayer->setEnabled(true);
 	progresslayer->show();
-	sdesc1->setText(QString("<b>%1 (Current)</b>").arg(sdesc1->text()));
+	sdesc1->setText(QString("<b>%1 %2</b>").arg(sdesc1->text()).arg(trcurrent));
 	tprogress->setValue(0);
 	installType = typeselect->currentText();
 	targetDrive = driveselect->currentText();
@@ -2642,17 +2647,17 @@ void unetbootin::runinst()
 	}
 	if (!sdesc1->text().contains("(Done)"))
 	{
-		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
 	}
 	if (sdesc2->text().contains("(Current)"))
 	{
-		sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
 	}
 	else
 	{
-		sdesc2->setText(QString("%1 (Done)").arg(sdesc2->text()));
+		sdesc2->setText(QString("%1 %2").arg(sdesc2->text()).arg(trdone));
 	}
-	sdesc3->setText(QString("<b>%1 (Current)</b>").arg(sdesc3->text()));
+	sdesc3->setText(QString("<b>%1 %2</b>").arg(sdesc3->text()).arg(trcurrent));
 	tprogress->setValue(0);
 	instDetType();
 }
@@ -2734,9 +2739,11 @@ void unetbootin::writegrub2cfg()
 
 void unetbootin::runinsthdd()
 {
+	this->tprogress->setValue(this->tprogress->maximum()/3);
 	#ifdef Q_OS_UNIX
 	if (QFile::exists("/boot/grub/grub.cfg")) // has grub2
 	{
+		pdesc1->setText(tr("Configuring grub2 on %1").arg(targetDev));
 		writegrub2cfg();
 		if (!QFile::exists("/boot/grub/menu.lst")) // grub2-only
 		{
@@ -2748,6 +2755,7 @@ void unetbootin::runinsthdd()
 	}
 	#endif
 	#ifdef Q_OS_WIN32
+	pdesc1->setText(tr("Configuring grldr on %1").arg(targetDev));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
 	{
 		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
@@ -2775,6 +2783,7 @@ void unetbootin::runinsthdd()
 	menulst.setFileName(QString("%1menu.lst").arg(targetPath));
 	#endif
 	#ifdef Q_OS_UNIX
+	pdesc1->setText(tr("Configuring grub on %1").arg(targetDev));
 	menulst.setFileName("/boot/grub/menu.lst");
 	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
 		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
@@ -2895,6 +2904,8 @@ void unetbootin::runinsthdd()
 
 void unetbootin::runinstusb()
 {
+	this->tprogress->setValue(this->tprogress->maximum()/3);
+	pdesc1->setText(tr("Installing syslinux to %1").arg(targetDev));
 	#ifdef Q_OS_WIN32
 	QString sysltfloc = instTempfl("syslinux.exe", "exe");
 	callexternapp(sysltfloc, QString("-ma %1").arg(targetDev));
@@ -2915,7 +2926,7 @@ void unetbootin::runinstusb()
 		isext2 = false;
 		if (!volidcommand.isEmpty())
 		{
-			if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3)")))
+			if (callexternapp(volidcommand, QString("-t %2").arg(targetDev)).contains(QRegExp("(ext2|ext3|ext4)")))
 				isext2 = true;
 		}
 		else
@@ -2928,7 +2939,10 @@ void unetbootin::runinstusb()
 			}
 		}
 		if (isext2)
+		{
+			pdesc1->setText(tr("Installing extlinux to %1").arg(targetDev));
 			callexternapp(extlinuxcommand, QString("-i %1").arg(targetPath));
+		}
 		else
 			callexternapp(syslinuxcommand, targetDev);
 	if (rawtargetDev != targetDev)
@@ -2947,10 +2961,6 @@ void unetbootin::runinstusb()
 	}
 	#endif
 	QString syslinuxcfgname = QString("%1syslinux.cfg").arg(targetPath);
-	#ifdef Q_OS_UNIX
-	if (isext2)
-		syslinuxcfgname = QString("%1extlinux.cfg").arg(targetPath);
-	#endif
 	if (QFile::exists(syslinuxcfgname))
 	{
 		overwritefileprompt(syslinuxcfgname);
@@ -2992,11 +3002,17 @@ void unetbootin::runinstusb()
 
 void unetbootin::fininstall()
 {
+	#ifdef Q_OS_UNIX
+	this->tprogress->setValue(this->tprogress->maximum()*2/3);
+	pdesc1->setText(tr("Syncing filesystems"));
+	callexternapp("sync", "");
+	#endif
+	pdesc1->setText("");
 	progresslayer->setEnabled(false);
 	progresslayer->hide();
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
-	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
 	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
 	if (installType == tr("Hard Disk"))
 	{
