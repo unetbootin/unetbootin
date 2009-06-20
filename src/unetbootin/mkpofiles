@@ -1,6 +1,15 @@
 #!/bin/bash
 
 ./mkpotfile
+
+if [ "$1" != "" ]
+then
+cd ../../po
+lconvert -if ts -of po -i ../src/unetbootin/unetbootin_$1.ts -o $1.po
+cd ../src/unetbootin
+exit 0
+fi
+
 cd ../../po
 for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do lconvert -if ts -of po -i $x -o $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
 cd ..

@@ -2,1167 +2,1504 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 14:14-0700\n"
-"PO-Revision-Date: 2009-06-15 18:37+0000\n"
+"POT-Creation-Date: 2009-06-19 18:17-0700\n"
+"PO-Revision-Date: 2009-06-20 01:09+0000\n"
 "Last-Translator: Vojtěch Trefný <vojtech.trefny@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-06-19 21:32+0000\n"
+"X-Launchpad-Export-Date: 2009-06-20 02:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-"X-Language: cs_CZ\n"
 
-#~ msgid "LeftToRight"
-#~ msgstr "LeftToRight"
+#. ts-context QObject
+#: main.cpp:257
+msgid "LeftToRight"
+msgstr "LeftToRight"
 
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start "
-#~ "Installation' option, choose 'Network' as the source, choose 'HTTP' as "
-#~ "the protocol, enter 'mirrors.kernel.org' when prompted for a server, and "
-#~ "enter '/centos/%1/os/%2' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-#~ "vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-#~ "'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte "
-#~ "'HTTP', při výzvě k zadání serveru zadejte 'mirrors.kernel.org' a při "
-#~ "dotazu na adresář zadejte '/centos/%1/os/%2'."
+#. ts-context unetbootin
+#: distrolst.cpp:173
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+"\n"
+"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
+"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
+"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
+"při výzvě k zadání serveru zadejte 'mirrors.kernel.org' a při dotazu na "
+"adresář zadejte '/centos/%1/os/%2'."
 
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start "
-#~ "Installation' option, choose 'Network' as the source, choose 'HTTP' as "
-#~ "the protocol, enter 'download.fedora.redhat.com' when prompted for a "
-#~ "server, and enter '/pub/fedora/linux/development/%1/os' when asked for "
-#~ "the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-#~ "vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-#~ "'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte "
-#~ "'HTTP', při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a "
-#~ "při dotazu na adresář zadejte '/pub/fedora/linux/development/%1/os'."
+#. ts-context unetbootin
+#: distrolst.cpp:314
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+"\n"
+"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
+"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
+"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
+"při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a při dotazu "
+"na adresář zadejte '/pub/fedora/linux/development/%1/os'."
 
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start "
-#~ "Installation' option, choose 'Network' as the source, choose 'HTTP' as "
-#~ "the protocol, enter 'download.fedora.redhat.com' when prompted for a "
-#~ "server, and enter '/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked "
-#~ "for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-#~ "vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-#~ "'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte "
-#~ "'HTTP', při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a "
-#~ "při dotazu na adresář zadejte "
-#~ "'/pub/fedora/linux/releases/%1/Fedora/%2/os'."
+#. ts-context unetbootin
+#: distrolst.cpp:320
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+"\n"
+"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
+"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
+"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
+"při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a při dotazu "
+"na adresář zadejte '/pub/fedora/linux/releases/%1/Fedora/%2/os'."
 
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start "
-#~ "Installation' option, choose 'Network' as the source, choose 'HTTP' as "
-#~ "the protocol, enter 'download.opensuse.org' when prompted for a server, "
-#~ "and enter '/factory/repo/oss' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-#~ "vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-#~ "'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte "
-#~ "'HTTP', při výzvě k zadání serveru zadejte 'download.opensuse.org' a při "
-#~ "dotazu na adresář zadejte '/factory/repo/oss'."
+#. ts-context unetbootin
+#: distrolst.cpp:571
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
+"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
+"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
+"při výzvě k zadání serveru zadejte 'download.opensuse.org' a při dotazu na "
+"adresář zadejte '/factory/repo/oss'."
 
-#~ msgid ""
-#~ "\n"
-#~ "*IMPORTANT* After rebooting, ignore any error messages and select back if "
-#~ "prompted for a CD, then go to the main menu, select the 'Start "
-#~ "Installation' option, choose 'Network' as the source, choose 'HTTP' as "
-#~ "the protocol, enter 'download.opensuse.org' when prompted for a server, "
-#~ "and enter '/distribution/%1/repo/oss' when asked for the folder."
-#~ msgstr ""
-#~ "\n"
-#~ "*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-#~ "vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-#~ "'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte "
-#~ "'HTTP', při výzvě k zadání serveru zadejte 'download.opensuse.org' a při "
-#~ "dotazu na adresář zadejte '/distribution/%1/repo/oss'."
+#. ts-context unetbootin
+#: distrolst.cpp:577
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
+"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
+"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
+"při výzvě k zadání serveru zadejte 'download.opensuse.org' a při dotazu na "
+"adresář zadejte '/distribution/%1/repo/oss'."
 
-#~ msgid "Hard Disk"
-#~ msgstr "Pevný disk"
+#. ts-context unetbootin
+#: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:590
+#: unetbootin.cpp:683 unetbootin.cpp:2515 unetbootin.cpp:2528
+#: unetbootin.cpp:2667 unetbootin.cpp:3017
+msgid "Hard Disk"
+msgstr "Pevný disk"
 
-#~ msgid "USB Drive"
-#~ msgstr "Mechanika USB"
+#. ts-context unetbootin
+#: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
+#: unetbootin.cpp:594 unetbootin.cpp:688 unetbootin.cpp:760 unetbootin.cpp:776
+#: unetbootin.cpp:1026 unetbootin.cpp:1882 unetbootin.cpp:1924
+#: unetbootin.cpp:2519 unetbootin.cpp:2544 unetbootin.cpp:2671
+#: unetbootin.cpp:3021
+msgid "USB Drive"
+msgstr "Mechanika USB"
 
-#~ msgid "ISO"
-#~ msgstr "ISO"
+#. ts-context unetbootin
+#: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:711
+#: unetbootin.cpp:712 unetbootin.cpp:2589
+msgid "ISO"
+msgstr "ISO"
 
-#~ msgid "Floppy"
-#~ msgstr "Disketa"
+#. ts-context unetbootin
+#: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:716
+#: unetbootin.cpp:717 unetbootin.cpp:2584
+msgid "Floppy"
+msgstr "Disketa"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:189 unetbootin.cpp:459
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Description:</b> Super Grub Disk is a bootloader which can perform a "
+"variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
+"simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Popis:</b> Super Grub Disk slouží ke snadné obnově MBR a různých zavaděčů "
+"systémů.<br/><b>Poznámky:</b> SGD se jednoduše zavede a spustí - k použití "
+"nepotřebujete instalaci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:210
+msgid ""
+"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
+"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
+"media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeepclos.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Popis:</b> EeePCLinuxOS je uživatelsky přívětivá distribuce postavená na "
+"PCLinuxOS určená pro počítače EeePC.<br/><b>Poznámky:</b> Před odsouhlasením "
+"instalace se ujistěte, že je médium prázdné a naformátované."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:218
+msgid ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
+"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
+"interface, which favors the best software available instead of open source "
+"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
+"sure install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Domovská "
+"stránka:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Popis:</b> Ubuntu Eee není jen Ubuntu uptavené pro Asus "
+"Eee PC. Je to operační systém používající rozhraní Netbook Remix "
+"upřednostňující nejlepší software před svobodnými alternativami (např. Skype "
+"místo Ekiga).<br/><b>Popis:</b> Před odsouhlasením instalace se ujistěte, že "
+"je médium prázdné a naformátované."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:230
+msgid ""
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched. "
+"The Unstable version, not the <a "
+"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
+"installed. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+"<img src=\":/elive.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b>"
+" Elive je distribuce založená na Debianu, která staví na pracovním prostředí "
+"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci se systémem "
+"bez jeho instalace, která je ale i tak možná. K dispozici je verze Unstable, "
+"nikoli <a href=\"http://www.elivecd.org/Download/Stable\">Stable</a>. "
+"Instalátor je založen na <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:239
+msgid ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Descri"
+"ption:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, "
+"Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
+"install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Popis:"
+"</b> Kiwi Linux je derivát Ubuntu určený převážně pro rumunsky, maďarsky a "
+"anglicky mluvící uživatele.<br/><b>Poznámky:</b> Před odsouhlasením "
+"instalace se ujistěte, že je médium prázdné a naformátované."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:250
+msgid ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is a high-quality GNU/Linux distribution that extends "
+"and improves Ubuntu to create a completely free operating system without any "
+"binary blobs or package trees that contain proprietary "
+"software.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
+msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:"
+"</b> gNewSense je velmi kvalitní linuxová distribuce, která staví na Ubuntu "
+"a přináší zcela svobodný systém prostý všech binárních součástí a licenčně "
+"problematických balíků.<br/><b>Poznámky:</b> Před odsouhlasením instalace se "
+"ujistěte, že je médium prázdné a naformátované."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:258
+msgid ""
+"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:"
+"</b> SliTaz je \"lehkotonážní\" mikrodistribuce zaměřená na desktopy. "
+"<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM odkud je "
+"následně zaveden, instalace tedy není nutná, ale je možná. Instalátor je "
+"založen na <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:266
+msgid ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> xPUD "
+"je malá distribuce přinášející kioskové rozhraní s interentovým prohlížečem "
+"a multimediálním přehrávačem.<br/><b>Poznámky:</b> Spustitelná verze načte "
+"celý systém do RAM odkud je systém následně zaveden."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:276
+msgid ""
+"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
+"version to download from the list above, or manually specify files to load "
+"below.</li><li>Select an installation type, and press OK to begin "
+"installing.</li></ol>"
+msgstr ""
+"Vítejte v <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> - "
+"Universal Netboot Installer. Použití:<ol><li>Ze seznamu nahoře vyberte "
+"distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory "
+"níže.</li><li>Vyberte typ instalace a k zahájení klikněte na OK.</li></ol>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:281
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
+"ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
+"flexibility.<br/><b>Install Notes:</b> The default version allows for "
+"installation over the internet (FTP). If interested in a LiveUSB version, "
+"see FaunOS."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Popis:"
+"</b> Arch Linux je rychlá a flexibilní distribuce. "
+"<br/><b>Poznámky:</b>Výchozí verze umoňuje instalaci přes FTP. Pro LIveUSB "
+"verzi navštivte FaunOS."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:287
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.remote-"
+"exploit.org/backtrack.html\">http://www.remote-"
+"exploit.org/backtrack.html</a><br/><b>Description:</b> BackTrack is a "
+"distribution focused on network analysis and penetration "
+"testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
+"no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a href=\"http://www.remote-"
+"exploit.org/backtrack.html\">http://www.remote-"
+"exploit.org/backtrack.html</a><br/><b>Popis:</b> BackTrack je distribuce "
+"zaměřená na síťovou analýzu a bezpečnostní testování.<br/><b>Popis:</b> "
+"BackTrack funguje jako živý (live) systém a nevyžaduje instalaci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:292
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
+"</b> CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install "
+"Notes:</b> The default version allows for both installation over the "
+"internet (FTP), or offline installation using pre-downloaded installation "
+"ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Popis:</b> "
+"CentOS je bezplatný klon Red Hat Enterprise Linux.<br/><b>Poznámky:</b> "
+"Standardní verze nabízí jak instalaci přes internet (FTP), tak offline "
+"instalaci za pomocí dříve získaných ISO obrazů."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:297
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
+":</b> CloneZilla is a distribution used for disk backup and "
+"imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Popis:</b> "
+"CloneZilla je distribuce určená pro snadné zálohování.<br/><b>Poznámky:</b> "
+"CloneZilla funguje jako živý (live) systém a nevyžaduje instalaci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:302
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
+"ription:</b> Damn Small Linux is a minimalist distribution designed for "
+"older computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Popi"
+"s:</b> Damn Small Linuxje minimalistická distribuce určená pro starší "
+"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
+"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:307
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
+"</b> Debian is a community-developed Linux distribution that supports a wide "
+"variety of architectures and offers a large repository of "
+"packages.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Popis:</b> "
+"Debian je komunitně vyvíjená linuxová distribuce s podporou mnoha "
+"architektur a rozsáhlým repozitářem.<br/><b>Poznámky:</b> Živá (Live) verze "
+"umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze "
+"NetInstall umožňuje instalaci přes FTP."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:313
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Description:</b> Dreamlinux is a user-friendly Debian-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Popis:</b> Dreamlinux je uživatelsky přívětivá distribuce založená na "
+"Debianu.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:318
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to "
+"restore a system that broke due to malware.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which malware scans can "
+"be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Popis:</b> Dr.Web AntiVirus je antivirový balík určený k opravě "
+"systému poškozeného malwarem.<br/><b>Poznámky:</b>Živá (Live) verze umožňuje "
+"spuštění systému přímo z CD a provedení  skenování nainstalovaného systému."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:323
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode. The Unstable version does not support Hard Drive "
+"installations, though the <a "
+"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not "
+"freely downloadable) does."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b>"
+" Elive je distribuce založená na Debianu, která staví na pracovním prostředí "
+"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci se systémem "
+"bez jeho instalace. Verze Unstable neumožňuje instalaci na pevný disk. To "
+"umožňuje <a href=\"http://www.elivecd.org/Download/Stable\">verze Stable</a> "
+"(není zdarma ke stažení)."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:333
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
+"ption:</b> Fedora is a Red Hat sponsored community distribution which "
+"showcases the latest cutting-edge free/open-source software.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched. The NetInstall version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Popis:"
+"</b> Fedora je komunitní distribuce sponzorovaná firmou Red Hat zaměříjící "
+"se na nejnovější free/open-source software.<br/><b>Poznámky:</b> Živá (Live) "
+"verze umožňuje spuštění systému přímo z CD s možností spuštění instalace. "
+"Verze NetInstall umožňuje instalaci z intrnetu (FTP) nebo z předem staženého "
+"ISO obrazu."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:338
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
+"n:</b> FreeBSD is a general-purpose Unix-like operating system designed for "
+"scalability and performance.<br/><b>Install Notes:</b> The default version "
+"allows for both installation over the internet (FTP), or offline "
+"installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Popis:</b>"
+" FreeBSD je unixový operační systém navržený pro stabilitu a "
+"rychlost.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
+"intrnetu (FTP) nebo z předem staženého ISO obrazu."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:343
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
+"n:</b> FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
+"Notes:</b> See the <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
+"installation details."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Popis:</b>"
+" FreeDOS je svobodný operační systém kompatibilní s MS-"
+"DOS.<br/><b>Poznámky:</b> Pro více informací o instalaci navštivte <a "
+"href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">online manuál</a>."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:348
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
+"</b> Frugalware is a general-purpose Slackware-based distro for advanced "
+"users.<br/><b>Install Notes:</b> The default option allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
+"</b> Frugalware je distribuce odvozená od Slackwaru určená pro pokročilé "
+"uživatele.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
+"intrnetu (FTP) nebo z předem stažených ISO obrazů."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:353
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
+"F-Secure Rescue CD detects and removes malware from your Windows "
+"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which malware scans can be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Popis:</b> F-"
+"Secure Rescue CD slouží k nalezení a odstranění malwaru ze systému "
+"Windows.<br/><b>Poznámky:</b> Živé CD umožňuje spuštění systému, ze kterého "
+"je možné spustit skenování počítače."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:358
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
+"</b> Gentoo is a flexible source-based distribution designed for advanced "
+"users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
+"mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Popis:</b> "
+"Gentoo je flexibilní distribuce určená pro pokročilé "
+"uživatele.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:368
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with "
+"all non-free components removed.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:"
+"</b> gNewSense je na Ubuntu založené distribuce, která je podporovaná Free "
+"Software Foundation a neobsahuje žádné nesvobodné "
+"součásti.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:373
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Description:</b> Gujin is a graphical boot manager which can bootstrap "
+"various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
+"runs; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Popis:</b> Gujin je grafický boot manager schopný zaváděný z rozličných "
+"zařízení a souborových systémů..<br/><b>Poznámky:</b> Gujin se jednoduše "
+"zavede a spustí - instalace není potřebná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:378
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Description:</b> Kaspersky Rescue Disk "
+"detects and removes malware from your Windows installation.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which "
+"malware scans can be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Popis:</b> Kaspersky Rescue Disk slouží "
+"k nalezení a odstranění malwaru ze systému Windows.<br/><b>Poznámky:</b> "
+"Živé CD umožňuje spuštění systému, ze kterého je možné spustit skenování "
+"počítače."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:383
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
+"n:</b> Kubuntu is an official Ubuntu derivative featuring the KDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Xubuntu "
+"and other official Ubuntu derivatives."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Popis:</b>"
+" Kubuntu je oficiální derivát s grafickým prostředím "
+"KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
+"z CD s možností spuštění instalace. Verze NetInstall umožňuje instalaci přes "
+"FTP, alternativně můžete nainstalovat Xubuntu nebo jiné oficální deriváty "
+"Ubuntu."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:388
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
+"b> Linux Mint is a user-friendly Ubuntu-based distribution which includes "
+"additional proprietary codecs and other software by default.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Popis:</b> "
+"Linux Mint je uživatelsky přívětivá distribuce odvozená od Ubuntu, která již "
+"v základní instalaci obsahuje různé nesvobodné kodeky a další "
+"software.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:393
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
+"tion:</b> Mandriva is a user-friendly distro formerly known as Mandrake "
+"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
+"mode, from which the installer can optionally be launched. The NetInstall "
+"version allows for installation over the internet (FTP) or via pre-"
+"downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
+"image files</a>."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Popis:<"
+"/b> Mandriva je uživatelsky přívětivá distribuce dříve známá jako Mandrake "
+"Linux.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje "
+"instalaci z intrnetu (FTP) nebo z předem staženého <a "
+"href=\"http://www.mandriva.com/en/download\">ISO obrazu</a>."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:399
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
+"b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
+"version based on KDE, while AntiX is a lightweight version for older "
+"computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
+"from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Popis:</b> "
+"MEPIS je distribuce odvozená od Debianu. SimplyMEPIS je uživatelsky "
+"přívětivá distribuce založená na prostředí KDE a Antix nenáročná verze pro "
+"staré počítače.<br/><b>Popis:</b> Živá (Live) verze umožňuje spuštění "
+"systému přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:404
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
+"</b> NetBSD is a Unix-like operating system which focuses on "
+"portability.<br/><b>Install Notes:</b>The default version allows for both "
+"installation over the internet (FTP), or using pre-downloaded installation "
+"ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Popis:</b> "
+"NetBSD je unïxový operační systém zaměřený na "
+"přenosnost.<br/><b>Poznámy:</b>Standardní verze umoňuje jak instalaci z "
+"internetu (FTP), tak z předem stažených instalačních ISO obrazů."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:409
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
+"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
+"Offline NT Password and Registry Editor can reset Windows passwords and edit "
+"the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd is "
+"booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
+"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Popis:</b> The Offline NT "
+"Password and Registry Editor umí resetovat hesla ve Windows a upravovat "
+"registry ve verzích Windows 2000-Vista.<br/><b>Popis:</b> NTPasswd se "
+"jednoduše zavede a spustí - instalace není potřebná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:414
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
+"ion:</b> openSUSE is a user-friendly Novell sponsored "
+"distribution.<br/><b>Install Notes:</b> The default version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Popis:</"
+"b> openSUSE je uživatelsky přívětivá distribuce sponzorovaná firmou "
+"Novell.<br/><b>Poznámky:</b> Standardní verze umoňuje jak instalaci z "
+"internetu (FTP), tak z předem stažených instalačních ISO obrazů."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:419
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Description:</b> Ophcrack can crack Windows "
+"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Popis:</b> Ophcrack umí získávat hesel z "
+"Windows.<br/><b>Poznámky:</b> Ophcrack se jednoduše zavede a spustí - "
+"instalace není potřebná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:424
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
+"n:</b> Parted Magic includes the GParted partition manager and other system "
+"utilities which can resize, copy, backup, and manipulate disk "
+"partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Popis:</b>"
+" Parted Magic obsahuje program GParted a další nástroje určená pro změnu "
+"velikosti, kopírování, zálohu a další manipulaci s diskovými "
+"oddíly.<br/><b>Poznámky:</b> Parted Magic se jednoduše zavede a spustí - "
+"instalace není potřebná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:429
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
+"ption:</b> PCLinuxOS is a user-friendly Mandriva-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Popis:"
+"</b> PCLinuxOS je uživatelsky přívětivá distribuce založená na "
+"Mandrivě.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
+"přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:434
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
+"ription:</b> Puppy Linux is a lightweight distribution designed for older "
+"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Popi"
+"s:</b> Puppy Linux je minimalistická distribuce určená pro starší "
+"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
+"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:439
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which "
+"features the Entropy binary package manager in addition to the source-based "
+"Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The LiteMCE "
+"edition is 2 GB, while the full edition will need an 8 GB USB drive"
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Popis:</b> Sabayon Linux je LiveDVD založené na Gentoo přinášející správce "
+"balíků Entropy jako doplněk k Portage.<br/><b>Poznámky:</b> Živá (Live) "
+"verze umožňuje spuštění systému přímo z CD s možností spuštění instalace. "
+"Verze LiteMCE vyžaduje 2GB místa, zatímco plná verze 8GB."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:444
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
+" Slax is a Slackware-based distribution featuring the KDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Popis:</b> Slax "
+"je distribuce založená na Slackware, která přináší prostředí "
+"KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
+"z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:449
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:"
+"</b> SliTaz je nenáročná mikrodistribuce zaměřená na stolní "
+"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
+"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:454
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Description:</b> Smart Boot Manager is a bootloader "
+"which can overcome some boot-related BIOS limitations and "
+"bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
+"is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Popis:</b> Smart Boot Manager je zavaděč schopný "
+"překonat některá omezení BIOSu v bootování. </b> SBM se jednoduše zavede a "
+"spustí - k použití nepotřebujete instalaci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:464
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
+"uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
+"derivative of Ubuntu which includes additional software by default. Requires "
+"a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
+"uper_Ubuntu</a><br/><b>Popis:</b> Super Ubuntu je neoficiální derivát "
+"Ubuntu, který přináší rozšířenou nabídku softwaru. Je vyžadován alespoň 2GB "
+"USB flash disk.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění "
+"systému přímo z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:469
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
+"tion:</b> SystemRescueCD includes various partition management and data "
+"recovery and backup tools.<br/><b>Install Notes:</b> SystemRescueCD is "
+"booted and run in live mode; no installation is required to use it."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Popis:<"
+"/b> SystemRescueCD obsahuje různé nástroje pro úpravu diskových oddílů a "
+"záchranu a zálohu dat.<br/><b>Poznámky:</b> SystemRescueCD se jednoduše "
+"zavede a spustí - k použití nepotřebujete instalaci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:474
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
+"</b> Ubuntu is a user-friendly Debian-based distribution. It is currently "
+"the most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which the installer can "
+"optionally be launched. The NetInstall version allows for installation over "
+"FTP, and can install Kubuntu and other official Ubuntu derivatives."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.ubuntu.cz/\">http://www.ubuntu.cz</a><br/><b>Popis:</b> "
+"Ubuntu je uživatelsky přívětivá distribuce založená na Debianu. V "
+"současnosti se jedná o nejpopulárnější distribuci.<br/><b>Popis:</b> Živá "
+"(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
+"instalace. Verze NetInstall umožňuje instalaci přes FTP, alternativně můžete "
+"nainstalovat Kubuntu, Xubuntu nebo jiné oficální deriváty Ubuntu."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:484
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
+"n:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Popis:</b>"
+" Xubuntu je oficiální derivát Ubuntu, který přináší prostředí "
+"XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
+"z CD s možností spuštění instalace. Verze NetInstall umožňuje instalaci přes "
+"FTP, alternativně můžete nainstalovat Kubuntu nebo jiné oficální deriváty "
+"Ubuntu."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1436 unetbootin.cpp:1458
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr "<b>Rozbalování ISO obrazu:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1515
+msgid "Extracting files, please wait..."
+msgstr "Rozbalování souborů, prosíme čekejte..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1516
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Archiv:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1517
+msgid "<b>Source:</b>"
+msgstr "<b>Zdroj:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1518
+msgid "<b>Destination:</b>"
+msgstr "<b>Cíl:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1519
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Rozbaleno:</b> 0 z %1 souborů"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1522
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Zdroj:</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1523
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Cíl:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1524
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Rozbaleno:</b> %1 z %2 souborů"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1866
+msgid "Downloading files, please wait..."
+msgstr "Stahhování souborů, prosíme čekejte..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1867
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Zdroj:</b> <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1868
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Cíl:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1869
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Staženo:</b> 0 bytes"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1939 unetbootin.cpp:1946
+msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgstr "<b>Staženo:</b> %1 z %2 bajtů"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2021
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "Vyhledávání <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2025
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 suhlasí s <a href=\"%3\">%3</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2210
+msgid "%1 not found"
+msgstr "%1 nenalezen"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2211
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 nebylo nenalezeno. Toto je třeba pro %2 instalační režimy.\n"
+"Nainstalujte balík \"%3\" nebo ekvivalent pro vaši distribuci."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2498
+msgid "(Current)"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2499
+msgid "(Done)"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2746
+msgid "Configuring grub2 on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2758
+msgid "Configuring grldr on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2786
+msgid "Configuring grub on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2908
+msgid "Installing syslinux to %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2943
+msgid "Installing extlinux to %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3007
+msgid "Syncing filesystems"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3019
+msgid "After rebooting, select the "
+msgstr "Po restartu zvolte "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3023
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1\n"
+"Restartovat nyní"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:479
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> xPUD "
+"je nenáročná distribuce s \"kioskovým\" rozhraním s internetovým prohlížečem "
+"a multimetiálním přehrávačem.<br/><b>Install Notes:</b> Spustitelná verze "
+"načte celý systém do RAM odkud je následně zaveden."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:489
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
+"n:</b> Zenwalk is a Slackware-based distribution featuring the XFCE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Popis:</b>"
+" Zenwalk je distribuce založená na Slackwaru s pracovním prostředím "
+"XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
+"z CD s možností spuštění instalace."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:499 unetbootin.cpp:503 unetbootin.cpp:507 unetbootin.cpp:511
+#: unetbootin.cpp:517 unetbootin.cpp:529
+msgid "either"
+msgstr "oba"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:708
+msgid "Open Disk Image File"
+msgstr "Výběr souboru s obrazem disku"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:726
+msgid "Open Kernel File"
+msgstr "Výběr souboru s jádrem"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:734
+msgid "Open Initrd File"
+msgstr "Výběr souboru initrd"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:742
+msgid "Open Bootloader Config File"
+msgstr "Výběr souboru s nastavením zavaděče"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:764
+msgid "Insert a USB flash drive"
+msgstr "Vložte USB flash disk"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:765
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr ""
+"Žádné USB flash disky nebyly nalezeny. Pokud jste USB disk již vložili, "
+"zkuste jej naformátovat na FAT32."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:780
+msgid "%1 not mounted"
+msgstr "%1 nepřipojen"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:781
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr ""
+"Napřed je třeba připojit USB zařízení %1. Většina distribucí to provede "
+"automaticky po odpojení a opětovném připojení zařízení."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:796
+msgid "Select a distro"
+msgstr "Vyberte distribuci"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:797
+msgid "You must select a distribution to load."
+msgstr "Pro spuštění musíte vybrat distribuci"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:811
+msgid "Select a disk image file"
+msgstr "Vyberte soubor s obrazem disku"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:812
+msgid "You must select a disk image file to load."
+msgstr "Pro spuštění musíte vybrat obraz disku."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:826
+msgid "Select a kernel and/or initrd file"
+msgstr "Vyberte jádro a/nebo soubor initrd"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:827
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "Pro spuštění musíte vybrat jádro a/nebo soubor initrd."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:841
+msgid "Diskimage file not found"
+msgstr "Obraz disku nebyl nalezen"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:842
+msgid "The specified diskimage file %1 does not exist."
+msgstr "Uvedený obraz disku %1 neexistuje."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:856
+msgid "Kernel file not found"
+msgstr "Soubor s jádrem nebyl nalezen"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:857
+msgid "The specified kernel file %1 does not exist."
+msgstr "Uvedený soubor s jádrem %1 neexistuje."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:871
+msgid "Initrd file not found"
+msgstr "Soubor initrd nebyl nalezen"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:872
+msgid "The specified initrd file %1 does not exist."
+msgstr "Uvedený soubor s initrd %1 neexistuje."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:972
+msgid "%1 exists, overwrite?"
+msgstr "%1 již existuje, přepsat?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:973
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"Soubor %1 již existuje. Zvolte 'Ano všem' pro jeho přepsání a přepsání "
+"dalších bez ptaní, 'Ano' pro přepsání souboru a 'Ne' pro zachování současné "
+"verze. Pokud nevíte, zvolte 'Ano všem'."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:999
+msgid "%1 is out of space, abort installation?"
+msgstr "V %1 není dostatek místa, přerušit instalaci?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1000
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+"V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte 'Ano', pro "
+"ignorování této chyba a pokračování instalace zvolte 'Ne' a pro ignorování "
+"všech chyb o nedostatku místa 'Ne všem'."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:25
+msgid "UNetbootin"
+msgstr "UNetbootin"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:52 unetbootin.ui:103
+msgid "Select from a list of supported distributions"
+msgstr "Vyberte z nabídky podporovaných distribucí"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:55
+msgid "Distribution"
+msgstr "Distribuce"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:71
+msgid "Specify a disk image file to load"
+msgstr "Výběr obrazu disku"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:74
+msgid "Diskimage"
+msgstr "Obraz disku"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:87
+msgid "Manually specify a kernel and initrd to load"
+msgstr "Ruční výběr jádra a initrd"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:90
+msgid "Custom"
+msgstr "Vlastní"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:119
+msgid "OK"
+msgstr "OK"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:132
+msgid "Cancel"
+msgstr "Ukončit"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:145 unetbootin.ui:161
+msgid "Select the target drive to install to"
+msgstr "Vyberte zařízení pro instalaci"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:148
+msgid "Drive:"
+msgstr "Zařízení:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:174 unetbootin.ui:190
+msgid "Select the installation target type"
+msgstr "Vyberte typ zařízení pro instalaci"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:177
+msgid "Type:"
+msgstr "Typ:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:203
+msgid "Select the distribution version"
+msgstr "Vyberte verzi distribuce"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:265
+msgid "Select disk image file"
+msgstr "Vyberte soubor s obrazem disku"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:268 unetbootin.ui:336 unetbootin.ui:387 unetbootin.ui:419
+msgid "..."
+msgstr "..."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:281
+msgid "Select the disk image type"
+msgstr "Zvolte typ obrazu disku"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:294
+msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
+msgstr "Vyberte obraz disku/diskety nebo obraz CD (ISO)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:317 unetbootin.ui:349
+msgid "Specify a kernel file to load"
+msgstr "Výběr souboru s jádrem"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:333
+msgid "Select kernel file"
+msgstr "Vyberte soubor s jádrem"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:352
+msgid "Kernel:"
+msgstr "Jádro:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:365 unetbootin.ui:400
+msgid "Specify an initrd file to load"
+msgstr "Výběr souboru initrd"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:368
+msgid "Initrd:"
+msgstr "Initrd:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:384
+msgid "Select initrd file"
+msgstr "Vyberte soubor initrd"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:416
+msgid "Select syslinux.cfg or isolinux.cfg file"
+msgstr "Vyberte soubor syslinux.cfg nebo isolinux.cfg"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:432 unetbootin.ui:445
+msgid "Specify parameters and options to pass to the kernel"
+msgstr "Výběr parametrů a voleb jádra"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:448
+msgid "Options:"
+msgstr "Volby:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:463
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will show all drives in "
+"the drop-down box titled \"Drives\". Enable this only if you know what "
+"you're doing; if you use this option, the installation will likely fail, or "
+"can lead to system boot issues.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span style=\" font-"
+"weight:600;\">potenciálně nebezpečná</span> volba zobrazí všechna zařízení a "
+"učiní je dostupnými v rozbalovací nabídce \"Zařízení\". Povolte jen v "
+"případě, že víte co děláte - můžete znemožnit vytvoření spustitelného disku "
+"nebo dokonce poškodit stávající systém.</p></body></html>"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:470
+msgid "Show All Drives (Use with Care)"
+msgstr "Zobrazit všechna zařízení (používejte opatrně)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:483
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will format the selected "
+"drive, wiping out all data on it. It shouldn't be necessary if you're using "
+"a standard USB drive.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span style=\" font-"
+"weight:600;\">potenciálně nebezpečná</span> volba zformátuje vybrané "
+"zařízení a zničí všechna přítomná data. Pokud používáte standardní USB disk, "
+"nemělo by to být nutné.</p></body></html>"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:490
+msgid "Format Drive (Wipes Out Data)"
+msgstr "Formátovat zařízení (zničí všechna data)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:635
+msgid "4. Installation Complete, Reboot"
+msgstr "4. Instalace je kompletní, restart"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:648
+msgid "3. Installing Bootloader"
+msgstr "3. Instalace zavaděče"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:661
+msgid "2. Extracting and Copying Files"
+msgstr "2. Rozbalování a kopírování dat"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:674
+msgid "1. Downloading Files"
+msgstr "1. Stahování dat"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:699
+msgid "Exit"
+msgstr "Ukončit"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:712
+msgid "Reboot Now"
+msgstr "Restartovat nyní"
+
+#. ts-context uninstaller
+#: main.cpp:156
+msgid "Uninstallation Complete"
+msgstr "Odinstalace byla úspěšně dokončena"
+
+#. ts-context uninstaller
+#: main.cpp:157
+msgid "%1 has been uninstalled."
+msgstr "%1byl odinstalován."
+
+#. ts-context uninstaller
+#: main.cpp:291
+msgid "Must run as root"
+msgstr "Spuštění s právy administrátora"
+
+#. ts-context uninstaller
+#: main.cpp:293
+msgid ""
+"%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+msgstr ""
+"%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte za "
+"použití buď:<br/><b>sudo %1</b><br/>, nebo:<br/><b>su -c '%1'</b>"
+
+#. ts-context uninstaller
+#: main.cpp:314
+msgid "%1 Uninstaller"
+msgstr "%1 odinstalátor"
+
+#. ts-context uninstaller
+#: main.cpp:315
+msgid "%1 is currently installed. Remove the existing version?"
+msgstr "%1 je již nainstalovát. Přejete si existující verzi odstranit?"
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b> "
-#~ "Super Grub Disk is a bootloader which can perform a variety of MBR and "
-#~ "bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
-#~ "runs; no installation is required to use it."
+#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:"
+#~ "</b> FaunOS is a distribution based on Arch Linux.<br/><b>Install Notes:</b> "
+#~ "The Live version allows for booting in Live mode, from which the installer "
+#~ "can optionally be launched."
 #~ msgstr ""
 #~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Popis:</b> "
-#~ "Super Grub Disk slouží ke snadné obnově MBR a různých zavaděčů "
-#~ "systémů.<br/><b>Poznámky:</b> SGD se jednoduše zavede a spustí - k "
-#~ "použití nepotřebujete instalaci."
-
-#~ msgid ""
-#~ "<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
-#~ "EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
-#~ "EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
-#~ "formatted before proceeding with install."
-#~ msgstr ""
-#~ "<img src=\":/eeepclos.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Popis:</b> "
-#~ "EeePCLinuxOS je uživatelsky přívětivá distribuce postavená na PCLinuxOS "
-#~ "určená pro počítače EeePC.<br/><b>Poznámky:</b> Před odsouhlasením "
-#~ "instalace se ujistěte, že je médium prázdné a naformátované."
-
-#~ msgid ""
-#~ "<img src=\":/eeeubuntu.png\" style=\"float:left;\" "
-#~ "/><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Description:</b> "
-#~ "Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an "
-#~ "operating system, using the Netbook Remix interface, which favors the "
-#~ "best software available instead of open source alternatives (ie. Skype "
-#~ "instead of Ekiga).<br/><b>Install Notes:</b> Make sure install media is "
-#~ "empty and formatted before proceeding with install."
-#~ msgstr ""
-#~ "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Domovská "
-#~ "stránka:</b> <a "
-#~ "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Popis:</b> "
-#~ "Ubuntu Eee není jen Ubuntu uptavené pro Asus Eee PC. Je to operační "
-#~ "systém používající rozhraní Netbook Remix upřednostňující nejlepší "
-#~ "software před svobodnými alternativami (např. Skype místo "
-#~ "Ekiga).<br/><b>Popis:</b> Před odsouhlasením instalace se ujistěte, že je "
-#~ "médium prázdné a naformátované."
-
-#~ msgid ""
-#~ "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-#~ "Elive is a Debian-based distribution featuring the Enlightenment window "
-#~ "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "Unstable version, not the <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
-#~ "installed. This installer is based on <a "
-#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-#~ msgstr ""
-#~ "<img src=\":/elive.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b> "
-#~ "Elive je distribuce založená na Debianu, která staví na pracovním "
-#~ "prostředí Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci "
-#~ "se systémem bez jeho instalace, která je ale i tak možná. K dispozici je "
-#~ "verze Unstable, nikoli <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable</a>. Instalátor je "
-#~ "založen na <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#~ msgid ""
-#~ "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
-#~ "Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian "
-#~ "and English speaking users.<br/><b>Install Notes:</b> Make sure install "
-#~ "media is empty and formatted before proceeding with install."
-#~ msgstr ""
-#~ "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Popis:</b> "
-#~ "Kiwi Linux je derivát Ubuntu určený převážně pro rumunsky, maďarsky a "
-#~ "anglicky mluvící uživatele.<br/><b>Poznámky:</b> Před odsouhlasením "
-#~ "instalace se ujistěte, že je médium prázdné a naformátované."
-
-#~ msgid ""
-#~ "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-#~ "gNewSense is a high-quality GNU/Linux distribution that extends and "
-#~ "improves Ubuntu to create a completely free operating system without any "
-#~ "binary blobs or package trees that contain proprietary "
-#~ "software.<br/><b>Install Notes:</b> Make sure install media is empty and "
-#~ "formatted before proceeding with install."
-#~ msgstr ""
-#~ "<img src=\":/gnewsense.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:</b> "
-#~ "gNewSense je velmi kvalitní linuxová distribuce, která staví na Ubuntu a "
-#~ "přináší zcela svobodný systém prostý všech binárních součástí a licenčně "
-#~ "problematických balíků.<br/><b>Poznámky:</b> Před odsouhlasením instalace "
-#~ "se ujistěte, že je médium prázdné a naformátované."
-
-#~ msgid ""
-#~ "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-#~ "SliTaz is a lightweight, desktop-oriented micro "
-#~ "distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
-#~ "system into RAM and boots from memory, so installation is not required "
-#~ "but optional. This installer is based on <a "
-#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-#~ msgstr ""
-#~ "<img src=\":/slitaz.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:</b> "
-#~ "SliTaz je \"lehkotonážní\" mikrodistribuce zaměřená na desktopy. "
-#~ "<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM odkud je "
-#~ "následně zaveden, instalace tedy není nutná, ale je možná. Instalátor je "
-#~ "založen na <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#~ msgid ""
-#~ "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-#~ "xPUD is a lightweight distribution featuring a simple kiosk-like "
-#~ "interface with a web browser and media player.<br/><b>Install Notes:</b> "
-#~ "The Live version loads the entire system into RAM and boots from memory."
-#~ msgstr ""
-#~ "<img src=\":/xpud.png\" /><br/><b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> "
-#~ "xPUD je malá distribuce přinášející kioskové rozhraní s interentovým "
-#~ "prohlížečem a multimediálním přehrávačem.<br/><b>Poznámky:</b> "
-#~ "Spustitelná verze načte celý systém do RAM odkud je systém následně "
-#~ "zaveden."
-
-#~ msgid ""
-#~ "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
-#~ "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
-#~ "version to download from the list above, or manually specify files to "
-#~ "load below.</li><li>Select an installation type, and press OK to begin "
-#~ "installing.</li></ol>"
-#~ msgstr ""
-#~ "Vítejte v <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> - "
-#~ "Universal Netboot Installer. Použití:<ol><li>Ze seznamu nahoře vyberte "
-#~ "distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory "
-#~ "níže.</li><li>Vyberte typ instalace a k zahájení klikněte na OK.</li></ol>"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b> "
-#~ "Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP). If interested in a LiveUSB version, "
-#~ "see FaunOS."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Popis:</b> "
-#~ "Arch Linux je rychlá a flexibilní distribuce. "
-#~ "<br/><b>Poznámky:</b>Výchozí verze umoňuje instalaci přes FTP. Pro "
-#~ "LIveUSB verzi navštivte FaunOS."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Description:</b> "
-#~ "BackTrack is a distribution focused on network analysis and penetration "
-#~ "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live "
-#~ "mode; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Popis:</b> "
-#~ "BackTrack je distribuce zaměřená na síťovou analýzu a bezpečnostní "
-#~ "testování.<br/><b>Popis:</b> BackTrack funguje jako živý (live) systém a "
-#~ "nevyžaduje instalaci."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:</b> "
-#~ "CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install "
-#~ "Notes:</b> The default version allows for both installation over the "
-#~ "internet (FTP), or offline installation using pre-downloaded installation "
-#~ "ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Popis:</b> "
-#~ "CentOS je bezplatný klon Red Hat Enterprise Linux.<br/><b>Poznámky:</b> "
-#~ "Standardní verze nabízí jak instalaci přes internet (FTP), tak offline "
-#~ "instalaci za pomocí dříve získaných ISO obrazů."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b> "
-#~ "CloneZilla is a distribution used for disk backup and "
-#~ "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
-#~ "mode; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Popis:</b> "
-#~ "CloneZilla je distribuce určená pro snadné "
-#~ "zálohování.<br/><b>Poznámky:</b> CloneZilla funguje jako živý (live) "
-#~ "systém a nevyžaduje instalaci."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Description:</b> "
-#~ "Damn Small Linux is a minimalist distribution designed for older "
-#~ "computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-#~ "system into RAM and boots from memory, so installation is not required "
-#~ "but optional."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Popis:</b> "
-#~ "Damn Small Linuxje minimalistická distribuce určená pro starší "
-#~ "počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-#~ "odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:</b> "
-#~ "Debian is a community-developed Linux distribution that supports a wide "
-#~ "variety of architectures and offers a large repository of "
-#~ "packages.<br/><b>Install Notes:</b> The Live version allows for booting "
-#~ "in Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Popis:</b> "
-#~ "Debian je komunitně vyvíjená linuxová distribuce s podporou mnoha "
-#~ "architektur a rozsáhlým repozitářem.<br/><b>Poznámky:</b> Živá (Live) "
-#~ "verze umožňuje spuštění systému přímo z CD s možností spuštění instalace. "
-#~ "Verze NetInstall umožňuje instalaci přes FTP."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Description:</b> "
-#~ "Dreamlinux is a user-friendly Debian-based distribution.<br/><b>Install "
-#~ "Notes:</b> The Live version allows for booting in Live mode, from which "
-#~ "the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Popis:</b> "
-#~ "Dreamlinux je uživatelsky přívětivá distribuce založená na "
-#~ "Debianu.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Description:</b> "
-#~ "Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that "
-#~ "broke due to malware.<br/><b>Install Notes:</b> The Live version allows "
-#~ "for booting in Live mode, from which malware scans can be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Popis:</b> "
-#~ "Dr.Web AntiVirus je antivirový balík určený k opravě systému poškozeného "
-#~ "malwarem.<br/><b>Poznámky:</b>Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD a provedení  skenování nainstalovaného systému."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-#~ "Elive is a Debian-based distribution featuring the Enlightenment window "
-#~ "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode. The Unstable version does not support Hard Drive "
-#~ "installations, though the <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not "
-#~ "freely downloadable) does."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b> "
-#~ "Elive je distribuce založená na Debianu, která staví na pracovním "
-#~ "prostředí Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci "
-#~ "se systémem bez jeho instalace. Verze Unstable neumožňuje instalaci na "
-#~ "pevný disk. To umožňuje <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">verze Stable</a> (není "
-#~ "zdarma ke stažení)."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Description:</b> "
-#~ "Fedora is a Red Hat sponsored community distribution which showcases the "
-#~ "latest cutting-edge free/open-source software.<br/><b>Install Notes:</b> "
-#~ "The Live version allows for booting in Live mode, from which the "
-#~ "installer can optionally be launched. The NetInstall version allows for "
-#~ "both installation over the internet (FTP), or offline installation using "
-#~ "pre-downloaded installation ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Popis:</b> "
-#~ "Fedora je komunitní distribuce sponzorovaná firmou Red Hat zaměříjící se "
-#~ "na nejnovější free/open-source software.<br/><b>Poznámky:</b> Živá (Live) "
-#~ "verze umožňuje spuštění systému přímo z CD s možností spuštění instalace. "
-#~ "Verze NetInstall umožňuje instalaci z intrnetu (FTP) nebo z předem "
-#~ "staženého ISO obrazu."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Description:</b> "
-#~ "FreeBSD is a general-purpose Unix-like operating system designed for "
-#~ "scalability and performance.<br/><b>Install Notes:</b> The default "
-#~ "version allows for both installation over the internet (FTP), or offline "
-#~ "installation using pre-downloaded installation ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Popis:</b> "
-#~ "FreeBSD je unixový operační systém navržený pro stabilitu a "
-#~ "rychlost.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
-#~ "intrnetu (FTP) nebo z předem staženého ISO obrazu."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Description:</b> "
-#~ "FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
-#~ "Notes:</b> See the <a "
-#~ "href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> "
-#~ "for installation details."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Popis:</b> "
-#~ "FreeDOS je svobodný operační systém kompatibilní s "
-#~ "MS-DOS.<br/><b>Poznámky:</b> Pro více informací o instalaci navštivte <a "
-#~ "href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">online "
-#~ "manuál</a>."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b> "
-#~ "Frugalware is a general-purpose Slackware-based distro for advanced "
-#~ "users.<br/><b>Install Notes:</b> The default option allows for both "
-#~ "installation over the internet (FTP), or offline installation using "
-#~ "pre-downloaded installation ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b> "
-#~ "Frugalware je distribuce odvozená od Slackwaru určená pro pokročilé "
-#~ "uživatele.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
-#~ "intrnetu (FTP) nebo z předem stažených ISO obrazů."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
-#~ "F-Secure Rescue CD detects and removes malware from your Windows "
-#~ "installation.<br/><b>Install Notes:</b> The Live version allows for "
-#~ "booting in Live mode, from which malware scans can be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Popis:</b> "
-#~ "F-Secure Rescue CD slouží k nalezení a odstranění malwaru ze systému "
-#~ "Windows.<br/><b>Poznámky:</b> Živé CD umožňuje spuštění systému, ze "
-#~ "kterého je možné spustit skenování počítače."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:</b> "
-#~ "Gentoo is a flexible source-based distribution designed for advanced "
-#~ "users.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Popis:</b> "
-#~ "Gentoo je flexibilní distribuce určená pro pokročilé "
-#~ "uživatele.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění "
-#~ "systému přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-#~ "gNewSense is an FSF-endorsed distribution based on Ubuntu with all "
-#~ "non-free components removed.<br/><b>Install Notes:</b> The Live version "
-#~ "allows for booting in Live mode, from which the installer can optionally "
-#~ "be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:</b> "
-#~ "gNewSense je na Ubuntu založené distribuce, která je podporovaná Free "
-#~ "Software Foundation a neobsahuje žádné nesvobodné "
-#~ "součásti.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění "
-#~ "systému přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Description:</b> "
-#~ "Gujin is a graphical boot manager which can bootstrap various volumes and "
-#~ "files.<br/><b>Install Notes:</b> Gujin simply boots and runs; no "
-#~ "installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Popis:</b> "
-#~ "Gujin je grafický boot manager schopný zaváděný z rozličných zařízení a "
-#~ "souborových systémů..<br/><b>Poznámky:</b> Gujin se jednoduše zavede a "
-#~ "spustí - instalace není potřebná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
-#~ "Kaspersky Rescue Disk detects and removes malware from your Windows "
-#~ "installation.<br/><b>Install Notes:</b> The Live version allows for "
-#~ "booting in Live mode, from which malware scans can be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Popis:</b> "
-#~ "Kaspersky Rescue Disk slouží k nalezení a odstranění malwaru ze systému "
-#~ "Windows.<br/><b>Poznámky:</b> Živé CD umožňuje spuštění systému, ze "
-#~ "kterého je možné spustit skenování počítače."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Description:</b> "
-#~ "Kubuntu is an official Ubuntu derivative featuring the KDE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP, and can install "
-#~ "Xubuntu and other official Ubuntu derivatives."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Popis:</b> "
-#~ "Kubuntu je oficiální derivát s grafickým prostředím "
-#~ "KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje "
-#~ "instalaci přes FTP, alternativně můžete nainstalovat Xubuntu nebo jiné "
-#~ "oficální deriváty Ubuntu."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</b> "
-#~ "Linux Mint is a user-friendly Ubuntu-based distribution which includes "
-#~ "additional proprietary codecs and other software by "
-#~ "default.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Popis:</b> "
-#~ "Linux Mint je uživatelsky přívětivá distribuce odvozená od Ubuntu, která "
-#~ "již v základní instalaci obsahuje různé nesvobodné kodeky a další "
-#~ "software.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění "
-#~ "systému přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Description:</b> "
-#~ "Mandriva is a user-friendly distro formerly known as Mandrake "
-#~ "Linux.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over the internet (FTP) or via "
-#~ "pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" "
-#~ "iso image files</a>."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Popis:</b> "
-#~ "Mandriva je uživatelsky přívětivá distribuce dříve známá jako Mandrake "
-#~ "Linux.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje "
-#~ "instalaci z intrnetu (FTP) nebo z předem staženého <a "
-#~ "href=\"http://www.mandriva.com/en/download\">ISO obrazu</a>."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</b> "
-#~ "MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
-#~ "version based on KDE, while AntiX is a lightweight version for older "
-#~ "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
-#~ "from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Popis:</b> "
-#~ "MEPIS je distribuce odvozená od Debianu. SimplyMEPIS je uživatelsky "
-#~ "přívětivá distribuce založená na prostředí KDE a Antix nenáročná verze "
-#~ "pro staré počítače.<br/><b>Popis:</b> Živá (Live) verze umožňuje spuštění "
-#~ "systému přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:</b> "
-#~ "NetBSD is a Unix-like operating system which focuses on "
-#~ "portability.<br/><b>Install Notes:</b>The default version allows for both "
-#~ "installation over the internet (FTP), or using pre-downloaded "
-#~ "installation ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Popis:</b> "
-#~ "NetBSD je unïxový operační systém zaměřený na "
-#~ "přenosnost.<br/><b>Poznámy:</b>Standardní verze umoňuje jak instalaci z "
-#~ "internetu (FTP), tak z předem stažených instalačních ISO obrazů."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> "
-#~ "The Offline NT Password and Registry Editor can reset Windows passwords "
-#~ "and edit the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> "
-#~ "NTPasswd is booted and run in live mode; no installation is required to "
-#~ "use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Popis:</b> "
-#~ "The Offline NT Password and Registry Editor umí resetovat hesla ve "
-#~ "Windows a upravovat registry ve verzích Windows "
-#~ "2000-Vista.<br/><b>Popis:</b> NTPasswd se jednoduše zavede a spustí - "
-#~ "instalace není potřebná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Description:</b> "
-#~ "openSUSE is a user-friendly Novell sponsored distribution.<br/><b>Install "
-#~ "Notes:</b> The default version allows for both installation over the "
-#~ "internet (FTP), or offline installation using pre-downloaded installation "
-#~ "ISO files."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Popis:</b> "
-#~ "openSUSE je uživatelsky přívětivá distribuce sponzorovaná firmou "
-#~ "Novell.<br/><b>Poznámky:</b> Standardní verze umoňuje jak instalaci z "
-#~ "internetu (FTP), tak z předem stažených instalačních ISO obrazů."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/><b>Description:</b> "
-#~ "Ophcrack can crack Windows passwords.<br/><b>Install Notes:</b> Ophcrack "
-#~ "is booted and run in live mode; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/><b>Popis:</b> "
-#~ "Ophcrack umí získávat hesel z Windows.<br/><b>Poznámky:</b> Ophcrack se "
-#~ "jednoduše zavede a spustí - instalace není potřebná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Description:</b> "
-#~ "Parted Magic includes the GParted partition manager and other system "
-#~ "utilities which can resize, copy, backup, and manipulate disk "
-#~ "partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in "
-#~ "live mode; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Popis:</b> "
-#~ "Parted Magic obsahuje program GParted a další nástroje určená pro změnu "
-#~ "velikosti, kopírování, zálohu a další manipulaci s diskovými "
-#~ "oddíly.<br/><b>Poznámky:</b> Parted Magic se jednoduše zavede a spustí - "
-#~ "instalace není potřebná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Description:</b> "
-#~ "PCLinuxOS is a user-friendly Mandriva-based distribution.<br/><b>Install "
-#~ "Notes:</b> The Live version allows for booting in Live mode, from which "
-#~ "the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Popis:</b> "
-#~ "PCLinuxOS je uživatelsky přívětivá distribuce založená na "
-#~ "Mandrivě.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění "
-#~ "systému přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Description:</b> "
-#~ "Puppy Linux is a lightweight distribution designed for older "
-#~ "computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-#~ "system into RAM and boots from memory, so installation is not required "
-#~ "but optional."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Popis:</b> "
-#~ "Puppy Linux je minimalistická distribuce určená pro starší "
-#~ "počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-#~ "odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Description:</b> "
-#~ "Sabayon Linux is a Gentoo-based Live DVD distribution which features the "
-#~ "Entropy binary package manager in addition to the source-based "
-#~ "Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB "
-#~ "drive"
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Popis:</b> "
-#~ "Sabayon Linux je LiveDVD založené na Gentoo přinášející správce balíků "
-#~ "Entropy jako doplněk k Portage.<br/><b>Poznámky:</b> Živá (Live) verze "
-#~ "umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze "
-#~ "LiteMCE vyžaduje 2GB místa, zatímco plná verze 8GB."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b> "
-#~ "Slax is a Slackware-based distribution featuring the KDE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Popis:</b> "
-#~ "Slax je distribuce založená na Slackware, která přináší prostředí "
-#~ "KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-#~ "SliTaz is a lightweight, desktop-oriented micro "
-#~ "distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
-#~ "system into RAM and boots from memory, so installation is not required "
-#~ "but optional."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:</b> "
-#~ "SliTaz je nenáročná mikrodistribuce zaměřená na stolní "
-#~ "počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-#~ "odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/><b>Description:</b> "
-#~ "Smart Boot Manager is a bootloader which can overcome some boot-related "
-#~ "BIOS limitations and bugs.<br/><b>Install Notes:</b> SBM simply boots and "
-#~ "runs; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/><b>Popis:</b> "
-#~ "Smart Boot Manager je zavaděč schopný překonat některá omezení BIOSu v "
-#~ "bootování. </b> SBM se jednoduše zavede a spustí - k použití "
-#~ "nepotřebujete instalaci."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/><b>Description:</b> "
-#~ "Super Ubuntu is an unofficial derivative of Ubuntu which includes "
-#~ "additional software by default. Requires a 2GB USB drive to "
-#~ "install.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/><b>Popis:</b> "
-#~ "Super Ubuntu je neoficiální derivát Ubuntu, který přináší rozšířenou "
-#~ "nabídku softwaru. Je vyžadován alespoň 2GB USB flash "
-#~ "disk.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Description:</b> "
-#~ "SystemRescueCD includes various partition management and data recovery "
-#~ "and backup tools.<br/><b>Install Notes:</b> SystemRescueCD is booted and "
-#~ "run in live mode; no installation is required to use it."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Popis:</b> "
-#~ "SystemRescueCD obsahuje různé nástroje pro úpravu diskových oddílů a "
-#~ "záchranu a zálohu dat.<br/><b>Poznámky:</b> SystemRescueCD se jednoduše "
-#~ "zavede a spustí - k použití nepotřebujete instalaci."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:</b> "
-#~ "Ubuntu is a user-friendly Debian-based distribution. It is currently the "
-#~ "most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
-#~ "Live version allows for booting in Live mode, from which the installer "
-#~ "can optionally be launched. The NetInstall version allows for "
-#~ "installation over FTP, and can install Kubuntu and other official Ubuntu "
-#~ "derivatives."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.ubuntu.cz/\">http://www.ubuntu.cz</a><br/><b>Popis:</b> "
-#~ "Ubuntu je uživatelsky přívětivá distribuce založená na Debianu. V "
-#~ "současnosti se jedná o nejpopulárnější distribuci.<br/><b>Popis:</b> Živá "
-#~ "(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
-#~ "instalace. Verze NetInstall umožňuje instalaci přes FTP, alternativně "
-#~ "můžete nainstalovat Kubuntu, Xubuntu nebo jiné oficální deriváty Ubuntu."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b> "
-#~ "Xubuntu is an official Ubuntu derivative featuring the XFCE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP, and can install "
-#~ "Kubuntu and other official Ubuntu derivatives."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Popis:</b> "
-#~ "Xubuntu je oficiální derivát Ubuntu, který přináší prostředí "
-#~ "XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje "
-#~ "instalaci přes FTP, alternativně můžete nainstalovat Kubuntu nebo jiné "
-#~ "oficální deriváty Ubuntu."
-
-#~ msgid "<b>Extracting compressed iso:</b> %1"
-#~ msgstr "<b>Rozbalování ISO obrazu:</b> %1"
-
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Rozbalování souborů, prosíme čekejte..."
-
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Archiv:</b> %1"
-
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Zdroj:</b>"
-
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Cíl:</b>"
-
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Rozbaleno:</b> 0 z %1 souborů"
-
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Zdroj:</b> %1 (%2)"
-
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Cíl:</b> %1%2"
-
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Rozbaleno:</b> %1 z %2 souborů"
-
-#~ msgid "Downloading files, please wait..."
-#~ msgstr "Stahhování souborů, prosíme čekejte..."
-
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Zdroj:</b> <a href=\"%1\">%1</a>"
-
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Cíl:</b> %1"
-
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Staženo:</b> 0 bytes"
-
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Staženo:</b> %1 z %2 bajtů"
-
-#~ msgid "Searching in <a href=\"%1\">%1</a>"
-#~ msgstr "Vyhledávání <a href=\"%1\">%1</a>"
-
-#~ msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-#~ msgstr "%1/%2 suhlasí s <a href=\"%3\">%3</a>"
-
-#~ msgid "%1 not found"
-#~ msgstr "%1 nenalezen"
-
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 nebylo nenalezeno. Toto je třeba pro %2 instalační režimy.\n"
-#~ "Nainstalujte balík \"%3\" nebo ekvivalent pro vaši distribuci."
-
-#~ msgid "After rebooting, select the "
-#~ msgstr "Po restartu zvolte "
-
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1\n"
-#~ "Restartovat nyní"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-#~ "xPUD is a lightweight distribution featuring a simple kiosk-like "
-#~ "interface with a web browser and media player.<br/><b>Install Notes:</b> "
-#~ "The Live version loads the entire system into RAM and boots from memory."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> "
-#~ "xPUD je nenáročná distribuce s \"kioskovým\" rozhraním s internetovým "
-#~ "prohlížečem a multimetiálním přehrávačem.<br/><b>Install Notes:</b> "
-#~ "Spustitelná verze načte celý systém do RAM odkud je následně zaveden."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Description:</b> "
-#~ "Zenwalk is a Slackware-based distribution featuring the XFCE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Popis:</b> "
-#~ "Zenwalk je distribuce založená na Slackwaru s pracovním prostředím "
-#~ "XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-#~ "přímo z CD s možností spuštění instalace."
-
-#~ msgid "either"
-#~ msgstr "oba"
-
-#~ msgid "Open Disk Image File"
-#~ msgstr "Výběr souboru s obrazem disku"
-
-#~ msgid "Open Kernel File"
-#~ msgstr "Výběr souboru s jádrem"
-
-#~ msgid "Open Initrd File"
-#~ msgstr "Výběr souboru initrd"
-
-#~ msgid "Open Bootloader Config File"
-#~ msgstr "Výběr souboru s nastavením zavaděče"
-
-#~ msgid "Insert a USB flash drive"
-#~ msgstr "Vložte USB flash disk"
-
-#~ msgid ""
-#~ "No USB flash drives were found. If you have already inserted a USB drive, "
-#~ "try reformatting it as FAT32."
-#~ msgstr ""
-#~ "Žádné USB flash disky nebyly nalezeny. Pokud jste USB disk již vložili, "
-#~ "zkuste jej naformátovat na FAT32."
-
-#~ msgid "%1 not mounted"
-#~ msgstr "%1 nepřipojen"
-
-#~ msgid ""
-#~ "You must first mount the USB drive %1 to a mountpoint. Most distributions "
-#~ "will do this automatically after you remove and reinsert the USB drive."
-#~ msgstr ""
-#~ "Napřed je třeba připojit USB zařízení %1. Většina distribucí to provede "
-#~ "automaticky po odpojení a opětovném připojení zařízení."
-
-#~ msgid "Select a distro"
-#~ msgstr "Vyberte distribuci"
-
-#~ msgid "You must select a distribution to load."
-#~ msgstr "Pro spuštění musíte vybrat distribuci"
-
-#~ msgid "Select a disk image file"
-#~ msgstr "Vyberte soubor s obrazem disku"
-
-#~ msgid "You must select a disk image file to load."
-#~ msgstr "Pro spuštění musíte vybrat obraz disku."
-
-#~ msgid "Select a kernel and/or initrd file"
-#~ msgstr "Vyberte jádro a/nebo soubor initrd"
-
-#~ msgid "You must select a kernel and/or initrd file to load."
-#~ msgstr "Pro spuštění musíte vybrat jádro a/nebo soubor initrd."
-
-#~ msgid "Diskimage file not found"
-#~ msgstr "Obraz disku nebyl nalezen"
-
-#~ msgid "The specified diskimage file %1 does not exist."
-#~ msgstr "Uvedený obraz disku %1 neexistuje."
-
-#~ msgid "Kernel file not found"
-#~ msgstr "Soubor s jádrem nebyl nalezen"
-
-#~ msgid "The specified kernel file %1 does not exist."
-#~ msgstr "Uvedený soubor s jádrem %1 neexistuje."
-
-#~ msgid "Initrd file not found"
-#~ msgstr "Soubor initrd nebyl nalezen"
-
-#~ msgid "The specified initrd file %1 does not exist."
-#~ msgstr "Uvedený soubor s initrd %1 neexistuje."
-
-#~ msgid "%1 exists, overwrite?"
-#~ msgstr "%1 již existuje, přepsat?"
-
-#~ msgid ""
-#~ "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-#~ "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' "
-#~ "to retain your existing version. If in doubt, press 'Yes to All'."
-#~ msgstr ""
-#~ "Soubor %1 již existuje. Zvolte 'Ano všem' pro jeho přepsání a přepsání "
-#~ "dalších bez ptaní, 'Ano' pro přepsání souboru a 'Ne' pro zachování "
-#~ "současné verze. Pokud nevíte, zvolte 'Ano všem'."
-
-#~ msgid "%1 is out of space, abort installation?"
-#~ msgstr "V %1 není dostatek místa, přerušit instalaci?"
-
-#~ msgid ""
-#~ "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' "
-#~ "to ignore this error and attempt to continue installation, and 'No to "
-#~ "All' to ignore all out-of-space errors."
-#~ msgstr ""
-#~ "V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte 'Ano', "
-#~ "pro ignorování této chyba a pokračování instalace zvolte 'Ne' a pro "
-#~ "ignorování všech chyb o nedostatku místa 'Ne všem'."
-
-#~ msgid "UNetbootin"
-#~ msgstr "UNetbootin"
-
-#~ msgid "Select from a list of supported distributions"
-#~ msgstr "Vyberte z nabídky podporovaných distribucí"
-
-#~ msgid "Distribution"
-#~ msgstr "Distribuce"
-
-#~ msgid "Specify a disk image file to load"
-#~ msgstr "Výběr obrazu disku"
-
-#~ msgid "Diskimage"
-#~ msgstr "Obraz disku"
-
-#~ msgid "Manually specify a kernel and initrd to load"
-#~ msgstr "Ruční výběr jádra a initrd"
-
-#~ msgid "Custom"
-#~ msgstr "Vlastní"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Cancel"
-#~ msgstr "Ukončit"
-
-#~ msgid "Select the target drive to install to"
-#~ msgstr "Vyberte zařízení pro instalaci"
-
-#~ msgid "Drive:"
-#~ msgstr "Zařízení:"
-
-#~ msgid "Select the installation target type"
-#~ msgstr "Vyberte typ zařízení pro instalaci"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Select the distribution version"
-#~ msgstr "Vyberte verzi distribuce"
-
-#~ msgid "Select disk image file"
-#~ msgstr "Vyberte soubor s obrazem disku"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Select the disk image type"
-#~ msgstr "Zvolte typ obrazu disku"
-
-#~ msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
-#~ msgstr "Vyberte obraz disku/diskety nebo obraz CD (ISO)"
-
-#~ msgid "Specify a kernel file to load"
-#~ msgstr "Výběr souboru s jádrem"
-
-#~ msgid "Select kernel file"
-#~ msgstr "Vyberte soubor s jádrem"
-
-#~ msgid "Kernel:"
-#~ msgstr "Jádro:"
-
-#~ msgid "Specify an initrd file to load"
-#~ msgstr "Výběr souboru initrd"
-
-#~ msgid "Initrd:"
-#~ msgstr "Initrd:"
-
-#~ msgid "Select initrd file"
-#~ msgstr "Vyberte soubor initrd"
-
-#~ msgid "Select syslinux.cfg or isolinux.cfg file"
-#~ msgstr "Vyberte soubor syslinux.cfg nebo isolinux.cfg"
-
-#~ msgid "Specify parameters and options to pass to the kernel"
-#~ msgstr "Výběr parametrů a voleb jádra"
-
-#~ msgid "Options:"
-#~ msgstr "Volby:"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span "
-#~ "style=\" font-weight:600;\">potentially dangerous</span> option will show "
-#~ "all drives in the drop-down box titled \"Drives\". Enable this only if "
-#~ "you know what you're doing; if you use this option, the installation will "
-#~ "likely fail, or can lead to system boot issues.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span "
-#~ "style=\" font-weight:600;\">potenciálně nebezpečná</span> volba zobrazí "
-#~ "všechna zařízení a učiní je dostupnými v rozbalovací nabídce "
-#~ "\"Zařízení\". Povolte jen v případě, že víte co děláte - můžete znemožnit "
-#~ "vytvoření spustitelného disku nebo dokonce poškodit stávající "
-#~ "systém.</p></body></html>"
-
-#~ msgid "Show All Drives (Use with Care)"
-#~ msgstr "Zobrazit všechna zařízení (používejte opatrně)"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span "
-#~ "style=\" font-weight:600;\">potentially dangerous</span> option will "
-#~ "format the selected drive, wiping out all data on it. It shouldn't be "
-#~ "necessary if you're using a standard USB drive.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-#~ "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span "
-#~ "style=\" font-weight:600;\">potenciálně nebezpečná</span> volba "
-#~ "zformátuje vybrané zařízení a zničí všechna přítomná data. Pokud "
-#~ "používáte standardní USB disk, nemělo by to být nutné.</p></body></html>"
-
-#~ msgid "Format Drive (Wipes Out Data)"
-#~ msgstr "Formátovat zařízení (zničí všechna data)"
-
-#~ msgid "4. Installation Complete, Reboot"
-#~ msgstr "4. Instalace je kompletní, restart"
-
-#~ msgid "3. Installing Bootloader"
-#~ msgstr "3. Instalace zavaděče"
-
-#~ msgid "2. Extracting and Copying Files"
-#~ msgstr "2. Rozbalování a kopírování dat"
-
-#~ msgid "1. Downloading Files"
-#~ msgstr "1. Stahování dat"
-
-#~ msgid "Exit"
-#~ msgstr "Ukončit"
-
-#~ msgid "Reboot Now"
-#~ msgstr "Restartovat nyní"
-
-#~ msgid "Uninstallation Complete"
-#~ msgstr "Odinstalace byla úspěšně dokončena"
-
-#~ msgid "%1 has been uninstalled."
-#~ msgstr "%1byl odinstalován."
-
-#~ msgid "Must run as root"
-#~ msgstr "Spuštění s právy administrátora"
-
-#~ msgid ""
-#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
-#~ msgstr ""
-#~ "%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte "
-#~ "za použití buď:<br/><b>sudo %1</b><br/>, nebo:<br/><b>su -c '%1'</b>"
-
-#~ msgid "%1 Uninstaller"
-#~ msgstr "%1 odinstalátor"
-
-#~ msgid "%1 is currently installed. Remove the existing version?"
-#~ msgstr "%1 je již nainstalovát. Přejete si existující verzi odstranit?"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:</b> "
-#~ "FaunOS is a distribution based on Arch Linux.<br/><b>Install Notes:</b> "
-#~ "The Live version allows for booting in Live mode, from which the "
-#~ "installer can optionally be launched."
-#~ msgstr ""
-#~ "<b>Domovská stránka:</b> <a "
-#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:</b> "
-#~ "FaunOSje distribuce založená na Arch Linuxu.<br/><b>Poznámky:</b> Živá "
+#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:"
+#~ "</b> FaunOSje distribuce založená na Arch Linuxu.<br/><b>Poznámky:</b> Živá "
 #~ "(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
 #~ "instalace."
 
@@ -1277,1456 +1614,3 @@ msgstr ""
 #~ msgctxt "unetbootin#9"
 #~ msgid "Floppy"
 #~ msgstr "Disketa"
-
-#. ts-context QObject
-#, fuzzy
-msgid "LeftToRight"
-msgstr "LeftToRight"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'mirrors.kernel.org' when prompted for a server, and enter "
-"'/centos/%1/os/%2' when asked for the folder."
-msgstr ""
-"\n"
-"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
-"při výzvě k zadání serveru zadejte 'mirrors.kernel.org' a při dotazu na "
-"adresář zadejte '/centos/%1/os/%2'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/development/%1/os' when asked for the folder."
-msgstr ""
-"\n"
-"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
-"při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a při dotazu "
-"na adresář zadejte '/pub/fedora/linux/development/%1/os'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-msgstr ""
-"\n"
-"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
-"při výzvě k zadání serveru zadejte 'download.fedora.redhat.com' a při dotazu "
-"na adresář zadejte '/pub/fedora/linux/releases/%1/Fedora/%2/os'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/factory/repo/oss' when asked for the folder."
-msgstr ""
-"\n"
-"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
-"při výzvě k zadání serveru zadejte 'download.opensuse.org' a při dotazu na "
-"adresář zadejte '/factory/repo/oss'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/distribution/%1/repo/oss' when asked for the folder."
-msgstr ""
-"\n"
-"*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste "
-"vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte "
-"'Zahájit instalaci', jako zdroj vyberte 'Síť', jako protokol zvolte 'HTTP', "
-"při výzvě k zadání serveru zadejte 'download.opensuse.org' a při dotazu na "
-"adresář zadejte '/distribution/%1/repo/oss'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Hard Disk"
-msgstr "Pevný disk"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "USB Drive"
-msgstr "Mechanika USB"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "ISO"
-msgstr "ISO"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Floppy"
-msgstr "Disketa"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b> "
-"Super Grub Disk is a bootloader which can perform a variety of MBR and "
-"bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
-"runs; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Popis:</b> "
-"Super Grub Disk slouží ke snadné obnově MBR a různých zavaděčů "
-"systémů.<br/><b>Poznámky:</b> SGD se jednoduše zavede a spustí - k použití "
-"nepotřebujete instalaci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
-"EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
-"EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
-msgstr ""
-"<img src=\":/eeepclos.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Popis:</b> "
-"EeePCLinuxOS je uživatelsky přívětivá distribuce postavená na PCLinuxOS "
-"určená pro počítače EeePC.<br/><b>Poznámky:</b> Před odsouhlasením instalace "
-"se ujistěte, že je médium prázdné a naformátované."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
-"<a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Description:</b> "
-"Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an "
-"operating system, using the Netbook Remix interface, which favors the best "
-"software available instead of open source alternatives (ie. Skype instead of "
-"Ekiga).<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
-msgstr ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Domovská "
-"stránka:</b> <a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Popis:</b> "
-"Ubuntu Eee není jen Ubuntu uptavené pro Asus Eee PC. Je to operační systém "
-"používající rozhraní Netbook Remix upřednostňující nejlepší software před "
-"svobodnými alternativami (např. Skype místo Ekiga).<br/><b>Popis:</b> Před "
-"odsouhlasením instalace se ujistěte, že je médium prázdné a naformátované."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The Unstable "
-"version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> is installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-msgstr ""
-"<img src=\":/elive.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b> "
-"Elive je distribuce založená na Debianu, která staví na pracovním prostředí "
-"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci se systémem "
-"bez jeho instalace, která je ale i tak možná. K dispozici je verze Unstable, "
-"nikoli <a href=\"http://www.elivecd.org/Download/Stable\">Stable</a>. "
-"Instalátor je založen na <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
-"Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian "
-"and English speaking users.<br/><b>Install Notes:</b> Make sure install "
-"media is empty and formatted before proceeding with install."
-msgstr ""
-"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Popis:</b> "
-"Kiwi Linux je derivát Ubuntu určený převážně pro rumunsky, maďarsky a "
-"anglicky mluvící uživatele.<br/><b>Poznámky:</b> Před odsouhlasením "
-"instalace se ujistěte, že je médium prázdné a naformátované."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-"gNewSense is a high-quality GNU/Linux distribution that extends and improves "
-"Ubuntu to create a completely free operating system without any binary blobs "
-"or package trees that contain proprietary software.<br/><b>Install "
-"Notes:</b> Make sure install media is empty and formatted before proceeding "
-"with install."
-msgstr ""
-"<img src=\":/gnewsense.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:</b> "
-"gNewSense je velmi kvalitní linuxová distribuce, která staví na Ubuntu a "
-"přináší zcela svobodný systém prostý všech binárních součástí a licenčně "
-"problematických balíků.<br/><b>Poznámky:</b> Před odsouhlasením instalace se "
-"ujistěte, že je médium prázdné a naformátované."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
-"Notes:</b> The Live version loads the entire system into RAM and boots from "
-"memory, so installation is not required but optional. This installer is "
-"based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-msgstr ""
-"<img src=\":/slitaz.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:</b> "
-"SliTaz je \"lehkotonážní\" mikrodistribuce zaměřená na desktopy. "
-"<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM odkud je "
-"následně zaveden, instalace tedy není nutná, ale je možná. Instalátor je "
-"založen na <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
-"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
-"version loads the entire system into RAM and boots from memory."
-msgstr ""
-"<img src=\":/xpud.png\" /><br/><b>Domovská stránka:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> xPUD "
-"je malá distribuce přinášející kioskové rozhraní s interentovým prohlížečem "
-"a multimediálním přehrávačem.<br/><b>Poznámky:</b> Spustitelná verze načte "
-"celý systém do RAM odkud je systém následně zaveden."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
-"the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
-"version to download from the list above, or manually specify files to load "
-"below.</li><li>Select an installation type, and press OK to begin "
-"installing.</li></ol>"
-msgstr ""
-"Vítejte v <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> - "
-"Universal Netboot Installer. Použití:<ol><li>Ze seznamu nahoře vyberte "
-"distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory "
-"níže.</li><li>Vyberte typ instalace a k zahájení klikněte na OK.</li></ol>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b> "
-"Arch Linux is a lightweight distribution optimized for speed and "
-"flexibility.<br/><b>Install Notes:</b> The default version allows for "
-"installation over the internet (FTP). If interested in a LiveUSB version, "
-"see FaunOS."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Popis:</b> "
-"Arch Linux je rychlá a flexibilní distribuce. <br/><b>Poznámky:</b>Výchozí "
-"verze umoňuje instalaci přes FTP. Pro LIveUSB verzi navštivte FaunOS."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Description:</b> "
-"BackTrack is a distribution focused on network analysis and penetration "
-"testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
-"no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Popis:</b> "
-"BackTrack je distribuce zaměřená na síťovou analýzu a bezpečnostní "
-"testování.<br/><b>Popis:</b> BackTrack funguje jako živý (live) systém a "
-"nevyžaduje instalaci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:</b> "
-"CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install Notes:</b> "
-"The default version allows for both installation over the internet (FTP), or "
-"offline installation using pre-downloaded installation ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Popis:</b> "
-"CentOS je bezplatný klon Red Hat Enterprise Linux.<br/><b>Poznámky:</b> "
-"Standardní verze nabízí jak instalaci přes internet (FTP), tak offline "
-"instalaci za pomocí dříve získaných ISO obrazů."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b> "
-"CloneZilla is a distribution used for disk backup and "
-"imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
-"mode; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Popis:</b> "
-"CloneZilla je distribuce určená pro snadné zálohování.<br/><b>Poznámky:</b> "
-"CloneZilla funguje jako živý (live) systém a nevyžaduje instalaci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Description:</b> "
-"Damn Small Linux is a minimalist distribution designed for older "
-"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Popis:</b> "
-"Damn Small Linuxje minimalistická distribuce určená pro starší "
-"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:</b> "
-"Debian is a community-developed Linux distribution that supports a wide "
-"variety of architectures and offers a large repository of "
-"packages.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Popis:</b> "
-"Debian je komunitně vyvíjená linuxová distribuce s podporou mnoha "
-"architektur a rozsáhlým repozitářem.<br/><b>Poznámky:</b> Živá (Live) verze "
-"umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze "
-"NetInstall umožňuje instalaci přes FTP."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Description:</b> "
-"Dreamlinux is a user-friendly Debian-based distribution.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Popis:</b> "
-"Dreamlinux je uživatelsky přívětivá distribuce založená na "
-"Debianu.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Description:</b> "
-"Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that "
-"broke due to malware.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which malware scans can be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Popis:</b> "
-"Dr.Web AntiVirus je antivirový balík určený k opravě systému poškozeného "
-"malwarem.<br/><b>Poznámky:</b>Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD a provedení  skenování nainstalovaného systému."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode. The Unstable version does not support Hard Drive installations, "
-"though the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> (not freely downloadable) does."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b> "
-"Elive je distribuce založená na Debianu, která staví na pracovním prostředí "
-"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci se systémem "
-"bez jeho instalace. Verze Unstable neumožňuje instalaci na pevný disk. To "
-"umožňuje <a href=\"http://www.elivecd.org/Download/Stable\">verze Stable</a> "
-"(není zdarma ke stažení)."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Description:</b> "
-"Fedora is a Red Hat sponsored community distribution which showcases the "
-"latest cutting-edge free/open-source software.<br/><b>Install Notes:</b> The "
-"Live version allows for booting in Live mode, from which the installer can "
-"optionally be launched. The NetInstall version allows for both installation "
-"over the internet (FTP), or offline installation using pre-downloaded "
-"installation ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Popis:</b> "
-"Fedora je komunitní distribuce sponzorovaná firmou Red Hat zaměříjící se na "
-"nejnovější free/open-source software.<br/><b>Poznámky:</b> Živá (Live) verze "
-"umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze "
-"NetInstall umožňuje instalaci z intrnetu (FTP) nebo z předem staženého ISO "
-"obrazu."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Description:</b> "
-"FreeBSD is a general-purpose Unix-like operating system designed for "
-"scalability and performance.<br/><b>Install Notes:</b> The default version "
-"allows for both installation over the internet (FTP), or offline "
-"installation using pre-downloaded installation ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Popis:</b> "
-"FreeBSD je unixový operační systém navržený pro stabilitu a "
-"rychlost.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
-"intrnetu (FTP) nebo z předem staženého ISO obrazu."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Description:</b> "
-"FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
-"Notes:</b> See the <a "
-"href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> "
-"for installation details."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Popis:</b> "
-"FreeDOS je svobodný operační systém kompatibilní s "
-"MS-DOS.<br/><b>Poznámky:</b> Pro více informací o instalaci navštivte <a "
-"href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">online "
-"manuál</a>."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b> "
-"Frugalware is a general-purpose Slackware-based distro for advanced "
-"users.<br/><b>Install Notes:</b> The default option allows for both "
-"installation over the internet (FTP), or offline installation using "
-"pre-downloaded installation ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b> "
-"Frugalware je distribuce odvozená od Slackwaru určená pro pokročilé "
-"uživatele.<br/><b>Poznámky:</b> Standardní verze umožňuje instalaci z "
-"intrnetu (FTP) nebo z předem stažených ISO obrazů."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
-"F-Secure Rescue CD detects and removes malware from your Windows "
-"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which malware scans can be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Popis:</b> "
-"F-Secure Rescue CD slouží k nalezení a odstranění malwaru ze systému "
-"Windows.<br/><b>Poznámky:</b> Živé CD umožňuje spuštění systému, ze kterého "
-"je možné spustit skenování počítače."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:</b> "
-"Gentoo is a flexible source-based distribution designed for advanced "
-"users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
-"mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Popis:</b> "
-"Gentoo je flexibilní distribuce určená pro pokročilé "
-"uživatele.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-"gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free "
-"components removed.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Popis:</b> "
-"gNewSense je na Ubuntu založené distribuce, která je podporovaná Free "
-"Software Foundation a neobsahuje žádné nesvobodné "
-"součásti.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Description:</b> "
-"Gujin is a graphical boot manager which can bootstrap various volumes and "
-"files.<br/><b>Install Notes:</b> Gujin simply boots and runs; no "
-"installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Popis:</b> "
-"Gujin je grafický boot manager schopný zaváděný z rozličných zařízení a "
-"souborových systémů..<br/><b>Poznámky:</b> Gujin se jednoduše zavede a "
-"spustí - instalace není potřebná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
-"Kaspersky Rescue Disk detects and removes malware from your Windows "
-"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which malware scans can be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Popis:</b> "
-"Kaspersky Rescue Disk slouží k nalezení a odstranění malwaru ze systému "
-"Windows.<br/><b>Poznámky:</b> Živé CD umožňuje spuštění systému, ze kterého "
-"je možné spustit skenování počítače."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Description:</b> "
-"Kubuntu is an official Ubuntu derivative featuring the KDE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Xubuntu "
-"and other official Ubuntu derivatives."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Popis:</b> "
-"Kubuntu je oficiální derivát s grafickým prostředím "
-"KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
-"z CD s možností spuštění instalace. Verze NetInstall umožňuje instalaci přes "
-"FTP, alternativně můžete nainstalovat Xubuntu nebo jiné oficální deriváty "
-"Ubuntu."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</b> "
-"Linux Mint is a user-friendly Ubuntu-based distribution which includes "
-"additional proprietary codecs and other software by default.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Popis:</b> "
-"Linux Mint je uživatelsky přívětivá distribuce odvozená od Ubuntu, která již "
-"v základní instalaci obsahuje různé nesvobodné kodeky a další "
-"software.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Description:</b> "
-"Mandriva is a user-friendly distro formerly known as Mandrake "
-"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
-"mode, from which the installer can optionally be launched. The NetInstall "
-"version allows for installation over the internet (FTP) or via "
-"pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
-"image files</a>."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Popis:</b> "
-"Mandriva je uživatelsky přívětivá distribuce dříve známá jako Mandrake "
-"Linux.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje "
-"instalaci z intrnetu (FTP) nebo z předem staženého <a "
-"href=\"http://www.mandriva.com/en/download\">ISO obrazu</a>."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</b> "
-"MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version "
-"based on KDE, while AntiX is a lightweight version for older "
-"computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
-"from which the installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Popis:</b> "
-"MEPIS je distribuce odvozená od Debianu. SimplyMEPIS je uživatelsky "
-"přívětivá distribuce založená na prostředí KDE a Antix nenáročná verze pro "
-"staré počítače.<br/><b>Popis:</b> Živá (Live) verze umožňuje spuštění "
-"systému přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:</b> "
-"NetBSD is a Unix-like operating system which focuses on "
-"portability.<br/><b>Install Notes:</b>The default version allows for both "
-"installation over the internet (FTP), or using pre-downloaded installation "
-"ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Popis:</b> "
-"NetBSD je unïxový operační systém zaměřený na "
-"přenosnost.<br/><b>Poznámy:</b>Standardní verze umoňuje jak instalaci z "
-"internetu (FTP), tak z předem stažených instalačních ISO obrazů."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> "
-"The Offline NT Password and Registry Editor can reset Windows passwords and "
-"edit the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd "
-"is booted and run in live mode; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Popis:</b> "
-"The Offline NT Password and Registry Editor umí resetovat hesla ve Windows a "
-"upravovat registry ve verzích Windows 2000-Vista.<br/><b>Popis:</b> NTPasswd "
-"se jednoduše zavede a spustí - instalace není potřebná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Description:</b> "
-"openSUSE is a user-friendly Novell sponsored distribution.<br/><b>Install "
-"Notes:</b> The default version allows for both installation over the "
-"internet (FTP), or offline installation using pre-downloaded installation "
-"ISO files."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Popis:</b> "
-"openSUSE je uživatelsky přívětivá distribuce sponzorovaná firmou "
-"Novell.<br/><b>Poznámky:</b> Standardní verze umoňuje jak instalaci z "
-"internetu (FTP), tak z předem stažených instalačních ISO obrazů."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/><b>Description:</b> "
-"Ophcrack can crack Windows passwords.<br/><b>Install Notes:</b> Ophcrack is "
-"booted and run in live mode; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/><b>Popis:</b> "
-"Ophcrack umí získávat hesel z Windows.<br/><b>Poznámky:</b> Ophcrack se "
-"jednoduše zavede a spustí - instalace není potřebná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Description:</b> "
-"Parted Magic includes the GParted partition manager and other system "
-"utilities which can resize, copy, backup, and manipulate disk "
-"partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
-"mode; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Popis:</b> "
-"Parted Magic obsahuje program GParted a další nástroje určená pro změnu "
-"velikosti, kopírování, zálohu a další manipulaci s diskovými "
-"oddíly.<br/><b>Poznámky:</b> Parted Magic se jednoduše zavede a spustí - "
-"instalace není potřebná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Description:</b> "
-"PCLinuxOS is a user-friendly Mandriva-based distribution.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Popis:</b> "
-"PCLinuxOS je uživatelsky přívětivá distribuce založená na "
-"Mandrivě.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému "
-"přímo z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Description:</b> "
-"Puppy Linux is a lightweight distribution designed for older "
-"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
-"system into RAM and boots from memory, so installation is not required but "
-"optional."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Popis:</b> "
-"Puppy Linux je minimalistická distribuce určená pro starší "
-"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Description:</b> "
-"Sabayon Linux is a Gentoo-based Live DVD distribution which features the "
-"Entropy binary package manager in addition to the source-based "
-"Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The LiteMCE "
-"edition is 2 GB, while the full edition will need an 8 GB USB drive"
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Popis:</b> "
-"Sabayon Linux je LiveDVD založené na Gentoo přinášející správce balíků "
-"Entropy jako doplněk k Portage.<br/><b>Poznámky:</b> Živá (Live) verze "
-"umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze "
-"LiteMCE vyžaduje 2GB místa, zatímco plná verze 8GB."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b> "
-"Slax is a Slackware-based distribution featuring the KDE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Popis:</b> Slax "
-"je distribuce založená na Slackware, která přináší prostředí "
-"KDE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
-"z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
-"Notes:</b> The Live version loads the entire system into RAM and boots from "
-"memory, so installation is not required but optional."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Popis:</b> "
-"SliTaz je nenáročná mikrodistribuce zaměřená na stolní "
-"počítače.<br/><b>Poznámky:</b> Spustitelná verze načte celý systém do RAM "
-"odkud je následně zaveden, instalace tedy není nutná, ale je možná."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/><b>Description:</b> "
-"Smart Boot Manager is a bootloader which can overcome some boot-related BIOS "
-"limitations and bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; "
-"no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/><b>Popis:</b> "
-"Smart Boot Manager je zavaděč schopný překonat některá omezení BIOSu v "
-"bootování. </b> SBM se jednoduše zavede a spustí - k použití nepotřebujete "
-"instalaci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/><b>Description:</b> "
-"Super Ubuntu is an unofficial derivative of Ubuntu which includes additional "
-"software by default. Requires a 2GB USB drive to install.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/><b>Popis:</b> "
-"Super Ubuntu je neoficiální derivát Ubuntu, který přináší rozšířenou nabídku "
-"softwaru. Je vyžadován alespoň 2GB USB flash disk.<br/><b>Poznámky:</b> Živá "
-"(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
-"instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Description:</b> "
-"SystemRescueCD includes various partition management and data recovery and "
-"backup tools.<br/><b>Install Notes:</b> SystemRescueCD is booted and run in "
-"live mode; no installation is required to use it."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Popis:</b> "
-"SystemRescueCD obsahuje různé nástroje pro úpravu diskových oddílů a "
-"záchranu a zálohu dat.<br/><b>Poznámky:</b> SystemRescueCD se jednoduše "
-"zavede a spustí - k použití nepotřebujete instalaci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:</b> "
-"Ubuntu is a user-friendly Debian-based distribution. It is currently the "
-"most popular Linux desktop distribution.<br/><b>Install Notes:</b> The Live "
-"version allows for booting in Live mode, from which the installer can "
-"optionally be launched. The NetInstall version allows for installation over "
-"FTP, and can install Kubuntu and other official Ubuntu derivatives."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.ubuntu.cz/\">http://www.ubuntu.cz</a><br/><b>Popis:</b> "
-"Ubuntu je uživatelsky přívětivá distribuce založená na Debianu. V "
-"současnosti se jedná o nejpopulárnější distribuci.<br/><b>Popis:</b> Živá "
-"(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
-"instalace. Verze NetInstall umožňuje instalaci přes FTP, alternativně můžete "
-"nainstalovat Kubuntu, Xubuntu nebo jiné oficální deriváty Ubuntu."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
-"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
-"version loads the entire system into RAM and boots from memory."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Popis:</b> xPUD "
-"je nenáročná distribuce s \"kioskovým\" rozhraním s internetovým prohlížečem "
-"a multimetiálním přehrávačem.<br/><b>Install Notes:</b> Spustitelná verze "
-"načte celý systém do RAM odkud je následně zaveden."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b> "
-"Xubuntu is an official Ubuntu derivative featuring the XFCE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Kubuntu "
-"and other official Ubuntu derivatives."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Popis:</b> "
-"Xubuntu je oficiální derivát Ubuntu, který přináší prostředí "
-"XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
-"z CD s možností spuštění instalace. Verze NetInstall umožňuje instalaci přes "
-"FTP, alternativně můžete nainstalovat Kubuntu nebo jiné oficální deriváty "
-"Ubuntu."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Description:</b> "
-"Zenwalk is a Slackware-based distribution featuring the XFCE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>Domovská stránka:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Popis:</b> "
-"Zenwalk je distribuce založená na Slackwaru s pracovním prostředím "
-"XFCE.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje spuštění systému přímo "
-"z CD s možností spuštění instalace."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "either"
-msgstr "oba"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Open Disk Image File"
-msgstr "Výběr souboru s obrazem disku"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Open Kernel File"
-msgstr "Výběr souboru s jádrem"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Open Initrd File"
-msgstr "Výběr souboru initrd"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Open Bootloader Config File"
-msgstr "Výběr souboru s nastavením zavaděče"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Insert a USB flash drive"
-msgstr "Vložte USB flash disk"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"No USB flash drives were found. If you have already inserted a USB drive, "
-"try reformatting it as FAT32."
-msgstr ""
-"Žádné USB flash disky nebyly nalezeny. Pokud jste USB disk již vložili, "
-"zkuste jej naformátovat na FAT32."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "%1 not mounted"
-msgstr "%1 nepřipojen"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"You must first mount the USB drive %1 to a mountpoint. Most distributions "
-"will do this automatically after you remove and reinsert the USB drive."
-msgstr ""
-"Napřed je třeba připojit USB zařízení %1. Většina distribucí to provede "
-"automaticky po odpojení a opětovném připojení zařízení."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Select a distro"
-msgstr "Vyberte distribuci"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "You must select a distribution to load."
-msgstr "Pro spuštění musíte vybrat distribuci"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Select a disk image file"
-msgstr "Vyberte soubor s obrazem disku"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "You must select a disk image file to load."
-msgstr "Pro spuštění musíte vybrat obraz disku."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Select a kernel and/or initrd file"
-msgstr "Vyberte jádro a/nebo soubor initrd"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "You must select a kernel and/or initrd file to load."
-msgstr "Pro spuštění musíte vybrat jádro a/nebo soubor initrd."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Diskimage file not found"
-msgstr "Obraz disku nebyl nalezen"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "The specified diskimage file %1 does not exist."
-msgstr "Uvedený obraz disku %1 neexistuje."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Kernel file not found"
-msgstr "Soubor s jádrem nebyl nalezen"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "The specified kernel file %1 does not exist."
-msgstr "Uvedený soubor s jádrem %1 neexistuje."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Initrd file not found"
-msgstr "Soubor initrd nebyl nalezen"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "The specified initrd file %1 does not exist."
-msgstr "Uvedený soubor s initrd %1 neexistuje."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "%1 exists, overwrite?"
-msgstr "%1 již existuje, přepsat?"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-"retain your existing version. If in doubt, press 'Yes to All'."
-msgstr ""
-"Soubor %1 již existuje. Zvolte 'Ano všem' pro jeho přepsání a přepsání "
-"dalších bez ptaní, 'Ano' pro přepsání souboru a 'Ne' pro zachování současné "
-"verze. Pokud nevíte, zvolte 'Ano všem'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "%1 is out of space, abort installation?"
-msgstr "V %1 není dostatek místa, přerušit instalaci?"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
-"ignore this error and attempt to continue installation, and 'No to All' to "
-"ignore all out-of-space errors."
-msgstr ""
-"V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte 'Ano', pro "
-"ignorování této chyba a pokračování instalace zvolte 'Ne' a pro ignorování "
-"všech chyb o nedostatku místa 'Ne všem'."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Rozbalování ISO obrazu:</b> %1"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Extracting files, please wait..."
-msgstr "Rozbalování souborů, prosíme čekejte..."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Archiv:</b> %1"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Source:</b>"
-msgstr "<b>Zdroj:</b>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Destination:</b>"
-msgstr "<b>Cíl:</b>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Rozbaleno:</b> 0 z %1 souborů"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Zdroj:</b> %1 (%2)"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Cíl:</b> %1%2"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Rozbaleno:</b> %1 z %2 souborů"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Downloading files, please wait..."
-msgstr "Stahhování souborů, prosíme čekejte..."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Zdroj:</b> <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Cíl:</b> %1"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Staženo:</b> 0 bytes"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Staženo:</b> %1 z %2 bajtů"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "Vyhledávání <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 suhlasí s <a href=\"%3\">%3</a>"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "%1 not found"
-msgstr "%1 nenalezen"
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"%1 not found. This is required for %2 install mode.\n"
-"Install the \"%3\" package or your distribution's equivalent."
-msgstr ""
-"%1 nebylo nenalezeno. Toto je třeba pro %2 instalační režimy.\n"
-"Nainstalujte balík \"%3\" nebo ekvivalent pro vaši distribuci."
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "(Current)"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "(Done)"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Configuring grub2 on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Configuring grldr on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Configuring grub on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Installing syslinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Installing extlinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "Syncing filesystems"
-msgstr ""
-
-#. ts-context unetbootin
-#, fuzzy
-msgid "After rebooting, select the "
-msgstr "Po restartu zvolte "
-
-#. ts-context unetbootin
-#, fuzzy
-msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-"Reboot now?"
-msgstr ""
-"Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1\n"
-"Restartovat nyní"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "UNetbootin"
-msgstr "UNetbootin"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select from a list of supported distributions"
-msgstr "Vyberte z nabídky podporovaných distribucí"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Distribution"
-msgstr "Distribuce"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Specify a disk image file to load"
-msgstr "Výběr obrazu disku"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Diskimage"
-msgstr "Obraz disku"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Manually specify a kernel and initrd to load"
-msgstr "Ruční výběr jádra a initrd"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Custom"
-msgstr "Vlastní"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "OK"
-msgstr "OK"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Cancel"
-msgstr "Ukončit"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select the target drive to install to"
-msgstr "Vyberte zařízení pro instalaci"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Drive:"
-msgstr "Zařízení:"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select the installation target type"
-msgstr "Vyberte typ zařízení pro instalaci"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Type:"
-msgstr "Typ:"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select the distribution version"
-msgstr "Vyberte verzi distribuce"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select disk image file"
-msgstr "Vyberte soubor s obrazem disku"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "..."
-msgstr "..."
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select the disk image type"
-msgstr "Zvolte typ obrazu disku"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
-msgstr "Vyberte obraz disku/diskety nebo obraz CD (ISO)"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Specify a kernel file to load"
-msgstr "Výběr souboru s jádrem"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select kernel file"
-msgstr "Vyberte soubor s jádrem"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Kernel:"
-msgstr "Jádro:"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Specify an initrd file to load"
-msgstr "Výběr souboru initrd"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Initrd:"
-msgstr "Initrd:"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select initrd file"
-msgstr "Vyberte soubor initrd"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Vyberte soubor syslinux.cfg nebo isolinux.cfg"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Specify parameters and options to pass to the kernel"
-msgstr "Výběr parametrů a voleb jádra"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Options:"
-msgstr "Volby:"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> option will show all drives "
-"in the drop-down box titled \"Drives\". Enable this only if you know what "
-"you're doing; if you use this option, the installation will likely fail, or "
-"can lead to system boot issues.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span style=\" "
-"font-weight:600;\">potenciálně nebezpečná</span> volba zobrazí všechna "
-"zařízení a učiní je dostupnými v rozbalovací nabídce \"Zařízení\". Povolte "
-"jen v případě, že víte co děláte - můžete znemožnit vytvoření spustitelného "
-"disku nebo dokonce poškodit stávající systém.</p></body></html>"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Show All Drives (Use with Care)"
-msgstr "Zobrazit všechna zařízení (používejte opatrně)"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> option will format the "
-"selected drive, wiping out all data on it. It shouldn't be necessary if "
-"you're using a standard USB drive.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tato <span style=\" "
-"font-weight:600;\">potenciálně nebezpečná</span> volba zformátuje vybrané "
-"zařízení a zničí všechna přítomná data. Pokud používáte standardní USB disk, "
-"nemělo by to být nutné.</p></body></html>"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Format Drive (Wipes Out Data)"
-msgstr "Formátovat zařízení (zničí všechna data)"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "4. Installation Complete, Reboot"
-msgstr "4. Instalace je kompletní, restart"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "3. Installing Bootloader"
-msgstr "3. Instalace zavaděče"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "2. Extracting and Copying Files"
-msgstr "2. Rozbalování a kopírování dat"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "1. Downloading Files"
-msgstr "1. Stahování dat"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Exit"
-msgstr "Ukončit"
-
-#. ts-context unetbootinui
-#, fuzzy
-msgid "Reboot Now"
-msgstr "Restartovat nyní"
-
-#. ts-context uninstaller
-#, fuzzy
-msgid "Uninstallation Complete"
-msgstr "Odinstalace byla úspěšně dokončena"
-
-#. ts-context uninstaller
-#, fuzzy
-msgid "%1 has been uninstalled."
-msgstr "%1byl odinstalován."
-
-#. ts-context uninstaller
-#, fuzzy
-msgid "Must run as root"
-msgstr "Spuštění s právy administrátora"
-
-#. ts-context uninstaller
-#, fuzzy
-msgid ""
-"%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
-msgstr ""
-"%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte za "
-"použití buď:<br/><b>sudo %1</b><br/>, nebo:<br/><b>su -c '%1'</b>"
-
-#. ts-context uninstaller
-#, fuzzy
-msgid "%1 Uninstaller"
-msgstr "%1 odinstalátor"
-
-#. ts-context uninstaller
-#, fuzzy
-msgid "%1 is currently installed. Remove the existing version?"
-msgstr "%1 je již nainstalovát. Přejete si existující verzi odstranit?"
