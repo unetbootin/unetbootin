@@ -1,25 +1,83 @@
-#!/bin/sh
+#!/usr/bin/env python
 
-lupdate unetbootin.pro
-lrelease unetbootin.pro
-potext=$(lconvert -i unetbootin.ts -if ts -of po)
-lineno=$(echo "$potext" | grep -n Header | sed "s/:/\n/" | head --lines 1)
-trimmedtext=$(echo "$potext" | tail --lines $(expr $(echo "$potext" | wc --lines) - $lineno))
-potgendate=$(date +"%Y-%m-%d %R%z")
-qtversion=$(qmake --version | tail --lines 1 | sed "s/ /\n/g" | grep "\.")
-/bin/echo -e \
-"#, fuzzy\n"\
-"msgid \"\"\n"\
-"msgstr \"\"\n"\
-"\"Project-Id-Version: PACKAGE VERSION\\\n\"\n"\
-"\"Report-Msgid-Bugs-To: \\\n\"\n"\
-"\"POT-Creation-Date: $potgendate\\\n\"\n"\
-"\"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\\n\"\n"\
-"\"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\\n\"\n"\
-"\"Language-Team: LANGUAGE <LL@li.org>\\\n\"\n"\
-"\"MIME-Version: 1.0\\\n\"\n"\
-"\"Content-Type: text/plain; charset=UTF-8\\\n\"\n"\
-"\"Content-Transfer-Encoding: 8bit\\\n\"\n"\
-"\"X-Generator: lconvert $qtversion\\\n"\
-"$trimmedtext"\
-> ../../po/unetbootin.pot
+from subprocess import Popen, PIPE, call
+
+def pout(p):
+	c = p.communicate()
+	l = []
+	for x in c:
+		for y in x.split('\n'):
+			l.append(y)
+	return l
+
+def printl(l):
+	print lstr(l)
+
+def lstr(l):
+	tl = []
+	for x in l:
+		if x != '':
+			tl.append(x)
+	return '\n'.join(tl)	
+
+def mkp(c):
+	return mkpl(c.split(' '))
+
+def mkpl(c):
+	return Popen(c, stdout=PIPE,stderr=PIPE)
+
+def ocall(c):
+	return pout(mkp(c))
+
+def lcall(c):
+	return pout(mkpl(c))
+
+def tail1(c):
+	o = ""
+	for x in c:
+		if x != '':
+			o = x
+	return o
+
+def fstrspl(fullst, searchst, splitc):
+	l = fullst.split(splitc)
+	for x in l:
+		if searchst in x:
+			return x
+	return ""
+
+call(['lupdate', 'unetbootin.pro'])
+call(['lrelease','unetbootin.pro'])
+potgendate = lstr(lcall(['date','+%Y-%m-%d %R%z']))
+potext = ocall('lconvert -i unetbootin.ts -if ts -of po')
+qtversion = fstrspl(tail1(ocall('qmake --version')), '.', ' ')
+lineno = 0
+for x in potext:
+	if 'Header' in x:
+		break
+	lineno += 1
+ntext = [ \
+'#, fuzzy', \
+'msgid ""', \
+'msgstr ""', \
+'"Project-Id-Version: PACKAGE VERSION\\n"', \
+'"Report-Msgid-Bugs-To: \\n"', \
+'"POT-Creation-Date: '+potgendate+'\\n"', \
+'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"', \
+'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"', \
+'"Language-Team: LANGUAGE <LL@li.org>\\n"', \
+'"MIME-Version: 1.0\\n"', \
+'"Content-Type: text/plain; charset=UTF-8\\n"', \
+'"Content-Transfer-Encoding: 8bit\\n"', \
+'"X-Generator: lconvert '+qtversion+'\\n"', \
+]
+i = 0
+for x in potext:
+	if i <= lineno:
+		i += 1
+		continue
+	ntext.append(x)
+f = open('../../po/unetbootin.pot', 'w')
+for x in ntext:
+	f.write(x+'\n')
+

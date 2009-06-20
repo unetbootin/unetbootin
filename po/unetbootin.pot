@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 16:29-0700\n"
+"POT-Creation-Date: 2009-06-19 18:07-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,7 @@ msgstr ""
 #: distrolst.cpp:173
 #, fuzzy
 msgid ""
-"
-"
+"\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
 "prompted for a CD, then go to the main menu, select the 'Start Installation' "
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
@@ -35,8 +34,7 @@ msgstr ""
 #: distrolst.cpp:314
 #, fuzzy
 msgid ""
-"
-"
+"\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
 "prompted for a CD, then go to the main menu, select the 'Start Installation' "
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
@@ -48,8 +46,7 @@ msgstr ""
 #: distrolst.cpp:320
 #, fuzzy
 msgid ""
-"
-"
+"\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
 "prompted for a CD, then go to the main menu, select the 'Start Installation' "
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
@@ -61,8 +58,7 @@ msgstr ""
 #: distrolst.cpp:571
 #, fuzzy
 msgid ""
-"
-"
+"\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
 "prompted for a CD, then go to the main menu, select the 'Start Installation' "
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
@@ -74,8 +70,7 @@ msgstr ""
 #: distrolst.cpp:577
 #, fuzzy
 msgid ""
-"
-"
+"\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
 "prompted for a CD, then go to the main menu, select the 'Start Installation' "
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
@@ -777,8 +772,7 @@ msgstr ""
 #: unetbootin.cpp:2211
 #, fuzzy
 msgid ""
-"%1 not found. This is required for %2 install mode.
-"
+"%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
 
@@ -840,8 +834,7 @@ msgstr ""
 #: unetbootin.cpp:3023
 #, fuzzy
 msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1
-"
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
 
@@ -1195,16 +1188,12 @@ msgstr ""
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">
-"
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">
-"
-"p, li { white-space: pre-wrap; }
-"
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">
-"
+"font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
 "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
 "font-weight:600;\">potentially dangerous</span> option will show all drives "
@@ -1224,16 +1213,12 @@ msgstr ""
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">
-"
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">
-"
-"p, li { white-space: pre-wrap; }
-"
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">
-"
+"font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
 "margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
 "font-weight:600;\">potentially dangerous</span> option will format the "
@@ -1320,3 +1305,5 @@ msgstr ""
 #, fuzzy
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr ""
+
+
