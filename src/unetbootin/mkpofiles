@@ -2,7 +2,7 @@
 
 ./mkpotfile
 cd ../../po
-for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do lconvert -if ts -of po $x $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
+for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do lconvert -if ts -of po -i $x -o $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
 cd ..
 tar -cvzf src/unetbootin/release/unetbootin-po-translations.tar.gz po
 cd src/unetbootin
