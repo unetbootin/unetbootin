@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-19 18:17-0700
-PO-Revision-Date: 2009-06-20 01:11+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-06-19 19:41-0700
+PO-Revision-Date: 2009-06-26 18:30+0000
+Last-Translator: erikkll &lt;erik@kleinlangenhorst.nl&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-06-20 02:40+0000
+X-Launchpad-Export-Date: 2009-06-28 01:08+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -141,13 +141,6 @@ Nu herstarten?</translation>
         <source>%1 not found</source>
         <comment>#16</comment>
         <translation type="obsolete">%1 niet gevonden</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <comment>#17</comment>
-        <translation type="obsolete">%1 niet gevonden. Dit is noodzakelijk voor de %2 installatiemodus.
-Installeer het &quot;%3&quot; pakket of het equivalent voor jouw distributie.</translation>
     </message>
     <message>
         <source>Hard Disk</source>
@@ -497,7 +490,7 @@ Installeer het &quot;%3&quot; pakket of het equivalent voor jouw distributie.</t
         <location filename="unetbootin.cpp" line="1436"/>
         <location filename="unetbootin.cpp" line="1458"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Iso bestand uitpakken:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1515"/>
@@ -542,7 +535,7 @@ Installeer het &quot;%3&quot; pakket of het equivalent voor jouw distributie.</t
     <message>
         <location filename="unetbootin.cpp" line="1866"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Bestanden worden gedownload, één momentje...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1867"/>
@@ -590,42 +583,42 @@ Installeer het &quot;%3&quot; pakket of het equivalent voor jouw distributie.</t
     <message>
         <location filename="unetbootin.cpp" line="2498"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(huidig)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2499"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Voltooid)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>grub 2 configureren op %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2758"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>grldr configureren op %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2786"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>grub configureren op %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2908"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>syslinux installeren op %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>extlinux installeren op %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3007"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Bestandssystemen synchroniseren</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3019"/>
@@ -772,12 +765,12 @@ Nu herstarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>Geen ruimte meer op %1, installatie annuleren?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1000"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>De directory %1 heeft geen vrije ruimte meer. Klik &apos;Ja&apos; om te annuleren, of &apos;Nee&apos; om deze fout te negeren en toch proberen door te gaan. Kies &apos;Nee op alles&apos; om alle toekomstige ruimte-meldingen te negeren.</translation>
     </message>
 </context>
 <context>

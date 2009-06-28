@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 18:17-0700\n"
-"PO-Revision-Date: 2009-06-20 01:09+0000\n"
+"POT-Creation-Date: 2009-06-19 19:41-0700\n"
+"PO-Revision-Date: 2009-06-22 16:38+0000\n"
 "Last-Translator: Vojtěch Trefný <vojtech.trefny@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-06-20 02:40+0000\n"
+"X-Launchpad-Export-Date: 2009-06-28 01:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -994,42 +994,42 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2498
 msgid "(Current)"
-msgstr ""
+msgstr "(Aktuální)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2499
 msgid "(Done)"
-msgstr ""
+msgstr "(Hotovo)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2746
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "Nastavování grub2 na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2758
 msgid "Configuring grldr on %1"
-msgstr ""
+msgstr "Nastavování grldr na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2786
 msgid "Configuring grub on %1"
-msgstr ""
+msgstr "Nastavování grub na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2908
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "Instalace syslinux na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2943
 msgid "Installing extlinux to %1"
-msgstr ""
+msgstr "Instalace extlinux na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3007
 msgid "Syncing filesystems"
-msgstr ""
+msgstr "Synchronizace souborových systémů"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3019

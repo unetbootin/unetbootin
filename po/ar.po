@@ -2,20 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 18:17-0700\n"
-"PO-Revision-Date: 2009-06-20 01:09+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2009-06-19 19:41-0700\n"
+"PO-Revision-Date: 2009-06-22 08:08+0000\n"
+"Last-Translator: Nawaf AsSulami <nawafnaim@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-06-20 02:40+0000\n"
+"X-Launchpad-Export-Date: 2009-06-28 01:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
 #: main.cpp:257
 msgid "LeftToRight"
-msgstr "RightToLeft"
+msgstr "من الشِمال إلى اليمين"
 
 #. ts-context unetbootin
 #: distrolst.cpp:173
@@ -1010,42 +1010,42 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2498
 msgid "(Current)"
-msgstr ""
+msgstr "(حالي)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2499
 msgid "(Done)"
-msgstr ""
+msgstr "(أنتهى)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2746
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "يضبط جرب ٢ في %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2758
 msgid "Configuring grldr on %1"
-msgstr ""
+msgstr "يضبط grldr في %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2786
 msgid "Configuring grub on %1"
-msgstr ""
+msgstr "يضبط جرب في %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2908
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "يثبت syslinux في %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2943
 msgid "Installing extlinux to %1"
-msgstr ""
+msgstr "يثبت extlinux في %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3007
 msgid "Syncing filesystems"
-msgstr ""
+msgstr "يزامن أنظمة الملفات"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3019
@@ -1229,7 +1229,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "نفذت مساحة %1، أجهِض التثبيت؟"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1000
@@ -1238,6 +1238,8 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
+"نفذت مساحة دليل %1. أضغط 'نعم' لإجهاض التثبيت، 'لا' لتجاهل هذا الخطأ ومحاولة "
+"متابعة التثبيت، و 'لا للجميع' لتجاهل جميع اخطأ المساحات النافذة."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:25

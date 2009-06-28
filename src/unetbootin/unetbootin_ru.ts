@@ -7,25 +7,20 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-19 18:17-0700
-PO-Revision-Date: 2009-06-20 01:12+0000
-Last-Translator: Sarg0s &lt;sum.teh@gmail.com&gt;
+POT-Creation-Date: 2009-06-19 19:41-0700
+PO-Revision-Date: 2009-06-20 15:45+0000
+Last-Translator: Sergei Sedov &lt;sedov@webmail.perm.ru&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-06-20 02:40+0000
+X-Launchpad-Export-Date: 2009-06-28 01:08+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; FaunOS - основанный на Arch Linux дистрибутив.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы.</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <comment>#2</comment>
-        <translation type="obsolete">Распаковка файлов, пожалуйста подождите...</translation>
     </message>
     <message>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
@@ -265,12 +260,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="239"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Kiwi Linux основан на Ubuntu и предназначен прежде всего для румынских, болгарских и англоговорящих пользователей.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="250"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; gNewSense - это высококачественный дистрибутив Linux, основанный на Ubuntu, который был создан для того, чтобы получить полностью свободную операционную систему, не содержащую проприетарное программное обеспечение.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="258"/>
@@ -305,7 +300,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; CloneZilla -  это дистрибутив, который можно использовать для резервного сохранения диска и снятия образа диска.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; CloneZilla загружается с установленного носителя и не требует установки на жёсткий диск для использования.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
@@ -481,7 +476,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1515"/>
         <source>Extracting files, please wait...</source>
-        <translation>Распаковка файлов, пожалуйста подождите...</translation>
+        <translation>Распаковка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1516"/>
@@ -521,7 +516,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1866"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Закачка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1867"/>
@@ -578,27 +573,27 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Конфигурирование grub2 на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2758"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Конфигурирование grldr на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2786"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2908"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Установка syslinux в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Установка extlinux в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3007"/>
@@ -750,7 +745,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>% не хватает свободного места, отменить установку?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1000"/>

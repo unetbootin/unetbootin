@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-19 18:17-0700
-PO-Revision-Date: 2009-06-20 01:11+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-06-19 19:41-0700
+PO-Revision-Date: 2009-06-20 16:26+0000
+Last-Translator: Luca Andrea Rossi &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-06-20 02:40+0000
+X-Launchpad-Export-Date: 2009-06-28 01:08+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -167,7 +167,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="main.cpp" line="257"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>SinistraADestra</translation>
     </message>
 </context>
 <context>
@@ -177,34 +177,35 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare back se suggerito per un CD, poi andare al menù principale, selezionare l&apos;opzione &apos;Start Installation&apos;, scegliere &apos;Network&apos; come sorgente, scegliere &apos;HTTP&apos; come protocollo, inserire &apos;mirrors.kernel.org&apos; quando suggerito per un server, e inserire come cartella &apos;/centos/%1/os/%2&apos; quando richiesto.</translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «mirrors.kernel.org» come server e inserire «/centos/%1/os/%2» quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare back se suggerito per un CD, poi andare al menù principale, selezionare l&apos;opzione &apos;Start Installation&apos;, scegliere &apos;Network&apos; come sorgente, scegliere &apos;HTTP&apos; come protocollo, inserire &apos;download.fedora.redhat.com&apos; quando suggerito per un server, e inserire come cartella &apos;/pub/fedora/linux/development/%1/os&apos; quando richiesto.</translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come server e inserire «/pub/fedora/linux/development/%1/os» quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare back se suggerito per un CD, poi andare al menù principale, selezionare l&apos;opzione &apos;Start Installation&apos;, scegliere &apos;Network&apos; come sorgente, scegliere &apos;HTTP&apos; come protocollo, inserire&apos;download.fedora.redhat.com&apos; quando suggerito per un server, e inserire come cartella &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; quando richiesto.</translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come server e inserire «/pub/fedora/linux/releases/%1/Fedora/%2/os» quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come server e inserire «/factory/repo/oss» quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare back se suggerito per un CD, poi andare al menù principale, selezionare l&apos;opzione &apos;Start Installation&apos;, scegliere &apos;Network&apos; come sorgente, scegliere &apos;HTTP&apos; come protocollo, inserire &apos;download.opensuse.org&apos; quando suggerito per un server, e inserire come cartella &apos;/distribution/%1/repo/oss&apos; quando richiesto.</translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come server e inserire «/distribution/%1/repo/oss» quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
@@ -217,7 +218,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="2667"/>
         <location filename="unetbootin.cpp" line="3017"/>
         <source>Hard Disk</source>
-        <translation></translation>
+        <translation>Disco rigido</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="156"/>
@@ -236,7 +237,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="2671"/>
         <location filename="unetbootin.cpp" line="3021"/>
         <source>USB Drive</source>
-        <translation></translation>
+        <translation>Periferica USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="157"/>
@@ -262,102 +263,102 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="189"/>
         <location filename="unetbootin.cpp" line="459"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Super Grub Disk è un bootloader che può svolgere svariate azioni di recupero sull&apos;MBR e su vari bootloader.&lt;br/&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt; SGD semplicemente avvia e lancia, non richiede nessuna installazione per usarlo.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Super Grub Disk è un bootloader che può svolgere svariate azioni di recupero sull&apos;MBR e su vari bootloader.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; SGD si avvia semplicemente, senza richiedere alcuna installazione per usarlo.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; EeePCLinuxOS è una distribuzione di facile uso basata su PCLinuxOS per l&apos;EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Assicurarsi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; EeePCLinuxOS è una distribuzione di facile uso basata su PCLinuxOS per l&apos;EeePC.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; Assicurarsi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="218"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee non è solamente ottimizzata per l&apos;ASUS Eee PC. È un sistema operativo che usa l&apos;interfaccia di Netboot Remix che privilegia il migliore software disponibile invece dell&apos;alternativa open source (per esempio. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Assicuratevi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee non è solamente ottimizzata per l&apos;ASUS Eee PC. È un sistema operativo che sfrutta l&apos;interfaccia di Netboot Remix privilegiando le migliori applicazioni disponibili invece delle loro alternative open-source (per esempio, Skype anziché Ekiga).&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; Assicurarsi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="230"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive è una distribuzione basata su Debian con Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione. Viene installata la versione Unstable, non la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;. Questo installatore è basato su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live, dalla quale può essere lanciata opzionalmente l&apos;installazione. Viene installata la versione Unstable (Instabile), non la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt;. Questa installazione è basata su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="239"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Kiwi Linux è una versione derivata da Ubuntu specifica per gli utenti che parlano rumeno, ungherese ed inglese.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; Assicurarsi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="250"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizion:&lt;/b&gt; gNewSense è una distribuzione GNU/Linux di qualità che estende e migliora Ubuntu per creare un sistema operativo completamente libero, senza alcun pacchetto contenente software proprietario.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; Assicurarsi che il disco sia vuoto e formattato prima di procedere con l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="258"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz è una micro distreibuzione leggera orientata a l desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia dalla memoria, perciò l&apos;installazione non viene richiesta ma è opzionale. Questo installatore è basato su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; SliTaz è una distribuzione leggera orientata al desktop.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia da disco, perciò l&apos;installazione non è richiesta ma opzionale. Questa installazione è basata su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; xPUD è una distribuzione leggera che fornisce un&apos;interfaccia simile a quella dei chioschi, con un browser e un riproduttore multimediale.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia da disco.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Benvenuti a &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, il Netboot Installer universale. Uso:&lt;ol&gt;&lt;li&gt;Selezionare  dalla lista quì sopra una distribuzione e una versione, oppure specificare manualmente quì sotto un file da caricare.&lt;/li&gt;&lt;li&gt;Selezionare un tipo di installazione, e cliccare OK per iniziare l&apos;installazione.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Benvenuti in &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, il Netboot Installer universale. Uso:&lt;ol&gt;&lt;li&gt;Selezionare dalla lista qui sopra una distribuzione ed una versione, oppure specificare manualmente i file da caricare qui sotto.&lt;/li&gt;&lt;li&gt;Selezionare un tipo di installazione e fare clic su OK per iniziarla.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="281"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Arch Linux è una distribuzione leggera ottimizzata in velocità e flessibilità.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione di default permette l&apos;installazione da internet (FTP). Se siete interessati ad una versione LiveUSB date un&apos;occhiata a FaunOS.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux è una distribuzione leggera ottimizzata per la velocità e flessibilità&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione predefinita permette un&apos;installazione via internet (FTP). Se si ha bisogno di una versione Live, provare FaunOS.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; BackTrack è una distribuzione focalizzata sull&apos;analisi di rete e test di penetrazione.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack viene avviata e lanciata in modo Live e non richiede nessuna installazione.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; BackTrack è una distribuzione focalizzata sull&apos;analisi di rete e test di penetrazione.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; BackTrack viene avviata e avviata in modalità Live; non richiede alcuna installazione per essere eseguita.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; CentOS è un libero clone di Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione di default permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; CentOS è un clone libero di Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione predefinita permette sia l&apos;installazione via internet (FTP) che l&apos;installazione da un&apos;immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; CloneZilla è una distribuzione usata per effettuare copie di sicurezza dei propri file.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; CloneZilla viene avviata e avviata in modalità Live; non richiede alcuna installazione per essere eseguita.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Damn Small Linux è una distribuzione minimalista studiata per vecchi computer.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia dalla memoria, perciò l&apos;installazione non è richiesta ma opzionale..</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Damn Small Linux è una distribuzione minimalista studiata per vecchi computer.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live carica l&apos;intero sistema nella RAM e si avvia dal disco, perciò l&apos;installazione non è richiesta ma opzionale.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="307"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Debian è un distribuzione Linux sviluppata dalla comunità che supporta una vasta varietà di architetture ed offre un enorme repository di pacchetti software.&lt;br/&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, da dove può essere opzionalmente lanciata l&apos;installazione. La versione Netinstall permette l&apos;installazione da FTP.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Debian è un distribuzione Linux, sviluppata dalla comunità, che supporta una vasta varietà di architetture ed offre un enorme repository di pacchetti software.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live, dalla quale può essere avviata opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="313"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux è una distribuzione di facile uso basata su Debian.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux è una distribuzione facile da usare basata su Debian.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live, dalla quale può essere avviata opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="318"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Dr.Web AntiVirus è un kit di emergenza anti-virus utile per ripristinare un sistema a séguito di un attacco virale.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live, dalla quale è possibile avviare la scansione malware.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive è una distribuzione basata su debian con Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live. La versione Unstable non supporta l&apos;installazione su disco rigido, benché la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (non liberamente scaricabile) lo faccia.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live. La versione Unstable (Instabile) non supporta l&apos;installazione su disco rigido; tuttavia la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt; (non scaricabile liberamente) può effettuarla.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Fedora è una distribuzione sponsorizzata dalla comunità Red Hat che propone software free/open source d&apos;avanguardia.&lt;br/&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.La versione Netinstall permette l&apos;installazione da internet (FTP) o da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Fedora è una distribuzione sponsorizzata dalla comunità Red Hat che propone software libero ed open source d&apos;avanguardia.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live, dalla quale può essere avviata opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via internet (FTP) o da un&apos;immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="338"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeBSD è un sistema operativo tipo Unix studiato per la scalabilità e le prestazioni.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione di default permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeBSD è un sistema operativo di tipo Unix studiato per la scalabilità e le prestazioni.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione predefinita permette sia l&apos;installazione via internet (FTP) che l&apos;installazione da un&apos;immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="343"/>

@@ -2,20 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 18:17-0700\n"
-"PO-Revision-Date: 2009-06-20 01:11+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2009-06-19 19:41-0700\n"
+"PO-Revision-Date: 2009-06-20 16:26+0000\n"
+"Last-Translator: Luca Andrea Rossi <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-06-20 02:40+0000\n"
+"X-Launchpad-Export-Date: 2009-06-28 01:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
 #: main.cpp:257
 msgid "LeftToRight"
-msgstr ""
+msgstr "SinistraADestra"
 
 #. ts-context unetbootin
 #: distrolst.cpp:173
@@ -29,11 +29,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare back se suggerito per un CD, poi andare al menù principale, "
-"selezionare l'opzione 'Start Installation', scegliere 'Network' come "
-"sorgente, scegliere 'HTTP' come protocollo, inserire 'mirrors.kernel.org' "
-"quando suggerito per un server, e inserire come cartella '/centos/%1/os/%2' "
-"quando richiesto."
+"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
+"sorgente, «HTTP» come protocollo, inserire «mirrors.kernel.org» come server "
+"e inserire «/centos/%1/os/%2» quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:314
@@ -47,11 +46,11 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare back se suggerito per un CD, poi andare al menù principale, "
-"selezionare l'opzione 'Start Installation', scegliere 'Network' come "
-"sorgente, scegliere 'HTTP' come protocollo, inserire "
-"'download.fedora.redhat.com' quando suggerito per un server, e inserire come "
-"cartella '/pub/fedora/linux/development/%1/os' quando richiesto."
+"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
+"sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come "
+"server e inserire «/pub/fedora/linux/development/%1/os» quando è richiesta "
+"la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:320
@@ -65,12 +64,11 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare back se suggerito per un CD, poi andare al menù principale, "
-"selezionare l'opzione 'Start Installation', scegliere 'Network' come "
-"sorgente, scegliere 'HTTP' come protocollo, "
-"inserire'download.fedora.redhat.com' quando suggerito per un server, e "
-"inserire come cartella '/pub/fedora/linux/releases/%1/Fedora/%2/os' quando "
-"richiesto."
+"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
+"sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come "
+"server e inserire «/pub/fedora/linux/releases/%1/Fedora/%2/os» quando è "
+"richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:571
@@ -82,6 +80,12 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
+"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
+"sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come "
+"server e inserire «/factory/repo/oss» quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:577
@@ -95,18 +99,17 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare back se suggerito per un CD, poi andare al menù principale, "
-"selezionare l'opzione 'Start Installation', scegliere 'Network' come "
-"sorgente, scegliere 'HTTP' come protocollo, inserire 'download.opensuse.org' "
-"quando suggerito per un server, e inserire come cartella "
-"'/distribution/%1/repo/oss' quando richiesto."
+"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
+"sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come "
+"server e inserire «/distribution/%1/repo/oss» quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:590
 #: unetbootin.cpp:683 unetbootin.cpp:2515 unetbootin.cpp:2528
 #: unetbootin.cpp:2667 unetbootin.cpp:3017
 msgid "Hard Disk"
-msgstr ""
+msgstr "Disco rigido"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
@@ -115,7 +118,7 @@ msgstr ""
 #: unetbootin.cpp:2519 unetbootin.cpp:2544 unetbootin.cpp:2671
 #: unetbootin.cpp:3021
 msgid "USB Drive"
-msgstr ""
+msgstr "Periferica USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:711
@@ -141,8 +144,8 @@ msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
 ">Descrizione:</b> Super Grub Disk è un bootloader che può svolgere svariate "
-"azioni di recupero sull'MBR e su vari bootloader.<br/><b>Note "
-"d'installazione:</b> SGD semplicemente avvia e lancia, non richiede nessuna "
+"azioni di recupero sull'MBR e su vari bootloader.<br/><b>Note di "
+"installazione:</b> SGD si avvia semplicemente, senza richiedere alcuna "
 "installazione per usarlo."
 
 #. ts-context unetbootin
@@ -157,8 +160,8 @@ msgstr ""
 "<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
 "Descrizione:</b> EeePCLinuxOS è una distribuzione di facile uso basata su "
-"PCLinuxOS per l'EeePC.<br/><b>Install Notes:</b> Assicurarsi che il disco "
-"sia vuoto e formattato prima di procedere con l'installazione."
+"PCLinuxOS per l'EeePC.<br/><b>Note di installazione:</b> Assicurarsi che il "
+"disco sia vuoto e formattato prima di procedere con l'installazione."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:218
@@ -174,11 +177,11 @@ msgstr ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
 "<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
 "eee.com</a><br/><b>Description:</b> Ubuntu Eee non è solamente ottimizzata "
-"per l'ASUS Eee PC. È un sistema operativo che usa l'interfaccia di Netboot "
-"Remix che privilegia il migliore software disponibile invece "
-"dell'alternativa open source (per esempio. Skype instead of "
-"Ekiga).<br/><b>Install Notes:</b> Assicuratevi che il disco sia vuoto e "
-"formattato prima di procedere con l'installazione"
+"per l'ASUS Eee PC. È un sistema operativo che sfrutta l'interfaccia di "
+"Netboot Remix privilegiando le migliori applicazioni disponibili invece "
+"delle loro alternative open-source (per esempio, Skype anziché "
+"Ekiga).<br/><b>Note di installazione:</b> Assicurarsi che il disco sia vuoto "
+"e formattato prima di procedere con l'installazione."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:230
@@ -194,13 +197,13 @@ msgid ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-"n:</b> Elive è una distribuzione basata su Debian con Enlightenment window "
-"manager.<br/><b>Install Notes:</b> La versione Live permette l'avvio in modo "
-"Live dal quale può essere lanciata opzionalmente l'installazione. Viene "
-"installata la versione Unstable, non la <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>. Questo "
-"installatore è basato su <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descrizion"
+"e:</b> Elive è una distribuzione basata su Debian con il gestore di finestre "
+"Enlightenment.<br/><b>Note di installazione:</b> La versione Live permette "
+"l'avvio in modalità Live, dalla quale può essere lanciata opzionalmente "
+"l'installazione. Viene installata la versione Unstable (Instabile), non la "
+"<a href=\"http://www.elivecd.org/Download/Stable\">versione Stable "
+"(Stabile)</a>. Questa installazione è basata su <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
@@ -212,6 +215,12 @@ msgid ""
 "Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
 "install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Descri"
+"zione:</b> Kiwi Linux è una versione derivata da Ubuntu specifica per gli "
+"utenti che parlano rumeno, ungherese ed inglese.<br/><b>Note di "
+"installazione:</b> Assicurarsi che il disco sia vuoto e formattato prima di "
+"procedere con l'installazione."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:250
@@ -224,6 +233,13 @@ msgid ""
 "software.<br/><b>Install Notes:</b> Make sure install media is empty and "
 "formatted before proceeding with install."
 msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"zion:</b> gNewSense è una distribuzione GNU/Linux di qualità che estende e "
+"migliora Ubuntu per creare un sistema operativo completamente libero, senza "
+"alcun pacchetto contenente software proprietario.<br/><b>Note di "
+"installazione:</b> Assicurarsi che il disco sia vuoto e formattato prima di "
+"procedere con l'installazione."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:258
@@ -238,10 +254,10 @@ msgid ""
 msgstr ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
-"ption:</b> SliTaz è una micro distreibuzione leggera orientata a l "
-"desktop.<br/><b>Install Notes:</b> La versione Live carica l'intero sistema "
-"nella RAM e si avvia dalla memoria, perciò l'installazione non viene "
-"richiesta ma è opzionale. Questo installatore è basato su <a "
+"zione:</b> SliTaz è una distribuzione leggera orientata al "
+"desktop.<br/><b>Note di installazione:</b> La versione Live carica l'intero "
+"sistema nella RAM e si avvia da disco, perciò l'installazione non è "
+"richiesta ma opzionale. Questa installazione è basata su <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
@@ -253,6 +269,12 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Descrizione:</b>"
+" xPUD è una distribuzione leggera che fornisce un'interfaccia simile a "
+"quella dei chioschi, con un browser e un riproduttore "
+"multimediale.<br/><b>Note di installazione:</b> La versione Live carica "
+"l'intero sistema nella RAM e si avvia da disco."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:276
@@ -263,11 +285,11 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Benvenuti a <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
-"il Netboot Installer universale. Uso:<ol><li>Selezionare  dalla lista quì "
-"sopra una distribuzione e una versione, oppure specificare manualmente quì "
-"sotto un file da caricare.</li><li>Selezionare un tipo di installazione, e "
-"cliccare OK per iniziare l'installazione.</li></ol>"
+"Benvenuti in <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"il Netboot Installer universale. Uso:<ol><li>Selezionare dalla lista qui "
+"sopra una distribuzione ed una versione, oppure specificare manualmente i "
+"file da caricare qui sotto.</li><li>Selezionare un tipo di installazione e "
+"fare clic su OK per iniziarla.</li></ol>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:281
@@ -281,10 +303,10 @@ msgid ""
 msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-"zione:</b> Arch Linux è una distribuzione leggera ottimizzata in velocità e "
-"flessibilità.<br/><b>Install Notes:</b> La versione di default permette "
-"l'installazione da internet (FTP). Se siete interessati ad una versione "
-"LiveUSB date un'occhiata a FaunOS."
+"ption:</b> Arch Linux è una distribuzione leggera ottimizzata per la "
+"velocità e flessibilità<br/><b>Note di installazione:</b> La versione "
+"predefinita permette un'installazione via internet (FTP). Se si ha bisogno "
+"di una versione Live, provare FaunOS."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:287
@@ -300,8 +322,9 @@ msgstr ""
 "exploit.org/backtrack.html\">http://www.remote-"
 "exploit.org/backtrack.html</a><br/><b>Descrizione:</b> BackTrack è una "
 "distribuzione focalizzata sull'analisi di rete e test di "
-"penetrazione.<br/><b>Install Notes:</b> BackTrack viene avviata e lanciata "
-"in modo Live e non richiede nessuna installazione."
+"penetrazione.<br/><b>Note di installazione:</b> BackTrack viene avviata e "
+"avviata in modalità Live; non richiede alcuna installazione per essere "
+"eseguita."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:292
@@ -315,9 +338,10 @@ msgid ""
 msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Descrizione:"
-"</b> CentOS è un libero clone di Red Hat Enterprise Linux.<br/><b>Install "
-"Notes:</b> La versione di default permette sia l'installazione da internet "
-"(FTP), sia l'installazione da un file immagine ISO scaricabile da internet."
+"</b> CentOS è un clone libero di Red Hat Enterprise Linux.<br/><b>Note di "
+"installazione:</b> La versione predefinita permette sia l'installazione via "
+"internet (FTP) che l'installazione da un'immagine ISO scaricabile da "
+"internet."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:297
@@ -328,6 +352,12 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Descrizione"
+":</b> CloneZilla è una distribuzione usata per effettuare copie di sicurezza "
+"dei propri file.<br/><b>Note di installazione:</b> CloneZilla viene avviata "
+"e avviata in modalità Live; non richiede alcuna installazione per essere "
+"eseguita."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:302
@@ -342,9 +372,9 @@ msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
 "rizione:</b> Damn Small Linux è una distribuzione minimalista studiata per "
-"vecchi computer.<br/><b>Install Notes:</b> La versione Live carica l'intero "
-"sistema nella RAM e si avvia dalla memoria, perciò l'installazione non è "
-"richiesta ma opzionale.."
+"vecchi computer.<br/><b>Note di installazione:</b> La versione Live carica "
+"l'intero sistema nella RAM e si avvia dal disco, perciò l'installazione non "
+"è richiesta ma opzionale."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:307
@@ -359,11 +389,12 @@ msgid ""
 msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Descrizione:"
-"</b> Debian è un distribuzione Linux sviluppata dalla comunità che supporta "
-"una vasta varietà di architetture ed offre un enorme repository di pacchetti "
-"software.<br/><b>Note d'installazione:</b> La versione Live permette l'avvio "
-"in modo Live, da dove può essere opzionalmente lanciata l'installazione. La "
-"versione Netinstall permette l'installazione da FTP."
+"</b> Debian è un distribuzione Linux, sviluppata dalla comunità, che "
+"supporta una vasta varietà di architetture ed offre un enorme repository di "
+"pacchetti software.<br/><b>Note di installazione:</b> La versione Live "
+"permette l'avvio in modalità Live, dalla quale può essere avviata "
+"opzionalmente l'installazione. La versione NetInstall permette "
+"l'installazione via FTP."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:313
@@ -376,9 +407,10 @@ msgid ""
 msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
-"b>Description:</b> Dreamlinux è una distribuzione di facile uso basata su "
-"Debian.<br/><b>Install Notes:</b> La versione Live permette l'avvio in modo "
-"Live dal quale può essere lanciata opzionalmente l'installazione."
+"b>Description:</b> Dreamlinux è una distribuzione facile da usare basata su "
+"Debian.<br/><b>Note di installazione:</b> La versione Live permette l'avvio "
+"in modalità Live, dalla quale può essere avviata opzionalmente "
+"l'installazione."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:318
@@ -390,6 +422,12 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Descrizione:</b> Dr.Web AntiVirus è un kit di emergenza anti-virus "
+"utile per ripristinare un sistema a séguito di un attacco "
+"virale.<br/><b>Note di installazione:</b> La versione Live permette l'avvio "
+"in modalità Live, dalla quale è possibile avviare la scansione malware."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:323
@@ -404,12 +442,13 @@ msgid ""
 "freely downloadable) does."
 msgstr ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-"n:</b> Elive è una distribuzione basata su debian con Enlightenment window "
-"manager.<br/><b>Install Notes:</b> La versione Live permette l'avvio in modo "
-"Live. La versione Unstable non supporta l'installazione su disco rigido, "
-"benché la <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> (non liberamente scaricabile) lo faccia."
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descrizion"
+"e:</b> Elive è una distribuzione basata su Debian con il gestore di finestre "
+"Enlightenment.<br/><b>Note di installazione:</b> La versione Live permette "
+"l'avvio in modalità Live. La versione Unstable (Instabile) non supporta "
+"l'installazione su disco rigido; tuttavia la <a "
+"href=\"http://www.elivecd.org/Download/Stable\">versione Stable "
+"(Stabile)</a> (non scaricabile liberamente) può effettuarla."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:333
@@ -426,11 +465,11 @@ msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
 "zione:</b> Fedora è una distribuzione sponsorizzata dalla comunità Red Hat "
-"che propone software free/open source d'avanguardia.<br/><b>Note "
-"d'installazione:</b> La versione Live permette l'avvio in modo Live dal "
-"quale può essere lanciata opzionalmente l'installazione.La versione "
-"Netinstall permette l'installazione da internet (FTP) o da un file immagine "
-"ISO scaricabile da internet."
+"che propone software libero ed open source d'avanguardia.<br/><b>Note di "
+"installazione:</b> La versione Live permette l'avvio in modalità Live, dalla "
+"quale può essere avviata opzionalmente l'installazione. La versione "
+"NetInstall permette l'installazione via internet (FTP) o da un'immagine ISO "
+"scaricabile da internet."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:338
@@ -444,10 +483,10 @@ msgid ""
 msgstr ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descrizion"
-"e:</b> FreeBSD è un sistema operativo tipo Unix studiato per la scalabilità "
-"e le prestazioni.<br/><b>Install Notes:</b> La versione di default permette "
-"sia l'installazione da internet (FTP), sia l'installazione da un file "
-"immagine ISO scaricabile da internet."
+"e:</b> FreeBSD è un sistema operativo di tipo Unix studiato per la "
+"scalabilità e le prestazioni.<br/><b>Note di installazione:</b> La versione "
+"predefinita permette sia l'installazione via internet (FTP) che "
+"l'installazione da un'immagine ISO scaricabile da internet."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:343

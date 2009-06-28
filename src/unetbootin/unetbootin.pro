@@ -13,6 +13,7 @@ TRANSLATIONS += unetbootin.ts \
  unetbootin_cs.ts \
  unetbootin_es.ts \
  unetbootin_el.ts \
+ unetbootin_gl.ts \
  unetbootin_ru.ts \
  unetbootin_ro.ts \
  unetbootin_tr.ts \

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-19 18:17-0700
-PO-Revision-Date: 2009-06-20 01:09+0000
+POT-Creation-Date: 2009-06-19 19:41-0700
+PO-Revision-Date: 2009-06-22 16:38+0000
 Last-Translator: Vojtěch Trefný &lt;vojtech.trefny@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-06-20 02:40+0000
+X-Launchpad-Export-Date: 2009-06-28 01:08+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -585,42 +585,42 @@ Nainstalujte balík &quot;%3&quot; nebo ekvivalent pro vaši distribuci.</transl
     <message>
         <location filename="unetbootin.cpp" line="2498"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Aktuální)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2499"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Hotovo)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Nastavování grub2 na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2758"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Nastavování grldr na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2786"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Nastavování grub na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2908"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Instalace syslinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Instalace extlinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3007"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Synchronizace souborových systémů</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3019"/>

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-19 18:17-0700
-PO-Revision-Date: 2009-06-20 01:09+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-06-19 19:41-0700
+PO-Revision-Date: 2009-06-22 08:08+0000
+Last-Translator: Nawaf AsSulami &lt;nawafnaim@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-06-20 02:40+0000
+X-Launchpad-Export-Date: 2009-06-28 01:08+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -171,7 +171,7 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="257"/>
         <source>LeftToRight</source>
-        <translation>RightToLeft</translation>
+        <translation>من الشِمال إلى اليمين</translation>
     </message>
 </context>
 <context>
@@ -590,42 +590,42 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2498"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(حالي)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2499"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(أنتهى)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>يضبط جرب ٢ في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2758"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>يضبط grldr في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2786"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>يضبط جرب في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2908"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>يثبت syslinux في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3007"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3019"/>
@@ -772,12 +772,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1000"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
     </message>
 </context>
 <context>
