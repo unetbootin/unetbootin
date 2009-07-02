@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2009-06-19 19:41-0700\n"
-"PO-Revision-Date: 2009-06-27 09:15+0000\n"
+"POT-Creation-Date: 2009-06-27 18:16-0700\n"
+"PO-Revision-Date: 2009-07-02 09:02+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-06-28 01:08+0000\n"
+"X-Launchpad-Export-Date: 2009-07-02 18:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -207,7 +207,7 @@ msgstr ""
 "<img src=\":/elive.png\" /><br/><b>Páxina web:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descrición"
 ":</b> Elive é unha distribución baseada en Debian co xestor de ventás "
-"Enlightenment.<br/><b>Notas de instalación:</b> A versión «live» permite o "
+"Enlightenment.<br/><b>Notas de instalación:</b> A versión Live permite o "
 "arranque en modo directo, a partir do que pode lanzarse o instalador. "
 "Versión inestable, a <a "
 "href=\"http://www.elivecd.org/Download/Stable\">version estable</a> non está "
@@ -263,9 +263,9 @@ msgstr ""
 "<img src=\":/slitaz.png\" /><br/><b>Páxina web:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
 "ción:</b> SliTaz é moi lixeira, micro distribución orientada ao "
-"escritorio.<br/><b>Notas de instalación:</b> A versión «live» carga o "
-"sistema enteiramente en RAM e arranca desde a memoria, non se precisa "
-"instalación sendo esta opcional. O instalador está baseado en <a "
+"escritorio.<br/><b>Notas de instalación:</b> A versión Live carga o sistema "
+"enteiramente en RAM e arranca desde a memoria, non se precisa instalación "
+"sendo esta opcional. O instalador está baseado en <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
@@ -281,7 +281,7 @@ msgstr ""
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Descrición:</b> "
 "xPUD é unha distribución moi lixeira con unha interface tipo \"quiosco\" con "
 "un navegador e un reproductor multimedia.<br/><b>Notas de instalación:</b> A "
-"versión «live» carga o sistema enteiramente en RAM e arranca desde a memoria."
+"versión Live carga o sistema enteiramente en RAM e arranca desde a memoria."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:276
@@ -330,7 +330,7 @@ msgstr ""
 "exploit.org/backtrack.html</a><br/><b>Descrición:</b> BackTrack é unha "
 "distribución enfocada a analise de redes e a probas de "
 "intrusión.<br/><b>Notas de instalación:</b> BackTrack arranca e executase en "
-"modo «live»; non é preciso instalala para o seu uso."
+"modo Live (directo); non é preciso instalala para o seu uso."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:292
@@ -362,7 +362,7 @@ msgstr ""
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Descrición:"
 "</b> CloneZilla é unha distribución usada para copias de seguridade (backup) "
 "e para imaxes de disco.<br/><b>Notas de instalación:</b> CloneZilla arranca "
-"e executase en modo «live» non se precisa a instalación para usala."
+"e executase en modo Live (directo) non se precisa a instalación para usala."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:302
@@ -377,7 +377,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
 "rición:</b> Damn Small Linux é unha distribución minimalista con un tamaño "
-"total de 50 MB.<br/><b>Notas de instalación:</b> A versión «live» carga o "
+"total de 50 MB.<br/><b>Notas de instalación:</b> A versión Live carga o "
 "sistema enteiro en RAM e arranca desde a memoria, non sendo precisa a "
 "instalación."
 
@@ -396,7 +396,7 @@ msgstr ""
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Descrición:<"
 "/b> Debian és unha distribución de Linux desenvolvida pola comunidade que "
 "funciona nunha grande variedade de arquitecturas e ofrece un gran "
-"repositorio de paquetes.<br/><b>Notas de instalación:</b> A versión «live» "
+"repositorio de paquetes.<br/><b>Notas de instalación:</b> A versión Live "
 "arranca en modo directo podendo desde ela lanzar o instalador. a versión "
 "Netinstall permite a súa instalación a través de FTP."
 
@@ -412,7 +412,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
 "b>Descrición:</b> Dreamlinux é unha distribución amigable basada en "
-"Debian.<br/><b>Notas de instalación:</b> A versión «live» permite o arranque "
+"Debian.<br/><b>Notas de instalación:</b> A versión Live permite o arranque "
 "en modo directo a partir do que se pode lanzar o instalador."
 
 #. ts-context unetbootin
@@ -429,8 +429,8 @@ msgstr ""
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
 "br/><b>Descrición:</b> Dr.Web AntiVirus é un anti-virus de emerxencia para "
 "restaurar un sistema danado por programas maliciosos .<br/><b>Notas de "
-"instalación:</b> A versión «live» permite o arranque en modo directo, a "
-"partir do que se pode lanxar a exploración de malware."
+"instalación:</b> A versión Live permite o arranque en modo directo, a partir "
+"do que se pode lanxar a exploración de malware."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:323
@@ -447,7 +447,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descrición"
 ":</b> Elive é una distribución basada en Debian co xestor de ventás "
-"Enlightenment.<br/><b>Notas de instalación:</b>A versión «live» permite "
+"Enlightenment.<br/><b>Notas de instalación:</b>A versión Live permite "
 "arrancar en modo directo. A versión inestable non é compatible con "
 "instalacións en disco ríxido, a <a "
 "href=\"http://www.elivecd.org/Download/Stable\">versión estable</a> non está "
@@ -469,7 +469,7 @@ msgstr ""
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
 "ción:</b> Fedora é unha distribución da comunidade patrocinada por Red hat "
 "que se centra no software libre/de codigo aberto máis punteiro.<br/><b>Notas "
-"de instalación:</b> A versión «live» permite arrancar en modo directo. A "
+"de instalación:</b> A versión Live permite arrancar en modo directo. A "
 "versión Netinstall permite ambas instalacións: a través de internet (FTP), "
 "ou instalación desconectado usando as imaxes ISO descargadas previamente."
 
@@ -536,9 +536,8 @@ msgstr ""
 "<b>Páxina web:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Descrición:</b> F-"
 "Secure Rescue CD detecta e elimina programas maliciosos na súa instalación "
-"Windows.<br/><b>Notas de instalación:</b> A version «live» permite o "
-"arranque en modo directo a partir do que se pode lanzar a exploración de "
-"malware."
+"Windows.<br/><b>Notas de instalación:</b> A version Live permite o arranque "
+"en modo directo a partir do que se pode lanzar a exploración de malware."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:358
@@ -552,9 +551,8 @@ msgstr ""
 "<b>Páxina wb:</b> <a "
 "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Descrición:<"
 "/b> Gentoo é unha distribución moi flexible basada en fontes deseñada para "
-"usuarios avanzados.<br/><b>Notas de instalación:</b> A versión «live» "
-"permite o arranque en modo directo a partir do que cual se pode lanzar o "
-"instalador."
+"usuarios avanzados.<br/><b>Notas de instalación:</b> A versión Live permite "
+"o arranque en modo directo a partir do que cual se pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:368
@@ -570,8 +568,8 @@ msgstr ""
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
 "ción:</b> gNewSense é unha distribución aprobada pola FSF sobre a base de "
 "Ubuntu con todos os compoñentes non libres eliminados.<br/><b>Notas de "
-"instalación:</b> A versión «live» permite o arranque en modo directo, a "
-"partir da que se  pode lanzar o instalador."
+"instalación:</b> A versión Live permite o arranque en modo directo, a partir "
+"da que se  pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:373
@@ -602,8 +600,8 @@ msgstr ""
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
 "com/devbuilds/RescueDisk/</a><br/><b>Descrición:</b> Kaspersky Rescue Disk "
 "detecta e elimina o malware da súa instalación de Windows.<br/><b>Notas de "
-"instalación:</b> A versión «live» permite o arranque en modo directo, a "
-"partir do que se pode lanzar a exploración de malware."
+"instalación:</b> A versión Live permite o arranque en modo directo, a partir "
+"do que se pode lanzar a exploración de malware."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:383
@@ -619,7 +617,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descrición"
 ":</b> Kubuntu é un derivado oficial de Ubuntu co escritorio "
-"KDE.<br/><b>Notas de instalación:</b> A versión «live» permite o arranque en "
+"KDE.<br/><b>Notas de instalación:</b> A versión Live permite o arranque en "
 "modo directo, a partir do que se pode lanzar o instalador. A versión "
 "Netinstall permite a instalación a través de FTP, pode instalar tamén "
 "Xubuntu e outros derivados oficiais de Ubuntu."
@@ -638,8 +636,8 @@ msgstr ""
 "href=\"http://linuxmint.com/\">http://linuxmint.com/</a><br/><b>Descrición:</"
 "b> Linux Mint é unha distribución baseada en Ubuntu orientada ao usuario que "
 "inclue codecs propietarios adicionais e outro software "
-"predeterminado.<br/><b>Notas de instalacón:</b> A versión «live» permite "
-"arrancar en modo directo."
+"predeterminado.<br/><b>Notas de instalacón:</b> A versión Live permite "
+"arrancar en modo directo, desde que se pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:393
@@ -656,9 +654,9 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descric"
 "ión:</b> Mandriva é unha distribución orientada ao usuario antes coñecida "
-"como Mandrake Linux.<br/><b>Notas de instalación</b> A versión «live» "
-"permite arrancar en modo directo. A versión NetInstall permite a instalación "
-"por internet (FTP) ou descargando previamente os: <a "
+"como Mandrake Linux.<br/><b>Notas de instalación</b> A versión Live permite "
+"arrancar en modo directo. A versión NetInstall permite a instalación por "
+"internet (FTP) ou descargando previamente os: <a "
 "href=\"http://www.mandriva.com/en/download\">ficheiros de imaxe ISO "
 "\"Free\"</a>."
 
@@ -678,8 +676,7 @@ msgstr ""
 "MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fácil "
 "de usar baseada na versión de KDE, mentres que AntiX é unha versión lixeira "
 "para computadores antigos<br/><b>Notas de instalación:</b> MEPIS dispon de "
-"arranque en modo «live» (directo) a partir do que se pode lanzar o "
-"instalador."
+"arranque en modo Live (directo) a partir do que se pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:404
@@ -713,8 +710,8 @@ msgstr ""
 "et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Descrición:</b> O disco de "
 "arranque NT Password and Registry Editor pode restaurar os contrasinais de "
 "Windows e editar o rexistro en Windows 2000-Vista.<br/><b>Notas de "
-"instalación:</b> NTPasswd arranca e se executa en modo «live» (directo) non "
-"se precisa da instalación para usalo."
+"instalación:</b> NTPasswd arranca e se executa en modo Live (directo) non se "
+"precisa da instalación para usalo."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:414
@@ -746,7 +743,7 @@ msgstr ""
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
 "<br/><b>Descrición:</b> Ophcrack pode romper os contrasinais de "
 "Windows.<br/><b>Notas de instalación:</b> Ophcrack arranca e se executa en "
-"modo «live» (directo) non se precisa da instalación para usalo."
+"modo Live (directo) non se precisa da instalación para usalo."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:424
@@ -763,8 +760,8 @@ msgstr ""
 ":</b> Parted Magic inclúe o administrador de particións Gparted e outras "
 "utilidades de sistema que poden redimensionar, copiar, facer copias de "
 "seguridade e manipular particións de disco.<br/><b>Notas de "
-"instalación</b>Parted Magic arranca e funciona en modo «live»; non se "
-"precisa de ningunha instalación para usalo."
+"instalación</b>Parted Magic arranca e funciona en modo Live (directo); non "
+"se precisa de ningunha instalación para usalo."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:429
@@ -778,8 +775,8 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
 "ción:</b> PCLinuxOS é unha distribución baseada en Mandriva orientada ao "
-"usuario.<br/><b>Notas de instalación</b> A versión «live» permite arrancar "
-"en modo directo."
+"usuario.<br/><b>Notas de instalación</b> A versión Live permite arrancar en "
+"modo directo, desde o que se pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:434
@@ -794,8 +791,8 @@ msgstr ""
 "<b>Pxina web:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
 "rición:</b> Puppy Linux é unha distribución lixeira para computadoras "
-"antigas.<br/><b>Notas de instalación:</b> Na versión «live» todo o sistema "
-"se carga na memoria RAM e arranca desde a memoria, de tal xeito que a "
+"antigas.<br/><b>Notas de instalación:</b> Na versión Live todo o sistema se "
+"carga na memoria RAM e arranca desde a memoria, de tal xeito que a "
 "instalación, sendo opcional, non é necesaria."
 
 #. ts-context unetbootin
@@ -814,7 +811,7 @@ msgstr ""
 "Descrición:</b> Sabayon Linux é unha distribución «live» en DVD baseada en "
 "Gentoo coa funcionalidade do xestor de paquetes binarios «Entropy» ademáis "
 "dos paquetes fonte de «Portage».<br/><b>Notas de instalación:</b> A versión "
-"«live» permite o arranque en modo directo, a partir do que se pode lanzar o "
+"Live permite o arranque en modo directo, a partir do que se pode lanzar o "
 "instalador. LiteMCE é unha edición de 2 GB, mentres que a edición completa "
 "precisa dunha unidade USB de 8 GB"
 
@@ -830,8 +827,8 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Descrición:</b> "
 "Slax é unha distribución baseada en Slackware que utiliza o escritorio "
-"KDE.<br/><b>Notas de instalación:</b> A versión »live» permite o arranque en "
-"modo directo desde o que se pode lanzar o instalador."
+"KDE.<br/><b>Notas de instalación:</b> A versión Live permite o arranque en "
+"modo directo, desde o que se pode lanzar o instalador."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:449
@@ -846,9 +843,8 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
 "ción:</b> SliTaz é unha micro distribución moi lixeira orientada ao "
-"escritorio.<br/><b>Notas de instalación:</b> A versión »live» carga o "
-"sistema en RAM e arranca desde a memoria, non é precisa a instalación para o "
-"seu uso."
+"escritorio.<br/><b>Notas de instalación:</b> A versión Live carga o sistema "
+"en RAM e arranca desde a memoria, non é precisa a instalación para o seu uso."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:454
@@ -883,7 +879,7 @@ msgstr ""
 "uper_Ubuntu</a><br/><b>Descripción:</b>Super Ubuntu é un derivado non "
 "oficial de Ubuntu que inclue software adicional de xeito predeterminado. "
 "Require de unha unidade USB de 2 GB.<br/><b>Notas de instalación:</b> A "
-"versión »live» permite o arranque en modo directo desde o que se pode lanzar "
+"versión Live permite o arranque en modo directo, desde o que se pode lanzar "
 "o instalador."
 
 #. ts-context unetbootin
@@ -899,8 +895,8 @@ msgstr ""
 "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descric"
 "ión:</b> SystemRescueCD inclue varios xestores de particións e recuperación "
 "de datos, así como ferramentas de copias seguridade.<br/><b>Install "
-"Notes:</b> SystemRescueCD arranca e se executa en modo «live» (directo) non "
-"é necesaria a instalación para o seu uso."
+"Notes:</b> SystemRescueCD arranca e se executa en modo Live (directo) non é "
+"necesaria a instalación para o seu uso."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:474
@@ -917,8 +913,8 @@ msgstr ""
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Descrición:<"
 "/b> Ubuntu é unha distribución baesada en Debian orientada ao usuario. Sendo "
 "hoxe en día a distribución de Linux para o escritorio máis "
-"popular.<br/><b>Notas de instalación</b> A versión «live» permite arrancar "
-"en modo directo. S versión Netinstall permite instalaciones por FTP e puede "
+"popular.<br/><b>Notas de instalación</b> A versión Live permite arrancar en "
+"modo directo. S versión Netinstall permite instalaciones por FTP e puede "
 "instalar Kubuntu e outras derivadas oficiais de Ubuntu."
 
 #. ts-context unetbootin
@@ -935,7 +931,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descrición"
 ":</b> Xubuntu é unha derivada oficial de Ubuntu que utiliza o escritorio "
-"XFCE.<br/><b>Notas de instalación:</b> A versión «live» arranca en modo "
+"XFCE.<br/><b>Notas de instalación:</b> A versión Live arranca en modo "
 "directo desde o que se pode lanzar o instalador. A versión Netinstall se "
 "utiliza para  a instalación a través de FTP e permite a instalación de "
 "Kubuntu e outras derivadas oficiais de Ubuntu."
@@ -1102,7 +1098,7 @@ msgstr ""
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Descrición:</b> "
 "xPUD é unha distribución moi lixeira con unha interface tipo \"quiosco\" con "
 "un navegador e un reproductor multimedia.<br/><b>Notas de instalación:</b> A "
-"versión «live» carga o sistema enteiramente en RAM e arranca desde a memoria."
+"versión Live carga o sistema enteiramente en RAM e arranca desde a memoria."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:489
@@ -1116,7 +1112,7 @@ msgstr ""
 "<b>Páxina web:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descrición"
 ":</b> Zenwalk é unha distribución baseada en Slackware que utiliza o "
-"escritorio XFCE.<br/><b>Notas de instalación:</b> A versión «live» permite o "
+"escritorio XFCE.<br/><b>Notas de instalación:</b> A versión Live permite o "
 "arranque en modo directo, a partir do que se pode lanzar o instalador."
 
 #. ts-context unetbootin

@@ -20,6 +20,7 @@ TRANSLATIONS += unetbootin.ts \
  unetbootin_de.ts \
  unetbootin_he.ts \
  unetbootin_hu.ts \
+ unetbootin_id.ts \
  unetbootin_it.ts \
  unetbootin_zh_CN.ts \
  unetbootin_zh_TW.ts \
