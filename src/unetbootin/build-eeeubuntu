@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
-rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+rvern="$(./vcs-revno)"
 make clean
 rm Makefile*
 rm release/*

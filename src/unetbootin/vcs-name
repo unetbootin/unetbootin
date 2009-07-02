@@ -1,0 +1,21 @@
+#!/bin/bash
+
+for x in . .. ../..
+do
+
+if [ "$(ls -a "$x" | grep '\.git$')" != "" ]
+then
+echo "git"
+exit 0
+fi
+
+if [ "$(ls -a "$x" | grep '\.bzr$')" != "" ]
+then
+echo "bzr"
+exit 0
+fi
+
+done
+
+echo "none"
+

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+vcsname="$(./vcs-name)"
+
+if [ "$vcsname" == "git" ]
+then
+git show-ref 'refs/heads/master' | sed 's/ /\n/g' | head --lines 1
+exit 0
+fi
+
+if [ "$vcsname" == "bzr" ]
+then
+bzr revno
+exit 0
+fi
+
+if [ "$(pwd | grep unetbootin-source-[0-9])" != "" ]
+then
+pwd | sed 's/\//\n/g' | grep 'unetbootin-source-' | sed "s/unetbootin-source-//"
+exit 0
+fi
+
+if [ "$(pwd | grep unetbootin-[0-9])" != "" ]
+then
+pwd | sed 's/\//\n/g' | grep 'unetbootin-' | sed "s/unetbootin-//"
+exit 0
+fi
+
+date "+%Y%m%d"
+

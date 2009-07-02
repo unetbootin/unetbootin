@@ -1,10 +1,6 @@
 #!/bin/sh
 
-rvern="$(bzr revno)"
-if [ "$rvern" = "" ]
-then
-rvern="$(pwd | sed 's/\//\n/g' | grep 'unetbootin-source-' | sed s/unetbootin-source-// )"
-fi
+rvern="$(./vcs-revno)"
 
 if [ "$(uname -m)" = "x86_64" ]
 then
@@ -24,10 +20,6 @@ qmake-qt4 "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
 mv unetbootin-pro.bak unetbootin.pro
 strip --strip-all unetbootin
-#mv unetbootin release/unetbootin-linux-$rvern
-#./upx --lzma release/unetbootin-linux-$rvern
-#printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\nDownload using bzr: bzr checkout http://bazaar.launchpad.net/~gezakovacs/unetbootin/devel-new -r$rvern\r\n" > README.TXT
-#zip release/unetbootin-source-$rvern.zip README.TXT $(bzr ls --versioned)
 mv unetbootin debbuild/usr/bin/unetbootin
 cp unetbootin_*.qm debbuild/usr/share/unetbootin/
 cp debbuild/DEBIAN/control ./control-bak

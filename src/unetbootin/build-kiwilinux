@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mingwb="i586-mingw32msvc"
-rvern="$(bzr version-info | grep revno | sed 's/revno: //')"
+rvern="$(./vcs-revno)"
 make clean
 rm Makefile*
 rm release/*

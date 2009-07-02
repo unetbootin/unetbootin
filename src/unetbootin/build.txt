@@ -60,7 +60,7 @@ qt4-x11.7z http://launchpad.net/unetbootin/trunk/trunk/+download/qt4-x11.7z
 
 2. Extract those files using 7-zip http://www.7-zip.org/ or p7zip-full on Linux, to get the directories "qt4-win" and "qt4-x11"
 
-3. Move the qt4-win and qt4-x11 directories into the UNetbootin build directory (the same directory containing the files unetbootin.cpp and unetbootin.pro, which is src/unetbootin in the bzr branch).
+3. Move the qt4-win and qt4-x11 directories into the UNetbootin build directory (the same directory containing the files unetbootin.cpp and unetbootin.pro, which is src/unetbootin in the repository).
 
 4. cd to the UNetbootin build directory, and run the script "./build"
 

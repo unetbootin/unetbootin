@@ -1,0 +1,17 @@
+#!/bin/bash
+
+vcsname="$(./vcs-name)"
+
+if [ "$vcsname" == "git" ]
+then
+git ls-files
+exit 0
+fi
+
+if [ "$vcsname" == "bzr" ]
+then
+bzr ls --versioned
+exit 0
+fi
+
+ls
