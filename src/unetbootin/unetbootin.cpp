@@ -1934,16 +1934,32 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
 {
-	tprogress->setValue(dlbytes);
-	tprogress->setMaximum(maxbytes);
-	pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
+ QTime time = QTime::currentTime();
+ static int oldsec = 0;
+ // refresh the progress bar every second
+ if(oldsec != time.second())
+ {
+   oldsec = time.second();
+     tprogress->setValue(dlbytes);
+     tprogress->setMaximum(maxbytes);
+   // display the downloaded size with suffix
+     pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+ }
 }
 
 void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
 {
-	tprogress->setValue(dlbytes);
-	tprogress->setMaximum(maxbytes);
-	pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2 bytes").arg(dlbytes).arg(maxbytes));
+ QTime time = QTime::currentTime();
+ static int oldsec = 0;
+ // refresh the progress bar every second
+ if(oldsec != time.second())
+ {
+   oldsec = time.second();
+     tprogress->setValue(dlbytes);
+     tprogress->setMaximum(maxbytes);
+   // display the downloaded size with suffix
+     pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+ }
 }
 
 QString unetbootin::downloadpagecontents(QString pageurl)

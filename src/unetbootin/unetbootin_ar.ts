@@ -217,10 +217,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="590"/>
         <location filename="unetbootin.cpp" line="683"/>
-        <location filename="unetbootin.cpp" line="2515"/>
-        <location filename="unetbootin.cpp" line="2528"/>
-        <location filename="unetbootin.cpp" line="2667"/>
-        <location filename="unetbootin.cpp" line="3017"/>
+        <location filename="unetbootin.cpp" line="2531"/>
+        <location filename="unetbootin.cpp" line="2544"/>
+        <location filename="unetbootin.cpp" line="2683"/>
+        <location filename="unetbootin.cpp" line="3033"/>
         <source>Hard Disk</source>
         <translation>القرص الصلب</translation>
     </message>
@@ -236,10 +236,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1026"/>
         <location filename="unetbootin.cpp" line="1882"/>
         <location filename="unetbootin.cpp" line="1924"/>
-        <location filename="unetbootin.cpp" line="2519"/>
-        <location filename="unetbootin.cpp" line="2544"/>
-        <location filename="unetbootin.cpp" line="2671"/>
-        <location filename="unetbootin.cpp" line="3021"/>
+        <location filename="unetbootin.cpp" line="2535"/>
+        <location filename="unetbootin.cpp" line="2560"/>
+        <location filename="unetbootin.cpp" line="2687"/>
+        <location filename="unetbootin.cpp" line="3037"/>
         <source>USB Drive</source>
         <translation>ذاكرة يو إس بي</translation>
     </message>
@@ -249,7 +249,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="185"/>
         <location filename="unetbootin.cpp" line="711"/>
         <location filename="unetbootin.cpp" line="712"/>
-        <location filename="unetbootin.cpp" line="2589"/>
+        <location filename="unetbootin.cpp" line="2605"/>
         <source>ISO</source>
         <translation>ملف آي إس أو</translation>
     </message>
@@ -259,7 +259,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="181"/>
         <location filename="unetbootin.cpp" line="716"/>
         <location filename="unetbootin.cpp" line="717"/>
-        <location filename="unetbootin.cpp" line="2584"/>
+        <location filename="unetbootin.cpp" line="2600"/>
         <source>Floppy</source>
         <translation>قرص فلوبي</translation>
     </message>
@@ -561,79 +561,80 @@ Reboot now?</source>
         <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1939"/>
         <location filename="unetbootin.cpp" line="1946"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; %1 من %2 بايت</translation>
+        <location filename="unetbootin.cpp" line="1961"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <oldsource>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</oldsource>
+        <translation type="unfinished">&lt;b&gt;تم تنزيل:&lt;/b&gt; %1 من %2 بايت</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2021"/>
+        <location filename="unetbootin.cpp" line="2037"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2025"/>
+        <location filename="unetbootin.cpp" line="2041"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2210"/>
+        <location filename="unetbootin.cpp" line="2226"/>
         <source>%1 not found</source>
         <translation>لم يتم العثور %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2211"/>
+        <location filename="unetbootin.cpp" line="2227"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2498"/>
+        <location filename="unetbootin.cpp" line="2514"/>
         <source>(Current)</source>
         <translation>(حالي)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2499"/>
+        <location filename="unetbootin.cpp" line="2515"/>
         <source>(Done)</source>
         <translation>(أنتهى)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2746"/>
+        <location filename="unetbootin.cpp" line="2762"/>
         <source>Configuring grub2 on %1</source>
         <translation>يضبط جرب ٢ في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2758"/>
+        <location filename="unetbootin.cpp" line="2774"/>
         <source>Configuring grldr on %1</source>
         <translation>يضبط grldr في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2786"/>
+        <location filename="unetbootin.cpp" line="2802"/>
         <source>Configuring grub on %1</source>
         <translation>يضبط جرب في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2908"/>
+        <location filename="unetbootin.cpp" line="2924"/>
         <source>Installing syslinux to %1</source>
         <translation>يثبت syslinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2943"/>
+        <location filename="unetbootin.cpp" line="2959"/>
         <source>Installing extlinux to %1</source>
         <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3007"/>
+        <location filename="unetbootin.cpp" line="3023"/>
         <source>Syncing filesystems</source>
         <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3019"/>
+        <location filename="unetbootin.cpp" line="3035"/>
         <source>After rebooting, select the </source>
         <translation>بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3023"/>
+        <location filename="unetbootin.cpp" line="3039"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
