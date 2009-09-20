@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2009-06-27 18:16-0700\n"
-"PO-Revision-Date: 2009-07-02 08:44+0000\n"
-"Last-Translator: nairobie <samuel.ostman@gmail.com>\n"
+"POT-Creation-Date: 2009-07-12 13:02-0700\n"
+"PO-Revision-Date: 2009-07-26 20:26+0000\n"
+"Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-07-02 18:56+0000\n"
+"X-Launchpad-Export-Date: 2009-09-20 17:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
 #: main.cpp:257
 msgid "LeftToRight"
-msgstr ""
+msgstr "LeftToRight"
 
 #. ts-context unetbootin
 #: distrolst.cpp:173
@@ -79,31 +79,31 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:590
-#: unetbootin.cpp:683 unetbootin.cpp:2515 unetbootin.cpp:2528
-#: unetbootin.cpp:2667 unetbootin.cpp:3017
+#: unetbootin.cpp:683 unetbootin.cpp:2531 unetbootin.cpp:2544
+#: unetbootin.cpp:2683 unetbootin.cpp:3033
 msgid "Hard Disk"
-msgstr ""
+msgstr "Hårddisk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
 #: unetbootin.cpp:594 unetbootin.cpp:688 unetbootin.cpp:760 unetbootin.cpp:776
 #: unetbootin.cpp:1026 unetbootin.cpp:1882 unetbootin.cpp:1924
-#: unetbootin.cpp:2519 unetbootin.cpp:2544 unetbootin.cpp:2671
-#: unetbootin.cpp:3021
+#: unetbootin.cpp:2535 unetbootin.cpp:2560 unetbootin.cpp:2687
+#: unetbootin.cpp:3037
 msgid "USB Drive"
-msgstr ""
+msgstr "USB-enhet"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:711
-#: unetbootin.cpp:712 unetbootin.cpp:2589
+#: unetbootin.cpp:712 unetbootin.cpp:2605
 msgid "ISO"
-msgstr ""
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:716
-#: unetbootin.cpp:717 unetbootin.cpp:2584
+#: unetbootin.cpp:717 unetbootin.cpp:2600
 msgid "Floppy"
-msgstr ""
+msgstr "Diskett"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:459
@@ -114,12 +114,12 @@ msgid ""
 "variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
 "simply boots and runs; no installation is required to use it."
 msgstr ""
-"<b>Hemsida:</b> <a "
+"<b>Webbsida:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
-">Beskrivning:</b> Super Grub Disk är en bootloader som kan utföra ett "
-"flertal MBR och bootloader "
-"återställningsåtgärder.<br/><b>Installationsanteckningar:</b> Med SGD "
-"fungerar dina uppstarter direkt utan krav på installation."
+">Beskrivning:</b> Super Grub Disk är en starthanterare som kan utföra ett "
+"flertal återställningsåtgärder för MBR och "
+"starthanterare.<br/><b>Installationsanteckningar:</b> Med SGD fungerar dina "
+"uppstarter direkt utan krav på installation."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:210
@@ -130,9 +130,9 @@ msgid ""
 "distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
 "media is empty and formatted before proceeding with install."
 msgstr ""
-"<img src=\":/eeepclos.png\" /><br/><b>Hemsida:</b> <a "
+"<img src=\":/eeepclos.png\" /><br/><b>Webbsida:</b> <a "
 "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"Beskrivning:</b> EeePCLinuxOS är en användarvänlig PCLinuxOS baserad "
+"Beskrivning:</b> EeePCLinuxOS är en användarvänlig PCLinuxOS-baserad "
 "distribution för din EeePC.<br/><b>Installationsanteckningar:</b> "
 "Kontrollera att installationsmediet är tomt och formaterat innan du "
 "fortsätter installationen."
@@ -148,12 +148,12 @@ msgid ""
 "alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Hemsida:</b> <a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
-"eee.com</a><br/><b>Beskrivning:</b> Ubuntu Eee är inte endast ett Ubuntu "
-"optimerat för Asus Eee PC. Det är ett operativsystem som använder Netbook "
-"Remix gränssnittet som innehåller den bästa mjukvaran istället för "
-"öppenkällkods alternativ tex Skype instället för "
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Webbsida:</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Beskrivning:</b> Ubuntu Eee är inte bara Ubuntu-optimerat "
+"för Asus Eee PC, det är ett operativsystem som använder Netbook Remix-"
+"gränssnittet som innehåller den bästa programvaran istället för "
+"öppenkällkodsalternativ t.ex. Skype istället för "
 "Ekiga).<br/><b>Installationsanteckningar:</b> Kontrollera att "
 "installationsmediet är tomt och formaterat innan du fortsätter "
 "installationen."
@@ -225,6 +225,12 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
+"Välkommen till <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
+"Netboot Installer. Användning:<ol><li>Välj en distribution och version att "
+"hämta från ovanstående lista, eller ange filer manuellt att läsa in "
+"nedan.</li><li>Välj en installationstyp och tryck på OK för att påbörja "
+"installationen.</li></ol>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:281
@@ -623,6 +629,15 @@ msgid ""
 "optionally be launched. The NetInstall version allows for installation over "
 "FTP, and can install Kubuntu and other official Ubuntu derivatives."
 msgstr ""
+"<b>Webbsida:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Beskrivning:"
+"</b> Ubuntu är en användarvänlig, Debian-baserad distribution. Den är för "
+"närvarande den mest populära Linux-distributionen för "
+"skrivbordsanvändning.<br/><b>Installationsanteckningar:</b> Live-versionen "
+"tillåter att man startar i ett Live-läge, från vilket "
+"installationsprogrammet valfritt kan startas. Nätverksinstallationen "
+"tillåter installation över FTP och kan installera Kubuntu och andra "
+"officiella Ubuntu-derivat."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:484
@@ -639,146 +654,151 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1436 unetbootin.cpp:1458
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+msgstr "<b>Extraherar komprimerad iso:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1515
 msgid "Extracting files, please wait..."
-msgstr ""
+msgstr "Extraherar filer, vänta..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1516
 msgid "<b>Archive:</b> %1"
-msgstr ""
+msgstr "<b>Arkiv:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1517
 msgid "<b>Source:</b>"
-msgstr ""
+msgstr "<b>Källa:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1518
 msgid "<b>Destination:</b>"
-msgstr ""
+msgstr "<b>Mål:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1519
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr ""
+msgstr "<b>Extraherat:</b> 0 av %1 filer"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1522
 msgid "<b>Source:</b> %1 (%2)"
-msgstr ""
+msgstr "<b>Källa:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1523
 msgid "<b>Destination:</b> %1%2"
-msgstr ""
+msgstr "<b>Mål:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1524
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
+msgstr "<b>Extraherat:</b> %1 av %2 filer"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1866
 msgid "Downloading files, please wait..."
-msgstr ""
+msgstr "Hämtar filer, vänta..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1867
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "<b>Källa:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1868
 msgid "<b>Destination:</b> %1"
-msgstr ""
+msgstr "<b>Mål:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1869
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Hämtat:</b> 0 byte"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1939 unetbootin.cpp:1946
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr ""
+#: unetbootin.cpp:1946 unetbootin.cpp:1961
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>Hämtat:</b> %1 av %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2021
+#: unetbootin.cpp:2037
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "Söker i <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2025
+#: unetbootin.cpp:2041
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
+msgstr "%1/%2 sökträffar i <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2210
+#: unetbootin.cpp:2226
 msgid "%1 not found"
-msgstr ""
+msgstr "%1 hittades inte"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2211
+#: unetbootin.cpp:2227
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
+"%1 hittades inte. Denna krävs för installationsläget %2.\n"
+"Installera paketet \"%3\" eller motsvarande i din distribution."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2498
+#: unetbootin.cpp:2514
 msgid "(Current)"
-msgstr ""
+msgstr "(Pågående)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2499
+#: unetbootin.cpp:2515
 msgid "(Done)"
-msgstr ""
+msgstr "(Färdig)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2746
+#: unetbootin.cpp:2762
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "Konfigurerar grub2 på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2758
+#: unetbootin.cpp:2774
 msgid "Configuring grldr on %1"
-msgstr ""
+msgstr "Konfigurerar grldr på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2786
+#: unetbootin.cpp:2802
 msgid "Configuring grub on %1"
-msgstr ""
+msgstr "Konfigurerar grub på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2908
+#: unetbootin.cpp:2924
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "Installerar syslinux på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2943
+#: unetbootin.cpp:2959
 msgid "Installing extlinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3007
-msgid "Syncing filesystems"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3019
-msgid "After rebooting, select the "
-msgstr ""
+msgstr "Installerar extlinux på %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3023
+msgid "Syncing filesystems"
+msgstr "Synkroniserar filsystem"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3035
+msgid "After rebooting, select the "
+msgstr "Efter omstart, välj "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3039
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
+"Efter omstart, välj uppstartsalternativet för USB i uppstartsmenyn i ditt "
+"BIOS.%1\n"
+"Starta om nu?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:479
@@ -804,32 +824,32 @@ msgstr ""
 #: unetbootin.cpp:499 unetbootin.cpp:503 unetbootin.cpp:507 unetbootin.cpp:511
 #: unetbootin.cpp:517 unetbootin.cpp:529
 msgid "either"
-msgstr ""
+msgstr "antingen"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:708
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "Öppna avbildningsfil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:726
 msgid "Open Kernel File"
-msgstr ""
+msgstr "Öppna kärnfil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:734
 msgid "Open Initrd File"
-msgstr ""
+msgstr "Öppna initrd-fil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:742
 msgid "Open Bootloader Config File"
-msgstr ""
+msgstr "Öppna konfigurationsfil för starthanterare"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:764
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "Anslut en USB-lagringsenhet"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:765
@@ -837,11 +857,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
+"Inga USB-lagringsenheter hittades. Om du har anslutit en USB-enhet så prova "
+"att formatera om den som FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:780
 msgid "%1 not mounted"
-msgstr ""
+msgstr "%1 är inte monterad"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:781
@@ -849,71 +871,74 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
+"Du måste först montera USB-enheten %1 till en monteringspunkt. De flesta "
+"distributioner kommer att göra detta automatiskt efter att du kopplar från "
+"och ansluter USB-enheten igen."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:796
 msgid "Select a distro"
-msgstr ""
+msgstr "Välj en distribution"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:797
 msgid "You must select a distribution to load."
-msgstr ""
+msgstr "Du måste välja en distribution att läsa in."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:811
 msgid "Select a disk image file"
-msgstr ""
+msgstr "Välj en avbildningsfil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:812
 msgid "You must select a disk image file to load."
-msgstr ""
+msgstr "Du måste välja en avbildningsfil att läsa in."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:826
 msgid "Select a kernel and/or initrd file"
-msgstr ""
+msgstr "Välj en fil för kärna och/eller initrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:827
 msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
+msgstr "Du måste välja en fil för kärna och/eller initrd att använda."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:841
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "Avbildningsfilen hittades inte"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:842
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "Den angivna avbildningsfilen %1 finns inte."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:856
 msgid "Kernel file not found"
-msgstr ""
+msgstr "Kärnfilen hittades inte"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:857
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "Den angivna kärnfilen %1 finns inte."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:871
 msgid "Initrd file not found"
-msgstr ""
+msgstr "Initrd-filen hittades inte"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:872
 msgid "The specified initrd file %1 does not exist."
-msgstr ""
+msgstr "Den angivna initrd-filen %1 finns inte."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:972
 msgid "%1 exists, overwrite?"
-msgstr ""
+msgstr "%1 finns redan. Skriv över den?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:973
@@ -922,6 +947,10 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
+"Filen %1 finns redan. Tryck på \"Ja för alla\" för att skriva över dem och "
+"inte bli tillfrågad igen, \"Ja\" för att skriva över filer på individuell "
+"basis, samt \"Nej\" för att hålla kvar din befintliga version. Om du är "
+"osäker, tryck på \"Ja för alla\"."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
@@ -935,6 +964,9 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
+"Katalogen %1 har slut på lagringsutrymme. Tryck på \"Ja\" för att avbryta "
+"installationen, \"Nej\" för att ignorera detta fel och försöka att fortsätta "
+"installationen, samt \"Nej till alla\" för att ignorera alla relaterade fel."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:25
@@ -944,7 +976,7 @@ msgstr "UNetbootin"
 #. ts-context unetbootinui
 #: unetbootin.ui:52 unetbootin.ui:103
 msgid "Select from a list of supported distributions"
-msgstr ""
+msgstr "Välj från en lista över distributioner som stöds"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:55
@@ -954,12 +986,12 @@ msgstr "Distribution"
 #. ts-context unetbootinui
 #: unetbootin.ui:71
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Ange en avbildningsfil att använda"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:74
 msgid "Diskimage"
-msgstr ""
+msgstr "Avbildning"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:87
@@ -989,7 +1021,7 @@ msgstr "Ange målenhet för installerationen"
 #. ts-context unetbootinui
 #: unetbootin.ui:148
 msgid "Drive:"
-msgstr "Målenhet:"
+msgstr "Enhet:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:174 unetbootin.ui:190
@@ -1009,7 +1041,7 @@ msgstr "Välj distributionsversion"
 #. ts-context unetbootinui
 #: unetbootin.ui:265
 msgid "Select disk image file"
-msgstr "Välj avbildsfil"
+msgstr "Välj avbildningsfil"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:268 unetbootin.ui:336 unetbootin.ui:387 unetbootin.ui:419
@@ -1019,19 +1051,19 @@ msgstr "..."
 #. ts-context unetbootinui
 #: unetbootin.ui:281
 msgid "Select the disk image type"
-msgstr "Välj avbildsfilsformat"
+msgstr "Välj typ av avbildningsfil"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:294
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
-"Ange en diskett/hårddisk avbildningsfil eller CD-avbildningsfil (ISO) att "
-"använda"
+"Ange en avbildningsfil för diskett/hårddisk eller cd-avbildningsfil (ISO) "
+"att använda"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:317 unetbootin.ui:349
 msgid "Specify a kernel file to load"
-msgstr "Ange en kärn-avbildsfil att använda"
+msgstr "Ange en kärnfil att använda"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:333
@@ -1046,7 +1078,7 @@ msgstr "Kärna:"
 #. ts-context unetbootinui
 #: unetbootin.ui:365 unetbootin.ui:400
 msgid "Specify an initrd file to load"
-msgstr "Ange en initrd fil att använda"
+msgstr "Ange en initrd-fil att använda"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:368
@@ -1056,12 +1088,12 @@ msgstr "Initrd:"
 #. ts-context unetbootinui
 #: unetbootin.ui:384
 msgid "Select initrd file"
-msgstr "Välj initrd fil"
+msgstr "Välj initrd-fil"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:416
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Välj syslinux.cfg eller isolinux.cfg fil"
+msgstr "Välj fil för syslinux.cfg eller isolinux.cfg"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:432 unetbootin.ui:445
@@ -1071,7 +1103,7 @@ msgstr "Ange parametrar och flaggor att skicka till kärnan"
 #. ts-context unetbootinui
 #: unetbootin.ui:448
 msgid "Options:"
-msgstr "Alternativ:"
+msgstr "Flaggor:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:463
@@ -1094,7 +1126,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:470
 msgid "Show All Drives (Use with Care)"
-msgstr "Visa alla diskar (använd varsamt)"
+msgstr "Visa alla enheter (använd med försiktighet)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:483
@@ -1116,7 +1148,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:490
 msgid "Format Drive (Wipes Out Data)"
-msgstr "Formatera diskar (Raderar all data)"
+msgstr "Formatera enhet (raderar all data)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:635
@@ -1126,17 +1158,17 @@ msgstr "4. Installationen är färdig, Starta om datorn"
 #. ts-context unetbootinui
 #: unetbootin.ui:648
 msgid "3. Installing Bootloader"
-msgstr "3. Installerar uppstartshanterare"
+msgstr "3. Installerar starthanterare"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:661
 msgid "2. Extracting and Copying Files"
-msgstr "2. Extracting and Copying Files"
+msgstr "2. Extraherar och kopierar filer"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "1. Downloading Files"
-msgstr "1. Laddar ner filer"
+msgstr "1. Hämtar filer"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:699

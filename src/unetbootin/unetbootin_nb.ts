@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-06-27 18:16-0700
-PO-Revision-Date: 2009-07-02 08:56+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-07-12 13:02-0700
+PO-Revision-Date: 2009-09-19 20:07+0000
+Last-Translator: kingu &lt;comradekingu@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-07-02 18:56+0000
+X-Launchpad-Export-Date: 2009-09-20 17:24+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -23,14 +23,8 @@ X-Generator: Launchpad (build Unknown)
         <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FaunOSer en distribusjon basert på Arch Linux.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen starter opp i live mode, hvorfra installasjonsprogrammat kan bli startet.</translation>
     </message>
     <message>
-        <source>USB Drive</source>
-        <comment>unetbootin#31</comment>
-        <translation type="obsolete">USB enhet</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <comment>unetbootin#32</comment>
-        <translation type="obsolete">Harddisk</translation>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Lastet ned:&lt;/b&gt; %1 av %2 bytes</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
@@ -152,6 +146,16 @@ Reboot now?</source>
 Omstart nå?</translation>
     </message>
     <message>
+        <source>USB Drive</source>
+        <comment>unetbootin#31</comment>
+        <translation type="obsolete">USB enhet</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <comment>unetbootin#32</comment>
+        <translation type="obsolete">Harddisk</translation>
+    </message>
+    <message>
         <source>Floppy</source>
         <comment>unetbootin#33</comment>
         <translation type="obsolete">diskett</translation>
@@ -165,9 +169,9 @@ Omstart nå?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="265"/>
+        <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>VenstreTilHøyre</translation>
     </message>
 </context>
 <context>
@@ -211,12 +215,13 @@ Omstart nå?</translation>
         <location filename="unetbootin.cpp" line="155"/>
         <location filename="unetbootin.cpp" line="538"/>
         <location filename="unetbootin.cpp" line="539"/>
-        <location filename="unetbootin.cpp" line="590"/>
-        <location filename="unetbootin.cpp" line="683"/>
-        <location filename="unetbootin.cpp" line="2531"/>
-        <location filename="unetbootin.cpp" line="2544"/>
-        <location filename="unetbootin.cpp" line="2683"/>
-        <location filename="unetbootin.cpp" line="3033"/>
+        <location filename="unetbootin.cpp" line="606"/>
+        <location filename="unetbootin.cpp" line="673"/>
+        <location filename="unetbootin.cpp" line="766"/>
+        <location filename="unetbootin.cpp" line="2614"/>
+        <location filename="unetbootin.cpp" line="2627"/>
+        <location filename="unetbootin.cpp" line="2766"/>
+        <location filename="unetbootin.cpp" line="3116"/>
         <source>Hard Disk</source>
         <translation>Harddisk</translation>
     </message>
@@ -225,17 +230,18 @@ Omstart nå?</translation>
         <location filename="unetbootin.cpp" line="521"/>
         <location filename="unetbootin.cpp" line="535"/>
         <location filename="unetbootin.cpp" line="536"/>
-        <location filename="unetbootin.cpp" line="594"/>
-        <location filename="unetbootin.cpp" line="688"/>
-        <location filename="unetbootin.cpp" line="760"/>
-        <location filename="unetbootin.cpp" line="776"/>
-        <location filename="unetbootin.cpp" line="1026"/>
-        <location filename="unetbootin.cpp" line="1882"/>
-        <location filename="unetbootin.cpp" line="1924"/>
-        <location filename="unetbootin.cpp" line="2535"/>
-        <location filename="unetbootin.cpp" line="2560"/>
-        <location filename="unetbootin.cpp" line="2687"/>
-        <location filename="unetbootin.cpp" line="3037"/>
+        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="677"/>
+        <location filename="unetbootin.cpp" line="771"/>
+        <location filename="unetbootin.cpp" line="843"/>
+        <location filename="unetbootin.cpp" line="859"/>
+        <location filename="unetbootin.cpp" line="1109"/>
+        <location filename="unetbootin.cpp" line="1965"/>
+        <location filename="unetbootin.cpp" line="2007"/>
+        <location filename="unetbootin.cpp" line="2618"/>
+        <location filename="unetbootin.cpp" line="2643"/>
+        <location filename="unetbootin.cpp" line="2770"/>
+        <location filename="unetbootin.cpp" line="3120"/>
         <source>USB Drive</source>
         <translation>USB enhet</translation>
     </message>
@@ -243,9 +249,10 @@ Omstart nå?</translation>
         <location filename="unetbootin.cpp" line="157"/>
         <location filename="unetbootin.cpp" line="184"/>
         <location filename="unetbootin.cpp" line="185"/>
-        <location filename="unetbootin.cpp" line="711"/>
-        <location filename="unetbootin.cpp" line="712"/>
-        <location filename="unetbootin.cpp" line="2605"/>
+        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="794"/>
+        <location filename="unetbootin.cpp" line="795"/>
+        <location filename="unetbootin.cpp" line="2688"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -253,11 +260,12 @@ Omstart nå?</translation>
         <location filename="unetbootin.cpp" line="158"/>
         <location filename="unetbootin.cpp" line="180"/>
         <location filename="unetbootin.cpp" line="181"/>
-        <location filename="unetbootin.cpp" line="716"/>
-        <location filename="unetbootin.cpp" line="717"/>
-        <location filename="unetbootin.cpp" line="2600"/>
+        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="799"/>
+        <location filename="unetbootin.cpp" line="800"/>
+        <location filename="unetbootin.cpp" line="2683"/>
         <source>Floppy</source>
-        <translation>diskett</translation>
+        <translation>Diskett</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="189"/>
@@ -283,7 +291,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="239"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hkemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kiwi Linux er en Ubuntu-basert distribusjon med hovedfokus på morsmålstalende fra Romania og Ungarn, samt dem som behersker Engelsk.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Sørg for at det ikke er noen filer på installasjonsmediet og at det er formatert før du fortsetter med installasjonen.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="250"/>
@@ -298,7 +306,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett å kjøre og inneholder et kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
@@ -323,7 +331,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CloneZilla er en distribusjon tiltenkt sikkerhetskopiering og oppretting av imagefiler av systemet .&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; CloneZilla blir startet opp og kjørt i live-modus; installasjon er ikke påkrevet for bruk.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
@@ -343,12 +351,13 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="318"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus er et antivirus-verktøy til bruk i nødstilfeller for å gjenopprette systemer som har blitt ødelagte som følge av skadelig programvare.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
-        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive er en Debian basert distribusjon med Enlightenment vindu behandleren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode. Den ustabile versjonen støtter ikke harddisk installasjoner, mens den &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabile versjonen&lt;/a&gt; (ikke gratis) gjør det.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
+        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive er en Debian basert distribusjon med Enlightenment vindu behandleren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode. Den ustabile versjonen støtter ikke harddisk installasjoner, mens den &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabile versjonen&lt;/a&gt; (ikke gratis) gjør det.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -373,7 +382,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="353"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; F-Secure Rescue CD finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="358"/>
@@ -383,7 +392,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="368"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense FSF har bifalt denne distribusjonen (basert på Ubuntu) der alle ufrie komponenter er fjernet.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="373"/>
@@ -393,7 +402,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="378"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kaspersky Rescue Disk finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="383"/>
@@ -413,7 +422,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="399"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; MEPIS er en Debian-basert distribusjon. SimplyMEPIS er en brukervennlig versjon basert på KDE, mens AntiX lettvektsversjon for gamle datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; MEPIS tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="404"/>
@@ -453,7 +462,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="439"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Sabayon Linux er en Gentoo-basert Live DVD-distribusjon som inneholder den binære pakkebehandleren Entropy i tillegg til kildekode-baserte Portage.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen. LiteMCE-versjonen nøyer seg med 2 GB, mens en full-installasjon krever 8 GB hardiskplass.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="444"/>
@@ -473,12 +482,12 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="464"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Ubuntu er en uofisiell nedstamning av Ubuntu som innehollder tilleggsprogramvare som standard. Krever 2 GB plass på usb-enheten for installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="469"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SystemRescueCD-en inneholder forskjellige partisjonerings-, datagjenopprettings- og sikkerhetskopierings-verktøy.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; SystemRescueCD-en starter i live-modus, tradisjonell installasjon til hardisk er ikke påkrevet for å bruke den.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="474"/>
@@ -491,147 +500,146 @@ Omstart nå?</translation>
         <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Xubuntu er en offesiell Ubuntu baserte distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjosnprogrammet valgfritt kan bli startet. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1436"/>
-        <location filename="unetbootin.cpp" line="1458"/>
+        <location filename="unetbootin.cpp" line="1519"/>
+        <location filename="unetbootin.cpp" line="1541"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pakker ut komprimert ISO-fil:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1515"/>
+        <location filename="unetbootin.cpp" line="1598"/>
         <source>Extracting files, please wait...</source>
         <translation>Pakker ut filer, venligst vent...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1516"/>
+        <location filename="unetbootin.cpp" line="1599"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Arkiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1517"/>
+        <location filename="unetbootin.cpp" line="1600"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Kilde:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1518"/>
+        <location filename="unetbootin.cpp" line="1601"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Mål:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1519"/>
+        <location filename="unetbootin.cpp" line="1602"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Pakket ut:&lt;/b&gt; 0 av %1 filer</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1522"/>
+        <location filename="unetbootin.cpp" line="1605"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Kilde:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1523"/>
+        <location filename="unetbootin.cpp" line="1606"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Mål:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1524"/>
+        <location filename="unetbootin.cpp" line="1607"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Pakket ut:&lt;/b&gt; %1 av %2 filer</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1866"/>
+        <location filename="unetbootin.cpp" line="1949"/>
         <source>Downloading files, please wait...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1867"/>
+        <location filename="unetbootin.cpp" line="1950"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Kilde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1868"/>
+        <location filename="unetbootin.cpp" line="1951"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Mål:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1869"/>
+        <location filename="unetbootin.cpp" line="1952"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Lastet ned:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1946"/>
-        <location filename="unetbootin.cpp" line="1961"/>
+        <location filename="unetbootin.cpp" line="2029"/>
+        <location filename="unetbootin.cpp" line="2044"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <oldsource>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</oldsource>
-        <translation type="unfinished">&lt;b&gt;Lastet ned:&lt;/b&gt; %1 av %2 bytes</translation>
+        <translation>&lt;b&gt;Lastet ned:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2037"/>
+        <location filename="unetbootin.cpp" line="2120"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Søker i &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2041"/>
+        <location filename="unetbootin.cpp" line="2124"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 treff i &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2226"/>
+        <location filename="unetbootin.cpp" line="2309"/>
         <source>%1 not found</source>
         <translation>%1 ikke funnet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2227"/>
+        <location filename="unetbootin.cpp" line="2310"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 ikke funnet. Dette er nødvendig for %2installasjonsmetoden.
 Installer &quot;%3&quot; pakken tilsvarende din distribusjon.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2514"/>
+        <location filename="unetbootin.cpp" line="2597"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Nåværende)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2515"/>
+        <location filename="unetbootin.cpp" line="2598"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Ferdig)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2762"/>
+        <location filename="unetbootin.cpp" line="2845"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Konfigurerer grub2 på %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2774"/>
+        <location filename="unetbootin.cpp" line="2857"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Konfigurerer grldr på %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2802"/>
+        <location filename="unetbootin.cpp" line="2885"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Konfigurerer grub på %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2924"/>
+        <location filename="unetbootin.cpp" line="3007"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Installerer syslinux til %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2959"/>
+        <location filename="unetbootin.cpp" line="3042"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Installerer extlinux til %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3023"/>
+        <location filename="unetbootin.cpp" line="3106"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Synkroniserer filsystemer</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3035"/>
+        <location filename="unetbootin.cpp" line="3118"/>
         <source>After rebooting, select the </source>
         <translation>Etter omstart, velg </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3039"/>
+        <location filename="unetbootin.cpp" line="3122"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Etter omstart, velg USB boot valget i BIOS boot menyen. %1
@@ -640,7 +648,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett og kjøre og inneholder et enkelt kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="489"/>
@@ -658,124 +666,124 @@ Omstart nå?</translation>
         <translation>enten</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="708"/>
+        <location filename="unetbootin.cpp" line="791"/>
         <source>Open Disk Image File</source>
         <translation>Åpne bildefil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="726"/>
+        <location filename="unetbootin.cpp" line="809"/>
         <source>Open Kernel File</source>
         <translation>Åpne kernel fil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="734"/>
+        <location filename="unetbootin.cpp" line="817"/>
         <source>Open Initrd File</source>
         <translation>Åpne initrd fil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>Open Bootloader Config File</source>
         <translation>Åpne Bootloader konfigurasjons fil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="764"/>
+        <location filename="unetbootin.cpp" line="847"/>
         <source>Insert a USB flash drive</source>
         <translation>Sett inn en USB flash enhet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="765"/>
+        <location filename="unetbootin.cpp" line="848"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Ingen USB flash enheter ble funnet. Hvis du allerede har satt in en USB enhet, prøv å reformatere den sm FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="780"/>
+        <location filename="unetbootin.cpp" line="863"/>
         <source>%1 not mounted</source>
         <translation>%1 ikke lastet inn</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="781"/>
+        <location filename="unetbootin.cpp" line="864"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Du må først laste inn USB enheten %1 til ett inlastningspunkt. De fleste distribusjoner gjør dette automatisk etter at du har fjernet og satt inn igjen USB enheten.</translation>
+        <translation>Du må først montere USB-enheten %1 til ett innlastningspunkt. De fleste distribusjoner gjør dette automatisk etter at du har fjernet og satt inn igjen USB-enheten.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="796"/>
+        <location filename="unetbootin.cpp" line="879"/>
         <source>Select a distro</source>
         <translation>Velg en distro</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="797"/>
+        <location filename="unetbootin.cpp" line="880"/>
         <source>You must select a distribution to load.</source>
         <translation>Du må velge en distribusjon som skal brukes.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="811"/>
+        <location filename="unetbootin.cpp" line="894"/>
         <source>Select a disk image file</source>
         <translation>Velg bildefil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="812"/>
+        <location filename="unetbootin.cpp" line="895"/>
         <source>You must select a disk image file to load.</source>
         <translation>Du må velge en bildefil som skal brukes.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="826"/>
+        <location filename="unetbootin.cpp" line="909"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Velg en Kernelog/eller en initrd fil</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="827"/>
+        <location filename="unetbootin.cpp" line="910"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Du må velge en kernel og/eller en initrd fil som skal brukes.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="841"/>
+        <location filename="unetbootin.cpp" line="924"/>
         <source>Diskimage file not found</source>
         <translation>Bildefil ikke funnet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="842"/>
+        <location filename="unetbootin.cpp" line="925"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Den valgte bildefilen %1 eksisterer ikke.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="856"/>
+        <location filename="unetbootin.cpp" line="939"/>
         <source>Kernel file not found</source>
         <translation>Kernel filen ble ikke funnet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="857"/>
+        <location filename="unetbootin.cpp" line="940"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Den valgte kernel filen %1 eksisterer ikke.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="871"/>
+        <location filename="unetbootin.cpp" line="954"/>
         <source>Initrd file not found</source>
         <translation>Initrd filen ble ikke funnet</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="872"/>
+        <location filename="unetbootin.cpp" line="955"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Den valgte initrd filen %1 eksisterer ikke.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="972"/>
+        <location filename="unetbootin.cpp" line="1055"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 eksisterer, overskriv?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="973"/>
+        <location filename="unetbootin.cpp" line="1056"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Filen %1 eksisterer allerede. Trykk &apos;Ja til Alt&apos; for å overskrive og slippe å bli spurt igjen, &apos;Ja&apos; for å overskrive enkeltfiler, og &apos;Nei&apos; for å beholde eksisterende versjon. Hvis du er usikker, trykk &apos;Ja til Alt&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="999"/>
+        <location filename="unetbootin.cpp" line="1082"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 har ikke mer plass, avbryte installasjonen?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1000"/>
+        <location filename="unetbootin.cpp" line="1083"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Direktivet %1 har ikke mer plass. Trykk &apos;Ja&apos; for å avbryte installasjonen, &apos;Nei&apos; for å ignorere denne feilen og prøve å fortsette installasjonen, og &apos;Nei til alt&apos; for å ignorere alle feil som følge av for lite plass.</translation>
     </message>
 </context>
 <context>
@@ -1004,22 +1012,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 har blitt avinstallert.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="299"/>
+        <location filename="main.cpp" line="300"/>
         <source>Must run as root</source>
         <translation>Må kjøres som root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="301"/>
+        <location filename="main.cpp" line="302"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 må kjøres som root. Lukk, og kjør som enten:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="322"/>
+        <location filename="main.cpp" line="323"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Avinstalleringsprogram</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="323"/>
+        <location filename="main.cpp" line="324"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 er for øyeblikket installert. Fjerne eksisterende versjon?</translation>
     </message>

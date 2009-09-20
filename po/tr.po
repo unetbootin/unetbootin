@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-27 18:16-0700\n"
-"PO-Revision-Date: 2009-07-02 08:57+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2009-07-12 13:02-0700\n"
+"PO-Revision-Date: 2009-09-15 02:39+0000\n"
+"Last-Translator: seqizz (gurkanGur) <seqizz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-07-02 18:56+0000\n"
+"X-Launchpad-Export-Date: 2009-09-20 17:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -74,29 +74,29 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:590
-#: unetbootin.cpp:683 unetbootin.cpp:2515 unetbootin.cpp:2528
-#: unetbootin.cpp:2667 unetbootin.cpp:3017
+#: unetbootin.cpp:683 unetbootin.cpp:2531 unetbootin.cpp:2544
+#: unetbootin.cpp:2683 unetbootin.cpp:3033
 msgid "Hard Disk"
-msgstr "Harddisk"
+msgstr "Sabit Disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
 #: unetbootin.cpp:594 unetbootin.cpp:688 unetbootin.cpp:760 unetbootin.cpp:776
 #: unetbootin.cpp:1026 unetbootin.cpp:1882 unetbootin.cpp:1924
-#: unetbootin.cpp:2519 unetbootin.cpp:2544 unetbootin.cpp:2671
-#: unetbootin.cpp:3021
+#: unetbootin.cpp:2535 unetbootin.cpp:2560 unetbootin.cpp:2687
+#: unetbootin.cpp:3037
 msgid "USB Drive"
 msgstr "USB Sürücü"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:711
-#: unetbootin.cpp:712 unetbootin.cpp:2589
+#: unetbootin.cpp:712 unetbootin.cpp:2605
 msgid "ISO"
 msgstr "İSO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:716
-#: unetbootin.cpp:717 unetbootin.cpp:2584
+#: unetbootin.cpp:717 unetbootin.cpp:2600
 msgid "Floppy"
 msgstr "Disket Sürücü"
 
@@ -686,79 +686,79 @@ msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1939 unetbootin.cpp:1946
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
+#: unetbootin.cpp:1946 unetbootin.cpp:1961
+msgid "<b>Downloaded:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2021
+#: unetbootin.cpp:2037
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2025
+#: unetbootin.cpp:2041
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2210
+#: unetbootin.cpp:2226
 msgid "%1 not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2211
+#: unetbootin.cpp:2227
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2498
+#: unetbootin.cpp:2514
 msgid "(Current)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2499
+#: unetbootin.cpp:2515
 msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2746
+#: unetbootin.cpp:2762
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2758
+#: unetbootin.cpp:2774
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2786
+#: unetbootin.cpp:2802
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2908
+#: unetbootin.cpp:2924
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2943
+#: unetbootin.cpp:2959
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3007
+#: unetbootin.cpp:3023
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3019
+#: unetbootin.cpp:3035
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3023
+#: unetbootin.cpp:3039
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1162,26 +1162,10 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:315
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr ""
+msgstr "%1 şu anda kurulu. Önceki sürümü kaldırmak ister misiniz?"
 
 #~ msgid "Downloading files, plese wait..."
 #~ msgstr "Dosyalar indiriliyor, Lütfen bekleyiniz..."
-
-#~ msgctxt "unetbootin#6"
-#~ msgid "Hard Disk"
-#~ msgstr "Harddisk"
-
-#~ msgctxt "unetbootin#7"
-#~ msgid "USB Drive"
-#~ msgstr "USB Sürücü"
-
-#~ msgctxt "unetbootin#8"
-#~ msgid "ISO"
-#~ msgstr "İSO"
-
-#~ msgctxt "unetbootin#9"
-#~ msgid "Floppy"
-#~ msgstr "Disket Sürücü"
 
 #~ msgctxt "#1"
 #~ msgid "Extracting files, please wait..."
@@ -1222,3 +1206,19 @@ msgstr ""
 #~ msgctxt "#20"
 #~ msgid "ISO"
 #~ msgstr "İSO"
+
+#~ msgctxt "unetbootin#6"
+#~ msgid "Hard Disk"
+#~ msgstr "Harddisk"
+
+#~ msgctxt "unetbootin#7"
+#~ msgid "USB Drive"
+#~ msgstr "USB Sürücü"
+
+#~ msgctxt "unetbootin#8"
+#~ msgid "ISO"
+#~ msgstr "İSO"
+
+#~ msgctxt "unetbootin#9"
+#~ msgid "Floppy"
+#~ msgstr "Disket Sürücü"

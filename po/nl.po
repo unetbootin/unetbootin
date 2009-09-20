@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-27 18:16-0700\n"
-"PO-Revision-Date: 2009-07-02 08:43+0000\n"
-"Last-Translator: erikkll <erik@kleinlangenhorst.nl>\n"
+"POT-Creation-Date: 2009-07-12 13:02-0700\n"
+"PO-Revision-Date: 2009-09-15 13:26+0000\n"
+"Last-Translator: Johan van Dijk <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-07-02 18:56+0000\n"
+"X-Launchpad-Export-Date: 2009-09-20 17:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -106,8 +106,8 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:590
-#: unetbootin.cpp:683 unetbootin.cpp:2515 unetbootin.cpp:2528
-#: unetbootin.cpp:2667 unetbootin.cpp:3017
+#: unetbootin.cpp:683 unetbootin.cpp:2531 unetbootin.cpp:2544
+#: unetbootin.cpp:2683 unetbootin.cpp:3033
 msgid "Hard Disk"
 msgstr "Harde schijf"
 
@@ -115,20 +115,20 @@ msgstr "Harde schijf"
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
 #: unetbootin.cpp:594 unetbootin.cpp:688 unetbootin.cpp:760 unetbootin.cpp:776
 #: unetbootin.cpp:1026 unetbootin.cpp:1882 unetbootin.cpp:1924
-#: unetbootin.cpp:2519 unetbootin.cpp:2544 unetbootin.cpp:2671
-#: unetbootin.cpp:3021
+#: unetbootin.cpp:2535 unetbootin.cpp:2560 unetbootin.cpp:2687
+#: unetbootin.cpp:3037
 msgid "USB Drive"
 msgstr "USB-schijf"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:711
-#: unetbootin.cpp:712 unetbootin.cpp:2589
+#: unetbootin.cpp:712 unetbootin.cpp:2605
 msgid "ISO"
 msgstr "ISO-bestand"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:716
-#: unetbootin.cpp:717 unetbootin.cpp:2584
+#: unetbootin.cpp:717 unetbootin.cpp:2600
 msgid "Floppy"
 msgstr "Diskette"
 
@@ -215,6 +215,12 @@ msgid ""
 "Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
 "install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Beschr"
+"ijving:</b> Kiwi Linux is een afgeleide van Ubuntu van oorsprong geschikt "
+"voor Roemeens-, Hongaars- en Engels-talige gebruikers.<br/><b>Installatie "
+"Opmerkingen:</b> Verzeker uzelf ervan dat het installatie medium leeg en "
+"geformatteerd is voordat u verder gaat met de installatie"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:250
@@ -262,6 +268,12 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Beschrijving:</b"
+"> xPUD is een lichtgewicht distributie met een simpele kiosk-achtige "
+"interface inclusief een web browser en mediaspeler.<br/><b>Installatie "
+"Opmerkingen:</b> De Live versie laad het gehele systeem in het RAM geheugen "
+"en start op uit het geheugen."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:276
@@ -337,6 +349,12 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Beschrijvin"
+"g:</b> CloneZilla is een distributie die word gebruikt om schijven te "
+"herstellen.<br/><b>Installatie Opmerkingen:</b> CloneZilla wordt opgestart "
+"en uitgevoerd in live modus; er is geen installatie nodig om het te "
+"gebruiken."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:302
@@ -401,6 +419,13 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Beschrijving:</b> Dr.Web AntiVirus is een anti-virus spoed reparatie "
+"pakket om een systeem dat kapot ging door malware te "
+"herstellen.<br/><b>Installatie Opmerkingen:</b> De Live versie staat "
+"opstarten in Live modus toe, van waaruit malware scans kunnen worden "
+"uitgevoerd."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:323
@@ -506,6 +531,12 @@ msgid ""
 "installation.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which malware scans can be launched."
 msgstr ""
+"<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Beschrijving:</b> "
+"F-Secure Rescue CD detecteerd en verwijdert malware in uw Windows "
+"installatie.<br/><b>Installatie Opmerkingen:</b> De Live versie staat "
+"opstarten in Live modus toe, van waaruit malware scans kunnen worden "
+"uitgevoerd."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:358
@@ -567,6 +598,13 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which "
 "malware scans can be launched."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Beschrijving:</b> Kaspersky Rescue Disk "
+"detecteerd en verwijdert malware in uw Windows "
+"installatie.<br/><b>Installatie Opmerkingen:</b> De Live versie staat "
+"opstarten in Live modus toe, van waaruit malware scans kunnen worden "
+"uitgevoerd."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:383
@@ -863,6 +901,12 @@ msgid ""
 "recovery and backup tools.<br/><b>Install Notes:</b> SystemRescueCD is "
 "booted and run in live mode; no installation is required to use it."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Beschri"
+"jving:</b> SystemRescueCD bevat diverse partitie management en data "
+"herstellings programma's.<br/><b>Installatie Opmerkingen:</b> SystemRescueCD "
+"wordt opgestart en uitgevoerd in live modus; er is geen installatie nodig om "
+"het te gebruiken."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:474
@@ -969,27 +1013,27 @@ msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Gedownload:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1939 unetbootin.cpp:1946
-msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgstr "<b>Gedownload:</b> %1 van %2 bytes"
+#: unetbootin.cpp:1946 unetbootin.cpp:1961
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>Gedownload:<b> %1 van %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2021
+#: unetbootin.cpp:2037
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Aan het zoeken in <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2025
+#: unetbootin.cpp:2041
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2  overeenkomsten op <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2210
+#: unetbootin.cpp:2226
 msgid "%1 not found"
 msgstr "%1 niet gevonden"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2211
+#: unetbootin.cpp:2227
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -998,52 +1042,52 @@ msgstr ""
 "Installeer het \"%3\" pakket of het equivalent voor jouw distributie."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2498
+#: unetbootin.cpp:2514
 msgid "(Current)"
 msgstr "(huidig)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2499
+#: unetbootin.cpp:2515
 msgid "(Done)"
 msgstr "(Voltooid)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2746
+#: unetbootin.cpp:2762
 msgid "Configuring grub2 on %1"
 msgstr "grub 2 configureren op %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2758
+#: unetbootin.cpp:2774
 msgid "Configuring grldr on %1"
 msgstr "grldr configureren op %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2786
+#: unetbootin.cpp:2802
 msgid "Configuring grub on %1"
 msgstr "grub configureren op %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2908
+#: unetbootin.cpp:2924
 msgid "Installing syslinux to %1"
 msgstr "syslinux installeren op %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2943
+#: unetbootin.cpp:2959
 msgid "Installing extlinux to %1"
 msgstr "extlinux installeren op %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3007
+#: unetbootin.cpp:3023
 msgid "Syncing filesystems"
 msgstr "Bestandssystemen synchroniseren"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3019
+#: unetbootin.cpp:3035
 msgid "After rebooting, select the "
 msgstr "Na het herstarten, selecteer de "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3023
+#: unetbootin.cpp:3039
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1060,6 +1104,12 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Beschrijving:</b"
+"> xPUD is een lichtgewicht distributie met een simpele kiosk-achtige "
+"interface inclusief een web browser en mediaspeler.<br/><b>Installatie "
+"Opmerkingen:</b> De Live versie laad het gehele systeem in het RAM geheugen "
+"en start op uit het geheugen."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:489
@@ -1512,6 +1562,12 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 #~ "installatie:</b> CloneZilla wordt gestart en draait vanuit Live-modus. Er is "
 #~ "geen installatie noodzakelijk om het te gebruiken."
 
+#~ msgid "Downloading files, plese wait..."
+#~ msgstr "Bestanden worden gedownload, één moment..."
+
+#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
+#~ msgstr "<b>Gedownload:</b> %1 van %2 bytes"
+
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "
 #~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:"
@@ -1524,25 +1580,6 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 #~ ":</b> FaunOS is een op Arch Linux gebaseerde distributie.<br/><b>Opmerkingen "
 #~ "m.b.t. installatie:</b>Met de Live versie kunt u opstarten naar live modus, "
 #~ "vanaf waar de installatie eventueel gestart kan worden."
-
-#~ msgid "Downloading files, plese wait..."
-#~ msgstr "Bestanden worden gedownload, één moment..."
-
-#~ msgctxt "unetbootin#6"
-#~ msgid "Hard Disk"
-#~ msgstr "Harde schijf"
-
-#~ msgctxt "unetbootin#7"
-#~ msgid "USB Drive"
-#~ msgstr "USB-schijf"
-
-#~ msgctxt "unetbootin#8"
-#~ msgid "ISO"
-#~ msgstr "ISO-bestand"
-
-#~ msgctxt "unetbootin#9"
-#~ msgid "Floppy"
-#~ msgstr "Diskette"
 
 #~ msgctxt "#1"
 #~ msgid "Extracting files, please wait..."
@@ -1575,18 +1612,6 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 #~ msgctxt "#8"
 #~ msgid "<b>Extracted:</b> %1 of %2 files"
 #~ msgstr "<b>Uitgepakt:</b> %1 van %2 bestand(en)"
-
-#~ msgctxt "#21"
-#~ msgid "After rebooting, select the "
-#~ msgstr "Na het herstarten, selecteer de "
-
-#~ msgctxt "#22"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Kies, na het herstarten, in je BIOS de optie 'USB boot' %1\n"
-#~ "Nu herstarten?"
 
 #~ msgctxt "#9"
 #~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
@@ -1631,3 +1656,31 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 #~ msgctxt "#20"
 #~ msgid "ISO"
 #~ msgstr "ISO-bestand"
+
+#~ msgctxt "#21"
+#~ msgid "After rebooting, select the "
+#~ msgstr "Na het herstarten, selecteer de "
+
+#~ msgctxt "#22"
+#~ msgid ""
+#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+#~ "Reboot now?"
+#~ msgstr ""
+#~ "Kies, na het herstarten, in je BIOS de optie 'USB boot' %1\n"
+#~ "Nu herstarten?"
+
+#~ msgctxt "unetbootin#6"
+#~ msgid "Hard Disk"
+#~ msgstr "Harde schijf"
+
+#~ msgctxt "unetbootin#7"
+#~ msgid "USB Drive"
+#~ msgstr "USB-schijf"
+
+#~ msgctxt "unetbootin#8"
+#~ msgid "ISO"
+#~ msgstr "ISO-bestand"
+
+#~ msgctxt "unetbootin#9"
+#~ msgid "Floppy"
+#~ msgstr "Diskette"
