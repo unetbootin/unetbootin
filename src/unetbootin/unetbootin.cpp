@@ -918,7 +918,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
 		}
 	}
-	else if (radioFloppy->isChecked() && !QFile::exists(FloppyPath->text()))
+	else if (radioFloppy->isChecked() && !QFile::exists(FloppyPath->text()) && !FloppyPath->text().startsWith("http://") && !FloppyPath->text().startsWith("ftp://"))
 	{
 		QMessageBox ffnotexistsmsgb;
 		ffnotexistsmsgb.setIcon(QMessageBox::Information);
@@ -933,7 +933,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
 		}
 	}
-	else if (radioManual->isChecked() && !QFile::exists(KernelPath->text()))
+	else if (radioManual->isChecked() && !QFile::exists(KernelPath->text()) && !KernelPath->text().startsWith("http://") && !KernelPath->text().startsWith("ftp://"))
 	{
 		QMessageBox kfnotexistsmsgb;
 		kfnotexistsmsgb.setIcon(QMessageBox::Information);
@@ -948,7 +948,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
 		}
 	}
-	else if (radioManual->isChecked() && InitrdPath->text().trimmed() != "" && !QFile::exists(InitrdPath->text()))
+	else if (radioManual->isChecked() && InitrdPath->text().trimmed() != "" && !QFile::exists(InitrdPath->text())  && !InitrdPath->text().startsWith("http://") && !InitrdPath->text().startsWith("ftp://"))
 	{
 		QMessageBox ifnotexistsmsgb;
 		ifnotexistsmsgb.setIcon(QMessageBox::Information);
@@ -2611,6 +2611,7 @@ void unetbootin::runinst()
 	targetDrive = driveselect->currentText();
 	QString ginstallDir;
 	QString installDir;
+	QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
 	#ifdef Q_OS_WIN32
 	if (installType == tr("Hard Disk"))
 	{
@@ -2684,11 +2685,20 @@ void unetbootin::runinst()
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("Floppy")))
 		{
 			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
-			QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+			if (!FloppyPath->text().startsWith("http://") && !FloppyPath->text().startsWith("ftp://"))
+				QFile::copy(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
+			else
+				downloadfile(FloppyPath->text(), QString("%1ubninit").arg(targetPath));
 		}
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("ISO")))
 		{
-			extractiso(FloppyPath->text(), targetPath);
+			if (!FloppyPath->text().startsWith("http://") && !FloppyPath->text().startsWith("ftp://"))
+				extractiso(FloppyPath->text(), targetPath);
+			else
+			{
+				downloadfile(FloppyPath->text(), isotmpf);
+				extractiso(isotmpf, targetPath);
+			}
 			if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 			{
 				QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
@@ -2701,8 +2711,14 @@ void unetbootin::runinst()
 	}
 	else if (radioManual->isChecked())
 	{
-		QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
-		QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
+		if (!KernelPath->text().startsWith("http://") && !KernelPath->text().startsWith("ftp://"))
+			QFile::copy(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
+		else
+			downloadfile(KernelPath->text(), QString("%1ubnkern").arg(targetPath));
+		if (!InitrdPath->text().startsWith("http://") && !InitrdPath->text().startsWith("ftp://"))
+			QFile::copy(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
+		else
+			downloadfile(InitrdPath->text(), QString("%1ubninit").arg(targetPath));
 		kernelOpts = OptionEnter->text();
 	}
 	else if (radioDistro->isChecked())
@@ -2732,7 +2748,6 @@ void unetbootin::runinst()
 		{
 			isarch64 = false;
 		}
-		QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
 		QString cpuarch;
 		QString relname = nameVersion.toLower();
 		#include "customdistrolst.cpp"
