@@ -153,7 +153,7 @@ Reboot now?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="257"/>
+        <location filename="main.cpp" line="265"/>
         <source>LeftToRight</source>
         <translation>D&apos;esquerra a dreta</translation>
     </message>
@@ -987,22 +987,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 s&apos;ha desinstal·lat.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="291"/>
+        <location filename="main.cpp" line="299"/>
         <source>Must run as root</source>
         <translation>S&apos;ha d&apos;executar com a root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="293"/>
+        <location filename="main.cpp" line="301"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 s&apos;ha d&apos;executar com a root. Tanqueu-lo, i torneu-lo a executar usant:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;o:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="314"/>
+        <location filename="main.cpp" line="322"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Desinstal·lador</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="315"/>
+        <location filename="main.cpp" line="323"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 actualment està instal·lat. Voleu desinstal·lar la versió actual?</translation>
     </message>

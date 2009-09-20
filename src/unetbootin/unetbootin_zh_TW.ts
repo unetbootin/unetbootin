@@ -62,7 +62,7 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="257"/>
+        <location filename="main.cpp" line="265"/>
         <source>LeftToRight</source>
         <translation></translation>
     </message>
@@ -886,22 +886,22 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="291"/>
+        <location filename="main.cpp" line="299"/>
         <source>Must run as root</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="293"/>
+        <location filename="main.cpp" line="301"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="314"/>
+        <location filename="main.cpp" line="322"/>
         <source>%1 Uninstaller</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="315"/>
+        <location filename="main.cpp" line="323"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation></translation>
     </message>

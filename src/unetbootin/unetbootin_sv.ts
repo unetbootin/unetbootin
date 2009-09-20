@@ -28,7 +28,7 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="257"/>
+        <location filename="main.cpp" line="265"/>
         <source>LeftToRight</source>
         <translation></translation>
     </message>
@@ -852,22 +852,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 har installerats.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="291"/>
+        <location filename="main.cpp" line="299"/>
         <source>Must run as root</source>
         <translation>Det krävs att du kör programmet som root-användare</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="293"/>
+        <location filename="main.cpp" line="301"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 Det krävs att du kör programmet som root-användare. Avsluta programmet och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="314"/>
+        <location filename="main.cpp" line="322"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Avinstallerare</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="315"/>
+        <location filename="main.cpp" line="323"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 är redan installerad, vill du avinstallera den installerade versionen?</translation>
     </message>

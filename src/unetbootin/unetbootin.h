@@ -185,7 +185,7 @@ public:
         QString extlinuxcommand;
         bool isext2;
 	#endif
-	void ubninitialize();
+	void ubninitialize(QList<QPair<QString, QString> > oppairs);
 	QString displayfisize(quint64 fisize);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listarchiveconts(QString archivefile);
 	bool overwritefileprompt(QString ovwfileloc);

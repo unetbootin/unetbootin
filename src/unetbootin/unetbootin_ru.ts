@@ -143,7 +143,7 @@ Reboot now?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="257"/>
+        <location filename="main.cpp" line="265"/>
         <source>LeftToRight</source>
         <translation>Слева направо</translation>
     </message>
@@ -972,22 +972,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 было удалено.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="291"/>
+        <location filename="main.cpp" line="299"/>
         <source>Must run as root</source>
         <translation>Запуск возможен только при правах суперпользователя</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="293"/>
+        <location filename="main.cpp" line="301"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 должно запускаться с правами суперпользователя. Перезапустите приложение, используя:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;или:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="314"/>
+        <location filename="main.cpp" line="322"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Удаление</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="315"/>
+        <location filename="main.cpp" line="323"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 установлено на данный момент. Удалить текущую версию?</translation>
     </message>

@@ -140,7 +140,7 @@ unetbootin::unetbootin(QWidget *parent)
 	setupUi(this);
 }
 
-void unetbootin::ubninitialize()
+void unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
 	this->ignoreoutofspace = false;
 	this->searchsymlinks = false;
@@ -322,7 +322,7 @@ void unetbootin::ubninitialize()
 	distroselect->addItem("Elive", (QStringList() << "Unstable_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 		"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not freely downloadable) does.") <<
+		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>.") <<
 	"Unstable_Live"));
 //	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" <<
 //	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
@@ -538,6 +538,89 @@ void unetbootin::ubninitialize()
 	if (typeselect->findText(tr("Hard Disk")) != -1)
 		typeselect->setCurrentIndex(typeselect->findText(tr("Hard Disk")));
 	#endif
+	for (QList<QPair<QString, QString> >::const_iterator i = oppairs.constBegin(); i < oppairs.constEnd(); ++i)
+	{
+		QString pfirst(i->first);
+		QString psecond(i->second);
+		if (pfirst.contains("method", Qt::CaseInsensitive))
+		{
+			if (psecond.contains("distribution", Qt::CaseInsensitive))
+				this->radioDistro->setChecked(true);
+			else if (psecond.contains("diskimage", Qt::CaseInsensitive))
+				this->radioFloppy->setChecked(true);
+			else if (psecond.contains("custom", Qt::CaseInsensitive))
+				this->radioManual->setChecked(true);
+		}
+		else if (pfirst.contains("distribution", Qt::CaseInsensitive))
+		{
+			int distidx = this->distroselect->findText(psecond, Qt::MatchFixedString);
+			if (distidx != -1)
+				this->distroselect->setCurrentIndex(distidx);
+		}
+		else if (pfirst.contains("version", Qt::CaseInsensitive))
+		{
+			QStringList verlist = this->distroselect->itemData(this->distroselect->currentIndex()).value<QStringList>();
+			for (int j = 2; j < verlist.size(); ++j)
+			{
+				if (verlist[j].contains(psecond, Qt::CaseInsensitive))
+				{
+					this->dverselect->setCurrentIndex(j-2);
+					break;
+				}
+			}
+		}
+		else if (pfirst.contains("isofile", Qt::CaseInsensitive))
+		{
+			this->diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText(tr("ISO")));
+			this->FloppyPath->setText(psecond);
+		}
+		else if (pfirst.contains("imgfile", Qt::CaseInsensitive))
+		{
+			this->diskimagetypeselect->setCurrentIndex(diskimagetypeselect->findText(tr("Floppy")));
+			this->FloppyPath->setText(psecond);
+		}
+		else if (pfirst.contains("kernelfile", Qt::CaseInsensitive))
+		{
+			this->KernelPath->setText(psecond);
+		}
+		else if (pfirst.contains("initrdfile", Qt::CaseInsensitive))
+		{
+			this->InitrdPath->setText(psecond);
+		}
+		else if (pfirst.contains("cfgfile", Qt::CaseInsensitive))
+		{
+			QString cfgoptstxt = getcfgkernargs(psecond, "", QStringList());
+			if (cfgoptstxt.isEmpty())
+			{
+				cfgoptstxt = getgrubcfgargs(psecond);
+			}
+			this->OptionEnter->setText(cfgoptstxt);
+		}
+		else if (pfirst.contains("kernelopts", Qt::CaseInsensitive))
+		{
+			this->OptionEnter->setText(psecond);
+		}
+		else if (pfirst.contains("installtype"))
+		{
+			if (psecond.contains("Hard", Qt::CaseInsensitive) || psecond.contains("HDD", Qt::CaseInsensitive))
+				this->typeselect->setCurrentIndex(this->typeselect->findText(tr("Hard Disk")));
+			else
+				this->typeselect->setCurrentIndex(this->typeselect->findText(tr("USB Drive")));
+		}
+		else if (pfirst.contains("targetdrive"))
+		{
+			int driveidx = this->driveselect->findText(psecond, Qt::MatchFixedString);
+			if (driveidx != -1)
+			{
+				this->driveselect->setCurrentIndex(driveidx);
+			}
+		}
+		else if (pfirst.contains("autoinstall"))
+		{
+			if (psecond.contains("y", Qt::CaseInsensitive))
+				this->okbutton->click();
+		}
+	}
 }
 
 void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)

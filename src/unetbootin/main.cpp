@@ -177,26 +177,35 @@ QString checkforgraphicalsu(QString graphicalsu)
 		return "REQCNOTFOUND";
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	QApplication app(argc, argv, true);
 	QTranslator custranldr;
 	QTranslator translator;
 	QString tnapplang;
 	QString tnappcoun;
-	QString clangcode;
+	QString clangcode = "";
 	QStringList allappargs = app.arguments();
-	QStringList ubnappargs = allappargs.filter(QRegExp("lang=\\w{2,}"));
-	if (!ubnappargs.isEmpty())
+	QList<QPair<QString, QString> > oppairs;
+	for (QList<QString>::const_iterator i = allappargs.constBegin(); i < allappargs.constEnd(); ++i)
 	{
-		clangcode = ubnappargs.at(0).simplified().remove("lang=");
-		tnapplang = clangcode.left(2);
-		if (clangcode.contains('_') && clangcode.size() == 5)
+		if (i->count('=') == 1)
+			oppairs.append(QPair<QString, QString>(i->section('=', 0, 0).simplified(), i->section('=',1, 1).simplified()));
+	}
+	for (QList<QPair<QString, QString> >::const_iterator i = oppairs.constBegin(); i < oppairs.constEnd(); ++i)
+	{
+		if (i->first.contains("lang", Qt::CaseInsensitive))
 		{
-			tnappcoun = clangcode.section('_', -1, -1);
+			clangcode = i->second;
+			tnapplang = clangcode.left(2);
+			if (clangcode.contains('_') && clangcode.size() == 5)
+			{
+				tnappcoun = clangcode.section('_', -1, -1);
+			}
+			break;
 		}
 	}
-	else
+	if (clangcode.isEmpty())
 	{
 		clangcode = QLocale::system().name();
 		tnapplang = clangcode.left(2);
@@ -331,7 +340,7 @@ int main(int argc, char *argv[])
 	unetbootin.appNlang = tnapplang;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
-	unetbootin.ubninitialize();
+	unetbootin.ubninitialize(oppairs);
 	unetbootin.show();
 	return app.exec();
 }
