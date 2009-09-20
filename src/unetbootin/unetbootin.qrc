@@ -3,9 +3,12 @@
         <file>memdisk</file>
         <file>vesamenu.c32</file>
         <file>unetbootin_ar.qm</file>
+        <file>unetbootin_ast.qm</file>
         <file>unetbootin_be.qm</file>
+        <file>unetbootin_bn.qm</file>
         <file>unetbootin_ca.qm</file>
         <file>unetbootin_cs.qm</file>
+        <file>unetbootin_da.qm</file>
         <file>unetbootin_de.qm</file>
         <file>unetbootin_el.qm</file>
         <file>unetbootin_es.qm</file>
@@ -16,6 +19,7 @@
         <file>unetbootin_id.qm</file>
         <file>unetbootin_it.qm</file>
         <file>unetbootin_ja.qm</file>
+        <file>unetbootin_lt.qm</file>
         <file>unetbootin_nb.qm</file>
         <file>unetbootin_nl.qm</file>
         <file>unetbootin_pl.qm</file>
