@@ -600,14 +600,14 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		{
 			this->OptionEnter->setText(psecond);
 		}
-		else if (pfirst.contains("installtype"))
+		else if (pfirst.contains("installtype", Qt::CaseInsensitive))
 		{
 			if (psecond.contains("Hard", Qt::CaseInsensitive) || psecond.contains("HDD", Qt::CaseInsensitive))
 				this->typeselect->setCurrentIndex(this->typeselect->findText(tr("Hard Disk")));
 			else
 				this->typeselect->setCurrentIndex(this->typeselect->findText(tr("USB Drive")));
 		}
-		else if (pfirst.contains("targetdrive"))
+		else if (pfirst.contains("targetdrive", Qt::CaseInsensitive))
 		{
 			int driveidx = this->driveselect->findText(psecond, Qt::MatchFixedString);
 			if (driveidx != -1)
@@ -615,9 +615,40 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				this->driveselect->setCurrentIndex(driveidx);
 			}
 		}
-		else if (pfirst.contains("autoinstall"))
+		else if (pfirst.contains("nocustom", Qt::CaseInsensitive))
 		{
-			if (psecond.contains("y", Qt::CaseInsensitive))
+			if (psecond.contains('y', Qt::CaseInsensitive))
+			{
+				customlayer->setEnabled(false);
+				customlayer->hide();
+				radioManual->setEnabled(false);
+				radioManual->hide();
+				diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
+				radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
+				intromessage->resize(intromessage->width(), intromessage->height() + 80);
+			}
+		}
+		else if (pfirst.contains("nodistro", Qt::CaseInsensitive))
+		{
+			if (psecond.contains('y', Qt::CaseInsensitive))
+			{
+				radioDistro->setEnabled(false);
+				radioDistro->hide();
+				distroselect->setEnabled(false);
+				distroselect->hide();
+				dverselect->setEnabled(false);
+				dverselect->hide();
+				intromessage->move(intromessage->x(), intromessage->y()-20);
+				intromessage->resize(intromessage->width(), intromessage->height() + 20);
+			}
+		}
+		else if (pfirst.contains("message", Qt::CaseInsensitive))
+		{
+			intromessage->setText(psecond);
+		}
+		else if (pfirst.contains("autoinstall", Qt::CaseInsensitive))
+		{
+			if (psecond.contains('y', Qt::CaseInsensitive))
 				return true;
 		}
 	}
