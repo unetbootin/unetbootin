@@ -292,7 +292,6 @@ int main(int argc, char **argv)
 			QString gksulocation = checkforgraphicalsu("gksu");
 			if (gksulocation != "REQCNOTFOUND")
 			{
-				qDebug() << QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc);
 				QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
 				return 0;
 			}
