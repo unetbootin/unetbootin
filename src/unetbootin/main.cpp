@@ -266,47 +266,67 @@ int main(int argc, char **argv)
 	if (QObject::tr("LeftToRight") == "RightToLeft")
 		app.setLayoutDirection(Qt::RightToLeft);
 	#ifdef Q_OS_UNIX
-	QProcess whoamip;
-	whoamip.start("whoami");
-	whoamip.waitForFinished();
-	if (!allappargs.contains("rootcheck=no") && QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
+	bool disabledrootcheck = false;
+	for (QList<QPair<QString, QString> >::const_iterator i = oppairs.constBegin(); i < oppairs.constEnd(); ++i)
 	{
-		QString gksulocation = checkforgraphicalsu("gksu");
-		if (gksulocation != "REQCNOTFOUND")
+		if (i->first.contains("rootcheck", Qt::CaseInsensitive))
 		{
-			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(gksulocation, allappargs.join(" ")));
-			return 0;
+			if (i->second.contains('n', Qt::CaseInsensitive))
+				disabledrootcheck = true;
+			break;
 		}
-		QString kdesulocation = checkforgraphicalsu("kdesu");
-		if (kdesulocation != "REQCNOTFOUND")
+	}
+	if (!disabledrootcheck)
+	{
+		QProcess whoamip;
+		whoamip.start("whoami");
+		whoamip.waitForFinished();
+		if (QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
 		{
-			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(kdesulocation, allappargs.join(" ")));
-			return 0;
-		}
-		QString gnomesulocation = checkforgraphicalsu("gnomesu");
-		if (gnomesulocation != "REQCNOTFOUND")
-		{
-			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(gnomesulocation, allappargs.join(" ")));
-			return 0;
-		}
-		QString kdesudolocation = checkforgraphicalsu("kdesudo");
-		if (kdesudolocation != "REQCNOTFOUND")
-		{
-			QProcess::startDetached(QString("%1 %2 rootcheck=no").arg(kdesudolocation, allappargs.join(" ")));
-			return 0;
-		}
-		QMessageBox rootmsgb;
-		rootmsgb.setIcon(QMessageBox::Warning);
-		rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
-		rootmsgb.setTextFormat(Qt::RichText);
-		rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
-		rootmsgb.setStandardButtons(QMessageBox::Ok);
-		switch (rootmsgb.exec())
-		{
-			case QMessageBox::Ok:
-				break;
-			default:
-				break;
+			QString argsconc = "";
+			for (int i = 1; i < allappargs.size(); ++i)
+			{
+				argsconc += QString("\"%1\" ").arg(allappargs.at(i));
+			}
+			argsconc += "'rootcheck=no'";
+			QString gksulocation = checkforgraphicalsu("gksu");
+			if (gksulocation != "REQCNOTFOUND")
+			{
+				qDebug() << QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc);
+				QProcess::startDetached(QString("%1 %2 %3").arg(gksulocation).arg(app.applicationFilePath()).arg(argsconc));
+				return 0;
+			}
+			QString kdesulocation = checkforgraphicalsu("kdesu");
+			if (kdesulocation != "REQCNOTFOUND")
+			{
+				QProcess::startDetached(QString("%1 %2 %3").arg(kdesulocation).arg(app.applicationFilePath()).arg(argsconc));
+				return 0;
+			}
+			QString gnomesulocation = checkforgraphicalsu("gnomesu");
+			if (gnomesulocation != "REQCNOTFOUND")
+			{
+				QProcess::startDetached(QString("%1 %2 %3").arg(gnomesulocation).arg(app.applicationFilePath()).arg(argsconc));
+				return 0;
+			}
+			QString kdesudolocation = checkforgraphicalsu("kdesudo");
+			if (kdesudolocation != "REQCNOTFOUND")
+			{
+				QProcess::startDetached(QString("%1 %2 %3").arg(kdesudolocation).arg(app.applicationFilePath()).arg(argsconc));
+				return 0;
+			}
+			QMessageBox rootmsgb;
+			rootmsgb.setIcon(QMessageBox::Warning);
+			rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
+			rootmsgb.setTextFormat(Qt::RichText);
+			rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
+			rootmsgb.setStandardButtons(QMessageBox::Ok);
+			switch (rootmsgb.exec())
+			{
+				case QMessageBox::Ok:
+					break;
+				default:
+					break;
+			}
 		}
 	}
 	#endif
@@ -340,7 +360,9 @@ int main(int argc, char **argv)
 	unetbootin.appNlang = tnapplang;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
-	unetbootin.ubninitialize(oppairs);
+	bool automate = unetbootin.ubninitialize(oppairs);
 	unetbootin.show();
+	if (automate)
+		unetbootin.on_okbutton_clicked();
 	return app.exec();
 }

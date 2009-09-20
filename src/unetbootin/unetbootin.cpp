@@ -140,7 +140,7 @@ unetbootin::unetbootin(QWidget *parent)
 	setupUi(this);
 }
 
-void unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
+bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
 	this->ignoreoutofspace = false;
 	this->searchsymlinks = false;
@@ -618,9 +618,10 @@ void unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		else if (pfirst.contains("autoinstall"))
 		{
 			if (psecond.contains("y", Qt::CaseInsensitive))
-				this->okbutton->click();
+				return true;
 		}
 	}
+	return false;
 }
 
 void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
