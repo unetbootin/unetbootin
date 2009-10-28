@@ -470,11 +470,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
 		"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") <<
 	"Latest_Live"));
-	distroselect->addItem("Ubuntu", (QStringList() << "9.04_Live" <<
+	distroselect->addItem("Ubuntu", (QStringList() << "9.10_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 		"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.") <<
-	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_Live" << "9.04_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
+	"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_Live" << "6.06_Live_x64" << "6.10_NetInstall" << "6.10_NetInstall_x64" << "6.10_Live" << "6.10_Live_x64" << "7.04_NetInstall" << "7.04_NetInstall_x64" << "7.04_Live" << "7.04_Live_x64" << "7.10_NetInstall" << "7.10_NetInstall_x64" << "7.10_Live" << "7.10_Live_x64" << "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_Live" << "8.04_Live_x64" << "8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_Live" << "8.10_Live_x64" << "9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_Live" << "9.04_Live_x64" << "9.10_NetInstall" << "9.10_NetInstall_x64" << "9.10_Live" << "9.10_Live_x64" << "Daily_Live" << "Daily_Live_x64"));
 	distroselect->addItem("xPUD", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
 		"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
