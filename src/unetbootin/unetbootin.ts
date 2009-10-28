@@ -48,10 +48,10 @@
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68,10 +68,10 @@
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
@@ -82,7 +82,7 @@
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,7 +93,7 @@
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -426,52 +426,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished"></translation>
@@ -835,22 +835,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation type="unfinished"></translation>
     </message>

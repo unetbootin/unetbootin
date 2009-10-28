@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-07-12 13:02-0700
-PO-Revision-Date: 2009-08-21 18:15+0000
-Last-Translator: Paco Molinero &lt;paco@byasl.com&gt;
+POT-Creation-Date: 2009-09-20 13:25-0400
+PO-Revision-Date: 2009-10-26 17:43+0000
+Last-Translator: Oscar Cerón Suárez &lt;OSCSOU@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -434,6 +434,10 @@ Reboot now?</source>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -457,28 +461,28 @@ Reboot now?</source>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción «Iniciar la instalación» elija «Red» como el origen, elija como protocolo: «HTTP», escriba «download.fedora.redhat.com» cuando le pregunten por un servidor, y ponga «/pub/fedora/linux/development/%1/os» cuando le pregunten por la carpeta.</translation>
+*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/development/%1/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como el origen, elija como protocolo: «HTTP», escriba «download.fedora.redhat.com» cuando le pregunten por un servidor, y ponga «/pub/fedora/linux/releases/%1/Fedora/%2/os» cuando le pregunten por la carpeta.</translation>
+*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/releases/%1/Fedora/%2/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción «Iniciar la instalación» elija «Red» como el origen, elija como protocolo: «HTTPx, escriba «download.opensuse.org» cuando le pregunten por un servidor, y ponga «/factory/repo/oss» cuando le pregunten por la carpeta.</translation>
+*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.opensuse.org» cuando se le solicite un servidor, y escriba «/factory/repo/oss» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción «Iniciar la instalación» elija «Red» como el origen, elija como protocolo: «HTTP», escriba «download.opensuse.org» cuando le pregunten por un servidor, y ponga «/distribution/%1/repo/oss» cuando le pregunten por la carpeta.</translation>
+*IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.opensuse.org» cuando se le solicite un servidor, y escriba «/distribution/%1/repo/oss» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
@@ -487,10 +491,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation>Disco duro</translation>
     </message>
@@ -507,10 +511,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation>Unidad USB</translation>
     </message>
@@ -521,7 +525,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -532,7 +536,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>Disquete</translation>
     </message>
@@ -540,17 +544,17 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="189"/>
         <location filename="unetbootin.cpp" line="459"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super Grub Disk es un cargador de arranque que puede realizar muchas tareas de recuperación del MBR y de cargadores de arranque.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; SGD simplemente arranca y se ejecuta; no necesita ser instalado.</translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super Grub Disk es un cargador de arranque con diversas tareas de recuperación del MBR y de cargadores de arranque.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; SGD simplemente inicie y ejecute; no requiere de instalación para su uso.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; EeePCLinuxOS es una distribución amigable Para EeePC basada en PCLinuxOS.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Asegúrese de que el dispositivo está vacio y formateado antes de proceder con la instalación.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; EeePCLinuxOS es una distribución amigable para EeePC basada en PCLinuxOS.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Asegúrese de que el dispositivo está vacio y formateado antes de proceder con la instalación.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="218"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu Eee non es sólo Ubuntu optimizado para a Asus Eee PC. Es un sistema operativo, utilizando la interfaz Netbook Remix, que provee el mejor software disponible en lugar de las alternativas de código abierto (es decir, Skype en lugar de Ekiga).&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Asegúrese de que el dispositivo está vacío y formateado antes de proceder con la instalación.</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu Eee no es sólo Ubuntu optimizado para la Asus Eee PC. Es un sistema operativo, que utiliza la interfaz Netbook Remix, que proporciona el mejor software disponible en lugar de las alternativas de código abierto (es decir, Skype en lugar de Ekiga).&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Asegúrese de que el dispositivo está vacío y formateado antes de proceder con la instalación.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="230"/>
@@ -625,8 +629,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -864,52 +867,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instala el paquete «%3» o el equivalente en tu distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation>(Actual)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation>(Hecho)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation>Configurando grub2 en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation>Configurando grldr en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation>Configurando grub en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando el sistema de archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation>Después de reiniciar, seleccione el </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la BIOS.%1
@@ -1282,22 +1285,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 se desintaló correctamente.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Se debe ejecutar como administrador</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 se debe ejecutar como administrador. Ciérrelo, y vuelva a ejecutarlo usando:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;o:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>Desinstalar %1</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>Actualmente está instalado %1. ¿Eliminar la versión existente?</translation>
     </message>

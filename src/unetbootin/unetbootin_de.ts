@@ -7,20 +7,24 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-07-12 13:02-0700
-PO-Revision-Date: 2009-07-03 01:54+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-09-20 13:25-0400
+PO-Revision-Date: 2009-09-25 20:21+0000
+Last-Translator: Stefan Haller &lt;haliner@googlemail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS ist eine Distribution basierend auf Arch Linux.&lt;br/&gt;&lt;b&gt;Installatonsnotizen:&lt;/b&gt; Die Live Version erlaubt das Booten im Live Modus, von dort kann ein Installationsprogramm optional gestartet werden.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Elive ist eine auf Debian basierende Distribution mit dem Enlightenment Fenster Manager.&lt;br/&gt;&lt;b&gt;Installationsnotizen:&lt;/b&gt; Die Live Version ermöglicht das Booten im Live Modus. Die Unstable Version unterstützt nicht die Festplatten Installationen, obwohl die &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable Version&lt;/a&gt; (nicht frei herunterladbar) dies tut.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
@@ -212,10 +216,10 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation>Festplatte</translation>
     </message>
@@ -232,10 +236,10 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation>USB Laufwerk</translation>
     </message>
@@ -246,7 +250,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -257,7 +261,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>Diskette</translation>
     </message>
@@ -350,8 +354,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Elive ist eine auf Debian basierende Distribution mit dem Enlightenment Fenster Manager.&lt;br/&gt;&lt;b&gt;Installationsnotizen:&lt;/b&gt; Die Live Version ermöglicht das Booten im Live Modus. Die Unstable Version unterstützt nicht die Festplatten Installationen, obwohl die &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable Version&lt;/a&gt; (nicht frei herunterladbar) dies tut.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -497,7 +500,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="1551"/>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Extrahiere komprimiertes Iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -542,7 +545,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1981"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Lade Dateien herunter, bitte warten...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1982"/>
@@ -563,7 +566,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="2061"/>
         <location filename="unetbootin.cpp" line="2076"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Heruntergeladen:&lt;/b&gt; %1 von %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2152"/>
@@ -587,52 +590,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>%1 nicht gefunden. Dies wird benötigt für %2 Installationsmodus. Installieren Sie das Paket &quot;%3&quot; oder das entsprechende Paket aus ihrer Distribution.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Konfiguriere Grub2 auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Konfiguriere Grldr auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Konfiguriere Grub auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Installiere Syslinux auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Installiere Extlinux auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Synchronisiere Dateisysteme</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation>Nach dem Neustart, wähle </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1
@@ -997,22 +1000,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 wurde deinstalliert.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Muss als root ausgeführt werden</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 muss als root ausgeführt werden. Schließen die Anwendung und starten sie sie neu durch: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt; oder:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Deinstallation</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 ist momentan installiert. Existierende Version entfernen?</translation>
     </message>

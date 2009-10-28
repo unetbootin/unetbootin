@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-07-12 13:02-0700
+POT-Creation-Date: 2009-09-20 13:25-0400
 PO-Revision-Date: 2009-07-03 01:53+0000
 Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -165,6 +165,10 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live. La versione Unstable (Instabile) non supporta l&apos;installazione su disco rigido; tuttavia la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt; (non scaricabile liberamente) può effettuarla.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -218,10 +222,10 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -238,10 +242,10 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation>Periferica USB</translation>
     </message>
@@ -252,7 +256,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -263,7 +267,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
@@ -356,8 +360,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live. La versione Unstable (Instabile) non supporta l&apos;installazione su disco rigido; tuttavia la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt; (non scaricabile liberamente) può effettuarla.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -594,52 +597,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuzione.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation></translation>
@@ -1011,22 +1014,22 @@ p, li { white-space: pre-wrap; }(new line)
         <translation>%1 è stato disinstallato.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Deve essere lanciato come root</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 deve essere lanciato come root. Chiuderlo e rilanciarlo usando o &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;oppure:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>%1 disinstallatore</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 è attualmente installato. Rimuovere la versione attuale?</translation>
     </message>

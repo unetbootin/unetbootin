@@ -13,20 +13,24 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2009-07-12 13:02-0700
-PO-Revision-Date: 2009-07-03 01:59+0000
+POT-Creation-Date: 2009-09-20 13:25-0400
+PO-Revision-Date: 2009-10-06 13:41+0000
 Last-Translator: Miguel Anxo Bouzada &lt;mbouzada@gmail.com&gt;
 Language-Team: Galician &lt;gl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Elive é una distribución basada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;A versión Live permite arrancar en modo directo. A versión inestable non é compatible con instalacións en disco ríxido, a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; non está dispoñible para  descarga libre.</translation>
     </message>
 </context>
 <context>
@@ -81,10 +85,10 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation>Disco ríxido</translation>
     </message>
@@ -101,10 +105,10 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation>Unidade USB</translation>
     </message>
@@ -115,7 +119,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -126,7 +130,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>Disquete</translation>
     </message>
@@ -214,13 +218,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="318"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation>&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Dr.Web AntiVirus é un anti-virus de emerxencia para restaurar un sistema danado por programas maliciosos .&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live permite o arranque en modo directo, a partir do que se pode lanxar a exploración de malware.</translation>
+        <translation>&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Dr.Web AntiVirus é un anti-virus de emerxencia para restaurar un sistema danado por programas maliciosos .&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live permite o arranque en modo directo, a partir do que se pode executar a exploración de malware.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Elive é una distribución basada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;A versión Live permite arrancar en modo directo. A versión inestable non é compatible con instalacións en disco ríxido, a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; non está dispoñible para  descarga libre.</translation>
+        <translation>&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive é unha distribución baseada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalación:&lt;/ b&gt; A versión Live permite arrancar en modo directo, desde o que pode opcionalmente lanzar o instalador. Isto instala unha versión inestable, non a &lt;a ref=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -433,7 +436,7 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
         <location filename="unetbootin.cpp" line="2061"/>
         <location filename="unetbootin.cpp" line="2076"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2152"/>
@@ -458,52 +461,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation>(Actual)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation>(Feito)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation>Configurando grub2 en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation>Configurando grldr en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation>Configurando grub en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando o sistema de ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation>Despois de reiniciar, elixa o </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
@@ -875,22 +878,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 foi correctamente desinstalado.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Debe executarse como administrador</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 debe ser executado como administrador. Pécheo, e volva a execuar usando:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>Desinstalar %1</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>Actualmente está instalado %1. Eliminar a versión existente?</translation>
     </message>

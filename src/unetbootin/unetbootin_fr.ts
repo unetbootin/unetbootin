@@ -7,20 +7,24 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-07-12 13:02-0700
-PO-Revision-Date: 2009-07-03 02:09+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-09-20 13:25-0400
+PO-Revision-Date: 2009-10-11 15:48+0000
+Last-Translator: abdoumoh &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; FaunOS est une distribution basée sur Arch Linux.&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; La version autonome (live) permet de démarrer le systéme à partir duquel on peut optionnellement l&apos;installer.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; Elive est une distribution basée sur Debian utilisant le gestionnaire de fenêtres Enlightenment.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation : &lt;/b&gt; La version autonome (live) s&apos;exécute à partir du média. La version instable ne peut s&apos;installer sur le disque dur à l&apos;inverse de la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version stable&lt;/a&gt; (non disponible gratuitement au téléchargement).</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
@@ -180,37 +184,31 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* Après le redémarrage, ignorer les messages d&apos;erreur et choisir retour si un CD est demandé, aller dans le menu, choisir l&apos;option  &apos;Commencer l&apos;installation&apos;, &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, renseigner  &apos;mirrors.kernel.org&apos; comme serveur et &apos;/centos/%1/os/%2&apos; comme dossier.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-￼*IMPORTANT* Après le redémarrage, ignorer les messages d&apos;erreur et choisir retour si un CD est demandé, aller dans le menu, choisir l&apos;option  &apos;Commencer l&apos;installation&apos;, &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, renseigner  &apos;download.fedora.redhat.com&apos; comme serveur et &apos;pub/fedora/linux/development/%1/os&apos; comme dossier.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* Après le redémarrage, ignorer les messages d&apos;erreur et choisir retour si un CD est demandé, aller dans le menu, choisir l&apos;option  &apos;Commencer l&apos;installation&apos;, &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, renseigner  &apos;download.fedora.redhat.com&apos; comme serveur et &apos;pub/fedora/linux/releases/%1/Fedora/%2/os&apos; comme dossier.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* Après avoir redémarré, ignorez tous les messages d&apos;erreurs et choisissez retour si on vous demande un CD,puis allez dans le menu principal, choisissez l&apos;option  &apos;démarrer l&apos;installation&apos;, choisissez la source &apos;Réseau&apos;, puis le protocole &apos;HTTP&apos;, saisissez &apos;download.opensuse.org&apos; lorsque l&apos;adresse d&apos;un serveur vous sera demandée, et saisissez &apos;/factory/repo/oss&apos; lors de la demande du dossier.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-￼￼
-*IMPORTANT* Après le redémarrage, ignorer les messages d&apos;erreur et choisir retour si un CD est demandé, aller dans le menu, choisir l&apos;option  &apos;Commencer l&apos;installation&apos;, &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, renseigner  &apos;download.opensuse.org&apos; comme serveur et &apos;/distribution/%1/repo/oss&apos; comme dossier.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
@@ -219,12 +217,12 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
-        <translation>Disque Dur</translation>
+        <translation>Disque dur</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="156"/>
@@ -239,12 +237,12 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
-        <translation>Périphérique USB</translation>
+        <translation>Lecteur USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="157"/>
@@ -253,7 +251,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -264,7 +262,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>disquette</translation>
     </message>
@@ -357,8 +355,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; Elive est une distribution basée sur Debian utilisant le gestionnaire de fenêtres Enlightenment.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation : &lt;/b&gt; La version autonome (live) s&apos;exécute à partir du média. La version instable ne peut s&apos;installer sur le disque dur à l&apos;inverse de la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version stable&lt;/a&gt; (non disponible gratuitement au téléchargement).</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -595,52 +592,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distribution</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation>Après avoir redémarré, choisissez le </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Après avoir redémarré, choisissez l&apos;option &quot;démarrez depuis un périphérique USB&quot; dans le menu de démarrage du BIOS. %1
@@ -1013,22 +1010,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1  a été désinstallé.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Seul root peut le lancer</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 doit être utilisé par root. Refermez et recommencez avec &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt; ou &lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Désinstallation</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 est actuellement installé. Supprimer la version existante ?</translation>
     </message>

@@ -7,20 +7,24 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-07-12 13:02-0700
-PO-Revision-Date: 2009-09-16 15:57+0000
-Last-Translator: XPEH &lt;Unknown&gt;
+POT-Creation-Date: 2009-09-20 13:25-0400
+PO-Revision-Date: 2009-10-11 06:04+0000
+Last-Translator: Sergey Sedov &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-09-20 17:24+0000
+X-Launchpad-Export-Date: 2009-10-28 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; FaunOS - основанный на Arch Linux дистрибутив.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
+        <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live предусматривает загрузку в режима Live mode . Версия Unstable не поддерживает установку на жесткие диски, хотя &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Версия Stable&lt;/a&gt; (не свободно загружаемая) - поддерживает.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
@@ -179,7 +183,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск, затем в главном меню выберите пункт &apos;Начать установку&apos;, отметьте &apos;Сеть&apos; в качестве источника, выберите &apos;HTTP&apos; протокол, укажите &apos;download.opensuse.org&apos; как адрес сервера и введите &apos;/factory/repo/oss&apos;, когда будет задан вопрос о папке.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="577"/>
@@ -195,10 +200,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2647"/>
-        <location filename="unetbootin.cpp" line="2660"/>
-        <location filename="unetbootin.cpp" line="2813"/>
-        <location filename="unetbootin.cpp" line="3163"/>
+        <location filename="unetbootin.cpp" line="2648"/>
+        <location filename="unetbootin.cpp" line="2661"/>
+        <location filename="unetbootin.cpp" line="2814"/>
+        <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
         <translation>Жёсткий диск</translation>
     </message>
@@ -215,10 +220,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1141"/>
         <location filename="unetbootin.cpp" line="1997"/>
         <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2651"/>
-        <location filename="unetbootin.cpp" line="2676"/>
-        <location filename="unetbootin.cpp" line="2817"/>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="2652"/>
+        <location filename="unetbootin.cpp" line="2677"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
         <translation>USB-накопитель</translation>
     </message>
@@ -229,7 +234,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2724"/>
+        <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -240,7 +245,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2716"/>
+        <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
         <translation>Флоппи-диск</translation>
     </message>
@@ -283,7 +288,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; xPUD это легковесный дистрибутив, представляющий простой киоско-подобный интерфейс с вэб браузером и медиа проигрывателем.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live загружает всю систему в оперативную память и запускается из памяти.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
@@ -328,13 +333,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="318"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Dr.Web AntiVirus это антивирусный пакет для восстановления системы которая сломана вредоносными программами.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать сканирование вредоносных программ.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live предусматривает загрузку в режима Live mode . Версия Unstable не поддерживает установку на жесткие диски, хотя &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Версия Stable&lt;/a&gt; (не свободно загружаемая) - поддерживает.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - это дистрибутив, который основан на Debian c рабочим столом Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Версия Live позволяет загружаться в  Live (пробном) режиме из которого может быть запущен установщик на жёсткий диск.  Внимание! Будет установлена нестабильная версия, в отличии от &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;стабильной, которая доступна здесь.&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -359,7 +363,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="353"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; F-Secure Rescue CD обнаруживает и удаляет вредоносные программы из вашей установленной Windows.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать сканирование вредоносных программ.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="358"/>
@@ -369,7 +373,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="368"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; gNewSense это одобренный ФСПО (FSF) дистрибутив базирующийся на Ubuntu с полностью удаленными не свободными компонентами.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать установку.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="373"/>
@@ -379,7 +383,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="378"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Kaspersky Rescue Disk обнаруживает и удаляет вредоносные программы из вашей установленной Windows.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать сканирование вредоносных программ.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="383"/>
@@ -399,7 +403,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="399"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; MEPIS это базирующийся на Debian дистрибутив. SimplyMEPIS это дружелюбная версия базирующаяся на KDE, тогда как AntiX это легковесная версия для старых компьютеров.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; MEPIS поддерживает загрузку в режиме Live, позволяя начать установку.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="404"/>
@@ -439,7 +443,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="439"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Sabayon Linux это базирующийся на Gentoo Live DVD дистрибутив который включает менеджер бинарных пакетов Entropy в добавок к  базирующемуся на исходных текстах Portage.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать установку. LiteMCE редакция занимает 2 Гб, тогда как полная редакция нуждается в 8 Гб USB-накопителе.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="444"/>
@@ -459,12 +463,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="464"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Super Ubuntu это неофициальная производная от Ubuntu, которая содержит дополнительное программное обеспечение. Требует 2Гб USB-накопитель для установки.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать установку.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="469"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; SystemRescueCD содержит различные инструменты по управлению разделами диска, восстановлению данных и резервному копированию.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; SystemRescueCD загружается и работает в режиме Live; установка не нужна.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="474"/>
@@ -571,52 +575,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2629"/>
+        <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
         <translation>(Текущий)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
         <translation>(Выполнено)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2892"/>
+        <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
         <translation>Конфигурирование grub2 на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2904"/>
+        <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
         <translation>Конфигурирование grldr на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2932"/>
+        <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
         <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
         <translation>Установка syslinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3089"/>
+        <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
         <translation>Установка extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3153"/>
+        <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
         <translation>Синхронизую файловую систему</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3165"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
         <translation>После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3169"/>
+        <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>После перезагрузки выберите в BIOS опцию загрузки с USB.%1
@@ -625,7 +629,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; xPUD это легковесный дистрибутив, представляющий простой киоско-подобный интерфейс с вэб браузером и медиа проигрывателем.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live загружает всю систему в оперативную память и запускается из памяти.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="489"/>
@@ -981,22 +985,22 @@ p, li { white-space: pre-wrap; }
         <translation>%1 было удалено.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="319"/>
+        <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
         <translation>Запуск возможен только при правах суперпользователя</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="321"/>
+        <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
         <translation>%2 должно запускаться с правами суперпользователя. Перезапустите приложение, используя:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;или:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="343"/>
+        <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
         <translation>%1 Удаление</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="344"/>
+        <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
         <translation>%1 установлено на данный момент. Удалить текущую версию?</translation>
     </message>
