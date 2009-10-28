@@ -2569,8 +2569,9 @@ void unetbootin::vistabcdEdit()
 	QTextStream vbcdEditS2(&vbcdEditF2);
 	vbcdEditS2 << QString("bcdedit /set {%1} device boot\n"
 	"bcdedit /set {%1} path \\ubnldr.mbr\n"
+	"bcdedit /set {%1} device partition=%2\n"
 	"bcdedit /displayorder {%1} /addlast\n"
-	"bcdedit /timeout 30").arg(vbcdIdTL) << endl;
+	"bcdedit /timeout 30").arg(vbcdIdTL).arg(targetDev) << endl;
 	vbcdEditF2.close();
 	if (warch64)
 	{
