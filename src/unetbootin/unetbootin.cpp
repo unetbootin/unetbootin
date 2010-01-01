@@ -1603,6 +1603,17 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		ubnfilelS << extractedfiles.at(i) << endl;
 	}
 	ubnfilelF.close();
+#ifdef XPUD
+	QFile::remove(QString("%1boot.cat").arg(exoutputdir));
+	QFile::remove(QString("%1isolinux.bin").arg(exoutputdir));
+	QFile::remove(QString("%1syslinux.cfg").arg(exoutputdir));
+	QFile::rename(QString("%1isolinux.cfg").arg(exoutputdir), QString("%1syslinux.cfg").arg(exoutputdir));
+	if (installType == tr("USB Drive"))
+	{
+		QFile::remove(QString("%1ubnfilel.txt").arg(exoutputdir));
+		QFile::remove(QString("%1ubnpathl.txt").arg(exoutputdir));
+	}
+#endif
 }
 
 QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
