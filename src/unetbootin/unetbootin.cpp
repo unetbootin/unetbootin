@@ -3118,6 +3118,7 @@ void unetbootin::runinstusb()
 		usbmbrF.close();
 	}
 	#endif
+#ifndef XPUD
 	QString syslinuxcfgname = QString("%1syslinux.cfg").arg(targetPath);
 	if (QFile::exists(syslinuxcfgname))
 	{
@@ -3150,6 +3151,7 @@ void unetbootin::runinstusb()
 	}
 	syslinuxcfgout << syslinuxcfgtxt << endl;
 		syslinuxcfg.close();
+#endif
 		#ifdef Q_OS_UNIX
 		if (isext2)
 			QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
