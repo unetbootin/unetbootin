@@ -7,16 +7,21 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-04-29 04:24+0000
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-12-02 14:25+0000
+Last-Translator: Сергій Матрунчик (SkyMan) &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">Пристрій USB</translation>
     </message>
 </context>
 <context>
@@ -24,37 +29,37 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>Зліва направо</translation>
     </message>
 </context>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
@@ -71,7 +76,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2814"/>
         <location filename="unetbootin.cpp" line="3164"/>
         <source>Hard Disk</source>
-        <translation></translation>
+        <translation>Жорсткий диск</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="156"/>
@@ -91,7 +96,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2818"/>
         <location filename="unetbootin.cpp" line="3168"/>
         <source>USB Drive</source>
-        <translation></translation>
+        <translation>Пристрій USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="157"/>
@@ -102,7 +107,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="827"/>
         <location filename="unetbootin.cpp" line="2725"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="158"/>
@@ -113,78 +118,78 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="832"/>
         <location filename="unetbootin.cpp" line="2717"/>
         <source>Floppy</source>
-        <translation></translation>
+        <translation>Дискета</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="189"/>
         <location filename="unetbootin.cpp" line="459"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Super Grub Disk -  завантажувач, який може виконувати різноманітні дії по відновленню MBR та завантажувальних записів.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt;Для використання SGD його встановлення не вимагається, оскільки він призначений лише для запуску процесу завантаження.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; EeePCLinuxOS - дружній для користувача дистрибутив, оснований на PCLinuxOS та призначений для користування на EeePC.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; До початку встановлення переконайтесь, що встановлювальний носій не містить даних та відформатовний.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="218"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Ubuntu Eee - це не просто Ubuntu, оптимізована для Asus EeePC. Це операційна система, яка використовує інтерфейс Netbook Remix, в котрому перевага надається найбільш популярним програмам замість їх вільних аналогів (наприклад, Skype замість Ekiga).&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:/b&gt;До початку встановлення переконайтесь, що встановлювальний носій не містить даних та відформатовний.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="230"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Elive - оснований на Debian дистрибутив с віконним менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Live-версія дозволяє завантажитися в режимі Live, звідти ж можна завантажити встановлення системи. Встановлюється версія Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версія Stable&lt;/a&gt; . Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="239"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Kiwi Linux оснований на Ubuntu та призначений найперш за все для румунських, венгерських і англомовних користувачів.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; До початку встановлення переконайтесь, що встановлювальний носій не містить даних та відформатовний.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="250"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; gNewSense - це дистрибутив високої якості Linux, оснований на Ubuntu, якого було створено як повністю вільна операційна система, яка не містить пропрієтарного програмного забезпечення.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; До початку встановлення переконайтесь, що встановлювальний носій не містить даних та відформатовний.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="258"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; SliTaz - полегшений, орієнтований на настільні системи мікродистрибутив.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; У версії Live система цілком завантажується в оперативну пам’ять та запускається звідти, тому встановлення не обов’язкове. Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; xPUD - це полегшений дистрибутив, який має простий кіоскоподібний інтерфейс з веб-браузером та медіапрогравачем.&lt;br/&gt;&lt;b&gt;Прмітка щодо встановлення:&lt;/b&gt; Версія Live завантажується в оперативну пам’ять та запускається з неї.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>Ласкаво порсимо до &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Використання: &lt;ol&gt;&lt;li&gt;Оберіть дистрибутив операційної системи та версію для завантаження зі списку або вкажіть файли вручну нижче.&lt;/li&gt;&lt;li&gt;Оберіть тип встановлення та натисніть OK для початку процесу.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="281"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Arch Linux - полегшений дистрибутив, оптимізований для швидкої та гнучкої роботи.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Версія по замовчуванню дозволяє виконувати встановлення через Інтернет (FTP). Якщо вам необхідна версія LiveUSB, зверніться, будь-ласка, до опису FaunOS.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Дистрибутив BackTrack призначений для мережного аналізу та тестування на предмет захисту від несанкціонованого доступу.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt;Встановлення не є необхідним, оскільки BackTrack завантажується і працює в режимі Live.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; CentOS є безкоштовним аналогом Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Версія по замовчуванню доволяє виконувати встановлення як через Інтернет (FTP), так і з попередньо завантажених образів ISO.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; CloneZilla - це дистрибутив, який можна використовувати для резервного копіювання диску та роботи з дисковими образами.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; CloneZilla завантажується з встановленого носія та не потребує встановлення на жорсткий диск для використання.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Damn Small Linux - мінімізований дистрибутив, розроблений для дуже старих комп’ютерів.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt;У версії Live система завантажується в оперативну пам’ять та запускається звідти, тому встановлення не є необхідним.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="307"/>
@@ -350,145 +355,147 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1551"/>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Витягую стиснений iso-образ:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>Extracting files, please wait...</source>
-        <translation></translation>
+        <translation>Витягування файлів, будь-ласка, зачекайте...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Архів:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1633"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1634"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Витягнено:&lt;/b&gt; 0 of %1 файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1637"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1638"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1639"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Витягнено:&lt;/b&gt; %1 of %2 файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1981"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Завантаження файлів, будь-ласка, зачекайте...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1982"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1983"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1984"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Завантажено:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2061"/>
         <location filename="unetbootin.cpp" line="2076"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Завантажено:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2152"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Пошук в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2156"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 співпадає з &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2341"/>
         <source>%1 not found</source>
-        <translation></translation>
+        <translation>%1 не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2342"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>%1 не знайдено. Це необхідно для режиму встановлення %2.
+Встановіть пакунок &quot;%3&quot; чи його еквівалент дистрибутиві, який використовується.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Поточний)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Виконано)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Налаштування grub2 на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Налаштування grldr на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Налаштування grub на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Встановлення syslinux на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Встановлення extlinux в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Синхронізація файлової системи</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3166"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation>Після перезавантаження оберіть </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3170"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Після перезавантаження оберіть в BIOS опцію завантажження з USB.%1
+Перезавантажити зараз?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
@@ -508,7 +515,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="517"/>
         <location filename="unetbootin.cpp" line="529"/>
         <source>either</source>
-        <translation></translation>
+        <translation>будь-який</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="823"/>
@@ -518,62 +525,62 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="841"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Відкрити файл ядра</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="849"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Відкрити файл Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="857"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Відкрити файл конфігурації завантажувача</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="879"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>Вставте USB флешку</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="880"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>Не знайдено ні одного USB-накопичувача. Якщо ви його вже підключили, спробуйте переформатувати його в FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="895"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 не примонований</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="896"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Спочатку потрібно примонтувати USB-накопичувача %1. Більшість дистрибутивів зроблять його автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="911"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Оберіть дистрибутив</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="912"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Ви повинні обрати дистрибутив для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="926"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Оберіть файл образу диску</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="927"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Ви повинні обрати файл образу диску для завантаження.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="941"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Оберіть ядро та/чи файл initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="942"/>

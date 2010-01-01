@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-28 17:41-0400\n"
+"POT-Creation-Date: 2010-01-01 01:42-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: lconvert 4.5.2\n"
 
+#: distrolst.cpp:120
+#, fuzzy
+msgid "USB Drive"
+msgstr ""
+
 #. ts-context QObject
 #: main.cpp:266
 #, fuzzy
@@ -19,7 +24,7 @@ msgid "LeftToRight"
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:173
+#: distrolst.cpp:174
 #, fuzzy
 msgid ""
 "\n"
@@ -31,7 +36,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:315
 #, fuzzy
 msgid ""
 "\n"
@@ -43,7 +48,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:320
+#: distrolst.cpp:321
 #, fuzzy
 msgid ""
 "\n"
@@ -55,7 +60,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:571
+#: distrolst.cpp:572
 #, fuzzy
 msgid ""
 "\n"
@@ -67,7 +72,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:577
+#: distrolst.cpp:578
 #, fuzzy
 msgid ""
 "\n"

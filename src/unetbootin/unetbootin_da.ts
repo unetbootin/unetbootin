@@ -13,20 +13,25 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-09-21 16:54+0000
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-12-24 11:24+0000
 Last-Translator: linux-abc.dk &lt;Unknown&gt;
 Language-Team: Danish &lt;da@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Elive er en Debian-baseret distribution der bruger Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Installations Noter:&lt;/b&gt; Live versionen tillader booting i Live mode. Unstable versionen understøtter ikke installation på harddisk, skønt  &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable versionen&lt;/a&gt; (ikke gratis download) gør.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">USB-drev</translation>
     </message>
 </context>
 <context>
@@ -40,35 +45,35 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *VIGTIGT* Efter genstart,ignorer alle fejlmeddelelser og vælg &apos;tilbage&apos; hvis du bliver spurgt efter CD, gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, skriv &apos;mirrors.kernel.org&apos; når du bliver spurgt efter server, og skriv &apos;/centos/%1/os/%2&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *VIGTIGT* Efter genstart,ignorer alle fejlmeddelelser og vælg &apos;tilbage&apos; hvis du bliver spurgt efter CD, gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, skriv &apos;download.fedora.redhat.com&apos; når du bliver spurgt efter server, og skriv &apos;/pub/fedora/linux/development/%1/os&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *VIGTIGT* Efter genstart,ignorer alle fejlmeddelelser og vælg &apos;tilbage&apos; hvis du bliver spurgt efter CD, gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, skriv &apos;download.fedora.redhat.com&apos; når du bliver spurgt efter server, og skriv &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VIGTIGT* Efter genstart,ignorer alle fejlmeddelelser og vælg &apos;tilbage&apos; hvis du bliver spurgt efter CD, gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, skriv &apos;download.opensuse.org&apos; når du bliver spurgt efter server, og skriv &apos;/factory/repo/oss&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -468,27 +473,27 @@ Installer &quot;%3&quot; pakken eller den tilsvarende for din distribution.</tra
     <message>
         <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Konfigurerer grub2 on %1</translation>
+        <translation>Konfigurerer grub2 på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
-        <translation>Konfigurerer grldr on %1</translation>
+        <translation>Konfigurerer grldr på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
-        <translation>Konfigurerer grub on %1</translation>
+        <translation>Konfigurerer grub på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
-        <translation>Installerer syslinux to %1</translation>
+        <translation>Installerer syslinux på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
-        <translation>Installerer extlinux to %1</translation>
+        <translation>Installerer extlinux på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3154"/>
@@ -530,17 +535,17 @@ Genstart nu?</translation>
     <message>
         <location filename="unetbootin.cpp" line="823"/>
         <source>Open Disk Image File</source>
-        <translation>Åben Disk Image File</translation>
+        <translation>Åben Disk Image Fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="841"/>
         <source>Open Kernel File</source>
-        <translation>Åben Kernel File</translation>
+        <translation>Åben Kernel Fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="849"/>
         <source>Open Initrd File</source>
-        <translation>Åben Initrd File</translation>
+        <translation>Åben Initrd Fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="857"/>
@@ -843,12 +848,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="661"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>Udpakker og kopierer filer</translation>
+        <translation>2. Udpakker og kopierer filer</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>1. Downloading Files</source>
-        <translation>Downloader filer</translation>
+        <translation>1. Downloader filer</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="699"/>

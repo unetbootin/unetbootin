@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-07-03 01:53+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-12-29 10:52+0000
+Last-Translator: Lorenzo Baracchi &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -169,6 +169,11 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live. La versione Unstable (Instabile) non supporta l&apos;installazione su disco rigido; tuttavia la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt; (non scaricabile liberamente) può effettuarla.</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -181,35 +186,35 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «mirrors.kernel.org» come server e inserire «/centos/%1/os/%2» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come server e inserire «/pub/fedora/linux/development/%1/os» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come server e inserire «/pub/fedora/linux/releases/%1/Fedora/%2/os» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come server e inserire «/factory/repo/oss» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -360,7 +365,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive é una distribuzione basata su Debian che usa Enlightenment come window manager.&lt;br&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt;La versione live consente di avviare in modalitá live, da dove l&apos;opzione di installazione puó opzionalmente essere lanciata. Questo installa la versione instabile, non &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;quella stabile&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -385,7 +390,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="353"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD trova e rimuove malware dalla tua installazione di Windows.&lt;br/&gt;&lt;b&gt;Note d&apos;installazione:&lt;/b&gt; La versione Live permette di fare il boot in modalità Live, dalla quale può essere lanciata la scansione di malware.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="358"/>
@@ -506,7 +511,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="1551"/>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Estrazione file iso compresso in corso:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -551,7 +556,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="1981"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Scaricamento file in corso, attendere prego...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1982"/>
@@ -599,42 +604,42 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Corrente)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Fatto)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Configuro grub2 su %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Configuro grldr su %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Configuro grub su %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Installo syslinux su %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Installo extlinux su %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Sincronizzando filesystems</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3166"/>
@@ -780,7 +785,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1114"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 ha finito lo spazio. Uscire dall&apos;installazione?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1115"/>

@@ -13,16 +13,21 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-09-20 22:03+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-11-08 03:11+0000
+Last-Translator: zahris &lt;Unknown&gt;
 Language-Team: Indonesian &lt;id@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">Kotak pemuat USB</translation>
     </message>
 </context>
 <context>
@@ -36,35 +41,35 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;mirror.kernel.org&apos; ketika diminta memasukkan server lalu masukkan &apos;/centos/%1/os/%2&apos; untuk isian foldernya.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.fedora.redhat.com&apos; ketika diminta memasukkan server lalu masukkan &apos;/pub/fedora/linux/development/%1/os&apos; untuk isian foldernya.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.fedora.redhat.com&apos; ketika diminta memasukkan server lalu masukkan &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; untuk isian foldernya.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.opensuse.org&apos; ketika diminta memasukkan server lalu masukkan &apos;/factory/repo/oss&apos; untuk isian foldernya.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -135,12 +140,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="210"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Halaman Muka:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Keterangan:&lt;/b&gt; EeePCLinuxOS adalah sebuah distribusi berbasis PCLinuxOS yg user-friendly untuk EeePC.&lt;br/&gt;&lt;b&gt;Catatan Install:&lt;/b&gt; Pastikan media installasi kosong dan terformat sebelum meneruskan instalasi.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="218"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Halaman Muka:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee Bukan hanya Ubuntu yg dioptimalkan untuk PC Asus Eee. Ini adalah sebuah sistem operasi, menggukan antarmuka Netbook Remix, yang memilih perangkat lunak terbaik dibandingkan alternatif open source (contoh, Skype daripada Ekiga).&lt;br/&gt;&lt;b&gt;Catatan Install:&lt;/b&gt; Pastikan media installasi kosong dan terformat sebelum meneruskan instalasi.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="230"/>

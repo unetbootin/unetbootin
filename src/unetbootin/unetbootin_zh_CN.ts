@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-10-27 23:34+0000
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-10-29 01:13+0000
 Last-Translator: Qianqian Fang &lt;fangqq@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -174,6 +174,11 @@ Reboot now?</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">软盘</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">USB设备</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -186,35 +191,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;mirrors.kernel.org&apos;，当询问文件夹时输入&apos;/centos/%1/os/%2&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/development/%1/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *重要提示* 重启动后，不要理会任何错误提示信息。如果提示要求插入CD光盘，请选择“返回”，然后回到主菜单，选择“开始安装”，安装源选“网络”，协议选“HTTP”。当提示指定服务器时，输入“download.opensuse.org”；询问文件夹位置时，再输入“/factory/repo/oss”即可。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

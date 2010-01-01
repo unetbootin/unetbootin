@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-10-11 15:48+0000
-Last-Translator: abdoumoh &lt;Unknown&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-11-01 15:48+0000
+Last-Translator: argos &lt;argos66@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -169,6 +169,11 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -181,31 +186,31 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
@@ -546,7 +551,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="1981"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Téléchargement des fichiers, veuillez patienter...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1982"/>
@@ -594,37 +599,37 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="2630"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(En cours)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2631"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Terminé)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2893"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Configuration de grub2 sur %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2905"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Configuration de grldr sur %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2933"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Configuration de grub sur %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3055"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Installation de syslinux sur %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3090"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Installation de extlinux sur %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3154"/>
@@ -776,12 +781,12 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1114"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>espace disque insuffisant sur %1, annuler l&apos;installation ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1115"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Il n&apos;y a plus d&apos;espace disponible dans le répertoire %1. Pressez &apos;Oui&apos; pour annuler l&apos;installation, &apos;Non&apos; pour ignorer cette erreur et continuer malgré tout l&apos;installation, ou &apos;Non à tout&apos; pour ignorer tout les messages d&apos;erreur liés à un manque d&apos;espace disque.</translation>
     </message>
 </context>
 <context>

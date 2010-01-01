@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-10-11 06:04+0000
-Last-Translator: Sergey Sedov &lt;Unknown&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-11-28 19:16+0000
+Last-Translator: Alexey Sannikov &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -147,6 +147,11 @@ Reboot now?</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">Флоппи-диск</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -159,39 +164,39 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
-*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;mirrors.kernel.org&apos; для имени сервера, и  &apos;/centos/%1/os/%2&apos; - для имени каталога.</translation>
+*ВАЖНО* После перезагрузки проигнорируйте любые сообщения об ошибках и вернитесь обратно, если будет затребован CD-диск. В главном меню выберите пункт &apos;Start Installation&apos;, в качестве источника укажите &apos;Network&apos; с протоколом &apos;HTTP&apos;. На запрос имени сервера введите &apos;mirrors.kernel.org&apos;, а имени каталога - &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.fedora.redhat.com&apos; для имени сервера, и  &apos;/pub/fedora/linux/development/%1/os&apos; - для имени каталога.</translation>
+*ВАЖНО* После перезагрузки проигнорируйте любые сообщения об ошибках и вернитесь обратно, если будет затребован CD-диск. В главном меню выберите пункт &apos;Start Installation&apos;, в качестве источника укажите &apos;Network&apos; с протоколом &apos;HTTP&apos;. На запрос имени сервера введите &apos;download.fedora.redhat.com&apos;, а имени каталога - &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.fedora.redhat.com&apos; для имени сервера, и  &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; - для имени каталога.</translation>
+*ВАЖНО* После перезагрузки проигнорируйте любые сообщения об ошибках и вернитесь обратно, если будет затребован CD-диск. В главном меню выберите пункт &apos;Start Installation&apos;, в качестве источника укажите &apos;Network&apos; с протоколом &apos;HTTP&apos;. На запрос имени сервера введите &apos;download.fedora.redhat.com&apos;, а имени каталога - &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск, затем в главном меню выберите пункт &apos;Начать установку&apos;, отметьте &apos;Сеть&apos; в качестве источника, выберите &apos;HTTP&apos; протокол, укажите &apos;download.opensuse.org&apos; как адрес сервера и введите &apos;/factory/repo/oss&apos;, когда будет задан вопрос о папке.</translation>
+*ВАЖНО* После перезагрузки проигнорируйте любые сообщения об ошибках и вернитесь обратно, если будет затребован CD-диск. В главном меню выберите пункт &apos;Start Installation&apos;, в качестве источника укажите &apos;Network&apos; с протоколом &apos;HTTP&apos;. На запрос имени сервера введите &apos;download.opensuse.org&apos;, а имени каталога - &apos;/factory/repo/oss&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*ВАЖНО* После перезагрузки не обращайте внимания на любые сообщения об ошибках, возвратитесь обратно, если будет затребован CD-диск. Затем выберите &apos;Start Installation&apos; в главном меню. Выберите &apos;Network&apos; в качестве источника, укажите &apos;HTTP&apos; в качестве протокола, введите  &apos;download.opensuse.org&apos; для имени сервера, и  &apos;/distribution/%1/repo/oss&apos; - для имени каталога.</translation>
+*ВАЖНО* После перезагрузки проигнорируйте любые сообщения об ошибках и вернитесь обратно, если будет затребован CD-диск. В главном меню выберите пункт &apos;Start Installation&apos;, в качестве источника укажите &apos;Network&apos; с протоколом &apos;HTTP&apos;. На запрос имени сервера введите &apos;download.opensuse.org&apos;, а имени каталога - &apos;/distribution/%1/repo/oss&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="155"/>
@@ -253,97 +258,97 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="189"/>
         <location filename="unetbootin.cpp" line="459"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Загрузчик Super Grub Disk, который также может выполнять различные действия по восстановлению MBR и загрузочных записей.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Установка SGD не требуется, поскольку он предназначен только для запуска процесса загрузки.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Super Grub Disk - это загрузчик, который может выполнять различные действия по восстановлению MBR и загрузочных записей.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Для использования SGD его установка не требуется, поскольку он предназначен только для запуска процесса загрузки.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; EeePCLinuxOS - ориентированный на пользователя дистрибутив, основанный на PCLinuxOS и предназначенный для использования на EeePC.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; EeePCLinuxOS - дружественный к пользователю дистрибутив, основанный на PCLinuxOS и предназначенный для использования на EeePC.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="218"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Официальный сайт:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Ubuntu Eee - это не только Ubuntu, оптимизированная для Asus Eee PC. Это операционная система, использующая Netbook Remix интерфейс, в котором отдается предпочтение наиболее популярным программам вместо свободных аналогов (например, Skype вместо Ekiga).&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Убедитесь, что накопитель для установки пуст и был отформатирован перед установкой.</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Ubuntu Eee - это не просто Ubuntu, оптимизированная для Asus EeePC. Это операционная система, использующая интерфейс Netbook Remix, в котором предпочтение отдается наиболее популярным программам вместо их свободных аналогов (например, Skype вместо Ekiga).&lt;br/&gt;&lt;b&gt;Примечания к установке:/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="230"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; основанный на Debian дистрибутив с установленным в качестве оконного менеджера Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с оконным менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live, оттуда же можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="239"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Kiwi Linux основан на Ubuntu и предназначен прежде всего для румынских, болгарских и англоговорящих пользователей.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Kiwi Linux основан на Ubuntu и предназначен прежде всего для румынских, венгерских и англоговорящих пользователей.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="250"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; gNewSense - это высококачественный дистрибутив Linux, основанный на Ubuntu, который был создан для того, чтобы получить полностью свободную операционную систему, не содержащую проприетарное программное обеспечение.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; gNewSense - это высококачественный дистрибутив Linux, основанный на Ubuntu, который был создан как полностью свободная операционная система, не содержащая проприетарного программного обеспечения.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; До начала установки убедитесь, что установочный носитель не содержит данных и отформатирован.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="258"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; SliTaz - облегченный, ориентированный на настольные системы, микродистрибутив..&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; В версии Live система целиком загружается в оперативную память и , затем,  запускается оттуда, поэтому установка не обязательна. Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; SliTaz - облегченный, ориентированный на настольные системы микродистрибутив.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; В версии Live система целиком загружается в оперативную память и запускается оттуда, поэтому установка не обязательна. Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; xPUD это легковесный дистрибутив, представляющий простой киоско-подобный интерфейс с вэб браузером и медиа проигрывателем.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live загружает всю систему в оперативную память и запускается из памяти.</translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; xPUD - это облегченный дистрибутив, имеющий простой киоско-подобный интерфейс с веб-браузером и медиапроигрывателем.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live загружается в оперативную память и запускается из нее.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Добро пожаловать в &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Использование: &lt;ol&gt;&lt;li&gt;Выберите дистрибутив операционной системы и его версию для загрузки из списка, или укажите файлы вручную ниже.&lt;/li&gt;&lt;li&gt;Выберите тип установки и нажмите OK для начала установки.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Добро пожаловать в &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Использование: &lt;ol&gt;&lt;li&gt;Выберите дистрибутив операционной системы и версию для загрузки из списка либо укажите файлы вручную ниже.&lt;/li&gt;&lt;li&gt;Выберите тип установки и нажмите OK для начала процесса.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="281"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Arch Linux -  облегченный дистрибутив, оптимизированный для быстрой и гибкой работы.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия по умолчанию позволяет производить установку через Интернет (FTP). Если необходима версия LiveUSB, обратитесь к описанию FaunOS.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Arch Linux - облегченный дистрибутив, оптимизированный для быстрой и гибкой работы.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия по умолчанию позволяет производить установку через Интернет (FTP). Если вам необходима версия LiveUSB, обратитесь к описанию FaunOS.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Дистрибутив BackTrack предназначен для сетевого анализа и тестирования на защиту от несанкционированного доступа.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Установка не требуется, поскольку BackTrack загружается и работает в режиме Live mode.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Дистрибутив BackTrack предназначен для сетевого анализа и тестирования на защиту от несанкционированного доступа.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Установка не требуется, поскольку BackTrack загружается и работает в Live mode.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; CentOS является бесплатным аналогом  Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия по умолчанию позволяет производить установку как через Интернет (FTP), так и с предварительно загруженных образов ISO.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; CentOS является бесплатным аналогом Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия по умолчанию позволяет производить установку как через Интернет (FTP), так и из предварительно загруженных образов ISO.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; CloneZilla -  это дистрибутив, который можно использовать для резервного сохранения диска и снятия образа диска.&lt;br/&gt;&lt;b&gt;Примечание:&lt;/b&gt; CloneZilla загружается с установленного носителя и не требует установки на жёсткий диск для использования.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; CloneZilla - это дистрибутив, который можно использовать для резервного копирования диска и работы с дисковыми образами.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; CloneZilla загружается с установленного носителя и не требует установки на жёсткий диск для использования.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Damn Small Linux - минималистский дистрибутив, разработанный для более ранних компьютеров.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;В версии Live система целиком загружается в оперативную память и , затем,  запускается оттуда, поэтому установка не обязательна.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Damn Small Linux - минималистский дистрибутив, разработанный для очень старых компьютеров.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;В версии Live система загружается в оперативную память и запускается оттуда, поэтому установка не требуется.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="307"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Debian  - разрабатываемый сообществом дистрибутив Linux, поддерживающий множество архитектур и имеющий большое хранилище пакетов.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Debian - Linux-дистрибутив, разрабатываемый сообществом и поддерживающий множество архитектур. Имеет огромное хранилище пакетов.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="313"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Dreamlinux - ориентированный на пользователя дистрибутив, основанный на Debian.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;   Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Dreamlinux - ориентированный на пользователя дистрибутив, основанный на Debian.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="318"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Dr.Web AntiVirus это антивирусный пакет для восстановления системы которая сломана вредоносными программами.&lt;br/&gt;&lt;b&gt;Замечания по установке:&lt;/b&gt; Версия Live учитывает загрузку в режиме Live, позволяя начать сканирование вредоносных программ.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Dr.Web AntiVirus - это антивирусный пакет для восстановления системы, которая повреждена вредоносными программами.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live позволяет загрузиться в режиме Live и начать сканирование вредоносных программ.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - это дистрибутив, который основан на Debian c рабочим столом Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Версия Live позволяет загружаться в  Live (пробном) режиме из которого может быть запущен установщик на жёсткий диск.  Внимание! Будет установлена нестабильная версия, в отличии от &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;стабильной, которая доступна здесь.&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - это дистрибутив, основанный на Debian, c рабочим столом Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live позволяет загружаться в Live (пробном) режиме, из которого может быть запущена установка на жёсткий диск. Внимание! Будет установлена нестабильная версия, в отличии от стабильной, которая доступна &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;здесь&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Fedora - поддерживаемый сообществом Red Hat дистрибутив, демонстрирующий новейшее свободное программное обеспечение.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;  Live версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку через Интернет (FTP) или через предварительно загруженные  образы ISO.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Fedora - поддерживаемый сообществом Red Hat дистрибутив, демонстрирующий новейшее свободное программное обеспечение.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку через Интернет (FTP) или из предварительно загруженных образов ISO.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="338"/>
@@ -934,17 +939,17 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;При использовании этой  &lt;span style=&quot; font-weight:600;&quot;&gt;потенциально опасной&lt;/span&gt; опции диск будет отформатирован и вся информация на нем будет потеряна. В этом нет необходимости, если используется USB-накопитель.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;При использовании этой &lt;span style=&quot; font-weight:600;&quot;&gt;потенциально опасной&lt;/span&gt; опции выбранный диск будет отформатирован и вся информация на нем будет потеряна. Если вы используете USB-накопитель, применять ее нет необходимости.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation>Форматировать диск (удаляет все данные)</translation>
+        <translation>Форматировать диск (с удалением всех данных)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="635"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Установка завершена, Перезагрузка</translation>
+        <translation>4. Установка завершена. Перезагрузка</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="648"/>
@@ -987,22 +992,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
-        <translation>Запуск возможен только при правах суперпользователя</translation>
+        <translation>Запуск возможен только с правами суперпользователя</translation>
     </message>
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>%2 должно запускаться с правами суперпользователя. Перезапустите приложение, используя:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;или:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 должно быть запущено с правами суперпользователя. Перезапустите приложение, используя&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;или&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation>%1 Удаление</translation>
+        <translation>Удаление %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation>%1 установлено на данный момент. Удалить текущую версию?</translation>
+        <translation>Система %1 уже установлена. Удалить текущую версию?</translation>
     </message>
 </context>
 </TS>

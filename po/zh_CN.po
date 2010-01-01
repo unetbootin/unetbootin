@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-20 13:25-0400\n"
-"PO-Revision-Date: 2009-10-27 23:34+0000\n"
+"POT-Creation-Date: 2009-10-28 17:41-0400\n"
+"PO-Revision-Date: 2009-10-29 01:13+0000\n"
 "Last-Translator: Qianqian Fang <fangqq@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2009-10-28 21:40+0000\n"
+"X-Launchpad-Export-Date: 2010-01-01 06:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -93,29 +93,29 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:606
-#: unetbootin.cpp:673 unetbootin.cpp:766 unetbootin.cpp:2614
-#: unetbootin.cpp:2627 unetbootin.cpp:2766 unetbootin.cpp:3116
+#: unetbootin.cpp:705 unetbootin.cpp:798 unetbootin.cpp:2648
+#: unetbootin.cpp:2661 unetbootin.cpp:2814 unetbootin.cpp:3164
 msgid "Hard Disk"
 msgstr "硬盘"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
-#: unetbootin.cpp:608 unetbootin.cpp:677 unetbootin.cpp:771 unetbootin.cpp:843
-#: unetbootin.cpp:859 unetbootin.cpp:1109 unetbootin.cpp:1965
-#: unetbootin.cpp:2007 unetbootin.cpp:2618 unetbootin.cpp:2643
-#: unetbootin.cpp:2770 unetbootin.cpp:3120
+#: unetbootin.cpp:608 unetbootin.cpp:709 unetbootin.cpp:803 unetbootin.cpp:875
+#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1997
+#: unetbootin.cpp:2039 unetbootin.cpp:2652 unetbootin.cpp:2677
+#: unetbootin.cpp:2818 unetbootin.cpp:3168
 msgid "USB Drive"
 msgstr "USB设备"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:574
-#: unetbootin.cpp:794 unetbootin.cpp:795 unetbootin.cpp:2688
+#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2725
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:579
-#: unetbootin.cpp:799 unetbootin.cpp:800 unetbootin.cpp:2683
+#: unetbootin.cpp:831 unetbootin.cpp:832 unetbootin.cpp:2717
 msgid "Floppy"
 msgstr "软盘"
 
@@ -829,92 +829,92 @@ msgstr ""
 "Ubuntu 衍生品。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1519 unetbootin.cpp:1541
+#: unetbootin.cpp:1551 unetbootin.cpp:1573
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>解压缩iso镜像文件：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1598
+#: unetbootin.cpp:1630
 msgid "Extracting files, please wait..."
 msgstr "正在抽取文件，请稍等……"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1599
+#: unetbootin.cpp:1631
 msgid "<b>Archive:</b> %1"
 msgstr "<b>存档：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1600
+#: unetbootin.cpp:1632
 msgid "<b>Source:</b>"
 msgstr "<b>来源：</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1601
+#: unetbootin.cpp:1633
 msgid "<b>Destination:</b>"
 msgstr "<b>目标：</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1602
+#: unetbootin.cpp:1634
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>抽取：</b>0 of %1 files"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1605
+#: unetbootin.cpp:1637
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>来源：</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1606
+#: unetbootin.cpp:1638
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>目标：</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1607
+#: unetbootin.cpp:1639
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>抽取：</b> %1 of %2 files"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1949
+#: unetbootin.cpp:1981
 msgid "Downloading files, please wait..."
 msgstr "正在下载文件，请稍候……"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1950
+#: unetbootin.cpp:1982
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>来源：</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1951
+#: unetbootin.cpp:1983
 msgid "<b>Destination:</b> %1"
 msgstr "<b>目标：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1952
+#: unetbootin.cpp:1984
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>下载：</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2029 unetbootin.cpp:2044
+#: unetbootin.cpp:2061 unetbootin.cpp:2076
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>已下载：</b> %1 / %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2120
+#: unetbootin.cpp:2152
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "正在搜索 <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2124
+#: unetbootin.cpp:2156
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 matches in <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2309
+#: unetbootin.cpp:2341
 msgid "%1 not found"
 msgstr "%1 没有找到"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2310
+#: unetbootin.cpp:2342
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -923,52 +923,52 @@ msgstr ""
 "安装 “ %3 ” 包或者你的发行版本的等效版本。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2597
+#: unetbootin.cpp:2630
 msgid "(Current)"
 msgstr "(处理中)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2598
+#: unetbootin.cpp:2631
 msgid "(Done)"
 msgstr "(完成)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2845
+#: unetbootin.cpp:2893
 msgid "Configuring grub2 on %1"
 msgstr "在 %1 上配置 grub2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2857
+#: unetbootin.cpp:2905
 msgid "Configuring grldr on %1"
 msgstr "在 %1 上配置 grldr"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2885
+#: unetbootin.cpp:2933
 msgid "Configuring grub on %1"
 msgstr "在 %1 上配置 grub"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3007
+#: unetbootin.cpp:3055
 msgid "Installing syslinux to %1"
 msgstr "安装 syslinux 到 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3042
+#: unetbootin.cpp:3090
 msgid "Installing extlinux to %1"
 msgstr "安装 extlinux 到 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3106
+#: unetbootin.cpp:3154
 msgid "Syncing filesystems"
 msgstr "同步文件系统"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3118
+#: unetbootin.cpp:3166
 msgid "After rebooting, select the "
 msgstr "重启动后，请选择 "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3122
+#: unetbootin.cpp:3170
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -1011,116 +1011,116 @@ msgid "either"
 msgstr "两者任选其一"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:791
+#: unetbootin.cpp:823
 msgid "Open Disk Image File"
 msgstr "打开磁盘镜像文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:809
+#: unetbootin.cpp:841
 msgid "Open Kernel File"
 msgstr "打开内核文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:817
+#: unetbootin.cpp:849
 msgid "Open Initrd File"
 msgstr "打开 Initrd 文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:825
+#: unetbootin.cpp:857
 msgid "Open Bootloader Config File"
 msgstr "打开引导载入配置文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:847
+#: unetbootin.cpp:879
 msgid "Insert a USB flash drive"
 msgstr "插入USB闪存驱动器"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:848
+#: unetbootin.cpp:880
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr "没有发现USB闪存驱动器。如果你插入USB驱动器，尝试重新格式化为FAT32格式。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:863
+#: unetbootin.cpp:895
 msgid "%1 not mounted"
 msgstr "%1 没有挂载"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:864
+#: unetbootin.cpp:896
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr "你必须首先挂载USB驱动器 %1 作为挂载点。大部分发行版本将在你移除并且重新插入USB驱动器后自动执行该操作。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:879
+#: unetbootin.cpp:911
 msgid "Select a distro"
 msgstr "选择一个发行版本"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:880
+#: unetbootin.cpp:912
 msgid "You must select a distribution to load."
 msgstr "你必须选择加载一个发行版本。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:894
+#: unetbootin.cpp:926
 msgid "Select a disk image file"
 msgstr "选择一个磁盘镜像文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:895
+#: unetbootin.cpp:927
 msgid "You must select a disk image file to load."
 msgstr "你必须选择加载一个磁盘镜像文件。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:909
+#: unetbootin.cpp:941
 msgid "Select a kernel and/or initrd file"
 msgstr "选择一个内核 和/或 initrd 文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:910
+#: unetbootin.cpp:942
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "你必须选择加载一个内核 和/或 initrd 文件。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:924
+#: unetbootin.cpp:956
 msgid "Diskimage file not found"
 msgstr "没有找到磁盘镜像文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:925
+#: unetbootin.cpp:957
 msgid "The specified diskimage file %1 does not exist."
 msgstr "指定的磁盘镜像文件 %1 不存在。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:939
+#: unetbootin.cpp:971
 msgid "Kernel file not found"
 msgstr "内核文件没有找到"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:940
+#: unetbootin.cpp:972
 msgid "The specified kernel file %1 does not exist."
 msgstr "指定内核文件 %1 不存在。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:954
+#: unetbootin.cpp:986
 msgid "Initrd file not found"
 msgstr "没有找到 Initrd 文件"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:955
+#: unetbootin.cpp:987
 msgid "The specified initrd file %1 does not exist."
 msgstr "指定 initrd 文件 %1 不存在。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1055
+#: unetbootin.cpp:1087
 msgid "%1 exists, overwrite?"
 msgstr "%1 已经存在，是否覆盖？"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1056
+#: unetbootin.cpp:1088
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -1130,12 +1130,12 @@ msgstr ""
 "如果不能确定，单击 'Yes to All'。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1082
+#: unetbootin.cpp:1114
 msgid "%1 is out of space, abort installation?"
 msgstr "%1 空间不够。放弃安装？"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1083
+#: unetbootin.cpp:1115
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -1381,12 +1381,12 @@ msgid "%1 has been uninstalled."
 msgstr "已经卸载 %1 。"
 
 #. ts-context uninstaller
-#: main.cpp:300
+#: main.cpp:318
 msgid "Must run as root"
 msgstr "必须以root的身份运行"
 
 #. ts-context uninstaller
-#: main.cpp:302
+#: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su -c '%1'</b>"
@@ -1395,12 +1395,12 @@ msgstr ""
 "'%1'</b>"
 
 #. ts-context uninstaller
-#: main.cpp:323
+#: main.cpp:342
 msgid "%1 Uninstaller"
 msgstr "卸载 %1"
 
 #. ts-context uninstaller
-#: main.cpp:324
+#: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr "%1 已经安装。是否移除现有的版本？"
 

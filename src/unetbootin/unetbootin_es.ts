@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-10-26 17:43+0000
-Last-Translator: Oscar Cerón Suárez &lt;OSCSOU@gmail.com&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-11-18 00:53+0000
+Last-Translator: Eduardo &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -438,6 +438,11 @@ Reboot now?</source>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">Unidad USB</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -450,35 +455,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como el origen, elija como protocolo: &quot;HTTP&quot;, escriba «mirrors.kernel.org» cuando le pregunten por un servidor, y ponga «/centos/%1/os%2» cuando le pregunten por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/development/%1/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/releases/%1/Fedora/%2/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.opensuse.org» cuando se le solicite un servidor, y escriba «/factory/repo/oss» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -629,7 +634,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sitio Web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una ditribución basada en Debian que incluye el administrador de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas sobre la instalación:&lt;/b&gt; La versión Live permite iniciar en modo Live, desde el cual se puede iniciar el instalador de manera opcional. De esta manera se instala la versión inestable, no la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>

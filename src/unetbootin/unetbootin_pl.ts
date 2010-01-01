@@ -13,16 +13,21 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-10-28 11:46+0000
-Last-Translator: Piotr Strębski &lt;strebski@o2.pl&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-12-11 00:42+0000
+Last-Translator: leffort &lt;Unknown&gt;
 Language-Team: Polish &lt;pl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">Napęd USB</translation>
     </message>
 </context>
 <context>
@@ -36,35 +41,35 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Uruchom instalację&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;mirrors.kernel.org&apos; przy pytaniu o serwer oraz wpisz &apos;/centos/%1/os/%2&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Uruchom instalację&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/development/%1/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Uruchom instalację&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.fedora.redhat.com&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *WAŻNE* Po restarcie zignoruj wszystkie komunikaty błędów i wybierz powrót jeśli pojawi się pytanie o płytę CD. Później przejdź do głównego menu, wybierz opcję &apos;Uruchom instalację&apos;, wybierz &apos;Sieć&apos; jako źródło, wybierz &apos;HTTP&apos; jako protokół, wpisz &apos;download.opensuse.org&apos;&apos; przy pytaniu o serwer oraz wpisz &apos;/factory/repo/oss&apos; gdy zostaniesz zapytany o katalog.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -155,7 +160,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="250"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; gNewSense jest wysokiej jakości dystrybucją GNU/Linux, rozbudowaną i ulepszoną w stosunku do Ubuntu, która jest całkowicie wolnym i darmowy systemem operacyjnym, wolnym kompletnie od własnościowego, zamkniętego kodu obecnego czy to w jądrze, czy też w drzewie pakietów.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Przed przystąpieniem do instalacji upewnij się, że partycja docelowa jest pusta i sformatowana.</translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; gNewSense jest wysokiej jakości dystrybucją GNU/Linux, rozbudowaną i ulepszoną w stosunku do Ubuntu, która jest całkowicie wolnym i darmowym systemem operacyjnym, wolnym kompletnie od własnościowego, zamkniętego kodu obecnego czy to w jądrze, czy też w drzewie pakietów.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Przed przystąpieniem do instalacji upewnij się, że partycja docelowa jest pusta i sformatowana.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="258"/>
@@ -240,122 +245,122 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="353"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; F-Secure Rescue CD wykrywa i usuwa złośliwe oprogramowanie z twojego Windowsa.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można przeprowadzić skanowanie pod kątem złośliwego oprogramowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="358"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Gentoo to elastyczna, oparta na kompilacji kodu z pakietów źródłowych, dystrybucja przewidziana dla zaawansowanych użytkowników.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, opcjonalnie, uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="368"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; gNewSense to, mająca poparcie FSF, dystrybucja oparta na Ubuntu, zawierająca tylko wolne oprogramowanie.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, opcjonalnie, uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="373"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Gujin to graficzny menedżer uruchamiania, który potrafi zainicjować rozruch z różnych typów partycji i plików.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Gujin, po prostu, się uruchamia i działa i instalacja nie jest konieczna by go używać.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="378"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Kaspersky Rescue Disk wykrywa i usuwa złośliwe oprogramowanie z twojej instalacji Windows.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można przeprowadzić skanowanie pod kątem złośliwego oprogramowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="383"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Kubuntu to oficjalna odmiana Ubuntu z KDE jako środowiskiem graficznym.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, opcjonalnie, uruchomić instalatora. Wersja NetInstall pozwala na instalację przez FTP i umożliwia instalację Xubuntu i innych oficjalnych odmian Ubuntu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="388"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Linux Mint to przyjazna użytkownikowi, oparta na Ubuntu, dystrybucja, która zawiera domyślnie dodatkowe, własnościowe kodeki i inne oprogramowanie.&lt;br/&gt;&lt;b&gt;Uwagi instalacyjne:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, opcjonalnie, uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="393"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona internetowa:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Mandriva to przyjazna użytkownikowi dystrybucja, wcześniej znana jako Mandrake Linux.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, opcjonalnie, uruchomić instalatora. Wersja NetInstall umożliwia instalację przez Internet (FTP) lub z uprzednio pobranych&lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;Obrazy iso wersji &quot;Free&quot;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="399"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; MEPIS jest dystrybucją opartą na Debianie. SimplyMEPIS to przyjazna użytkownikowi wersja z KDE, natomiast AntiX to lekka dystrybucja dla starszych komputerów.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; MEPIS-a można uruchomić w trybie live, w którym można, opcjonalnie, uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="404"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; NetBSD to uniksopodobny system operacyjny, który koncentruje się na przenośności.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt;Wersja domyślna umożliwia zarówno instalację przez Internet (FTP), jak również z uprzednio pobranych plików ISO.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="409"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Offline NT Password and Registry Editor to narzędzie do resetowania hasła Windowsa oraz edytowania rejestru w Windowsach wersji od 2000 do Visty.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; NTPasswd uruchamia się w trybie live, bez konieczności instalacji.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="414"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; OpenSUSE to łatwa w użyciu dystrybucja, sponsorowana przez firmę  Novell.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersję domyślną można zainstalować bądź przez internet (FTP), bądź z uprzednio pobranych plików instalacyjnych ISO.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="419"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Ophcrack służy do łamania haseł Windowsa.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Ophcrack działa w trybie live; aby móc z niego korzystać nie jest konieczna instalacja.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="424"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Parted Magic składa się z menedżera partycji GParted i innych narzędzi systemowych. Można za jego pomocą zmienić rozmiar, skopiować, utworzyć kopię zapasową lub w inny sposób manipulować partycją dysku.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Parted Magic działa w trybie live; aby móc z niego korzystać nie jest konieczna instalacja..</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="429"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; PCLinuxOS to łatwa w użyciu, oparta na Mandrivie, dystrybucja.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live działa w trybie bezinstalacyjnym, w którym można uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="434"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Puppy Linux to lekka dystrybucja przeznaczona dla starszych komputerów.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live ładuje cały system do pamięci RAM i stamtąd się uruchamia, tak więc instalacja nie jest wymagana, choć opcjonalna.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="439"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Sabayon Linux to oparta na Gentoo dystrybucja Live DVD, która oprócz bazującego na plikach źródłowych systemu Portage, zawiera menedżera pakietów skompilowanych Entropy.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live umożliwia uruchomienie w trybie bezinstalacyjnym, w którym można uruchomić instalatora. Wersja LiteMCE zajmuje 2 GB, podczas gdy pełna wersja wymaga pamięci USB o pojemności 8 GB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="444"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Slax to oparta na Slackware dystrybucja ze środowiskiem graficznym KDE.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live uruchamia się w trybie bezinstalacyjnym, w którym jest możliwość uruchomienia instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="449"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; SliTaz to lekka, przeznaczona dla komputerów biurkowych mikrodystrybucja.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live ładuje cały system do pamięci RAM skąd się uruchamia, tak więc instalacja nie jest wymagana, choć opcjonalna.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="454"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Smart Boot Manager to program rozruchowy, który pozwala obejść niektóre problemy z uruchomieniem komputera, wynikające z ograniczeń i błędów BIOS-u.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; SBM po prostu się uruchamia i działa bez instalowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="464"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Super Ubuntu to nieoficjalna dystrybucja wywodząca się z Ubuntu, która domyślnie zawiera dodatkowe oprogramowanie. Zajmuje 2 GB na dysku USB.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="469"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; SystemRescueCD zawiera różne narzędzia do zarządzania partycjami, odzyskiwania danych i tworzenia kopii zapasowych.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; SystemRescueCD działa w trybie live - bez konieczności instalacji.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="474"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Ubuntu to łatwa w użytkowaniu, oparta na Debianie, dystrybucja. Obecnie jest najbardziej popularną desktopową dystrybucją Linuksa.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można uruchomić instalatora. Wersja NetInstall pozwala na instalację przez FTP oraz umożliwia zainstalowanie Kubuntu i innych, oficjalnych odmian Ubuntu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="484"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Xubuntu to oficjalna odmiana Ubuntu ze środowiskiem graficznym XFCE.&lt;br/&gt;&lt;b&gt; Notka instalacyjna:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, ewentualnie, uruchomić instalatora. Wersja NetInstall pozwala na instalację przez FTP i umożliwia instalację Kubuntu i innych oficjalnych odmian Ubuntu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1551"/>
@@ -437,7 +442,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="2156"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 pasuje w &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2341"/>
@@ -448,7 +453,8 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2342"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>%1 nie znaleziono. Wymagane, gdy tryb instalacji to: %2.
+Zainstaluj pakiet &quot;%3&quot; lub odpowiednik dla Twojej dystrybucji.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2630"/>
@@ -488,7 +494,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3154"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Synchronizacja systemów plików</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3166"/>
@@ -505,12 +511,12 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; xPUD jest lekką dystrybucją z prostym interfejsem typu &quot;kiosk&quot;, zawierającą przeglądarkę internetową i odtwarzacz multimediów.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja live ładuje się w całości do pamięci RAM i z niej się uruchamia.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="489"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Zenwalk jest opartą na Slackware dystrybucją zawierającą środowisko graficzne XFCE.&lt;br/&gt;&lt;b&gt;Notka instalacyjna:&lt;/b&gt; Wersja Live pozwala na uruchomienie w trybie bezinstalacyjnym, w którym można, ewentualnie, uruchomić instalatora.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="499"/>
@@ -560,7 +566,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="896"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Najpierw musisz zamontować dysk USB %1 w punkcie montowania. Większość dystrybucji robi to automatycznie po odłączeniu i podłączeniu dysku USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="911"/>
@@ -570,7 +576,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="912"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Wybierz dystrybucję do załadowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="926"/>
@@ -580,7 +586,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="927"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Wybierz plik obrazu dysku do załadowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="941"/>
@@ -590,7 +596,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="942"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Wybierz jądro i/lub plik initrd do załadowania.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="956"/>
@@ -600,7 +606,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="957"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Wskazany plik obrazu dysku %1 nie istnieje.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="971"/>
@@ -630,7 +636,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1088"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Plik  %1 już istnieje. Naciśnij &quot;Tak dla wszystkich&quot;, aby go nadpisać i nie być pytanym przy następnych. Naciśnij &quot;Tak&quot;, aby być każdorazowo pytanym o nadpisanie pliku. Naciśnij &quot;Nie&quot;, aby zachować istniejącą wersję pliku. W razie wątpliwości naciśnij &quot;Tak dla wszystkich&quot;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1114"/>
@@ -640,7 +646,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1115"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>W katalogu %1 zabrakło miejsca. Naciśnij &quot;Tak&quot;, aby przerwać instalację; &quot;Nie&quot;, aby zignorować ten błąd i spróbować kontynuować instalację; &quot;Nie dla wszystkich&quot;, aby zignorować wszystkie komunikaty o braku miejsca.</translation>
     </message>
 </context>
 <context>
@@ -679,7 +685,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.ui" line="90"/>
         <source>Custom</source>
-        <translation></translation>
+        <translation>Ręcznie</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="119"/>
@@ -782,7 +788,7 @@ Uruchomić ponownie komputer?</translation>
         <location filename="unetbootin.ui" line="432"/>
         <location filename="unetbootin.ui" line="445"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
+        <translation>Określ parametry i opcje dla jądra</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="448"/>
@@ -796,7 +802,11 @@ Uruchomić ponownie komputer?</translation>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ta &lt;span style=&quot; font-weight:600;&quot;&gt;potencjalnie niebezpieczna&lt;/span&gt; opcja pokaże wszystkie napędy komputera w liście rozwijalnej &quot;Napędy&quot;. Włącz ją tylko wtedy jeśli wiesz co robisz; jeśli użyjesz tej opcji, instalacja prawdopodobnie się nie powiedzie lub też doprowadzi do problemów z uruchomieniem systemu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="470"/>
@@ -810,12 +820,16 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ta &lt;span style=&quot; font-weight:600;&quot;&gt;potencjalnie niebezpieczna&lt;/span&gt; opcja sformatuje wybrany dysk, wymazując z niego wszystkie dane. Nie powinna być konieczna w przypadku standardowego dysku USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>Formatowanie dysku (wymazuje dane)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="635"/>
@@ -868,7 +882,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 musi zostać uruchomiony w trybie administratora. Zamknij go i ponownie włącz używając albo:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;albo:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

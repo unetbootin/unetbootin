@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-09-20 13:25-0400
-PO-Revision-Date: 2009-09-20 22:03+0000
-Last-Translator: kingu &lt;comradekingu@gmail.com&gt;
+POT-Creation-Date: 2009-10-28 17:41-0400
+PO-Revision-Date: 2009-11-27 18:47+0000
+Last-Translator: Tor Syversen &lt;sol-moe@online.no&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2009-10-28 21:40+0000
+X-Launchpad-Export-Date: 2010-01-01 06:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -169,6 +169,11 @@ Omstart nå?</translation>
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
+    <message>
+        <location filename="distrolst.cpp" line="120"/>
+        <source>USB Drive</source>
+        <translation type="unfinished">USB enhet</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -181,35 +186,35 @@ Omstart nå?</translation>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="174"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;mirrors.kernel.org&apos; når du blir spurt etter server, og skriv inn &apos;/centos/%1/os/%2&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="315"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.fedora.redhat.com&apos; når du blir spurt etter server, og skriv inn  &apos;/pub/fedora/linux/development/%1/os&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="321"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.fedora.redhat.com&apos; når du blir spurt etter server, og skriv inn   &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="572"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.opensuse.org&apos; når du blir spurt etter server, og skriv inn   &apos;/factory/repo/oss&apos;&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="578"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -360,7 +365,15 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt;
+&lt;a href=&quot;http://www.elivecd.org/&quot;&gt;&lt;/a&gt;
+&lt;br/&gt;
+&lt;b&gt;Beskrivelse:&lt;/b&gt; 
+Elive er en Debian-basert distribusjon, inneholdende Enlightenment window manager.&lt;br/&gt;
+&lt;b&gt;Installasjons informasjon:&lt;/b&gt; 
+Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, installasjon kjøres. Dette installerer den ustabile versjonen, ikke den stabile versjonen som du kan laste ned fra: 
+&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;
+&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -551,7 +564,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1981"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Laster ned, vennligst vent...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1982"/>
