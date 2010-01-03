@@ -665,8 +665,9 @@ Reštartovať teraz?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="56"/>
-        <source>Distribution</source>
-        <translation>Distribúcia</translation>
+        <source>&amp;Distribution</source>
+        <oldsource>Distribution</oldsource>
+        <translation type="unfinished">Distribúcia</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -675,8 +676,9 @@ Reštartovať teraz?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="75"/>
-        <source>Diskimage</source>
-        <translation>Obraz disku</translation>
+        <source>Disk&amp;image</source>
+        <oldsource>Diskimage</oldsource>
+        <translation type="unfinished">Obraz disku</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -685,8 +687,9 @@ Reštartovať teraz?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="91"/>
-        <source>Custom</source>
-        <translation>Vlastné</translation>
+        <source>&amp;Custom</source>
+        <oldsource>Custom</oldsource>
+        <translation type="unfinished">Vlastné</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -699,105 +702,127 @@ Reštartovať teraz?</translation>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="146"/>
-        <location filename="unetbootin.ui" line="162"/>
+        <location filename="unetbootin.ui" line="136"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="149"/>
+        <location filename="unetbootin.ui" line="168"/>
         <source>Select the target drive to install to</source>
         <translation>Vyberte zariadenie pre inštaláciu</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
         <source>Drive:</source>
-        <translation>Zariadenie:</translation>
+        <translation type="obsolete">Zariadenie:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="175"/>
-        <location filename="unetbootin.ui" line="191"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="181"/>
+        <location filename="unetbootin.ui" line="200"/>
         <source>Select the installation target type</source>
         <translation>Vyberte typ zariadenia pre inštaláciu:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="178"/>
-        <source>Type:</source>
-        <translation>Typ:</translation>
+        <location filename="unetbootin.ui" line="184"/>
+        <source>&amp;Type:</source>
+        <oldsource>Type:</oldsource>
+        <translation type="unfinished">Typ:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="204"/>
+        <location filename="unetbootin.ui" line="213"/>
         <source>Select the distribution version</source>
         <translation>Vyberte verziu distribúcie</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="266"/>
+        <location filename="unetbootin.ui" line="275"/>
         <source>Select disk image file</source>
         <translation>Vyberte súbor s obrazom disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="269"/>
-        <location filename="unetbootin.ui" line="337"/>
-        <location filename="unetbootin.ui" line="388"/>
-        <location filename="unetbootin.ui" line="420"/>
+        <location filename="unetbootin.ui" line="278"/>
+        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="282"/>
+        <location filename="unetbootin.ui" line="291"/>
         <source>Select the disk image type</source>
         <translation>Vyberte typ obrazu disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="295"/>
+        <location filename="unetbootin.ui" line="304"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Vyberte obraz disku, diskety alebo CD (ISO)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="318"/>
-        <location filename="unetbootin.ui" line="350"/>
+        <location filename="unetbootin.ui" line="327"/>
+        <location filename="unetbootin.ui" line="362"/>
         <source>Specify a kernel file to load</source>
         <translation>Vyberte súbor s jadrom</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="334"/>
+        <location filename="unetbootin.ui" line="346"/>
         <source>Select kernel file</source>
         <translation>Vyberte súbor s jadrom</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="353"/>
-        <source>Kernel:</source>
-        <translation>Jadro:</translation>
+        <location filename="unetbootin.ui" line="365"/>
+        <source>&amp;Kernel:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="366"/>
-        <location filename="unetbootin.ui" line="401"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <source>Init&amp;rd:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>&amp;Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Jadro:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="381"/>
+        <location filename="unetbootin.ui" line="419"/>
         <source>Specify an initrd file to load</source>
         <translation>Vyberte súbor s initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="369"/>
         <source>Initrd:</source>
-        <translation>Initrd:</translation>
+        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="385"/>
+        <location filename="unetbootin.ui" line="403"/>
         <source>Select initrd file</source>
         <translation>Vyberte súbor initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="417"/>
+        <location filename="unetbootin.ui" line="435"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Vyberte súbor syslinux.cfg alebo isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="433"/>
-        <location filename="unetbootin.ui" line="446"/>
+        <location filename="unetbootin.ui" line="451"/>
+        <location filename="unetbootin.ui" line="464"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Vyber parametrov a volieb jadra</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="449"/>
         <source>Options:</source>
-        <translation>Možnosti:</translation>
+        <translation type="obsolete">Možnosti:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="485"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -810,12 +835,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Táto &lt;span style=&quot; font-weight:600;&quot;&gt;potenciálne nebezpečná&lt;/span&gt; voľba zobrazí všetky zariadenia a sprístupní ich v rozbalovacej ponuke &quot;Zariadení&quot;. Povoľte len v prípade, že viete čo robíte - môže znemožniť vytvorenie spustiteľného disku alebo poškodiť existujúci systém.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="471"/>
-        <source>Show All Drives (Use with Care)</source>
-        <translation>Zobraziť všetky zariadenia (používajte opatrne)</translation>
+        <location filename="unetbootin.ui" line="492"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="484"/>
+        <location filename="unetbootin.ui" line="512"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Zobraziť všetky zariadenia (používajte opatrne)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="505"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -828,37 +862,36 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Táto &lt;span style=&quot; font-weight:600;&quot;&gt;potenciálne nebezpečná&lt;/span&gt; voľba zformátuje vybrané zariadenie a zničí všetky prítomné dáta. Ak používate bežný USB disk, nemusí to byť  nutné.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="491"/>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation>Formátovanie zariadenia (zničí všetky dáta)</translation>
+        <translation type="obsolete">Formátovanie zariadenia (zničí všetky dáta)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="636"/>
+        <location filename="unetbootin.ui" line="657"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. Inštalácia je úplná, reštart</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="649"/>
+        <location filename="unetbootin.ui" line="670"/>
         <source>3. Installing Bootloader</source>
         <translation>3. Inštalácia zavádzača</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="662"/>
+        <location filename="unetbootin.ui" line="683"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. Rozbaľovanie a kopírovanie súborov</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="675"/>
+        <location filename="unetbootin.ui" line="696"/>
         <source>1. Downloading Files</source>
         <translation>1. Sťahovanie súborov</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="700"/>
+        <location filename="unetbootin.ui" line="721"/>
         <source>Exit</source>
         <translation>Koniec</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="713"/>
+        <location filename="unetbootin.ui" line="734"/>
         <source>Reboot Now</source>
         <translation>Reštartovať teraz</translation>
     </message>

@@ -703,8 +703,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.ui" line="56"/>
-        <source>Distribution</source>
-        <translation>發行套件</translation>
+        <source>&amp;Distribution</source>
+        <oldsource>Distribution</oldsource>
+        <translation type="unfinished">發行套件</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -713,8 +714,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.ui" line="75"/>
-        <source>Diskimage</source>
-        <translation>磁碟映象檔</translation>
+        <source>Disk&amp;image</source>
+        <oldsource>Diskimage</oldsource>
+        <translation type="unfinished">磁碟映象檔</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -723,8 +725,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.ui" line="91"/>
-        <source>Custom</source>
-        <translation>自訂</translation>
+        <source>&amp;Custom</source>
+        <oldsource>Custom</oldsource>
+        <translation type="unfinished">自訂</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -737,105 +740,127 @@ Reboot now?</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="146"/>
-        <location filename="unetbootin.ui" line="162"/>
+        <location filename="unetbootin.ui" line="136"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="149"/>
+        <location filename="unetbootin.ui" line="168"/>
         <source>Select the target drive to install to</source>
         <translation>選擇安裝目標磁碟區</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
         <source>Drive:</source>
-        <translation>磁碟區</translation>
+        <translation type="obsolete">磁碟區</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="175"/>
-        <location filename="unetbootin.ui" line="191"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="181"/>
+        <location filename="unetbootin.ui" line="200"/>
         <source>Select the installation target type</source>
         <translation>選擇安裝目標形式</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="178"/>
-        <source>Type:</source>
-        <translation>形式：</translation>
+        <location filename="unetbootin.ui" line="184"/>
+        <source>&amp;Type:</source>
+        <oldsource>Type:</oldsource>
+        <translation type="unfinished">形式：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="204"/>
+        <location filename="unetbootin.ui" line="213"/>
         <source>Select the distribution version</source>
         <translation>選擇版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="266"/>
+        <location filename="unetbootin.ui" line="275"/>
         <source>Select disk image file</source>
         <translation>選擇映象檔</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="269"/>
-        <location filename="unetbootin.ui" line="337"/>
-        <location filename="unetbootin.ui" line="388"/>
-        <location filename="unetbootin.ui" line="420"/>
+        <location filename="unetbootin.ui" line="278"/>
+        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>...</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="282"/>
+        <location filename="unetbootin.ui" line="291"/>
         <source>Select the disk image type</source>
         <translation>選擇映像檔格式</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="295"/>
+        <location filename="unetbootin.ui" line="304"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>指定映像檔 (ISO)進行裝載</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="318"/>
-        <location filename="unetbootin.ui" line="350"/>
+        <location filename="unetbootin.ui" line="327"/>
+        <location filename="unetbootin.ui" line="362"/>
         <source>Specify a kernel file to load</source>
         <translation>指定 kernel 檔案進行裝載</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="334"/>
+        <location filename="unetbootin.ui" line="346"/>
         <source>Select kernel file</source>
         <translation>選擇 kernel 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="353"/>
-        <source>Kernel:</source>
-        <translation>Kernel:</translation>
+        <location filename="unetbootin.ui" line="365"/>
+        <source>&amp;Kernel:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="366"/>
-        <location filename="unetbootin.ui" line="401"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <source>Init&amp;rd:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>&amp;Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Kernel:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="381"/>
+        <location filename="unetbootin.ui" line="419"/>
         <source>Specify an initrd file to load</source>
         <translation>指定 initrd 檔案以進行裝載</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="369"/>
         <source>Initrd:</source>
-        <translation>Initrd:</translation>
+        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="385"/>
+        <location filename="unetbootin.ui" line="403"/>
         <source>Select initrd file</source>
         <translation>選擇 initrd 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="417"/>
+        <location filename="unetbootin.ui" line="435"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>選擇 syslinux.cfg 或 isolinux.cfg 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="433"/>
-        <location filename="unetbootin.ui" line="446"/>
+        <location filename="unetbootin.ui" line="451"/>
+        <location filename="unetbootin.ui" line="464"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>指定進入kernel的參數與選項</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="449"/>
         <source>Options:</source>
-        <translation>選項:</translation>
+        <translation type="obsolete">選項:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="485"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -848,12 +873,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;這個&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險性&lt;/span&gt;的選項將會在&quot;分割區&quot;下拉選單內顯示所有的磁區。請確定你知道你在幹什麼之後再啟用這個選項，若您使用了這個選項，安裝過程將有可能失敗，亦有可能造成系統開機問題。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="471"/>
-        <source>Show All Drives (Use with Care)</source>
-        <translation>顯示所有磁區（請小心使用）</translation>
+        <location filename="unetbootin.ui" line="492"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="484"/>
+        <location filename="unetbootin.ui" line="512"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">顯示所有磁區（請小心使用）</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="505"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -866,37 +900,36 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;這個&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險性&lt;/span&gt;的選項將會格式化掉已選的分割區，抹除掉所有該分割區上已有的資料，如果你正在使用一個正常的 USB 磁碟就應該不是必要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="491"/>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation>格式化（清除資料）</translation>
+        <translation type="obsolete">格式化（清除資料）</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="636"/>
+        <location filename="unetbootin.ui" line="657"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. 安裝完成，重新開機</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="649"/>
+        <location filename="unetbootin.ui" line="670"/>
         <source>3. Installing Bootloader</source>
         <translation>3. 安裝 Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="662"/>
+        <location filename="unetbootin.ui" line="683"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. 提取並複製檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="675"/>
+        <location filename="unetbootin.ui" line="696"/>
         <source>1. Downloading Files</source>
         <translation>1. 檔案下載中</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="700"/>
+        <location filename="unetbootin.ui" line="721"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="713"/>
+        <location filename="unetbootin.ui" line="734"/>
         <source>Reboot Now</source>
         <translation>現在重新開機</translation>
     </message>

@@ -806,8 +806,9 @@ Nu herstarten?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="56"/>
-        <source>Distribution</source>
-        <translation>Distributie</translation>
+        <source>&amp;Distribution</source>
+        <oldsource>Distribution</oldsource>
+        <translation type="unfinished">Distributie</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -816,8 +817,9 @@ Nu herstarten?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="75"/>
-        <source>Diskimage</source>
-        <translation>Disk image</translation>
+        <source>Disk&amp;image</source>
+        <oldsource>Diskimage</oldsource>
+        <translation type="unfinished">Disk image</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -826,8 +828,9 @@ Nu herstarten?</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="91"/>
-        <source>Custom</source>
-        <translation>Eigen</translation>
+        <source>&amp;Custom</source>
+        <oldsource>Custom</oldsource>
+        <translation type="unfinished">Eigen</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -840,105 +843,127 @@ Nu herstarten?</translation>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="146"/>
-        <location filename="unetbootin.ui" line="162"/>
+        <location filename="unetbootin.ui" line="136"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="149"/>
+        <location filename="unetbootin.ui" line="168"/>
         <source>Select the target drive to install to</source>
         <translation>Selecteer de bestemmingsschijf waarnaar geïnstalleerd moet worden</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
         <source>Drive:</source>
-        <translation>Schijf:</translation>
+        <translation type="obsolete">Schijf:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="175"/>
-        <location filename="unetbootin.ui" line="191"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="181"/>
+        <location filename="unetbootin.ui" line="200"/>
         <source>Select the installation target type</source>
         <translation>Selecteer het type van de installatiebestemming</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="178"/>
-        <source>Type:</source>
-        <translation>Type:</translation>
+        <location filename="unetbootin.ui" line="184"/>
+        <source>&amp;Type:</source>
+        <oldsource>Type:</oldsource>
+        <translation type="unfinished">Type:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="204"/>
+        <location filename="unetbootin.ui" line="213"/>
         <source>Select the distribution version</source>
         <translation>Selecteer de versie van de distributie</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="266"/>
+        <location filename="unetbootin.ui" line="275"/>
         <source>Select disk image file</source>
         <translation>Selecteer het disk image-bestand</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="269"/>
-        <location filename="unetbootin.ui" line="337"/>
-        <location filename="unetbootin.ui" line="388"/>
-        <location filename="unetbootin.ui" line="420"/>
+        <location filename="unetbootin.ui" line="278"/>
+        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="282"/>
+        <location filename="unetbootin.ui" line="291"/>
         <source>Select the disk image type</source>
         <translation>Selecteer het disk image type</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="295"/>
+        <location filename="unetbootin.ui" line="304"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Kies een floppy/harde schijf image, or CD image (ISO) bestand om te laden</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="318"/>
-        <location filename="unetbootin.ui" line="350"/>
+        <location filename="unetbootin.ui" line="327"/>
+        <location filename="unetbootin.ui" line="362"/>
         <source>Specify a kernel file to load</source>
         <translation>Kies een kernelbestand om te laden</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="334"/>
+        <location filename="unetbootin.ui" line="346"/>
         <source>Select kernel file</source>
         <translation>Selecteer kernelbestand</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="353"/>
-        <source>Kernel:</source>
-        <translation>Kernel:</translation>
+        <location filename="unetbootin.ui" line="365"/>
+        <source>&amp;Kernel:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="366"/>
-        <location filename="unetbootin.ui" line="401"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <source>Init&amp;rd:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>&amp;Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Kernel:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="381"/>
+        <location filename="unetbootin.ui" line="419"/>
         <source>Specify an initrd file to load</source>
         <translation>Kies een initrd-bestand om te laden</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="369"/>
         <source>Initrd:</source>
-        <translation>Initrd:</translation>
+        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="385"/>
+        <location filename="unetbootin.ui" line="403"/>
         <source>Select initrd file</source>
         <translation>selecteer initrd bestand</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="417"/>
+        <location filename="unetbootin.ui" line="435"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Selecteer syslinux.cfg of isolinux.cfg bestand</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="433"/>
-        <location filename="unetbootin.ui" line="446"/>
+        <location filename="unetbootin.ui" line="451"/>
+        <location filename="unetbootin.ui" line="464"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Geef parameters en opties die aan de kernel moeten worden doorgegeven op</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="449"/>
         <source>Options:</source>
-        <translation>Opties:</translation>
+        <translation type="obsolete">Opties:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="485"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -951,12 +976,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dit is&lt;span style=&quot; font-weight:600;&quot;&gt;Potentieel gevaarlijk&lt;/span&gt; Deze optie toont alle schijven in het selectiemenu. Doe dit alleen als je weet waar je mee bezig bent. Als je dit doet, zal de installatie waarschijnlijk mislukken of het kan leiden tot opstartproblemen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="471"/>
-        <source>Show All Drives (Use with Care)</source>
-        <translation>Toon alle schijven (voorzichtig!)</translation>
+        <location filename="unetbootin.ui" line="492"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="484"/>
+        <location filename="unetbootin.ui" line="512"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Toon alle schijven (voorzichtig!)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="505"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -969,37 +1003,36 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dit is&lt;span style=&quot; font-weight:600;&quot;&gt;potentieel gevaarlijk&lt;/span&gt; De optie formatteert de geselecteerde schijf, waardoor alle data die er op staat gewist wordt. Dit zou niet noodzakelijk moeten zijn op een standaard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="491"/>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation>Formatteer schijf (Wist alle gegevens)</translation>
+        <translation type="obsolete">Formatteer schijf (Wist alle gegevens)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="636"/>
+        <location filename="unetbootin.ui" line="657"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>Installatie is klaar, herstart</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="649"/>
+        <location filename="unetbootin.ui" line="670"/>
         <source>3. Installing Bootloader</source>
         <translation>Bootloader installeren</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="662"/>
+        <location filename="unetbootin.ui" line="683"/>
         <source>2. Extracting and Copying Files</source>
         <translation>Bestanden uitpakken en kopiëren</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="675"/>
+        <location filename="unetbootin.ui" line="696"/>
         <source>1. Downloading Files</source>
         <translation>1. Bestanden aan het downloaden</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="700"/>
+        <location filename="unetbootin.ui" line="721"/>
         <source>Exit</source>
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="713"/>
+        <location filename="unetbootin.ui" line="734"/>
         <source>Reboot Now</source>
         <translation>Nu herstarten</translation>
     </message>
