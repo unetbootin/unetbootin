@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>unetbootinui</class>
- <widget class="QWidget" name="unetbootinui" >
-  <property name="geometry" >
+ <widget class="QWidget" name="unetbootinui">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,26 +10,26 @@
     <height>360</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>524</width>
     <height>360</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>524</width>
     <height>360</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>UNetbootin</string>
   </property>
-  <widget class="QWidget" native="1" name="firstlayer" >
-   <property name="enabled" >
+  <widget class="QWidget" name="firstlayer" native="true">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="geometry" >
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
@@ -36,11 +37,11 @@
      <height>360</height>
     </rect>
    </property>
-   <property name="autoFillBackground" >
+   <property name="autoFillBackground">
     <bool>true</bool>
    </property>
-   <widget class="QRadioButton" name="radioDistro" >
-    <property name="geometry" >
+   <widget class="QRadioButton" name="radioDistro">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
@@ -48,18 +49,18 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select from a list of supported distributions</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Distribution</string>
     </property>
-    <property name="checked" >
+    <property name="checked">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioFloppy" >
-    <property name="geometry" >
+   <widget class="QRadioButton" name="radioFloppy">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>180</y>
@@ -67,15 +68,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Specify a disk image file to load</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Diskimage</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioManual" >
-    <property name="geometry" >
+   <widget class="QRadioButton" name="radioManual">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>220</y>
@@ -83,15 +84,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Manually specify a kernel and initrd to load</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Custom</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="distroselect" >
-    <property name="geometry" >
+   <widget class="QComboBox" name="distroselect">
+    <property name="geometry">
      <rect>
       <x>110</x>
       <y>20</y>
@@ -99,15 +100,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select from a list of supported distributions</string>
     </property>
-    <property name="currentIndex" >
+    <property name="currentIndex">
      <number>-1</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="okbutton" >
-    <property name="geometry" >
+   <widget class="QPushButton" name="okbutton">
+    <property name="geometry">
      <rect>
       <x>343</x>
       <y>325</y>
@@ -115,12 +116,12 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>OK</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cancelbutton" >
-    <property name="geometry" >
+   <widget class="QPushButton" name="cancelbutton">
+    <property name="geometry">
      <rect>
       <x>433</x>
       <y>325</y>
@@ -128,12 +129,12 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Cancel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labeldrive" >
-    <property name="geometry" >
+   <widget class="QLabel" name="labeldrive">
+    <property name="geometry">
      <rect>
       <x>150</x>
       <y>325</y>
@@ -141,15 +142,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select the target drive to install to</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Drive:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="driveselect" >
-    <property name="geometry" >
+   <widget class="QComboBox" name="driveselect">
+    <property name="geometry">
      <rect>
       <x>190</x>
       <y>325</y>
@@ -157,12 +158,12 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select the target drive to install to</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labeltype" >
-    <property name="geometry" >
+   <widget class="QLabel" name="labeltype">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>325</y>
@@ -170,15 +171,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select the installation target type</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Type:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="typeselect" >
-    <property name="geometry" >
+   <widget class="QComboBox" name="typeselect">
+    <property name="geometry">
      <rect>
       <x>50</x>
       <y>325</y>
@@ -186,12 +187,12 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select the installation target type</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="dverselect" >
-    <property name="geometry" >
+   <widget class="QComboBox" name="dverselect">
+    <property name="geometry">
      <rect>
       <x>313</x>
       <y>20</y>
@@ -199,15 +200,15 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
+    <property name="toolTip">
      <string>Select the distribution version</string>
     </property>
-    <property name="currentIndex" >
+    <property name="currentIndex">
      <number>-1</number>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="intromessage" >
-    <property name="geometry" >
+   <widget class="QTextBrowser" name="intromessage">
+    <property name="geometry">
      <rect>
       <x>9</x>
       <y>60</y>
@@ -215,24 +216,24 @@
       <height>101</height>
      </rect>
     </property>
-    <property name="styleSheet" >
-     <string notr="true" >background-color: transparent;</string>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;</string>
     </property>
-    <property name="frameShape" >
+    <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
     </property>
-    <property name="frameShadow" >
+    <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <property name="openExternalLinks" >
+    <property name="openExternalLinks">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QWidget" native="1" name="optionslayer" >
-    <property name="enabled" >
+   <widget class="QWidget" name="optionslayer" native="true">
+    <property name="enabled">
      <bool>false</bool>
     </property>
-    <property name="geometry" >
+    <property name="geometry">
      <rect>
       <x>100</x>
       <y>170</y>
@@ -240,8 +241,8 @@
       <height>121</height>
      </rect>
     </property>
-    <widget class="QWidget" native="1" name="diskimagelayer" >
-     <property name="geometry" >
+    <widget class="QWidget" name="diskimagelayer" native="true">
+     <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
@@ -249,8 +250,8 @@
        <height>40</height>
       </rect>
      </property>
-     <widget class="QPushButton" name="FloppyFileSelector" >
-      <property name="geometry" >
+     <widget class="QPushButton" name="FloppyFileSelector">
+      <property name="geometry">
        <rect>
         <x>388</x>
         <y>10</y>
@@ -258,18 +259,18 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="acceptDrops" >
+      <property name="acceptDrops">
        <bool>false</bool>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Select disk image file</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>...</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="diskimagetypeselect" >
-      <property name="geometry" >
+     <widget class="QComboBox" name="diskimagetypeselect">
+      <property name="geometry">
        <rect>
         <x>0</x>
         <y>10</y>
@@ -277,12 +278,12 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Select the disk image type</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="FloppyPath" >
-      <property name="geometry" >
+     <widget class="QLineEdit" name="FloppyPath">
+      <property name="geometry">
        <rect>
         <x>60</x>
         <y>10</y>
@@ -290,13 +291,13 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify a floppy/hard disk image, or CD image (ISO) file to load</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" native="1" name="customlayer" >
-     <property name="geometry" >
+    <widget class="QWidget" name="customlayer" native="true">
+     <property name="geometry">
       <rect>
        <x>0</x>
        <y>40</y>
@@ -304,8 +305,8 @@
        <height>81</height>
       </rect>
      </property>
-     <widget class="QLineEdit" name="KernelPath" >
-      <property name="geometry" >
+     <widget class="QLineEdit" name="KernelPath">
+      <property name="geometry">
        <rect>
         <x>60</x>
         <y>10</y>
@@ -313,12 +314,12 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify a kernel file to load</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="KernelFileSelector" >
-      <property name="geometry" >
+     <widget class="QPushButton" name="KernelFileSelector">
+      <property name="geometry">
        <rect>
         <x>180</x>
         <y>10</y>
@@ -326,18 +327,18 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="acceptDrops" >
+      <property name="acceptDrops">
        <bool>false</bool>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Select kernel file</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>...</string>
       </property>
      </widget>
-     <widget class="QLabel" name="labelkernel" >
-      <property name="geometry" >
+     <widget class="QLabel" name="labelkernel">
+      <property name="geometry">
        <rect>
         <x>0</x>
         <y>10</y>
@@ -345,15 +346,15 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify a kernel file to load</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>Kernel:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="labelinitrd" >
-      <property name="geometry" >
+     <widget class="QLabel" name="labelinitrd">
+      <property name="geometry">
        <rect>
         <x>230</x>
         <y>10</y>
@@ -361,15 +362,15 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify an initrd file to load</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>Initrd:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="InitrdFileSelector" >
-      <property name="geometry" >
+     <widget class="QPushButton" name="InitrdFileSelector">
+      <property name="geometry">
        <rect>
         <x>388</x>
         <y>10</y>
@@ -377,18 +378,18 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="acceptDrops" >
+      <property name="acceptDrops">
        <bool>false</bool>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Select initrd file</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>...</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="InitrdPath" >
-      <property name="geometry" >
+     <widget class="QLineEdit" name="InitrdPath">
+      <property name="geometry">
        <rect>
         <x>270</x>
         <y>10</y>
@@ -396,12 +397,12 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify an initrd file to load</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="CfgFileSelector" >
-      <property name="geometry" >
+     <widget class="QPushButton" name="CfgFileSelector">
+      <property name="geometry">
        <rect>
         <x>388</x>
         <y>50</y>
@@ -409,18 +410,18 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="acceptDrops" >
+      <property name="acceptDrops">
        <bool>false</bool>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Select syslinux.cfg or isolinux.cfg file</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>...</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="OptionEnter" >
-      <property name="geometry" >
+     <widget class="QLineEdit" name="OptionEnter">
+      <property name="geometry">
        <rect>
         <x>60</x>
         <y>50</y>
@@ -428,12 +429,12 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify parameters and options to pass to the kernel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="labeloption" >
-      <property name="geometry" >
+     <widget class="QLabel" name="labeloption">
+      <property name="geometry">
        <rect>
         <x>0</x>
         <y>50</y>
@@ -441,17 +442,17 @@
         <height>25</height>
        </rect>
       </property>
-      <property name="toolTip" >
+      <property name="toolTip">
        <string>Specify parameters and options to pass to the kernel</string>
       </property>
-      <property name="text" >
+      <property name="text">
        <string>Options:</string>
       </property>
      </widget>
     </widget>
    </widget>
-   <widget class="QCheckBox" name="showalldrivescheckbox" >
-    <property name="geometry" >
+   <widget class="QCheckBox" name="showalldrivescheckbox">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>295</y>
@@ -459,19 +460,19 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
-     <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This &lt;span style=" font-weight:600;">potentially dangerous&lt;/span> option will show all drives in the drop-down box titled "Drives". Enable this only if you know what you're doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you're doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Show All Drives (Use with Care)</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="formatdrivecheckbox" >
-    <property name="geometry" >
+   <widget class="QCheckBox" name="formatdrivecheckbox">
+    <property name="geometry">
      <rect>
       <x>260</x>
       <y>295</y>
@@ -479,23 +480,23 @@ p, li { white-space: pre-wrap; }
       <height>25</height>
      </rect>
     </property>
-    <property name="toolTip" >
-     <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This &lt;span style=" font-weight:600;">potentially dangerous&lt;/span> option will format the selected drive, wiping out all data on it. It shouldn't be necessary if you're using a standard USB drive.&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn't be necessary if you're using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>Format Drive (Wipes Out Data)</string>
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" native="1" name="secondlayer" >
-   <property name="enabled" >
+  <widget class="QWidget" name="secondlayer" native="true">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="geometry" >
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
@@ -503,11 +504,11 @@ p, li { white-space: pre-wrap; }
      <height>360</height>
     </rect>
    </property>
-   <widget class="QWidget" native="1" name="progresslayer" >
-    <property name="enabled" >
+   <widget class="QWidget" name="progresslayer" native="true">
+    <property name="enabled">
      <bool>false</bool>
     </property>
-    <property name="geometry" >
+    <property name="geometry">
      <rect>
       <x>0</x>
       <y>150</y>
@@ -515,8 +516,8 @@ p, li { white-space: pre-wrap; }
       <height>210</height>
      </rect>
     </property>
-    <widget class="QProgressBar" name="tprogress" >
-     <property name="geometry" >
+    <widget class="QProgressBar" name="tprogress">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>170</y>
@@ -524,12 +525,12 @@ p, li { white-space: pre-wrap; }
        <height>23</height>
       </rect>
      </property>
-     <property name="value" >
+     <property name="value">
       <number>24</number>
      </property>
     </widget>
-    <widget class="QLabel" name="pdesc5" >
-     <property name="geometry" >
+    <widget class="QLabel" name="pdesc5">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
@@ -537,15 +538,15 @@ p, li { white-space: pre-wrap; }
        <height>20</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="pdesc4" >
-     <property name="geometry" >
+    <widget class="QLabel" name="pdesc4">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
@@ -553,15 +554,15 @@ p, li { white-space: pre-wrap; }
        <height>20</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="pdesc3" >
-     <property name="geometry" >
+    <widget class="QLabel" name="pdesc3">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>70</y>
@@ -569,15 +570,15 @@ p, li { white-space: pre-wrap; }
        <height>20</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="pdesc2" >
-     <property name="geometry" >
+    <widget class="QLabel" name="pdesc2">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>100</y>
@@ -585,15 +586,15 @@ p, li { white-space: pre-wrap; }
        <height>20</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="pdesc1" >
-     <property name="geometry" >
+    <widget class="QLabel" name="pdesc1">
+     <property name="geometry">
       <rect>
        <x>10</x>
        <y>130</y>
@@ -601,16 +602,16 @@ p, li { white-space: pre-wrap; }
        <height>20</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="sdesc5" >
-    <property name="geometry" >
+   <widget class="QLabel" name="sdesc5">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>130</y>
@@ -618,12 +619,12 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="sdesc4" >
-    <property name="geometry" >
+   <widget class="QLabel" name="sdesc4">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>100</y>
@@ -631,12 +632,12 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>4. Installation Complete, Reboot</string>
     </property>
    </widget>
-   <widget class="QLabel" name="sdesc3" >
-    <property name="geometry" >
+   <widget class="QLabel" name="sdesc3">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>70</y>
@@ -644,12 +645,12 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>3. Installing Bootloader</string>
     </property>
    </widget>
-   <widget class="QLabel" name="sdesc2" >
-    <property name="geometry" >
+   <widget class="QLabel" name="sdesc2">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>40</y>
@@ -657,12 +658,12 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>2. Extracting and Copying Files</string>
     </property>
    </widget>
-   <widget class="QLabel" name="sdesc1" >
-    <property name="geometry" >
+   <widget class="QLabel" name="sdesc1">
+    <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
@@ -670,15 +671,15 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
-    <property name="text" >
+    <property name="text">
      <string>1. Downloading Files</string>
     </property>
    </widget>
-   <widget class="QWidget" native="1" name="rebootlayer" >
-    <property name="enabled" >
+   <widget class="QWidget" name="rebootlayer" native="true">
+    <property name="enabled">
      <bool>false</bool>
     </property>
-    <property name="geometry" >
+    <property name="geometry">
      <rect>
       <x>0</x>
       <y>150</y>
@@ -686,8 +687,8 @@ p, li { white-space: pre-wrap; }
       <height>210</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="fexitbutton" >
-     <property name="geometry" >
+    <widget class="QPushButton" name="fexitbutton">
+     <property name="geometry">
       <rect>
        <x>420</x>
        <y>170</y>
@@ -695,12 +696,12 @@ p, li { white-space: pre-wrap; }
        <height>29</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Exit</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="frebootbutton" >
-     <property name="geometry" >
+    <widget class="QPushButton" name="frebootbutton">
+     <property name="geometry">
       <rect>
        <x>310</x>
        <y>170</y>
@@ -708,12 +709,12 @@ p, li { white-space: pre-wrap; }
        <height>29</height>
       </rect>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Reboot Now</string>
      </property>
     </widget>
-    <widget class="QTextBrowser" name="rebootmsgtext" >
-     <property name="geometry" >
+    <widget class="QTextBrowser" name="rebootmsgtext">
+     <property name="geometry">
       <rect>
        <x>20</x>
        <y>10</y>
@@ -721,19 +722,19 @@ p, li { white-space: pre-wrap; }
        <height>151</height>
       </rect>
      </property>
-     <property name="styleSheet" >
-      <string notr="true" >background-color: transparent;</string>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
      </property>
-     <property name="frameShape" >
+     <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
-     <property name="frameShadow" >
+     <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
-     <property name="lineWidth" >
+     <property name="lineWidth">
       <number>0</number>
      </property>
-     <property name="openExternalLinks" >
+     <property name="openExternalLinks">
       <bool>true</bool>
      </property>
     </widget>
@@ -742,8 +743,32 @@ p, li { white-space: pre-wrap; }
   <zorder>secondlayer</zorder>
   <zorder>firstlayer</zorder>
  </widget>
- <resources>
-  <include location="unetbootin-windows.qrc" />
- </resources>
+ <tabstops>
+  <tabstop>radioDistro</tabstop>
+  <tabstop>distroselect</tabstop>
+  <tabstop>dverselect</tabstop>
+  <tabstop>radioFloppy</tabstop>
+  <tabstop>diskimagetypeselect</tabstop>
+  <tabstop>FloppyPath</tabstop>
+  <tabstop>FloppyFileSelector</tabstop>
+  <tabstop>radioManual</tabstop>
+  <tabstop>KernelPath</tabstop>
+  <tabstop>KernelFileSelector</tabstop>
+  <tabstop>InitrdPath</tabstop>
+  <tabstop>InitrdFileSelector</tabstop>
+  <tabstop>OptionEnter</tabstop>
+  <tabstop>CfgFileSelector</tabstop>
+  <tabstop>showalldrivescheckbox</tabstop>
+  <tabstop>formatdrivecheckbox</tabstop>
+  <tabstop>typeselect</tabstop>
+  <tabstop>driveselect</tabstop>
+  <tabstop>okbutton</tabstop>
+  <tabstop>cancelbutton</tabstop>
+  <tabstop>intromessage</tabstop>
+  <tabstop>rebootmsgtext</tabstop>
+  <tabstop>frebootbutton</tabstop>
+  <tabstop>fexitbutton</tabstop>
+ </tabstops>
+ <resources/>
  <connections/>
 </ui>

@@ -232,10 +232,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="606"/>
         <location filename="unetbootin.cpp" line="705"/>
         <location filename="unetbootin.cpp" line="798"/>
-        <location filename="unetbootin.cpp" line="2648"/>
-        <location filename="unetbootin.cpp" line="2661"/>
-        <location filename="unetbootin.cpp" line="2814"/>
-        <location filename="unetbootin.cpp" line="3164"/>
+        <location filename="unetbootin.cpp" line="2659"/>
+        <location filename="unetbootin.cpp" line="2672"/>
+        <location filename="unetbootin.cpp" line="2825"/>
+        <location filename="unetbootin.cpp" line="3177"/>
         <source>Hard Disk</source>
         <translation>硬盘</translation>
     </message>
@@ -250,12 +250,13 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="875"/>
         <location filename="unetbootin.cpp" line="891"/>
         <location filename="unetbootin.cpp" line="1141"/>
-        <location filename="unetbootin.cpp" line="1997"/>
-        <location filename="unetbootin.cpp" line="2039"/>
-        <location filename="unetbootin.cpp" line="2652"/>
-        <location filename="unetbootin.cpp" line="2677"/>
-        <location filename="unetbootin.cpp" line="2818"/>
-        <location filename="unetbootin.cpp" line="3168"/>
+        <location filename="unetbootin.cpp" line="1611"/>
+        <location filename="unetbootin.cpp" line="2008"/>
+        <location filename="unetbootin.cpp" line="2050"/>
+        <location filename="unetbootin.cpp" line="2663"/>
+        <location filename="unetbootin.cpp" line="2688"/>
+        <location filename="unetbootin.cpp" line="2829"/>
+        <location filename="unetbootin.cpp" line="3181"/>
         <source>USB Drive</source>
         <translation>USB设备</translation>
     </message>
@@ -266,7 +267,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="574"/>
         <location filename="unetbootin.cpp" line="826"/>
         <location filename="unetbootin.cpp" line="827"/>
-        <location filename="unetbootin.cpp" line="2725"/>
+        <location filename="unetbootin.cpp" line="2736"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -277,7 +278,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="579"/>
         <location filename="unetbootin.cpp" line="831"/>
         <location filename="unetbootin.cpp" line="832"/>
-        <location filename="unetbootin.cpp" line="2717"/>
+        <location filename="unetbootin.cpp" line="2728"/>
         <source>Floppy</source>
         <translation>软盘</translation>
     </message>
@@ -519,140 +520,140 @@ Reboot now?</source>
         <translation>&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1630"/>
+        <location filename="unetbootin.cpp" line="1641"/>
         <source>Extracting files, please wait...</source>
         <translation>正在抽取文件，请稍等……</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1631"/>
+        <location filename="unetbootin.cpp" line="1642"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;存档：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1632"/>
+        <location filename="unetbootin.cpp" line="1643"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1633"/>
+        <location filename="unetbootin.cpp" line="1644"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1634"/>
+        <location filename="unetbootin.cpp" line="1645"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1637"/>
+        <location filename="unetbootin.cpp" line="1648"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1638"/>
+        <location filename="unetbootin.cpp" line="1649"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1639"/>
+        <location filename="unetbootin.cpp" line="1650"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1981"/>
+        <location filename="unetbootin.cpp" line="1992"/>
         <source>Downloading files, please wait...</source>
         <translation>正在下载文件，请稍候……</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1982"/>
+        <location filename="unetbootin.cpp" line="1993"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1983"/>
+        <location filename="unetbootin.cpp" line="1994"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1984"/>
+        <location filename="unetbootin.cpp" line="1995"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2061"/>
-        <location filename="unetbootin.cpp" line="2076"/>
+        <location filename="unetbootin.cpp" line="2072"/>
+        <location filename="unetbootin.cpp" line="2087"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;已下载：&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2152"/>
+        <location filename="unetbootin.cpp" line="2163"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2156"/>
+        <location filename="unetbootin.cpp" line="2167"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2341"/>
+        <location filename="unetbootin.cpp" line="2352"/>
         <source>%1 not found</source>
         <translation>%1 没有找到</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2342"/>
+        <location filename="unetbootin.cpp" line="2353"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 没有找到。该安装模式需要 %2。
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2641"/>
         <source>(Current)</source>
         <translation>(处理中)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2631"/>
+        <location filename="unetbootin.cpp" line="2642"/>
         <source>(Done)</source>
         <translation>(完成)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2893"/>
+        <location filename="unetbootin.cpp" line="2904"/>
         <source>Configuring grub2 on %1</source>
         <translation>在 %1 上配置 grub2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2905"/>
+        <location filename="unetbootin.cpp" line="2916"/>
         <source>Configuring grldr on %1</source>
         <translation>在 %1 上配置 grldr</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2933"/>
+        <location filename="unetbootin.cpp" line="2944"/>
         <source>Configuring grub on %1</source>
         <translation>在 %1 上配置 grub</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>Installing syslinux to %1</source>
         <translation>安装 syslinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3090"/>
+        <location filename="unetbootin.cpp" line="3101"/>
         <source>Installing extlinux to %1</source>
         <translation>安装 extlinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3154"/>
+        <location filename="unetbootin.cpp" line="3167"/>
         <source>Syncing filesystems</source>
         <translation>同步文件系统</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3166"/>
+        <location filename="unetbootin.cpp" line="3179"/>
         <source>After rebooting, select the </source>
         <translation>重启动后，请选择 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3170"/>
+        <location filename="unetbootin.cpp" line="3183"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。
@@ -802,151 +803,151 @@ Reboot now?</source>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="25"/>
+        <location filename="unetbootin.ui" line="26"/>
         <source>UNetbootin</source>
         <translation>UNetbootin</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="52"/>
-        <location filename="unetbootin.ui" line="103"/>
+        <location filename="unetbootin.ui" line="53"/>
+        <location filename="unetbootin.ui" line="104"/>
         <source>Select from a list of supported distributions</source>
         <translation>在列表中选择一个支持的发行版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="55"/>
+        <location filename="unetbootin.ui" line="56"/>
         <source>Distribution</source>
         <translation>发行版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="71"/>
+        <location filename="unetbootin.ui" line="72"/>
         <source>Specify a disk image file to load</source>
         <translation>指定加载磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="74"/>
+        <location filename="unetbootin.ui" line="75"/>
         <source>Diskimage</source>
         <translation>磁盘镜像</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="87"/>
+        <location filename="unetbootin.ui" line="88"/>
         <source>Manually specify a kernel and initrd to load</source>
         <translation>手动地指定加载一个内核 和 initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="90"/>
+        <location filename="unetbootin.ui" line="91"/>
         <source>Custom</source>
         <translation>自定义</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="119"/>
+        <location filename="unetbootin.ui" line="120"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="132"/>
+        <location filename="unetbootin.ui" line="133"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="145"/>
-        <location filename="unetbootin.ui" line="161"/>
+        <location filename="unetbootin.ui" line="146"/>
+        <location filename="unetbootin.ui" line="162"/>
         <source>Select the target drive to install to</source>
         <translation>选择进行安装的目标驱动器</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="148"/>
+        <location filename="unetbootin.ui" line="149"/>
         <source>Drive:</source>
         <translation>驱动器：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="174"/>
-        <location filename="unetbootin.ui" line="190"/>
+        <location filename="unetbootin.ui" line="175"/>
+        <location filename="unetbootin.ui" line="191"/>
         <source>Select the installation target type</source>
         <translation>选择安装目标类型</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="177"/>
+        <location filename="unetbootin.ui" line="178"/>
         <source>Type:</source>
         <translation>类型：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="203"/>
+        <location filename="unetbootin.ui" line="204"/>
         <source>Select the distribution version</source>
         <translation>选择发行版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="265"/>
+        <location filename="unetbootin.ui" line="266"/>
         <source>Select disk image file</source>
         <translation>选择磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="268"/>
-        <location filename="unetbootin.ui" line="336"/>
-        <location filename="unetbootin.ui" line="387"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="269"/>
+        <location filename="unetbootin.ui" line="337"/>
+        <location filename="unetbootin.ui" line="388"/>
+        <location filename="unetbootin.ui" line="420"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="282"/>
         <source>Select the disk image type</source>
         <translation>选择磁盘镜像类型</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="294"/>
+        <location filename="unetbootin.ui" line="295"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>指定加载 软盘/硬盘 镜像，或者 CD 镜像(ISO)文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="317"/>
-        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="318"/>
+        <location filename="unetbootin.ui" line="350"/>
         <source>Specify a kernel file to load</source>
         <translation>指定加载内核文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="333"/>
+        <location filename="unetbootin.ui" line="334"/>
         <source>Select kernel file</source>
         <translation>选择内核文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="353"/>
         <source>Kernel:</source>
         <translation>内核：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
-        <location filename="unetbootin.ui" line="400"/>
+        <location filename="unetbootin.ui" line="366"/>
+        <location filename="unetbootin.ui" line="401"/>
         <source>Specify an initrd file to load</source>
         <translation>指定加载 initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="368"/>
+        <location filename="unetbootin.ui" line="369"/>
         <source>Initrd:</source>
         <translation>Initrd：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="385"/>
         <source>Select initrd file</source>
         <translation>选择 initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="416"/>
+        <location filename="unetbootin.ui" line="417"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>选择 syslinux.cfg or isolinux.cfg 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="432"/>
-        <location filename="unetbootin.ui" line="445"/>
+        <location filename="unetbootin.ui" line="433"/>
+        <location filename="unetbootin.ui" line="446"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>指定传递给内核的参数和选项</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="448"/>
+        <location filename="unetbootin.ui" line="449"/>
         <source>Options:</source>
         <translation>选项：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="463"/>
+        <location filename="unetbootin.ui" line="464"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -955,12 +956,12 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项，将在名为“驱动器”的下拉框中显示所有驱动器。 仅在你知道你在做什么再启用它； 如果你使用这个选项，安装可能会失败，或者可导致系统启动的问题。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="470"/>
+        <location filename="unetbootin.ui" line="471"/>
         <source>Show All Drives (Use with Care)</source>
         <translation>显示所有驱动器（谨慎使用）</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="483"/>
+        <location filename="unetbootin.ui" line="484"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -969,37 +970,37 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项将格式化选定的驱动器，擦除它上面的所有数据。 如果你使用的是标准的 USB 驱动器则它是非必要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="490"/>
+        <location filename="unetbootin.ui" line="491"/>
         <source>Format Drive (Wipes Out Data)</source>
         <translation>格式化驱动器（擦除数据）</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="635"/>
+        <location filename="unetbootin.ui" line="636"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. 安装完成，重启</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="648"/>
+        <location filename="unetbootin.ui" line="649"/>
         <source>3. Installing Bootloader</source>
         <translation>3. 安装 Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="661"/>
+        <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. 抽取和拷贝文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="674"/>
+        <location filename="unetbootin.ui" line="675"/>
         <source>1. Downloading Files</source>
         <translation>1. 下载文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="699"/>
+        <location filename="unetbootin.ui" line="700"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="712"/>
+        <location filename="unetbootin.ui" line="713"/>
         <source>Reboot Now</source>
         <translation>现在重启</translation>
     </message>
