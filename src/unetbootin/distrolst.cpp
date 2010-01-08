@@ -113,15 +113,6 @@ if (nameDistro == "xPUD")
 {
 	downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
 	extractiso(isotmpf, targetPath);
-	QFile::remove(QString("%1boot.cat").arg(targetPath));
-	QFile::remove(QString("%1isolinux.bin").arg(targetPath));
-	QFile::remove(QString("%1syslinux.cfg").arg(targetPath));
-	QFile::rename(QString("%1isolinux.cfg").arg(targetPath), QString("%1syslinux.cfg").arg(targetPath));
-	if (installType == tr("USB Drive"))
-	{
-		QFile::remove(QString("%1ubnfilel.txt").arg(targetPath));
-		QFile::remove(QString("%1ubnpathl.txt").arg(targetPath));
-	}
 }
 
 #endif

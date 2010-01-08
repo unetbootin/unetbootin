@@ -119,6 +119,9 @@
     <property name="text">
      <string>OK</string>
     </property>
+    <property name="shortcut">
+     <string>Return</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="cancelbutton">
     <property name="geometry">
