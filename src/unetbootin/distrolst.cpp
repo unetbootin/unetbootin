@@ -114,13 +114,12 @@ if (nameDistro == "xPUD")
 	if (relname == "stable")
 	{
 		downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
-		extractiso(isotmpf, targetPath);
 	}
 	else if (relname == "unstable")
 	{
 		downloadfile("http://xpud.org/xpud-latest-snapshot.php", isotmpf);
-		extractiso(isotmpf, targetPath);
 	}
+	extractiso(isotmpf, targetPath);
 }
 
 #endif
@@ -842,7 +841,14 @@ if (nameDistro == "Kubuntu")
 
 if (nameDistro == "xPUD")
 {
-	downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
+	if (relname == "stable")
+	{
+		downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
+	}
+	else if (relname == "unstable")
+	{
+		downloadfile("http://xpud.org/xpud-latest-snapshot.php", isotmpf);
+	}
 	initrdLoc = "";
 	kernelLoc = "/boot/xpud";
 	initrdOpts = "";
