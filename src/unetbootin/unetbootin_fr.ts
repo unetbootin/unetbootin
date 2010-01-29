@@ -14,7 +14,7 @@ Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -799,10 +799,8 @@ Redémarrer immédiatement?</translation>
         <translation>Choisir à partir d&apos;une liste de distributions compatibles</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished">Distribution</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Distribution</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -810,10 +808,8 @@ Redémarrer immédiatement?</translation>
         <translation>Choisir une image de disque à charger</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished">Image de disque</translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Image de disque</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -821,10 +817,8 @@ Redémarrer immédiatement?</translation>
         <translation>Choisir manuellement un noyau et un initrd à charger</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished">Personnalisé</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Personnalisé</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -832,19 +826,9 @@ Redémarrer immédiatement?</translation>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="139"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="152"/>
@@ -857,21 +841,49 @@ Redémarrer immédiatement?</translation>
         <translation type="obsolete">Disque :</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="184"/>
         <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Choisir le type de support cible</translation>
     </message>
     <message>
+        <source>Type:</source>
+        <translation type="obsolete">Type :</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="139"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="155"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
-        <translation type="unfinished">Type :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="216"/>
@@ -928,6 +940,16 @@ Redémarrer immédiatement?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Kernel:</source>
         <translation type="obsolete">Noyau :</translation>
     </message>
@@ -973,16 +995,6 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Cette option &lt;span style=&quot; font-weight:600;&quot;&gt;potentiellement dangereuse&lt;/span&gt; montrera tous les disque dans la liste déroulante « Disques : ». Activez la que si vous savez exactement ce que vous faites; si vous utilisez cette option l&apos;installation peut échouer et le démarrage peut être compromis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>

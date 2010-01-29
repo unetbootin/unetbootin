@@ -8,13 +8,13 @@
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
 POT-Creation-Date: 2009-10-28 17:41-0400
-PO-Revision-Date: 2009-10-29 01:12+0000
-Last-Translator: ΑναστόπουλοςΧάρης &lt;harrisanasto@gmail.com&gt;
+PO-Revision-Date: 2010-01-24 10:27+0000
+Last-Translator: Costas Skarlatos &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -149,10 +149,6 @@ Reboot now?</source>
         <comment>unetbootin#32</comment>
         <translation type="obsolete">Δισκέτα</translation>
     </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">Δισκος USB</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -164,6 +160,27 @@ Reboot now?</source>
 </context>
 <context>
     <name>unetbootin</name>
+    <message>
+        <location filename="unetbootin.cpp" line="156"/>
+        <location filename="unetbootin.cpp" line="521"/>
+        <location filename="unetbootin.cpp" line="535"/>
+        <location filename="unetbootin.cpp" line="536"/>
+        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="709"/>
+        <location filename="unetbootin.cpp" line="803"/>
+        <location filename="unetbootin.cpp" line="875"/>
+        <location filename="unetbootin.cpp" line="891"/>
+        <location filename="unetbootin.cpp" line="1141"/>
+        <location filename="unetbootin.cpp" line="1611"/>
+        <location filename="unetbootin.cpp" line="2008"/>
+        <location filename="unetbootin.cpp" line="2050"/>
+        <location filename="unetbootin.cpp" line="2663"/>
+        <location filename="unetbootin.cpp" line="2688"/>
+        <location filename="unetbootin.cpp" line="2829"/>
+        <location filename="unetbootin.cpp" line="3181"/>
+        <source>USB Drive</source>
+        <translation>USB Δίσκος</translation>
+    </message>
     <message>
         <location filename="distrolst.cpp" line="173"/>
         <source>
@@ -209,27 +226,6 @@ Reboot now?</source>
         <translation>Σκληρός Δίσκος</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="156"/>
-        <location filename="unetbootin.cpp" line="521"/>
-        <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="536"/>
-        <location filename="unetbootin.cpp" line="608"/>
-        <location filename="unetbootin.cpp" line="709"/>
-        <location filename="unetbootin.cpp" line="803"/>
-        <location filename="unetbootin.cpp" line="875"/>
-        <location filename="unetbootin.cpp" line="891"/>
-        <location filename="unetbootin.cpp" line="1141"/>
-        <location filename="unetbootin.cpp" line="1611"/>
-        <location filename="unetbootin.cpp" line="2008"/>
-        <location filename="unetbootin.cpp" line="2050"/>
-        <location filename="unetbootin.cpp" line="2663"/>
-        <location filename="unetbootin.cpp" line="2688"/>
-        <location filename="unetbootin.cpp" line="2829"/>
-        <location filename="unetbootin.cpp" line="3181"/>
-        <source>USB Drive</source>
-        <translation>Δισκος USB</translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="157"/>
         <location filename="unetbootin.cpp" line="184"/>
         <location filename="unetbootin.cpp" line="185"/>
@@ -238,7 +234,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="827"/>
         <location filename="unetbootin.cpp" line="2736"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>Αρχείο εικόνας οπτικού δίσκου (ISO)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="158"/>
@@ -249,7 +245,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="832"/>
         <location filename="unetbootin.cpp" line="2728"/>
         <source>Floppy</source>
-        <translation>Δισκέτα</translation>
+        <translation>Δισκέττα</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="189"/>
@@ -295,12 +291,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Καλώς ήρθατε στο &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Τρόπος Χρήσης:&lt;ol&gt;&lt;li&gt;Επιλέξτε, απο την άνωθεν λίστα, διανομή και αριθμό έκδοσης για καταφώρτωση, ή χειροκίνητα επιλέξτε αρχεία για φώρτωση.&lt;/li&gt;&lt;li&gt;Επιλέξτε τύπο εγκατάστασης και πατήστε ΟΚ για να ξεκινήση η εγκατάσταση.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Καλώς ήρθατε στο &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Τρόπος Χρήσης:&lt;ol&gt;&lt;li&gt;Επιλέξετε απο την παραπάνω λίστα την διανομή και την έκδοση που επιθυμείτε να κατεβεί, ή διαλέξτε παρακάτω μεμονωμένα αρχεία για φόρτωση.&lt;/li&gt;&lt;li&gt;Στη συνέχεια επιλέξτε τύπο εγκατάστασης και πατήστε ΟΚ για να ξεκινήσει η διαδικασία.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="281"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Το Arch Linux είναι μια ελαφριά διανομή βελτιστοποιημένη για ταχύτητα και ευελιξία.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Η προεπιλεγμένη έκδοση επιτρέπει την εγκατάσταση μέσω internet (FTP). Άν σας ενδιαφέρει μια έκδοση LiveUSB, δείτε το FaunOS.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
@@ -486,12 +482,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1551"/>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>Αποσυμπίεση του ISO:</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1641"/>
         <source>Extracting files, please wait...</source>
-        <translation>Εξαγωγή αρχείων, παρακαλω περιμένετε...</translation>
+        <translation>Εξαγωγή αρχείων, παρακαλώ περιμένετε...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1642"/>
@@ -506,7 +502,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1644"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1645"/>
@@ -521,7 +517,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1649"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1650"/>
@@ -541,12 +537,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1994"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Προς:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1995"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Μεταφορτώθηκαν:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2072"/>
@@ -562,7 +558,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="2167"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 είναι όμοια στο &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 είναι όμοια με το &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2352"/>
@@ -573,12 +569,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2353"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
+        <translation>%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2641"/>
         <source>(Current)</source>
-        <translation>(Τρέχων)</translation>
+        <translation>(Τρέχον)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2642"/>
@@ -618,13 +614,13 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3179"/>
         <source>After rebooting, select the </source>
-        <translation>Αφού κανετε επανεκήνηση, επιλέξτε το </translation>
+        <translation>Μετά την επανεκκίνηση επιλέξετε το </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3183"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;</translation>
+        <translation>Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
@@ -654,7 +650,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="841"/>
         <source>Open Kernel File</source>
-        <translation>Άνοιγμα Αρχείου Πυρίνα</translation>
+        <translation>Άνοιγμα Αρχείου Πυρήνα</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="849"/>
@@ -674,7 +670,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="880"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Δέν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, προσπαθείστε να το διαμορφώσετε ώς FAT32.</translation>
+        <translation>Δεν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, προσπαθείστε να τον διαμορφώσετε ως FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="895"/>
@@ -684,7 +680,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="896"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε καποιο σημείο προσάρτησης. Οι περισσότερες διανομές το κανουν αυτόματα όταν αφαιρεσεται το USB δίσκο και τον επανεισάγετε.</translation>
+        <translation>Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε κάποιο σημείο προσάρτησης. Οι περισσότερες διανομές το κανουν αυτόματα όταν αφαιρέσετε τον USB δίσκο και τον επανεισάγετε.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="911"/>
@@ -694,7 +690,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="912"/>
         <source>You must select a distribution to load.</source>
-        <translation>Πρέπει να επιλέξετε διανομή.</translation>
+        <translation>Πρέπει να επιλέξετε διανομή για φόρτωση</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="926"/>
@@ -704,37 +700,37 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="927"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Πρέπει να επιλέξετε αρχείο εικονας δισκου.</translation>
+        <translation>Πρέπει να επιλέξετε αρχείο εικόνας δίσκου.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="941"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Επιλέξτε πυρίνα και αρχείο initrd</translation>
+        <translation>Επιλέξτε πυρήνα και αρχείο initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="942"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Πρέπει να επιλέξετε πυρίνα και αρχειο initrd.</translation>
+        <translation>Πρέπει να επιλέξετε πυρήνα και αρχείο initrd.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="956"/>
         <source>Diskimage file not found</source>
-        <translation>Το αρχείο εικονας δίσκου δεν βρέθηκε</translation>
+        <translation>Το αρχείο εικόνας δίσκου δεν βρέθηκε</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="957"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Το συγκεκριμμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει.</translation>
+        <translation>Το συγκεκριμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="971"/>
         <source>Kernel file not found</source>
-        <translation>Το αρχείο πυρίνα δεν βρέθηκε</translation>
+        <translation>Το αρχείο πυρήνα δεν βρέθηκε</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="972"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Το συγκεκριμενο αρχείο πυρινα %1 δεν υπάρχει.</translation>
+        <translation>Το συγκεκριμένο αρχείο πυρήνα %1 δεν υπάρχει.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="986"/>
@@ -744,7 +740,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Το συγκεκριμένο αρχειο initrd %1 δεν υπάρχει.</translation>
+        <translation>Το συγκεκριμένο αρχείο initrd %1 δεν υπάρχει.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1087"/>
@@ -754,7 +750,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1088"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Το αρχείο %1 υπάρχει ήδη. Πατίστε &apos;Ναι σε Όλα&apos; για να γράψετε απο πάνω του και δεν θα σας ξαναρωτησει στα υπόλοιπα, &apos;Ναι&apos; για να γράψει απο πανω μονο το συγεκριμμένο αρχειο, και &apos;Όχι&apos; για να διατηρήσετε την υπάρχουσα έκδωση. &apos;Αμα δεν είστε σιγουροι, πατήστε &apos;Ναι σε &apos;Ολα&apos;.</translation>
+        <translation>Το αρχείο %1 υπάρχει ήδη. Πατήστε &apos;Ναι σε Όλα&apos; για να γράψετε απο πάνω του, και μετά δεν θα ξαναερωτηθείτε, &apos;Ναι&apos; για να γράψει απο πάνω μόνο το συγκεκριμένο αρχείο, και &apos;Όχι&apos; για να διατηρήσετε την υπάρχουσα έκδοση. Άν δεν είστε σίγουροι, πατήστε &apos;Ναι σε &apos;Ολα&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1114"/>
@@ -764,7 +760,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1115"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Ο φάκελος %1 δεν έχει άλλο χώρο. Πατήστε &apos;Ναι&apos; για ακύρωση εγκατάστασης, &apos;Οχι&apos; για αγνόηση του σφάλματος και απόπειρα για συνέχεια της εγκατάστασης, και &apos;Οχι σε Όλα&apos; για να αγνοηθούν όλα τα λάθη έλλειψης χώρου.</translation>
     </message>
 </context>
 <context>
@@ -778,55 +774,39 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="53"/>
         <location filename="unetbootin.ui" line="104"/>
         <source>Select from a list of supported distributions</source>
-        <translation>Επίλέξτε από την λίστα με τις υποστοιριζόμενες διανομές</translation>
+        <translation>Επίλέξτε από την λίστα με τις υποστηριζόμενες διανομές</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished">Διανομή</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Διανομή</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
         <source>Specify a disk image file to load</source>
-        <translation>Προσδιωρίστε ενα αρχείο εικόνας δίσκου</translation>
+        <translation>Προσδιορίστε ενα αρχείο εικόνας δίσκου</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished">Εικόνα Δίσκου</translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Εικόνα Δίσκου</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation>Χειροκίνητα δηλώστε πυρίνα και intird</translation>
+        <translation>Χειροκίνητα δηλώστε πυρήνα και intird</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished">Τροποποιημένο</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Προσαρμοσμένο</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
         <source>OK</source>
-        <translation>Ναι</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="123"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
+        <translation>Εντάξει</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="139"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="152"/>
@@ -839,26 +819,54 @@ Reboot now?</source>
         <translation type="obsolete">Δίσκος:</translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
+        <source>Select the installation target type</source>
+        <translation>Επιλέξτε το είδος δίσκου στον οποίο θα γίνει η εγκατάσταση</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Είδος Δίσκου:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="139"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
-        <location filename="unetbootin.ui" line="203"/>
-        <source>Select the installation target type</source>
-        <translation>Επιλέξτε το είδος δίσκου στον οποιο θα γίνει η εγκατάσταση</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
-        <translation type="unfinished">Είδος Δίσκου:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
-        <translation>Επιλέξτε την εκδοση της διανομής</translation>
+        <translation>Επιλέξτε την έκδοση της διανομής</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="278"/>
@@ -881,18 +889,18 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation>Προσδιορίστε αρχείο εικόνας δίσκου/δισκετας, ή αρχειο εικόνας οπτικού δίσκου (ISO)</translation>
+        <translation>Προσδιορίστε αρχείο εικόνας δίσκου/δισκέττας, ή αρχειο εικόνας οπτικού δίσκου (ISO)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="330"/>
         <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
-        <translation>Προσδιορίστε αρχειο πυρίνα</translation>
+        <translation>Προσδιορίστε αρχείο πυρήνα</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
-        <translation>Επιλέξτε αρχείο πυρίνα</translation>
+        <translation>Επιλέξτε αρχείο πυρήνα</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="368"/>
@@ -910,8 +918,18 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Kernel:</source>
-        <translation type="obsolete">Πυρίνας:</translation>
+        <translation type="obsolete">Πυρήνας:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="384"/>
@@ -937,7 +955,7 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="454"/>
         <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation>Προσδιορίστε παραμέτρους και επιλογές για τον πυρίνα</translation>
+        <translation>Προσδιορίστε παραμέτρους και επιλογές για τον πυρήνα</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -950,21 +968,11 @@ Reboot now?</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή η&lt;span style=&quot; font-weight:600;&quot;&gt;, πιθανότατα επικύνδινη &lt;/span&gt; επιλογή, θα εμφανίσει όλους τους δίσκους στο μενού με το όνομα &quot;Δίσκοι&quot;. Ενεργοποιειστε το μονο αν ξέρετε τι κανετε. Εαν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανών η εγκατάσταση να αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του συστήματος.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή η&lt;span style=&quot; font-weight:600;&quot;&gt;, πιθανότατα επικίνδυνη &lt;/span&gt; επιλογή, θα εμφανίσει όλους τους δίσκους στο μενού με το όνομα &quot;Δίσκοι&quot;. Ενεργοποιείστε το μονο αν ξέρετε τι κάνετε. Εάν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανόν η εγκατάσταση να αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του συστήματος.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>
-        <translation type="obsolete">Εμφάνιση Όλων των Δίσκων (Χρησιμοποιείστε με Σύνεση)</translation>
+        <translation type="obsolete">Εμφάνιση όλων των δίσκων (Χρησιμοποιήστε με προσοχή)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
@@ -973,11 +981,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή  η&lt;span style=&quot; font-weight:600;&quot;&gt; ,πιθανότατα επικίνδυνη, &lt;/span&gt; επιλογή θα διαμορφώσει το επιλεγμένο δίσκο, εξαλήφωντας ολα τα δεδομενα που έχει. Δεν ειναι απαραίτητη εφόσον χρησιμοποιείτε standard USB δίσκο.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή  η&lt;span style=&quot; font-weight:600;&quot;&gt; ,πιθανότατα επικίνδυνη, &lt;/span&gt; επιλογή θα διαμορφώσει τον επιλεγμένο δίσκο, διαγράφοντας ολα τα δεδομένα που έχει. Δεν ειναι απαραίτητη εφόσον χρησιμοποιείτε standard USB δίσκο.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">Διαμόρφωση Δίσκου ( Εξαλήφει &apos;Ολα τα Δεδομένα)</translation>
+        <translation type="obsolete">Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="660"/>
@@ -997,7 +1005,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
-        <translation>1. Καταφώρτωση αρχείων</translation>
+        <translation>1. Μεταφόρτωση αρχείων</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="724"/>
@@ -1015,7 +1023,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation>Η απεγκατάσταση Ολοκληρώθηκε</translation>
+        <translation>Η απεγκατάσταση ολοκληρώθηκε</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
@@ -1030,7 +1038,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>%2 πρέπει να εκτελείται απο τον χρήστη root. Κλείστε την εφαρμογή, και εκτελέστε την παλι χρησιμοποιώντας είτε την εντολή :&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ή:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 πρέπει να εκτελείται απο τον χρήστη root. Κλείστε την εφαρμογή, και εκτελέστε την πάλι χρησιμοποιώντας είτε την εντολή :&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ή:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
@@ -1040,7 +1048,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation>%1 εγκαθήστατε αυτήν τη στιγμή. Να διαγραφεί η υπάρχουσα έκδοση;</translation>
+        <translation>%1 εγκαθίσταται αυτήν τη στιγμή. Να διαγραφεί η υπάρχουσα έκδοση;</translation>
     </message>
 </context>
 </TS>

@@ -14,7 +14,7 @@ Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -406,10 +406,6 @@ Reboot now?</source>
         <source>Downloading files, please wait...</source>
         <comment>#30</comment>
         <translation type="obsolete">Fájlok letöltése, kérem várjon...</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB meghajtó</translation>
     </message>
 </context>
 <context>
@@ -1046,10 +1042,8 @@ Reboot now?</source>
         <translation>Válasszon a támogatott disztribúciók listájából</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished">Disztribúció</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Disztribúció</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -1057,10 +1051,8 @@ Reboot now?</source>
         <translation>Adja meg a betöltendő lemezképfájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished">Lemezképfájl</translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Lemezképfájl</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -1068,10 +1060,8 @@ Reboot now?</source>
         <translation>Manuálisan adja meg a betöltendő kernel és initrd fájlokat</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished">Egyéni</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Egyéni</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -1079,19 +1069,9 @@ Reboot now?</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="139"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="152"/>
@@ -1104,21 +1084,49 @@ Reboot now?</source>
         <translation type="obsolete">Meghajtó:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="184"/>
         <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Válassza ki a telepítési cél típusát</translation>
     </message>
     <message>
+        <source>Type:</source>
+        <translation type="obsolete">Típus:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="139"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="155"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
-        <translation type="unfinished">Típus:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="216"/>
@@ -1175,6 +1183,16 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Kernel:</source>
         <translation type="obsolete">Kernel:</translation>
     </message>
@@ -1220,16 +1238,6 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ez egy &lt;span style=&quot; font-weight:600;&quot;&gt;potenciálisan veszélyes&lt;/span&gt; opció, mivel az összes eszközt megjeleníti a meghajtóknál. Csak akkor engedélyezze, ha pontosan tudja, mit csinál, ellenkező esetben a telepítés meghiúsulhat, vagy esetleg rendszerbetöltési problémákat okozhat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>

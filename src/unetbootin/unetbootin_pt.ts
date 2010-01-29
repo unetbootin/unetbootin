@@ -8,13 +8,13 @@
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
 POT-Creation-Date: 2009-10-28 17:41-0400
-PO-Revision-Date: 2009-11-10 17:18+0000
-Last-Translator: Leandro Gamito &lt;lr.gamito@gmail.com&gt;
+PO-Revision-Date: 2010-01-18 15:10+0000
+Last-Translator: Jose Almeida &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -200,10 +200,6 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <comment>#22</comment>
         <translation type="obsolete">ISO</translation>
     </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">Disco USB</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -371,7 +367,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="unetbootin.cpp" line="297"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; CloneZilla é uma distribuição usada para fazer imagens e cópias de segurança de discos rígidos.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; O CloneZilla arranca e corre em modo instantâneo; não é necessário instala-lo para o poder utilizar.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="302"/>
@@ -396,7 +392,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="unetbootin.cpp" line="323"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada em Debian que usa o gestor de janelas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite arrancar em modo Live, de onde o instalador pode ser executado. Esta instalação é da versão instável e não da &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão estável&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="333"/>
@@ -687,7 +683,7 @@ Quer reinicializar agora?</translation>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt;O xPUD é uma distribuição leve que contém uma interface simples, semelhante à de um quiosque, com um navegador web e um reprodutor multimédia.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live carrega o sistema completo para a RAM e arranca-o a partir da memória.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="489"/>
@@ -839,10 +835,8 @@ Quer reinicializar agora?</translation>
         <translation>Selecione a distribuição desejada da lista</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished">Distribuição</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Distribuição</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -850,10 +844,8 @@ Quer reinicializar agora?</translation>
         <translation>Especificar uma imagem de disco para carregar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished">Imagem</translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Imagem</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -861,10 +853,8 @@ Quer reinicializar agora?</translation>
         <translation>Especificar o kernel e o initrd para carga</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished">Modificado</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Modificado</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -872,19 +862,9 @@ Quer reinicializar agora?</translation>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="139"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="152"/>
@@ -897,21 +877,49 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Disco:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="184"/>
         <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Selecione o tipo de instalação desejado</translation>
     </message>
     <message>
+        <source>Type:</source>
+        <translation type="obsolete">Tipo:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="139"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="155"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
-        <translation type="unfinished">Tipo:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="216"/>
@@ -968,6 +976,16 @@ Quer reinicializar agora?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Kernel:</source>
         <translation type="obsolete">Kernel:</translation>
     </message>
@@ -1009,16 +1027,6 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; opção, vai mostrar todos os dispositivos de disco numa lista entitulada &quot;Discos&quot;. Habilite isso somente caso você entenda o que está fazendo; usando esta opção, a instalação tenderá a falhar, ou poderá resultar em problemas de (boot) inicializacão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>

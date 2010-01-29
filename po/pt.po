@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-28 17:41-0400\n"
-"PO-Revision-Date: 2009-11-10 17:18+0000\n"
-"Last-Translator: Leandro Gamito <lr.gamito@gmail.com>\n"
+"PO-Revision-Date: 2010-01-18 15:10+0000\n"
+"Last-Translator: Jose Almeida <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-01-01 06:40+0000\n"
+"X-Launchpad-Export-Date: 2010-01-29 05:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -339,6 +339,12 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Página web:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Descrição:<"
+"/b> CloneZilla é uma distribuição usada para fazer imagens e cópias de "
+"segurança de discos rígidos.<br/><b>Notas de Instalação:</b> O CloneZilla "
+"arranca e corre em modo instantâneo; não é necessário instala-lo para o "
+"poder utilizar."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:302
@@ -414,6 +420,13 @@ msgid ""
 "This installs the unstable version, not the <a "
 "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
 msgstr ""
+"<b>Página web:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descrição:"
+"</b> Elive é uma distribuição baseada em Debian que usa o gestor de janelas "
+"Enlightenment.<br/><b>Notas de Instalação:</b> A versão Live permite "
+"arrancar em modo Live, de onde o instalador pode ser executado. Esta "
+"instalação é da versão instável e não da <a "
+"href=\"http://www.elivecd.org/Download/Stable\">versão estável</a>."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:333
@@ -1012,6 +1025,12 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<b>Página web:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Descrição:</b>O "
+"xPUD é uma distribuição leve que contém uma interface simples, semelhante à "
+"de um quiosque, com um navegador web e um reprodutor "
+"multimédia.<br/><b>Notas de Instalação:</b> A versão Live carrega o sistema "
+"completo para a RAM e arranca-o a partir da memória."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:489

@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2009-10-28 17:41-0400\n"
-"PO-Revision-Date: 2009-10-29 01:12+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"PO-Revision-Date: 2010-01-01 13:59+0000\n"
+"Last-Translator: bushido <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-01-01 06:40+0000\n"
+"X-Launchpad-Export-Date: 2010-01-29 05:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -645,22 +645,22 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1551 unetbootin.cpp:1573
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+msgstr "<b>Pakitakse lahti kokkupakitud iso´d:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1630
 msgid "Extracting files, please wait..."
-msgstr ""
+msgstr "Pakitakse lahti faile, palun oota..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1631
 msgid "<b>Archive:</b> %1"
-msgstr ""
+msgstr "<b>Arhiiv:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1632
 msgid "<b>Source:</b>"
-msgstr ""
+msgstr "<b>Allikas:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1633
@@ -670,62 +670,62 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1634
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr ""
+msgstr "<b>Lahti pakitud:</b> 0 of %1 faili"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1637
 msgid "<b>Source:</b> %1 (%2)"
-msgstr ""
+msgstr "<b>Allikas:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1638
 msgid "<b>Destination:</b> %1%2"
-msgstr ""
+msgstr "<b>Sihtkoht:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1639
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
+msgstr "<b>Lahti pakitud:</b> %1 of %2 faili"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1981
 msgid "Downloading files, please wait..."
-msgstr ""
+msgstr "Failide allalaadimine, palun oota..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1982
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "<b>Allikas:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1983
 msgid "<b>Destination:</b> %1"
-msgstr ""
+msgstr "<b>Sihtkoht:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1984
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Allalaetud:</b> 0 baiti"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2061 unetbootin.cpp:2076
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Allalaetud:</b> %1 of %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2152
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "Otsitakse siit <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2156
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
+msgstr "%1/%2 vastuseid siin <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2341
 msgid "%1 not found"
-msgstr ""
+msgstr "%1 ei leitud"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2342
@@ -737,17 +737,17 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2630
 msgid "(Current)"
-msgstr ""
+msgstr "(Praegune)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2631
 msgid "(Done)"
-msgstr ""
+msgstr "(Tehtud)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2893
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "Seadistatakse grub2´de %1´s"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2905
@@ -762,7 +762,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:3055
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "syslinuxi installimine siia %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3090
@@ -777,7 +777,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:3166
 msgid "After rebooting, select the "
-msgstr ""
+msgstr "Peale taaskäivitamist, valige "
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3170
@@ -785,6 +785,8 @@ msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
+"Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1\n"
+"Taaskäivita nüüd?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:479
@@ -810,32 +812,32 @@ msgstr ""
 #: unetbootin.cpp:499 unetbootin.cpp:503 unetbootin.cpp:507 unetbootin.cpp:511
 #: unetbootin.cpp:517 unetbootin.cpp:529
 msgid "either"
-msgstr ""
+msgstr "või siis"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:823
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "Ava Ketta-image fail (.iso)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:841
 msgid "Open Kernel File"
-msgstr ""
+msgstr "Ava Kerneli fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:849
 msgid "Open Initrd File"
-msgstr ""
+msgstr "Ava Initrd fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:857
 msgid "Open Bootloader Config File"
-msgstr ""
+msgstr "Ava Bootimislaadija Seadistamise fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:879
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "Sisesta USB välkkõvaketas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:880
@@ -843,6 +845,8 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
+"Mitte ühtegi USB välkkõvaketast ei leitud. Kui sa oled juba sisestanud USB "
+"ketta, proovi taasformaatida see FAT32 failisüsteemina."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:895
@@ -869,57 +873,57 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:926
 msgid "Select a disk image file"
-msgstr ""
+msgstr "vali ketta-image fail (.iso)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:927
 msgid "You must select a disk image file to load."
-msgstr ""
+msgstr "Sa pead valima ketta-image(.iso) faili, et laadida."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:941
 msgid "Select a kernel and/or initrd file"
-msgstr ""
+msgstr "Vali kerneli ja/või initrd´i fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:942
 msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
+msgstr "Sa pead valima kerneli ja/või initrd´i faili, et laadida."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:956
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "Ketta-image(.iso) ei leitud"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:957
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "Täpsustatud kettafaili (.iso) faili %1 pole olemas."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:971
 msgid "Kernel file not found"
-msgstr ""
+msgstr "Kerneli faili ei leitud"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:972
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "Täpsustatud kerneli %1 faili ei leitud."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:986
 msgid "Initrd file not found"
-msgstr ""
+msgstr "Initrd´i faili ei leitud"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:987
 msgid "The specified initrd file %1 does not exist."
-msgstr ""
+msgstr "Täpsustatud initrd´i %1 faili pole olemas."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1087
 msgid "%1 exists, overwrite?"
-msgstr ""
+msgstr "%1 on juba olema, kirjuta ümber?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1088
@@ -932,7 +936,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1114
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "%1 on mälu täis, katkesta paigaldamine?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1115
@@ -945,67 +949,67 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:25
 msgid "UNetbootin"
-msgstr ""
+msgstr "UNetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:52 unetbootin.ui:103
 msgid "Select from a list of supported distributions"
-msgstr ""
+msgstr "Vali toetatav distributsioon listist"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:55
 msgid "Distribution"
-msgstr ""
+msgstr "Distributsioon"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:71
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Täpsusta ketta-image faili (.iso), et laadida"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:74
 msgid "Diskimage"
-msgstr ""
+msgstr "Ketta-image (.iso)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:87
 msgid "Manually specify a kernel and initrd to load"
-msgstr ""
+msgstr "Käsitsi täpsusta kernel ja intrd, et laadida"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:90
 msgid "Custom"
-msgstr ""
+msgstr "Kohandatud"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:119
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:132
 msgid "Cancel"
-msgstr ""
+msgstr "Loobu"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:145 unetbootin.ui:161
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Vali sihtkoha ketas, kuhu installida"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:148
 msgid "Drive:"
-msgstr ""
+msgstr "Kõvaketas:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:174 unetbootin.ui:190
 msgid "Select the installation target type"
-msgstr ""
+msgstr "Vali installimise sihtkoha tüüp"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:177
 msgid "Type:"
-msgstr ""
+msgstr "Tüüp:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:203
@@ -1015,17 +1019,17 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:265
 msgid "Select disk image file"
-msgstr ""
+msgstr "Vali ketta-image (.iso) fail"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:268 unetbootin.ui:336 unetbootin.ui:387 unetbootin.ui:419
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:281
 msgid "Select the disk image type"
-msgstr ""
+msgstr "Vali ketta-image (.iso) tüüp"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:294
@@ -1040,32 +1044,32 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:333
 msgid "Select kernel file"
-msgstr ""
+msgstr "Vali kerneli fail"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:352
 msgid "Kernel:"
-msgstr ""
+msgstr "Kernel:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:365 unetbootin.ui:400
 msgid "Specify an initrd file to load"
-msgstr ""
+msgstr "Täpsusta initrd´i fail laadimiseks"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:368
 msgid "Initrd:"
-msgstr ""
+msgstr "Initrd:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:384
 msgid "Select initrd file"
-msgstr ""
+msgstr "Vali initrd fail"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:416
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr ""
+msgstr "Vali syslinux.cfg või isolinux.cfg fail"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:432 unetbootin.ui:445
@@ -1075,7 +1079,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:448
 msgid "Options:"
-msgstr ""
+msgstr "Valikud:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:463
@@ -1098,7 +1102,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:470
 msgid "Show All Drives (Use with Care)"
-msgstr ""
+msgstr "Näita kõiki kettaid (Kasuta ettevaatlikult)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:483
@@ -1125,42 +1129,42 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:635
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Paigaldamine lõpetatud, Taaskäivita."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:648
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Bootloader´i paigaldamine"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:661
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Pakitakse lahti ja kopeeritakse faile"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Failide allalaadimine"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:699
 msgid "Exit"
-msgstr ""
+msgstr "Välju"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:712
 msgid "Reboot Now"
-msgstr ""
+msgstr "Taaskäivita nüüd"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr ""
+msgstr "Eemaaldamine lõpetatud"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "%1 on eemaldatud."
 
 #. ts-context uninstaller
 #: main.cpp:318
@@ -1177,9 +1181,9 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:342
 msgid "%1 Uninstaller"
-msgstr ""
+msgstr "%1 Eemaldaja"
 
 #. ts-context uninstaller
 #: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr ""
+msgstr "%1 on hetkel paigaldatud. Eemalda olemasolev versioon?"

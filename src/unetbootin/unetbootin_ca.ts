@@ -14,7 +14,7 @@ Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -156,10 +156,6 @@ Reboot now?</translation>
         <source>Floppy</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">Disquet</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB Disc</translation>
     </message>
 </context>
 <context>
@@ -791,10 +787,8 @@ Reboot now?</translation>
         <translation>Seleccioneu des d&apos;una llista de distribucions suportades</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished">Distribució</translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Distribució</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
@@ -802,10 +796,8 @@ Reboot now?</translation>
         <translation>Especifiqueu un fitxer imatge de disc per carregar-lo</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished">Imatge de disc</translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Imatge de disc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
@@ -813,10 +805,8 @@ Reboot now?</translation>
         <translation>especifiqueu un nucli (kernel) i un initrd a carregar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished">Personalitzat</translation>
+        <source>Custom</source>
+        <translation type="obsolete">Personalitzat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
@@ -824,19 +814,9 @@ Reboot now?</translation>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="139"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="152"/>
@@ -849,21 +829,49 @@ Reboot now?</translation>
         <translation type="obsolete">Unitat:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="184"/>
         <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Seleccioneu el tipus d&apos;instal·lació de destí</translation>
     </message>
     <message>
+        <source>Type:</source>
+        <translation type="obsolete">Tipus:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="139"/>
+        <source>Esc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="155"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
-        <translation type="unfinished">Tipus:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="216"/>
@@ -920,6 +928,16 @@ Reboot now?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Kernel:</source>
         <translation type="obsolete">Nucli:</translation>
     </message>
@@ -965,16 +983,6 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Aquesta opció &lt;span style=&quot; font-weight:600;&quot;&gt;és potencialment perillosa&lt;/span&gt; i mostra totes les unitats en un menú desplegable anomenat &quot;Unitats&quot;. Activeu aquesta opció només si sabeu el que esteu fent; si useu aquesta opció, la instal·lació probablement fallarà, o us pot provocar problemes d&apos;arrencada al vostre equip.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>

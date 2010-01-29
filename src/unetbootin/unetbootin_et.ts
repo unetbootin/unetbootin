@@ -14,19 +14,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2009-10-28 17:41-0400
-PO-Revision-Date: 2009-10-29 01:12+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+PO-Revision-Date: 2010-01-01 13:59+0000
+Last-Translator: bushido &lt;Unknown&gt;
 Language-Team: Estonian &lt;et@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-01 06:40+0000
+X-Launchpad-Export-Date: 2010-01-29 05:36+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB seade</translation>
     </message>
 </context>
 <context>
@@ -362,22 +358,22 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1551"/>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pakitakse lahti kokkupakitud iso´d:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1641"/>
         <source>Extracting files, please wait...</source>
-        <translation></translation>
+        <translation>Pakitakse lahti faile, palun oota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1642"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Arhiiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1643"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1644"/>
@@ -387,63 +383,63 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1645"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; 0 of %1 faili</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1648"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1649"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1650"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; %1 of %2 faili</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1992"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Failide allalaadimine, palun oota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1993"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1994"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1995"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; 0 baiti</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2072"/>
         <location filename="unetbootin.cpp" line="2087"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2163"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Otsitakse siit &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2167"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 vastuseid siin &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2352"/>
         <source>%1 not found</source>
-        <translation></translation>
+        <translation>%1 ei leitud</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2353"/>
@@ -454,17 +450,17 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2641"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Praegune)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2642"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Tehtud)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2904"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Seadistatakse grub2´de %1´s</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2916"/>
@@ -479,7 +475,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3066"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>syslinuxi installimine siia %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3101"/>
@@ -494,13 +490,14 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3179"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation>Peale taaskäivitamist, valige </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3183"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1
+Taaskäivita nüüd?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="479"/>
@@ -520,37 +517,37 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="517"/>
         <location filename="unetbootin.cpp" line="529"/>
         <source>either</source>
-        <translation></translation>
+        <translation>või siis</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="823"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Ava Ketta-image fail (.iso)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="841"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Ava Kerneli fail</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="849"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Ava Initrd fail</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="857"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Ava Bootimislaadija Seadistamise fail</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="879"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>Sisesta USB välkkõvaketas</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="880"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>Mitte ühtegi USB välkkõvaketast ei leitud. Kui sa oled juba sisestanud USB ketta, proovi taasformaatida see FAT32 failisüsteemina.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="895"/>
@@ -575,57 +572,57 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="926"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>vali ketta-image fail (.iso)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="927"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Sa pead valima ketta-image(.iso) faili, et laadida.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="941"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Vali kerneli ja/või initrd´i fail</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="942"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Sa pead valima kerneli ja/või initrd´i faili, et laadida.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="956"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>Ketta-image(.iso) ei leitud</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="957"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Täpsustatud kettafaili (.iso) faili %1 pole olemas.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="971"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>Kerneli faili ei leitud</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="972"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Täpsustatud kerneli %1 faili ei leitud.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="986"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>Initrd´i faili ei leitud</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Täpsustatud initrd´i %1 faili pole olemas.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1087"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 on juba olema, kirjuta ümber?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1088"/>
@@ -635,7 +632,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1114"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 on mälu täis, katkesta paigaldamine?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1115"/>
@@ -648,46 +645,80 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="26"/>
         <source>UNetbootin</source>
-        <translation></translation>
+        <translation>UNetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="53"/>
         <location filename="unetbootin.ui" line="104"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Vali toetatav distributsioon listist</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
-        <source>&amp;Distribution</source>
-        <oldsource>Distribution</oldsource>
-        <translation type="unfinished"></translation>
+        <source>Distribution</source>
+        <translation type="obsolete">Distributsioon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="72"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Täpsusta ketta-image faili (.iso), et laadida</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
-        <source>Disk&amp;image</source>
-        <oldsource>Diskimage</oldsource>
-        <translation type="unfinished"></translation>
+        <source>Diskimage</source>
+        <translation type="obsolete">Ketta-image (.iso)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="88"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Käsitsi täpsusta kernel ja intrd, et laadida</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
-        <source>&amp;Custom</source>
-        <oldsource>Custom</oldsource>
-        <translation type="unfinished"></translation>
+        <source>Custom</source>
+        <translation type="obsolete">Kohandatud</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="120"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
+        <source>Select the target drive to install to</source>
+        <translation>Vali sihtkoha ketas, kuhu installida</translation>
+    </message>
+    <message>
+        <source>Drive:</source>
+        <translation type="obsolete">Kõvaketas:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
+        <source>Select the installation target type</source>
+        <translation>Vali installimise sihtkoha tüüp</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Tüüp:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="56"/>
+        <source>&amp;Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="75"/>
+        <source>Disk&amp;image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="91"/>
+        <source>&amp;Custom</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="123"/>
@@ -695,31 +726,18 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
-        <source>Cancel</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
-        <location filename="unetbootin.ui" line="171"/>
-        <source>Select the target drive to install to</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="184"/>
-        <location filename="unetbootin.ui" line="203"/>
-        <source>Select the installation target type</source>
-        <translation></translation>
+        <location filename="unetbootin.ui" line="155"/>
+        <source>Dri&amp;ve:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
-        <oldsource>Type:</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -730,7 +748,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Vali ketta-image (.iso) fail</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="281"/>
@@ -738,12 +756,12 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="409"/>
         <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Vali ketta-image (.iso) tüüp</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="307"/>
@@ -759,62 +777,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="384"/>
-        <location filename="unetbootin.ui" line="422"/>
-        <source>Specify an initrd file to load</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="406"/>
-        <source>Select initrd file</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="438"/>
-        <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="454"/>
-        <location filename="unetbootin.ui" line="467"/>
-        <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="488"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="508"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="155"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali kerneli fail</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="368"/>
@@ -832,34 +795,100 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="495"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="515"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Kernel:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
+        <source>Specify an initrd file to load</source>
+        <translation>Täpsusta initrd´i fail laadimiseks</translation>
+    </message>
+    <message>
+        <source>Initrd:</source>
+        <translation type="obsolete">Initrd:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="406"/>
+        <source>Select initrd file</source>
+        <translation>Vali initrd fail</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="438"/>
+        <source>Select syslinux.cfg or isolinux.cfg file</source>
+        <translation>Vali syslinux.cfg või isolinux.cfg fail</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>Specify parameters and options to pass to the kernel</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="obsolete">Valikud:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="488"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Näita kõiki kettaid (Kasuta ettevaatlikult)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="508"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Paigaldamine lõpetatud, Taaskäivita.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Bootloader´i paigaldamine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Pakitakse lahti ja kopeeritakse faile</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Failide allalaadimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Välju</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Taaskäivita nüüd</translation>
     </message>
 </context>
 <context>
@@ -867,12 +896,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Eemaaldamine lõpetatud</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 on eemaldatud.</translation>
     </message>
     <message>
         <location filename="main.cpp" line="318"/>
@@ -887,12 +916,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>%1 Eemaldaja</translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 on hetkel paigaldatud. Eemalda olemasolev versioon?</translation>
     </message>
 </context>
 </TS>

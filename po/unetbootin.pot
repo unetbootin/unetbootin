@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-01 01:42-0500\n"
+"POT-Creation-Date: 2010-01-29 00:38-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,11 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: lconvert 4.5.2\n"
 
-#: distrolst.cpp:120
-#, fuzzy
-msgid "USB Drive"
-msgstr ""
-
 #. ts-context QObject
 #: main.cpp:266
 #, fuzzy
@@ -24,7 +19,7 @@ msgid "LeftToRight"
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:174
+#: distrolst.cpp:173
 #, fuzzy
 msgid ""
 "\n"
@@ -36,7 +31,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:315
+#: distrolst.cpp:314
 #, fuzzy
 msgid ""
 "\n"
@@ -48,7 +43,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:321
+#: distrolst.cpp:320
 #, fuzzy
 msgid ""
 "\n"
@@ -60,7 +55,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:572
+#: distrolst.cpp:571
 #, fuzzy
 msgid ""
 "\n"
@@ -72,7 +67,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:578
+#: distrolst.cpp:577
 #, fuzzy
 msgid ""
 "\n"
@@ -85,8 +80,8 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:606
-#: unetbootin.cpp:705 unetbootin.cpp:798 unetbootin.cpp:2648
-#: unetbootin.cpp:2661 unetbootin.cpp:2814 unetbootin.cpp:3164
+#: unetbootin.cpp:705 unetbootin.cpp:798 unetbootin.cpp:2659
+#: unetbootin.cpp:2672 unetbootin.cpp:2825 unetbootin.cpp:3177
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
@@ -94,23 +89,23 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
 #: unetbootin.cpp:608 unetbootin.cpp:709 unetbootin.cpp:803 unetbootin.cpp:875
-#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1997
-#: unetbootin.cpp:2039 unetbootin.cpp:2652 unetbootin.cpp:2677
-#: unetbootin.cpp:2818 unetbootin.cpp:3168
+#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1611
+#: unetbootin.cpp:2008 unetbootin.cpp:2050 unetbootin.cpp:2663
+#: unetbootin.cpp:2688 unetbootin.cpp:2829 unetbootin.cpp:3181
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:574
-#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2725
+#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2736
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:579
-#: unetbootin.cpp:831 unetbootin.cpp:832 unetbootin.cpp:2717
+#: unetbootin.cpp:831 unetbootin.cpp:832 unetbootin.cpp:2728
 #, fuzzy
 msgid "Floppy"
 msgstr ""
@@ -687,104 +682,104 @@ msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1630
+#: unetbootin.cpp:1641
 #, fuzzy
 msgid "Extracting files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1631
+#: unetbootin.cpp:1642
 #, fuzzy
 msgid "<b>Archive:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1632
+#: unetbootin.cpp:1643
 #, fuzzy
 msgid "<b>Source:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1633
+#: unetbootin.cpp:1644
 #, fuzzy
 msgid "<b>Destination:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1634
+#: unetbootin.cpp:1645
 #, fuzzy
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1637
+#: unetbootin.cpp:1648
 #, fuzzy
 msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1638
+#: unetbootin.cpp:1649
 #, fuzzy
 msgid "<b>Destination:</b> %1%2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1639
+#: unetbootin.cpp:1650
 #, fuzzy
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1981
+#: unetbootin.cpp:1992
 #, fuzzy
 msgid "Downloading files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1982
+#: unetbootin.cpp:1993
 #, fuzzy
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1983
+#: unetbootin.cpp:1994
 #, fuzzy
 msgid "<b>Destination:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1984
+#: unetbootin.cpp:1995
 #, fuzzy
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2061 unetbootin.cpp:2076
+#: unetbootin.cpp:2072 unetbootin.cpp:2087
 #, fuzzy
 #| msgid "<b>Downloaded:</b> %1 of %2 bytes"
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2152
+#: unetbootin.cpp:2163
 #, fuzzy
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2156
+#: unetbootin.cpp:2167
 #, fuzzy
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2341
+#: unetbootin.cpp:2352
 #, fuzzy
 msgid "%1 not found"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2342
+#: unetbootin.cpp:2353
 #, fuzzy
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
@@ -792,61 +787,61 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2630
+#: unetbootin.cpp:2641
 #, fuzzy
 msgid "(Current)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2631
+#: unetbootin.cpp:2642
 #, fuzzy
 msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2893
+#: unetbootin.cpp:2904
 #, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2905
+#: unetbootin.cpp:2916
 #, fuzzy
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2933
+#: unetbootin.cpp:2944
 #, fuzzy
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3055
+#: unetbootin.cpp:3066
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3090
+#: unetbootin.cpp:3101
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3154
+#: unetbootin.cpp:3167
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3166
+#: unetbootin.cpp:3179
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3170
+#: unetbootin.cpp:3183
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -1037,169 +1032,161 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:25
+#: unetbootin.ui:26
 #, fuzzy
 msgid "UNetbootin"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:52 unetbootin.ui:103
+#: unetbootin.ui:53 unetbootin.ui:104
 #, fuzzy
 msgid "Select from a list of supported distributions"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:55
+#: unetbootin.ui:56
 #, fuzzy
-msgid "Distribution"
+#| msgid "Distribution"
+msgid "&Distribution"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:71
+#: unetbootin.ui:72
 #, fuzzy
 msgid "Specify a disk image file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:74
+#: unetbootin.ui:75
 #, fuzzy
-msgid "Diskimage"
+#| msgid "Diskimage"
+msgid "Disk&image"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:87
+#: unetbootin.ui:88
 #, fuzzy
 msgid "Manually specify a kernel and initrd to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:90
+#: unetbootin.ui:91
 #, fuzzy
-msgid "Custom"
+#| msgid "Custom"
+msgid "&Custom"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:119
+#: unetbootin.ui:120
 #, fuzzy
 msgid "OK"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:132
+#: unetbootin.ui:123
+#, fuzzy
+msgid "Return"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:136
 #, fuzzy
 msgid "Cancel"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:145 unetbootin.ui:161
+#: unetbootin.ui:139
+#, fuzzy
+msgid "Esc"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:152 unetbootin.ui:171
 #, fuzzy
 msgid "Select the target drive to install to"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:148
-#, fuzzy
-msgid "Drive:"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:174 unetbootin.ui:190
+#: unetbootin.ui:184 unetbootin.ui:203
 #, fuzzy
 msgid "Select the installation target type"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:177
+#: unetbootin.ui:187
 #, fuzzy
-msgid "Type:"
+#| msgid "Type:"
+msgid "&Type:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:203
+#: unetbootin.ui:216
 #, fuzzy
 msgid "Select the distribution version"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:265
+#: unetbootin.ui:278
 #, fuzzy
 msgid "Select disk image file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:268 unetbootin.ui:336 unetbootin.ui:387 unetbootin.ui:419
+#: unetbootin.ui:281 unetbootin.ui:352 unetbootin.ui:409 unetbootin.ui:441
 #, fuzzy
 msgid "..."
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:281
+#: unetbootin.ui:294
 #, fuzzy
 msgid "Select the disk image type"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:294
+#: unetbootin.ui:307
 #, fuzzy
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:317 unetbootin.ui:349
+#: unetbootin.ui:330 unetbootin.ui:365
 #, fuzzy
 msgid "Specify a kernel file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:333
+#: unetbootin.ui:349
 #, fuzzy
 msgid "Select kernel file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:352
-#, fuzzy
-msgid "Kernel:"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:365 unetbootin.ui:400
+#: unetbootin.ui:384 unetbootin.ui:422
 #, fuzzy
 msgid "Specify an initrd file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:368
-#, fuzzy
-msgid "Initrd:"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:384
+#: unetbootin.ui:406
 #, fuzzy
 msgid "Select initrd file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:416
+#: unetbootin.ui:438
 #, fuzzy
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:432 unetbootin.ui:445
+#: unetbootin.ui:454 unetbootin.ui:467
 #, fuzzy
 msgid "Specify parameters and options to pass to the kernel"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:448
-#, fuzzy
-msgid "Options:"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:463
+#: unetbootin.ui:488
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1218,13 +1205,19 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:470
+#: unetbootin.ui:495
 #, fuzzy
-msgid "Show All Drives (Use with Care)"
+msgid "Show &All Drives (Use with Care)"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:483
+#: unetbootin.ui:515
+#, fuzzy
+msgid "&Format Drive (Wipes Out Data)"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:508
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1242,43 +1235,61 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:490
+#: unetbootin.ui:155
 #, fuzzy
-msgid "Format Drive (Wipes Out Data)"
+msgid "Dri&ve:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:635
+#: unetbootin.ui:368
+#, fuzzy
+msgid "&Kernel:"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:387
+#, fuzzy
+msgid "Init&rd:"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:470
+#, fuzzy
+msgid "&Options:"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:660
 #, fuzzy
 msgid "4. Installation Complete, Reboot"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:648
+#: unetbootin.ui:673
 #, fuzzy
 msgid "3. Installing Bootloader"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:661
+#: unetbootin.ui:686
 #, fuzzy
 msgid "2. Extracting and Copying Files"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:674
+#: unetbootin.ui:699
 #, fuzzy
 msgid "1. Downloading Files"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:699
+#: unetbootin.ui:724
 #, fuzzy
 msgid "Exit"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:712
+#: unetbootin.ui:737
 #, fuzzy
 msgid "Reboot Now"
 msgstr ""
