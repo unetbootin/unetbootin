@@ -173,11 +173,6 @@ Reboot now?</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">قرص فلوبي</translation>
     </message>
-    <message>
-        <location filename="distrolst.cpp" line="120"/>
-        <source>USB Drive</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -190,35 +185,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="174"/>
+        <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;mirrors.kernel.org&apos; عندما تطالب بالمزود و &apos;/centos/%1/os/%2&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="315"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/development/%1/os&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="321"/>
+        <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="572"/>
+        <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/factory/repo/oss&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="578"/>
+        <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -845,18 +840,23 @@ Reboot now?</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="133"/>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
-        <location filename="unetbootin.ui" line="168"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
         <source>Select the target drive to install to</source>
         <translation>إختر السواقة الهدف ليتم التنصيب عليها</translation>
     </message>
@@ -865,73 +865,73 @@ Reboot now?</source>
         <translation type="obsolete">السواقة:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="181"/>
-        <location filename="unetbootin.ui" line="200"/>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>إختر نوع هدف التنصيب</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
         <oldsource>Type:</oldsource>
         <translation type="unfinished">النوع:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="213"/>
+        <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
         <translation>إختر نسخة التوزيعة</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="275"/>
+        <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
         <translation>إختر ملف صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
-        <location filename="unetbootin.ui" line="349"/>
-        <location filename="unetbootin.ui" line="406"/>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="409"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="291"/>
+        <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
         <translation>إختر نوع صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="304"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>حدد صورة قرص فلوبي أو صلب أو صورة قرص إسطوانة سي دي (أي إس أو) ليتم تحميلها</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="327"/>
-        <location filename="unetbootin.ui" line="362"/>
+        <location filename="unetbootin.ui" line="330"/>
+        <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
         <translation>حدد ملف النواة ليتم تحميله</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="346"/>
+        <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
         <translation>إختر ملف النواة</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="368"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="387"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="470"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -940,8 +940,8 @@ Reboot now?</source>
         <translation type="obsolete">النواة:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
         <source>Specify an initrd file to load</source>
         <translation>حدد ملف قرص الذاكرة المؤقته المبدئية (initrd) ليتم تحميلها</translation>
     </message>
@@ -950,18 +950,18 @@ Reboot now?</source>
         <translation type="obsolete">ملف قرص الذاكرة المؤقته المبدئية (initrd):</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="403"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>Select initrd file</source>
         <translation>إختر ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>إختر ملف syslinux.cfg أو isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="451"/>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>حدد القيم والخيارات لجتياز النواة</translation>
     </message>
@@ -970,7 +970,7 @@ Reboot now?</source>
         <translation type="obsolete">الخيارات:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="485"/>
+        <location filename="unetbootin.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -983,12 +983,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;سيقوم خيار &lt;span style=&quot; font-weight:600;&quot;&gt;منطوي على خطر&lt;/span&gt; بعرض كافة السواقات في الصندوق المنسدل المعنون بعنوان &quot;سواقات&quot;. قم بتفعيل هذا الخيار فقط إذا كنت على علم بما تفعل, لان إستخدام هذا الخيار قد يؤدي إلى فشل عملية التنصيب أو مشكلات في عملية إقلاع النظام.</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="492"/>
+        <location filename="unetbootin.ui" line="495"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="512"/>
+        <location filename="unetbootin.ui" line="515"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -997,7 +997,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">عرض جميع السواقات (إستخدم هذا الخيار بحذر)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="505"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1014,32 +1014,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">تهيئة السواقة (ستمحو كافة البيانات)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="657"/>
+        <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>٤. إكتملت عملية التنصيب, إعادة التشغيل</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="670"/>
+        <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
         <translation>٣. تنصيب محمل الإقلاع</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="683"/>
+        <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
         <translation>٢. إستخراج ونسخ الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="696"/>
+        <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
         <translation>١. تنزيل الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="721"/>
+        <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
         <translation>إخرج</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="734"/>
+        <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
         <translation>أعد التشغيل الأن</translation>
     </message>

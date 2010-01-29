@@ -170,9 +170,8 @@ Reboot now?</source>
         <translation type="obsolete">ISO</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="120"/>
         <source>USB Drive</source>
-        <translation type="unfinished">כונן USB</translation>
+        <translation type="obsolete">כונן USB</translation>
     </message>
 </context>
 <context>
@@ -186,35 +185,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="174"/>
+        <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;mirrors.kernel.org&apos; כשיתבקש שם השרת ולהזין &apos;/centos/%1/os/%2&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="315"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/development/%1/os&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="321"/>
+        <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="572"/>
+        <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;/factory/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="578"/>
+        <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -842,18 +841,23 @@ Reboot now?</source>
         <translation>אישור</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="133"/>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
-        <location filename="unetbootin.ui" line="168"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
         <source>Select the target drive to install to</source>
         <translation>יש לבחור את כונן היעד להתקנה</translation>
     </message>
@@ -862,73 +866,73 @@ Reboot now?</source>
         <translation type="obsolete">כונן:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="181"/>
-        <location filename="unetbootin.ui" line="200"/>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>יש לבחור את סוג יעד ההתקנה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
         <oldsource>Type:</oldsource>
         <translation type="unfinished">סוג:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="213"/>
+        <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
         <translation>יש לבחור את גירסת ההפצה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="275"/>
+        <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
         <translation>יש לבחור קובץ דמות כונן</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
-        <location filename="unetbootin.ui" line="349"/>
-        <location filename="unetbootin.ui" line="406"/>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="409"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="291"/>
+        <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
         <translation>יש לבחור את סוג דמות הכונן</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="304"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>יש לציין את דמות הדיסקט/כונן קשיח או דמות תקליטור (ISO) לטעינה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="327"/>
-        <location filename="unetbootin.ui" line="362"/>
+        <location filename="unetbootin.ui" line="330"/>
+        <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
         <translation>יש לציין קובץ ליבה לטעינה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="346"/>
+        <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
         <translation>יש לבחור קובץ ליבה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="368"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="387"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="470"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -937,8 +941,8 @@ Reboot now?</source>
         <translation type="obsolete">ליבה:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
         <source>Specify an initrd file to load</source>
         <translation>יש לציין קובץ initrd לטעינה</translation>
     </message>
@@ -947,18 +951,18 @@ Reboot now?</source>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="403"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>Select initrd file</source>
         <translation>יש לבחור קובץ initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>יש לבחור קובץ syslinux.cfg או isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="451"/>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>יש לציין פרמטרים ואפשרויות להעברה אל הליבה</translation>
     </message>
@@ -967,7 +971,7 @@ Reboot now?</source>
         <translation type="obsolete">אפשרויות:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="485"/>
+        <location filename="unetbootin.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -976,12 +980,12 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html dir=&quot;rtl&quot;&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; direction:rtl;font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;אפשרות זו &lt;span style=&quot; font-weight:600;&quot;&gt;העלולה להיות מסוכנת&lt;/span&gt; תציג את כל הכוננים בתיבה הנשלפת בעלת הכותרת &quot;כוננים&quot;. יש לאפשר זאת רק במידה שהפעולות נעשות על ידי אדם המבין את מעשיו; אם יעשה שימוש באפשרות זו, סביר להניח כי ההתקנה תכשל, או שתווצר בעיית איתחול מערכת.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="492"/>
+        <location filename="unetbootin.ui" line="495"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="512"/>
+        <location filename="unetbootin.ui" line="515"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -990,7 +994,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">הצגת כל הכוננים (להשתמש בזהירות)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="505"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1003,32 +1007,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">איתחול הכונן (מחיקת כל הנתונים)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="657"/>
+        <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. ההתקנה הושלמה, מתבצע איתחול</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="670"/>
+        <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
         <translation>3. התקנת תוכנית הטעינה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="683"/>
+        <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. חילוץ והעתקת קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="696"/>
+        <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
         <translation>1. הורדת קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="721"/>
+        <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="734"/>
+        <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
         <translation>איתחול כעת</translation>
     </message>

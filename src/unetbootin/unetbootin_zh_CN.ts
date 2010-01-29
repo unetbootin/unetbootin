@@ -175,9 +175,8 @@ Reboot now?</source>
         <translation type="obsolete">软盘</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="120"/>
         <source>USB Drive</source>
-        <translation type="unfinished">USB设备</translation>
+        <translation type="obsolete">USB设备</translation>
     </message>
 </context>
 <context>
@@ -191,35 +190,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="174"/>
+        <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;mirrors.kernel.org&apos;，当询问文件夹时输入&apos;/centos/%1/os/%2&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="315"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/development/%1/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="321"/>
+        <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="572"/>
+        <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *重要提示* 重启动后，不要理会任何错误提示信息。如果提示要求插入CD光盘，请选择“返回”，然后回到主菜单，选择“开始安装”，安装源选“网络”，协议选“HTTP”。当提示指定服务器时，输入“download.opensuse.org”；询问文件夹位置时，再输入“/factory/repo/oss”即可。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="578"/>
+        <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -847,18 +846,23 @@ Reboot now?</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="133"/>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
-        <location filename="unetbootin.ui" line="168"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
         <source>Select the target drive to install to</source>
         <translation>选择进行安装的目标驱动器</translation>
     </message>
@@ -867,73 +871,73 @@ Reboot now?</source>
         <translation type="obsolete">驱动器：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="181"/>
-        <location filename="unetbootin.ui" line="200"/>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>选择安装目标类型</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
         <oldsource>Type:</oldsource>
         <translation type="unfinished">类型：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="213"/>
+        <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
         <translation>选择发行版本</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="275"/>
+        <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
         <translation>选择磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
-        <location filename="unetbootin.ui" line="349"/>
-        <location filename="unetbootin.ui" line="406"/>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="409"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="291"/>
+        <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
         <translation>选择磁盘镜像类型</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="304"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>指定加载 软盘/硬盘 镜像，或者 CD 镜像(ISO)文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="327"/>
-        <location filename="unetbootin.ui" line="362"/>
+        <location filename="unetbootin.ui" line="330"/>
+        <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
         <translation>指定加载内核文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="346"/>
+        <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
         <translation>选择内核文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="368"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="387"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="470"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -942,8 +946,8 @@ Reboot now?</source>
         <translation type="obsolete">内核：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
         <source>Specify an initrd file to load</source>
         <translation>指定加载 initrd 文件</translation>
     </message>
@@ -952,18 +956,18 @@ Reboot now?</source>
         <translation type="obsolete">Initrd：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="403"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>Select initrd file</source>
         <translation>选择 initrd 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>选择 syslinux.cfg or isolinux.cfg 文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="451"/>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>指定传递给内核的参数和选项</translation>
     </message>
@@ -972,7 +976,7 @@ Reboot now?</source>
         <translation type="obsolete">选项：</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="485"/>
+        <location filename="unetbootin.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -981,12 +985,12 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项，将在名为“驱动器”的下拉框中显示所有驱动器。 仅在你知道你在做什么再启用它； 如果你使用这个选项，安装可能会失败，或者可导致系统启动的问题。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="492"/>
+        <location filename="unetbootin.ui" line="495"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="512"/>
+        <location filename="unetbootin.ui" line="515"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -995,7 +999,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">显示所有驱动器（谨慎使用）</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="505"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1008,32 +1012,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">格式化驱动器（擦除数据）</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="657"/>
+        <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. 安装完成，重启</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="670"/>
+        <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
         <translation>3. 安装 Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="683"/>
+        <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. 抽取和拷贝文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="696"/>
+        <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
         <translation>1. 下载文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="721"/>
+        <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="734"/>
+        <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
         <translation>现在重启</translation>
     </message>

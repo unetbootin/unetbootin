@@ -158,9 +158,8 @@ Reboot now?</translation>
         <translation type="obsolete">Disquet</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="120"/>
         <source>USB Drive</source>
-        <translation type="unfinished">USB Disc</translation>
+        <translation type="obsolete">USB Disc</translation>
     </message>
 </context>
 <context>
@@ -174,32 +173,32 @@ Reboot now?</translation>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="174"/>
+        <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="315"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="321"/>
+        <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="572"/>
+        <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu &apos;Enrera&apos; si se us requereix introduïr un CD, llavors aneu al menú principal, seleccioneu &apos;Inicia la instal·lació&apos;, escolliu &apos;En xarxa&apos; com a origen, escolliu &apos;HTTP&apos; com a protocol, quan se us demani el servidor escriviu &apos;download.opensuse.org&apos; i escriviu &apos;/factory/repo/oss&apos; quan se us demani el directori.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="578"/>
+        <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
@@ -825,18 +824,23 @@ Reboot now?</translation>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="133"/>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
-        <location filename="unetbootin.ui" line="168"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
         <source>Select the target drive to install to</source>
         <translation>Seleccioneu la unitat destí a la que voleu instal·lar</translation>
     </message>
@@ -845,73 +849,73 @@ Reboot now?</translation>
         <translation type="obsolete">Unitat:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="181"/>
-        <location filename="unetbootin.ui" line="200"/>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Seleccioneu el tipus d&apos;instal·lació de destí</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
         <oldsource>Type:</oldsource>
         <translation type="unfinished">Tipus:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="213"/>
+        <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
         <translation>Seleccioneu la versió de la distribució</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="275"/>
+        <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
         <translation>Seleccioneu el fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
-        <location filename="unetbootin.ui" line="349"/>
-        <location filename="unetbootin.ui" line="406"/>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="409"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="291"/>
+        <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
         <translation>Seleccioneu el tipus d&apos;imatge de disc</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="304"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Especifiqueu el fitxer imatge de disc dur, de diquet o de CD (ISO) a carregar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="327"/>
-        <location filename="unetbootin.ui" line="362"/>
+        <location filename="unetbootin.ui" line="330"/>
+        <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
         <translation>Especifiqueu el fitxer nucli (kernel) a carregar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="346"/>
+        <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
         <translation>Seleccioneu un fitxer de nucli (kernel)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="368"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="387"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="470"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -920,8 +924,8 @@ Reboot now?</translation>
         <translation type="obsolete">Nucli:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
         <source>Specify an initrd file to load</source>
         <translation>Especifiqueu el fitxer initrd a carregar</translation>
     </message>
@@ -930,18 +934,18 @@ Reboot now?</translation>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="403"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>Select initrd file</source>
         <translation>Seleccioneu el fitxer initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Seleccioneu el fitxer syslinux.cfg o isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="451"/>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Especifiqueu els paràmetres i opcions que voleu passar al nucli</translation>
     </message>
@@ -950,7 +954,7 @@ Reboot now?</translation>
         <translation type="obsolete">Opcions:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="485"/>
+        <location filename="unetbootin.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -963,12 +967,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Aquesta opció &lt;span style=&quot; font-weight:600;&quot;&gt;és potencialment perillosa&lt;/span&gt; i mostra totes les unitats en un menú desplegable anomenat &quot;Unitats&quot;. Activeu aquesta opció només si sabeu el que esteu fent; si useu aquesta opció, la instal·lació probablement fallarà, o us pot provocar problemes d&apos;arrencada al vostre equip.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="492"/>
+        <location filename="unetbootin.ui" line="495"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="512"/>
+        <location filename="unetbootin.ui" line="515"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -977,7 +981,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Mostra totes les unitats (Compte!)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="505"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -994,32 +998,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Formata la unitat (Esborra les dades)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="657"/>
+        <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. S&apos;ha acabat la instal·lació, Reinici</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="670"/>
+        <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
         <translation>3. S&apos;està instal·lat en carregador d&apos;arrencada</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="683"/>
+        <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. S&apos;estan extraient i copiant fitxers</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="696"/>
+        <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
         <translation>1. S&apos;estan descarregant fitxers</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="721"/>
+        <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
         <translation>Surt</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="734"/>
+        <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
         <translation>Reinicia ara</translation>
     </message>

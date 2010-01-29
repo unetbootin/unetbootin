@@ -168,9 +168,8 @@ Restartovat nyní</translation>
         <translation type="obsolete">Disketa</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="120"/>
         <source>USB Drive</source>
-        <translation type="unfinished">Mechanika USB</translation>
+        <translation type="obsolete">Mechanika USB</translation>
     </message>
 </context>
 <context>
@@ -184,35 +183,35 @@ Restartovat nyní</translation>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="174"/>
+        <location filename="distrolst.cpp" line="173"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;mirrors.kernel.org&apos; a při dotazu na adresář zadejte &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="315"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="321"/>
+        <location filename="distrolst.cpp" line="320"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="572"/>
+        <location filename="distrolst.cpp" line="571"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/factory/repo/oss&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="578"/>
+        <location filename="distrolst.cpp" line="577"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -840,18 +839,23 @@ Restartovat nyní</translation>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="133"/>
+        <location filename="unetbootin.ui" line="123"/>
+        <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="136"/>
         <source>Cancel</source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="139"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="149"/>
-        <location filename="unetbootin.ui" line="168"/>
+        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="171"/>
         <source>Select the target drive to install to</source>
         <translation>Vyberte zařízení pro instalaci</translation>
     </message>
@@ -860,73 +864,73 @@ Restartovat nyní</translation>
         <translation type="obsolete">Zařízení:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
+        <location filename="unetbootin.ui" line="155"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="181"/>
-        <location filename="unetbootin.ui" line="200"/>
+        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Select the installation target type</source>
         <translation>Vyberte typ zařízení pro instalaci</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
+        <location filename="unetbootin.ui" line="187"/>
         <source>&amp;Type:</source>
         <oldsource>Type:</oldsource>
         <translation type="unfinished">Typ:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="213"/>
+        <location filename="unetbootin.ui" line="216"/>
         <source>Select the distribution version</source>
         <translation>Vyberte verzi distribuce</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="275"/>
+        <location filename="unetbootin.ui" line="278"/>
         <source>Select disk image file</source>
         <translation>Vyberte soubor s obrazem disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
-        <location filename="unetbootin.ui" line="349"/>
-        <location filename="unetbootin.ui" line="406"/>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="352"/>
+        <location filename="unetbootin.ui" line="409"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="291"/>
+        <location filename="unetbootin.ui" line="294"/>
         <source>Select the disk image type</source>
         <translation>Zvolte typ obrazu disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="304"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Vyberte obraz disku/diskety nebo obraz CD (ISO)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="327"/>
-        <location filename="unetbootin.ui" line="362"/>
+        <location filename="unetbootin.ui" line="330"/>
+        <location filename="unetbootin.ui" line="365"/>
         <source>Specify a kernel file to load</source>
         <translation>Výběr souboru s jádrem</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="346"/>
+        <location filename="unetbootin.ui" line="349"/>
         <source>Select kernel file</source>
         <translation>Vyberte soubor s jádrem</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="368"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="387"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="470"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -935,8 +939,8 @@ Restartovat nyní</translation>
         <translation type="obsolete">Jádro:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <location filename="unetbootin.ui" line="419"/>
+        <location filename="unetbootin.ui" line="384"/>
+        <location filename="unetbootin.ui" line="422"/>
         <source>Specify an initrd file to load</source>
         <translation>Výběr souboru initrd</translation>
     </message>
@@ -945,18 +949,18 @@ Restartovat nyní</translation>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="403"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>Select initrd file</source>
         <translation>Vyberte soubor initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="438"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Vyberte soubor syslinux.cfg nebo isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="451"/>
-        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="454"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Výběr parametrů a voleb jádra</translation>
     </message>
@@ -965,7 +969,7 @@ Restartovat nyní</translation>
         <translation type="obsolete">Volby:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="485"/>
+        <location filename="unetbootin.ui" line="488"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -978,12 +982,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tato &lt;span style=&quot; font-weight:600;&quot;&gt;potenciálně nebezpečná&lt;/span&gt; volba zobrazí všechna zařízení a učiní je dostupnými v rozbalovací nabídce &quot;Zařízení&quot;. Povolte jen v případě, že víte co děláte - můžete znemožnit vytvoření spustitelného disku nebo dokonce poškodit stávající systém.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="492"/>
+        <location filename="unetbootin.ui" line="495"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="512"/>
+        <location filename="unetbootin.ui" line="515"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -992,7 +996,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Zobrazit všechna zařízení (používejte opatrně)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="505"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1009,32 +1013,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Formátovat zařízení (zničí všechna data)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="657"/>
+        <location filename="unetbootin.ui" line="660"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. Instalace je kompletní, restart</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="670"/>
+        <location filename="unetbootin.ui" line="673"/>
         <source>3. Installing Bootloader</source>
         <translation>3. Instalace zavaděče</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="683"/>
+        <location filename="unetbootin.ui" line="686"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. Rozbalování a kopírování dat</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="696"/>
+        <location filename="unetbootin.ui" line="699"/>
         <source>1. Downloading Files</source>
         <translation>1. Stahování dat</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="721"/>
+        <location filename="unetbootin.ui" line="724"/>
         <source>Exit</source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="734"/>
+        <location filename="unetbootin.ui" line="737"/>
         <source>Reboot Now</source>
         <translation>Restartovat nyní</translation>
     </message>

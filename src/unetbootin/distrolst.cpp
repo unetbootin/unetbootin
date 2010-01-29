@@ -111,8 +111,16 @@ if (nameDistro == "SliTaz")
 
 if (nameDistro == "xPUD")
 {
-	downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
-	extractiso(isotmpf, targetPath);
+	if (relname == "stable")
+	{
+		downloadfile("http://xpud.org/xpud-latest-iso.php", isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
+	else if (relname == "unstable")
+	{
+		downloadfile("http://xpud.org/xpud-latest-snapshot.php", isotmpf);
+		extractiso(isotmpf, targetPath);
+	}
 }
 
 #endif
