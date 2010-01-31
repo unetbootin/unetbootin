@@ -450,35 +450,35 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="173"/>
+        <location filename="distrolst.cpp" line="172"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y escoja nuevamente si se lo piden un CD, vaya entonces al menú principal, escoja la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como el origen, elija como protocolo: &quot;HTTP&quot;, escriba «mirrors.kernel.org» cuando le pregunten por un servidor, y ponga «/centos/%1/os%2» cuando le pregunten por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="314"/>
+        <location filename="distrolst.cpp" line="313"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/development/%1/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="320"/>
+        <location filename="distrolst.cpp" line="319"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.fedora.redhat.com» cuando se le solicite un servidor, y escriba «/pub/fedora/linux/releases/%1/Fedora/%2/os» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="571"/>
+        <location filename="distrolst.cpp" line="570"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.opensuse.org» cuando se le solicite un servidor, y escriba «/factory/repo/oss» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="577"/>
+        <location filename="distrolst.cpp" line="576"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
