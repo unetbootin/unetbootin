@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-10-28 17:41-0400
+POT-Creation-Date: 2010-01-29 00:38-0500
 PO-Revision-Date: 2009-10-29 01:13+0000
 Last-Translator: Qianqian Fang &lt;fangqq@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-29 05:36+0000
+X-Launchpad-Export-Date: 2010-02-01 07:24+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -29,6 +29,46 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;下载：&lt;/b&gt; %1 of %2 bytes</translation>
+    </message>
+    <message>
+        <source>Distribution</source>
+        <translation type="obsolete">发行版本</translation>
+    </message>
+    <message>
+        <source>Diskimage</source>
+        <translation type="obsolete">磁盘镜像</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="obsolete">自定义</translation>
+    </message>
+    <message>
+        <source>Drive:</source>
+        <translation type="obsolete">驱动器：</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">类型：</translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">内核：</translation>
+    </message>
+    <message>
+        <source>Initrd:</source>
+        <translation type="obsolete">Initrd：</translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="obsolete">选项：</translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">显示所有驱动器（谨慎使用）</translation>
+    </message>
+    <message>
+        <source>Format Drive (Wipes Out Data)</source>
+        <translation type="obsolete">格式化驱动器（擦除数据）</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
@@ -798,10 +838,8 @@ Reboot now?</source>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="20"/>
-        <source>Unetbootin</source>
-        <oldsource>UNetbootin</oldsource>
-        <translation type="unfinished">UNetbootin</translation>
+        <source>UNetbootin</source>
+        <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -810,8 +848,9 @@ Reboot now?</source>
         <translation>在列表中选择一个支持的发行版本</translation>
     </message>
     <message>
-        <source>Distribution</source>
-        <translation type="obsolete">发行版本</translation>
+        <location filename="unetbootin.ui" line="47"/>
+        <source>&amp;Distribution</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -819,8 +858,9 @@ Reboot now?</source>
         <translation>指定加载磁盘镜像文件</translation>
     </message>
     <message>
-        <source>Diskimage</source>
-        <translation type="obsolete">磁盘镜像</translation>
+        <location filename="unetbootin.ui" line="130"/>
+        <source>Disk&amp;image</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -828,78 +868,46 @@ Reboot now?</source>
         <translation>手动地指定加载一个内核 和 initrd</translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation type="obsolete">自定义</translation>
+        <location filename="unetbootin.ui" line="381"/>
+        <source>&amp;Custom</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="493"/>
+        <source>Return</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="503"/>
+        <source>Esc</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation type="unfinished">选择进行安装的目标驱动器</translation>
-    </message>
-    <message>
-        <source>Drive:</source>
-        <translation type="obsolete">驱动器：</translation>
+        <translation>选择进行安装的目标驱动器</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
         <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation type="unfinished">选择安装目标类型</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="obsolete">类型：</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="47"/>
-        <source>&amp;Distribution</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="130"/>
-        <source>Disk&amp;image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <source>&amp;Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="427"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="493"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="503"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="467"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
+        <translation>选择安装目标类型</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -936,43 +944,20 @@ Reboot now?</source>
         <translation>指定加载内核文件</translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
         <translation>选择内核文件</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="170"/>
-        <source>&amp;Kernel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="256"/>
-        <source>Init&amp;rd:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="189"/>
-        <source>&amp;Options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="413"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kernel:</source>
-        <translation type="obsolete">内核：</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="253"/>
         <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
         <translation>指定加载 initrd 文件</translation>
-    </message>
-    <message>
-        <source>Initrd:</source>
-        <translation type="obsolete">Initrd：</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="332"/>
@@ -991,21 +976,23 @@ Reboot now?</source>
         <translation>指定传递给内核的参数和选项</translation>
     </message>
     <message>
-        <source>Options:</source>
-        <translation type="obsolete">选项：</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="406"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项，将在名为“驱动器”的下拉框中显示所有驱动器。 仅在你知道你在做什么再启用它； 如果你使用这个选项，安装可能会失败，或者可导致系统启动的问题。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项，将在名为“驱动器”的下拉框中显示所有驱动器。 仅在你知道你在做什么再启用它； 如果你使用这个选项，安装可能会失败，或者可导致系统启动的问题。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Show All Drives (Use with Care)</source>
-        <translation type="obsolete">显示所有驱动器（谨慎使用）</translation>
+        <location filename="unetbootin.ui" line="413"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -1014,41 +1001,57 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项将格式化选定的驱动器，擦除它上面的所有数据。 如果你使用的是标准的 USB 驱动器则它是非必要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;这个 &lt;span style=&quot; font-weight:600;&quot;&gt;有潜在危险的&lt;/span&gt; 选项将格式化选定的驱动器，擦除它上面的所有数据。 如果你使用的是标准的 USB 驱动器则它是非必要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">格式化驱动器（擦除数据）</translation>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>Dri&amp;ve:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="170"/>
+        <source>&amp;Kernel:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="256"/>
+        <source>Init&amp;rd:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="189"/>
+        <source>&amp;Options:</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation type="unfinished">4. 安装完成，重启</translation>
+        <translation>4. 安装完成，重启</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation type="unfinished">3. 安装 Bootloader</translation>
+        <translation>3. 安装 Bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation type="unfinished">2. 抽取和拷贝文件</translation>
+        <translation>2. 抽取和拷贝文件</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation type="unfinished">1. 下载文件</translation>
+        <translation>1. 下载文件</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation type="unfinished">退出</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation type="unfinished">现在重启</translation>
+        <translation>现在重启</translation>
     </message>
 </context>
 <context>

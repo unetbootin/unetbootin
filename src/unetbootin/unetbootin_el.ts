@@ -7,20 +7,44 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-10-28 17:41-0400
-PO-Revision-Date: 2010-01-24 10:27+0000
-Last-Translator: Costas Skarlatos &lt;Unknown&gt;
+POT-Creation-Date: 2010-01-29 00:38-0500
+PO-Revision-Date: 2010-01-29 08:11+0000
+Last-Translator: UNetbootin Team &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-29 05:36+0000
+X-Launchpad-Export-Date: 2010-02-01 07:24+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;Καταφωρτώθηκαν:&lt;/b&gt; %1 of %2 bytes</translation>
+    </message>
+    <message>
+        <source>Distribution</source>
+        <translation type="obsolete">Διανομή</translation>
+    </message>
+    <message>
+        <source>Diskimage</source>
+        <translation type="obsolete">Εικόνα Δίσκου</translation>
+    </message>
+    <message>
+        <source>Drive:</source>
+        <translation type="obsolete">Δίσκος:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Είδος Δίσκου:</translation>
+    </message>
+    <message>
+        <source>Initrd:</source>
+        <translation type="obsolete">Initrd:</translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="obsolete">Επιλογές:</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
@@ -149,6 +173,22 @@ Reboot now?</source>
         <comment>unetbootin#32</comment>
         <translation type="obsolete">Δισκέτα</translation>
     </message>
+    <message>
+        <source>Custom</source>
+        <translation type="obsolete">Προσαρμοσμένο</translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Εμφάνιση όλων των δίσκων (Χρησιμοποιήστε με προσοχή)</translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Πυρήνας:</translation>
+    </message>
+    <message>
+        <source>Format Drive (Wipes Out Data)</source>
+        <translation type="obsolete">Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -160,27 +200,6 @@ Reboot now?</source>
 </context>
 <context>
     <name>unetbootin</name>
-    <message>
-        <location filename="unetbootin.cpp" line="156"/>
-        <location filename="unetbootin.cpp" line="521"/>
-        <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="536"/>
-        <location filename="unetbootin.cpp" line="608"/>
-        <location filename="unetbootin.cpp" line="709"/>
-        <location filename="unetbootin.cpp" line="803"/>
-        <location filename="unetbootin.cpp" line="875"/>
-        <location filename="unetbootin.cpp" line="891"/>
-        <location filename="unetbootin.cpp" line="1141"/>
-        <location filename="unetbootin.cpp" line="1611"/>
-        <location filename="unetbootin.cpp" line="2008"/>
-        <location filename="unetbootin.cpp" line="2050"/>
-        <location filename="unetbootin.cpp" line="2663"/>
-        <location filename="unetbootin.cpp" line="2688"/>
-        <location filename="unetbootin.cpp" line="2829"/>
-        <location filename="unetbootin.cpp" line="3181"/>
-        <source>USB Drive</source>
-        <translation>USB Δίσκος</translation>
-    </message>
     <message>
         <location filename="distrolst.cpp" line="172"/>
         <source>
@@ -224,6 +243,27 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="3177"/>
         <source>Hard Disk</source>
         <translation>Σκληρός Δίσκος</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="156"/>
+        <location filename="unetbootin.cpp" line="521"/>
+        <location filename="unetbootin.cpp" line="535"/>
+        <location filename="unetbootin.cpp" line="536"/>
+        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="709"/>
+        <location filename="unetbootin.cpp" line="803"/>
+        <location filename="unetbootin.cpp" line="875"/>
+        <location filename="unetbootin.cpp" line="891"/>
+        <location filename="unetbootin.cpp" line="1141"/>
+        <location filename="unetbootin.cpp" line="1611"/>
+        <location filename="unetbootin.cpp" line="2008"/>
+        <location filename="unetbootin.cpp" line="2050"/>
+        <location filename="unetbootin.cpp" line="2663"/>
+        <location filename="unetbootin.cpp" line="2688"/>
+        <location filename="unetbootin.cpp" line="2829"/>
+        <location filename="unetbootin.cpp" line="3181"/>
+        <source>USB Drive</source>
+        <translation>USB Δίσκος</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="157"/>
@@ -766,10 +806,8 @@ Reboot now?</source>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="20"/>
-        <source>Unetbootin</source>
-        <oldsource>UNetbootin</oldsource>
-        <translation type="unfinished">UNetbootin</translation>
+        <source>UNetbootin</source>
+        <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -778,8 +816,9 @@ Reboot now?</source>
         <translation>Επίλέξτε από την λίστα με τις υποστηριζόμενες διανομές</translation>
     </message>
     <message>
-        <source>Distribution</source>
-        <translation type="obsolete">Διανομή</translation>
+        <location filename="unetbootin.ui" line="47"/>
+        <source>&amp;Distribution</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -787,8 +826,9 @@ Reboot now?</source>
         <translation>Προσδιορίστε ενα αρχείο εικόνας δίσκου</translation>
     </message>
     <message>
-        <source>Diskimage</source>
-        <translation type="obsolete">Εικόνα Δίσκου</translation>
+        <location filename="unetbootin.ui" line="130"/>
+        <source>Disk&amp;image</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -796,78 +836,46 @@ Reboot now?</source>
         <translation>Χειροκίνητα δηλώστε πυρήνα και intird</translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation type="obsolete">Προσαρμοσμένο</translation>
+        <location filename="unetbootin.ui" line="381"/>
+        <source>&amp;Custom</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation type="unfinished">Εντάξει</translation>
+        <translation>Εντάξει</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="493"/>
+        <source>Return</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation type="unfinished">Ακύρωση</translation>
+        <translation>Ακύρωση</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="503"/>
+        <source>Esc</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation type="unfinished">Επιλέξτε τον δίσκο στον οποίο θα γινει η εγκατάσταση</translation>
-    </message>
-    <message>
-        <source>Drive:</source>
-        <translation type="obsolete">Δίσκος:</translation>
+        <translation>Επιλέξτε τον δίσκο στον οποίο θα γινει η εγκατάσταση</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
         <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation type="unfinished">Επιλέξτε το είδος δίσκου στον οποίο θα γίνει η εγκατάσταση</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="obsolete">Είδος Δίσκου:</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="47"/>
-        <source>&amp;Distribution</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="130"/>
-        <source>Disk&amp;image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <source>&amp;Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="427"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="493"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="503"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="467"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε το είδος δίσκου στον οποίο θα γίνει η εγκατάσταση</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -904,43 +912,20 @@ Reboot now?</source>
         <translation>Προσδιορίστε αρχείο πυρήνα</translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
         <translation>Επιλέξτε αρχείο πυρήνα</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="170"/>
-        <source>&amp;Kernel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="256"/>
-        <source>Init&amp;rd:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="189"/>
-        <source>&amp;Options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="413"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kernel:</source>
-        <translation type="obsolete">Πυρήνας:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="253"/>
         <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
         <translation>Προσδιορίστε αρχείο initrd</translation>
-    </message>
-    <message>
-        <source>Initrd:</source>
-        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="332"/>
@@ -959,21 +944,23 @@ Reboot now?</source>
         <translation>Προσδιορίστε παραμέτρους και επιλογές για τον πυρήνα</translation>
     </message>
     <message>
-        <source>Options:</source>
-        <translation type="obsolete">Επιλογές:</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="406"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή η&lt;span style=&quot; font-weight:600;&quot;&gt;, πιθανότατα επικίνδυνη &lt;/span&gt; επιλογή, θα εμφανίσει όλους τους δίσκους στο μενού με το όνομα &quot;Δίσκοι&quot;. Ενεργοποιείστε το μονο αν ξέρετε τι κάνετε. Εάν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανόν η εγκατάσταση να αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του συστήματος.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή η&lt;span style=&quot; font-weight:600;&quot;&gt;, πιθανότατα επικίνδυνη &lt;/span&gt; επιλογή, θα εμφανίσει όλους τους δίσκους στο μενού με το όνομα &quot;Δίσκοι&quot;. Ενεργοποιείστε το μονο αν ξέρετε τι κάνετε. Εάν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανόν η εγκατάσταση να αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του συστήματος.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Show All Drives (Use with Care)</source>
-        <translation type="obsolete">Εμφάνιση όλων των δίσκων (Χρησιμοποιήστε με προσοχή)</translation>
+        <location filename="unetbootin.ui" line="413"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -982,41 +969,57 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή  η&lt;span style=&quot; font-weight:600;&quot;&gt; ,πιθανότατα επικίνδυνη, &lt;/span&gt; επιλογή θα διαμορφώσει τον επιλεγμένο δίσκο, διαγράφοντας ολα τα δεδομένα που έχει. Δεν ειναι απαραίτητη εφόσον χρησιμοποιείτε standard USB δίσκο.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;￼&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;￼p, li { white-space: pre-wrap; }￼&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;￼&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Αυτή  η&lt;span style=&quot; font-weight:600;&quot;&gt; ,πιθανότατα επικίνδυνη, &lt;/span&gt; επιλογή θα διαμορφώσει τον επιλεγμένο δίσκο, διαγράφοντας ολα τα δεδομένα που έχει. Δεν ειναι απαραίτητη εφόσον χρησιμοποιείτε standard USB δίσκο.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)</translation>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>Dri&amp;ve:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="170"/>
+        <source>&amp;Kernel:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="256"/>
+        <source>Init&amp;rd:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="189"/>
+        <source>&amp;Options:</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation type="unfinished">4. Η Εγκατάσταση Ολοκληρώθηκε, Επανεκκίνηση</translation>
+        <translation>4. Η Εγκατάσταση Ολοκληρώθηκε, Επανεκκίνηση</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation type="unfinished">3. Εγκατάσταση Επιλογέα Εκκίνησης</translation>
+        <translation>3. Εγκατάσταση Επιλογέα Εκκίνησης</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation type="unfinished">2. Εξαγωγή και Αντιγραφή Αρχείων</translation>
+        <translation>2. Εξαγωγή και Αντιγραφή Αρχείων</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation type="unfinished">1. Μεταφόρτωση αρχείων</translation>
+        <translation>1. Μεταφόρτωση αρχείων</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation type="unfinished">Επανεκκίνηση Τώρα</translation>
+        <translation>Επανεκκίνηση Τώρα</translation>
     </message>
 </context>
 <context>
