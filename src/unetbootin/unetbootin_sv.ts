@@ -643,13 +643,14 @@ Starta om nu?</translation>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="26"/>
-        <source>UNetbootin</source>
-        <translation>UNetbootin</translation>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <oldsource>UNetbootin</oldsource>
+        <translation type="unfinished">UNetbootin</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="53"/>
-        <location filename="unetbootin.ui" line="104"/>
+        <location filename="unetbootin.ui" line="44"/>
+        <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
         <translation>Välj från en lista över distributioner som stöds</translation>
     </message>
@@ -658,7 +659,7 @@ Starta om nu?</translation>
         <translation type="obsolete">Distribution</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="72"/>
+        <location filename="unetbootin.ui" line="127"/>
         <source>Specify a disk image file to load</source>
         <translation>Ange en avbildningsfil att använda</translation>
     </message>
@@ -667,7 +668,7 @@ Starta om nu?</translation>
         <translation type="obsolete">Avbildning</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="88"/>
+        <location filename="unetbootin.ui" line="378"/>
         <source>Manually specify a kernel and initrd to load</source>
         <translation>Ange kärna samt initrd manuellt</translation>
     </message>
@@ -676,132 +677,150 @@ Starta om nu?</translation>
         <translation type="obsolete">Anpassad</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="120"/>
+        <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
-        <location filename="unetbootin.ui" line="171"/>
+        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation>Ange målenhet för installerationen</translation>
+        <translation type="unfinished">Ange målenhet för installerationen</translation>
     </message>
     <message>
         <source>Drive:</source>
         <translation type="obsolete">Enhet:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
-        <location filename="unetbootin.ui" line="203"/>
+        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation>Ange typ för installationsmål</translation>
+        <translation type="unfinished">Ange typ för installationsmål</translation>
     </message>
     <message>
         <source>Type:</source>
         <translation type="obsolete">Typ:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
+        <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
+        <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
+        <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
+        <location filename="unetbootin.ui" line="420"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="139"/>
+        <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="187"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="216"/>
+        <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
         <translation>Välj distributionsversion</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Select disk image file</source>
         <translation>Välj avbildningsfil</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="281"/>
-        <location filename="unetbootin.ui" line="352"/>
-        <location filename="unetbootin.ui" line="409"/>
-        <location filename="unetbootin.ui" line="441"/>
+        <location filename="unetbootin.ui" line="246"/>
+        <location filename="unetbootin.ui" line="310"/>
+        <location filename="unetbootin.ui" line="335"/>
+        <location filename="unetbootin.ui" line="360"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="294"/>
+        <location filename="unetbootin.ui" line="148"/>
         <source>Select the disk image type</source>
         <translation>Välj typ av avbildningsfil</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="307"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Ange en avbildningsfil för diskett/hårddisk eller cd-avbildningsfil (ISO) att använda</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="330"/>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="167"/>
+        <location filename="unetbootin.ui" line="218"/>
         <source>Specify a kernel file to load</source>
         <translation>Ange en kärnfil att använda</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
         <translation>Välj kärna</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="368"/>
+        <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="387"/>
+        <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="470"/>
+        <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="495"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
+        <location filename="unetbootin.ui" line="406"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <location filename="unetbootin.ui" line="413"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -809,8 +828,8 @@ Starta om nu?</translation>
         <translation type="obsolete">Kärna:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
-        <location filename="unetbootin.ui" line="422"/>
+        <location filename="unetbootin.ui" line="253"/>
+        <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
         <translation>Ange en initrd-fil att använda</translation>
     </message>
@@ -819,18 +838,18 @@ Starta om nu?</translation>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="332"/>
         <source>Select initrd file</source>
         <translation>Välj initrd-fil</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="357"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Välj fil för syslinux.cfg eller isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="454"/>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="186"/>
+        <location filename="unetbootin.ui" line="281"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Ange parametrar och flaggor att skicka till kärnan</translation>
     </message>
@@ -839,60 +858,42 @@ Starta om nu?</translation>
         <translation type="obsolete">Flaggor:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="488"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Show All Drives (Use with Care)</source>
         <translation type="obsolete">Visa alla enheter (använd med försiktighet)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="508"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Formatera enhet (raderar all data)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="660"/>
+        <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Installationen är färdig, Starta om datorn</translation>
+        <translation type="unfinished">4. Installationen är färdig, Starta om datorn</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="673"/>
+        <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Installerar starthanterare</translation>
+        <translation type="unfinished">3. Installerar starthanterare</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="686"/>
+        <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Extraherar och kopierar filer</translation>
+        <translation type="unfinished">2. Extraherar och kopierar filer</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="699"/>
+        <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation>1. Hämtar filer</translation>
+        <translation type="unfinished">1. Hämtar filer</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="724"/>
+        <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation type="unfinished">Avsluta</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="737"/>
+        <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation>Starta om nu</translation>
+        <translation type="unfinished">Starta om nu</translation>
     </message>
 </context>
 <context>

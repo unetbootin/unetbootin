@@ -824,13 +824,14 @@ Quer reinicializar agora?</translation>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="26"/>
-        <source>UNetbootin</source>
-        <translation>UNetbootin</translation>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <oldsource>UNetbootin</oldsource>
+        <translation type="unfinished">UNetbootin</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="53"/>
-        <location filename="unetbootin.ui" line="104"/>
+        <location filename="unetbootin.ui" line="44"/>
+        <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
         <translation>Selecione a distribuição desejada da lista</translation>
     </message>
@@ -839,7 +840,7 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Distribuição</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="72"/>
+        <location filename="unetbootin.ui" line="127"/>
         <source>Specify a disk image file to load</source>
         <translation>Especificar uma imagem de disco para carregar</translation>
     </message>
@@ -848,7 +849,7 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Imagem</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="88"/>
+        <location filename="unetbootin.ui" line="378"/>
         <source>Manually specify a kernel and initrd to load</source>
         <translation>Especificar o kernel e o initrd para carga</translation>
     </message>
@@ -857,132 +858,132 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Modificado</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="120"/>
+        <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="136"/>
+        <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation type="unfinished">Cancelar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="152"/>
-        <location filename="unetbootin.ui" line="171"/>
+        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation>Selecione o disco no qual será instalado</translation>
+        <translation type="unfinished">Selecione o disco no qual será instalado</translation>
     </message>
     <message>
         <source>Drive:</source>
         <translation type="obsolete">Disco:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="184"/>
-        <location filename="unetbootin.ui" line="203"/>
+        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation>Selecione o tipo de instalação desejado</translation>
+        <translation type="unfinished">Selecione o tipo de instalação desejado</translation>
     </message>
     <message>
         <source>Type:</source>
         <translation type="obsolete">Tipo:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="56"/>
+        <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="75"/>
+        <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="91"/>
+        <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="123"/>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="139"/>
+        <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="155"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="187"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="216"/>
+        <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
         <translation>Selecione a versão da distribuição</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="278"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Select disk image file</source>
         <translation>Selecione o arquivo de imagem</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="281"/>
-        <location filename="unetbootin.ui" line="352"/>
-        <location filename="unetbootin.ui" line="409"/>
-        <location filename="unetbootin.ui" line="441"/>
+        <location filename="unetbootin.ui" line="246"/>
+        <location filename="unetbootin.ui" line="310"/>
+        <location filename="unetbootin.ui" line="335"/>
+        <location filename="unetbootin.ui" line="360"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="294"/>
+        <location filename="unetbootin.ui" line="148"/>
         <source>Select the disk image type</source>
         <translation>Selecione o tipo de imagem</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="307"/>
+        <location filename="unetbootin.ui" line="203"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Especificar uma imagem de floppy/disco rígido, or CD (ISO) para carregar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="330"/>
-        <location filename="unetbootin.ui" line="365"/>
+        <location filename="unetbootin.ui" line="167"/>
+        <location filename="unetbootin.ui" line="218"/>
         <source>Specify a kernel file to load</source>
         <translation>Especificar um arquivo kernel para carga</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="349"/>
+        <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
         <translation>Selecione o arquivo de kernel</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="368"/>
+        <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="387"/>
+        <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="470"/>
+        <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="495"/>
+        <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="515"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -990,8 +991,8 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Kernel:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="384"/>
-        <location filename="unetbootin.ui" line="422"/>
+        <location filename="unetbootin.ui" line="253"/>
+        <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
         <translation>Especificar um arquivo initrd para carga</translation>
     </message>
@@ -1000,18 +1001,18 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="332"/>
         <source>Select initrd file</source>
         <translation>Selecione o arquivo (de) initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="357"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Selecione o arquivo syslinux.cfg ou isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="454"/>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="186"/>
+        <location filename="unetbootin.ui" line="281"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Especificar parâmetros e opções para kernel</translation>
     </message>
@@ -1020,60 +1021,60 @@ Quer reinicializar agora?</translation>
         <translation type="obsolete">Opções:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="488"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; opção, vai mostrar todos os dispositivos de disco numa lista entitulada &quot;Discos&quot;. Habilite isso somente caso você entenda o que está fazendo; usando esta opção, a instalação tenderá a falhar, ou poderá resultar em problemas de (boot) inicializacão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; opção, vai mostrar todos os dispositivos de disco numa lista entitulada &quot;Discos&quot;. Habilite isso somente caso você entenda o que está fazendo; usando esta opção, a instalação tenderá a falhar, ou poderá resultar em problemas de (boot) inicializacão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show All Drives (Use with Care)</source>
         <translation type="obsolete">Exibe todos os dispositivos (Use com CUIDADO!)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="508"/>
+        <location filename="unetbootin.ui" line="420"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; opção, formatará o dispositivo selecionado, limpando todos os dados presentes. Esta operação não é necessária caso voce esteja usando um dispositivo de disco USB padrão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; opção, formatará o dispositivo selecionado, limpando todos os dados presentes. Esta operação não é necessária caso voce esteja usando um dispositivo de disco USB padrão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Formatar o Dispositivo (Destrói os Dados Atuais)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="660"/>
+        <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Instalação Completada, Reiniciar</translation>
+        <translation type="unfinished">4. Instalação Completada, Reiniciar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="673"/>
+        <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Instalando o Bootloader</translation>
+        <translation type="unfinished">3. Instalando o Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="686"/>
+        <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Extraindo e Copiando arquivos</translation>
+        <translation type="unfinished">2. Extraindo e Copiando arquivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="699"/>
+        <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation>1. Descarregando Arquivos</translation>
+        <translation type="unfinished">1. Descarregando Arquivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="724"/>
+        <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation>Sair</translation>
+        <translation type="unfinished">Sair</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="737"/>
+        <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation>Reiniciar Agora</translation>
+        <translation type="unfinished">Reiniciar Agora</translation>
     </message>
 </context>
 <context>

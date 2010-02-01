@@ -159,11 +159,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#ifdef NOMANUAL
 	optionslayer->setEnabled(true);
 	optionslayer->show();
-	customlayer->setEnabled(false);
-	customlayer->hide();
+	//customlayer->setEnabled(false);
+	//customlayer->hide();
 	radioManual->setEnabled(false);
 	radioManual->hide();
-	diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
+	//diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
 	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
 	intromessage->resize(intromessage->width(), intromessage->height() + 80);
 	#endif
@@ -619,11 +619,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		{
 			if (psecond.contains('y', Qt::CaseInsensitive))
 			{
-				customlayer->setEnabled(false);
-				customlayer->hide();
+				//customlayer->setEnabled(false);
+				//customlayer->hide();
 				radioManual->setEnabled(false);
 				radioManual->hide();
-				diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
+				//diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
 				radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
 				intromessage->resize(intromessage->width(), intromessage->height() + 80);
 			}

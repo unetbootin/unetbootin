@@ -17,13 +17,13 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>UNetbootin</string>
+   <string>Unetbootin</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
     <number>0</number>
    </property>
-      <item row="1" column="1">
+   <item row="1" column="1">
     <widget class="QWidget" name="firstlayer" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
@@ -407,263 +407,281 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you're doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Show &amp;All Drives (Use with Care)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="formatdrivecheckbox">
+          <property name="toolTip">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn't be necessary if you're using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>&amp;Format Drive (Wipes Out Data)</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QWidget" name="secondlayer" native="true">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>524</width>
-     <height>360</height>
-    </rect>
-   </property>
-   <widget class="QWidget" name="progresslayer" native="true">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>150</y>
-      <width>524</width>
-      <height>210</height>
-     </rect>
-    </property>
-    <widget class="QProgressBar" name="tprogress">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>170</y>
-       <width>501</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="value">
-      <number>24</number>
-     </property>
+          </property>
+          <property name="text">
+           <string>&amp;Format Drive (Wipes Out Data)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="targetlayout">
+        <item>
+         <widget class="QLabel" name="labeltype">
+          <property name="toolTip">
+           <string>Select the installation target type</string>
+          </property>
+          <property name="text">
+           <string>&amp;Type:</string>
+          </property>
+          <property name="buddy">
+           <cstring>typeselect</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="typeselect">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Select the installation target type</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labeldrive">
+          <property name="toolTip">
+           <string>Select the target drive to install to</string>
+          </property>
+          <property name="text">
+           <string>Dri&amp;ve:</string>
+          </property>
+          <property name="buddy">
+           <cstring>driveselect</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="driveselect">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Select the target drive to install to</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="okbutton">
+          <property name="text">
+           <string>OK</string>
+          </property>
+          <property name="shortcut">
+           <string>Return</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="cancelbutton">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+          <property name="shortcut">
+           <string>Esc</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
-    <widget class="QLabel" name="pdesc5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>501</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
+   </item>
+   <item row="0" column="0" rowspan="2" colspan="2">
+    <widget class="QWidget" name="secondlayer" native="true">
+     <layout class="QGridLayout" name="oldsecondlayer">
+      <item row="1" column="0">
+       <widget class="QWidget" name="rebootlayer" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QTextBrowser" name="rebootmsgtext">
+           <property name="styleSheet">
+            <string notr="true">background-color: transparent;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="lineWidth">
+            <number>0</number>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="exitbuttonslayout">
+           <property name="leftMargin">
+            <number>300</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="frebootbutton">
+             <property name="text">
+              <string>Reboot Now</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fexitbutton">
+             <property name="text">
+              <string>Exit</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="progresslayer" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="pdesc5">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pdesc4">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pdesc3">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pdesc2">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pdesc1">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="tprogress">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="value">
+            <number>24</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="statuslayout">
+        <item>
+         <widget class="QLabel" name="sdesc1">
+          <property name="text">
+           <string>1. Downloading Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="sdesc2">
+          <property name="text">
+           <string>2. Extracting and Copying Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="sdesc3">
+          <property name="text">
+           <string>3. Installing Bootloader</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="sdesc4">
+          <property name="text">
+           <string>4. Installation Complete, Reboot</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="sdesc5">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
-    <widget class="QLabel" name="pdesc4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>501</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pdesc3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>501</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pdesc2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>501</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pdesc1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>501</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="sdesc5">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sdesc4">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>4. Installation Complete, Reboot</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sdesc3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3. Installing Bootloader</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sdesc2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>2. Extracting and Copying Files</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sdesc1">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1. Downloading Files</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="rebootlayer" native="true">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>150</y>
-      <width>524</width>
-      <height>210</height>
-     </rect>
-    </property>
-    <widget class="QPushButton" name="fexitbutton">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>170</y>
-       <width>100</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Exit</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="frebootbutton">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>170</y>
-       <width>100</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Reboot Now</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="rebootmsgtext">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>501</width>
-       <height>151</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: transparent;</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="lineWidth">
-      <number>0</number>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-  </widget>
-  <zorder>secondlayer</zorder>
-  <zorder>firstlayer</zorder>
+   </item>
+  </layout>
  </widget>
  <tabstops>
   <tabstop>radioDistro</tabstop>
@@ -686,10 +704,10 @@ p, li { white-space: pre-wrap; }
   <tabstop>driveselect</tabstop>
   <tabstop>okbutton</tabstop>
   <tabstop>cancelbutton</tabstop>
-  <tabstop>intromessage</tabstop>
-  <tabstop>rebootmsgtext</tabstop>
   <tabstop>frebootbutton</tabstop>
   <tabstop>fexitbutton</tabstop>
+  <tabstop>intromessage</tabstop>
+  <tabstop>rebootmsgtext</tabstop>
  </tabstops>
  <resources/>
  <connections/>
