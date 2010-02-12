@@ -7,16 +7,40 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2009-10-28 17:41-0400
-PO-Revision-Date: 2009-11-18 00:53+0000
-Last-Translator: Eduardo &lt;Unknown&gt;
+POT-Creation-Date: 2010-01-29 00:38-0500
+PO-Revision-Date: 2010-01-29 21:00+0000
+Last-Translator: Jorge Miguel Prediger &lt;jorgeprediger@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-01-29 05:36+0000
+X-Launchpad-Export-Date: 2010-02-01 07:24+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
+    </message>
+    <message>
+        <source>Distribution</source>
+        <translation type="obsolete">Distribución</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="obsolete">Personalizado</translation>
+    </message>
+    <message>
+        <source>Drive:</source>
+        <translation type="obsolete">Unidad:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Tipo:</translation>
+    </message>
+    <message>
+        <source>Initrd:</source>
+        <translation type="obsolete">Initrd:</translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="obsolete">Opciones:</translation>
     </message>
     <message>
         <source>Hard Disk</source>
@@ -435,8 +459,24 @@ Reboot now?</source>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
+        <source>Diskimage</source>
+        <translation type="obsolete">Imagen de disco</translation>
+    </message>
+    <message>
+        <source>Show All Drives (Use with Care)</source>
+        <translation type="obsolete">Mostrar todas las unidades (usar con cuidado)</translation>
+    </message>
+    <message>
+        <source>Format Drive (Wipes Out Data)</source>
+        <translation type="obsolete">Formatear la unidad (borra los datos)</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
+    </message>
+    <message>
+        <source>Kernel:</source>
+        <translation type="obsolete">Núcleo:</translation>
     </message>
 </context>
 <context>
@@ -1064,10 +1104,8 @@ Reboot now?</source>
 <context>
     <name>unetbootinui</name>
     <message>
-        <location filename="unetbootin.ui" line="20"/>
-        <source>Unetbootin</source>
-        <oldsource>UNetbootin</oldsource>
-        <translation type="unfinished">UNetbootin</translation>
+        <source>UNetbootin</source>
+        <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -1076,8 +1114,9 @@ Reboot now?</source>
         <translation>Seleccione de una lista de distribuciones disponibles</translation>
     </message>
     <message>
-        <source>Distribution</source>
-        <translation type="obsolete">Distribución</translation>
+        <location filename="unetbootin.ui" line="47"/>
+        <source>&amp;Distribution</source>
+        <translation>&amp;Distribución</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -1085,8 +1124,9 @@ Reboot now?</source>
         <translation>Especifica un archivo de imagen de disco para cargar</translation>
     </message>
     <message>
-        <source>Diskimage</source>
-        <translation type="obsolete">Imagen de disco</translation>
+        <location filename="unetbootin.ui" line="130"/>
+        <source>Disk&amp;image</source>
+        <translation>Disco&amp;Imagen</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -1094,78 +1134,46 @@ Reboot now?</source>
         <translation>Especifica manualmente un núcleo y un initrd para cargar</translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation type="obsolete">Personalizado</translation>
+        <location filename="unetbootin.ui" line="381"/>
+        <source>&amp;Custom</source>
+        <translation>&amp;Personalizar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="493"/>
+        <source>Return</source>
+        <translation>Volver</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="503"/>
+        <source>Esc</source>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation type="unfinished">Seleccionar la unidad de destino donde instalar</translation>
-    </message>
-    <message>
-        <source>Drive:</source>
-        <translation type="obsolete">Unidad:</translation>
+        <translation>Seleccionar la unidad de destino donde instalar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
         <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation type="unfinished">Seleccione el tipo de instalación de destino</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="obsolete">Tipo:</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="47"/>
-        <source>&amp;Distribution</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="130"/>
-        <source>Disk&amp;image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="381"/>
-        <source>&amp;Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="427"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="493"/>
-        <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="503"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="467"/>
-        <source>Dri&amp;ve:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el tipo de instalación de destino</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tipo:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1202,43 +1210,20 @@ Reboot now?</source>
         <translation>Especifique un archivo de núcleo para cargar</translation>
     </message>
     <message>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
         <translation>Seleccione un archivo de núcleo</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="170"/>
-        <source>&amp;Kernel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="256"/>
-        <source>Init&amp;rd:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="189"/>
-        <source>&amp;Options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="413"/>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Kernel:</source>
-        <translation type="obsolete">Núcleo:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="253"/>
         <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
         <translation>Especifique un archivo initrd para cargar</translation>
-    </message>
-    <message>
-        <source>Initrd:</source>
-        <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="332"/>
@@ -1257,25 +1242,27 @@ Reboot now?</source>
         <translation>Especifique los parámetros y opciones que pasar al núcleo</translation>
     </message>
     <message>
-        <source>Options:</source>
-        <translation type="obsolete">Opciones:</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="406"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente peligrosa&lt;/span&gt; mostrará todas las unidades en el cuadro desplegable titulado «Unidad». Active esta opción sólo si sabe lo que está haciendo, si usa esta opción la instalación puede fallar o crear problemas de arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Show All Drives (Use with Care)</source>
-        <translation type="obsolete">Mostrar todas las unidades (usar con cuidado)</translation>
+        <location filename="unetbootin.ui" line="413"/>
+        <source>Show &amp;All Drives (Use with Care)</source>
+        <translation>Mostrar &amp;Todas las Unidades (Utilizar con cuidado)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation>&amp;Formatear Unidad (Borra los datos)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -1284,45 +1271,61 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente peligrosa&lt;/span&gt; formateará la unidad seleccionada, borrando todos los datos que en ella existan. Esta opción no debería ser necesaria si usted está utilizando una unidad USB estándar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">Formatear la unidad (borra los datos)</translation>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>Dri&amp;ve:</source>
+        <translation>Unidad:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="170"/>
+        <source>&amp;Kernel:</source>
+        <translation>&amp;Núcleo:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="256"/>
+        <source>Init&amp;rd:</source>
+        <translation>Initrd:</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="189"/>
+        <source>&amp;Options:</source>
+        <translation>&amp;Opciones:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation type="unfinished">4. Se completó la instalación, reiniciar</translation>
+        <translation>4. Se completó la instalación, reiniciar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation type="unfinished">3. Instalando el cargador de arranque</translation>
+        <translation>3. Instalando el cargador de arranque</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation type="unfinished">2. Extrayendo y copiando archivos</translation>
+        <translation>2. Extrayendo y copiando archivos</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation type="unfinished">1. Descargando archivos</translation>
+        <translation>1. Descargando archivos</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation type="unfinished">Salir</translation>
+        <translation>Salir</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation type="unfinished">Reiniciar ahora</translation>
+        <translation>Reiniciar ahora</translation>
     </message>
 </context>
 <context>
