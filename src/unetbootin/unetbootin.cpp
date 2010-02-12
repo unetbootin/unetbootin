@@ -283,11 +283,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		"<b>Install Notes:</b> The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.") <<
 	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
-	distroselect->addItem("BackTrack", (QStringList() << "3" <<
-	tr("<b>Homepage:</b> <a href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/>"
+	distroselect->addItem("BackTrack", (QStringList() << "4f" <<
+	tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/>"
 		"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 		"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
-	"3"));
+	"3" << "4f"));
 	distroselect->addItem("CentOS", (QStringList() << "5" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 		"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"

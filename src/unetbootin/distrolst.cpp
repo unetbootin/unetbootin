@@ -153,7 +153,7 @@ if (nameDistro == "Arch Linux")
 
 if (nameDistro == "BackTrack")
 {
-	downloadfile(QString("http://www.remote-exploit.org/cgi-bin/fileget?version=bt%1-usb").arg(relname), isotmpf);
+	downloadfile(QString("http://www.backtrack-linux.org/download.php?fname=bt%1").arg(relname), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 

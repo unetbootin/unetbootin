@@ -180,8 +180,9 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack je distribúcia zameraná na sieťovú analýzu a testovanie bezpečnosti.&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack funguje ako živý (Live) systém a nevyžaduje inštaláciu.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</oldsource>
+        <translation type="unfinished">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack je distribúcia zameraná na sieťovú analýzu a testovanie bezpečnosti.&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack funguje ako živý (Live) systém a nevyžaduje inštaláciu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>

@@ -325,8 +325,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="287"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; BackTrack הינה הפצה המתמקדת על ניתוח רשתות מחשבים ובדיקת חדירות אבטחה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; BackTrack מתאתחלת ומופעלת במצב חי; אין צורך בהתקנה כדי להשתמש בה.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</oldsource>
+        <translation type="unfinished">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; BackTrack הינה הפצה המתמקדת על ניתוח רשתות מחשבים ובדיקת חדירות אבטחה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; BackTrack מתאתחלת ומופעלת במצב חי; אין צורך בהתקנה כדי להשתמש בה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
