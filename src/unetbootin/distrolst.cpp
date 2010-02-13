@@ -250,8 +250,8 @@ if (nameDistro == "Debian")
 	}
 	else if (ishdmedia)
 	{
-		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/debian-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
 		postinstmsg = unetbootin::tr("\n*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org");
 	}
 	else
