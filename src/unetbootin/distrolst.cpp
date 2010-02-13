@@ -7,6 +7,33 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License at <http://www.gnu.org/licenses/> for more details.
 */
 
+#ifndef debianrelnamereplace
+#define debianrelnamereplace \
+	relname.replace("unstable", "sid").replace("testing", "squeeze").replace("stable", "lenny");
+#endif
+
+#ifndef ubunturelnamereplace
+#define ubunturelnamereplace \
+	relname.replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+#endif
+
+#ifndef ubuntunetinst
+#define ubuntunetinst \
+	if (ishdmedia) \
+	{ \
+		ubunturelnamereplace \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath)); \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath)); \
+		postinstmsg = unetbootin::tr("\n*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com"); \
+	} \
+	else if (isnetinstall) \
+	{ \
+		ubunturelnamereplace \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath)); \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath)); \
+	}
+#endif
+
 #ifdef AUTOSUPERGRUBDISK
 
 if (nameDistro == "Auto Super Grub Disk")
@@ -217,15 +244,20 @@ if (nameDistro == "Debian")
 	}
 	if (islivecd)
 	{
-		relname.replace("unstable", "sid").replace("testing", "squeeze").replace("stable", "lenny");
+		debianrelnamereplace
 		downloadfile(QString("http://live.debian.net/cdimage/%1-builds/current/%2/debian-live-%1-%2-gnome-desktop.iso").arg(relname, cpuarch), isotmpf);
 		extractiso(isotmpf, targetPath);
+	}
+	else if (ishdmedia)
+	{
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/debian-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/hd-media/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		postinstmsg = unetbootin::tr("\n*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org");
 	}
 	else
 	{
 		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/debian-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
 		downloadfile(QString("http://ftp.debian.org/debian/dists/%1/main/installer-%2/current/images/netboot/debian-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-		//kernelOpts = "video=vesa:ywrap,mtrr vga=788 installgui";
 	}
 }
 
@@ -796,14 +828,8 @@ if (nameDistro == "Ubuntu")
 			), isotmpf);
 			extractiso(isotmpf, targetPath);
 		}
-		else
-		{
-			relname.replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-			kernelOpts = "vga=normal";
-		}
 	}
+	ubuntunetinst
 }
 
 if (nameDistro == "Kubuntu")
@@ -850,14 +876,8 @@ if (nameDistro == "Kubuntu")
 			), isotmpf);
 			extractiso(isotmpf, targetPath);
 		}
-		else
-		{
-			relname.replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-			kernelOpts = "vga=normal";
-		}
 	}
+	ubuntunetinst
 }
 
 if (nameDistro == "xPUD")
@@ -923,14 +943,8 @@ if (nameDistro == "Xubuntu")
 			), isotmpf);
 			extractiso(isotmpf, targetPath);
 		}
-		else
-		{
-			relname.replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-			downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/netboot/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-			kernelOpts = "vga=normal";
-		}
 	}
+	ubuntunetinst
 }
 
 if (nameDistro == "Zenwalk")

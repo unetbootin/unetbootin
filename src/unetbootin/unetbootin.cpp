@@ -2795,6 +2795,11 @@ void unetbootin::runinst()
 			nameVersion.remove("_NetInstall");
 			isnetinstall = true;
 		}
+		if (nameVersion.contains("_HdMedia"))
+		{
+			nameVersion.remove("_HdMedia");
+			ishdmedia = true;
+		}
 		if (nameVersion.contains("_x64"))
 		{
 			nameVersion.remove("_x64");
