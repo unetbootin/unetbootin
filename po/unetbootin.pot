@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-01 02:26-0500\n"
+"POT-Creation-Date: 2010-02-13 16:42-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,17 @@ msgid "LeftToRight"
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:172
+#: distrolst.cpp:27
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
+"install iso file on the root directory of your hard drive or USB drive. "
+"These can be obtained from cdimage.ubuntu.com"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:199
 #, fuzzy
 msgid ""
 "\n"
@@ -31,7 +41,17 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:313
+#: distrolst.cpp:255
+#, fuzzy
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
+"directory of your hard drive or USB drive. These can be obtained from "
+"cdimage.debian.org"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:345
 #, fuzzy
 msgid ""
 "\n"
@@ -43,7 +63,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:319
+#: distrolst.cpp:351
 #, fuzzy
 msgid ""
 "\n"
@@ -55,7 +75,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:570
+#: distrolst.cpp:623
 #, fuzzy
 msgid ""
 "\n"
@@ -67,7 +87,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:576
+#: distrolst.cpp:629
 #, fuzzy
 msgid ""
 "\n"
@@ -79,142 +99,373 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:155 unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:606
-#: unetbootin.cpp:705 unetbootin.cpp:798 unetbootin.cpp:2659
-#: unetbootin.cpp:2672 unetbootin.cpp:2825 unetbootin.cpp:3177
+#: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2366
+#: unetbootin.cpp:2379 unetbootin.cpp:2537 unetbootin.cpp:2889
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
-#: unetbootin.cpp:608 unetbootin.cpp:709 unetbootin.cpp:803 unetbootin.cpp:875
-#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1611
-#: unetbootin.cpp:2008 unetbootin.cpp:2050 unetbootin.cpp:2663
-#: unetbootin.cpp:2688 unetbootin.cpp:2829 unetbootin.cpp:3181
+#: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
+#: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
+#: unetbootin.cpp:598 unetbootin.cpp:848 unetbootin.cpp:1318
+#: unetbootin.cpp:1715 unetbootin.cpp:1757 unetbootin.cpp:2370
+#: unetbootin.cpp:2395 unetbootin.cpp:2541 unetbootin.cpp:2893
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:574
-#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2736
+#: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2443
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:579
-#: unetbootin.cpp:831 unetbootin.cpp:832 unetbootin.cpp:2728
+#: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2435
 #, fuzzy
 msgid "Floppy"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:189 unetbootin.cpp:459
+#: unetbootin.cpp:1258 unetbootin.cpp:1280
 #, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b> "
-"Super Grub Disk is a bootloader which can perform a variety of MBR and "
-"bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
-"runs; no installation is required to use it."
+msgid "<b>Extracting compressed iso:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:210
+#: unetbootin.cpp:1348
 #, fuzzy
-msgid ""
-"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
-"EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
-"EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
+msgid "Extracting files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:218
+#: unetbootin.cpp:1349
 #, fuzzy
-msgid ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
-"<a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Description:</b> "
-"Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an "
-"operating system, using the Netbook Remix interface, which favors the best "
-"software available instead of open source alternatives (ie. Skype instead of "
-"Ekiga).<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
+msgid "<b>Archive:</b> %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:230
+#: unetbootin.cpp:1350
 #, fuzzy
-msgid ""
-"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The Unstable "
-"version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> is installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgid "<b>Source:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:239
+#: unetbootin.cpp:1351
 #, fuzzy
-#| msgid ""
-#| "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
-#| "href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
-#| "Kiwi e un sistem de operare adaptat pentru utilizatorii din RomÃ¢nia. "
-#| "<br/><b>Install Notes:</b> Make sure install media is empty and formatted "
-#| "before proceeding with install."
-msgid ""
-"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
-"Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian "
-"and English speaking users.<br/><b>Install Notes:</b> Make sure install "
-"media is empty and formatted before proceeding with install."
+msgid "<b>Destination:</b>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:250
+#: unetbootin.cpp:1352
 #, fuzzy
-msgid ""
-"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-"gNewSense is a high-quality GNU/Linux distribution that extends and improves "
-"Ubuntu to create a completely free operating system without any binary blobs "
-"or package trees that contain proprietary software.<br/><b>Install "
-"Notes:</b> Make sure install media is empty and formatted before proceeding "
-"with install."
+msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:258
+#: unetbootin.cpp:1355
 #, fuzzy
-msgid ""
-"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
-"Notes:</b> The Live version loads the entire system into RAM and boots from "
-"memory, so installation is not required but optional. This installer is "
-"based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgid "<b>Source:</b> %1 (%2)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:266
+#: unetbootin.cpp:1356
 #, fuzzy
-msgid ""
-"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
-"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
-"version loads the entire system into RAM and boots from memory."
+msgid "<b>Destination:</b> %1%2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:276
+#: unetbootin.cpp:1357
+#, fuzzy
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1699
+#, fuzzy
+msgid "Downloading files, please wait..."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1700
+#, fuzzy
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1701
+#, fuzzy
+msgid "<b>Destination:</b> %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1702
+#, fuzzy
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1779 unetbootin.cpp:1794
+#, fuzzy
+#| msgid "<b>Downloaded:</b> %1 of %2 bytes"
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1870
+#, fuzzy
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1874
+#, fuzzy
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2059
+#, fuzzy
+msgid "%1 not found"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2060
+#, fuzzy
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2348
+#, fuzzy
+msgid "(Current)"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2349
+#, fuzzy
+msgid "(Done)"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2616
+#, fuzzy
+msgid "Configuring grub2 on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2628
+#, fuzzy
+msgid "Configuring grldr on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2656
+#, fuzzy
+msgid "Configuring grub on %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2778
+#, fuzzy
+msgid "Installing syslinux to %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2813
+#, fuzzy
+msgid "Installing extlinux to %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2879
+#, fuzzy
+msgid "Syncing filesystems"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2891
+#, fuzzy
+msgid "After rebooting, select the "
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2895
+#, fuzzy
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:206 unetbootin.cpp:210 unetbootin.cpp:214 unetbootin.cpp:218
+#: unetbootin.cpp:224 unetbootin.cpp:236
+#, fuzzy
+msgid "either"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:530
+#, fuzzy
+msgid "Open Disk Image File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:548
+#, fuzzy
+msgid "Open Kernel File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:556
+#, fuzzy
+msgid "Open Initrd File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:564
+#, fuzzy
+msgid "Open Bootloader Config File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:586
+#, fuzzy
+msgid "Insert a USB flash drive"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:587
+#, fuzzy
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:602
+#, fuzzy
+msgid "%1 not mounted"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:603
+#, fuzzy
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:618
+#, fuzzy
+msgid "Select a distro"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:619
+#, fuzzy
+msgid "You must select a distribution to load."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:633
+#, fuzzy
+msgid "Select a disk image file"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:634
+#, fuzzy
+msgid "You must select a disk image file to load."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:648
+#, fuzzy
+msgid "Select a kernel and/or initrd file"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:649
+#, fuzzy
+msgid "You must select a kernel and/or initrd file to load."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:663
+#, fuzzy
+msgid "Diskimage file not found"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:664
+#, fuzzy
+msgid "The specified diskimage file %1 does not exist."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:678
+#, fuzzy
+msgid "Kernel file not found"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:679
+#, fuzzy
+msgid "The specified kernel file %1 does not exist."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:693
+#, fuzzy
+msgid "Initrd file not found"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:694
+#, fuzzy
+msgid "The specified initrd file %1 does not exist."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:794
+#, fuzzy
+msgid "%1 exists, overwrite?"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:795
+#, fuzzy
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:821
+#, fuzzy
+msgid "%1 is out of space, abort installation?"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:822
+#, fuzzy
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:21
 #, fuzzy
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
@@ -225,7 +476,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:281
+#: distrover.cpp:26
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -237,18 +488,18 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:287
+#: distrover.cpp:32
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Description:</b> "
+"href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
 "BackTrack is a distribution focused on network analysis and penetration "
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:292
+#: distrover.cpp:37
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -259,14 +510,8 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:297
+#: distrover.cpp:42
 #, fuzzy
-#| msgid ""
-#| "<b>Homepage:</b> <a "
-#| "href=\"http://www.remote-exploit.org/backtrack.html\">http://www.remote-exploit.org/backtrack.html</a><br/><b>Description:</b> "
-#| "CloneZilla is a distribution used for disk backup and "
-#| "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
-#| "mode; no installation is required to use it."
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b> "
@@ -276,7 +521,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:302
+#: distrover.cpp:47
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -288,20 +533,21 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:307
+#: distrover.cpp:52
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:</b> "
 "Debian is a community-developed Linux distribution that supports a wide "
 "variety of architectures and offers a large repository of "
-"packages.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP."
+"packages.<br/><b>Install Notes:</b> The NetInstall version allows for "
+"installation over FTP. If you would like to use a pre-downloaded install "
+"iso, use the HdMedia option, and then place the install iso file on the root "
+"directory of your hard drive or USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:313
+#: distrover.cpp:58
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -312,7 +558,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:318
+#: distrover.cpp:63
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -323,17 +569,8 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:323
+#: distrover.cpp:68
 #, fuzzy
-#| msgid ""
-#| "<b>Homepage:</b> <a "
-#| "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-#| "Elive is a Debian-based distribution featuring the Enlightenment window "
-#| "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#| "Live mode. The Unstable version does not support Hard Drive "
-#| "installations, though the <a "
-#| "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not "
-#| "freely downloadable) does."
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
@@ -345,7 +582,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:333
+#: distrover.cpp:78
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -359,7 +596,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:338
+#: distrover.cpp:83
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -371,7 +608,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:343
+#: distrover.cpp:88
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -383,7 +620,20 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:348
+#: distrover.cpp:93
+#, fuzzy
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</b> "
+"FreeNAS is an embedded open source NAS (Network-Attached Storage) "
+"distribution based on FreeBSD.<br/><b>Install Notes:</b> The LiveCD version "
+"creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB "
+"key for saving the configuration file. The embedded version allows "
+"installation to hard disk."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:98
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -395,7 +645,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:353
+#: distrover.cpp:103
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -406,7 +656,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:358
+#: distrover.cpp:108
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -417,7 +667,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:368
+#: distrover.cpp:118
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -428,7 +678,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:373
+#: distrover.cpp:123
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -439,7 +689,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:378
+#: distrover.cpp:128
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -450,7 +700,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:383
+#: distrover.cpp:133
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -458,12 +708,15 @@ msgid ""
 "Kubuntu is an official Ubuntu derivative featuring the KDE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Xubuntu "
-"and other official Ubuntu derivatives."
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a "
+"pre-downloaded alternate (not desktop) install iso, use the HdMedia option, "
+"and then place the alternate install iso file on the root directory of your "
+"hard drive or USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:388
+#: distrover.cpp:138
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -475,7 +728,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:393
+#: distrover.cpp:143
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -489,7 +742,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:399
+#: distrover.cpp:149
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -501,7 +754,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:404
+#: distrover.cpp:154
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -513,7 +766,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:409
+#: distrover.cpp:159
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -524,7 +777,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:414
+#: distrover.cpp:164
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -536,7 +789,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:419
+#: distrover.cpp:169
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -546,7 +799,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:424
+#: distrover.cpp:174
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -558,7 +811,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:429
+#: distrover.cpp:179
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -569,7 +822,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:434
+#: distrover.cpp:184
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -581,7 +834,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:439
+#: distrover.cpp:189
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -594,7 +847,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:444
+#: distrover.cpp:194
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -605,7 +858,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:449
+#: distrover.cpp:199
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -616,7 +869,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:454
+#: distrover.cpp:204
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -627,7 +880,18 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:464
+#: distrover.cpp:209 distrovercust.cpp:12
+#, fuzzy
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b> "
+"Super Grub Disk is a bootloader which can perform a variety of MBR and "
+"bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
+"runs; no installation is required to use it."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:214
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -639,7 +903,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:469
+#: distrover.cpp:219
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -650,7 +914,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:474
+#: distrover.cpp:224
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -659,197 +923,14 @@ msgid ""
 "most popular Linux desktop distribution.<br/><b>Install Notes:</b> The Live "
 "version allows for booting in Live mode, from which the installer can "
 "optionally be launched. The NetInstall version allows for installation over "
-"FTP, and can install Kubuntu and other official Ubuntu derivatives."
+"FTP, and can install Kubuntu and other official Ubuntu derivatives. If you "
+"would like to use a pre-downloaded alternate (not desktop) install iso, use "
+"the HdMedia option, and then place the alternate install iso file on the "
+"root directory of your hard drive or USB drive"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:484
-#, fuzzy
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b> "
-"Xubuntu is an official Ubuntu derivative featuring the XFCE "
-"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The "
-"NetInstall version allows for installation over FTP, and can install Kubuntu "
-"and other official Ubuntu derivatives."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1551 unetbootin.cpp:1573
-#, fuzzy
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1641
-#, fuzzy
-msgid "Extracting files, please wait..."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1642
-#, fuzzy
-msgid "<b>Archive:</b> %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1643
-#, fuzzy
-msgid "<b>Source:</b>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1644
-#, fuzzy
-msgid "<b>Destination:</b>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1645
-#, fuzzy
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1648
-#, fuzzy
-msgid "<b>Source:</b> %1 (%2)"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1649
-#, fuzzy
-msgid "<b>Destination:</b> %1%2"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1650
-#, fuzzy
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1992
-#, fuzzy
-msgid "Downloading files, please wait..."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1993
-#, fuzzy
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1994
-#, fuzzy
-msgid "<b>Destination:</b> %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1995
-#, fuzzy
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2072 unetbootin.cpp:2087
-#, fuzzy
-#| msgid "<b>Downloaded:</b> %1 of %2 bytes"
-msgid "<b>Downloaded:</b> %1 of %2"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2163
-#, fuzzy
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2167
-#, fuzzy
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2352
-#, fuzzy
-msgid "%1 not found"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2353
-#, fuzzy
-msgid ""
-"%1 not found. This is required for %2 install mode.\n"
-"Install the \"%3\" package or your distribution's equivalent."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2641
-#, fuzzy
-msgid "(Current)"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2642
-#, fuzzy
-msgid "(Done)"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2904
-#, fuzzy
-msgid "Configuring grub2 on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2916
-#, fuzzy
-msgid "Configuring grldr on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2944
-#, fuzzy
-msgid "Configuring grub on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3066
-#, fuzzy
-msgid "Installing syslinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3101
-#, fuzzy
-msgid "Installing extlinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3167
-#, fuzzy
-msgid "Syncing filesystems"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3179
-#, fuzzy
-msgid "After rebooting, select the "
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3183
-#, fuzzy
-msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-"Reboot now?"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:479
+#: distrover.cpp:229
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -860,7 +941,23 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:489
+#: distrover.cpp:234
+#, fuzzy
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b> "
+"Xubuntu is an official Ubuntu derivative featuring the XFCE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a "
+"pre-downloaded alternate (not desktop) install iso, use the HdMedia option, "
+"and then place the alternate install iso file on the root directory of your "
+"hard drive or USB drive"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:239
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -871,164 +968,89 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:499 unetbootin.cpp:503 unetbootin.cpp:507 unetbootin.cpp:511
-#: unetbootin.cpp:517 unetbootin.cpp:529
-#, fuzzy
-msgid "either"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:823
-#, fuzzy
-msgid "Open Disk Image File"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:841
-#, fuzzy
-msgid "Open Kernel File"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:849
-#, fuzzy
-msgid "Open Initrd File"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:857
-#, fuzzy
-msgid "Open Bootloader Config File"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:879
-#, fuzzy
-msgid "Insert a USB flash drive"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:880
+#: distrovercust.cpp:33
 #, fuzzy
 msgid ""
-"No USB flash drives were found. If you have already inserted a USB drive, "
-"try reformatting it as FAT32."
+"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
+"EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
+"EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:895
-#, fuzzy
-msgid "%1 not mounted"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:896
+#: distrovercust.cpp:41
 #, fuzzy
 msgid ""
-"You must first mount the USB drive %1 to a mountpoint. Most distributions "
-"will do this automatically after you remove and reinsert the USB drive."
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
+"<a "
+"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Description:</b> "
+"Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an "
+"operating system, using the Netbook Remix interface, which favors the best "
+"software available instead of open source alternatives (ie. Skype instead of "
+"Ekiga).<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:911
-#, fuzzy
-msgid "Select a distro"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:912
-#, fuzzy
-msgid "You must select a distribution to load."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:926
-#, fuzzy
-msgid "Select a disk image file"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:927
-#, fuzzy
-msgid "You must select a disk image file to load."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:941
-#, fuzzy
-msgid "Select a kernel and/or initrd file"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:942
-#, fuzzy
-msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:956
-#, fuzzy
-msgid "Diskimage file not found"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:957
-#, fuzzy
-msgid "The specified diskimage file %1 does not exist."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:971
-#, fuzzy
-msgid "Kernel file not found"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:972
-#, fuzzy
-msgid "The specified kernel file %1 does not exist."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:986
-#, fuzzy
-msgid "Initrd file not found"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:987
-#, fuzzy
-msgid "The specified initrd file %1 does not exist."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1087
-#, fuzzy
-msgid "%1 exists, overwrite?"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1088
+#: distrovercust.cpp:53
 #, fuzzy
 msgid ""
-"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-"retain your existing version. If in doubt, press 'Yes to All'."
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
+"Elive is a Debian-based distribution featuring the Enlightenment window "
+"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The Unstable "
+"version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
+"version</a> is installed. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1114
-#, fuzzy
-msgid "%1 is out of space, abort installation?"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1115
+#: distrovercust.cpp:61
 #, fuzzy
 msgid ""
-"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
-"ignore this error and attempt to continue installation, and 'No to All' to "
-"ignore all out-of-space errors."
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
+"Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian "
+"and English speaking users.<br/><b>Install Notes:</b> Make sure install "
+"media is empty and formatted before proceeding with install."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:69
+#, fuzzy
+msgid ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
+"gNewSense is a high-quality GNU/Linux distribution that extends and improves "
+"Ubuntu to create a completely free operating system without any binary blobs "
+"or package trees that contain proprietary software.<br/><b>Install "
+"Notes:</b> Make sure install media is empty and formatted before proceeding "
+"with install."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:77
+#, fuzzy
+msgid ""
+"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
+"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
+"Notes:</b> The Live version loads the entire system into RAM and boots from "
+"memory, so installation is not required but optional. This installer is "
+"based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:85
+#, fuzzy
+msgid ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
+"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
 msgstr ""
 
 #. ts-context unetbootinui

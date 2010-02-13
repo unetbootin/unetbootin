@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-01-29 00:38-0500\n"
+"POT-Creation-Date: 2010-02-01 02:26-0500\n"
 "PO-Revision-Date: 2009-10-29 01:12+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-01 07:24+0000\n"
+"X-Launchpad-Export-Date: 2010-02-13 21:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -23,7 +23,7 @@ msgid "LeftToRight"
 msgstr "De esquerda a dereita"
 
 #. ts-context unetbootin
-#: distrolst.cpp:173
+#: distrolst.cpp:172
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -40,7 +40,7 @@ msgstr ""
 "un servidor, e poña \"/centos/%1/os%2\" cuando lle pregunten polo directorio."
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:313
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -58,7 +58,7 @@ msgstr ""
 "cuando lle pregunten polo directorio."
 
 #. ts-context unetbootin
-#: distrolst.cpp:320
+#: distrolst.cpp:319
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -77,7 +77,7 @@ msgstr ""
 "directorio."
 
 #. ts-context unetbootin
-#: distrolst.cpp:571
+#: distrolst.cpp:570
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -95,7 +95,7 @@ msgstr ""
 "directorio."
 
 #. ts-context unetbootin
-#: distrolst.cpp:577
+#: distrolst.cpp:576
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1263,134 +1263,202 @@ msgstr ""
 "erro sobre o espazo dispoñible."
 
 #. ts-context unetbootinui
-#: unetbootin.ui:26
-msgid "UNetbootin"
-msgstr "UNetbootin"
+#: unetbootin.ui:20
+msgid "Unetbootin"
+msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:53 unetbootin.ui:104
+#: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
 msgstr "Escoller dunha lista de distribucións dispoñibles"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:56
+#: unetbootin.ui:47
 msgid "&Distribution"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:72
+#: unetbootin.ui:127
 msgid "Specify a disk image file to load"
 msgstr "Indique o ficheiro de imaxe de disco a cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:75
+#: unetbootin.ui:130
 msgid "Disk&image"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:88
+#: unetbootin.ui:378
 msgid "Manually specify a kernel and initrd to load"
 msgstr "Indicar manualmente o kernel e o initrd a cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:91
+#: unetbootin.ui:381
 msgid "&Custom"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:120
+#: unetbootin.ui:420
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will format the selected "
+"drive, wiping out all data on it. It shouldn't be necessary if you're using "
+"a standard USB drive.</p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Esta opción <span style=\" "
+"font-weight:600;\">potencialmente perigosa</span> formatara a unidade "
+"escollida, borrando todos os datos que nela existan. Esta opción non debería "
+"ser precisa se vostede está a utilizar unha unidade USB "
+"estándar.</p></body></html>"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:427
+msgid "&Format Drive (Wipes Out Data)"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:490
 msgid "OK"
 msgstr "Aceptar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:123
+#: unetbootin.ui:493
 msgid "Return"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:136
+#: unetbootin.ui:500
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:139
+#: unetbootin.ui:503
 msgid "Esc"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:152 unetbootin.ui:171
+#: unetbootin.ui:548
+msgid "Reboot Now"
+msgstr "Reiniciar agora"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:555
+msgid "Exit"
+msgstr "Saír"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:647
+msgid "1. Downloading Files"
+msgstr "1. Descargando os ficheiros"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:654
+msgid "2. Extracting and Copying Files"
+msgstr "2. Extraendo e copiando os ficheiros"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:661
+msgid "3. Installing Bootloader"
+msgstr "3. Instalando o cargador de arranque"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:668
+msgid "4. Installation Complete, Reboot"
+msgstr "4. Completouse a instalación, reinicie"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:464 unetbootin.ui:483
 msgid "Select the target drive to install to"
 msgstr "Escolla a unidade de destino onde instalar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:184 unetbootin.ui:203
+#: unetbootin.ui:467
+msgid "Dri&ve:"
+msgstr ""
+
+#. ts-context unetbootinui
+#: unetbootin.ui:438 unetbootin.ui:457
 msgid "Select the installation target type"
 msgstr "Escolla o tipo de instalación de destino"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:187
+#: unetbootin.ui:441
 msgid "&Type:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:216
+#: unetbootin.ui:81
 msgid "Select the distribution version"
 msgstr "Escolla a versión da distribución"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:278
+#: unetbootin.ui:307
 msgid "Select disk image file"
 msgstr "Escolla o ficheiro de imaxe de disco"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:281 unetbootin.ui:352 unetbootin.ui:409 unetbootin.ui:441
+#: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
 msgid "..."
 msgstr "..."
 
 #. ts-context unetbootinui
-#: unetbootin.ui:294
+#: unetbootin.ui:148
 msgid "Select the disk image type"
 msgstr "Escolla o tipo de imaxe de disco"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:307
+#: unetbootin.ui:203
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 "Indique unha imaxe de disquete/disco ríxido, ou un ficheiro de imaxe de CD "
 "(ISO) a cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:330 unetbootin.ui:365
+#: unetbootin.ui:167 unetbootin.ui:218
 msgid "Specify a kernel file to load"
 msgstr "Indique o ficheiro de kernel a cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:349
+#: unetbootin.ui:243
 msgid "Select kernel file"
 msgstr "Escolla o ficheiro de kernel"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:384 unetbootin.ui:422
+#: unetbootin.ui:253 unetbootin.ui:272
 msgid "Specify an initrd file to load"
 msgstr "Indique un ficheiro initrd a cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:406
+#: unetbootin.ui:332
 msgid "Select initrd file"
 msgstr "Escolla o ficheiro initrd"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:438
+#: unetbootin.ui:357
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr "Escolla o ficheiro syslinux.cfg ou isolinux.cfg"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:454 unetbootin.ui:467
+#: unetbootin.ui:186 unetbootin.ui:281
 msgid "Specify parameters and options to pass to the kernel"
 msgstr "Indique os parametros e opcións a pasar ao kernel"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:488
+#: unetbootin.ui:406
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1421,92 +1489,24 @@ msgstr ""
 "problemas de arranque.</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:495
+#: unetbootin.ui:413
 msgid "Show &All Drives (Use with Care)"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:515
-msgid "&Format Drive (Wipes Out Data)"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:508
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will format the selected "
-"drive, wiping out all data on it. It shouldn't be necessary if you're using "
-"a standard USB drive.</p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Esta opción <span style=\" "
-"font-weight:600;\">potencialmente perigosa</span> formatara a unidade "
-"escollida, borrando todos os datos que nela existan. Esta opción non debería "
-"ser precisa se vostede está a utilizar unha unidade USB "
-"estándar.</p></body></html>"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:155
-msgid "Dri&ve:"
-msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:368
+#: unetbootin.ui:170
 msgid "&Kernel:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:387
+#: unetbootin.ui:256
 msgid "Init&rd:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:470
+#: unetbootin.ui:189
 msgid "&Options:"
 msgstr ""
-
-#. ts-context unetbootinui
-#: unetbootin.ui:660
-msgid "4. Installation Complete, Reboot"
-msgstr "4. Completouse a instalación, reinicie"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:673
-msgid "3. Installing Bootloader"
-msgstr "3. Instalando o cargador de arranque"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:686
-msgid "2. Extracting and Copying Files"
-msgstr "2. Extraendo e copiando os ficheiros"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:699
-msgid "1. Downloading Files"
-msgstr "1. Descargando os ficheiros"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:724
-msgid "Exit"
-msgstr "Saír"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:737
-msgid "Reboot Now"
-msgstr "Reiniciar agora"
 
 #. ts-context uninstaller
 #: main.cpp:156
@@ -1553,6 +1553,9 @@ msgstr "Actualmente está instalado %1. Eliminar a versión existente?"
 
 #~ msgid "Custom"
 #~ msgstr "Personalizado"
+
+#~ msgid "UNetbootin"
+#~ msgstr "UNetbootin"
 
 #~ msgid "Drive:"
 #~ msgstr "Unidade:"

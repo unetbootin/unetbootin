@@ -2,152 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-29 00:38-0500\n"
-"PO-Revision-Date: 2010-01-31 05:21+0000\n"
-"Last-Translator: Rogier Maas <Unknown>\n"
+"POT-Creation-Date: 2010-02-01 02:26-0500\n"
+"PO-Revision-Date: 2010-02-09 07:57+0000\n"
+"Last-Translator: Jeppe Toustrup <launchpad@tenzer.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-02-01 07:24+0000\n"
+"X-Launchpad-Export-Date: 2010-02-13 21:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
-#: unetbootin.cpp:608 unetbootin.cpp:709 unetbootin.cpp:803 unetbootin.cpp:875
-#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1611
-#: unetbootin.cpp:2008 unetbootin.cpp:2050 unetbootin.cpp:2663
-#: unetbootin.cpp:2688 unetbootin.cpp:2829 unetbootin.cpp:3181
-msgid "USB Drive"
-msgstr "USB-schijf"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:574
-#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2736
-msgid "ISO"
-msgstr "ISO"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:152 unetbootin.ui:171
-msgid "Select the target drive to install to"
-msgstr "Selecteer de harde schijf waarop geïnstalleerd wordt"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:216
-msgid "Select the distribution version"
-msgstr "Kies de distributie-versie"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:278
-msgid "Select disk image file"
-msgstr "Selecteer disk-image bestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:294
-msgid "Select the disk image type"
-msgstr "Selecteer het disk-image type"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:307
-msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
-msgstr ""
-"Kies een te laden floppy-/harde schijf-image of CD-image (ISO) bestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:330 unetbootin.ui:365
-msgid "Specify a kernel file to load"
-msgstr "Geef zelf een te laden kernelbestand op"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:384 unetbootin.ui:422
-msgid "Specify an initrd file to load"
-msgstr "Kies zelf een te laden initrd-bestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:406
-msgid "Select initrd file"
-msgstr "Selecteer initrd-bestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:438
-msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Selecteer syslinux.cfg of isolinux.cfg-bestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:454 unetbootin.ui:467
-msgid "Specify parameters and options to pass to the kernel"
-msgstr ""
-"Geef parameters en opties op die aan de kernel moeten worden doorgegeven"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:488
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will show all drives in "
-"the drop-down box titled \"Drives\". Enable this only if you know what "
-"you're doing; if you use this option, the installation will likely fail, or "
-"can lead to system boot issues.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Deze <span style=\" font-"
-"weight:600;\">potentieel gevaarlijke</span> optie toont alle schijven in het "
-"selectiemenu. Doe dit alleen als u weet waar u mee bezig bent. Als u dit "
-"doet, zal de installatie waarschijnlijk mislukken of leiden tot "
-"opstartproblemen.</p></body></html>"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:508
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will format the selected "
-"drive, wiping out all data on it. It shouldn't be necessary if you're using "
-"a standard USB drive.</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Deze <span style=\" font-"
-"weight:600;\">potentieel gevaarlijke</span> optie formatteert de "
-"geselecteerde schijf. Alle gegevens op deze schijf zullen verloren gaan. "
-"Normaliter is niet niet nodig op een USB-drive.</p></body></html>"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:660
-msgid "4. Installation Complete, Reboot"
-msgstr "Installatie gereed. Opnieuw opstarten"
-
-#. ts-context uninstaller
-#: main.cpp:156
-msgid "Uninstallation Complete"
-msgstr "Deïnstallatie gereed"
 
 #. ts-context QObject
 #: main.cpp:266
@@ -155,7 +18,7 @@ msgid "LeftToRight"
 msgstr "LinksNaarRechts"
 
 #. ts-context unetbootin
-#: distrolst.cpp:173
+#: distrolst.cpp:172
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -172,7 +35,7 @@ msgstr ""
 "'/centos/%1/os/%2' wanneer gevraagd wordt naar de directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:313
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -190,7 +53,7 @@ msgstr ""
 "directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:320
+#: distrolst.cpp:319
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -208,7 +71,7 @@ msgstr ""
 "naar de directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:571
+#: distrolst.cpp:570
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -225,7 +88,7 @@ msgstr ""
 "'/factory/repo/oss' wanneer gevraagd wordt naar de directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:577
+#: distrolst.cpp:576
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -247,6 +110,21 @@ msgstr ""
 #: unetbootin.cpp:2672 unetbootin.cpp:2825 unetbootin.cpp:3177
 msgid "Hard Disk"
 msgstr "Harde schijf"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:156 unetbootin.cpp:521 unetbootin.cpp:535 unetbootin.cpp:536
+#: unetbootin.cpp:608 unetbootin.cpp:709 unetbootin.cpp:803 unetbootin.cpp:875
+#: unetbootin.cpp:891 unetbootin.cpp:1141 unetbootin.cpp:1611
+#: unetbootin.cpp:2008 unetbootin.cpp:2050 unetbootin.cpp:2663
+#: unetbootin.cpp:2688 unetbootin.cpp:2829 unetbootin.cpp:3181
+msgid "USB Drive"
+msgstr "USB-schijf"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:157 unetbootin.cpp:184 unetbootin.cpp:185 unetbootin.cpp:574
+#: unetbootin.cpp:826 unetbootin.cpp:827 unetbootin.cpp:2736
+msgid "ISO"
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:158 unetbootin.cpp:180 unetbootin.cpp:181 unetbootin.cpp:579
@@ -1396,134 +1274,256 @@ msgstr ""
 "alles' om alle toekomstige ruimte-meldingen te negeren."
 
 #. ts-context unetbootinui
-#: unetbootin.ui:26
-msgid "UNetbootin"
-msgstr "UNetbootin"
+#: unetbootin.ui:20
+msgid "Unetbootin"
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:53 unetbootin.ui:104
+#: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
 msgstr "Kies uit een lijst van ondersteunde distributies"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:56
+#: unetbootin.ui:47
 msgid "&Distribution"
 msgstr "&Distributie"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:72
+#: unetbootin.ui:127
 msgid "Specify a disk image file to load"
 msgstr "Kies een disk image-bestand om te laden"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:75
+#: unetbootin.ui:130
 msgid "Disk&image"
 msgstr "Disk&image"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:88
+#: unetbootin.ui:378
 msgid "Manually specify a kernel and initrd to load"
 msgstr "Handmatig een kernel en initrd opgeven"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:91
+#: unetbootin.ui:381
 msgid "&Custom"
 msgstr "Aan&gepast"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:120
-msgid "OK"
-msgstr "OK"
+#: unetbootin.ui:420
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will format the selected "
+"drive, wiping out all data on it. It shouldn't be necessary if you're using "
+"a standard USB drive.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Deze <span style=\" font-"
+"weight:600;\">potentieel gevaarlijke</span> optie formatteert de "
+"geselecteerde schijf. Alle gegevens op deze schijf zullen verloren gaan. "
+"Normaliter is niet niet nodig op een USB-drive.</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:123
-msgid "Return"
-msgstr "Terug"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:136
-msgid "Cancel"
-msgstr "Anulleren"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:139
-msgid "Esc"
-msgstr "Esc"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:184 unetbootin.ui:203
-msgid "Select the installation target type"
-msgstr "Selecteer het type van de installatiebestemming"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:187
-msgid "&Type:"
-msgstr "&Type:"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:281 unetbootin.ui:352 unetbootin.ui:409 unetbootin.ui:441
-msgid "..."
-msgstr "..."
-
-#. ts-context unetbootinui
-#: unetbootin.ui:349
-msgid "Select kernel file"
-msgstr "Selecteer kernelbestand"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:495
-msgid "Show &All Drives (Use with Care)"
-msgstr "Toon &Alle Schijven (voor geavanceerde gebruikers)"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:515
+#: unetbootin.ui:427
 msgid "&Format Drive (Wipes Out Data)"
 msgstr "&Formatteer Schijf (Wist Alle Gegevens)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:155
-msgid "Dri&ve:"
-msgstr "Sch&ijf"
+#: unetbootin.ui:490
+msgid "OK"
+msgstr "OK"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:368
-msgid "&Kernel:"
-msgstr "&Kernel:"
+#: unetbootin.ui:493
+msgid "Return"
+msgstr "Terug"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:387
-msgid "Init&rd:"
-msgstr "Init&rd:"
+#: unetbootin.ui:500
+msgid "Cancel"
+msgstr "Annuleren"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:470
-msgid "&Options:"
-msgstr "&Opties:"
+#: unetbootin.ui:503
+msgid "Esc"
+msgstr "Esc"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:673
-msgid "3. Installing Bootloader"
-msgstr "Bootloader installeren"
+#: unetbootin.ui:548
+msgid "Reboot Now"
+msgstr "Nu herstarten"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:686
-msgid "2. Extracting and Copying Files"
-msgstr "Bestanden uitpakken en kopiëren"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:699
-msgid "1. Downloading Files"
-msgstr "1. Bestanden aan het downloaden"
-
-#. ts-context unetbootinui
-#: unetbootin.ui:724
+#: unetbootin.ui:555
 msgid "Exit"
 msgstr "Afsluiten"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:737
-msgid "Reboot Now"
-msgstr "Nu herstarten"
+#: unetbootin.ui:647
+msgid "1. Downloading Files"
+msgstr "1. Bestanden aan het downloaden"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:654
+msgid "2. Extracting and Copying Files"
+msgstr "Bestanden uitpakken en kopiëren"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:661
+msgid "3. Installing Bootloader"
+msgstr "Bootloader installeren"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:668
+msgid "4. Installation Complete, Reboot"
+msgstr "Installatie gereed. Opnieuw opstarten"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:464 unetbootin.ui:483
+msgid "Select the target drive to install to"
+msgstr "Selecteer de harde schijf waarop geïnstalleerd wordt"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:467
+msgid "Dri&ve:"
+msgstr "Sch&ijf"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:438 unetbootin.ui:457
+msgid "Select the installation target type"
+msgstr "Selecteer het type van de installatiebestemming"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:441
+msgid "&Type:"
+msgstr "&Type:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:81
+msgid "Select the distribution version"
+msgstr "Kies de distributie-versie"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:307
+msgid "Select disk image file"
+msgstr "Selecteer disk-image bestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
+msgid "..."
+msgstr "..."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:148
+msgid "Select the disk image type"
+msgstr "Selecteer het disk-image type"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:203
+msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
+msgstr ""
+"Kies een te laden floppy-/harde schijf-image of CD-image (ISO) bestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:167 unetbootin.ui:218
+msgid "Specify a kernel file to load"
+msgstr "Geef zelf een te laden kernelbestand op"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:243
+msgid "Select kernel file"
+msgstr "Selecteer kernelbestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:253 unetbootin.ui:272
+msgid "Specify an initrd file to load"
+msgstr "Kies zelf een te laden initrd-bestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:332
+msgid "Select initrd file"
+msgstr "Selecteer initrd-bestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:357
+msgid "Select syslinux.cfg or isolinux.cfg file"
+msgstr "Selecteer syslinux.cfg of isolinux.cfg-bestand"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:186 unetbootin.ui:281
+msgid "Specify parameters and options to pass to the kernel"
+msgstr ""
+"Geef parameters en opties op die aan de kernel moeten worden doorgegeven"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:406
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will show all drives in "
+"the drop-down box titled \"Drives\". Enable this only if you know what "
+"you're doing; if you use this option, the installation will likely fail, or "
+"can lead to system boot issues.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Deze <span style=\" font-"
+"weight:600;\">potentieel gevaarlijke</span> optie toont alle schijven in het "
+"selectiemenu. Doe dit alleen als u weet waar u mee bezig bent. Als u dit "
+"doet, zal de installatie waarschijnlijk mislukken of leiden tot "
+"opstartproblemen.</p></body></html>"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:413
+msgid "Show &All Drives (Use with Care)"
+msgstr "Toon &Alle Schijven (voor geavanceerde gebruikers)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:170
+msgid "&Kernel:"
+msgstr "&Kernel:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:256
+msgid "Init&rd:"
+msgstr "Init&rd:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:189
+msgid "&Options:"
+msgstr "&Opties:"
+
+#. ts-context uninstaller
+#: main.cpp:156
+msgid "Uninstallation Complete"
+msgstr "Deïnstallatie gereed"
 
 #. ts-context uninstaller
 #: main.cpp:157
@@ -1580,6 +1580,9 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 
 #~ msgid "Distribution"
 #~ msgstr "Distributie"
+
+#~ msgid "UNetbootin"
+#~ msgstr "UNetbootin"
 
 #~ msgid "Custom"
 #~ msgstr "Eigen"

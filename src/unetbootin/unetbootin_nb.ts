@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-01-29 00:38-0500
-PO-Revision-Date: 2010-01-29 08:00+0000
-Last-Translator: Tor Syversen &lt;sol-moe@online.no&gt;
+POT-Creation-Date: 2010-02-01 02:26-0500
+PO-Revision-Date: 2010-02-11 11:36+0000
+Last-Translator: ehellabe &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-02-01 07:24+0000
+X-Launchpad-Export-Date: 2010-02-13 21:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -29,6 +29,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;Lastet ned:&lt;/b&gt; %1 av %2 bytes</translation>
+    </message>
+    <message>
+        <source>UNetbootin</source>
+        <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
         <source>Distribution</source>
@@ -209,206 +213,6 @@ Omstart nå?</translation>
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
-    <message>
-        <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation type="obsolete">Velkommen til&lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, den Universale Netboot installatøren. Bruken:&lt;ol&gt;&lt;li&gt;Velg en distribusjon og versjon som du vil laste ned fra listen over, eller velg manuelt filene du vil laste inn under.&lt;/li&gt;&lt;li&gt;Velg en installasjonstype, og  trykk OK for å begynne installasjonen.&lt;/li&gt;&lt;/ol&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Arch Linuxer en lettvekt distribusjon optimalisert for hastighte og fleksibilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standard versjonen gir tilater installasjon over internett (FTP). Hvis du er interessert i en LiveUSB versjon, se FaunOS.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; BackTracker er en distribusjon som fokuserer på netverksanalyse og sikkerhetstesting.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; BackTrack booter opp; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CentOS er en gratis Red Hat Enterprise Linux klone.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CloneZilla er en distribusjon tiltenkt sikkerhetskopiering og oppretting av imagefiler av systemet .&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; CloneZilla blir startet opp og kjørt i live-modus; installasjon er ikke påkrevet for bruk.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Damn Small Linux er en minimalistisk distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen  laster hele systemet inn i RAM og starter fra minnet, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Debian er en felleskaputviklet Linux distribusjon som støtter ett vidt spekter av prosessor akritekturer og som tilbyr store pakktilvisninger.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live modus, og kan derfra starte installasjonsprogrammet. NetInstall versjonen tilater installasjon over FTP.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Dreamlinux er en brukevennlig distribusjon basert på Debian.&lt;br/&gt;&lt;b&gt;Installasjon:&lt;/b&gt; Livetilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus er et antivirus-verktøy til bruk i nødstilfeller for å gjenopprette systemer som har blitt ødelagte som følge av skadelig programvare.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt;
-&lt;a href=&quot;http://www.elivecd.org/&quot;&gt;&lt;/a&gt;
-&lt;br/&gt;
-&lt;b&gt;Beskrivelse:&lt;/b&gt; 
-Elive er en Debian-basert distribusjon, inneholdende Enlightenment window manager.&lt;br/&gt;
-&lt;b&gt;Installasjons informasjon:&lt;/b&gt; 
-Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, installasjon kjøres. Dette installerer den ustabile versjonen, ikke den stabile versjonen som du kan laste ned fra: 
-&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;
-&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Fedora er en Red Hat felles-utviklet distribusjon som inkluderer den sistegratis/open-source programvaren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live version tilater oppstart i live mode, hvorfra installasjonsprogrammet kan startes. NetInstall versjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved bruk av forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeBSD er en generelt ment som et Unix-lignende operativsystem designet for tilpassning og ytelse.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeDOS er ett gratis MS-DOS kompatibelt operativsystem.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Se &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manualen&lt;/a&gt;for installasjonsdetaljer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Frugalwareer en ment å være en Slackware-basert distro for advanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; F-Secure Rescue CD finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gentoo er en fleksibel kildebasert distribusjon designet for avanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;Live versjonen tilater oppstart i live mode hvorfra installasjonsprogarmmet kan bli startet.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense FSF har bifalt denne distribusjonen (basert på Ubuntu) der alle ufrie komponenter er fjernet.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gujin er en grafiskl boot manager som kan boote fra forskjellige volum and files.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Gujin booter enkelt opp;ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kaspersky Rescue Disk finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kubuntuer en offesiell Ubuntu basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan startes. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Linux Minter en brukervennlig linuxdistribusjon basert på Ubuntu og kommer ferdiginstallert med proprietære kodeker og programware.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live mode hvor installeren kan startes.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Mandriva er en brukervennlig linux distribusjon tidligere kjent som Mandrake Linux.&lt;br/&gt;&lt;b&gt;Installsjonsnotater:&lt;/b&gt; Live versjonen tilater å starte opp i live mode hvorfra installasjonsprogarmmet kan startes. NetInstall versjonen tilater installasjon over internett (FTP) eller via en forhåndsnedlastet &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Gratis&quot; iso bildefil&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; MEPIS er en Debian-basert distribusjon. SimplyMEPIS er en brukervennlig versjon basert på KDE, mens AntiX lettvektsversjon for gamle datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; MEPIS tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; NetBSD er ett Unix-likt operativsystem som fokuserer på portabilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Offline NT Password and Registry Editor kan resette Windows passord og endre registeret i Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; NTPasswdstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; openSUSE er en brukervennlig distribusjon sponset av Novell.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ophcrack kan cracke Windows passord.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Ophcrackstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Parted Magic inkluderer GParted partisjonsbehandlerenj og andre systemverktøy som kan endre størrelse, kopiere, sikkerhetskopiere og manipulere partisjoner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Parted Magic booter og kjører i live mode; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; PCLinuxOS er en brukervennlig distribusjon basert på Mandriva.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å boote opp i live hvorfra installasjonsprogrammet kan bli startet.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Puppy Linux er en lettvekt distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM starter, ingen installasjon er nødvendig, men valgfritt.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Sabayon Linux er en Gentoo-basert Live DVD-distribusjon som inneholder den binære pakkebehandleren Entropy i tillegg til kildekode-baserte Portage.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen. LiteMCE-versjonen nøyer seg med 2 GB, mens en full-installasjon krever 8 GB hardiskplass.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Slax er en Slackware basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvekt, desktop orientert micro distribusjon.&lt;br/&gt;&lt;b&gt;Installasjosnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM og kjører derfra, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Smart Boot Managerer en bootloader som kommer seg forbi BIOS begrensninger og feil.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SBM booter opp; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Grub Disk er en bootloader som kan utføre ett stort utvalg av MBR og bootloader reparasjons oppgaver.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SGD booter opp; ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Ubuntu er en uofisiell nedstamning av Ubuntu som innehollder tilleggsprogramvare som standard. Krever 2 GB plass på usb-enheten for installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SystemRescueCD-en inneholder forskjellige partisjonerings-, datagjenopprettings- og sikkerhetskopierings-verktøy.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; SystemRescueCD-en starter i live-modus, tradisjonell installasjon til hardisk er ikke påkrevet for å bruke den.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu er en brukervennlig distribusjon basert på Debian. Ubuntu er for øyeblikket den mest populære linux desktop distribusjonen.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;  Live versjonen tilater å starte opp i live modus hvorfra installasjonsprogrammet kan bli startet. NetInstall versjonen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett og kjøre og inneholder et enkelt kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Xubuntu er en offesiell Ubuntu baserte distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjosnprogrammet valgfritt kan bli startet. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Zenwalk er en Slackware basert distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; EeePCLinuxOS er en brukervennlig PCLinuxOS basert distribusjon for EeePC.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for atinstallasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu Eee er ikke bare Ubuntu optimalisert for Asus Eee PCen. Det er ett operativsystem som bruker Netbook Remix brukergrensesnittet, som bruker den beste programvaren istedenfor open source alternativer (eks. Skype istedenfor Ekiga).&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Eliveer en Debian basert distribusjon med Enlightenment vindu behandleren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammat valgfritt kan bli startet. Den ustabile versjonen, ikke den &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabile versjonen&lt;/a&gt;er installert. Denne installasjonen er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hkemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kiwi Linux er en Ubuntu-basert distribusjon med hovedfokus på morsmålstalende fra Romania og Ungarn, samt dem som behersker Engelsk.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Sørg for at det ikke er noen filer på installasjonsmediet og at det er formatert før du fortsetter med installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense er en høykvalitets GNU/Linux distribusjon som utvider og forbedrer Ubuntutil et helt gratis operativsystem uten binærfiler eller pakketilvisninger som inneholder propetiær programvare.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter installasjonen.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvek, desktop basert mikrodistribusjon.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemer inn i RAm og kjøres derfra, installasjon er derfor ikke nødvendig. Dette installasjonsprogrammet er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett å kjøre og inneholder et kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -500,7 +304,7 @@ Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, ins
         <location filename="unetbootin.cpp" line="2541"/>
         <location filename="unetbootin.cpp" line="2893"/>
         <source>USB Drive</source>
-        <translation>USB enhet</translation>
+        <translation>USB-disk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="165"/>
@@ -528,94 +332,90 @@ Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, ins
         <location filename="distrover.cpp" line="209"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Grub Disk er en bootloader som kan utføre ett stort utvalg av MBR og bootloader reparasjons oppgaver.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SGD booter opp; ingen installasjon er nødvendig.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Grub Disk er en bootloader som kan utføre ett stort utvalg av MBR og bootloader reparasjons oppgaver.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SGD booter opp; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; EeePCLinuxOS er en brukervennlig PCLinuxOS basert distribusjon for EeePC.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for atinstallasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; EeePCLinuxOS er en brukervennlig PCLinuxOS basert distribusjon for EeePC.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for atinstallasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="41"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu Eee er ikke bare Ubuntu optimalisert for Asus Eee PCen. Det er ett operativsystem som bruker Netbook Remix brukergrensesnittet, som bruker den beste programvaren istedenfor open source alternativer (eks. Skype istedenfor Ekiga).&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu Eee er ikke bare Ubuntu optimalisert for Asus Eee PCen. Det er ett operativsystem som bruker Netbook Remix brukergrensesnittet, som bruker den beste programvaren istedenfor open source alternativer (eks. Skype istedenfor Ekiga).&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter med installasjonen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Eliveer en Debian basert distribusjon med Enlightenment vindu behandleren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammat valgfritt kan bli startet. Den ustabile versjonen, ikke den &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabile versjonen&lt;/a&gt;er installert. Denne installasjonen er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Eliveer en Debian basert distribusjon med Enlightenment vindu behandleren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammat valgfritt kan bli startet. Den ustabile versjonen, ikke den &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabile versjonen&lt;/a&gt;er installert. Denne installasjonen er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hkemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kiwi Linux er en Ubuntu-basert distribusjon med hovedfokus på morsmålstalende fra Romania og Ungarn, samt dem som behersker Engelsk.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Sørg for at det ikke er noen filer på installasjonsmediet og at det er formatert før du fortsetter med installasjonen.</translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hkemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kiwi Linux er en Ubuntu-basert distribusjon med hovedfokus på morsmålstalende fra Romania og Ungarn, samt dem som behersker Engelsk.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Sørg for at det ikke er noen filer på installasjonsmediet og at det er formatert før du fortsetter med installasjonen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="69"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense er en høykvalitets GNU/Linux distribusjon som utvider og forbedrer Ubuntutil et helt gratis operativsystem uten binærfiler eller pakketilvisninger som inneholder propetiær programvare.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter installasjonen.</translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense er en høykvalitets GNU/Linux distribusjon som utvider og forbedrer Ubuntutil et helt gratis operativsystem uten binærfiler eller pakketilvisninger som inneholder propetiær programvare.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Sørg for at installasjonsmediet er tomt og formatert før du fortsetter installasjonen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvek, desktop basert mikrodistribusjon.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemer inn i RAm og kjøres derfra, installasjon er derfor ikke nødvendig. Dette installasjonsprogrammet er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvek, desktop basert mikrodistribusjon.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemer inn i RAm og kjøres derfra, installasjon er derfor ikke nødvendig. Dette installasjonsprogrammet er basert på &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation type="unfinished">&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett å kjøre og inneholder et kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett å kjøre og inneholder et kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation type="unfinished">Velkommen til&lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, den Universale Netboot installatøren. Bruken:&lt;ol&gt;&lt;li&gt;Velg en distribusjon og versjon som du vil laste ned fra listen over, eller velg manuelt filene du vil laste inn under.&lt;/li&gt;&lt;li&gt;Velg en installasjonstype, og  trykk OK for å begynne installasjonen.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Velkommen til &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, det universielle verktøyet for netboot-installasjon. Bruk: &lt;ol&gt;&lt;li&gt;Velg distribusjon og versjon du ønsker å laste ned fra listen over, eller velg en fil du vil bruke.&lt;/li&gt;&lt;li&gt;Velg installasjonstype og trykk OK for å starte.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Arch Linuxer en lettvekt distribusjon optimalisert for hastighte og fleksibilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standard versjonen gir tilater installasjon over internett (FTP). Hvis du er interessert i en LiveUSB versjon, se FaunOS.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Arch Linuxer en lettvekt distribusjon optimalisert for hastighte og fleksibilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standard versjonen gir tilater installasjon over internett (FTP). Hvis du er interessert i en LiveUSB versjon, se FaunOS.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="32"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; BackTracker er en distribusjon som fokuserer på netverksanalyse og sikkerhetstesting.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; BackTrack booter opp; ingen installasjon er nødvendig.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; BackTracker er en distribusjon som fokuserer på netverksanalyse og sikkerhetstesting.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; BackTrack booter opp; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CentOS er en gratis Red Hat Enterprise Linux klone.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CentOS er en gratis Red Hat Enterprise Linux klone.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="42"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CloneZilla er en distribusjon tiltenkt sikkerhetskopiering og oppretting av imagefiler av systemet .&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; CloneZilla blir startet opp og kjørt i live-modus; installasjon er ikke påkrevet for bruk.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; CloneZilla er en distribusjon tiltenkt sikkerhetskopiering og oppretting av imagefiler av systemet .&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; CloneZilla blir startet opp og kjørt i live-modus; installasjon er ikke påkrevet for bruk.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="47"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Damn Small Linux er en minimalistisk distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen  laster hele systemet inn i RAM og starter fra minnet, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Damn Small Linux er en minimalistisk distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen  laster hele systemet inn i RAM og starter fra minnet, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="52"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</oldsource>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Debian er en felleskaputviklet Linux distribusjon som støtter ett vidt spekter av prosessor akritekturer og som tilbyr store pakktilvisninger.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live modus, og kan derfra starte installasjonsprogrammet. NetInstall versjonen tilater installasjon over FTP.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Debian er en felleskaputviklet Linux distribusjon som støtter ett vidt spekter av prosessor akritekturer og som tilbyr store pakktilvisninger.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live modus, og kan derfra starte installasjonsprogrammet. NetInstall versjonen tilater installasjon over FTP.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="58"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Dreamlinux er en brukevennlig distribusjon basert på Debian.&lt;br/&gt;&lt;b&gt;Installasjon:&lt;/b&gt; Livetilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Dreamlinux er en brukevennlig distribusjon basert på Debian.&lt;br/&gt;&lt;b&gt;Installasjon:&lt;/b&gt; Livetilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="63"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus er et antivirus-verktøy til bruk i nødstilfeller for å gjenopprette systemer som har blitt ødelagte som følge av skadelig programvare.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus er et antivirus-verktøy til bruk i nødstilfeller for å gjenopprette systemer som har blitt ødelagte som følge av skadelig programvare.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="68"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt;
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt;
 &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;&lt;/a&gt;
 &lt;br/&gt;
 &lt;b&gt;Beskrivelse:&lt;/b&gt; 
@@ -628,17 +428,61 @@ Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, ins
     <message>
         <location filename="distrover.cpp" line="78"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Fedora er en Red Hat felles-utviklet distribusjon som inkluderer den sistegratis/open-source programvaren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live version tilater oppstart i live mode, hvorfra installasjonsprogrammet kan startes. NetInstall versjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved bruk av forhåndsnedlastede ISO-filer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Fedora er en Red Hat felles-utviklet distribusjon som inkluderer den sistegratis/open-source programvaren.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live version tilater oppstart i live mode, hvorfra installasjonsprogrammet kan startes. NetInstall versjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved bruk av forhåndsnedlastede ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="83"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeBSD er en generelt ment som et Unix-lignende operativsystem designet for tilpassning og ytelse.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeBSD er en generelt ment som et Unix-lignende operativsystem designet for tilpassning og ytelse.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="88"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeDOS er ett gratis MS-DOS kompatibelt operativsystem.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Se &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manualen&lt;/a&gt;for installasjonsdetaljer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeDOS er ett gratis MS-DOS kompatibelt operativsystem.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Se &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manualen&lt;/a&gt;for installasjonsdetaljer.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="98"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Frugalwareer en ment å være en Slackware-basert distro for advanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="103"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; F-Secure Rescue CD finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="108"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gentoo er en fleksibel kildebasert distribusjon designet for avanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;Live versjonen tilater oppstart i live mode hvorfra installasjonsprogarmmet kan bli startet.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="118"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense FSF har bifalt denne distribusjonen (basert på Ubuntu) der alle ufrie komponenter er fjernet.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="123"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gujin er en grafiskl boot manager som kan boote fra forskjellige volum and files.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Gujin booter enkelt opp;ingen installasjon er nødvendig.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="128"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kaspersky Rescue Disk finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kubuntuer en offesiell Ubuntu basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan startes. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="32"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="52"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="93"/>
@@ -646,132 +490,102 @@ Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, ins
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="98"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Frugalwareer en ment å være en Slackware-basert distro for advanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon både over internett (FTP), eller en offline installasjon ved hjelp av forhåndsnedlastede ISO-filer.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="103"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; F-Secure Rescue CD finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="108"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gentoo er en fleksibel kildebasert distribusjon designet for avanserte brukere.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;Live versjonen tilater oppstart i live mode hvorfra installasjonsprogarmmet kan bli startet.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="118"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; gNewSense FSF har bifalt denne distribusjonen (basert på Ubuntu) der alle ufrie komponenter er fjernet.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="123"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Gujin er en grafiskl boot manager som kan boote fra forskjellige volum and files.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Gujin booter enkelt opp;ingen installasjon er nødvendig.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="128"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kaspersky Rescue Disk finner og fjerner skadelig programvare fra din Windows-installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man søke etter skadelig programvare.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="133"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Kubuntuer en offesiell Ubuntu basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjonsprogrammet valgfritt kan startes. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="138"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Linux Minter en brukervennlig linuxdistribusjon basert på Ubuntu og kommer ferdiginstallert med proprietære kodeker og programware.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live mode hvor installeren kan startes.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Linux Minter en brukervennlig linuxdistribusjon basert på Ubuntu og kommer ferdiginstallert med proprietære kodeker og programware.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å starte i Live mode hvor installeren kan startes.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="143"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Mandriva er en brukervennlig linux distribusjon tidligere kjent som Mandrake Linux.&lt;br/&gt;&lt;b&gt;Installsjonsnotater:&lt;/b&gt; Live versjonen tilater å starte opp i live mode hvorfra installasjonsprogarmmet kan startes. NetInstall versjonen tilater installasjon over internett (FTP) eller via en forhåndsnedlastet &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Gratis&quot; iso bildefil&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Mandriva er en brukervennlig linux distribusjon tidligere kjent som Mandrake Linux.&lt;br/&gt;&lt;b&gt;Installsjonsnotater:&lt;/b&gt; Live versjonen tilater å starte opp i live mode hvorfra installasjonsprogarmmet kan startes. NetInstall versjonen tilater installasjon over internett (FTP) eller via en forhåndsnedlastet &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Gratis&quot; iso bildefil&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="149"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; MEPIS er en Debian-basert distribusjon. SimplyMEPIS er en brukervennlig versjon basert på KDE, mens AntiX lettvektsversjon for gamle datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; MEPIS tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; MEPIS er en Debian-basert distribusjon. SimplyMEPIS er en brukervennlig versjon basert på KDE, mens AntiX lettvektsversjon for gamle datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; MEPIS tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="154"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; NetBSD er ett Unix-likt operativsystem som fokuserer på portabilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; NetBSD er ett Unix-likt operativsystem som fokuserer på portabilitet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="159"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Offline NT Password and Registry Editor kan resette Windows passord og endre registeret i Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; NTPasswdstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Offline NT Password and Registry Editor kan resette Windows passord og endre registeret i Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; NTPasswdstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="164"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; openSUSE er en brukervennlig distribusjon sponset av Novell.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; openSUSE er en brukervennlig distribusjon sponset av Novell.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Standardversjonen tilater installasjon over internett (FTP), eller offline installasjon ved å bruke forhåndsnedlastede ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="169"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ophcrack kan cracke Windows passord.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Ophcrackstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ophcrack kan cracke Windows passord.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Ophcrackstarter opp og kjører i live mode; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="174"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Parted Magic inkluderer GParted partisjonsbehandlerenj og andre systemverktøy som kan endre størrelse, kopiere, sikkerhetskopiere og manipulere partisjoner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Parted Magic booter og kjører i live mode; ingen installasjon er nødvendig.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Parted Magic inkluderer GParted partisjonsbehandlerenj og andre systemverktøy som kan endre størrelse, kopiere, sikkerhetskopiere og manipulere partisjoner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Parted Magic booter og kjører i live mode; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="179"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; PCLinuxOS er en brukervennlig distribusjon basert på Mandriva.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å boote opp i live hvorfra installasjonsprogrammet kan bli startet.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; PCLinuxOS er en brukervennlig distribusjon basert på Mandriva.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater å boote opp i live hvorfra installasjonsprogrammet kan bli startet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="184"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Puppy Linux er en lettvekt distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM starter, ingen installasjon er nødvendig, men valgfritt.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Puppy Linux er en lettvekt distribusjon designet for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM starter, ingen installasjon er nødvendig, men valgfritt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="189"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Sabayon Linux er en Gentoo-basert Live DVD-distribusjon som inneholder den binære pakkebehandleren Entropy i tillegg til kildekode-baserte Portage.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen. LiteMCE-versjonen nøyer seg med 2 GB, mens en full-installasjon krever 8 GB hardiskplass.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Sabayon Linux er en Gentoo-basert Live DVD-distribusjon som inneholder den binære pakkebehandleren Entropy i tillegg til kildekode-baserte Portage.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen. LiteMCE-versjonen nøyer seg med 2 GB, mens en full-installasjon krever 8 GB hardiskplass.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="194"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Slax er en Slackware basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Slax er en Slackware basert distribusjon med KDE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="199"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvekt, desktop orientert micro distribusjon.&lt;br/&gt;&lt;b&gt;Installasjosnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM og kjører derfra, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SliTaz er en lettvekt, desktop orientert micro distribusjon.&lt;br/&gt;&lt;b&gt;Installasjosnotater:&lt;/b&gt; Live versjonen laster hele systemet inn i RAM og kjører derfra, installasjon er derfor ikke nødvendig, men valgfritt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="204"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Smart Boot Managerer en bootloader som kommer seg forbi BIOS begrensninger og feil.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SBM booter opp; ingen installasjon er nødvendig.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Smart Boot Managerer en bootloader som kommer seg forbi BIOS begrensninger og feil.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; SBM booter opp; ingen installasjon er nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Ubuntu er en uofisiell nedstamning av Ubuntu som innehollder tilleggsprogramvare som standard. Krever 2 GB plass på usb-enheten for installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super Ubuntu er en uofisiell nedstamning av Ubuntu som innehollder tilleggsprogramvare som standard. Krever 2 GB plass på usb-enheten for installasjon.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen tillater oppstart i live-modus, derfra kan man velge å starte installasjonen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SystemRescueCD-en inneholder forskjellige partisjonerings-, datagjenopprettings- og sikkerhetskopierings-verktøy.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; SystemRescueCD-en starter i live-modus, tradisjonell installasjon til hardisk er ikke påkrevet for å bruke den.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; SystemRescueCD-en inneholder forskjellige partisjonerings-, datagjenopprettings- og sikkerhetskopierings-verktøy.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; SystemRescueCD-en starter i live-modus, tradisjonell installasjon til hardisk er ikke påkrevet for å bruke den.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="224"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu er en brukervennlig distribusjon basert på Debian. Ubuntu er for øyeblikket den mest populære linux desktop distribusjonen.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;  Live versjonen tilater å starte opp i live modus hvorfra installasjonsprogrammet kan bli startet. NetInstall versjonen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="234"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Xubuntu er en offesiell Ubuntu baserte distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjosnprogrammet valgfritt kan bli startet. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu er en brukervennlig distribusjon basert på Debian. Ubuntu er for øyeblikket den mest populære linux desktop distribusjonen.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt;  Live versjonen tilater å starte opp i live modus hvorfra installasjonsprogrammet kan bli startet. NetInstall versjonen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
+        <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Xubuntu er en offesiell Ubuntu baserte distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i live mode, hvorfra installasjosnprogrammet valgfritt kan bli startet. NetInstall versjojen tilater installasjon over FTP, og kan installere Kubuntu og andre offesielle Ubuntu baserte distribusjoner.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1258"/>
@@ -922,12 +736,17 @@ Omstart nå?</translation>
     <message>
         <location filename="distrover.cpp" line="229"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett og kjøre og inneholder et enkelt kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; xPUD er lett og kjøre og inneholder et enkelt kiosk-lignende grensesnitt med en nettleser og mediaspiller.&lt;br/&gt;&lt;b&gt;Installasjonsveiledning:&lt;/b&gt; Live-versjonen laster hele systemet til RAM og starter opp fra minne.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="234"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="239"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="unfinished">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Zenwalk er en Slackware basert distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Zenwalk er en Slackware basert distribusjon med XFCE brukergrensesnittet.&lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live tilater oppstart i live mode hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="206"/>
@@ -1063,8 +882,9 @@ Omstart nå?</translation>
 <context>
     <name>unetbootinui</name>
     <message>
-        <source>UNetbootin</source>
-        <translation type="obsolete">UNetbootin</translation>
+        <location filename="unetbootin.ui" line="20"/>
+        <source>Unetbootin</source>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -1075,7 +895,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribusjon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -1085,7 +905,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Disk&amp;avtrykk</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -1095,7 +915,25 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Tilpasset</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="420"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dette &lt;span style=&quot; font-weight:600;&quot;&gt;er potensielt farlig&lt;/span&gt; valget vil formatere enheten, og slette all informasjon lagret på den. Dette burde ikke være nødvendig om du bruker en vanlig USB enhet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="427"/>
+        <source>&amp;Format Drive (Wipes Out Data)</source>
+        <translation>&amp;Formater enheten (fjerner alle data)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -1105,7 +943,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -1115,13 +953,48 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="548"/>
+        <source>Reboot Now</source>
+        <translation>Omstart Nå</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="555"/>
+        <source>Exit</source>
+        <translation>Avslutt</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="647"/>
+        <source>1. Downloading Files</source>
+        <translation>1. Laster ned filer</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="654"/>
+        <source>2. Extracting and Copying Files</source>
+        <translation>2. Pakker ut og kopierer filer</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="661"/>
+        <source>3. Installing Bootloader</source>
+        <translation>3. Installerer Bootlader</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="668"/>
+        <source>4. Installation Complete, Reboot</source>
+        <translation>4. Installasjon fullført, Omstart</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
         <translation>Velg en målenhet å installere til</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="467"/>
+        <source>Dri&amp;ve:</source>
+        <translation>&amp;Enhet</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
@@ -1132,7 +1005,7 @@ Omstart nå?</translation>
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Type:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1167,11 +1040,6 @@ Omstart nå?</translation>
         <location filename="unetbootin.ui" line="218"/>
         <source>Specify a kernel file to load</source>
         <translation>Spesifiser en kernel fil som skal brukes</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="20"/>
-        <source>Unetbootin</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
@@ -1216,75 +1084,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="427"/>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="420"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dette &lt;span style=&quot; font-weight:600;&quot;&gt;er potensielt farlig&lt;/span&gt; valget vil formatere enheten, og slette all informasjon lagret på den. Dette burde ikke være nødvendig om du bruker en vanlig USB enhet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="467"/>
-        <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Vis skuljte enheter (brukes med forsiktighet)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kjerne:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="668"/>
-        <source>4. Installation Complete, Reboot</source>
-        <translation>4. Installasjon fullført, Omstart</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="661"/>
-        <source>3. Installing Bootloader</source>
-        <translation>3. Installerer Bootlader</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="654"/>
-        <source>2. Extracting and Copying Files</source>
-        <translation>2. Pakker ut og kopierer filer</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="647"/>
-        <source>1. Downloading Files</source>
-        <translation>1. Laster ned filer</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="555"/>
-        <source>Exit</source>
-        <translation>Avslutt</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="548"/>
-        <source>Reboot Now</source>
-        <translation>Omstart Nå</translation>
+        <translation>&amp;Innstillinger</translation>
     </message>
 </context>
 <context>
