@@ -33,5 +33,7 @@ src/unetbootin/unetbootin.pro.user
 src/unetbootin/sgd.img
 src/unetbootin/qrc_unetbootin-linux.o
 src/unetbootin/qrc_unetbootin.o
+src/unetbootin/qrc_*
+src/unetbootin/*.o
 src/unetbootin/qt4-win
 src/unetbootin/qt4-x11
