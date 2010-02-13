@@ -22,8 +22,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 	if (ishdmedia) \
 	{ \
 		ubunturelnamereplace \
-		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/ubuntu-installer/%2/linux").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath)); \
-		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/ubuntu-installer/%2/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath)); \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath)); \
+		downloadfile(QString("http://archive.ubuntu.com/ubuntu/dists/%1/main/installer-%2/current/images/hd-media/initrd.gz").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath)); \
 		postinstmsg = unetbootin::tr("\n*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com"); \
 	} \
 	else if (isnetinstall) \
