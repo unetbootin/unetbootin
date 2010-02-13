@@ -314,8 +314,8 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	distroselect->addItem("Debian", (QStringList() << "Stable_NetInstall" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.debian.org/\">http://www.debian.org</a><br/>"
 		"<b>Description:</b> Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.<br/>"
-		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.") <<
-	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Unstable_NetInstall" << "Unstable_NetInstall_x64"));
+		"<b>Install Notes:</b> The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive") <<
+	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_HdMedia" << "Stable_HdMedia_x64" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_HdMedia" << "Testing_HdMedia_x64" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_HdMedia" << "Unstable_HdMedia_x64"));
 //	"Stable_NetInstall" << "Stable_NetInstall_x64" << "Stable_Live" << "Testing_NetInstall" << "Testing_NetInstall_x64" << "Testing_Live" << "Unstable_NetInstall" << "Unstable_NetInstall_x64" << "Unstable_Live"));
 	distroselect->addItem("Dreamlinux", (QStringList() << "Latest_Live" <<
 	tr("<b>Homepage:</b> <a href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/>"
