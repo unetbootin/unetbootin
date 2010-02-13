@@ -344,6 +344,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		"<b>Description:</b> FreeDOS is a free MS-DOS compatible operating system.<br/>"
 		"<b>Install Notes:</b> See the <a href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for installation details.") <<
 	"1.0"));
+	distroselect->addItem("FreeNAS", (QStringList() << "0.7.4919" <<
+	tr("<b>Homepage:</b> <a href=\"http://freenas.org/\">http://www.freenas.org</a><br/>"
+		"<b>Description:</b> FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.<br/>"
+		"<b>Install Notes:</b> The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.") <<
+	"0.7.4919" << "0.7.4919_x64" << "0.7.1.5024_Live" << "0.7.1.4997_Live_x64"));
 	distroselect->addItem("Frugalware", (QStringList() << "Stable" <<
 	tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
 		"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"

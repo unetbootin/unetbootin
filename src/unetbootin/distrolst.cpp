@@ -342,6 +342,27 @@ if (nameDistro == "FreeDOS")
 	downloadfile(QString("http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/%1/fdboot.img").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "FreeNAS")
+{
+	if (isarch64)
+	{
+		cpuarch = "amd64";
+	}
+	else
+	{
+		cpuarch = "i386";
+	}
+	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
+	if (islivecd)
+	{
+		downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/FreeNAS-%1-LiveCD-%2.img.gz").arg(cpuarch, relname), QString("%1ubninit").arg(targetPath));
+	}
+	else
+	{
+		downloadfile(QString("http://sourceforge.net/projects/freenas/files/stable/0.7/FreeNAS-%1-embedded-%2.img/download").arg(cpuarch, relname), QString("%1ubninit").arg(targetPath));
+	}
+}
+
 if (nameDistro == "Frugalware")
 {
 	if (isarch64)
