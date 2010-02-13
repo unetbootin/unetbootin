@@ -96,16 +96,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
-#ifndef ubuntuverlist
-#define ubuntuverlist \
-"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_HdMedia" << "6.06_HdMedia_x64" << "6.06_Live" << "6.06_Live_x64" << \
-"8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_HdMedia" << "8.04_HdMedia_x64" << "8.04_Live" << "8.04_Live_x64" << \
-"8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_HdMedia" << "8.10_HdMedia_x64" << "8.10_Live" << "8.10_Live_x64" << \
-"9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_HdMedia" << "9.04_HdMedia_x64" << "9.04_Live" << "9.04_Live_x64" << \
-"9.10_NetInstall" << "9.10_NetInstall_x64" << "9.10_HdMedia" << "9.10_HdMedia_x64" << "9.10_Live" << "9.10_Live_x64" << \
-"Daily_Live" << "Daily_Live_x64"
-#endif
-
 class customver : public QObject
 {
 	Q_OBJECT
