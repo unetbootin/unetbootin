@@ -4,7 +4,7 @@ vcsname="$(./vcs-name)"
 
 if [ "$vcsname" == "git" ]
 then
-expr "$(git log --pretty=format:'' | wc -l)" + 1
+expr "$(git log --diff-filter=ACDMRTUX --pretty=format:'' | wc -l)" + 1
 exit 0
 fi
 
