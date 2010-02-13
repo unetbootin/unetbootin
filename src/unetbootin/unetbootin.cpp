@@ -142,8 +142,16 @@ unetbootin::unetbootin(QWidget *parent)
 
 bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
-	this->ignoreoutofspace = false;
-	this->searchsymlinks = false;
+	isarch64 = false;
+	islivecd = false;
+	isnetinstall = false;
+	ishdmedia = false;
+	overwriteall = false;
+	searchsymlinks = false;
+	ignoreoutofspace = false;
+	#ifdef Q_OS_UNIX
+	isext2 = false;
+	#endif
 	secondlayer->setEnabled(false);
 	secondlayer->hide();
 	firstlayer->setEnabled(true);

@@ -159,6 +159,7 @@ public:
 	bool isarch64;
 	bool islivecd;
 	bool isnetinstall;
+	bool ishdmedia;
 	bool overwriteall;
 	bool searchsymlinks;
 	bool ignoreoutofspace;
@@ -176,14 +177,14 @@ public:
 	QString sevzcommand;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
 	#ifdef Q_OS_UNIX
-        QString fdiskcommand;
-        QString dfcommand;
+	QString fdiskcommand;
+	QString dfcommand;
 	QString sfdiskcommand;
 	QString blkidcommand;
 	QString volidcommand;
-        QString syslinuxcommand;
-        QString extlinuxcommand;
-        bool isext2;
+	QString syslinuxcommand;
+	QString extlinuxcommand;
+	bool isext2;
 	#endif
 	bool ubninitialize(QList<QPair<QString, QString> > oppairs);
 	QString displayfisize(quint64 fisize);
