@@ -210,9 +210,9 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.supergrubdisk.org\">http:/
 	"<b>Description:</b> Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.<br/>"
 	"<b>Install Notes:</b> SGD simply boots and runs; no installation is required to use it.") <<
 "Latest"));
-distroselect->addItem("Super Ubuntu", (QStringList() << "Latest_Live" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/Super_Ubuntu</a><br/>"
-	"<b>Description:</b> Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
+distroselect->addItem("Super OS", (QStringList() << "Latest_Live" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super_OS</a><br/>"
+	"<b>Description:</b> Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Latest_Live"));
 distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" <<

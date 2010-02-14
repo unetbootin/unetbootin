@@ -757,16 +757,9 @@ if (nameDistro == "Super Grub Disk")
 	downloadfile(QString("http://lubi.sourceforge.net/sgd-latest.img").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
-if (nameDistro == "Super Ubuntu")
+if (nameDistro == "Super OS")
 {
-	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://superubuntu.kaobear.com/" <<
-	"ftp://linux-ds.unidu.hr/super_ubuntu/"
-	, 61440000, 2147483647, QList<QRegExp>() << 
-	QRegExp("super\\S{0,}ubuntu\\S{0,}.iso$", Qt::CaseInsensitive) << 
-	QRegExp("super\\S{0,}ubuntu", Qt::CaseInsensitive) <<
-	QRegExp(".iso$", Qt::CaseInsensitive)
-	), isotmpf);
+	downloadfile("http://hacktolive.org/download/os"), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
