@@ -759,7 +759,7 @@ if (nameDistro == "Super Grub Disk")
 
 if (nameDistro == "Super OS")
 {
-	downloadfile("http://hacktolive.org/download/os"), isotmpf);
+	downloadfile("http://hacktolive.org/download/os", isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
