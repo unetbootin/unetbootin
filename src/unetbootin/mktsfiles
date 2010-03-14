@@ -1,13 +1,15 @@
 #!/bin/bash
 
+qtx11d="$(pwd)/qt4-x11"
+
 if [ "$1" != "" ]
 then
 cd ../../po
-lconvert -if po -of ts -i $1.po -o ../src/unetbootin/unetbootin_$1.ts
+$qtx11d/bin/lconvert -if po -of ts -i $1.po -o ../src/unetbootin/unetbootin_$1.ts
 cd ../src/unetbootin
 exit 0
 fi
 
 cd ../../po
-for x in $(ls *.po); do lconvert -if po -of ts -i $x -o ../src/unetbootin/unetbootin_$(echo $x | sed "s/po/ts/"); done
+for x in $(ls *.po); do $qtx11d/bin/lconvert -if po -of ts -i $x -o ../src/unetbootin/unetbootin_$(echo $x | sed "s/po/ts/"); done
 cd ../src/unetbootin
