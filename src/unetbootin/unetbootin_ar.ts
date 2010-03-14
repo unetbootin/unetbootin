@@ -237,6 +237,141 @@ Reboot now?</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">قرص فلوبي</translation>
     </message>
+    <message>
+        <source>%1 exists, overwrite?</source>
+        <translation type="obsolete">%1 موجود, هل تريد إستبداله؟</translation>
+    </message>
+    <message>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation type="obsolete">الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="obsolete">نفذت مساحة %1، أجهِض التثبيت؟</translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="obsolete">نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">يتم إستخراج الملفات, انتظر من فضلك...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">لم يتم العثور %1</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(حالي)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(أنتهى)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">القرص الصلب</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">يضبط جرب ٢ في %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">يضبط grldr في %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">يضبط جرب في %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">يثبت syslinux في %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">يثبت extlinux في %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">يزامن أنظمة الملفات</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
+هل تريد إعادة التشغيل الأن؟</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -302,10 +437,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="313"/>
         <location filename="unetbootin.cpp" line="412"/>
         <location filename="unetbootin.cpp" line="505"/>
-        <location filename="unetbootin.cpp" line="2368"/>
-        <location filename="unetbootin.cpp" line="2381"/>
-        <location filename="unetbootin.cpp" line="2539"/>
-        <location filename="unetbootin.cpp" line="2891"/>
+        <location filename="unetbootin.cpp" line="2373"/>
+        <location filename="unetbootin.cpp" line="2386"/>
+        <location filename="unetbootin.cpp" line="2544"/>
+        <location filename="unetbootin.cpp" line="2896"/>
         <source>Hard Disk</source>
         <translation>القرص الصلب</translation>
     </message>
@@ -319,14 +454,14 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="510"/>
         <location filename="unetbootin.cpp" line="582"/>
         <location filename="unetbootin.cpp" line="598"/>
-        <location filename="unetbootin.cpp" line="850"/>
-        <location filename="unetbootin.cpp" line="1320"/>
-        <location filename="unetbootin.cpp" line="1717"/>
-        <location filename="unetbootin.cpp" line="1759"/>
-        <location filename="unetbootin.cpp" line="2372"/>
-        <location filename="unetbootin.cpp" line="2397"/>
-        <location filename="unetbootin.cpp" line="2543"/>
-        <location filename="unetbootin.cpp" line="2895"/>
+        <location filename="unetbootin.cpp" line="852"/>
+        <location filename="unetbootin.cpp" line="1323"/>
+        <location filename="unetbootin.cpp" line="1720"/>
+        <location filename="unetbootin.cpp" line="1762"/>
+        <location filename="unetbootin.cpp" line="2377"/>
+        <location filename="unetbootin.cpp" line="2402"/>
+        <location filename="unetbootin.cpp" line="2548"/>
+        <location filename="unetbootin.cpp" line="2900"/>
         <source>USB Drive</source>
         <translation>مشغل USB</translation>
     </message>
@@ -337,7 +472,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="281"/>
         <location filename="unetbootin.cpp" line="533"/>
         <location filename="unetbootin.cpp" line="534"/>
-        <location filename="unetbootin.cpp" line="2445"/>
+        <location filename="unetbootin.cpp" line="2450"/>
         <source>ISO</source>
         <translation>ملف ISO</translation>
     </message>
@@ -348,153 +483,153 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="286"/>
         <location filename="unetbootin.cpp" line="538"/>
         <location filename="unetbootin.cpp" line="539"/>
-        <location filename="unetbootin.cpp" line="2437"/>
+        <location filename="unetbootin.cpp" line="2442"/>
         <source>Floppy</source>
         <translation>قرص مرن</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1260"/>
-        <location filename="unetbootin.cpp" line="1282"/>
+        <location filename="unetbootin.cpp" line="1263"/>
+        <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1350"/>
-        <source>Extracting files, please wait...</source>
-        <translation>يتم إستخراج الملفات, انتظر من فضلك...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1351"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1352"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1353"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
+        <source>Extracting files, please wait...</source>
+        <translation type="unfinished">يتم إستخراج الملفات, انتظر من فضلك...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1354"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="unfinished">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1355"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1356"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1357"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="unfinished">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1360"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1358"/>
+        <location filename="unetbootin.cpp" line="1361"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1359"/>
+        <location filename="unetbootin.cpp" line="1362"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1701"/>
-        <source>Downloading files, please wait...</source>
-        <translation>يتم تنزيل الملفات, إنتظر من فضلك...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1702"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1703"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1704"/>
+        <source>Downloading files, please wait...</source>
+        <translation type="unfinished">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1705"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1706"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1707"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
+        <translation type="unfinished">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1781"/>
-        <location filename="unetbootin.cpp" line="1796"/>
+        <location filename="unetbootin.cpp" line="1784"/>
+        <location filename="unetbootin.cpp" line="1799"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
+        <translation type="unfinished">&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1872"/>
+        <location filename="unetbootin.cpp" line="1875"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1876"/>
+        <location filename="unetbootin.cpp" line="1879"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2061"/>
+        <location filename="unetbootin.cpp" line="2066"/>
         <source>%1 not found</source>
-        <translation>لم يتم العثور %1</translation>
+        <translation type="unfinished">لم يتم العثور %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2062"/>
+        <location filename="unetbootin.cpp" line="2067"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
+        <translation type="unfinished">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2350"/>
+        <location filename="unetbootin.cpp" line="2355"/>
         <source>(Current)</source>
-        <translation>(حالي)</translation>
+        <translation type="unfinished">(حالي)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2351"/>
+        <location filename="unetbootin.cpp" line="2356"/>
         <source>(Done)</source>
-        <translation>(أنتهى)</translation>
+        <translation type="unfinished">(أنتهى)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2618"/>
+        <location filename="unetbootin.cpp" line="2623"/>
         <source>Configuring grub2 on %1</source>
-        <translation>يضبط جرب ٢ في %1</translation>
+        <translation type="unfinished">يضبط جرب ٢ في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2630"/>
+        <location filename="unetbootin.cpp" line="2635"/>
         <source>Configuring grldr on %1</source>
-        <translation>يضبط grldr في %1</translation>
+        <translation type="unfinished">يضبط grldr في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2658"/>
+        <location filename="unetbootin.cpp" line="2663"/>
         <source>Configuring grub on %1</source>
-        <translation>يضبط جرب في %1</translation>
+        <translation type="unfinished">يضبط جرب في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2780"/>
+        <location filename="unetbootin.cpp" line="2785"/>
         <source>Installing syslinux to %1</source>
-        <translation>يثبت syslinux في %1</translation>
+        <translation type="unfinished">يثبت syslinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2815"/>
+        <location filename="unetbootin.cpp" line="2820"/>
         <source>Installing extlinux to %1</source>
-        <translation>يثبت extlinux في %1</translation>
+        <translation type="unfinished">يثبت extlinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2881"/>
+        <location filename="unetbootin.cpp" line="2886"/>
         <source>Syncing filesystems</source>
-        <translation>يزامن أنظمة الملفات</translation>
+        <translation type="unfinished">يزامن أنظمة الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2893"/>
+        <location filename="unetbootin.cpp" line="2898"/>
         <source>After rebooting, select the </source>
-        <translation>بعد إعادة التشغيل قم بإختيار </translation>
+        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2897"/>
+        <location filename="unetbootin.cpp" line="2902"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
+        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
 هل تريد إعادة التشغيل الأن؟</translation>
     </message>
     <message>
@@ -608,24 +743,24 @@ Reboot now?</source>
         <translation>ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="796"/>
+        <location filename="unetbootin.cpp" line="798"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 موجود, هل تريد إستبداله؟</translation>
+        <translation type="unfinished">%1 موجود, هل تريد إستبداله؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="797"/>
+        <location filename="unetbootin.cpp" line="799"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
+        <translation type="unfinished">الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="823"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
+        <translation type="unfinished">نفذت مساحة %1، أجهِض التثبيت؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="824"/>
+        <location filename="unetbootin.cpp" line="826"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
+        <translation type="unfinished">نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>

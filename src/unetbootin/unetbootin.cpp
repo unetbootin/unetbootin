@@ -740,13 +740,13 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	{
 		installsvzip();
 	}
-	callexternapp(getenv("COMSPEC"), QString("/c \"\"%1\" -bd -slt l \"%2\" > \"%3\"\"").arg(sevzcommand).arg(archivefile).arg(QString("%1ubntmpls.txt").arg(ubntmpf)));
-	QFile tmplsF(QString("%1ubntmpls.txt").arg(ubntmpf));
+	randtmpfile tmplsF(ubntmpf, "ufl");
+	callexternapp(getenv("COMSPEC"), QString("/c \"\"%1\" -bd -slt l \"%2\" > \"%3\"\"").arg(sevzcommand).arg(QFileInfo(archivefile).absoluteFilePath()).arg(QFileInfo(tmplsF).absoluteFilePath()));
 	tmplsF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream tmplsS(&tmplsF);
 	#endif
 	#ifdef Q_OS_UNIX
-	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l \"%2\"").arg(archivefile));
+	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l \"%2\"").arg(QFileInfo(archivefile).absoluteFilePath()));
 	QTextStream tmplsS(&sevzlcommandout);
 	#endif
 	QString tmplsL;
@@ -762,7 +762,9 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 		{
 			if (tmplsL.contains("Path = [BOOT]"))
 				continue;
-			if (tmplsL.contains(QString("Path = %1").arg(QFile(archivefile).fileName())))
+			if (tmplsL == QString("Path = %1").arg(QFileInfo(archivefile).absoluteFilePath()))
+				continue;
+			if (tmplsL == QString("Path = %1").arg(QDir::toNativeSeparators(QFileInfo(archivefile).absoluteFilePath())))
 				continue;
 			tmplsN = tmplsS.readLine();
 			if (tmplsN.contains("Folder = 1") || tmplsN.contains("Folder = +"))
@@ -779,7 +781,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	}
 	#ifdef Q_OS_WIN32
 	tmplsF.close();
-	QFile::remove(QString("%1ubntmpls.txt").arg(ubntmpf));
+	tmplsF.remove();
 	#endif
 	return qMakePair(qMakePair(tmplsSLF, tmplsSLFS), tmplsSLD);
 }
