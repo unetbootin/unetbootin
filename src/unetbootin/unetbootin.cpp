@@ -762,6 +762,8 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 		{
 			if (tmplsL.contains("Path = [BOOT]"))
 				continue;
+			if (tmplsL.contains(QString("Path = %1").arg(QFile(archivefile).fileName())))
+				continue;
 			tmplsN = tmplsS.readLine();
 			if (tmplsN.contains("Folder = 1") || tmplsN.contains("Folder = +"))
 			{
