@@ -12,6 +12,7 @@ src/unetbootin/unetbootin
 src/unetbootin/unetbootin.exe
 src/unetbootin/unetbootin.o
 src/unetbootin/sevenzip.exe
+src/unetbootin/sevenzip-extra.7z
 src/unetbootin/qrc_unetbootin*.cpp
 src/unetbootin/ui_unetbootin.h
 src/unetbootin/sevnz.dll
