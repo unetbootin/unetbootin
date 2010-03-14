@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/" >
         <file>memdisk</file>
-        <file>vesamenu.c32</file>
+        <file>menu.c32</file>
         <file>unetbootin_ar.qm</file>
         <file>unetbootin_ast.qm</file>
         <file>unetbootin_bg.qm</file>

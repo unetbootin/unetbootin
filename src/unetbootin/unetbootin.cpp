@@ -2321,8 +2321,8 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	#ifdef NOSTATIC
 	if (srcfName == "memdisk")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
-	else if (srcfName == "vesamenu.c32")
-				srcF.setFileName(QFile::exists("/usr/share/syslinux/vesamenu.c32") ? "/usr/share/syslinux/vesamenu.c32" : "/usr/lib/syslinux/vesamenu.c32");
+	else if (srcfName == "menu.c32")
+				srcF.setFileName(QFile::exists("/usr/share/syslinux/menu.c32") ? "/usr/share/syslinux/menu.c32" : "/usr/lib/syslinux/menu.c32");
 	else if (srcfName == "mbr.bin")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 	else if (srcfName == "ubnsylnx")
@@ -2839,7 +2839,7 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(syslinuxcfgname);
 	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
-	QString syslinuxcfgtxt = QString("default vesamenu.c32\n"
+	QString syslinuxcfgtxt = QString("default menu.c32\n"
 	"prompt 0\n"
 	"menu title UNetbootin\n"
 	"timeout 100\n\n"
@@ -2868,7 +2868,7 @@ void unetbootin::runinstusb()
 		if (isext2)
 			QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
 		#endif
-		instIndvfl("vesamenu.c32", QString("%1vesamenu.c32").arg(targetPath));
+		instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
 	fininstall();
 }
 
