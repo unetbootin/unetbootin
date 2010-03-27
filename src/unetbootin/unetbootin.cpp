@@ -790,6 +790,7 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 {
 	if (overwriteall)
 	{
+		QFile::setPermissions(ovwfileloc, QFile::WriteUser);
 		QFile::remove(ovwfileloc);
 		return true;
 	}
@@ -802,11 +803,13 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 	{
 		case QMessageBox::Yes:
 		{
+			QFile::setPermissions(ovwfileloc, QFile::WriteUser);
 			QFile::remove(ovwfileloc);
 			return true;
 		}
 		case QMessageBox::YesToAll:
 		{
+			QFile::setPermissions(ovwfileloc, QFile::WriteUser);
 			QFile::remove(ovwfileloc);
 			overwriteall = true;
 			return true;
@@ -1298,6 +1301,11 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 #endif
 	QStringList createdpaths = makepathtree(targetDrive, listfilesizedirpair.second);
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
+	if (ubnpathlF.exists())
+	{
+		ubnpathlF.setPermissions(QFile::WriteUser);
+		ubnpathlF.remove();
+	}
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnpathlS(&ubnpathlF);
 	for (int i = createdpaths.size() - 1; i > -1; i--)
@@ -1307,6 +1315,11 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	ubnpathlF.close();
 	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first);
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
+	if (ubnfilelF.exists())
+	{
+		ubnfilelF.setPermissions(QFile::WriteUser);
+		ubnfilelF.remove();
+	}
 	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnfilelS(&ubnfilelF);
 	for (int i = 0; i < extractedfiles.size(); ++i)
@@ -2835,12 +2848,12 @@ void unetbootin::runinstusb()
 	}
 	#endif
 #ifndef XPUD
-	QString syslinuxcfgname = QString("%1syslinux.cfg").arg(targetPath);
-	if (QFile::exists(syslinuxcfgname))
+	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
+	if (syslinuxcfg.exists())
 	{
-		overwritefileprompt(syslinuxcfgname);
+		syslinuxcfg.setPermissions(QFile::WriteUser);
+		syslinuxcfg.remove();
 	}
-	QFile syslinuxcfg(syslinuxcfgname);
 	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);
 	QString syslinuxcfgtxt = QString("default menu.c32\n"
