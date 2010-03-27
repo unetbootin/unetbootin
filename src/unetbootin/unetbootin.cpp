@@ -781,7 +781,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	}
 	#ifdef Q_OS_WIN32
 	tmplsF.close();
-	tmplsF.remove();
+	rmFile(tmplsF);
 	#endif
 	return qMakePair(qMakePair(tmplsSLF, tmplsSLFS), tmplsSLD);
 }
@@ -790,8 +790,7 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 {
 	if (overwriteall)
 	{
-		QFile::setPermissions(ovwfileloc, QFile::WriteUser);
-		QFile::remove(ovwfileloc);
+		rmFile(ovwfileloc);
 		return true;
 	}
 	QMessageBox overwritefilemsgbx;
@@ -803,14 +802,12 @@ bool unetbootin::overwritefileprompt(QString ovwfileloc)
 	{
 		case QMessageBox::Yes:
 		{
-			QFile::setPermissions(ovwfileloc, QFile::WriteUser);
-			QFile::remove(ovwfileloc);
+			rmFile(ovwfileloc);
 			return true;
 		}
 		case QMessageBox::YesToAll:
 		{
-			QFile::setPermissions(ovwfileloc, QFile::WriteUser);
-			QFile::remove(ovwfileloc);
+			rmFile(ovwfileloc);
 			overwriteall = true;
 			return true;
 		}
@@ -1012,7 +1009,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 				randtmpfile mlstftf(ubntmpf, "lst");
 				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
 				grubpcfg = getgrubcfgargs(mlstftf.fileName()).trimmed();
-				mlstftf.remove();
+				rmFile(mlstftf);
 				if (!grubpcfg.isEmpty())
 					break;
 			}
@@ -1032,7 +1029,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
 				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
-				ccfgftf.remove();
+				rmFile(ccfgftf);
 				if (!syslinuxpcfg.isEmpty())
 					break;
 			}
@@ -1069,7 +1066,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				randtmpfile mlstftf(ubntmpf, "lst");
 				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
 				grubpcfgPL = getgrubcfgargsL(mlstftf.fileName());
-				mlstftf.remove();
+				rmFile(mlstftf);
 				combinedcfgPL.first.first += grubpcfgPL.first.first;
 				combinedcfgPL.first.second += grubpcfgPL.first.second;
 				combinedcfgPL.second.first += grubpcfgPL.second.first;
@@ -1093,7 +1090,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
 				syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
-				ccfgftf.remove();
+				rmFile(ccfgftf);
 				combinedcfgPL.first.first += syslinuxpcfgPL.first.first;
 				combinedcfgPL.first.second += syslinuxpcfgPL.first.second;
 				combinedcfgPL.second.first += syslinuxpcfgPL.second.first;
@@ -1303,8 +1300,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	if (ubnpathlF.exists())
 	{
-		ubnpathlF.setPermissions(QFile::WriteUser);
-		ubnpathlF.remove();
+		rmFile(ubnpathlF);
 	}
 	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnpathlS(&ubnpathlF);
@@ -1317,8 +1313,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
 	if (ubnfilelF.exists())
 	{
-		ubnfilelF.setPermissions(QFile::WriteUser);
-		ubnfilelF.remove();
+		rmFile(ubnfilelF);
 	}
 	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream ubnfilelS(&ubnfilelF);
@@ -1328,14 +1323,14 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	ubnfilelF.close();
 #ifdef XPUD
-	QFile::remove(QString("%1boot.cat").arg(exoutputdir));
-	QFile::remove(QString("%1isolinux.bin").arg(exoutputdir));
-	QFile::remove(QString("%1syslinux.cfg").arg(exoutputdir));
+	rmFile(QString("%1boot.cat").arg(exoutputdir));
+	rmFile(QString("%1isolinux.bin").arg(exoutputdir));
+	rmFile(QString("%1syslinux.cfg").arg(exoutputdir));
 	QFile::rename(QString("%1isolinux.cfg").arg(exoutputdir), QString("%1syslinux.cfg").arg(exoutputdir));
 	if (installType == tr("USB Drive"))
 	{
-		QFile::remove(QString("%1ubnfilel.txt").arg(exoutputdir));
-		QFile::remove(QString("%1ubnpathl.txt").arg(exoutputdir));
+		rmFile(QString("%1ubnfilel.txt").arg(exoutputdir));
+		rmFile(QString("%1ubnpathl.txt").arg(exoutputdir));
 	}
 #endif
 }
@@ -1661,7 +1656,7 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
 			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts).trimmed();
-			tmpoutputcfgf.remove();
+			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.isEmpty())
 			{
 				return extractcfgtmp;
@@ -1685,7 +1680,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
 			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getcfgkernargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
-			tmpoutputcfgf.remove();
+			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.first.first.isEmpty())
 			{
 				return extractcfgtmp;
@@ -1701,7 +1696,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		return;
 	if (QFile::exists(targetfile))
 	{
-		QFile::remove(targetfile);
+		rmFile(targetfile);
 	}
 	QUrl dlurl(fileurl);
 	bool isftp = false;
@@ -1758,7 +1753,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		if (dlrstatus >= 300 && dlrstatus < 400 && dlresponse.hasKey("Location"))
 		{
 			dloutfile.close();
-			dloutfile.remove();
+			rmFile(dloutfile);
 			downloadfile(dlresponse.value("Location"), targetfile);
 		}
 	}
@@ -2186,12 +2181,12 @@ void unetbootin::installsvzip()
 {
 	if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 	{
-		QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
+		rmFile(QString("%1\\7z.dll").arg(ubntmpf));
 	}
 	instIndvfl("sevnz.dll", QString("%1\\7z.dll").arg(ubntmpf));
 	if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 	{
-		QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
+		rmFile(QString("%1sevnz.exe").arg(ubntmpf));
 	}
 	instIndvfl("sevnz.exe", QString("%1sevnz.exe").arg(ubntmpf));
 	sevzcommand = QString("%1sevnz.exe").arg(ubntmpf);
@@ -2219,7 +2214,7 @@ void unetbootin::configsysEdit()
 	confignwOut << configsysText << endl;
 	if (!QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive))))
 	{
-		configsysFile.remove();
+		rmFile(configsysFile);
 		QFile::copy(QString("%1confignw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)));
 	}
 }
@@ -2257,7 +2252,7 @@ void unetbootin::bootiniEdit()
 	bootnwOut << bootiniText << endl;
 	if (!QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive))))
 	{
-		bootiniFile.remove();
+		rmFile(bootiniFile);
 		QFile::copy(QString("%1bootnw.txt").arg(targetPath), QDir::toNativeSeparators(QString("%1boot.ini").arg(targetDrive)));
 	}
 }
@@ -2468,11 +2463,11 @@ void unetbootin::runinst()
 			}
 			if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 			{
-				QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
+				rmFile(QString("%1sevnz.exe").arg(ubntmpf));
 			}
 			if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 			{
-				QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
+				rmFile(QString("%1\\7z.dll").arg(ubntmpf));
 			}
 		}
 	}
@@ -2525,11 +2520,11 @@ void unetbootin::runinst()
 		#include "customdistrolst.cpp"
 		if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 		{
-			QFile::remove(QString("%1sevnz.exe").arg(ubntmpf));
+			rmFile(QString("%1sevnz.exe").arg(ubntmpf));
 		}
 		if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 		{
-			QFile::remove(QString("%1\\7z.dll").arg(ubntmpf));
+			rmFile(QString("%1\\7z.dll").arg(ubntmpf));
 		}
 	}
 	if (!sdesc1->text().contains("(Done)"))
@@ -2568,7 +2563,7 @@ void unetbootin::writegrub2cfg()
 	QFile menulst;
 	menulst.setFileName("/boot/grub/grub.cfg");
 	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
-		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
+		rmFile(QString("%1.bak").arg(menulst.fileName()));
 	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
 	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
 	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -2645,7 +2640,7 @@ void unetbootin::runinsthdd()
 	pdesc1->setText(tr("Configuring grldr on %1").arg(targetDev));
 	if (QFile::exists(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive))))
 	{
-		QFile::remove(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
+		rmFile(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	}
 	QFile::copy(appLoc, QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)));
 	QFile::setPermissions(QDir::toNativeSeparators(QString("%1unetbtin.exe").arg(targetDrive)), QFile::ReadOther|QFile::WriteOther|QFile::ExeOther);
@@ -2673,7 +2668,7 @@ void unetbootin::runinsthdd()
 	pdesc1->setText(tr("Configuring grub on %1").arg(targetDev));
 	menulst.setFileName("/boot/grub/menu.lst");
 	if (QFile::exists(QString("%1.bak").arg(menulst.fileName())))
-		QFile::remove(QString("%1.bak").arg(menulst.fileName()));
+		rmFile(QString("%1.bak").arg(menulst.fileName()));
 	QFile::copy(menulst.fileName(), QString("%1.bak").arg(menulst.fileName()));
 	QFile bkmenulst(QString("%1.bak").arg(menulst.fileName()));
 	bkmenulst.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -2789,6 +2784,20 @@ void unetbootin::runinsthdd()
 	fininstall();
 }
 
+void unetbootin::rmFile(const QFile &fn)
+{
+	rmFile(QFileInfo(fn).canonicalFilePath());
+}
+
+void unetbootin::rmFile(const QString &fn)
+{
+	QFile::setPermissions(fn, QFile::WriteUser);
+	QFile::remove(fn);
+#ifdef Q_OS_UNIX
+	callexternapp("sync", "");
+#endif
+}
+
 void unetbootin::runinstusb()
 {
 	this->tprogress->setValue(this->tprogress->maximum()/3);
@@ -2796,16 +2805,16 @@ void unetbootin::runinstusb()
 	#ifdef Q_OS_WIN32
 	QString sysltfloc = instTempfl("syslinux.exe", "exe");
 	callexternapp(sysltfloc, QString("-ma %1").arg(targetDev));
-	QFile::remove(sysltfloc);
+	rmFile(sysltfloc);
 	#endif
 	#ifdef STATICLINUX
 	if (QFile::exists(syslinuxcommand))
-		QFile::remove(syslinuxcommand);
+		rmFile(syslinuxcommand);
 	instIndvfl("ubnsylnx", syslinuxcommand);
 		QFile::setPermissions(syslinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 //	chmod(syslinuxcommand, S_IRUSR|S_IRGRP|S_IROTH|S_IRWXU);
 		if (QFile::exists(extlinuxcommand))
-				QFile::remove(extlinuxcommand);
+				rmFile(extlinuxcommand);
 		instIndvfl("ubnexlnx", extlinuxcommand);
 		QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 	#endif
@@ -2851,8 +2860,7 @@ void unetbootin::runinstusb()
 	QFile syslinuxcfg(QString("%1syslinux.cfg").arg(targetPath));
 	if (syslinuxcfg.exists())
 	{
-		syslinuxcfg.setPermissions(QFile::WriteUser);
-		syslinuxcfg.remove();
+		rmFile(syslinuxcfg);
 	}
 	syslinuxcfg.open(QIODevice::WriteOnly | QIODevice::Text);
 	QTextStream syslinuxcfgout(&syslinuxcfg);

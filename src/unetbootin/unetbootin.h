@@ -254,6 +254,8 @@ public:
 	void runinsthdd();
 	void runinstusb();
 	void fininstall();
+	void rmFile(const QString &fn);
+	void rmFile(const QFile &fn);
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
