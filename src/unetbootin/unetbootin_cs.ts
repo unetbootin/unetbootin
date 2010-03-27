@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
-PO-Revision-Date: 2010-02-14 08:03+0000
+POT-Creation-Date: 2010-03-14 12:27-0400
+PO-Revision-Date: 2010-03-14 06:18+0000
 Last-Translator: Vojtěch Trefný &lt;vojtech.trefny@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -231,6 +231,10 @@ Restartovat nyní</translation>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Xubuntu je oficiální derivát Ubuntu, který přináší prostředí XFCE.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace. Verze NetInstall umožňuje instalaci přes FTP, alternativně můžete nainstalovat Kubuntu nebo jiné oficální deriváty Ubuntu.</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="obsolete">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Super Ubuntu je neoficiální derivát Ubuntu, který přináší rozšířenou nabídku softwaru. Je vyžadován alespoň 2GB USB flash disk.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -242,55 +246,6 @@ Restartovat nyní</translation>
 </context>
 <context>
     <name>unetbootin</name>
-    <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation>
-*NALÉHAVÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne desktop) do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.ubuntu.com</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;mirrors.kernel.org&apos; a při dotazu na adresář zadejte &apos;/centos/%1/os/%2&apos;.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation>
-*NALÉHAVÉ* Před restartováním umístěte instalační ISO Debianu do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.debian.org</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/factory/repo/oss&apos;.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/distribution/%1/repo/oss&apos;.</translation>
-    </message>
     <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
@@ -347,6 +302,136 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>oba</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>Výběr souboru s obrazem disku</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>Výběr souboru s jádrem</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>Výběr souboru initrd</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>Výběr souboru s nastavením zavaděče</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>Vložte USB flash disk</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>Žádné USB flash disky nebyly nalezeny. Pokud jste USB disk již vložili, zkuste jej naformátovat na FAT32.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>%1 nepřipojen</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>Napřed je třeba připojit USB zařízení %1. Většina distribucí to provede automaticky po odpojení a opětovném připojení zařízení.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>Vyberte distribuci</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>Pro spuštění musíte vybrat distribuci</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>Vyberte soubor s obrazem disku</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>Pro spuštění musíte vybrat obraz disku.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>Vyberte jádro a/nebo soubor initrd</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>Pro spuštění musíte vybrat jádro a/nebo soubor initrd.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>Obraz disku nebyl nalezen</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>Uvedený obraz disku %1 neexistuje.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>Soubor s jádrem nebyl nalezen</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>Uvedený soubor s jádrem %1 neexistuje.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>Soubor initrd nebyl nalezen</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>Uvedený soubor s initrd %1 neexistuje.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>%1 již existuje, přepsat?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>Soubor %1 již existuje. Zvolte &apos;Ano všem&apos; pro jeho přepsání a přepsání dalších bez ptaní, &apos;Ano&apos; pro přepsání souboru a &apos;Ne&apos; pro zachování současné verze. Pokud nevíte, zvolte &apos;Ano všem&apos;.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>V %1 není dostatek místa, přerušit instalaci?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte &apos;Ano&apos;, pro ignorování této chyba a pokračování instalace zvolte &apos;Ne&apos; a pro ignorování všech chyb o nedostatku místa &apos;Ne všem&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1262"/>
@@ -495,134 +580,53 @@ Reboot now?</source>
 Restartovat nyní</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>oba</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation>
+*NALÉHAVÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne desktop) do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>Výběr souboru s obrazem disku</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;mirrors.kernel.org&apos; a při dotazu na adresář zadejte &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>Výběr souboru s jádrem</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation>
+*NALÉHAVÉ* Před restartováním umístěte instalační ISO Debianu do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>Výběr souboru initrd</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>Výběr souboru s nastavením zavaděče</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>Vložte USB flash disk</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/factory/repo/oss&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Žádné USB flash disky nebyly nalezeny. Pokud jste USB disk již vložili, zkuste jej naformátovat na FAT32.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>%1 nepřipojen</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Napřed je třeba připojit USB zařízení %1. Většina distribucí to provede automaticky po odpojení a opětovném připojení zařízení.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>Vyberte distribuci</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Pro spuštění musíte vybrat distribuci</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>Vyberte soubor s obrazem disku</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Pro spuštění musíte vybrat obraz disku.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Vyberte jádro a/nebo soubor initrd</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Pro spuštění musíte vybrat jádro a/nebo soubor initrd.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>Obraz disku nebyl nalezen</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Uvedený obraz disku %1 neexistuje.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>Soubor s jádrem nebyl nalezen</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>Uvedený soubor s jádrem %1 neexistuje.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>Soubor initrd nebyl nalezen</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>Uvedený soubor s initrd %1 neexistuje.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>%1 již existuje, přepsat?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Soubor %1 již existuje. Zvolte &apos;Ano všem&apos; pro jeho přepsání a přepsání dalších bez ptaní, &apos;Ano&apos; pro přepsání souboru a &apos;Ne&apos; pro zachování současné verze. Pokud nevíte, zvolte &apos;Ano všem&apos;.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>V %1 není dostatek místa, přerušit instalaci?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte &apos;Ano&apos;, pro ignorování této chyba a pokračování instalace zvolte &apos;Ne&apos; a pro ignorování všech chyb o nedostatku místa &apos;Ne všem&apos;.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/distribution/%1/repo/oss&apos;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -808,8 +812,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Super Ubuntu je neoficiální derivát Ubuntu, který přináší rozšířenou nabídku softwaru. Je vyžadován alespoň 2GB USB flash disk.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
+POT-Creation-Date: 2010-03-14 12:27-0400
 PO-Revision-Date: 2010-01-29 08:09+0000
 Last-Translator: UNetbootin Team &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -460,6 +460,10 @@ Reboot now?</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Xubuntu egy hivatalos Ubuntu származék, ami XFCE asztali környezetet használ.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. A NetInstall verzióval interneten keresztül lehet telepíteni (FTP) akármelyik hivatalos Ubuntu származékot.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Super Ubuntu egy nem hivatalos Ubuntu származék, ami alapból tartalmaz néhány extra alkalmazást, amit a sima Ubuntu nem. A telepítéshez egy 2GB méretű USB meghajtót igényel.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja.</translation>
+    </message>
+    <message>
         <source>Options:</source>
         <translation type="obsolete">Opciók:</translation>
     </message>
@@ -482,53 +486,6 @@ Reboot now?</source>
 </context>
 <context>
     <name>unetbootin</name>
-    <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;mirrors.kernel.org&apos;, majd írja be mappának a következőt: &apos;/centos/%1/os/%2&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.fedora.redhat.com&apos;, majd írja be mappának a következőt: &apos;/pub/fedora/linux/development/%1/os&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.fedora.redhat.com&apos;, majd írja be mappának a következőt: &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/factory/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/distribution/%1/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
-    </message>
     <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
@@ -585,6 +542,136 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>akármelyik</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>Lemezképfájl megnyitása</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>Kernel fájl megnyitása</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>Initrd fájl megnyitása</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>Rendszerbetöltő beállítófájljának megnyitása</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>Csatlakoztasson egy USB-s flash meghajtót</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>Nem található USB-s flash meghajtó. Ha már csatlakoztatta, de mégsem látható, próbálja meg újraformázni FAT32 fájlrendszerre.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>A(z) %1 nincs felcsatolva</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>Először csatolja az USB-s meghajtót a(z) %1 csatolási ponthoz. A legtöbb disztribúció automatikusan elvégzi ezt az USB-s eszköz eltávolítása, majd újbóli csatlakoztatásakor.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>Válasszon egy disztribúciót</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>Ki kell választania a betöltendő disztribúciót.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>Válasszon egy lemezképfájlt</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>Ki kell választania a betöltendő lemezképfájlt.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>Válasszon egy kernel és/vagy initrd fájlt</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>Ki kell választania a betöltendő kernel és/vagy initrd fájlt</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>A lemezképfájl nem található</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>A megadott %1 lemezképfájl nem létezik.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>A kernel fájl nem található</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>A megadott %1 kernel fájl nem létezik.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>Initrd fájl nem található</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>A megadott %1 initrd fájl nem létezik.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>A(z) %1 létezik, felülírja?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>A %1 fájl már létezik. Nyomja meg a &apos;Yes to All&apos; gombot az összes fájl felülírásához, a &apos;Yes&apos; gombot a fájlok egyesével történő felülírásához, vagy a &apos;No&apos; gombot a jelenlegi verzió megtartásához. Ha nem tud dönteni, nyomja meg a &apos;Yes to All&apos; gombot.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>A(z) %1 eszközön kevés a szabad hely, megszakítja a telepítést?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>A(z) %1 könyvtárban kevés a szabad hely. Nyomja meg a &apos;Yes&apos; gombot a telepítése megszakításához, a &apos;No&apos; gombot a hiba figyelmen kívül hagyásához és a telepítés folytatásához, vagy a &apos;No to All&apos; gombot az összes &apos;kevés szabad hely&apos; hibaüzenet figyelmen kívül hagyásához.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1262"/>
@@ -733,134 +820,51 @@ Reboot now?</source>
 Újraindítja most a számítógépet?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>akármelyik</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>Lemezképfájl megnyitása</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;mirrors.kernel.org&apos;, majd írja be mappának a következőt: &apos;/centos/%1/os/%2&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>Kernel fájl megnyitása</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>Initrd fájl megnyitása</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.fedora.redhat.com&apos;, majd írja be mappának a következőt: &apos;/pub/fedora/linux/development/%1/os&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>Rendszerbetöltő beállítófájljának megnyitása</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.fedora.redhat.com&apos;, majd írja be mappának a következőt: &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>Csatlakoztasson egy USB-s flash meghajtót</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/factory/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Nem található USB-s flash meghajtó. Ha már csatlakoztatta, de mégsem látható, próbálja meg újraformázni FAT32 fájlrendszerre.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>A(z) %1 nincs felcsatolva</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Először csatolja az USB-s meghajtót a(z) %1 csatolási ponthoz. A legtöbb disztribúció automatikusan elvégzi ezt az USB-s eszköz eltávolítása, majd újbóli csatlakoztatásakor.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>Válasszon egy disztribúciót</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Ki kell választania a betöltendő disztribúciót.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>Válasszon egy lemezképfájlt</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Ki kell választania a betöltendő lemezképfájlt.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Válasszon egy kernel és/vagy initrd fájlt</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Ki kell választania a betöltendő kernel és/vagy initrd fájlt</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>A lemezképfájl nem található</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>A megadott %1 lemezképfájl nem létezik.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>A kernel fájl nem található</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>A megadott %1 kernel fájl nem létezik.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>Initrd fájl nem található</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>A megadott %1 initrd fájl nem létezik.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>A(z) %1 létezik, felülírja?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>A %1 fájl már létezik. Nyomja meg a &apos;Yes to All&apos; gombot az összes fájl felülírásához, a &apos;Yes&apos; gombot a fájlok egyesével történő felülírásához, vagy a &apos;No&apos; gombot a jelenlegi verzió megtartásához. Ha nem tud dönteni, nyomja meg a &apos;Yes to All&apos; gombot.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>A(z) %1 eszközön kevés a szabad hely, megszakítja a telepítést?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>A(z) %1 könyvtárban kevés a szabad hely. Nyomja meg a &apos;Yes&apos; gombot a telepítése megszakításához, a &apos;No&apos; gombot a hiba figyelmen kívül hagyásához és a telepítés folytatásához, vagy a &apos;No to All&apos; gombot az összes &apos;kevés szabad hely&apos; hibaüzenet figyelmen kívül hagyásához.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/distribution/%1/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -1046,8 +1050,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Super Ubuntu egy nem hivatalos Ubuntu származék, ami alapból tartalmaz néhány extra alkalmazást, amit a sima Ubuntu nem. A telepítéshez egy 2GB méretű USB meghajtót igényel.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

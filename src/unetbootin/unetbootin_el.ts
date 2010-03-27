@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
-PO-Revision-Date: 2010-01-29 08:11+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-03-14 12:27-0400
+PO-Revision-Date: 2010-03-24 10:40+0000
+Last-Translator: j0hn aka c7p &lt;c7p.admin@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -205,48 +205,6 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
         <location filename="unetbootin.cpp" line="246"/>
@@ -279,7 +237,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2553"/>
         <location filename="unetbootin.cpp" line="2918"/>
         <source>USB Drive</source>
-        <translation>USB Δίσκος</translation>
+        <translation>Δισκος USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="165"/>
@@ -301,7 +259,137 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
-        <translation>Δισκέττα</translation>
+        <translation>Δισκέτα</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>ή</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>Άνοιγμα Αρχείου Εικόνας Δίσκου</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>Άνοιγμα Αρχείου Πυρήνα</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>Άνοιγμα Αρχείου Initrd</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>&apos;Ανοιγμα Αρχείου Ρυθμίσεων Επιλογέα Εκκίνησης</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>Εισάγετε ένα USB flash δίσκο</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>Δεν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, προσπαθείστε να τον διαμορφώσετε ως FAT32.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>%1 δεν έχει προσαρτηθεί</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε κάποιο σημείο προσάρτησης. Οι περισσότερες διανομές το κανουν αυτόματα όταν αφαιρέσετε τον USB δίσκο και τον επανεισάγετε.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>Επιλέξτε διανομή</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>Πρέπει να επιλέξετε διανομή για φόρτωση</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>Επιλέξτε αρχείο εικόνας δίσκου</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>Πρέπει να επιλέξετε αρχείο εικόνας δίσκου.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>Επιλέξτε πυρήνα και αρχείο initrd</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>Πρέπει να επιλέξετε πυρήνα και αρχείο initrd.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>Το αρχείο εικόνας δίσκου δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>Το συγκεκριμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>Το αρχείο πυρήνα δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>Το συγκεκριμένο αρχείο πυρήνα %1 δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>Το αρχείο initrd δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>Το συγκεκριμένο αρχείο initrd %1 δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>%1 υπάρχει ήδη, να γίνει εγγραφή απο πάνω;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>Το αρχείο %1 υπάρχει ήδη. Πατήστε &apos;Ναι σε Όλα&apos; για να γράψετε απο πάνω του, και μετά δεν θα ξαναερωτηθείτε, &apos;Ναι&apos; για να γράψει απο πάνω μόνο το συγκεκριμένο αρχείο, και &apos;Όχι&apos; για να διατηρήσετε την υπάρχουσα έκδοση. Άν δεν είστε σίγουροι, πατήστε &apos;Ναι σε &apos;Ολα&apos;.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>%1 δεν έχει χώρο, ακύρωση εγκατάστασης;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>Ο φάκελος %1 δεν έχει άλλο χώρο. Πατήστε &apos;Ναι&apos; για ακύρωση εγκατάστασης, &apos;Οχι&apos; για αγνόηση του σφάλματος και απόπειρα για συνέχεια της εγκατάστασης, και &apos;Οχι σε Όλα&apos; για να αγνοηθούν όλα τα λάθη έλλειψης χώρου.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1262"/>
@@ -434,7 +522,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2904"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Συγχρονισμός συστημάτων αρχείων</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2916"/>
@@ -448,134 +536,46 @@ Reboot now?</source>
         <translation>Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>ή</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>Άνοιγμα Αρχείου Εικόνας Δίσκου</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>Άνοιγμα Αρχείου Πυρήνα</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>Άνοιγμα Αρχείου Initrd</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>&apos;Ανοιγμα Αρχείου Ρυθμίσεων Επιλογέα Εκκίνησης</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>Εισάγετε ένα USB flash δίσκο</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Δεν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, προσπαθείστε να τον διαμορφώσετε ως FAT32.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>%1 Δεν έχει προσαρτηθεί</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε κάποιο σημείο προσάρτησης. Οι περισσότερες διανομές το κανουν αυτόματα όταν αφαιρέσετε τον USB δίσκο και τον επανεισάγετε.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>Επιλέξτε διανομή</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Πρέπει να επιλέξετε διανομή για φόρτωση</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>Επιλέξτε αρχείο εικόνας δίσκου</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Πρέπει να επιλέξετε αρχείο εικόνας δίσκου.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Επιλέξτε πυρήνα και αρχείο initrd</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Πρέπει να επιλέξετε πυρήνα και αρχείο initrd.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>Το αρχείο εικόνας δίσκου δεν βρέθηκε</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Το συγκεκριμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>Το αρχείο πυρήνα δεν βρέθηκε</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>Το συγκεκριμένο αρχείο πυρήνα %1 δεν υπάρχει.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>Το αρχείο initrd δεν βρέθηκε</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>Το συγκεκριμένο αρχείο initrd %1 δεν υπάρχει.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>%1 υπάρχει ήδη, να γίνει εγγραφή απο πάνω;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Το αρχείο %1 υπάρχει ήδη. Πατήστε &apos;Ναι σε Όλα&apos; για να γράψετε απο πάνω του, και μετά δεν θα ξαναερωτηθείτε, &apos;Ναι&apos; για να γράψει απο πάνω μόνο το συγκεκριμένο αρχείο, και &apos;Όχι&apos; για να διατηρήσετε την υπάρχουσα έκδοση. Άν δεν είστε σίγουροι, πατήστε &apos;Ναι σε &apos;Ολα&apos;.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>%1 δεν έχει χώρο, ακύρωση εγκατάστασης;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Ο φάκελος %1 δεν έχει άλλο χώρο. Πατήστε &apos;Ναι&apos; για ακύρωση εγκατάστασης, &apos;Οχι&apos; για αγνόηση του σφάλματος και απόπειρα για συνέχεια της εγκατάστασης, και &apos;Οχι σε Όλα&apos; για να αγνοηθούν όλα τα λάθη έλλειψης χώρου.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -595,7 +595,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="37"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Κεντρική Σελίδα:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Πριγραφή:&lt;/b&gt; Το CentOS είναι ένας δωρεάν κλώνος του Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Σημειώσης Εγκατάστασης:&lt;/b&gt; Η προεπιλεγμένη έκδοση επιτρέπει και την εγκατάσταση μέσω διαδικτύου (FTP)  και την εγκατάσταση μέσω δίσκου εγκατάστασης του CentOS.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="42"/>
@@ -761,8 +761,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

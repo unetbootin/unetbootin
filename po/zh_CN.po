@@ -2,20 +2,334 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-13 16:42-0500\n"
-"PO-Revision-Date: 2010-03-09 00:51+0000\n"
-"Last-Translator: Yiding He <yiding.he@gmail.com>\n"
+"POT-Creation-Date: 2010-03-14 12:27-0400\n"
+"PO-Revision-Date: 2010-03-26 14:26+0000\n"
+"Last-Translator: 英华 <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-14 01:44+0000\n"
+"X-Launchpad-Export-Date: 2010-03-27 20:52+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
 msgstr "从左到右"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2370
+#: unetbootin.cpp:2383 unetbootin.cpp:2541 unetbootin.cpp:2893
+msgid "Hard Disk"
+msgstr "Hard Disk"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
+#: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
+#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1322
+#: unetbootin.cpp:1719 unetbootin.cpp:1761 unetbootin.cpp:2374
+#: unetbootin.cpp:2399 unetbootin.cpp:2545 unetbootin.cpp:2897
+msgid "USB Drive"
+msgstr "USB 驱动器"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2447
+msgid "ISO"
+msgstr "ISO"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2439
+msgid "Floppy"
+msgstr "软盘"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:206 unetbootin.cpp:210 unetbootin.cpp:214 unetbootin.cpp:218
+#: unetbootin.cpp:224 unetbootin.cpp:236
+msgid "either"
+msgstr "两者任选其一"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:530
+msgid "Open Disk Image File"
+msgstr "打开磁盘镜像文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:548
+msgid "Open Kernel File"
+msgstr "打开内核文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:556
+msgid "Open Initrd File"
+msgstr "打开 Initrd 文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:564
+msgid "Open Bootloader Config File"
+msgstr "载入引导配置文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:586
+msgid "Insert a USB flash drive"
+msgstr "插入USB驱动器"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:587
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr "没有发现USB驱动器。如果您已经插入USB驱动器，请尝试重新格式化为FAT32格式。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:602
+msgid "%1 not mounted"
+msgstr "%1 没有挂载"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:603
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr "你必须首先在 %1 挂载驱动器。大部分发行版本会在您移除并且重新插入USB驱动器后自动执行该操作。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:618
+msgid "Select a distro"
+msgstr "选择一个发行版本"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:619
+msgid "You must select a distribution to load."
+msgstr "你必须选择加载一个发行版本。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:633
+msgid "Select a disk image file"
+msgstr "选择一个磁盘镜像文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:634
+msgid "You must select a disk image file to load."
+msgstr "你必须选择加载一个磁盘镜像文件。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:648
+msgid "Select a kernel and/or initrd file"
+msgstr "选择一个内核 和/或 initrd 文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:649
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "你必须选择加载一个内核 和/或 initrd 文件。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:663
+msgid "Diskimage file not found"
+msgstr "没有找到磁盘镜像文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:664
+msgid "The specified diskimage file %1 does not exist."
+msgstr "指定的磁盘镜像文件 %1 不存在。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:678
+msgid "Kernel file not found"
+msgstr "内核文件没有找到"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:679
+msgid "The specified kernel file %1 does not exist."
+msgstr "指定内核文件 %1 不存在。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:693
+msgid "Initrd file not found"
+msgstr "没有找到 Initrd 文件"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:694
+msgid "The specified initrd file %1 does not exist."
+msgstr "指定 initrd 文件 %1 不存在。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:798
+msgid "%1 exists, overwrite?"
+msgstr "%1 已经存在，是否覆盖？"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:799
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"文件 %1 已经存在。单击 'Yes to All' 进行覆盖并且不再提示， 'Yes' 覆盖单个文件， 而 'No' 保留你现在的版本。 "
+"如果不能确定，单击 'Yes to All'。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:825
+msgid "%1 is out of space, abort installation?"
+msgstr "%1 空间不够。放弃安装？"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:826
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr "目录 %1 空间不够。按 “是” 放弃安装，按 “否” 忽略这个错误并继续安装，按 “全部选否” 忽略所有“空间不够”之类的错误。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1262 unetbootin.cpp:1284
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr "<b>解压缩iso镜像文件：</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1352
+msgid "Extracting files, please wait..."
+msgstr "正在抽取文件，请稍等……"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1353
+msgid "<b>Archive:</b> %1"
+msgstr "<b>存档：</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1354
+msgid "<b>Source:</b>"
+msgstr "<b>来源：</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1355
+msgid "<b>Destination:</b>"
+msgstr "<b>目标：</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1356
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>抽取：</b>0 of %1 files"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1359
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>来源：</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1360
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>目标：</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1361
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>抽取：</b> %1 of %2 files"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1703
+msgid "Downloading files, please wait..."
+msgstr "正在下载文件，请稍候……"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1704
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>来源：</b> <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1705
+msgid "<b>Destination:</b> %1"
+msgstr "<b>目标：</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1706
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>下载：</b> 0 bytes"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1783 unetbootin.cpp:1798
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>已下载：</b> %1 / %2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1874
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "正在搜索 <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1878
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 matches in <a href=\"%3\">%3</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2063
+msgid "%1 not found"
+msgstr "%1 没有找到"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2064
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 没有找到。该安装模式需要 %2。\n"
+"安装 “ %3 ” 包或者你的发行版本的等效版本。"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2352
+msgid "(Current)"
+msgstr "(处理中)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2353
+msgid "(Done)"
+msgstr "(完成)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2620
+msgid "Configuring grub2 on %1"
+msgstr "在 %1 上配置 grub2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2632
+msgid "Configuring grldr on %1"
+msgstr "在 %1 上配置 grldr"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2660
+msgid "Configuring grub on %1"
+msgstr "在 %1 上配置 grub"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2782
+msgid "Installing syslinux to %1"
+msgstr "安装 syslinux 到 %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2817
+msgid "Installing extlinux to %1"
+msgstr "安装 extlinux 到 %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2883
+msgid "Syncing filesystems"
+msgstr "同步文件系统"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2895
+msgid "After rebooting, select the "
+msgstr "重启动后，请选择 "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2899
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"重启动后，请在BIOS的启动菜单里，选择USB启动选项。\n"
+"立即重启动？"
 
 #. ts-context unetbootin
 #: distrolst.cpp:27
@@ -114,320 +428,6 @@ msgstr ""
 "*重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 '开始安装' 选项，来源选择 '网络模式'，协议选择 "
 "'HTTP'，当提示登陆服务器时输入'download.opensuse.org'，当询问文件夹时输入'/distribution/%1/repo/oss"
 "'。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2366
-#: unetbootin.cpp:2379 unetbootin.cpp:2537 unetbootin.cpp:2889
-msgid "Hard Disk"
-msgstr "硬盘"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
-#: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:848 unetbootin.cpp:1318
-#: unetbootin.cpp:1715 unetbootin.cpp:1757 unetbootin.cpp:2370
-#: unetbootin.cpp:2395 unetbootin.cpp:2541 unetbootin.cpp:2893
-msgid "USB Drive"
-msgstr "USB 驱动器"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2443
-msgid "ISO"
-msgstr "ISO"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2435
-msgid "Floppy"
-msgstr "软盘"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1258 unetbootin.cpp:1280
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>解压缩iso镜像文件：</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1348
-msgid "Extracting files, please wait..."
-msgstr "正在抽取文件，请稍等……"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1349
-msgid "<b>Archive:</b> %1"
-msgstr "<b>存档：</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1350
-msgid "<b>Source:</b>"
-msgstr "<b>来源：</b>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1351
-msgid "<b>Destination:</b>"
-msgstr "<b>目标：</b>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1352
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>抽取：</b>0 of %1 files"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1355
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>来源：</b> %1 (%2)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1356
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>目标：</b> %1%2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1357
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>抽取：</b> %1 of %2 files"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1699
-msgid "Downloading files, please wait..."
-msgstr "正在下载文件，请稍候……"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1700
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>来源：</b> <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1701
-msgid "<b>Destination:</b> %1"
-msgstr "<b>目标：</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1702
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>下载：</b> 0 bytes"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1779 unetbootin.cpp:1794
-msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>已下载：</b> %1 / %2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1870
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "正在搜索 <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1874
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 matches in <a href=\"%3\">%3</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2059
-msgid "%1 not found"
-msgstr "%1 没有找到"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2060
-msgid ""
-"%1 not found. This is required for %2 install mode.\n"
-"Install the \"%3\" package or your distribution's equivalent."
-msgstr ""
-"%1 没有找到。该安装模式需要 %2。\n"
-"安装 “ %3 ” 包或者你的发行版本的等效版本。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2348
-msgid "(Current)"
-msgstr "(处理中)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2349
-msgid "(Done)"
-msgstr "(完成)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2616
-msgid "Configuring grub2 on %1"
-msgstr "在 %1 上配置 grub2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2628
-msgid "Configuring grldr on %1"
-msgstr "在 %1 上配置 grldr"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2656
-msgid "Configuring grub on %1"
-msgstr "在 %1 上配置 grub"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2778
-msgid "Installing syslinux to %1"
-msgstr "安装 syslinux 到 %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2813
-msgid "Installing extlinux to %1"
-msgstr "安装 extlinux 到 %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2879
-msgid "Syncing filesystems"
-msgstr "同步文件系统"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2891
-msgid "After rebooting, select the "
-msgstr "重启动后，请选择 "
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2895
-msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-"Reboot now?"
-msgstr ""
-"重启动后，请在BIOS的启动菜单里，选择USB启动选项。\n"
-"立即重启动？"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:206 unetbootin.cpp:210 unetbootin.cpp:214 unetbootin.cpp:218
-#: unetbootin.cpp:224 unetbootin.cpp:236
-msgid "either"
-msgstr "两者任选其一"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:530
-msgid "Open Disk Image File"
-msgstr "打开磁盘镜像文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:548
-msgid "Open Kernel File"
-msgstr "打开内核文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:556
-msgid "Open Initrd File"
-msgstr "打开 Initrd 文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:564
-msgid "Open Bootloader Config File"
-msgstr "打开引导载入配置文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:586
-msgid "Insert a USB flash drive"
-msgstr "插入USB闪存驱动器"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:587
-msgid ""
-"No USB flash drives were found. If you have already inserted a USB drive, "
-"try reformatting it as FAT32."
-msgstr "没有发现USB闪存驱动器。如果你插入USB驱动器，尝试重新格式化为FAT32格式。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:602
-msgid "%1 not mounted"
-msgstr "%1 没有挂载"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:603
-msgid ""
-"You must first mount the USB drive %1 to a mountpoint. Most distributions "
-"will do this automatically after you remove and reinsert the USB drive."
-msgstr "你必须首先挂载USB驱动器 %1 作为挂载点。大部分发行版本将在你移除并且重新插入USB驱动器后自动执行该操作。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:618
-msgid "Select a distro"
-msgstr "选择一个发行版本"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:619
-msgid "You must select a distribution to load."
-msgstr "你必须选择加载一个发行版本。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:633
-msgid "Select a disk image file"
-msgstr "选择一个磁盘镜像文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:634
-msgid "You must select a disk image file to load."
-msgstr "你必须选择加载一个磁盘镜像文件。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:648
-msgid "Select a kernel and/or initrd file"
-msgstr "选择一个内核 和/或 initrd 文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:649
-msgid "You must select a kernel and/or initrd file to load."
-msgstr "你必须选择加载一个内核 和/或 initrd 文件。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:663
-msgid "Diskimage file not found"
-msgstr "没有找到磁盘镜像文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:664
-msgid "The specified diskimage file %1 does not exist."
-msgstr "指定的磁盘镜像文件 %1 不存在。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:678
-msgid "Kernel file not found"
-msgstr "内核文件没有找到"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:679
-msgid "The specified kernel file %1 does not exist."
-msgstr "指定内核文件 %1 不存在。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:693
-msgid "Initrd file not found"
-msgstr "没有找到 Initrd 文件"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:694
-msgid "The specified initrd file %1 does not exist."
-msgstr "指定 initrd 文件 %1 不存在。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:794
-msgid "%1 exists, overwrite?"
-msgstr "%1 已经存在，是否覆盖？"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:795
-msgid ""
-"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
-"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
-"retain your existing version. If in doubt, press 'Yes to All'."
-msgstr ""
-"文件 %1 已经存在。单击 'Yes to All' 进行覆盖并且不再提示， 'Yes' 覆盖单个文件， 而 'No' 保留你现在的版本。 "
-"如果不能确定，单击 'Yes to All'。"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:821
-msgid "%1 is out of space, abort installation?"
-msgstr "%1 空间不够。放弃安装？"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:822
-msgid ""
-"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
-"ignore this error and attempt to continue installation, and 'No to All' to "
-"ignore all out-of-space errors."
-msgstr "目录 %1 空间不够。按 “是” 放弃安装，按 “否” 忽略这个错误并继续安装，按 “全部选否” 忽略所有“空间不够”之类的错误。"
 
 #. ts-context unetbootin
 #: distrover.cpp:21
@@ -637,6 +637,10 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>主页：</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>简介：</b> "
+"FreeNAS 是一个基于 FreeBSD 的嵌入式开源 NAS(网络附加存储设备)发行版。<br/><b>安装提示：</b> LiveCD "
+"版本会创建一个虚拟内存盘来运行 FreeNAS, 而配置文件将保存在 FAT 格式的软盘或 U 盘上。 嵌入式版本可以安装在硬盘上。"
 
 #. ts-context unetbootin
 #: distrover.cpp:98
@@ -740,6 +744,12 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>主页：</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>简介：</b> "
+"Kubuntu 是以 KDE 为桌面环境的 Ubuntu 官方衍生版。<br/><b>安装提示：</b> Live版本允许以 Live "
+"模式启动，从中可以选择安装程序。NetInstall 版本支持通过FTP安装，并可以安装 Xubuntu 或其他 Ubuntu "
+"官方衍生版。如果您想使用预先下载的 alternate(不是 Desktop)镜像，请使用 HdMedia 选项，然后再将 alternate "
+"安装镜像文件移动至您硬盘驱动器或USB驱动器的根目录。"
 
 #. ts-context unetbootin
 #: distrover.cpp:138
@@ -972,18 +982,16 @@ msgstr ""
 #: distrover.cpp:214
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-"uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
-"derivative of Ubuntu which includes additional software by default. Requires "
-"a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
-"allows for booting in Live mode, from which the installer can optionally be "
-"launched."
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Description:</b> Super OS is an unofficial derivative of "
+"Ubuntu which includes additional software by default. Requires a 2GB USB "
+"drive to install.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 "<b>主页：</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-"uper_Ubuntu</a><br/><b>说明：</b> Super "
-"Ubuntu是一个非官方版的Ubuntu衍生版本，它附带了很多其它软件。要求至少容量为2G的USB设备来进行安装。<br/><b>安装说明：</b>Liv"
-"e版本允许以Live模式进行启动，进行系统后再运行安装程序，把Ubuntu真正安装到电脑上。"
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>简介：</b>Super_OS 是一个非官方的 Ubuntu 衍生版，默认情况下包含了一些额外的软件。它需要一个2GB 的 "
+"U 盘来安装。<br/><b>安装提示：</b>Live 版本允许以 Live 模式启动，启动后可以从中选择执行安装程序。"
 
 #. ts-context unetbootin
 #: distrover.cpp:219
@@ -1013,6 +1021,12 @@ msgid ""
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
 msgstr ""
+"<b>主页：</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>简介：</b> "
+"Ubuntu是一个用户友好的基于 Debian的发行版。这是目前最流行的 Linux 桌面发行版。<br/><b>安装提示：</b> Live "
+"版本允许以 Live 模式启动，启动后可以从中选择执行安装程序。NetInstall 版本支持通过 FTP 安装，并可以安装 Kubuntu 或其他官方 "
+"Ubuntu 的衍生版本。如果您想使用一个预先下载的alternate(不是 Desktop)镜像文件安装，请使用 HdMedia 选项，然后再将 "
+"alternate 镜像文件移动至您硬盘驱动器或USB驱动器的根目录下。"
 
 #. ts-context unetbootin
 #: distrover.cpp:229
@@ -1042,6 +1056,12 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>主页：</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>简介：</b> "
+"Xubuntu  是一个 Ubuntu 官方发行的以 XFCE 为桌面环境的轻量级发行版。<br/><b>安装提示：</b>  Live 版本允许以 "
+"Live 模式启动，启动后可以从中选择执行安装程序。NetInstall 版本支持通过 FTP 安装，并可以安装 Kubuntu 或其他官方 "
+"Ubuntu 的衍生版本。如果您想使用一个预先下载的 alternate(不是Desktop) 镜像文件安装，请使用 HdMedia 选项，然后再将 "
+"alternate 镜像文件移动至您硬盘驱动器或USB驱动器的根目录下。"
 
 #. ts-context unetbootin
 #: distrover.cpp:239
@@ -1392,7 +1412,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:413
 msgid "Show &All Drives (Use with Care)"
-msgstr ""
+msgstr "显示所有驱动器(慎用)(&A)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:170
@@ -1697,3 +1717,18 @@ msgstr "%1 已经安装。是否移除现有的版本？"
 #~ msgctxt "unetbootin#9"
 #~ msgid "Floppy"
 #~ msgstr "软盘"
+
+#~ msgid ""
+#~ "<b>Homepage:</b> <a "
+#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
+#~ "uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
+#~ "derivative of Ubuntu which includes additional software by default. Requires "
+#~ "a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
+#~ "allows for booting in Live mode, from which the installer can optionally be "
+#~ "launched."
+#~ msgstr ""
+#~ "<b>主页：</b> <a "
+#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
+#~ "uper_Ubuntu</a><br/><b>说明：</b> Super "
+#~ "Ubuntu是一个非官方版的Ubuntu衍生版本，它附带了很多其它软件。要求至少容量为2G的USB设备来进行安装。<br/><b>安装说明：</b>Liv"
+#~ "e版本允许以Live模式进行启动，进行系统后再运行安装程序，把Ubuntu真正安装到电脑上。"

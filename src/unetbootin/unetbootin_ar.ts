@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
+POT-Creation-Date: 2010-03-14 12:27-0400
 PO-Revision-Date: 2010-02-14 05:27+0000
 Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -93,6 +93,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هي توزيعة سهلة الإستعمال مرتكزة على ديبيان, وفي الوقت الحالي هي أكثر توزيعات لينيكس المستخدمة في حواسيب سطح المكتب شعبية.&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الحية من الإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة, و تسمح نسخة التنصيب الشبكي بالتنصيب عن طريق الشبكة العالمية (FTP) وبستطاعتها إيضاً تنصيب توزيعة كوبونتو والمشتقات الرسمية الأخرى لأوبنتو.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هو مشتق غير رسمي من أوبنتو مشتمل على برمجيات إضافية في نسخته الإفتراضية, ويحتاج ذاكرة يو إس بي بحجم ٢ جيجا من أجل عملية التنصيب.&lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
@@ -249,53 +253,6 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;mirrors.kernel.org&apos; عندما تطالب بالمزود و &apos;/centos/%1/os/%2&apos; عندما تسئل عن المجلد.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/development/%1/os&apos; عندما تسئل عن المجلد.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; عندما تسئل عن المجلد.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/factory/repo/oss&apos; عندما تسئل عن المجلد.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/distribution/%1/repo/oss&apos; عندما تسئل عن المجلد.</translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
         <location filename="unetbootin.cpp" line="246"/>
@@ -351,6 +308,136 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>قرص مرن</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>احد الامرين</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>إفتح ملف صورة القرص</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>إفتح ملف النواة</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>إفتح ملف تهيئة محمل الإقلاع</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>أدخل ذاكرة فلاش يو إس بي</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>%1 لم يركب</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>إختر توزيعة</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>يجب عليك إختيار توزيعة ليتم تحميلها</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>إختر ملف صورة القرص</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>لم يتم العثور على ملف صورة القرص</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>لم يتم العثور على ملف النواة</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>%1 موجود, هل تريد إستبداله؟</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1262"/>
@@ -498,134 +585,51 @@ Reboot now?</source>
 هل تريد إعادة التشغيل الأن؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>احد الامرين</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>إفتح ملف صورة القرص</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;mirrors.kernel.org&apos; عندما تطالب بالمزود و &apos;/centos/%1/os/%2&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>إفتح ملف النواة</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/development/%1/os&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>إفتح ملف تهيئة محمل الإقلاع</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>أدخل ذاكرة فلاش يو إس بي</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/factory/repo/oss&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>%1 لم يركب</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>إختر توزيعة</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>يجب عليك إختيار توزيعة ليتم تحميلها</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>إختر ملف صورة القرص</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>لم يتم العثور على ملف صورة القرص</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>لم يتم العثور على ملف النواة</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>%1 موجود, هل تريد إستبداله؟</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/distribution/%1/repo/oss&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -811,8 +815,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هو مشتق غير رسمي من أوبنتو مشتمل على برمجيات إضافية في نسخته الإفتراضية, ويحتاج ذاكرة يو إس بي بحجم ٢ جيجا من أجل عملية التنصيب.&lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

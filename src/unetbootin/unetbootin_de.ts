@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
-PO-Revision-Date: 2010-01-29 08:11+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-03-14 12:27-0400
+PO-Revision-Date: 2010-03-27 10:58+0000
+Last-Translator: Jan-Christoph Borchardt &lt;jan@inquata.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -244,53 +244,6 @@ Jetzt neustarten?</translation>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;mirrors.kernel.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/centos/%1/os/%2&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.fedora.redhat.com&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/pub/fedora/linux/development/%1/os&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.fedora.redhat.com&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.opensuse.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/factory/repo/oss&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.opensuse.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/distribution/%1/repo/oss&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
         <location filename="unetbootin.cpp" line="246"/>
@@ -348,6 +301,136 @@ Jetzt neustarten?</translation>
         <translation>Diskette</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>entweder</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>Öffne Image-Datei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>Öffne Kernel-Datei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>Öffne Initrd-Datei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>Öffne Bootloader Konfigurationsdatei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>Stecken Sie ein USB-Flash Laufwerk ein</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>Keine USB-Flash Laufwerke wurden gefunden. Falls Sie bereits ein USB-Laufwerk eingesteckt haben, versuchen Sie es mit FAT32 erneut zu formatieren.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>%1 nicht eingehängt</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>Sie müssen das USB-Laufwerk %1 erst einhängen. Die meisten Distributionen werden dies automatisch tun, nachdem Sie das USB-Laufwerk ausgeworfen und wieder eingesteckt haben.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>Wähle Sie eine Distribution aus</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>Sie müssen eine Distribution zum laden auswählen.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>Wählen Sie eine Image-Datei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>Sie müssen eine Image-Datei zum Laden auswählen.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>Wählen Sie einen Kernel- und/oder initrd-Datei</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>Sie müssen eine Kernel- und/oder initrd-Datei zum Laden auswählen.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>Image-Datei nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>Die angegebene Image-Datei %1 existiert nicht.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>Kernel-Datei nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>Die angegebene Kernel-Datei %1 existiert nicht.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>Initrd-Datei nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>Die angegebene initrd-Datei %1 existiert nicht.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>%1 besteht bereits, überschreiben?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>Die Datei %1 besteht bereits. Drücke &apos;Ja, alle&apos; um sie zu überschreiben und nicht wieder hierzu gefragt zu werden, &apos;Ja&apos; um individuell die Dateien zu überschreiben, und &apos;Nein&apos; um ihre bestehende Version zu behalten. Im Zweifelsfall, &apos;Ja, alle&apos; drücken.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>%1 ist vollständig belegt, Installation abbrechen?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>Das Verzeichnis ist vollständig belegt. Klicken Sie auf &apos;Ja&apos;, um die Installation abzubrechen, auf &apos;Nein&apos;, um diesen Fehler zu ignorieren und mit der Installation fortzufahren oder auf &apos;Nein, alle&apos;, um alle &quot;vollständig belegt&quot; Fehler zu ignorieren.</translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="1262"/>
         <location filename="unetbootin.cpp" line="1284"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
@@ -356,7 +439,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1360"/>
         <source>Extracting files, please wait...</source>
-        <translation>Extrahiere Datien, bitte warten...</translation>
+        <translation>Extrahiere Dateien, bitte warten...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1361"/>
@@ -494,134 +577,51 @@ Reboot now?</source>
 Jetzt neustarten?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>entweder</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>Öffne Image-Datei</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;mirrors.kernel.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/centos/%1/os/%2&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>Öffne Kernel-Datei</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>Öffne Initrd-Datei</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.fedora.redhat.com&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/pub/fedora/linux/development/%1/os&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>Öffne Bootloader Konfigurationsdatei</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.fedora.redhat.com&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>Stecken Sie ein USB-Flash Laufwerk ein</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.opensuse.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/factory/repo/oss&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Keine USB-Flash Laufwerke wurden gefunden. Falls Sie bereits ein USB-Laufwerk eingesteckt haben, versuchen Sie es mit FAT32 erneut zu formatieren.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>%1 nicht eingehängt</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Sie müssen das USB-Laufwerk %1 erst einhängen. Die meisten Distributionen werden dies automatisch tun, nachdem Sie das USB-Laufwerk ausgeworfen und wieder eingesteckt haben.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>Wähle Sie eine Distribution aus</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Sie müssen eine Distribution zum laden auswählen.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>Wählen Sie eine Image-Datei</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Sie müssen eine Image-Datei zum Laden auswählen.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Wählen Sie einen Kernel- und/oder initrd-Datei</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Sie müssen eine Kernel- und/oder initrd-Datei zum Laden auswählen.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>Image-Datei nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Die angegebene Image-Datei %1 existiert nicht.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>Kernel-Datei nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>Die angegebene Kernel-Datei %1 existiert nicht.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>Initrd-Datei nicht gefunden</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>Die angegebene initrd-Datei %1 existiert nicht.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>%1 besteht bereits, überschreiben?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Die Datei %1 besteht bereits. Drücke &apos;Ja, alle&apos; um sie zu überschreiben und nicht wieder hierzu gefragt zu werden, &apos;Ja&apos; um individuell die Dateien zu überschreiben, und &apos;Nein&apos; um ihre bestehende Version zu behalten. Im Zweifelsfall, &apos;Ja, alle&apos; drücken.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>%1 ist vollständig belegt, Installation abbrechen?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Das Verzeichnis ist vollständig belegt. Klicken Sie auf &apos;Ja&apos;, um die Installation abzubrechen, auf &apos;Nein&apos;, um diesen Fehler zu ignorieren und mit der Installation fortzufahren oder auf &apos;Nein, alle&apos;, um alle &quot;vollständig belegt&quot; Fehler zu ignorieren.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*WICHTIG* Ignorieren Sia nach dem Neustart alle Fehlermeldungen und gehen Sie zurück falls Sie nach einer CD gefragt werden. Gehen Sie dann ins Hauptmenü und wählen Sie die &apos;Beginne Installation&apos; Option, wählen Sie &apos;Netzwerk&apos; als Quelle, wählen Sie &apos;HTTP&apos; als Protokoll, geben Sie &apos;download.opensuse.org&apos; ein wenn sie nach einem Server gefragt werden und geben Sie &apos;/distribution/%1/repo/oss&apos; ein wenn Sie nach dem Verzeichnis gefragt werden.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -807,8 +807,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>
@@ -876,7 +875,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -975,7 +974,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>Installation vollständig, neustart</translation>
+        <translation>Installation vollständig, Neustart</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>

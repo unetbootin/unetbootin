@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-02-13 16:42-0500\n"
-"PO-Revision-Date: 2010-01-29 08:11+0000\n"
-"Last-Translator: UNetbootin Team <Unknown>\n"
+"POT-Creation-Date: 2010-03-14 12:27-0400\n"
+"PO-Revision-Date: 2010-03-19 12:56+0000\n"
+"Last-Translator: bushido <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-14 01:44+0000\n"
+"X-Launchpad-Export-Date: 2010-03-27 20:52+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -23,257 +23,32 @@ msgid "LeftToRight"
 msgstr "Vasakult paremale"
 
 #. ts-context unetbootin
-#: distrolst.cpp:27
-msgid ""
-"\n"
-"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
-"install iso file on the root directory of your hard drive or USB drive. "
-"These can be obtained from cdimage.ubuntu.com"
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:199
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'mirrors.kernel.org' when prompted for a server, and enter "
-"'/centos/%1/os/%2' when asked for the folder."
-msgstr ""
-"\n"
-"*TÄHTIS* Peale taaskäivitamist, ignoreeri igasugused veateated ja vali "
-"Tagasi, kui CD on prompted, siis mine põhimenüüsse, vali 'Käivita install' "
-"valik, vali ´Võrk´ asukohaks, vali ´HTTP´ protokolliks, sisesta "
-"´mirrors.kernel.org´, kui prompted serverina ja sisesta  '/centos/%1/os/%2'  "
-"kui küsitakse kausta."
-
-#. ts-context unetbootin
-#: distrolst.cpp:255
-msgid ""
-"\n"
-"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
-"directory of your hard drive or USB drive. These can be obtained from "
-"cdimage.debian.org"
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:345
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/development/%1/os' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:351
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.fedora.redhat.com' when prompted for a server, and enter "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:623
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/factory/repo/oss' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
-#: distrolst.cpp:629
-msgid ""
-"\n"
-"*IMPORTANT* After rebooting, ignore any error messages and select back if "
-"prompted for a CD, then go to the main menu, select the 'Start Installation' "
-"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
-"'download.opensuse.org' when prompted for a server, and enter "
-"'/distribution/%1/repo/oss' when asked for the folder."
-msgstr ""
-
-#. ts-context unetbootin
 #: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2366
-#: unetbootin.cpp:2379 unetbootin.cpp:2537 unetbootin.cpp:2889
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2370
+#: unetbootin.cpp:2383 unetbootin.cpp:2541 unetbootin.cpp:2893
 msgid "Hard Disk"
 msgstr "Kõvaketas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
 #: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:848 unetbootin.cpp:1318
-#: unetbootin.cpp:1715 unetbootin.cpp:1757 unetbootin.cpp:2370
-#: unetbootin.cpp:2395 unetbootin.cpp:2541 unetbootin.cpp:2893
+#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1322
+#: unetbootin.cpp:1719 unetbootin.cpp:1761 unetbootin.cpp:2374
+#: unetbootin.cpp:2399 unetbootin.cpp:2545 unetbootin.cpp:2897
 msgid "USB Drive"
 msgstr "USB seade"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2443
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2447
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2435
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2439
 msgid "Floppy"
 msgstr "Diskett"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1258 unetbootin.cpp:1280
-msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Pakitakse lahti kokkupakitud iso´d:</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1348
-msgid "Extracting files, please wait..."
-msgstr "Pakitakse lahti faile, palun oota..."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1349
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Arhiiv:</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1350
-msgid "<b>Source:</b>"
-msgstr "<b>Allikas:</b>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1351
-msgid "<b>Destination:</b>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1352
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Lahti pakitud:</b> 0 of %1 faili"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1355
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Allikas:</b> %1 (%2)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1356
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Sihtkoht:</b> %1%2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1357
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Lahti pakitud:</b> %1 of %2 faili"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1699
-msgid "Downloading files, please wait..."
-msgstr "Failide allalaadimine, palun oota..."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1700
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Allikas:</b> <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1701
-msgid "<b>Destination:</b> %1"
-msgstr "<b>Sihtkoht:</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1702
-msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Allalaetud:</b> 0 baiti"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1779 unetbootin.cpp:1794
-msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Allalaetud:</b> %1 of %2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1870
-msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "Otsitakse siit <a href=\"%1\">%1</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1874
-msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 vastuseid siin <a href=\"%3\">%3</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2059
-msgid "%1 not found"
-msgstr "%1 ei leitud"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2060
-msgid ""
-"%1 not found. This is required for %2 install mode.\n"
-"Install the \"%3\" package or your distribution's equivalent."
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2348
-msgid "(Current)"
-msgstr "(Praegune)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2349
-msgid "(Done)"
-msgstr "(Tehtud)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2616
-msgid "Configuring grub2 on %1"
-msgstr "Seadistatakse grub2´de %1´s"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2628
-msgid "Configuring grldr on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2656
-msgid "Configuring grub on %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2778
-msgid "Installing syslinux to %1"
-msgstr "syslinuxi installimine siia %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2813
-msgid "Installing extlinux to %1"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2879
-msgid "Syncing filesystems"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2891
-msgid "After rebooting, select the "
-msgstr "Peale taaskäivitamist, valige "
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2895
-msgid ""
-"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-"Reboot now?"
-msgstr ""
-"Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1\n"
-"Taaskäivita nüüd?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:206 unetbootin.cpp:210 unetbootin.cpp:214 unetbootin.cpp:218
@@ -388,12 +163,12 @@ msgid "The specified initrd file %1 does not exist."
 msgstr "Täpsustatud initrd´i %1 faili pole olemas."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:794
+#: unetbootin.cpp:798
 msgid "%1 exists, overwrite?"
 msgstr "%1 on juba olema, kirjuta ümber?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:795
+#: unetbootin.cpp:799
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -401,16 +176,241 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:821
+#: unetbootin.cpp:825
 msgid "%1 is out of space, abort installation?"
 msgstr "%1 on mälu täis, katkesta paigaldamine?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:822
+#: unetbootin.cpp:826
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1262 unetbootin.cpp:1284
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr "<b>Pakitakse lahti kokkupakitud iso´d:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1352
+msgid "Extracting files, please wait..."
+msgstr "Pakitakse lahti faile, palun oota..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1353
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Arhiiv:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1354
+msgid "<b>Source:</b>"
+msgstr "<b>Allikas:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1355
+msgid "<b>Destination:</b>"
+msgstr "<b>Sihtkoht:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1356
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Lahti pakitud:</b> 0 of %1 faili"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1359
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Allikas:</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1360
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Sihtkoht:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1361
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Lahti pakitud:</b> %1 of %2 faili"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1703
+msgid "Downloading files, please wait..."
+msgstr "Failide allalaadimine, palun oota..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1704
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Allikas:</b> <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1705
+msgid "<b>Destination:</b> %1"
+msgstr "<b>Sihtkoht:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1706
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>Allalaetud:</b> 0 baiti"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1783 unetbootin.cpp:1798
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>Allalaetud:</b> %1 of %2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1874
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "Otsitakse siit <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1878
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 vastuseid siin <a href=\"%3\">%3</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2063
+msgid "%1 not found"
+msgstr "%1 ei leitud"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2064
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2352
+msgid "(Current)"
+msgstr "(Praegune)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2353
+msgid "(Done)"
+msgstr "(Tehtud)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2620
+msgid "Configuring grub2 on %1"
+msgstr "Seadistatakse grub2´de %1´s"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2632
+msgid "Configuring grldr on %1"
+msgstr "Seadistatakse grldr %1´s"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2660
+msgid "Configuring grub on %1"
+msgstr "Seadistatakse grub %1´s"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2782
+msgid "Installing syslinux to %1"
+msgstr "syslinuxi installimine siia %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2817
+msgid "Installing extlinux to %1"
+msgstr "Paidaldatakse extlinuxi %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2883
+msgid "Syncing filesystems"
+msgstr "Sünkroniseeritakse failisüsteeme"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2895
+msgid "After rebooting, select the "
+msgstr "Peale taaskäivitamist, valige "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2899
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1\n"
+"Taaskäivita nüüd?"
+
+#. ts-context unetbootin
+#: distrolst.cpp:27
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
+"install iso file on the root directory of your hard drive or USB drive. "
+"These can be obtained from cdimage.ubuntu.com"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:199
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+"\n"
+"*TÄHTIS* Peale taaskäivitamist, ignoreeri igasugused veateated ja vali "
+"Tagasi, kui CD on prompted, siis mine põhimenüüsse, vali 'Käivita install' "
+"valik, vali ´Võrk´ asukohaks, vali ´HTTP´ protokolliks, sisesta "
+"´mirrors.kernel.org´, kui prompted serverina ja sisesta  '/centos/%1/os/%2'  "
+"kui küsitakse kausta."
+
+#. ts-context unetbootin
+#: distrolst.cpp:255
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
+"directory of your hard drive or USB drive. These can be obtained from "
+"cdimage.debian.org"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:345
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:351
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:623
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrolst.cpp:629
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
 
 #. ts-context unetbootin
@@ -438,6 +438,12 @@ msgid ""
 "installation over the internet (FTP). If interested in a LiveUSB version, "
 "see FaunOS."
 msgstr ""
+"<b>Kodulehekülg:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Kirjel"
+"dus:</b> Arch Linux on  kerge jaotusega, mis on optimiseeritud kiirusele ja "
+"vastupidavusele.<br/><b>Paigaldusemärkmed:</b>Tavaversioon lubab "
+"paigaldamist internetist (FTP). Kui oled huvitatud LiveUSB versioonist, "
+"vaata FaunOS´i."
 
 #. ts-context unetbootin
 #: distrover.cpp:32
@@ -448,6 +454,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Kodulehekülg:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Kirjeldus:</b> "
+"BackTrack on jaotus, mis keskendub võrgustiku analüüsile ja hõlmamise "
+"testimisele.<br/><b>Paigaldusmärkmed:</b> BackTrack on laetud ja  käivitatud "
+"live olekus; paigaldus pole nõutav selle kasutamiseks."
 
 #. ts-context unetbootin
 #: distrover.cpp:37
@@ -469,6 +480,11 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Kodulehekülg:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Kirjeldus:<"
+"/b> CloneZilla on jaotus, mida kasutatakse kõvaketta tagavaraks ja "
+"pildistamiseks.<br/><b>Paigaldusmärkmed:</b> CloneZilla on laetud ja  "
+"käivitatud live olekus; paigaldus pole nõutav selle kasutamiseks."
 
 #. ts-context unetbootin
 #: distrover.cpp:47
@@ -573,6 +589,12 @@ msgid ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
 "installation details."
 msgstr ""
+"<b>Kodulehekülg:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Kirjeldus:"
+"</b> FreeDOS on vabavaraline MS-DOS ühilduvusega "
+"operatsioonisüsteem.<br/><b>Paigaldusmärkmed:</b> Vaata <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> "
+"paigaldusdetailide jaoks."
 
 #. ts-context unetbootin
 #: distrover.cpp:93
@@ -837,12 +859,11 @@ msgstr ""
 #: distrover.cpp:214
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-"uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
-"derivative of Ubuntu which includes additional software by default. Requires "
-"a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
-"allows for booting in Live mode, from which the installer can optionally be "
-"launched."
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Description:</b> Super OS is an unofficial derivative of "
+"Ubuntu which includes additional software by default. Requires a 2GB USB "
+"drive to install.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 
 #. ts-context unetbootin

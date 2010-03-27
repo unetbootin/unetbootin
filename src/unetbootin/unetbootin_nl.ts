@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
+POT-Creation-Date: 2010-03-14 12:27-0400
 PO-Revision-Date: 2010-02-14 05:28+0000
 Last-Translator: Jeppe Toustrup &lt;launchpad@tenzer.dk&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -101,6 +101,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Xubuntu is een officiële Ubuntu afstammeling met daarin de XFCE desktop.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de Live versie kan in Live modus worden opgestart vanaf waar eventueel de installatie kan worden gestart. Met de Netinstall kan via FTP worden geïnstalleerd, zowel Ubuntu als Kubuntu en andere afstammelingen van Ubuntu.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <translation type="obsolete">&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Super Ubuntu is een onofficiële afstammeling van Ubuntu die standaard extra software bevat. Benodigt een 2GB USB drive om naar te installeren.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de Live versie kan in Live modus worden opgestart vanaf waar eventueel de installatie kan worden gestart.</translation>
     </message>
     <message>
         <source>Extracting files, please wait...</source>
@@ -241,53 +245,6 @@ Nu herstarten?</translation>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;mirrors.kernel.org&apos; in, en voer &apos;/centos/%1/os/%2&apos; wanneer gevraagd wordt naar de directory.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation>
-*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.fedora.redhat.com&apos; in, en voer &apos;/pub/fedora/linux/development/%1/os&apos; wanneer gevraagd wordt naar de directory.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation>
-*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.fedora.redhat.com&apos; in, en voer &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; wanneer gevraagd wordt naar de directory.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.opensuse.org&apos; in, en voer &apos;/factory/repo/oss&apos; wanneer gevraagd wordt naar de directory.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation>
-*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.opensuse.org&apos; in, en voer &apos;/distribution/%1/repo/oss&apos; wanneer gevraagd wordt naar de directory.</translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
         <location filename="unetbootin.cpp" line="246"/>
@@ -343,6 +300,136 @@ Nu herstarten?</translation>
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>Diskette</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="206"/>
+        <location filename="unetbootin.cpp" line="210"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <source>either</source>
+        <translation>Ofwel</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="530"/>
+        <source>Open Disk Image File</source>
+        <translation>Open Disk Image-bestand</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="548"/>
+        <source>Open Kernel File</source>
+        <translation>Open Kernel-bestand</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <source>Open Initrd File</source>
+        <translation>Open Initrd-Bestand</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="564"/>
+        <source>Open Bootloader Config File</source>
+        <translation>Open Bootloader configuratiebestand</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="586"/>
+        <source>Insert a USB flash drive</source>
+        <translation>Sluit een USB drive aan</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="587"/>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation>Er is geen USB drive gevonden. Als je er wel één hebt aangesloten, probeer deze dan te formatteren als FAT32.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="602"/>
+        <source>%1 not mounted</source>
+        <translation>%1 niet aangekoppeld.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="603"/>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation>Je moet de USB drive %1 eerst aankoppelen (mounten). De meeste distributies doen dat automatisch als je de de USB drive verwijdert en vervolgens terugplaatst.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="618"/>
+        <source>Select a distro</source>
+        <translation>Selecteer een distributie</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="619"/>
+        <source>You must select a distribution to load.</source>
+        <translation>Je dient een distributie te selecteren om te laden.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="633"/>
+        <source>Select a disk image file</source>
+        <translation>Selecteer een disk image bestand.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="634"/>
+        <source>You must select a disk image file to load.</source>
+        <translation>Je dient een disk image-bestand te selecteren om in te laden.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="648"/>
+        <source>Select a kernel and/or initrd file</source>
+        <translation>Selecteer een kernel- en/of initrd-bestand</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="649"/>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation>Je dient een kernel- en/of initrd-bestand te selecteren om te laden</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="663"/>
+        <source>Diskimage file not found</source>
+        <translation>Disk image-bestand niet gevonden.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="664"/>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation>Het gekozen disk image-bestand %1 bestaat niet.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="678"/>
+        <source>Kernel file not found</source>
+        <translation>Kernelbestand niet gevonden.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="679"/>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation>Het geselecteerde kernelbestand %1 bestaat niet.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="693"/>
+        <source>Initrd file not found</source>
+        <translation>Initrd-bestand niet gevonden</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="694"/>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation>Het geselecteerde initrd-bestand %1 bestaat niet.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="798"/>
+        <source>%1 exists, overwrite?</source>
+        <translation>%1 bestaat al, wil je het overschrijven?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="799"/>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation>Het bestand %1 bestaat al. Klik &apos;Ja op alles&apos; om het te overschrijven en dit voor alle volgende situaties ook te doen, &apos;Ja&apos; om het te overschrijven en de volgende keer weer te vragen en &apos;Nee&apos; om de huidige versie te behouden. Als je twijfelt, klik dan op &apos;Ja op alles&apos;.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="825"/>
+        <source>%1 is out of space, abort installation?</source>
+        <translation>Geen ruimte meer op %1, installatie annuleren?</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="826"/>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation>De directory %1 heeft geen vrije ruimte meer. Klik &apos;Ja&apos; om te annuleren, of &apos;Nee&apos; om deze fout te negeren en toch proberen door te gaan. Kies &apos;Nee op alles&apos; om alle toekomstige ruimte-meldingen te negeren.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1262"/>
@@ -491,134 +578,51 @@ Reboot now?</source>
 Nu herstarten?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="206"/>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <source>either</source>
-        <translation>Ofwel</translation>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="530"/>
-        <source>Open Disk Image File</source>
-        <translation>Open Disk Image-bestand</translation>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;mirrors.kernel.org&apos; in, en voer &apos;/centos/%1/os/%2&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="548"/>
-        <source>Open Kernel File</source>
-        <translation>Open Kernel-bestand</translation>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <source>Open Initrd File</source>
-        <translation>Open Initrd-Bestand</translation>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.fedora.redhat.com&apos; in, en voer &apos;/pub/fedora/linux/development/%1/os&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="564"/>
-        <source>Open Bootloader Config File</source>
-        <translation>Open Bootloader configuratiebestand</translation>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.fedora.redhat.com&apos; in, en voer &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <source>Insert a USB flash drive</source>
-        <translation>Sluit een USB drive aan</translation>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.opensuse.org&apos; in, en voer &apos;/factory/repo/oss&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Er is geen USB drive gevonden. Als je er wel één hebt aangesloten, probeer deze dan te formatteren als FAT32.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="602"/>
-        <source>%1 not mounted</source>
-        <translation>%1 niet aangekoppeld.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="603"/>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Je moet de USB drive %1 eerst aankoppelen (mounten). De meeste distributies doen dat automatisch als je de de USB drive verwijdert en vervolgens terugplaatst.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="618"/>
-        <source>Select a distro</source>
-        <translation>Selecteer een distributie</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="619"/>
-        <source>You must select a distribution to load.</source>
-        <translation>Je dient een distributie te selecteren om te laden.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="633"/>
-        <source>Select a disk image file</source>
-        <translation>Selecteer een disk image bestand.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="634"/>
-        <source>You must select a disk image file to load.</source>
-        <translation>Je dient een disk image-bestand te selecteren om in te laden.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="648"/>
-        <source>Select a kernel and/or initrd file</source>
-        <translation>Selecteer een kernel- en/of initrd-bestand</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="649"/>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Je dient een kernel- en/of initrd-bestand te selecteren om te laden</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="663"/>
-        <source>Diskimage file not found</source>
-        <translation>Disk image-bestand niet gevonden.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="664"/>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Het gekozen disk image-bestand %1 bestaat niet.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="678"/>
-        <source>Kernel file not found</source>
-        <translation>Kernelbestand niet gevonden.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="679"/>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation>Het geselecteerde kernelbestand %1 bestaat niet.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="693"/>
-        <source>Initrd file not found</source>
-        <translation>Initrd-bestand niet gevonden</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="694"/>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation>Het geselecteerde initrd-bestand %1 bestaat niet.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="798"/>
-        <source>%1 exists, overwrite?</source>
-        <translation>%1 bestaat al, wil je het overschrijven?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="799"/>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Het bestand %1 bestaat al. Klik &apos;Ja op alles&apos; om het te overschrijven en dit voor alle volgende situaties ook te doen, &apos;Ja&apos; om het te overschrijven en de volgende keer weer te vragen en &apos;Nee&apos; om de huidige versie te behouden. Als je twijfelt, klik dan op &apos;Ja op alles&apos;.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="825"/>
-        <source>%1 is out of space, abort installation?</source>
-        <translation>Geen ruimte meer op %1, installatie annuleren?</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="826"/>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>De directory %1 heeft geen vrije ruimte meer. Klik &apos;Ja&apos; om te annuleren, of &apos;Nee&apos; om deze fout te negeren en toch proberen door te gaan. Kies &apos;Nee op alles&apos; om alle toekomstige ruimte-meldingen te negeren.</translation>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.opensuse.org&apos; in, en voer &apos;/distribution/%1/repo/oss&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -804,8 +808,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Super Ubuntu is een onofficiële afstammeling van Ubuntu die standaard extra software bevat. Benodigt een 2GB USB drive om naar te installeren.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de Live versie kan in Live modus worden opgestart vanaf waar eventueel de installatie kan worden gestart.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

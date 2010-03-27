@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-02-13 16:42-0500
-PO-Revision-Date: 2010-01-29 08:11+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-03-14 12:27-0400
+PO-Revision-Date: 2010-03-19 12:56+0000
+Last-Translator: bushido &lt;Unknown&gt;
 Language-Team: Estonian &lt;et@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -75,49 +75,6 @@ X-Generator: Launchpad (build Unknown)
 </context>
 <context>
     <name>unetbootin</name>
-    <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation>
-*TÄHTIS* Peale taaskäivitamist, ignoreeri igasugused veateated ja vali Tagasi, kui CD on prompted, siis mine põhimenüüsse, vali &apos;Käivita install&apos; valik, vali ´Võrk´ asukohaks, vali ´HTTP´ protokolliks, sisesta ´mirrors.kernel.org´, kui prompted serverina ja sisesta  &apos;/centos/%1/os/%2&apos;  kui küsitakse kausta.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
     <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
@@ -174,151 +131,6 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>Diskett</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1262"/>
-        <location filename="unetbootin.cpp" line="1284"/>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Pakitakse lahti kokkupakitud iso´d:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1360"/>
-        <source>Extracting files, please wait...</source>
-        <translation>Pakitakse lahti faile, palun oota...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1361"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Arhiiv:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1362"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Allikas:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1363"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1364"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; 0 of %1 faili</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1367"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Allikas:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1368"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1369"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; %1 of %2 faili</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1711"/>
-        <source>Downloading files, please wait...</source>
-        <translation>Failide allalaadimine, palun oota...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1712"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Allikas:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1713"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1714"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; 0 baiti</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1791"/>
-        <location filename="unetbootin.cpp" line="1806"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1882"/>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Otsitakse siit &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1886"/>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 vastuseid siin &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2071"/>
-        <source>%1 not found</source>
-        <translation>%1 ei leitud</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2072"/>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2360"/>
-        <source>(Current)</source>
-        <translation>(Praegune)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2361"/>
-        <source>(Done)</source>
-        <translation>(Tehtud)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2628"/>
-        <source>Configuring grub2 on %1</source>
-        <translation>Seadistatakse grub2´de %1´s</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2640"/>
-        <source>Configuring grldr on %1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2668"/>
-        <source>Configuring grub on %1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2804"/>
-        <source>Installing syslinux to %1</source>
-        <translation>syslinuxi installimine siia %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2839"/>
-        <source>Installing extlinux to %1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2904"/>
-        <source>Syncing filesystems</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2916"/>
-        <source>After rebooting, select the </source>
-        <translation>Peale taaskäivitamist, valige </translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2920"/>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation>Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1
-Taaskäivita nüüd?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="206"/>
@@ -451,6 +263,194 @@ Taaskäivita nüüd?</translation>
         <translation></translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="1262"/>
+        <location filename="unetbootin.cpp" line="1284"/>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Pakitakse lahti kokkupakitud iso´d:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1360"/>
+        <source>Extracting files, please wait...</source>
+        <translation>Pakitakse lahti faile, palun oota...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1361"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Arhiiv:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1362"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1363"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1364"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; 0 of %1 faili</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1367"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1368"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1369"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; %1 of %2 faili</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1711"/>
+        <source>Downloading files, please wait...</source>
+        <translation>Failide allalaadimine, palun oota...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1712"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation>&lt;b&gt;Allikas:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1713"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1714"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; 0 baiti</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1791"/>
+        <location filename="unetbootin.cpp" line="1806"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1882"/>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation>Otsitakse siit &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1886"/>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation>%1/%2 vastuseid siin &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2071"/>
+        <source>%1 not found</source>
+        <translation>%1 ei leitud</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2072"/>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2360"/>
+        <source>(Current)</source>
+        <translation>(Praegune)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2361"/>
+        <source>(Done)</source>
+        <translation>(Tehtud)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2628"/>
+        <source>Configuring grub2 on %1</source>
+        <translation>Seadistatakse grub2´de %1´s</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2640"/>
+        <source>Configuring grldr on %1</source>
+        <translation>Seadistatakse grldr %1´s</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2668"/>
+        <source>Configuring grub on %1</source>
+        <translation>Seadistatakse grub %1´s</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2804"/>
+        <source>Installing syslinux to %1</source>
+        <translation>syslinuxi installimine siia %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2839"/>
+        <source>Installing extlinux to %1</source>
+        <translation>Paidaldatakse extlinuxi %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2904"/>
+        <source>Syncing filesystems</source>
+        <translation>Sünkroniseeritakse failisüsteeme</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2916"/>
+        <source>After rebooting, select the </source>
+        <translation>Peale taaskäivitamist, valige </translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2920"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation>Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1
+Taaskäivita nüüd?</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*TÄHTIS* Peale taaskäivitamist, ignoreeri igasugused veateated ja vali Tagasi, kui CD on prompted, siis mine põhimenüüsse, vali &apos;Käivita install&apos; valik, vali ´Võrk´ asukohaks, vali ´HTTP´ protokolliks, sisesta ´mirrors.kernel.org´, kui prompted serverina ja sisesta  &apos;/centos/%1/os/%2&apos;  kui küsitakse kausta.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="distrover.cpp" line="21"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
         <translation>Tere tulemast kasutama  &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin´i&lt;/a&gt;, Universaalne Netboot Installer. Kasutamine:&lt;ol&gt;&lt;li&gt;Vali operatsioonisüsteem ja allalaadimise versioon listist või käsitsi näita ISO asupaika.&lt;/li&gt;&lt;li&gt;Vali installimise tüüpja vajuta OK, et alustada installi.&lt;/li&gt;&lt;/ol&gt;</translation>
@@ -458,12 +458,12 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Arch Linux on  kerge jaotusega, mis on optimiseeritud kiirusele ja vastupidavusele.&lt;br/&gt;&lt;b&gt;Paigaldusemärkmed:&lt;/b&gt;Tavaversioon lubab paigaldamist internetist (FTP). Kui oled huvitatud LiveUSB versioonist, vaata FaunOS´i.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; BackTrack on jaotus, mis keskendub võrgustiku analüüsile ja hõlmamise testimisele.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; BackTrack on laetud ja  käivitatud live olekus; paigaldus pole nõutav selle kasutamiseks.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
@@ -473,7 +473,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="42"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; CloneZilla on jaotus, mida kasutatakse kõvaketta tagavaraks ja pildistamiseks.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; CloneZilla on laetud ja  käivitatud live olekus; paigaldus pole nõutav selle kasutamiseks.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="47"/>
@@ -513,7 +513,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="88"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; FreeDOS on vabavaraline MS-DOS ühilduvusega operatsioonisüsteem.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; Vaata &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; paigaldusdetailide jaoks.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="93"/>
@@ -634,8 +634,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>

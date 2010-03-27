@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-02-13 16:42-0500
-PO-Revision-Date: 2010-02-27 14:03+0000
-Last-Translator: PETIT Aymeric &lt;os2mule@gmail.com&gt;
+POT-Creation-Date: 2010-03-14 12:27-0400
+PO-Revision-Date: 2010-03-22 16:18+0000
+Last-Translator: loquehumaine &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-14 01:44+0000
+X-Launchpad-Export-Date: 2010-03-27 20:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -245,49 +245,6 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="distrolst.cpp" line="27"/>
-        <source>
-*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation>
-*IMPORTANT* Avant de redémarrer, placer une image ISO d&apos;Ubuntu alternate (pas une version desktop), à la racine de votre disque dur ou de votre clef USB. Elle peut être obtenu depuis cdimage.ubuntu.com.</translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="199"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="255"/>
-        <source>
-*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="345"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="351"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="623"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="distrolst.cpp" line="629"/>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="163"/>
         <location filename="unetbootin.cpp" line="245"/>
         <location filename="unetbootin.cpp" line="246"/>
@@ -343,152 +300,6 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="2447"/>
         <source>Floppy</source>
         <translation>disquette</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1262"/>
-        <location filename="unetbootin.cpp" line="1284"/>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1360"/>
-        <source>Extracting files, please wait...</source>
-        <translation>Extraction des fichiers, patientez...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1361"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1362"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1363"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1364"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Extrait :&lt;/b&gt; 0 de %1 fichiers</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1367"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1368"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1369"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Extrait :&lt;/b&gt; %1 de %2 fichiers</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1711"/>
-        <source>Downloading files, please wait...</source>
-        <translation>Téléchargement des fichiers, veuillez patienter...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1712"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1713"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1714"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Téléchargé :&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1791"/>
-        <location filename="unetbootin.cpp" line="1806"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1882"/>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Recherche dans &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1886"/>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 trouvé(s) dans &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2071"/>
-        <source>%1 not found</source>
-        <translation>%1 introuvable</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2072"/>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1introuvable. Nécessaire pour le mode d&apos;installation %2.￼
-Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distribution</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2360"/>
-        <source>(Current)</source>
-        <translation>(En cours)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2361"/>
-        <source>(Done)</source>
-        <translation>(Terminé)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2628"/>
-        <source>Configuring grub2 on %1</source>
-        <translation>Configuration de grub2 sur %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2640"/>
-        <source>Configuring grldr on %1</source>
-        <translation>Configuration de grldr sur %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2668"/>
-        <source>Configuring grub on %1</source>
-        <translation>Configuration de grub sur %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2804"/>
-        <source>Installing syslinux to %1</source>
-        <translation>Installation de syslinux sur %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2839"/>
-        <source>Installing extlinux to %1</source>
-        <translation>Installation de extlinux sur %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2904"/>
-        <source>Syncing filesystems</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2916"/>
-        <source>After rebooting, select the </source>
-        <translation>Après avoir redémarré, choisissez le </translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2920"/>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation>Après avoir redémarré, choisissez l&apos;option &quot;démarrez depuis un périphérique USB&quot; dans le menu de démarrage du BIOS. %1
-Redémarrer immédiatement?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="206"/>
@@ -619,6 +430,201 @@ Redémarrer immédiatement?</translation>
         <location filename="unetbootin.cpp" line="826"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>Il n&apos;y a plus d&apos;espace disponible dans le répertoire %1. Pressez &apos;Oui&apos; pour annuler l&apos;installation, &apos;Non&apos; pour ignorer cette erreur et continuer malgré tout l&apos;installation, ou &apos;Non à tout&apos; pour ignorer tout les messages d&apos;erreur liés à un manque d&apos;espace disque.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1262"/>
+        <location filename="unetbootin.cpp" line="1284"/>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Extraction de l&apos;iso compressé :&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1360"/>
+        <source>Extracting files, please wait...</source>
+        <translation>Extraction des fichiers, patientez...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1361"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1362"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Source:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1363"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Destination:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1364"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation>&lt;b&gt;Extrait :&lt;/b&gt; 0 de %1 fichiers</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1367"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1368"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1369"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation>&lt;b&gt;Extrait :&lt;/b&gt; %1 de %2 fichiers</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1711"/>
+        <source>Downloading files, please wait...</source>
+        <translation>Téléchargement des fichiers, veuillez patienter...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1712"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1713"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1714"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation>&lt;b&gt;Téléchargé :&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1791"/>
+        <location filename="unetbootin.cpp" line="1806"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Téléchargé :&lt;/b&gt; %1 sur %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1882"/>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation>Recherche dans &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1886"/>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation>%1/%2 trouvé(s) dans &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2071"/>
+        <source>%1 not found</source>
+        <translation>%1 introuvable</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2072"/>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation>%1introuvable. Nécessaire pour le mode d&apos;installation %2.￼
+Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distribution</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2360"/>
+        <source>(Current)</source>
+        <translation>(En cours)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2361"/>
+        <source>(Done)</source>
+        <translation>(Terminé)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2628"/>
+        <source>Configuring grub2 on %1</source>
+        <translation>Configuration de grub2 sur %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2640"/>
+        <source>Configuring grldr on %1</source>
+        <translation>Configuration de grldr sur %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2668"/>
+        <source>Configuring grub on %1</source>
+        <translation>Configuration de grub sur %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2804"/>
+        <source>Installing syslinux to %1</source>
+        <translation>Installation de syslinux sur %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2839"/>
+        <source>Installing extlinux to %1</source>
+        <translation>Installation de extlinux sur %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2904"/>
+        <source>Syncing filesystems</source>
+        <translation>Synchronisation des systèmes de fichiers</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2916"/>
+        <source>After rebooting, select the </source>
+        <translation>Après avoir redémarré, choisissez le </translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2920"/>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation>Après avoir redémarré, choisissez l&apos;option &quot;démarrez depuis un périphérique USB&quot; dans le menu de démarrage du BIOS. %1
+Redémarrer immédiatement?</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="27"/>
+        <source>
+*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
+        <translation>
+*IMPORTANT* Avant de redémarrer, placer une image ISO d&apos;Ubuntu alternate (pas une version desktop), à la racine de votre disque dur ou de votre clef USB. Elle peut être obtenu depuis cdimage.ubuntu.com.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="199"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* Après le redémarrage, ignorez tout message d&apos;erreur, et choisissez précédent si l&apos;affichage demande un CD, puis allez au menu principal, choisissez l&apos;option &apos;Commencez l&apos;installation&apos;, choisissez &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, entrez &apos;mirrors.kernel.org&apos; lorsqu&apos;est demandé le serveur, et entrez &apos;/centos/%1/os/%2&apos; quand est demandé le dossier.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="255"/>
+        <source>
+*IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
+        <translation>
+*IMPORTANT* Avant de redémarrer, placez un fichier iso d&apos;installation de Debian à la racine de votre disque dur ou USB. Ils peuvent être obtenu à partir de cdimage.debian.org</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="345"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* Après le redémarrage, ignorez tout message d&apos;erreur, et choisissez précédent si l&apos;affichage demande un CD, puis allez au menu principal, choisissez l&apos;option &apos;Commencez l&apos;installation&apos;, choisissez &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, entrez &apos;download.fedora.redhat.com&apos; lorsqu&apos;est demandé le serveur, et entrez &apos;/pub/fedora/linux/development/%1/os&apos; quand est demandé le dossier.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="351"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* Après le redémarrage, ignorez tout message d&apos;erreur, et choisissez précédent si l&apos;affichage demande un CD, puis allez au menu principal, choisissez l&apos;option &apos;Commencez l&apos;installation&apos;, choisissez &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, entrez &apos;download.fedora.redhat.com&apos; lorsqu&apos;est demandé le serveur, et entrez &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; quand est demandé le dossier.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="623"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* Après le redémarrage, ignorez tout message d&apos;erreur, et choisissez précédent si l&apos;affichage demande un CD, puis allez au menu principal, choisissez l&apos;option &apos;Commencez l&apos;installation&apos;, choisissez &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, entrez &apos;download.opensuse.org&apos; lorsqu&apos;est demandé le serveur, et entrez &apos;/factory/repo/oss&apos; quand est demandé le dossier.</translation>
+    </message>
+    <message>
+        <location filename="distrolst.cpp" line="629"/>
+        <source>
+*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
+        <translation>
+*IMPORTANT* Après le redémarrage, ignorez tout message d&apos;erreur, et choisissez précédent si l&apos;affichage demande un CD, puis allez au menu principal, choisissez l&apos;option &apos;Commencez l&apos;installation&apos;, choisissez &apos;Réseau&apos; comme source, &apos;HTTP&apos; comme protocole, entrez &apos;download.opensuse.org&apos; lorsqu&apos;est demandé le serveur, et entrez &apos;/distribution/%1/repo/oss&apos; quand est demandé le dossier.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
@@ -804,8 +810,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>
