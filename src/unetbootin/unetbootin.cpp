@@ -1288,6 +1288,56 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 			}
 		}
 	}
+	QStringList filepathnames = listfilesizedirpair.first.first;
+	QStringList directorypathnames;
+	if (listfilesizedirpair.second.size() > 0)
+	{
+		bool redundanttopleveldir = true;
+		QString redundantrootdirname = listfilesizedirpair.second.at(0);
+		for (int i = 0; i < listfilesizedirpair.second.size(); ++i)
+		{
+			if (listfilesizedirpair.second.at(i).size() < redundantrootdirname.size())
+				redundantrootdirname = listfilesizedirpair.second.at(i);
+		}
+		for (int i = 0; i < listfilesizedirpair.second.size(); ++i) // redundant toplevel path in dirs
+		{
+			if (!listfilesizedirpair.second.at(i).startsWith(redundantrootdirname))
+				redundanttopleveldir = false;
+		}
+		if (redundanttopleveldir)
+		{
+			for (int i = 0; i < listfilesizedirpair.first.first.size(); ++i) // redundant toplevel path in files
+			{
+				if (!listfilesizedirpair.first.first.at(i).startsWith(redundantrootdirname))
+					redundanttopleveldir = false;
+			}
+		}
+		if (redundanttopleveldir)
+		{
+			int rmnumcharsrootdir = redundantrootdirname.size();
+			for (int i = 0; i < listfilesizedirpair.second.size(); ++i)
+			{
+				QString tmpdirectpath = listfilesizedirpair.second[i];
+				tmpdirectpath.remove(0, rmnumcharsrootdir);
+				if (tmpdirectpath.startsWith("/") || tmpdirectpath.startsWith(QDir::toNativeSeparators("/")))
+				{
+					tmpdirectpath.remove(0, 1);
+				}
+				if (!tmpdirectpath.isEmpty())
+				{
+					directorypathnames.append(tmpdirectpath);
+				}
+			}
+			for (int i = 0; i < listfilesizedirpair.first.first.size(); ++i)
+			{
+				filepathnames[i].remove(0, rmnumcharsrootdir);
+				if (filepathnames[i].startsWith("/") || filepathnames[i].startsWith(QDir::toNativeSeparators("/")))
+				{
+					filepathnames[i].remove(0, 1);
+				}
+			}
+		}
+	}
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
 #ifndef NOEXTRACTKERNEL
@@ -1296,7 +1346,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 #ifndef NOEXTRACTINITRD
 	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
 #endif
-	QStringList createdpaths = makepathtree(targetDrive, listfilesizedirpair.second);
+	QStringList createdpaths = makepathtree(targetDrive, directorypathnames);
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	if (ubnpathlF.exists())
 	{
@@ -1309,7 +1359,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		ubnpathlS << createdpaths.at(i) << endl;
 	}
 	ubnpathlF.close();
-	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first);
+	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first, filepathnames);
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
 	if (ubnfilelF.exists())
 	{
@@ -1349,7 +1399,7 @@ QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
 	return createdpaths;
 }
 
-QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist)
+QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist, QStringList outputfilelist)
 {
 	QStringList filelist = filesizelist.first;
 	QStringList extractedfiles;
@@ -1365,10 +1415,10 @@ QStringList unetbootin::extractallfiles(QString archivefile, QString dirxfilesto
 	for (int i = 0; i < filelist.size(); ++i)
 	{
 		pdesc3->setText(tr("<b>Source:</b> %1 (%2)").arg(filelist.at(i)).arg(displayfisize(filesizelist.second.at(i))));
-		pdesc2->setText(tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(filelist.at(i)));
+		pdesc2->setText(tr("<b>Destination:</b> %1%2").arg(dirxfilesto).arg(outputfilelist.at(i)));
 		pdesc1->setText(tr("<b>Extracted:</b> %1 of %2 files").arg(i).arg(filelist.size()));
 		tprogress->setValue(i);
-		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(filelist.at(i)), archivefile))
+		if (extractfile(filelist.at(i), QString("%1%2").arg(dirxfilesto).arg(outputfilelist.at(i)), archivefile))
 		{
 			extractedfiles.append(filelist.at(i));
 		}

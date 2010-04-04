@@ -203,7 +203,7 @@ public:
 	QStringList filteroutlistL(QStringList listofdata, QList<QRegExp> listofmatches);
 	void extractiso(QString isofile, QString exoutputdir);
 	QStringList makepathtree(QString dirmkpathw, QStringList pathlist);
-	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist);
+	QStringList extractallfiles(QString archivefile, QString dirxfilesto, QPair<QStringList, QList<quint64> > filesizelist, QStringList outputfilelist);
 	QString getgrubcfgargs(QString cfgfile);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
 	QString getFirstTextBlock(QString fulltext);
