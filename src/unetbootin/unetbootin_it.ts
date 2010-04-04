@@ -254,7 +254,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>Disco rigido</translation>
     </message>
@@ -276,7 +276,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>Periferica USB</translation>
     </message>
@@ -562,17 +562,17 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <translation>Installo extlinux su %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizzando filesystems</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation></translation>

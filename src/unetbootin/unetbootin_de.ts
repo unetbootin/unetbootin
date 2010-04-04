@@ -253,7 +253,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>Festplatte</translation>
     </message>
@@ -275,7 +275,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>USB-Laufwerk</translation>
     </message>
@@ -561,17 +561,17 @@ Installieren Sie das Paket &quot;%3&quot; oder das entsprechende Paket aus ihrer
         <translation>Installiere Extlinux auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>Synchronisiere Dateisysteme</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation>Nach dem Neustart, wähle </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Wählen Sie nach dem Neustart die USB Boot Option im BIOS Boot Menü aus.%1

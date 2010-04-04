@@ -93,7 +93,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>Hårddisk</translation>
     </message>
@@ -115,7 +115,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>USB-enhet</translation>
     </message>
@@ -401,17 +401,17 @@ Installera paketet &quot;%3&quot; eller motsvarande i din distribution.</transla
         <translation>Installerar extlinux på %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>Synkroniserar filsystem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation>Efter omstart, välj </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Efter omstart, välj uppstartsalternativet för USB i uppstartsmenyn i ditt BIOS.%1

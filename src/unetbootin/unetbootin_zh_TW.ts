@@ -151,7 +151,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>硬碟</translation>
     </message>
@@ -173,7 +173,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>隨身碟</translation>
     </message>
@@ -459,17 +459,17 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>安裝 extlinux 至 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>正在同步檔案系統</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation>重開機後，請選擇 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重開機後，請選擇 BIOS 開機選單當中的 USB 開機選項。%1

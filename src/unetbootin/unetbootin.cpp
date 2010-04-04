@@ -3020,10 +3020,9 @@ void unetbootin::runinstusb()
 			#ifdef Q_OS_UNIX
 			if (isext2)
 			{
-				QDir exld(targetPath);
-				syslpathloc.replace("syslinux", "extlinux");
-				exld.mkpath(syslpathloc);
 				QFile::copy(QString("%1%2").arg(targetPath).arg(locatedsyslinuxcfgfiles.at(j)), QString("%1%2extlinux.conf").arg(targetPath).arg(syslpathloc));
+				QString extlpathloc = QString(syslpathloc).replace("syslinux", "extlinux");
+				callexternapp("ln", QString("-s %1 %2").arg(syslpathloc).arg(extlpathloc));
 			}
 			#endif
 		}

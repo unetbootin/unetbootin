@@ -256,7 +256,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>Pevný disk</translation>
     </message>
@@ -278,7 +278,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>Mechanika USB</translation>
     </message>
@@ -564,17 +564,17 @@ Nainstalujte balík &quot;%3&quot; nebo ekvivalent pro vaši distribuci.</transl
         <translation>Instalace extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizace souborových systémů</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation>Po restartu zvolte </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1

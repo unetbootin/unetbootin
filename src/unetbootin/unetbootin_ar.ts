@@ -262,7 +262,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Hard Disk</source>
         <translation>القرص الصلب</translation>
     </message>
@@ -284,7 +284,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3059"/>
+        <location filename="unetbootin.cpp" line="3058"/>
         <source>USB Drive</source>
         <translation>مشغل USB</translation>
     </message>
@@ -569,17 +569,17 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3045"/>
+        <location filename="unetbootin.cpp" line="3044"/>
         <source>Syncing filesystems</source>
         <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3056"/>
         <source>After rebooting, select the </source>
         <translation>بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3061"/>
+        <location filename="unetbootin.cpp" line="3060"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
