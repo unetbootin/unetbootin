@@ -957,7 +957,7 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
-	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.igz" << "initrd.gz" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz" << "initram" << "initr" << "init" << "ram";
+	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.lz" << "initrd.igz" << "initrd.gz" << "initrd.xz" << "initrd.lzma" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz" << "initram" << "initr" << "init" << "ram" << ".lz" << ".lzma" << ".xz";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
@@ -972,7 +972,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 //		{
 //			continue;
 //		}
-		if (archivefileconts.second.at(i) > 256000 && archivefileconts.second.at(i) < 209715200) // between 250 KB and 200 MB
+		if (archivefileconts.second.at(i) >= 128000 && archivefileconts.second.at(i) < 209715200) // between 128 KB and 200 MB
 		{
 			tnarchivefileconts.append(archivefileconts.first.at(i));
 		}
