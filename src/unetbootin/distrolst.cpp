@@ -883,11 +883,13 @@ if (nameDistro == "xPUD")
 	{
 		downloadfile("http://xpud.org/xpud-latest-snapshot.php", isotmpf);
 	}
+	/*
 	initrdLoc = "";
 	kernelLoc = "/boot/xpud";
 	initrdOpts = "";
 	initrdLine = "";
 	slinitrdLine = "";
+	*/
 	extractiso(isotmpf, targetPath);
 }
 
