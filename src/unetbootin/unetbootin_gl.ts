@@ -121,7 +121,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3064"/>
         <source>Hard Disk</source>
         <translation>Disco ríxido</translation>
     </message>
@@ -143,7 +143,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3058"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>USB Drive</source>
         <translation>Unidade USB</translation>
     </message>
@@ -429,17 +429,17 @@ Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3044"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando o sistema de ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3056"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>After rebooting, select the </source>
         <translation>Despois de reiniciar, elixa o </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3060"/>
+        <location filename="unetbootin.cpp" line="3070"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1

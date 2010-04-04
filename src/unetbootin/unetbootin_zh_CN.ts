@@ -263,7 +263,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3064"/>
         <source>Hard Disk</source>
         <translation>Hard Disk</translation>
     </message>
@@ -285,7 +285,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3058"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>USB Drive</source>
         <translation>USB 驱动器</translation>
     </message>
@@ -571,17 +571,17 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>安装 extlinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3044"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Syncing filesystems</source>
         <translation>同步文件系统</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3056"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>After rebooting, select the </source>
         <translation>重启动后，请选择 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3060"/>
+        <location filename="unetbootin.cpp" line="3070"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。

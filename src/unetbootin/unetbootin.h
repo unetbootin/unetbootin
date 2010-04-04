@@ -230,7 +230,7 @@ public:
 	QStringList listcurdrives();
 	QStringList listsanedrives();
 	QStringList listalldrives();
-	void replaceTextInFile(QString repfilepath, QString replaceme, QString replacewith);
+	void replaceTextInFile(QString repfilepath, QRegExp replaceme, QString replacewith);
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
 	QString locatedevicenode(QString mountpoint);

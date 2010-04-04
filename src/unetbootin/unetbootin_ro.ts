@@ -147,7 +147,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3064"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -169,7 +169,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3058"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>USB Drive</source>
         <translation>Disc USB</translation>
     </message>
@@ -455,17 +455,17 @@ Instalaţi pachetul &quot;%3&quot; sau pachetul echivalent din distribuţia voas
         <translation>Se instalează extlinux in %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3044"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Syncing filesystems</source>
         <translation>Se sincronizează fişierele-sistem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3056"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>After rebooting, select the </source>
         <translation>După repornire, selectaţi </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3060"/>
+        <location filename="unetbootin.cpp" line="3070"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>După repornire, selectaţi optiunea pentru bootare USB din meniul de boot al BIOS-lui.%1

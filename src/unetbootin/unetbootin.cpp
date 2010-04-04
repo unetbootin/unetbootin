@@ -1341,7 +1341,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	if (installType == tr("USB Drive"))
 	{
-		QStringList syslinuxfilepaths = QStringList() << "boot/syslinux/syslinux.cfg" << "syslinux/syslinux.cfg" << "syslinux.cfg";
+		QStringList syslinuxfilepaths = QStringList() << "boot/syslinux/syslinux.cfg" << "syslinux/syslinux.cfg" << "syslinux.cfg" << "isolinux.cfg" << "extlinux.conf";
 		if (QString(QDir::toNativeSeparators("/")) != QString("/"))
 		{
 			syslinuxfilepaths << QString("boot%1syslinux%1syslinux.cfg").arg(QDir::toNativeSeparators("/")) <<  QString("syslinux%1syslinux.cfg").arg(QDir::toNativeSeparators("/"));
@@ -2887,7 +2887,7 @@ void unetbootin::mvFile(const QString &fn, const QString &outfn)
 #endif
 }
 
-void unetbootin::replaceTextInFile(QString repfilepath, QString replaceme, QString replacewith)
+void unetbootin::replaceTextInFile(QString repfilepath, QRegExp replaceme, QString replacewith)
 {
 	QFile repfileF(repfilepath);
 	randtmpfile nrepfileF(QFileInfo(repfilepath).canonicalPath(), "cfg");
@@ -3005,6 +3005,7 @@ void unetbootin::runinstusb()
 		for (int j = 0; j < locatedsyslinuxcfgfiles.size(); ++j)
 		{
 			QString syslpathloc = QFileInfo(locatedsyslinuxcfgfiles.at(j)).path();
+			if (syslpathloc == ".") syslpathloc = "";
 			if (syslpathloc.contains("/"))
 			{
 				if (!syslpathloc.endsWith("/"))
@@ -3015,14 +3016,23 @@ void unetbootin::runinstusb()
 				if (!syslpathloc.endsWith(QDir::toNativeSeparators("/")))
 					syslpathloc.append(QDir::toNativeSeparators("/"));
 			}
+			QString abssyslpathloc = QDir::fromNativeSeparators(QString(syslpathloc));
+			if (!abssyslpathloc.startsWith("/"))
+				abssyslpathloc.prepend("/");
 			instIndvfl("menu.c32", QString("%1%2menu.c32").arg(targetPath).arg(syslpathloc));
-			replaceTextInFile(QString("%1%2").arg(targetPath).arg(locatedsyslinuxcfgfiles.at(j)), "vesamenu.c32", "menu.c32");
+			QString syslrealcfgloc = QString(locatedsyslinuxcfgfiles.at(j)).replace("isolinux.cfg", "syslinux.cfg").replace("extlinux.conf", "syslinux.cfg");
+			if (syslrealcfgloc != locatedsyslinuxcfgfiles.at(j))
+			{
+				QFile::copy(QString("%1%2").arg(targetPath).arg(locatedsyslinuxcfgfiles.at(j)), QString("%1%2").arg(targetPath).arg(syslrealcfgloc));
+			}
+			replaceTextInFile(QString("%1%2").arg(targetPath).arg(syslrealcfgloc), QRegExp("\\S{0,}vesamenu.c32"), QString("%1menu.c32").arg(abssyslpathloc));
 			#ifdef Q_OS_UNIX
 			if (isext2)
 			{
 				QFile::copy(QString("%1%2").arg(targetPath).arg(locatedsyslinuxcfgfiles.at(j)), QString("%1%2extlinux.conf").arg(targetPath).arg(syslpathloc));
 				QString extlpathloc = QString(syslpathloc).replace("syslinux", "extlinux");
-				callexternapp("ln", QString("-s %1 %2").arg(syslpathloc).arg(extlpathloc));
+				if (syslpathloc != extlpathloc)
+					callexternapp("ln", QString("-s %1 %2").arg(syslpathloc).arg(extlpathloc));
 			}
 			#endif
 		}

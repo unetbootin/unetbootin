@@ -246,7 +246,7 @@ Reboot now?</translation>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3064"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -268,7 +268,7 @@ Reboot now?</translation>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3058"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>USB Drive</source>
         <translation>USB Disc</translation>
     </message>
@@ -553,17 +553,17 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3044"/>
+        <location filename="unetbootin.cpp" line="3054"/>
         <source>Syncing filesystems</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3056"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>After rebooting, select the </source>
         <translation>Després de reiniciar, seleccioneu la </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3060"/>
+        <location filename="unetbootin.cpp" line="3070"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Després de reiniciar, seleccioneu l&apos;USB boot opció en el menu de la BIOS.%1
