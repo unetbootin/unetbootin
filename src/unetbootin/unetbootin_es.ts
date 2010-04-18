@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-14 12:27-0400
-PO-Revision-Date: 2010-03-14 06:18+0000
-Last-Translator: Jorge Prediger &lt;jorgeprediger@gmail.com&gt;
+POT-Creation-Date: 2010-03-27 16:54-0400
+PO-Revision-Date: 2010-04-18 00:44+0000
+Last-Translator: Canofeles &lt;canofe2@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-27 20:52+0000
+X-Launchpad-Export-Date: 2010-04-18 16:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -869,7 +869,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="255"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Antes de reiniciar, coloque una imagen ISO del instalador Debian en el directorio raíz de su disco duro o unidad USB. Éstas pueden obtenerse desde cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="345"/>
@@ -912,7 +913,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; BackTrack es una distribución enfocada en el análisis de redes y pruebas de penetración.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; BackTrack se arranca y ejecuta en modo vivo; no es necesario instalarlo para poderlo usar.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
@@ -932,7 +933,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="52"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Debian es una distribución Linux desarrollada por la comunidad, que soporta una amplia variedad de arquitecturas y ofrece un gran repositorio de paquetes.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión NetInstall permite la instalación por FTP. Si desea usar una imagen ISO de instalación previamente descargada, use la opción HdMedia, y coloque la imagen ISO de instalación en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="58"/>
@@ -967,7 +968,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página del Proyecto:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeNAS es una distribución NAS (Network-Attached Storage)de código abierto basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión LiveCD crea una unidad RAM para FreeNAS, y usa un disquete o unidad de memoria USB con formato FAT para almacenar el archivo de configuración. La versión incluida permite su instalación a disco duro.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -1002,7 +1003,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="133"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Kubuntu es un derivado oficial de Ubuntu que utiliza el escritorio KDE.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional. La versión NetInstall permite realizar la instalación  version por FTP, y puede instalar Kubuntu y cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO del instalador en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="138"/>
@@ -1084,7 +1085,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super OS es un derivado no oficial de Ubuntu que incluye software adicionar por defecto. Requiere una unidad USB de 2GB para instalarse.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="219"/>
@@ -1094,7 +1095,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="224"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu es una distrubicón amigable con el usuario basada en Debian. Actualmente es la distribución Linux de escritorio más popular.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional. La versión NetInstall permite realizar la instalación por FTP, y puede instalar Kubuntu y cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="229"/>
@@ -1104,7 +1105,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="234"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Xubuntu es un derivado oficial de Ubuntu que utiliza el escritorio XFCE.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual el instalador puede iniciarse de forma opcional. La versión NetInstall le permite realizar la instalación por FTP, y puede instalar Kubuntu o cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO del instalador alternativo en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="239"/>

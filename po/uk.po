@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 12:27-0400\n"
-"PO-Revision-Date: 2010-01-29 07:57+0000\n"
-"Last-Translator: UNetbootin Team <Unknown>\n"
+"POT-Creation-Date: 2010-03-27 16:54-0400\n"
+"PO-Revision-Date: 2010-04-10 19:33+0000\n"
+"Last-Translator: Kisenko Vladimir <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-27 20:52+0000\n"
+"X-Launchpad-Export-Date: 2010-04-18 16:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "X-Language: uk_UA\n"
 
@@ -20,29 +20,29 @@ msgstr "Зліва направо"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2370
-#: unetbootin.cpp:2383 unetbootin.cpp:2541 unetbootin.cpp:2893
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2378
+#: unetbootin.cpp:2391 unetbootin.cpp:2549 unetbootin.cpp:2914
 msgid "Hard Disk"
 msgstr "Жорсткий диск"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
 #: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1322
-#: unetbootin.cpp:1719 unetbootin.cpp:1761 unetbootin.cpp:2374
-#: unetbootin.cpp:2399 unetbootin.cpp:2545 unetbootin.cpp:2897
+#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1330
+#: unetbootin.cpp:1727 unetbootin.cpp:1769 unetbootin.cpp:2382
+#: unetbootin.cpp:2407 unetbootin.cpp:2553 unetbootin.cpp:2918
 msgid "USB Drive"
-msgstr "Пристрій USB"
+msgstr "USB-пристрій"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2447
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2455
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2439
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2447
 msgid "Floppy"
 msgstr "Дискета"
 
@@ -55,7 +55,7 @@ msgstr "будь-який"
 #. ts-context unetbootin
 #: unetbootin.cpp:530
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "Відкрити файл з образом диску"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:548
@@ -75,7 +75,7 @@ msgstr "Відкрити файл конфігурації завантажув�
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Insert a USB flash drive"
-msgstr "Вставте USB флешку"
+msgstr "Вставте USB-накопичувач"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:587
@@ -89,7 +89,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:602
 msgid "%1 not mounted"
-msgstr "%1 не примонований"
+msgstr "%1 не примонтований"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:603
@@ -97,8 +97,8 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Спочатку потрібно примонтувати USB-накопичувача %1. Більшість дистрибутивів "
-"зроблять його автоматично, якщо вийняти та вставити знову USB-накопичувач."
+"Спочатку потрібно примонтувати USB-накопичувач %1. Більшість дистрибутивів "
+"зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:618
@@ -133,37 +133,37 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:663
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "Файл з образом диску не знайдено"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:664
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "Вказаний образ диску %1 не існує."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:678
 msgid "Kernel file not found"
-msgstr ""
+msgstr "Файл з ядром не знайдено"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:679
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "Вказане ядро %1 не існує."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:693
 msgid "Initrd file not found"
-msgstr ""
+msgstr "Initrd не знайдено."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:694
 msgid "The specified initrd file %1 does not exist."
-msgstr ""
+msgstr "Вказаний файл initrd %1 не існує."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:798
 msgid "%1 exists, overwrite?"
-msgstr ""
+msgstr "%1 існує, перезаписати?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:799
@@ -176,7 +176,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:825
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "Не вистачає місця на%1 , відмінити встановлення?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:826
@@ -192,87 +192,87 @@ msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>Витягую стиснений iso-образ:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1352
+#: unetbootin.cpp:1360
 msgid "Extracting files, please wait..."
 msgstr "Витягування файлів, будь-ласка, зачекайте..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1353
+#: unetbootin.cpp:1361
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Архів:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1354
+#: unetbootin.cpp:1362
 msgid "<b>Source:</b>"
 msgstr "<b>Джерело:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1355
+#: unetbootin.cpp:1363
 msgid "<b>Destination:</b>"
 msgstr "<b>Призначення:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1356
+#: unetbootin.cpp:1364
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Витягнено:</b> 0 of %1 файлів"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1359
+#: unetbootin.cpp:1367
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Джерело:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1360
+#: unetbootin.cpp:1368
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Призначення:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1361
+#: unetbootin.cpp:1369
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Витягнено:</b> %1 of %2 файлів"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1703
+#: unetbootin.cpp:1711
 msgid "Downloading files, please wait..."
 msgstr "Завантаження файлів, будь-ласка, зачекайте..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1704
+#: unetbootin.cpp:1712
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Джерело:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1705
+#: unetbootin.cpp:1713
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Призначення:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1706
+#: unetbootin.cpp:1714
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Завантажено:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1783 unetbootin.cpp:1798
+#: unetbootin.cpp:1791 unetbootin.cpp:1806
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Завантажено:</b> %1 of %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1874
+#: unetbootin.cpp:1882
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Пошук в <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1878
+#: unetbootin.cpp:1886
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 співпадає з <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2063
+#: unetbootin.cpp:2071
 msgid "%1 not found"
 msgstr "%1 не знайдено"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2064
+#: unetbootin.cpp:2072
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -282,52 +282,52 @@ msgstr ""
 "використовується."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2352
+#: unetbootin.cpp:2360
 msgid "(Current)"
 msgstr "(Поточний)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2353
+#: unetbootin.cpp:2361
 msgid "(Done)"
 msgstr "(Виконано)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2620
+#: unetbootin.cpp:2628
 msgid "Configuring grub2 on %1"
 msgstr "Налаштування grub2 на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2632
+#: unetbootin.cpp:2640
 msgid "Configuring grldr on %1"
 msgstr "Налаштування grldr на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2660
+#: unetbootin.cpp:2668
 msgid "Configuring grub on %1"
 msgstr "Налаштування grub на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2782
+#: unetbootin.cpp:2804
 msgid "Installing syslinux to %1"
 msgstr "Встановлення syslinux на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2817
+#: unetbootin.cpp:2839
 msgid "Installing extlinux to %1"
 msgstr "Встановлення extlinux в %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2883
+#: unetbootin.cpp:2904
 msgid "Syncing filesystems"
-msgstr "Синхронізація файлової системи"
+msgstr "Синхронізація файлових систем"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2895
+#: unetbootin.cpp:2916
 msgid "After rebooting, select the "
 msgstr "Після перезавантаження оберіть "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2899
+#: unetbootin.cpp:2920
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -343,6 +343,10 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*ВАЖЛИВО* Перед перезавантаженням, скопіюйте Ubuntu alternate (не desktop) "
+"install iso файл в кореневий каталог вашого жорсткого або USB диску. Цей "
+"файл може бути отриманий з cdimage.ubuntu.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:199
@@ -363,6 +367,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*ВАЖЛИВО* Перед перезавантаженням, скопіюйте Debian install iso файл в "
+"кореневий каталог вашого жорсткого або USB диску. Цей файл можна завантажити "
+"з cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:345
@@ -417,7 +425,7 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Ласкаво порсимо до <a "
+"Ласкаво просимо до <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
 "Netboot Installer. Використання: <ol><li>Оберіть дистрибутив операційної "
 "системи та версію для завантаження зі списку або вкажіть файли вручну "
@@ -450,6 +458,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Домашня сторінка:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Опис:</b> BackTrack "
+"дистрибутив для аналізу мережі та перевірки проникнення.<br/><b>Примітка "
+"щодо встановлення:</b> BackTrack завантажується  і працює у live режимі; не "
+"потребує встановлення для використання."
 
 #. ts-context unetbootin
 #: distrover.cpp:37
@@ -1050,7 +1063,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr ""
+msgstr "Оберіть зі списку дистрибутивів"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
@@ -1060,7 +1073,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:127
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Оберіть файл з образом диску для завантаження"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:130
@@ -1122,17 +1135,17 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:548
 msgid "Reboot Now"
-msgstr ""
+msgstr "Перезавантажитись"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:555
 msgid "Exit"
-msgstr ""
+msgstr "Вийти"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:647
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Завантаження файлів"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:654
@@ -1147,12 +1160,12 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:668
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Встановлення завершено, Перезавантаження"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:464 unetbootin.ui:483
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Оберіть диск на який буде встановлено"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:467
@@ -1172,47 +1185,49 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Оберіть версію дистрибутива"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:307
 msgid "Select disk image file"
-msgstr ""
+msgstr "Оберіть файл з образом диску"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:148
 msgid "Select the disk image type"
-msgstr ""
+msgstr "Оберіть тип образу диску"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:203
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
+"Оберіть файл з образом гнучкого/жорсткого диску, або з CD-образом  (ISO) для "
+"завантаження"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:167 unetbootin.ui:218
 msgid "Specify a kernel file to load"
-msgstr ""
+msgstr "Оберіть файл ядра для завантаження"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Select kernel file"
-msgstr ""
+msgstr "Оберіть файл ядра"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:253 unetbootin.ui:272
 msgid "Specify an initrd file to load"
-msgstr ""
+msgstr "Оберіть файл initrd для завантаження"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:332
 msgid "Select initrd file"
-msgstr ""
+msgstr "Оберіть файл initrd"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:357
@@ -1265,12 +1280,12 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr ""
+msgstr "Видалення завершено"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "%1 видалено"
 
 #. ts-context uninstaller
 #: main.cpp:318
@@ -1292,7 +1307,7 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr ""
+msgstr "%1 вже встановлено. Видалити існуючу версію?"
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a href=\"http://www.remote-"

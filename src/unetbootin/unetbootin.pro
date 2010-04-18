@@ -26,6 +26,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_et.ts \
     unetbootin_el.ts \
     unetbootin_fi.ts \
+    unetbootin_fo.ts \
     unetbootin_gl.ts \
     unetbootin_ru.ts \
     unetbootin_ro.ts \

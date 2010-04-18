@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-14 12:27-0400
-PO-Revision-Date: 2010-01-29 07:57+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-03-27 16:54-0400
+PO-Revision-Date: 2010-04-10 19:33+0000
+Last-Translator: Kisenko Vladimir &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-27 20:52+0000
+X-Launchpad-Export-Date: 2010-04-18 16:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -67,7 +67,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2631"/>
         <location filename="unetbootin.cpp" line="3081"/>
         <source>USB Drive</source>
-        <translation>Пристрій USB</translation>
+        <translation>USB-пристрій</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="166"/>
@@ -104,7 +104,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="531"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Відкрити файл з образом диску</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="549"/>
@@ -124,7 +124,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation>Вставте USB флешку</translation>
+        <translation>Вставте USB-накопичувач</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
@@ -134,12 +134,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="603"/>
         <source>%1 not mounted</source>
-        <translation>%1 не примонований</translation>
+        <translation>%1 не примонтований</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="604"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Спочатку потрібно примонтувати USB-накопичувача %1. Більшість дистрибутивів зроблять його автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
+        <translation>Спочатку потрібно примонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="619"/>
@@ -174,37 +174,37 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="664"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>Файл з образом диску не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Вказаний образ диску %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="679"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>Файл з ядром не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="680"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Вказане ядро %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="694"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>Initrd не знайдено.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="695"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Вказаний файл initrd %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 існує, перезаписати?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
@@ -214,7 +214,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="826"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>Не вистачає місця на%1 , відмінити встановлення?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="827"/>
@@ -353,7 +353,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3067"/>
         <source>Syncing filesystems</source>
-        <translation>Синхронізація файлової системи</translation>
+        <translation>Синхронізація файлових систем</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3079"/>
@@ -371,7 +371,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Перед перезавантаженням, скопіюйте Ubuntu alternate (не desktop) install iso файл в кореневий каталог вашого жорсткого або USB диску. Цей файл може бути отриманий з cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="199"/>
@@ -383,7 +384,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="255"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Перед перезавантаженням, скопіюйте Debian install iso файл в кореневий каталог вашого жорсткого або USB диску. Цей файл можна завантажити з cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="345"/>
@@ -412,7 +414,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Ласкаво порсимо до &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Використання: &lt;ol&gt;&lt;li&gt;Оберіть дистрибутив операційної системи та версію для завантаження зі списку або вкажіть файли вручну нижче.&lt;/li&gt;&lt;li&gt;Оберіть тип встановлення та натисніть OK для початку процесу.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Ласкаво просимо до &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Використання: &lt;ol&gt;&lt;li&gt;Оберіть дистрибутив операційної системи та версію для завантаження зі списку або вкажіть файли вручну нижче.&lt;/li&gt;&lt;li&gt;Оберіть тип встановлення та натисніть OK для початку процесу.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
@@ -422,7 +424,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; BackTrack дистрибутив для аналізу мережі та перевірки проникнення.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; BackTrack завантажується  і працює у live режимі; не потребує встановлення для використання.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
@@ -667,7 +669,7 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Оберіть зі списку дистрибутивів</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
@@ -677,7 +679,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="127"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Оберіть файл з образом диску для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="130"/>
@@ -731,17 +733,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Перезавантажитись</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Вийти</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Завантаження файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="654"/>
@@ -756,13 +758,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Встановлення завершено, Перезавантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Оберіть диск на який буде встановлено</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="467"/>
@@ -783,12 +785,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Оберіть версію дистрибутива</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="307"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Оберіть файл з образом диску</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="246"/>
@@ -796,39 +798,39 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="335"/>
         <location filename="unetbootin.ui" line="360"/>
         <source>...</source>
-        <translation></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="148"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Оберіть тип образу диску</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="203"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Оберіть файл з образом гнучкого/жорсткого диску, або з CD-образом  (ISO) для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="167"/>
         <location filename="unetbootin.ui" line="218"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Оберіть файл ядра для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
-        <translation></translation>
+        <translation>Оберіть файл ядра</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="253"/>
         <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
-        <translation></translation>
+        <translation>Оберіть файл initrd для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="332"/>
         <source>Select initrd file</source>
-        <translation></translation>
+        <translation>Оберіть файл initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="357"/>
@@ -876,12 +878,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Видалення завершено</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 видалено</translation>
     </message>
     <message>
         <location filename="main.cpp" line="318"/>
@@ -901,7 +903,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 вже встановлено. Видалити існуючу версію?</translation>
     </message>
 </context>
 </TS>

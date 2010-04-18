@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 12:27-0400\n"
-"PO-Revision-Date: 2010-03-14 06:18+0000\n"
-"Last-Translator: Jorge Prediger <jorgeprediger@gmail.com>\n"
+"POT-Creation-Date: 2010-03-27 16:54-0400\n"
+"PO-Revision-Date: 2010-04-18 00:44+0000\n"
+"Last-Translator: Canofeles <canofe2@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-27 20:52+0000\n"
+"X-Launchpad-Export-Date: 2010-04-18 16:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -19,29 +19,29 @@ msgstr "De izquierda a derecha"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2370
-#: unetbootin.cpp:2383 unetbootin.cpp:2541 unetbootin.cpp:2893
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2378
+#: unetbootin.cpp:2391 unetbootin.cpp:2549 unetbootin.cpp:2914
 msgid "Hard Disk"
 msgstr "Disco duro"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
 #: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1322
-#: unetbootin.cpp:1719 unetbootin.cpp:1761 unetbootin.cpp:2374
-#: unetbootin.cpp:2399 unetbootin.cpp:2545 unetbootin.cpp:2897
+#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1330
+#: unetbootin.cpp:1727 unetbootin.cpp:1769 unetbootin.cpp:2382
+#: unetbootin.cpp:2407 unetbootin.cpp:2553 unetbootin.cpp:2918
 msgid "USB Drive"
 msgstr "Unidad USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2447
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2455
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2439
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2447
 msgid "Floppy"
 msgstr "Disquete"
 
@@ -200,87 +200,87 @@ msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>Extrayendo iso comprimida:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1352
+#: unetbootin.cpp:1360
 msgid "Extracting files, please wait..."
 msgstr "Extrayendo archivos, por favor espere..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1353
+#: unetbootin.cpp:1361
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archivo:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1354
+#: unetbootin.cpp:1362
 msgid "<b>Source:</b>"
 msgstr "<b>Origen:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1355
+#: unetbootin.cpp:1363
 msgid "<b>Destination:</b>"
 msgstr "<b>Destino:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1356
+#: unetbootin.cpp:1364
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Extraídos:</b> 0 de %1 archivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1359
+#: unetbootin.cpp:1367
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Origen:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1360
+#: unetbootin.cpp:1368
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Destino:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1361
+#: unetbootin.cpp:1369
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extraídos:</b> %1 de %2 archivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1703
+#: unetbootin.cpp:1711
 msgid "Downloading files, please wait..."
 msgstr "Descargando archivos, por favor espere..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1704
+#: unetbootin.cpp:1712
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Origen:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1705
+#: unetbootin.cpp:1713
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Destino:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1706
+#: unetbootin.cpp:1714
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Descargados:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1783 unetbootin.cpp:1798
+#: unetbootin.cpp:1791 unetbootin.cpp:1806
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Descargado(s):</b> %1 de %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1874
+#: unetbootin.cpp:1882
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Buscando en <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1878
+#: unetbootin.cpp:1886
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 coincidencias en <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2063
+#: unetbootin.cpp:2071
 msgid "%1 not found"
 msgstr "%1 no encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2064
+#: unetbootin.cpp:2072
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -289,52 +289,52 @@ msgstr ""
 "Instala el paquete «%3» o el equivalente en tu distribución."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2352
+#: unetbootin.cpp:2360
 msgid "(Current)"
 msgstr "(Actual)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2353
+#: unetbootin.cpp:2361
 msgid "(Done)"
 msgstr "(Hecho)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2620
+#: unetbootin.cpp:2628
 msgid "Configuring grub2 on %1"
 msgstr "Configurando grub2 en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2632
+#: unetbootin.cpp:2640
 msgid "Configuring grldr on %1"
 msgstr "Configurando grldr en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2660
+#: unetbootin.cpp:2668
 msgid "Configuring grub on %1"
 msgstr "Configurando grub en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2782
+#: unetbootin.cpp:2804
 msgid "Installing syslinux to %1"
 msgstr "Instalando syslinux en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2817
+#: unetbootin.cpp:2839
 msgid "Installing extlinux to %1"
 msgstr "Instalando extlinux en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2883
+#: unetbootin.cpp:2904
 msgid "Syncing filesystems"
 msgstr "Sincronizando el sistema de archivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2895
+#: unetbootin.cpp:2916
 msgid "After rebooting, select the "
 msgstr "Después de reiniciar, seleccione el "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2899
+#: unetbootin.cpp:2920
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -383,6 +383,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*IMPORTANTE* Antes de reiniciar, coloque una imagen ISO del instalador "
+"Debian en el directorio raíz de su disco duro o unidad USB. Éstas pueden "
+"obtenerse desde cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:345
@@ -497,6 +501,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Página de inicio:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Descripción:</b> "
+"BackTrack es una distribución enfocada en el análisis de redes y pruebas de "
+"penetración.<br/><b>Notas de la instalación:</b> BackTrack se arranca y "
+"ejecuta en modo vivo; no es necesario instalarlo para poderlo usar."
 
 #. ts-context unetbootin
 #: distrover.cpp:37
@@ -559,6 +568,14 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Página de inicio:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Descripción:"
+"</b> Debian es una distribución Linux desarrollada por la comunidad, que "
+"soporta una amplia variedad de arquitecturas y ofrece un gran repositorio de "
+"paquetes.<br/><b>Notas de la instalación:</b> La versión NetInstall permite "
+"la instalación por FTP. Si desea usar una imagen ISO de instalación "
+"previamente descargada, use la opción HdMedia, y coloque la imagen ISO de "
+"instalación en el directorio raíz de su disco duro o unidad USB"
 
 #. ts-context unetbootin
 #: distrover.cpp:58
@@ -678,6 +695,13 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Página del Proyecto:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Descripción:</"
+"b> FreeNAS es una distribución NAS (Network-Attached Storage)de código "
+"abierto basada en FreeBSD.<br/><b>Notas de la instalación:</b> La versión "
+"LiveCD crea una unidad RAM para FreeNAS, y usa un disquete o unidad de "
+"memoria USB con formato FAT para almacenar el archivo de configuración. La "
+"versión incluida permite su instalación a disco duro."
 
 #. ts-context unetbootin
 #: distrover.cpp:98
@@ -790,6 +814,16 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Página de inicio:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descripció"
+"n:</b> Kubuntu es un derivado oficial de Ubuntu que utiliza el escritorio "
+"KDE.<br/><b>Notas de la instalación:</b> La versión Live le permite iniciar "
+"en modo vivo, desde el cual se puede iniciar el instalador de forma "
+"opcional. La versión NetInstall permite realizar la instalación  version por "
+"FTP, y puede instalar Kubuntu y cualquier otro derivado oficial de Ubuntu. "
+"Si desea usar una imagen ISO alternativa (no de escritorio) previamente "
+"descargada, use la opción HdMedia, y coloque la imagen ISO del instalador en "
+"el directorio raíz de su disco duro o unidad USB"
 
 #. ts-context unetbootin
 #: distrover.cpp:138
@@ -1060,6 +1094,13 @@ msgid ""
 "drive to install.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Página de inicio:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Descripción:</b> Super OS es un derivado no oficial de Ubuntu "
+"que incluye software adicionar por defecto. Requiere una unidad USB de 2GB "
+"para instalarse.<br/><b>Notas de la instalación:</b> La versión Live le "
+"permite iniciar en modo vivo, desde el cual se puede iniciar el instalador "
+"de forma opcional."
 
 #. ts-context unetbootin
 #: distrover.cpp:219
@@ -1091,6 +1132,17 @@ msgid ""
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
 msgstr ""
+"<b>Página de inicio:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Descripción:"
+"</b> Ubuntu es una distrubicón amigable con el usuario basada en Debian. "
+"Actualmente es la distribución Linux de escritorio más popular.<br/><b>Notas "
+"de la instalación:</b> La versión Live le permite iniciar en modo vivo, "
+"desde el cual se puede iniciar el instalador de forma opcional. La versión "
+"NetInstall permite realizar la instalación por FTP, y puede instalar Kubuntu "
+"y cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO "
+"alternativa (no de escritorio) previamente descargada, use la opción "
+"HdMedia, y coloque la imagen ISO en el directorio raíz de su disco duro o "
+"unidad USB"
 
 #. ts-context unetbootin
 #: distrover.cpp:229
@@ -1122,6 +1174,16 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Página de inicio:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descripció"
+"n:</b> Xubuntu es un derivado oficial de Ubuntu que utiliza el escritorio "
+"XFCE.<br/><b>Notas de la instalación:</b> La versión Live le permite iniciar "
+"en modo vivo, desde el cual el instalador puede iniciarse de forma opcional. "
+"La versión NetInstall le permite realizar la instalación por FTP, y puede "
+"instalar Kubuntu o cualquier otro derivado oficial de Ubuntu. Si desea usar "
+"una imagen ISO alternativa (no de escritorio) previamente descargada, use la "
+"opción HdMedia, y coloque la imagen ISO del instalador alternativo en el "
+"directorio raíz de su disco duro o unidad USB"
 
 #. ts-context unetbootin
 #: distrover.cpp:239

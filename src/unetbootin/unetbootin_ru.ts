@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-14 12:27-0400
-PO-Revision-Date: 2010-03-14 11:48+0000
-Last-Translator: Yuri Tkachenko &lt;Unknown&gt;
+POT-Creation-Date: 2010-03-27 16:54-0400
+PO-Revision-Date: 2010-03-28 14:10+0000
+Last-Translator: Alexander Shumakov &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-27 20:52+0000
+X-Launchpad-Export-Date: 2010-04-18 16:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -271,7 +271,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="535"/>
         <location filename="unetbootin.cpp" line="2533"/>
         <source>ISO</source>
-        <translation>ISO</translation>
+        <translation>ISO образ</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="167"/>
@@ -282,7 +282,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="540"/>
         <location filename="unetbootin.cpp" line="2525"/>
         <source>Floppy</source>
-        <translation>Флоппи-диск</translation>
+        <translation>FDD дисковод</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="207"/>
@@ -307,7 +307,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="557"/>
         <source>Open Initrd File</source>
-        <translation>Открыть файл Initrd</translation>
+        <translation>Открыть Initrd файл</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="565"/>
@@ -317,12 +317,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation>Вставьте USB флэшку</translation>
+        <translation>Подключите USB накопитель</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Не найдено ни одного USB накопителя. Если вы его уже подсоединили, попробуйте переформатировать его в FAT32.</translation>
+        <translation>Не найдено USB-накопителей. Если устройство подключено, попробуйте переформатировать его в FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="603"/>
@@ -332,7 +332,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="604"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Вначале нужно примонитровать USB накопитель %1. Многие дистрибутивы сделают это автоматически, если вынуть и вставить обратно USB накопитель.</translation>
+        <translation>Необходимо сначала примонтировать USB-накопитель %1 к точке монтирования. Большинство дистрибутивов делают это автоматически после переподключения USB-накопителя.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="619"/>
@@ -362,7 +362,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="650"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Вы должны выбрать ядро и/или файл initrd для загрузки</translation>
+        <translation>Необходимо выбрать ядро и/или initrd файл для загрузки.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
@@ -402,7 +402,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Файо %1 уже существует. Нажмите &apos;Да для всех&apos;, чтобы переписать его и не спрашивать больше, &apos;Да&apos;, чтобы выборочно переписать файлы и &apos;Нет&apos; оставить существующую версию. Если сомневаетесь, нажмите &apos;Да для всех.</translation>
+        <translation>Файл %1 уже существует. Нажмите &apos;Да для всех&apos;, чтобы переписать его и не спрашивать больше, &apos;Да&apos;, чтобы выборочно переписать файлы и &apos;Нет&apos; оставить существующую версию. Если сомневаетесь, нажмите &apos;Да для всех&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="826"/>
@@ -412,7 +412,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="827"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>В каталоге %1 нет места. Нажмите &apos;Да&apos; для прекращения установки, &apos;Нет&apos; для игнорирования этой ошибки и попытаться продолжить установку или &apos;Нет для всего&apos; для игнорирования всех ошибок о нехватке места.</translation>
+        <translation>В каталоге %1 нет места. Нажмите &apos;Да&apos; для прекращения установки, &apos;Нет&apos; для игнорирования этой ошибки и попытаться продолжить установку или &apos;Нет для всех&apos; для игнорирования всех ошибок о нехватке места.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1263"/>

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-14 12:27-0400
-PO-Revision-Date: 2010-03-14 06:20+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-03-27 16:54-0400
+PO-Revision-Date: 2010-04-02 13:21+0000
+Last-Translator: Yalçın Can &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-27 20:52+0000
+X-Launchpad-Export-Date: 2010-04-18 16:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -306,7 +306,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 mevcut, üzerine yazılsın mı?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>

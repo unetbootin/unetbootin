@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-14 12:27-0400
-PO-Revision-Date: 2009-09-20 22:04+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-03-27 16:54-0400
+PO-Revision-Date: 2010-04-14 14:34+0000
+Last-Translator: Anthony Fok &lt;foka@debian.org&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-03-27 20:52+0000
+X-Launchpad-Export-Date: 2010-04-18 16:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -175,7 +175,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2631"/>
         <location filename="unetbootin.cpp" line="3081"/>
         <source>USB Drive</source>
-        <translation>隨身碟</translation>
+        <translation>USB 磁碟機</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="166"/>
@@ -479,7 +479,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*重要* 在重開機之前，請把 Ubuntu 的 alternative（非 desktop）版本安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.ubuntu.com 取得</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="199"/>
@@ -492,7 +493,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="255"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*重要* 在重開機之前，請把 Debian 的安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.debian.org 取得</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="345"/>
@@ -535,7 +537,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;說明：&lt;/b&gt; BackTrack 是一個目標於網路分系與滲透測試的發行版本。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; BackTrack 將會以 live 模式啟動，您不需要安裝它。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
@@ -774,7 +776,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -785,7 +787,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>發行版(&amp;D)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -805,7 +807,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>自訂(&amp;C)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -823,7 +825,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>格式化磁碟機(將會清除資料) (&amp;F)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -833,7 +835,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>返回</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -895,7 +897,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>類型(&amp;T)：</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -974,12 +976,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>顯示全部磁碟機(使用時請小心) (&amp;A)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>核心(&amp;K):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>

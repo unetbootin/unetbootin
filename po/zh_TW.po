@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 12:27-0400\n"
-"PO-Revision-Date: 2009-09-20 22:04+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2010-03-27 16:54-0400\n"
+"PO-Revision-Date: 2010-04-14 14:34+0000\n"
+"Last-Translator: Anthony Fok <foka@debian.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-27 20:52+0000\n"
+"X-Launchpad-Export-Date: 2010-04-18 16:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -19,29 +19,29 @@ msgstr "由左至右"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2370
-#: unetbootin.cpp:2383 unetbootin.cpp:2541 unetbootin.cpp:2893
+#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2378
+#: unetbootin.cpp:2391 unetbootin.cpp:2549 unetbootin.cpp:2914
 msgid "Hard Disk"
 msgstr "硬碟"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
 #: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1322
-#: unetbootin.cpp:1719 unetbootin.cpp:1761 unetbootin.cpp:2374
-#: unetbootin.cpp:2399 unetbootin.cpp:2545 unetbootin.cpp:2897
+#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1330
+#: unetbootin.cpp:1727 unetbootin.cpp:1769 unetbootin.cpp:2382
+#: unetbootin.cpp:2407 unetbootin.cpp:2553 unetbootin.cpp:2918
 msgid "USB Drive"
-msgstr "隨身碟"
+msgstr "USB 磁碟機"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2447
+#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2455
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2439
+#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2447
 msgid "Floppy"
 msgstr "磁片"
 
@@ -190,87 +190,87 @@ msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>自映象檔提取：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1352
+#: unetbootin.cpp:1360
 msgid "Extracting files, please wait..."
 msgstr "提取檔案中，請稍後..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1353
+#: unetbootin.cpp:1361
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archive:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1354
+#: unetbootin.cpp:1362
 msgid "<b>Source:</b>"
 msgstr "<b>來源：</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1355
+#: unetbootin.cpp:1363
 msgid "<b>Destination:</b>"
 msgstr "<b>目的地：</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1356
+#: unetbootin.cpp:1364
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>已提取：</b> 0 of %1 檔案"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1359
+#: unetbootin.cpp:1367
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>來源：</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1360
+#: unetbootin.cpp:1368
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>目的地：</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1361
+#: unetbootin.cpp:1369
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>已提取：</b> %1 of %2 files"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1703
+#: unetbootin.cpp:1711
 msgid "Downloading files, please wait..."
 msgstr "檔案下載中，請稍後..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1704
+#: unetbootin.cpp:1712
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>來源：</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1705
+#: unetbootin.cpp:1713
 msgid "<b>Destination:</b> %1"
 msgstr "<b>目的地：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1706
+#: unetbootin.cpp:1714
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>已下載：</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1783 unetbootin.cpp:1798
+#: unetbootin.cpp:1791 unetbootin.cpp:1806
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>已下載：</b> %1 of %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1874
+#: unetbootin.cpp:1882
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "正在搜尋 <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1878
+#: unetbootin.cpp:1886
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 個符合於 <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2063
+#: unetbootin.cpp:2071
 msgid "%1 not found"
 msgstr "找不到 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2064
+#: unetbootin.cpp:2072
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -279,52 +279,52 @@ msgstr ""
 "請安裝 \"%3\" 軟體包或是您的發行版當中的類似程式。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2352
+#: unetbootin.cpp:2360
 msgid "(Current)"
 msgstr "(目前)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2353
+#: unetbootin.cpp:2361
 msgid "(Done)"
 msgstr "(完成)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2620
+#: unetbootin.cpp:2628
 msgid "Configuring grub2 on %1"
 msgstr "正在設定 %1 上的 grub2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2632
+#: unetbootin.cpp:2640
 msgid "Configuring grldr on %1"
 msgstr "正在設定 %1 上的 grldr"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2660
+#: unetbootin.cpp:2668
 msgid "Configuring grub on %1"
 msgstr "正在設定 %1 上的 grub"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2782
+#: unetbootin.cpp:2804
 msgid "Installing syslinux to %1"
 msgstr "安裝 syslinux 至 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2817
+#: unetbootin.cpp:2839
 msgid "Installing extlinux to %1"
 msgstr "安裝 extlinux 至 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2883
+#: unetbootin.cpp:2904
 msgid "Syncing filesystems"
 msgstr "正在同步檔案系統"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2895
+#: unetbootin.cpp:2916
 msgid "After rebooting, select the "
 msgstr "重開機後，請選擇 "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2899
+#: unetbootin.cpp:2920
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -340,6 +340,9 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*重要* 在重開機之前，請把 Ubuntu 的 alternative（非 desktop）版本安裝映像檔放到您的硬碟或 USB "
+"磁碟機根目錄。這些檔案可以從 cdimage.ubuntu.com 取得"
 
 #. ts-context unetbootin
 #: distrolst.cpp:199
@@ -364,6 +367,8 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*重要* 在重開機之前，請把 Debian 的安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.debian.org 取得"
 
 #. ts-context unetbootin
 #: distrolst.cpp:345
@@ -464,6 +469,9 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>首頁：</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-"
+"linux.org/</a><br/><b>說明：</b> BackTrack "
+"是一個目標於網路分系與滲透測試的發行版本。<br/><b>安裝說明：</b> BackTrack 將會以 live 模式啟動，您不需要安裝它。"
 
 #. ts-context unetbootin
 #: distrover.cpp:37
@@ -1199,7 +1207,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:20
 msgid "Unetbootin"
-msgstr ""
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
@@ -1209,7 +1217,7 @@ msgstr "自清單中選擇已支援的套件"
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "發行版(&D)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:127
@@ -1229,7 +1237,7 @@ msgstr "手動指定 kernel 及 initrd 以進行裝載"
 #. ts-context unetbootinui
 #: unetbootin.ui:381
 msgid "&Custom"
-msgstr ""
+msgstr "自訂(&C)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:420
@@ -1262,7 +1270,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:427
 msgid "&Format Drive (Wipes Out Data)"
-msgstr ""
+msgstr "格式化磁碟機(將會清除資料) (&F)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:490
@@ -1272,7 +1280,7 @@ msgstr "確定"
 #. ts-context unetbootinui
 #: unetbootin.ui:493
 msgid "Return"
-msgstr ""
+msgstr "返回"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:500
@@ -1332,7 +1340,7 @@ msgstr "選擇安裝目標形式"
 #. ts-context unetbootinui
 #: unetbootin.ui:441
 msgid "&Type:"
-msgstr ""
+msgstr "類型(&T)："
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
@@ -1421,12 +1429,12 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:413
 msgid "Show &All Drives (Use with Care)"
-msgstr ""
+msgstr "顯示全部磁碟機(使用時請小心) (&A)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:170
 msgid "&Kernel:"
-msgstr ""
+msgstr "核心(&K):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:256
