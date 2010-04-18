@@ -236,7 +236,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3064"/>
+        <location filename="unetbootin.cpp" line="3073"/>
         <source>Hard Disk</source>
         <translation>Жёсткий диск</translation>
     </message>
@@ -258,7 +258,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3068"/>
+        <location filename="unetbootin.cpp" line="3077"/>
         <source>USB Drive</source>
         <translation>USB-накопитель</translation>
     </message>
@@ -534,27 +534,27 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2913"/>
+        <location filename="unetbootin.cpp" line="2922"/>
         <source>Installing syslinux to %1</source>
         <translation>Установка syslinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2957"/>
         <source>Installing extlinux to %1</source>
         <translation>Установка extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3063"/>
         <source>Syncing filesystems</source>
         <translation>Синхронизую файловую систему</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3066"/>
+        <location filename="unetbootin.cpp" line="3075"/>
         <source>After rebooting, select the </source>
         <translation>После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3070"/>
+        <location filename="unetbootin.cpp" line="3079"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>После перезагрузки выберите в BIOS опцию загрузки с USB.%1

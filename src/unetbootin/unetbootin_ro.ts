@@ -147,7 +147,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3064"/>
+        <location filename="unetbootin.cpp" line="3073"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -169,7 +169,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3068"/>
+        <location filename="unetbootin.cpp" line="3077"/>
         <source>USB Drive</source>
         <translation>Disc USB</translation>
     </message>
@@ -445,27 +445,27 @@ Instalaţi pachetul &quot;%3&quot; sau pachetul echivalent din distribuţia voas
         <translation>Se configurează grub pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2913"/>
+        <location filename="unetbootin.cpp" line="2922"/>
         <source>Installing syslinux to %1</source>
         <translation>Se instalează syslinux in %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2957"/>
         <source>Installing extlinux to %1</source>
         <translation>Se instalează extlinux in %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3063"/>
         <source>Syncing filesystems</source>
         <translation>Se sincronizează fişierele-sistem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3066"/>
+        <location filename="unetbootin.cpp" line="3075"/>
         <source>After rebooting, select the </source>
         <translation>După repornire, selectaţi </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3070"/>
+        <location filename="unetbootin.cpp" line="3079"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>După repornire, selectaţi optiunea pentru bootare USB din meniul de boot al BIOS-lui.%1

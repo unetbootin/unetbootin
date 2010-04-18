@@ -213,7 +213,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <location filename="unetbootin.cpp" line="2452"/>
         <location filename="unetbootin.cpp" line="2465"/>
         <location filename="unetbootin.cpp" line="2623"/>
-        <location filename="unetbootin.cpp" line="3064"/>
+        <location filename="unetbootin.cpp" line="3073"/>
         <source>Hard Disk</source>
         <translation>Disco Rígido</translation>
     </message>
@@ -235,7 +235,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3068"/>
+        <location filename="unetbootin.cpp" line="3077"/>
         <source>USB Drive</source>
         <translation>Unidade USB</translation>
     </message>
@@ -511,27 +511,27 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <translation>Configurando grub no %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2913"/>
+        <location filename="unetbootin.cpp" line="2922"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux no %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2957"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux no %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3054"/>
+        <location filename="unetbootin.cpp" line="3063"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando sistema de arquivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3066"/>
+        <location filename="unetbootin.cpp" line="3075"/>
         <source>After rebooting, select the </source>
         <translation>Após reiniciar, selecione o </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3070"/>
+        <location filename="unetbootin.cpp" line="3079"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Após reiniciar, selecione a opção &quot;Boot USB&quot; no menu da BIOS. %1

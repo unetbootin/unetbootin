@@ -2840,7 +2840,7 @@ void unetbootin::runinsthdd()
 	{
 		bootiniEdit();
 	}
-	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA)
+	else if (QSysInfo::WindowsVersion == QSysInfo::WV_VISTA) //|| QSysInfo::WindowsVersion == QSysInfo::WV_WINDOWS7) // TODO when upgrading to latest Qt
 	{
 		vistabcdEdit();
 	}
@@ -2858,9 +2858,14 @@ void unetbootin::runinsthdd()
 	fininstall();
 }
 
-void unetbootin::rmFile(const QFile &fn)
+void unetbootin::rmFile(QFile &fn)
 {
-	rmFile(QFileInfo(fn).canonicalFilePath());
+	if (!fn.exists()) return;
+	fn.setPermissions(QFile::WriteUser);
+	fn.remove();
+#ifdef Q_OS_UNIX
+	callexternapp("sync", "");
+#endif
 }
 
 void unetbootin::rmFile(const QString &fn)
@@ -2873,9 +2878,13 @@ void unetbootin::rmFile(const QString &fn)
 #endif
 }
 
-void unetbootin::mvFile(const QFile &fn, const QFile &outfn)
+void unetbootin::mvFile(QFile &fn, QFile &outfn)
 {
-	mvFile(QFileInfo(fn).canonicalFilePath(), QFileInfo(outfn).canonicalFilePath());
+	rmFile(outfn);
+	fn.rename(outfn.fileName());
+#ifdef Q_OS_UNIX
+	callexternapp("sync", "");
+#endif
 }
 
 void unetbootin::mvFile(const QString &fn, const QString &outfn)
