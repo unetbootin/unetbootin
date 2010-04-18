@@ -1338,6 +1338,10 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 				}
 			}
 		}
+		else
+		{
+			directorypathnames = listfilesizedirpair.second;
+		}
 	}
 	if (installType == tr("USB Drive"))
 	{
