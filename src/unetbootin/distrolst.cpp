@@ -499,7 +499,15 @@ if (nameDistro == "Gujin")
 
 if (nameDistro == "Linux Mint")
 {
-        downloadfile(QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/LinuxMint-%2.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}")), relname), isotmpf);
+	if (isarch64)
+	{
+		cpuarch = "-x64";
+	}
+	else
+	{
+		cpuarch = "";
+	}
+	downloadfile(QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/LinuxMint-%2%3.iso").arg(QString(relname).remove(QRegExp("-r\\d{0,}"))).arg(relname).arg(cpuarch), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
