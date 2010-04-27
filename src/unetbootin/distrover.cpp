@@ -176,11 +176,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://part
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
 "2.1_Live" << "Latest_Live"));
-distroselect->addItem("PCLinuxOS", (QStringList() << "2007_Live" <<
+distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-"2007_Live" << "2008 Gnome_Live" << "2008 Minime_Live"));
+"KDE 2010" << "Gnome 2010" << "LXDE 2010" << "MiniMe 2010" << "E17 2010"));
 distroselect->addItem("Puppy Linux", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 	"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"

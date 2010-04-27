@@ -674,18 +674,7 @@ if (nameDistro == "Parted Magic")
 
 if (nameDistro == "PCLinuxOS")
 {
-	if (relname == "2007")
-	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-2007.iso", isotmpf);
-	}
-	if (relname == "2008 gnome")
-	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclos-gnome2008.iso", isotmpf);
-	}
-	if (relname == "2008 minime")
-	{
-		downloadfile("ftp://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-minime-2008.iso", isotmpf);
-	}
+	downloadfile(QString("http://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-%1.iso").arg(relname.toLower().replace(" ", "-")), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
