@@ -3019,15 +3019,15 @@ void unetbootin::runinstusb()
 		{
 			QString syslpathloc = QFileInfo(locatedsyslinuxcfgfiles.at(j)).path();
 			if (syslpathloc == ".") syslpathloc = "";
-			if (syslpathloc.contains("/"))
-			{
-				if (!syslpathloc.endsWith("/"))
-					syslpathloc.append("/");
-			}
-			else if (syslpathloc.contains(QDir::toNativeSeparators("/")))
+			if (syslpathloc.contains(QDir::toNativeSeparators("/")))
 			{
 				if (!syslpathloc.endsWith(QDir::toNativeSeparators("/")))
 					syslpathloc.append(QDir::toNativeSeparators("/"));
+			}
+			else
+			{
+				if (!syslpathloc.endsWith("/"))
+					syslpathloc.append("/");
 			}
 			QString abssyslpathloc = QDir::fromNativeSeparators(QString(syslpathloc));
 			if (!abssyslpathloc.startsWith("/"))
