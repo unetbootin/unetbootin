@@ -901,214 +901,214 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignore cualquier mensaje de error y elija nuevamente si se le solicita un CD, dirijase al menú principal, seleccione la opción &quot;Iniciar la instalación&quot; elija &quot;Red&quot; como origen, cambie a &quot;HTTP&quot; como protocolo, ingrese «download.opensuse.org» cuando se le solicite un servidor, y escriba «/distribution/%1/repo/oss» cuando se le pregunte por la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="21"/>
+        <location filename="distrover.cpp" line="22"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
         <translation>Bienvenido a &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, el instalador de arranque en red universal. Uso:&lt;ol&gt;&lt;li&gt;Seleccione una distribución y versión para descargar de la lista anterior, o especifique manualmente los archivos para cargar a continuación.&lt;/li&gt;&lt;li&gt;Seleccione un tipo de instalación y pulse Aceptar para comenzar la instalación.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="26"/>
+        <location filename="distrover.cpp" line="27"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Arch Linux es una distribución ligera optimizada para velocidad y flexibilidad.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada le permite instalarla por internet (FTP). Si está interesado en una versión LiveUSB vea FaunOS.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="32"/>
+        <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; BackTrack es una distribución enfocada en el análisis de redes y pruebas de penetración.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; BackTrack se arranca y ejecuta en modo vivo; no es necesario instalarlo para poderlo usar.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="37"/>
+        <location filename="distrover.cpp" line="38"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripci&amp;oacute;n:&lt;/b&gt; CentOS es un clon libre de Red Hat Entreprise Linux.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada le permite instalarla tanto por internet (FTP) o desconectado usando los archivos ISO previamente descargados.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="42"/>
+        <location filename="distrover.cpp" line="43"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; CloneZilla es una distribución usada para copias de seguridad y para imágenes de disco.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; CloneZilla arranca y se ejecuta en modo «live» (directo) no se necesita su instalación para usarla.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="47"/>
+        <location filename="distrover.cpp" line="48"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Damn Small Linux es una distribución minimalista con un tamaño total de 50 MB.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live carga el sistema entero en RAM y arranca desde memoria, no siendo necesaria la instalación.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="52"/>
+        <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Debian es una distribución Linux desarrollada por la comunidad, que soporta una amplia variedad de arquitecturas y ofrece un gran repositorio de paquetes.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión NetInstall permite la instalación por FTP. Si desea usar una imagen ISO de instalación previamente descargada, use la opción HdMedia, y coloque la imagen ISO de instalación en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="58"/>
+        <location filename="distrover.cpp" line="59"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Dreamlinux es una distribución amigable basada en Debian.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del que se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="63"/>
+        <location filename="distrover.cpp" line="64"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Dr.Web AntiVirus es un antivirus de emergencia para restaurar un sistema dañado por programas maliciosos .&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del cual se puede lanzar la exploración de malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="68"/>
+        <location filename="distrover.cpp" line="69"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Sitio Web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una ditribución basada en Debian que incluye el administrador de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas sobre la instalación:&lt;/b&gt; La versión Live permite iniciar en modo Live, desde el cual se puede iniciar el instalador de manera opcional. De esta manera se instala la versión inestable, no la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="78"/>
+        <location filename="distrover.cpp" line="79"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Fedora es una distribución de la comunidad patrocinada por Red Hat que se centra en el software libre/de código abierto más puntero.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite arrancar en modo directo. La versión Netinstall permite ambas instalaciones: a través de internet (FTP), o instalación desconectado usando las imágenes ISO descargadas previamente.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="83"/>
+        <location filename="distrover.cpp" line="84"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeBSD es un sistema operativo de propósito general de tipo Unix diseñado para escalabilidad y rendimiento.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada permite la instalación por internet (FTP), o la instalación desconectado usando las imágenes ISO descargadas previamente.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="88"/>
+        <location filename="distrover.cpp" line="89"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeDOS es un sistema operativo compatible con MS-DOS.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Vea el &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; para detalles de la instalación.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="93"/>
+        <location filename="distrover.cpp" line="94"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
         <translation>&lt;b&gt;Página del Proyecto:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeNAS es una distribución NAS (Network-Attached Storage)de código abierto basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión LiveCD crea una unidad RAM para FreeNAS, y usa un disquete o unidad de memoria USB con formato FAT para almacenar el archivo de configuración. La versión incluida permite su instalación a disco duro.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="98"/>
+        <location filename="distrover.cpp" line="99"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Frugalware es una distribución basada en Slackaware de propósito general para usuarios avanzados.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La opción predeterminada permite la instalación por internet (FTP), o instalación desconectado usando las imágenes ISO descargadas previamente.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="103"/>
+        <location filename="distrover.cpp" line="104"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; F-Secure Rescue CD detecta y elimina programas maliciosos en su instalación Windows.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo a partir del cual se puede lanzar la exploración de malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="108"/>
+        <location filename="distrover.cpp" line="109"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Gentoo es una distribución muy flexible basada en fuentes diseñada para usuarios avanzados.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo a partir del cual se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="118"/>
+        <location filename="distrover.cpp" line="119"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; gNewSense es una distribución aprobada por la FSF sobre la base de Ubuntu con todos los componentes no libres eliminados.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir de la cual se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="123"/>
+        <location filename="distrover.cpp" line="124"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Gujin es un gestor de arranque gráfico, que puede arrancar varios volúmenes y archivos.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Gujin simplemente arranca y se ejecuta, no es necesario instalar para utilizarlo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="128"/>
+        <location filename="distrover.cpp" line="129"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Kaspersky Rescue Disk detecta y elimina el malware de su instalación de Windows.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del cual se puede lanzar la exploración de malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="133"/>
+        <location filename="distrover.cpp" line="134"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Kubuntu es un derivado oficial de Ubuntu que utiliza el escritorio KDE.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional. La versión NetInstall permite realizar la instalación  version por FTP, y puede instalar Kubuntu y cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO del instalador en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="138"/>
+        <location filename="distrover.cpp" line="139"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Linux Mint es una distribución basada en Ubuntu orientada al usuario que incluye códecs propietarios adicionales y otro software predeterminado.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite arrancar en modo directo desde el que se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="143"/>
+        <location filename="distrover.cpp" line="144"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Mandriva es una distribución orientada al usuario antes conocida como Mandrake Linux.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La versión Live permite arrancar en modo directo. La versión NetInstall permite la instalación por internet (FTP) o descargando previamente los: &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;archivos de imagen ISO «Free»&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="149"/>
+        <location filename="distrover.cpp" line="150"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; . 	
 MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil de usar basada en la versión de KDE, mientras que AntiX es una versión ligera para ordenadores antiguos&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; MEPIS dispone de arranque en modo Live (directo) a partir del cual se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="154"/>
+        <location filename="distrover.cpp" line="155"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; NetBSD es un sistema operativo de tipo UNIX que se especializa en la portabilidad.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada permite la instalación por internet (FTP), o usando los archivos ISO de instalación previamente descargados.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="159"/>
+        <location filename="distrover.cpp" line="160"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; El disco de arranque NT Password and Registry Editor puede restaurar las contraseñas de Windows y editar el registro en Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; NTPasswd arranca y se ejecuta en modo Live (directo) no se necesita su instalación para usarlo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="164"/>
+        <location filename="distrover.cpp" line="165"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt;  &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; openSUSE es una distribución patrocinada por Novell orientada al usuario.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada permite la instalación por internet (FTP), o instalación desconectados usando las imágenes ISO descargadas previamente.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="169"/>
+        <location filename="distrover.cpp" line="170"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ophcrack puede romper las contraseñas de Windows.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; Ophcrack arranca y se ejecuta en modo Live (directo) no se necesita su instalación para usarlo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="174"/>
+        <location filename="distrover.cpp" line="175"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Parted Magic incluye el administrador de particiones Gparted y otras utilidades de sistema que pueden redimensionar, copiar, hacer copias de seguridad y manipular particiones de disco.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt;Parted Magic se arranca y funciona en modo Live, no se necesita ninguna instalación para usarlo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="179"/>
+        <location filename="distrover.cpp" line="180"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; PCLinuxOS es una distribución basada en Mandriva orientada al usuario.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La versión Live permite arrancar en modo directo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="184"/>
+        <location filename="distrover.cpp" line="185"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Puppy Linux es una distribución ligera para equipos antiguos.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; En la versión Live todo el sistema se carga en la memoria RAM y arranca desde la memoria, de modo que la instalación, siendo opcional, no es necesaria.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="189"/>
+        <location filename="distrover.cpp" line="190"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Sabayon Linux es una distribución «live» en DVD basada en Gentoo con la funcionalidad del gestor de paquetes binarios «Entropy» además de los paquetes fuente de «Portage».&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del cual se puede lanzar el instalador. LiteMCE es una edición de 2 GB, mientras que la edición completa necesita una unidad USB de 8 GB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="194"/>
+        <location filename="distrover.cpp" line="195"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Slax es una distribución basada en Slackware que utiliza el escritorio KDE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo desde el que se puede lanzar el instalador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="199"/>
+        <location filename="distrover.cpp" line="200"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; SliTaz es una micro distribución muy ligera orientada al escritorio.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live carga el sistema en RAM y arranca desde la memoria, no es necesaria la instalación para su uso.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="204"/>
+        <location filename="distrover.cpp" line="205"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Smart Boot Manager es un gestor de arranque que puede solucionar algunas limitaciones y errores relacionados con el arranque de la BIOS.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; SBM simplemente arranca y se ejecuta, no es necesaria su instalación.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="209"/>
+        <location filename="distrover.cpp" line="210"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super Grub Disk es un cargador de arranque con diversas tareas de recuperación del MBR y de cargadores de arranque.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; SGD simplemente inicie y ejecute; no requiere de instalación para su uso.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="214"/>
+        <location filename="distrover.cpp" line="215"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super OS es un derivado no oficial de Ubuntu que incluye software adicionar por defecto. Requiere una unidad USB de 2GB para instalarse.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="219"/>
+        <location filename="distrover.cpp" line="220"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; SystemRescueCD incluye varios gestores de particiones y recuperación de datos, así como herramientas de copias seguridad.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD arranca y se ejecuta en modo Live (directo) no es necesaria la instalación para su uso.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="224"/>
+        <location filename="distrover.cpp" line="225"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu es una distrubicón amigable con el usuario basada en Debian. Actualmente es la distribución Linux de escritorio más popular.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional. La versión NetInstall permite realizar la instalación por FTP, y puede instalar Kubuntu y cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="229"/>
+        <location filename="distrover.cpp" line="230"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; xPUD es una distribución muy ligera con una interfaz tipo &quot;quiosco&quot; con un navegador y un reproductor multimedia.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live carga el sistema enteramente en RAM y arranca desde la memoria.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="234"/>
+        <location filename="distrover.cpp" line="235"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Xubuntu es un derivado oficial de Ubuntu que utiliza el escritorio XFCE.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual el instalador puede iniciarse de forma opcional. La versión NetInstall le permite realizar la instalación por FTP, y puede instalar Kubuntu o cualquier otro derivado oficial de Ubuntu. Si desea usar una imagen ISO alternativa (no de escritorio) previamente descargada, use la opción HdMedia, y coloque la imagen ISO del instalador alternativo en el directorio raíz de su disco duro o unidad USB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="239"/>
+        <location filename="distrover.cpp" line="240"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Zenwalk es una distribución basada en Slackware que utiliza el escritorio XFCE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del que se puede lanzar el instalador.</translation>
     </message>
