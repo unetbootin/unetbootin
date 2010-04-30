@@ -43,7 +43,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2469"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3077"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Hard Disk</source>
         <translation>Жорсткий диск</translation>
     </message>
@@ -65,7 +65,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2460"/>
         <location filename="unetbootin.cpp" line="2485"/>
         <location filename="unetbootin.cpp" line="2631"/>
-        <location filename="unetbootin.cpp" line="3081"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>USB Drive</source>
         <translation>USB-пристрій</translation>
     </message>
@@ -341,27 +341,27 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>Налаштування grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2926"/>
+        <location filename="unetbootin.cpp" line="2931"/>
         <source>Installing syslinux to %1</source>
         <translation>Встановлення syslinux на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2966"/>
         <source>Installing extlinux to %1</source>
         <translation>Встановлення extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3067"/>
+        <location filename="unetbootin.cpp" line="3072"/>
         <source>Syncing filesystems</source>
         <translation>Синхронізація файлових систем</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3079"/>
+        <location filename="unetbootin.cpp" line="3084"/>
         <source>After rebooting, select the </source>
         <translation>Після перезавантаження оберіть </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3083"/>
+        <location filename="unetbootin.cpp" line="3088"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Після перезавантаження оберіть в BIOS опцію завантажження з USB.%1

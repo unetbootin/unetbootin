@@ -496,7 +496,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2469"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3077"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Hard Disk</source>
         <translation>Merevlemez</translation>
     </message>
@@ -518,7 +518,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2460"/>
         <location filename="unetbootin.cpp" line="2485"/>
         <location filename="unetbootin.cpp" line="2631"/>
-        <location filename="unetbootin.cpp" line="3081"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>USB Drive</source>
         <translation>USB meghajtó</translation>
     </message>
@@ -794,27 +794,27 @@ Telepítse a(z) &quot;%3&quot; csomagot, vagy az ön disztribúciójában talál
         <translation>Grub konfigurálása itt: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2926"/>
+        <location filename="unetbootin.cpp" line="2931"/>
         <source>Installing syslinux to %1</source>
         <translation>Syslinux telepítése ide: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2966"/>
         <source>Installing extlinux to %1</source>
         <translation>Extlinux telepítése ide: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3067"/>
+        <location filename="unetbootin.cpp" line="3072"/>
         <source>Syncing filesystems</source>
         <translation>Fájlrendszerek szinkronizálása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3079"/>
+        <location filename="unetbootin.cpp" line="3084"/>
         <source>After rebooting, select the </source>
         <translation>Újraindítás után, válassza a </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3083"/>
+        <location filename="unetbootin.cpp" line="3088"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Újraindítás után válassza az USB boot opciót a BIOS boot menüjében.%1

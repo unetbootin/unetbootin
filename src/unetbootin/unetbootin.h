@@ -231,6 +231,7 @@ public:
 	QStringList listsanedrives();
 	QStringList listalldrives();
 	void replaceTextInFile(QString repfilepath, QRegExp replaceme, QString replacewith);
+	QString fixkernelbootoptions(const QString &cfgfileCL);
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
 	QString locatedevicenode(QString mountpoint);

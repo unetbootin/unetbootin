@@ -121,7 +121,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2456"/>
         <location filename="unetbootin.cpp" line="2469"/>
         <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3077"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Hard Disk</source>
         <translation>Disco ríxido</translation>
     </message>
@@ -143,7 +143,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2460"/>
         <location filename="unetbootin.cpp" line="2485"/>
         <location filename="unetbootin.cpp" line="2631"/>
-        <location filename="unetbootin.cpp" line="3081"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>USB Drive</source>
         <translation>Unidade USB</translation>
     </message>
@@ -419,27 +419,27 @@ Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
         <translation>Configurando grub en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2926"/>
+        <location filename="unetbootin.cpp" line="2931"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2966"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3067"/>
+        <location filename="unetbootin.cpp" line="3072"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando o sistema de ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3079"/>
+        <location filename="unetbootin.cpp" line="3084"/>
         <source>After rebooting, select the </source>
         <translation>Despois de reiniciar, elixa o </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3083"/>
+        <location filename="unetbootin.cpp" line="3088"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
