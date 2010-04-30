@@ -483,42 +483,42 @@ Reboot now?</source>
 *重要* 在重開機之前，請把 Ubuntu 的 alternative（非 desktop）版本安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.ubuntu.com 取得</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="199"/>
+        <location filename="distrolst.cpp" line="205"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *重要*重新開機後，忽略任何錯誤訊息， 如有提示需要光碟則選擇『返回』，之後進入主選單，選擇『開始安裝』選項，選擇『網路』作為來源，選擇『HTTP』協定，伺服器的提示輸入『mirrors.kernel.org』, 資料夾則輸入『/centos/%1/os/%2』。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="255"/>
+        <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *重要* 在重開機之前，請把 Debian 的安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.debian.org 取得</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="351"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *重要*重新開機後，忽略任何錯誤訊息， 如有提示需要光碟則選擇『返回』，之後進入主選單，選擇『開始安裝』選項，選擇『網路』作為來源，選擇『HTTP』協定，伺服器的提示輸入『download.fedora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/development/%1/os』。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="357"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *重要*重新開機後，忽略任何錯誤訊息， 如有提示需要光碟則選擇『返回』，之後進入主選單，選擇『開始安裝』選項，選擇『網路』作為來源，選擇『HTTP』協定，伺服器的提示輸入『download.fedora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/releases/%1/Fedora/%2/os』。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="631"/>
+        <location filename="distrolst.cpp" line="637"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *重要*重新開機後，忽略任何錯誤訊息， 如有提示需要光碟則選擇『返回』，之後進入主選單，選擇『開始安裝』選項，選擇『網路』作為來源，選擇『HTTP』協定，伺服器的提示輸入『download.opensuse.org』, 資料夾則輸入『/factory/repo/oss』。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="643"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

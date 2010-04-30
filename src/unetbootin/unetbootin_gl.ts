@@ -453,42 +453,42 @@ Reiniciar agora?</translation>
 *IMPORTANTE* Antes de reiniciar o sistema, coloque un ficheiro ISO de instalación de «Ubuntu Alternate» (a Desktop non) no directorio raíz do seu disco ríxido ou memoria USB. Estes poden obterse en cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="199"/>
+        <location filename="distrolst.cpp" line="205"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;mirrors.kernel.org&quot; cando lle pregunten por un servidor, e poña &quot;/centos/%1/os%2&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="255"/>
+        <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *IMPORTANTE* Antes de reiniciar o sistema, coloque un ficheiro ISO de instalación de «Debian» no directorio raíz do seu disco ríxido ou memoria USB. Estes poden obterse en cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="351"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.fedora.redhat.com&quot; cando lle pregunten por un servidor, e poña &quot;/pub/fedora/linux/development/%1/os&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="357"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.fedora.redhat.com&quot; cando lle pregunten por un servidor, e poña &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="631"/>
+        <location filename="distrolst.cpp" line="637"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.opensuse.org&quot; cando lle pregunten por un servidor, e poña &quot;/factory/repo/oss&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="643"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

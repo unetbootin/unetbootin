@@ -590,42 +590,42 @@ Omstart nå?</translation>
 *VIKTIG* Før omstart, plasser Ubuntu alternate (ikke desktop) install iso fil i root mappen på din harddisk eller USB-disk. Disse kan du finne på cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="199"/>
+        <location filename="distrolst.cpp" line="205"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;mirrors.kernel.org&apos; når du blir spurt etter server, og skriv inn &apos;/centos/%1/os/%2&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="255"/>
+        <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *VIKTIG* Før omstart, plasser en Debian install iso fil i root mappen på din harddisk eller USB-disk. Disse finner du på cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="351"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.fedora.redhat.com&apos; når du blir spurt etter server, og skriv inn  &apos;/pub/fedora/linux/development/%1/os&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="357"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.fedora.redhat.com&apos; når du blir spurt etter server, og skriv inn   &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="631"/>
+        <location filename="distrolst.cpp" line="637"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VIKTIG* Etter omstart, ignorer alle feilmeldinger og velg tilbakehvis du blir spurt etter CD, gå deretter til hovedmenyen, velg &apos;Start Installation&apos; valget, velg &apos;Network&apos; som kilde, velg &apos;HTTP&apos; som protocol, skriv inn &apos;download.opensuse.org&apos; når du blir spurt etter server, og skriv inn   &apos;/factory/repo/oss&apos;&apos; når du blir spurt etter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="643"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

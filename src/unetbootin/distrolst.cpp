@@ -126,7 +126,13 @@ if (nameDistro == "SliTaz")
 	}
 	else
 	{
-		downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
+		downloadfile(fileFilterNetDir(QStringList() <<
+		QString("http://mirror.slitaz.org/iso/%1/").arg(relname)
+		, 3072000, 1048576000, QList<QRegExp>() <<
+		QRegExp("^slitaz", Qt::CaseInsensitive) <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("^slitaz-\\S{1,}.iso$", Qt::CaseInsensitive)
+		), isotmpf);
 		extractiso(isotmpf, targetPath);
 	}
 
@@ -738,7 +744,13 @@ if (nameDistro == "Slax")
 
 if (nameDistro == "SliTaz")
 {
-	downloadfile(QString("http://mirror.slitaz.org/iso/%1/slitaz-%1.iso").arg(relname), isotmpf);
+	downloadfile(fileFilterNetDir(QStringList() <<
+	QString("http://mirror.slitaz.org/iso/%1/").arg(relname)
+	, 3072000, 1048576000, QList<QRegExp>() <<
+	QRegExp("^slitaz", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp("^slitaz-\\S{1,}.iso$", Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
