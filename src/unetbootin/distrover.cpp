@@ -186,11 +186,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://w
 	"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"
 	"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.") <<
 	"Latest_Live"));
-distroselect->addItem("Sabayon Linux", (QStringList() << "4-LiteMCE" <<
+distroselect->addItem("Sabayon Linux", (QStringList() << "5.2" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/>"
 	"<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive") <<
-	"4-LiteMCE" << "4-LiteMCE_x64" << "4" << "4_x64"));
+	"5.1" << "5.1_x64" << "5.2" << "5.2_x64"));
 distroselect->addItem("Slax", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 	"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"

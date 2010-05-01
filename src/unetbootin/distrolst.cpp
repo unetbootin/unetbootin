@@ -703,11 +703,11 @@ if (nameDistro == "Sabayon Linux")
 {
         if (isarch64)
         {
-                cpuarch = "x86_64";
+			cpuarch = "amd64";
         }
         else
         {
-                cpuarch = "x86";
+			cpuarch = "x86";
         }
         QString relnamenum = nameVersion;
         QString relnamepart = "";
@@ -717,21 +717,24 @@ if (nameDistro == "Sabayon Linux")
             relnamepart = nameVersion.section('-', -1, -1);
         }
         downloadfile(fileFilterNetDir(QStringList() <<
-        "http://cross-lfs.sabayonlinux.org/" <<
-        "http://mirror.cs.vt.edu/pub/SabayonLinux/" <<
-        "http://mirror.umoss.org/sabayonlinux/" <<
+		"http://cross-lfs.sabayonlinux.org/iso/" <<
+		"http://mirror.cs.vt.edu/pub/SabayonLinux/iso/" <<
+		"http://mirror.umoss.org/sabayonlinux/iso/" <<
         "http://distro.ibiblio.org/pub/linux/distributions/sabayonlinux/" <<
-        "http://ftp.nluug.nl/pub/os/Linux/distr/sabayonlinux/" <<
-        "http://mirror.aarnet.edu.au/pub/SabayonLinux/" <<
-        "http://na.mirror.garr.it/mirrors/sabayonlinux/" <<
-        "http://cesium.di.uminho.pt/pub/sabayon/" <<
-        "http://ftp.fsn.hu/pub/linux/distributions/sabayon/"
+		"http://ftp.nluug.nl/pub/os/Linux/distr/sabayonlinux/iso/" <<
+		"http://mirror.aarnet.edu.au/pub/SabayonLinux/iso/" <<
+		"http://na.mirror.garr.it/mirrors/sabayonlinux/iso/" <<
+		"http://cesium.di.uminho.pt/pub/sabayon/iso/" <<
+		"http://ftp.fsn.hu/pub/linux/distributions/sabayon/iso/"
         , 61440000, 2147483647, QList<QRegExp>() << // need to store as unsigned long long to use FTP (HTTP doesn't check size)
         QRegExp(".iso$", Qt::CaseInsensitive) <<
-        QRegExp("^Sabayon-Linux-\\S{1,}.iso$", Qt::CaseInsensitive) <<
-        QRegExp("^Sabayon-Linux-"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
-        QRegExp("^Sabayon-Linux-"+cpuarch+"-"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
-        QRegExp("^Sabayon-Linux-"+cpuarch+"-"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}.iso$", Qt::CaseInsensitive)
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}"+relnamenum+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,1}"+relnamenum+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}"+relnamenum+"\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("^Sabayon\\S{0,}Linux\\S{0,}"+relnamenum+"\\S{0,}"+relnamepart+"\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive)
         ), isotmpf);
         extractiso(isotmpf, targetPath);
 }
