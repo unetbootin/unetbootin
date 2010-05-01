@@ -4,7 +4,13 @@ vcsname="$(./vcs-name)"
 
 if [ "$vcsname" == "git" ]
 then
-expr "$(git log --diff-filter=ACDMRTUX --pretty=format:'' | wc -l)" + 1
+git log --first-parent --format='%H' | wc -l
+exit 0
+fi
+
+if [ "$vcsname" == "hg" ]
+then
+hg log --follow-first --template='{node}\n' | wc -l
 exit 0
 fi
 

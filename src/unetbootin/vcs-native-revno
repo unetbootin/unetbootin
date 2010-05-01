@@ -8,9 +8,22 @@ git show-ref 'refs/heads/master' | sed 's/ /\n/g' | head --lines 1
 exit 0
 fi
 
+if [ "$vcsname" == "hg" ]
+then
+hgrevno=$(hg log -r-1 --template='{node}')
+for x in . .. ../..
+do
+if [ -f "$x/.hg/git-mapfile" ]
+then
+cat "$x/.hg/git-mapfile" | grep "$hgrevno$" | sed 's/ /\n/g' | head --lines 1
+exit 0
+fi
+done
+fi
+
 if [ "$vcsname" == "bzr" ]
 then
-bzr revno
+bzr log -r-1 | grep git | head --lines 1 | sed 's/ /\n/g' | tail --lines 1
 exit 0
 fi
 

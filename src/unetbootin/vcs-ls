@@ -8,6 +8,12 @@ git ls-files
 exit 0
 fi
 
+if [ "$vcsname" == "hg" ]
+then
+hg locate
+exit 0
+fi
+
 if [ "$vcsname" == "bzr" ]
 then
 bzr ls --versioned
