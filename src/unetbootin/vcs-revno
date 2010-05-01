@@ -4,7 +4,7 @@ vcsname="$(./vcs-name)"
 
 if [ "$vcsname" == "git" ]
 then
-git log --first-parent --format='%H' | wc -l
+git log --first-parent --pretty=oneline | wc -l
 exit 0
 fi
 
