@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-01-27 01:22+0000
-Last-Translator: carlos alberto guglielmelli viglioni &lt;Unknown&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-29 21:30+0000
+Last-Translator: Fernando J. Cordeiro &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -198,7 +198,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>EsquerdaParaDireita</translation>
     </message>
 </context>
 <context>
@@ -269,7 +269,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="237"/>
         <source>either</source>
-        <translation></translation>
+        <translation>cada(um)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="531"/>
@@ -395,7 +395,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <location filename="unetbootin.cpp" line="1263"/>
         <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Extraindo iso comprimido:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1438"/>
@@ -493,7 +493,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="unetbootin.cpp" line="2439"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Terminado)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2706"/>
@@ -541,7 +541,8 @@ Reiniciar Agora?</translation>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Antes de reiniciar, coloque o arquivo iso de instalação do Ubuntu alternate (não o desktop) no diretório raíz de seu disco rígido ou drive USB. Este arquivo pode ser obtido em cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="205"/>
@@ -554,7 +555,8 @@ Reiniciar Agora?</translation>
         <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Antes de reiniciar, coloque o arquivo iso de instalação do Debian no diretório raíz de seu disco rígido ou drive USB. Este arquivo pode ser obtido em cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="351"/>
@@ -836,7 +838,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -847,7 +849,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribuição</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -857,7 +859,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>&amp;Imagem de disco</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -867,7 +869,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Personalizar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -891,7 +893,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -901,7 +903,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
@@ -953,7 +955,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tipo:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1033,12 +1035,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>

@@ -50,6 +50,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_nl.ts \
     unetbootin_ca.ts \
     unetbootin_sk.ts \
+    unetbootin_sl.ts \
     unetbootin_sv.ts \
     unetbootin_pl.ts
 RESOURCES += unetbootin.qrc

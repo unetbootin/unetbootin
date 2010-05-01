@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2009-09-20 22:03+0000
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-25 21:28+0000
 Last-Translator: Yaron &lt;sh.yaron@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -502,7 +502,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1869"/>
         <location filename="unetbootin.cpp" line="1884"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1960"/>
@@ -877,7 +877,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -888,7 +888,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>ה&amp;פצה</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -898,7 +898,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>דמות &amp;כונן</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -908,7 +908,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>ה&amp;תאמה אישית</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -922,7 +922,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;פירמוט הכונן (מחיקת הנתונים לחלוטין)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -932,7 +932,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -942,7 +942,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
@@ -983,7 +983,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;כונן:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
@@ -994,7 +994,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;סוג:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1069,22 +1069,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>הצגת &amp;כל הכוננים (להשתמש בזהירות)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;קרנל:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;אפשרויות:</translation>
     </message>
 </context>
 <context>

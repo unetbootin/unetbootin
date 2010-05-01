@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-03-28 14:10+0000
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-29 17:26+0000
 Last-Translator: Alexander Shumakov &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -260,7 +260,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="2631"/>
         <location filename="unetbootin.cpp" line="3086"/>
         <source>USB Drive</source>
-        <translation>USB-накопитель</translation>
+        <translation>Устройство USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="166"/>
@@ -271,7 +271,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="535"/>
         <location filename="unetbootin.cpp" line="2533"/>
         <source>ISO</source>
-        <translation>ISO образ</translation>
+        <translation>Образ диска</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="167"/>
@@ -282,7 +282,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="540"/>
         <location filename="unetbootin.cpp" line="2525"/>
         <source>Floppy</source>
-        <translation>FDD дисковод</translation>
+        <translation>Дисковод гибких дисков</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="207"/>
@@ -317,7 +317,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation>Подключите USB накопитель</translation>
+        <translation>Подключите USB-накопитель</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
@@ -622,7 +622,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; BackTrack является дистрибутивом, ориентированным на изучение сетей и тестирования их пропускной способности.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; BackTrack загружается и работает в live-режиме; для его использование не требуется установки.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -642,7 +642,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Debian является разрабатываемым сообществом дистрибутивом Linux, который поддерживает широкий круг архитектур и располагает большим количеством репозиториев пакетов программ.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия NetInstall предлагает установку через FTP. Если вы желаете использовать предварительно загруженный установочный образ диска, то используйте опцию HdMedia , и после поместите установочный образ диска в корневую директорию вашего жесткого диска или USB-накопителя.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>
@@ -677,7 +677,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="94"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; FreeNAS является открытым NAS (Network-Attached Storage) дистрибутивом для встроенных систем, основанный на FreeBSD.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия LiveCD создает диск RAM  для FreeNAS  и  использует для созранения конфигурационного файла форматированную в FAT дискету или USB-накопитель. Версия для встроенных систем допускает установку на жесткий диск.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="99"/>
@@ -712,7 +712,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="134"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/bKubuntu - это дружественная к пользователю операционная система на базе Ubuntu и использующая KDE.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия NetInstall предлагает установку через FTP. Если вы желаете использовать предварительно загруженный установочный образ диска, то используйте опцию HdMedia , и после поместите установочный образ диска в корневую директорию вашего жесткого диска или USB-накопителя.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="139"/>
@@ -803,7 +803,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="225"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Ubuntu - это дружественная к пользователю операционная система на базе Debian. В настоящее время это самый популярный настольный Linux-дистрибутив.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия NetInstall предлагает установку через FTP (так-же возможна установка Kubuntu и других официальный Ubuntu деривативов). Если вы желаете использовать предварительно загруженный установочный образ диска, то используйте опцию HdMedia , и после поместите установочный образ диска в корневую директорию вашего жесткого диска или USB-накопителя.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="230"/>
@@ -813,7 +813,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="235"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.com/&quot;&gt;http://www.xubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Xubuntu - это дружественная к пользователю операционная система на базе Ubuntu и использующая рабочий стол XFCE.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия NetInstall предлагает установку через FTP. Если вы желаете использовать предварительно загруженный установочный образ диска, то используйте опцию HdMedia , и после поместите установочный образ диска в корневую директорию вашего жесткого диска или USB-накопителя.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="240"/>
@@ -872,7 +872,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp; Распространение</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>

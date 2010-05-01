@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-04-10 18:06+0000
-Last-Translator: Jan-Christoph Borchardt &lt;jan@inquata.com&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-28 15:24+0000
+Last-Translator: Cochi86 &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -288,7 +288,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="535"/>
         <location filename="unetbootin.cpp" line="2533"/>
         <source>ISO</source>
-        <translation>Abbild</translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="167"/>
@@ -299,7 +299,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.cpp" line="540"/>
         <location filename="unetbootin.cpp" line="2525"/>
         <source>Floppy</source>
-        <translation>Diskette</translation>
+        <translation>Diskettenlaufwerk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="207"/>

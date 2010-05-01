@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-03-30 14:22+0000
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-20 22:02+0000
 Last-Translator: Gunleif Joensen &lt;Unknown&gt;
 Language-Team: Faroese &lt;fo@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -247,7 +247,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1441"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1442"/>
@@ -262,7 +262,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1446"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1447"/>
@@ -282,7 +282,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1791"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1792"/>
@@ -365,7 +365,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <location filename="unetbootin.cpp" line="3088"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Eftir endurbyrjan, vel USB/geymu byrjanarkostin í BIOS byrjanarvalmyndini.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -783,7 +783,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Vel hvørja útgávu ið tú vil hava</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="307"/>
@@ -876,12 +876,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Av-innlegging fullfgjørd</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 er vorðin av-innløgd</translation>
     </message>
     <message>
         <location filename="main.cpp" line="318"/>
@@ -896,7 +896,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>%1 av-innleggjari</translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>

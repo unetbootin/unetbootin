@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-01-29 14:16+0000
-Last-Translator: QuKeN &lt;jimcederborg@gmail.com&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-23 06:14+0000
+Last-Translator: Daniel Nylander &lt;yeager@ubuntu.com&gt;
 Language-Team: Swedish &lt;sv@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -711,7 +711,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -722,7 +722,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribution</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -732,7 +732,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Diska&amp;vbildning</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -742,7 +742,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>A&amp;npassa</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -756,7 +756,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Formatera enhet (raderar allt data)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -766,7 +766,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Return</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -776,7 +776,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
@@ -817,7 +817,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>En&amp;het:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
@@ -828,7 +828,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Typ:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -903,22 +903,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Visa &amp;alla enheter (använd med försiktighet)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kärna:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Flaggor:</translation>
     </message>
 </context>
 <context>

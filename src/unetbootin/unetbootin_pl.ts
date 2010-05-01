@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-01-29 07:59+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-19 08:06+0000
+Last-Translator: skrzat &lt;Unknown&gt;
 Language-Team: Polish &lt;pl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -736,7 +736,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -747,7 +747,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Dystrybucja</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -757,7 +757,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Obraz dysku</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -767,7 +767,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Własny</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -785,7 +785,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Formatuj dysk (wymazuje wszystkie dane)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -846,7 +846,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;Napęd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
@@ -857,7 +857,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Typ:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -936,22 +936,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Pokaż &amp;wszystkie napędy (korzystaj z rozwagą)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Jądro</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opcje:</translation>
     </message>
 </context>
 <context>

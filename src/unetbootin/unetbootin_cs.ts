@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-03-14 06:18+0000
-Last-Translator: Vojtěch Trefný &lt;vojtech.trefny@gmail.com&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-23 19:26+0000
+Last-Translator: Roman Horník &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -317,22 +317,22 @@ Restartovat nyní</translation>
     <message>
         <location filename="unetbootin.cpp" line="531"/>
         <source>Open Disk Image File</source>
-        <translation>Výběr souboru s obrazem disku</translation>
+        <translation>Vybrat soubor s obrazem disku</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="549"/>
         <source>Open Kernel File</source>
-        <translation>Výběr souboru s jádrem</translation>
+        <translation>Vybrat soubor s jádrem</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="557"/>
         <source>Open Initrd File</source>
-        <translation>Výběr souboru initrd</translation>
+        <translation>Vybrat soubor initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="565"/>
         <source>Open Bootloader Config File</source>
-        <translation>Výběr souboru s nastavením zavaděče</translation>
+        <translation>Vybrat soubor s nastavením zavaděče</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
@@ -387,7 +387,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
         <source>Diskimage file not found</source>
-        <translation>Obraz disku nebyl nalezen</translation>
+        <translation>Soubor obrazu disku nebyl nalezen</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
@@ -438,12 +438,12 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="1263"/>
         <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Rozbalování ISO obrazu:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Rozbaluji ISO obraz:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1438"/>
         <source>Extracting files, please wait...</source>
-        <translation>Rozbalování souborů, prosíme čekejte...</translation>
+        <translation>Rozbaluji soubory, čekejte prosím...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1439"/>
@@ -483,7 +483,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="unetbootin.cpp" line="1789"/>
         <source>Downloading files, please wait...</source>
-        <translation>Stahhování souborů, prosíme čekejte...</translation>
+        <translation>Stahuji soubory, čekejte prosím...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1790"/>
@@ -498,7 +498,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="unetbootin.cpp" line="1792"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Staženo:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Staženo:&lt;/b&gt; 0 bajtů</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1869"/>
@@ -514,12 +514,12 @@ Restartovat nyní</translation>
     <message>
         <location filename="unetbootin.cpp" line="1964"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 suhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 souhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2149"/>
         <source>%1 not found</source>
-        <translation>%1 nenalezen</translation>
+        <translation>%1 nenalezeno</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2150"/>
@@ -541,32 +541,32 @@ Nainstalujte balík &quot;%3&quot; nebo ekvivalent pro vaši distribuci.</transl
     <message>
         <location filename="unetbootin.cpp" line="2706"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Nastavování grub2 na %1</translation>
+        <translation>Nastavuji grub2 na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2718"/>
         <source>Configuring grldr on %1</source>
-        <translation>Nastavování grldr na %1</translation>
+        <translation>Nastavuji grldr na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub on %1</source>
-        <translation>Nastavování grub na %1</translation>
+        <translation>Nastavuji grub na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2931"/>
         <source>Installing syslinux to %1</source>
-        <translation>Instalace syslinux na %1</translation>
+        <translation>Instaluji syslinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2966"/>
         <source>Installing extlinux to %1</source>
-        <translation>Instalace extlinux na %1</translation>
+        <translation>Instaluji extlinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3072"/>
         <source>Syncing filesystems</source>
-        <translation>Synchronizace souborových systémů</translation>
+        <translation>Synchronizuji souborové systémy</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3084"/>
@@ -585,7 +585,7 @@ Restartovat nyní</translation>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
         <translation>
-*NALÉHAVÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne desktop) do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.ubuntu.com</translation>
+*DŮLEŽITÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne desktop) do kořenové složky vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="205"/>
@@ -599,7 +599,7 @@ Restartovat nyní</translation>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
-*NALÉHAVÉ* Před restartováním umístěte instalační ISO Debianu do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.debian.org</translation>
+*DŮLEŽITÉ* Před restartováním umístěte instalační ISO Debianu do kořenové složky vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="351"/>
@@ -632,7 +632,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Vítejte v &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt; - Universal Netboot Installer. Použití:&lt;ol&gt;&lt;li&gt;Ze seznamu nahoře vyberte distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory níže.&lt;/li&gt;&lt;li&gt;Vyberte typ instalace a k zahájení klikněte na OK.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Vítá vás &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Použití:&lt;ol&gt;&lt;li&gt;Ze seznamu nahoře vyberte distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory níže.&lt;/li&gt;&lt;li&gt;Vyberte typ instalace a k zahájení klikněte na OK.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
@@ -662,7 +662,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Debian je komunitně vyvíjená linuxová distribuce podporující širokou škálu architektur, nabízející obrovský repozitář balíků.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; NetInstall verze umožňuje instalaci přes FTP. Přejete-li si použít předem stažený instalační obraz, zvolte možnost HdMedia, pak vložte instalační ISO soubor do kořenové složky vašeho harddisku nebo USB disku</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>
@@ -677,7 +677,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="69"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Domovská stráka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je od Debianu odvozenou distribucí obsahující grafické prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. Toto je experimentální verze, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilní vydání&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je od Debianu odvozenou distribucí obsahující grafické prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. Toto je experimentální verze, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilní vydání&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="79"/>

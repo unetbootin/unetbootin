@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-03-27 21:52+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-30 11:19+0000
+Last-Translator: Florent DEUTSCH &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -239,7 +239,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>DeGaucheADroite</translation>
     </message>
 </context>
 <context>
@@ -640,7 +640,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page Officielle:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt;  BackTrack est une distribution spécialisée dans les analyses réseaux et tests d&apos;intrusion.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; BackTrack démarre et fonctionne en mode Live USB; Il n&apos;est pas nécessaire de l&apos;installer pour l&apos;utiliser.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -650,7 +650,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="43"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page Officielle:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt;  CloneZilla est une distribution utilisée pour sauvegarder les disques ou créer des images de disque.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; CloneZilla démarre et fonctionne en mode Live USB; Il n&apos;est pas nécessaire de l&apos;installer pour l&apos;utiliser.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="48"/>
@@ -879,7 +879,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -890,7 +890,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribution</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
@@ -900,7 +900,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Disque&amp;Image</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
@@ -910,7 +910,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Personalisé</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -938,7 +938,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Entrée</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -948,7 +948,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Échap</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="548"/>
@@ -1000,7 +1000,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Type :</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1089,12 +1089,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Options:</translation>
     </message>
 </context>
 <context>

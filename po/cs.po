@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-27 16:54-0400\n"
-"PO-Revision-Date: 2010-03-14 06:18+0000\n"
-"Last-Translator: Vojtěch Trefný <vojtech.trefny@gmail.com>\n"
+"POT-Creation-Date: 2010-04-18 12:45-0400\n"
+"PO-Revision-Date: 2010-04-23 19:26+0000\n"
+"Last-Translator: Roman Horník <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-18 16:40+0000\n"
+"X-Launchpad-Export-Date: 2010-05-01 13:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -18,66 +18,67 @@ msgid "LeftToRight"
 msgstr "LeftToRight"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:163 unetbootin.cpp:245 unetbootin.cpp:246 unetbootin.cpp:313
-#: unetbootin.cpp:412 unetbootin.cpp:505 unetbootin.cpp:2378
-#: unetbootin.cpp:2391 unetbootin.cpp:2549 unetbootin.cpp:2914
+#: unetbootin.cpp:164 unetbootin.cpp:246 unetbootin.cpp:247 unetbootin.cpp:314
+#: unetbootin.cpp:413 unetbootin.cpp:506 unetbootin.cpp:2456
+#: unetbootin.cpp:2469 unetbootin.cpp:2627 unetbootin.cpp:3077
 msgid "Hard Disk"
 msgstr "Pevný disk"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:164 unetbootin.cpp:228 unetbootin.cpp:242 unetbootin.cpp:243
-#: unetbootin.cpp:315 unetbootin.cpp:416 unetbootin.cpp:510 unetbootin.cpp:582
-#: unetbootin.cpp:598 unetbootin.cpp:852 unetbootin.cpp:1330
-#: unetbootin.cpp:1727 unetbootin.cpp:1769 unetbootin.cpp:2382
-#: unetbootin.cpp:2407 unetbootin.cpp:2553 unetbootin.cpp:2918
+#: unetbootin.cpp:165 unetbootin.cpp:229 unetbootin.cpp:243 unetbootin.cpp:244
+#: unetbootin.cpp:316 unetbootin.cpp:417 unetbootin.cpp:511 unetbootin.cpp:583
+#: unetbootin.cpp:599 unetbootin.cpp:853 unetbootin.cpp:1346
+#: unetbootin.cpp:1408 unetbootin.cpp:1805 unetbootin.cpp:1847
+#: unetbootin.cpp:2460 unetbootin.cpp:2485 unetbootin.cpp:2631
+#: unetbootin.cpp:3081
 msgid "USB Drive"
 msgstr "Mechanika USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:165 unetbootin.cpp:192 unetbootin.cpp:193 unetbootin.cpp:281
-#: unetbootin.cpp:533 unetbootin.cpp:534 unetbootin.cpp:2455
+#: unetbootin.cpp:166 unetbootin.cpp:193 unetbootin.cpp:194 unetbootin.cpp:282
+#: unetbootin.cpp:534 unetbootin.cpp:535 unetbootin.cpp:2533
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:166 unetbootin.cpp:188 unetbootin.cpp:189 unetbootin.cpp:286
-#: unetbootin.cpp:538 unetbootin.cpp:539 unetbootin.cpp:2447
+#: unetbootin.cpp:167 unetbootin.cpp:189 unetbootin.cpp:190 unetbootin.cpp:287
+#: unetbootin.cpp:539 unetbootin.cpp:540 unetbootin.cpp:2525
 msgid "Floppy"
 msgstr "Disketa"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:206 unetbootin.cpp:210 unetbootin.cpp:214 unetbootin.cpp:218
-#: unetbootin.cpp:224 unetbootin.cpp:236
+#: unetbootin.cpp:207 unetbootin.cpp:211 unetbootin.cpp:215 unetbootin.cpp:219
+#: unetbootin.cpp:225 unetbootin.cpp:237
 msgid "either"
 msgstr "oba"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:530
+#: unetbootin.cpp:531
 msgid "Open Disk Image File"
-msgstr "Výběr souboru s obrazem disku"
+msgstr "Vybrat soubor s obrazem disku"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:548
+#: unetbootin.cpp:549
 msgid "Open Kernel File"
-msgstr "Výběr souboru s jádrem"
+msgstr "Vybrat soubor s jádrem"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:556
+#: unetbootin.cpp:557
 msgid "Open Initrd File"
-msgstr "Výběr souboru initrd"
+msgstr "Vybrat soubor initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:564
+#: unetbootin.cpp:565
 msgid "Open Bootloader Config File"
-msgstr "Výběr souboru s nastavením zavaděče"
+msgstr "Vybrat soubor s nastavením zavaděče"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:586
+#: unetbootin.cpp:587
 msgid "Insert a USB flash drive"
 msgstr "Vložte USB flash disk"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:587
+#: unetbootin.cpp:588
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -86,12 +87,12 @@ msgstr ""
 "zkuste jej naformátovat na FAT32."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:602
+#: unetbootin.cpp:603
 msgid "%1 not mounted"
 msgstr "%1 nepřipojen"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:603
+#: unetbootin.cpp:604
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -100,72 +101,72 @@ msgstr ""
 "automaticky po odpojení a opětovném připojení zařízení."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:618
+#: unetbootin.cpp:619
 msgid "Select a distro"
 msgstr "Vyberte distribuci"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:619
+#: unetbootin.cpp:620
 msgid "You must select a distribution to load."
 msgstr "Pro spuštění musíte vybrat distribuci"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:633
+#: unetbootin.cpp:634
 msgid "Select a disk image file"
 msgstr "Vyberte soubor s obrazem disku"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:634
+#: unetbootin.cpp:635
 msgid "You must select a disk image file to load."
 msgstr "Pro spuštění musíte vybrat obraz disku."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:648
+#: unetbootin.cpp:649
 msgid "Select a kernel and/or initrd file"
 msgstr "Vyberte jádro a/nebo soubor initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:649
+#: unetbootin.cpp:650
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "Pro spuštění musíte vybrat jádro a/nebo soubor initrd."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:663
+#: unetbootin.cpp:664
 msgid "Diskimage file not found"
-msgstr "Obraz disku nebyl nalezen"
+msgstr "Soubor obrazu disku nebyl nalezen"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:664
+#: unetbootin.cpp:665
 msgid "The specified diskimage file %1 does not exist."
 msgstr "Uvedený obraz disku %1 neexistuje."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678
+#: unetbootin.cpp:679
 msgid "Kernel file not found"
 msgstr "Soubor s jádrem nebyl nalezen"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:679
+#: unetbootin.cpp:680
 msgid "The specified kernel file %1 does not exist."
 msgstr "Uvedený soubor s jádrem %1 neexistuje."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:693
+#: unetbootin.cpp:694
 msgid "Initrd file not found"
 msgstr "Soubor initrd nebyl nalezen"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:695
 msgid "The specified initrd file %1 does not exist."
 msgstr "Uvedený soubor s initrd %1 neexistuje."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:798
+#: unetbootin.cpp:799
 msgid "%1 exists, overwrite?"
 msgstr "%1 již existuje, přepsat?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:799
+#: unetbootin.cpp:800
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -176,12 +177,12 @@ msgstr ""
 "verze. Pokud nevíte, zvolte 'Ano všem'."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:825
+#: unetbootin.cpp:826
 msgid "%1 is out of space, abort installation?"
 msgstr "V %1 není dostatek místa, přerušit instalaci?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:826
+#: unetbootin.cpp:827
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -192,92 +193,92 @@ msgstr ""
 "všech chyb o nedostatku místa 'Ne všem'."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1262 unetbootin.cpp:1284
+#: unetbootin.cpp:1263 unetbootin.cpp:1285
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Rozbalování ISO obrazu:</b> %1"
+msgstr "<b>Rozbaluji ISO obraz:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1360
+#: unetbootin.cpp:1438
 msgid "Extracting files, please wait..."
-msgstr "Rozbalování souborů, prosíme čekejte..."
+msgstr "Rozbaluji soubory, čekejte prosím..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1361
+#: unetbootin.cpp:1439
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archiv:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1362
+#: unetbootin.cpp:1440
 msgid "<b>Source:</b>"
 msgstr "<b>Zdroj:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1363
+#: unetbootin.cpp:1441
 msgid "<b>Destination:</b>"
 msgstr "<b>Cíl:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1364
+#: unetbootin.cpp:1442
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Rozbaleno:</b> 0 z %1 souborů"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1367
+#: unetbootin.cpp:1445
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Zdroj:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1368
+#: unetbootin.cpp:1446
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Cíl:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1369
+#: unetbootin.cpp:1447
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Rozbaleno:</b> %1 z %2 souborů"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1711
+#: unetbootin.cpp:1789
 msgid "Downloading files, please wait..."
-msgstr "Stahhování souborů, prosíme čekejte..."
+msgstr "Stahuji soubory, čekejte prosím..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1712
+#: unetbootin.cpp:1790
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Zdroj:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1713
+#: unetbootin.cpp:1791
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Cíl:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1714
+#: unetbootin.cpp:1792
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Staženo:</b> 0 bytes"
+msgstr "<b>Staženo:</b> 0 bajtů"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1791 unetbootin.cpp:1806
+#: unetbootin.cpp:1869 unetbootin.cpp:1884
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Staženo:</b> %1 z %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1882
+#: unetbootin.cpp:1960
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Vyhledávání <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1886
+#: unetbootin.cpp:1964
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 suhlasí s <a href=\"%3\">%3</a>"
+msgstr "%1/%2 souhlasí s <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2071
+#: unetbootin.cpp:2149
 msgid "%1 not found"
-msgstr "%1 nenalezen"
+msgstr "%1 nenalezeno"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2072
+#: unetbootin.cpp:2150
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -286,52 +287,52 @@ msgstr ""
 "Nainstalujte balík \"%3\" nebo ekvivalent pro vaši distribuci."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2360
+#: unetbootin.cpp:2438
 msgid "(Current)"
 msgstr "(Aktuální)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2361
+#: unetbootin.cpp:2439
 msgid "(Done)"
 msgstr "(Hotovo)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2628
+#: unetbootin.cpp:2706
 msgid "Configuring grub2 on %1"
-msgstr "Nastavování grub2 na %1"
+msgstr "Nastavuji grub2 na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2640
+#: unetbootin.cpp:2718
 msgid "Configuring grldr on %1"
-msgstr "Nastavování grldr na %1"
+msgstr "Nastavuji grldr na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2668
+#: unetbootin.cpp:2746
 msgid "Configuring grub on %1"
-msgstr "Nastavování grub na %1"
+msgstr "Nastavuji grub na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2804
+#: unetbootin.cpp:2926
 msgid "Installing syslinux to %1"
-msgstr "Instalace syslinux na %1"
+msgstr "Instaluji syslinux na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2839
+#: unetbootin.cpp:2961
 msgid "Installing extlinux to %1"
-msgstr "Instalace extlinux na %1"
+msgstr "Instaluji extlinux na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2904
+#: unetbootin.cpp:3067
 msgid "Syncing filesystems"
-msgstr "Synchronizace souborových systémů"
+msgstr "Synchronizuji souborové systémy"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2916
+#: unetbootin.cpp:3079
 msgid "After rebooting, select the "
 msgstr "Po restartu zvolte "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2920
+#: unetbootin.cpp:3083
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -348,8 +349,8 @@ msgid ""
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
 "\n"
-"*NALÉHAVÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne "
-"desktop) do kořenového adresáře vašeho pevného nebo USB disku. Alternate CD "
+"*DŮLEŽITÉ* Před restartováním umístěte ISO soubor Ubuntu alternate CD (ne "
+"desktop) do kořenové složky vašeho pevného nebo USB disku. Alternate CD "
 "můžete stáhnout z cdimage.ubuntu.com"
 
 #. ts-context unetbootin
@@ -378,8 +379,8 @@ msgid ""
 "cdimage.debian.org"
 msgstr ""
 "\n"
-"*NALÉHAVÉ* Před restartováním umístěte instalační ISO Debianu do kořenového "
-"adresáře vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z "
+"*DŮLEŽITÉ* Před restartováním umístěte instalační ISO Debianu do kořenové "
+"složky vašeho pevného nebo USB disku. Alternate CD můžete stáhnout z "
 "cdimage.debian.org"
 
 #. ts-context unetbootin
@@ -417,7 +418,7 @@ msgstr ""
 "na adresář zadejte '/pub/fedora/linux/releases/%1/Fedora/%2/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:623
+#: distrolst.cpp:631
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -434,7 +435,7 @@ msgstr ""
 "adresář zadejte '/factory/repo/oss'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:629
+#: distrolst.cpp:637
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -459,7 +460,7 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Vítejte v <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> - "
+"Vítá vás <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "Universal Netboot Installer. Použití:<ol><li>Ze seznamu nahoře vyberte "
 "distribuci a verzi ke stažení, nebo ručně zvolte potřebné soubory "
 "níže.</li><li>Vyberte typ instalace a k zahájení klikněte na OK.</li></ol>"
@@ -553,6 +554,13 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Popis:</b> "
+"Debian je komunitně vyvíjená linuxová distribuce podporující širokou škálu "
+"architektur, nabízející obrovský repozitář balíků.<br/><b>Poznámky:</b> "
+"NetInstall verze umožňuje instalaci přes FTP. Přejete-li si použít předem "
+"stažený instalační obraz, zvolte možnost HdMedia, pak vložte instalační ISO "
+"soubor do kořenové složky vašeho harddisku nebo USB disku"
 
 #. ts-context unetbootin
 #: distrover.cpp:58
@@ -596,13 +604,13 @@ msgid ""
 "This installs the unstable version, not the <a "
 "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
 msgstr ""
-"<b>Domovská stráka:</b> <a "
+"<b>Domovská stránka:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Popis:</b>"
 " Elive je od Debianu odvozenou distribucí obsahující grafické prostředí "
-"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) umožňuje práci se systémem "
-"bez jeho instalace, která je ale i tak možná. Toto je experimentální verze, "
-"nikoli <a href=\"http://www.elivecd.org/Download/Stable\">stabilní "
-"vydání</a>."
+"Enlightenment.<br/><b>Poznámky:</b> Živá (Live) verze umožňuje práci se "
+"systémem bez jeho instalace, která je ale i tak možná. Toto je "
+"experimentální verze, nikoli <a "
+"href=\"http://www.elivecd.org/Download/Stable\">stabilní vydání</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:78

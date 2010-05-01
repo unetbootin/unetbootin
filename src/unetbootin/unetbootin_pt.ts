@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-01-29 07:59+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-20 10:20+0000
+Last-Translator: Jose Almeida &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -613,7 +613,8 @@ Quer reinicializar agora?</translation>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Antes de reiniciar, coloque um ficheiro iso de instalação do Ubuntu alternate (não desktop) no directório raiz do disco rígido ou pen USB. Estes ficheiros podem ser obtidos em cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="205"/>
@@ -626,7 +627,8 @@ Quer reinicializar agora?</translation>
         <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*IMPORTANTE* Antes de reiniciar, coloque um ficheiro iso de instalação do Debian no directório raiz do disco rígido ou pen USB. Estes ficheiros podem ser obtidos em cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="351"/>
@@ -669,7 +671,7 @@ Quer reinicializar agora?</translation>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; BackTrack é uma distribuição focada na análise de rede e teste de penetração.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; O BackTrack é arrancado e corre em &quot;live mode&quot;; não é necessária instalação para ser usado.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -908,7 +910,7 @@ Quer reinicializar agora?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>

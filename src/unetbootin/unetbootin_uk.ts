@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-04-10 19:33+0000
-Last-Translator: Kisenko Vladimir &lt;Unknown&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-19 21:19+0000
+Last-Translator: Viktor Mosijchuk (Merik) &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -134,12 +134,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="603"/>
         <source>%1 not mounted</source>
-        <translation>%1 не примонтований</translation>
+        <translation>%1 не змонтований</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="604"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Спочатку потрібно примонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
+        <translation>Спочатку потрібно змонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="619"/>
@@ -169,7 +169,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="650"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Ви повинні обрати ядро та/чи файл initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
@@ -209,12 +209,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Файл %1 вже існує. Натисніть &apos;Так, для всіх&apos; щоб перезаписати його і не виводити діалог знову для наступних файлів, &apos;Так&apos; для перезапису в індивідуальному порядку, та &apos;Ні&apos; для збереження попередньої версії . Якщо сумніваєтесь, то натискайте &apos;Так, для всіх&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="826"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>Не вистачає місця на%1 , відмінити встановлення?</translation>
+        <translation>%1 невистачає місця, припинити встановлення?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="827"/>
@@ -444,7 +444,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Debian is a community-developed дистрибутив Linux що підтримує багато архітектур і надає великий репозиторій програм.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Версія NetInstall дозволяє встановлювати з FTP. Якщо ви хочете використовувати вже завантжений образ диску, вмкористовуйте HdMedia , and then place the install iso file on the root directory of your hard drive or USB drive</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>
@@ -663,7 +663,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>

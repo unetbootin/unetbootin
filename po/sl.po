@@ -1,16 +1,16 @@
-# Asturian translation for unetbootin
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Slovenian translation for unetbootin
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the unetbootin package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-04-18 12:45-0400\n"
-"PO-Revision-Date: 2009-09-20 22:03+0000\n"
-"Last-Translator: Iñigo Varela <malditoastur@gmail.com>\n"
-"Language-Team: Asturian <ast@li.org>\n"
+"PO-Revision-Date: 2010-04-29 22:40+0000\n"
+"Last-Translator: Štefan Baebler <Unknown>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,7 @@ msgstr ""
 #: unetbootin.cpp:413 unetbootin.cpp:506 unetbootin.cpp:2456
 #: unetbootin.cpp:2469 unetbootin.cpp:2627 unetbootin.cpp:3077
 msgid "Hard Disk"
-msgstr "Discu duru"
+msgstr "Trdi disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:165 unetbootin.cpp:229 unetbootin.cpp:243 unetbootin.cpp:244
@@ -37,7 +37,7 @@ msgstr "Discu duru"
 #: unetbootin.cpp:2460 unetbootin.cpp:2485 unetbootin.cpp:2631
 #: unetbootin.cpp:3081
 msgid "USB Drive"
-msgstr "Unidá USB"
+msgstr "Pogon USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:166 unetbootin.cpp:193 unetbootin.cpp:194 unetbootin.cpp:282
@@ -49,7 +49,7 @@ msgstr "ISO"
 #: unetbootin.cpp:167 unetbootin.cpp:189 unetbootin.cpp:190 unetbootin.cpp:287
 #: unetbootin.cpp:539 unetbootin.cpp:540 unetbootin.cpp:2525
 msgid "Floppy"
-msgstr "Disquín"
+msgstr "Disketa"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:207 unetbootin.cpp:211 unetbootin.cpp:215 unetbootin.cpp:219
@@ -80,7 +80,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:587
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "Vstavite USB pomnilnik"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:588
@@ -92,7 +92,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:603
 msgid "%1 not mounted"
-msgstr ""
+msgstr "%1 ni priklopljen"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:604
@@ -104,7 +104,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:619
 msgid "Select a distro"
-msgstr ""
+msgstr "Izberite distribucijo"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:620
@@ -114,7 +114,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:634
 msgid "Select a disk image file"
-msgstr ""
+msgstr "Izberi datoteko slike diska"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:635
@@ -200,17 +200,17 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1439
 msgid "<b>Archive:</b> %1"
-msgstr ""
+msgstr "<b>Arhiv:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1440
 msgid "<b>Source:</b>"
-msgstr ""
+msgstr "<b>Vir:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1441
 msgid "<b>Destination:</b>"
-msgstr ""
+msgstr "<b>Cilj:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1442
@@ -220,12 +220,12 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1445
 msgid "<b>Source:</b> %1 (%2)"
-msgstr ""
+msgstr "<b>Vir:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1446
 msgid "<b>Destination:</b> %1%2"
-msgstr ""
+msgstr "<b>Cilj:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1447
@@ -235,7 +235,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1789
 msgid "Downloading files, please wait..."
-msgstr ""
+msgstr "Prenašanje datotek. Prosim, počakajte.."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1790
@@ -245,22 +245,22 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1791
 msgid "<b>Destination:</b> %1"
-msgstr ""
+msgstr "<b>Cilj:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1792
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Prenešeno:</b> 0 bajtov"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1869 unetbootin.cpp:1884
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Prenešeno:</b> %1 od %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1960
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "Iskanje v <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1964
@@ -270,7 +270,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2149
 msgid "%1 not found"
-msgstr ""
+msgstr "%1 ni bil najden"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2150
@@ -282,12 +282,12 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2438
 msgid "(Current)"
-msgstr ""
+msgstr "(trenutno)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2439
 msgid "(Done)"
-msgstr ""
+msgstr "(končano)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2706
@@ -956,7 +956,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:20
 msgid "Unetbootin"
-msgstr ""
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
@@ -966,7 +966,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "&Distribucija"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:127
@@ -986,7 +986,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:381
 msgid "&Custom"
-msgstr ""
+msgstr "Po &meri"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:420
@@ -1013,7 +1013,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:490
 msgid "OK"
-msgstr ""
+msgstr "V redu"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:493
@@ -1023,7 +1023,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:500
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:503
@@ -1043,22 +1043,22 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:647
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Prenašanje datotek"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:654
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Razširjanje in kopiranje datotek"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:661
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Namestitev zaganjalnika"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:668
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Namestitev končana, ponovno zaženite"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:464 unetbootin.ui:483
@@ -1078,12 +1078,12 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:441
 msgid "&Type:"
-msgstr ""
+msgstr "&Vrsta:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Izberite verzijo distribucije"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:307
@@ -1093,7 +1093,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:148
@@ -1156,12 +1156,12 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:413
 msgid "Show &All Drives (Use with Care)"
-msgstr ""
+msgstr "Prikaži &vsel pogone (bodite previdni)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:170
 msgid "&Kernel:"
-msgstr ""
+msgstr "&Jedro:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:256

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-03-27 16:54-0400
-PO-Revision-Date: 2010-03-14 06:19+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-04-18 12:45-0400
+PO-Revision-Date: 2010-04-26 01:12+0000
+Last-Translator: Kristian &lt;kimocoder&gt; Bremvaag &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-04-18 16:40+0000
+X-Launchpad-Export-Date: 2010-05-01 13:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -823,7 +823,7 @@ Live versjonen tillater oppstart i live-modus. Derfra kan om du ønsker det, ins
     <message>
         <location filename="distrover.cpp" line="215"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Hjemmeside:&lt;/ b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/ a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Super OS er en uoffisiell derivat av Ubuntu som inkluderer ekstra programvare som standard. Krever en 2GB USB kjøre å installere. &lt;br/&gt;&lt;b&gt;Installasjonsnotater:&lt;/b&gt; Live versjonen tilater oppstart i Live modus, hvorfra installasjonsprogrammet valgfritt kan bli startet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="220"/>
