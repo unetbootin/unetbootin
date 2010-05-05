@@ -680,7 +680,16 @@ if (nameDistro == "Parted Magic")
 
 if (nameDistro == "PCLinuxOS")
 {
-	downloadfile(QString("http://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/pclinuxos-%1.iso").arg(relname.toLower().replace(" ", "-")), isotmpf);
+	QString deskn = relname.toLower().split(" ").first();
+	QString vern = relname.toLower().split(" ").last();
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://distro.ibiblio.org/pub/linux/distributions/texstar/pclinuxos/live-cd/english/preview/"
+	, 10485760, 2147483647, QList<QRegExp>() <<
+	QRegExp("^pclinuxos", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp(deskn, Qt::CaseInsensitive) <<
+	QRegExp(vern, Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
