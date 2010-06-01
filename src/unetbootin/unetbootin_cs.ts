@@ -253,10 +253,10 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2456"/>
-        <location filename="unetbootin.cpp" line="2469"/>
-        <location filename="unetbootin.cpp" line="2627"/>
-        <location filename="unetbootin.cpp" line="3082"/>
+        <location filename="unetbootin.cpp" line="2556"/>
+        <location filename="unetbootin.cpp" line="2569"/>
+        <location filename="unetbootin.cpp" line="2727"/>
+        <location filename="unetbootin.cpp" line="3182"/>
         <source>Hard Disk</source>
         <translation>Pevný disk</translation>
     </message>
@@ -271,14 +271,14 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="583"/>
         <location filename="unetbootin.cpp" line="599"/>
         <location filename="unetbootin.cpp" line="853"/>
-        <location filename="unetbootin.cpp" line="1346"/>
-        <location filename="unetbootin.cpp" line="1408"/>
-        <location filename="unetbootin.cpp" line="1805"/>
-        <location filename="unetbootin.cpp" line="1847"/>
-        <location filename="unetbootin.cpp" line="2460"/>
-        <location filename="unetbootin.cpp" line="2485"/>
-        <location filename="unetbootin.cpp" line="2631"/>
-        <location filename="unetbootin.cpp" line="3086"/>
+        <location filename="unetbootin.cpp" line="1352"/>
+        <location filename="unetbootin.cpp" line="1414"/>
+        <location filename="unetbootin.cpp" line="1905"/>
+        <location filename="unetbootin.cpp" line="1947"/>
+        <location filename="unetbootin.cpp" line="2560"/>
+        <location filename="unetbootin.cpp" line="2585"/>
+        <location filename="unetbootin.cpp" line="2731"/>
+        <location filename="unetbootin.cpp" line="3186"/>
         <source>USB Drive</source>
         <translation>Mechanika USB</translation>
     </message>
@@ -289,7 +289,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2533"/>
+        <location filename="unetbootin.cpp" line="2633"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -300,7 +300,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2525"/>
+        <location filename="unetbootin.cpp" line="2625"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
@@ -435,146 +435,146 @@ Restartovat nyní</translation>
         <translation>V adresáři %1 není dostatek místa. Pro přerušení instalace zvolte &apos;Ano&apos;, pro ignorování této chyba a pokračování instalace zvolte &apos;Ne&apos; a pro ignorování všech chyb o nedostatku místa &apos;Ne všem&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1263"/>
-        <location filename="unetbootin.cpp" line="1285"/>
+        <location filename="unetbootin.cpp" line="1269"/>
+        <location filename="unetbootin.cpp" line="1291"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Rozbaluji ISO obraz:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1438"/>
+        <location filename="unetbootin.cpp" line="1444"/>
         <source>Extracting files, please wait...</source>
         <translation>Rozbaluji soubory, čekejte prosím...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1439"/>
+        <location filename="unetbootin.cpp" line="1445"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1440"/>
+        <location filename="unetbootin.cpp" line="1446"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1441"/>
+        <location filename="unetbootin.cpp" line="1447"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cíl:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1442"/>
+        <location filename="unetbootin.cpp" line="1448"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Rozbaleno:&lt;/b&gt; 0 z %1 souborů</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1445"/>
+        <location filename="unetbootin.cpp" line="1451"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1446"/>
+        <location filename="unetbootin.cpp" line="1452"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cíl:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1447"/>
+        <location filename="unetbootin.cpp" line="1453"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Rozbaleno:&lt;/b&gt; %1 z %2 souborů</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1789"/>
+        <location filename="unetbootin.cpp" line="1889"/>
         <source>Downloading files, please wait...</source>
         <translation>Stahuji soubory, čekejte prosím...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1790"/>
+        <location filename="unetbootin.cpp" line="1890"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1791"/>
+        <location filename="unetbootin.cpp" line="1891"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cíl:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1792"/>
+        <location filename="unetbootin.cpp" line="1892"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Staženo:&lt;/b&gt; 0 bajtů</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1869"/>
-        <location filename="unetbootin.cpp" line="1884"/>
+        <location filename="unetbootin.cpp" line="1969"/>
+        <location filename="unetbootin.cpp" line="1984"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Staženo:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1960"/>
+        <location filename="unetbootin.cpp" line="2060"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Vyhledávání &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1964"/>
+        <location filename="unetbootin.cpp" line="2064"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 souhlasí s &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2149"/>
+        <location filename="unetbootin.cpp" line="2249"/>
         <source>%1 not found</source>
         <translation>%1 nenalezeno</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2150"/>
+        <location filename="unetbootin.cpp" line="2250"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nebylo nenalezeno. Toto je třeba pro %2 instalační režimy.
 Nainstalujte balík &quot;%3&quot; nebo ekvivalent pro vaši distribuci.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2438"/>
+        <location filename="unetbootin.cpp" line="2538"/>
         <source>(Current)</source>
         <translation>(Aktuální)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2439"/>
+        <location filename="unetbootin.cpp" line="2539"/>
         <source>(Done)</source>
         <translation>(Hotovo)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2706"/>
+        <location filename="unetbootin.cpp" line="2806"/>
         <source>Configuring grub2 on %1</source>
         <translation>Nastavuji grub2 na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2718"/>
+        <location filename="unetbootin.cpp" line="2818"/>
         <source>Configuring grldr on %1</source>
         <translation>Nastavuji grldr na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2746"/>
+        <location filename="unetbootin.cpp" line="2846"/>
         <source>Configuring grub on %1</source>
         <translation>Nastavuji grub na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2931"/>
+        <location filename="unetbootin.cpp" line="3031"/>
         <source>Installing syslinux to %1</source>
         <translation>Instaluji syslinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2966"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>Installing extlinux to %1</source>
         <translation>Instaluji extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3072"/>
+        <location filename="unetbootin.cpp" line="3172"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizuji souborové systémy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3084"/>
+        <location filename="unetbootin.cpp" line="3184"/>
         <source>After rebooting, select the </source>
         <translation>Po restartu zvolte </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3088"/>
+        <location filename="unetbootin.cpp" line="3188"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1

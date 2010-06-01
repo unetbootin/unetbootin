@@ -1018,7 +1018,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		if (!grubpcfg.isEmpty())
 			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1029,7 +1029,10 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
+				if (lcfgfoundfiles.at(j).contains("grub"))
+					syslinuxpcfg = getgrub2cfgargs(ccfgftf.fileName()).trimmed();
+				else
+					syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
 				rmFile(ccfgftf);
 				if (!syslinuxpcfg.isEmpty())
 					break;
@@ -1079,7 +1082,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1090,7 +1093,10 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
+				if (lcfgfoundfiles.at(j).contains("grub"))
+					syslinuxpcfgPL = getgrub2cfgargsL(ccfgftf.fileName());
+				else
+					syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
 				rmFile(ccfgftf);
 				combinedcfgPL.first.first += syslinuxpcfgPL.first.first;
 				combinedcfgPL.first.second += syslinuxpcfgPL.first.second;
@@ -1563,6 +1569,100 @@ QString unetbootin::getFirstTextBlock(QString fulltext)
 	{
 		return textblockL.at(0);
 	}
+}
+
+QString unetbootin::getgrub2cfgargs(QString cfgfile)
+{
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine().trimmed();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (cfgfileCL.contains(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			return fixkernelbootoptions(QString(cfgfileCL).remove(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)));
+		}
+	}
+	return "";
+}
+
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getgrub2cfgargsL(QString cfgfile)
+{
+	QPair<QStringList, QStringList> kernelandinitrd;
+	QPair<QStringList, QStringList> titleandparams;
+	int curindex = 0;
+	bool kernelpassed = false;
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+	kernelandinitrd.first.append(kernelLoc);
+	kernelandinitrd.second.append(initrdLoc);
+	titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
+	titleandparams.second.append("");
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine().trimmed();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (cfgfileCL.contains(QRegExp("^menuentry\\s{1,}\"\\S{1,}\"", Qt::CaseInsensitive)))
+		{
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
+				titleandparams.second.append("");
+				kernelpassed = false;
+			}
+			titleandparams.first[curindex] = QString(cfgfileCL).remove("menuentry", Qt::CaseInsensitive).remove("\"").remove("{").remove("}").trimmed();
+			continue;
+		}
+		if (cfgfileCL.contains(QRegExp("^initrd\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			kernelandinitrd.second[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^initrd", Qt::CaseInsensitive)).trimmed());
+//			if (kernelandinitrd.second.at(curindex).isEmpty())
+//				kernelandinitrd.second[curindex] = initrdLoc;
+			continue;
+		}
+//		if (cfgfileCL.contains(QRegExp("^module\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+//		{
+//			kernelandinitrd.second[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^module", Qt::CaseInsensitive)).trimmed());
+//			if (kernelandinitrd.second.at(curindex).isEmpty())
+//				kernelandinitrd.second[curindex] = initrdLoc;
+//		}
+		if (cfgfileCL.contains(QRegExp("^linux\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+		{
+			if (kernelpassed)
+			{
+				++curindex;
+				kernelandinitrd.first.append(kernelLoc);
+				kernelandinitrd.second.append(initrdLoc);
+				titleandparams.first.append(QString("Untitled Entry Grub %1").arg(curindex));
+				titleandparams.second.append("");
+//				kernelpassed = false;
+			}
+			if (cfgfileCL.contains(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
+			{
+				titleandparams.second[curindex] = fixkernelbootoptions(QString(cfgfileCL).remove(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)));
+			}
+			kernelandinitrd.first[curindex] = getFirstTextBlock(QString(cfgfileCL).remove(QRegExp("^linux", Qt::CaseInsensitive)).trimmed());
+//			if (kernelandinitrd.first.at(curindex).isEmpty())
+//				kernelandinitrd.first[curindex] = kernelLoc;
+			kernelpassed = true;
+			continue;
+		}
+	}
+	return qMakePair(kernelandinitrd, titleandparams);
 }
 
 QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
