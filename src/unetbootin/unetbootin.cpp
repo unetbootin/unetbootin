@@ -1018,7 +1018,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		if (!grubpcfg.isEmpty())
 			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grubenv" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1082,7 +1082,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grubenv" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1584,6 +1584,24 @@ QString unetbootin::getgrub2cfgargs(QString cfgfile)
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
 		}
+		if (cfgfileCL.contains("${"))
+		{
+			for (QMap<QString, QString>::const_iterator i = grub2vars.begin(); i != grub2vars.end(); ++i)
+			{
+				if (cfgfileCL.contains(QString("${%1}").arg(i.key())))
+					cfgfileCL.replace(QString("${%1}").arg(i.key()), i.value());
+			}
+		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
+		{
+			QRegExp setrg("set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+			}
+		}
 		if (cfgfileCL.contains(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}\\S{1,}", Qt::CaseInsensitive)))
 		{
 			return fixkernelbootoptions(QString(cfgfileCL).remove(QRegExp("^linux\\s{1,}\\S{1,}\\s{1,}", Qt::CaseInsensitive)));
@@ -1612,6 +1630,25 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (cfgfileCL.contains("#"))
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (cfgfileCL.contains("${"))
+		{
+			for (QMap<QString, QString>::const_iterator i = grub2vars.begin(); i != grub2vars.end(); ++i)
+			{
+				if (cfgfileCL.contains(QString("${%1}").arg(i.key())))
+					cfgfileCL.replace(QString("${%1}").arg(i.key()), i.value());
+			}
+		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
+		{
+			QRegExp setrg("set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				qDebug() << grub2vars;
+			}
 		}
 		if (cfgfileCL.contains(QRegExp("^menuentry\\s{1,}\"\\S{1,}\"", Qt::CaseInsensitive)))
 		{

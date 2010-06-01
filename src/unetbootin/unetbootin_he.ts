@@ -251,10 +251,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2556"/>
-        <location filename="unetbootin.cpp" line="2569"/>
-        <location filename="unetbootin.cpp" line="2727"/>
-        <location filename="unetbootin.cpp" line="3182"/>
+        <location filename="unetbootin.cpp" line="2593"/>
+        <location filename="unetbootin.cpp" line="2606"/>
+        <location filename="unetbootin.cpp" line="2764"/>
+        <location filename="unetbootin.cpp" line="3219"/>
         <source>Hard Disk</source>
         <translation>כונן קשיח</translation>
     </message>
@@ -271,12 +271,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1352"/>
         <location filename="unetbootin.cpp" line="1414"/>
-        <location filename="unetbootin.cpp" line="1905"/>
-        <location filename="unetbootin.cpp" line="1947"/>
-        <location filename="unetbootin.cpp" line="2560"/>
-        <location filename="unetbootin.cpp" line="2585"/>
-        <location filename="unetbootin.cpp" line="2731"/>
-        <location filename="unetbootin.cpp" line="3186"/>
+        <location filename="unetbootin.cpp" line="1942"/>
+        <location filename="unetbootin.cpp" line="1984"/>
+        <location filename="unetbootin.cpp" line="2597"/>
+        <location filename="unetbootin.cpp" line="2622"/>
+        <location filename="unetbootin.cpp" line="2768"/>
+        <location filename="unetbootin.cpp" line="3223"/>
         <source>USB Drive</source>
         <translation>כונן USB</translation>
     </message>
@@ -287,7 +287,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2633"/>
+        <location filename="unetbootin.cpp" line="2670"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -298,7 +298,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2625"/>
+        <location filename="unetbootin.cpp" line="2662"/>
         <source>Floppy</source>
         <translation>דיסקט</translation>
     </message>
@@ -479,100 +479,100 @@ Reboot now?</source>
         <translation>&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1889"/>
+        <location filename="unetbootin.cpp" line="1926"/>
         <source>Downloading files, please wait...</source>
         <translation>קבצים בהורדה, אנא המתן...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1890"/>
+        <location filename="unetbootin.cpp" line="1927"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1891"/>
+        <location filename="unetbootin.cpp" line="1928"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1892"/>
+        <location filename="unetbootin.cpp" line="1929"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1969"/>
-        <location filename="unetbootin.cpp" line="1984"/>
+        <location filename="unetbootin.cpp" line="2006"/>
+        <location filename="unetbootin.cpp" line="2021"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2060"/>
+        <location filename="unetbootin.cpp" line="2097"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2064"/>
+        <location filename="unetbootin.cpp" line="2101"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2249"/>
+        <location filename="unetbootin.cpp" line="2286"/>
         <source>%1 not found</source>
         <translation>%1 לא נמצא</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2250"/>
+        <location filename="unetbootin.cpp" line="2287"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
 יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2538"/>
+        <location filename="unetbootin.cpp" line="2575"/>
         <source>(Current)</source>
         <translation>(נוכחי)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2539"/>
+        <location filename="unetbootin.cpp" line="2576"/>
         <source>(Done)</source>
         <translation>(בוצע)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2806"/>
+        <location filename="unetbootin.cpp" line="2843"/>
         <source>Configuring grub2 on %1</source>
         <translation>הגדרת grub2 על גבי %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="2855"/>
         <source>Configuring grldr on %1</source>
         <translation>הגדרת grldr על %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2846"/>
+        <location filename="unetbootin.cpp" line="2883"/>
         <source>Configuring grub on %1</source>
         <translation>הגדרת grub על %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3031"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>Installing syslinux to %1</source>
         <translation>התקנת syslinux אל %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3066"/>
+        <location filename="unetbootin.cpp" line="3103"/>
         <source>Installing extlinux to %1</source>
         <translation>התקנת extlinux אל %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3172"/>
+        <location filename="unetbootin.cpp" line="3209"/>
         <source>Syncing filesystems</source>
         <translation>סנכרון מערכות קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3184"/>
+        <location filename="unetbootin.cpp" line="3221"/>
         <source>After rebooting, select the </source>
         <translation>לאחר האתחול, יש לבחור ב </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3188"/>
+        <location filename="unetbootin.cpp" line="3225"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1

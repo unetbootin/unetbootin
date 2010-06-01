@@ -178,6 +178,7 @@ public:
 	QString slinitrdLine;
 	QString sevzcommand;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
+	QMap<QString, QString> grub2vars;
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
 	QString dfcommand;

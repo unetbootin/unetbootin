@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mingwb="$(ls /usr/ | grep mingw32 | head --lines 1)"
+mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
 qtx11d="$(pwd)/qt4-x11"
 if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
 then

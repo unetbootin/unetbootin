@@ -118,10 +118,10 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2556"/>
-        <location filename="unetbootin.cpp" line="2569"/>
-        <location filename="unetbootin.cpp" line="2727"/>
-        <location filename="unetbootin.cpp" line="3182"/>
+        <location filename="unetbootin.cpp" line="2593"/>
+        <location filename="unetbootin.cpp" line="2606"/>
+        <location filename="unetbootin.cpp" line="2764"/>
+        <location filename="unetbootin.cpp" line="3219"/>
         <source>Hard Disk</source>
         <translation>Disco ríxido</translation>
     </message>
@@ -138,12 +138,12 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1352"/>
         <location filename="unetbootin.cpp" line="1414"/>
-        <location filename="unetbootin.cpp" line="1905"/>
-        <location filename="unetbootin.cpp" line="1947"/>
-        <location filename="unetbootin.cpp" line="2560"/>
-        <location filename="unetbootin.cpp" line="2585"/>
-        <location filename="unetbootin.cpp" line="2731"/>
-        <location filename="unetbootin.cpp" line="3186"/>
+        <location filename="unetbootin.cpp" line="1942"/>
+        <location filename="unetbootin.cpp" line="1984"/>
+        <location filename="unetbootin.cpp" line="2597"/>
+        <location filename="unetbootin.cpp" line="2622"/>
+        <location filename="unetbootin.cpp" line="2768"/>
+        <location filename="unetbootin.cpp" line="3223"/>
         <source>USB Drive</source>
         <translation>Unidade USB</translation>
     </message>
@@ -154,7 +154,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2633"/>
+        <location filename="unetbootin.cpp" line="2670"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -165,7 +165,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2625"/>
+        <location filename="unetbootin.cpp" line="2662"/>
         <source>Floppy</source>
         <translation>Disquete</translation>
     </message>
@@ -346,100 +346,100 @@ X-Generator: Launchpad (build Unknown)
         <translation>&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1889"/>
+        <location filename="unetbootin.cpp" line="1926"/>
         <source>Downloading files, please wait...</source>
         <translation>Descargando ficheiros, agarde...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1890"/>
+        <location filename="unetbootin.cpp" line="1927"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Orixe:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1891"/>
+        <location filename="unetbootin.cpp" line="1928"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1892"/>
+        <location filename="unetbootin.cpp" line="1929"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1969"/>
-        <location filename="unetbootin.cpp" line="1984"/>
+        <location filename="unetbootin.cpp" line="2006"/>
+        <location filename="unetbootin.cpp" line="2021"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2060"/>
+        <location filename="unetbootin.cpp" line="2097"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2064"/>
+        <location filename="unetbootin.cpp" line="2101"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2249"/>
+        <location filename="unetbootin.cpp" line="2286"/>
         <source>%1 not found</source>
         <translation>%1 non atopado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2250"/>
+        <location filename="unetbootin.cpp" line="2287"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 non atopado. É preciso para instalar en modo  %2.
 Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2538"/>
+        <location filename="unetbootin.cpp" line="2575"/>
         <source>(Current)</source>
         <translation>(Actual)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2539"/>
+        <location filename="unetbootin.cpp" line="2576"/>
         <source>(Done)</source>
         <translation>(Feito)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2806"/>
+        <location filename="unetbootin.cpp" line="2843"/>
         <source>Configuring grub2 on %1</source>
         <translation>Configurando grub2 en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="2855"/>
         <source>Configuring grldr on %1</source>
         <translation>Configurando grldr en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2846"/>
+        <location filename="unetbootin.cpp" line="2883"/>
         <source>Configuring grub on %1</source>
         <translation>Configurando grub en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3031"/>
+        <location filename="unetbootin.cpp" line="3068"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3066"/>
+        <location filename="unetbootin.cpp" line="3103"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3172"/>
+        <location filename="unetbootin.cpp" line="3209"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando o sistema de ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3184"/>
+        <location filename="unetbootin.cpp" line="3221"/>
         <source>After rebooting, select the </source>
         <translation>Despois de reiniciar, elixa o </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3188"/>
+        <location filename="unetbootin.cpp" line="3225"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
