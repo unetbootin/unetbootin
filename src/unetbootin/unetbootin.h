@@ -210,12 +210,14 @@ public:
 	QString getgrubcfgargs(QString cfgfile);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
 	QString getFirstTextBlock(QString fulltext);
-	QString getgrub2cfgargs(QString cfgfile);
-	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrub2cfgargsL(QString cfgfile);
+	QString getgrub2cfgargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrub2cfgargsL(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QString searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts);
+	QString searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts);
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts);
 	void downloadfile(QString fileurl, QString targetfile);
 	QString downloadpagecontents(QString pageurl);
 	QStringList lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);

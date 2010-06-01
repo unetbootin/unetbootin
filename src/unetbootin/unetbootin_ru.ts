@@ -233,10 +233,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2593"/>
-        <location filename="unetbootin.cpp" line="2606"/>
-        <location filename="unetbootin.cpp" line="2764"/>
-        <location filename="unetbootin.cpp" line="3219"/>
+        <location filename="unetbootin.cpp" line="2686"/>
+        <location filename="unetbootin.cpp" line="2699"/>
+        <location filename="unetbootin.cpp" line="2857"/>
+        <location filename="unetbootin.cpp" line="3312"/>
         <source>Hard Disk</source>
         <translation>Жёсткий диск</translation>
     </message>
@@ -253,12 +253,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1352"/>
         <location filename="unetbootin.cpp" line="1414"/>
-        <location filename="unetbootin.cpp" line="1942"/>
-        <location filename="unetbootin.cpp" line="1984"/>
-        <location filename="unetbootin.cpp" line="2597"/>
-        <location filename="unetbootin.cpp" line="2622"/>
-        <location filename="unetbootin.cpp" line="2768"/>
-        <location filename="unetbootin.cpp" line="3223"/>
+        <location filename="unetbootin.cpp" line="2035"/>
+        <location filename="unetbootin.cpp" line="2077"/>
+        <location filename="unetbootin.cpp" line="2690"/>
+        <location filename="unetbootin.cpp" line="2715"/>
+        <location filename="unetbootin.cpp" line="2861"/>
+        <location filename="unetbootin.cpp" line="3316"/>
         <source>USB Drive</source>
         <translation>Устройство USB</translation>
     </message>
@@ -269,7 +269,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2670"/>
+        <location filename="unetbootin.cpp" line="2763"/>
         <source>ISO</source>
         <translation>Образ диска</translation>
     </message>
@@ -280,7 +280,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2662"/>
+        <location filename="unetbootin.cpp" line="2755"/>
         <source>Floppy</source>
         <translation>Дисковод гибких дисков</translation>
     </message>
@@ -461,100 +461,100 @@ Reboot now?</source>
         <translation>&lt;b&gt;Распаковано:&lt;/b&gt; %1 of %2 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1926"/>
+        <location filename="unetbootin.cpp" line="2019"/>
         <source>Downloading files, please wait...</source>
         <translation>Закачка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1927"/>
+        <location filename="unetbootin.cpp" line="2020"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Источник:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1928"/>
+        <location filename="unetbootin.cpp" line="2021"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Назначение:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1929"/>
+        <location filename="unetbootin.cpp" line="2022"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Загружено:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2006"/>
-        <location filename="unetbootin.cpp" line="2021"/>
+        <location filename="unetbootin.cpp" line="2099"/>
+        <location filename="unetbootin.cpp" line="2114"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Загружено:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2097"/>
+        <location filename="unetbootin.cpp" line="2190"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Поиск в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2101"/>
+        <location filename="unetbootin.cpp" line="2194"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 совпадает в &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2286"/>
+        <location filename="unetbootin.cpp" line="2379"/>
         <source>%1 not found</source>
         <translation>%1 не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2287"/>
+        <location filename="unetbootin.cpp" line="2380"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 не найден. Это необходимо для режима установки %2.
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2575"/>
+        <location filename="unetbootin.cpp" line="2668"/>
         <source>(Current)</source>
         <translation>(Текущий)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2576"/>
+        <location filename="unetbootin.cpp" line="2669"/>
         <source>(Done)</source>
         <translation>(Выполнено)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2843"/>
+        <location filename="unetbootin.cpp" line="2936"/>
         <source>Configuring grub2 on %1</source>
         <translation>Конфигурирование grub2 на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2855"/>
+        <location filename="unetbootin.cpp" line="2948"/>
         <source>Configuring grldr on %1</source>
         <translation>Конфигурирование grldr на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2883"/>
+        <location filename="unetbootin.cpp" line="2976"/>
         <source>Configuring grub on %1</source>
         <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3068"/>
+        <location filename="unetbootin.cpp" line="3161"/>
         <source>Installing syslinux to %1</source>
         <translation>Установка syslinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3103"/>
+        <location filename="unetbootin.cpp" line="3196"/>
         <source>Installing extlinux to %1</source>
         <translation>Установка extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3209"/>
+        <location filename="unetbootin.cpp" line="3302"/>
         <source>Syncing filesystems</source>
         <translation>Синхронизую файловую систему</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3221"/>
+        <location filename="unetbootin.cpp" line="3314"/>
         <source>After rebooting, select the </source>
         <translation>После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3225"/>
+        <location filename="unetbootin.cpp" line="3318"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>После перезагрузки выберите в BIOS опцию загрузки с USB.%1
