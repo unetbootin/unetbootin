@@ -1306,6 +1306,13 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 			if (listfilesizedirpair.second.at(i).size() < redundantrootdirname.size())
 				redundantrootdirname = listfilesizedirpair.second.at(i);
 		}
+		if (redundantrootdirname == "boot" ||
+			redundantrootdirname == "syslinux" ||
+			redundantrootdirname == "grub" ||
+			redundantrootdirname == "isolinux" ||
+			redundantrootdirname == "extlinux" ||
+			redundantrootdirname == "pxelinux")
+			redundanttopleveldir = false;
 		for (int i = 0; i < listfilesizedirpair.second.size(); ++i) // redundant toplevel path in dirs
 		{
 			if (!listfilesizedirpair.second.at(i).startsWith(redundantrootdirname))
