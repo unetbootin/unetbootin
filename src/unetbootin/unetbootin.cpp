@@ -297,7 +297,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		}
 		else if (pfirst.contains("cfgfile", Qt::CaseInsensitive))
 		{
-			QString cfgoptstxt = getcfgkernargs(psecond, "", QStringList());
+			QString cfgoptstxt = getcfgkernargs(psecond, "", QStringList(), QStringList());
 			if (cfgoptstxt.isEmpty())
 			{
 				cfgoptstxt = getgrubcfgargs(psecond);
@@ -564,7 +564,7 @@ void unetbootin::on_CfgFileSelector_clicked()
 {
 	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath());
 	OptionEnter->clear();
-	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList());
+	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList(), QStringList());
 	if (cfgoptstxt.isEmpty())
 	{
 		cfgoptstxt = getgrubcfgargs(nameCfg);
@@ -1032,9 +1032,9 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 				if (lcfgfoundfiles.at(j).contains("grubenv"))
 					loadgrub2env(ccfgftf.fileName());
 				else if (lcfgfoundfiles.at(j).contains("grub"))
-					syslinuxpcfg = getgrub2cfgargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
+					syslinuxpcfg = getgrub2cfgargs(ccfgftf.fileName(), archivefile, archivefileconts, QStringList() << lcfgfoundfiles.at(j)).trimmed();
 				else
-					syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
+					syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts, QStringList() << lcfgfoundfiles.at(j)).trimmed();
 				rmFile(ccfgftf);
 				if (!syslinuxpcfg.isEmpty())
 					break;
@@ -1098,9 +1098,9 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 				if (lcfgfoundfiles.at(j).contains("grubenv"))
 					loadgrub2env(ccfgftf.fileName());
 				else if (lcfgfoundfiles.at(j).contains("grub"))
-					syslinuxpcfgPL = getgrub2cfgargsL(ccfgftf.fileName(), archivefile, archivefileconts);
+					syslinuxpcfgPL = getgrub2cfgargsL(ccfgftf.fileName(), archivefile, archivefileconts, QStringList() << lcfgfoundfiles.at(j));
 				else
-					syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
+					syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts, QStringList() << lcfgfoundfiles.at(j));
 				rmFile(ccfgftf);
 				combinedcfgPL.first.first += syslinuxpcfgPL.first.first;
 				combinedcfgPL.first.second += syslinuxpcfgPL.first.second;
@@ -1636,7 +1636,7 @@ void unetbootin::loadgrub2env(QString cfgfile)
 	}
 }
 
-QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
+QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -1684,14 +1684,14 @@ QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStrin
 		if (!archivefileconts.isEmpty() && QRegExp("^configfile\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^configfile\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforgrub2includesfile(includesfile, archivefile, archivefileconts).trimmed();
+			searchincfrs = searchforgrub2includesfile(includesfile, archivefile, archivefileconts, visitedincludes).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
 		if (!archivefileconts.isEmpty() && QRegExp("^source\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^source\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforgrub2includesfile(includesfile, archivefile, archivefileconts).trimmed();
+			searchincfrs = searchforgrub2includesfile(includesfile, archivefile, archivefileconts, visitedincludes).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
@@ -1703,7 +1703,7 @@ QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStrin
 	return "";
 }
 
-QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getgrub2cfgargsL(QString cfgfile, QString archivefile, QStringList archivefileconts)
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getgrub2cfgargsL(QString cfgfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	QPair<QStringList, QStringList> kernelandinitrd;
 	QPair<QStringList, QStringList> titleandparams;
@@ -1761,7 +1761,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (!archivefileconts.isEmpty() && QRegExp("^configfile\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^configfile\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforgrub2includesfileL(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforgrub2includesfileL(includesfile, archivefile, archivefileconts, visitedincludes);
 			if (!searchincfrs.first.first.isEmpty())
 			{
 				kernelandinitrd.first += searchincfrs.first.first;
@@ -1774,7 +1774,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (!archivefileconts.isEmpty() && QRegExp("^source\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^source\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforgrub2includesfileL(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforgrub2includesfileL(includesfile, archivefile, archivefileconts, visitedincludes);
 			if (!searchincfrs.first.first.isEmpty())
 			{
 				kernelandinitrd.first += searchincfrs.first.first;
@@ -1836,7 +1836,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return qMakePair(kernelandinitrd, titleandparams);
 }
 
-QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
+QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -1854,14 +1854,14 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts).trimmed();
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts, visitedincludes).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
 		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^append\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts).trimmed();
+			searchincfrs = searchforincludesfile(includesfile, archivefile, archivefileconts, visitedincludes).trimmed();
 			if (!searchincfrs.isEmpty())
 				return searchincfrs;
 		}
@@ -1873,7 +1873,7 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 	return "";
 }
 
-QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts)
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::getcfgkernargsL(QString cfgfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	/*
 	QString cfgfiledir;
@@ -1911,7 +1911,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (!archivefileconts.isEmpty() && QRegExp("^include\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^include\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts, visitedincludes);
 			if (!searchincfrs.first.first.isEmpty())
 			{
 				kernelandinitrd.first += searchincfrs.first.first;
@@ -1924,7 +1924,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		if (!archivefileconts.isEmpty() && QRegExp("^append\\s{1,}\\S{1,}.cfg$", Qt::CaseInsensitive).exactMatch(cfgfileCL))
 		{
 			includesfile = QDir::toNativeSeparators(QString(cfgfileCL).remove(QRegExp("^append\\s{1,}", Qt::CaseInsensitive))).trimmed();
-			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts);
+			searchincfrs = searchforincludesfileL(includesfile, archivefile, archivefileconts, visitedincludes);
 			if (!searchincfrs.first.first.isEmpty())
 			{
 				kernelandinitrd.first += searchincfrs.first.first;
@@ -1991,7 +1991,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return qMakePair(kernelandinitrd, titleandparams);
 }
 
-QString unetbootin::searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts)
+QString unetbootin::searchforincludesfile(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
 	{
@@ -2002,9 +2002,13 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
 		{
+			if (visitedincludes.contains(includesfileL.at(i)))
+				continue;
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts).trimmed();
+			QStringList nextinclude = visitedincludes;
+			nextinclude.append(includesfileL.at(i));
+			QString extractcfgtmp = getcfgkernargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts, nextinclude).trimmed();
 			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.isEmpty())
 			{
@@ -2015,7 +2019,7 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 	return "";
 }
 
-QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts)
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
 	{
@@ -2026,9 +2030,13 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
 		{
+			if (visitedincludes.contains(includesfileL.at(i)))
+				continue;
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getcfgkernargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+			QStringList nextinclude = visitedincludes;
+			nextinclude.append(includesfileL.at(i));
+			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getcfgkernargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts, nextinclude);
 			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.first.first.isEmpty())
 			{
@@ -2039,7 +2047,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> >();
 }
 
-QString unetbootin::searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts)
+QString unetbootin::searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
 	{
@@ -2050,9 +2058,13 @@ QString unetbootin::searchforgrub2includesfile(QString includesfile, QString arc
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
 		{
+			if (visitedincludes.contains(includesfileL.at(i)))
+				continue;
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-			QString extractcfgtmp = getgrub2cfgargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts).trimmed();
+			QStringList nextinclude = visitedincludes;
+			nextinclude.append(includesfileL.at(i));
+			QString extractcfgtmp = getgrub2cfgargs(tmpoutputcfgf.fileName(), archivefile, archivefileconts, nextinclude).trimmed();
 			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.isEmpty())
 			{
@@ -2063,21 +2075,26 @@ QString unetbootin::searchforgrub2includesfile(QString includesfile, QString arc
 	return "";
 }
 
-QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts)
+QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
 	if (includesfile.startsWith(QDir::toNativeSeparators("/")))
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
 	qDebug() << "search for " << includesfile;
+	qDebug() << visitedincludes;
 	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
 	if (!includesfileL.isEmpty())
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
 		{
+			if (visitedincludes.contains(includesfileL.at(i)))
+				continue;
 			randtmpfile tmpoutputcfgf(ubntmpf, "cfg");
 			extractfile(includesfileL.at(i), tmpoutputcfgf.fileName(), archivefile);
-			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getgrub2cfgargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts);
+			QStringList nextinclude = visitedincludes;
+			nextinclude.append(includesfileL.at(i));
+			QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgtmp = getgrub2cfgargsL(tmpoutputcfgf.fileName(), archivefile, archivefileconts, nextinclude);
 			rmFile(tmpoutputcfgf);
 			if (!extractcfgtmp.first.first.isEmpty())
 			{
