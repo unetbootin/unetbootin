@@ -1018,7 +1018,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		if (!grubpcfg.isEmpty())
 			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grubenv" << "grub.cfg" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "grubenv" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1029,7 +1029,9 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				if (lcfgfoundfiles.at(j).contains("grub"))
+				if (lcfgfoundfiles.at(j).contains("grubenv"))
+					loadgrub2env(ccfgftf.fileName());
+				else if (lcfgfoundfiles.at(j).contains("grub"))
 					syslinuxpcfg = getgrub2cfgargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
 				else
 					syslinuxpcfg = getcfgkernargs(ccfgftf.fileName(), archivefile, archivefileconts).trimmed();
@@ -1082,7 +1084,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 //		if (!grubpcfg.isEmpty())
 //			break;
 	}
-	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grubenv" << "grub.cfg" << ".cfg";
+	QStringList syslinuxcfgtypes = QStringList() << "syslinux.cfg" << "isolinux.cfg" << "extlinux.cfg" << "pxelinux.cfg" << "grubenv" << "menu_en.cfg" << "en.cfg" << "extlinux.conf" << "grub.cfg" << ".cfg";
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
@@ -1093,7 +1095,9 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
-				if (lcfgfoundfiles.at(j).contains("grub"))
+				if (lcfgfoundfiles.at(j).contains("grubenv"))
+					loadgrub2env(ccfgftf.fileName());
+				else if (lcfgfoundfiles.at(j).contains("grub"))
 					syslinuxpcfgPL = getgrub2cfgargsL(ccfgftf.fileName(), archivefile, archivefileconts);
 				else
 					syslinuxpcfgPL = getcfgkernargsL(ccfgftf.fileName(), archivefile, archivefileconts);
@@ -1578,6 +1582,60 @@ QString unetbootin::getFirstTextBlock(QString fulltext)
 	}
 }
 
+void unetbootin::loadgrub2env(QString cfgfile)
+{
+	QFile cfgfileF(cfgfile);
+	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream cfgfileS(&cfgfileF);
+	QString cfgfileCL;
+	while (!cfgfileS.atEnd())
+	{
+		cfgfileCL = cfgfileS.readLine().trimmed();
+		if (cfgfileCL.contains("#"))
+		{
+			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
+		}
+		if (cfgfileCL.contains("${"))
+		{
+			for (QMap<QString, QString>::const_iterator i = grub2vars.begin(); i != grub2vars.end(); ++i)
+			{
+				if (cfgfileCL.contains(QString("${%1}").arg(i.key())))
+					cfgfileCL.replace(QString("${%1}").arg(i.key()), i.value());
+			}
+		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\".{1,}\"")))
+		{
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}\"(.{1,})\"");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				continue;
+			}
+		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
+		{
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				continue;
+			}
+		}
+		if (cfgfileCL.count("=") == 1)
+		{
+			QStringList splp = cfgfileCL.split("=");
+			if (splp.size() == 2)
+			{
+				grub2vars[splp.at(0).trimmed()] = QString(splp.at(1)).remove("\"").trimmed();
+			}
+		}
+	}
+}
+
 QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStringList archivefileconts)
 {
 	QFile cfgfileF(cfgfile);
@@ -2011,6 +2069,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
+	qDebug() << "search for " << includesfile;
 	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
 	if (!includesfileL.isEmpty())
 	{

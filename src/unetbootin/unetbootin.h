@@ -210,6 +210,7 @@ public:
 	QString getgrubcfgargs(QString cfgfile);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrubcfgargsL(QString cfgfile);
 	QString getFirstTextBlock(QString fulltext);
+	void loadgrub2env(QString cfgfile);
 	QString getgrub2cfgargs(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > getgrub2cfgargsL(QString cfgfile, QString archivefile, QStringList archivefileconts);
 	QString getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts);

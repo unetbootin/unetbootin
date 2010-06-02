@@ -233,10 +233,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2717"/>
-        <location filename="unetbootin.cpp" line="2730"/>
-        <location filename="unetbootin.cpp" line="2888"/>
-        <location filename="unetbootin.cpp" line="3343"/>
+        <location filename="unetbootin.cpp" line="2776"/>
+        <location filename="unetbootin.cpp" line="2789"/>
+        <location filename="unetbootin.cpp" line="2947"/>
+        <location filename="unetbootin.cpp" line="3402"/>
         <source>Hard Disk</source>
         <translation>Жёсткий диск</translation>
     </message>
@@ -251,14 +251,14 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="583"/>
         <location filename="unetbootin.cpp" line="599"/>
         <location filename="unetbootin.cpp" line="853"/>
-        <location filename="unetbootin.cpp" line="1359"/>
-        <location filename="unetbootin.cpp" line="1421"/>
-        <location filename="unetbootin.cpp" line="2066"/>
-        <location filename="unetbootin.cpp" line="2108"/>
-        <location filename="unetbootin.cpp" line="2721"/>
-        <location filename="unetbootin.cpp" line="2746"/>
-        <location filename="unetbootin.cpp" line="2892"/>
-        <location filename="unetbootin.cpp" line="3347"/>
+        <location filename="unetbootin.cpp" line="1363"/>
+        <location filename="unetbootin.cpp" line="1425"/>
+        <location filename="unetbootin.cpp" line="2125"/>
+        <location filename="unetbootin.cpp" line="2167"/>
+        <location filename="unetbootin.cpp" line="2780"/>
+        <location filename="unetbootin.cpp" line="2805"/>
+        <location filename="unetbootin.cpp" line="2951"/>
+        <location filename="unetbootin.cpp" line="3406"/>
         <source>USB Drive</source>
         <translation>Устройство USB</translation>
     </message>
@@ -269,7 +269,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2794"/>
+        <location filename="unetbootin.cpp" line="2853"/>
         <source>ISO</source>
         <translation>Образ диска</translation>
     </message>
@@ -280,7 +280,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2786"/>
+        <location filename="unetbootin.cpp" line="2845"/>
         <source>Floppy</source>
         <translation>Дисковод гибких дисков</translation>
     </message>
@@ -415,146 +415,146 @@ Reboot now?</source>
         <translation>В каталоге %1 нет места. Нажмите &apos;Да&apos; для прекращения установки, &apos;Нет&apos; для игнорирования этой ошибки и попытаться продолжить установку или &apos;Нет для всех&apos; для игнорирования всех ошибок о нехватке места.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1269"/>
-        <location filename="unetbootin.cpp" line="1291"/>
+        <location filename="unetbootin.cpp" line="1273"/>
+        <location filename="unetbootin.cpp" line="1295"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Распаковываю сжатый iso-образ:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1451"/>
+        <location filename="unetbootin.cpp" line="1455"/>
         <source>Extracting files, please wait...</source>
         <translation>Распаковка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1452"/>
+        <location filename="unetbootin.cpp" line="1456"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Архив:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1453"/>
+        <location filename="unetbootin.cpp" line="1457"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Источник:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1454"/>
+        <location filename="unetbootin.cpp" line="1458"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Назначение:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1455"/>
+        <location filename="unetbootin.cpp" line="1459"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Распаковано:&lt;/b&gt; 0 of %1 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1458"/>
+        <location filename="unetbootin.cpp" line="1462"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Источник:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1459"/>
+        <location filename="unetbootin.cpp" line="1463"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Назначение:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1460"/>
+        <location filename="unetbootin.cpp" line="1464"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Распаковано:&lt;/b&gt; %1 of %2 файлов</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2050"/>
+        <location filename="unetbootin.cpp" line="2109"/>
         <source>Downloading files, please wait...</source>
         <translation>Закачка файлов, пожалуйста, подождите...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2051"/>
+        <location filename="unetbootin.cpp" line="2110"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Источник:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2052"/>
+        <location filename="unetbootin.cpp" line="2111"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Назначение:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2053"/>
+        <location filename="unetbootin.cpp" line="2112"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Загружено:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2130"/>
-        <location filename="unetbootin.cpp" line="2145"/>
+        <location filename="unetbootin.cpp" line="2189"/>
+        <location filename="unetbootin.cpp" line="2204"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Загружено:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2221"/>
+        <location filename="unetbootin.cpp" line="2280"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Поиск в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2225"/>
+        <location filename="unetbootin.cpp" line="2284"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 совпадает в &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2410"/>
+        <location filename="unetbootin.cpp" line="2469"/>
         <source>%1 not found</source>
         <translation>%1 не найден</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2411"/>
+        <location filename="unetbootin.cpp" line="2470"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 не найден. Это необходимо для режима установки %2.
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2699"/>
+        <location filename="unetbootin.cpp" line="2758"/>
         <source>(Current)</source>
         <translation>(Текущий)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2700"/>
+        <location filename="unetbootin.cpp" line="2759"/>
         <source>(Done)</source>
         <translation>(Выполнено)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2967"/>
+        <location filename="unetbootin.cpp" line="3026"/>
         <source>Configuring grub2 on %1</source>
         <translation>Конфигурирование grub2 на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2979"/>
+        <location filename="unetbootin.cpp" line="3038"/>
         <source>Configuring grldr on %1</source>
         <translation>Конфигурирование grldr на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3007"/>
+        <location filename="unetbootin.cpp" line="3066"/>
         <source>Configuring grub on %1</source>
         <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3192"/>
+        <location filename="unetbootin.cpp" line="3251"/>
         <source>Installing syslinux to %1</source>
         <translation>Установка syslinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3227"/>
+        <location filename="unetbootin.cpp" line="3286"/>
         <source>Installing extlinux to %1</source>
         <translation>Установка extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3333"/>
+        <location filename="unetbootin.cpp" line="3392"/>
         <source>Syncing filesystems</source>
         <translation>Синхронизую файловую систему</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3345"/>
+        <location filename="unetbootin.cpp" line="3404"/>
         <source>After rebooting, select the </source>
         <translation>После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3349"/>
+        <location filename="unetbootin.cpp" line="3408"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>После перезагрузки выберите в BIOS опцию загрузки с USB.%1
