@@ -918,7 +918,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 
 QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
-	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
+	pdesc1->setText(tr("Locating kernel file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
@@ -959,13 +959,13 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 	QString kfloc = locatekernel(archivefile, archivefileconts);
 	if (kfloc == "")
 		return false;
-	pdesc1->setText(QString("Copying kernel file from %1").arg(kfloc));
+	pdesc1->setText(tr("Copying kernel file from %1").arg(kfloc));
 	return extractfile(kfloc, kernoutputfile, archivefile);
 }
 
 QString unetbootin::locateinitrd(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
-	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
+	pdesc1->setText(tr("Locating initrd file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.lz" << "initrd.igz" << "initrd.gz" << "initrd.xz" << "initrd.lzma" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz" << "initram" << "initr" << "init" << "ram" << ".lz" << ".lzma" << ".xz";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
@@ -1006,7 +1006,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 	QString kfloc = locateinitrd(archivefile, archivefileconts);
 	if (kfloc == "")
 		return false;
-	pdesc1->setText(QString("Copying initrd file from %1").arg(kfloc));
+	pdesc1->setText(tr("Copying initrd file from %1").arg(kfloc));
 	return extractfile(kfloc, kernoutputfile, archivefile);
 }
 
@@ -1071,7 +1071,7 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 
 QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::extractcfgL(QString archivefile, QStringList archivefileconts)
 {
-	pdesc1->setText(QString("Extracting bootloader configuration"));
+	pdesc1->setText(tr("Extracting bootloader configuration"));
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > grubpcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > combinedcfgPL;

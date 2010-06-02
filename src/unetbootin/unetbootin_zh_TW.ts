@@ -148,10 +148,10 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2872"/>
-        <location filename="unetbootin.cpp" line="2885"/>
-        <location filename="unetbootin.cpp" line="3043"/>
-        <location filename="unetbootin.cpp" line="3498"/>
+        <location filename="unetbootin.cpp" line="2882"/>
+        <location filename="unetbootin.cpp" line="2895"/>
+        <location filename="unetbootin.cpp" line="3053"/>
+        <location filename="unetbootin.cpp" line="3508"/>
         <source>Hard Disk</source>
         <translation>硬碟</translation>
     </message>
@@ -168,12 +168,12 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1383"/>
         <location filename="unetbootin.cpp" line="1445"/>
-        <location filename="unetbootin.cpp" line="2221"/>
-        <location filename="unetbootin.cpp" line="2263"/>
-        <location filename="unetbootin.cpp" line="2876"/>
-        <location filename="unetbootin.cpp" line="2901"/>
-        <location filename="unetbootin.cpp" line="3047"/>
-        <location filename="unetbootin.cpp" line="3502"/>
+        <location filename="unetbootin.cpp" line="2231"/>
+        <location filename="unetbootin.cpp" line="2273"/>
+        <location filename="unetbootin.cpp" line="2886"/>
+        <location filename="unetbootin.cpp" line="2911"/>
+        <location filename="unetbootin.cpp" line="3057"/>
+        <location filename="unetbootin.cpp" line="3512"/>
         <source>USB Drive</source>
         <translation>USB 磁碟機</translation>
     </message>
@@ -184,7 +184,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2949"/>
+        <location filename="unetbootin.cpp" line="2959"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -195,7 +195,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2941"/>
+        <location filename="unetbootin.cpp" line="2951"/>
         <source>Floppy</source>
         <translation>磁片</translation>
     </message>
@@ -330,146 +330,171 @@ X-Generator: Launchpad (build Unknown)
         <translation>資料夾 %1 已經滿了。請按 &quot;是&quot; 以中止安裝，&quot;否&quot; 以跳過這個錯誤並嘗試繼續安裝過程，或按下 &quot;全部皆否&quot; 以忽略所有空間不族的訊息。</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="921"/>
+        <source>Locating kernel file in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="962"/>
+        <source>Copying kernel file from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="968"/>
+        <source>Locating initrd file in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1009"/>
+        <source>Copying initrd file from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1074"/>
+        <source>Extracting bootloader configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="1289"/>
         <location filename="unetbootin.cpp" line="1315"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;自映象檔提取：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1538"/>
+        <location filename="unetbootin.cpp" line="1548"/>
         <source>Extracting files, please wait...</source>
         <translation>提取檔案中，請稍後...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1539"/>
+        <location filename="unetbootin.cpp" line="1549"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archive:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1540"/>
+        <location filename="unetbootin.cpp" line="1550"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;來源：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1541"/>
+        <location filename="unetbootin.cpp" line="1551"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;目的地：&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1542"/>
+        <location filename="unetbootin.cpp" line="1552"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;已提取：&lt;/b&gt; 0 of %1 檔案</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1545"/>
+        <location filename="unetbootin.cpp" line="1555"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;來源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1546"/>
+        <location filename="unetbootin.cpp" line="1556"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;目的地：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1547"/>
+        <location filename="unetbootin.cpp" line="1557"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;已提取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2205"/>
+        <location filename="unetbootin.cpp" line="2215"/>
         <source>Downloading files, please wait...</source>
         <translation>檔案下載中，請稍後...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2206"/>
+        <location filename="unetbootin.cpp" line="2216"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;來源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2207"/>
+        <location filename="unetbootin.cpp" line="2217"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;目的地：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2208"/>
+        <location filename="unetbootin.cpp" line="2218"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;已下載：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2285"/>
-        <location filename="unetbootin.cpp" line="2300"/>
+        <location filename="unetbootin.cpp" line="2295"/>
+        <location filename="unetbootin.cpp" line="2310"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;已下載：&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2376"/>
+        <location filename="unetbootin.cpp" line="2386"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>正在搜尋 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2380"/>
+        <location filename="unetbootin.cpp" line="2390"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 個符合於 &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2565"/>
+        <location filename="unetbootin.cpp" line="2575"/>
         <source>%1 not found</source>
         <translation>找不到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2566"/>
+        <location filename="unetbootin.cpp" line="2576"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>找不到 %1。%2 安裝模式必須要使用它。
 請安裝 &quot;%3&quot; 軟體包或是您的發行版當中的類似程式。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2854"/>
+        <location filename="unetbootin.cpp" line="2864"/>
         <source>(Current)</source>
         <translation>(目前)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2855"/>
+        <location filename="unetbootin.cpp" line="2865"/>
         <source>(Done)</source>
         <translation>(完成)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3122"/>
+        <location filename="unetbootin.cpp" line="3132"/>
         <source>Configuring grub2 on %1</source>
         <translation>正在設定 %1 上的 grub2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3134"/>
+        <location filename="unetbootin.cpp" line="3144"/>
         <source>Configuring grldr on %1</source>
         <translation>正在設定 %1 上的 grldr</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3162"/>
+        <location filename="unetbootin.cpp" line="3172"/>
         <source>Configuring grub on %1</source>
         <translation>正在設定 %1 上的 grub</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3347"/>
+        <location filename="unetbootin.cpp" line="3357"/>
         <source>Installing syslinux to %1</source>
         <translation>安裝 syslinux 至 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3382"/>
+        <location filename="unetbootin.cpp" line="3392"/>
         <source>Installing extlinux to %1</source>
         <translation>安裝 extlinux 至 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3488"/>
+        <location filename="unetbootin.cpp" line="3498"/>
         <source>Syncing filesystems</source>
         <translation>正在同步檔案系統</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3500"/>
+        <location filename="unetbootin.cpp" line="3510"/>
         <source>After rebooting, select the </source>
         <translation>重開機後，請選擇 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3504"/>
+        <location filename="unetbootin.cpp" line="3514"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重開機後，請選擇 BIOS 開機選單當中的 USB 開機選項。%1
