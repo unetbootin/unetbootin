@@ -81,5 +81,6 @@ for x in potext:
 	ntext.append(x)
 f = open('../../po/unetbootin.pot', 'w')
 for x in ntext:
-	f.write(x+'\n')
+	if x != 'QFileInfo::absolutePath: Constructed with empty filename':
+		f.write(x+'\n')
 

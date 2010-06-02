@@ -17,8 +17,7 @@ rvern="$(./vcs-revno)"
 make clean
 rm Makefile*
 rm release/*
-$qtx11d/bin/lupdate unetbootin.pro
-$qtx11d/bin/lrelease unetbootin.pro
+./mkpotfile
 ./qmake-windows
 make
 $mingwb-strip --strip-all release/unetbootin.exe
