@@ -1274,6 +1274,10 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		extractfile(subarchivename, tmpoutsubarchive.fileName(), isofile);
 		return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
 	}
+	if (listfilesizedirpair.first.first.contains(QDir::toNativeSeparators("rescue/KRD.VERSION"), Qt::CaseInsensitive))
+	{
+		return extractiso_krd10(isofile, exoutputdir);
+	}
 	QFileInfo isofileFI(isofile);
 	qint64 isofileSize = isofileFI.size();
 	if (listfilesizedirpair.first.first.size() < 10 && isofileSize > 12)
@@ -1428,6 +1432,54 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		rmFile(QString("%1ubnpathl.txt").arg(exoutputdir));
 	}
 #endif
+}
+
+void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
+{
+	if (!sdesc2->text().contains("(Current)"))
+	{
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
+		sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+	}
+	tprogress->setValue(0);
+	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
+	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
+	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
+	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
+	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
+	QFile(QString("%1liveusb").arg(targetDrive)).open(QIODevice::WriteOnly);
+	QStringList createdpaths = makepathtree(targetDrive, QStringList() << "rescue");
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
+	if (ubnpathlF.exists())
+	{
+		rmFile(ubnpathlF);
+	}
+	ubnpathlF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream ubnpathlS(&ubnpathlF);
+	for (int i = createdpaths.size() - 1; i > -1; i--)
+	{
+		ubnpathlS << createdpaths.at(i) << endl;
+	}
+	ubnpathlF.close();
+	QStringList extractedfiles;
+	pdesc1->setText(QString("Copying %1 to %2").arg(isofile).arg(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/"))));
+	if (QFile::exists(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/"))))
+		overwritefileprompt(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
+	else
+		extractedfiles.append(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
+	QFile::copy(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
+	if (ubnfilelF.exists())
+	{
+		rmFile(ubnfilelF);
+	}
+	ubnfilelF.open(QIODevice::WriteOnly | QIODevice::Text);
+	QTextStream ubnfilelS(&ubnfilelF);
+	for (int i = 0; i < extractedfiles.size(); ++i)
+	{
+		ubnfilelS << extractedfiles.at(i) << endl;
+	}
+	ubnfilelF.close();
 }
 
 QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
