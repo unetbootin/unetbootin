@@ -125,11 +125,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://gujin.sourceforge.net/\">http:
 	"<b>Description:</b> Gujin is a graphical boot manager which can bootstrap various volumes and files.<br/>"
 	"<b>Install Notes:</b> Gujin simply boots and runs; no installation is required to use it.") <<
 "2.4"));
-distroselect->addItem("Kaspersky Rescue Disk", (QStringList() << "Latest_Live" <<
+distroselect->addItem("Kaspersky Rescue Disk", (QStringList() << "10_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/>"
 	"<b>Description:</b> Kaspersky Rescue Disk detects and removes malware from your Windows installation.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
-"Latest_Live"));
+"10_Live" << "8_Live"));
 	distroselect->addItem("Kubuntu", (QStringList() << "10.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/>"
 	"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"

@@ -475,14 +475,14 @@ Genstart nu?</translation>
 *VIGTIGT* Efter genstart, skal du ignorer eventuelle fejlbeskeder og vælge &apos;tilbage&apos; hvis du bliver spurgt efter en CD. Gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, indtast &apos;download.fedora.redhat.com&apos; når du bliver spurgt efter server, og indtast &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="652"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VIGTIGT* Efter genstart, skal du ignorer eventuelle fejlbeskeder og vælge &apos;tilbage&apos; hvis du bliver spurgt efter en CD. Gå til hovedmenuen, vælg &apos;Start installation&apos;, vælg &apos;Netværk&apos; som kilde, vælg &apos;HTTP&apos; som protokol, indtast &apos;download.opensuse.org&apos; når du bliver spurgt efter server, og indtast &apos;/factory/repo/oss&apos; når du bliver spurgt efter mappe.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="643"/>
+        <location filename="distrolst.cpp" line="658"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

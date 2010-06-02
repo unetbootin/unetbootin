@@ -487,13 +487,28 @@ if (nameDistro == "gNewSense")
 
 if (nameDistro == "Kaspersky Rescue Disk")
 {
-	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://ftp.kaspersky.com/devbuilds/RescueDisk/" <<
-	"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
-	, 9288000, 1048576000, QList<QRegExp>() << 
-	QRegExp(".iso$", Qt::CaseInsensitive) << 
-	QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
-	), isotmpf);
+	if (relname == "8")
+	{
+		downloadfile(fileFilterNetDir(QStringList() <<
+		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk/" <<
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk/" <<
+		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk/"
+		, 9288000, 1048576000, QList<QRegExp>() <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
+		), isotmpf);
+	}
+	else
+	{
+		downloadfile(fileFilterNetDir(QStringList() <<
+		"http://devbuilds.kaspersky-labs.com/devbuilds/RescueDisk10/" <<
+		"http://ftp.kaspersky.com/devbuilds/RescueDisk10/" <<
+		"ftp://ftp.kaspersky.com/devbuilds/RescueDisk10/"
+		, 9288000, 1048576000, QList<QRegExp>() <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("k\\S{0,}.iso$", Qt::CaseInsensitive)
+		), isotmpf);
+	}
 	extractiso(isotmpf, targetPath);
 }
 

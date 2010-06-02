@@ -507,14 +507,14 @@ Reporniţi acum?</translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;download.fedora.redhat.com&apos; când vi se va cere server-ul, și introduceți &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="652"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;download.opensuse.org&apos; când vi se va cere server-ul, și introduceți &apos;/factory/repo/oss&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="643"/>
+        <location filename="distrolst.cpp" line="658"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

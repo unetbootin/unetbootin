@@ -614,14 +614,14 @@ Reboot now?</source>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="637"/>
+        <location filename="distrolst.cpp" line="652"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;/factory/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="643"/>
+        <location filename="distrolst.cpp" line="658"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
