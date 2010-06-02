@@ -211,10 +211,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2793"/>
-        <location filename="unetbootin.cpp" line="2806"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="3419"/>
+        <location filename="unetbootin.cpp" line="2789"/>
+        <location filename="unetbootin.cpp" line="2802"/>
+        <location filename="unetbootin.cpp" line="2960"/>
+        <location filename="unetbootin.cpp" line="3415"/>
         <source>Hard Disk</source>
         <translation>Σκληρός Δίσκος</translation>
     </message>
@@ -231,12 +231,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1363"/>
         <location filename="unetbootin.cpp" line="1425"/>
-        <location filename="unetbootin.cpp" line="2142"/>
-        <location filename="unetbootin.cpp" line="2184"/>
-        <location filename="unetbootin.cpp" line="2797"/>
-        <location filename="unetbootin.cpp" line="2822"/>
-        <location filename="unetbootin.cpp" line="2968"/>
-        <location filename="unetbootin.cpp" line="3423"/>
+        <location filename="unetbootin.cpp" line="2138"/>
+        <location filename="unetbootin.cpp" line="2180"/>
+        <location filename="unetbootin.cpp" line="2793"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="2964"/>
+        <location filename="unetbootin.cpp" line="3419"/>
         <source>USB Drive</source>
         <translation>Δισκος USB</translation>
     </message>
@@ -247,7 +247,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2870"/>
+        <location filename="unetbootin.cpp" line="2866"/>
         <source>ISO</source>
         <translation>Αρχείο εικόνας οπτικού δίσκου (ISO)</translation>
     </message>
@@ -258,7 +258,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2862"/>
+        <location filename="unetbootin.cpp" line="2858"/>
         <source>Floppy</source>
         <translation>Δισκέτα</translation>
     </message>
@@ -439,99 +439,99 @@ Reboot now?</source>
         <translation>&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2126"/>
+        <location filename="unetbootin.cpp" line="2122"/>
         <source>Downloading files, please wait...</source>
         <translation>Μεταφόρτωση αρχείων, παρακαλώ περιμένετε...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2127"/>
+        <location filename="unetbootin.cpp" line="2123"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2128"/>
+        <location filename="unetbootin.cpp" line="2124"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Προορισμός:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2129"/>
+        <location filename="unetbootin.cpp" line="2125"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Μεταφορτώθηκαν:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2206"/>
-        <location filename="unetbootin.cpp" line="2221"/>
+        <location filename="unetbootin.cpp" line="2202"/>
+        <location filename="unetbootin.cpp" line="2217"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Μεταφορτώθηκε:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2297"/>
+        <location filename="unetbootin.cpp" line="2293"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2301"/>
+        <location filename="unetbootin.cpp" line="2297"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 είναι όμοια με το &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2486"/>
+        <location filename="unetbootin.cpp" line="2482"/>
         <source>%1 not found</source>
         <translation>%1 δεν βρέθηκε</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2487"/>
+        <location filename="unetbootin.cpp" line="2483"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2775"/>
+        <location filename="unetbootin.cpp" line="2771"/>
         <source>(Current)</source>
         <translation>(Τρέχον)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2776"/>
+        <location filename="unetbootin.cpp" line="2772"/>
         <source>(Done)</source>
         <translation>(Ολοκληρώθηκε)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3043"/>
+        <location filename="unetbootin.cpp" line="3039"/>
         <source>Configuring grub2 on %1</source>
         <translation>Ρύθμιση grub2 στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3051"/>
         <source>Configuring grldr on %1</source>
         <translation>Ρύθμιση grldr στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3083"/>
+        <location filename="unetbootin.cpp" line="3079"/>
         <source>Configuring grub on %1</source>
         <translation>Ρύθμιση grub στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3268"/>
+        <location filename="unetbootin.cpp" line="3264"/>
         <source>Installing syslinux to %1</source>
         <translation>Εγκατάσταση syslinux στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3303"/>
+        <location filename="unetbootin.cpp" line="3299"/>
         <source>Installing extlinux to %1</source>
         <translation>Εγκατάσταση extlinux στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3409"/>
+        <location filename="unetbootin.cpp" line="3405"/>
         <source>Syncing filesystems</source>
         <translation>Συγχρονισμός συστημάτων αρχείων</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3421"/>
+        <location filename="unetbootin.cpp" line="3417"/>
         <source>After rebooting, select the </source>
         <translation>Μετά την επανεκκίνηση επιλέξετε το </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3425"/>
+        <location filename="unetbootin.cpp" line="3421"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>

@@ -1742,7 +1742,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			if (captxt.size() >= 2)
 			{
 				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
-				// qDebug() << grub2vars;
 				continue;
 			}
 		}
@@ -1754,7 +1753,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			if (captxt.size() >= 2)
 			{
 				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
-				// qDebug() << grub2vars;
 				continue;
 			}
 		}
@@ -2081,8 +2079,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
-	qDebug() << "search for " << includesfile;
-	qDebug() << visitedincludes;
 	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
 	if (!includesfileL.isEmpty())
 	{

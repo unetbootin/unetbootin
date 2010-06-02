@@ -260,10 +260,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2793"/>
-        <location filename="unetbootin.cpp" line="2806"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="3419"/>
+        <location filename="unetbootin.cpp" line="2789"/>
+        <location filename="unetbootin.cpp" line="2802"/>
+        <location filename="unetbootin.cpp" line="2960"/>
+        <location filename="unetbootin.cpp" line="3415"/>
         <source>Hard Disk</source>
         <translation>Hard Disk</translation>
     </message>
@@ -280,12 +280,12 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="853"/>
         <location filename="unetbootin.cpp" line="1363"/>
         <location filename="unetbootin.cpp" line="1425"/>
-        <location filename="unetbootin.cpp" line="2142"/>
-        <location filename="unetbootin.cpp" line="2184"/>
-        <location filename="unetbootin.cpp" line="2797"/>
-        <location filename="unetbootin.cpp" line="2822"/>
-        <location filename="unetbootin.cpp" line="2968"/>
-        <location filename="unetbootin.cpp" line="3423"/>
+        <location filename="unetbootin.cpp" line="2138"/>
+        <location filename="unetbootin.cpp" line="2180"/>
+        <location filename="unetbootin.cpp" line="2793"/>
+        <location filename="unetbootin.cpp" line="2818"/>
+        <location filename="unetbootin.cpp" line="2964"/>
+        <location filename="unetbootin.cpp" line="3419"/>
         <source>USB Drive</source>
         <translation>USB 驱动器</translation>
     </message>
@@ -296,7 +296,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2870"/>
+        <location filename="unetbootin.cpp" line="2866"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -307,7 +307,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2862"/>
+        <location filename="unetbootin.cpp" line="2858"/>
         <source>Floppy</source>
         <translation>软盘</translation>
     </message>
@@ -488,100 +488,100 @@ Reboot now?</source>
         <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2126"/>
+        <location filename="unetbootin.cpp" line="2122"/>
         <source>Downloading files, please wait...</source>
         <translation>正在下载文件，请稍候……</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2127"/>
+        <location filename="unetbootin.cpp" line="2123"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2128"/>
+        <location filename="unetbootin.cpp" line="2124"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;目标：&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2129"/>
+        <location filename="unetbootin.cpp" line="2125"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2206"/>
-        <location filename="unetbootin.cpp" line="2221"/>
+        <location filename="unetbootin.cpp" line="2202"/>
+        <location filename="unetbootin.cpp" line="2217"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;已下载：&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2297"/>
+        <location filename="unetbootin.cpp" line="2293"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2301"/>
+        <location filename="unetbootin.cpp" line="2297"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2486"/>
+        <location filename="unetbootin.cpp" line="2482"/>
         <source>%1 not found</source>
         <translation>%1 没有找到</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2487"/>
+        <location filename="unetbootin.cpp" line="2483"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 没有找到。该安装模式需要 %2。
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2775"/>
+        <location filename="unetbootin.cpp" line="2771"/>
         <source>(Current)</source>
         <translation>(处理中)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2776"/>
+        <location filename="unetbootin.cpp" line="2772"/>
         <source>(Done)</source>
         <translation>(完成)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3043"/>
+        <location filename="unetbootin.cpp" line="3039"/>
         <source>Configuring grub2 on %1</source>
         <translation>在 %1 上配置 grub2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3055"/>
+        <location filename="unetbootin.cpp" line="3051"/>
         <source>Configuring grldr on %1</source>
         <translation>在 %1 上配置 grldr</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3083"/>
+        <location filename="unetbootin.cpp" line="3079"/>
         <source>Configuring grub on %1</source>
         <translation>在 %1 上配置 grub</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3268"/>
+        <location filename="unetbootin.cpp" line="3264"/>
         <source>Installing syslinux to %1</source>
         <translation>安装 syslinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3303"/>
+        <location filename="unetbootin.cpp" line="3299"/>
         <source>Installing extlinux to %1</source>
         <translation>安装 extlinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3409"/>
+        <location filename="unetbootin.cpp" line="3405"/>
         <source>Syncing filesystems</source>
         <translation>同步文件系统</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3421"/>
+        <location filename="unetbootin.cpp" line="3417"/>
         <source>After rebooting, select the </source>
         <translation>重启动后，请选择 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3425"/>
+        <location filename="unetbootin.cpp" line="3421"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。
