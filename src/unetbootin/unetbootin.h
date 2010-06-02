@@ -196,7 +196,9 @@ public:
 	bool ignoreoutofspaceprompt(QString destindir);
 	bool extractfile(QString filepath, QString destinfileL, QString archivefile);
 	bool checkifoutofspace(QString destindir);
+	QString locatekernel(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts);
 	bool extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
+	QString locateinitrd(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts);
 	bool extractinitrd(QString archivefile, QString initoutputfile, QPair<QStringList, QList<quint64> > archivefileconts);
 	QString extractcfg(QString archivefile, QStringList archivefileconts);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extractcfgL(QString archivefile, QStringList archivefileconts);

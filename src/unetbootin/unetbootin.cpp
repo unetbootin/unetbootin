@@ -916,7 +916,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 	return false;
 }
 
-bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
+QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating kernel file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud";
@@ -946,16 +946,24 @@ bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPai
 		{
 			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i), Qt::CaseInsensitive))
 			{
-				pdesc1->setText(QString("Copying kernel file from %1").arg(narchivefileconts.at(j)));
-				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
+				return narchivefileconts.at(j);
 			}
 		}
 	}
 	pdesc1->setText("");
-	return false;
+	return "";
 }
 
-bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
+bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
+{
+	QString kfloc = locatekernel(archivefile, archivefileconts);
+	if (kfloc == "")
+		return false;
+	pdesc1->setText(QString("Copying kernel file from %1").arg(kfloc));
+	return extractfile(kfloc, kernoutputfile, archivefile);
+}
+
+QString unetbootin::locateinitrd(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(QString("Locating initrd file in %1").arg(archivefile));
 	QStringList kernelnames = QStringList() << "initrd.img.gz" << "initrd.lz" << "initrd.igz" << "initrd.gz" << "initrd.xz" << "initrd.lzma" << "initrd.img" << "initramfs.gz" << "initramfs.img" << "initrd" << "initramfs" << "minirt" << "miniroot" << "sabayon.igz" << "gentoo.igz" << "archlive.img" << "rootfs.gz" << ".igz" << ".cgz" << ".img" << "rootfs" << "fs.gz" << "root.gz" << ".gz" << "initram" << "initr" << "init" << "ram" << ".lz" << ".lzma" << ".xz";
@@ -985,13 +993,21 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 		{
 			if (narchivefileconts.at(j).right(narchivefileconts.at(j).size() - narchivefileconts.at(j).lastIndexOf(QDir::toNativeSeparators("/")) - 1).contains(kernelnames.at(i), Qt::CaseInsensitive))
 			{
-				pdesc1->setText(QString("Copying initrd file from %1").arg(narchivefileconts.at(j)));
-				return extractfile(narchivefileconts.at(j), kernoutputfile, archivefile);
+				return narchivefileconts.at(j);
 			}
 		}
 	}
 	pdesc1->setText("");
-	return false;
+	return "";
+}
+
+bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
+{
+	QString kfloc = locateinitrd(archivefile, archivefileconts);
+	if (kfloc == "")
+		return false;
+	pdesc1->setText(QString("Copying initrd file from %1").arg(kfloc));
+	return extractfile(kfloc, kernoutputfile, archivefile);
 }
 
 QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
@@ -1443,11 +1459,21 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 	}
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
+	kernelLoc = QDir::fromNativeSeparators(locatekernel(isofile, listfilesizedirpair.first));
+	if (!kernelLoc.startsWith("/")) kernelLoc.prepend("/");
+	initrdLoc = QDir::fromNativeSeparators(locateinitrd(isofile, listfilesizedirpair.first));
+	if (!initrdLoc.startsWith("/")) initrdLoc.prepend("/");
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
-	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
-	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
-	QFile(QString("%1liveusb").arg(targetDrive)).open(QIODevice::WriteOnly);
+	QPair<QStringList, QList<quint64> > bootfiles;
+	for (int i = 0; i < listfilesizedirpair.first.first.size(); ++i)
+	{
+		if (listfilesizedirpair.first.first.at(i).startsWith("boot", Qt::CaseInsensitive))
+		{
+			bootfiles.first.append(listfilesizedirpair.first.first.at(i));
+			bootfiles.second.append(listfilesizedirpair.first.second.at(i));
+		}
+	}
 	QStringList createdpaths = makepathtree(targetDrive, QStringList() << "rescue");
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	if (ubnpathlF.exists())
@@ -1461,7 +1487,12 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 		ubnpathlS << createdpaths.at(i) << endl;
 	}
 	ubnpathlF.close();
-	QStringList extractedfiles;
+	QStringList extractedfiles = extractallfiles(isofile, targetDrive, bootfiles, listfilesizedirpair.first.first);
+	if (QFile::exists(QString("%1liveusb").arg(targetDrive)))
+		overwritefileprompt(QString("%1liveusb").arg(targetDrive));
+	else
+		extractedfiles.append(QString("%1liveusb").arg(targetDrive));
+	QFile(QString("%1liveusb").arg(targetDrive)).open(QIODevice::WriteOnly);
 	pdesc1->setText(QString("Copying %1 to %2").arg(isofile).arg(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/"))));
 	if (QFile::exists(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/"))))
 		overwritefileprompt(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
