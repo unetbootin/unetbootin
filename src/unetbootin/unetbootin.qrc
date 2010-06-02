@@ -12,6 +12,7 @@
         <file>unetbootin_da.qm</file>
         <file>unetbootin_de.qm</file>
         <file>unetbootin_el.qm</file>
+        <file>unetbootin_eo.qm</file>
         <file>unetbootin_es.qm</file>
         <file>unetbootin_et.qm</file>
         <file>unetbootin_fi.qm</file>
@@ -24,6 +25,8 @@
         <file>unetbootin_it.qm</file>
         <file>unetbootin_ja.qm</file>
         <file>unetbootin_lt.qm</file>
+        <file>unetbootin_lv.qm</file>
+        <file>unetbootin_ml.qm</file>
         <file>unetbootin_nan.qm</file>
         <file>unetbootin_nb.qm</file>
         <file>unetbootin_nl.qm</file>

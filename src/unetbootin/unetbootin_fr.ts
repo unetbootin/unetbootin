@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-04-30 11:19+0000
-Last-Translator: Florent DEUTSCH &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-02 11:19+0000
+Last-Translator: Gabriel JUCHAULT &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -660,7 +660,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Decription: &lt;/b&gt; Debian est une distribution développée par la communeauté qui supporte beaucoup d&apos;architectures et offre un large choix de paquets.&lt;br/&gt;&lt;b&gt;Notes d&apos;installations:&lt;/b&gt;La version de NetInstall permet l&apos;installation via le FTP. Si vous voulez utiliser une iso pré-télechargée, utilisez l&apos;option HdMedia, et après, placez l&apos;iso sur le premier dossier de votre clée USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>

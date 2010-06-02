@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-04-25 21:28+0000
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-25 20:15+0000
 Last-Translator: Yaron &lt;sh.yaron@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -582,7 +582,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*חשוב* בטרם ההפעלה מחדש, יש להציב קובץ iso של התקנה אלטרנטיבית (לא באמצעות שולחן עבודה) של אובונטו בתיקיית הבסיס של הכונן הקשיח או של כונן ה־USB שלך. ניתן להשיג קבצים אלה דרך cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="205"/>
@@ -595,7 +596,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="261"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*חשוב* בטרם ההפעלה מחדש, יש להציב קובץ iso של התקנה של דביאן בתיקיית הבסיס של הכונן הקשיח או של כונן ה־USB שלך. ניתן להשיג קבצים אלה דרך cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="351"/>
@@ -638,7 +640,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; BackTrack הנה הפצה המתמקדת בניתוח רשתות ובדיקות חדירה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; BackTrack פועלת ורצה במצב חי; אין צורך בהתקנה כדי להשתמש בה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -658,7 +660,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Debian הנה הפצת לינוקס המפותחת באופן קהילתי התומכת במגוון רחב של תצורות מעבדים ומציעה מאגר רחב של חבילות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה להתקנה מקוונת (NetInstall) מאפשרת להתקין דרך FTP. אם ברצונך להשתמש בקובץ iso שהורד מראש, יש להשתמש באפשרות HdMedia ואז להציב את קובץ ה־iso של ההתקנה בתיקיית הבסיס של הכונן הקשיח או כונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>
@@ -668,12 +670,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="64"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Dr.Web AntiVirus הנה ערכת חירום מבוססת אנטיווירוס לשחזור מערכת שקרסה עקב תכנה זדונית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנו ניתן לבצע סריקות אחר תוכנות זדוניות.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="69"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הנה הפצה מבוססת דביאן המציעה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת לבצע הפעלה במצב חי ממנו ניתן להפעיל את ההתקנה. התקנה זו תתקין את הגרסה היציבה ולא את ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גרסה היציבה&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="79"/>
@@ -693,7 +695,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="94"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; FreeNAS הנה הפצה משובצת בקוד פתוח  NAS (Network-Attached Storage/אחסון צמוד רשת) המבוססת על BSD.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת התקליטור החי יוצרת כונן וירטואלי בזכרון עבור  FreeNAS, ומשתמשת בדיסקט בפורמט FAT או בכונן USB לשמירת קובץ התצורה. הגרסה המשובצת מאפשרת התקנה אל הכונן הקשיח.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="99"/>
@@ -703,7 +705,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="104"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; תקליטור השחזורF-Secure מאתר ומסיר תכנה זדונית ממערכת ה־Windows המותקנת אצלך.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו מופעלת סריקת תוכנות זדוניות.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="109"/>
@@ -713,7 +715,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="119"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; gNewSense הנה הפצה המקבלת תמיכה מהמוסד לתכנה חופשית המבוססת על אובונטו אך אינה כוללת כלל רכיבים שאינם חופשיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנו ניתן להפעיל את ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="124"/>
@@ -723,12 +725,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="129"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Kaspersky Rescue Disk מאתר ומסיר תוכנות זדוניות מהתקנת ה־Windows שלך.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנו ניתן לבצע סריקות אחר תכנה זדונית.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="134"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="139"/>
@@ -743,7 +745,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="150"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; MEPIS הנה הפצה מבוססת דביאן. SimplyMEPIS היא גרסה ידידותית למשתמש המבוססת על KDE בעוד AntiX היא גרסה קלילה המיועדת למחשבים ישנים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; MEPIS תומכת בהפעלה במצב חי ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="155"/>
@@ -783,7 +785,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="190"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Sabayon Linux הנה הפצה ב־DVD מבוססת ג&apos;נטו המציעה את מנהל החבילות הבינריות Entropy נוסף על המערכת מבוססת המקור Portage.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן להפעיל את תהנית ההתקנה. מהדורת ה־LiteMCE הנה בגודל של 2 ג&quot;ב, בעוד הגרסה המלאה דורשת כונן USB בגודל של 8 ג&quot;ב.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="195"/>
@@ -809,27 +811,27 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="215"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Super OS הנה נגזרת בלתי רשמית של אובונטו הכוללת תוכנות נוספות כברירת מחדל. יש צורך בכונן USB בנפח של 2 ג&quot;ב כדי להתקין.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="220"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; SystemRescueCD כוללת מגוון כלים לניהול מחיצות ושחזור וגיבוי נתונים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; SystemRescueCD ניתנת להפעלה ולהרצה באופן חי; אין צורך בהתקנה כדי להפעיל אותה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="225"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="230"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; xPUD הנה הפצה קלילה המציעה מנשק דמוי קיוסק המציע דפדפן אינטרנט ונגן מדיה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה טוענת את כל המערכת אל זיכרון ה־RAM ומופעלת מהזיכרון.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="235"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="240"/>
@@ -854,7 +856,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Kiwi Linux הינה הפצת לינוקס שנגזרה מאובונטו ומיועד בעיקר לדוברי רומנית, הונגרית ואנגלית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא שהמדיה המשמשת להתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="69"/>

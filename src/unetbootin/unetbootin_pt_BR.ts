@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-04-29 21:30+0000
-Last-Translator: Fernando J. Cordeiro &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-24 13:09+0000
+Last-Translator: Drivador &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -198,7 +198,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation>EsquerdaParaDireita</translation>
+        <translation>Da esquerda para a direita</translation>
     </message>
 </context>
 <context>
@@ -599,7 +599,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; BackTrack é uma distribuição focada em análise de rede e testes de penetração.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; BackTrack é iniciada e executada em modo live; não é necessário instalar para usá-la.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -619,7 +619,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Debian é uma distribuição desenvolvida pela comunidade que suporta uma enorme variedade de arquiteturas e oferece um gigantesco repositório de pacotes.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão NetInstall permite a instalação via FTP. Se você deseja usar uma iso previamente baixada use a opção HdMedia e coloque o arquivo ISO no diretório raíz de seu disco rígido ou drive USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="59"/>
@@ -883,7 +883,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Formatar Unidade (Apaga todos os dados)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
@@ -1030,7 +1030,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Exibir tod&amp;as as unidades (use com cuidado)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
@@ -1045,7 +1045,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opções:</translation>
     </message>
 </context>
 <context>

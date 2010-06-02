@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
+POT-Creation-Date: 2010-05-01 09:36-0400
 PO-Revision-Date: 2010-04-18 20:37+0000
 Last-Translator: Canofeles &lt;canofe2@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>

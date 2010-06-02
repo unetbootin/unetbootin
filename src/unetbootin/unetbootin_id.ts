@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-01-29 08:09+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-05 12:34+0000
+Last-Translator: ivan90112 &lt;ivan90112@gmail.com&gt;
 Language-Team: Indonesian &lt;id@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -101,37 +101,37 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="237"/>
         <source>either</source>
-        <translation></translation>
+        <translation>Salah Satu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="531"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Buka file iso</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="549"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Buka file kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="557"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Buka file Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="565"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Buka file konfigurasi biitloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>Masukkan USB flash drive</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>Tidak ada USB flash drive yang ditemukan. Jika Anda telah memasukkan USB drive, cobalah format ke FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="603"/>
@@ -146,37 +146,37 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="619"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Pilih salah satu Distro</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="620"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Anda harus memilih distribusi untuk memulai</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="634"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Pilih file iso</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="635"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Anda harus memilih file iso untuk memulai</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="649"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Pilih salah satu  kernel dan/atau file initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="650"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Anda harus memilih salah satu kernel dan/atau file initrd untuk memulai</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>Diskimage tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
@@ -186,7 +186,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="679"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>File Kernel tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="680"/>
@@ -196,7 +196,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="694"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>File initrd tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="695"/>
@@ -206,12 +206,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>sudah ada 1% ,timpa?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>File sudah ada sebelumnya . Tekan &apos;Ya untuk Semua&apos; untuk menimpanya, &apos;Ya&apos; untuk menimpa file-file secara individual, dan &apos;Tidak&apos; untuk mempertahankan versi yang ada. Jika ragu, tekan &quot;Ya untuk Semua &apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="826"/>
@@ -232,73 +232,73 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1455"/>
         <source>Extracting files, please wait...</source>
-        <translation></translation>
+        <translation>Mengekstrak file, mohon tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1456"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Arsip:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1457"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sumber:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1458"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Tujuan:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1459"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mengekstrak:&lt;/b&gt; 0 dari %1 file</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1462"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sumber:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1463"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Tujuan:&lt;/b&gt; %1 %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1464"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mengekstrak:&lt;/b&gt; 1% dari %2 file</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2122"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Mendownload file, mohon tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2123"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Sumber:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2124"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Tujuan:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2125"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mendownload:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2202"/>
         <location filename="unetbootin.cpp" line="2217"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mendownload:&lt;/b&gt; %1 dari %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2293"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Mencari di  &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2297"/>
@@ -308,7 +308,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="2482"/>
         <source>%1 not found</source>
-        <translation></translation>
+        <translation>%1 tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2483"/>
@@ -319,37 +319,37 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2771"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Saat ini)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2772"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Selesai)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3039"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Mengkonfigurasi grub2 pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Mengkonfigurasi gldr pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3079"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Mengkonfigurasi grub pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3264"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>menginstall syslinux pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3299"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>menginstall extlinux pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3405"/>

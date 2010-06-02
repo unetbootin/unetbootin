@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-01-29 08:09+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-17 15:25+0000
+Last-Translator: Maurizio.13 &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -239,7 +239,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation>SinistraADestra</translation>
+        <translation>Da sinistra a destra</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="2964"/>
         <location filename="unetbootin.cpp" line="3419"/>
         <source>USB Drive</source>
-        <translation>Periferica USB</translation>
+        <translation>Drive USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="166"/>
@@ -310,37 +310,37 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="237"/>
         <source>either</source>
-        <translation>sia</translation>
+        <translation>Entrambi</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="531"/>
         <source>Open Disk Image File</source>
-        <translation>Aprire file immagine disco</translation>
+        <translation>Aprire file immagine</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="549"/>
         <source>Open Kernel File</source>
-        <translation>Aprire Kernel File</translation>
+        <translation>Apri Kernel File</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="557"/>
         <source>Open Initrd File</source>
-        <translation>Aprire Initrd File</translation>
+        <translation>Apri File Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="565"/>
         <source>Open Bootloader Config File</source>
-        <translation>Aprire Bootloader Config File</translation>
+        <translation>Aprire file configurazione di bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation>Inserire un USB flash drive</translation>
+        <translation>Inserire un&apos;unità flash USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Non sono stati trovati USB flash drives, Se avete già inserito un USB flash drive provate a riformattarlo come FAT32.</translation>
+        <translation>Non sono state trovate unità flash USB. Se avete già inserito un&apos;unità USB, provate a riformattarla come FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="603"/>
@@ -350,7 +350,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="604"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Dovete prima montare l&apos;USB drive %1 in un mountpoint. La maggior parte delle distribuzioni lo fa automaticamente dopo la rimozione ed il reinserimento dell&apos;USB flash drive.</translation>
+        <translation>E&apos; necessario prima montare il drive USB 1% ad un punto di montaggio. La maggior parte delle distribuzioni farà questa operazione automaticamente dopo che avrete rimosso e reinserito il drive USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="619"/>
@@ -360,12 +360,12 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="620"/>
         <source>You must select a distribution to load.</source>
-        <translation>Dovete selezionare una distribuzione da caricare.</translation>
+        <translation>Dovete selezionare una distribuzione da caricare</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="634"/>
         <source>Select a disk image file</source>
-        <translation>Selezionare un file immagine di disco</translation>
+        <translation>Selezionare un file immagine</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="635"/>
@@ -375,22 +375,22 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="649"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Selezionare un kernel e/o un file initrd</translation>
+        <translation>Selezionare un file kernel e/o initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="650"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Dovete selezionare un kernel e/o un file initrd da caricare.</translation>
+        <translation>Dovete selezionare un file kernel e/o initrd da caricare.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
         <source>Diskimage file not found</source>
-        <translation>file immagine di disco non trovato</translation>
+        <translation>File immagine non trovato.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Il file immagine di disco %1 non esiste.</translation>
+        <translation>Il file immagine %1 non esiste</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="679"/>
@@ -415,12 +415,12 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 esiste già, lo sovrascrivo?</translation>
+        <translation>%1 esiste già, sovrascriverlo?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Il file %1 esiste già. Cliccare su &apos;Yes to All&apos; per sovrascriverlo e non essere più avvertito, su &apos;Yes&apos; per sovrascrivere i file individualmente, e su &apos;No&apos; per mantenere il file esistente. Nel dubbio cliccare su &apos;Yes to All&apos;.</translation>
+        <translation>Il file %1 esiste già. Cliccare su &apos;Si a tutti&apos; per sovrasciverlo e non ricevere ulteriori avvisi, su &apos;Si&apos; per sovrascrivere i file individualmente, e su &apos;No&apos; per mantenere la versione esistente. Nel dubbio cliccare su &apos;Si a tutti&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="826"/>
@@ -430,7 +430,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="827"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>La cartella %1 è piena. Premere &apos;Si&apos; per uscire dall&apos;installazione, &apos;No&apos; per ignorare questo avviso e provare a continuare l&apos;installazione, &apos;No a tutti&apos; per ignorare ulteriori avvisi di spazio insufficiente.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1273"/>
@@ -451,7 +451,7 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <location filename="unetbootin.cpp" line="1457"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Sorgentee:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Sorgente:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1458"/>

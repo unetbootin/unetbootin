@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-04-29 17:26+0000
-Last-Translator: Alexander Shumakov &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-09 13:11+0000
+Last-Translator: shatalovd &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -793,7 +793,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="215"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Super OS является неофициальной версией Ubuntu, которая по умолчанию включает в себя расширенный пакет программ. Для установки требуется 2Гб флеш-накопитель.&lt;br/&gt;&lt;b&gt;Заметки по установке:&lt;/b&gt; Версия Live позволяет загружаться в Live-режиме, из которого при желании возможен запуск установки дистрибутива.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="220"/>
@@ -1063,7 +1063,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>

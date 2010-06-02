@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-18 12:45-0400\n"
-"PO-Revision-Date: 2010-04-28 15:24+0000\n"
-"Last-Translator: Cochi86 <Unknown>\n"
+"POT-Creation-Date: 2010-05-01 09:36-0400\n"
+"PO-Revision-Date: 2010-05-01 21:03+0000\n"
+"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-05-01 13:32+0000\n"
+"X-Launchpad-Export-Date: 2010-06-01 19:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -20,7 +20,7 @@ msgstr "LinksNachRechts"
 #. ts-context unetbootin
 #: unetbootin.cpp:164 unetbootin.cpp:246 unetbootin.cpp:247 unetbootin.cpp:314
 #: unetbootin.cpp:413 unetbootin.cpp:506 unetbootin.cpp:2456
-#: unetbootin.cpp:2469 unetbootin.cpp:2627 unetbootin.cpp:3077
+#: unetbootin.cpp:2469 unetbootin.cpp:2627 unetbootin.cpp:3082
 msgid "Hard Disk"
 msgstr "Festplatte"
 
@@ -30,7 +30,7 @@ msgstr "Festplatte"
 #: unetbootin.cpp:599 unetbootin.cpp:853 unetbootin.cpp:1346
 #: unetbootin.cpp:1408 unetbootin.cpp:1805 unetbootin.cpp:1847
 #: unetbootin.cpp:2460 unetbootin.cpp:2485 unetbootin.cpp:2631
-#: unetbootin.cpp:3081
+#: unetbootin.cpp:3086
 msgid "USB Drive"
 msgstr "USB-Laufwerk"
 
@@ -316,27 +316,27 @@ msgid "Configuring grub on %1"
 msgstr "Konfiguriere Grub auf %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2926
+#: unetbootin.cpp:2931
 msgid "Installing syslinux to %1"
 msgstr "Installiere Syslinux auf %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2961
+#: unetbootin.cpp:2966
 msgid "Installing extlinux to %1"
 msgstr "Installiere Extlinux auf %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3067
+#: unetbootin.cpp:3072
 msgid "Syncing filesystems"
 msgstr "Gleiche Dateisysteme ab"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3079
+#: unetbootin.cpp:3084
 msgid "After rebooting, select the "
 msgstr "Wählen Sie nach dem Neustart "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3083
+#: unetbootin.cpp:3088
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -358,7 +358,7 @@ msgstr ""
 "USB-Laufwerks. Sie können diese von cdimage.ubuntu.com herunterladen."
 
 #. ts-context unetbootin
-#: distrolst.cpp:199
+#: distrolst.cpp:205
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -376,7 +376,7 @@ msgstr ""
 "wenn Sie nach dem Verzeichnis gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:255
+#: distrolst.cpp:261
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -389,7 +389,7 @@ msgstr ""
 "diese von cdimage.debian.com herunterladen."
 
 #. ts-context unetbootin
-#: distrolst.cpp:345
+#: distrolst.cpp:351
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -408,7 +408,7 @@ msgstr ""
 "gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:357
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -427,7 +427,7 @@ msgstr ""
 "Verzeichnis gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:631
+#: distrolst.cpp:637
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -445,7 +445,7 @@ msgstr ""
 "wenn Sie nach dem Verzeichnis gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:637
+#: distrolst.cpp:643
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -464,7 +464,7 @@ msgstr ""
 "werden."
 
 #. ts-context unetbootin
-#: distrover.cpp:21
+#: distrover.cpp:22
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -479,7 +479,7 @@ msgstr ""
 "und drücken Sie OK, um die Installation zu beginnen.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:26
+#: distrover.cpp:27
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -496,7 +496,7 @@ msgstr ""
 "ist eine Version mit Live-Modus."
 
 #. ts-context unetbootin
-#: distrover.cpp:32
+#: distrover.cpp:33
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -512,7 +512,7 @@ msgstr ""
 "aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:37
+#: distrover.cpp:38
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -529,7 +529,7 @@ msgstr ""
 "Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:42
+#: distrover.cpp:43
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -545,7 +545,7 @@ msgstr ""
 "Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:47
+#: distrover.cpp:48
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -562,7 +562,7 @@ msgstr ""
 "aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:52
+#: distrover.cpp:53
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -584,7 +584,7 @@ msgstr ""
 "des USB-Laufwerks."
 
 #. ts-context unetbootin
-#: distrover.cpp:58
+#: distrover.cpp:59
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -600,7 +600,7 @@ msgstr ""
 "aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:63
+#: distrover.cpp:64
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -618,7 +618,7 @@ msgstr ""
 "Malware-Scans nicht notwendig, aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:68
+#: distrover.cpp:69
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -638,7 +638,7 @@ msgstr ""
 "href=\"http://www.elivecd.org/Download/Stable\">stabile Version</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:78
+#: distrover.cpp:79
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -659,7 +659,7 @@ msgstr ""
 "das Internet (FTP) oder durch zuvor heruntergeladene Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:83
+#: distrover.cpp:84
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -677,7 +677,7 @@ msgstr ""
 "heruntergeladenen Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:88
+#: distrover.cpp:89
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -695,7 +695,7 @@ msgstr ""
 "(englisch)</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:93
+#: distrover.cpp:94
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -715,7 +715,7 @@ msgstr ""
 "Laufwerk, um die Konfigurationsdatei zu speichern."
 
 #. ts-context unetbootin
-#: distrover.cpp:98
+#: distrover.cpp:99
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -732,7 +732,7 @@ msgstr ""
 "durch zuvor heruntergeladene Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:103
+#: distrover.cpp:104
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
@@ -748,7 +748,7 @@ msgstr ""
 "von Malware-Scans nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:108
+#: distrover.cpp:109
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
@@ -764,7 +764,7 @@ msgstr ""
 "nicht notwendig, aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:118
+#: distrover.cpp:119
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -782,7 +782,7 @@ msgstr ""
 "Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:123
+#: distrover.cpp:124
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -797,7 +797,7 @@ msgstr ""
 "läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:128
+#: distrover.cpp:129
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -815,7 +815,7 @@ msgstr ""
 "Durchführung von Malware-Scans nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:133
+#: distrover.cpp:134
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -841,7 +841,7 @@ msgstr ""
 "der Festplatte oder des USB-Laufwerks."
 
 #. ts-context unetbootin
-#: distrover.cpp:138
+#: distrover.cpp:139
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -859,7 +859,7 @@ msgstr ""
 "dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:143
+#: distrover.cpp:144
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -881,7 +881,7 @@ msgstr ""
 "Dateien</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:149
+#: distrover.cpp:150
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -899,7 +899,7 @@ msgstr ""
 "nicht notwendig, aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:154
+#: distrover.cpp:155
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
@@ -916,7 +916,7 @@ msgstr ""
 "heruntergeladene Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:159
+#: distrover.cpp:160
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
@@ -934,7 +934,7 @@ msgstr ""
 "eine Installation ist für den Gebrauch nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:164
+#: distrover.cpp:165
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -951,7 +951,7 @@ msgstr ""
 "heruntergeladene Abbild-Dateien."
 
 #. ts-context unetbootin
-#: distrover.cpp:169
+#: distrover.cpp:170
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -966,7 +966,7 @@ msgstr ""
 "Installation ist für den Gebrauch nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:174
+#: distrover.cpp:175
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -984,7 +984,7 @@ msgstr ""
 "notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:179
+#: distrover.cpp:180
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
@@ -1000,7 +1000,7 @@ msgstr ""
 "dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:184
+#: distrover.cpp:185
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1017,7 +1017,7 @@ msgstr ""
 "Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:189
+#: distrover.cpp:190
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1038,7 +1038,7 @@ msgstr ""
 "eines mit 8 GB."
 
 #. ts-context unetbootin
-#: distrover.cpp:194
+#: distrover.cpp:195
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1054,7 +1054,7 @@ msgstr ""
 "aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:199
+#: distrover.cpp:200
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1071,7 +1071,7 @@ msgstr ""
 "dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:204
+#: distrover.cpp:205
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1088,7 +1088,7 @@ msgstr ""
 "Live-Modus; eine Installation ist für den Gebrauch nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:209 distrovercust.cpp:12
+#: distrover.cpp:210 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1104,7 +1104,7 @@ msgstr ""
 "ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:214
+#: distrover.cpp:215
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1122,7 +1122,7 @@ msgstr ""
 "möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:219
+#: distrover.cpp:220
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
@@ -1138,7 +1138,7 @@ msgstr ""
 "Live-Modus; eine Installation ist für den Gebrauch nicht notwendig."
 
 #. ts-context unetbootin
-#: distrover.cpp:224
+#: distrover.cpp:225
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1164,7 +1164,7 @@ msgstr ""
 "die Abbild-Datei im Stammverzeichnis der Festplatte oder des USB-Laufwerks."
 
 #. ts-context unetbootin
-#: distrover.cpp:229
+#: distrover.cpp:230
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1181,7 +1181,7 @@ msgstr ""
 "dem Live-Modus möglich."
 
 #. ts-context unetbootin
-#: distrover.cpp:234
+#: distrover.cpp:235
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1207,7 +1207,7 @@ msgstr ""
 "Laufwerks."
 
 #. ts-context unetbootin
-#: distrover.cpp:239
+#: distrover.cpp:240
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"

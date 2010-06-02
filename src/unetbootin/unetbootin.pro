@@ -25,6 +25,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_es.ts \
     unetbootin_et.ts \
     unetbootin_el.ts \
+    unetbootin_eo.ts \
     unetbootin_fi.ts \
     unetbootin_fo.ts \
     unetbootin_gl.ts \
@@ -37,6 +38,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_id.ts \
     unetbootin_it.ts \
     unetbootin_lt.ts \
+    unetbootin_lv.ts \
     unetbootin_zh_CN.ts \
     unetbootin_zh_TW.ts \
     unetbootin_fr.ts \
@@ -45,6 +47,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_uk.ts \
     unetbootin_be.ts \
     unetbootin_pt.ts \
+    unetbootin_ml.ts \
     unetbootin_nan.ts \
     unetbootin_nb.ts \
     unetbootin_nl.ts \

@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-04-18 12:45-0400
-PO-Revision-Date: 2010-04-29 22:40+0000
-Last-Translator: Štefan Baebler &lt;Unknown&gt;
+POT-Creation-Date: 2010-05-01 09:36-0400
+PO-Revision-Date: 2010-05-01 21:02+0000
+Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
 Language-Team: Slovenian &lt;sl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-05-01 13:32+0000
+X-Launchpad-Export-Date: 2010-06-01 19:40+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>

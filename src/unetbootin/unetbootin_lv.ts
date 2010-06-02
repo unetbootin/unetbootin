@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="lv_LV">
 <context>
     <name></name>
     <message>
         <source></source>
-        <translatorcomment>Min Nan Chinese translation for unetbootin
-Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+        <translatorcomment>Latvian translation for unetbootin
+Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 This file is distributed under the same license as the unetbootin package.
-FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
+FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2010-05-01 09:36-0400
-PO-Revision-Date: 2009-09-26 11:32+0000
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: Min Nan Chinese &lt;nan@li.org&gt;
+PO-Revision-Date: 2010-05-11 06:36+0000
+Last-Translator: rediss &lt;Unknown&gt;
+Language-Team: Latvian &lt;lv@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -42,12 +42,12 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2789"/>
-        <location filename="unetbootin.cpp" line="2802"/>
-        <location filename="unetbootin.cpp" line="2960"/>
-        <location filename="unetbootin.cpp" line="3415"/>
+        <location filename="unetbootin.cpp" line="2456"/>
+        <location filename="unetbootin.cpp" line="2469"/>
+        <location filename="unetbootin.cpp" line="2627"/>
+        <location filename="unetbootin.cpp" line="3082"/>
         <source>Hard Disk</source>
-        <translation></translation>
+        <translation>Cietais Disks</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="165"/>
@@ -60,16 +60,16 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="583"/>
         <location filename="unetbootin.cpp" line="599"/>
         <location filename="unetbootin.cpp" line="853"/>
-        <location filename="unetbootin.cpp" line="1363"/>
-        <location filename="unetbootin.cpp" line="1425"/>
-        <location filename="unetbootin.cpp" line="2138"/>
-        <location filename="unetbootin.cpp" line="2180"/>
-        <location filename="unetbootin.cpp" line="2793"/>
-        <location filename="unetbootin.cpp" line="2818"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="3419"/>
+        <location filename="unetbootin.cpp" line="1346"/>
+        <location filename="unetbootin.cpp" line="1408"/>
+        <location filename="unetbootin.cpp" line="1805"/>
+        <location filename="unetbootin.cpp" line="1847"/>
+        <location filename="unetbootin.cpp" line="2460"/>
+        <location filename="unetbootin.cpp" line="2485"/>
+        <location filename="unetbootin.cpp" line="2631"/>
+        <location filename="unetbootin.cpp" line="3086"/>
         <source>USB Drive</source>
-        <translation></translation>
+        <translation>USB dzinis</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="166"/>
@@ -78,9 +78,9 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2866"/>
+        <location filename="unetbootin.cpp" line="2533"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="167"/>
@@ -89,9 +89,9 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2858"/>
+        <location filename="unetbootin.cpp" line="2525"/>
         <source>Floppy</source>
-        <translation></translation>
+        <translation>Diskete</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="207"/>
@@ -101,122 +101,122 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="237"/>
         <source>either</source>
-        <translation></translation>
+        <translation>vai arī</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="531"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Atvērt ISO failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="549"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Atvērt Kerneļa failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="557"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Atvērt Initrd failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="565"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Atvērt Bootloader konfigurāciju</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="587"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>Ieliekat USB dzini</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="588"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>Netika atrasts USB dzinis. Ja jau esat to pievienojuši, lūdz pamēģiniet to noformatēt uz FAT32 failu sistēmu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="603"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 nav piemontēts</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="604"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Jums no sākuma vajag piemontēt USB dzini pie montēšana punkta %1 . Vairums distribūcijas, to dara automātiski, kad izņemat un ieliekat USB dzini.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="619"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Izvēlieties OS</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="620"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Jums ir jāizvēlas distribūcija ko ielādēt.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="634"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Izvēlaties ISO failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="635"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Jums ir jāizvēlas IO fails ko ielādēt.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="649"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Izvēlaties kernel un/vai initrd failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="650"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Jums ir jāizvēlas kernel un/vai initrd failu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="664"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>ISO nav atrasts</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Norādītais ISO fails %1 neeksistē</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="679"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>Kernel fails nav atrasts</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="680"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Norādītais kernel fails %1 neeksistē.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="694"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>Initrd fails nav atrasts</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="695"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Norādītais initrd fails %1 neeksistē</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 pastāv, pārrakstīt ?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Fails %1 jau eksistē. Nospiediet &apos;Yes to All&apos; , lai pārrakstītu pa virsu visus failus, spiediet &apos;Yes&apos; lai pārrakstītu tikai individuālus failu, un &apos;No&apos; lai atstātu visu bez izmaiņām, bet ja šaubaties, spiediet &apos;Yes to All&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="826"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 nepietiek vietas, atcelt instalāciju?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="827"/>
@@ -224,160 +224,164 @@ X-Generator: Launchpad (build Unknown)
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1273"/>
-        <location filename="unetbootin.cpp" line="1295"/>
+        <location filename="unetbootin.cpp" line="1263"/>
+        <location filename="unetbootin.cpp" line="1285"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Atarhivējam ISO:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1455"/>
+        <location filename="unetbootin.cpp" line="1438"/>
         <source>Extracting files, please wait...</source>
-        <translation></translation>
+        <translation>Notiek atarhiv</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1456"/>
+        <location filename="unetbootin.cpp" line="1439"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Arhīvs:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1457"/>
+        <location filename="unetbootin.cpp" line="1440"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Avots:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1458"/>
+        <location filename="unetbootin.cpp" line="1441"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1459"/>
+        <location filename="unetbootin.cpp" line="1442"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Atarhivēti:&lt;/b&gt; 0 no %1 failiem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1462"/>
+        <location filename="unetbootin.cpp" line="1445"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Avots:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1463"/>
+        <location filename="unetbootin.cpp" line="1446"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mērķis:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1464"/>
+        <location filename="unetbootin.cpp" line="1447"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Atarhivēti:&lt;/b&gt; %1 no %2 failiem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2122"/>
+        <location filename="unetbootin.cpp" line="1789"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Lejupielādēju failus, lūdzu uzgaidiet...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2123"/>
+        <location filename="unetbootin.cpp" line="1790"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Avots:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2124"/>
+        <location filename="unetbootin.cpp" line="1791"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Mērķis:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2125"/>
+        <location filename="unetbootin.cpp" line="1792"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Lejupielādēti:&lt;/b&gt; 0 baiti</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2202"/>
-        <location filename="unetbootin.cpp" line="2217"/>
+        <location filename="unetbootin.cpp" line="1869"/>
+        <location filename="unetbootin.cpp" line="1884"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Lejupielādēti:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2293"/>
+        <location filename="unetbootin.cpp" line="1960"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Meklē iekš &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2297"/>
+        <location filename="unetbootin.cpp" line="1964"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 skrīt iekš &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2482"/>
+        <location filename="unetbootin.cpp" line="2149"/>
         <source>%1 not found</source>
-        <translation></translation>
+        <translation>%1 nav atrasts</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2483"/>
+        <location filename="unetbootin.cpp" line="2150"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>%1 nav atrasts. Tas ir vajadzīgs priekš %2 instalācijas veida.
+Uzinstalējiet &quot;%3&quot; pakotni, vai Jūsu OS līdzīgu.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2771"/>
+        <location filename="unetbootin.cpp" line="2438"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(Esošais)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2772"/>
+        <location filename="unetbootin.cpp" line="2439"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Gatavs)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3039"/>
+        <location filename="unetbootin.cpp" line="2706"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Konfigurēju grub2 uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3051"/>
+        <location filename="unetbootin.cpp" line="2718"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Konfigurēju grldr uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3079"/>
+        <location filename="unetbootin.cpp" line="2746"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Konfigurēju grub uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3264"/>
+        <location filename="unetbootin.cpp" line="2931"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Instalēju syslinux uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3299"/>
+        <location filename="unetbootin.cpp" line="2966"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Intalēju extlinux uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3405"/>
+        <location filename="unetbootin.cpp" line="3072"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Sinhronizēju failu sistēmas</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3417"/>
+        <location filename="unetbootin.cpp" line="3084"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation>Pēc pārstartēšanaas, izvēlieties </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3421"/>
+        <location filename="unetbootin.cpp" line="3088"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Pēc pārstartēšanas, izvēlaties USB boot opciju, iekš BIOS boot izvēlnes.%1
+Vai tagad pārstartēt datoru?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*SVARĪGI* Pirms pārstartēšanas, ielieciet Ubuntu alternatīvu (ne desktop versiju) instalācijas ISO failu, saknes direktorijā uz Jūsu cietā diska vai USB dziņa. Iegūt ISO var no cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="205"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*SVARĪGI* Pēc pārstartēšanas, ignorējiet kļūdu ziņojumus, un kad jautā pēc CD, dodaties uz galveno izvēlni, un paņemat &apos;Start Installation&apos; opciju.Kā avotu izvēlaties &apos;Network&apos;, bet &apos;HTTP&apos; kā protokolu. Ievadiet &apos;mirrors.kernel.org&apos; kad tiek prasīts servers un  &apos;/centos/%1/os/%2&apos;, kad tiek prasīta mape.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="261"/>
