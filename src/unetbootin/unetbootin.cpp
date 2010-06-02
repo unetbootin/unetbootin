@@ -1124,7 +1124,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		bool isduplicate = false;
 		for (int j = 0; j < filteredcfgPL.second.first.size(); ++j)
 		{
-			if (filteredcfgPL.second.first.at(j) == combinedcfgPL.second.first.at(i))
+			if (filteredcfgPL.second.first.at(j) == combinedcfgPL.second.first.at(i)) // duplicate title
 			{
 				isduplicate = true;
 				break;
@@ -1601,9 +1601,20 @@ QString unetbootin::getgrub2cfgargs(QString cfgfile, QString archivefile, QStrin
 					cfgfileCL.replace(QString("${%1}").arg(i.key()), i.value());
 			}
 		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\".{1,}\"")))
+		{
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}\"(.{1,})\"");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				continue;
+			}
+		}
 		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
 		{
-			QRegExp setrg("set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
 			setrg.indexIn(cfgfileCL);
 			QStringList captxt = setrg.capturedTexts();
 			if (captxt.size() >= 2)
@@ -1665,14 +1676,27 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 					cfgfileCL.replace(QString("${%1}").arg(i.key()), i.value());
 			}
 		}
-		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\".{1,}\"")))
 		{
-			QRegExp setrg("set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}\"(.{1,})\"");
 			setrg.indexIn(cfgfileCL);
 			QStringList captxt = setrg.capturedTexts();
 			if (captxt.size() >= 2)
 			{
 				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				// qDebug() << grub2vars;
+				continue;
+			}
+		}
+		if (cfgfileCL.contains(QRegExp("^set\\s{1,}\\S{1,}\\s{0,}=\\s{0,}\\S{1,}")))
+		{
+			QRegExp setrg("^set\\s{1,}(\\S{1,})\\s{0,}=\\s{0,}(\\S{1,})");
+			setrg.indexIn(cfgfileCL);
+			QStringList captxt = setrg.capturedTexts();
+			if (captxt.size() >= 2)
+			{
+				grub2vars[captxt.at(captxt.size()-2)] = captxt.at(captxt.size()-1);
+				// qDebug() << grub2vars;
 				continue;
 			}
 		}
@@ -1702,7 +1726,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			}
 			continue;
 		}
-		if (cfgfileCL.contains(QRegExp("^menuentry\\s{1,}\"\\S{1,}\"", Qt::CaseInsensitive)))
+		if (cfgfileCL.contains(QRegExp("^menuentry\\s{1,}\".{1,}\"", Qt::CaseInsensitive)))
 		{
 			if (kernelpassed)
 			{
