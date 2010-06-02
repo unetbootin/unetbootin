@@ -1474,7 +1474,17 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 			bootfiles.second.append(listfilesizedirpair.first.second.at(i));
 		}
 	}
-	QStringList createdpaths = makepathtree(targetDrive, QStringList() << "rescue");
+	QStringList bootpaths;
+	for (int i = 0; i < listfilesizedirpair.second.size(); ++i)
+	{
+		if (listfilesizedirpair.second.at(i).startsWith("boot", Qt::CaseInsensitive))
+		{
+			bootpaths.append(listfilesizedirpair.second.at(i));
+		}
+	}
+	if (!bootpaths.contains("rescue"))
+		bootpaths.append("rescue");
+	QStringList createdpaths = makepathtree(targetDrive, bootpaths);
 	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
 	if (ubnpathlF.exists())
 	{
