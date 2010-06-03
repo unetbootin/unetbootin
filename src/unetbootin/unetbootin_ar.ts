@@ -253,377 +253,377 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="194"/>
-        <location filename="unetbootin.cpp" line="276"/>
+        <location filename="unetbootin.cpp" line="195"/>
         <location filename="unetbootin.cpp" line="277"/>
-        <location filename="unetbootin.cpp" line="344"/>
-        <location filename="unetbootin.cpp" line="443"/>
-        <location filename="unetbootin.cpp" line="536"/>
-        <location filename="unetbootin.cpp" line="2965"/>
-        <location filename="unetbootin.cpp" line="2978"/>
-        <location filename="unetbootin.cpp" line="3136"/>
-        <location filename="unetbootin.cpp" line="3591"/>
+        <location filename="unetbootin.cpp" line="278"/>
+        <location filename="unetbootin.cpp" line="345"/>
+        <location filename="unetbootin.cpp" line="444"/>
+        <location filename="unetbootin.cpp" line="537"/>
+        <location filename="unetbootin.cpp" line="2966"/>
+        <location filename="unetbootin.cpp" line="2979"/>
+        <location filename="unetbootin.cpp" line="3137"/>
+        <location filename="unetbootin.cpp" line="3592"/>
         <source>Hard Disk</source>
         <translation>القرص الصلب</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="195"/>
-        <location filename="unetbootin.cpp" line="259"/>
-        <location filename="unetbootin.cpp" line="273"/>
+        <location filename="unetbootin.cpp" line="196"/>
+        <location filename="unetbootin.cpp" line="260"/>
         <location filename="unetbootin.cpp" line="274"/>
-        <location filename="unetbootin.cpp" line="346"/>
-        <location filename="unetbootin.cpp" line="447"/>
-        <location filename="unetbootin.cpp" line="541"/>
-        <location filename="unetbootin.cpp" line="613"/>
-        <location filename="unetbootin.cpp" line="629"/>
-        <location filename="unetbootin.cpp" line="883"/>
-        <location filename="unetbootin.cpp" line="1414"/>
-        <location filename="unetbootin.cpp" line="1476"/>
-        <location filename="unetbootin.cpp" line="2299"/>
-        <location filename="unetbootin.cpp" line="2341"/>
-        <location filename="unetbootin.cpp" line="2969"/>
-        <location filename="unetbootin.cpp" line="2994"/>
-        <location filename="unetbootin.cpp" line="3140"/>
-        <location filename="unetbootin.cpp" line="3595"/>
+        <location filename="unetbootin.cpp" line="275"/>
+        <location filename="unetbootin.cpp" line="347"/>
+        <location filename="unetbootin.cpp" line="448"/>
+        <location filename="unetbootin.cpp" line="542"/>
+        <location filename="unetbootin.cpp" line="614"/>
+        <location filename="unetbootin.cpp" line="630"/>
+        <location filename="unetbootin.cpp" line="884"/>
+        <location filename="unetbootin.cpp" line="1415"/>
+        <location filename="unetbootin.cpp" line="1477"/>
+        <location filename="unetbootin.cpp" line="2300"/>
+        <location filename="unetbootin.cpp" line="2342"/>
+        <location filename="unetbootin.cpp" line="2970"/>
+        <location filename="unetbootin.cpp" line="2995"/>
+        <location filename="unetbootin.cpp" line="3141"/>
+        <location filename="unetbootin.cpp" line="3596"/>
         <source>USB Drive</source>
         <translation>مشغل USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="196"/>
-        <location filename="unetbootin.cpp" line="223"/>
+        <location filename="unetbootin.cpp" line="197"/>
         <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="312"/>
-        <location filename="unetbootin.cpp" line="564"/>
+        <location filename="unetbootin.cpp" line="225"/>
+        <location filename="unetbootin.cpp" line="313"/>
         <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="3042"/>
+        <location filename="unetbootin.cpp" line="566"/>
+        <location filename="unetbootin.cpp" line="3043"/>
         <source>ISO</source>
         <translation>ملف ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="197"/>
-        <location filename="unetbootin.cpp" line="219"/>
+        <location filename="unetbootin.cpp" line="198"/>
         <location filename="unetbootin.cpp" line="220"/>
-        <location filename="unetbootin.cpp" line="317"/>
-        <location filename="unetbootin.cpp" line="569"/>
+        <location filename="unetbootin.cpp" line="221"/>
+        <location filename="unetbootin.cpp" line="318"/>
         <location filename="unetbootin.cpp" line="570"/>
-        <location filename="unetbootin.cpp" line="3034"/>
+        <location filename="unetbootin.cpp" line="571"/>
+        <location filename="unetbootin.cpp" line="3035"/>
         <source>Floppy</source>
         <translation>قرص مرن</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="237"/>
-        <location filename="unetbootin.cpp" line="241"/>
-        <location filename="unetbootin.cpp" line="245"/>
-        <location filename="unetbootin.cpp" line="249"/>
-        <location filename="unetbootin.cpp" line="255"/>
-        <location filename="unetbootin.cpp" line="267"/>
+        <location filename="unetbootin.cpp" line="238"/>
+        <location filename="unetbootin.cpp" line="242"/>
+        <location filename="unetbootin.cpp" line="246"/>
+        <location filename="unetbootin.cpp" line="250"/>
+        <location filename="unetbootin.cpp" line="256"/>
+        <location filename="unetbootin.cpp" line="268"/>
         <source>either</source>
         <translation>احد الامرين</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="561"/>
+        <location filename="unetbootin.cpp" line="562"/>
         <source>Open Disk Image File</source>
         <translation>إفتح ملف صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="579"/>
+        <location filename="unetbootin.cpp" line="580"/>
         <source>Open Kernel File</source>
         <translation>إفتح ملف النواة</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="587"/>
+        <location filename="unetbootin.cpp" line="588"/>
         <source>Open Initrd File</source>
         <translation>إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="595"/>
+        <location filename="unetbootin.cpp" line="596"/>
         <source>Open Bootloader Config File</source>
         <translation>إفتح ملف تهيئة محمل الإقلاع</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="617"/>
+        <location filename="unetbootin.cpp" line="618"/>
         <source>Insert a USB flash drive</source>
         <translation>أدخل ذاكرة فلاش يو إس بي</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="618"/>
+        <location filename="unetbootin.cpp" line="619"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="633"/>
+        <location filename="unetbootin.cpp" line="634"/>
         <source>%1 not mounted</source>
         <translation>%1 لم يركب</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="634"/>
+        <location filename="unetbootin.cpp" line="635"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="649"/>
+        <location filename="unetbootin.cpp" line="650"/>
         <source>Select a distro</source>
         <translation>إختر توزيعة</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="650"/>
+        <location filename="unetbootin.cpp" line="651"/>
         <source>You must select a distribution to load.</source>
         <translation>يجب عليك إختيار توزيعة ليتم تحميلها</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="664"/>
+        <location filename="unetbootin.cpp" line="665"/>
         <source>Select a disk image file</source>
         <translation>إختر ملف صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
+        <location filename="unetbootin.cpp" line="666"/>
         <source>You must select a disk image file to load.</source>
         <translation>يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="679"/>
+        <location filename="unetbootin.cpp" line="680"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="680"/>
+        <location filename="unetbootin.cpp" line="681"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="694"/>
+        <location filename="unetbootin.cpp" line="695"/>
         <source>Diskimage file not found</source>
         <translation>لم يتم العثور على ملف صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="695"/>
+        <location filename="unetbootin.cpp" line="696"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="709"/>
+        <location filename="unetbootin.cpp" line="710"/>
         <source>Kernel file not found</source>
         <translation>لم يتم العثور على ملف النواة</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="710"/>
+        <location filename="unetbootin.cpp" line="711"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="724"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>Initrd file not found</source>
         <translation>لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="725"/>
+        <location filename="unetbootin.cpp" line="726"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="829"/>
+        <location filename="unetbootin.cpp" line="830"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 موجود, هل تريد إستبداله؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="830"/>
+        <location filename="unetbootin.cpp" line="831"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="856"/>
+        <location filename="unetbootin.cpp" line="857"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="857"/>
+        <location filename="unetbootin.cpp" line="858"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="951"/>
+        <location filename="unetbootin.cpp" line="952"/>
         <source>Locating kernel file in %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="992"/>
+        <location filename="unetbootin.cpp" line="993"/>
         <source>Copying kernel file from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="998"/>
+        <location filename="unetbootin.cpp" line="999"/>
         <source>Locating initrd file in %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1039"/>
+        <location filename="unetbootin.cpp" line="1040"/>
         <source>Copying initrd file from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1045"/>
-        <location filename="unetbootin.cpp" line="1105"/>
+        <location filename="unetbootin.cpp" line="1046"/>
+        <location filename="unetbootin.cpp" line="1106"/>
         <source>Extracting bootloader configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1320"/>
-        <location filename="unetbootin.cpp" line="1346"/>
+        <location filename="unetbootin.cpp" line="1321"/>
+        <location filename="unetbootin.cpp" line="1347"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1575"/>
+        <location filename="unetbootin.cpp" line="1576"/>
         <source>Copying file, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1578"/>
+        <location filename="unetbootin.cpp" line="1579"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <oldsource>&lt;b&gt;Copied:&lt;/b&gt; 0 KB</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2393"/>
+        <location filename="unetbootin.cpp" line="2394"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1616"/>
+        <location filename="unetbootin.cpp" line="1617"/>
         <source>Extracting files, please wait...</source>
         <translation>يتم إستخراج الملفات, انتظر من فضلك...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;المصدر:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1620"/>
+        <location filename="unetbootin.cpp" line="1621"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1623"/>
+        <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1624"/>
+        <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1625"/>
+        <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2283"/>
+        <location filename="unetbootin.cpp" line="2284"/>
         <source>Downloading files, please wait...</source>
         <translation>يتم تنزيل الملفات, إنتظر من فضلك...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1576"/>
-        <location filename="unetbootin.cpp" line="2284"/>
+        <location filename="unetbootin.cpp" line="1577"/>
+        <location filename="unetbootin.cpp" line="2285"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1577"/>
-        <location filename="unetbootin.cpp" line="2285"/>
+        <location filename="unetbootin.cpp" line="1578"/>
+        <location filename="unetbootin.cpp" line="2286"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2286"/>
+        <location filename="unetbootin.cpp" line="2287"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2363"/>
-        <location filename="unetbootin.cpp" line="2378"/>
+        <location filename="unetbootin.cpp" line="2364"/>
+        <location filename="unetbootin.cpp" line="2379"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2469"/>
+        <location filename="unetbootin.cpp" line="2470"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2473"/>
+        <location filename="unetbootin.cpp" line="2474"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2658"/>
+        <location filename="unetbootin.cpp" line="2659"/>
         <source>%1 not found</source>
         <translation>لم يتم العثور %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2659"/>
+        <location filename="unetbootin.cpp" line="2660"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2947"/>
+        <location filename="unetbootin.cpp" line="2948"/>
         <source>(Current)</source>
         <translation>(حالي)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2949"/>
         <source>(Done)</source>
         <translation>(أنتهى)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3215"/>
+        <location filename="unetbootin.cpp" line="3216"/>
         <source>Configuring grub2 on %1</source>
         <translation>يضبط جرب ٢ في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3227"/>
+        <location filename="unetbootin.cpp" line="3228"/>
         <source>Configuring grldr on %1</source>
         <translation>يضبط grldr في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3255"/>
+        <location filename="unetbootin.cpp" line="3256"/>
         <source>Configuring grub on %1</source>
         <translation>يضبط جرب في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3440"/>
+        <location filename="unetbootin.cpp" line="3441"/>
         <source>Installing syslinux to %1</source>
         <translation>يثبت syslinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3475"/>
+        <location filename="unetbootin.cpp" line="3476"/>
         <source>Installing extlinux to %1</source>
         <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3581"/>
+        <location filename="unetbootin.cpp" line="3582"/>
         <source>Syncing filesystems</source>
         <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3593"/>
+        <location filename="unetbootin.cpp" line="3594"/>
         <source>After rebooting, select the </source>
         <translation>بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3597"/>
+        <location filename="unetbootin.cpp" line="3598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
