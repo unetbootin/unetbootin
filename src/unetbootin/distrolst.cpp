@@ -518,6 +518,12 @@ if (nameDistro == "Gujin")
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gujin-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "LinuxConsole")
+{
+  downloadfile(QString("http://jukebox.linuxconsole.org/official/linuxconsole%1.iso").arg(QString(relname)), isotmpf);
+  extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "Linux Mint")
 {
 	if (isarch64)

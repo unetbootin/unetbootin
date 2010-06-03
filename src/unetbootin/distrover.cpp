@@ -135,6 +135,13 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.
 	"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
 ubuntuverlist));
+
+	distroselect->addItem("LinuxConsole", (QStringList() << "1.0.2009-cd" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/>"
+ "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
+ "<b>Install Notes:</b> The 1.0.2009 is latest 1.0 relsease. Multimedia ISO (200Mb) is smaller that cd (690Mb).") <<
+ "1.0.2009-cd" << "1.0.2009-multimedia"));
+
 	distroselect->addItem("Linux Mint", (QStringList() << "8_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
