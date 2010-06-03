@@ -525,14 +525,14 @@ Reiniciar agora?</translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.fedora.redhat.com&quot; cando lle pregunten por un servidor, e poña &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.opensuse.org&quot; cando lle pregunten por un servidor, e poña &quot;/factory/repo/oss&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

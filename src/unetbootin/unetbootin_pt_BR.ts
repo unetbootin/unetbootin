@@ -617,14 +617,14 @@ Reiniciar Agora?</translation>
 *IMPORTANTE* Após a reinicialização, ignore as mensagens de erros, e, mantenha a seleção caso houver mensagem pedindo um CD. Vá até o menu principal, selecione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Network (rede)&apos; como sendo a fonte, escolha &apos;HTTP&apos; como sendo o protocolo, entre com &apos;download.fedora.redhat.com&apos; quando perguntado sobre o servidor, e, entre com &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;  quando perguntado sobre a pasta (folder).</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Após a reinicialização, ignore as mensagens de erros, e, mantenha a seleção caso houver mensagem pedindo um CD. Vá até o menu principal, selecione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Network (rede)&apos; como sendo a fonte, escolha &apos;HTTP&apos; como sendo o protocolo, entre com &apos;download.opensuse.org&apos; quando perguntado sobre o servidor, e, entre com &apos;/factory/repo/oss&apos;  quando perguntado sobre a pasta (folder).</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

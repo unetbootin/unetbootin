@@ -663,14 +663,14 @@ Reboot now?</source>
 *IMPORTANT* بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.fedora.redhat.com&apos; عندما تطالب بالمزود و &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 بعد إعادة تشغيل الجهاز قم بتجاهل أي رسالة خطأ قد تظهر لك وقم بإختيار خيار الرجوع إذا طُولبت بإدخال إسطوانة سي دي ثم اذهب إلى القائمة الرئيسية وختر خيار &apos;إبدأ التثبيت&apos; ثم أختر &apos;شبكي&apos; ليكون مصدر التثبيت و أختر &apos;HTTP&apos; ليكون البروتوكول ثم قم بكتابة &apos;download.opensuse.org&apos; عندما تطالب بالمزود و &apos;/factory/repo/oss&apos; عندما تسئل عن المجلد.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

@@ -655,14 +655,14 @@ Reboot now?</source>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come server e inserire «/pub/fedora/linux/releases/%1/Fedora/%2/os» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare indietro se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione «Inizia installazione», scegliere «Rete» come sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come server e inserire «/factory/repo/oss» quando è richiesta la cartella.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

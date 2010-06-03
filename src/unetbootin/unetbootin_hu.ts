@@ -898,14 +898,14 @@ Reboot now?</source>
 *FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.fedora.redhat.com&apos;, majd írja be mappának a következőt: &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/factory/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

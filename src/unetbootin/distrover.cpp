@@ -137,11 +137,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxconsole.org/\">http://lin
  "<b>Install Notes:</b> The 1.0.2009 is latest 1.0 relsease. Multimedia ISO (200Mb) is smaller that cd (690Mb).") <<
  "1.0.2009-cd" << "1.0.2009-multimedia"));
 
-	distroselect->addItem("Linux Mint", (QStringList() << "8_Live" <<
+	distroselect->addItem("Linux Mint", (QStringList() << "9_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-	"3.1_Live" << "4.0_Live" << "5-r1_Live" << "5_Live_x64" << "6_Live" << "6_Live_x64" << "7_Live" << "7_Live_x64" << "8_Live" << "8_Live_x64"));
+	"3.1_Live" << "4.0_Live" << "5_Live" << "5_Live_x64" << "6_Live" << "6_Live_x64" << "7_Live" << "7_Live_x64" << "8_Live" << "8_Live_x64" << "9_Live" << "9_Live_x64"));
 distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 	"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"

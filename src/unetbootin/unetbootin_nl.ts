@@ -656,14 +656,14 @@ Nu herstarten?</translation>
 *BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.fedora.redhat.com&apos; in, en voer &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *BELANGRIJK* Negeer na het herstarten mogelijke foutmeldingen, kies &apos;back&apos; als gevraagd wordt om een CD. Ga dan naar het hoofdmenu, kies de optie &apos;Start installatie&apos;, kies &apos;Netwerk&apos; als bron, kies &apos;HTTP&apos; als protocol. Als gevraagd wordt om een server voer je &apos;download.opensuse.org&apos; in, en voer &apos;/factory/repo/oss&apos; wanneer gevraagd wordt naar de directory.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

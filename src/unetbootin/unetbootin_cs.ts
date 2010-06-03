@@ -660,14 +660,14 @@ Restartovat nyní</translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.fedora.redhat.com&apos; a při dotazu na adresář zadejte &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="652"/>
+        <location filename="distrolst.cpp" line="706"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *DŮLEŽITÉ* Po restartu ignorujte všechna chybová hlášení a pokud jste vyzvání k vložení CD, zvolte zpět, běžte do hlavní nabídky a vyberte &apos;Zahájit instalaci&apos;, jako zdroj vyberte &apos;Síť&apos;, jako protokol zvolte &apos;HTTP&apos;, při výzvě k zadání serveru zadejte &apos;download.opensuse.org&apos; a při dotazu na adresář zadejte &apos;/factory/repo/oss&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="658"/>
+        <location filename="distrolst.cpp" line="712"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
