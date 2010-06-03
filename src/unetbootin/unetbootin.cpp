@@ -1465,7 +1465,21 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 	initrdLoc = QDir::fromNativeSeparators(locateinitrd(isofile, listfilesizedirpair.first));
 	if (!initrdLoc.startsWith("/")) initrdLoc.prepend("/");
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
-	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
+	extraoptionsPL.first.first.clear();
+	extraoptionsPL.first.second.clear();
+	extraoptionsPL.second.first.clear();
+	extraoptionsPL.second.second.clear();
+	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > tmpoptionsL = extractcfgL(isofile, listfilesizedirpair.first.first);
+	for (int i = 0; i < tmpoptionsL.second.second.size(); ++i)
+	{
+		if (!tmpoptionsL.second.second.at(i).isEmpty())
+		{
+			extraoptionsPL.first.first.append(tmpoptionsL.first.first.at(i));
+			extraoptionsPL.first.second.append(tmpoptionsL.first.second.at(i));
+			extraoptionsPL.second.first.append(tmpoptionsL.second.first.at(i));
+			extraoptionsPL.second.second.append(tmpoptionsL.second.second.at(i));
+		}
+	}
 	QPair<QStringList, QList<quint64> > bootfiles;
 	for (int i = 0; i < listfilesizedirpair.first.first.size(); ++i)
 	{
