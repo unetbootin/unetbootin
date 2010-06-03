@@ -95,6 +95,37 @@ void callexternappT::run()
 	#endif
 }
 
+void copyfileT::run()
+{
+	QFile srcF(source);
+	srcF.open(QIODevice::ReadOnly);
+	QFile dstF(destination);
+	dstF.open(QIODevice::WriteOnly);
+	qint64 maxbytes = srcF.size();
+	qint64 dlbytes = 0;
+	char buf[4096];
+#ifdef Q_OS_UNIX
+	int numsync = 0;
+#endif
+	while (!srcF.atEnd())
+	{
+		qint64 bytesread = srcF.read(buf, 4096);
+		dstF.write(buf, bytesread);
+		dlbytes += bytesread;
+		emit datacopied64(dlbytes, maxbytes);
+#ifdef Q_OS_UNIX
+		if (++numsync >= 256)
+		{
+			unetbootin::callexternapp("sync", "");
+			numsync = 0;
+		}
+#endif
+	}
+	srcF.close();
+	dstF.close();
+	emit finished();
+}
+
 ubngetrequestheader::ubngetrequestheader(QString urhost, QString urpath)
 {
 	this->setRequest("GET", urpath);
@@ -1541,38 +1572,19 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 
 void unetbootin::copyfilegui(QString src, QString dst)
 {
-	QFile srcF(src);
-	srcF.open(QIODevice::ReadOnly);
-	QFile dstF(dst);
-	dstF.open(QIODevice::WriteOnly);
 	pdesc5->setText("");
 	pdesc4->setText(tr("Copying file, please wait..."));
 	pdesc3->setText(tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(src));
 	pdesc2->setText(tr("<b>Destination:</b> %1").arg(dst));
 	pdesc1->setText(tr("<b>Copied:</b> 0 bytes"));
-	qint64 maxbytes = srcF.size();
-	qint64 dlbytes = 0;
-	char buf[4096];
-#ifdef Q_OS_UNIX
-	int numsync = 0;
-#endif
-	while (!srcF.atEnd())
-	{
-		qint64 bytesread = srcF.read(buf, 4096);
-		dstF.write(buf, bytesread);
-		dlbytes += bytesread;
-		tprogress->setValue(dlbytes);
-		tprogress->setMaximum(maxbytes);
-		pdesc1->setText(tr("<b>Copied:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
-		qApp->processEvents();
-#ifdef Q_OS_UNIX
-		if (++numsync >= 256)
-		{
-			callexternapp("sync", "");
-			numsync = 0;
-		}
-#endif
-	}
+	QEventLoop cpfw;
+	copyfileT cpft;
+	cpft.source = src;
+	cpft.destination = dst;
+	connect(&cpft, SIGNAL(datacopied64(qint64,qint64)), this, SLOT(cpprogressupdate64(qint64,qint64)));
+	connect(&cpft, SIGNAL(finished()), &cpfw, SLOT(quit()));
+	cpft.start();
+	cpfw.exec();
 	pdesc4->setText("");
 	pdesc3->setText("");
 	pdesc2->setText("");
@@ -2365,6 +2377,21 @@ void unetbootin::dlprogressupdate64(qint64 dlbytes, qint64 maxbytes)
      tprogress->setMaximum(maxbytes);
    // display the downloaded size with suffix
      pdesc1->setText(tr("<b>Downloaded:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+ }
+}
+
+void unetbootin::cpprogressupdate64(qint64 dlbytes, qint64 maxbytes)
+{
+ QTime time = QTime::currentTime();
+ static int oldsec = 0;
+ // refresh the progress bar every second
+ if(oldsec != time.second())
+ {
+   oldsec = time.second();
+	 tprogress->setValue(dlbytes);
+	 tprogress->setMaximum(maxbytes);
+   // display the downloaded size with suffix
+	 pdesc1->setText(tr("<b>Copied:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
  }
 }
 

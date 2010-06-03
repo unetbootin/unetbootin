@@ -115,6 +115,20 @@ public:
 	void run();
 };
 
+class copyfileT : public QThread
+{
+	Q_OBJECT
+
+public:
+	QString source;
+	QString destination;
+	void run();
+
+signals:
+	void datacopied64(qint64 dlbytes, qint64 maxbytes);
+	void finished();
+};
+
 class ubngetrequestheader : public QHttpRequestHeader
 {
 public:
@@ -290,6 +304,7 @@ private slots:
 public slots:
 	void dlprogressupdate(int dlbytes, int maxbytes);
 	void dlprogressupdate64(qint64 dlbytes, qint64 maxbytes);
+	void cpprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void on_okbutton_clicked();
 };
 
