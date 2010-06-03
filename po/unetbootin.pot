@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 21:08-0700\n"
+"POT-Creation-Date: 2010-06-02 22:40-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: lconvert 4.4.3\n"
+"X-Generator: lconvert 4.5.0\n"
 
 #. ts-context QObject
 #: main.cpp:266
@@ -466,7 +466,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:345
 #, fuzzy
 msgid ""
 "\n"
@@ -478,7 +478,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:357
+#: distrolst.cpp:351
 #, fuzzy
 msgid ""
 "\n"
@@ -527,13 +527,19 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:27
 #, fuzzy
+#| msgid ""
+#| "<b>Homepage:</b> <a "
+#| "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b> "
+#| "Arch Linux is a lightweight distribution optimized for speed and "
+#| "flexibility.<br/><b>Install Notes:</b> The default version allows for "
+#| "installation over the internet (FTP). If interested in a LiveUSB version, "
+#| "see FaunOS."
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b> "
 "Arch Linux is a lightweight distribution optimized for speed and "
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-"installation over the internet (FTP). If interested in a LiveUSB version, "
-"see FaunOS."
+"installation over the internet (FTP)."
 msgstr ""
 
 #. ts-context unetbootin
@@ -631,7 +637,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:79
+#: distrover.cpp:74
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -645,7 +651,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:84
+#: distrover.cpp:79
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -657,7 +663,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:89
+#: distrover.cpp:84
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -669,7 +675,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:94
+#: distrover.cpp:89
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -682,7 +688,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:99
+#: distrover.cpp:94
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -694,7 +700,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:104
+#: distrover.cpp:99
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -705,7 +711,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:109
+#: distrover.cpp:104
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -716,7 +722,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:119
+#: distrover.cpp:114
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -727,7 +733,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:124
+#: distrover.cpp:119
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -738,7 +744,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:129
+#: distrover.cpp:124
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -749,7 +755,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:134
+#: distrover.cpp:129
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -765,7 +771,18 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:139
+#: distrover.cpp:135
+#, fuzzy
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Description:</b> "
+"LinuxConsole is a desktop distro to play games, easy to install, easy to use "
+"and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is latest 1.0 "
+"relsease. Multimedia ISO (200Mb) is smaller that cd (690Mb)."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:141
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -777,7 +794,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:144
+#: distrover.cpp:146
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -791,7 +808,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:150
+#: distrover.cpp:152
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -803,7 +820,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:155
+#: distrover.cpp:157
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -815,7 +832,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:160
+#: distrover.cpp:162
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -826,7 +843,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:165
+#: distrover.cpp:167
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -838,7 +855,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:170
+#: distrover.cpp:172
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -848,7 +865,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:175
+#: distrover.cpp:177
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -860,7 +877,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:180
+#: distrover.cpp:182
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -871,7 +888,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:185
+#: distrover.cpp:187
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -883,7 +900,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:190
+#: distrover.cpp:192
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -896,7 +913,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:195
+#: distrover.cpp:197
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -907,7 +924,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:200
+#: distrover.cpp:202
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -918,7 +935,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:205
+#: distrover.cpp:207
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -929,7 +946,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:210 distrovercust.cpp:12
+#: distrover.cpp:212 distrovercust.cpp:12
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -940,7 +957,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:215
+#: distrover.cpp:217
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -952,7 +969,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:220
+#: distrover.cpp:222
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -963,7 +980,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:225
+#: distrover.cpp:227
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -979,7 +996,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:230
+#: distrover.cpp:232
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -990,7 +1007,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:235
+#: distrover.cpp:237
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1006,7 +1023,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:240
+#: distrover.cpp:242
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "

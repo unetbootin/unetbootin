@@ -306,12 +306,6 @@ if (nameDistro == "Elive")
 	extractiso(isotmpf, targetPath);
 }
 
-if (nameDistro == "FaunOS")
-{
-	downloadfile(QString("http://download.faunos.com/FaunOS-%1/FaunOS-%1-dvd.iso").arg(relname), isotmpf);
-	extractiso(isotmpf, targetPath);
-}
-
 if (nameDistro == "Fedora")
 {
 	if (isarch64)

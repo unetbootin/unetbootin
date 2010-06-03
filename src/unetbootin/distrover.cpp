@@ -26,7 +26,7 @@ unetbootin::tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbo
 distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 	"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
-	"<b>Install Notes:</b> The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.") <<
+	"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") <<
 "2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
 distroselect->addItem("BackTrack", (QStringList() << "4f" <<
@@ -70,12 +70,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>.") <<
 "Unstable_Live"));
-//	distroselect->addItem("FaunOS", (QStringList() << "shadow-0.5.4-stable" <<
-//	tr("<b>Homepage:</b> <a href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/>"
-//		"<b>Description:</b> FaunOS is a distribution based on Arch Linux.<br/>"
-//		"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-//	"shadow-0.5.4-stable"));
-	distroselect->addItem("Fedora", (QStringList() << "12_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "12_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
