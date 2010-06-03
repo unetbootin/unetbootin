@@ -103,24 +103,18 @@ void copyfileT::run()
 	dstF.open(QIODevice::WriteOnly);
 	qint64 maxbytes = srcF.size();
 	qint64 dlbytes = 0;
-	char buf[4096];
-#ifdef Q_OS_UNIX
-	int numsync = 0;
-#endif
+	char *buf = new char[262144];
 	while (!srcF.atEnd())
 	{
-		qint64 bytesread = srcF.read(buf, 4096);
+		qint64 bytesread = srcF.read(buf, 262144);
 		dstF.write(buf, bytesread);
 		dlbytes += bytesread;
 		emit datacopied64(dlbytes, maxbytes);
 #ifdef Q_OS_UNIX
-		if (++numsync >= 256)
-		{
-			unetbootin::callexternapp("sync", "");
-			numsync = 0;
-		}
+		unetbootin::callexternapp("sync", "");
 #endif
 	}
+	delete[] buf;
 	srcF.close();
 	dstF.close();
 	emit finished();
