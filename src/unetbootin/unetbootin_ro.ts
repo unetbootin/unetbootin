@@ -144,10 +144,10 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="314"/>
         <location filename="unetbootin.cpp" line="413"/>
         <location filename="unetbootin.cpp" line="506"/>
-        <location filename="unetbootin.cpp" line="2882"/>
-        <location filename="unetbootin.cpp" line="2895"/>
-        <location filename="unetbootin.cpp" line="3053"/>
-        <location filename="unetbootin.cpp" line="3508"/>
+        <location filename="unetbootin.cpp" line="2924"/>
+        <location filename="unetbootin.cpp" line="2937"/>
+        <location filename="unetbootin.cpp" line="3095"/>
+        <location filename="unetbootin.cpp" line="3550"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -162,14 +162,14 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="583"/>
         <location filename="unetbootin.cpp" line="599"/>
         <location filename="unetbootin.cpp" line="853"/>
-        <location filename="unetbootin.cpp" line="1383"/>
-        <location filename="unetbootin.cpp" line="1445"/>
-        <location filename="unetbootin.cpp" line="2231"/>
+        <location filename="unetbootin.cpp" line="1384"/>
+        <location filename="unetbootin.cpp" line="1446"/>
         <location filename="unetbootin.cpp" line="2273"/>
-        <location filename="unetbootin.cpp" line="2886"/>
-        <location filename="unetbootin.cpp" line="2911"/>
-        <location filename="unetbootin.cpp" line="3057"/>
-        <location filename="unetbootin.cpp" line="3512"/>
+        <location filename="unetbootin.cpp" line="2315"/>
+        <location filename="unetbootin.cpp" line="2928"/>
+        <location filename="unetbootin.cpp" line="2953"/>
+        <location filename="unetbootin.cpp" line="3099"/>
+        <location filename="unetbootin.cpp" line="3554"/>
         <source>USB Drive</source>
         <translation>Disc USB</translation>
     </message>
@@ -180,7 +180,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="282"/>
         <location filename="unetbootin.cpp" line="534"/>
         <location filename="unetbootin.cpp" line="535"/>
-        <location filename="unetbootin.cpp" line="2959"/>
+        <location filename="unetbootin.cpp" line="3001"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -191,7 +191,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="287"/>
         <location filename="unetbootin.cpp" line="539"/>
         <location filename="unetbootin.cpp" line="540"/>
-        <location filename="unetbootin.cpp" line="2951"/>
+        <location filename="unetbootin.cpp" line="2993"/>
         <source>Floppy</source>
         <translation>Dischetă</translation>
     </message>
@@ -346,151 +346,170 @@ X-Generator: Launchpad (build Unknown)
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1074"/>
+        <location filename="unetbootin.cpp" line="1015"/>
+        <location filename="unetbootin.cpp" line="1075"/>
         <source>Extracting bootloader configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1289"/>
-        <location filename="unetbootin.cpp" line="1315"/>
+        <location filename="unetbootin.cpp" line="1290"/>
+        <location filename="unetbootin.cpp" line="1316"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Se extrage fişierul iso comprimat:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1548"/>
+        <location filename="unetbootin.cpp" line="1535"/>
+        <source>Copying file, please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1538"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <oldsource>&lt;b&gt;Copied:&lt;/b&gt; 0 KB</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1552"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1590"/>
         <source>Extracting files, please wait...</source>
         <translation>Se extrag fişierele, vă rog asteptaţi...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1549"/>
+        <location filename="unetbootin.cpp" line="1591"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Arhiva:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1550"/>
+        <location filename="unetbootin.cpp" line="1592"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Sursa:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1551"/>
+        <location filename="unetbootin.cpp" line="1593"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destinaţie:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1552"/>
+        <location filename="unetbootin.cpp" line="1594"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Extrase:&lt;/b&gt; 0 din %1 fişiere</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1555"/>
+        <location filename="unetbootin.cpp" line="1597"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Sursa:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1556"/>
+        <location filename="unetbootin.cpp" line="1598"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destinaţie:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1557"/>
+        <location filename="unetbootin.cpp" line="1599"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Extrase:&lt;/b&gt; %1 din %2 fisiere</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2215"/>
+        <location filename="unetbootin.cpp" line="2257"/>
         <source>Downloading files, please wait...</source>
         <translation>Se descarcă fişiere, vă rog asteptaţi...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2216"/>
+        <location filename="unetbootin.cpp" line="1536"/>
+        <location filename="unetbootin.cpp" line="2258"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Sursa:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2217"/>
+        <location filename="unetbootin.cpp" line="1537"/>
+        <location filename="unetbootin.cpp" line="2259"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destinaţie:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2218"/>
+        <location filename="unetbootin.cpp" line="2260"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Descărcate:&lt;/b&gt; 0 byti</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2295"/>
-        <location filename="unetbootin.cpp" line="2310"/>
+        <location filename="unetbootin.cpp" line="2337"/>
+        <location filename="unetbootin.cpp" line="2352"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descărcate:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2386"/>
+        <location filename="unetbootin.cpp" line="2428"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Se caută în &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2390"/>
+        <location filename="unetbootin.cpp" line="2432"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1 nu a(u) fost găsit(e)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2575"/>
+        <location filename="unetbootin.cpp" line="2617"/>
         <source>%1 not found</source>
         <translation>%1 nu a fost găsit</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2576"/>
+        <location filename="unetbootin.cpp" line="2618"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nu a fost găsit. Acesta este necesar pentru modul de instalare %2.
 Instalaţi pachetul &quot;%3&quot; sau pachetul echivalent din distribuţia voastră.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2864"/>
+        <location filename="unetbootin.cpp" line="2906"/>
         <source>(Current)</source>
         <translation>(Cel aflat în curs)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2865"/>
+        <location filename="unetbootin.cpp" line="2907"/>
         <source>(Done)</source>
         <translation>(Gata)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3132"/>
+        <location filename="unetbootin.cpp" line="3174"/>
         <source>Configuring grub2 on %1</source>
         <translation>Se configurează grub2 pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3144"/>
+        <location filename="unetbootin.cpp" line="3186"/>
         <source>Configuring grldr on %1</source>
         <translation>Se configurează grldr pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3172"/>
+        <location filename="unetbootin.cpp" line="3214"/>
         <source>Configuring grub on %1</source>
         <translation>Se configurează grub pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3357"/>
+        <location filename="unetbootin.cpp" line="3399"/>
         <source>Installing syslinux to %1</source>
         <translation>Se instalează syslinux in %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3392"/>
+        <location filename="unetbootin.cpp" line="3434"/>
         <source>Installing extlinux to %1</source>
         <translation>Se instalează extlinux in %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3498"/>
+        <location filename="unetbootin.cpp" line="3540"/>
         <source>Syncing filesystems</source>
         <translation>Se sincronizează fişierele-sistem</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3510"/>
+        <location filename="unetbootin.cpp" line="3552"/>
         <source>After rebooting, select the </source>
         <translation>După repornire, selectaţi </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3514"/>
+        <location filename="unetbootin.cpp" line="3556"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>După repornire, selectaţi optiunea pentru bootare USB din meniul de boot al BIOS-lui.%1

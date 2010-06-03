@@ -1012,6 +1012,7 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 
 QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
 {
+	pdesc1->setText(tr("Extracting bootloader configuration"));
 	QString grubpcfg;
 	QString syslinuxpcfg;
 	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
@@ -1508,7 +1509,8 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 		overwritefileprompt(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
 	else
 		extractedfiles.append(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
-	QFile::copy(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
+	//QFile::copy(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
+	copyfilegui(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
 	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
 	if (ubnfilelF.exists())
 	{
@@ -1521,6 +1523,46 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 		ubnfilelS << extractedfiles.at(i) << endl;
 	}
 	ubnfilelF.close();
+}
+
+void unetbootin::copyfilegui(QString src, QString dst)
+{
+	QFile srcF(src);
+	srcF.open(QIODevice::ReadOnly);
+	QFile dstF(dst);
+	dstF.open(QIODevice::WriteOnly);
+	pdesc5->setText("");
+	pdesc4->setText(tr("Copying file, please wait..."));
+	pdesc3->setText(tr("<b>Source:</b> <a href=\"%1\">%1</a>").arg(src));
+	pdesc2->setText(tr("<b>Destination:</b> %1").arg(dst));
+	pdesc1->setText(tr("<b>Copied:</b> 0 bytes"));
+	qint64 maxbytes = srcF.size();
+	qint64 dlbytes = 0;
+	char buf[4096];
+#ifdef Q_OS_UNIX
+	int numsync = 0;
+#endif
+	while (!srcF.atEnd())
+	{
+		qint64 bytesread = srcF.read(buf, 4096);
+		dstF.write(buf, bytesread);
+		dlbytes += bytesread;
+		tprogress->setValue(dlbytes);
+		tprogress->setMaximum(maxbytes);
+		pdesc1->setText(tr("<b>Copied:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+#ifdef Q_OS_UNIX
+		if (++numsync >= 256)
+		{
+			callexternapp("sync", "");
+			numsync = 0;
+		}
+#endif
+	}
+	pdesc4->setText("");
+	pdesc3->setText("");
+	pdesc2->setText("");
+	pdesc1->setText("");
+	tprogress->setValue(0);
 }
 
 QStringList unetbootin::makepathtree(QString dirmkpathw, QStringList pathlist)
