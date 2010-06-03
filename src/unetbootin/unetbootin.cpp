@@ -1564,6 +1564,7 @@ void unetbootin::copyfilegui(QString src, QString dst)
 		tprogress->setValue(dlbytes);
 		tprogress->setMaximum(maxbytes);
 		pdesc1->setText(tr("<b>Copied:</b> %1 of %2").arg(displayfisize(dlbytes)).arg(displayfisize(maxbytes)));
+		qApp->processEvents();
 #ifdef Q_OS_UNIX
 		if (++numsync >= 256)
 		{
