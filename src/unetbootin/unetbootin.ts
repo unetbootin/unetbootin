@@ -430,6 +430,18 @@ Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="distrover.cpp" line="21"/>
+        <location filename="unetbootin.cpp" line="640"/>
+        <source>== Select Distribution ==</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="21"/>
+        <location filename="distrover.cpp" line="25"/>
+        <source>== Select Version ==</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="distrover.cpp" line="22"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
         <translation type="unfinished"></translation>

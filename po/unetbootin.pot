@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-15 20:53-0700\n"
+"POT-Creation-Date: 2010-06-15 21:06-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,6 +511,18 @@ msgid ""
 "option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:21 unetbootin.cpp:640
+#, fuzzy
+msgid "== Select Distribution =="
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:21 distrover.cpp:25
+#, fuzzy
+msgid "== Select Version =="
 msgstr ""
 
 #. ts-context unetbootin

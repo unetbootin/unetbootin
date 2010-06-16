@@ -18,11 +18,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
-distroselect->addItem("== Select Distribution ==", (QStringList() << "== Select Version ==" <<
+distroselect->addItem(unetbootin::tr("== Select Distribution =="), (QStringList() << unetbootin::tr("== Select Version ==") <<
 unetbootin::tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal Netboot Installer. Usage:"
 	"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 	"<li>Select an installation type, and press OK to begin installing.</li></ol>") <<
-"== Select Version =="));
+unetbootin::tr("== Select Version ==")));
 distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 	"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"

@@ -19,168 +19,140 @@ X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Debian rendszert egy nagy felhasználóközösség fejlezti, ezert sok szamítógépfajtát támogat, és széles a programcsomagok vállasztéka.&lt;br/&gt;&lt;b&gt;Telepítési jegyzetek:&lt;/b&gt; A &apos;Live&apos; változatot &apos;élő&apos; módban lehet tölteni (a rendszer memoriábol fut), és innen el lehet indítani a telepítőt. A &apos;NetInstall&apos; változattal interneten keresztül lehet telepíteni (FTP).</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Insert a USB flash drive</source>
         <comment>#1</comment>
         <translation type="obsolete">Kérem rakja a USB-lemezet a szamítógépbe</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <comment>#2</comment>
         <translation type="obsolete">Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 rendszerre.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not mounted</source>
         <comment>#3</comment>
         <translation type="obsolete">%1 kötet nem csatolt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <comment>#4</comment>
         <translation type="obsolete">Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és visszarakod a USB-lemezet.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a distro</source>
         <comment>#5</comment>
         <translation type="obsolete">Vállasztja ki a kívánt operációs rendszert</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a distribution to load.</source>
         <comment>#6</comment>
         <translation type="obsolete">Még nem választott ki egy operációs rendszert.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a disk image file</source>
         <comment>#7</comment>
         <translation type="obsolete">Vállasztja ki a kívánt CD/lemez kép fájlt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a disk image file to load.</source>
         <comment>#8</comment>
         <translation type="obsolete">Még nem választotta ki a CD/lemez kép fájlt.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a kernel and/or initrd file</source>
         <comment>#9</comment>
         <translation type="obsolete">Kérem vállasztja ki a kernel vagz initrd fájlokat</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <comment>#10</comment>
         <translation type="obsolete">Még nem választotta ki a kernel vagy initrd fájlt.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 exists, overwrite?</source>
         <comment>#11</comment>
         <translation type="obsolete">%1 létezik, felülírás?</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <comment>#12</comment>
         <translation type="obsolete">A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Extracting files, please wait...</source>
         <comment>#13</comment>
         <translation type="obsolete">Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <comment>#14</comment>
         <translation type="obsolete">&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <comment>#15</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <comment>#16</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <comment>#17</comment>
         <translation type="obsolete">&lt;b&gt;Kicsomagolt:&lt;/b&gt; 0, %1 fájlból</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <comment>#18</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <comment>#19</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <comment>#20</comment>
         <translation type="obsolete">&lt;b&gt;Kicsomagolt:&lt;/b&gt; %1, %2 fájlból</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Downloading files, plese wait...</source>
         <comment>#21</comment>
         <translation type="obsolete">Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <comment>#22</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <comment>#23</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <comment>#24</comment>
         <translation type="obsolete">&lt;b&gt;Letöltött:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <comment>#25</comment>
         <translation type="obsolete">&lt;b&gt;Letöltött:&lt;/b&gt; %1, %2 bájtbol</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found</source>
         <comment>#26</comment>
         <translation type="obsolete">%1 nem található</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <comment>#27</comment>
@@ -188,13 +160,11 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the </source>
         <comment>#28</comment>
         <translation type="obsolete">Újrainditás után vállasztja a (sp) </translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <comment>#29</comment>
@@ -202,7 +172,6 @@ Reboot now?</source>
 Újrainditás most?</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <comment>QObject#1</comment>
@@ -210,7 +179,6 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;mirrors.kernel.org&apos; szerverrel , és &apos;/centos/%1/os/%2&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <comment>QObject#2</comment>
@@ -218,7 +186,6 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.fedora.redhat.com&apos; szerverrel , és &apos;/pub/fedora/linux/development/%1/os&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <comment>QObject#3</comment>
@@ -226,14 +193,12 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.fedora.redhat.com&apos; szerverrel , és &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
         <translation type="obsolete">
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/SL-OSS-factory/inst-source&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <comment>QObject#5</comment>
@@ -241,163 +206,136 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/%1/repo/oss&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Uninstallation Complete</source>
         <comment>QObject#6</comment>
         <translation type="obsolete">Kész a program eltávolítása</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Must run as root</source>
         <comment>QObject#7</comment>
         <translation type="obsolete">Ezt a programot &apos;root&apos; (rendszergazda) felhasználóként kell futatni</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Insert a USB flash drive</source>
         <comment>QObject#8</comment>
         <translation type="obsolete">Kérem rakja a USB-lemezet a szamítógépbe</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <comment>QObject#9</comment>
         <translation type="obsolete">Nem találtam USB lemezet. Ha a USB lemez már hozzá van kapcsolva a számítógéphez és mégsem található, kérem leformázza a lemezet FAT32 rendszerre.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not mounted</source>
         <comment>QObject#10</comment>
         <translation type="obsolete">%1 kötet nem csatolt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <comment>QObject#11</comment>
         <translation type="obsolete">Először hozzá kell csatolni a USB-lemezet a %1 csatolási ponthoz. A legtöbb esetben az operációs rendszer ezt magátol végrehajtja miután kiveszed és visszarakod a USB-lemezet.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a distro</source>
         <comment>QObject#12</comment>
         <translation type="obsolete">Vállasztja ki a kívánt operációs rendszert</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a distribution to load.</source>
         <comment>QObject#13</comment>
         <translation type="obsolete">Még nem választott ki egy operációs rendszert.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a disk image file</source>
         <comment>QObject#14</comment>
         <translation type="obsolete">Vállasztja ki a kívánt CD/lemez kép fájlt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a disk image file to load.</source>
         <comment>QObject#15</comment>
         <translation type="obsolete">Még nem választotta ki a CD/lemez kép fájlt.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Select a kernel and/or initrd file</source>
         <comment>QObject#16</comment>
         <translation type="obsolete">Kérem vállasztja ki a kernel vagz initrd fájlokat</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <comment>QObject#17</comment>
         <translation type="obsolete">Még nem választotta ki a kernel vagy initrd fájlt.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Extracting files, please wait...</source>
         <comment>QObject#18</comment>
         <translation type="obsolete">Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <comment>QObject#19</comment>
         <translation type="obsolete">&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <comment>QObject#20</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <comment>QObject#21</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <comment>QObject#22</comment>
         <translation type="obsolete">&lt;b&gt;Kicsomagolt:&lt;/b&gt; 0, %1 fájlból</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <comment>QObject#23</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <comment>QObject#24</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <comment>QObject#25</comment>
         <translation type="obsolete">&lt;b&gt;Kicsomagolt:&lt;/b&gt; %1, %2 fájlból</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Downloading files, plese wait...</source>
         <comment>QObject#26</comment>
         <translation type="obsolete">Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <comment>QObject#27</comment>
         <translation type="obsolete">&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <comment>QObject#28</comment>
         <translation type="obsolete">&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <comment>QObject#29</comment>
         <translation type="obsolete">&lt;b&gt;Letöltött:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <comment>QObject#30</comment>
         <translation type="obsolete">&lt;b&gt;Letöltött:&lt;/b&gt; %1, %2 bájtbol</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found</source>
         <comment>QObject#31</comment>
         <translation type="obsolete">%1 nem található</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <comment>QObject#32</comment>
@@ -405,13 +343,11 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Kérem telepítse a &quot;%3&quot; csomagot, vagy az ön rendszeréhez megfelelő csomagot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the </source>
         <comment>QObject#33</comment>
         <translation type="obsolete">Újrainditás után vállasztja a (sp) </translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <comment>QObject#34</comment>
@@ -419,19 +355,16 @@ Reboot now?</source>
 Újrainditás most?</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>%1 exists, overwrite?</source>
         <comment>QObject#35</comment>
         <translation type="obsolete">%1 létezik, felülírás?</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <comment>QObject#36</comment>
         <translation type="obsolete">A %1 fájl már létezik. Vállasztja az &apos;Igen, mindent&apos; ha át akarja írni az összes létező fájlokat, &apos;Igen&apos; ha csak bizonyos fájlokat akar átírni, es &apos;Nem&apos; ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, akkor vállasztja az &apos;Igen, mindent&apos; vállasztékot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <comment>unetbootin#27</comment>
@@ -439,7 +372,6 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;mirrors.kernel.org&apos; szerverrel , és &apos;/centos/%1/os/%2&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <comment>unetbootin#28</comment>
@@ -447,7 +379,6 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.fedora.redhat.com&apos; szerverrel , és &apos;/pub/fedora/linux/development/%1/os&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <comment>unetbootin#29</comment>
@@ -455,7 +386,6 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.fedora.redhat.com&apos; szerverrel , és &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <comment>unetbootin#31</comment>
@@ -463,105 +393,85 @@ Reboot now?</source>
 *FIGYELEM* A számítogép ujrainditás után lesz néhány hibaüzenet, ezeket nem kell figyelembe venni. Ha a program CD-t kér, vállasztja a &apos;Back (Vissza)&apos; parancsot. Ezután lépjen vissza a főmenübe, vállasztja a &apos;Start Installation (Telepítés Inditás)&apos; parancsot, &apos;Network (Hálozat)&apos; forrással, HTTP protokollal, &apos;download.opensuse.org&apos; szerverrel , és &apos;/distribution/%1/repo/oss&apos; mappával.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Uninstallation Complete</source>
         <comment>uninstaller#1</comment>
         <translation type="obsolete">Kész a program eltávolítása</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Must run as root</source>
         <comment>uninstaller#3</comment>
         <translation type="obsolete">Ezt a programot &apos;root&apos; (rendszergazda) felhasználóként kell futatni</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Downloading files, please wait...</source>
         <comment>#30</comment>
         <translation type="obsolete">Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Diskimage</source>
         <translation type="obsolete">Lemezképfájl</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Distribution</source>
         <translation type="obsolete">Disztribúció</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Custom</source>
         <translation type="obsolete">Egyéni</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>UNetbootin</source>
         <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Drive:</source>
         <translation type="obsolete">Meghajtó:</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Type:</source>
         <translation type="obsolete">Típus:</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Initrd:</source>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Kernel:</source>
         <translation type="obsolete">Kernel:</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Show All Drives (Use with Care)</source>
         <translation type="obsolete">Minden meghajtó mutatása (óvatosan használja)</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A BackTrack egy hálózati elemzéssel és behatolás teszteléssel foglalkozó disztribúció.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A BackTrack live módban fut, ezért a használatához nem szükséges telepíteni.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Arch Linux egy könnyűsúlyú disztribúció, ami sebességre és rugalmasságra lett kihegyezve.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; Az alapváltozatot interneten keresztül lehet telepíteni (FTP). Ha egy live usb változat érdekli, akkor nézze meg a FaunOS-t.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Ubuntu egy felhasználóbarát Debian alapú disztribúció. Jelenleg ez a legnépszerűbb asztali Linux disztribúció.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. A NetInstall verzióval interneten keresztül lehet telepíteni (FTP) akármelyik hivatalos Ubuntu származékot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Xubuntu egy hivatalos Ubuntu származék, ami XFCE asztali környezetet használ.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. A NetInstall verzióval interneten keresztül lehet telepíteni (FTP) akármelyik hivatalos Ubuntu származékot.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Super Ubuntu egy nem hivatalos Ubuntu származék, ami alapból tartalmaz néhány extra alkalmazást, amit a sima Ubuntu nem. A telepítéshez egy 2GB méretű USB meghajtót igényel.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja.</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Options:</source>
         <translation type="obsolete">Opciók:</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Meghajtó formázása (minden adat elvész)</translation>
     </message>
     <message>
-        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A Kubuntu egy hivatalos Ubuntu származék, KDE asztallal.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. A NetInstall verzióval interneten keresztül lehet telepíteni (FTP) akármelyik hivatalos Ubuntu származékot.</translation>
     </message>
@@ -577,377 +487,377 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="195"/>
-        <location filename="unetbootin.cpp" line="277"/>
-        <location filename="unetbootin.cpp" line="278"/>
-        <location filename="unetbootin.cpp" line="345"/>
-        <location filename="unetbootin.cpp" line="444"/>
-        <location filename="unetbootin.cpp" line="537"/>
-        <location filename="unetbootin.cpp" line="2966"/>
-        <location filename="unetbootin.cpp" line="2979"/>
-        <location filename="unetbootin.cpp" line="3137"/>
-        <location filename="unetbootin.cpp" line="3592"/>
+        <location filename="unetbootin.cpp" line="189"/>
+        <location filename="unetbootin.cpp" line="271"/>
+        <location filename="unetbootin.cpp" line="272"/>
+        <location filename="unetbootin.cpp" line="339"/>
+        <location filename="unetbootin.cpp" line="438"/>
+        <location filename="unetbootin.cpp" line="531"/>
+        <location filename="unetbootin.cpp" line="2960"/>
+        <location filename="unetbootin.cpp" line="2973"/>
+        <location filename="unetbootin.cpp" line="3131"/>
+        <location filename="unetbootin.cpp" line="3586"/>
         <source>Hard Disk</source>
         <translation>Merevlemez</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="196"/>
-        <location filename="unetbootin.cpp" line="260"/>
-        <location filename="unetbootin.cpp" line="274"/>
-        <location filename="unetbootin.cpp" line="275"/>
-        <location filename="unetbootin.cpp" line="347"/>
-        <location filename="unetbootin.cpp" line="448"/>
-        <location filename="unetbootin.cpp" line="542"/>
-        <location filename="unetbootin.cpp" line="614"/>
-        <location filename="unetbootin.cpp" line="630"/>
-        <location filename="unetbootin.cpp" line="884"/>
-        <location filename="unetbootin.cpp" line="1415"/>
-        <location filename="unetbootin.cpp" line="1477"/>
-        <location filename="unetbootin.cpp" line="2300"/>
-        <location filename="unetbootin.cpp" line="2342"/>
-        <location filename="unetbootin.cpp" line="2970"/>
-        <location filename="unetbootin.cpp" line="2995"/>
-        <location filename="unetbootin.cpp" line="3141"/>
-        <location filename="unetbootin.cpp" line="3596"/>
+        <location filename="unetbootin.cpp" line="190"/>
+        <location filename="unetbootin.cpp" line="254"/>
+        <location filename="unetbootin.cpp" line="268"/>
+        <location filename="unetbootin.cpp" line="269"/>
+        <location filename="unetbootin.cpp" line="341"/>
+        <location filename="unetbootin.cpp" line="442"/>
+        <location filename="unetbootin.cpp" line="536"/>
+        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="878"/>
+        <location filename="unetbootin.cpp" line="1409"/>
+        <location filename="unetbootin.cpp" line="1471"/>
+        <location filename="unetbootin.cpp" line="2294"/>
+        <location filename="unetbootin.cpp" line="2336"/>
+        <location filename="unetbootin.cpp" line="2964"/>
+        <location filename="unetbootin.cpp" line="2989"/>
+        <location filename="unetbootin.cpp" line="3135"/>
+        <location filename="unetbootin.cpp" line="3590"/>
         <source>USB Drive</source>
         <translation>USB meghajtó</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="197"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="225"/>
-        <location filename="unetbootin.cpp" line="313"/>
-        <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="566"/>
-        <location filename="unetbootin.cpp" line="3043"/>
+        <location filename="unetbootin.cpp" line="191"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="219"/>
+        <location filename="unetbootin.cpp" line="307"/>
+        <location filename="unetbootin.cpp" line="559"/>
+        <location filename="unetbootin.cpp" line="560"/>
+        <location filename="unetbootin.cpp" line="3037"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="198"/>
-        <location filename="unetbootin.cpp" line="220"/>
-        <location filename="unetbootin.cpp" line="221"/>
-        <location filename="unetbootin.cpp" line="318"/>
-        <location filename="unetbootin.cpp" line="570"/>
-        <location filename="unetbootin.cpp" line="571"/>
-        <location filename="unetbootin.cpp" line="3035"/>
+        <location filename="unetbootin.cpp" line="192"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="215"/>
+        <location filename="unetbootin.cpp" line="312"/>
+        <location filename="unetbootin.cpp" line="564"/>
+        <location filename="unetbootin.cpp" line="565"/>
+        <location filename="unetbootin.cpp" line="3029"/>
         <source>Floppy</source>
         <translation>Floppy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="238"/>
-        <location filename="unetbootin.cpp" line="242"/>
-        <location filename="unetbootin.cpp" line="246"/>
+        <location filename="unetbootin.cpp" line="232"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <location filename="unetbootin.cpp" line="240"/>
+        <location filename="unetbootin.cpp" line="244"/>
         <location filename="unetbootin.cpp" line="250"/>
-        <location filename="unetbootin.cpp" line="256"/>
-        <location filename="unetbootin.cpp" line="268"/>
+        <location filename="unetbootin.cpp" line="262"/>
         <source>either</source>
         <translation>akármelyik</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="562"/>
+        <location filename="unetbootin.cpp" line="556"/>
         <source>Open Disk Image File</source>
         <translation>Lemezképfájl megnyitása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="580"/>
+        <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Kernel fájl megnyitása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="588"/>
+        <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
         <translation>Initrd fájl megnyitása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="596"/>
+        <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
         <translation>Rendszerbetöltő beállítófájljának megnyitása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="618"/>
+        <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
         <translation>Csatlakoztasson egy USB-s flash meghajtót</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="619"/>
+        <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nem található USB-s flash meghajtó. Ha már csatlakoztatta, de mégsem látható, próbálja meg újraformázni FAT32 fájlrendszerre.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="634"/>
+        <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
         <translation>A(z) %1 nincs felcsatolva</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="635"/>
+        <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Először csatolja az USB-s meghajtót a(z) %1 csatolási ponthoz. A legtöbb disztribúció automatikusan elvégzi ezt az USB-s eszköz eltávolítása, majd újbóli csatlakoztatásakor.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="650"/>
+        <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
         <translation>Válasszon egy disztribúciót</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="651"/>
+        <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
         <translation>Ki kell választania a betöltendő disztribúciót.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
+        <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
         <translation>Válasszon egy lemezképfájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="666"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
         <translation>Ki kell választania a betöltendő lemezképfájlt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="680"/>
+        <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Válasszon egy kernel és/vagy initrd fájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="681"/>
+        <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Ki kell választania a betöltendő kernel és/vagy initrd fájlt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="695"/>
+        <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
         <translation>A lemezképfájl nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="696"/>
+        <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>A megadott %1 lemezképfájl nem létezik.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="710"/>
+        <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
         <translation>A kernel fájl nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="711"/>
+        <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>A megadott %1 kernel fájl nem létezik.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="725"/>
+        <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
         <translation>Initrd fájl nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="726"/>
+        <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>A megadott %1 initrd fájl nem létezik.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="830"/>
+        <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
         <translation>A(z) %1 létezik, felülírja?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="831"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>A %1 fájl már létezik. Nyomja meg a &apos;Yes to All&apos; gombot az összes fájl felülírásához, a &apos;Yes&apos; gombot a fájlok egyesével történő felülírásához, vagy a &apos;No&apos; gombot a jelenlegi verzió megtartásához. Ha nem tud dönteni, nyomja meg a &apos;Yes to All&apos; gombot.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="857"/>
+        <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>A(z) %1 eszközön kevés a szabad hely, megszakítja a telepítést?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="858"/>
+        <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>A(z) %1 könyvtárban kevés a szabad hely. Nyomja meg a &apos;Yes&apos; gombot a telepítése megszakításához, a &apos;No&apos; gombot a hiba figyelmen kívül hagyásához és a telepítés folytatásához, vagy a &apos;No to All&apos; gombot az összes &apos;kevés szabad hely&apos; hibaüzenet figyelmen kívül hagyásához.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="952"/>
+        <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="993"/>
+        <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="999"/>
+        <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1040"/>
+        <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1046"/>
-        <location filename="unetbootin.cpp" line="1106"/>
+        <location filename="unetbootin.cpp" line="1040"/>
+        <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1321"/>
-        <location filename="unetbootin.cpp" line="1347"/>
+        <location filename="unetbootin.cpp" line="1315"/>
+        <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Tömörített ISO fájl kicsomagolása:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1576"/>
+        <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1579"/>
+        <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2394"/>
+        <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
         <translation>Fájlok kicsomagolása, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archívum:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1620"/>
+        <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1621"/>
+        <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Kicsomagolt fájlok:&lt;/b&gt; 0/%1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1624"/>
+        <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1625"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1626"/>
+        <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Kicsomagolt fájlok:&lt;/b&gt; %1/%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2284"/>
+        <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
         <translation>Fájlok letöltése, kérem várjon...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1577"/>
-        <location filename="unetbootin.cpp" line="2285"/>
+        <location filename="unetbootin.cpp" line="1571"/>
+        <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Forrás:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1578"/>
-        <location filename="unetbootin.cpp" line="2286"/>
+        <location filename="unetbootin.cpp" line="1572"/>
+        <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cél:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2287"/>
+        <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Letöltve:&lt;/b&gt; 0 bájt</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2364"/>
-        <location filename="unetbootin.cpp" line="2379"/>
+        <location filename="unetbootin.cpp" line="2358"/>
+        <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Letöltve:&lt;/b&gt; %1/%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2470"/>
+        <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Keresés: &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2474"/>
+        <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 egyezik ebben: &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2659"/>
+        <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
         <translation>A(z) %1 nem található</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2660"/>
+        <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>A(z) %1 nem található. Ez ehhez a telepítési módhoz szükséges: %2.
 Telepítse a(z) &quot;%3&quot; csomagot, vagy az ön disztribúciójában található megfelelőjét.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
         <translation>(folyamatban)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2949"/>
+        <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
         <translation>(kész)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3216"/>
+        <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
         <translation>Grub2 konfigurálása itt: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3228"/>
+        <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
         <translation>Grldr konfigurálása itt: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3256"/>
+        <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
         <translation>Grub konfigurálása itt: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3441"/>
+        <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
         <translation>Syslinux telepítése ide: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3476"/>
+        <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
         <translation>Extlinux telepítése ide: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3582"/>
+        <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
         <translation>Fájlrendszerek szinkronizálása</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3594"/>
+        <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
         <translation>Újraindítás után, válassza a </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3598"/>
+        <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Újraindítás után válassza az USB boot opciót a BIOS boot menüjében.%1
@@ -999,6 +909,18 @@ Reboot now?</source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *FONTOS* Újraindítás után hagyjon figyelmen kívül minden hibaüzenetet és válassza a &apos;back&apos; (vissza) opciót, ha a számítógép CD-t kérne. Ezután lépjen vissza a főmenübe és válassza a &apos;Start Installation&apos; (telepítése elkezdése) opciót. Válassza a &apos;Network&apos; (internet) lehetőséget forrásként és a &apos;HTTP&apos;-t protokollnak. Írja be a következő címet szervernek: &apos;download.opensuse.org&apos;, majd írja be mappának a következőt: &apos;/distribution/%1/repo/oss&apos;. (Mindkettőt idézőjelek nélkül.)</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="21"/>
+        <location filename="unetbootin.cpp" line="640"/>
+        <source>== Select Distribution ==</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="21"/>
+        <location filename="distrover.cpp" line="25"/>
+        <source>== Select Version ==</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>

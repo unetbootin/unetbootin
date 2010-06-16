@@ -637,7 +637,7 @@ void unetbootin::on_okbutton_clicked()
 		}
 	}
 	#endif
-	else if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText("== Select Distribution =="))
+	else if (radioDistro->isChecked() && distroselect->currentIndex() == distroselect->findText(unetbootin::tr("== Select Distribution ==")))
 	{
 		QMessageBox dnotenoughinputmsgb;
 		dnotenoughinputmsgb.setIcon(QMessageBox::Information);
