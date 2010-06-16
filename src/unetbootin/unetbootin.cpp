@@ -553,7 +553,7 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("All Files (*)")));
+	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath()));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
 		if (diskimagetypeselect->findText(tr("ISO")) != -1)
@@ -571,7 +571,7 @@ void unetbootin::on_FloppyFileSelector_clicked()
 
 void unetbootin::on_KernelFileSelector_clicked()
 {
-	QString nameKernel = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Kernel File"), QDir::homePath(), tr("All Files (*)")));
+	QString nameKernel = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Kernel File"), QDir::homePath()));
 	KernelPath->clear();
 	KernelPath->insert(nameKernel);
 	radioManual->setChecked(true);
@@ -579,7 +579,7 @@ void unetbootin::on_KernelFileSelector_clicked()
 
 void unetbootin::on_InitrdFileSelector_clicked()
 {
-	QString nameInitrd = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Initrd File"), QDir::homePath(), tr("All Files (*)")));
+	QString nameInitrd = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Initrd File"), QDir::homePath()));
 	InitrdPath->clear();
 	InitrdPath->insert(nameInitrd);
 	radioManual->setChecked(true);
@@ -587,7 +587,7 @@ void unetbootin::on_InitrdFileSelector_clicked()
 
 void unetbootin::on_CfgFileSelector_clicked()
 {
-	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath(), tr("All Files (*)"));
+	QString nameCfg = QFileDialog::getOpenFileName(this, tr("Open Bootloader Config File"), QDir::homePath());
 	OptionEnter->clear();
 	QString cfgoptstxt = getcfgkernargs(nameCfg, "", QStringList(), QStringList());
 	if (cfgoptstxt.isEmpty())

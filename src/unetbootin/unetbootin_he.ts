@@ -237,226 +237,6 @@ Reboot now?</source>
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
-    <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">פתיחת קובץ Initrd</translation>
-    </message>
-    <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">פתיחת קובץ תצורת איתחול</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">כונן USB</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">יש לחבר כונן הבזק USB</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">לא נמצאו כונני הבזק USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו כ־FAT32.</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 אינו נעגן</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רב ההפצות יעשו זאת אוטומטית לאחר הסרה וחיבור מחדש של כונן ה־USB.</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">יש לבחור הפצה</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">יש לבחור הפצה לטעינה.</translation>
-    </message>
-    <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">יש לבחור קובץ דמות תקליטור</translation>
-    </message>
-    <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">יש לבחור קובץ דמות לטעינה.</translation>
-    </message>
-    <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">יש לבחור ליבה ו/או קובץ initrd</translation>
-    </message>
-    <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">יש לבחור ליבה ו/או קובץ initrd לטעינה.</translation>
-    </message>
-    <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">קובץ דמות התקליטור לא נמצא</translation>
-    </message>
-    <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">קובץ דמות התקליטור שצויין %1 אינו קיים.</translation>
-    </message>
-    <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">קובץ הליבה לא נמצא</translation>
-    </message>
-    <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">קובץ הליבה שצויין %1 לא נמצא.</translation>
-    </message>
-    <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">קובץ ה־initrd לא נמצא</translation>
-    </message>
-    <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">קובץ ה־initrd שצויין %1 לא נמצא.</translation>
-    </message>
-    <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 קיים, לשכתב?</translation>
-    </message>
-    <message>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="obsolete">הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
-    </message>
-    <message>
-        <source>%1 is out of space, abort installation?</source>
-        <translation type="obsolete">המקום שעל %1 אזל, האם לבטל את ההתקנה?</translation>
-    </message>
-    <message>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="obsolete">בתיקייה %1 אין עוד מקום. ניתן ללחוץ על &apos;כן&apos; כדי לבטל את ההתקנה, &apos;לא&apos; כדי להתעלם משגיאה זו ולנסות להמשיך בהתקנה, ו־&apos;לא להכל&apos; כדי להתעלם מכל ההתרעות אודות המחסור במקום.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;חילוץ קובץ ה־ISO הדחוס:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">הקבצים בחילוץ, נא להמתין...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">קבצים בהורדה, אנא המתן...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 לא נמצא</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="obsolete">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
-יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(נוכחי)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(בוצע)</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">כונן קשיח</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">דיסקט</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">הגדרת grub2 על גבי %1</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">הגדרת grldr על %1</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">הגדרת grub על %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">התקנת syslinux אל %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">התקנת extlinux אל %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">סנכרון מערכות קבצים</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">לאחר האתחול, יש לבחור ב </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
-האם לאתחל כאת?</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -542,14 +322,6 @@ Reboot now?</source>
         <translation>פתיחת קובץ דמות תקליטור</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <location filename="unetbootin.cpp" line="574"/>
-        <location filename="unetbootin.cpp" line="582"/>
-        <location filename="unetbootin.cpp" line="590"/>
-        <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>פתיחת קובץ ליבה</translation>
@@ -557,300 +329,300 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation type="unfinished">פתיחת קובץ Initrd</translation>
+        <translation>פתיחת קובץ Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">פתיחת קובץ תצורת איתחול</translation>
+        <translation>פתיחת קובץ תצורת איתחול</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">יש לחבר כונן הבזק USB</translation>
+        <translation>יש לחבר כונן הבזק USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">לא נמצאו כונני הבזק USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו כ־FAT32.</translation>
+        <translation>לא נמצאו כונני הבזק USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו כ־FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 אינו נעגן</translation>
+        <translation>%1 אינו נעגן</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רב ההפצות יעשו זאת אוטומטית לאחר הסרה וחיבור מחדש של כונן ה־USB.</translation>
+        <translation>ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רב ההפצות יעשו זאת אוטומטית לאחר הסרה וחיבור מחדש של כונן ה־USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation type="unfinished">יש לבחור הפצה</translation>
+        <translation>יש לבחור הפצה</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">יש לבחור הפצה לטעינה.</translation>
+        <translation>יש לבחור הפצה לטעינה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation type="unfinished">יש לבחור קובץ דמות תקליטור</translation>
+        <translation>יש לבחור קובץ דמות תקליטור</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">יש לבחור קובץ דמות לטעינה.</translation>
+        <translation>יש לבחור קובץ דמות לטעינה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">יש לבחור ליבה ו/או קובץ initrd</translation>
+        <translation>יש לבחור ליבה ו/או קובץ initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">יש לבחור ליבה ו/או קובץ initrd לטעינה.</translation>
+        <translation>יש לבחור ליבה ו/או קובץ initrd לטעינה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">קובץ דמות התקליטור לא נמצא</translation>
+        <translation>קובץ דמות התקליטור לא נמצא</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">קובץ דמות התקליטור שצויין %1 אינו קיים.</translation>
+        <translation>קובץ דמות התקליטור שצויין %1 אינו קיים.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation type="unfinished">קובץ הליבה לא נמצא</translation>
+        <translation>קובץ הליבה לא נמצא</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">קובץ הליבה שצויין %1 לא נמצא.</translation>
+        <translation>קובץ הליבה שצויין %1 לא נמצא.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation type="unfinished">קובץ ה־initrd לא נמצא</translation>
+        <translation>קובץ ה־initrd לא נמצא</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">קובץ ה־initrd שצויין %1 לא נמצא.</translation>
+        <translation>קובץ ה־initrd שצויין %1 לא נמצא.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 קיים, לשכתב?</translation>
+        <translation>%1 קיים, לשכתב?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="unfinished">הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
+        <translation>הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation type="unfinished">המקום שעל %1 אזל, האם לבטל את ההתקנה?</translation>
+        <translation>המקום שעל %1 אזל, האם לבטל את ההתקנה?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="unfinished">בתיקייה %1 אין עוד מקום. ניתן ללחוץ על &apos;כן&apos; כדי לבטל את ההתקנה, &apos;לא&apos; כדי להתעלם משגיאה זו ולנסות להמשיך בהתקנה, ו־&apos;לא להכל&apos; כדי להתעלם מכל ההתרעות אודות המחסור במקום.</translation>
+        <translation>בתיקייה %1 אין עוד מקום. ניתן ללחוץ על &apos;כן&apos; כדי לבטל את ההתקנה, &apos;לא&apos; כדי להתעלם משגיאה זו ולנסות להמשיך בהתקנה, ו־&apos;לא להכל&apos; כדי להתעלם מכל ההתרעות אודות המחסור במקום.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;חילוץ קובץ ה־ISO הדחוס:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;חילוץ קובץ ה־ISO הדחוס:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation type="unfinished">הקבצים בחילוץ, נא להמתין...</translation>
+        <translation>הקבצים בחילוץ, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;מקור:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;יעד:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
+        <translation>&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
+        <translation>&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
+        <translation>&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation type="unfinished">קבצים בהורדה, אנא המתן...</translation>
+        <translation>קבצים בהורדה, אנא המתן...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
+        <translation>&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 לא נמצא</translation>
+        <translation>%1 לא נמצא</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
+        <translation>%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
 יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation type="unfinished">(נוכחי)</translation>
+        <translation>(נוכחי)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation type="unfinished">(בוצע)</translation>
+        <translation>(בוצע)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">הגדרת grub2 על גבי %1</translation>
+        <translation>הגדרת grub2 על גבי %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">הגדרת grldr על %1</translation>
+        <translation>הגדרת grldr על %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">הגדרת grub על %1</translation>
+        <translation>הגדרת grub על %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">התקנת syslinux אל %1</translation>
+        <translation>התקנת syslinux אל %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">התקנת extlinux אל %1</translation>
+        <translation>התקנת extlinux אל %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">סנכרון מערכות קבצים</translation>
+        <translation>סנכרון מערכות קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">לאחר האתחול, יש לבחור ב </translation>
+        <translation>לאחר האתחול, יש לבחור ב </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
+        <translation>לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
 האם לאתחל כאת?</translation>
     </message>
     <message>

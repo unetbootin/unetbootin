@@ -26,222 +26,6 @@ X-Generator: Launchpad (build Unknown)
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="obsolete">&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Дистрибутив BackTrack призначений для мережного аналізу та тестування на предмет захисту від несанкціонованого доступу.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt;Встановлення не є необхідним, оскільки BackTrack завантажується і працює в режимі Live.</translation>
     </message>
-    <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">Відкрити файл Initrd</translation>
-    </message>
-    <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">Відкрити файл конфігурації завантажувача</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB-пристрій</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">Вставте USB-накопичувач</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">Не знайдено ні одного USB-накопичувача. Якщо ви його вже підключили, спробуйте переформатувати його в FAT32.</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 не змонтований</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">Спочатку потрібно змонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">Оберіть дистрибутив</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">Ви повинні обрати дистрибутив для завантаження</translation>
-    </message>
-    <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">Оберіть файл образу диску</translation>
-    </message>
-    <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">Ви повинні обрати файл образу диску для завантаження.</translation>
-    </message>
-    <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">Оберіть ядро та/чи файл initrd</translation>
-    </message>
-    <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">Ви повинні обрати ядро та/чи файл initrd</translation>
-    </message>
-    <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">Файл з образом диску не знайдено</translation>
-    </message>
-    <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">Вказаний образ диску %1 не існує.</translation>
-    </message>
-    <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">Файл з ядром не знайдено</translation>
-    </message>
-    <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">Вказане ядро %1 не існує.</translation>
-    </message>
-    <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">Initrd не знайдено.</translation>
-    </message>
-    <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">Вказаний файл initrd %1 не існує.</translation>
-    </message>
-    <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 існує, перезаписати?</translation>
-    </message>
-    <message>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="obsolete">Файл %1 вже існує. Натисніть &apos;Так, для всіх&apos; щоб перезаписати його і не виводити діалог знову для наступних файлів, &apos;Так&apos; для перезапису в індивідуальному порядку, та &apos;Ні&apos; для збереження попередньої версії . Якщо сумніваєтесь, то натискайте &apos;Так, для всіх&apos;.</translation>
-    </message>
-    <message>
-        <source>%1 is out of space, abort installation?</source>
-        <translation type="obsolete">%1 невистачає місця, припинити встановлення?</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Витягую стиснений iso-образ:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Джерело:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Призначення:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">Витягування файлів, будь-ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Архів:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Джерело:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Призначення:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;Витягнено:&lt;/b&gt; 0 of %1 файлів</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;Джерело:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;Призначення:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;Витягнено:&lt;/b&gt; %1 of %2 файлів</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">Завантаження файлів, будь-ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Завантажено:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Завантажено:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">Пошук в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 співпадає з &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 не знайдено</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="obsolete">%1 не знайдено. Це необхідно для режиму встановлення %2.
-Встановіть пакунок &quot;%3&quot; чи його еквівалент дистрибутиві, який використовується.</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(Поточний)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(Виконано)</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">Жорсткий диск</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">Дискета</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">Налаштування grub2 на %1</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">Налаштування grldr на %1</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">Налаштування grub на %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">Встановлення syslinux на %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">Встановлення extlinux в %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">Синхронізація файлових систем</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">Після перезавантаження оберіть </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">Після перезавантаження оберіть в BIOS опцію завантажження з USB.%1
-Перезавантажити зараз?</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -327,14 +111,6 @@ Reboot now?</source>
         <translation>Відкрити файл з образом диску</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <location filename="unetbootin.cpp" line="574"/>
-        <location filename="unetbootin.cpp" line="582"/>
-        <location filename="unetbootin.cpp" line="590"/>
-        <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Відкрити файл ядра</translation>
@@ -342,300 +118,300 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation type="unfinished">Відкрити файл Initrd</translation>
+        <translation>Відкрити файл Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">Відкрити файл конфігурації завантажувача</translation>
+        <translation>Відкрити файл конфігурації завантажувача</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">Вставте USB-накопичувач</translation>
+        <translation>Вставте USB-накопичувач</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">Не знайдено ні одного USB-накопичувача. Якщо ви його вже підключили, спробуйте переформатувати його в FAT32.</translation>
+        <translation>Не знайдено ні одного USB-накопичувача. Якщо ви його вже підключили, спробуйте переформатувати його в FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 не змонтований</translation>
+        <translation>%1 не змонтований</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">Спочатку потрібно змонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
+        <translation>Спочатку потрібно змонтувати USB-накопичувач %1. Більшість дистрибутивів зроблять це автоматично, якщо вийняти та вставити знову USB-накопичувач.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation type="unfinished">Оберіть дистрибутив</translation>
+        <translation>Оберіть дистрибутив</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">Ви повинні обрати дистрибутив для завантаження</translation>
+        <translation>Ви повинні обрати дистрибутив для завантаження</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation type="unfinished">Оберіть файл образу диску</translation>
+        <translation>Оберіть файл образу диску</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">Ви повинні обрати файл образу диску для завантаження.</translation>
+        <translation>Ви повинні обрати файл образу диску для завантаження.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">Оберіть ядро та/чи файл initrd</translation>
+        <translation>Оберіть ядро та/чи файл initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">Ви повинні обрати ядро та/чи файл initrd</translation>
+        <translation>Ви повинні обрати ядро та/чи файл initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">Файл з образом диску не знайдено</translation>
+        <translation>Файл з образом диску не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">Вказаний образ диску %1 не існує.</translation>
+        <translation>Вказаний образ диску %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation type="unfinished">Файл з ядром не знайдено</translation>
+        <translation>Файл з ядром не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">Вказане ядро %1 не існує.</translation>
+        <translation>Вказане ядро %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation type="unfinished">Initrd не знайдено.</translation>
+        <translation>Initrd не знайдено.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">Вказаний файл initrd %1 не існує.</translation>
+        <translation>Вказаний файл initrd %1 не існує.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 існує, перезаписати?</translation>
+        <translation>%1 існує, перезаписати?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="unfinished">Файл %1 вже існує. Натисніть &apos;Так, для всіх&apos; щоб перезаписати його і не виводити діалог знову для наступних файлів, &apos;Так&apos; для перезапису в індивідуальному порядку, та &apos;Ні&apos; для збереження попередньої версії . Якщо сумніваєтесь, то натискайте &apos;Так, для всіх&apos;.</translation>
+        <translation>Файл %1 вже існує. Натисніть &apos;Так, для всіх&apos; щоб перезаписати його і не виводити діалог знову для наступних файлів, &apos;Так&apos; для перезапису в індивідуальному порядку, та &apos;Ні&apos; для збереження попередньої версії . Якщо сумніваєтесь, то натискайте &apos;Так, для всіх&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation type="unfinished">%1 невистачає місця, припинити встановлення?</translation>
+        <translation>%1 невистачає місця, припинити встановлення?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Витягую стиснений iso-образ:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Витягую стиснений iso-образ:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation type="unfinished">Витягування файлів, будь-ласка, зачекайте...</translation>
+        <translation>Витягування файлів, будь-ласка, зачекайте...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Архів:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Архів:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Джерело:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Призначення:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;Витягнено:&lt;/b&gt; 0 of %1 файлів</translation>
+        <translation>&lt;b&gt;Витягнено:&lt;/b&gt; 0 of %1 файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;Джерело:&lt;/b&gt; %1 (%2)</translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;Призначення:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;Витягнено:&lt;/b&gt; %1 of %2 файлів</translation>
+        <translation>&lt;b&gt;Витягнено:&lt;/b&gt; %1 of %2 файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation type="unfinished">Завантаження файлів, будь-ласка, зачекайте...</translation>
+        <translation>Завантаження файлів, будь-ласка, зачекайте...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Джерело:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;Джерело:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Призначення:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Призначення:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Завантажено:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Завантажено:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Завантажено:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Завантажено:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">Пошук в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Пошук в &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 співпадає з &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 співпадає з &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 не знайдено</translation>
+        <translation>%1 не знайдено</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">%1 не знайдено. Це необхідно для режиму встановлення %2.
+        <translation>%1 не знайдено. Це необхідно для режиму встановлення %2.
 Встановіть пакунок &quot;%3&quot; чи його еквівалент дистрибутиві, який використовується.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation type="unfinished">(Поточний)</translation>
+        <translation>(Поточний)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation type="unfinished">(Виконано)</translation>
+        <translation>(Виконано)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">Налаштування grub2 на %1</translation>
+        <translation>Налаштування grub2 на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">Налаштування grldr на %1</translation>
+        <translation>Налаштування grldr на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">Налаштування grub на %1</translation>
+        <translation>Налаштування grub на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">Встановлення syslinux на %1</translation>
+        <translation>Встановлення syslinux на %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">Встановлення extlinux в %1</translation>
+        <translation>Встановлення extlinux в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">Синхронізація файлових систем</translation>
+        <translation>Синхронізація файлових систем</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">Після перезавантаження оберіть </translation>
+        <translation>Після перезавантаження оберіть </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">Після перезавантаження оберіть в BIOS опцію завантажження з USB.%1
+        <translation>Після перезавантаження оберіть в BIOS опцію завантажження з USB.%1
 Перезавантажити зараз?</translation>
     </message>
     <message>

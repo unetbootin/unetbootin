@@ -246,218 +246,6 @@ Reboot now?</source>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Super Ubuntu是一个非官方版的Ubuntu衍生版本，它附带了很多其它软件。要求至少容量为2G的USB设备来进行安装。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版本允许以Live模式进行启动，进行系统后再运行安装程序，把Ubuntu真正安装到电脑上。</translation>
     </message>
-    <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">打开 Initrd 文件</translation>
-    </message>
-    <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">载入引导配置文件</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">插入USB驱动器</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">没有发现USB驱动器。如果您已经插入USB驱动器，请尝试重新格式化为FAT32格式。</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 没有挂载</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">你必须首先在 %1 挂载驱动器。大部分发行版本会在您移除并且重新插入USB驱动器后自动执行该操作。</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">选择一个发行版本</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">你必须选择加载一个发行版本。</translation>
-    </message>
-    <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">选择一个磁盘镜像文件</translation>
-    </message>
-    <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">你必须选择加载一个磁盘镜像文件。</translation>
-    </message>
-    <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">选择一个内核 和/或 initrd 文件</translation>
-    </message>
-    <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">你必须选择加载一个内核 和/或 initrd 文件。</translation>
-    </message>
-    <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">没有找到磁盘镜像文件</translation>
-    </message>
-    <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">指定的磁盘镜像文件 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">内核文件没有找到</translation>
-    </message>
-    <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">指定内核文件 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">没有找到 Initrd 文件</translation>
-    </message>
-    <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">指定 initrd 文件 %1 不存在。</translation>
-    </message>
-    <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 已经存在，是否覆盖？</translation>
-    </message>
-    <message>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="obsolete">文件 %1 已经存在。单击 &apos;Yes to All&apos; 进行覆盖并且不再提示， &apos;Yes&apos; 覆盖单个文件， 而 &apos;No&apos; 保留你现在的版本。 如果不能确定，单击 &apos;Yes to All&apos;。</translation>
-    </message>
-    <message>
-        <source>%1 is out of space, abort installation?</source>
-        <translation type="obsolete">%1 空间不够。放弃安装？</translation>
-    </message>
-    <message>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="obsolete">目录 %1 空间不够。按 “是” 放弃安装，按 “否” 忽略这个错误并继续安装，按 “全部选否” 忽略所有“空间不够”之类的错误。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">正在抽取文件，请稍等……</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;存档：&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">正在下载文件，请稍候……</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;已下载：&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 没有找到</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="obsolete">%1 没有找到。该安装模式需要 %2。
-安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(处理中)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(完成)</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">软盘</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">在 %1 上配置 grub2</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">在 %1 上配置 grldr</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">在 %1 上配置 grub</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">安装 syslinux 到 %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">安装 extlinux 到 %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">同步文件系统</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">重启动后，请选择 </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">重启动后，请在BIOS的启动菜单里，选择USB启动选项。
-立即重启动？</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -543,14 +331,6 @@ Reboot now?</source>
         <translation>打开磁盘镜像文件</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <location filename="unetbootin.cpp" line="574"/>
-        <location filename="unetbootin.cpp" line="582"/>
-        <location filename="unetbootin.cpp" line="590"/>
-        <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>打开内核文件</translation>
@@ -558,300 +338,300 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation type="unfinished">打开 Initrd 文件</translation>
+        <translation>打开 Initrd 文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">载入引导配置文件</translation>
+        <translation>载入引导配置文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">插入USB驱动器</translation>
+        <translation>插入USB驱动器</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">没有发现USB驱动器。如果您已经插入USB驱动器，请尝试重新格式化为FAT32格式。</translation>
+        <translation>没有发现USB驱动器。如果您已经插入USB驱动器，请尝试重新格式化为FAT32格式。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 没有挂载</translation>
+        <translation>%1 没有挂载</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">你必须首先在 %1 挂载驱动器。大部分发行版本会在您移除并且重新插入USB驱动器后自动执行该操作。</translation>
+        <translation>你必须首先在 %1 挂载驱动器。大部分发行版本会在您移除并且重新插入USB驱动器后自动执行该操作。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation type="unfinished">选择一个发行版本</translation>
+        <translation>选择一个发行版本</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">你必须选择加载一个发行版本。</translation>
+        <translation>你必须选择加载一个发行版本。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation type="unfinished">选择一个磁盘镜像文件</translation>
+        <translation>选择一个磁盘镜像文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">你必须选择加载一个磁盘镜像文件。</translation>
+        <translation>你必须选择加载一个磁盘镜像文件。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">选择一个内核 和/或 initrd 文件</translation>
+        <translation>选择一个内核 和/或 initrd 文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">你必须选择加载一个内核 和/或 initrd 文件。</translation>
+        <translation>你必须选择加载一个内核 和/或 initrd 文件。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">没有找到磁盘镜像文件</translation>
+        <translation>没有找到磁盘镜像文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">指定的磁盘镜像文件 %1 不存在。</translation>
+        <translation>指定的磁盘镜像文件 %1 不存在。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation type="unfinished">内核文件没有找到</translation>
+        <translation>内核文件没有找到</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">指定内核文件 %1 不存在。</translation>
+        <translation>指定内核文件 %1 不存在。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation type="unfinished">没有找到 Initrd 文件</translation>
+        <translation>没有找到 Initrd 文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">指定 initrd 文件 %1 不存在。</translation>
+        <translation>指定 initrd 文件 %1 不存在。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 已经存在，是否覆盖？</translation>
+        <translation>%1 已经存在，是否覆盖？</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="unfinished">文件 %1 已经存在。单击 &apos;Yes to All&apos; 进行覆盖并且不再提示， &apos;Yes&apos; 覆盖单个文件， 而 &apos;No&apos; 保留你现在的版本。 如果不能确定，单击 &apos;Yes to All&apos;。</translation>
+        <translation>文件 %1 已经存在。单击 &apos;Yes to All&apos; 进行覆盖并且不再提示， &apos;Yes&apos; 覆盖单个文件， 而 &apos;No&apos; 保留你现在的版本。 如果不能确定，单击 &apos;Yes to All&apos;。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation type="unfinished">%1 空间不够。放弃安装？</translation>
+        <translation>%1 空间不够。放弃安装？</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="unfinished">目录 %1 空间不够。按 “是” 放弃安装，按 “否” 忽略这个错误并继续安装，按 “全部选否” 忽略所有“空间不够”之类的错误。</translation>
+        <translation>目录 %1 空间不够。按 “是” 放弃安装，按 “否” 忽略这个错误并继续安装，按 “全部选否” 忽略所有“空间不够”之类的错误。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation type="unfinished">正在抽取文件，请稍等……</translation>
+        <translation>正在抽取文件，请稍等……</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;存档：&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;存档：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;来源：&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;目标：&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
+        <translation>&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
+        <translation>&lt;b&gt;来源：&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;目标：&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
+        <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation type="unfinished">正在下载文件，请稍候……</translation>
+        <translation>正在下载文件，请稍候……</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;来源：&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;目标：&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;目标：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;下载：&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;已下载：&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;已下载：&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>正在搜索 &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 没有找到</translation>
+        <translation>%1 没有找到</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">%1 没有找到。该安装模式需要 %2。
+        <translation>%1 没有找到。该安装模式需要 %2。
 安装 “ %3 ” 包或者你的发行版本的等效版本。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation type="unfinished">(处理中)</translation>
+        <translation>(处理中)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation type="unfinished">(完成)</translation>
+        <translation>(完成)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">在 %1 上配置 grub2</translation>
+        <translation>在 %1 上配置 grub2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">在 %1 上配置 grldr</translation>
+        <translation>在 %1 上配置 grldr</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">在 %1 上配置 grub</translation>
+        <translation>在 %1 上配置 grub</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">安装 syslinux 到 %1</translation>
+        <translation>安装 syslinux 到 %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">安装 extlinux 到 %1</translation>
+        <translation>安装 extlinux 到 %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">同步文件系统</translation>
+        <translation>同步文件系统</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">重启动后，请选择 </translation>
+        <translation>重启动后，请选择 </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">重启动后，请在BIOS的启动菜单里，选择USB启动选项。
+        <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。
 立即重启动？</translation>
     </message>
     <message>

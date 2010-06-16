@@ -245,213 +245,6 @@ Reboot now?</source>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">قرص فلوبي</translation>
     </message>
-    <message>
-        <source>Open Initrd File</source>
-        <translation type="obsolete">إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
-    </message>
-    <message>
-        <source>Open Bootloader Config File</source>
-        <translation type="obsolete">إفتح ملف تهيئة محمل الإقلاع</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <translation type="obsolete">أدخل ذاكرة فلاش يو إس بي</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="obsolete">لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <translation type="obsolete">%1 لم يركب</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="obsolete">يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <translation type="obsolete">إختر توزيعة</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <translation type="obsolete">يجب عليك إختيار توزيعة ليتم تحميلها</translation>
-    </message>
-    <message>
-        <source>Select a disk image file</source>
-        <translation type="obsolete">إختر ملف صورة القرص</translation>
-    </message>
-    <message>
-        <source>You must select a disk image file to load.</source>
-        <translation type="obsolete">يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
-    </message>
-    <message>
-        <source>Select a kernel and/or initrd file</source>
-        <translation type="obsolete">قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
-    </message>
-    <message>
-        <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="obsolete">يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
-    </message>
-    <message>
-        <source>Diskimage file not found</source>
-        <translation type="obsolete">لم يتم العثور على ملف صورة القرص</translation>
-    </message>
-    <message>
-        <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="obsolete">ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <source>Kernel file not found</source>
-        <translation type="obsolete">لم يتم العثور على ملف النواة</translation>
-    </message>
-    <message>
-        <source>The specified kernel file %1 does not exist.</source>
-        <translation type="obsolete">ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <source>Initrd file not found</source>
-        <translation type="obsolete">لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
-    </message>
-    <message>
-        <source>The specified initrd file %1 does not exist.</source>
-        <translation type="obsolete">ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
-    </message>
-    <message>
-        <source>%1 exists, overwrite?</source>
-        <translation type="obsolete">%1 موجود, هل تريد إستبداله؟</translation>
-    </message>
-    <message>
-        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="obsolete">الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
-    </message>
-    <message>
-        <source>%1 is out of space, abort installation?</source>
-        <translation type="obsolete">نفذت مساحة %1، أجهِض التثبيت؟</translation>
-    </message>
-    <message>
-        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="obsolete">نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">يتم إستخراج الملفات, انتظر من فضلك...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">لم يتم العثور %1</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="obsolete">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(حالي)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(أنتهى)</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">القرص الصلب</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">يضبط جرب ٢ في %1</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">يضبط grldr في %1</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">يضبط جرب في %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">يثبت syslinux في %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">يثبت extlinux في %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">يزامن أنظمة الملفات</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
-هل تريد إعادة التشغيل الأن؟</translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -537,14 +330,6 @@ Reboot now?</source>
         <translation>إفتح ملف صورة القرص</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
-        <location filename="unetbootin.cpp" line="574"/>
-        <location filename="unetbootin.cpp" line="582"/>
-        <location filename="unetbootin.cpp" line="590"/>
-        <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>إفتح ملف النواة</translation>
@@ -552,299 +337,299 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation type="unfinished">إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
+        <translation>إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation type="unfinished">إفتح ملف تهيئة محمل الإقلاع</translation>
+        <translation>إفتح ملف تهيئة محمل الإقلاع</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation type="unfinished">أدخل ذاكرة فلاش يو إس بي</translation>
+        <translation>أدخل ذاكرة فلاش يو إس بي</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation type="unfinished">لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
+        <translation>لم يتم العثور على ذاكرة فلاش يو إس بي. إذا قمت بإدخال ذاكرة يو إس بي فقم بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation type="unfinished">%1 لم يركب</translation>
+        <translation>%1 لم يركب</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation type="unfinished">يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
+        <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation type="unfinished">إختر توزيعة</translation>
+        <translation>إختر توزيعة</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation type="unfinished">يجب عليك إختيار توزيعة ليتم تحميلها</translation>
+        <translation>يجب عليك إختيار توزيعة ليتم تحميلها</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation type="unfinished">إختر ملف صورة القرص</translation>
+        <translation>إختر ملف صورة القرص</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation type="unfinished">يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
+        <translation>يجب عليك إختيار ملف صورة القرص ليتم تحميلها</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation type="unfinished">قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
+        <translation>قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation type="unfinished">يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
+        <translation>يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) ليتم تحميلها.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation type="unfinished">لم يتم العثور على ملف صورة القرص</translation>
+        <translation>لم يتم العثور على ملف صورة القرص</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation type="unfinished">ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
+        <translation>ملف صورة القرص %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation type="unfinished">لم يتم العثور على ملف النواة</translation>
+        <translation>لم يتم العثور على ملف النواة</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation type="unfinished">ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
+        <translation>ملف النواة %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation type="unfinished">لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
+        <translation>لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation type="unfinished">ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
+        <translation>ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation type="unfinished">%1 موجود, هل تريد إستبداله؟</translation>
+        <translation>%1 موجود, هل تريد إستبداله؟</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation type="unfinished">الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
+        <translation>الملف %1 موجود مسبقاً. قم بالضغط على &apos;نعم للجميع&apos; لكي يتم الكتابة فوقه ولكي لاتسئل عن مثله مرة أخرى, أو إضغط على &apos;نعم&apos; للكتابة فوق الملفات بصورة فردية, أو إضغط على &apos;لا&apos; إذا اردت الإحتفاظ بنسخة الملف الموجودة. وأما إذا كنت مرتاباً في ماتختار فقم بالضغط على &apos;نعم للجميع&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation type="unfinished">نفذت مساحة %1، أجهِض التثبيت؟</translation>
+        <translation>نفذت مساحة %1، أجهِض التثبيت؟</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation type="unfinished">نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
+        <translation>نفذت مساحة دليل %1. أضغط &apos;نعم&apos; لإجهاض التثبيت، &apos;لا&apos; لتجاهل هذا الخطأ ومحاولة متابعة التثبيت، و &apos;لا للجميع&apos; لتجاهل جميع اخطأ المساحات النافذة.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;يتم إستخراج ملف الأي إس أو المضغوط:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation type="unfinished">يتم إستخراج الملفات, انتظر من فضلك...</translation>
+        <translation>يتم إستخراج الملفات, انتظر من فضلك...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;الارشيف:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;المصدر:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;الوجهة:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
+        <translation>&lt;b&gt;تم إستخراج:&lt;/b&gt; 0 من ملفات %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
+        <translation>&lt;b&gt;المصدر:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
+        <translation>&lt;b&gt;إستخراج:&lt;/b&gt; %1 من ملفات %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation type="unfinished">يتم تنزيل الملفات, إنتظر من فضلك...</translation>
+        <translation>يتم تنزيل الملفات, إنتظر من فضلك...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;المصدر:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;الوجهة:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
+        <translation>&lt;b&gt;تم تنزيل:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;تمّ تحميل:&lt;/b&gt; %1 من %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>يتم البحث في &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 تطابق في &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation type="unfinished">لم يتم العثور %1</translation>
+        <translation>لم يتم العثور %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
+        <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation type="unfinished">(حالي)</translation>
+        <translation>(حالي)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation type="unfinished">(أنتهى)</translation>
+        <translation>(أنتهى)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">يضبط جرب ٢ في %1</translation>
+        <translation>يضبط جرب ٢ في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">يضبط grldr في %1</translation>
+        <translation>يضبط grldr في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">يضبط جرب في %1</translation>
+        <translation>يضبط جرب في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">يثبت syslinux في %1</translation>
+        <translation>يثبت syslinux في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">يثبت extlinux في %1</translation>
+        <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">يزامن أنظمة الملفات</translation>
+        <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار </translation>
+        <translation>بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
+        <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
 هل تريد إعادة التشغيل الأن؟</translation>
     </message>
     <message>
