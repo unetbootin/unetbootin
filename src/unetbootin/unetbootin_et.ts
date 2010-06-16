@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-05-01 09:36-0400
-PO-Revision-Date: 2010-03-27 21:49+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-06-03 14:25-0700
+PO-Revision-Date: 2010-06-09 17:49+0000
+Last-Translator: mahfiaz &lt;mahfiaz@gmail.com&gt;
 Language-Team: Estonian &lt;et@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-01 19:40+0000
+X-Launchpad-Export-Date: 2010-06-16 00:52+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -64,6 +64,10 @@ X-Generator: Launchpad (build Unknown)
         <source>Kernel:</source>
         <translation type="obsolete">Kernel:</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
+        <translation type="obsolete">&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Arch Linux on  kerge jaotusega, mis on optimiseeritud kiirusele ja vastupidavusele.&lt;br/&gt;&lt;b&gt;Paigaldusemärkmed:&lt;/b&gt;Tavaversioon lubab paigaldamist internetist (FTP). Kui oled huvitatud LiveUSB versioonist, vaata FaunOS´i.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -76,381 +80,380 @@ X-Generator: Launchpad (build Unknown)
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="195"/>
-        <location filename="unetbootin.cpp" line="277"/>
-        <location filename="unetbootin.cpp" line="278"/>
-        <location filename="unetbootin.cpp" line="345"/>
-        <location filename="unetbootin.cpp" line="444"/>
-        <location filename="unetbootin.cpp" line="537"/>
-        <location filename="unetbootin.cpp" line="2966"/>
-        <location filename="unetbootin.cpp" line="2979"/>
-        <location filename="unetbootin.cpp" line="3137"/>
-        <location filename="unetbootin.cpp" line="3592"/>
+        <location filename="unetbootin.cpp" line="189"/>
+        <location filename="unetbootin.cpp" line="271"/>
+        <location filename="unetbootin.cpp" line="272"/>
+        <location filename="unetbootin.cpp" line="339"/>
+        <location filename="unetbootin.cpp" line="438"/>
+        <location filename="unetbootin.cpp" line="531"/>
+        <location filename="unetbootin.cpp" line="2960"/>
+        <location filename="unetbootin.cpp" line="2973"/>
+        <location filename="unetbootin.cpp" line="3131"/>
+        <location filename="unetbootin.cpp" line="3586"/>
         <source>Hard Disk</source>
         <translation>Kõvaketas</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="196"/>
-        <location filename="unetbootin.cpp" line="260"/>
-        <location filename="unetbootin.cpp" line="274"/>
-        <location filename="unetbootin.cpp" line="275"/>
-        <location filename="unetbootin.cpp" line="347"/>
-        <location filename="unetbootin.cpp" line="448"/>
-        <location filename="unetbootin.cpp" line="542"/>
-        <location filename="unetbootin.cpp" line="614"/>
-        <location filename="unetbootin.cpp" line="630"/>
-        <location filename="unetbootin.cpp" line="884"/>
-        <location filename="unetbootin.cpp" line="1415"/>
-        <location filename="unetbootin.cpp" line="1477"/>
-        <location filename="unetbootin.cpp" line="2300"/>
-        <location filename="unetbootin.cpp" line="2342"/>
-        <location filename="unetbootin.cpp" line="2970"/>
-        <location filename="unetbootin.cpp" line="2995"/>
-        <location filename="unetbootin.cpp" line="3141"/>
-        <location filename="unetbootin.cpp" line="3596"/>
+        <location filename="unetbootin.cpp" line="190"/>
+        <location filename="unetbootin.cpp" line="254"/>
+        <location filename="unetbootin.cpp" line="268"/>
+        <location filename="unetbootin.cpp" line="269"/>
+        <location filename="unetbootin.cpp" line="341"/>
+        <location filename="unetbootin.cpp" line="442"/>
+        <location filename="unetbootin.cpp" line="536"/>
+        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="878"/>
+        <location filename="unetbootin.cpp" line="1409"/>
+        <location filename="unetbootin.cpp" line="1471"/>
+        <location filename="unetbootin.cpp" line="2294"/>
+        <location filename="unetbootin.cpp" line="2336"/>
+        <location filename="unetbootin.cpp" line="2964"/>
+        <location filename="unetbootin.cpp" line="2989"/>
+        <location filename="unetbootin.cpp" line="3135"/>
+        <location filename="unetbootin.cpp" line="3590"/>
         <source>USB Drive</source>
-        <translation>USB seade</translation>
+        <translation>USB-ketas</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="197"/>
-        <location filename="unetbootin.cpp" line="224"/>
-        <location filename="unetbootin.cpp" line="225"/>
-        <location filename="unetbootin.cpp" line="313"/>
-        <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="566"/>
-        <location filename="unetbootin.cpp" line="3043"/>
+        <location filename="unetbootin.cpp" line="191"/>
+        <location filename="unetbootin.cpp" line="218"/>
+        <location filename="unetbootin.cpp" line="219"/>
+        <location filename="unetbootin.cpp" line="307"/>
+        <location filename="unetbootin.cpp" line="559"/>
+        <location filename="unetbootin.cpp" line="560"/>
+        <location filename="unetbootin.cpp" line="3037"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="198"/>
-        <location filename="unetbootin.cpp" line="220"/>
-        <location filename="unetbootin.cpp" line="221"/>
-        <location filename="unetbootin.cpp" line="318"/>
-        <location filename="unetbootin.cpp" line="570"/>
-        <location filename="unetbootin.cpp" line="571"/>
-        <location filename="unetbootin.cpp" line="3035"/>
+        <location filename="unetbootin.cpp" line="192"/>
+        <location filename="unetbootin.cpp" line="214"/>
+        <location filename="unetbootin.cpp" line="215"/>
+        <location filename="unetbootin.cpp" line="312"/>
+        <location filename="unetbootin.cpp" line="564"/>
+        <location filename="unetbootin.cpp" line="565"/>
+        <location filename="unetbootin.cpp" line="3029"/>
         <source>Floppy</source>
         <translation>Diskett</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="238"/>
-        <location filename="unetbootin.cpp" line="242"/>
-        <location filename="unetbootin.cpp" line="246"/>
+        <location filename="unetbootin.cpp" line="232"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <location filename="unetbootin.cpp" line="240"/>
+        <location filename="unetbootin.cpp" line="244"/>
         <location filename="unetbootin.cpp" line="250"/>
-        <location filename="unetbootin.cpp" line="256"/>
-        <location filename="unetbootin.cpp" line="268"/>
+        <location filename="unetbootin.cpp" line="262"/>
         <source>either</source>
         <translation>või siis</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="562"/>
+        <location filename="unetbootin.cpp" line="556"/>
         <source>Open Disk Image File</source>
-        <translation>Ava Ketta-image fail (.iso)</translation>
+        <translation>Kettatõmmise avamine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="580"/>
+        <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
-        <translation>Ava Kerneli fail</translation>
+        <translation>Kerneli faili avamine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="588"/>
+        <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation>Ava Initrd fail</translation>
+        <translation>Initrd faili avamine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="596"/>
+        <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation>Ava Bootimislaadija Seadistamise fail</translation>
+        <translation>Alglaaduri seadistusfaili avamine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="618"/>
+        <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation>Sisesta USB välkkõvaketas</translation>
+        <translation>Sisesta USB flash-ketas</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="619"/>
+        <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Mitte ühtegi USB välkkõvaketast ei leitud. Kui sa oled juba sisestanud USB ketta, proovi taasformaatida see FAT32 failisüsteemina.</translation>
+        <translation>Mitte ühtegi USB flash-ketast ei leitud. Kui sa oled juba sisestanud USB ketta, proovi vormindada see FAT32 failisüsteemina.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="634"/>
+        <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 ei ole haagitud</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="635"/>
+        <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Kõigepealt pead USB-ketta %1 haakima. Enamik distributsioone teeb seda automaatselt pärast USB-ketta eemaldamist ja uuesti sisestamist.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="650"/>
+        <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Vali distributsioon</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="651"/>
+        <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Pead valima distributsioonid, mida laadida.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
+        <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation>vali ketta-image fail (.iso)</translation>
+        <translation>Kettatõmmise faili valimine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="666"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Sa pead valima ketta-image(.iso) faili, et laadida.</translation>
+        <translation>Pead valima kettatõmmise faili, mida laadida.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="680"/>
+        <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Vali kerneli ja/või initrd´i fail</translation>
+        <translation>Kerneli ja/või initrd faili valimine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="681"/>
+        <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Sa pead valima kerneli ja/või initrd´i faili, et laadida.</translation>
+        <translation>Sa pead valima kerneli ja/või initrd faili, mida laadida.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="695"/>
+        <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation>Ketta-image(.iso) ei leitud</translation>
+        <translation>Kettatõmmist ei leitud</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="696"/>
+        <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Täpsustatud kettafaili (.iso) faili %1 pole olemas.</translation>
+        <translation>Määratud kettatõmmise faili %1 pole olemas.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="710"/>
+        <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation>Kerneli faili ei leitud</translation>
+        <translation>Kernelifaili ei leitud</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="711"/>
+        <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Täpsustatud kerneli %1 faili ei leitud.</translation>
+        <translation>Määratud kernelifaili %1 pole olemas.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="725"/>
+        <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation>Initrd´i faili ei leitud</translation>
+        <translation>Initrd faili ei leitud</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="726"/>
+        <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Täpsustatud initrd´i %1 faili pole olemas.</translation>
+        <translation>Määratud initrd faili %1 pole olemas.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="830"/>
+        <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 on juba olema, kirjuta ümber?</translation>
+        <translation>%1 on juba olemas, kas kirjutada üle?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="831"/>
+        <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Fail %1 on juba olemas. Vajuta &apos;Kõigile jah&apos;, et see ja kõik teised üle kirjutada. &apos;Jah&apos;, et üle kirjutada ainult see fail ning &apos;Ei&apos; et säilitada paregune fail. Kui sa kahtled, vali &apos;Kõigile jah&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="857"/>
+        <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 on mälu täis, katkesta paigaldamine?</translation>
+        <translation>%1 on mälu täis, kas katkesta paigaldamine?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="858"/>
+        <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Kaustas %1 ei ole rohkem vaba ruumi. Vajuta &apos;Jah&apos;, et katkestada paigaldus, &apos;Ei&apos;, et eirata seda veateadet ning püüda paigaldust jätkata, ning &apos;Kõigile ei&apos;, et eirata kõiki ruumilõppemise teateid.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="952"/>
+        <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernelifaili otsimine asukohast %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="987"/>
+        <source>Copying kernel file from %1</source>
+        <translation>Kernelifaili kopeerimine asukohast %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
-        <source>Copying kernel file from %1</source>
-        <translation type="unfinished"></translation>
+        <source>Locating initrd file in %1</source>
+        <translation>Initrd faili otsimine asukohast %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="999"/>
-        <source>Locating initrd file in %1</source>
-        <translation type="unfinished"></translation>
+        <location filename="unetbootin.cpp" line="1034"/>
+        <source>Copying initrd file from %1</source>
+        <translation>Initrd faili kopeerimine asukohast %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
-        <source>Copying initrd file from %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1046"/>
-        <location filename="unetbootin.cpp" line="1106"/>
+        <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Alglaaduri seadistuse lahtipakkimine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1321"/>
-        <location filename="unetbootin.cpp" line="1347"/>
+        <location filename="unetbootin.cpp" line="1315"/>
+        <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Pakitakse lahti kokkupakitud iso´d:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Pakitud iso faili lahtipakkimine:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1576"/>
+        <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili kopeerimine, palun oota...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1579"/>
+        <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <oldsource>&lt;b&gt;Copied:&lt;/b&gt; 0 KB</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Kopeeritud:&lt;/b&gt; 0 baiti</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2394"/>
+        <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Kopeeritud:&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation>Pakitakse lahti faile, palun oota...</translation>
+        <translation>Failide lahtipakkimine, palun oota...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Arhiiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Allikas:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1620"/>
+        <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1621"/>
+        <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; 0 of %1 faili</translation>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; 0  %1-st failist</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1624"/>
+        <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Allikas:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1625"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1626"/>
+        <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; %1 of %2 faili</translation>
+        <translation>&lt;b&gt;Lahti pakitud:&lt;/b&gt; %1 %2-st failist</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2284"/>
+        <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
         <translation>Failide allalaadimine, palun oota...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1577"/>
-        <location filename="unetbootin.cpp" line="2285"/>
+        <location filename="unetbootin.cpp" line="1571"/>
+        <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Allikas:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1578"/>
-        <location filename="unetbootin.cpp" line="2286"/>
+        <location filename="unetbootin.cpp" line="1572"/>
+        <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Sihtkoht:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2287"/>
+        <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; 0 baiti</translation>
+        <translation>&lt;b&gt;Allalaaditud:&lt;/b&gt; 0 baiti</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2364"/>
-        <location filename="unetbootin.cpp" line="2379"/>
+        <location filename="unetbootin.cpp" line="2358"/>
+        <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Allalaetud:&lt;/b&gt; %1 of %2</translation>
+        <translation>&lt;b&gt;Allalaaditud:&lt;/b&gt; %1 %2-st</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2470"/>
+        <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Otsitakse siit &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Otsimine kaustast &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2474"/>
+        <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 vastuseid siin &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 vastavust kohas &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2659"/>
+        <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
         <translation>%1 ei leitud</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2660"/>
+        <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2948"/>
+        <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation>(Praegune)</translation>
+        <translation>(käsil)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2949"/>
+        <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation>(Tehtud)</translation>
+        <translation>(valmis)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3216"/>
+        <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Seadistatakse grub2´de %1´s</translation>
+        <translation>Grub2 seadistamine seadmel %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3228"/>
+        <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation>Seadistatakse grldr %1´s</translation>
+        <translation>Grldr seadistamine seadmel %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3256"/>
+        <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation>Seadistatakse grub %1´s</translation>
+        <translation>Grubi seadistamine seadmel %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3441"/>
+        <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation>syslinuxi installimine siia %1</translation>
+        <translation>Syslinuxi paigaldamine kausta %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3476"/>
+        <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation>Paidaldatakse extlinuxi %1</translation>
+        <translation>Extlinuxi paigaldamine kausta %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3582"/>
+        <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation>Sünkroniseeritakse failisüsteeme</translation>
+        <translation>Failisüsteemide sünkroniseerimine</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3594"/>
+        <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation>Peale taaskäivitamist, valige </translation>
+        <translation>Pärast taaskäivitamist vali </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3598"/>
+        <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Peale taaskäivitamist, valige USB bootimise valik BIOS bootimise menüüst.%1
-Taaskäivita nüüd?</translation>
+        <translation>Pärast taaskäivitamist vali USB alglaadimine BIOSi menüüst.%1
+Kas taaskäivitada kohe?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -498,18 +501,17 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Tere tulemast kasutama  &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin´i&lt;/a&gt;, Universaalne Netboot Installer. Kasutamine:&lt;ol&gt;&lt;li&gt;Vali operatsioonisüsteem ja allalaadimise versioon listist või käsitsi näita ISO asupaika.&lt;/li&gt;&lt;li&gt;Vali installimise tüüpja vajuta OK, et alustada installi.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Tere tulemast kasutama  &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootini&lt;/a&gt;, universaalset Netbooti paigaldajat. Kasutamine:&lt;ol&gt;&lt;li&gt;Vali operatsioonisüsteem ja allalaadimise versioon loendist või osuta alumistel väljadel failidele.&lt;/li&gt;&lt;li&gt;Vali paigalduse liik ja vajuta Olgu, et paigaldust alustada.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Arch Linux on  kerge jaotusega, mis on optimiseeritud kiirusele ja vastupidavusele.&lt;br/&gt;&lt;b&gt;Paigaldusemärkmed:&lt;/b&gt;Tavaversioon lubab paigaldamist internetist (FTP). Kui oled huvitatud LiveUSB versioonist, vaata FaunOS´i.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; BackTrack on jaotus, mis keskendub võrgustiku analüüsile ja hõlmamise testimisele.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; BackTrack on laetud ja  käivitatud live olekus; paigaldus pole nõutav selle kasutamiseks.</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; BackTrack on distributsioon, mis keskendub võrguanalüüsile ja ulatuse testimisele.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; BackTrack laaditakse live-režiimis, kasutamiseks pole paigaldamine vajalik.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="38"/>
@@ -519,12 +521,12 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="43"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; CloneZilla on jaotus, mida kasutatakse kõvaketta tagavaraks ja pildistamiseks.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; CloneZilla on laetud ja  käivitatud live olekus; paigaldus pole nõutav selle kasutamiseks.</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; CloneZilla on distributsioon, mida kasutatakse kõvaketta varundamiseks ja tõmmise tegemiseks.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; CloneZilla laaditakse live-režiimis, kasutamiseks pole paigaldamine vajalik.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="48"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Damn Small Linux minimalistliku välimuse ja suurusega operatsioonisüsteem, mis on mõeldud vanematele arvutitele.&lt;br/&gt;&lt;b&gt;Installimise abi:&lt;/b&gt; Live versioon laeb terve süsteemi RAM´i ja boodib mälust nii, et install pole nõutav aga valikuline.</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Damn Small Linux on minimalistliku välimuse ja suurusega operatsioonisüsteem, mis on mõeldud vanematele arvutitele.&lt;br/&gt;&lt;b&gt;Paigaldamise abi:&lt;/b&gt; Live versioon laadib terve süsteemi RAMli ja käivitub mälust, paigaldus pole nõutav, kuid on võimalik.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="53"/>
@@ -534,7 +536,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="59"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Dreamlinux on kasutajasõbralik Debian´il põhinev operatsioonisüsteem.&lt;br/&gt;&lt;b&gt;Installi abi:&lt;/b&gt; Live versioon lubab bootida Live moodis ilma midagi installimata, ja installi saad valikuliselt pärast käivitada.</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; Dreamlinux on kasutajasõbralik Debianil põhinev operatsioonisüsteem.&lt;br/&gt;&lt;b&gt;Paigalduse abi:&lt;/b&gt; Live versiooni saab laadida Live režiimis ilma midagi paigaldamata, misjärel võib soovi korral käivatada paigaldaja.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="64"/>
@@ -559,7 +561,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="84"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; FreeDOS on vabavaraline MS-DOS ühilduvusega operatsioonisüsteem.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; Vaata &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; paigaldusdetailide jaoks.</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; FreeDOS on vabavaraline MS-DOSiga ühilduv operatsioonisüsteem.&lt;br/&gt;&lt;b&gt;Paigaldusmärkmed:&lt;/b&gt; Vaata paigalduse üksikasju &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;käsiraamatust&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="89"/>
@@ -574,7 +576,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="99"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; F-Secure Rescue CD tuvastab ja eemaldab pahavara Sinu Windowsi installist.&lt;br/&gt;&lt;b&gt;Install Abi:&lt;/b&gt; Live versioon lubab bootida Live moodis, kust pahavara skännimist saab käivitada..</translation>
+        <translation>&lt;b&gt;Kodulehekülg:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kirjeldus:&lt;/b&gt; F-Secure Rescue CD tuvastab ja eemaldab pahavara sinu Windowsi paigaldusest.&lt;br/&gt;&lt;b&gt;Paigalduse abi:&lt;/b&gt; Live versioon võimaldab käivitada Live-režiimis, kust saab käivitada pahavara skannimise.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="104"/>
@@ -604,7 +606,7 @@ Taaskäivita nüüd?</translation>
     <message>
         <location filename="distrover.cpp" line="134"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="139"/>
@@ -759,32 +761,32 @@ Taaskäivita nüüd?</translation>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation>Vali toetatav distributsioon listist</translation>
+        <translation>Vali distributsioon loendist</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distributsioon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="127"/>
         <source>Specify a disk image file to load</source>
-        <translation>Täpsusta ketta-image faili (.iso), et laadida</translation>
+        <translation>Määratud kettatõmmise faili laadimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>&amp;Kettatõmmis</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="378"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation>Käsitsi täpsusta kernel ja intrd, et laadida</translation>
+        <translation>Määratud kerneli ja initrd laadimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Kohandatud</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="420"/>
@@ -798,17 +800,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Vorminda ketas (kustutab andmed)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Olgu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Tagasi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="500"/>
@@ -823,7 +825,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation>Taaskäivita nüüd</translation>
+        <translation>Taaskäivita kohe</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="555"/>
@@ -838,49 +840,49 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Pakitakse lahti ja kopeeritakse faile</translation>
+        <translation>2. Failide lahtipakkimine ja kopeerimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Bootloader´i paigaldamine</translation>
+        <translation>3. Alglaaduri paigaldamine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Paigaldamine lõpetatud, Taaskäivita.</translation>
+        <translation>4. Paigaldamine lõpetatud, taaskäivita.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="464"/>
         <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation>Vali sihtkoha ketas, kuhu installida</translation>
+        <translation>Vali sihtkoha ketas, kuhu paigaldada</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;Ketas:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="438"/>
         <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation>Vali installimise sihtkoha tüüp</translation>
+        <translation>Vali paigalduse sihtkoha liik</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Liik:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Distributsiooni versiooni valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="307"/>
         <source>Select disk image file</source>
-        <translation>Vali ketta-image (.iso) fail</translation>
+        <translation>Kettatõmmise faili valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="246"/>
@@ -893,39 +895,39 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="148"/>
         <source>Select the disk image type</source>
-        <translation>Vali ketta-image (.iso) tüüp</translation>
+        <translation>Kettatõmmise faili liigi valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="203"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Vali disketi/kõvaketta tõmmis või plaaditõmmis (ISO), mida laadida</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="167"/>
         <location filename="unetbootin.ui" line="218"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Kerneli faili valimine, mida laadida</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Select kernel file</source>
-        <translation>Vali kerneli fail</translation>
+        <translation>Kerneli faili valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="253"/>
         <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
-        <translation>Täpsusta initrd´i fail laadimiseks</translation>
+        <translation>Initrd faili valimine, mida laadida</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="332"/>
         <source>Select initrd file</source>
-        <translation>Vali initrd fail</translation>
+        <translation>Initrd faili valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="357"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation>Vali syslinux.cfg või isolinux.cfg fail</translation>
+        <translation>Syslinux.cfg või isolinux.cfg faili valimine</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="186"/>
@@ -945,22 +947,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Näidatakse &amp;kõiki kettaid (ole ettevaatlik)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Valikud:</translation>
     </message>
 </context>
 <context>
@@ -968,7 +970,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation>Eemaaldamine lõpetatud</translation>
+        <translation>Eemaldamine lõpetatud</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
@@ -978,22 +980,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Tuleb käivitada juurkasutajana</translation>
     </message>
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 tuleb käivitada juurkasutajana. Sulge see ning käivita uuesti kas käsuga&lt;br /&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br /&gt;või:&lt;br /&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation>%1 Eemaldaja</translation>
+        <translation>%1 eemaldaja</translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation>%1 on hetkel paigaldatud. Eemalda olemasolev versioon?</translation>
+        <translation>Hetkel on paigaldatud %1. Kas eemalda olemasolev versioon?</translation>
     </message>
 </context>
 </TS>

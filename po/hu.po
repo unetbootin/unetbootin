@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-01 09:36-0400\n"
+"POT-Creation-Date: 2010-06-03 14:25-0700\n"
 "PO-Revision-Date: 2010-01-29 08:09+0000\n"
 "Last-Translator: UNetbootin Team <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-01 19:40+0000\n"
+"X-Launchpad-Export-Date: 2010-06-16 00:52+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -18,67 +18,67 @@ msgid "LeftToRight"
 msgstr "Balról jobbra"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:164 unetbootin.cpp:246 unetbootin.cpp:247 unetbootin.cpp:314
-#: unetbootin.cpp:413 unetbootin.cpp:506 unetbootin.cpp:2456
-#: unetbootin.cpp:2469 unetbootin.cpp:2627 unetbootin.cpp:3082
+#: unetbootin.cpp:195 unetbootin.cpp:277 unetbootin.cpp:278 unetbootin.cpp:345
+#: unetbootin.cpp:444 unetbootin.cpp:537 unetbootin.cpp:2966
+#: unetbootin.cpp:2979 unetbootin.cpp:3137 unetbootin.cpp:3592
 msgid "Hard Disk"
 msgstr "Merevlemez"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:165 unetbootin.cpp:229 unetbootin.cpp:243 unetbootin.cpp:244
-#: unetbootin.cpp:316 unetbootin.cpp:417 unetbootin.cpp:511 unetbootin.cpp:583
-#: unetbootin.cpp:599 unetbootin.cpp:853 unetbootin.cpp:1346
-#: unetbootin.cpp:1408 unetbootin.cpp:1805 unetbootin.cpp:1847
-#: unetbootin.cpp:2460 unetbootin.cpp:2485 unetbootin.cpp:2631
-#: unetbootin.cpp:3086
+#: unetbootin.cpp:196 unetbootin.cpp:260 unetbootin.cpp:274 unetbootin.cpp:275
+#: unetbootin.cpp:347 unetbootin.cpp:448 unetbootin.cpp:542 unetbootin.cpp:614
+#: unetbootin.cpp:630 unetbootin.cpp:884 unetbootin.cpp:1415
+#: unetbootin.cpp:1477 unetbootin.cpp:2300 unetbootin.cpp:2342
+#: unetbootin.cpp:2970 unetbootin.cpp:2995 unetbootin.cpp:3141
+#: unetbootin.cpp:3596
 msgid "USB Drive"
 msgstr "USB meghajtó"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:166 unetbootin.cpp:193 unetbootin.cpp:194 unetbootin.cpp:282
-#: unetbootin.cpp:534 unetbootin.cpp:535 unetbootin.cpp:2533
+#: unetbootin.cpp:197 unetbootin.cpp:224 unetbootin.cpp:225 unetbootin.cpp:313
+#: unetbootin.cpp:565 unetbootin.cpp:566 unetbootin.cpp:3043
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:167 unetbootin.cpp:189 unetbootin.cpp:190 unetbootin.cpp:287
-#: unetbootin.cpp:539 unetbootin.cpp:540 unetbootin.cpp:2525
+#: unetbootin.cpp:198 unetbootin.cpp:220 unetbootin.cpp:221 unetbootin.cpp:318
+#: unetbootin.cpp:570 unetbootin.cpp:571 unetbootin.cpp:3035
 msgid "Floppy"
 msgstr "Floppy"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:207 unetbootin.cpp:211 unetbootin.cpp:215 unetbootin.cpp:219
-#: unetbootin.cpp:225 unetbootin.cpp:237
+#: unetbootin.cpp:238 unetbootin.cpp:242 unetbootin.cpp:246 unetbootin.cpp:250
+#: unetbootin.cpp:256 unetbootin.cpp:268
 msgid "either"
 msgstr "akármelyik"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:531
+#: unetbootin.cpp:562
 msgid "Open Disk Image File"
 msgstr "Lemezképfájl megnyitása"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:549
+#: unetbootin.cpp:580
 msgid "Open Kernel File"
 msgstr "Kernel fájl megnyitása"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:557
+#: unetbootin.cpp:588
 msgid "Open Initrd File"
 msgstr "Initrd fájl megnyitása"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:565
+#: unetbootin.cpp:596
 msgid "Open Bootloader Config File"
 msgstr "Rendszerbetöltő beállítófájljának megnyitása"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:587
+#: unetbootin.cpp:618
 msgid "Insert a USB flash drive"
 msgstr "Csatlakoztasson egy USB-s flash meghajtót"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:588
+#: unetbootin.cpp:619
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -87,12 +87,12 @@ msgstr ""
 "látható, próbálja meg újraformázni FAT32 fájlrendszerre."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:603
+#: unetbootin.cpp:634
 msgid "%1 not mounted"
 msgstr "A(z) %1 nincs felcsatolva"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:604
+#: unetbootin.cpp:635
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -102,72 +102,72 @@ msgstr ""
 "újbóli csatlakoztatásakor."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:619
+#: unetbootin.cpp:650
 msgid "Select a distro"
 msgstr "Válasszon egy disztribúciót"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:620
+#: unetbootin.cpp:651
 msgid "You must select a distribution to load."
 msgstr "Ki kell választania a betöltendő disztribúciót."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:634
+#: unetbootin.cpp:665
 msgid "Select a disk image file"
 msgstr "Válasszon egy lemezképfájlt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:635
+#: unetbootin.cpp:666
 msgid "You must select a disk image file to load."
 msgstr "Ki kell választania a betöltendő lemezképfájlt."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:649
+#: unetbootin.cpp:680
 msgid "Select a kernel and/or initrd file"
 msgstr "Válasszon egy kernel és/vagy initrd fájlt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:650
+#: unetbootin.cpp:681
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "Ki kell választania a betöltendő kernel és/vagy initrd fájlt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:664
+#: unetbootin.cpp:695
 msgid "Diskimage file not found"
 msgstr "A lemezképfájl nem található"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:665
+#: unetbootin.cpp:696
 msgid "The specified diskimage file %1 does not exist."
 msgstr "A megadott %1 lemezképfájl nem létezik."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:679
+#: unetbootin.cpp:710
 msgid "Kernel file not found"
 msgstr "A kernel fájl nem található"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:680
+#: unetbootin.cpp:711
 msgid "The specified kernel file %1 does not exist."
 msgstr "A megadott %1 kernel fájl nem létezik."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:725
 msgid "Initrd file not found"
 msgstr "Initrd fájl nem található"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:695
+#: unetbootin.cpp:726
 msgid "The specified initrd file %1 does not exist."
 msgstr "A megadott %1 initrd fájl nem létezik."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:799
+#: unetbootin.cpp:830
 msgid "%1 exists, overwrite?"
 msgstr "A(z) %1 létezik, felülírja?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:800
+#: unetbootin.cpp:831
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -179,12 +179,12 @@ msgstr ""
 "meg a 'Yes to All' gombot."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:826
+#: unetbootin.cpp:857
 msgid "%1 is out of space, abort installation?"
 msgstr "A(z) %1 eszközön kevés a szabad hely, megszakítja a telepítést?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:827
+#: unetbootin.cpp:858
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -196,92 +196,132 @@ msgstr ""
 "szabad hely' hibaüzenet figyelmen kívül hagyásához."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1263 unetbootin.cpp:1285
+#: unetbootin.cpp:952
+msgid "Locating kernel file in %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:993
+msgid "Copying kernel file from %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:999
+msgid "Locating initrd file in %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1040
+msgid "Copying initrd file from %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1046 unetbootin.cpp:1106
+msgid "Extracting bootloader configuration"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1321 unetbootin.cpp:1347
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>Tömörített ISO fájl kicsomagolása:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1438
+#: unetbootin.cpp:1576
+msgid "Copying file, please wait..."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1579
+msgid "<b>Copied:</b> 0 bytes"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2394
+msgid "<b>Copied:</b> %1 of %2"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1617
 msgid "Extracting files, please wait..."
 msgstr "Fájlok kicsomagolása, kérem várjon..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1439
+#: unetbootin.cpp:1618
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archívum:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1440
+#: unetbootin.cpp:1619
 msgid "<b>Source:</b>"
 msgstr "<b>Forrás:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1441
+#: unetbootin.cpp:1620
 msgid "<b>Destination:</b>"
 msgstr "<b>Cél:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1442
+#: unetbootin.cpp:1621
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Kicsomagolt fájlok:</b> 0/%1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1445
+#: unetbootin.cpp:1624
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Forrás:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1446
+#: unetbootin.cpp:1625
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Cél:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1447
+#: unetbootin.cpp:1626
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Kicsomagolt fájlok:</b> %1/%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1789
+#: unetbootin.cpp:2284
 msgid "Downloading files, please wait..."
 msgstr "Fájlok letöltése, kérem várjon..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1790
+#: unetbootin.cpp:1577 unetbootin.cpp:2285
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Forrás:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1791
+#: unetbootin.cpp:1578 unetbootin.cpp:2286
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Cél:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1792
+#: unetbootin.cpp:2287
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Letöltve:</b> 0 bájt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1869 unetbootin.cpp:1884
+#: unetbootin.cpp:2364 unetbootin.cpp:2379
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Letöltve:</b> %1/%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1960
+#: unetbootin.cpp:2470
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Keresés: <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1964
+#: unetbootin.cpp:2474
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 egyezik ebben: <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2149
+#: unetbootin.cpp:2659
 msgid "%1 not found"
 msgstr "A(z) %1 nem található"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2150
+#: unetbootin.cpp:2660
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -291,52 +331,52 @@ msgstr ""
 "megfelelőjét."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2438
+#: unetbootin.cpp:2948
 msgid "(Current)"
 msgstr "(folyamatban)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2439
+#: unetbootin.cpp:2949
 msgid "(Done)"
 msgstr "(kész)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2706
+#: unetbootin.cpp:3216
 msgid "Configuring grub2 on %1"
 msgstr "Grub2 konfigurálása itt: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2718
+#: unetbootin.cpp:3228
 msgid "Configuring grldr on %1"
 msgstr "Grldr konfigurálása itt: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2746
+#: unetbootin.cpp:3256
 msgid "Configuring grub on %1"
 msgstr "Grub konfigurálása itt: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2931
+#: unetbootin.cpp:3441
 msgid "Installing syslinux to %1"
 msgstr "Syslinux telepítése ide: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2966
+#: unetbootin.cpp:3476
 msgid "Installing extlinux to %1"
 msgstr "Extlinux telepítése ide: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3072
+#: unetbootin.cpp:3582
 msgid "Syncing filesystems"
 msgstr "Fájlrendszerek szinkronizálása"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3084
+#: unetbootin.cpp:3594
 msgid "After rebooting, select the "
 msgstr "Újraindítás után, válassza a "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3088
+#: unetbootin.cpp:3598
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -382,7 +422,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:345
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -401,7 +441,7 @@ msgstr ""
 "'/pub/fedora/linux/development/%1/os'. (Mindkettőt idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:357
+#: distrolst.cpp:351
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -420,7 +460,7 @@ msgstr ""
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os'. (Mindkettőt idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:637
+#: distrolst.cpp:705
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -439,7 +479,7 @@ msgstr ""
 "idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:643
+#: distrolst.cpp:711
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -480,15 +520,13 @@ msgid ""
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
 "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-"installation over the internet (FTP). If interested in a LiveUSB version, "
-"see FaunOS."
+"installation over the internet (FTP)."
 msgstr ""
 "<b>Honlap:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
-":</b> Az Arch Linux egy könnyűsúlyú disztribúció, ami sebességre és "
-"rugalmasságra lett kihegyezve.<br/><b>Telepítési megjegyzések:</b> Az "
-"alapváltozatot interneten keresztül lehet telepíteni (FTP). Ha egy live usb "
-"változat érdekli, akkor nézze meg a FaunOS-t."
+":</b> Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és "
+"rugalmasságot hangsúlyozza.<br/><b>Telepítési jegyzetek:</b> Az "
+"alapváltozatot interneten keresztül lehet telepíteni (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:33
@@ -615,7 +653,7 @@ msgstr ""
 "href=\"http://www.elivecd.org/Download/Stable\">stabil verziót</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:79
+#: distrover.cpp:74
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -635,7 +673,7 @@ msgstr ""
 "internetkapcsolattal (FTP), vagy egy előre letöltött ISO fájllal."
 
 #. ts-context unetbootin
-#: distrover.cpp:84
+#: distrover.cpp:79
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -652,7 +690,7 @@ msgstr ""
 "letöltött ISO lemezképekkel lehet telepíteni."
 
 #. ts-context unetbootin
-#: distrover.cpp:89
+#: distrover.cpp:84
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -670,7 +708,7 @@ msgstr ""
 "utasítást</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:94
+#: distrover.cpp:89
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -682,7 +720,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:99
+#: distrover.cpp:94
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -699,7 +737,7 @@ msgstr ""
 "telepíteni."
 
 #. ts-context unetbootin
-#: distrover.cpp:104
+#: distrover.cpp:99
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
@@ -714,7 +752,7 @@ msgstr ""
 "rendszert live módban, ahonnan lefuttathatja a víruskeresést."
 
 #. ts-context unetbootin
-#: distrover.cpp:109
+#: distrover.cpp:104
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
@@ -730,7 +768,7 @@ msgstr ""
 "elindíthatja."
 
 #. ts-context unetbootin
-#: distrover.cpp:119
+#: distrover.cpp:114
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -747,7 +785,7 @@ msgstr ""
 "rendszert live módban, ahonnan a telepítőt bármikor elindíthatja."
 
 #. ts-context unetbootin
-#: distrover.cpp:124
+#: distrover.cpp:119
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -762,7 +800,7 @@ msgstr ""
 "elindul és működik; nem kell telepíteni a használatához."
 
 #. ts-context unetbootin
-#: distrover.cpp:129
+#: distrover.cpp:124
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -779,7 +817,7 @@ msgstr ""
 "ahonnan lefuttathatja a víruskeresést."
 
 #. ts-context unetbootin
-#: distrover.cpp:134
+#: distrover.cpp:129
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -791,6 +829,16 @@ msgid ""
 "downloaded alternate (not desktop) install iso, use the HdMedia option, and "
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:134
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
+"ion:</b> LinuxConsole is a desktop distro to play games, easy to install, "
+"easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is "
+"latest 1.0 release."
 msgstr ""
 
 #. ts-context unetbootin
@@ -1941,19 +1989,6 @@ msgstr "A(z) %1 jelenleg telepítve van. Eltávolítja a meglévő verziót?"
 #~ "'Nem' ha meg akarja tartani a már létező változatot. Ha nem tud dönteni, "
 #~ "akkor vállasztja az 'Igen, mindent' vállasztékot."
 
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP)."
-#~ msgstr ""
-#~ "<b>Honlap:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
-#~ ":</b> Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és "
-#~ "rugalmasságot hangsúlyozza.<br/><b>Telepítési jegyzetek:</b> Az "
-#~ "alapváltozatot interneten keresztül lehet telepíteni (FTP)."
-
 #~ msgctxt "unetbootin#27"
 #~ msgid ""
 #~ "\n"
@@ -2075,6 +2110,21 @@ msgstr "A(z) %1 jelenleg telepítve van. Eltávolítja a meglévő verziót?"
 #~ "elemzéssel és behatolás teszteléssel foglalkozó "
 #~ "disztribúció.<br/><b>Telepítési megjegyzések:</b> A BackTrack live módban "
 #~ "fut, ezért a használatához nem szükséges telepíteni."
+
+#~ msgid ""
+#~ "<b>Homepage:</b> <a "
+#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
+#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
+#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
+#~ "installation over the internet (FTP). If interested in a LiveUSB version, "
+#~ "see FaunOS."
+#~ msgstr ""
+#~ "<b>Honlap:</b> <a "
+#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
+#~ ":</b> Az Arch Linux egy könnyűsúlyú disztribúció, ami sebességre és "
+#~ "rugalmasságra lett kihegyezve.<br/><b>Telepítési megjegyzések:</b> Az "
+#~ "alapváltozatot interneten keresztül lehet telepíteni (FTP). Ha egy live usb "
+#~ "változat érdekli, akkor nézze meg a FaunOS-t."
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "
