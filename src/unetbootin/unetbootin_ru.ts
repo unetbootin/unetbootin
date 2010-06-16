@@ -237,10 +237,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="339"/>
         <location filename="unetbootin.cpp" line="438"/>
         <location filename="unetbootin.cpp" line="531"/>
-        <location filename="unetbootin.cpp" line="2960"/>
-        <location filename="unetbootin.cpp" line="2973"/>
-        <location filename="unetbootin.cpp" line="3131"/>
-        <location filename="unetbootin.cpp" line="3586"/>
+        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2974"/>
+        <location filename="unetbootin.cpp" line="3132"/>
+        <location filename="unetbootin.cpp" line="3587"/>
         <source>Hard Disk</source>
         <translation>Жёсткий диск</translation>
     </message>
@@ -259,10 +259,10 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="1471"/>
         <location filename="unetbootin.cpp" line="2294"/>
         <location filename="unetbootin.cpp" line="2336"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="2989"/>
-        <location filename="unetbootin.cpp" line="3135"/>
-        <location filename="unetbootin.cpp" line="3590"/>
+        <location filename="unetbootin.cpp" line="2965"/>
+        <location filename="unetbootin.cpp" line="2990"/>
+        <location filename="unetbootin.cpp" line="3136"/>
+        <location filename="unetbootin.cpp" line="3591"/>
         <source>USB Drive</source>
         <translation>Устройство USB</translation>
     </message>
@@ -273,7 +273,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="307"/>
         <location filename="unetbootin.cpp" line="559"/>
         <location filename="unetbootin.cpp" line="560"/>
-        <location filename="unetbootin.cpp" line="3037"/>
+        <location filename="unetbootin.cpp" line="3038"/>
         <source>ISO</source>
         <translation>Образ диска</translation>
     </message>
@@ -284,7 +284,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="312"/>
         <location filename="unetbootin.cpp" line="564"/>
         <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="3029"/>
+        <location filename="unetbootin.cpp" line="3030"/>
         <source>Floppy</source>
         <translation>Дисковод гибких дисков</translation>
     </message>
@@ -564,52 +564,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Установите пакет &quot;%3&quot; или его эквивалент в используемом дистрибутиве.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2942"/>
+        <location filename="unetbootin.cpp" line="2943"/>
         <source>(Current)</source>
         <translation>(Текущий)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2943"/>
+        <location filename="unetbootin.cpp" line="2944"/>
         <source>(Done)</source>
         <translation>(Выполнено)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3210"/>
+        <location filename="unetbootin.cpp" line="3211"/>
         <source>Configuring grub2 on %1</source>
         <translation>Конфигурирование grub2 на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3222"/>
+        <location filename="unetbootin.cpp" line="3223"/>
         <source>Configuring grldr on %1</source>
         <translation>Конфигурирование grldr на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3250"/>
+        <location filename="unetbootin.cpp" line="3251"/>
         <source>Configuring grub on %1</source>
         <translation>Конфигурирование grub на %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3435"/>
+        <location filename="unetbootin.cpp" line="3436"/>
         <source>Installing syslinux to %1</source>
         <translation>Установка syslinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3470"/>
+        <location filename="unetbootin.cpp" line="3471"/>
         <source>Installing extlinux to %1</source>
         <translation>Установка extlinux в %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3576"/>
+        <location filename="unetbootin.cpp" line="3577"/>
         <source>Syncing filesystems</source>
         <translation>Синхронизую файловую систему</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3588"/>
+        <location filename="unetbootin.cpp" line="3589"/>
         <source>After rebooting, select the </source>
         <translation>После перезагрузки выберите </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3592"/>
+        <location filename="unetbootin.cpp" line="3593"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>После перезагрузки выберите в BIOS опцию загрузки с USB.%1

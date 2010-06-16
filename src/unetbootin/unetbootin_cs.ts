@@ -257,10 +257,10 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="339"/>
         <location filename="unetbootin.cpp" line="438"/>
         <location filename="unetbootin.cpp" line="531"/>
-        <location filename="unetbootin.cpp" line="2960"/>
-        <location filename="unetbootin.cpp" line="2973"/>
-        <location filename="unetbootin.cpp" line="3131"/>
-        <location filename="unetbootin.cpp" line="3586"/>
+        <location filename="unetbootin.cpp" line="2961"/>
+        <location filename="unetbootin.cpp" line="2974"/>
+        <location filename="unetbootin.cpp" line="3132"/>
+        <location filename="unetbootin.cpp" line="3587"/>
         <source>Hard Disk</source>
         <translation>Pevný disk</translation>
     </message>
@@ -279,10 +279,10 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="1471"/>
         <location filename="unetbootin.cpp" line="2294"/>
         <location filename="unetbootin.cpp" line="2336"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="2989"/>
-        <location filename="unetbootin.cpp" line="3135"/>
-        <location filename="unetbootin.cpp" line="3590"/>
+        <location filename="unetbootin.cpp" line="2965"/>
+        <location filename="unetbootin.cpp" line="2990"/>
+        <location filename="unetbootin.cpp" line="3136"/>
+        <location filename="unetbootin.cpp" line="3591"/>
         <source>USB Drive</source>
         <translation>Mechanika USB</translation>
     </message>
@@ -293,7 +293,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="307"/>
         <location filename="unetbootin.cpp" line="559"/>
         <location filename="unetbootin.cpp" line="560"/>
-        <location filename="unetbootin.cpp" line="3037"/>
+        <location filename="unetbootin.cpp" line="3038"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -304,7 +304,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="312"/>
         <location filename="unetbootin.cpp" line="564"/>
         <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="3029"/>
+        <location filename="unetbootin.cpp" line="3030"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
@@ -584,52 +584,52 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Nainstalujte balík &quot;%3&quot; nebo ekvivalent pro vaši distribuci.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2942"/>
+        <location filename="unetbootin.cpp" line="2943"/>
         <source>(Current)</source>
         <translation>(Aktuální)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2943"/>
+        <location filename="unetbootin.cpp" line="2944"/>
         <source>(Done)</source>
         <translation>(Hotovo)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3210"/>
+        <location filename="unetbootin.cpp" line="3211"/>
         <source>Configuring grub2 on %1</source>
         <translation>Nastavuji grub2 na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3222"/>
+        <location filename="unetbootin.cpp" line="3223"/>
         <source>Configuring grldr on %1</source>
         <translation>Nastavuji grldr na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3250"/>
+        <location filename="unetbootin.cpp" line="3251"/>
         <source>Configuring grub on %1</source>
         <translation>Nastavuji grub na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3435"/>
+        <location filename="unetbootin.cpp" line="3436"/>
         <source>Installing syslinux to %1</source>
         <translation>Instaluji syslinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3470"/>
+        <location filename="unetbootin.cpp" line="3471"/>
         <source>Installing extlinux to %1</source>
         <translation>Instaluji extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3576"/>
+        <location filename="unetbootin.cpp" line="3577"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizuji souborové systémy</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3588"/>
+        <location filename="unetbootin.cpp" line="3589"/>
         <source>After rebooting, select the </source>
         <translation>Po restartu zvolte </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3592"/>
+        <location filename="unetbootin.cpp" line="3593"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po restartu zvolte v BIOSu možnost zavádění systému z USB. %1

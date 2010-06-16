@@ -2841,14 +2841,17 @@ void unetbootin::bootiniEdit()
 
 void unetbootin::vistabcdEdit()
 {
+	bool warch64 = false;
+	if (!QProcess::systemEnvironment().filter("ProgramW6432").isEmpty())
+		warch64 = true;
 	instIndvfl("emtxfile.exe", QString("%1emtxfile.exe").arg(targetPath));
 	QFile vbcdEditF1(QString("%1vbcdedit.bat").arg(targetPath));
 	vbcdEditF1.open(QIODevice::ReadWrite | QIODevice::Text);
 	QTextStream vbcdEditS1(&vbcdEditF1);
 	vbcdEditS1 << QString("bcdedit /create /d \""UNETBOOTINB"\" /application bootsector > %1tmpbcdid").arg(targetPath) << endl;
 	vbcdEditF1.close();
-	bool warch64;
-	callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
+	if (!warch64)
+		callexternapp(QString("%1vbcdedit.bat").arg(targetPath), "");
 	QFile vbcdTmpInF(QString("%1tmpbcdid").arg(targetPath));
 	vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream vbcdTmpInS(&vbcdTmpInF);
@@ -2856,16 +2859,14 @@ void unetbootin::vistabcdEdit()
 	vbcdTmpInF.close();
 	QString vbcdIdTL;
 	QStringList vbcdIdTLSL;
-	if (qstmpvbcdin.contains("{") && qstmpvbcdin.contains("}") && qstmpvbcdin.contains("-"))
+	if (!warch64)
 	{
-		warch64 = false;
 		vbcdIdTLSL = qstmpvbcdin.replace("{", "\n").replace("}", "\n").split("\n").filter("-");
 		if (!vbcdIdTLSL.isEmpty())
 			vbcdIdTL = vbcdIdTLSL.at(0);
 	}
 	else
 	{
-		warch64 = true;
 		callexternapp(QString("%1emtxfile.exe").arg(targetPath), QString("%1vbcdedit.bat runas").arg(targetPath));
 		vbcdTmpInF.open(QIODevice::ReadOnly | QIODevice::Text);
 		QTextStream vbcdTmpInS2(&vbcdTmpInF);
