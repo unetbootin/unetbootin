@@ -322,6 +322,14 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <translation>Ouvrir le disque du fichier image</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="590"/>
+        <source>All Files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Ouvrie le fichier du noyau</translation>

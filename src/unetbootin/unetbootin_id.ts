@@ -109,6 +109,14 @@ X-Generator: Launchpad (build Unknown)
         <translation>Buka file iso</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="590"/>
+        <source>All Files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Buka file kernel</translation>

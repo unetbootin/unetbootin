@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-15 21:06-0700\n"
+"POT-Creation-Date: 2010-06-15 22:48-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,6 +62,12 @@ msgstr ""
 #: unetbootin.cpp:556
 #, fuzzy
 msgid "Open Disk Image File"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:556 unetbootin.cpp:574 unetbootin.cpp:582 unetbootin.cpp:590
+#, fuzzy
+msgid "All Files (*)"
 msgstr ""
 
 #. ts-context unetbootin
