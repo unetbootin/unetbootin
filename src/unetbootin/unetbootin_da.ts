@@ -100,6 +100,226 @@ X-Generator: Launchpad (build Unknown)
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Hjemmeside:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Ubuntu er en brugervenlig Debian-baseret distribution. Der i øjeblikket er den mest populære Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Installations Noter:&lt;/b&gt; Live versionen tillader booting i Live mode, hvorfra man kan vælge at starte installation. NetInstall versionen tillader installation over FTP, og kan installere Kubuntu og andre officielle Ubuntu varianter.</translation>
     </message>
+    <message>
+        <source>Open Initrd File</source>
+        <translation type="obsolete">Åben Initrd Fil</translation>
+    </message>
+    <message>
+        <source>Open Bootloader Config File</source>
+        <translation type="obsolete">Åben Bootloaderens Konfigurationsfil</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">USB-drev</translation>
+    </message>
+    <message>
+        <source>Insert a USB flash drive</source>
+        <translation type="obsolete">Insæt et USB flash drev</translation>
+    </message>
+    <message>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation type="obsolete">Der blev ikke fundet noget USB flash drev. Hvis du allerede har indsat et USB drev, så prøv at genformatere det i FAT32 filsystemet.</translation>
+    </message>
+    <message>
+        <source>%1 not mounted</source>
+        <translation type="obsolete">%1 ikke monteret</translation>
+    </message>
+    <message>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation type="obsolete">Du skal først montere USB drevet %1 til et monteringspunkt. De fleste distributioner vil gøre dette automatisk efter at du har fjernet og genindsat USB drevet.</translation>
+    </message>
+    <message>
+        <source>Select a distro</source>
+        <translation type="obsolete">Vælg en distribution</translation>
+    </message>
+    <message>
+        <source>You must select a distribution to load.</source>
+        <translation type="obsolete">Du skal vælge en distribution til indlæsning.</translation>
+    </message>
+    <message>
+        <source>Select a disk image file</source>
+        <translation type="obsolete">Vælg en disk billede fil</translation>
+    </message>
+    <message>
+        <source>You must select a disk image file to load.</source>
+        <translation type="obsolete">Du skal vælge en disk billede fil til indlæsning.</translation>
+    </message>
+    <message>
+        <source>Select a kernel and/or initrd file</source>
+        <translation type="obsolete">Vælg en kernel og/eller initrd fil</translation>
+    </message>
+    <message>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation type="obsolete">Du skal vælge en kernel og/eller initrd fil til indlæsning.</translation>
+    </message>
+    <message>
+        <source>Diskimage file not found</source>
+        <translation type="obsolete">Disk billede filen blev ikke fundet</translation>
+    </message>
+    <message>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation type="obsolete">Den valgte disk billede fil %1 eksisterer ikke.</translation>
+    </message>
+    <message>
+        <source>Kernel file not found</source>
+        <translation type="obsolete">Kernel fil blev ikke fundet</translation>
+    </message>
+    <message>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation type="obsolete">Den valgte kernel fil %1 eksisterer ikke.</translation>
+    </message>
+    <message>
+        <source>Initrd file not found</source>
+        <translation type="obsolete">Initrd fil blev ikke fundet</translation>
+    </message>
+    <message>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation type="obsolete">Den valgte initrd fil %1 eksisterer ikke.</translation>
+    </message>
+    <message>
+        <source>%1 exists, overwrite?</source>
+        <translation type="obsolete">%1 findes allerede, overskriv?</translation>
+    </message>
+    <message>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation type="obsolete">Filen %1 eksisterer allerede. Tryk &apos;Ja til alt&apos; for at overskrive uden at blive spurgt igen, &apos;Ja&apos; for at overskrive filer på individuel basis, og &apos;Nej&apos; for at beholde den eksisterende version. Er du i tvivl, så tryk &apos;Ja til alt&apos;.</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="obsolete">%1 har ikke mere plads, afbryd installation?</translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="obsolete">Biblioteket %1 har ikke mere plads. Tryk &apos;Ja&apos; for at afslutte installationen, &apos;Nej&apos; for at ignorere denne fejl og forsøg at fortsætte installationen, og &apos;Nej til alt&apos; for at ignorere alle pladsmangel fejl.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Udpakker komprimeret iso:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Kilde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Udpakker filer, vent venligst...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Arkiv:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Kilde:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Udpakket:&lt;/b&gt; 0 ud af %1 filer</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Kilde:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Udpakket:&lt;/b&gt; %1 ud af %2 filer</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Henter filer, vent venligst....</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Hentet:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Hentet:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Søger i &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 fundet i &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 ikke fundet</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 ikke fundet. Denne er krævet for %2 kunne installere.
+Installer &quot;%3&quot; pakken eller den tilsvarende for din distribution.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Nuværende)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Færdig)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Harddisk</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Diskette</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">Konfigurerer grub2 på %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">Konfigurerer grldr på %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">Konfigurerer grub på %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">Installerer syslinux på %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">Installerer extlinux på %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">Synkroniserer filsystemer</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Efter genstart, vælg </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Efter genstart, vælg USB opstarts muligheden i BIOS boot menuen.%1
+Genstart nu?</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -185,6 +405,14 @@ X-Generator: Launchpad (build Unknown)
         <translation>Åben Disk Billede Fil</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="590"/>
+        <source>All Files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Åben Kernel Fil</translation>
@@ -192,300 +420,300 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation>Åben Initrd Fil</translation>
+        <translation type="unfinished">Åben Initrd Fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation>Åben Bootloaderens Konfigurationsfil</translation>
+        <translation type="unfinished">Åben Bootloaderens Konfigurationsfil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation>Insæt et USB flash drev</translation>
+        <translation type="unfinished">Insæt et USB flash drev</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Der blev ikke fundet noget USB flash drev. Hvis du allerede har indsat et USB drev, så prøv at genformatere det i FAT32 filsystemet.</translation>
+        <translation type="unfinished">Der blev ikke fundet noget USB flash drev. Hvis du allerede har indsat et USB drev, så prøv at genformatere det i FAT32 filsystemet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation>%1 ikke monteret</translation>
+        <translation type="unfinished">%1 ikke monteret</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Du skal først montere USB drevet %1 til et monteringspunkt. De fleste distributioner vil gøre dette automatisk efter at du har fjernet og genindsat USB drevet.</translation>
+        <translation type="unfinished">Du skal først montere USB drevet %1 til et monteringspunkt. De fleste distributioner vil gøre dette automatisk efter at du har fjernet og genindsat USB drevet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation>Vælg en distribution</translation>
+        <translation type="unfinished">Vælg en distribution</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation>Du skal vælge en distribution til indlæsning.</translation>
+        <translation type="unfinished">Du skal vælge en distribution til indlæsning.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation>Vælg en disk billede fil</translation>
+        <translation type="unfinished">Vælg en disk billede fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Du skal vælge en disk billede fil til indlæsning.</translation>
+        <translation type="unfinished">Du skal vælge en disk billede fil til indlæsning.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Vælg en kernel og/eller initrd fil</translation>
+        <translation type="unfinished">Vælg en kernel og/eller initrd fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Du skal vælge en kernel og/eller initrd fil til indlæsning.</translation>
+        <translation type="unfinished">Du skal vælge en kernel og/eller initrd fil til indlæsning.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation>Disk billede filen blev ikke fundet</translation>
+        <translation type="unfinished">Disk billede filen blev ikke fundet</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Den valgte disk billede fil %1 eksisterer ikke.</translation>
+        <translation type="unfinished">Den valgte disk billede fil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation>Kernel fil blev ikke fundet</translation>
+        <translation type="unfinished">Kernel fil blev ikke fundet</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Den valgte kernel fil %1 eksisterer ikke.</translation>
+        <translation type="unfinished">Den valgte kernel fil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation>Initrd fil blev ikke fundet</translation>
+        <translation type="unfinished">Initrd fil blev ikke fundet</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Den valgte initrd fil %1 eksisterer ikke.</translation>
+        <translation type="unfinished">Den valgte initrd fil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 findes allerede, overskriv?</translation>
+        <translation type="unfinished">%1 findes allerede, overskriv?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Filen %1 eksisterer allerede. Tryk &apos;Ja til alt&apos; for at overskrive uden at blive spurgt igen, &apos;Ja&apos; for at overskrive filer på individuel basis, og &apos;Nej&apos; for at beholde den eksisterende version. Er du i tvivl, så tryk &apos;Ja til alt&apos;.</translation>
+        <translation type="unfinished">Filen %1 eksisterer allerede. Tryk &apos;Ja til alt&apos; for at overskrive uden at blive spurgt igen, &apos;Ja&apos; for at overskrive filer på individuel basis, og &apos;Nej&apos; for at beholde den eksisterende version. Er du i tvivl, så tryk &apos;Ja til alt&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 har ikke mere plads, afbryd installation?</translation>
+        <translation type="unfinished">%1 har ikke mere plads, afbryd installation?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Biblioteket %1 har ikke mere plads. Tryk &apos;Ja&apos; for at afslutte installationen, &apos;Nej&apos; for at ignorere denne fejl og forsøg at fortsætte installationen, og &apos;Nej til alt&apos; for at ignorere alle pladsmangel fejl.</translation>
+        <translation type="unfinished">Biblioteket %1 har ikke mere plads. Tryk &apos;Ja&apos; for at afslutte installationen, &apos;Nej&apos; for at ignorere denne fejl og forsøg at fortsætte installationen, og &apos;Nej til alt&apos; for at ignorere alle pladsmangel fejl.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Udpakker komprimeret iso:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Udpakker komprimeret iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation>Udpakker filer, vent venligst...</translation>
+        <translation type="unfinished">Udpakker filer, vent venligst...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Arkiv:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Arkiv:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Kilde:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Kilde:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Udpakket:&lt;/b&gt; 0 ud af %1 filer</translation>
+        <translation type="unfinished">&lt;b&gt;Udpakket:&lt;/b&gt; 0 ud af %1 filer</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Kilde:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Kilde:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Udpakket:&lt;/b&gt; %1 ud af %2 filer</translation>
+        <translation type="unfinished">&lt;b&gt;Udpakket:&lt;/b&gt; %1 ud af %2 filer</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation>Henter filer, vent venligst....</translation>
+        <translation type="unfinished">Henter filer, vent venligst....</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Kilde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Kilde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Destination:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Hentet:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Hentet:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Hentet:&lt;/b&gt; %1 of %2</translation>
+        <translation type="unfinished">&lt;b&gt;Hentet:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Søger i &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Søger i &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 fundet i &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 fundet i &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation>%1 ikke fundet</translation>
+        <translation type="unfinished">%1 ikke fundet</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 ikke fundet. Denne er krævet for %2 kunne installere.
+        <translation type="unfinished">%1 ikke fundet. Denne er krævet for %2 kunne installere.
 Installer &quot;%3&quot; pakken eller den tilsvarende for din distribution.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation>(Nuværende)</translation>
+        <translation type="unfinished">(Nuværende)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation>(Færdig)</translation>
+        <translation type="unfinished">(Færdig)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Konfigurerer grub2 på %1</translation>
+        <translation type="unfinished">Konfigurerer grub2 på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation>Konfigurerer grldr på %1</translation>
+        <translation type="unfinished">Konfigurerer grldr på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation>Konfigurerer grub på %1</translation>
+        <translation type="unfinished">Konfigurerer grub på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation>Installerer syslinux på %1</translation>
+        <translation type="unfinished">Installerer syslinux på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation>Installerer extlinux på %1</translation>
+        <translation type="unfinished">Installerer extlinux på %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation>Synkroniserer filsystemer</translation>
+        <translation type="unfinished">Synkroniserer filsystemer</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation>Efter genstart, vælg </translation>
+        <translation type="unfinished">Efter genstart, vælg </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Efter genstart, vælg USB opstarts muligheden i BIOS boot menuen.%1
+        <translation type="unfinished">Efter genstart, vælg USB opstarts muligheden i BIOS boot menuen.%1
 Genstart nu?</translation>
     </message>
     <message>

@@ -104,6 +104,226 @@ X-Generator: Launchpad (build Unknown)
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Arch Linux é unha distribución lixeira optimizada para velocidade e flexibilidade.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión predeterminada permitelle instalala por internet (FTP). Se está interesado nunha versión LiveUSB vexa FaunOS.</translation>
     </message>
+    <message>
+        <source>Open Initrd File</source>
+        <translation type="obsolete">Abrir o ficheiro initrd</translation>
+    </message>
+    <message>
+        <source>Open Bootloader Config File</source>
+        <translation type="obsolete">Abrir o ficheiro de configuración do cargador de arranque</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Unidade USB</translation>
+    </message>
+    <message>
+        <source>Insert a USB flash drive</source>
+        <translation type="obsolete">Insira unha unidade flash USB</translation>
+    </message>
+    <message>
+        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
+        <translation type="obsolete">Non se atoparon unidades USB, se xa inseriu unha unidade USB, tente formatala como FAT32.</translation>
+    </message>
+    <message>
+        <source>%1 not mounted</source>
+        <translation type="obsolete">%1 non esta montada</translation>
+    </message>
+    <message>
+        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
+        <translation type="obsolete">En primeiro lugar, debe montar a unidade USB %1 nun punto de montaxe. A maioría das distribucións farao automaticamente despois de quitar e volver a inserir a unidade USB.</translation>
+    </message>
+    <message>
+        <source>Select a distro</source>
+        <translation type="obsolete">Escolla a distribución</translation>
+    </message>
+    <message>
+        <source>You must select a distribution to load.</source>
+        <translation type="obsolete">Debe escoller unha distribución a cargar</translation>
+    </message>
+    <message>
+        <source>Select a disk image file</source>
+        <translation type="obsolete">Escolla o ficheiro de imaxe de disco</translation>
+    </message>
+    <message>
+        <source>You must select a disk image file to load.</source>
+        <translation type="obsolete">Debe escoller un ficheiro de imaxe de disco a cargar</translation>
+    </message>
+    <message>
+        <source>Select a kernel and/or initrd file</source>
+        <translation type="obsolete">Escolla o kernel e/ou un ficheiro initrd</translation>
+    </message>
+    <message>
+        <source>You must select a kernel and/or initrd file to load.</source>
+        <translation type="obsolete">Debe escoller un kernel e/ou un ficheiro initrd a cargar.</translation>
+    </message>
+    <message>
+        <source>Diskimage file not found</source>
+        <translation type="obsolete">Non se atopa o ficheiro de imaxe de disco</translation>
+    </message>
+    <message>
+        <source>The specified diskimage file %1 does not exist.</source>
+        <translation type="obsolete">O ficheiro de imaxe de disco %1 non existe.</translation>
+    </message>
+    <message>
+        <source>Kernel file not found</source>
+        <translation type="obsolete">Non se atopa o ficheiro de kernel</translation>
+    </message>
+    <message>
+        <source>The specified kernel file %1 does not exist.</source>
+        <translation type="obsolete">O ficheiro de kernel %1 non existe.</translation>
+    </message>
+    <message>
+        <source>Initrd file not found</source>
+        <translation type="obsolete">Non se atopa o ficheiro initrd</translation>
+    </message>
+    <message>
+        <source>The specified initrd file %1 does not exist.</source>
+        <translation type="obsolete">O ficheiro initrd %1 non existe.</translation>
+    </message>
+    <message>
+        <source>%1 exists, overwrite?</source>
+        <translation type="obsolete">%1 xa existe, sobrescribilo?</translation>
+    </message>
+    <message>
+        <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
+        <translation type="obsolete">O ficheiro %1 xa existe. Prema «Si a todo» para sobrescribilo e que non sexa  solicitado de novo, «Si» para sobrescribir os ficheiros de forma individual, e «Non» para conservar a versión existente. En caso de dubida, prema «Si a todo».</translation>
+    </message>
+    <message>
+        <source>%1 is out of space, abort installation?</source>
+        <translation type="obsolete">%1 non dispon de espazo, cancelar a instalación?</translation>
+    </message>
+    <message>
+        <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
+        <translation type="obsolete">O directorio %1 non dispon de espazo. Prema «Sí» para interrumpir a instalación, «Non» para ignorar este erro e tratar de continuar a instalación, e «Non a todos» para facer caso omiso de todas as mensaxes de erro sobre o espazo dispoñible.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Extraendo iso comprimida:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Orixe:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Extraendo ficheiros, agarde...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Orixe:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 ficheiros</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Orixe:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 ficheiros</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Descargando ficheiros, agarde...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 non atopado</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 non atopado. É preciso para instalar en modo  %2.
+Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Actual)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Feito)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Disco ríxido</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Disquete</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">Configurando grub2 en %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">Configurando grldr en %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">Configurando grub en %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">Instalando syslinux en %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">Instalando extlinux en %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">Sincronizando o sistema de ficheiros</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Despois de reiniciar, elixa o </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
+Reiniciar agora?</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -189,6 +409,14 @@ X-Generator: Launchpad (build Unknown)
         <translation>Abrir o ficheiro de imaxe de disco</translation>
     </message>
     <message>
+        <location filename="unetbootin.cpp" line="556"/>
+        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="590"/>
+        <source>All Files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="574"/>
         <source>Open Kernel File</source>
         <translation>Abrir o ficheiro do kernel</translation>
@@ -196,300 +424,300 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Initrd File</source>
-        <translation>Abrir o ficheiro initrd</translation>
+        <translation type="unfinished">Abrir o ficheiro initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
         <source>Open Bootloader Config File</source>
-        <translation>Abrir o ficheiro de configuración do cargador de arranque</translation>
+        <translation type="unfinished">Abrir o ficheiro de configuración do cargador de arranque</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="612"/>
         <source>Insert a USB flash drive</source>
-        <translation>Insira unha unidade flash USB</translation>
+        <translation type="unfinished">Insira unha unidade flash USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="613"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Non se atoparon unidades USB, se xa inseriu unha unidade USB, tente formatala como FAT32.</translation>
+        <translation type="unfinished">Non se atoparon unidades USB, se xa inseriu unha unidade USB, tente formatala como FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="628"/>
         <source>%1 not mounted</source>
-        <translation>%1 non esta montada</translation>
+        <translation type="unfinished">%1 non esta montada</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="629"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>En primeiro lugar, debe montar a unidade USB %1 nun punto de montaxe. A maioría das distribucións farao automaticamente despois de quitar e volver a inserir a unidade USB.</translation>
+        <translation type="unfinished">En primeiro lugar, debe montar a unidade USB %1 nun punto de montaxe. A maioría das distribucións farao automaticamente despois de quitar e volver a inserir a unidade USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="644"/>
         <source>Select a distro</source>
-        <translation>Escolla a distribución</translation>
+        <translation type="unfinished">Escolla a distribución</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="645"/>
         <source>You must select a distribution to load.</source>
-        <translation>Debe escoller unha distribución a cargar</translation>
+        <translation type="unfinished">Debe escoller unha distribución a cargar</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="659"/>
         <source>Select a disk image file</source>
-        <translation>Escolla o ficheiro de imaxe de disco</translation>
+        <translation type="unfinished">Escolla o ficheiro de imaxe de disco</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Debe escoller un ficheiro de imaxe de disco a cargar</translation>
+        <translation type="unfinished">Debe escoller un ficheiro de imaxe de disco a cargar</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="674"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Escolla o kernel e/ou un ficheiro initrd</translation>
+        <translation type="unfinished">Escolla o kernel e/ou un ficheiro initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="675"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Debe escoller un kernel e/ou un ficheiro initrd a cargar.</translation>
+        <translation type="unfinished">Debe escoller un kernel e/ou un ficheiro initrd a cargar.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="689"/>
         <source>Diskimage file not found</source>
-        <translation>Non se atopa o ficheiro de imaxe de disco</translation>
+        <translation type="unfinished">Non se atopa o ficheiro de imaxe de disco</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="690"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>O ficheiro de imaxe de disco %1 non existe.</translation>
+        <translation type="unfinished">O ficheiro de imaxe de disco %1 non existe.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>Kernel file not found</source>
-        <translation>Non se atopa o ficheiro de kernel</translation>
+        <translation type="unfinished">Non se atopa o ficheiro de kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="705"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>O ficheiro de kernel %1 non existe.</translation>
+        <translation type="unfinished">O ficheiro de kernel %1 non existe.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="719"/>
         <source>Initrd file not found</source>
-        <translation>Non se atopa o ficheiro initrd</translation>
+        <translation type="unfinished">Non se atopa o ficheiro initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="720"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>O ficheiro initrd %1 non existe.</translation>
+        <translation type="unfinished">O ficheiro initrd %1 non existe.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="824"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 xa existe, sobrescribilo?</translation>
+        <translation type="unfinished">%1 xa existe, sobrescribilo?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="825"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>O ficheiro %1 xa existe. Prema «Si a todo» para sobrescribilo e que non sexa  solicitado de novo, «Si» para sobrescribir os ficheiros de forma individual, e «Non» para conservar a versión existente. En caso de dubida, prema «Si a todo».</translation>
+        <translation type="unfinished">O ficheiro %1 xa existe. Prema «Si a todo» para sobrescribilo e que non sexa  solicitado de novo, «Si» para sobrescribir os ficheiros de forma individual, e «Non» para conservar a versión existente. En caso de dubida, prema «Si a todo».</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="851"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 non dispon de espazo, cancelar a instalación?</translation>
+        <translation type="unfinished">%1 non dispon de espazo, cancelar a instalación?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="852"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>O directorio %1 non dispon de espazo. Prema «Sí» para interrumpir a instalación, «Non» para ignorar este erro e tratar de continuar a instalación, e «Non a todos» para facer caso omiso de todas as mensaxes de erro sobre o espazo dispoñible.</translation>
+        <translation type="unfinished">O directorio %1 non dispon de espazo. Prema «Sí» para interrumpir a instalación, «Non» para ignorar este erro e tratar de continuar a instalación, e «Non a todos» para facer caso omiso de todas as mensaxes de erro sobre o espazo dispoñible.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
         <location filename="unetbootin.cpp" line="1341"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Extraendo iso comprimida:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Extraendo iso comprimida:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1570"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1573"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1611"/>
         <source>Extracting files, please wait...</source>
-        <translation>Extraendo ficheiros, agarde...</translation>
+        <translation type="unfinished">Extraendo ficheiros, agarde...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1612"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1613"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Orixe:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Orixe:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1614"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destino:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1615"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 ficheiros</translation>
+        <translation type="unfinished">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 ficheiros</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Orixe:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Orixe:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 ficheiros</translation>
+        <translation type="unfinished">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 ficheiros</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2278"/>
         <source>Downloading files, please wait...</source>
-        <translation>Descargando ficheiros, agarde...</translation>
+        <translation type="unfinished">Descargando ficheiros, agarde...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1571"/>
         <location filename="unetbootin.cpp" line="2279"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Orixe:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Orixe:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1572"/>
         <location filename="unetbootin.cpp" line="2280"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2281"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2358"/>
         <location filename="unetbootin.cpp" line="2373"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2</translation>
+        <translation type="unfinished">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2464"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2468"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2653"/>
         <source>%1 not found</source>
-        <translation>%1 non atopado</translation>
+        <translation type="unfinished">%1 non atopado</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2654"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 non atopado. É preciso para instalar en modo  %2.
+        <translation type="unfinished">%1 non atopado. É preciso para instalar en modo  %2.
 Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2942"/>
         <source>(Current)</source>
-        <translation>(Actual)</translation>
+        <translation type="unfinished">(Actual)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2943"/>
         <source>(Done)</source>
-        <translation>(Feito)</translation>
+        <translation type="unfinished">(Feito)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3210"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Configurando grub2 en %1</translation>
+        <translation type="unfinished">Configurando grub2 en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3222"/>
         <source>Configuring grldr on %1</source>
-        <translation>Configurando grldr en %1</translation>
+        <translation type="unfinished">Configurando grldr en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3250"/>
         <source>Configuring grub on %1</source>
-        <translation>Configurando grub en %1</translation>
+        <translation type="unfinished">Configurando grub en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3435"/>
         <source>Installing syslinux to %1</source>
-        <translation>Instalando syslinux en %1</translation>
+        <translation type="unfinished">Instalando syslinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3470"/>
         <source>Installing extlinux to %1</source>
-        <translation>Instalando extlinux en %1</translation>
+        <translation type="unfinished">Instalando extlinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3576"/>
         <source>Syncing filesystems</source>
-        <translation>Sincronizando o sistema de ficheiros</translation>
+        <translation type="unfinished">Sincronizando o sistema de ficheiros</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3588"/>
         <source>After rebooting, select the </source>
-        <translation>Despois de reiniciar, elixa o </translation>
+        <translation type="unfinished">Despois de reiniciar, elixa o </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3592"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
+        <translation type="unfinished">Despois de reiniciar, elixa a opción de arranque desde USB  no menú de arranque da BIOS.%1
 Reiniciar agora?</translation>
     </message>
     <message>
