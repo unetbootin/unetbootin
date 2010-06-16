@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-16 00:52+0000\n"
+"X-Launchpad-Export-Date: 2010-06-15 07:52+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -22,7 +22,7 @@ msgstr "Da sinistra a destra"
 #: unetbootin.cpp:444 unetbootin.cpp:537 unetbootin.cpp:2966
 #: unetbootin.cpp:2979 unetbootin.cpp:3137 unetbootin.cpp:3592
 msgid "Hard Disk"
-msgstr "Disco rigido"
+msgstr "Disco fisso"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:196 unetbootin.cpp:260 unetbootin.cpp:274 unetbootin.cpp:275
@@ -32,7 +32,7 @@ msgstr "Disco rigido"
 #: unetbootin.cpp:2970 unetbootin.cpp:2995 unetbootin.cpp:3141
 #: unetbootin.cpp:3596
 msgid "USB Drive"
-msgstr "Drive USB"
+msgstr "Unità USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:197 unetbootin.cpp:224 unetbootin.cpp:225 unetbootin.cpp:313
@@ -97,9 +97,9 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"E' necessario prima montare il drive USB 1% ad un punto di montaggio. La "
+"E' necessario prima montare l'unità USB 1% ad un punto di montaggio. La "
 "maggior parte delle distribuzioni farà questa operazione automaticamente "
-"dopo che avrete rimosso e reinserito il drive USB."
+"dopo che avrete rimosso e reinserito l'unità USB."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:650
@@ -325,7 +325,7 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
-"%1 non trovato. Questo è necessario per %2 install mode.(new line)\n"
+"%1 non trovato. Questo è necessario per mod installazione %2.\n"
 "Installare il pacchetto \"%3\" o l'equivalente per la tua distribuzione."
 
 #. ts-context unetbootin
@@ -407,10 +407,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
-"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
-"sorgente, «HTTP» come protocollo, inserire «mirrors.kernel.org» come server "
-"e inserire «/centos/%1/os/%2» quando è richiesta la cartella."
+"selezionare 'Indietro' se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione 'Inizia installazione', scegliere 'Rete' come "
+"sorgente, 'HTTP' come protocollo, inserire 'mirrors.kernel.org' come server "
+"e inserire '/centos/%1/os/%2' quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:261
@@ -437,10 +437,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
-"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
-"sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come "
-"server e inserire «/pub/fedora/linux/development/%1/os» quando è richiesta "
+"selezionare 'Indietro' se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione 'Inizia installazione', scegliere 'Rete' come "
+"sorgente, 'HTTP' come protocollo, inserire 'download.fedora.redhat.com' come "
+"server e inserire '/pub/fedora/linux/development/%1/os' quando è richiesta "
 "la cartella."
 
 #. ts-context unetbootin
@@ -455,10 +455,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
-"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
-"sorgente, «HTTP» come protocollo, inserire «download.fedora.redhat.com» come "
-"server e inserire «/pub/fedora/linux/releases/%1/Fedora/%2/os» quando è "
+"selezionare 'Indietro' se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione 'Inizia installazione', scegliere 'Rete' come "
+"sorgente, 'HTTP' come protocollo, inserire 'download.fedora.redhat.com' come "
+"server e inserire '/pub/fedora/linux/releases/%1/Fedora/%2/os' quando è "
 "richiesta la cartella."
 
 #. ts-context unetbootin
@@ -473,10 +473,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
-"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
-"sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come "
-"server e inserire «/factory/repo/oss» quando è richiesta la cartella."
+"selezionare 'Indietro' se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione 'Inizia installazione', scegliere 'Rete' come "
+"sorgente, 'HTTP' come protocollo, inserire 'download.opensuse.org' come "
+"server e inserire '/factory/repo/oss' quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrolst.cpp:711
@@ -490,10 +490,10 @@ msgid ""
 msgstr ""
 "\n"
 "*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d'errore e "
-"selezionare indietro se è richiesto un CD, dopodiché nel menù principale "
-"selezionare l'opzione «Inizia installazione», scegliere «Rete» come "
-"sorgente, «HTTP» come protocollo, inserire «download.opensuse.org» come "
-"server e inserire «/distribution/%1/repo/oss» quando è richiesta la cartella."
+"selezionare 'Indietro' se è richiesto un CD, dopodiché nel menù principale "
+"selezionare l'opzione 'Inizia installazione', scegliere 'Rete' come "
+"sorgente, 'HTTP' come protocollo, inserire 'download.opensuse.org' come "
+"server e inserire '/distribution/%1/repo/oss' quando è richiesta la cartella."
 
 #. ts-context unetbootin
 #: distrover.cpp:22
@@ -523,7 +523,7 @@ msgstr ""
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
 "pzione:</b> Arch Linux è una distribuzione leggera ottimmizzata per la "
 "velocità e la flessibilità.<br/><b>Install Notes:</b> La versione "
-"predefinita permette l'instalalzione attraverso internet (FTP)."
+"predefinita permette l'installazione attraverso internet (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:33
@@ -735,7 +735,7 @@ msgstr ""
 "Attached Storage) ed è basata su FreeBSD.<br/><b>Note installazione:</b>La "
 "versione LiveCD crea un disco RAM per FreeNAS, e usa un floppy formattato "
 "FAT o una unità USB per salvare il file di configurazione. La versione "
-"embedded permette l'instalalzione su disco fisso."
+"embedded permette l'installazione su disco fisso."
 
 #. ts-context unetbootin
 #: distrover.cpp:94
@@ -854,7 +854,7 @@ msgstr ""
 "n:</b> Kubuntu è una distribuzione derivata di Ubuntu basata sul desktop "
 "KDE.<br/><b>Install Notes:</b> La versione Live permette l'avvio in modo "
 "Live, dal quale è possibile avviare opzionalmente l'installazione. La "
-"versione NetInstall permette l'instalalzione via FTP, e può installare "
+"versione NetInstall permette l'installazione via FTP, e può installare "
 "Kubuntu e altre distribuzione derivate ufficiali. Se volete usare un file di "
 "installazione ISO di una distribuzione alternativa (non desktop) pre "
 "scaricata, usare l'opzione HDMedia e copiare il file ISO di installazione "
@@ -1186,7 +1186,7 @@ msgstr ""
 "Debian. E' attualmente la distribuzione Linux desktop più "
 "popolare.<br/><b>Note installazione:</b>La versione Live permette l'avvio in "
 "modo Live, da cui è possibile avviare opzionalmente l'installazione. La "
-"versione NetInstall permette l'instalalzione via FTP, e può installare "
+"versione NetInstall permette l'installazione via FTP, e può installare "
 "Kubuntu e altre distribuzione derivate ufficiali Ubuntu. Se volete usare un "
 "fiel ISO di una distribuzione alternativa (non desktop) pre scaricata, usate "
 "l'opzione HdMedia, e copiate il file ISO dell'installazione alternativa "
@@ -1205,7 +1205,7 @@ msgstr ""
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Descrizione:</b>"
 "xPUD è una distribuzione leggera pensata come semplice utilizzo come chiosco "
 "internet, con un browser web e un riproduttore multimedialer.<br/><b>Note "
-"instalalzione:</b>La versione Live carica interamente il sistema in memroia "
+"installazione:</b>La versione Live carica interamente il sistema in memroia "
 "RAM e si avvia dalla memoria RAM."
 
 #. ts-context unetbootin
@@ -1384,7 +1384,7 @@ msgstr "Unetbootin"
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr "Selezionare da una lista di distribuzioni supportate"
+msgstr "Selezionare una distribuzione dalla lista di quelle supportate"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
@@ -1428,12 +1428,12 @@ msgid ""
 "a standard USB drive.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">(new line)\n"
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">(new line)\n"
-"p, li { white-space: pre-wrap; }(new line)\n"
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">(new line)\n"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
 "weight:600;\">potentially dangerous</span> option will format the selected "
@@ -1498,7 +1498,7 @@ msgstr "Installazione completata, Riavviare"
 #. ts-context unetbootinui
 #: unetbootin.ui:464 unetbootin.ui:483
 msgid "Select the target drive to install to"
-msgstr "Selezionare il disco dove installare"
+msgstr "Selezionare l'unità in cui effettuare l'instalalzione"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:467
@@ -1590,18 +1590,18 @@ msgid ""
 "can lead to system boot issues.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">(new line)\n"
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">(new line)\n"
-"p, li { white-space: pre-wrap; }(new line)\n"
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">(new line)\n"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-"weight:600;\">potentially dangerous</span> option will show all drives in "
-"the drop-down box titled \"Drives\". Enable this only if you know what "
-"you're doing; if you use this option, the installation will likely fail, or "
-"can lead to system boot issues.</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Questa opzione <span style=\" font-"
+"weight:600;\">potenzialmente pericolosa</span> visualizzerà tutte le unità "
+"nella lista a discesa della finestra \"Unità\". Abilitarla solo se si conosce cosa "
+"si sta facendo; se si usa questa opzione, l'installazione facilmente fallirà, o "
+"si potrebbero avere problemi al boot.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:413
@@ -1760,7 +1760,7 @@ msgstr "%1 è attualmente installato. Rimuovere la versione attuale?"
 
 #~ msgctxt "#1"
 #~ msgid "Hard Disk"
-#~ msgstr "Disco rigido"
+#~ msgstr "Disco fisso"
 
 #~ msgctxt "#2"
 #~ msgid "After rebooting, select the "
@@ -1785,7 +1785,7 @@ msgstr "%1 è attualmente installato. Rimuovere la versione attuale?"
 
 #~ msgctxt "unetbootin#32"
 #~ msgid "Hard Disk"
-#~ msgstr "Disco rigido"
+#~ msgstr "Disco disco fisso"
 
 #~ msgctxt "#5"
 #~ msgid "Extracting files, please wait..."
@@ -1856,7 +1856,7 @@ msgstr "%1 è attualmente installato. Rimuovere la versione attuale?"
 #~ "%1 not found. This is required for %2 install mode.\n"
 #~ "Install the \"%3\" package or your distribution's equivalent."
 #~ msgstr ""
-#~ "%1 non trovato. Questo è necessario per %2 install mode.(new line)\n"
+#~ "%1 non trovato. Questo è necessario per mod installazione %2.\n"
 #~ "Installare il pacchetto \"%3\" o l'equivalente per la tua distribuzione."
 
 #~ msgctxt "#22"
@@ -1905,7 +1905,7 @@ msgstr "%1 è attualmente installato. Rimuovere la versione attuale?"
 #~ "e:</b> Elive è una distribuzione basata su Debian con il gestore di finestre "
 #~ "Enlightenment.<br/><b>Note di installazione:</b> La versione Live permette "
 #~ "l'avvio in modalità Live. La versione Unstable (Instabile) non supporta "
-#~ "l'installazione su disco rigido; tuttavia la <a "
+#~ "l'installazione su disco fisso; tuttavia la <a "
 #~ "href=\"http://www.elivecd.org/Download/Stable\">versione Stable "
 #~ "(Stabile)</a> (non scaricabile liberamente) può effettuarla."
 

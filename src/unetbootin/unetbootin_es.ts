@@ -19,144 +19,174 @@ X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>UNetbootin</source>
         <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Distribution</source>
         <translation type="obsolete">Distribución</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Custom</source>
         <translation type="obsolete">Personalizado</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Drive:</source>
         <translation type="obsolete">Unidad:</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Type:</source>
         <translation type="obsolete">Tipo:</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Initrd:</source>
         <translation type="obsolete">Initrd:</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Options:</source>
         <translation type="obsolete">Opciones:</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Hard Disk</source>
         <comment>#1</comment>
         <translation type="obsolete">Disco Duro</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>USB Drive</source>
         <comment>#2</comment>
         <translation type="obsolete">Unidad USB</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>ISO</source>
         <comment>#3</comment>
         <translation type="obsolete">ISO</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Floppy</source>
         <comment>#4</comment>
         <translation type="obsolete">Disquete</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Insert a USB flash drive</source>
         <comment>#5</comment>
         <translation type="obsolete">Inserta un pendrive (unidad USB)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <comment>#6</comment>
         <translation type="obsolete">No se encontró ningun pendrive (unidad USB). Si has introducido ya un pendrive, prueba a reformatearlo como FAT32.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not mounted</source>
         <comment>#7</comment>
         <translation type="obsolete">%1 no está montado</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <comment>#8</comment>
         <translation type="obsolete">Primero debes montar el pendrive: %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quites y vuelvas a insertar el pendrive.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Select a distro</source>
         <comment>#9</comment>
         <translation type="obsolete">Selecciona una distribución</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>You must select a distribution to load.</source>
         <comment>#10</comment>
         <translation type="obsolete">Debes seleccionar una distribución para cargar.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <comment>#16</comment>
         <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <comment>#17</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <comment>#18</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <comment>#19</comment>
         <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 archivos</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <comment>#20</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <comment>#21</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <comment>#22</comment>
         <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 archivos</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <comment>#24</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <comment>#25</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <comment>#26</comment>
         <translation type="obsolete">&lt;b&gt;Descargado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <comment>#27</comment>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found</source>
         <comment>#28</comment>
         <translation type="obsolete">%1 no encontrado</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <comment>#29</comment>
@@ -164,11 +194,13 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the </source>
         <comment>#30</comment>
         <translation type="obsolete">Después de reiniciar, selecciona el </translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <comment>#31</comment>
@@ -176,6 +208,7 @@ Reboot now?</source>
 ¿Reiniciar ahora?</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <comment>@default#1</comment>
@@ -183,6 +216,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <comment>@default#2</comment>
@@ -190,6 +224,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <comment>@default#3</comment>
@@ -197,6 +232,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
         <comment>@default#4</comment>
@@ -204,6 +240,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <comment>@default#5</comment>
@@ -211,20 +248,24 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Uninstallation Complete</source>
         <comment>QObject#1</comment>
         <translation type="obsolete">Desinstalación completa</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>UNetbootin Uninstaller</source>
         <translation type="obsolete">UNetbootin Desinstalador</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the </source>
         <comment>QObject#3</comment>
         <translation type="obsolete">Después de reiniciar, selecciona el </translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <comment>QObject#4</comment>
@@ -232,6 +273,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <comment>QObject#5</comment>
@@ -239,6 +281,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <comment>QObject#6</comment>
@@ -246,6 +289,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
         <comment>QObject#7</comment>
@@ -253,6 +297,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <comment>QObject#8</comment>
@@ -260,101 +305,121 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Must run as root</source>
         <comment>QObject#9</comment>
         <translation type="obsolete">Se debe ejecutar como superusuario (root)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Insert a USB flash drive</source>
         <comment>QObject#10</comment>
         <translation type="obsolete">Inserta un pendrive (unidad USB)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <comment>QObject#11</comment>
         <translation type="obsolete">No se encontró ningun pendrive (unidad USB). Si has introducido ya un pendrive, prueba a reformatearlo como FAT32.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not mounted</source>
         <comment>QObject#12</comment>
         <translation type="obsolete">%1 no está montado</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <comment>QObject#13</comment>
         <translation type="obsolete">Primero debes montar el pendrive: %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quites y vuelvas a insertar el pendrive.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Select a distro</source>
         <comment>QObject#14</comment>
         <translation type="obsolete">Selecciona una distribución</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>You must select a distribution to load.</source>
         <comment>QObject#15</comment>
         <translation type="obsolete">Debes seleccionar una distribución para cargar.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <comment>QObject#21</comment>
         <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <comment>QObject#22</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <comment>QObject#23</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <comment>QObject#24</comment>
         <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 archivos</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <comment>QObject#25</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <comment>QObject#26</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <comment>QObject#27</comment>
         <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 archivos</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <comment>QObject#29</comment>
         <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <comment>QObject#30</comment>
         <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <comment>QObject#31</comment>
         <translation type="obsolete">&lt;b&gt;Descargado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <comment>QObject#32</comment>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found</source>
         <comment>QObject#33</comment>
         <translation type="obsolete">%1 no encontrado</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <comment>QObject#34</comment>
@@ -362,6 +427,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <comment>QObject#35</comment>
@@ -369,68 +435,82 @@ Reboot now?</source>
 ¿Reiniciar ahora?</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Disk Image</source>
         <translation type="obsolete">Imagen de Disco</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Hard Disk</source>
         <comment>unetbootinui#14</comment>
         <translation type="obsolete">Disco Duro</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>USB Drive</source>
         <comment>unetbootinui#15</comment>
         <translation type="obsolete">Unidad USB</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>background-color: transparent;</source>
         <translation type="obsolete">background-color: transparent;</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>ISO</source>
         <comment>unetbootinui#21</comment>
         <translation type="obsolete">ISO</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Floppy</source>
         <comment>unetbootinui#22</comment>
         <translation type="obsolete">Disquete</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>background: transparent;</source>
         <translation type="obsolete">UNetbootin</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Uninstallation Complete</source>
         <comment>uninstaller#1</comment>
         <translation type="obsolete">Desinstalación completa</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Must run as root</source>
         <comment>uninstaller#3</comment>
         <translation type="obsolete">Se debe ejecutar como superusuario (root)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>USB Drive</source>
         <comment>unetbootin#75</comment>
         <translation type="obsolete">Unidad USB</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Hard Disk</source>
         <comment>unetbootin#76</comment>
         <translation type="obsolete">Disco Duro</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Floppy</source>
         <comment>unetbootin#77</comment>
         <translation type="obsolete">Disquete</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>ISO</source>
         <comment>unetbootin#78</comment>
         <translation type="obsolete">ISO</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <comment>unetbootin#83</comment>
@@ -438,6 +518,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <comment>unetbootin#84</comment>
@@ -445,6 +526,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <comment>unetbootin#85</comment>
@@ -452,6 +534,7 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <comment>unetbootin#87</comment>
@@ -459,54 +542,67 @@ Reboot now?</source>
 *IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
         <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Diskimage</source>
         <translation type="obsolete">Imagen de disco</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Show All Drives (Use with Care)</source>
         <translation type="obsolete">Mostrar todas las unidades (usar con cuidado)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Formatear la unidad (borra los datos)</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Debian es una distribución de Linux desarrollada por la comunidad que funciona en una gran variedad de arquitecturas y ofrece un gran repositorio de paquetes.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live arranca en modo directo pudiendo desde el cual se puede lanzar el instalador. La versión Netinstall permite su instalación a partir de FTP.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; BackTrack es una distribución enfocada al análisis de redes y a pruebas de intrusión.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; BackTrack arranca y se ejecuta en modo «live» (directo); no es necesario instalarla para su uso.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Kubuntu es un derivado oficial de Ubuntu con el escritorio KDE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del cual se puede lanzar el instalador. La versión Netinstall permite la instalación a través de FTP, puede instalar también Xubuntu y otros derivados oficiales de Ubuntu.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Arch Linux es una distribución ligera optimizada para velocidad y flexibilidad.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada le permite instalarla por internet (FTP). Si está interesado en una versión LiveUSB vea FaunOS.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt;Super Ubuntu es un derivado no oficial de Ubuntu que incluye software adicional de forma predeterminada. Requiere de una unidad USB de 2 GB.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo desde el que se puede lanzar el instalador.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu es una distribución basada en Debian orientada al usuario. Siendo hoy en día la distribución de Linux para el escritorio más popular.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La versión Live permite arrancar en modo directo. La versión Netinstall permite instalaciones por FTP y puede instalar Kubuntu y otras derivadas oficiales de Ubuntu.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Xubuntu es una derivada oficial de Ubuntu que utiliza el escritorio XFCE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live arranca en modo directo desde el que se puede lanzar el instalador. La versión Netinstall se utiliza para  la instalación a través de FTP y permite la instalación de Kubuntu y otras derivadas oficiales de Ubuntu.</translation>
     </message>
     <message>
+        <location filename="Obsolete_PO_entries"/>
         <source>Kernel:</source>
         <translation type="obsolete">Núcleo:</translation>
     </message>
@@ -522,377 +618,377 @@ Reboot now?</source>
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="189"/>
-        <location filename="unetbootin.cpp" line="271"/>
-        <location filename="unetbootin.cpp" line="272"/>
-        <location filename="unetbootin.cpp" line="339"/>
-        <location filename="unetbootin.cpp" line="438"/>
-        <location filename="unetbootin.cpp" line="531"/>
-        <location filename="unetbootin.cpp" line="2960"/>
-        <location filename="unetbootin.cpp" line="2973"/>
-        <location filename="unetbootin.cpp" line="3131"/>
-        <location filename="unetbootin.cpp" line="3586"/>
+        <location filename="unetbootin.cpp" line="195"/>
+        <location filename="unetbootin.cpp" line="277"/>
+        <location filename="unetbootin.cpp" line="278"/>
+        <location filename="unetbootin.cpp" line="345"/>
+        <location filename="unetbootin.cpp" line="444"/>
+        <location filename="unetbootin.cpp" line="537"/>
+        <location filename="unetbootin.cpp" line="2966"/>
+        <location filename="unetbootin.cpp" line="2979"/>
+        <location filename="unetbootin.cpp" line="3137"/>
+        <location filename="unetbootin.cpp" line="3592"/>
         <source>Hard Disk</source>
         <translation>Disco duro</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="190"/>
-        <location filename="unetbootin.cpp" line="254"/>
-        <location filename="unetbootin.cpp" line="268"/>
-        <location filename="unetbootin.cpp" line="269"/>
-        <location filename="unetbootin.cpp" line="341"/>
-        <location filename="unetbootin.cpp" line="442"/>
-        <location filename="unetbootin.cpp" line="536"/>
-        <location filename="unetbootin.cpp" line="608"/>
-        <location filename="unetbootin.cpp" line="624"/>
-        <location filename="unetbootin.cpp" line="878"/>
-        <location filename="unetbootin.cpp" line="1409"/>
-        <location filename="unetbootin.cpp" line="1471"/>
-        <location filename="unetbootin.cpp" line="2294"/>
-        <location filename="unetbootin.cpp" line="2336"/>
-        <location filename="unetbootin.cpp" line="2964"/>
-        <location filename="unetbootin.cpp" line="2989"/>
-        <location filename="unetbootin.cpp" line="3135"/>
-        <location filename="unetbootin.cpp" line="3590"/>
+        <location filename="unetbootin.cpp" line="196"/>
+        <location filename="unetbootin.cpp" line="260"/>
+        <location filename="unetbootin.cpp" line="274"/>
+        <location filename="unetbootin.cpp" line="275"/>
+        <location filename="unetbootin.cpp" line="347"/>
+        <location filename="unetbootin.cpp" line="448"/>
+        <location filename="unetbootin.cpp" line="542"/>
+        <location filename="unetbootin.cpp" line="614"/>
+        <location filename="unetbootin.cpp" line="630"/>
+        <location filename="unetbootin.cpp" line="884"/>
+        <location filename="unetbootin.cpp" line="1415"/>
+        <location filename="unetbootin.cpp" line="1477"/>
+        <location filename="unetbootin.cpp" line="2300"/>
+        <location filename="unetbootin.cpp" line="2342"/>
+        <location filename="unetbootin.cpp" line="2970"/>
+        <location filename="unetbootin.cpp" line="2995"/>
+        <location filename="unetbootin.cpp" line="3141"/>
+        <location filename="unetbootin.cpp" line="3596"/>
         <source>USB Drive</source>
         <translation>Unidad USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="191"/>
-        <location filename="unetbootin.cpp" line="218"/>
-        <location filename="unetbootin.cpp" line="219"/>
-        <location filename="unetbootin.cpp" line="307"/>
-        <location filename="unetbootin.cpp" line="559"/>
-        <location filename="unetbootin.cpp" line="560"/>
-        <location filename="unetbootin.cpp" line="3037"/>
+        <location filename="unetbootin.cpp" line="197"/>
+        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="225"/>
+        <location filename="unetbootin.cpp" line="313"/>
+        <location filename="unetbootin.cpp" line="565"/>
+        <location filename="unetbootin.cpp" line="566"/>
+        <location filename="unetbootin.cpp" line="3043"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="192"/>
-        <location filename="unetbootin.cpp" line="214"/>
-        <location filename="unetbootin.cpp" line="215"/>
-        <location filename="unetbootin.cpp" line="312"/>
-        <location filename="unetbootin.cpp" line="564"/>
-        <location filename="unetbootin.cpp" line="565"/>
-        <location filename="unetbootin.cpp" line="3029"/>
+        <location filename="unetbootin.cpp" line="198"/>
+        <location filename="unetbootin.cpp" line="220"/>
+        <location filename="unetbootin.cpp" line="221"/>
+        <location filename="unetbootin.cpp" line="318"/>
+        <location filename="unetbootin.cpp" line="570"/>
+        <location filename="unetbootin.cpp" line="571"/>
+        <location filename="unetbootin.cpp" line="3035"/>
         <source>Floppy</source>
         <translation>Disquete</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="232"/>
-        <location filename="unetbootin.cpp" line="236"/>
-        <location filename="unetbootin.cpp" line="240"/>
-        <location filename="unetbootin.cpp" line="244"/>
+        <location filename="unetbootin.cpp" line="238"/>
+        <location filename="unetbootin.cpp" line="242"/>
+        <location filename="unetbootin.cpp" line="246"/>
         <location filename="unetbootin.cpp" line="250"/>
-        <location filename="unetbootin.cpp" line="262"/>
+        <location filename="unetbootin.cpp" line="256"/>
+        <location filename="unetbootin.cpp" line="268"/>
         <source>either</source>
         <translation>cualquiera</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="556"/>
+        <location filename="unetbootin.cpp" line="562"/>
         <source>Open Disk Image File</source>
         <translation>Abrir el archivo de imagen de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="574"/>
+        <location filename="unetbootin.cpp" line="580"/>
         <source>Open Kernel File</source>
         <translation>Abrir el archivo del núcleo</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="588"/>
         <source>Open Initrd File</source>
         <translation>Abrir el archivo initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="590"/>
+        <location filename="unetbootin.cpp" line="596"/>
         <source>Open Bootloader Config File</source>
         <translation>Abrir el archivo de configuración del cargador de arranque</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="612"/>
+        <location filename="unetbootin.cpp" line="618"/>
         <source>Insert a USB flash drive</source>
         <translation>Inserte una unidad flash USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="613"/>
+        <location filename="unetbootin.cpp" line="619"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>No se encontró ninguna unidad USB. Si ha insertado ya una unidad USB, pruebe a formatearlo como FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="628"/>
+        <location filename="unetbootin.cpp" line="634"/>
         <source>%1 not mounted</source>
         <translation>%1 no está montado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="629"/>
+        <location filename="unetbootin.cpp" line="635"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Primero debe montar la unidad USB %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quite y vuelva a insertar la unidad USB.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="644"/>
+        <location filename="unetbootin.cpp" line="650"/>
         <source>Select a distro</source>
         <translation>Seleccione una distribución</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="645"/>
+        <location filename="unetbootin.cpp" line="651"/>
         <source>You must select a distribution to load.</source>
         <translation>Debe seleccionar una distribución para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="659"/>
+        <location filename="unetbootin.cpp" line="665"/>
         <source>Select a disk image file</source>
         <translation>Seleccione un archivo de imagen de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="660"/>
+        <location filename="unetbootin.cpp" line="666"/>
         <source>You must select a disk image file to load.</source>
         <translation>Debe seleccionar un archivo de imagen de disco para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="674"/>
+        <location filename="unetbootin.cpp" line="680"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Seleccione un núcleo o un archivo initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="675"/>
+        <location filename="unetbootin.cpp" line="681"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Debe seleccionar un núcleo o un archivo initrd para cargar.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="689"/>
+        <location filename="unetbootin.cpp" line="695"/>
         <source>Diskimage file not found</source>
         <translation>Non se encuentra el archivo de imagen de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="690"/>
+        <location filename="unetbootin.cpp" line="696"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>El archivo de imagen de disco %1 no existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="710"/>
         <source>Kernel file not found</source>
         <translation>No se encuentra el archivo de núcleo</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="705"/>
+        <location filename="unetbootin.cpp" line="711"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>El archivo de núcleo %1 no existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="719"/>
+        <location filename="unetbootin.cpp" line="725"/>
         <source>Initrd file not found</source>
         <translation>No se encuentra el archivo initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="720"/>
+        <location filename="unetbootin.cpp" line="726"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>El archivo initrd %1 no existe.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="824"/>
+        <location filename="unetbootin.cpp" line="830"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 ya existe, ¿sobreescribirlo?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="825"/>
+        <location filename="unetbootin.cpp" line="831"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>El archivo %1 ya existe. Prulse «Si a todo» para sobreescribirlo y que no sea solicitado de nuevo, «Si» para sobreescribir los archivos de forma individual, y «No» para conservar la versión existente. En caso de duda, pulse «Si a todo».</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="851"/>
+        <location filename="unetbootin.cpp" line="857"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>%1 no dispone de espacio, ¿cancelar la instalación?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="852"/>
+        <location filename="unetbootin.cpp" line="858"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>El directorio %1 no dispone de espacio. Pulse «Sí» para interrumpir la instalación, «No» para ignorar este error y tratar de continuar la instalación, y «No a todos» para hacer caso omiso de todos los mensajes de error sobre el espacio disponible.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="946"/>
+        <location filename="unetbootin.cpp" line="952"/>
         <source>Locating kernel file in %1</source>
         <translation>Ubicando archivo del kernel en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="987"/>
+        <location filename="unetbootin.cpp" line="993"/>
         <source>Copying kernel file from %1</source>
         <translation>Copiando el archivo del kernel desde %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="993"/>
+        <location filename="unetbootin.cpp" line="999"/>
         <source>Locating initrd file in %1</source>
         <translation>Ubicando archivo initrd en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1034"/>
+        <location filename="unetbootin.cpp" line="1040"/>
         <source>Copying initrd file from %1</source>
         <translation>Copiando archivo initrd desde %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1040"/>
-        <location filename="unetbootin.cpp" line="1100"/>
+        <location filename="unetbootin.cpp" line="1046"/>
+        <location filename="unetbootin.cpp" line="1106"/>
         <source>Extracting bootloader configuration</source>
         <translation>Extrayendo configuración del cargador de inicio (bootloader)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1315"/>
-        <location filename="unetbootin.cpp" line="1341"/>
+        <location filename="unetbootin.cpp" line="1321"/>
+        <location filename="unetbootin.cpp" line="1347"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Extrayendo iso comprimida:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1570"/>
+        <location filename="unetbootin.cpp" line="1576"/>
         <source>Copying file, please wait...</source>
         <translation>Copiando archivo, por favor, espere...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1573"/>
+        <location filename="unetbootin.cpp" line="1579"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Copiado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2388"/>
+        <location filename="unetbootin.cpp" line="2394"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Copiado:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1611"/>
+        <location filename="unetbootin.cpp" line="1617"/>
         <source>Extracting files, please wait...</source>
         <translation>Extrayendo archivos, por favor espere...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1612"/>
+        <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1613"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1614"/>
+        <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1615"/>
+        <location filename="unetbootin.cpp" line="1621"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Extraídos:&lt;/b&gt; 0 de %1 archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1618"/>
+        <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1619"/>
+        <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1620"/>
+        <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Extraídos:&lt;/b&gt; %1 de %2 archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2278"/>
+        <location filename="unetbootin.cpp" line="2284"/>
         <source>Downloading files, please wait...</source>
         <translation>Descargando archivos, por favor espere...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1571"/>
-        <location filename="unetbootin.cpp" line="2279"/>
+        <location filename="unetbootin.cpp" line="1577"/>
+        <location filename="unetbootin.cpp" line="2285"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1572"/>
-        <location filename="unetbootin.cpp" line="2280"/>
+        <location filename="unetbootin.cpp" line="1578"/>
+        <location filename="unetbootin.cpp" line="2286"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2281"/>
+        <location filename="unetbootin.cpp" line="2287"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2358"/>
-        <location filename="unetbootin.cpp" line="2373"/>
+        <location filename="unetbootin.cpp" line="2364"/>
+        <location filename="unetbootin.cpp" line="2379"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Descargado(s):&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2464"/>
+        <location filename="unetbootin.cpp" line="2470"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2468"/>
+        <location filename="unetbootin.cpp" line="2474"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2653"/>
+        <location filename="unetbootin.cpp" line="2659"/>
         <source>%1 not found</source>
         <translation>%1 no encontrado</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2654"/>
+        <location filename="unetbootin.cpp" line="2660"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 no encontrado. Es necesario para el modo de instalación %2.
 Instala el paquete «%3» o el equivalente en tu distribución.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2942"/>
+        <location filename="unetbootin.cpp" line="2948"/>
         <source>(Current)</source>
         <translation>(Actual)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2943"/>
+        <location filename="unetbootin.cpp" line="2949"/>
         <source>(Done)</source>
         <translation>(Hecho)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3210"/>
+        <location filename="unetbootin.cpp" line="3216"/>
         <source>Configuring grub2 on %1</source>
         <translation>Configurando grub2 en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3222"/>
+        <location filename="unetbootin.cpp" line="3228"/>
         <source>Configuring grldr on %1</source>
         <translation>Configurando grldr en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3250"/>
+        <location filename="unetbootin.cpp" line="3256"/>
         <source>Configuring grub on %1</source>
         <translation>Configurando grub en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3435"/>
+        <location filename="unetbootin.cpp" line="3441"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3470"/>
+        <location filename="unetbootin.cpp" line="3476"/>
         <source>Installing extlinux to %1</source>
         <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3576"/>
+        <location filename="unetbootin.cpp" line="3582"/>
         <source>Syncing filesystems</source>
         <translation>Sincronizando el sistema de archivos</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3588"/>
+        <location filename="unetbootin.cpp" line="3594"/>
         <source>After rebooting, select the </source>
         <translation>Después de reiniciar, seleccione el </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3592"/>
+        <location filename="unetbootin.cpp" line="3598"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la BIOS.%1
