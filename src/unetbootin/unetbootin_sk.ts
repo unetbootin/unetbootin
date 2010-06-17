@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-06-03 14:25-0700
+POT-Creation-Date: 2010-06-15 21:03-0700
 PO-Revision-Date: 2010-01-29 07:58+0000
 Last-Translator: UNetbootin Team &lt;Unknown&gt;
 Language-Team: Slovak &lt;sk@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-16 00:52+0000
+X-Launchpad-Export-Date: 2010-06-17 00:56+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -170,7 +170,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="582"/>
         <location filename="unetbootin.cpp" line="590"/>
         <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="574"/>
@@ -527,13 +527,13 @@ Reštartovať teraz?</translation>
         <location filename="distrover.cpp" line="21"/>
         <location filename="unetbootin.cpp" line="640"/>
         <source>== Select Distribution ==</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <location filename="distrover.cpp" line="25"/>
         <source>== Select Version ==</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-03 14:25-0700
-PO-Revision-Date: 2010-06-15 14:57+0000
-Last-Translator: Yuri Efremov &lt;yur.arh@gmail.com&gt;
+POT-Creation-Date: 2010-06-15 21:03-0700
+PO-Revision-Date: 2010-06-16 16:53+0000
+Last-Translator: Sergey Sedov &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-16 00:52+0000
+X-Launchpad-Export-Date: 2010-06-17 00:56+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -309,7 +309,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="582"/>
         <location filename="unetbootin.cpp" line="590"/>
         <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Все файлы (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="574"/>
@@ -434,7 +434,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="987"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Копирование ядра из %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="993"/>
@@ -444,13 +444,13 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1034"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Копирование файла initrd из %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1040"/>
         <location filename="unetbootin.cpp" line="1100"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Извлечение конфигурации загрузчика</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1315"/>
@@ -668,13 +668,13 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="21"/>
         <location filename="unetbootin.cpp" line="640"/>
         <source>== Select Distribution ==</source>
-        <translation type="unfinished"></translation>
+        <translation>== Выберите дистрибутив ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <location filename="distrover.cpp" line="25"/>
         <source>== Select Version ==</source>
-        <translation type="unfinished"></translation>
+        <translation>== Выберите версию ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>

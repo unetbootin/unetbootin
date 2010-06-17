@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-03 14:25-0700
+POT-Creation-Date: 2010-06-15 21:03-0700
 PO-Revision-Date: 2010-05-01 21:04+0000
 Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-16 00:52+0000
+X-Launchpad-Export-Date: 2010-06-17 00:56+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -331,7 +331,7 @@ Omstart nå?</translation>
         <location filename="unetbootin.cpp" line="582"/>
         <location filename="unetbootin.cpp" line="590"/>
         <source>All Files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="574"/>
@@ -690,13 +690,13 @@ Omstart nå?</translation>
         <location filename="distrover.cpp" line="21"/>
         <location filename="unetbootin.cpp" line="640"/>
         <source>== Select Distribution ==</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <location filename="distrover.cpp" line="25"/>
         <source>== Select Version ==</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
