@@ -190,17 +190,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	typeselect->addItem(tr("USB Drive"));
 	diskimagetypeselect->addItem(tr("ISO"));
 	diskimagetypeselect->addItem(tr("Floppy"));
-	#ifdef NOMANUAL
-	optionslayer->setEnabled(true);
-	optionslayer->show();
-	//customlayer->setEnabled(false);
-	//customlayer->hide();
-	radioManual->setEnabled(false);
-	radioManual->hide();
-	//diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
-	radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
-	intromessage->resize(intromessage->width(), intromessage->height() + 80);
-	#endif
+	bool hideCustom = true;
 	#ifdef NOEXTERN
 	optionslayer->setEnabled(false);
 	optionslayer->hide();
@@ -348,17 +338,11 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				this->driveselect->setCurrentIndex(driveidx);
 			}
 		}
-		else if (pfirst.contains("nocustom", Qt::CaseInsensitive))
+		else if (pfirst.contains("showcustom", Qt::CaseInsensitive))
 		{
 			if (psecond.contains('y', Qt::CaseInsensitive))
 			{
-				//customlayer->setEnabled(false);
-				//customlayer->hide();
-				radioManual->setEnabled(false);
-				radioManual->hide();
-				//diskimagelayer->move(diskimagelayer->x(), diskimagelayer->y() + 80);
-				radioFloppy->move(radioFloppy->x(), radioFloppy->y() + 80);
-				intromessage->resize(intromessage->width(), intromessage->height() + 80);
+				hideCustom = false;
 			}
 		}
 		else if (pfirst.contains("nodistro", Qt::CaseInsensitive))
@@ -384,6 +368,34 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 			if (psecond.contains('y', Qt::CaseInsensitive))
 				return true;
 		}
+	}
+	if (hideCustom)
+	{
+		radioManual->setEnabled(false);
+		radioManual->hide();
+		labelkernel->setEnabled(false);
+		labelkernel->hide();
+		labelinitrd->setEnabled(false);
+		labelinitrd->hide();
+		labeloption->setEnabled(false);
+		labeloption->hide();
+		KernelFileSelector->setEnabled(false);
+		KernelFileSelector->hide();
+		InitrdFileSelector->setEnabled(false);
+		InitrdFileSelector->hide();
+		CfgFileSelector->setEnabled(false);
+		CfgFileSelector->hide();
+		OptionEnter->setEnabled(false);
+		OptionEnter->hide();
+		KernelPath->setEnabled(false);
+		KernelPath->hide();
+		InitrdPath->setEnabled(false);
+		InitrdPath->hide();
+		KernelFileSelector->setEnabled(false);
+		KernelFileSelector->hide();
+		InitrdFileSelector->setEnabled(false);
+		InitrdFileSelector->hide();
+		gridLayout_2->removeItem(verticalSpacer);
 	}
 	return false;
 }
