@@ -395,7 +395,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		KernelFileSelector->hide();
 		InitrdFileSelector->setEnabled(false);
 		InitrdFileSelector->hide();
-		gridLayout_2->removeItem(verticalSpacer);
+		radioLayout->removeItem(verticalSpacer);
 	}
 	return false;
 }

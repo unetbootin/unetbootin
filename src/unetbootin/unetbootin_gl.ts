@@ -839,27 +839,27 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
         <translation>&amp;Distribución</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="127"/>
+        <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
         <translation>Indique o ficheiro de imaxe de disco a cargar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="130"/>
+        <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
         <translation>&amp;Imaxe de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="378"/>
+        <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
         <translation>Indicar manualmente o kernel e o initrd a cargar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="381"/>
+        <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
         <translation>&amp;Personalizado</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="420"/>
+        <location filename="unetbootin.ui" line="428"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -871,79 +871,79 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; formatara a unidade escollida, borrando todos os datos que nela existan. Esta opción non debería ser precisa se vostede está a utilizar unha unidade USB estándar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="427"/>
+        <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
         <translation>&amp;Formatar unidade (destrúe os datos)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="490"/>
+        <location filename="unetbootin.ui" line="498"/>
         <source>OK</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="493"/>
+        <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
         <translation>Volver</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="500"/>
+        <location filename="unetbootin.ui" line="508"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="503"/>
+        <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
         <translation>Escape</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="548"/>
+        <location filename="unetbootin.ui" line="556"/>
         <source>Reboot Now</source>
         <translation>Reiniciar agora</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="555"/>
+        <location filename="unetbootin.ui" line="563"/>
         <source>Exit</source>
         <translation>Saír</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="647"/>
+        <location filename="unetbootin.ui" line="655"/>
         <source>1. Downloading Files</source>
         <translation>1. Descargando os ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="654"/>
+        <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
         <translation>2. Extraendo e copiando os ficheiros</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="661"/>
+        <location filename="unetbootin.ui" line="669"/>
         <source>3. Installing Bootloader</source>
         <translation>3. Instalando o cargador de arranque</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="668"/>
+        <location filename="unetbootin.ui" line="676"/>
         <source>4. Installation Complete, Reboot</source>
         <translation>4. Completouse a instalación, reinicie</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="464"/>
-        <location filename="unetbootin.ui" line="483"/>
+        <location filename="unetbootin.ui" line="472"/>
+        <location filename="unetbootin.ui" line="491"/>
         <source>Select the target drive to install to</source>
         <translation>Escolla a unidade de destino onde instalar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="467"/>
+        <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
         <translation>&amp;Unidade:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="438"/>
-        <location filename="unetbootin.ui" line="457"/>
+        <location filename="unetbootin.ui" line="446"/>
+        <location filename="unetbootin.ui" line="465"/>
         <source>Select the installation target type</source>
         <translation>Escolla o tipo de instalación de destino</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="441"/>
+        <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
         <translation>&amp;Tipo:</translation>
     </message>
@@ -953,63 +953,63 @@ p, li { white-space: pre-wrap; }
         <translation>Escolla a versión da distribución</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="307"/>
+        <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
         <translation>Escolla o ficheiro de imaxe de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="246"/>
-        <location filename="unetbootin.ui" line="310"/>
-        <location filename="unetbootin.ui" line="335"/>
-        <location filename="unetbootin.ui" line="360"/>
+        <location filename="unetbootin.ui" line="286"/>
+        <location filename="unetbootin.ui" line="350"/>
+        <location filename="unetbootin.ui" line="375"/>
+        <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="148"/>
+        <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
         <translation>Escolla o tipo de imaxe de disco</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="203"/>
+        <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
         <translation>Indique unha imaxe de disquete/disco ríxido, ou un ficheiro de imaxe de CD (ISO) a cargar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="167"/>
-        <location filename="unetbootin.ui" line="218"/>
+        <location filename="unetbootin.ui" line="207"/>
+        <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
         <translation>Indique o ficheiro de kernel a cargar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="243"/>
+        <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
         <translation>Escolla o ficheiro de kernel</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="253"/>
-        <location filename="unetbootin.ui" line="272"/>
+        <location filename="unetbootin.ui" line="293"/>
+        <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
         <translation>Indique un ficheiro initrd a cargar</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="332"/>
+        <location filename="unetbootin.ui" line="372"/>
         <source>Select initrd file</source>
         <translation>Escolla o ficheiro initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="357"/>
+        <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
         <translation>Escolla o ficheiro syslinux.cfg ou isolinux.cfg</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="186"/>
-        <location filename="unetbootin.ui" line="281"/>
+        <location filename="unetbootin.ui" line="226"/>
+        <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Indique os parametros e opcións a pasar ao kernel</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="406"/>
+        <location filename="unetbootin.ui" line="414"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1022,22 +1022,22 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; amosará todas as unidades no cadro desplegable titulado «Unidade». Active esta opción só si sabe o que está a facer, se usa esta opción a instalación pode fallar ou crear problemas de arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="413"/>
+        <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
         <translation>Mostrar &amp;todas as unidades (Usar con xeito)</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="170"/>
+        <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
         <translation>&amp;Núcleo:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="256"/>
+        <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
         <translation>Init&amp;rd:</translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="189"/>
+        <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
         <translation>&amp;Opcións:</translation>
     </message>

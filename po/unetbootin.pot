@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-20 14:11-0700\n"
+"POT-Creation-Date: 2010-06-20 14:57-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1178,33 +1178,33 @@ msgid "&Distribution"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:127
+#: unetbootin.ui:131
 #, fuzzy
 msgid "Specify a disk image file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:130
+#: unetbootin.ui:134
 #, fuzzy
 #| msgid "Diskimage"
 msgid "Disk&image"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:378
+#: unetbootin.ui:147
 #, fuzzy
 msgid "Manually specify a kernel and initrd to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:381
+#: unetbootin.ui:150
 #, fuzzy
 #| msgid "Custom"
 msgid "&Custom"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:420
+#: unetbootin.ui:428
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1222,91 +1222,91 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:427
+#: unetbootin.ui:435
 #, fuzzy
 msgid "&Format Drive (Wipes Out Data)"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:490
+#: unetbootin.ui:498
 #, fuzzy
 msgid "OK"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:493
+#: unetbootin.ui:501
 #, fuzzy
 msgid "Return"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:500
+#: unetbootin.ui:508
 #, fuzzy
 msgid "Cancel"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:503
+#: unetbootin.ui:511
 #, fuzzy
 msgid "Esc"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:548
+#: unetbootin.ui:556
 #, fuzzy
 msgid "Reboot Now"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:555
+#: unetbootin.ui:563
 #, fuzzy
 msgid "Exit"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:647
+#: unetbootin.ui:655
 #, fuzzy
 msgid "1. Downloading Files"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:654
+#: unetbootin.ui:662
 #, fuzzy
 msgid "2. Extracting and Copying Files"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:661
+#: unetbootin.ui:669
 #, fuzzy
 msgid "3. Installing Bootloader"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:668
+#: unetbootin.ui:676
 #, fuzzy
 msgid "4. Installation Complete, Reboot"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:464 unetbootin.ui:483
+#: unetbootin.ui:472 unetbootin.ui:491
 #, fuzzy
 msgid "Select the target drive to install to"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:467
+#: unetbootin.ui:475
 #, fuzzy
 msgid "Dri&ve:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:438 unetbootin.ui:457
+#: unetbootin.ui:446 unetbootin.ui:465
 #, fuzzy
 msgid "Select the installation target type"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:441
+#: unetbootin.ui:449
 #, fuzzy
 msgid "&Type:"
 msgstr ""
@@ -1318,67 +1318,67 @@ msgid "Select the distribution version"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:307
+#: unetbootin.ui:347
 #, fuzzy
 msgid "Select disk image file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
+#: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 #, fuzzy
 msgid "..."
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:148
+#: unetbootin.ui:188
 #, fuzzy
 msgid "Select the disk image type"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:203
+#: unetbootin.ui:243
 #, fuzzy
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:167 unetbootin.ui:218
+#: unetbootin.ui:207 unetbootin.ui:258
 #, fuzzy
 msgid "Specify a kernel file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:243
+#: unetbootin.ui:283
 #, fuzzy
 msgid "Select kernel file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:253 unetbootin.ui:272
+#: unetbootin.ui:293 unetbootin.ui:312
 #, fuzzy
 msgid "Specify an initrd file to load"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:332
+#: unetbootin.ui:372
 #, fuzzy
 msgid "Select initrd file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:357
+#: unetbootin.ui:397
 #, fuzzy
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:186 unetbootin.ui:281
+#: unetbootin.ui:226 unetbootin.ui:321
 #, fuzzy
 msgid "Specify parameters and options to pass to the kernel"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:406
+#: unetbootin.ui:414
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1397,25 +1397,25 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:413
+#: unetbootin.ui:421
 #, fuzzy
 msgid "Show &All Drives (Use with Care)"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:170
+#: unetbootin.ui:210
 #, fuzzy
 msgid "&Kernel:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:256
+#: unetbootin.ui:296
 #, fuzzy
 msgid "Init&rd:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:189
+#: unetbootin.ui:229
 #, fuzzy
 msgid "&Options:"
 msgstr ""
