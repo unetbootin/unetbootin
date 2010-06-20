@@ -72,6 +72,14 @@ unetbootin::tr("<img src=\":/gnewsense.png\" /><br/>"
 	"<b>Install Notes:</b> Make sure install media is empty and formatted before proceeding with install.") <<
 "deltah-2.1"));
 #endif
+#ifdef NIMBLEX
+distroselect->addItem("NimbleX", (QStringList() << "Latest_Live" <<
+unetbootin::tr("<img src=\":/nimblex.png\" /><br/>"
+	"<b>Homepage:</b> <a href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/>"
+	"<b>Description:</b> NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.<br/>"
+	"<b>Install Notes:</b> NimbleX boots in Live mode.") <<
+"Latest_Live"));
+#endif
 #ifdef SLITAZ
 distroselect->addItem("SliTaz", (QStringList() << "Stable" <<
 unetbootin::tr("<img src=\":/slitaz.png\" /><br/>"

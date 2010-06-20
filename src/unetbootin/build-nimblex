@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
+rvern="$(./vcs-revno)"
+make clean
+rm Makefile*
+rm release/*
+lupdate-qt4 unetbootin.pro
+lrelease-qt4 unetbootin.pro
+./qmake-windows "DEFINES += NIMBLEX" "RESOURCES += unetbootin-nimblex.qrc"
+make
+$mingwb-strip --strip-all release/unetbootin.exe
+mv release/unetbootin.exe release/unetbootin-nimblex-windows-$rvern.exe
+./upx --lzma release/unetbootin-nimblex-windows-$rvern.exe
+./qmake-linux "DEFINES += NIMBLEX" "RESOURCES += unetbootin-nimblex.qrc"
+make
+$mingwb-strip --strip-all unetbootin
+mv unetbootin release/unetbootin-nimblex-linux-$rvern
+./upx --lzma release/unetbootin-nimblex-linux-$rvern
+qmake-qt4 -spec linux-g++-32 "RESOURCES += unetbootin-linux.qrc"
+

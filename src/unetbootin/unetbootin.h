@@ -71,6 +71,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 //#define USBINSTALL
 #endif
 
+#ifdef NIMBLEX
+#define UNETBOOTINB "NimbleX Installer"
+#define NOMANUAL
+#define NOFLOPPY
+//#define USBINSTALL
+#endif
+
 #ifdef SLITAZ
 #define UNETBOOTINB "SliTaz Installer"
 #define NOMANUAL

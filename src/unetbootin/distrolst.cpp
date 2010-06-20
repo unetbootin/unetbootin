@@ -108,6 +108,15 @@ if (nameDistro == "Kiwi Linux")
 
 #endif
 
+#ifdef NIMBLEX
+
+if (nameDistro == "NimbleX")
+{
+	downloadfile("http://public.nimblex.net/Download/NimbleX-latest.iso", isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
+#endif
 
 #ifdef SLITAZ
 
