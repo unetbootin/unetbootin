@@ -156,6 +156,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.n
 	"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
 	"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") <<
 "4.0"));
+distroselect->addItem("NimbleX", (QStringList() << "Latest_Live" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/>"
+	"<b>Description:</b> NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.<br/>"
+	"<b>Install Notes:</b> NimbleX boots in Live mode.") <<
+"Latest_Live"));
 distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/>"
 	"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"

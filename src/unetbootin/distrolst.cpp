@@ -674,6 +674,12 @@ if (nameDistro == "NetBSD")
 	initrdLoc = "";
 }
 
+if (nameDistro == "NimbleX")
+{
+	downloadfile("http://public.nimblex.net/Download/NimbleX-latest.iso", isotmpf);
+	extractiso(isotmpf, targetPath);
+}
+
 if (nameDistro == "NTPasswd")
 {
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/ntpasswd-%1-kernel").arg(relname), QString("%1ubnkern").arg(targetPath));

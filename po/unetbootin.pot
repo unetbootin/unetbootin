@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-20 13:18-0700\n"
+"POT-Creation-Date: 2010-06-20 14:11-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -496,7 +496,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:705
+#: distrolst.cpp:711
 #, fuzzy
 msgid ""
 "\n"
@@ -508,7 +508,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:711
+#: distrolst.cpp:717
 #, fuzzy
 msgid ""
 "\n"
@@ -852,6 +852,26 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:160
 #, fuzzy
+#| msgid ""
+#| "<b>Homepage:</b> <a "
+#| "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Description:</b> "
+#| "NimbleX is a small, lightweight Slackware-based distribution featuring "
+#| "the KDE desktop. It is able to boot from CD or flash memory (USB pens or "
+#| "MP3 players), and can easily be customized.<br/><b>Install Notes:</b> "
+#| "NimbleX boots in Live mode."
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Description:</b> "
+"NimbleX is a small, versatile Slackware-based distribution. It is built "
+"using the linux-live scripts, and features the KDE desktop. It can be booted "
+"from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:165
+#, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> "
@@ -861,7 +881,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:165
+#: distrover.cpp:170
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -873,7 +893,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:170
+#: distrover.cpp:175
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -883,7 +903,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:175
+#: distrover.cpp:180
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -895,7 +915,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:180
+#: distrover.cpp:185
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -906,7 +926,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:185
+#: distrover.cpp:190
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -918,7 +938,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:190
+#: distrover.cpp:195
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -931,7 +951,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:195
+#: distrover.cpp:200
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -942,7 +962,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:200
+#: distrover.cpp:205
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -953,7 +973,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:205
+#: distrover.cpp:210
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -964,7 +984,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:210 distrovercust.cpp:12
+#: distrover.cpp:215 distrovercust.cpp:12
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -975,7 +995,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:215
+#: distrover.cpp:220
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -987,7 +1007,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:220
+#: distrover.cpp:225
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -998,7 +1018,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:225
+#: distrover.cpp:230
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1014,7 +1034,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:230
+#: distrover.cpp:235
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1025,7 +1045,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:235
+#: distrover.cpp:240
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1041,7 +1061,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:240
+#: distrover.cpp:245
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
