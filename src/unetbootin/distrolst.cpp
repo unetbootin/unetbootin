@@ -855,8 +855,8 @@ if (nameDistro == "Super OS")
 if (nameDistro == "SystemRescueCD")
 {
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"ftp://ftp.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/sy/systemrescuecd/" <<
-	"http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/sy/systemrescuecd/"
+	"ftp://ftp.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/project/sy/systemrescuecd/" <<
+	"http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/project/sy/systemrescuecd/"
 	, 9440000, 1147483647, QList<QRegExp>() << 
 	QRegExp("systemrescuecd\\S{0,}.iso$", Qt::CaseInsensitive) << 
 	QRegExp("x86", Qt::CaseInsensitive) <<
