@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fo_FO">
+<TS version="2.0" language="am_ET">
 <context>
     <name></name>
     <message>
         <source></source>
-        <translatorcomment>Faroese translation for unetbootin
+        <translatorcomment>Amharic translation for unetbootin
 Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 This file is distributed under the same license as the unetbootin package.
 FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
@@ -14,9 +14,9 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-05-01 21:03+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
-Language-Team: Faroese &lt;fo@li.org&gt;
+PO-Revision-Date: 2010-06-20 17:12+0000
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: Amharic &lt;am@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -30,7 +30,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation>Vinstru til høgru</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="3144"/>
         <location filename="unetbootin.cpp" line="3599"/>
         <source>Hard Disk</source>
-        <translation>Harðdiskur</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -69,7 +69,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="3148"/>
         <location filename="unetbootin.cpp" line="3603"/>
         <source>USB Drive</source>
-        <translation>Geymi</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="191"/>
@@ -80,7 +80,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="572"/>
         <location filename="unetbootin.cpp" line="3050"/>
         <source>ISO</source>
-        <translation>ISO</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="192"/>
@@ -91,7 +91,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="577"/>
         <location filename="unetbootin.cpp" line="3042"/>
         <source>Floppy</source>
-        <translation>Diskil</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="222"/>
@@ -101,12 +101,12 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="240"/>
         <location filename="unetbootin.cpp" line="252"/>
         <source>either</source>
-        <translation>annahvørt</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>Open Disk Image File</source>
-        <translation>Lat upp diskmyndafílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
@@ -119,117 +119,117 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <source>Open Kernel File</source>
-        <translation>Lat upp kjarnufílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation>Lat upp Initrd fílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
         <source>Open Bootloader Config File</source>
-        <translation>Lat upp byrjunarløðara samansetingafílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>Set inn ein geyma</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Eingin geymi funnin. Um tú longu hevur sett ein geyma inn, royn at endursniða hann sum FAT32.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
         <source>%1 not mounted</source>
-        <translation>%1 ikki ísett</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Tú mást fyrst seta geyman í %1 eitt ísetingastað. Tær flestu linux útgávurnar gerða hetta sjálvvirknar, eftir at tú tekur geyman út og setur hann inn aftur.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
         <source>Select a distro</source>
-        <translation>Vel ein linux útgávu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
         <source>You must select a distribution to load.</source>
-        <translation>Tú mást velja eina linux útgávu at løða.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="671"/>
         <source>Select a disk image file</source>
-        <translation>Vel eina diskmyndafílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="672"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Tú mást velja eina diskmyndafílu at løða.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Vel ein kjarna og/ella initrd fílu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Tú mást velja ein kjarna og/ella initrd fílu at løða.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
         <source>Diskimage file not found</source>
-        <translation>Diskmyndafíla ikki funnin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="702"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Tann tilskilaða diskmyndafílan %1 finnst ikki.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="716"/>
         <source>Kernel file not found</source>
-        <translation>Kjarnufíla ikki funnin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Tann tilskilaða kjarnufílan %1 finnst ikki.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="731"/>
         <source>Initrd file not found</source>
-        <translation>Initrd fílan er ikki funnin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="732"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Tann tilskilaða initrd fían %1 finnst ikki.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="836"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 finnst, skriva omaná?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Fílan %1 finnst longu. Trýst &apos;Ja til alt&apos; fyri at skriva omaná, og ikki verða ámint/ur aftur, &apos;Ja&apos; fyri at skriva omaná fílur á einum einstøkum føri, og &apos;Nei&apos; fyri at varveita núverandi útgávu. Er tú í iva, trýst &apos;Ja til alt&apos;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 hevur ikki pláss, gevst við innlegging?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Fíluskráin %1 hevur ikki pláss. Trýst &apos;Ja&apos; fyri at gevast við innlegging. &apos;Nei&apos; fyri at síggja burtur frá hesari villu, og royna at halda á við innlegging; og &apos;Nei til allt&apos; fyri at síggja burtur frá øllum pláss-trots-villum.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
@@ -261,7 +261,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Pakki út stappaða iso:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
@@ -281,85 +281,85 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>Pakki út fílur, vinarliga bíða...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Skjalasavn:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Kelda:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Útpakkað:&lt;/b&gt; 0 of %1 fílur</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Kelda:&lt;/b&gt; %1 (%2)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1%2</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Útpakkað:&lt;/b&gt; %1 of %2 fílur</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2290"/>
         <source>Downloading files, please wait...</source>
-        <translation>Niðurtaki fílur, vinarliga bíða...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2291"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Kelda:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2292"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Móttøkustaður:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2293"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Niðurtikið:&lt;/b&gt; 0 bytes</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2370"/>
         <location filename="unetbootin.cpp" line="2385"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Niðurtikið:&lt;/b&gt; %1 of %2</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2476"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Leiti í &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2480"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 samsvar í &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2665"/>
         <source>%1 not found</source>
-        <translation>%1 ikki funnin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2666"/>
@@ -370,53 +370,53 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="2955"/>
         <source>(Current)</source>
-        <translation>(Núverandi)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2956"/>
         <source>(Done)</source>
-        <translation>(Liðugt)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3223"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Samanseti grub2 á %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3235"/>
         <source>Configuring grldr on %1</source>
-        <translation>Samanseti grldr á %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3263"/>
         <source>Configuring grub on %1</source>
-        <translation>Samanseti grub á %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3448"/>
         <source>Installing syslinux to %1</source>
-        <translation>Innleggi syslinux á %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3483"/>
         <source>Installing extlinux to %1</source>
-        <translation>Innleggi extlinux á %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3589"/>
         <source>Syncing filesystems</source>
-        <translation>Stevjavni fílukervi</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3601"/>
         <source>After rebooting, select the </source>
-        <translation>Eftir endurbyrjan, vel </translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3605"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Eftir endurbyrjan, vel USB/geymu byrjanarkostin í BIOS byrjanarvalmyndini.%1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -449,13 +449,13 @@ Reboot now?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="711"/>
+        <location filename="distrolst.cpp" line="705"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="717"/>
+        <location filename="distrolst.cpp" line="711"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
@@ -603,88 +603,88 @@ Reboot now?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="165"/>
+        <location filename="distrover.cpp" line="160"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="170"/>
+        <location filename="distrover.cpp" line="165"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="175"/>
+        <location filename="distrover.cpp" line="170"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="180"/>
+        <location filename="distrover.cpp" line="175"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="185"/>
+        <location filename="distrover.cpp" line="180"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="190"/>
+        <location filename="distrover.cpp" line="185"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="195"/>
+        <location filename="distrover.cpp" line="190"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="200"/>
+        <location filename="distrover.cpp" line="195"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="205"/>
+        <location filename="distrover.cpp" line="200"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="210"/>
+        <location filename="distrover.cpp" line="205"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="215"/>
+        <location filename="distrover.cpp" line="210"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="220"/>
+        <location filename="distrover.cpp" line="215"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="225"/>
+        <location filename="distrover.cpp" line="220"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="230"/>
+        <location filename="distrover.cpp" line="225"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="235"/>
+        <location filename="distrover.cpp" line="230"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="240"/>
+        <location filename="distrover.cpp" line="235"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="245"/>
+        <location filename="distrover.cpp" line="240"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation></translation>
     </message>
@@ -729,41 +729,41 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation>Unetbootin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation>Vel úr listanum av tøkum útgávum</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation>&amp;Útgáva</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="131"/>
+        <location filename="unetbootin.ui" line="127"/>
         <source>Specify a disk image file to load</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="134"/>
+        <location filename="unetbootin.ui" line="130"/>
         <source>Disk&amp;image</source>
-        <translation>D&amp;iskmynd</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="147"/>
+        <location filename="unetbootin.ui" line="378"/>
         <source>Manually specify a kernel and initrd to load</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="150"/>
+        <location filename="unetbootin.ui" line="381"/>
         <source>&amp;Custom</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="428"/>
+        <location filename="unetbootin.ui" line="420"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -772,145 +772,145 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="435"/>
+        <location filename="unetbootin.ui" line="427"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation>&amp;Forsniða driv (slettar allar dátur)</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="498"/>
+        <location filename="unetbootin.ui" line="490"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="501"/>
+        <location filename="unetbootin.ui" line="493"/>
         <source>Return</source>
-        <translation>Vend aftur</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="508"/>
+        <location filename="unetbootin.ui" line="500"/>
         <source>Cancel</source>
-        <translation>Ógilda</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="511"/>
+        <location filename="unetbootin.ui" line="503"/>
         <source>Esc</source>
-        <translation>Esc</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="556"/>
+        <location filename="unetbootin.ui" line="548"/>
         <source>Reboot Now</source>
-        <translation>Endurbyrja nú</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="563"/>
+        <location filename="unetbootin.ui" line="555"/>
         <source>Exit</source>
-        <translation>Far út</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="655"/>
+        <location filename="unetbootin.ui" line="647"/>
         <source>1. Downloading Files</source>
-        <translation>1. niðurtaki fílur</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="662"/>
+        <location filename="unetbootin.ui" line="654"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Pakka út og avrita fílir</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="669"/>
+        <location filename="unetbootin.ui" line="661"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Innleggi byrjunarløðara</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="676"/>
+        <location filename="unetbootin.ui" line="668"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Innlegging liðug, endyrbyrja</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="472"/>
-        <location filename="unetbootin.ui" line="491"/>
+        <location filename="unetbootin.ui" line="464"/>
+        <location filename="unetbootin.ui" line="483"/>
         <source>Select the target drive to install to</source>
-        <translation>Vel máldrivuna at innleggja á</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="475"/>
+        <location filename="unetbootin.ui" line="467"/>
         <source>Dri&amp;ve:</source>
-        <translation>Dri&amp;v:</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="446"/>
-        <location filename="unetbootin.ui" line="465"/>
+        <location filename="unetbootin.ui" line="438"/>
+        <location filename="unetbootin.ui" line="457"/>
         <source>Select the installation target type</source>
-        <translation>Vel hvat miðlaslag ið tú vil skriva á</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="449"/>
+        <location filename="unetbootin.ui" line="441"/>
         <source>&amp;Type:</source>
-        <translation>&amp;Slag:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation>Vel hvørja útgávu ið tú vil hava</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="347"/>
+        <location filename="unetbootin.ui" line="307"/>
         <source>Select disk image file</source>
-        <translation>Vel diskmyndafílu</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="286"/>
-        <location filename="unetbootin.ui" line="350"/>
-        <location filename="unetbootin.ui" line="375"/>
-        <location filename="unetbootin.ui" line="400"/>
+        <location filename="unetbootin.ui" line="246"/>
+        <location filename="unetbootin.ui" line="310"/>
+        <location filename="unetbootin.ui" line="335"/>
+        <location filename="unetbootin.ui" line="360"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="188"/>
+        <location filename="unetbootin.ui" line="148"/>
         <source>Select the disk image type</source>
-        <translation>Vel diskmyndaslag</translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="203"/>
+        <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="167"/>
+        <location filename="unetbootin.ui" line="218"/>
+        <source>Specify a kernel file to load</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
-        <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation>Vel eina diskil/harðdiskamynd, ella fløgumynd (ISO) fílu at løða</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="207"/>
-        <location filename="unetbootin.ui" line="258"/>
-        <source>Specify a kernel file to load</source>
-        <translation>Vel eina kjarnufílu at løða</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation>Vel kjarnufílu</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="293"/>
-        <location filename="unetbootin.ui" line="312"/>
+        <location filename="unetbootin.ui" line="253"/>
+        <location filename="unetbootin.ui" line="272"/>
         <source>Specify an initrd file to load</source>
-        <translation>Nevn eina initrd fílu at løða</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="372"/>
+        <location filename="unetbootin.ui" line="332"/>
         <source>Select initrd file</source>
-        <translation>Vel initrd fílu</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="397"/>
+        <location filename="unetbootin.ui" line="357"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation>Vel syslinux.cfg ella isolinux.cfg fílu</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="226"/>
-        <location filename="unetbootin.ui" line="321"/>
+        <location filename="unetbootin.ui" line="186"/>
+        <location filename="unetbootin.ui" line="281"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation>Nevn bundnatøl og kostir at senda víðari til kjarnuna</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="406"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -919,24 +919,24 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="421"/>
+        <location filename="unetbootin.ui" line="413"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation>Sýn &amp;Øll driv (nýt við varni)</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="210"/>
+        <location filename="unetbootin.ui" line="170"/>
         <source>&amp;Kernel:</source>
-        <translation>%Kjarni:</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="296"/>
+        <location filename="unetbootin.ui" line="256"/>
         <source>Init&amp;rd:</source>
-        <translation>Init&amp;rd:</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.ui" line="229"/>
+        <location filename="unetbootin.ui" line="189"/>
         <source>&amp;Options:</source>
-        <translation>&amp;Kostir:</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -944,32 +944,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation>Av-innlegging fullfgjørd</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation>%1 er vorðin av-innløgd</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
-        <translation>Má koyra sum rót</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>%2 má koyrast sum rót. Lat aftur, og koyr umaftir við annahvørt at nýta:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation>%1 av-innleggjari</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation>%1 er innlagt í løtuni. Tak burtur tí núverandi útgávuna?</translation>
+        <translation></translation>
     </message>
 </context>
 </TS>

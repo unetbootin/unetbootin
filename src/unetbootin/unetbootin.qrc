@@ -2,6 +2,7 @@
     <qresource prefix="/" >
         <file>memdisk</file>
         <file>menu.c32</file>
+        <file>unetbootin_am.qm</file>
         <file>unetbootin_ar.qm</file>
         <file>unetbootin_ast.qm</file>
         <file>unetbootin_bg.qm</file>
@@ -27,6 +28,7 @@
         <file>unetbootin_lt.qm</file>
         <file>unetbootin_lv.qm</file>
         <file>unetbootin_ml.qm</file>
+        <file>unetbootin_ms.qm</file>
         <file>unetbootin_nan.qm</file>
         <file>unetbootin_nb.qm</file>
         <file>unetbootin_nl.qm</file>

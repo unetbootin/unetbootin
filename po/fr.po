@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-15 21:03-0700\n"
+"POT-Creation-Date: 2010-06-19 01:22-0700\n"
 "PO-Revision-Date: 2010-06-02 05:01+0000\n"
 "Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-17 00:56+0000\n"
+"X-Launchpad-Export-Date: 2010-06-20 22:16+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -18,72 +18,72 @@ msgid "LeftToRight"
 msgstr "DeGaucheADroite"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:189 unetbootin.cpp:271 unetbootin.cpp:272 unetbootin.cpp:339
-#: unetbootin.cpp:438 unetbootin.cpp:531 unetbootin.cpp:2961
-#: unetbootin.cpp:2974 unetbootin.cpp:3132 unetbootin.cpp:3587
+#: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
+#: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:2973
+#: unetbootin.cpp:2986 unetbootin.cpp:3144 unetbootin.cpp:3599
 msgid "Hard Disk"
 msgstr "Disque dur"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:190 unetbootin.cpp:254 unetbootin.cpp:268 unetbootin.cpp:269
-#: unetbootin.cpp:341 unetbootin.cpp:442 unetbootin.cpp:536 unetbootin.cpp:608
-#: unetbootin.cpp:624 unetbootin.cpp:878 unetbootin.cpp:1409
-#: unetbootin.cpp:1471 unetbootin.cpp:2294 unetbootin.cpp:2336
-#: unetbootin.cpp:2965 unetbootin.cpp:2990 unetbootin.cpp:3136
-#: unetbootin.cpp:3591
+#: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
+#: unetbootin.cpp:331 unetbootin.cpp:454 unetbootin.cpp:548 unetbootin.cpp:620
+#: unetbootin.cpp:636 unetbootin.cpp:890 unetbootin.cpp:1421
+#: unetbootin.cpp:1483 unetbootin.cpp:2306 unetbootin.cpp:2348
+#: unetbootin.cpp:2977 unetbootin.cpp:3002 unetbootin.cpp:3148
+#: unetbootin.cpp:3603
 msgid "USB Drive"
 msgstr "Lecteur USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:191 unetbootin.cpp:218 unetbootin.cpp:219 unetbootin.cpp:307
-#: unetbootin.cpp:559 unetbootin.cpp:560 unetbootin.cpp:3038
+#: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
+#: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3050
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:192 unetbootin.cpp:214 unetbootin.cpp:215 unetbootin.cpp:312
-#: unetbootin.cpp:564 unetbootin.cpp:565 unetbootin.cpp:3030
+#: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
+#: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3042
 msgid "Floppy"
 msgstr "disquette"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:232 unetbootin.cpp:236 unetbootin.cpp:240 unetbootin.cpp:244
-#: unetbootin.cpp:250 unetbootin.cpp:262
+#: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
+#: unetbootin.cpp:240 unetbootin.cpp:252
 msgid "either"
 msgstr "Aucun"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:556
+#: unetbootin.cpp:568
 msgid "Open Disk Image File"
 msgstr "Ouvrir le disque du fichier image"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:556 unetbootin.cpp:574 unetbootin.cpp:582 unetbootin.cpp:590
+#: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:574
+#: unetbootin.cpp:586
 msgid "Open Kernel File"
 msgstr "Ouvrie le fichier du noyau"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:582
+#: unetbootin.cpp:594
 msgid "Open Initrd File"
 msgstr "Ouvrir l'initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:590
+#: unetbootin.cpp:602
 msgid "Open Bootloader Config File"
 msgstr "Ouvrir le fichier de configuration du gestionnaire de démarrage"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:612
+#: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
 msgstr "Insérer un disque USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:613
+#: unetbootin.cpp:625
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -92,12 +92,12 @@ msgstr ""
 "reformater en FAT 32."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:628
+#: unetbootin.cpp:640
 msgid "%1 not mounted"
 msgstr "%1 n'est pas monté"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:629
+#: unetbootin.cpp:641
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -106,72 +106,72 @@ msgstr ""
 "plupart des distributions le font automatiquement à la connexion."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:644
+#: unetbootin.cpp:656
 msgid "Select a distro"
 msgstr "Choisir une distribution"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:645
+#: unetbootin.cpp:657
 msgid "You must select a distribution to load."
 msgstr "Vous devez choisir une distribution à charger."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:659
+#: unetbootin.cpp:671
 msgid "Select a disk image file"
 msgstr "Choisir un fichier image"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:672
 msgid "You must select a disk image file to load."
 msgstr "Vous devez choisir une image à charger."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:674
+#: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
 msgstr "Choisir un noyau  et-ou un initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:675
+#: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "Vous devez choisir un noyau et-ou un initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:689
+#: unetbootin.cpp:701
 msgid "Diskimage file not found"
 msgstr "Le fichier image est introuvable"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:690
+#: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
 msgstr "L'image %1 choisie n'existe pas"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:704
+#: unetbootin.cpp:716
 msgid "Kernel file not found"
 msgstr "Noyau introuvable"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:705
+#: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
 msgstr "Le noyau %1 choisi n'existe pas."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:719
+#: unetbootin.cpp:731
 msgid "Initrd file not found"
 msgstr "Initrd introuvable"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:720
+#: unetbootin.cpp:732
 msgid "The specified initrd file %1 does not exist."
 msgstr "L'initrd %1 n'existe pas."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:824
+#: unetbootin.cpp:836
 msgid "%1 exists, overwrite?"
 msgstr "%1 existe, écraser ?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:825
+#: unetbootin.cpp:837
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -182,12 +182,12 @@ msgstr ""
 "garder la version existante.  Dans le doute,  'Oui à tout'."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:851
+#: unetbootin.cpp:863
 msgid "%1 is out of space, abort installation?"
 msgstr "espace disque insuffisant sur %1, annuler l'installation ?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:852
+#: unetbootin.cpp:864
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -199,132 +199,132 @@ msgstr ""
 "liés à un manque d'espace disque."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:946
+#: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:987
+#: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:993
+#: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1034
+#: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1040 unetbootin.cpp:1100
+#: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1315 unetbootin.cpp:1341
+#: unetbootin.cpp:1327 unetbootin.cpp:1353
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>Extraction de l'iso compressé :</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1570
+#: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1573
+#: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2388
+#: unetbootin.cpp:2400
 msgid "<b>Copied:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1611
+#: unetbootin.cpp:1623
 msgid "Extracting files, please wait..."
 msgstr "Extraction des fichiers, patientez..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1612
+#: unetbootin.cpp:1624
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Archive:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1613
+#: unetbootin.cpp:1625
 msgid "<b>Source:</b>"
 msgstr "<b>Source:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1614
+#: unetbootin.cpp:1626
 msgid "<b>Destination:</b>"
 msgstr "<b>Destination:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1615
+#: unetbootin.cpp:1627
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Extrait :</b> 0 de %1 fichiers"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1618
+#: unetbootin.cpp:1630
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Source:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1619
+#: unetbootin.cpp:1631
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Destination:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1620
+#: unetbootin.cpp:1632
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extrait :</b> %1 de %2 fichiers"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2278
+#: unetbootin.cpp:2290
 msgid "Downloading files, please wait..."
 msgstr "Téléchargement des fichiers, veuillez patienter..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1571 unetbootin.cpp:2279
+#: unetbootin.cpp:1583 unetbootin.cpp:2291
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Source:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1572 unetbootin.cpp:2280
+#: unetbootin.cpp:1584 unetbootin.cpp:2292
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Destination:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2281
+#: unetbootin.cpp:2293
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Téléchargé :</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2358 unetbootin.cpp:2373
+#: unetbootin.cpp:2370 unetbootin.cpp:2385
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Téléchargé :</b> %1 sur %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2464
+#: unetbootin.cpp:2476
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Recherche dans <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2468
+#: unetbootin.cpp:2480
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 trouvé(s) dans <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2653
+#: unetbootin.cpp:2665
 msgid "%1 not found"
 msgstr "%1 introuvable"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2654
+#: unetbootin.cpp:2666
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -333,52 +333,52 @@ msgstr ""
 "Installation du paquet \"%3\"  ou l'équivalent de votre distribution"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2943
+#: unetbootin.cpp:2955
 msgid "(Current)"
 msgstr "(En cours)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2944
+#: unetbootin.cpp:2956
 msgid "(Done)"
 msgstr "(Terminé)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3211
+#: unetbootin.cpp:3223
 msgid "Configuring grub2 on %1"
 msgstr "Configuration de grub2 sur %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3223
+#: unetbootin.cpp:3235
 msgid "Configuring grldr on %1"
 msgstr "Configuration de grldr sur %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3251
+#: unetbootin.cpp:3263
 msgid "Configuring grub on %1"
 msgstr "Configuration de grub sur %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3436
+#: unetbootin.cpp:3448
 msgid "Installing syslinux to %1"
 msgstr "Installation de syslinux sur %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3471
+#: unetbootin.cpp:3483
 msgid "Installing extlinux to %1"
 msgstr "Installation de extlinux sur %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3577
+#: unetbootin.cpp:3589
 msgid "Syncing filesystems"
 msgstr "Synchronisation des systèmes de fichiers"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3589
+#: unetbootin.cpp:3601
 msgid "After rebooting, select the "
 msgstr "Après avoir redémarré, choisissez le "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3593
+#: unetbootin.cpp:3605
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -504,7 +504,7 @@ msgstr ""
 "'/distribution/%1/repo/oss' quand est demandé le dossier."
 
 #. ts-context unetbootin
-#: distrover.cpp:21 unetbootin.cpp:640
+#: distrover.cpp:21 unetbootin.cpp:652
 msgid "== Select Distribution =="
 msgstr ""
 

@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-15 21:03-0700
-PO-Revision-Date: 2010-06-16 17:50+0000
-Last-Translator: bovirus &lt;roberto.boriotti@canon-europe.com&gt;
+POT-Creation-Date: 2010-06-19 01:22-0700
+PO-Revision-Date: 2010-06-20 03:49+0000
+Last-Translator: G. Spanu &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-17 00:56+0000
+X-Launchpad-Export-Date: 2010-06-20 22:16+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -686,13 +686,13 @@ Riavviare ora?</translation>
         <location filename="distrover.cpp" line="21"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation>=== Selezionare distribuzione ===</translation>
+        <translation>== Selezionare distribuzione ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
         <location filename="distrover.cpp" line="25"/>
         <source>== Select Version ==</source>
-        <translation>=== Selezionare versione ===</translation>
+        <translation>== Selezionare versione ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
@@ -823,12 +823,6 @@ Riavviare ora?</translation>
         <location filename="distrover.cpp" line="155"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NetBSD è un sistema operativo tipo Unix focalizzato sulla portabilità.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt;&gt; la versione di default permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
-    </message>
-    <message>
-        <location filename="distrover.cpp" line="160"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, lightweight Slackware-based distribution featuring the KDE desktop. It is able to boot from CD or flash memory (USB pens or MP3 players), and can easily be customized.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</oldsource>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="165"/>

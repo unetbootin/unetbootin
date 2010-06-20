@@ -1,16 +1,16 @@
-# Asturian translation for unetbootin
-# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# Malay translation for unetbootin
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the unetbootin package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-06-19 01:22-0700\n"
-"PO-Revision-Date: 2009-09-20 22:03+0000\n"
-"Last-Translator: Iñigo Varela <malditoastur@gmail.com>\n"
-"Language-Team: Asturian <ast@li.org>\n"
+"PO-Revision-Date: 2010-06-18 02:31+0000\n"
+"Last-Translator: syzwn <Unknown>\n"
+"Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,14 +20,14 @@ msgstr ""
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr ""
+msgstr "KiriKeKanan"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
 #: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:2973
 #: unetbootin.cpp:2986 unetbootin.cpp:3144 unetbootin.cpp:3599
 msgid "Hard Disk"
-msgstr "Discu duru"
+msgstr "Cakera Keras"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
@@ -37,7 +37,7 @@ msgstr "Discu duru"
 #: unetbootin.cpp:2977 unetbootin.cpp:3002 unetbootin.cpp:3148
 #: unetbootin.cpp:3603
 msgid "USB Drive"
-msgstr "Unidá USB"
+msgstr "Pemacu USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
@@ -49,7 +49,7 @@ msgstr "ISO"
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
 #: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3042
 msgid "Floppy"
-msgstr "Disquín"
+msgstr "Liut"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
@@ -60,22 +60,22 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "Buka Fail Imej Pemacu"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "Semua Fail (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Open Kernel File"
-msgstr ""
+msgstr "Buka Fail Kernel"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr ""
+msgstr "Buka Fail Initrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
@@ -85,7 +85,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "Sisipkan pemacu flash USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:625
@@ -93,6 +93,8 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
+"Tiada pemacu flash USB dijumpai. Jika anda telah sisipkan pemacu USB, cuba "
+"formatkan semula sebagai FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
@@ -119,57 +121,57 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:671
 msgid "Select a disk image file"
-msgstr ""
+msgstr "Pilih fail imej cakera"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:672
 msgid "You must select a disk image file to load."
-msgstr ""
+msgstr "Anda mesti pilih fail imej cakera untuk dimuat."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
-msgstr ""
+msgstr "Pilih fail kernel dan/atau initrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
+msgstr "Anda mesti pilih fail kernel dan/atau initrd untuk dimuat."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:701
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "Fail imej cakera tidak dijumpai"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "Fail imej cakera yang ditetapkan %1 tidak wujud."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Kernel file not found"
-msgstr ""
+msgstr "Fail kernel tidak dijumpai"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "Fail kernel yang ditetapkan %1 tidak wujud."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:731
 msgid "Initrd file not found"
-msgstr ""
+msgstr "Fail initrd tidak dijumpai"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:732
 msgid "The specified initrd file %1 does not exist."
-msgstr ""
+msgstr "Fail initrd yang ditetapkan %1 tidak wujud."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:836
 msgid "%1 exists, overwrite?"
-msgstr ""
+msgstr "%1 wujud, tulis ganti?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:837
@@ -178,11 +180,15 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
+"Fail %1 telah sedia wujud. Tekan 'Ya untuk Semua' untuk menulis ganti dan "
+"tidak dibantu ingat lagi, 'Ya' untuk menulis ganti fail-fail berasaskan "
+"individu, dan 'Tidak' untuk mengekalkan versi anda yang telah sedia wujud. "
+"Jika ragu-ragu, tekan 'Ya untuk Semua'."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "%1 kehabisan ruang, henti paksa pemasangan?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:864
@@ -191,6 +197,9 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
+"Directory %1 kehabisan ruang. Tekan 'Ya' untuk henti paksa pemasangan, "
+"'Tidak' untuk abaikan ralat ini dan cuba untuk teruskan pemasangan, dan "
+"'Tidak untuk Semua' untuk abaikan semua ralat kehabisan ruang."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:958
@@ -200,7 +209,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Menyalin fail kernel dari %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
@@ -210,97 +219,97 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Menyalin fail initrd dari %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "Mengekstrak konfigurasi bootloader"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1327 unetbootin.cpp:1353
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+msgstr "<b>Mengekstrak iso termampat:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Menyalin fail, sila tunggu..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Telah disalin:</b> 0 bait"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2400
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Telah disalin:</b> %1 daripada %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1623
 msgid "Extracting files, please wait..."
-msgstr ""
+msgstr "Mengekstrak fail, sila tunggu..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1624
 msgid "<b>Archive:</b> %1"
-msgstr ""
+msgstr "<b>Arkib:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1625
 msgid "<b>Source:</b>"
-msgstr ""
+msgstr "<b>Sumber:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1626
 msgid "<b>Destination:</b>"
-msgstr ""
+msgstr "<b>Destinasi:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1627
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr ""
+msgstr "<b>Telah diekstrak:</b> 0 daripada %1 fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1630
 msgid "<b>Source:</b> %1 (%2)"
-msgstr ""
+msgstr "<b>Sumber:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1631
 msgid "<b>Destination:</b> %1%2"
-msgstr ""
+msgstr "<b>Destinasi:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1632
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
+msgstr "<b>Telah diekstrak:</b> %1 daripada %2 fail"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2290
 msgid "Downloading files, please wait..."
-msgstr ""
+msgstr "Memuat turun fail-fail, sila tunggu..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1583 unetbootin.cpp:2291
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "<b>Sumber:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1584 unetbootin.cpp:2292
 msgid "<b>Destination:</b> %1"
-msgstr ""
+msgstr "<b>Destinasi:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2293
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Telah dimuat turun:</b> 0 bait"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2370 unetbootin.cpp:2385
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Telah dimuat turun:</b> %1 of %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2476
@@ -315,7 +324,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:2665
 msgid "%1 not found"
-msgstr ""
+msgstr "%1 tidak dijumpai"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2666
@@ -323,21 +332,23 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
+"%1 tidak dijumpai. Ianya diperlukan untuk mod pemasangan %2.\n"
+"Pasang package \"%3\" atau padanan daripada distribusi anda."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2955
 msgid "(Current)"
-msgstr ""
+msgstr "(Semasa)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2956
 msgid "(Done)"
-msgstr ""
+msgstr "(Selesai)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3223
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "Mengkonfigurasi grub2 on %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3235

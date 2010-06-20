@@ -15,6 +15,7 @@ QT += core \
     gui \
     network
 TRANSLATIONS += unetbootin.ts \
+    unetbootin_am.ts \
     unetbootin_ar.ts \
     unetbootin_ast.ts \
     unetbootin_bg.ts \
@@ -47,6 +48,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_uk.ts \
     unetbootin_be.ts \
     unetbootin_pt.ts \
+    unetbootin_ms.ts \
     unetbootin_ml.ts \
     unetbootin_nan.ts \
     unetbootin_nb.ts \
