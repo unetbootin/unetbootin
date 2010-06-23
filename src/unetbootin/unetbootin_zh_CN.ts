@@ -650,42 +650,42 @@ Reboot now?</source>
 *重要* 在重新启动前，请将一个 Ubuntu alternate（而非 desktop）安装 iso 文件放置在您的硬盘或 U 盘根目录下。该 iso 文件可从 cdimage.ubuntu.com 获取。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="205"/>
+        <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;mirrors.kernel.org&apos;，当询问文件夹时输入&apos;/centos/%1/os/%2&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="261"/>
+        <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *重要* 在重新启动前，请将一个 Debian 安装 iso 文件放置在您的硬盘或 U 盘根目录下。该 iso 文件可从 cdimage.debian.org 获取。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/development/%1/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="711"/>
+        <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *重要提示* 重启动后，不要理会任何错误提示信息。如果提示要求插入CD光盘，请选择“返回”，然后回到主菜单，选择“开始安装”，安装源选“网络”，协议选“HTTP”。当提示指定服务器时，输入“download.opensuse.org”；询问文件夹位置时，再输入“/factory/repo/oss”即可。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="717"/>
+        <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -750,8 +750,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrover.cpp" line="69"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个基于 Debian 并使用 Enlightenment 作为默认窗口管理器的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 光盘版允许用户启动到 Live 模式，在这个模式下用户可以选择执行安装程序(并将系统安装到硬盘上)。将要安装的版本有可能不稳定，并非经过测试的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;稳定版&lt;/a&gt;.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个基于 Debian 并使用 Enlightenment 作为默认窗口管理器的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 光盘版允许用户启动到 Live 模式，在这个模式下用户可以选择执行安装程序(并将系统安装到硬盘上)。将要安装的版本有可能不稳定，并非经过测试的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;稳定版&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="74"/>
@@ -832,6 +833,11 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="155"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; NetBSD 是一个重点于可携服务的类Unix操作系统。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;默认版本允许网络安装方式（FTP），或者用预先下载安装的ISO文件进行离线安装。</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="160"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="165"/>
@@ -931,8 +937,9 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
-        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个致力于 Enlightenment window manager的基于 Debian 的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。Unstable 版本被安装，并非安装的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable 版本&lt;/a&gt; 建立在 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;基础之上安装的。</translation>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个致力于 Enlightenment window manager的基于 Debian 的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。Unstable 版本被安装，并非安装的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable 版本&lt;/a&gt; 建立在 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;基础之上安装的。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -946,11 +953,16 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
+        <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; SliTaz 是一个轻量级，桌面导向微型发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;  该实时版本加载系统到 RAM 并且从内存启动，所以安装可选并不是必需的。 该安装是基于 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;。</translation>
     </message>
     <message>
-        <location filename="distrovercust.cpp" line="85"/>
+        <location filename="distrovercust.cpp" line="93"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; xPUD是一个轻量级的发行版本，它有简单的类似kiosk风格的界面，并带有浏览器和媒体播放器。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版本启动过程：它把全部系统装入RAM内存中，然后从内存启动。</translation>
     </message>

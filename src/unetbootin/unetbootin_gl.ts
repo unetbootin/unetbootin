@@ -508,42 +508,42 @@ Reiniciar agora?</translation>
 *IMPORTANTE* Antes de reiniciar o sistema, coloque un ficheiro ISO de instalación de «Ubuntu Alternate» (a Desktop non) no directorio raíz do seu disco ríxido ou memoria USB. Estes poden obterse en cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="205"/>
+        <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;mirrors.kernel.org&quot; cando lle pregunten por un servidor, e poña &quot;/centos/%1/os%2&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="261"/>
+        <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *IMPORTANTE* Antes de reiniciar o sistema, coloque un ficheiro ISO de instalación de «Debian» no directorio raíz do seu disco ríxido ou memoria USB. Estes poden obterse en cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.fedora.redhat.com&quot; cando lle pregunten por un servidor, e poña &quot;/pub/fedora/linux/development/%1/os&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.fedora.redhat.com&quot; cando lle pregunten por un servidor, e poña &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="711"/>
+        <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Despois de reiniciar, ignore calqueira mensaxe de erro e escolla novamente se llo piden un CD, vaia entón ao menú principal, escolla a opción &quot;Iniciar a instalación&quot; elixa &quot;Rede&quot; como a orixe, elixa como protocolo: &quot;HTTP&quot;, escriba &quot;download.opensuse.org&quot; cando lle pregunten por un servidor, e poña &quot;/factory/repo/oss&quot; cuando lle pregunten polo directorio.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="717"/>
+        <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -608,8 +608,9 @@ Reiniciar agora?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="69"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive é unha distribución baseada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalación:&lt;/ b&gt; A versión Live permite arrancar en modo directo, desde o que pode opcionalmente lanzar o instalador. Isto instala unha versión inestable, non a &lt;a ref=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive é unha distribución baseada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalación:&lt;/ b&gt; A versión Live permite arrancar en modo directo, desde o que pode opcionalmente lanzar o instalador. Isto instala unha versión inestable, non a &lt;a ref=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="74"/>
@@ -691,6 +692,11 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
         <location filename="distrover.cpp" line="155"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; NetBSD é un sistema operativo de tipo UNIX que se especializa na portabilidade.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión predeterminada permite a instalación por internet (FTP), ou usando os ficheiros ISO de instalación previamente decargados.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="160"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="165"/>
@@ -790,8 +796,9 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
-        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Elive é unha distribución baseada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live permite o arranque en modo directo, a partir do que pode lanzarse o instalador. Versión inestable, a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version estable&lt;/a&gt; non está instalada. O instalador está baseado en &lt;a ref=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Elive é unha distribución baseada en Debian co xestor de ventás Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live permite o arranque en modo directo, a partir do que pode lanzarse o instalador. Versión inestable, a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version estable&lt;/a&gt; non está instalada. O instalador está baseado en &lt;a ref=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -805,11 +812,16 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
+        <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; SliTaz é moi lixeira, micro distribución orientada ao escritorio.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live carga o sistema enteiramente en RAM e arranca desde a memoria, non se precisa instalación sendo esta opcional. O instalador está baseado en &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrovercust.cpp" line="85"/>
+        <location filename="distrovercust.cpp" line="93"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Páxina web:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; xPUD é unha distribución moi lixeira con unha interface tipo &quot;quiosco&quot; con un navegador e un reproductor multimedia.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión Live carga o sistema enteiramente en RAM e arranca desde a memoria.</translation>
     </message>

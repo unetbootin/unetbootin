@@ -74,10 +74,15 @@ if (nameDistro == "Ubuntu Eee")
 
 if (nameDistro == "Elive")
 {
+	if (relname == "unstable")
+		relname = "development";
 	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://elive.leviathan-avc.com/development/" << 
-	"http://elive.cmhacks.com/development/" << 
-	"http://elive.icedslash.com/isos/development/"
+	"http://elive.icedslash.com/isos/"+relname+"/" <<
+	"http://elive.leviathan-avc.com/"+relname+"/" <<
+	"http://elive.jumbef.net/"+relname+"/" <<
+	"http://elive.homogenica.com/"+relname+"/" <<
+	"http://elive.evryanz.net/isos/"+relname+"/" <<
+	"http://elive.7ds.pl/isos/"+relname+"/"
 	, 524288000, 1048576000, QList<QRegExp>() << 
 	QRegExp(".iso$", Qt::CaseInsensitive) << 
 	QRegExp("elive\\S{0,}.iso$", Qt::CaseInsensitive)
@@ -304,12 +309,17 @@ if (nameDistro == "Dr.Web AntiVirus")
 
 if (nameDistro == "Elive")
 {
-	downloadfile(fileFilterNetDir(QStringList() << 
-	"http://elive.leviathan-avc.com/development/" << 
-	"http://elive.cmhacks.com/development/" << 
-	"http://elive.icedslash.com/isos/development/"
-	, 524288000, 1048576000, QList<QRegExp>() << 
-	QRegExp(".iso$", Qt::CaseInsensitive) << 
+	if (relname == "unstable")
+		relname = "development";
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://elive.icedslash.com/isos/"+relname+"/" <<
+	"http://elive.leviathan-avc.com/"+relname+"/" <<
+	"http://elive.jumbef.net/"+relname+"/" <<
+	"http://elive.homogenica.com/"+relname+"/" <<
+	"http://elive.evryanz.net/isos/"+relname+"/" <<
+	"http://elive.7ds.pl/isos/"+relname+"/"
+	, 524288000, 1048576000, QList<QRegExp>() <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
 	QRegExp("elive\\S{0,}.iso$", Qt::CaseInsensitive)
 	), isotmpf);
 	extractiso(isotmpf, targetPath);

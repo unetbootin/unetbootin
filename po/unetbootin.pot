@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-20 15:17-0700\n"
+"POT-Creation-Date: 2010-06-22 20:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -450,7 +450,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:205
+#: distrolst.cpp:219
 #, fuzzy
 msgid ""
 "\n"
@@ -462,7 +462,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:261
+#: distrolst.cpp:275
 #, fuzzy
 msgid ""
 "\n"
@@ -472,7 +472,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:345
+#: distrolst.cpp:364
 #, fuzzy
 msgid ""
 "\n"
@@ -484,7 +484,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:370
 #, fuzzy
 msgid ""
 "\n"
@@ -496,7 +496,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:711
+#: distrolst.cpp:730
 #, fuzzy
 msgid ""
 "\n"
@@ -508,7 +508,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:717
+#: distrolst.cpp:736
 #, fuzzy
 msgid ""
 "\n"
@@ -644,14 +644,20 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:69
 #, fuzzy
+#| msgid ""
+#| "<b>Homepage:</b> <a "
+#| "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
+#| "Elive is a Debian-based distribution featuring the Enlightenment window "
+#| "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
+#| "Live mode, from which the installer can optionally be launched. This "
+#| "installs the unstable version, not the <a "
+#| "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
 "Elive is a Debian-based distribution featuring the Enlightenment window "
 "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. This "
-"installs the unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
+"Live mode, from which the installer can optionally be launched."
 msgstr ""
 
 #. ts-context unetbootin
@@ -1099,15 +1105,22 @@ msgstr ""
 #. ts-context unetbootin
 #: distrovercust.cpp:53
 #, fuzzy
+#| msgid ""
+#| "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+#| "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
+#| "Elive is a Debian-based distribution featuring the Enlightenment window "
+#| "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
+#| "Live mode, from which the installer can optionally be launched. The "
+#| "Unstable version, not the <a "
+#| "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
+#| "installed. This installer is based on <a "
+#| "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
 "Elive is a Debian-based distribution featuring the Enlightenment window "
 "manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched. The Unstable "
-"version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> is installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"Live mode, from which the installer can optionally be launched."
 msgstr ""
 
 #. ts-context unetbootin
@@ -1138,6 +1151,19 @@ msgstr ""
 #: distrovercust.cpp:77
 #, fuzzy
 msgid ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Description:</b> "
+"NimbleX is a small, versatile Slackware-based distribution. It is built "
+"using the linux-live scripts, and features the KDE desktop. It can be booted "
+"from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:85
+#, fuzzy
+msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
 "SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
@@ -1147,7 +1173,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrovercust.cpp:85
+#: distrovercust.cpp:93
 #, fuzzy
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "

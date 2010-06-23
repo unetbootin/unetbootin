@@ -534,42 +534,42 @@ Reporniţi acum?</translation>
 *IMPORTANT* Înainete de a repornii, puneți un fișier ISO Ubuntu alternete (nu desktop) în dosarul rădăcină a hardiscului sau a sticului USB. Acest fișier poate fi obținut de la cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="205"/>
+        <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;mirrors.kernel.org&apos; când vi se va cere server-ul, și introduceți &apos;/centos/%1/os/%2&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="261"/>
+        <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *IMPORTANT* Înainete de a repornii, puneți un fișier ISO Debian în dosarul rădăcină a hardiscului sau a sticului USB. Acest fișier poate fi obținut de la cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="345"/>
+        <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;download.fedora.redhat.com&apos; când vi se va cere server-ul, și introduceți &apos;/pub/fedora/linux/development/%1/os&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="351"/>
+        <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;download.fedora.redhat.com&apos; când vi se va cere server-ul, și introduceți &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="711"/>
+        <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După restartarea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea &quot;Pornire instalare&quot;, alegeți &apos;Rețea&apos; drept sursă, alegeți &apos;HTTP&apos; drept protocol, introduceți &apos;download.opensuse.org&apos; când vi se va cere server-ul, și introduceți &apos;/factory/repo/oss&apos; când vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="717"/>
+        <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -634,8 +634,9 @@ Reporniţi acum?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="69"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuţie bazată pe Debian care cuprinde managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea Live permite bootarea in modul Live,  de unde modulul de instalare poate fi lansat in mod optional. Aceasta instalează versiunea nestabilă, nu versiunea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilă&lt;/a&gt;.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuţie bazată pe Debian care cuprinde managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea Live permite bootarea in modul Live,  de unde modulul de instalare poate fi lansat in mod optional. Aceasta instalează versiunea nestabilă, nu versiunea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilă&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="74"/>
@@ -717,6 +718,11 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
         <location filename="distrover.cpp" line="155"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; NetBSD este un sistem de operare asemănător lui Unix şi pune accent pe portabilitate.&lt;br/&gt;&lt;b&gt;Install Note:&lt;/b&gt;Versiunea standard permite atât instalarea prin internet (FTP), cât şi instalarea prin intermediul fişierelor de instalare ISO descărcate în prealabil.</translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="160"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="165"/>
@@ -816,8 +822,9 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
-        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuție bazată pe Debian care utilizează managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Notițe de instalare:&lt;/b&gt; Versiunea Live permite bootarea în sesiune Live, de unde se poate lansa opțional programul de instalare. Este instalată versiunea Instabilă și nu cea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabilă&lt;/a&gt;. Programul de instalare este bazat pe &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
+        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
+        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuție bazată pe Debian care utilizează managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Notițe de instalare:&lt;/b&gt; Versiunea Live permite bootarea în sesiune Live, de unde se poate lansa opțional programul de instalare. Este instalată versiunea Instabilă și nu cea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabilă&lt;/a&gt;. Programul de instalare este bazat pe &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -831,11 +838,16 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
+        <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
         <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; SliTaz e o microdistribuție ultraușoara destinată sistemelor desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea live incarcă întregul sistem în RAM și butează din memorie, așa că instalarea nu e necesară ci opțională. Acest instaler e bazat pe&lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrovercust.cpp" line="85"/>
+        <location filename="distrovercust.cpp" line="93"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Pagina proiectului:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; xPUD este o distribuție minimalistă, include un navigator web și un program de redare media și are o interfață simplă de tip chioșc.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; În cazul versiunii Live, sistemul este încărcat complet în RAM, pornește și rulează din memorie.</translation>
     </message>

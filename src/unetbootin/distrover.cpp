@@ -65,11 +65,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freedrweb.com/livecd\">htt
 	"<b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
 "Latest_Live"));
-distroselect->addItem("Elive", (QStringList() << "Unstable_Live" <<
+distroselect->addItem("Elive", (QStringList() << "Stable_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
-	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>.") <<
-"Unstable_Live"));
+	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
+"Stable_Live" << "Unstable_Live"));
 distroselect->addItem("Fedora", (QStringList() << "13_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
