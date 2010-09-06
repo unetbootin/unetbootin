@@ -30,6 +30,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <sys/mount.h>
 #endif
 
+<<<<<<< .merge_file_hS6a1U
+
+=======
+>>>>>>> .merge_file_cX4e54
 #ifdef  Q_OS_LINUX
 #include <sys/vfs.h>
 #endif
