@@ -25,7 +25,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <shellapi.h>
 #endif
 
-#ifdef Q_OS_UNIX
+#ifdef Q_OS_MACX
+#include <sys/param.h>
+#include <sys/mount.h>
+#endif
+
+#ifdef  Q_OS_LINUX
 #include <sys/vfs.h>
 #endif
 
