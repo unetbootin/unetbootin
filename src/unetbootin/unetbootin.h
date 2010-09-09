@@ -28,12 +28,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifdef Q_OS_MACX
 #include <sys/param.h>
 #include <sys/mount.h>
+#include <sys/statvfs.h>
 #endif
 
-<<<<<<< .merge_file_hS6a1U
-
-=======
->>>>>>> .merge_file_cX4e54
 #ifdef  Q_OS_LINUX
 #include <sys/vfs.h>
 #endif
