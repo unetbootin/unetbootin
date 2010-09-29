@@ -2163,7 +2163,31 @@ QString unetbootin::searchforincludesfile(QString includesfile, QString archivef
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
-	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	QStringList includesfileL;
+	for (int i = 0; i < archivefileconts.size(); ++i)
+	{
+		QString curentry = archivefileconts.at(i);
+		if (curentry.endsWith("/") || curentry.endsWith(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.left(curentry.size() - 1).trimmed();
+		}
+		if (curentry.contains("/"))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf("/"));
+		}
+		else if (curentry.contains(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf(QDir::toNativeSeparators("/")));
+		}
+		if (includesfile.compare(curentry, Qt::CaseInsensitive) == 0)
+		{
+			includesfileL.append(archivefileconts.at(i));
+		}
+	}
+	if (includesfileL.isEmpty())
+	{
+		includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	}
 	if (!includesfileL.isEmpty())
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
@@ -2191,7 +2215,31 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
-	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	QStringList includesfileL;
+	for (int i = 0; i < archivefileconts.size(); ++i)
+	{
+		QString curentry = archivefileconts.at(i);
+		if (curentry.endsWith("/") || curentry.endsWith(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.left(curentry.size() - 1).trimmed();
+		}
+		if (curentry.contains("/"))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf("/"));
+		}
+		else if (curentry.contains(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf(QDir::toNativeSeparators("/")));
+		}
+		if (includesfile.compare(curentry, Qt::CaseInsensitive) == 0)
+		{
+			includesfileL.append(archivefileconts.at(i));
+		}
+	}
+	if (includesfileL.isEmpty())
+	{
+		includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	}
 	if (!includesfileL.isEmpty())
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
@@ -2219,7 +2267,31 @@ QString unetbootin::searchforgrub2includesfile(QString includesfile, QString arc
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
-	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	QStringList includesfileL;
+	for (int i = 0; i < archivefileconts.size(); ++i)
+	{
+		QString curentry = archivefileconts.at(i);
+		if (curentry.endsWith("/") || curentry.endsWith(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.left(curentry.size() - 1).trimmed();
+		}
+		if (curentry.contains("/"))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf("/"));
+		}
+		else if (curentry.contains(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf(QDir::toNativeSeparators("/")));
+		}
+		if (includesfile.compare(curentry, Qt::CaseInsensitive) == 0)
+		{
+			includesfileL.append(archivefileconts.at(i));
+		}
+	}
+	if (includesfileL.isEmpty())
+	{
+		includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	}
 	if (!includesfileL.isEmpty())
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
@@ -2247,7 +2319,31 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	{
 		includesfile = includesfile.right(includesfile.size() - 1).trimmed();
 	}
-	QStringList includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	QStringList includesfileL;
+	for (int i = 0; i < archivefileconts.size(); ++i)
+	{
+		QString curentry = archivefileconts.at(i);
+		if (curentry.endsWith("/") || curentry.endsWith(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.left(curentry.size() - 1).trimmed();
+		}
+		if (curentry.contains("/"))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf("/"));
+		}
+		else if (curentry.contains(QDir::toNativeSeparators("/")))
+		{
+			curentry = curentry.right(curentry.size() - 1 - curentry.indexOf(QDir::toNativeSeparators("/")));
+		}
+		if (includesfile.compare(curentry, Qt::CaseInsensitive) == 0)
+		{
+			includesfileL.append(archivefileconts.at(i));
+		}
+	}
+	if (includesfileL.isEmpty())
+	{
+		includesfileL = archivefileconts.filter(includesfile, Qt::CaseInsensitive);
+	}
 	if (!includesfileL.isEmpty())
 	{
 		for (int i = 0; i < includesfileL.size(); ++i)
