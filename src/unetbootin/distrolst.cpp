@@ -14,7 +14,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
-	relname.replace("10.04", "lucid").replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+	relname.replace("10.10", "maverick").replace("10.04", "lucid").replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
 #endif
 
 #ifndef ubuntunetinst
