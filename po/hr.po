@@ -1,11 +1,16 @@
+# Croatian translation for unetbootin
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the unetbootin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: unetbootin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-09-29 00:49-0400\n"
-"PO-Revision-Date: 2010-03-27 21:48+0000\n"
-"Last-Translator: j0hn aka c7p <c7p.admin@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-08-18 18:32+0000\n"
+"Last-Translator: Alen Milincevic <Unknown>\n"
+"Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,14 +20,14 @@ msgstr ""
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "Αριστερά προς  δεξιά"
+msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
 #: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:3072
 #: unetbootin.cpp:3085 unetbootin.cpp:3243 unetbootin.cpp:3698
 msgid "Hard Disk"
-msgstr "Σκληρός Δίσκος"
+msgstr "Tvrdi disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
@@ -32,55 +37,55 @@ msgstr "Σκληρός Δίσκος"
 #: unetbootin.cpp:3076 unetbootin.cpp:3101 unetbootin.cpp:3247
 #: unetbootin.cpp:3702
 msgid "USB Drive"
-msgstr "Δισκος USB"
+msgstr "USB uređaj"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
 #: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3149
 msgid "ISO"
-msgstr "Αρχείο εικόνας οπτικού δίσκου (ISO)"
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
 #: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3141
 msgid "Floppy"
-msgstr "Δισκέτα"
+msgstr "Disketa"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
 #: unetbootin.cpp:240 unetbootin.cpp:252
 msgid "either"
-msgstr "ή"
+msgstr "ili"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "Open Disk Image File"
-msgstr "Άνοιγμα Αρχείου Εικόνας Δίσκου"
+msgstr "Otvoriti Datoteku disketnog image-a"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "Sve Datoteke (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Open Kernel File"
-msgstr "Άνοιγμα Αρχείου Πυρήνα"
+msgstr "Otvorena Kernel Datoteka"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr "Άνοιγμα Αρχείου Initrd"
+msgstr "Otvoriti Initrd Datoteku"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
 msgid "Open Bootloader Config File"
-msgstr "'Ανοιγμα Αρχείου Ρυθμίσεων Επιλογέα Εκκίνησης"
+msgstr "Otvoriti Konfiguracijsku Datoteku Bootloadera"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
-msgstr "Εισάγετε ένα USB flash δίσκο"
+msgstr "Umetnuti USB flash jedinicu"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:625
@@ -88,13 +93,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"Δεν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, "
-"προσπαθείστε να τον διαμορφώσετε ως FAT32."
+"Nisu nađene USB flash jedinice. Ako ste već umetnuli USB jedinicu, probajte "
+"ponovno formatirati kao FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
 msgid "%1 not mounted"
-msgstr "%1 δεν έχει προσαρτηθεί"
+msgstr "%1 nije montirano"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:641
@@ -102,74 +107,74 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε κάποιο σημείο προσάρτησης. Οι "
-"περισσότερες διανομές το κανουν αυτόματα όταν αφαιρέσετε τον USB δίσκο και "
-"τον επανεισάγετε."
+"Prvo morate mountati USB jedinicu %1 na točku montiranja. Većina "
+"distribucija će to učiniti automatski  nakon što izvadite i ponovno umetnete "
+"USB jedinicu."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:656
 msgid "Select a distro"
-msgstr "Επιλέξτε διανομή"
+msgstr "Odabrati distribuciju"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:657
 msgid "You must select a distribution to load."
-msgstr "Πρέπει να επιλέξετε διανομή για φόρτωση"
+msgstr "Morate odabrati distribuciju za učitavanje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:671
 msgid "Select a disk image file"
-msgstr "Επιλέξτε αρχείο εικόνας δίσκου"
+msgstr "Odabrati datoteku disk image-a"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:672
 msgid "You must select a disk image file to load."
-msgstr "Πρέπει να επιλέξετε αρχείο εικόνας δίσκου."
+msgstr "Morate odabrati diskovni image za učitavanje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
-msgstr "Επιλέξτε πυρήνα και αρχείο initrd"
+msgstr "Odabrati kernel i/ili initrd datoteku"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
-msgstr "Πρέπει να επιλέξετε πυρήνα και αρχείο initrd."
+msgstr "Morate odabrati kernel i/ili initrd datoteku za učitavanje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:701
 msgid "Diskimage file not found"
-msgstr "Το αρχείο εικόνας δίσκου δεν βρέθηκε"
+msgstr "Datoteka diskovnog image-a nije nađena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει."
+msgstr "Zadani datoteka disk image-a %1 ne postoji."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Kernel file not found"
-msgstr "Το αρχείο πυρήνα δεν βρέθηκε"
+msgstr "Kernel datoteka nije nađena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο πυρήνα %1 δεν υπάρχει."
+msgstr "Zadana datoteka kernela %1 ne postoji."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:731
 msgid "Initrd file not found"
-msgstr "Το αρχείο initrd δεν βρέθηκε"
+msgstr "Initrd nije nađen"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:732
 msgid "The specified initrd file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο initrd %1 δεν υπάρχει."
+msgstr "Zadana initrd datoteka %1 ne postoji."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:836
 msgid "%1 exists, overwrite?"
-msgstr "%1 υπάρχει ήδη, να γίνει εγγραφή απο πάνω;"
+msgstr "%1 postoji, prepisati?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:837
@@ -178,15 +183,15 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"Το αρχείο %1 υπάρχει ήδη. Πατήστε 'Ναι σε Όλα' για να γράψετε απο πάνω του, "
-"και μετά δεν θα ξαναερωτηθείτε, 'Ναι' για να γράψει απο πάνω μόνο το "
-"συγκεκριμένο αρχείο, και 'Όχι' για να διατηρήσετε την υπάρχουσα έκδοση. Άν "
-"δεν είστε σίγουροι, πατήστε 'Ναι σε 'Ολα'."
+"Datoteka %1 već postoji. Odabrati  'Da za Sve' za prepisivanje i "
+"spriječavanje daljnjih budućih upita, 'Da' za prepisivanje datoteka na "
+"inidividualnoj bazi, i 'Ne' za zadržavanje vaše postojeće inačice. Ako "
+"postoji sumnja, odaberite 'Da za Sve'."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
 msgid "%1 is out of space, abort installation?"
-msgstr "%1 δεν έχει χώρο, ακύρωση εγκατάστασης;"
+msgstr "%1 nema više mjesta, prekinuti instalaciju?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:864
@@ -195,134 +200,134 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
-"Ο φάκελος %1 δεν έχει άλλο χώρο. Πατήστε 'Ναι' για ακύρωση εγκατάστασης, "
-"'Οχι' για αγνόηση του σφάλματος και απόπειρα για συνέχεια της εγκατάστασης, "
-"και 'Οχι σε Όλα' για να αγνοηθούν όλα τα λάθη έλλειψης χώρου."
+"Datoteka %1 nema više mjesta. Odabrati 'Da' za prekid instalacije, 'Ne' za "
+"ignoriranje ove greške i pokušaj nastavka instalacije, i 'Ne za Sve' za "
+"ignoriranje svi grešaka izvan-prostora."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "Traženje kernel datoteke u %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Kopiranje kernel datoteke iz %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "Traženje initrd datoteke u %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Kopiranje initrf datoteke iz %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "Otpakiravanje konfiguracije bootloader-a"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1327 unetbootin.cpp:1353
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "Αποσυμπίεση του ISO:"
+msgstr "<b>Otpakiravanje kompresiranog iso-a:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Kopiranje datoteke, molimo pričekajte..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Kopirano:</b> 0 byte-ova"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2499
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Kopirano:</b> %1 od %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1623
 msgid "Extracting files, please wait..."
-msgstr "Εξαγωγή αρχείων, παρακαλώ περιμένετε..."
+msgstr "Otpakiravanje datoteka, molimo pričekajte..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1624
 msgid "<b>Archive:</b> %1"
-msgstr "<b>Δέσμη Αρχείων:</b> %1"
+msgstr "<b>Arhiva:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1625
 msgid "<b>Source:</b>"
-msgstr "<b>Από:</b>"
+msgstr "<b>Izvor:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1626
 msgid "<b>Destination:</b>"
-msgstr "<b>Προορισμός:</b>"
+msgstr "<b>Odredište:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1627
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Εξήχθησαν:</b> 0 of %1 files"
+msgstr "<b>Otpakirano:</b>0 od %1 datoteka"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1630
 msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Από:</b> %1 (%2)"
+msgstr "<b>Izvor:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1631
 msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Προορισμός:</b> %1%2"
+msgstr "<b>Odredište:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1632
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Εξήχθησαν:</b> %1 of %2 files"
+msgstr "<b>Otpakirano:</b> %1 od %2 datoteka"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2389
 msgid "Downloading files, please wait..."
-msgstr "Μεταφόρτωση αρχείων, παρακαλώ περιμένετε..."
+msgstr "Skidanje datoteka, molimo pričekajte..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1583 unetbootin.cpp:2390
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Από:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Izvor:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1584 unetbootin.cpp:2391
 msgid "<b>Destination:</b> %1"
-msgstr "<b>Προορισμός:</b> %1"
+msgstr "<b>Odredište:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2392
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Μεταφορτώθηκαν:</b> 0 bytes"
+msgstr "<b>Skinuto:</b> 0 byteova"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2469 unetbootin.cpp:2484
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Μεταφορτώθηκε:</b> %1 of %2"
+msgstr "<b>Skinuto:</b> %1 od %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2575
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "Αναζήτηση στο <a href=\"%1\">%1</a>"
+msgstr "Traženje u <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2579
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 είναι όμοια με το <a href=\"%3\">%3</a>"
+msgstr "%1/%2 odgovarajućih nađeno u <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2764
 msgid "%1 not found"
-msgstr "%1 δεν βρέθηκε"
+msgstr "%1 nije pronađen"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2765
@@ -330,54 +335,53 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
-"%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο "
-"εγκατάστασης.￼Εγκαταστήστε το πακετο \"%3\" ή το αντίστοιχο για την διανομή "
-"σας."
+"%1 nije nađen. To je potrebno za %2 install mode.\n"
+"Instaliranje \"%3\" paketa ili ekvivalent vaše distribucije."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3054
 msgid "(Current)"
-msgstr "(Τρέχον)"
+msgstr "(Trenutno)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3055
 msgid "(Done)"
-msgstr "(Ολοκληρώθηκε)"
+msgstr "(Napravljeno)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3322
 msgid "Configuring grub2 on %1"
-msgstr "Ρύθμιση grub2 στο %1"
+msgstr "Konfiguracija grub2 na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3334
 msgid "Configuring grldr on %1"
-msgstr "Ρύθμιση grldr στο %1"
+msgstr "Konfiguriranje grldr na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3362
 msgid "Configuring grub on %1"
-msgstr "Ρύθμιση grub στο %1"
+msgstr "Konfiguriranje grub na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3547
 msgid "Installing syslinux to %1"
-msgstr "Εγκατάσταση syslinux στο %1"
+msgstr "Konfiguriranje syslinux na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3582
 msgid "Installing extlinux to %1"
-msgstr "Εγκατάσταση extlinux στο %1"
+msgstr "Instaliranje extlinux na %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3688
 msgid "Syncing filesystems"
-msgstr "Συγχρονισμός συστημάτων αρχείων"
+msgstr "Synhronizacija datotečnih sustava"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3700
 msgid "After rebooting, select the "
-msgstr "Μετά την επανεκκίνηση επιλέξετε το "
+msgstr "Nakon restarta, odabrati "
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3704
@@ -385,8 +389,8 @@ msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
-"Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να "
-"ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;"
+"Nakon restarta, odabrati USB boot opciju u BIOS boot menu.%1\n"
+"Restart odmah?"
 
 #. ts-context unetbootin
 #: distrolst.cpp:27
@@ -396,6 +400,10 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*BITNO* Prije restarta, postaviti Ubutnu alternativnu (ne desktop) install "
+"iso datoteku u glavni direktorij vašeg tvrdog diska ili USB jedinice. Oni se "
+"mogu nabaviti da cdimage.ubuntu.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:219
@@ -407,6 +415,12 @@ msgid ""
 "'mirrors.kernel.org' when prompted for a server, and enter "
 "'/centos/%1/os/%2' when asked for the folder."
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, ignorirati bilo kakve poruke o grešci i odabrati "
+"nazad ako se pojavi upit za CD, zatim otići u glavni meni, odabrati opciju "
+"'Pokrenuti Instalaciju', odvrati 'Mreža' kao izvor, odabrati 'HTTP' kao "
+"protokol, ući u 'mirrors.kernel.org' kada se pojavi upit za server, i "
+"unijeti '/centos/%1/os/%2' kada se pojavi upit za mapu."
 
 #. ts-context unetbootin
 #: distrolst.cpp:275
@@ -416,6 +430,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, staviti Debian install iso datoteku u glavni "
+"direktorij vašeg tvrdog diska ili USB jedinice. One se mogu nabaviti sa "
+"cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:364
@@ -427,6 +445,12 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako "
+"se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju "
+"'Pokrenuti Instalaciju', odabrati 'Mreža' kao izvor, odbarati 'HTTP' kao "
+"protokol, ući u 'download.fedora.redhat.com', kada se pojavi upit o serveru, "
+"unijeti '/pub/fedora/linux/development/%1/os' kada se pojavi upit o mapi."
 
 #. ts-context unetbootin
 #: distrolst.cpp:370
@@ -438,6 +462,13 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako "
+"se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju "
+"'Pokrenuti Instalaciju', odabrati 'Mreža' kao izvor, odbarati 'HTTP' kao "
+"protokol, ući u 'download.fedora.redhat.com', kada se pojavi upit o serveru, "
+"unijeti '/pub/fedora/linux/development/%1/Fedora/%2/os' kada se pojavi upit "
+"o mapi."
 
 #. ts-context unetbootin
 #: distrolst.cpp:730
@@ -449,6 +480,12 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako "
+"se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju "
+"'Pokrenuti Instalaciju', odabrati 'Mreža' kao izvor, odbarati 'HTTP' kao "
+"protokol, ući u 'download.opensuse.com', kada se pojavi upit o serveru, "
+"unijeti '/factory/repo/oss' kada se pojavi upit o mapi."
 
 #. ts-context unetbootin
 #: distrolst.cpp:736
@@ -460,16 +497,22 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako "
+"se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju "
+"'Pokrenuti Instalaciju', odabrati 'Mreža' kao izvor, odbarati 'HTTP' kao "
+"protokol, ući u 'download.opensuse.com', kada se pojavi upit o serveru, "
+"unijeti '/distribution/%1/repo/oss' kada se pojavi upit o mapi."
 
 #. ts-context unetbootin
 #: distrover.cpp:21 unetbootin.cpp:652
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "== Odabrati Distribuciju =="
 
 #. ts-context unetbootin
 #: distrover.cpp:21 distrover.cpp:25
 msgid "== Select Version =="
-msgstr ""
+msgstr "== Odabrati Verziju =="
 
 #. ts-context unetbootin
 #: distrover.cpp:22
@@ -480,12 +523,11 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Καλώς ήρθατε στο <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal "
-"Netboot Installer. Τρόπος Χρήσης:<ol><li>Επιλέξετε απο την παραπάνω λίστα "
-"την διανομή και την έκδοση που επιθυμείτε να κατεβεί, ή διαλέξτε παρακάτω "
-"μεμονωμένα αρχεία για φόρτωση.</li><li>Στη συνέχεια επιλέξτε τύπο "
-"εγκατάστασης και πατήστε ΟΚ για να ξεκινήσει η διαδικασία.</li></ol>"
+"Dobrodošli u <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"the Universal Netboot Installer. Korištenje:<ol><li>Odabrati distribuciju i "
+"verziju za skidanje iz gornje liste, ili ručno odrediti datoteke za skidanje "
+"ispod</li><li>Odabrati tip instalacije, i stisnuti OK za početak "
+"instalacije.</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:27
@@ -496,6 +538,11 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Opis:<"
+"/b> Arch Linux je lightweight distribution optimizirana za brzinu i "
+"fleksibilnost.<br/><b>Napomena Instalacije:</b> Osnovna inačica dozvoljava "
+"instalaciju preko internet-a (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:33
@@ -506,6 +553,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Web stranica:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Opis:</b>  BackTrack "
+"je distribucija sa fokusom na analizu mreže i provjeru "
+"prodornosti.<br/><b>Napomena Instalacije:</b> BackTrack se boota i pokreće u "
+"live mode; instalacija nije potrebna za korištenje."
 
 #. ts-context unetbootin
 #: distrover.cpp:38
@@ -517,12 +569,11 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
-"<b>Κεντρική Σελίδα:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Πριγραφή:</b"
-"> Το CentOS είναι ένας δωρεάν κλώνος του Red Hat Enterprise "
-"Linux.<br/><b>Σημειώσης Εγκατάστασης:</b> Η προεπιλεγμένη έκδοση επιτρέπει "
-"και την εγκατάσταση μέσω διαδικτύου (FTP)  και την εγκατάσταση μέσω δίσκου "
-"εγκατάστασης του CentOS."
+"<b>Web stranica:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Opis:</b>  "
+"CentOS je besplatan Red Hat Enterprise Linux klon.<br/><b>Napomena "
+"Instalacije:</b> Osnovna inačica dozvolj instalacije preko interneta (FTP), "
+"ili offline installation koristeći prije skinute ISO datoteke instalacije."
 
 #. ts-context unetbootin
 #: distrover.cpp:43
@@ -533,6 +584,11 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Opis:</b> "
+"CloneZilla je sidtribucija koja se koristi za backup diska i pravljenje "
+"slika diska.<br/><b>Napomena Instalacije:</b> CloneZilla se boot-a i pokreće "
+"u live mode-u; za korištenje nije potrebna instalacija."
 
 #. ts-context unetbootin
 #: distrover.cpp:48
@@ -544,6 +600,12 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Opis"
+":</b>  Damn Small Linux je minimalistička distribucija stvorena za starija "
+"računala.<br/><b>Napomena Instalacije:</b> The Live inačica učitava cijeli "
+"sustav u RAM i boot-a u memoriju, dakle instalacija nije potrebna, već je "
+"opcionalna."
 
 #. ts-context unetbootin
 #: distrover.cpp:53
@@ -557,6 +619,14 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Opis:</b>  "
+"Debian je community-developed Linux distribucija koja podržava cijelo čudo "
+"arhitektura i nudi vrlo veliki repozitorij paketa.<br/><b>Napomene "
+"Instalacije:</b> The NetInstall inačica dozvoljava instalaciju preko FTP. "
+"Ako želite koristiti  pre-downloaded install iso, koristiti HdMedia opciju, "
+"i zatim staviti install iso file u glavni direktorij vašeg tvrdog diska ili "
+"USB sticka"
 
 #. ts-context unetbootin
 #: distrover.cpp:59
@@ -567,6 +637,11 @@ msgid ""
 "distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Opis:</b>  Dreamlinux je korisnički prijateljska Debian bazirana "
+"distribucija.<br/><b>Napomena Instalacije:</b> The Live inačica dozvoljava "
+"boot u Live mode, iz kojega se instaler može pokrenuti prema potrebi."
 
 #. ts-context unetbootin
 #: distrover.cpp:64
@@ -578,6 +653,11 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Opis:</b>  Dr.Web AntiVirus je anti-virus emergency kit za vraćanje "
+"sustava koji se srušio zbog malware-a.<br/><b>Napomena Instalacije:</b> The "
+"Live inačica boot u Live mode, iz kojega se mogu pokrenuti malware pretrage."
 
 #. ts-context unetbootin
 #: distrover.cpp:69
@@ -588,6 +668,11 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Opis:</b> "
+" Elive je Debian-based distribucija koja promovira Enlightenment window "
+"manager.<br/><b>Napomena Instalacije:</b> The Live inačica dozvoljava boot u "
+"Live mode, iz kojega se prema potrebi može pokrenuti instaler."
 
 #. ts-context unetbootin
 #: distrover.cpp:74
@@ -601,6 +686,14 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Opis:<"
+"/b>  Fedora je Red Hat sponzorirana community distribucija koja prikazuje "
+"zadnji najnoviji free/open-source software.<br/><b>Napomene Instalacije:</b> "
+"The Live version dozvoljava boot u Live mode, iz kojega se prema potrebi "
+"može pokrenuti instaler. NetInstall inačica dozvoljava instalaciju "
+"prekointerneta (FTP), ili offline instalaciju korištenjem prije skinutih "
+"installation ISO datoteka."
 
 #. ts-context unetbootin
 #: distrover.cpp:79
@@ -612,6 +705,12 @@ msgid ""
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Opis:</b> "
+" FreeBSD je općeniti Unix-like operacijski sustav koji je načinjen za "
+"skalabilnost i performanse.<br/><b>Bilješka Instalacije\r\n"
+":</b>  Podrazumijevana inačica dozvoljava instalaciju preko interneta (FTP), "
+"ili offline instalaciju korištenjem prije skinutih ISO datoteka."
 
 #. ts-context unetbootin
 #: distrover.cpp:84
@@ -623,6 +722,12 @@ msgid ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
 "installation details."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Opis:</b> "
+" FreeDOS je besplatni MS-DOS kompatibilina operacijski "
+"sustav.<br/><b>Bilješka Instalacije:</b> Pogledati <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">uputstvo</a>  za "
+"detalje instalacije."
 
 #. ts-context unetbootin
 #: distrover.cpp:89
@@ -635,6 +740,13 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Opis:</b>  "
+"FreeNAS je ugrađena open source NAS (Network-Attached Storage) distribucija "
+"bazirana na FreeBSD.<br/><b>Napomene Instalacije:</b> The LiveCD inačica "
+"stvara RAM disk za FreeNAS, i koristi a FAT formatiranu disketu ili USB "
+"stick za spremanje datoteke postavki. Ugrađena inačica dozvoljava "
+"instalaciju na tvrdi disk."
 
 #. ts-context unetbootin
 #: distrover.cpp:94
@@ -646,6 +758,12 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Opis:</b>  "
+"Frugalware je general-purpose Slackware-based distribucija za napredne "
+"korisnike.<br/><b>Primjedba Instalacije:</b> Podrazumijevana postavka "
+"dozvoljava obadvije i instalaciju preko interneta (FTP), ili offline "
+"instalaciju korištenjem  pre-downloaded installation ISO datoteka."
 
 #. ts-context unetbootin
 #: distrover.cpp:99
@@ -656,6 +774,11 @@ msgid ""
 "installation.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which malware scans can be launched."
 msgstr ""
+"<b>Web stranica:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Opis:</b>  F-"
+"Secure Rescue CD otkriva i uklanja malware iz vaše Windows "
+"instalacije.<br/><b>Primjedba Instalacije:</b> The Live version dozvoljava "
+"boot u Live mode, iz kojega se može pokrenuti pretraživanje na malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:104
@@ -666,6 +789,11 @@ msgid ""
 "users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
 "mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Opis:</b> "
+"Gentoo je fleksibil ilna distribucija bazirana na izvornom kodu napravljena "
+"za napredne korisnike.<br/><b>Primjedba Instalacije:</b> The Live inačica "
+"dozvoljava boot u Live mode, iz kojega može dodatno pokrenuti instaler."
 
 #. ts-context unetbootin
 #: distrover.cpp:114
@@ -677,6 +805,12 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Opis:<"
+"/b> gNewSense je FSF-endorsed distribucija bazirana na Ubuntu sa svim non-"
+"free componentama uklonjenim.<br/><b>Primjedba Instalacije:</b> The Live "
+"version dozvoljava boot u Live mode, iz kojega se instaler eventualno može "
+"pokrenuti."
 
 #. ts-context unetbootin
 #: distrover.cpp:119
@@ -687,6 +821,11 @@ msgid ""
 "various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
 "runs; no installation is required to use it."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Opis:</b>  Gujin je grafički boot manager koji može raditi bootstrap "
+"raznih i particija i datoteka.<br/><b>Bilješke Instalacije:</b> Gujin se "
+"jednostavno boot-a i pokreće; instalacije nije nužna za korištenje."
 
 #. ts-context unetbootin
 #: distrover.cpp:124
@@ -698,6 +837,12 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which "
 "malware scans can be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Opis:</b>  Kaspersky Rescue Disk "
+"otkriva i uklanja malware iz vaše Windows installacije.<br/><b>Bilješke "
+"Instalacije:</b> The Live inačica dozvoljava boot u Live mode, iz koje se "
+"može pokrenuti pretraživanje na malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:129
@@ -713,6 +858,16 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Opis:</b> "
+" Kubuntuje službeni Ubuntu derivati koji promovira KDE "
+"desktop.<br/><b>Primjedbe Instalacije:</b> The Live version dozvoljava boot "
+"u Live mode, iz koje se eventualno može pokrenuti instaler. The NetInstall "
+"inačica dozvoljava instalaciju preko FTP,  i može instalirati Kubuntu i "
+"druge službene Ubuntu derivate. Ako želite koristiti pre-downloaded "
+"alternate (ne desktop) install iso, koristiti HdMedia option, i zatim "
+"staviti alternativnu iso datoteku u osnovni direktorij vašeg tvrdog diska "
+"ili USB sticka"
 
 #. ts-context unetbootin
 #: distrover.cpp:134
@@ -723,6 +878,11 @@ msgid ""
 "easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is "
 "latest 1.0 release."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Opis:</b"
+">  LinuxConsole je desktop distro za igranje igara, jednostavnmo za "
+"instalaciju, jednostavno za korištenje i boot .<br/><b>Primjedbe "
+"Instalacije:</b> 1.0.2009 je zadnje 1.0 izdanje."
 
 #. ts-context unetbootin
 #: distrover.cpp:139
@@ -734,6 +894,12 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Opis:</b>  "
+"Linux Mint je korisnički prijateljska Ubuntu-based distribucija koja sadrži "
+"dodatne vlasničke kodeke i drugi software podrazumijevano.<br/><b>Primjedbe "
+"Instalacije:</b> The Live inačica dozvoljava boot u Live mode, iz koje se "
+"može pokrenuti instaler prema potrebi."
 
 #. ts-context unetbootin
 #: distrover.cpp:144
@@ -747,6 +913,14 @@ msgid ""
 "downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Opis:</"
+"b>  Mandriva je korisnički prijateljska distribucija poznata kao Mandrake "
+"Linux.<br/><b>Bilješke Instalacije:</b> The Live inačica dozvoljava boot u "
+"Live mode, iz kojega se po potrebi može pokrenuti instaler. The NetInstall "
+"inačica dozvoljava instalaciju preko interneta (FTP) ili preko prije "
+"skinutih <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image "
+"datoteka</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:150
@@ -769,6 +943,12 @@ msgid ""
 "installation over the internet (FTP), or using pre-downloaded installation "
 "ISO files."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Opis:</b>  "
+"NetBSD je Unix-like operativni sustav koji se fokusira "
+"naportabilnost.<br/><b>Napomena Instalacije:</b>Podrazumijevana inačica "
+"dozvoljava instalaciju preko interneta (FTP), ili korištenjem prije skinutih "
+"installation ISO datoteka."
 
 #. ts-context unetbootin
 #: distrover.cpp:160
@@ -781,6 +961,13 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Opis:</b> "
+" NimbleX je mala, svestrana Slackware-based distribucija. Napravljena je "
+"korištenjem linux-live skripti, i sadrži KDE desktop. Može se boot-ati sa CD "
+"ili flash memorije (USB stikovi ili MP3 playeri),  i može se jednostavn "
+"prilagođavati i proširivati.<br/><b>Napomena Instalacije:</b>  NimbleX se "
+"boot-a u Live mode."
 
 #. ts-context unetbootin
 #: distrover.cpp:165
@@ -845,6 +1032,12 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Opis"
+":</b> Puppy Linux je lagana distribucija stvirena za starija "
+"računala.<br/><b>Bilješka Instalacije:</b> The Live inačica učitava cijeli "
+"sustav u RAM i boot-a iz memorije, dakle instalacija nije potrebna ali "
+"moguća."
 
 #. ts-context unetbootin
 #: distrover.cpp:195
@@ -878,6 +1071,12 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Opis:<"
+"/b>  SliTaz je malena, desktop-orientirana micro "
+"distribucija.<br/><b>Napomena instalacije:</b> The Live inačica učitava "
+"cijeli sustav u RAM i boot-a iz  memorije, dakle instalacija nije potrebna "
+"ali opcionalna."
 
 #. ts-context unetbootin
 #: distrover.cpp:210
@@ -889,6 +1088,12 @@ msgid ""
 "bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
 "is required to use it."
 msgstr ""
+"<b>Web stranica:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Opis:</b> Smart Boot Manager je bootloader koji može "
+"rješiti neka boot-related BIOS ograničenja i greške.<br/><b>Napomena "
+"instalacije:</b> SBM se jednostavno boot-a i radi; instalacija nije nužna za "
+"korištenje."
 
 #. ts-context unetbootin
 #: distrover.cpp:215 distrovercust.cpp:12
@@ -980,6 +1185,11 @@ msgid ""
 "distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
 "media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/eeepclos.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Opis:</b>  EeePCLinuxOS je korisnički prijateljska distribucija bazirana na "
+"PCLinuxOS za EeePC.<br/><b>Napomena Instalacije:</b> Osigurati se kako je "
+"medij prazan i formatiran prije nastavka instalacije."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:41
@@ -992,6 +1202,14 @@ msgid ""
 "alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Web "
+"stranica:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Opis:</b>  Ubuntu Eee nije samo Ubuntu optimiziran za "
+"Asus Eee PC. To je operativni sustav, koji koristi Netbook Remix interface, "
+"koji favorizira najwhich favors the best software available ibolji dostupan "
+"software umjesto open source alternative (npr. Skype umjesto "
+"Ekiga).<br/><b>Napomena Instalacije:</b> Osigurati se kako je medij prazan i "
+"formatiran prije nastavka instalacije."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:53
@@ -1002,6 +1220,11 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<img src=\":/elive.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Opis:</b> "
+" Elive je Debian-based distribucija koja promovira Enlightenment window "
+"manager.<br/><b>Napomena Instalacije:</b> The Live version dozvoljava "
+"booting u Live mode, iz kojega se prema potrebi može pokrenuti installer."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1012,6 +1235,11 @@ msgid ""
 "Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
 "install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Opis:<"
+"/b>  Kiwi Linux je Ubuntu derivative prvotno napravljen za korisnike koji "
+"govore Rumunjski, Mađarski i Engleski.<br/><b>Napomena Instalacije:</b> "
+"Osigurati prazan i formatiran medij prije nastavka instalacije."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:69
@@ -1024,6 +1252,13 @@ msgid ""
 "software.<br/><b>Install Notes:</b> Make sure install media is empty and "
 "formatted before proceeding with install."
 msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Opis:<"
+"/b>  gNewSense je visokokvalitetna GNU/Linux distribucija koja proširuje i "
+"poboljšava Ubuntu stvarajući potpuno slobodan operacijski sustav bez "
+"bilokakvih binary blobs ili stabla paketa koji sadrže proprietary "
+"software.<br/><b>Napomena Instalacije:</b> Osigurati prazan i formatiran "
+"medij prije nastavka instalacije."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:77
@@ -1036,6 +1271,13 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>Web stranica:</b>  <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Opis:</b> "
+" NimbleX je mala, svestranae Slackware-based distribucija. Stvorena je "
+"korištenjem linux-live scripts,  i promovira KDE desktop. Može biti  boot-"
+"ana iz CD ili flash memorije (USB stickovi ili MP3 playeri), i može biti "
+"jednostavno prilagođavana i proširivana.<br/><b>Napomena Instalacije:</b>  "
+"NimbleX se boot-a u Live mode."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:85
@@ -1048,6 +1290,13 @@ msgid ""
 "optional. This installer is based on <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Opis:<"
+"/b>  SliTaz je lightweight, desktop-oriented micro "
+"distribution.<br/><b>Napomene Instalacije:</b> The Live version učitava "
+"čitav sustav u RAM i boot-a iz memorije, dakle instalacija nije nužna ali je "
+"moguća. Ovaj installer se bazira na <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:93
@@ -1058,6 +1307,11 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Web stranica:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Opis:</b>  xPUD "
+"je lightweight distribution koja promovira jednostavni kiosk-like interface "
+"sa preglednikom interneta i media player.<br/><b>Napomena Instalacije:</b> "
+"The Live version učitava cijeli sustav u RAM i boot-a iz  memorije."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:20
@@ -1067,32 +1321,32 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr "Επίλέξτε από την λίστα με τις υποστηριζόμενες διανομές"
+msgstr "Odabrati iz liste podržanih distribucija"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "&Distribucija"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr "Προσδιορίστε ενα αρχείο εικόνας δίσκου"
+msgstr "Odrediti image datoteku diska za učitavanje"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "Disk&image"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr "Χειροκίνητα δηλώστε πυρήνα και intird"
+msgstr "Odrediti ručno kernel i initrd za učitavanje"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
 msgid "&Custom"
-msgstr ""
+msgstr "&Podešeno"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:428
@@ -1110,101 +1364,91 @@ msgid ""
 "drive, wiping out all data on it. It shouldn't be necessary if you're using "
 "a standard USB drive.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">￼<html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">￼p, li { white-"
-"space: pre-wrap; }￼</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\">￼<p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">Αυτή  η<span style=\" font-weight:600;\"> "
-",πιθανότατα επικίνδυνη, </span> επιλογή θα διαμορφώσει τον επιλεγμένο δίσκο, "
-"διαγράφοντας ολα τα δεδομένα που έχει. Δεν ειναι απαραίτητη εφόσον "
-"χρησιμοποιείτε standard USB δίσκο.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:435
 msgid "&Format Drive (Wipes Out Data)"
-msgstr ""
+msgstr "&Formatiranje Diska (Uništava Podatke)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:498
 msgid "OK"
-msgstr "Εντάξει"
+msgstr "U redu"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:501
 msgid "Return"
-msgstr ""
+msgstr "Return"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:508
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Odustani"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:511
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:556
 msgid "Reboot Now"
-msgstr "Επανεκκίνηση Τώρα"
+msgstr "Restart Sada"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:563
 msgid "Exit"
-msgstr "Έξοδος"
+msgstr "Izlaz"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:655
 msgid "1. Downloading Files"
-msgstr "1. Μεταφόρτωση αρχείων"
+msgstr "Skidanje Datoteka"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:662
 msgid "2. Extracting and Copying Files"
-msgstr "2. Εξαγωγή και Αντιγραφή Αρχείων"
+msgstr "Otpakiravanje i Kopiranje Datoteka"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:669
 msgid "3. Installing Bootloader"
-msgstr "3. Εγκατάσταση Επιλογέα Εκκίνησης"
+msgstr "Instalacija Bootloader-a"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:676
 msgid "4. Installation Complete, Reboot"
-msgstr "4. Η Εγκατάσταση Ολοκληρώθηκε, Επανεκκίνηση"
+msgstr "Instalacija Potpuna, Restart"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:472 unetbootin.ui:491
 msgid "Select the target drive to install to"
-msgstr "Επιλέξτε τον δίσκο στον οποίο θα γινει η εγκατάσταση"
+msgstr "Odabrati ciljni disk za instalaciju"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:475
 msgid "Dri&ve:"
-msgstr ""
+msgstr "D&isk"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:446 unetbootin.ui:465
 msgid "Select the installation target type"
-msgstr "Επιλέξτε το είδος δίσκου στον οποίο θα γίνει η εγκατάσταση"
+msgstr "Odabrati ciljni tip instalacije"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:449
 msgid "&Type:"
-msgstr ""
+msgstr "&Tip:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr "Επιλέξτε την έκδοση της διανομής"
+msgstr "Odabrati inačicu distribucije"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr "Επιλέξτε το αρχείο εικόνας δίσκου"
+msgstr "Odbarati datoteku diskovnog image-a"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
@@ -1214,44 +1458,44 @@ msgstr "..."
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr "Επιλογή τύπου εικόνας δίσκου"
+msgstr "Odabrati tip diskovnog image-a"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
-"Προσδιορίστε αρχείο εικόνας δίσκου/δισκέττας, ή αρχειο εικόνας οπτικού "
-"δίσκου (ISO)"
+"Zadati disketni image/image tvrdog diska, ili CD image (ISO) datoteku za "
+"učitavanje"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
-msgstr "Προσδιορίστε αρχείο πυρήνα"
+msgstr "Zadati kernel datoteku za učitavanje"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:283
 msgid "Select kernel file"
-msgstr "Επιλέξτε αρχείο πυρήνα"
+msgstr "Odabrati kernel datoteku"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
-msgstr "Προσδιορίστε αρχείο initrd"
+msgstr "Zadati initrd datoteku za učitavanje"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:372
 msgid "Select initrd file"
-msgstr "Επιλέξτε αρχείο initrd"
+msgstr "Odabrati initrd datoteku"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Επιλέξτε αρχείο syslinux.cfg ή isolinux.cfg"
+msgstr "Odabrati syslinux.cfg ili isolinux.cfg datoteku"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr "Προσδιορίστε παραμέτρους και επιλογές για τον πυρήνα"
+msgstr "Zadati parametre i opcije koji će se slati kernelu"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:414
@@ -1270,28 +1514,16 @@ msgid ""
 "you're doing; if you use this option, the installation will likely fail, or "
 "can lead to system boot issues.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">￼<html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">￼p, li { white-"
-"space: pre-wrap; }￼</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\">￼<p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">Αυτή η<span style=\" font-weight:600;\">, "
-"πιθανότατα επικίνδυνη </span> επιλογή, θα εμφανίσει όλους τους δίσκους στο "
-"μενού με το όνομα \"Δίσκοι\". Ενεργοποιείστε το μονο αν ξέρετε τι κάνετε. "
-"Εάν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανόν η εγκατάσταση να "
-"αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του "
-"συστήματος.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:421
 msgid "Show &All Drives (Use with Care)"
-msgstr ""
+msgstr "Prik&az Svih Diskova (koristiti pažljivo)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr ""
+msgstr "&Kernel:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
@@ -1301,22 +1533,22 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "&Opcije:"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr "Η απεγκατάσταση ολοκληρώθηκε"
+msgstr "Deinstalacija Završena"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr "%1 έχει απεγκατασταθεί."
+msgstr "%1 je deinstalirano."
 
 #. ts-context uninstaller
 #: main.cpp:318
 msgid "Must run as root"
-msgstr "Πρέπει να εκτελεσθεί από τον χρήστη root"
+msgstr "Nužno pokretanje kao root"
 
 #. ts-context uninstaller
 #: main.cpp:320
@@ -1324,176 +1556,15 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su -c '%1'</b>"
 msgstr ""
-"%2 πρέπει να εκτελείται απο τον χρήστη root. Κλείστε την εφαρμογή, και "
-"εκτελέστε την πάλι χρησιμοποιώντας είτε την εντολή :<br/><b>sudo "
-"%1</b><br/>ή:<br/><b>su -c '%1'</b>"
+"%2 mora biti izvršen kao root. Zatvoriti, i ponovno pokrenuti "
+"koristeći:<br/><b>sudo %1</b><br/>ili:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
 msgid "%1 Uninstaller"
-msgstr "%1 Πρόγραμμα Απεγκατάστασης"
+msgstr "%1 Deinstaler"
 
 #. ts-context uninstaller
 #: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr "%1 εγκαθίσταται αυτήν τη στιγμή. Να διαγραφεί η υπάρχουσα έκδοση;"
-
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> %1 of %2 bytes"
-
-#~ msgid "UNetbootin"
-#~ msgstr "UNetbootin"
-
-#~ msgid "Distribution"
-#~ msgstr "Διανομή"
-
-#~ msgid "Diskimage"
-#~ msgstr "Εικόνα Δίσκου"
-
-#~ msgid "Drive:"
-#~ msgstr "Δίσκος:"
-
-#~ msgid "Type:"
-#~ msgstr "Είδος Δίσκου:"
-
-#~ msgid "Initrd:"
-#~ msgstr "Initrd:"
-
-#~ msgid "Options:"
-#~ msgstr "Επιλογές:"
-
-#~ msgctxt "#1"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Εξαγωγή αρχείων, παρακαλω περιμένετε..."
-
-#~ msgctxt "#2"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Δέσμη Αρχείων:</b> %1"
-
-#~ msgctxt "#3"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Από:</b>"
-
-#~ msgctxt "#4"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Προς:</b>"
-
-#~ msgctxt "#5"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Εξήχθησαν:</b> 0 of %1 files"
-
-#~ msgctxt "#6"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Από:</b> %1 (%2)"
-
-#~ msgctxt "#7"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Προς:</b> %1%2"
-
-#~ msgctxt "#8"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Εξήχθησαν:</b> %1 of %2 files"
-
-#~ msgctxt "#9"
-#~ msgid "Downloading files, please wait..."
-#~ msgstr "Καταφώρτωση αρχείων, παρακαλώ περιμένετε..."
-
-#~ msgctxt "#10"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Από:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#11"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Προς:</b> %1"
-
-#~ msgctxt "#12"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> 0 bytes"
-
-#~ msgctxt "#13"
-#~ msgid "USB Drive"
-#~ msgstr "Δισκος USB"
-
-#~ msgctxt "#14"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> %1 of %2 bytes"
-
-#~ msgctxt "#15"
-#~ msgid "Searching in <a href=\"%1\">%1</a>"
-#~ msgstr "Αναζήτηση στο <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#16"
-#~ msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-#~ msgstr "%1/%2 είναι όμοια στο <a href=\"%3\">%3</a>"
-
-#~ msgctxt "#17"
-#~ msgid "%1 not found"
-#~ msgstr "%1 δεν βρέθηκε"
-
-#~ msgctxt "#18"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο "
-#~ "εγκατάστασης.￼Εγκαταστήστε το πακετο \"%3\" ή το αντίστοιχο για την διανομή "
-#~ "σας."
-
-#~ msgctxt "#19"
-#~ msgid "Hard Disk"
-#~ msgstr "Σκληρός Δίσκος"
-
-#~ msgctxt "#20"
-#~ msgid "Floppy"
-#~ msgstr "Δισκέτα"
-
-#~ msgctxt "#21"
-#~ msgid "After rebooting, select the "
-#~ msgstr "Αφού κανετε επανεκήνηση, επιλέξτε το "
-
-#~ msgctxt "#22"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει "
-#~ "εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;"
-
-#~ msgctxt "unetbootin#30"
-#~ msgid "USB Drive"
-#~ msgstr "Δισκος USB"
-
-#~ msgctxt "unetbootin#31"
-#~ msgid "Hard Disk"
-#~ msgstr "Σκληρός Δίσκος"
-
-#~ msgctxt "unetbootin#32"
-#~ msgid "Floppy"
-#~ msgstr "Δισκέτα"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP). If interested in a LiveUSB version, "
-#~ "see FaunOS."
-#~ msgstr ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Το Arch Linux είναι μια ελαφριά διανομή βελτιστοποιημένη για "
-#~ "ταχύτητα και ευελιξία.<br/><b>Install Notes:</b> Η προεπιλεγμένη έκδοση "
-#~ "επιτρέπει την εγκατάσταση μέσω internet (FTP). Άν σας ενδιαφέρει μια έκδοση "
-#~ "LiveUSB, δείτε το FaunOS."
-
-#~ msgid "Custom"
-#~ msgstr "Προσαρμοσμένο"
-
-#~ msgid "Show All Drives (Use with Care)"
-#~ msgstr "Εμφάνιση όλων των δίσκων (Χρησιμοποιήστε με προσοχή)"
-
-#~ msgid "Kernel:"
-#~ msgstr "Πυρήνας:"
-
-#~ msgid "Format Drive (Wipes Out Data)"
-#~ msgstr "Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)"
+msgstr "%1 je trenutno instalirano. Ukloniti postojeću inačicu?"

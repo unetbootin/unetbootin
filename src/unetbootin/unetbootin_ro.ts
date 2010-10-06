@@ -7,20 +7,24 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-03-14 06:19+0000
-Last-Translator: Adi Roiban &lt;adi@roiban.ro&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-07-17 15:30+0000
+Last-Translator: Vicol Dragos &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>Options:</source>
         <translation type="obsolete">Opțiuni:</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuție bazată pe Debian care utilizează managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Notițe de instalare:&lt;/b&gt; Versiunea Live permite bootarea în sesiune Live, de unde se poate lansa opțional programul de instalare. Este instalată versiunea Instabilă și nu cea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabilă&lt;/a&gt;. Programul de instalare este bazat pe &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
@@ -99,6 +103,10 @@ X-Generator: Launchpad (build Unknown)
         <translation type="obsolete">&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Debian este o distribitie Linux dezvoltată de comuniuni de oameni care suporta o largă varietate de arhitecturi de calculatoare şi oferă un depozit mare de pachete de programe.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea Live permite bootarea in modul Live,  de unde modulul de instalare poate fi lansat in mod optional. Versiunea Instalare-prin-reţea permite instalarea prin protocol FTP.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuţie bazată pe Debian care cuprinde managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea Live permite bootarea in modul Live,  de unde modulul de instalare poate fi lansat in mod optional. Aceasta instalează versiunea nestabilă, nu versiunea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilă&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
         <translation type="obsolete">&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Kubuntu este o distribuţie oficială derivată din Ubuntu şi contine interfaţă grafică KDE.</translation>
     </message>
@@ -153,7 +161,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="3240"/>
         <location filename="unetbootin.cpp" line="3695"/>
         <source>Hard Disk</source>
-        <translation>Disc dur</translation>
+        <translation>Hard disc</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -220,7 +228,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Toate fișierele (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -340,28 +348,28 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Se caută fișierul nucleului în %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Se copiază fișierul nucleului din %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Se caută fișierul initrd în %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Se copiază fișierul initrd din %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Se extrage configurația încărcătorului de sistem</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -372,17 +380,17 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Se copiază fișierul, așteptați vă rog...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiați:&lt;/b&gt; 0 octeți</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiați:&lt;/b&gt; %1 din %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -579,13 +587,13 @@ Reporniţi acum?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Selectați distribuția ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Selectați versiunea ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -595,12 +603,12 @@ Reporniţi acum?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Arch Linux este o distribuție lejeră, optimizată pentru viteză și flexibilitate.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea implicită permite instalarea prin Internet (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; BackTrack este o distribuție orientată pe analizarea rețelei și teste de penetrare.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; BackTrack se pornește și rulează în direct; nu este necesară nici o instalare pentru a o utiliza.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
@@ -620,7 +628,7 @@ Reporniţi acum?</translation>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Debian este o distribuție Linux dezvoltată de comunitate ce suportă o mare varietate de arhitecturi și oferă un depozit de pachete imens.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea NetInstall permite instalarea prin FTP. Dacă doriți să utilizați o imagine iso pre-descărcată, utilizați opțiunea HdMedia și apoi plasați fișierul iso în directorul rădăcină al discului dur sau a unității USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -635,8 +643,7 @@ Reporniţi acum?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Pagina sursă:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuţie bazată pe Debian care cuprinde managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Versiunea Live permite bootarea in modul Live,  de unde modulul de instalare poate fi lansat in mod optional. Aceasta instalează versiunea nestabilă, nu versiunea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilă&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -722,7 +729,7 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -793,7 +800,7 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Ubuntu este o distribuție ușor de utilizat bazată pe Debian. În momentul de față este cea mai populară distribuție Linux.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea Live permite utilizarea în mod direct, de une se poate lansa instalatorul dacă se dorește. Versiunea NetInstall permite instalarea prin FTP, și se poate instala Kubuntu și alte derivate Ubuntu oficiale. Dacă doriți să utilizați o imagine iso pre-descărcată alternativă (nu de birou), utilizați opțiunea HdMedia și plasați imaginea iso alternativă de instalare în directorul rădăcină al discului dur sau a unității USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
@@ -823,8 +830,7 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Elive este o distribuție bazată pe Debian care utilizează managerul de ferestre Enlightenment.&lt;br/&gt;&lt;b&gt;Notițe de instalare:&lt;/b&gt; Versiunea Live permite bootarea în sesiune Live, de unde se poate lansa opțional programul de instalare. Este instalată versiunea Instabilă și nu cea &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stabilă&lt;/a&gt;. Programul de instalare este bazat pe &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -839,7 +845,7 @@ F-Secure Rescue CD gaseste si indeparteaza programele de tip malware aflate intr
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

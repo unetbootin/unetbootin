@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-03-14 19:18+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-01 09:21+0000
+Last-Translator: Jiri Grönroos &lt;Unknown&gt;
 Language-Team: Finnish &lt;fi@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -106,7 +106,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>Open Disk Image File</source>
-        <translation>Avaa levy kuva tiedosto</translation>
+        <translation>Avaa levykuvatiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
@@ -114,32 +114,32 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Kaikki tiedostot (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <source>Open Kernel File</source>
-        <translation>Avaa ydin tiedosto</translation>
+        <translation>Avaa kernel-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation>Avaa initrd tiedosto</translation>
+        <translation>Avaa initrd-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Avaa käynnistyslataajan asetustiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>Aseta USB asema</translation>
+        <translation>Kiinnitä USB-asema</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>USB asemaa ei löytynyt. Jos olet jo asettanut USB aseman, yritä uudelleen alustamista muotoon FAT32.</translation>
+        <translation>USB-asemia ei löytynyt. Jos olet jo kiinnittänyt USB-aseman, yritä alustaa se käyttäen FAT32-tiedostojärjestelmää.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
@@ -154,7 +154,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="656"/>
         <source>Select a distro</source>
-        <translation>Valitse Linux jakelu</translation>
+        <translation>Valitse jakelu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
@@ -174,7 +174,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Valitse kernel- ja/tai initrd-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
@@ -189,32 +189,32 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="702"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Levykuvatiedostoa %1 ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="716"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>Kernel-tiedostoa ei löytynyt</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Kernel-tiedostoa %1 ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="731"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>Initrd-tiedostoa ei löytynyt</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="732"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Initrd-tiedostoa %1 ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="836"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 on jo olemassa, korvataanko se?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
@@ -224,7 +224,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="863"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 - levytila lopussa, perutaanko asennus?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="864"/>
@@ -255,33 +255,33 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Puretaan käynnistyslataajan asetuksia</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;/a&gt;Avataan tiivistettyä iso tiedostoa:&lt;/a&gt; %1</translation>
+        <translation>&lt;/a&gt;Puretaan tiivistettyä iso-tiedostoa:&lt;/a&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Kopioidaan tiedostoa, odota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopioitu:&lt;/b&gt; 0 tavua</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopioitu:&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>Puretaan tiedostoja, odota kärsivällisesti...</translation>
+        <translation>Puretaan tiedostoja, odota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
@@ -296,12 +296,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Määränpää:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Purettu:&lt;/b&gt;  0 %1 tiedostosta</translation>
+        <translation>&lt;b&gt;Purettu:&lt;/b&gt;  0 / %1 tiedostoa</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -311,17 +311,17 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Määränpää:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Purettu:&lt;/b&gt; %1 %2 tiedostosta</translation>
+        <translation>&lt;b&gt;Purettu:&lt;/b&gt; %1 / %2 tiedostoa</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>Ladataan tiedostoja, odota kärsivällisesti...</translation>
+        <translation>Ladataan tiedostoja, odota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
@@ -333,7 +333,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Määränpää:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
@@ -344,7 +344,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Ladattu:&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
@@ -380,7 +380,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Säädetään grub2: %1</translation>
+        <translation>Määritetään grub2:n asetuksia: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
@@ -405,19 +405,19 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Synkronoidaan tiedostojärjestelmiä</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>Uudelleen käynnistyksen jälkeen valitse </translation>
+        <translation>Uudelleenkäynnistyksen jälkeen valitse </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Uudelleen käynnistyksen jälkeen, valitse USB asema käynnistettäväksi mediaksi BIOS menusta. %1
-Uudelleen käynnistä nyt?</translation>
+        <translation>Valitse USB-asema käynnistettäväksi mediaksi BIOS-valikosta uudelleenkäynnistyksen yhteydessä. %1
+Käynnistetäänkö kone uudelleen nyt?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -465,18 +465,18 @@ Uudelleen käynnistä nyt?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Valitse jakelu ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Valitse versio ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>Tervetuloa käyttämään &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootinia&lt;/a&gt; (lyhenne sanoista Universal Netboot Installer). Käyttöohjeet:&lt;ol&gt;&lt;li&gt;Valitse jakelu ja jakelun versio pudotusvalikoista tai vaihtoehtoisesti määritä levykuva itse.&lt;/li&gt;&lt;li&gt;Valitse asennustapa ja napsauta OK aloittaaksesi asennuksen USB-levylle.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
@@ -521,8 +521,7 @@ Uudelleen käynnistä nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -607,7 +606,7 @@ Uudelleen käynnistä nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -708,8 +707,7 @@ Uudelleen käynnistä nyt?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -724,7 +722,7 @@ Uudelleen käynnistä nyt?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -742,38 +740,38 @@ Uudelleen käynnistä nyt?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Valitse tuettujen jakeluiden luettelosta</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Jakelu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Valitse levykuva</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Levy&amp;kuva</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Valitse itse ladattava kernel ja initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Mukautettu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -787,57 +785,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Alusta asema (poistaa tiedot!)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Takaisin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Peru</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Käynnistä uudelleen nyt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="563"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Lopeta</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="655"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Ladataan tiedostoja</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Puretaan ja kopioidaan tiedostoja</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="669"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Asennetaan käynnistyslataajaa</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="676"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Asennus valmis, uudelleenkäynnistä</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="472"/>
@@ -848,7 +846,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>A&amp;sema:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -859,17 +857,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tyyppi:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Valitse jakeluversio</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Valitse levykuvatiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="286"/>
@@ -877,12 +875,12 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="375"/>
         <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Valitse levykuvan tyyppi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
@@ -893,34 +891,34 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="207"/>
         <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Valitse ladattava kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation></translation>
+        <translation>Valitse kernel-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="293"/>
         <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
-        <translation></translation>
+        <translation>Valitse ladattava initrd-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="372"/>
         <source>Select initrd file</source>
-        <translation></translation>
+        <translation>Valitse initrd-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
+        <translation>Valitse syslinux.cfg- tai isolinux.cfg-tiedosto</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
+        <translation>Valitse kernelille välitettävät parametrit ja valinnat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="414"/>
@@ -934,22 +932,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Nä&amp;ytä kaikki asemat (käytä varoen!)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Valinnat:</translation>
     </message>
 </context>
 <context>

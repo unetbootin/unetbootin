@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-02-14 05:28+0000
-Last-Translator: Jeppe Toustrup &lt;launchpad@tenzer.dk&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-07-21 02:50+0000
+Last-Translator: Steven Avonds &lt;steven.avonds@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -25,6 +25,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Arch Linux is een lichte distributie die geoptimaliseerd is voor snelheid en flexibiliteit.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; De standaardversie kan geïnstalleerd worden over het internet (FTP). Als u geïnteresseerd bent in een LiveUSB versie, kijk dan naar FaunOS.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Elive is een op Debian gebaseerde distributie met de Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de Live versie kunt u opstarten naar de live-modus, vanuit waar u eventueel de installatie kunt starten. Dit is de unstable-versie, niet de&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable versie&lt;/a&gt;. Deze installer is gebaseerd op &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
@@ -237,6 +241,10 @@ Nu herstarten?</translation>
         <comment>unetbootin#9</comment>
         <translation type="obsolete">Diskette</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Elive is een Debian gebaseerde distributie met de &quot;Enlightenment&quot; schermen beheerder.&lt;br/&gt;&lt;b&gt;Installatie commentaar:&lt;/b&gt; De live mode staat je toe om in live mode op te starten, van waar je de installatie kan starten (optioneel). Dit installeert de onstabiele versie, niet de &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabiele versie&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -327,7 +335,7 @@ Nu herstarten?</translation>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Alle bestanden (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -337,7 +345,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation>Open Initrd-Bestand</translation>
+        <translation>Open Initrd-bestand</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
@@ -347,12 +355,12 @@ Nu herstarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>Sluit een USB drive aan</translation>
+        <translation>Sluit een USB-schijf aan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Er is geen USB drive gevonden. Als je er wel één hebt aangesloten, probeer deze dan te formatteren als FAT32.</translation>
+        <translation>Er werden geen USB-schijven gevonden. Als je er wel één hebt aangesloten, probeer deze dan te formatteren als FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
@@ -447,28 +455,28 @@ Nu herstarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Kernelbestand aan het zoeken in %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kernelbestand aan het kopiëren van %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>initrd-bestand aan het zoeken in %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>initrd-bestand aan het kopiëren van %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>bootloader-configuratie aan het uitpakken</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -479,17 +487,17 @@ Nu herstarten?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Bestand wordt gekopieerd, even geduld...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Gekopieerd:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Gekopieerd:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -637,7 +645,8 @@ Nu herstarten?</translation>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*BELANGRIJK* Plaats voor het herstarten een Ubuntu Alternate (geen desktop)ISO-bestand in de hoofdmap van uw harde- of USB-schijf. Deze ISO-bestanden zijn beschikbaar op cdimage.ubuntu.cm</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
@@ -650,7 +659,8 @@ Nu herstarten?</translation>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*BELANGRIJK* Plaats voor het herstarten een Debian-ISO-beeldbestand in de hoofdmap van uw harde- of USB-schijf. Deze ISO-bestanden zijn beschikbaar op cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
@@ -684,13 +694,13 @@ Nu herstarten?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Selecteer distributie ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Selecteer versie ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -700,12 +710,12 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Arch Linux is een lichtgewicht distributie waarbij de nadruk ligt op optimalisatie voor snelheid en flexibiliteit.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; De standaardversie biedt de mogelijkheid om te installeren via internet (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; BackTrack is een besturingssysteem dat volledig in het teken staat van netwerkanalyse en veiligheidstesten.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; BackTrack start op in de live-modus; u hoeft niets te installeren om het te gebruiken.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
@@ -725,7 +735,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Debian is een door de gemeenschap ontwikkelde Linux-distributie die uiteenlopende architecturen (bv. 32- of 64 bit) ondersteunt. Verder beschikt het over veel installatiebronnen waardoor het veel software aanbiedt.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de Netinstall-versie kunt u via FTP installeren. Wilt u al op voorhand over de benodigde installatiebronnen beschikken? Gebruik dan een ISO-bestand met de Hdmedia-optie, en plaats het in de hoofdmap van uw harde- of USB-schijf</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -740,8 +750,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Elive is een Debian gebaseerde distributie met de &quot;Enlightenment&quot; schermen beheerder.&lt;br/&gt;&lt;b&gt;Installatie commentaar:&lt;/b&gt; De live mode staat je toe om in live mode op te starten, van waar je de installatie kan starten (optioneel). Dit installeert de onstabiele versie, niet de &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabiele versie&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Elive is gebaseerd op Debian en heeft de Enlightenment-windowmanager aan boord .&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de live-versie kan u in de live-modus booten, en vandaar kan u eventueel het systeem installeren.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -761,7 +770,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; FreeNAS is opensource en een geïntegreerde NAS(Network-Attached Storage)-distributie die gebaseerd is op FreeBSD.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; De Live-cdversie maakt een RAM-drive aan voor FreeNAS en gebruikt een FAT-geformatteerde floppy- of USB-disk om het configuratiebestand op te slaan. Met de zogeheten &apos;embedded&apos; versie kunt u FreeNAS volledig installeren op uw harde schijf.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="95"/>
@@ -796,12 +805,12 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Kubuntu is officieel afgeleid van Ubuntu en beschikt over de KDE-desktop.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; De live-versie start op in de live-modus, en dan kunt u de installatie starten als u dat wenst. Met de NetInstall-versie kunt u Kubuntu installeren (en ook andere officiële varianten van Ubuntu), Wilt u een ISO-installatiebestand (geen desktopversie) gebruiken dat u op voorhand hebt gedownload? Gebruik daarvoor de HdMedia-optie en plaats de zogeheten &quot;alternate install&quot;-ISO in de hoofdmap van uw harde- of USB-schijf.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; LinuxConsole is een desktopdistributie om spelletjes te spelen. De installatie is eenvoudig, het is gemakkelijk in gebruik en start snel op.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; 1.0.2009 is de laatste 1.0-uitgave.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="140"/>
@@ -826,7 +835,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Nimblex is een kleine en veelzijdige distributie die de mosterd haalt bij Slackware. Het is gebouwd met de linux-live scripts, and heeft de KDE-desktop in petto. Opstarten kan van cd of flashgeheugen (USB-sticks of MP3-spelers). Verder kan Nimblex gemakkelijk aangepast en uitgebreid worden.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; NimbleX start op in de live-modus.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -887,7 +896,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="221"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Super OS is onofficieel afgeleid van Ubuntu en beschikt standaard over extra software. Een USB-schijf van 2GB is een vereiste.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de live-versie kan u in de live-modus opstarten, en dan kan de installatie eventueel worden opgestart.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="226"/>
@@ -897,7 +906,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Ubuntu is een gebruiksvriendelijke, op Debian-gebaseerde distributie. Momenteel is het de meest populaire distributie.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de live-versie kunt u opstarten in de live-modus, en dan kan de installatie eventueel worden opgestart. Met de NetInstall-versie kunt u Kubuntu en andere officiële afgeleide distributies installeren via FTP. Gebruik de HdMedia-optie als u een zogeheten &quot;alternate install&quot;-ISO-installatiebestand (niet te verwarren met de desktopvariant) wil gebruiken dat u al op voorhand hebt gedownload. Plaats het ISO-installeerbestand in de hoofdmap van uw harde- of USB-schijf.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
@@ -907,7 +916,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Xubuntu is een officiële variant van Ubuntu met de XFCE-desktop aan boord.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de live-versie kunt u opstarten in de live-modus, en dan kan de installatie eventueel worden opgestart. Met de NetInstall-versie kunt u Kubuntu en andere officiële afgeleide distributies installeren via FTP. Gebruik de HdMedia-optie als u een zogeheten &quot;alternate install&quot;-ISO-installatiebestand (niet te verwarren met de desktopvariant) wil gebruiken dat u al op voorhand hebt gedownload. Plaats het ISO-installeerbestand in de hoofdmap van uw harde- of USB-schijf.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="246"/>
@@ -927,8 +936,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Elive is een op Debian gebaseerde distributie met de Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de Live versie kunt u opstarten naar de live-modus, vanuit waar u eventueel de installatie kunt starten. Dit is de unstable-versie, niet de&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable versie&lt;/a&gt;. Deze installer is gebaseerd op &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; Elive is een op Debian gebaseerde distributie en heeft de Enlightenment-windowmanager aan boord.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; Met de live-versie kan u in de live-modus opstarten, en dan kan de installatie eventueel worden opgestart.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -943,7 +951,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; NimbleX is een kleine, veelzijdige distributie die gebaseerd is op Slackware. Het is gebouwd met de linux-live scripts, and heeft de KDE-desktop in petto. Opstarten kan van cd of flashgeheugen (USB-sticks of MP3-spelers). Verder kan Nimblex gemakkelijk aangepast en uitgebreid worden.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; NimbleX start op in de live-modus.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

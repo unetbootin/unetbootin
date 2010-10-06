@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-02 05:01+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-08-12 16:30+0000
+Last-Translator: philippe &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -41,6 +41,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; Elive est une distribution basée sur Debian utilisant le gestionnaire de fenêtres Enlightenment.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation : &lt;/b&gt; La version autonome (live) s&apos;exécute à partir du média. La version instable ne peut s&apos;installer sur le disque dur à l&apos;inverse de la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version stable&lt;/a&gt; (non disponible gratuitement au téléchargement).</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; Elive est une distribution basée sur Debian utilisant le gestionnaire de fenêtres Enlightenment.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; La version autonome (live) s&apos;exécute à partir du média. La version instable ne peut s&apos;installer sur le disque dur à l&apos;inverse de la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version stable&lt;/a&gt; (non disponible gratuitement au téléchargement). Cet installeur est basé sur  &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
@@ -327,7 +331,7 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Tous les fichiers (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -447,28 +451,28 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Localisation du fichier de kernel en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Copie du fichier de kernel de %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Localisation du fichier initrd en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Copie du fichier initrd de %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Extraction de la configuration du bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -479,17 +483,17 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Copie de fichiers, patientez s&apos;il vous plaît ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiés :&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiés :&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -686,13 +690,13 @@ Redémarrer immédiatement?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Sélectionnez la distribution ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Sélectionnez la version ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -702,7 +706,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux est distribution légère optimisée pour la vitesse et la flexibilité.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version par défaut autorise l&apos;installation par l&apos;internet via FTP.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
@@ -737,13 +741,12 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="65"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus est un kit anti-virus d&apos;urgence pour restorer un système détruit à cause d&apos;un logiciel malveillant.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La version Live permet de démarer en mode live, à partir duquel une inspection des logiciels malveillants pourra être démarrée.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive est une distribution basée sur Debian offrant le gestionnaire de fenêtres enluminée.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet le démarrage en mode live, à partir duquel l&apos;installeur pourra éventuellement être lancé.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -763,7 +766,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS est distribution NAS (Network-Attached Storage) open-source basée sur FreeBSD.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version LiveCD crée un support RAM pour FreeNAS, et utilise une disquette formatée FAT ou une clé USB pour sauver le fichier de configuration. La version s&apos;installe sur le disque dur.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="95"/>
@@ -773,7 +776,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="100"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Le CD de secours F-Secure détecte et supprime les logiciels malveillants de votre installation Windows.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La version Live permets de démarrer en mode Live, à partir duquel une inspection des logiciels malveillants pourra être lancée.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="105"/>
@@ -783,7 +786,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="115"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;page d&apos;accueil :&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense est une distribution appuyée par la FSF basée sur Ubuntu sans les composants non libres qui ont étés supprimés.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet de démarrer en mode Live, à partir duquel l&apos;installation peut etre lancée.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="120"/>
@@ -793,17 +796,17 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="125"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt;Le disque de secours Kaspersky détecte et supprime les logiciels malveillants de votre installation Windows.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet de démarrer en mode Live, à partir duquel l&apos;installation peut etre lancée.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriptions:&lt;/b&gt; Kubuntu une version officielle dérivant de Ubuntu proposant un bureau KDE.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet de démarrer en mode live, à partir duquel l&apos;installeur peut, si besoin, être démarré. La version d&apos;installation en réseau permet l&apos;installation en FTP, et permet l&apos;installation de Kubuntu et d&apos;autres versions dérivées de Ubuntu. Si vous souhaitez utiliser un fichier iso alternate déjà téléchargé en lieu et place d&apos;une installation par le bureau, utilisez l&apos;option HdMedia, et placez le fichier iso d&apos;installation alternate dans le répertoire racine de votre disque dur ou de votre volume usb</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole est une distribution de jeux, facile à installer, facile d&apos;utilisation et démarrant rapidement.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt;  1.0.2009 est la dernière diffusion en version 1.0.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="140"/>
@@ -818,7 +821,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS est une distribution basée sur Debian. SimplyMEPIS est une version conviviale basée sur KDE, AntiX est une version plus légère pour les ordinateurs plus anciens.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; MEPIS peut démarrer en mode Live, depuis lequel l&apos;installation est possible.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -828,7 +831,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX est une petite distribution dérivant de Slackware. Il est construit à partir de scripts linux live, et offre un bureau KDE. Il peut être démarré à partir d&quot;un CD, ou d&apos;une mémoire flash (clés USB ou lecteurs MP3), et peut être facilement personnalisé et développé..&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La démarrage de NimbleX en en mode Live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -863,7 +866,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="196"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux est une distribution Live sur DVD basée sur Gentoo qui contient le gestionnaire de paquets Entropy en plus du gestionnaire Portage.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; La version Live permet de démarrer en mode Live, depuis lequel l&apos;installation est possible. La version LiteMCE nécessite 2GB, alors que la version complète requiert un périphérique USB de 8GB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="201"/>
@@ -889,27 +892,27 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="221"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS est version non officielle dérivée de Ubuntu qui inclut par défaut des logiciels supplémentaires. Il nécessite un lecteur USB d&apos;au moins 2GB pour être installé.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La version Live permet le démarrage en mode live, à partir duquel l&apos;installeur pourra éventuellement être lancé.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="226"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD comprend plusieurs outils de gestion de partitions, de récupération de donnée et de sauvegarde.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD démarre et fonctionne en mode LIve; aucune installation n&apos;est nécessaire pour son utilisation.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu est une distribution, orientée utilisateur, basée sur Debian. Elle est actuellement la plus populaire des distribution linux pour poste de travail.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La version Live permet de démarrer en mode LIve, à partir duquel l&apos;installeur pourra éventuellement être lancé. La version réseau (NetInstall) permet l&apos;installation par FTP, et permet l&apos;installation de Kubuntu et d&apos;autres dérivés officiels de Ubuntu. Si vous souhaitez procéder à l&apos;installation par fichier alternate iso déjà téléchargé sans passer par le bureau, utiliser l&apos;option HdMedia, et placez le fichier iso d&apos;installation alternate dans le répertoire racine de votre disque dur ou de votre lecteur usb</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD est une distribution légère offrant une inferface type kiosque avec un navigateur internet et un lecteur multimédia.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live charge le système entièrement en mémoire vive et démarre depuis la mémoire.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu est une version officielle de Ubuntu offrant le bureau XFCE.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet de démarrer en mode LIve, à partir duquel l&apos;installeur pourra éventuellement être lancé. La version réseau (NetInstall) permet l&apos;installation par FTP, et permet l&apos;installation de Kubuntu et d&apos;autres dérivés officiels de Ubuntu. Si vous souhaitez procéder à l&apos;installation par fichier alternate iso déjà téléchargé sans passer par le bureau, utiliser l&apos;option HdMedia, et placez le fichier iso d&apos;installation alternate dans le répertoire racine de votre disque dur ou de votre lecteur usb</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="246"/>
@@ -929,23 +932,22 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; Elive est une distribution basée sur Debian utilisant le gestionnaire de fenêtres Enlightenment.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation :&lt;/b&gt; La version autonome (live) s&apos;exécute à partir du média. La version instable ne peut s&apos;installer sur le disque dur à l&apos;inverse de la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;version stable&lt;/a&gt; (non disponible gratuitement au téléchargement). Cet installeur est basé sur  &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive est une distribution basée sur Debian offrant le gestionnaire de fenêtres enluminée.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version Live permet le démarrage en mode live, à partir duquel l&apos;installeur pourra éventuellement être lancé.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux est une version dérivée de Ubuntu, développée à l&apos;origine pour les utilisateurs parlant le Roumain, le Hongrois ou l&apos;Anglais.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; Assurez vous que le support d&apos;installation est vide et formatté avant de procéder à l&apos;installation.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="69"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense est une distribution GNU/Linux qui améliore Ubuntu et tend à créer une version de ce système d&apos;exploitation complètement libre sans blob binaire ou paquets propriétaires.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; Veuillez vous assurer que le média est vide et formaté avant de lancer l&apos;installation.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX est une petite distribution dérivant de Slackware. Elle est construite à partir de scripts linux live, et offre le bureau KDE. Elle peut être démarrée d&apos;un CD, d&apos;une mémoire flash (clé USB, lecteur MP3), et peut être facilement personalisée et développée.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; NimbleX démarre en mode live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -955,7 +957,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrovercust.cpp" line="93"/>
         <source>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/xpud.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD est une distribution légère offrant une interface simple de type kiosque avec un navigateur internet et un lecteur multimédia.&lt;br/&gt;&lt;b&gt;Notes d&apos;installation:&lt;/b&gt; La version live charge le système entièrement en mémoire vive and démarre depuis la mémoire.</translation>
     </message>
 </context>
 <context>
@@ -1012,7 +1014,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>Formatage du lecteur (avec effacement complet des Données )</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
@@ -1073,7 +1075,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Lecteur:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -1163,12 +1165,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Montrer tous les lecteurs (A utiliser avec précaution)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>Noyau:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>

@@ -7,16 +7,20 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-02-14 05:27+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-25 13:04+0000
+Last-Translator: Ahmed Mohammed &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; تعد Elive توزيعة مبنية على نظام التشغيل Debian متسمة بمدير النوافذ Enlightenment. &lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذى يمكن من داخله بدء برنامج التثبيت عند الرغبة. لم يتم تثبيت &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;النسخة المستقرة&lt;/a&gt; بل تم تثبيت النسخة غير المستقرة. برنامج التثبيت مبني على &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
@@ -335,7 +339,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>كلّ الملفات (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -455,22 +459,22 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>تحديد ملف kernal في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>نسخ ملف kernal من %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>تحديد ملف initrd في %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>نسخ ملف initrd من %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
@@ -487,17 +491,17 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>نسخ الملف, يرجى الانتظار...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;نسخ:&lt;/b&gt; 0 بايت</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;نسخ:&lt;/b&gt; %1 من %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -657,7 +661,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*تنبيه* قبل إعادة التشغيل , ضع ملف إقلاع Debian في مجلد الجذر في القرص الصلب أو ال USB.تلك الملفات ممكن الخصول عليها من cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
@@ -691,13 +696,13 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== إختيار التوزيعة ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== إختيار الإصدار ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -747,8 +752,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -833,7 +837,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -934,8 +938,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; تعد Elive توزيعة مبنية على نظام التشغيل Debian متسمة بمدير النوافذ Enlightenment. &lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذى يمكن من داخله بدء برنامج التثبيت عند الرغبة. لم يتم تثبيت &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;النسخة المستقرة&lt;/a&gt; بل تم تثبيت النسخة غير المستقرة. برنامج التثبيت مبني على &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -950,7 +953,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -968,7 +971,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Copy text   	 Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -979,7 +982,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;توزيعة</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -989,7 +992,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>قرص&amp;صورة</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -999,7 +1002,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;تخصيص</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -1017,7 +1020,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>تهيئة قرص (مسح بيانات)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
@@ -1027,7 +1030,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>رجوع</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
@@ -1037,7 +1040,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>خروج</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
@@ -1078,7 +1081,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>سوا&amp;قة</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -1089,7 +1092,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;نوع</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1168,22 +1171,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>إظهار &amp;كل السواقات (استخدم بحذر)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;اختيارات:</translation>
     </message>
 </context>
 <context>

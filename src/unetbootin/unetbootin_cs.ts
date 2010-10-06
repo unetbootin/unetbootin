@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-16 03:29+0000
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-08 08:53+0000
 Last-Translator: Vojtěch Trefný &lt;vojtech.trefny@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -81,6 +81,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="obsolete">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack je distribuce zaměřená na síťovou analýzu a bezpečnostní testování.&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack funguje jako živý (live) systém a nevyžaduje instalaci.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribuce založená na Debianu, která staví na pracovním prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. K dispozici je verze Unstable, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable&lt;/a&gt;. Instalátor je založen na &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.faunos.com/&quot;&gt;http://www.faunos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FaunOS is a distribution based on Arch Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
@@ -239,6 +243,10 @@ Restartovat nyní</translation>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Super Ubuntu je neoficiální derivát Ubuntu, který přináší rozšířenou nabídku softwaru. Je vyžadován alespoň 2GB USB flash disk.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je od Debianu odvozenou distribucí obsahující grafické prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. Toto je experimentální verze, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilní vydání&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -329,7 +337,7 @@ Restartovat nyní</translation>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Všechny soubory (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -688,13 +696,13 @@ Restartovat nyní</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Vyberte distribuci ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Vyberte verzi ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -744,8 +752,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je od Debianu odvozenou distribucí obsahující grafické prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. Toto je experimentální verze, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabilní vydání&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribuce založená na Debianu přinášející správce oken Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -805,7 +812,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; LinuxConsole je distribuce určená pro hraní her - jednoduše nainstalovatelná, lehce použitelná a rychlým startem&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; 1.0.2009 je poslední vydání 1.0.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="140"/>
@@ -830,7 +837,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -891,7 +898,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="221"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Super OS je neoficiální derivát Ubuntu obsahující větší výběr softwaru ve výchozí instalaci. K instalaci je potřeba minimálně 2GB USB flash disk.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="226"/>
@@ -901,7 +908,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.cz/&quot;&gt;http://www.ubuntu.cz&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Ubuntu je uživatelsky přívětivá distribuce založená na Debianu. V současné době se jedná o nejpopulárnější linuxovou distribuci pro osobní počítače.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (&quot;Live&quot;) verze umožňuje spouštění v live módu, ze kterého je možné spustit instalátor.Verze NetInstall umožňuje instalaci přes FTP nebo instalaci Kubuntu a dalších oficiálních derivátů Ubuntu.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
@@ -931,8 +938,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribuce založená na Debianu, která staví na pracovním prostředí Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) umožňuje práci se systémem bez jeho instalace, která je ale i tak možná. K dispozici je verze Unstable, nikoli &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable&lt;/a&gt;. Instalátor je založen na &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribuce založená na Debianu přinášející správce oken Enlightenment.&lt;br/&gt;&lt;b&gt;Poznámky:&lt;/b&gt; Živá (Live) verze umožňuje spuštění systému přímo z CD s možností spuštění instalace.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -947,7 +953,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

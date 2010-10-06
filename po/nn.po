@@ -1,11 +1,16 @@
+# Norwegian Nynorsk translation for unetbootin
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the unetbootin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: unetbootin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-09-29 00:49-0400\n"
-"PO-Revision-Date: 2010-03-27 21:48+0000\n"
-"Last-Translator: j0hn aka c7p <c7p.admin@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-10-02 09:11+0000\n"
+"Last-Translator: AndreasN <Unknown>\n"
+"Language-Team: Norwegian Nynorsk <nn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,14 +20,14 @@ msgstr ""
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "Αριστερά προς  δεξιά"
+msgstr "Venstre-til-høgre"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
 #: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:3072
 #: unetbootin.cpp:3085 unetbootin.cpp:3243 unetbootin.cpp:3698
 msgid "Hard Disk"
-msgstr "Σκληρός Δίσκος"
+msgstr "Harddisk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
@@ -32,55 +37,55 @@ msgstr "Σκληρός Δίσκος"
 #: unetbootin.cpp:3076 unetbootin.cpp:3101 unetbootin.cpp:3247
 #: unetbootin.cpp:3702
 msgid "USB Drive"
-msgstr "Δισκος USB"
+msgstr "USB-disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
 #: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3149
 msgid "ISO"
-msgstr "Αρχείο εικόνας οπτικού δίσκου (ISO)"
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
 #: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3141
 msgid "Floppy"
-msgstr "Δισκέτα"
+msgstr "Diskett"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
 #: unetbootin.cpp:240 unetbootin.cpp:252
 msgid "either"
-msgstr "ή"
+msgstr "enten"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "Open Disk Image File"
-msgstr "Άνοιγμα Αρχείου Εικόνας Δίσκου"
+msgstr "Opne biletfil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "Alle filer (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Open Kernel File"
-msgstr "Άνοιγμα Αρχείου Πυρήνα"
+msgstr "Opne kjernefil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr "Άνοιγμα Αρχείου Initrd"
+msgstr "Opne initrd-fil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
 msgid "Open Bootloader Config File"
-msgstr "'Ανοιγμα Αρχείου Ρυθμίσεων Επιλογέα Εκκίνησης"
+msgstr "Opne konfigurasjonsfil for oppstartslastar"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
-msgstr "Εισάγετε ένα USB flash δίσκο"
+msgstr "Set inn ein USB-disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:625
@@ -88,13 +93,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"Δεν βρέθηκαν USB flash δίσκοι. Εάν έχετε ήδη εισάγει κάποιο USB δίσκο, "
-"προσπαθείστε να τον διαμορφώσετε ως FAT32."
+"Ingen USB-diskar vart funne. Om du allereie har sett inn USB-disken, prøv å "
+"formatere den som FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
 msgid "%1 not mounted"
-msgstr "%1 δεν έχει προσαρτηθεί"
+msgstr "%1 ikkje montert"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:641
@@ -102,74 +107,74 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Πρέπει πρώτα να προσαρτηθεί ο USB δίσκος %1 σε κάποιο σημείο προσάρτησης. Οι "
-"περισσότερες διανομές το κανουν αυτόματα όταν αφαιρέσετε τον USB δίσκο και "
-"τον επανεισάγετε."
+"Du må først montere USB-disken %1 til eit monteringspunkt. Dei fleste "
+"distribusjonar ordnar dette automatisk etter at du har fjerna og sett inn "
+"att USB-disken."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:656
 msgid "Select a distro"
-msgstr "Επιλέξτε διανομή"
+msgstr "Vel ein distribusjon"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:657
 msgid "You must select a distribution to load."
-msgstr "Πρέπει να επιλέξετε διανομή για φόρτωση"
+msgstr "Du må velje distribusjonen som skal brukast."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:671
 msgid "Select a disk image file"
-msgstr "Επιλέξτε αρχείο εικόνας δίσκου"
+msgstr "Vel biletfil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:672
 msgid "You must select a disk image file to load."
-msgstr "Πρέπει να επιλέξετε αρχείο εικόνας δίσκου."
+msgstr "Du må velje biletfila som skal brukast."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
-msgstr "Επιλέξτε πυρήνα και αρχείο initrd"
+msgstr "Vel ei kjerne- og/eller ei initrd-fil"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
-msgstr "Πρέπει να επιλέξετε πυρήνα και αρχείο initrd."
+msgstr "Du må velje kjerne- og/eller initrd-fila som skal brukast"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:701
 msgid "Diskimage file not found"
-msgstr "Το αρχείο εικόνας δίσκου δεν βρέθηκε"
+msgstr "Biletfil ikkje funne"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο εικόνας δίσκου %1 δεν υπάρχει."
+msgstr "Den valde biletfila %1 finst ikkje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Kernel file not found"
-msgstr "Το αρχείο πυρήνα δεν βρέθηκε"
+msgstr "Kjernefil ikkje funne"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο πυρήνα %1 δεν υπάρχει."
+msgstr "Den valde kernel-fila %1 finst ikkje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:731
 msgid "Initrd file not found"
-msgstr "Το αρχείο initrd δεν βρέθηκε"
+msgstr "Initrd-fil ikkje funne"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:732
 msgid "The specified initrd file %1 does not exist."
-msgstr "Το συγκεκριμένο αρχείο initrd %1 δεν υπάρχει."
+msgstr "Den valde initrd-fila %1 finst ikkje."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:836
 msgid "%1 exists, overwrite?"
-msgstr "%1 υπάρχει ήδη, να γίνει εγγραφή απο πάνω;"
+msgstr "%1 finst, overskrive?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:837
@@ -178,15 +183,14 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"Το αρχείο %1 υπάρχει ήδη. Πατήστε 'Ναι σε Όλα' για να γράψετε απο πάνω του, "
-"και μετά δεν θα ξαναερωτηθείτε, 'Ναι' για να γράψει απο πάνω μόνο το "
-"συγκεκριμένο αρχείο, και 'Όχι' για να διατηρήσετε την υπάρχουσα έκδοση. Άν "
-"δεν είστε σίγουροι, πατήστε 'Ναι σε 'Ολα'."
+"Fila %1 finst allereie. Trykk \"Ja til alt\" for å overskrive og ikkje bli "
+"spurt igjen. \"Ja\" for å overskrive enkeltfiler, og \"Nei\" for å behalde "
+"den eksisterande versjonen. Om du er usikker, trykk \"Ja til alt\"."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
 msgid "%1 is out of space, abort installation?"
-msgstr "%1 δεν έχει χώρο, ακύρωση εγκατάστασης;"
+msgstr "%1 har ikkje meir ledig plass, avbryte installasjonen?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:864
@@ -195,134 +199,135 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
-"Ο φάκελος %1 δεν έχει άλλο χώρο. Πατήστε 'Ναι' για ακύρωση εγκατάστασης, "
-"'Οχι' για αγνόηση του σφάλματος και απόπειρα για συνέχεια της εγκατάστασης, "
-"και 'Οχι σε Όλα' για να αγνοηθούν όλα τα λάθη έλλειψης χώρου."
+"Mappa %1 har ikkje meir ledig plass. Trykk \"Ja\" for å avbryte "
+"installasjonen, \"Nei\" for å ignorere denne feilen og prøve å halde fram "
+"med installasjonen, og \"Nei til alt\" for å ignorere alle feil som følgje "
+"av for lite ledig plass."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "Finn kjernefil i %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Kopierar kjernefil frå %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "Finn initrd-fil i %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Kopierar initrd-fil frå %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "Hentar ut konfigurasjon om oppstartslastar"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1327 unetbootin.cpp:1353
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "Αποσυμπίεση του ISO:"
+msgstr "<b>Pakkar ut komprimert ISO-fil:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Kopierar fil, vent litt..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Kopiert:</b> 0 bytes"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2499
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Kopiert:</b> %1 av %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1623
 msgid "Extracting files, please wait..."
-msgstr "Εξαγωγή αρχείων, παρακαλώ περιμένετε..."
+msgstr "Pakkar ut filer, vent litt..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1624
 msgid "<b>Archive:</b> %1"
-msgstr "<b>Δέσμη Αρχείων:</b> %1"
+msgstr "<b>Arkiv:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1625
 msgid "<b>Source:</b>"
-msgstr "<b>Από:</b>"
+msgstr "<b>Kjelde:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1626
 msgid "<b>Destination:</b>"
-msgstr "<b>Προορισμός:</b>"
+msgstr "<b>Mål:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1627
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Εξήχθησαν:</b> 0 of %1 files"
+msgstr "<b>Pakka ut:</b> 0 av %1 filer"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1630
 msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Από:</b> %1 (%2)"
+msgstr "<b>Kjelde:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1631
 msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Προορισμός:</b> %1%2"
+msgstr "<b>Mål:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1632
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Εξήχθησαν:</b> %1 of %2 files"
+msgstr "<b>Pakka ut:</b> %1 av %2 filer"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2389
 msgid "Downloading files, please wait..."
-msgstr "Μεταφόρτωση αρχείων, παρακαλώ περιμένετε..."
+msgstr "Lastar ned filer, vent litt..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1583 unetbootin.cpp:2390
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Από:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Kjelde:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1584 unetbootin.cpp:2391
 msgid "<b>Destination:</b> %1"
-msgstr "<b>Προορισμός:</b> %1"
+msgstr "<b>Mål:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2392
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Μεταφορτώθηκαν:</b> 0 bytes"
+msgstr "<b>Lasta ned:</b> 0 bytes"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2469 unetbootin.cpp:2484
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Μεταφορτώθηκε:</b> %1 of %2"
+msgstr "<b>Lasta ned:</b> %1 av %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2575
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "Αναζήτηση στο <a href=\"%1\">%1</a>"
+msgstr "Søkjer i <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2579
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 είναι όμοια με το <a href=\"%3\">%3</a>"
+msgstr "%1/%2 treff i <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2764
 msgid "%1 not found"
-msgstr "%1 δεν βρέθηκε"
+msgstr "Fann ikkje %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2765
@@ -330,54 +335,53 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
-"%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο "
-"εγκατάστασης.￼Εγκαταστήστε το πακετο \"%3\" ή το αντίστοιχο για την διανομή "
-"σας."
+"Fann ikkje %1. Dette er naudsynt for installasjonsmetoden %2.\n"
+"Installer \"%3\"-pakken tilsvarande din distribusjon."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3054
 msgid "(Current)"
-msgstr "(Τρέχον)"
+msgstr "(Noverande)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3055
 msgid "(Done)"
-msgstr "(Ολοκληρώθηκε)"
+msgstr "(Ferdig)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3322
 msgid "Configuring grub2 on %1"
-msgstr "Ρύθμιση grub2 στο %1"
+msgstr "Set opp grub2 på %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3334
 msgid "Configuring grldr on %1"
-msgstr "Ρύθμιση grldr στο %1"
+msgstr "Set opp grldr på %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3362
 msgid "Configuring grub on %1"
-msgstr "Ρύθμιση grub στο %1"
+msgstr "Set opp grub på %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3547
 msgid "Installing syslinux to %1"
-msgstr "Εγκατάσταση syslinux στο %1"
+msgstr "Installerar syslinux til %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3582
 msgid "Installing extlinux to %1"
-msgstr "Εγκατάσταση extlinux στο %1"
+msgstr "Installerar extlinux til %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3688
 msgid "Syncing filesystems"
-msgstr "Συγχρονισμός συστημάτων αρχείων"
+msgstr "Synkroniserar filsystem"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3700
 msgid "After rebooting, select the "
-msgstr "Μετά την επανεκκίνηση επιλέξετε το "
+msgstr "Etter omstart, velg "
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3704
@@ -385,8 +389,8 @@ msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
-"Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να "
-"ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;"
+"Etter omstart, vel alternativet for USB-boot i BIOS-oppstartsmenyen.%1\n"
+"Starte på nytt no?"
 
 #. ts-context unetbootin
 #: distrolst.cpp:27
@@ -396,6 +400,10 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*VIKTIG* Før omstart, må du plassere iso-fila Ubuntu alternate (ikkje "
+"desktop) i øverste mappa på harddisken eller USB-disken. Denne fila finn du "
+"på cdimage.ubuntu.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:219
@@ -407,6 +415,12 @@ msgid ""
 "'mirrors.kernel.org' when prompted for a server, and enter "
 "'/centos/%1/os/%2' when asked for the folder."
 msgstr ""
+"\n"
+"*VIKTIG* Etter omstart, ignorer alle feilmeldingar, og vel tilbake om du "
+"blir spurt etter ein CD. Gå deretter til hovudmenyen, vel \"Start "
+"installasjon\", vel \"Nettverk\" som kjelde og \"HTTP\" som protokoll. Skriv "
+"inn \"mirrors.kernel.org\" som server og \"/centos/%1/os/%2\" når du blir "
+"spurt etter mappe."
 
 #. ts-context unetbootin
 #: distrolst.cpp:275
@@ -416,6 +430,9 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*VIKITIG* Før omstart må du plassere ei Debian-iso-fil i øverste mappa på "
+"harddisken eller USB-disken. Denne fila finn du på cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:364
@@ -427,6 +444,12 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
+"\n"
+"*VIKTIG* Etter omstart, ignorer alle feilmeldingar, og vel tilbake om du "
+"blir spurt etter ein CD. Gå deretter til hovudmenyen, vel \"Start "
+"installasjon\", vel \"Nettverk\" som kjelde og \"HTTP\" som protokoll. Skriv "
+"inn \"download.fedora.redhat.com\" som server og "
+"\"/pub/fedora/linux/development/%1/os\" når du blir spurt etter mappe."
 
 #. ts-context unetbootin
 #: distrolst.cpp:370
@@ -438,6 +461,12 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
+"\n"
+"*VIKTIG* Etter omstart, ignorer alle feilmeldingar, og vel tilbake om du "
+"blir spurt etter ein CD. Gå deretter til hovudmenyen, vel \"Start "
+"installasjon\", vel \"Nettverk\" som kjelde og \"HTTP\" som protokoll. Skriv "
+"inn \"download.fedora.redhat.com\" som server og "
+"\"/pub/fedora/linux/releases/%1/Fedora/%2/os\" når du blir spurt etter mappe."
 
 #. ts-context unetbootin
 #: distrolst.cpp:730
@@ -449,6 +478,12 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*VIKTIG* Etter omstart, ignorer alle feilmeldingar, og vel tilbake om du "
+"blir spurt etter ein CD. Gå deretter til hovudmenyen, vel \"Start "
+"installasjon\", vel \"Nettverk\" som kjelde og \"HTTP\" som protokoll. Skriv "
+"inn \"download.opensuse.org\" som server og \"/factory/repo/oss\" når du "
+"blir spurt etter mappe."
 
 #. ts-context unetbootin
 #: distrolst.cpp:736
@@ -460,16 +495,22 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*VIKTIG* Etter omstart, ignorer alle feilmeldingar, og vel tilbake om du "
+"blir spurt etter ein CD. Gå deretter til hovudmenyen, vel \"Start "
+"installasjon\", vel \"Nettverk\" som kjelde og \"HTTP\" som protokoll. Skriv "
+"inn \"download.opensuse.org\" som server og \"/distribution/%1/repo/oss\" "
+"når du blir spurt etter mappe."
 
 #. ts-context unetbootin
 #: distrover.cpp:21 unetbootin.cpp:652
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "== Vel distribusjon =="
 
 #. ts-context unetbootin
 #: distrover.cpp:21 distrover.cpp:25
 msgid "== Select Version =="
-msgstr ""
+msgstr "== Vel versjon =="
 
 #. ts-context unetbootin
 #: distrover.cpp:22
@@ -480,12 +521,11 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Καλώς ήρθατε στο <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, the Universal "
-"Netboot Installer. Τρόπος Χρήσης:<ol><li>Επιλέξετε απο την παραπάνω λίστα "
-"την διανομή και την έκδοση που επιθυμείτε να κατεβεί, ή διαλέξτε παρακάτω "
-"μεμονωμένα αρχεία για φόρτωση.</li><li>Στη συνέχεια επιλέξτε τύπο "
-"εγκατάστασης και πατήστε ΟΚ για να ξεκινήσει η διαδικασία.</li></ol>"
+"Velkomen til <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"det universielle verktøyet for netboot-installasjon. Bruk:<ol><li>Vel ein "
+"distribusjon og versjon du vil laste ned frå lista ovanfor, eller vel filer "
+"manuelt nedanfor.</li><li>Vel ein installasjonstype, og trykk OK for å "
+"starte installasjonen.</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:27
@@ -517,12 +557,6 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
-"<b>Κεντρική Σελίδα:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Πριγραφή:</b"
-"> Το CentOS είναι ένας δωρεάν κλώνος του Red Hat Enterprise "
-"Linux.<br/><b>Σημειώσης Εγκατάστασης:</b> Η προεπιλεγμένη έκδοση επιτρέπει "
-"και την εγκατάσταση μέσω διαδικτύου (FTP)  και την εγκατάσταση μέσω δίσκου "
-"εγκατάστασης του CentOS."
 
 #. ts-context unetbootin
 #: distrover.cpp:43
@@ -1067,7 +1101,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr "Επίλέξτε από την λίστα με τις υποστηριζόμενες διανομές"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
@@ -1077,7 +1111,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr "Προσδιορίστε ενα αρχείο εικόνας δίσκου"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
@@ -1087,7 +1121,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr "Χειροκίνητα δηλώστε πυρήνα και intird"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
@@ -1110,16 +1144,6 @@ msgid ""
 "drive, wiping out all data on it. It shouldn't be necessary if you're using "
 "a standard USB drive.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">￼<html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">￼p, li { white-"
-"space: pre-wrap; }￼</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\">￼<p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">Αυτή  η<span style=\" font-weight:600;\"> "
-",πιθανότατα επικίνδυνη, </span> επιλογή θα διαμορφώσει τον επιλεγμένο δίσκο, "
-"διαγράφοντας ολα τα δεδομένα που έχει. Δεν ειναι απαραίτητη εφόσον "
-"χρησιμοποιείτε standard USB δίσκο.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:435
@@ -1129,7 +1153,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:498
 msgid "OK"
-msgstr "Εντάξει"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:501
@@ -1139,7 +1163,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:508
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:511
@@ -1149,37 +1173,37 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:556
 msgid "Reboot Now"
-msgstr "Επανεκκίνηση Τώρα"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:563
 msgid "Exit"
-msgstr "Έξοδος"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:655
 msgid "1. Downloading Files"
-msgstr "1. Μεταφόρτωση αρχείων"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:662
 msgid "2. Extracting and Copying Files"
-msgstr "2. Εξαγωγή και Αντιγραφή Αρχείων"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:669
 msgid "3. Installing Bootloader"
-msgstr "3. Εγκατάσταση Επιλογέα Εκκίνησης"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:676
 msgid "4. Installation Complete, Reboot"
-msgstr "4. Η Εγκατάσταση Ολοκληρώθηκε, Επανεκκίνηση"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:472 unetbootin.ui:491
 msgid "Select the target drive to install to"
-msgstr "Επιλέξτε τον δίσκο στον οποίο θα γινει η εγκατάσταση"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:475
@@ -1189,7 +1213,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:446 unetbootin.ui:465
 msgid "Select the installation target type"
-msgstr "Επιλέξτε το είδος δίσκου στον οποίο θα γίνει η εγκατάσταση"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:449
@@ -1199,59 +1223,57 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr "Επιλέξτε την έκδοση της διανομής"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr "Επιλέξτε το αρχείο εικόνας δίσκου"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr "Επιλογή τύπου εικόνας δίσκου"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
-"Προσδιορίστε αρχείο εικόνας δίσκου/δισκέττας, ή αρχειο εικόνας οπτικού "
-"δίσκου (ISO)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
-msgstr "Προσδιορίστε αρχείο πυρήνα"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:283
 msgid "Select kernel file"
-msgstr "Επιλέξτε αρχείο πυρήνα"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
-msgstr "Προσδιορίστε αρχείο initrd"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:372
 msgid "Select initrd file"
-msgstr "Επιλέξτε αρχείο initrd"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Επιλέξτε αρχείο syslinux.cfg ή isolinux.cfg"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr "Προσδιορίστε παραμέτρους και επιλογές για τον πυρήνα"
+msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:414
@@ -1270,18 +1292,6 @@ msgid ""
 "you're doing; if you use this option, the installation will likely fail, or "
 "can lead to system boot issues.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">￼<html><head><meta "
-"name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">￼p, li { white-"
-"space: pre-wrap; }￼</style></head><body style=\" font-family:'Sans Serif'; "
-"font-size:10pt; font-weight:400; font-style:normal;\">￼<p style=\" margin-"
-"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">Αυτή η<span style=\" font-weight:600;\">, "
-"πιθανότατα επικίνδυνη </span> επιλογή, θα εμφανίσει όλους τους δίσκους στο "
-"μενού με το όνομα \"Δίσκοι\". Ενεργοποιείστε το μονο αν ξέρετε τι κάνετε. "
-"Εάν χρησιμοποιησετε αυτήν την επιλογή, το πιο πιθανόν η εγκατάσταση να "
-"αποτύχει, ή να οδηγήσει σε προβλήματα εκκίνησης του "
-"συστήματος.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:421
@@ -1306,17 +1316,17 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr "Η απεγκατάσταση ολοκληρώθηκε"
+msgstr ""
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr "%1 έχει απεγκατασταθεί."
+msgstr ""
 
 #. ts-context uninstaller
 #: main.cpp:318
 msgid "Must run as root"
-msgstr "Πρέπει να εκτελεσθεί από τον χρήστη root"
+msgstr ""
 
 #. ts-context uninstaller
 #: main.cpp:320
@@ -1324,176 +1334,13 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su -c '%1'</b>"
 msgstr ""
-"%2 πρέπει να εκτελείται απο τον χρήστη root. Κλείστε την εφαρμογή, και "
-"εκτελέστε την πάλι χρησιμοποιώντας είτε την εντολή :<br/><b>sudo "
-"%1</b><br/>ή:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
 msgid "%1 Uninstaller"
-msgstr "%1 Πρόγραμμα Απεγκατάστασης"
+msgstr ""
 
 #. ts-context uninstaller
 #: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr "%1 εγκαθίσταται αυτήν τη στιγμή. Να διαγραφεί η υπάρχουσα έκδοση;"
-
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> %1 of %2 bytes"
-
-#~ msgid "UNetbootin"
-#~ msgstr "UNetbootin"
-
-#~ msgid "Distribution"
-#~ msgstr "Διανομή"
-
-#~ msgid "Diskimage"
-#~ msgstr "Εικόνα Δίσκου"
-
-#~ msgid "Drive:"
-#~ msgstr "Δίσκος:"
-
-#~ msgid "Type:"
-#~ msgstr "Είδος Δίσκου:"
-
-#~ msgid "Initrd:"
-#~ msgstr "Initrd:"
-
-#~ msgid "Options:"
-#~ msgstr "Επιλογές:"
-
-#~ msgctxt "#1"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "Εξαγωγή αρχείων, παρακαλω περιμένετε..."
-
-#~ msgctxt "#2"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>Δέσμη Αρχείων:</b> %1"
-
-#~ msgctxt "#3"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>Από:</b>"
-
-#~ msgctxt "#4"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>Προς:</b>"
-
-#~ msgctxt "#5"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>Εξήχθησαν:</b> 0 of %1 files"
-
-#~ msgctxt "#6"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>Από:</b> %1 (%2)"
-
-#~ msgctxt "#7"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>Προς:</b> %1%2"
-
-#~ msgctxt "#8"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>Εξήχθησαν:</b> %1 of %2 files"
-
-#~ msgctxt "#9"
-#~ msgid "Downloading files, please wait..."
-#~ msgstr "Καταφώρτωση αρχείων, παρακαλώ περιμένετε..."
-
-#~ msgctxt "#10"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>Από:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#11"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>Προς:</b> %1"
-
-#~ msgctxt "#12"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> 0 bytes"
-
-#~ msgctxt "#13"
-#~ msgid "USB Drive"
-#~ msgstr "Δισκος USB"
-
-#~ msgctxt "#14"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>Καταφωρτώθηκαν:</b> %1 of %2 bytes"
-
-#~ msgctxt "#15"
-#~ msgid "Searching in <a href=\"%1\">%1</a>"
-#~ msgstr "Αναζήτηση στο <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#16"
-#~ msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-#~ msgstr "%1/%2 είναι όμοια στο <a href=\"%3\">%3</a>"
-
-#~ msgctxt "#17"
-#~ msgid "%1 not found"
-#~ msgstr "%1 δεν βρέθηκε"
-
-#~ msgctxt "#18"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "%1 δεν βρέθηκε. Αυτο ειναι απαραίτητο για το %2 τύπο "
-#~ "εγκατάστασης.￼Εγκαταστήστε το πακετο \"%3\" ή το αντίστοιχο για την διανομή "
-#~ "σας."
-
-#~ msgctxt "#19"
-#~ msgid "Hard Disk"
-#~ msgstr "Σκληρός Δίσκος"
-
-#~ msgctxt "#20"
-#~ msgid "Floppy"
-#~ msgstr "Δισκέτα"
-
-#~ msgctxt "#21"
-#~ msgid "After rebooting, select the "
-#~ msgstr "Αφού κανετε επανεκήνηση, επιλέξτε το "
-
-#~ msgctxt "#22"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "Αφού κάνετε επανεκίνηση, ρυθμίστε απο το BIOS του υπολογιστή σας να κάνει "
-#~ "εκκίνιση απο USB.%1￼Επανεκκίνηση τωρα;"
-
-#~ msgctxt "unetbootin#30"
-#~ msgid "USB Drive"
-#~ msgstr "Δισκος USB"
-
-#~ msgctxt "unetbootin#31"
-#~ msgid "Hard Disk"
-#~ msgstr "Σκληρός Δίσκος"
-
-#~ msgctxt "unetbootin#32"
-#~ msgid "Floppy"
-#~ msgstr "Δισκέτα"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP). If interested in a LiveUSB version, "
-#~ "see FaunOS."
-#~ msgstr ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Το Arch Linux είναι μια ελαφριά διανομή βελτιστοποιημένη για "
-#~ "ταχύτητα και ευελιξία.<br/><b>Install Notes:</b> Η προεπιλεγμένη έκδοση "
-#~ "επιτρέπει την εγκατάσταση μέσω internet (FTP). Άν σας ενδιαφέρει μια έκδοση "
-#~ "LiveUSB, δείτε το FaunOS."
-
-#~ msgid "Custom"
-#~ msgstr "Προσαρμοσμένο"
-
-#~ msgid "Show All Drives (Use with Care)"
-#~ msgstr "Εμφάνιση όλων των δίσκων (Χρησιμοποιήστε με προσοχή)"
-
-#~ msgid "Kernel:"
-#~ msgstr "Πυρήνας:"
-
-#~ msgid "Format Drive (Wipes Out Data)"
-#~ msgstr "Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)"
+msgstr ""

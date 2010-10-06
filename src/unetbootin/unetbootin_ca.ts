@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-16 03:25+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-17 23:14+0000
+Last-Translator: BennyBeat &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -45,6 +45,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
@@ -319,7 +323,7 @@ Reboot now?</translation>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Tots els fitxers (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -354,7 +358,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Primer heu de muntar la unitat USB %1 mitjançant un punt de muntatge. Algunes distribucións ho fan automàticament si el retireu i el torneu a inserir.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
@@ -384,7 +388,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Seleccioneu un nucli (kernel) i/o un fitxer initrd per carregar-los.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
@@ -429,59 +433,59 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>No hi ha prou espai a %1, voleu aturar la instal·lació?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>No hi ha prou espai al directori %1. Premeu &apos;Sí&apos; per aturar la instal·lació, &apos;No&apos; per ignorar aquest error i tornar a provar, i &apos;No a tot&apos; per ignorar qualsevol error d&apos;aquest tipus.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Fitxer kernel a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Copiant el fitxer kernel des d&apos;e la ubicació %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>S&apos;està ubicant el fitxer initrd a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>S&apos;està copiant el fitxer initrd des de la ubicació %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>S&apos;està extraïent la configuració del gestor d&apos;arrencada</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;S&apos;està extraïent el contingut comprimit del fitxer ISO:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>S&apos;estan copiant els fitxers...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiat:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiat:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -526,7 +530,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>S&apos;estan descarregant els fitxers...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
@@ -549,7 +553,7 @@ Reboot now?</translation>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Descarregat:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
@@ -570,47 +574,48 @@ Reboot now?</translation>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>No s&apos;ha trobat %1. Es requereix pel mode d&apos;instal·lació %2.
+Instal·leu el paquet &quot;%3&quot; o l&apos;equivalent de la vostra distribució.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(actual)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(Fet)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>S&apos;està configurant grub2 a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Configurant grldr a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Configurant el grub a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Instal·lant syslinux a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Instal·lant extlinux a %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Sincronitzant els fitxers de sistema</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
@@ -628,31 +633,36 @@ Reboot now?</translation>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Abans de reiniciar, col·loqueu la imatge ISO d&apos;Ubuntu Alternate (No la versió d&apos;escriptori) d&apos;arrencada al directori arrel del vostre disc dur o unitat USB. Aquest fitxer es pot obtenir des de cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «mirrors.kernel.org» quan si us demani el servidor i «/centos/%1/os/%2» quan si us demani el directori.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Abans de reiniciar, col·loqueu la imatge ISO de Debian d&apos;arrencada al directori arrel del vostre disc dur o unitat USB. Aquest fitxer es pot obtenir des de cdimage.debian.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan si us demani el servidor i «/pub/fedora/linux/development/%1/os» quan si us demani el directori.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan si us demani el servidor i «/pub/fedora/linux/releases/%1/Fedora/%2/os» quan si us demani el directori.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="730"/>
@@ -665,19 +675,20 @@ Reboot now?</translation>
         <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.opensuse.com» quan si us demani el servidor i «/distribution/%1/repo/oss» quan si us demani el directori.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Trieu la distribució ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Trieu la versió ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -727,8 +738,7 @@ Reboot now?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -813,7 +823,7 @@ Reboot now?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -914,8 +924,7 @@ Reboot now?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -930,7 +939,7 @@ Reboot now?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -948,7 +957,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -959,7 +968,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribució</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -969,7 +978,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>&amp;Image ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -979,7 +988,7 @@ Reboot now?</translation>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Personalitzada</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -997,7 +1006,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Formata la unitat (es perdran totes les dades!)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
@@ -1007,7 +1016,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enrere</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
@@ -1017,7 +1026,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Tecla d&apos;escapada</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
@@ -1058,7 +1067,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;Unitat:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -1069,7 +1078,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tipus:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1148,22 +1157,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>&amp;Mostra totes les unitats (empreu amb precaució)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Nucli:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opcions:</translation>
     </message>
 </context>
 <context>

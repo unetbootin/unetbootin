@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-16 03:24+0000
-Last-Translator: André Gondim &lt;andregondim@ubuntu.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-08-23 23:27+0000
+Last-Translator: Matheus de Araújo &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -25,6 +25,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Arch Linux é uma distribuição superleve, otimizada para velocidade e flexibilidade.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão normal permite instalar diretamente da internet usando FTP. Caso tenha interesse na versão LiveUSB, veja também o FaunOS.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que usa o gerenciador de janela Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão Instável, e não a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão Estável&lt;/a&gt; será instalada. Este instalador é baseado no &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
@@ -196,6 +200,10 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <source>Drive:</source>
         <translation type="obsolete">Unidade:</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Site:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que utiliza o Enlightenment como gerenciador de janelas.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, de modo que o instalador possa opcionalmente ser inicializado. Isto instalará a versão Instável, não a&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão Estável&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -286,7 +294,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Todos os arquivos (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -321,7 +329,7 @@ Por favor instale o pacote &quot;%3&quot; ou olgo equivalente (da distribuição
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Você deve primeiro montar a %1 unidade USB. Maioria das distribuições farão isso automaticamente após você remover e reinserir o dispositivo USB.</translation>
+        <translation>Você primeiro tem de montar o dispositivo USB %1. A maioria das distribuições farão isso automaticamente depois de você remover e inserir o dispositivo USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
@@ -645,13 +653,13 @@ Reiniciar Agora?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Selecione a Distribuição ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Selecione a Versão ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -701,8 +709,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Site:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que utiliza o Enlightenment como gerenciador de janelas.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, de modo que o instalador possa opcionalmente ser inicializado. Isto instalará a versão Instável, não a&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão Estável&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian usando o gerenciador de janelas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite o boot modo Live, do qual o instalador pode ser executado opcionalmente.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -722,7 +729,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; FreeNAS é uma distribuição baseada no FreeBSD incorporada com um NAS (Armazenamento Ligado à Rede - Network-Attached Storage).&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; O LiceCD cria um drive RAM para o FreeNAS, e usa um disquete formatado em FAR ou um pendrive USB para salvar os arquivos de configuração. A versão incorporada possibilita a instalação para o HD.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="95"/>
@@ -787,7 +794,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; NimbleX é uma pequena e versátil distribuição baseada no Slackware. É construída com os scripts linux-live, e usa o desktop KDE. Pode ser inicializada do CD ou de uma memória flash (pendrives USB e MP3 players), e facilmente ser customizada e extendida.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; NimbleX inicializa em modo live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -888,8 +895,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian que usa o gerenciador de janela Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite inicializar em modo Live, a partir do qual, o instalador pode, opcionalmente, ser lançado(executado). A versão Instável, e não a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versão Estável&lt;/a&gt; será instalada. Este instalador é baseado no &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; Elive é uma distribuição baseada no Debian usando o gerenciador de janelas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; A versão Live permite o boot no modo live, de onde o instalador pode ser executado opcionalmente.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -904,7 +910,7 @@ Reiniciar Agora?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrição:&lt;/b&gt; NimbleX é uma pequena e versátil distribuição baseada no Slackware. É construída com os scripts linux-live, e usa o desktop KDE. Pode ser inicializada do CD ou de uma memória flash (pendrives USB e MP3 players), e facilmente ser customizada e extendida.&lt;br/&gt;&lt;b&gt;Notas de Instalação:&lt;/b&gt; NimbleX inicializa em modo live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

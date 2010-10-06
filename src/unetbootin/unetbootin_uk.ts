@@ -7,20 +7,24 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-05-01 21:03+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-26 20:15+0000
+Last-Translator: oleg voitsikhovskyi &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Arch Linux - полегшений дистрибутив, оптимізований для швидкої та гнучкої роботи.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Версія по замовчуванню дозволяє виконувати встановлення через Інтернет (FTP). Якщо вам необхідна версія LiveUSB, зверніться, будь-ласка, до опису FaunOS.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Elive - оснований на Debian дистрибутив с віконним менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Live-версія дозволяє завантажитися в режимі Live, звідти ж можна завантажити встановлення системи. Встановлюється версія Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версія Stable&lt;/a&gt; . Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
@@ -116,7 +120,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Всі файли (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -231,33 +235,33 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Не достатньо вільного місця в теці %1. Натисніть &apos;Так&apos; щоб перервати встановлення, &apos;Ні&apos; - щоб ігнорувати помилку і продовжити встановлення і &apos;Ні для всіх&apos; щоб ігнорувати всі помилки недостачі місця.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Розташування ядра в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Копіювання ядра з %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Розташування файлу initrd в %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Копіювання файлу initrd з %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Розпакування конфігурації загрузчика</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -268,17 +272,17 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Зачекайте будь-ласка, іде копіювання файлу...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Скопійовано:&lt;/b&gt; 0 байтів</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Скопійовано:&lt;/b&gt; %1 з %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -433,7 +437,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Після перезавантаження проігноруйте будь-які повідомлення про помилки. Якщо система запросить CD-диск - поверніться назад. В головному меню виберіть &apos;Почати встановлення&apos;, в якості джерела вкажіть &apos;Мережа&apos; з протоколом &apos;HTTP&apos;. На запит сервера введіть &apos;mirrors.kernel.org&apos; і &apos;/centos/%1/os/%2&apos; на запит теки.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
@@ -446,37 +451,41 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Після перезавантаження проігноруйте будь-які повідомлення про помилки. Якщо система запросить CD-диск - поверніться назад. В головному меню виберіть &apos;Почати встановлення&apos;, в якості джерела вкажіть &apos;Мережа&apos; з протоколом &apos;HTTP&apos;. На запит сервера введіть &apos;download.fedora.redhat.com&apos; і &apos;/pub/fedora/linux/development/%1/os&apos; на запит теки.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Після перезавантаження проігноруйте будь-які повідомлення про помилки. Якщо система запросить CD-диск - поверніться назад. В головному меню виберіть &apos;Почати встановлення&apos;, в якості джерела вкажіть &apos;Мережа&apos; з протоколом &apos;HTTP&apos;. На запит сервера введіть &apos;download.fedora.redhat.com&apos; і &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; на запит теки.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Після перезавантаження проігноруйте будь-які повідомлення про помилки. Якщо система запросить CD-диск - поверніться назад. В головному меню виберіть &apos;Почати встановлення&apos;, в якості джерела вкажіть &apos;Мережа&apos; з протоколом &apos;HTTP&apos;. На запит сервера введіть &apos;download.opensuse.org&apos; і &apos;/factory/repo/oss&apos; на запит теки.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*ВАЖЛИВО* Після перезавантаження проігноруйте будь-які повідомлення про помилки. Якщо система запросить CD-диск - поверніться назад. В головному меню виберіть &apos;Почати встановлення&apos;, в якості джерела вкажіть &apos;Мережа&apos; з протоколом &apos;HTTP&apos;. На запит сервера введіть&apos;download.opensuse.org&apos; і &apos;/distribution/%1/repo/oss&apos; на запит теки.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Виберіть дистрибутив ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Виберіть версію ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -486,7 +495,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Arch Linux - легкий дистрибутив оптимізований для швидкості і гнучкий в настройках.&lt;br/&gt;&lt;b&gt;Примітки по установці:&lt;/b&gt; Версія по замовчуванню дозволяє виконати встановлення через інтернет (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
@@ -516,7 +525,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="60"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторніка:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Dreamlinux - орієнтований на користувача дистрибутив, оснований на Debian.&lt;br/&gt;&lt;b&gt;Примітки по установці:&lt;/b&gt; Live-версія дозволяє запуск системи в режимі Live Mode, звідки можна запустити встановлення системи.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="65"/>
@@ -526,8 +535,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -612,7 +620,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -713,8 +721,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Elive - оснований на Debian дистрибутив с віконним менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; Live-версія дозволяє завантажитися в режимі Live, звідти ж можна завантажити встановлення системи. Встановлюється версія Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версія Stable&lt;/a&gt; . Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -729,7 +736,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -758,7 +765,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Дистрибутив</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -787,32 +794,36 @@ Reboot now?</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ця &lt;span style=&quot; font-weight:600;&quot;&gt;потенційно небезпечна&lt;/span&gt; опція форматує вибраний диск, знищуючи всі дані на ньому. Вона не є обов&apos;язковою при використанні стандартного накопичувача USB.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Форматування носія (Стирає всі дані)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Повернути</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Відміна</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
@@ -832,12 +843,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Розпакування і копіювання файлів</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="669"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Встановлення загрузчика</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="676"/>
@@ -853,18 +864,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Носій:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
         <location filename="unetbootin.ui" line="465"/>
         <source>Select the installation target type</source>
-        <translation></translation>
+        <translation>Виберіть тип установи</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Тип:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -919,7 +930,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
+        <translation>Виберіть файл syslinux.cfg або isolinux.cfg</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
@@ -939,12 +950,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Показати &amp;всі носії (використовуте обережно)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Ядро:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
@@ -954,7 +965,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Настройки:</translation>
     </message>
 </context>
 <context>

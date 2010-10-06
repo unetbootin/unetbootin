@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-01-29 08:09+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-08-19 21:21+0000
+Last-Translator: Szávics Dániel &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -448,6 +448,10 @@ Reboot now?</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A BackTrack egy hálózati elemzéssel és behatolás teszteléssel foglalkozó disztribúció.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A BackTrack live módban fut, ezért a használatához nem szükséges telepíteni.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Elive egy Debian alapú disztribúció, ami az Enlightenment ablakkezelőt használja.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. Ez az instabil verziót telepíti, nem a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabil verziót&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Arch Linux egy könnyűsúlyú disztribúció, ami sebességre és rugalmasságra lett kihegyezve.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; Az alapváltozatot interneten keresztül lehet telepíteni (FTP). Ha egy live usb változat érdekli, akkor nézze meg a FaunOS-t.</translation>
     </message>
@@ -470,6 +474,10 @@ Reboot now?</source>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Meghajtó formázása (minden adat elvész)</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Elive egy Debian alapú disztribúció, ami Enlightenment ablakkezelőt használ.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. Az instabil verzió, nem a&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabil verzió&lt;/a&gt; lesz telepítve. Ez a telepítő az &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;-en alapul.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
@@ -565,7 +573,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Minden fájl (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -685,12 +693,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Kernel fájl meghatározása itt: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kernel fájl másolása innen: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
@@ -717,7 +725,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Fájl másolása, kérem várjon...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
@@ -727,7 +735,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Átmásolt:&lt;/b&gt; %1 a %2 -ből</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -922,13 +930,13 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Disztribúció kijelölése ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Verzió kijelölése ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -978,8 +986,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Elive egy Debian alapú disztribúció, ami az Enlightenment ablakkezelőt használja.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. Ez az instabil verziót telepíti, nem a &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabil verziót&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -1064,7 +1071,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -1165,8 +1172,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Elive egy Debian alapú disztribúció, ami Enlightenment ablakkezelőt használ.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A live verzióval betöltheti a rendszert live módban, ahonnan a telepítőt bármikor elindíthatja. Az instabil verzió, nem a&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;stabil verzió&lt;/a&gt; lesz telepítve. Ez a telepítő az &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;-en alapul.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -1181,7 +1187,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -1210,7 +1216,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Disztribúció</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -1230,7 +1236,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Egyéni</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -1258,7 +1264,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
@@ -1309,7 +1315,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Meghaj&amp;tó</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -1320,7 +1326,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Típus:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -1399,12 +1405,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>&amp;Minden meghajtó mutatása (Használja óvatosan)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>K&amp;ernel</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
@@ -1414,7 +1420,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Beállítások</translation>
     </message>
 </context>
 <context>

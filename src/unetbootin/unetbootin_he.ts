@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-02 05:37+0000
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-05 16:46+0000
 Last-Translator: Yaron &lt;sh.yaron@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -41,6 +41,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הינה הפצה מבוססת דביאן המציגה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה. הגירסה הלא יציבה אינה תומכת בהתקנות לכונן קשיח, למרות שה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גירסה היציבה&lt;/a&gt; (שאינה ניתנת להורדה בחינם) כן מאפשרת זאת.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הינה הפצה מבוססת דביאן המציגה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה. הגירסה הלא יציבה, לא ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גירסה היציבה&lt;/a&gt; מותקנת. תוכנית התקנה זו מבוססת על &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
@@ -237,6 +241,10 @@ Reboot now?</source>
         <comment>unetbootin#34</comment>
         <translation type="obsolete">ISO</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הנה הפצה מבוססת דביאן המציעה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת לבצע הפעלה במצב חי ממנו ניתן להפעיל את ההתקנה. התקנה זו תתקין את הגרסה היציבה ולא את ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גרסה היציבה&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -327,7 +335,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>כל הקבצים (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -347,22 +355,22 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>יש לחבר כונן הבזק USB</translation>
+        <translation>יש לחבר כונן USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>לא נמצאו כונני הבזק USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו כ־FAT32.</translation>
+        <translation>לא נמצאו כונני USB. במידה שכבר חובר כונן USB, יש לנסות לפרמט אותו כ־FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
         <source>%1 not mounted</source>
-        <translation>%1 אינו נעגן</translation>
+        <translation>%1 אינו מעוגן</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רב ההפצות יעשו זאת אוטומטית לאחר הסרה וחיבור מחדש של כונן ה־USB.</translation>
+        <translation>ראשית יש לעגן את כונן ה־USB %1 לנקודת עגינה. רוב ההפצות יעשו זאת אוטומטית לאחר הסרה וחיבור מחדש של כונן ה־USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
@@ -402,7 +410,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="702"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>קובץ דמות התקליטור שצויין %1 אינו קיים.</translation>
+        <translation>קובץ דמות התקליטור שצוין %1 אינו קיים.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="716"/>
@@ -412,7 +420,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>קובץ הליבה שצויין %1 לא נמצא.</translation>
+        <translation>קובץ הליבה שצוין %1 לא נמצא.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="731"/>
@@ -422,7 +430,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="732"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>קובץ ה־initrd שצויין %1 לא נמצא.</translation>
+        <translation>קובץ ה־initrd שצוין %1 לא נמצא.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="836"/>
@@ -432,64 +440,64 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכל&apos; כדי לשכתב עליו כדי לא להשאל שוב,&apos;כן&apos; כדי לשכתב קבצים באופן יחידני, ו־&apos;לא&apos; כדי לשמור על הגירסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכל&apos;.</translation>
+        <translation>הקובץ %1 כבר קיים. יש ללחוץ על &apos;כן להכול&apos; כדי לשכתב ושלא תופיע שאלה שוב, &apos;כן&apos; כדי לשכתב קבצים באופן יחידני ו־&apos;לא&apos; כדי לשמור על הגרסה הנוכחית. אם קיים ספק, יש לבחור ב־&apos;כן להכול&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>המקום שעל %1 אזל, האם לבטל את ההתקנה?</translation>
+        <translation>המקום שב־%1 אזל, האם לבטל את ההתקנה?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>בתיקייה %1 אין עוד מקום. ניתן ללחוץ על &apos;כן&apos; כדי לבטל את ההתקנה, &apos;לא&apos; כדי להתעלם משגיאה זו ולנסות להמשיך בהתקנה, ו־&apos;לא להכל&apos; כדי להתעלם מכל ההתרעות אודות המחסור במקום.</translation>
+        <translation>בתיקייה %1 אין עוד מקום. ניתן ללחוץ על &apos;כן&apos; כדי לבטל את ההתקנה, &apos;לא&apos; כדי להתעלם משגיאה זו ולנסות להמשיך בהתקנה ו־&apos;לא להכול&apos; כדי להתעלם מכל ההתרעות אודות המחסור במקום.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>מתבצע איתור של קובץ הליבה ב־%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>קובץ הליבה מועתק מ־%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>קומתבצע איתור של קובץ ה־initrd ב־%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>קובץ ה־initrd מועתק מ־%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>תצורת מנהל הטעינה מחולצת</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;חילוץ קובץ ה־ISO הדחוס:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;חילוץ קובץ ה־ISO הדחוס:&lt;/b&gt;‏ %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>הקבצים מועתקים, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;הועתקו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;הועתקו:&lt;/b&gt; %1 מתוך %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -499,7 +507,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;ארכיון:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;ארכיון:&lt;/b&gt;‏ %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
@@ -514,50 +522,50 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt; 0 מתוך %1 קבצים</translation>
+        <translation>&lt;b&gt;חולצו:&lt;/b&gt;‏ 0 מתוך %1 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt; %1 (%2)</translation>
+        <translation>&lt;b&gt;מקור:&lt;/b&gt;‏ %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1%2</translation>
+        <translation>&lt;b&gt;יעד:&lt;/b&gt;‏ %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt; %1 מתוך %2 קבצים</translation>
+        <translation>&lt;b&gt;חולצו:&lt;/b&gt;‏ %1 מתוך %2 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>קבצים בהורדה, אנא המתן...</translation>
+        <translation>קבצים בהורדה, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;מקור:&lt;/b&gt;‏ &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;יעד:&lt;/b&gt;‏ %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;הורדו:&lt;/b&gt; 0 בתים</translation>
+        <translation>&lt;b&gt;הורדו:&lt;/b&gt;‏ 0 בתים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;הורד:&lt;/b&gt; %1 of %2</translation>
+        <translation>&lt;b&gt;הורדו:&lt;/b&gt;‏ %1 מתוך %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
@@ -624,14 +632,14 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>לאחר האתחול, יש לבחור ב </translation>
+        <translation>לאחר האתחול, יש לבחור ב־ </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>לאחר האתחול, יש לבחור באפשרות האתחול מ־USB בתפריט האתחול של ה־BIOS. %1
-האם לאתחל כאת?</translation>
+        <translation>לאחר ההפעלה מחדש, יש לבחור באפשרות ההפעלה מ־USB בתפריט ההפעלה של ה־BIOS.‏ %1
+האם הפעיל מחדש כעת?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -645,64 +653,64 @@ Reboot now?</source>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
-*הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;mirrors.kernel.org&apos; כשיתבקש שם השרת ולהזין &apos;/centos/%1/os/%2&apos; כאשר יתבקש שם התיקייה.</translation>
+*שובה* לאחר ההפעלה מחדש יש להתעלם מהודעות השגיאה ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;mirrors.kernel.org&apos; כשיתבקש שם השרת ולהזין &apos;/centos/%1/os/%2&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
-*חשוב* בטרם ההפעלה מחדש, יש להציב קובץ iso של התקנה של דביאן בתיקיית הבסיס של הכונן הקשיח או של כונן ה־USB שלך. ניתן להשיג קבצים אלה דרך cdimage.debian.org</translation>
+*חשוב* בטרם ההפעלה מחדש, יש להציב קובץ iso של ההתקנה של דביאן בתיקיית הבסיס של הכונן הקשיח או של כונן ה־USB שלך. ניתן להשיג קבצים אלה דרך cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/development/%1/os&apos; כאשר יתבקש שם התיקייה.</translation>
+*חשוב* לאחר ההפעלה מחדש יש להתעלם מהודעות השגיאה ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/development/%1/os&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; כאשר יתבקש שם התיקייה.</translation>
+*חשוב* לאחר ההפעלה מחדש יש להתעלם מהודעות השגיאה ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.fedora.redhat.com&apos; כשיתבקש שם השרת ולהזין &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;/factory/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
+*חשוב* לאחר ההפעלה מחדש יש להתעלם מהודעות השגיאה ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;/factory/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*הודעה חשובה* לאחר האיתחול, יש להתעלם מהודעות השגיאה, ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;&apos;/distribution/%1/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
+*חשוב* לאחר ההפעלה מחדש יש להתעלם מהודעות השגיאה ולבחור באחורה אם התבקש תקליטור, אז יש לגשת אל התפריט הראשי, לבחור באפשרות &apos;התחלת ההתקנה&apos;, לבחור ב־&apos;רשת&apos; כמקור, לבחור ב־&apos;HTTP&apos; כפרוטוקול, להזין את הכתובת &apos;download.opensuse.org&apos; כשיתבקש שם השרת ולהזין &apos;&apos;/distribution/%1/repo/oss&apos; כאשר יתבקש שם התיקייה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== נא לבחור הפצה ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== נא לבחור גרסה ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>ברוכים הבאים אל &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, תוכנית ההתקנה האוניברסלית דרך הרשת, שימוש:&lt;ol&gt;&lt;li&gt;יש לבחור בהפצה וגירסה להורדה מהרשימה שלהלן, או לציין קבצים מסויימים לטעינה להלן.&lt;/li&gt;&lt;li&gt;יש לבחור את סוג ההתקנה, וללחוץ על אישור כדי להתחיל בהתקנה.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>ברוך בואך אל &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, תכנית ההתקנה האוניברסלית דרך הרשת, שימוש:&lt;ol&gt;&lt;li&gt;יש לבחור בהפצה ובגרסה להורדה מהרשימה שלהלן, או לציין קבצים מסויימים לטעינה להלן.&lt;/li&gt;&lt;li&gt;יש לבחור את סוג ההתקנה, וללחוץ על אישור כדי להתחיל בהתקנה.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ Arch Linux היא הפצה קלילה המותאמת למהירות ולגמישות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
@@ -712,12 +720,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; CentOS הינה כפילה חופשית של Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גירסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ CentOS הנה כפילה חופשית של Red Hat Enterprise Linux.&lt;br/&gt;‏&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; CloneZilla מתאתחלת ופועלת במצב חי; אין צורך בהתקנתה כדי לעשות בה שימוש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; CloneZilla היה הפצה המשמשת לגיבוי כוננים וחילוץ תמונות כוננים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; CloneZilla מתאתחלת ופועלת במצב חי; אין צורך בהתקנתה כדי לעשות בה שימוש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="49"/>
@@ -742,8 +750,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הנה הפצה מבוססת דביאן המציעה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת לבצע הפעלה במצב חי ממנו ניתן להפעיל את ההתקנה. התקנה זו תתקין את הגרסה היציבה ולא את ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גרסה היציבה&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive היא הפצה מבוססת דביאן המשתמשת במנהל החלונות Enligtenment.‏&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -768,7 +775,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="95"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Frugalware הינה הפצה המבוססת על Slackware לשימוש כללי.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; אפשרות ברירת המחדל מאפשרת התקנה דרך האינטרנט, או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Frugalware הנה הפצה המבוססת על Slackware לשימוש כללי.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; אפשרות ברירת המחדל מאפשרת התקנה דרך האינטרנט, או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="100"/>
@@ -778,7 +785,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="105"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Gentoo הינה הפצה גמישה מבוססת מקור המתוכננת עבור משתמשים מתקדמים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Gentoo הינה הפצה גמישה מבוססת מקור המתוכננת עבור משתמשים מתקדמים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="115"/>
@@ -803,12 +810,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; LinuxConsole הנה הפצה שולחנית המיועדת למשחקים, פשוטה להתקנה, קלה לשימוש ועולה במהירות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; ההפצה 1.0.2009 הנה המהדורה החדש ביותר בסדרה 1.0.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="140"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Linux Mint הינה הפצה ידידותית למשתמש המבוססת על אובונטו הכוללת מפענחים ותוכנות נוספות קנייניים כברירת מחדל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt;הגירסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן לטעון את תוכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Linux Mint הינה הפצה ידידותית למשתמש המבוססת על אובונטו הכוללת מפענחים ותוכנות נוספות קנייניים כברירת מחדל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt;הגירסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן לטעון את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="145"/>
@@ -828,7 +835,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; NimbleX הנה הפצה קטנה וגמישה מבוססת Slackware. נבנתה באמצעות הסקריפטים של linux-live, ומציע שולחן עבודה מסוג KDE. נתין להפעיל ואתה מתקליטור CD או מהתקני הבזק (כונניUSB או נגני MP3), וניתנת בקלות להתאמה או להרחבה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NimbleX מאותחלת במצב חי.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -929,8 +936,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הינה הפצה מבוססת דביאן המציגה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה. הגירסה הלא יציבה, לא ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גירסה היציבה&lt;/a&gt; מותקנת. תוכנית התקנה זו מבוססת על &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הנה הפצה מבוססת Debian המציעה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt;הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -945,7 +951,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; NimbleX הנה הפצה קטנה וגמישה מבוססת Slackware. נבנתה באמצעות הסקריפטים של linux-live, ומציע שולחן עבודה מסוג KDE. נתין להפעיל ואתה מתקליטור CD או מהתקני הבזק (כונניUSB או נגני MP3), וניתנת בקלות להתאמה או להרחבה.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NimbleX מאותחלת במצב חי.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

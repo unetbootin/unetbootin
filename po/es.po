@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-19 01:22-0700\n"
-"PO-Revision-Date: 2010-06-19 20:56+0000\n"
-"Last-Translator: victor tejada yau <Unknown>\n"
+"POT-Creation-Date: 2010-09-29 00:49-0400\n"
+"PO-Revision-Date: 2010-08-18 02:41+0000\n"
+"Last-Translator: Vic One <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-20 22:16+0000\n"
+"X-Launchpad-Export-Date: 2010-10-06 20:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -19,8 +19,8 @@ msgstr "De izquierda a derecha"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
-#: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:2973
-#: unetbootin.cpp:2986 unetbootin.cpp:3144 unetbootin.cpp:3599
+#: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:3072
+#: unetbootin.cpp:3085 unetbootin.cpp:3243 unetbootin.cpp:3698
 msgid "Hard Disk"
 msgstr "Disco duro"
 
@@ -28,21 +28,21 @@ msgstr "Disco duro"
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
 #: unetbootin.cpp:331 unetbootin.cpp:454 unetbootin.cpp:548 unetbootin.cpp:620
 #: unetbootin.cpp:636 unetbootin.cpp:890 unetbootin.cpp:1421
-#: unetbootin.cpp:1483 unetbootin.cpp:2306 unetbootin.cpp:2348
-#: unetbootin.cpp:2977 unetbootin.cpp:3002 unetbootin.cpp:3148
-#: unetbootin.cpp:3603
+#: unetbootin.cpp:1483 unetbootin.cpp:2405 unetbootin.cpp:2447
+#: unetbootin.cpp:3076 unetbootin.cpp:3101 unetbootin.cpp:3247
+#: unetbootin.cpp:3702
 msgid "USB Drive"
 msgstr "Unidad USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
-#: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3050
+#: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3149
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
-#: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3042
+#: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3141
 msgid "Floppy"
 msgstr "Disquete"
 
@@ -139,7 +139,7 @@ msgstr "Debe seleccionar un núcleo o un archivo initrd para cargar."
 #. ts-context unetbootin
 #: unetbootin.cpp:701
 msgid "Diskimage file not found"
-msgstr "Non se encuentra el archivo de imagen de disco"
+msgstr "No se encuentra el archivo de imagen de disco"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:702
@@ -178,10 +178,10 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"El archivo %1 ya existe. Prulse «Si a todo» para sobreescribirlo y que no "
-"sea solicitado de nuevo, «Si» para sobreescribir los archivos de forma "
+"El archivo %1 ya existe. Pulse «Sí a todo» para sobrescribirlo y que no sea "
+"solicitado de nuevo, «Sí» para sobrescribir los archivos de forma "
 "individual, y «No» para conservar la versión existente. En caso de duda, "
-"pulse «Si a todo»."
+"pulse «Sí a todo»."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
@@ -241,7 +241,7 @@ msgid "<b>Copied:</b> 0 bytes"
 msgstr "<b>Copiado:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2400
+#: unetbootin.cpp:2499
 msgid "<b>Copied:</b> %1 of %2"
 msgstr "<b>Copiado:</b> %1 de %2"
 
@@ -286,47 +286,47 @@ msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extraídos:</b> %1 de %2 archivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2290
+#: unetbootin.cpp:2389
 msgid "Downloading files, please wait..."
 msgstr "Descargando archivos, por favor espere..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1583 unetbootin.cpp:2291
+#: unetbootin.cpp:1583 unetbootin.cpp:2390
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Origen:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1584 unetbootin.cpp:2292
+#: unetbootin.cpp:1584 unetbootin.cpp:2391
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Destino:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2293
+#: unetbootin.cpp:2392
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Descargados:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2370 unetbootin.cpp:2385
+#: unetbootin.cpp:2469 unetbootin.cpp:2484
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>Descargado(s):</b> %1 de %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2476
+#: unetbootin.cpp:2575
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Buscando en <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2480
+#: unetbootin.cpp:2579
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 coincidencias en <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2665
+#: unetbootin.cpp:2764
 msgid "%1 not found"
 msgstr "%1 no encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2666
+#: unetbootin.cpp:2765
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -335,52 +335,52 @@ msgstr ""
 "Instala el paquete «%3» o el equivalente en tu distribución."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2955
+#: unetbootin.cpp:3054
 msgid "(Current)"
 msgstr "(Actual)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2956
+#: unetbootin.cpp:3055
 msgid "(Done)"
 msgstr "(Hecho)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3223
+#: unetbootin.cpp:3322
 msgid "Configuring grub2 on %1"
 msgstr "Configurando grub2 en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3235
+#: unetbootin.cpp:3334
 msgid "Configuring grldr on %1"
 msgstr "Configurando grldr en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3263
+#: unetbootin.cpp:3362
 msgid "Configuring grub on %1"
 msgstr "Configurando grub en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3448
+#: unetbootin.cpp:3547
 msgid "Installing syslinux to %1"
 msgstr "Instalando syslinux en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3483
+#: unetbootin.cpp:3582
 msgid "Installing extlinux to %1"
 msgstr "Instalando extlinux en %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3589
+#: unetbootin.cpp:3688
 msgid "Syncing filesystems"
 msgstr "Sincronizando el sistema de archivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3601
+#: unetbootin.cpp:3700
 msgid "After rebooting, select the "
 msgstr "Después de reiniciar, seleccione el "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3605
+#: unetbootin.cpp:3704
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -398,13 +398,12 @@ msgid ""
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
 "\n"
-"*IMPORTANTE* Antes de reiniciar el sistema, colocar una alternativa de la "
-"ISO de instalacion de Ubuntu (no de escritorio) en el directorio raíz de tu "
-"disco duro o memoria USB. Estos pueden ser obtenidos a partir de "
-"cdimage.ubuntu.com"
+"*IMPORTANTE* Antes de reiniciar el sistema, colocar la ISO de instalación de "
+"Ubuntu Alternate (no de escritorio) en el directorio raíz de tu disco duro o "
+"memoria USB. Estos pueden ser obtenidos a partir de cdimage.ubuntu.com"
 
 #. ts-context unetbootin
-#: distrolst.cpp:205
+#: distrolst.cpp:219
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -422,7 +421,7 @@ msgstr ""
 "la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:261
+#: distrolst.cpp:275
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -435,7 +434,7 @@ msgstr ""
 "obtenerse desde cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:345
+#: distrolst.cpp:364
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -453,7 +452,7 @@ msgstr ""
 "se le pregunte por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:370
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -471,7 +470,7 @@ msgstr ""
 "cuando se le pregunte por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:705
+#: distrolst.cpp:730
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -489,7 +488,7 @@ msgstr ""
 "por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:711
+#: distrolst.cpp:736
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -670,18 +669,13 @@ msgid ""
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
 "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched. "
-"This installs the unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Sitio Web:</b> <a "
+"<b>Página de inicio:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descripció"
-"n:</b> Elive es una ditribución basada en Debian que incluye el "
-"administrador de ventanas Enlightenment.<br/><b>Notas sobre la "
-"instalación:</b> La versión Live permite iniciar en modo Live, desde el cual "
-"se puede iniciar el instalador de manera opcional. De esta manera se instala "
-"la versión inestable, no la <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Versión estable</a>."
+"n:</b> Elive es una distribución basada en Debian pero utiliza el gestor de "
+"ventanas Enlightenment.<br/><b>Notas de la instalación:</b> La versión Live "
+"permite arranca en modo Live, desde donde podrá iniciar el instalador."
 
 #. ts-context unetbootin
 #: distrover.cpp:74
@@ -972,6 +966,25 @@ msgstr ""
 #: distrover.cpp:160
 msgid ""
 "<b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<b>Página de incio:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descripció"
+"n:</b> NimbleX es una pequeña y versátil distribución basada en Slackware. "
+"Está construida usando los scripts linux-live, y cuenta con un escritorio "
+"KDE. Se puede arrancar desde un CD o una memoria flash y se puede "
+"personalizar y extender fácilmente.<br/><b>Notas de la instalación</b> "
+"NimbleX arranca en modo Live."
+
+#. ts-context unetbootin
+#: distrover.cpp:165
+msgid ""
+"<b>Homepage:</b> <a "
 "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
 "et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
 "Offline NT Password and Registry Editor can reset Windows passwords and edit "
@@ -987,7 +1000,7 @@ msgstr ""
 "necesita su instalación para usarlo."
 
 #. ts-context unetbootin
-#: distrover.cpp:165
+#: distrover.cpp:170
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -1004,7 +1017,7 @@ msgstr ""
 "imágenes ISO descargadas previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:170
+#: distrover.cpp:175
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -1019,7 +1032,7 @@ msgstr ""
 "modo Live (directo) no se necesita su instalación para usarlo."
 
 #. ts-context unetbootin
-#: distrover.cpp:175
+#: distrover.cpp:180
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -1037,7 +1050,7 @@ msgstr ""
 "necesita ninguna instalación para usarlo."
 
 #. ts-context unetbootin
-#: distrover.cpp:180
+#: distrover.cpp:185
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
@@ -1052,7 +1065,7 @@ msgstr ""
 "modo directo."
 
 #. ts-context unetbootin
-#: distrover.cpp:185
+#: distrover.cpp:190
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1069,7 +1082,7 @@ msgstr ""
 "la instalación, siendo opcional, no es necesaria."
 
 #. ts-context unetbootin
-#: distrover.cpp:190
+#: distrover.cpp:195
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1089,7 +1102,7 @@ msgstr ""
 "edición completa necesita una unidad USB de 8 GB"
 
 #. ts-context unetbootin
-#: distrover.cpp:195
+#: distrover.cpp:200
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1104,7 +1117,7 @@ msgstr ""
 "modo directo desde el que se puede lanzar el instalador."
 
 #. ts-context unetbootin
-#: distrover.cpp:200
+#: distrover.cpp:205
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1121,7 +1134,7 @@ msgstr ""
 "para su uso."
 
 #. ts-context unetbootin
-#: distrover.cpp:205
+#: distrover.cpp:210
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1138,7 +1151,7 @@ msgstr ""
 "arranca y se ejecuta, no es necesaria su instalación."
 
 #. ts-context unetbootin
-#: distrover.cpp:210 distrovercust.cpp:12
+#: distrover.cpp:215 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1154,7 +1167,7 @@ msgstr ""
 "instalación para su uso."
 
 #. ts-context unetbootin
-#: distrover.cpp:215
+#: distrover.cpp:220
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1172,7 +1185,7 @@ msgstr ""
 "de forma opcional."
 
 #. ts-context unetbootin
-#: distrover.cpp:220
+#: distrover.cpp:225
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
@@ -1188,7 +1201,7 @@ msgstr ""
 "modo Live (directo) no es necesaria la instalación para su uso."
 
 #. ts-context unetbootin
-#: distrover.cpp:225
+#: distrover.cpp:230
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1214,7 +1227,7 @@ msgstr ""
 "unidad USB"
 
 #. ts-context unetbootin
-#: distrover.cpp:230
+#: distrover.cpp:235
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1230,7 +1243,7 @@ msgstr ""
 "memoria."
 
 #. ts-context unetbootin
-#: distrover.cpp:235
+#: distrover.cpp:240
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1255,7 +1268,7 @@ msgstr ""
 "directorio raíz de su disco duro o unidad USB"
 
 #. ts-context unetbootin
-#: distrover.cpp:240
+#: distrover.cpp:245
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1311,21 +1324,13 @@ msgid ""
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
 "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched. "
-"The Unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
-"installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<img src=\":/elive.png\" /><br/><b>Página de inicio:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descripció"
-"n:</b> Elive es una distribución basada en Debian con el gestor de ventanas "
-"Enlightenment.<br/><b>Notas de instalación:</b> La versión Live permite el "
-"arranque en modo directo, a partir del que puede lanzarse el instalador. "
-"Versión inestable, la <a "
-"href=\"http://www.elivecd.org/Download/Stable\">versión estable</a> no está "
-"instalada. El instalador está basado en <a "
-"ref=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive es una distribución basada en Debian pero utiliza el gestor de "
+"ventanas Enlightenment.<br/><b>Notas de la instalación:</b> La versión Live "
+"permite arranca en modo Live, desde donde podrá iniciar el instalador."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1366,6 +1371,25 @@ msgstr ""
 #. ts-context unetbootin
 #: distrovercust.cpp:77
 msgid ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descripció"
+"n:</b> NimbleX es una pequeña y versátil distribución basada en Slackware. "
+"Está construida usando los scripts linux-live, y cuenta con un escritorio "
+"KDE. Se puede arrancar desde un CD o una memoria flash y se puede "
+"personalizar y extender fácilmente.<br/><b>Notas de la instalación</b> "
+"NimbleX arranca en modo Live."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:85
+msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
 "ption:</b> SliTaz is a lightweight, desktop-oriented micro "
@@ -1383,7 +1407,7 @@ msgstr ""
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
-#: distrovercust.cpp:85
+#: distrovercust.cpp:93
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1414,27 +1438,27 @@ msgid "&Distribution"
 msgstr "&Distribución"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:127
+#: unetbootin.ui:131
 msgid "Specify a disk image file to load"
 msgstr "Especifica un archivo de imagen de disco para cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:130
+#: unetbootin.ui:134
 msgid "Disk&image"
 msgstr "Disco&Imagen"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:378
+#: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
 msgstr "Especifica manualmente un núcleo y un initrd para cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:381
+#: unetbootin.ui:150
 msgid "&Custom"
 msgstr "&Personalizar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:420
+#: unetbootin.ui:428
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1464,77 +1488,77 @@ msgstr ""
 "estándar.</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:427
+#: unetbootin.ui:435
 msgid "&Format Drive (Wipes Out Data)"
 msgstr "&Formatear Unidad (Borra los datos)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:490
+#: unetbootin.ui:498
 msgid "OK"
 msgstr "Aceptar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:493
+#: unetbootin.ui:501
 msgid "Return"
 msgstr "Volver"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:500
+#: unetbootin.ui:508
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:503
+#: unetbootin.ui:511
 msgid "Esc"
 msgstr "Esc"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:548
+#: unetbootin.ui:556
 msgid "Reboot Now"
 msgstr "Reiniciar ahora"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:555
+#: unetbootin.ui:563
 msgid "Exit"
 msgstr "Salir"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:647
+#: unetbootin.ui:655
 msgid "1. Downloading Files"
 msgstr "1. Descargando archivos"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:654
+#: unetbootin.ui:662
 msgid "2. Extracting and Copying Files"
 msgstr "2. Extrayendo y copiando archivos"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:661
+#: unetbootin.ui:669
 msgid "3. Installing Bootloader"
 msgstr "3. Instalando el cargador de arranque"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:668
+#: unetbootin.ui:676
 msgid "4. Installation Complete, Reboot"
 msgstr "4. Se completó la instalación, reiniciar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:464 unetbootin.ui:483
+#: unetbootin.ui:472 unetbootin.ui:491
 msgid "Select the target drive to install to"
 msgstr "Seleccionar la unidad de destino donde instalar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:467
+#: unetbootin.ui:475
 msgid "Dri&ve:"
 msgstr "Unidad:"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:438 unetbootin.ui:457
+#: unetbootin.ui:446 unetbootin.ui:465
 msgid "Select the installation target type"
 msgstr "Seleccione el tipo de instalación de destino"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:441
+#: unetbootin.ui:449
 msgid "&Type:"
 msgstr "&Tipo:"
 
@@ -1544,59 +1568,59 @@ msgid "Select the distribution version"
 msgstr "Seleccione la versión de la distribución"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:307
+#: unetbootin.ui:347
 msgid "Select disk image file"
 msgstr "Seleccione archivo de imagen de disco"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
+#: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 msgid "..."
 msgstr "..."
 
 #. ts-context unetbootinui
-#: unetbootin.ui:148
+#: unetbootin.ui:188
 msgid "Select the disk image type"
 msgstr "Seleccione el tipo de imagen de disco"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:203
+#: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
 "Especifique una imagen de disco duro/disquete o una imagen de CD (ISO) para "
 "cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:167 unetbootin.ui:218
+#: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
 msgstr "Especifique un archivo de núcleo para cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:243
+#: unetbootin.ui:283
 msgid "Select kernel file"
 msgstr "Seleccione un archivo de núcleo"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:253 unetbootin.ui:272
+#: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
 msgstr "Especifique un archivo initrd para cargar"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:332
+#: unetbootin.ui:372
 msgid "Select initrd file"
 msgstr "Seleccione el archivo initrd"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:357
+#: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr "Seleccione el archivo syslinux.cfg o isolinux.cfg"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:186 unetbootin.ui:281
+#: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
 msgstr "Especifique los parámetros y opciones que pasar al núcleo"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:406
+#: unetbootin.ui:414
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1627,22 +1651,22 @@ msgstr ""
 "o crear problemas de arranque.</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:413
+#: unetbootin.ui:421
 msgid "Show &All Drives (Use with Care)"
 msgstr "Mostrar &Todas las Unidades (Utilizar con cuidado)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:170
+#: unetbootin.ui:210
 msgid "&Kernel:"
 msgstr "&Núcleo:"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:256
+#: unetbootin.ui:296
 msgid "Init&rd:"
 msgstr "Initrd:"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:189
+#: unetbootin.ui:229
 msgid "&Options:"
 msgstr "&Opciones:"
 
@@ -2235,6 +2259,27 @@ msgstr "Actualmente está instalado %1. ¿Eliminar la versión existente?"
 #~ msgstr "Formatear la unidad (borra los datos)"
 
 #~ msgid ""
+#~ "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+#~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+#~ "window manager.<br/><b>Install Notes:</b> The Live version allows for "
+#~ "booting in Live mode, from which the installer can optionally be launched. "
+#~ "The Unstable version, not the <a "
+#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
+#~ "installed. This installer is based on <a "
+#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+#~ msgstr ""
+#~ "<img src=\":/elive.png\" /><br/><b>Página de inicio:</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descripció"
+#~ "n:</b> Elive es una distribución basada en Debian con el gestor de ventanas "
+#~ "Enlightenment.<br/><b>Notas de instalación:</b> La versión Live permite el "
+#~ "arranque en modo directo, a partir del que puede lanzarse el instalador. "
+#~ "Versión inestable, la <a "
+#~ "href=\"http://www.elivecd.org/Download/Stable\">versión estable</a> no está "
+#~ "instalada. El instalador está basado en <a "
+#~ "ref=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+
+#~ msgid ""
 #~ "<b>Homepage:</b> <a "
 #~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
 #~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
@@ -2370,3 +2415,21 @@ msgstr "Actualmente está instalado %1. ¿Eliminar la versión existente?"
 
 #~ msgid "Kernel:"
 #~ msgstr "Núcleo:"
+
+#~ msgid ""
+#~ "<b>Homepage:</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+#~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+#~ "window manager.<br/><b>Install Notes:</b> The Live version allows for "
+#~ "booting in Live mode, from which the installer can optionally be launched. "
+#~ "This installs the unstable version, not the <a "
+#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
+#~ msgstr ""
+#~ "<b>Sitio Web:</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descripció"
+#~ "n:</b> Elive es una ditribución basada en Debian que incluye el "
+#~ "administrador de ventanas Enlightenment.<br/><b>Notas sobre la "
+#~ "instalación:</b> La versión Live permite iniciar en modo Live, desde el cual "
+#~ "se puede iniciar el instalador de manera opcional. De esta manera se instala "
+#~ "la versión inestable, no la <a "
+#~ "href=\"http://www.elivecd.org/Download/Stable\">Versión estable</a>."

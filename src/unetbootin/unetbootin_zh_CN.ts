@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-03-27 21:55+0000
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-07-11 10:12+0000
 Last-Translator: 英华 &lt;wantinghard@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -41,6 +41,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个致力于 Enlightenment window manager 的基于 Debian 的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许实模式启动。Unstable 版本不支持硬盘安装, 然而 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable 版本&lt;/a&gt; (非免费下载) 支持。</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个致力于 Enlightenment window manager的基于 Debian 的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。Unstable 版本被安装，并非安装的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable 版本&lt;/a&gt; 建立在 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;基础之上安装的。</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
@@ -246,6 +250,10 @@ Reboot now?</source>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation type="obsolete">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Super Ubuntu是一个非官方版的Ubuntu衍生版本，它附带了很多其它软件。要求至少容量为2G的USB设备来进行安装。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版本允许以Live模式进行启动，进行系统后再运行安装程序，把Ubuntu真正安装到电脑上。</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个基于 Debian 并使用 Enlightenment 作为默认窗口管理器的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 光盘版允许用户启动到 Live 模式，在这个模式下用户可以选择执行安装程序(并将系统安装到硬盘上)。将要安装的版本有可能不稳定，并非经过测试的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;稳定版&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -269,7 +277,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="3240"/>
         <location filename="unetbootin.cpp" line="3695"/>
         <source>Hard Disk</source>
-        <translation>Hard Disk</translation>
+        <translation>硬盘</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -336,7 +344,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>所有文件(*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -356,12 +364,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>插入USB驱动器</translation>
+        <translation>插入USB 闪存盘</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>没有发现USB驱动器。如果您已经插入USB驱动器，请尝试重新格式化为FAT32格式。</translation>
+        <translation>没有发现USB 闪存盘。如果您已经插入USB 闪存盘，请尝试重新格式化为FAT32格式。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
@@ -371,7 +379,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>你必须首先在 %1 挂载驱动器。大部分发行版本会在您移除并且重新插入USB驱动器后自动执行该操作。</translation>
+        <translation>你必须首先在 %1 挂载 USB 闪存盘。大部分发行版本会在您移除并且重新插入USB 闪存盘后自动执行该操作。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
@@ -456,49 +464,49 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>正在 %1 中查找内核文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>正从 %1 中复制内核文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>正从 %1 中查找 initrd 文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>正从 %1 中复制 initrd 文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>正在提取引导装载程序配置</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;解压缩iso镜像文件：&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;正在解压 iso 镜像文件：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>正在复制文件，请稍候...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;已复制：&lt;/b&gt; 0 字节</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;已复制：&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -523,7 +531,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;抽取：&lt;/b&gt;0 of %1 files</translation>
+        <translation>&lt;b&gt;已抽取：&lt;/b&gt;0 / %1 个文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -538,7 +546,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;抽取：&lt;/b&gt; %1 of %2 files</translation>
+        <translation>&lt;b&gt;已抽取：&lt;/b&gt; %1 / %2 个文件</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
@@ -576,7 +584,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>在 &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt; 中有 %1/%2 匹配</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
@@ -603,44 +611,44 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation>在 %1 上配置 grub2</translation>
+        <translation>正在配置 %1 上的 grub2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation>在 %1 上配置 grldr</translation>
+        <translation>正在配置 %1 上的 grldr</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation>在 %1 上配置 grub</translation>
+        <translation>正在配置 %1 上的 grub</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation>安装 syslinux 到 %1</translation>
+        <translation>正在安装 syslinux 到 %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation>安装 extlinux 到 %1</translation>
+        <translation>正在安装 extlinux 到 %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation>同步文件系统</translation>
+        <translation>正在同步文件系统</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>重启动后，请选择 </translation>
+        <translation>重启后，选择 </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>重启动后，请在BIOS的启动菜单里，选择USB启动选项。
-立即重启动？</translation>
+        <translation>重启后，在 BIOS 启动菜单里选择 USB 启动 选项。%1
+现在重启吗？</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -695,23 +703,23 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== 选择发行版 ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== 选择版本 ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>欢迎访问 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;， the Universal Netboot Installer。 用法：&lt;ol&gt;&lt;li&gt;在列表里选择一个类型版本下载，或者手动载入指定文件。&lt;/li&gt;&lt;li&gt;选择一种安装类型，然后单击 OK 开始安装。&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>欢迎使用 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;， 通用网络引导安装程序。用法：&lt;ol&gt;&lt;li&gt;在列表里选择一个类型版本下载，或者手动载入指定文件。&lt;/li&gt;&lt;li&gt;选择一种安装类型，然后单击 OK 开始安装。&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; Arch Linux 是一个针对速度和灵活性进行了优化的轻量级发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;默认版本允许通过网络安装(FTP)。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
@@ -751,8 +759,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个基于 Debian 并使用 Enlightenment 作为默认窗口管理器的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 光盘版允许用户启动到 Live 模式，在这个模式下用户可以选择执行安装程序(并将系统安装到硬盘上)。将要安装的版本有可能不稳定，并非经过测试的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;稳定版&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; Elive 是一个基于 Debian 的、以 Enlightenment 窗口管理器为特色的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live 版本允许以 Live 模式启动，启动后可以选择启动安装程序。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -812,7 +819,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; LinuxConsole 是一个用来玩游戏的、安装使用简单、启动速度快的桌面发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;1.0.2009 版是最新的 1.0 发布版本。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="140"/>
@@ -837,7 +844,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; NimbleX 是一个小型、多功能的基于 Slackware 的发行版。它使用 linux-live 脚本构建，使用 KDE 桌面环境。它可以通过 CD 或闪存(USB 盘或 MP3 播放器)启动，定制和扩展都很方便。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; NimbleX 以 Live 模式启动。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -938,8 +945,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Elive 是一个致力于 Enlightenment window manager的基于 Debian 的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。Unstable 版本被安装，并非安装的 &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable 版本&lt;/a&gt; 建立在 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;基础之上安装的。</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; Elive 是一个以 Enlightenment 窗口管理器为特色的基于 Debian 的发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live 版本允许通过 Live 模式启动，然后选择启动安装程序。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -954,7 +960,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; NimbleX 是一个小型、多功能的基于 Slackware 的发行版。它使用 linux-live 脚本构建，使用 KDE 桌面环境。它可以从 CD 或闪存(USB 盘或 MP3 播放器)启动，定制和扩展很容易。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; NimbleX 以 Live 模式启动。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

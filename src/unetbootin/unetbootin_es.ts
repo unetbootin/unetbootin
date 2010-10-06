@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-19 20:56+0000
-Last-Translator: victor tejada yau &lt;Unknown&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-08-18 02:41+0000
+Last-Translator: Vic One &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -475,6 +475,10 @@ Reboot now?</source>
         <translation type="obsolete">Formatear la unidad (borra los datos)</translation>
     </message>
     <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del que puede lanzarse el instalador. Versión inestable, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está instalada. El instalador está basado en &lt;a ref=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
     </message>
@@ -509,6 +513,10 @@ Reboot now?</source>
     <message>
         <source>Kernel:</source>
         <translation type="obsolete">Núcleo:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Sitio Web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una ditribución basada en Debian que incluye el administrador de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas sobre la instalación:&lt;/b&gt; La versión Live permite iniciar en modo Live, desde el cual se puede iniciar el instalador de manera opcional. De esta manera se instala la versión inestable, no la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -670,7 +678,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
         <source>Diskimage file not found</source>
-        <translation>Non se encuentra el archivo de imagen de disco</translation>
+        <translation>No se encuentra el archivo de imagen de disco</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="702"/>
@@ -705,7 +713,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>El archivo %1 ya existe. Prulse «Si a todo» para sobreescribirlo y que no sea solicitado de nuevo, «Si» para sobreescribir los archivos de forma individual, y «No» para conservar la versión existente. En caso de duda, pulse «Si a todo».</translation>
+        <translation>El archivo %1 ya existe. Pulse «Sí a todo» para sobrescribirlo y que no sea solicitado de nuevo, «Sí» para sobrescribir los archivos de forma individual, y «No» para conservar la versión existente. En caso de duda, pulse «Sí a todo».</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
@@ -911,7 +919,7 @@ Reboot now?</source>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
         <translation>
-*IMPORTANTE* Antes de reiniciar el sistema, colocar una alternativa de la ISO de instalacion de Ubuntu (no de escritorio) en el directorio raíz de tu disco duro o memoria USB. Estos pueden ser obtenidos a partir de cdimage.ubuntu.com</translation>
+*IMPORTANTE* Antes de reiniciar el sistema, colocar la ISO de instalación de Ubuntu Alternate (no de escritorio) en el directorio raíz de tu disco duro o memoria USB. Estos pueden ser obtenidos a partir de cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
@@ -1015,8 +1023,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Sitio Web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una ditribución basada en Debian que incluye el administrador de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas sobre la instalación:&lt;/b&gt; La versión Live permite iniciar en modo Live, desde el cual se puede iniciar el instalador de manera opcional. De esta manera se instala la versión inestable, no la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian pero utiliza el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live permite arranca en modo Live, desde donde podrá iniciar el instalador.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -1102,7 +1109,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Página de incio:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; NimbleX es una pequeña y versátil distribución basada en Slackware. Está construida usando los scripts linux-live, y cuenta con un escritorio KDE. Se puede arrancar desde un CD o una memoria flash y se puede personalizar y extender fácilmente.&lt;br/&gt;&lt;b&gt;Notas de la instalación&lt;/b&gt; NimbleX arranca en modo Live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -1203,8 +1210,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del que puede lanzarse el instalador. Versión inestable, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está instalada. El instalador está basado en &lt;a ref=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive es una distribución basada en Debian pero utiliza el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live permite arranca en modo Live, desde donde podrá iniciar el instalador.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -1219,7 +1225,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; NimbleX es una pequeña y versátil distribución basada en Slackware. Está construida usando los scripts linux-live, y cuenta con un escritorio KDE. Se puede arrancar desde un CD o una memoria flash y se puede personalizar y extender fácilmente.&lt;br/&gt;&lt;b&gt;Notas de la instalación&lt;/b&gt; NimbleX arranca en modo Live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

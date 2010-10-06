@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-18 11:16+0000
-Last-Translator: HsH &lt;hsh@runtu.org&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-09-04 13:28+0000
+Last-Translator: Dr Gregory House &lt;housegregory299@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -208,12 +208,20 @@ Reboot now?</source>
         <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Arch Linux - облегченный дистрибутив, оптимизированный для быстрой и гибкой работы.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия по умолчанию позволяет производить установку через Интернет (FTP). Если вам необходима версия LiveUSB, обратитесь к описанию FaunOS.</translation>
     </message>
     <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с оконным менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live, оттуда же можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
         <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Debian - Linux-дистрибутив, разрабатываемый сообществом и поддерживающий множество архитектур. Имеет огромное хранилище пакетов.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live Mode, откуда можно запустить установку системы. Версия NetInstall предусматривает установку по FTP.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Дистрибутив BackTrack предназначен для сетевого анализа и тестирования на защиту от несанкционированного доступа.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;Установка не требуется, поскольку BackTrack загружается и работает в Live mode.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - это дистрибутив, основанный на Debian, c рабочим столом Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live позволяет загружаться в Live (пробном) режиме, из которого может быть запущена установка на жёсткий диск. Внимание! Будет установлена нестабильная версия, в отличии от стабильной, которая доступна &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;здесь&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Format Drive (Wipes Out Data)</source>
@@ -242,7 +250,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="3240"/>
         <location filename="unetbootin.cpp" line="3695"/>
         <source>Hard Disk</source>
-        <translation>Жёсткий диск</translation>
+        <translation>Жесткий Диск</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -275,7 +283,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="572"/>
         <location filename="unetbootin.cpp" line="3146"/>
         <source>ISO</source>
-        <translation>Образ диска</translation>
+        <translation>ISO образ</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="192"/>
@@ -286,7 +294,7 @@ Reboot now?</source>
         <location filename="unetbootin.cpp" line="577"/>
         <location filename="unetbootin.cpp" line="3138"/>
         <source>Floppy</source>
-        <translation>Дисковод гибких дисков</translation>
+        <translation>Флоппи-диск</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="222"/>
@@ -724,8 +732,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - это дистрибутив, основанный на Debian, c рабочим столом Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Версия Live позволяет загружаться в Live (пробном) режиме, из которого может быть запущена установка на жёсткий диск. Внимание! Будет установлена нестабильная версия, в отличии от стабильной, которая доступна &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;здесь&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt;  Elive это дистрибутив основанный на Debian включающий оконный менеджер Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загружаться в режиме Live, из которого может быть запущен установщик.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -810,7 +817,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt;  NimbleX это небольшой, многофункциональный дистрибутив основанный на Slackware. Он построен с использованием linux-live скриптов, и включает рабочий стол KDE. Он может быть загружен с CD или Flash памяти (USB ручек или MP3 плееров), и может быть легко настроен и расширен.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt;  NimbleX загружается в режиме Live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -830,7 +837,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Parted Magic включает в себя диспетчер разделов GParted и друние утилиты для изменения размеров, копирования (в том числе и резервного) и управления дисковыми разделами.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Установка не требуется, поскольку Parted Magic загружается и работает в режиме Live mode.</translation>
+        <translation>&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt;  Parted Magic включает в себя диспетчер разделов GParted и другие утилиты для изменения размеров, копирования (в том числе и резервного) и управления дисковыми разделами.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Установка не требуется, поскольку Parted Magic загружается и работает в режиме Live mode.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -911,8 +918,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt; Elive - основанный на Debian дистрибутив с оконным менеджером Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live-версия позволяет загрузиться в режиме Live, оттуда же можно запустить установку системы. Устанавливается версия Unstable, а не &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;версия Stable&lt;/a&gt; . Этот установщик основан на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt;  Elive это дистрибутив основанный на Debian, включающий оконный менеджер Enlightenment.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; Live версия позволяет загружаться в режиме Live, из которого может быть запущен установщик.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -927,7 +933,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашняя страница:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Описание:&lt;/b&gt;  NimbleX это небольшой, многофункциональный дистрибутив основанный на Slackware. Он построен с использованием linux-live скриптов, и включает рабочий стол KDE. Он может быть загружен с CD или Flash памяти (USB ручек или MP3 плееров), и может быть легко настроен и расширен.&lt;br/&gt;&lt;b&gt;Примечания к установке:&lt;/b&gt; NimbleX загружается в режиме Live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>

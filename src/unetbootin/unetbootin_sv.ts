@@ -13,15 +13,17 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-05-01 21:02+0000
-Last-Translator: Daniel Nylander &lt;yeager@ubuntu.com&gt;
-Language-Team: Swedish &lt;sv@li.org&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-08-10 14:52+0000
+Last-Translator: David Bengtsson &lt;Unknown&gt;
+Language-Team: Launchpad Swedish Translators &lt;lp-l10n-sv@lists.launchpad.net&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
+X-Poedit-Language: Swedish
+X-Poedit-Bookmarks: 80,-1,-1,-1,-1,-1,-1,-1,-1,-1
 </translation>
     </message>
     <message>
@@ -162,7 +164,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Alla filer (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -187,7 +189,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Inga USB-lagringsenheter hittades. Om du har anslutit en USB-enhet så prova att formatera om den som FAT32.</translation>
+        <translation>Inga USB-lagringsenheter hittades. Om du redan har anslutit en USB-enhet, prova att formatera om den som FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
@@ -222,12 +224,12 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Välj en fil för kärna och/eller initrd</translation>
+        <translation>Välj en kärn- och/eller initrd-fil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Du måste välja en fil för kärna och/eller initrd att använda.</translation>
+        <translation>Du måste välja en kärn- och/eller initrd-fil att läsa in.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
@@ -252,7 +254,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="731"/>
         <source>Initrd file not found</source>
-        <translation>Initrd-filen hittades inte</translation>
+        <translation>Initrd-fil hittades inte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="732"/>
@@ -262,7 +264,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="836"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 finns redan. Skriv över den?</translation>
+        <translation>%1 finns redan, vill du skriva över?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
@@ -277,33 +279,33 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Katalogen %1 har slut på lagringsutrymme. Tryck på &quot;Ja&quot; för att avbryta installationen, &quot;Nej&quot; för att ignorera detta fel och försöka att fortsätta installationen, samt &quot;Nej till alla&quot; för att ignorera alla relaterade fel.</translation>
+        <translation>Katalogen %1 har slut på utrymme. Tryck på &quot;Ja&quot; för att avbryta installationen, &quot;Nej&quot; för att ignorera detta fel och försöka att fortsätta installationen, samt &quot;Nej till alla&quot; för att ignorera alla relaterade fel.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Lokaliserar kärnfil i %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kopierar kärnfil från %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Lokaliserar initrd-fil i %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Kopierar initrd-fil från %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Extraherar konfiguration för starthanterare</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -314,17 +316,17 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Kopierar fil, vänta...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopierat:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopierat:&lt;/b&gt; %1 av %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -413,18 +415,18 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 hittades inte. Denna krävs för installationsläget %2.
-Installera paketet &quot;%3&quot; eller motsvarande i din distribution.</translation>
+        <translation>%1 hittades inte. Den krävs för installationsläget %2.
+Installera paketet &quot;%3&quot; eller din distributions motsvarighet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(Pågående)</translation>
+        <translation>(Aktuell)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(Färdig)</translation>
+        <translation>(Utförd)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
@@ -465,92 +467,99 @@ Installera paketet &quot;%3&quot; eller motsvarande i din distribution.</transla
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Efter omstart, välj uppstartsalternativet för USB i uppstartsmenyn i ditt BIOS.%1
+        <translation>Efter omstart, välj uppstartsalternativet för USB i BIOS-uppstartsmenyn%1
 Starta om nu?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Innan omstart, lägg till en ISO-installationsfil av Ubuntu alternate (inte desktop) i rootmappen på din hårddisk eller USB-minne. Dessa kan laddas ner från cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;mirrors.kernel.org&quot; när du tillfrågas om en server och ange &quot;/centos/%1/os/%2&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Innan omstart, lägg till en ISO-installationsfil av Debian i rootmappen på din hårddisk eller USB-minne. Dessa kan laddas ner från cdimage.debian.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.fedora.redhat.com&quot; när du tillfrågas om en server och ange &quot;/pub/fedora/linux/development/%1/os&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="370"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.fedora.redhat.com&quot; när du tillfrågas om en server och ange &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="730"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.opensuse.org&quot; när du tillfrågas om en server och ange &quot;/factory/repo/oss&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="736"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.opensuse.org&quot; när du tillfrågas om en server och ange &quot;/distribution/%1/repo/oss&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Välj distribution ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Välj version ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Välkommen till &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Användning:&lt;ol&gt;&lt;li&gt;Välj en distribution och version att hämta från ovanstående lista, eller ange filer manuellt att läsa in nedan.&lt;/li&gt;&lt;li&gt;Välj en installationstyp och tryck på OK för att påbörja installationen.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Välkommen till &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer. Användning:&lt;ol&gt;&lt;li&gt;Välj en distribution och version att hämta från ovanstående lista, eller ange filer att läsa in manuellt nedan.&lt;/li&gt;&lt;li&gt;Välj en installationstyp och tryck på OK för att påbörja installationen.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt; Beskrivning:&lt;/b&gt; Arch Linux är en lättviktig distribution som är optimerad för snabbhet och flexibilitet.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt;Standardversionen tillåter installation över internet (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; BackTrack är en distribution inriktad på nätverksanalys och infiltrationstestning. &lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; BackTrack startas upp och körs i &quot;live&quot;-läge; ingen installation krävs för att använda det.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; CentOS är en fri klon av Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; Standardversionen tillåter både installation över internet (FTP), samt offlineinstallation med förhämtade ISO-installationsfiler.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; CloneZilla är en distribution som används för säkerhetskopiering och avbildning.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; CloneZilla startas upp och körs i &quot;live&quot;-läge; ingen installation krävs för att använda det.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="49"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Damn Small Linux är en minimalistisk distribution utformad för äldre datorer.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; &quot;Live&quot;-versionen läser in hela systemet i RAM-minnet och startar upp från minnet, så installation är inte nödvändigt men frivilligt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="54"/>
@@ -570,8 +579,7 @@ Starta om nu?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -656,7 +664,7 @@ Starta om nu?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -712,7 +720,7 @@ Starta om nu?</translation>
         <location filename="distrover.cpp" line="216"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Webbsida:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Super Grub Disk är en starthanterare som kan utföra ett flertal återställningsåtgärder för MBR och starthanterare.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Med SGD fungerar dina uppstarter direkt utan krav på installation.</translation>
+        <translation>&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Super Grub Disk är en starthanterare som kan utföra ett flertal återställningsåtgärder för MBR och starthanterare.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; SGD bara startar upp och körs; ingen installation krävs för att använda det.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="221"/>
@@ -747,18 +755,17 @@ Starta om nu?</translation>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webbsida:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; EeePCLinuxOS är en användarvänlig PCLinuxOS-baserad distribution för din EeePC.&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; EeePCLinuxOS är en användarvänlig PCLinuxOS-baserad distribution för EeePC:n.&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="41"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webbsida:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Ubuntu Eee är inte bara Ubuntu-optimerat för Asus Eee PC, det är ett operativsystem som använder Netbook Remix-gränssnittet som innehåller den bästa programvaran istället för öppenkällkodsalternativ t.ex. Skype istället för Ekiga).&lt;br/&gt;&lt;b&gt;Installationsanteckningar:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Webbplats:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivning:&lt;/b&gt; Ubuntu Eee är inte bara Ubuntu-optimerat för Asus Eee PC, det är ett operativsystem som använder Netbook Remix-gränssnittet, som gynnar den bästa programvaran tillgänglig istället för öppen källkodsalternativ (t.ex. Skype istället för Ekiga).&lt;br/&gt;&lt;b&gt;Installationsnotering:&lt;/b&gt; Kontrollera att installationsmediet är tomt och formaterat innan du fortsätter installationen.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -773,7 +780,7 @@ Starta om nu?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -807,7 +814,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation>Ange en avbildningsfil att använda</translation>
+        <translation>Ange en avbildningsfil att läsa in</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
@@ -817,7 +824,7 @@ Starta om nu?</translation>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation>Ange kärna samt initrd manuellt</translation>
+        <translation>Ange kärn- och initrd-fil att läsa in manuellt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
@@ -836,7 +843,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation>&amp;Formatera enhet (raderar allt data)</translation>
+        <translation>&amp;Formatera enhet (raderar all data)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
@@ -846,7 +853,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="501"/>
         <source>Return</source>
-        <translation>Return</translation>
+        <translation>Gå tillbaka</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="508"/>
@@ -942,18 +949,18 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="207"/>
         <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
-        <translation>Ange en kärnfil att använda</translation>
+        <translation>Ange kärnfil att läsa in</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation>Välj kärna</translation>
+        <translation>Välj kärnfil</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="293"/>
         <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
-        <translation>Ange en initrd-fil att använda</translation>
+        <translation>Ange en initrd-fil att läsa in</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="372"/>
@@ -963,13 +970,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation>Välj fil för syslinux.cfg eller isolinux.cfg</translation>
+        <translation>Välj syslinux.cfg- eller isolinux.cfg-fil</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation>Ange parametrar och flaggor att skicka till kärnan</translation>
+        <translation>Ange parametrar och alternativ att skicka till kärnan</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="414"/>
@@ -998,7 +1005,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation>&amp;Flaggor:</translation>
+        <translation>A&amp;lternativ:</translation>
     </message>
 </context>
 <context>
@@ -1006,22 +1013,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation>Avinstallationen utfördes</translation>
+        <translation>Avinstallation slutförd</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation>%1 har installerats.</translation>
+        <translation>%1 har avinstallerats.</translation>
     </message>
     <message>
         <location filename="main.cpp" line="318"/>
         <source>Must run as root</source>
-        <translation>Det krävs att du kör programmet som root-användare</translation>
+        <translation>Måste köras som root</translation>
     </message>
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>%2 Det krävs att du kör programmet som root-användare. Avsluta programmet och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 måste köras som root. Avsluta och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
@@ -1031,7 +1038,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation>%1 är redan installerad, vill du avinstallera den installerade versionen?</translation>
+        <translation>%1 är för tillfället installerad, vill du ta bort befintlig version?</translation>
     </message>
 </context>
 </TS>

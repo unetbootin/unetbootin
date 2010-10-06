@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-04-18 21:13+0000
-Last-Translator: Anthony Fok &lt;foka@debian.org&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-10-03 07:11+0000
+Last-Translator: Walter Cheuk &lt;wwycheuk@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -117,6 +117,10 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
         <translation type="obsolete">&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
@@ -224,7 +228,7 @@ X-Generator: Launchpad (build Unknown)
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -329,7 +333,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>檔案 %1 已存在。請按下 &quot;全部皆是&quot; 以覆蓋該當案，並在之後再也不提示，或按下 &quot;是&quot; 只覆蓋這個檔案，或是 &quot;否&quot; 以保留目前的版本。如果你不知道怎麼做，請按 &quot;全部皆是&quot;。</translation>
+        <translation>檔案 %1 已存在。請按下 &quot;全部皆是&quot; 以覆蓋該檔案，並在之後再也不提示，或按下 &quot;是&quot; 只覆蓋這個檔案，或是 &quot;否&quot; 以保留目前版本。如果你不知道怎麼做，請按 &quot;全部皆是&quot;。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
@@ -339,59 +343,59 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>資料夾 %1 已經滿了。請按 &quot;是&quot; 以中止安裝，&quot;否&quot; 以跳過這個錯誤並嘗試繼續安裝過程，或按下 &quot;全部皆否&quot; 以忽略所有空間不族的訊息。</translation>
+        <translation>資料夾 %1 已經滿了。請按 &quot;是&quot; 以中止安裝，&quot;否&quot; 以跳過這個錯誤並嘗試繼續安裝過程，或按下 &quot;全部皆否&quot; 以忽略所有空間不足訊息。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>正自 %1 尋找核心檔案</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>正從 %1 複製核心檔案</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>正自 %1 尋找 initrd 檔案</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>從 %1 複製initrd文件中</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>正在抓取開機載入器之設定</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
         <location filename="unetbootin.cpp" line="1353"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;自映象檔提取：&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;自映像檔提取：&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>複製檔案中，請稍等...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;已複製了&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;已複製了&lt;/b&gt; %2之中的%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>提取檔案中，請稍後...</translation>
+        <translation>正提取檔案，請稍候...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
@@ -411,7 +415,7 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;已提取：&lt;/b&gt; 0 of %1 檔案</translation>
+        <translation>&lt;b&gt;已提取：&lt;/b&gt;%1 中之 0 個檔案</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -448,13 +452,13 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;已下載：&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;已下載：&lt;/b&gt; 0 位元組</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;已下載：&lt;/b&gt; %1 of %2</translation>
+        <translation>&lt;b&gt;已下載：&lt;/b&gt;%2 中之 %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
@@ -583,13 +587,13 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== 選擇發行版 ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== 選擇版本 ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -599,22 +603,22 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;說明：&lt;/b&gt;Arch Linux 很輕巧，又快又容易設定。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;預設版本可經網際網路安裝（FTP）。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;說明：&lt;/b&gt; BackTrack 是一個目標於網路分系與滲透測試的發行版本。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; BackTrack 將會以 live 模式啟動，您不需要安裝它。</translation>
+        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;說明：&lt;/b&gt; BackTrack 是擅長於網路分析與滲透測試的發行版本。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; BackTrack 會以 live 模式啟動，毋須安裝。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</translation>
+        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; CentOS 是 Red Hat Enterprise Linux 之免費複製版（clone）。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;預設版本可經網際網路（FTP）或預先下載之 ISO 檔案安裝。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</translation>
+        <translation>&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; CloneZilla 可用於磁碟備份與複製。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;CloneZilla 以 live 模式運作，毋須安裝。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="49"/>
@@ -639,8 +643,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -725,7 +728,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -816,18 +819,17 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;在繼續安裝之前，請確定所安裝的儲存媒體是空的且已經格式化。</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; EeePCLinuxOS 是為 EeePC 而設、基於 PCLinuxOS 的好用套件。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;在繼續安裝之前，請確定所安裝的儲存媒體是空的且已格式化。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="41"/>
         <source>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It&apos;s an operating system, using the Netbook Remix interface, which favors the best software available instead of open source alternatives (ie. Skype instead of Ekiga).&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;在繼續安裝之前，請確定所安裝的儲存媒體是空的且已經格式化。</translation>
+        <translation>&lt;img src=&quot;:/eeeubuntu.png&quot; style=&quot;float:left;&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu-eee.com/&quot;&gt;http://www.ubuntu-eee.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; Ubuntu Eee 並不只是為華碩 Eee PC 而設的 Ubuntu 那麼簡單。這是使用 Netbook Remix 介面的作業系統；強調使用最佳軟體，而非只用開源版本（例如用 Skype 而非 Ekiga）。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt;在繼續安裝之前，請確定所安裝的儲存媒體是空的且已格式化。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -842,12 +844,12 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; Live版本將整個系統載入記憶體並由記憶體開機，不必安裝但可選擇安裝。 This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;首頁：&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;簡介：&lt;/b&gt; SliTaz 是輕巧、專為桌面而設之微型套件。&lt;br/&gt;&lt;b&gt;安裝說明：&lt;/b&gt; Live版本將整個系統載入記憶體並由記憶體開機，不必安裝但可選擇安裝。此安裝程式基於 &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;。</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="93"/>
@@ -866,7 +868,7 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation>自清單中選擇已支援的套件</translation>
+        <translation>自清單選擇已支援套件</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
@@ -876,12 +878,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation>指定磁碟映象檔以進行裝載</translation>
+        <translation>指定映像檔以進行裝載</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>映像檔(&amp;I)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -904,7 +906,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;這個&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險性&lt;/span&gt;的選項將會格式化掉已選的分割區，抹除掉所有該分割區上已有的資料，如果你正在使用一個正常的 USB 磁碟就應該不是必要的。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;此&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險&lt;/span&gt;選項會將已選之磁碟格式化，抹除掉該分割區所有已有資料。普通 USB 磁碟通常無此需要。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="435"/>
@@ -970,13 +972,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>磁碟機(&amp;V)：</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
         <location filename="unetbootin.ui" line="465"/>
         <source>Select the installation target type</source>
-        <translation>選擇安裝目標形式</translation>
+        <translation>選擇安裝目標類型</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="449"/>
@@ -991,7 +993,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
-        <translation>選擇映象檔</translation>
+        <translation>選擇映像檔</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="286"/>
@@ -1004,12 +1006,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation>選擇映像檔格式</translation>
+        <translation>選擇映像檔類型</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation>指定映像檔 (ISO)進行裝載</translation>
+        <translation>指定軟碟、硬碟或 CD 映像檔 (ISO)進行裝載</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="207"/>
@@ -1055,17 +1057,17 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;這個&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險性&lt;/span&gt;的選項將會在&quot;分割區&quot;下拉選單內顯示所有的磁區。請確定你知道你在幹什麼之後再啟用這個選項，若您使用了這個選項，安裝過程將有可能失敗，亦有可能造成系統開機問題。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;此&lt;span style=&quot; font-weight:600;&quot;&gt;有潛在危險&lt;/span&gt;選項會在「磁碟機」下拉選單顯示所有磁碟機。請確定你知道自己在幹什麼之後再啟用這個選項；若您用了這個選項，安裝過程將有可能失敗，亦有可能造成系統開機問題。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation>顯示全部磁碟機(使用時請小心) (&amp;A)</translation>
+        <translation>顯示全部磁碟機（請小心使用）(&amp;A)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation>核心(&amp;K):</translation>
+        <translation>核心(&amp;K)：</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
@@ -1075,7 +1077,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>選項(&amp;O)：</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1100,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation>%2 必須以 root 權限執行。關閉他並用以下方式執行：&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;或是：&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 須以 root 權限執行。將其關閉並用以下方式執行：&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;或是：&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

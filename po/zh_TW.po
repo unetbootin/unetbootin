@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-19 01:22-0700\n"
-"PO-Revision-Date: 2010-04-18 21:13+0000\n"
-"Last-Translator: Anthony Fok <foka@debian.org>\n"
+"POT-Creation-Date: 2010-09-29 00:49-0400\n"
+"PO-Revision-Date: 2010-10-03 07:11+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-20 22:16+0000\n"
+"X-Launchpad-Export-Date: 2010-10-06 20:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #. ts-context QObject
@@ -19,8 +19,8 @@ msgstr "由左至右"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
-#: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:2973
-#: unetbootin.cpp:2986 unetbootin.cpp:3144 unetbootin.cpp:3599
+#: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:3072
+#: unetbootin.cpp:3085 unetbootin.cpp:3243 unetbootin.cpp:3698
 msgid "Hard Disk"
 msgstr "硬碟"
 
@@ -28,21 +28,21 @@ msgstr "硬碟"
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
 #: unetbootin.cpp:331 unetbootin.cpp:454 unetbootin.cpp:548 unetbootin.cpp:620
 #: unetbootin.cpp:636 unetbootin.cpp:890 unetbootin.cpp:1421
-#: unetbootin.cpp:1483 unetbootin.cpp:2306 unetbootin.cpp:2348
-#: unetbootin.cpp:2977 unetbootin.cpp:3002 unetbootin.cpp:3148
-#: unetbootin.cpp:3603
+#: unetbootin.cpp:1483 unetbootin.cpp:2405 unetbootin.cpp:2447
+#: unetbootin.cpp:3076 unetbootin.cpp:3101 unetbootin.cpp:3247
+#: unetbootin.cpp:3702
 msgid "USB Drive"
 msgstr "USB 磁碟機"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
-#: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3050
+#: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3149
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
-#: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3042
+#: unetbootin.cpp:576 unetbootin.cpp:577 unetbootin.cpp:3141
 msgid "Floppy"
 msgstr "磁片"
 
@@ -60,7 +60,7 @@ msgstr "開啟映像檔"
 #. ts-context unetbootin
 #: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "所有檔案 (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
@@ -173,8 +173,8 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"檔案 %1 已存在。請按下 \"全部皆是\" 以覆蓋該當案，並在之後再也不提示，或按下 \"是\" 只覆蓋這個檔案，或是 \"否\" "
-"以保留目前的版本。如果你不知道怎麼做，請按 \"全部皆是\"。"
+"檔案 %1 已存在。請按下 \"全部皆是\" 以覆蓋該檔案，並在之後再也不提示，或按下 \"是\" 只覆蓋這個檔案，或是 \"否\" "
+"以保留目前版本。如果你不知道怎麼做，請按 \"全部皆是\"。"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
@@ -188,57 +188,57 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
-"資料夾 %1 已經滿了。請按 \"是\" 以中止安裝，\"否\" 以跳過這個錯誤並嘗試繼續安裝過程，或按下 \"全部皆否\" 以忽略所有空間不族的訊息。"
+"資料夾 %1 已經滿了。請按 \"是\" 以中止安裝，\"否\" 以跳過這個錯誤並嘗試繼續安裝過程，或按下 \"全部皆否\" 以忽略所有空間不足訊息。"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "正自 %1 尋找核心檔案"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "正從 %1 複製核心檔案"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "正自 %1 尋找 initrd 檔案"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "從 %1 複製initrd文件中"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "正在抓取開機載入器之設定"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1327 unetbootin.cpp:1353
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>自映象檔提取：</b> %1"
+msgstr "<b>自映像檔提取：</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "複製檔案中，請稍等..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>已複製了</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2400
+#: unetbootin.cpp:2499
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>已複製了</b> %2之中的%1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1623
 msgid "Extracting files, please wait..."
-msgstr "提取檔案中，請稍後..."
+msgstr "正提取檔案，請稍候..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1624
@@ -258,7 +258,7 @@ msgstr "<b>目的地：</b>"
 #. ts-context unetbootin
 #: unetbootin.cpp:1627
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>已提取：</b> 0 of %1 檔案"
+msgstr "<b>已提取：</b>%1 中之 0 個檔案"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1630
@@ -276,47 +276,47 @@ msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>已提取：</b> %1 of %2 files"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2290
+#: unetbootin.cpp:2389
 msgid "Downloading files, please wait..."
 msgstr "檔案下載中，請稍後..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1583 unetbootin.cpp:2291
+#: unetbootin.cpp:1583 unetbootin.cpp:2390
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>來源：</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1584 unetbootin.cpp:2292
+#: unetbootin.cpp:1584 unetbootin.cpp:2391
 msgid "<b>Destination:</b> %1"
 msgstr "<b>目的地：</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2293
+#: unetbootin.cpp:2392
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>已下載：</b> 0 bytes"
+msgstr "<b>已下載：</b> 0 位元組"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2370 unetbootin.cpp:2385
+#: unetbootin.cpp:2469 unetbootin.cpp:2484
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>已下載：</b> %1 of %2"
+msgstr "<b>已下載：</b>%2 中之 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2476
+#: unetbootin.cpp:2575
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "正在搜尋 <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2480
+#: unetbootin.cpp:2579
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 個符合於 <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2665
+#: unetbootin.cpp:2764
 msgid "%1 not found"
 msgstr "找不到 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2666
+#: unetbootin.cpp:2765
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -325,52 +325,52 @@ msgstr ""
 "請安裝 \"%3\" 軟體包或是您的發行版當中的類似程式。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2955
+#: unetbootin.cpp:3054
 msgid "(Current)"
 msgstr "(目前)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2956
+#: unetbootin.cpp:3055
 msgid "(Done)"
 msgstr "(完成)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3223
+#: unetbootin.cpp:3322
 msgid "Configuring grub2 on %1"
 msgstr "正在設定 %1 上的 grub2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3235
+#: unetbootin.cpp:3334
 msgid "Configuring grldr on %1"
 msgstr "正在設定 %1 上的 grldr"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3263
+#: unetbootin.cpp:3362
 msgid "Configuring grub on %1"
 msgstr "正在設定 %1 上的 grub"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3448
+#: unetbootin.cpp:3547
 msgid "Installing syslinux to %1"
 msgstr "安裝 syslinux 至 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3483
+#: unetbootin.cpp:3582
 msgid "Installing extlinux to %1"
 msgstr "安裝 extlinux 至 %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3589
+#: unetbootin.cpp:3688
 msgid "Syncing filesystems"
 msgstr "正在同步檔案系統"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3601
+#: unetbootin.cpp:3700
 msgid "After rebooting, select the "
 msgstr "重開機後，請選擇 "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3605
+#: unetbootin.cpp:3704
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -391,7 +391,7 @@ msgstr ""
 "磁碟機根目錄。這些檔案可以從 cdimage.ubuntu.com 取得"
 
 #. ts-context unetbootin
-#: distrolst.cpp:205
+#: distrolst.cpp:219
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -406,7 +406,7 @@ msgstr ""
 "nel.org』, 資料夾則輸入『/centos/%1/os/%2』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:261
+#: distrolst.cpp:275
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -417,7 +417,7 @@ msgstr ""
 "*重要* 在重開機之前，請把 Debian 的安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.debian.org 取得"
 
 #. ts-context unetbootin
-#: distrolst.cpp:345
+#: distrolst.cpp:364
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -432,7 +432,7 @@ msgstr ""
 "dora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/development/%1/os』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:351
+#: distrolst.cpp:370
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -447,7 +447,7 @@ msgstr ""
 "dora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/releases/%1/Fedora/%2/os』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:705
+#: distrolst.cpp:730
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -462,7 +462,7 @@ msgstr ""
 "ensuse.org』, 資料夾則輸入『/factory/repo/oss』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:711
+#: distrolst.cpp:736
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -479,12 +479,12 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:21 unetbootin.cpp:652
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "== 選擇發行版 =="
 
 #. ts-context unetbootin
 #: distrover.cpp:21 distrover.cpp:25
 msgid "== Select Version =="
-msgstr ""
+msgstr "== 選擇版本 =="
 
 #. ts-context unetbootin
 #: distrover.cpp:22
@@ -509,6 +509,9 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>首頁：</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org/</a><br/><b>說明：</"
+"b>Arch Linux 很輕巧，又快又容易設定。<br/><b>安裝說明：</b>預設版本可經網際網路安裝（FTP）。"
 
 #. ts-context unetbootin
 #: distrover.cpp:33
@@ -520,8 +523,8 @@ msgid ""
 "no installation is required to use it."
 msgstr ""
 "<b>首頁：</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-"
-"linux.org/</a><br/><b>說明：</b> BackTrack "
-"是一個目標於網路分系與滲透測試的發行版本。<br/><b>安裝說明：</b> BackTrack 將會以 live 模式啟動，您不需要安裝它。"
+"linux.org/</a><br/><b>說明：</b> BackTrack 是擅長於網路分析與滲透測試的發行版本。<br/><b>安裝說明：</b> "
+"BackTrack 會以 live 模式啟動，毋須安裝。"
 
 #. ts-context unetbootin
 #: distrover.cpp:38
@@ -535,9 +538,8 @@ msgid ""
 msgstr ""
 "<b>首頁：</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>簡介：</b> "
-"CentOS is a free Red Hat Enterprise Linux clone.<br/><b>安裝說明：</b> The "
-"default version allows for both installation over the internet (FTP), or "
-"offline installation using pre-downloaded installation ISO files."
+"CentOS 是 Red Hat Enterprise Linux "
+"之免費複製版（clone）。<br/><b>安裝說明：</b>預設版本可經網際網路（FTP）或預先下載之 ISO 檔案安裝。"
 
 #. ts-context unetbootin
 #: distrover.cpp:43
@@ -550,9 +552,7 @@ msgid ""
 msgstr ""
 "<b>首頁：</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>簡介：</b> "
-"CloneZilla is a distribution used for disk backup and "
-"imaging.<br/><b>安裝說明：</b> CloneZilla is booted and run in live mode; no "
-"installation is required to use it."
+"CloneZilla 可用於磁碟備份與複製。<br/><b>安裝說明：</b>CloneZilla 以 live 模式運作，毋須安裝。"
 
 #. ts-context unetbootin
 #: distrover.cpp:48
@@ -621,9 +621,7 @@ msgid ""
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
 "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched. "
-"This installs the unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a>."
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 
 #. ts-context unetbootin
@@ -888,6 +886,18 @@ msgstr ""
 #: distrover.cpp:160
 msgid ""
 "<b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:165
+msgid ""
+"<b>Homepage:</b> <a "
 "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
 "et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
 "Offline NT Password and Registry Editor can reset Windows passwords and edit "
@@ -902,7 +912,7 @@ msgstr ""
 "in live mode; no installation is required to use it."
 
 #. ts-context unetbootin
-#: distrover.cpp:165
+#: distrover.cpp:170
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -918,7 +928,7 @@ msgstr ""
 "offline installation using pre-downloaded installation ISO files."
 
 #. ts-context unetbootin
-#: distrover.cpp:170
+#: distrover.cpp:175
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -933,7 +943,7 @@ msgstr ""
 "it."
 
 #. ts-context unetbootin
-#: distrover.cpp:175
+#: distrover.cpp:180
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -950,7 +960,7 @@ msgstr ""
 "installation is required to use it."
 
 #. ts-context unetbootin
-#: distrover.cpp:180
+#: distrover.cpp:185
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
@@ -965,7 +975,7 @@ msgstr ""
 "can optionally be launched."
 
 #. ts-context unetbootin
-#: distrover.cpp:185
+#: distrover.cpp:190
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -981,7 +991,7 @@ msgstr ""
 "RAM and boots from memory, so installation is not required but optional."
 
 #. ts-context unetbootin
-#: distrover.cpp:190
+#: distrover.cpp:195
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1000,7 +1010,7 @@ msgstr ""
 "2 GB, while the full edition will need an 8 GB USB drive"
 
 #. ts-context unetbootin
-#: distrover.cpp:195
+#: distrover.cpp:200
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1015,7 +1025,7 @@ msgstr ""
 "can optionally be launched."
 
 #. ts-context unetbootin
-#: distrover.cpp:200
+#: distrover.cpp:205
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1031,7 +1041,7 @@ msgstr ""
 "RAM and boots from memory, so installation is not required but optional."
 
 #. ts-context unetbootin
-#: distrover.cpp:205
+#: distrover.cpp:210
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1047,7 +1057,7 @@ msgstr ""
 "simply boots and runs; no installation is required to use it."
 
 #. ts-context unetbootin
-#: distrover.cpp:210 distrovercust.cpp:12
+#: distrover.cpp:215 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1061,7 +1071,7 @@ msgstr ""
 "and bootloader recovery tasks.<br/><b>安裝說明：</b> SGD 只需開機就可執行，不必安裝。"
 
 #. ts-context unetbootin
-#: distrover.cpp:215
+#: distrover.cpp:220
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1072,7 +1082,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:220
+#: distrover.cpp:225
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
@@ -1087,7 +1097,7 @@ msgstr ""
 "mode; no installation is required to use it."
 
 #. ts-context unetbootin
-#: distrover.cpp:225
+#: distrover.cpp:230
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1102,7 +1112,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:230
+#: distrover.cpp:235
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1117,7 +1127,7 @@ msgstr ""
 "entire system into RAM and boots from memory."
 
 #. ts-context unetbootin
-#: distrover.cpp:235
+#: distrover.cpp:240
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1132,7 +1142,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:240
+#: distrover.cpp:245
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1157,8 +1167,8 @@ msgid ""
 msgstr ""
 "<img src=\":/eeepclos.png\" /><br/><b>首頁：</b> <a "
 "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"簡介：</b> EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
-"EeePC.<br/><b>安裝說明：</b>在繼續安裝之前，請確定所安裝的儲存媒體是空的且已經格式化。"
+"簡介：</b> EeePCLinuxOS 是為 EeePC 而設、基於 PCLinuxOS "
+"的好用套件。<br/><b>安裝說明：</b>在繼續安裝之前，請確定所安裝的儲存媒體是空的且已格式化。"
 
 #. ts-context unetbootin
 #: distrovercust.cpp:41
@@ -1173,10 +1183,9 @@ msgid ""
 msgstr ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>首頁：</b> <a "
 "href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
-"eee.com</a><br/><b>簡介：</b> Ubuntu Eee is not only Ubuntu optimized for the "
-"Asus Eee PC. It's an operating system, using the Netbook Remix interface, "
-"which favors the best software available instead of open source alternatives "
-"(ie. Skype instead of Ekiga).<br/><b>安裝說明：</b>在繼續安裝之前，請確定所安裝的儲存媒體是空的且已經格式化。"
+"eee.com</a><br/><b>簡介：</b> Ubuntu Eee 並不只是為華碩 Eee PC 而設的 Ubuntu 那麼簡單。這是使用 "
+"Netbook Remix 介面的作業系統；強調使用最佳軟體，而非只用開源版本（例如用 Skype 而非 "
+"Ekiga）。<br/><b>安裝說明：</b>在繼續安裝之前，請確定所安裝的儲存媒體是空的且已格式化。"
 
 #. ts-context unetbootin
 #: distrovercust.cpp:53
@@ -1185,20 +1194,8 @@ msgid ""
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
 "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched. "
-"The Unstable version, not the <a "
-"href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
-"installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<img src=\":/elive.png\" /><br/><b>首頁：</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>簡介：</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>安裝說明：</b> The Live version allows for booting in Live mode, "
-"from which the installer can optionally be launched. The Unstable version, "
-"not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
-"version</a> is installed. This installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1235,6 +1232,18 @@ msgstr ""
 #. ts-context unetbootin
 #: distrovercust.cpp:77
 msgid ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrovercust.cpp:85
+msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
 "ption:</b> SliTaz is a lightweight, desktop-oriented micro "
@@ -1245,13 +1254,12 @@ msgid ""
 msgstr ""
 "<img src=\":/slitaz.png\" /><br/><b>首頁：</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>簡介：</b"
-"> SliTaz is a lightweight, desktop-oriented micro "
-"distribution.<br/><b>安裝說明：</b> Live版本將整個系統載入記憶體並由記憶體開機，不必安裝但可選擇安裝。 This "
-"installer is based on <a "
-"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"> SliTaz 是輕巧、專為桌面而設之微型套件。<br/><b>安裝說明：</b> "
+"Live版本將整個系統載入記憶體並由記憶體開機，不必安裝但可選擇安裝。此安裝程式基於 <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>。"
 
 #. ts-context unetbootin
-#: distrovercust.cpp:85
+#: distrovercust.cpp:93
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1272,7 +1280,7 @@ msgstr "Unetbootin"
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr "自清單中選擇已支援的套件"
+msgstr "自清單選擇已支援套件"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
@@ -1280,27 +1288,27 @@ msgid "&Distribution"
 msgstr "發行版(&D)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:127
+#: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr "指定磁碟映象檔以進行裝載"
+msgstr "指定映像檔以進行裝載"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:130
+#: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "映像檔(&I)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:378
+#: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
 msgstr "手動指定 kernel 及 initrd 以進行裝載"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:381
+#: unetbootin.ui:150
 msgid "&Custom"
 msgstr "自訂(&C)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:420
+#: unetbootin.ui:428
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1323,82 +1331,82 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">這個<span style=\" font-"
-"weight:600;\">有潛在危險性</span>的選項將會格式化掉已選的分割區，抹除掉所有該分割區上已有的資料，如果你正在使用一個正常的 USB "
-"磁碟就應該不是必要的。</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">此<span style=\" font-"
+"weight:600;\">有潛在危險</span>選項會將已選之磁碟格式化，抹除掉該分割區所有已有資料。普通 USB "
+"磁碟通常無此需要。</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:427
+#: unetbootin.ui:435
 msgid "&Format Drive (Wipes Out Data)"
 msgstr "格式化磁碟機(將會清除資料) (&F)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:490
+#: unetbootin.ui:498
 msgid "OK"
 msgstr "確定"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:493
+#: unetbootin.ui:501
 msgid "Return"
 msgstr "返回"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:500
+#: unetbootin.ui:508
 msgid "Cancel"
 msgstr "取消"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:503
+#: unetbootin.ui:511
 msgid "Esc"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:548
+#: unetbootin.ui:556
 msgid "Reboot Now"
 msgstr "現在重新開機"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:555
+#: unetbootin.ui:563
 msgid "Exit"
 msgstr "退出"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:647
+#: unetbootin.ui:655
 msgid "1. Downloading Files"
 msgstr "1. 檔案下載中"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:654
+#: unetbootin.ui:662
 msgid "2. Extracting and Copying Files"
 msgstr "2. 提取並複製檔案"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:661
+#: unetbootin.ui:669
 msgid "3. Installing Bootloader"
 msgstr "3. 安裝 Bootloader"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:668
+#: unetbootin.ui:676
 msgid "4. Installation Complete, Reboot"
 msgstr "4. 安裝完成，重新開機"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:464 unetbootin.ui:483
+#: unetbootin.ui:472 unetbootin.ui:491
 msgid "Select the target drive to install to"
 msgstr "選擇安裝目標磁碟區"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:467
+#: unetbootin.ui:475
 msgid "Dri&ve:"
-msgstr ""
+msgstr "磁碟機(&V)："
 
 #. ts-context unetbootinui
-#: unetbootin.ui:438 unetbootin.ui:457
+#: unetbootin.ui:446 unetbootin.ui:465
 msgid "Select the installation target type"
-msgstr "選擇安裝目標形式"
+msgstr "選擇安裝目標類型"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:441
+#: unetbootin.ui:449
 msgid "&Type:"
 msgstr "類型(&T)："
 
@@ -1408,57 +1416,57 @@ msgid "Select the distribution version"
 msgstr "選擇版本"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:307
+#: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr "選擇映象檔"
+msgstr "選擇映像檔"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:246 unetbootin.ui:310 unetbootin.ui:335 unetbootin.ui:360
+#: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 msgid "..."
 msgstr "…"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:148
+#: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr "選擇映像檔格式"
+msgstr "選擇映像檔類型"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:203
+#: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
-msgstr "指定映像檔 (ISO)進行裝載"
+msgstr "指定軟碟、硬碟或 CD 映像檔 (ISO)進行裝載"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:167 unetbootin.ui:218
+#: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
 msgstr "指定 kernel 檔案進行裝載"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:243
+#: unetbootin.ui:283
 msgid "Select kernel file"
 msgstr "選擇 kernel 檔案"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:253 unetbootin.ui:272
+#: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
 msgstr "指定 initrd 檔案以進行裝載"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:332
+#: unetbootin.ui:372
 msgid "Select initrd file"
 msgstr "選擇 initrd 檔案"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:357
+#: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
 msgstr "選擇 syslinux.cfg 或 isolinux.cfg 檔案"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:186 unetbootin.ui:281
+#: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
 msgstr "指定進入kernel的參數與選項"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:406
+#: unetbootin.ui:414
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1482,29 +1490,29 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">這個<span style=\" font-"
-"weight:600;\">有潛在危險性</span>的選項將會在\"分割區\"下拉選單內顯示所有的磁區。請確定你知道你在幹什麼之後再啟用這個選項，若您使"
-"用了這個選項，安裝過程將有可能失敗，亦有可能造成系統開機問題。</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">此<span style=\" font-"
+"weight:600;\">有潛在危險</span>選項會在「磁碟機」下拉選單顯示所有磁碟機。請確定你知道自己在幹什麼之後再啟用這個選項；若您用了這個選項"
+"，安裝過程將有可能失敗，亦有可能造成系統開機問題。</p></body></html>"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:413
+#: unetbootin.ui:421
 msgid "Show &All Drives (Use with Care)"
-msgstr "顯示全部磁碟機(使用時請小心) (&A)"
+msgstr "顯示全部磁碟機（請小心使用）(&A)"
 
 #. ts-context unetbootinui
-#: unetbootin.ui:170
+#: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr "核心(&K):"
+msgstr "核心(&K)："
 
 #. ts-context unetbootinui
-#: unetbootin.ui:256
+#: unetbootin.ui:296
 msgid "Init&rd:"
 msgstr ""
 
 #. ts-context unetbootinui
-#: unetbootin.ui:189
+#: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "選項(&O)："
 
 #. ts-context uninstaller
 #: main.cpp:156
@@ -1527,7 +1535,7 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su -c '%1'</b>"
 msgstr ""
-"%2 必須以 root 權限執行。關閉他並用以下方式執行：<br/><b>sudo %1</b><br/>或是：<br/><b>su -c "
+"%2 須以 root 權限執行。將其關閉並用以下方式執行：<br/><b>sudo %1</b><br/>或是：<br/><b>su -c "
 "'%1'</b>"
 
 #. ts-context uninstaller
@@ -1668,6 +1676,26 @@ msgstr "%1 已安裝。要移除現有版本？"
 #~ "> Arch Linux is a lightweight distribution optimized for speed and "
 #~ "flexibility.<br/><b>安裝說明：</b> The default version allows for installation "
 #~ "over the internet (FTP). If interested in a LiveUSB version, see FaunOS."
+
+#~ msgid ""
+#~ "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+#~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+#~ "window manager.<br/><b>Install Notes:</b> The Live version allows for "
+#~ "booting in Live mode, from which the installer can optionally be launched. "
+#~ "The Unstable version, not the <a "
+#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
+#~ "installed. This installer is based on <a "
+#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+#~ msgstr ""
+#~ "<img src=\":/elive.png\" /><br/><b>首頁：</b> <a "
+#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>簡介：</b> "
+#~ "Elive is a Debian-based distribution featuring the Enlightenment window "
+#~ "manager.<br/><b>安裝說明：</b> The Live version allows for booting in Live mode, "
+#~ "from which the installer can optionally be launched. The Unstable version, "
+#~ "not the <a href=\"http://www.elivecd.org/Download/Stable\">Stable "
+#~ "version</a> is installed. This installer is based on <a "
+#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "

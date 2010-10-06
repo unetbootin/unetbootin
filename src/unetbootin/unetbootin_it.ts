@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-06-19 01:22-0700
-PO-Revision-Date: 2010-06-20 03:49+0000
-Last-Translator: G. Spanu &lt;Unknown&gt;
+POT-Creation-Date: 2010-09-29 00:49-0400
+PO-Revision-Date: 2010-06-23 08:00+0000
+Last-Translator: bovirus &lt;roberto.boriotti@canon-europe.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-06-20 22:16+0000
+X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
@@ -236,6 +236,14 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la tua distribuz
     <message>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
         <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note di installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modalità Live. La versione Unstable (Instabile) non supporta l&apos;installazione su disco fisso; tuttavia la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versione Stable (Stabile)&lt;/a&gt; (non scaricabile liberamente) può effettuarla.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive é una distribuzione basata su Debian che usa Enlightenment come window manager.&lt;br&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione live consente di avviare in modalitá live, da dove l&apos;opzione di installazione puó opzionalmente essere lanciata. Questo installa la versione instabile, non &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;quella stabile&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
+        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modalità Live, dalla quale può essere lanciata opzionalmente l&apos;installazione. Viene installata la versione Unstable (Instabile), non la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versione Stable (stabile)&lt;/a&gt;. Questa installazione è basata su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -742,8 +750,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive é una distribuzione basata su Debian che usa Enlightenment come window manager.&lt;br&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione live consente di avviare in modalitá live, da dove l&apos;opzione di installazione puó opzionalmente essere lanciata. Questo installa la versione instabile, non &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;quella stabile&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, dal quale è possibile lanciare opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="75"/>
@@ -828,7 +835,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NimbleX è una piccola ma versatile distribuzione basata su Slackware. E&apos; creata usando gli script linux-live, e ha KDE come desktop. Può essere avviata da CD o da memoria flash USB (penna USB o riproduttore MP3), e può essere facilmente personalizzata e estesa.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; NimbleX si avvia in modo Live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -929,8 +936,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <oldsource>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</oldsource>
-        <translation type="unfinished">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore di finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modalità Live, dalla quale può essere lanciata opzionalmente l&apos;installazione. Viene installata la versione Unstable (Instabile), non la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versione Stable (stabile)&lt;/a&gt;. Questa installazione è basata su &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, dal quale è possibile lanciare opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -945,7 +951,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NimbleX è una piccola ma versatile distribuzione basata su Slackware. E&apos; creata usando gli script linux-live, e ha KDE come desktop. Può essere avviata da CD o da memoria flash USB (penna USB o riproduttore MP3), e può essere facilmente personalizzata e estesa.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; NimbleX si avvia in modo Live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
