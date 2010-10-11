@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-06 16:42-0400\n"
+"POT-Creation-Date: 2010-10-10 20:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,13 @@ msgid "Open Disk Image File"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:568 unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
+#: unetbootin.cpp:568
+#, fuzzy
+msgid "All Files"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 #, fuzzy
 msgid "All Files (*)"
 msgstr ""
@@ -261,16 +267,21 @@ msgid "Copying file, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1585
+#: unetbootin.cpp:1583 unetbootin.cpp:2387
 #, fuzzy
-#| msgid "<b>Copied:</b> 0 KB"
-msgid "<b>Copied:</b> 0 bytes"
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2496
+#: unetbootin.cpp:1584 unetbootin.cpp:2388
 #, fuzzy
-msgid "<b>Copied:</b> %1 of %2"
+msgid "<b>Destination:</b> %1"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1585
+#, fuzzy
+msgid "<b>Copied:</b> 0 bytes"
 msgstr ""
 
 #. ts-context unetbootin
@@ -328,18 +339,6 @@ msgid "Downloading files, please wait..."
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1583 unetbootin.cpp:2387
-#, fuzzy
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1584 unetbootin.cpp:2388
-#, fuzzy
-msgid "<b>Destination:</b> %1"
-msgstr ""
-
-#. ts-context unetbootin
 #: unetbootin.cpp:2389
 #, fuzzy
 msgid "<b>Downloaded:</b> 0 bytes"
@@ -349,6 +348,12 @@ msgstr ""
 #: unetbootin.cpp:2466 unetbootin.cpp:2481
 #, fuzzy
 msgid "<b>Downloaded:</b> %1 of %2"
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2496
+#, fuzzy
+msgid "<b>Copied:</b> %1 of %2"
 msgstr ""
 
 #. ts-context unetbootin

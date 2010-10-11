@@ -24,6 +24,108 @@ X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
+    <message>
+        <source>Copying file, please wait...</source>
+        <translation type="obsolete">Menyalin fail, sila tunggu...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Sumber:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Destinasi:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Telah disalin:&lt;/b&gt; 0 bait</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Mengekstrak fail, sila tunggu...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Arkib:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Sumber:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Destinasi:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Telah diekstrak:&lt;/b&gt; 0 daripada %1 fail</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Sumber:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Destinasi:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Telah diekstrak:&lt;/b&gt; %1 daripada %2 fail</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Memuat turun fail-fail, sila tunggu...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Telah dimuat turun:&lt;/b&gt; 0 bait</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Pemacu USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Telah dimuat turun:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Telah disalin:&lt;/b&gt; %1 daripada %2</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 tidak dijumpai</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 tidak dijumpai. Ianya diperlukan untuk mod pemasangan %2.
+Pasang package &quot;%3&quot; atau padanan daripada distribusi anda.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Semasa)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Selesai)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Cakera Keras</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Liut</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">Mengkonfigurasi grub2 on %1</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -110,6 +212,10 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
@@ -266,158 +372,158 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation>Menyalin fail, sila tunggu...</translation>
+        <translation type="unfinished">Menyalin fail, sila tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Telah disalin:&lt;/b&gt; 0 bait</translation>
+        <translation type="unfinished">&lt;b&gt;Telah disalin:&lt;/b&gt; 0 bait</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Telah disalin:&lt;/b&gt; %1 daripada %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1623"/>
-        <source>Extracting files, please wait...</source>
-        <translation>Mengekstrak fail, sila tunggu...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1624"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Arkib:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1625"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Sumber:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1626"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Destinasi:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1627"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Telah diekstrak:&lt;/b&gt; 0 daripada %1 fail</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1630"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Sumber:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1631"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Destinasi:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1632"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Telah diekstrak:&lt;/b&gt; %1 daripada %2 fail</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2386"/>
-        <source>Downloading files, please wait...</source>
-        <translation>Memuat turun fail-fail, sila tunggu...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1583"/>
-        <location filename="unetbootin.cpp" line="2387"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Sumber:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1584"/>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Destinasi:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2389"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Telah dimuat turun:&lt;/b&gt; 0 bait</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2466"/>
-        <location filename="unetbootin.cpp" line="2481"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Telah dimuat turun:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2572"/>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2576"/>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2761"/>
-        <source>%1 not found</source>
-        <translation>%1 tidak dijumpai</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2762"/>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 tidak dijumpai. Ianya diperlukan untuk mod pemasangan %2.
-Pasang package &quot;%3&quot; atau padanan daripada distribusi anda.</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3051"/>
-        <source>(Current)</source>
-        <translation>(Semasa)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3052"/>
-        <source>(Done)</source>
-        <translation>(Selesai)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3319"/>
-        <source>Configuring grub2 on %1</source>
-        <translation>Mengkonfigurasi grub2 on %1</translation>
+        <translation type="unfinished">&lt;b&gt;Telah disalin:&lt;/b&gt; %1 daripada %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1623"/>
+        <source>Extracting files, please wait...</source>
+        <translation type="unfinished">Mengekstrak fail, sila tunggu...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1624"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="unfinished">&lt;b&gt;Arkib:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1625"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="unfinished">&lt;b&gt;Sumber:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1626"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="unfinished">&lt;b&gt;Destinasi:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1627"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="unfinished">&lt;b&gt;Telah diekstrak:&lt;/b&gt; 0 daripada %1 fail</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1630"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="unfinished">&lt;b&gt;Sumber:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1631"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="unfinished">&lt;b&gt;Destinasi:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1632"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="unfinished">&lt;b&gt;Telah diekstrak:&lt;/b&gt; %1 daripada %2 fail</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2386"/>
+        <source>Downloading files, please wait...</source>
+        <translation type="unfinished">Memuat turun fail-fail, sila tunggu...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1583"/>
+        <location filename="unetbootin.cpp" line="2387"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;b&gt;Sumber:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1584"/>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="unfinished">&lt;b&gt;Destinasi:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2389"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="unfinished">&lt;b&gt;Telah dimuat turun:&lt;/b&gt; 0 bait</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2466"/>
+        <location filename="unetbootin.cpp" line="2481"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished">&lt;b&gt;Telah dimuat turun:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2572"/>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2576"/>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2761"/>
+        <source>%1 not found</source>
+        <translation type="unfinished">%1 tidak dijumpai</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2762"/>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="unfinished">%1 tidak dijumpai. Ianya diperlukan untuk mod pemasangan %2.
+Pasang package &quot;%3&quot; atau padanan daripada distribusi anda.</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3051"/>
+        <source>(Current)</source>
+        <translation type="unfinished">(Semasa)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3052"/>
+        <source>(Done)</source>
+        <translation type="unfinished">(Selesai)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3319"/>
+        <source>Configuring grub2 on %1</source>
+        <translation type="unfinished">Mengkonfigurasi grub2 on %1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>

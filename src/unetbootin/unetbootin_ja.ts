@@ -18,6 +18,124 @@ X-Launchpad-Export-Date: 2010-10-06 20:32+0000
 X-Generator: Launchpad (build Unknown)
 </translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;ソース:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;解凍先:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">ファイルを解凍しています、しばらくお待ちください...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;解凍元:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;ソース:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;解凍先:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;解凍済み:&lt;/b&gt; 0 of %1 files</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;ソース:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;解凍先:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;解凍済み:&lt;/b&gt; %1 of %2 files</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">ファイルをダウンロードしています、しばらくお待ちください...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;ダウンロード済:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">USB ドライブ</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;ダウンロード済:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt; を検索中</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt; で %1/%2 がマッチ</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 が見つかりません</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 が見つかりません。これは%2のインストールのために必要です。
+&quot;%3&quot;パッケージか、同等のパッケージをインストールしてください。</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Current)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Done)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">ハードディスク</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">フロッピー</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">%1のgrub2を設定</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">%1のgrldrを設定</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">%1のgrubを設定</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">%1にsyslinuxをインストール</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">%1にextlinuxをインストール</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">ファイルシステムを同期</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -104,6 +222,10 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
@@ -260,158 +382,158 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2496"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>ファイルを解凍しています、しばらくお待ちください...</translation>
+        <translation type="unfinished">ファイルを解凍しています、しばらくお待ちください...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;解凍元:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;解凍元:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;ソース:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;ソース:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;解凍先:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;解凍先:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;解凍済み:&lt;/b&gt; 0 of %1 files</translation>
+        <translation type="unfinished">&lt;b&gt;解凍済み:&lt;/b&gt; 0 of %1 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;ソース:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;ソース:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;解凍先:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;解凍先:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;解凍済み:&lt;/b&gt; %1 of %2 files</translation>
+        <translation type="unfinished">&lt;b&gt;解凍済み:&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>ファイルをダウンロードしています、しばらくお待ちください...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1583"/>
-        <location filename="unetbootin.cpp" line="2387"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;ソース:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1584"/>
-        <location filename="unetbootin.cpp" line="2388"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;解凍先:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2389"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2466"/>
-        <location filename="unetbootin.cpp" line="2481"/>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt; %1 of %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2572"/>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt; を検索中</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2576"/>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt; で %1/%2 がマッチ</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2761"/>
-        <source>%1 not found</source>
-        <translation>%1 が見つかりません</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2762"/>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 が見つかりません。これは%2のインストールのために必要です。
-&quot;%3&quot;パッケージか、同等のパッケージをインストールしてください。</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3051"/>
-        <source>(Current)</source>
-        <translation>(Current)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3052"/>
-        <source>(Done)</source>
-        <translation>(Done)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3319"/>
-        <source>Configuring grub2 on %1</source>
-        <translation>%1のgrub2を設定</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3331"/>
-        <source>Configuring grldr on %1</source>
-        <translation>%1のgrldrを設定</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3359"/>
-        <source>Configuring grub on %1</source>
-        <translation>%1のgrubを設定</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3544"/>
-        <source>Installing syslinux to %1</source>
-        <translation>%1にsyslinuxをインストール</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3579"/>
-        <source>Installing extlinux to %1</source>
-        <translation>%1にextlinuxをインストール</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="3685"/>
-        <source>Syncing filesystems</source>
-        <translation>ファイルシステムを同期</translation>
+        <translation type="unfinished">ファイルをダウンロードしています、しばらくお待ちください...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1583"/>
+        <location filename="unetbootin.cpp" line="2387"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;b&gt;ソース:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1584"/>
+        <location filename="unetbootin.cpp" line="2388"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="unfinished">&lt;b&gt;解凍先:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2389"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="unfinished">&lt;b&gt;ダウンロード済:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2466"/>
+        <location filename="unetbootin.cpp" line="2481"/>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished">&lt;b&gt;ダウンロード済:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2496"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2572"/>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt; を検索中</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2576"/>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt; で %1/%2 がマッチ</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2761"/>
+        <source>%1 not found</source>
+        <translation type="unfinished">%1 が見つかりません</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2762"/>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="unfinished">%1 が見つかりません。これは%2のインストールのために必要です。
+&quot;%3&quot;パッケージか、同等のパッケージをインストールしてください。</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3051"/>
+        <source>(Current)</source>
+        <translation type="unfinished">(Current)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3052"/>
+        <source>(Done)</source>
+        <translation type="unfinished">(Done)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3319"/>
+        <source>Configuring grub2 on %1</source>
+        <translation type="unfinished">%1のgrub2を設定</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3331"/>
+        <source>Configuring grldr on %1</source>
+        <translation type="unfinished">%1のgrldrを設定</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3359"/>
+        <source>Configuring grub on %1</source>
+        <translation type="unfinished">%1のgrubを設定</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3544"/>
+        <source>Installing syslinux to %1</source>
+        <translation type="unfinished">%1にsyslinuxをインストール</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3579"/>
+        <source>Installing extlinux to %1</source>
+        <translation type="unfinished">%1にextlinuxをインストール</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="3685"/>
+        <source>Syncing filesystems</source>
+        <translation type="unfinished">ファイルシステムを同期</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>

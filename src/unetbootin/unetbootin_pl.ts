@@ -104,6 +104,146 @@ X-Generator: Launchpad (build Unknown)
         <source>Custom</source>
         <translation type="obsolete">Ręcznie</translation>
     </message>
+    <message>
+        <source>Copying file, please wait...</source>
+        <translation type="obsolete">Kopiowanie plików, proszę czekać...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Źródło:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Skopiowano:&lt;/b&gt; 0 bajtów</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">Rozpakowuję pliki, proszę czekać...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Archiwum:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Źródło:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Miejsce docelowe:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Rozpakowano:&lt;/b&gt; 0 z %1 plików</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Źródło:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation type="obsolete">&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Rozpakowano:&lt;/b&gt; %1 z %2 plików</translation>
+    </message>
+    <message>
+        <source>Downloading files, please wait...</source>
+        <translation type="obsolete">Pobieram pliki, proszę czekać...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;Pobrano:&lt;/b&gt; 0 bajtów</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Napęd USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Pobrano:&lt;/b&gt; %1 z %2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Skopiowano:&lt;/b&gt; %1 z %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Szukam w &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 pasuje w &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">Nie znaleziono %1</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 nie znaleziono. Wymagane, gdy tryb instalacji to: %2.
+Zainstaluj pakiet &quot;%3&quot; lub odpowiednik dla Twojej dystrybucji.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Bieżący)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Zrobiony)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Dysk twardy</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Dyskietka</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">Plik ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">Konfiguruję grub2 na %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">Konfiguruję grldr na %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">Konfiguruję grub na %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">Instaluję syslinux na %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">Instaluję extlinux na %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">Synchronizacja systemów plików</translation>
+    </message>
+    <message>
+        <source>After rebooting, select the </source>
+        <translation type="obsolete">Po ponownym uruchomieniu komputera wybierz </translation>
+    </message>
+    <message>
+        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
+Reboot now?</source>
+        <translation type="obsolete">Po ponownym uruchomieniu komputera wybierz opcję bootowania z USB w menu bootowania znajdującym się w BIOSie.%1
+Uruchomić ponownie komputer?</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -190,6 +330,10 @@ X-Generator: Launchpad (build Unknown)
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
@@ -346,158 +490,158 @@ X-Generator: Launchpad (build Unknown)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation>Kopiowanie plików, proszę czekać...</translation>
+        <translation type="unfinished">Kopiowanie plików, proszę czekać...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Skopiowano:&lt;/b&gt; 0 bajtów</translation>
+        <translation type="unfinished">&lt;b&gt;Skopiowano:&lt;/b&gt; 0 bajtów</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Skopiowano:&lt;/b&gt; %1 z %2</translation>
+        <translation type="unfinished">&lt;b&gt;Skopiowano:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>Rozpakowuję pliki, proszę czekać...</translation>
+        <translation type="unfinished">Rozpakowuję pliki, proszę czekać...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Archiwum:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Archiwum:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Źródło:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Źródło:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Miejsce docelowe:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Miejsce docelowe:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Rozpakowano:&lt;/b&gt; 0 z %1 plików</translation>
+        <translation type="unfinished">&lt;b&gt;Rozpakowano:&lt;/b&gt; 0 z %1 plików</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Źródło:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Źródło:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Rozpakowano:&lt;/b&gt; %1 z %2 plików</translation>
+        <translation type="unfinished">&lt;b&gt;Rozpakowano:&lt;/b&gt; %1 z %2 plików</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>Pobieram pliki, proszę czekać...</translation>
+        <translation type="unfinished">Pobieram pliki, proszę czekać...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Źródło:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Źródło:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Miejsce docelowe:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Pobrano:&lt;/b&gt; 0 bajtów</translation>
+        <translation type="unfinished">&lt;b&gt;Pobrano:&lt;/b&gt; 0 bajtów</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Pobrano:&lt;/b&gt; %1 z %2</translation>
+        <translation type="unfinished">&lt;b&gt;Pobrano:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Szukam w &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Szukam w &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 pasuje w &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 pasuje w &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation>Nie znaleziono %1</translation>
+        <translation type="unfinished">Nie znaleziono %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 nie znaleziono. Wymagane, gdy tryb instalacji to: %2.
+        <translation type="unfinished">%1 nie znaleziono. Wymagane, gdy tryb instalacji to: %2.
 Zainstaluj pakiet &quot;%3&quot; lub odpowiednik dla Twojej dystrybucji.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(Bieżący)</translation>
+        <translation type="unfinished">(Bieżący)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(Zrobiony)</translation>
+        <translation type="unfinished">(Zrobiony)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Konfiguruję grub2 na %1</translation>
+        <translation type="unfinished">Konfiguruję grub2 na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation>Konfiguruję grldr na %1</translation>
+        <translation type="unfinished">Konfiguruję grldr na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation>Konfiguruję grub na %1</translation>
+        <translation type="unfinished">Konfiguruję grub na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation>Instaluję syslinux na %1</translation>
+        <translation type="unfinished">Instaluję syslinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation>Instaluję extlinux na %1</translation>
+        <translation type="unfinished">Instaluję extlinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation>Synchronizacja systemów plików</translation>
+        <translation type="unfinished">Synchronizacja systemów plików</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>Po ponownym uruchomieniu komputera wybierz </translation>
+        <translation type="unfinished">Po ponownym uruchomieniu komputera wybierz </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Po ponownym uruchomieniu komputera wybierz opcję bootowania z USB w menu bootowania znajdującym się w BIOSie.%1
+        <translation type="unfinished">Po ponownym uruchomieniu komputera wybierz opcję bootowania z USB w menu bootowania znajdującym się w BIOSie.%1
 Uruchomić ponownie komputer?</translation>
     </message>
     <message>

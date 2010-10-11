@@ -565,7 +565,7 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("All Files (*)")));
+	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("All Files") + "(*)"));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
 		if (diskimagetypeselect->findText(tr("ISO")) != -1)
@@ -1313,10 +1313,10 @@ QStringList unetbootin::filteroutlistL(QStringList listofdata, QList<QRegExp> li
 
 void unetbootin::extractiso(QString isofile, QString exoutputdir)
 {
-	if (!sdesc2->text().contains("(Current)"))
+	if (!sdesc2->text().contains(trcurrent))
 	{
-		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-		sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
+		sdesc2->setText(QString("<b>%1 %2</b>").arg(sdesc2->text()).arg(trcurrent));
 	}
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
@@ -1490,10 +1490,10 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 
 void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 {
-	if (!sdesc2->text().contains("(Current)"))
+	if (!sdesc2->text().contains(trcurrent))
 	{
-		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace("(Current)</b>", "(Done)"));
-		sdesc2->setText(QString("<b>%1 (Current)</b>").arg(sdesc2->text()));
+		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
+		sdesc2->setText(QString("<b>%1 %2</b>").arg(sdesc2->text()).arg(trdone));
 	}
 	tprogress->setValue(0);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listfilesizedirpair = listarchiveconts(isofile);
@@ -3218,11 +3218,11 @@ void unetbootin::runinst()
 			rmFile(QString("%1\\7z.dll").arg(ubntmpf));
 		}
 	}
-	if (!sdesc1->text().contains("(Done)"))
+	if (!sdesc1->text().contains(trdone))
 	{
 		sdesc1->setText(QString(sdesc1->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
 	}
-	if (sdesc2->text().contains("(Current)"))
+	if (sdesc2->text().contains(trcurrent))
 	{
 		sdesc2->setText(QString(sdesc2->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
 	}
@@ -3691,7 +3691,7 @@ void unetbootin::fininstall()
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
 	sdesc3->setText(QString(sdesc3->text()).remove("<b>").replace(trcurrent+"</b>", trdone));
-	sdesc4->setText(QString("<b>%1 (Current)</b>").arg(sdesc4->text()));
+	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 	if (installType == tr("Hard Disk"))
 	{
 		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));

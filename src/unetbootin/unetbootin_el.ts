@@ -197,6 +197,90 @@ Reboot now?</source>
         <source>Format Drive (Wipes Out Data)</source>
         <translation type="obsolete">Διαμόρφωση Δίσκου (Διαγράφει Όλα τα Δεδομένα)</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation type="obsolete">&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation type="obsolete">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation type="obsolete">&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation type="obsolete">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">Δισκος USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;Μεταφορτώθηκε:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(Τρέχον)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(Ολοκληρώθηκε)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">Σκληρός Δίσκος</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">Δισκέτα</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">Αρχείο εικόνας οπτικού δίσκου (ISO)</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">Ρύθμιση grub2 στο %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">Ρύθμιση grldr στο %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">Ρύθμιση grub στο %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">Εγκατάσταση syslinux στο %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">Εγκατάσταση extlinux στο %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">Συγχρονισμός συστημάτων αρχείων</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -283,6 +367,10 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
@@ -439,157 +527,157 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2496"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>Εξαγωγή αρχείων, παρακαλώ περιμένετε...</translation>
+        <translation type="unfinished">Εξαγωγή αρχείων, παρακαλώ περιμένετε...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Δέσμη Αρχείων:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Προορισμός:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
+        <translation type="unfinished">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; 0 of %1 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt; %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;Προορισμός:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
+        <translation type="unfinished">&lt;b&gt;Εξήχθησαν:&lt;/b&gt; %1 of %2 files</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>Μεταφόρτωση αρχείων, παρακαλώ περιμένετε...</translation>
+        <translation type="unfinished">Μεταφόρτωση αρχείων, παρακαλώ περιμένετε...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Από:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Προορισμός:&lt;/b&gt; %1</translation>
+        <translation type="unfinished">&lt;b&gt;Προορισμός:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Μεταφορτώθηκαν:&lt;/b&gt; 0 bytes</translation>
+        <translation type="unfinished">&lt;b&gt;Μεταφορτώθηκαν:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Μεταφορτώθηκε:&lt;/b&gt; %1 of %2</translation>
+        <translation type="unfinished">&lt;b&gt;Μεταφορτώθηκε:&lt;/b&gt; %1 of %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2496"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">Αναζήτηση στο &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 είναι όμοια με το &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 είναι όμοια με το &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation>%1 δεν βρέθηκε</translation>
+        <translation type="unfinished">%1 δεν βρέθηκε</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
+        <translation type="unfinished">%1 δεν βρέθηκε. Αυτό ειναι απαραίτητο για τον %2 τύπο εγκατάστασης.￼Εγκαταστήστε το πακετο &quot;%3&quot; ή το αντίστοιχο για την διανομή σας.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(Τρέχον)</translation>
+        <translation type="unfinished">(Τρέχον)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(Ολοκληρώθηκε)</translation>
+        <translation type="unfinished">(Ολοκληρώθηκε)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation>Ρύθμιση grub2 στο %1</translation>
+        <translation type="unfinished">Ρύθμιση grub2 στο %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation>Ρύθμιση grldr στο %1</translation>
+        <translation type="unfinished">Ρύθμιση grldr στο %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation>Ρύθμιση grub στο %1</translation>
+        <translation type="unfinished">Ρύθμιση grub στο %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation>Εγκατάσταση syslinux στο %1</translation>
+        <translation type="unfinished">Εγκατάσταση syslinux στο %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation>Εγκατάσταση extlinux στο %1</translation>
+        <translation type="unfinished">Εγκατάσταση extlinux στο %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation>Συγχρονισμός συστημάτων αρχείων</translation>
+        <translation type="unfinished">Συγχρονισμός συστημάτων αρχείων</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>Μετά την επανεκκίνηση επιλέξετε το </translation>
+        <translation type="unfinished">Μετά την επανεκκίνηση επιλέξετε το </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>
+        <translation type="unfinished">Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>

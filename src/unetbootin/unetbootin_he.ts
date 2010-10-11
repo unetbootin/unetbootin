@@ -245,6 +245,100 @@ Reboot now?</source>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
         <translation type="obsolete">&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Elive הנה הפצה מבוססת דביאן המציעה את מנהל החלונות Enlightenment.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת לבצע הפעלה במצב חי ממנו ניתן להפעיל את ההתקנה. התקנה זו תתקין את הגרסה היציבה ולא את ה&lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;גרסה היציבה&lt;/a&gt;.</translation>
     </message>
+    <message>
+        <source>Copying file, please wait...</source>
+        <translation type="obsolete">הקבצים מועתקים, נא להמתין...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation type="obsolete">&lt;b&gt;הועתקו:&lt;/b&gt; 0 בתים</translation>
+    </message>
+    <message>
+        <source>Extracting files, please wait...</source>
+        <translation type="obsolete">הקבצים בחילוץ, נא להמתין...</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;מקור:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;יעד:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>USB Drive</source>
+        <translation type="obsolete">כונן USB</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;הורדו:&lt;/b&gt;‏ %1 מתוך %2</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation type="obsolete">&lt;b&gt;הועתקו:&lt;/b&gt; %1 מתוך %2</translation>
+    </message>
+    <message>
+        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
+        <translation type="obsolete">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
+        <translation type="obsolete">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="obsolete">%1 לא נמצא</translation>
+    </message>
+    <message>
+        <source>%1 not found. This is required for %2 install mode.
+Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
+        <translation type="obsolete">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
+יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
+    </message>
+    <message>
+        <source>(Current)</source>
+        <translation type="obsolete">(נוכחי)</translation>
+    </message>
+    <message>
+        <source>(Done)</source>
+        <translation type="obsolete">(בוצע)</translation>
+    </message>
+    <message>
+        <source>Hard Disk</source>
+        <translation type="obsolete">כונן קשיח</translation>
+    </message>
+    <message>
+        <source>Floppy</source>
+        <translation type="obsolete">דיסקט</translation>
+    </message>
+    <message>
+        <source>ISO</source>
+        <translation type="obsolete">ISO</translation>
+    </message>
+    <message>
+        <source>Configuring grub2 on %1</source>
+        <translation type="obsolete">הגדרת grub2 על גבי %1</translation>
+    </message>
+    <message>
+        <source>Configuring grldr on %1</source>
+        <translation type="obsolete">הגדרת grldr על %1</translation>
+    </message>
+    <message>
+        <source>Configuring grub on %1</source>
+        <translation type="obsolete">הגדרת grub על %1</translation>
+    </message>
+    <message>
+        <source>Installing syslinux to %1</source>
+        <translation type="obsolete">התקנת syslinux אל %1</translation>
+    </message>
+    <message>
+        <source>Installing extlinux to %1</source>
+        <translation type="obsolete">התקנת extlinux אל %1</translation>
+    </message>
+    <message>
+        <source>Syncing filesystems</source>
+        <translation type="obsolete">סנכרון מערכות קבצים</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -331,6 +425,10 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
@@ -487,158 +585,158 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation>הקבצים מועתקים, נא להמתין...</translation>
+        <translation type="unfinished">הקבצים מועתקים, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;הועתקו:&lt;/b&gt; 0 בתים</translation>
+        <translation type="unfinished">&lt;b&gt;הועתקו:&lt;/b&gt; 0 בתים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;הועתקו:&lt;/b&gt; %1 מתוך %2</translation>
+        <translation type="unfinished">&lt;b&gt;הועתקו:&lt;/b&gt; %1 מתוך %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
         <source>Extracting files, please wait...</source>
-        <translation>הקבצים בחילוץ, נא להמתין...</translation>
+        <translation type="unfinished">הקבצים בחילוץ, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;ארכיון:&lt;/b&gt;‏ %1</translation>
+        <translation type="unfinished">&lt;b&gt;ארכיון:&lt;/b&gt;‏ %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt;‏ 0 מתוך %1 קבצים</translation>
+        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt;‏ 0 מתוך %1 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt;‏ %1 (%2)</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt;‏ %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt;‏ %1%2</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt;‏ %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;חולצו:&lt;/b&gt;‏ %1 מתוך %2 קבצים</translation>
+        <translation type="unfinished">&lt;b&gt;חולצו:&lt;/b&gt;‏ %1 מתוך %2 קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>קבצים בהורדה, נא להמתין...</translation>
+        <translation type="unfinished">קבצים בהורדה, נא להמתין...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>&lt;b&gt;מקור:&lt;/b&gt;‏ &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;מקור:&lt;/b&gt;‏ &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;יעד:&lt;/b&gt;‏ %1</translation>
+        <translation type="unfinished">&lt;b&gt;יעד:&lt;/b&gt;‏ %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;הורדו:&lt;/b&gt;‏ 0 בתים</translation>
+        <translation type="unfinished">&lt;b&gt;הורדו:&lt;/b&gt;‏ 0 בתים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;הורדו:&lt;/b&gt;‏ %1 מתוך %2</translation>
+        <translation type="unfinished">&lt;b&gt;הורדו:&lt;/b&gt;‏ %1 מתוך %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation type="unfinished">חיפוש תחת &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation>%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation type="unfinished">%1/%2 התאמות תחת &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation>%1 לא נמצא</translation>
+        <translation type="unfinished">%1 לא נמצא</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation>%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
+        <translation type="unfinished">%1 לא נמצא. רכיב זה נדרש למצב ההתקנה של %2.
 יש להתקין את החבילה &quot;%3&quot; או המקבילה להפצה שנבחרה.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(נוכחי)</translation>
+        <translation type="unfinished">(נוכחי)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(בוצע)</translation>
+        <translation type="unfinished">(בוצע)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation>הגדרת grub2 על גבי %1</translation>
+        <translation type="unfinished">הגדרת grub2 על גבי %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation>הגדרת grldr על %1</translation>
+        <translation type="unfinished">הגדרת grldr על %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation>הגדרת grub על %1</translation>
+        <translation type="unfinished">הגדרת grub על %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation>התקנת syslinux אל %1</translation>
+        <translation type="unfinished">התקנת syslinux אל %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation>התקנת extlinux אל %1</translation>
+        <translation type="unfinished">התקנת extlinux אל %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation>סנכרון מערכות קבצים</translation>
+        <translation type="unfinished">סנכרון מערכות קבצים</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation>לאחר האתחול, יש לבחור ב־ </translation>
+        <translation type="unfinished">לאחר האתחול, יש לבחור ב־ </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>לאחר ההפעלה מחדש, יש לבחור באפשרות ההפעלה מ־USB בתפריט ההפעלה של ה־BIOS.‏ %1
+        <translation type="unfinished">לאחר ההפעלה מחדש, יש לבחור באפשרות ההפעלה מ־USB בתפריט ההפעלה של ה־BIOS.‏ %1
 האם הפעיל מחדש כעת?</translation>
     </message>
     <message>
