@@ -13,156 +13,16 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-09-29 00:49-0400
-PO-Revision-Date: 2010-09-14 13:58+0000
-Last-Translator: boki24 &lt;Unknown&gt;
+POT-Creation-Date: 2011-01-15 00:21-0500
+PO-Revision-Date: 2010-12-21 20:15+0000
+Last-Translator: Kosava &lt;Unknown&gt;
 Language-Team: Serbian &lt;sr@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-10-06 20:32+0000
-X-Generator: Launchpad (build Unknown)
+X-Launchpad-Export-Date: 2011-01-15 16:40+0000
+X-Generator: Launchpad (build 12200)
 </translation>
-    </message>
-    <message>
-        <source>Copying file, please wait...</source>
-        <translation type="obsolete">Kopiram fajl, molim sačekajte ...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Izvorište:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Odredište:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Kopirano:&lt;/b&gt; 0 bajtova</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">Raspakujem fajlove, molim sačekajte ...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Arhiva:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Izvorište:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Odredište:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;Raspakovano:&lt;/b&gt; 0 od %1 files</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;Izvorište:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;Odredište:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;Raspakovano:&lt;/b&gt; %1 od %2 fajl(ova)</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">Preuzimam fajlove, molim sačekajte ...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Preuzeto:&lt;/b&gt; 0 bajtova</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB disk</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Preuzeto:&lt;/b&gt; %1 od %2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Kopirano:&lt;/b&gt; %1 od %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">Pretražujem &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 odgovarajućih pronađeno u &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 nije pronađen</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="obsolete">%1 nije pronađen. Ovo je potrebno za %2 instalacioni mod.
-Instaliranje paketa &quot;%3&quot; ili ekvivalenta vaše distribucije.</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(Trenutno)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(Učinjeno)</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">Tvrdi disk</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">Disketna jedinica</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">Podešavam grub2 na %1</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">Podešavam grldr za %1</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">Podešavam grub za %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">Instaliram syslinux na %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">Instaliram extlinux na %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">Sinhronizujem sistem fajlova</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">Posle ponovnog učitavanja sistema, odaberite </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">Posle ponovnog učitavanja sistema, odaberite opciju USB boot u BIOS boot meniju.%1
-Sada ponovo pokrenuti sistem?</translation>
     </message>
 </context>
 <context>
@@ -251,7 +111,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Сви фајлови</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -410,158 +270,158 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished">Kopiram fajl, molim sačekajte ...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1585"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Kopirano:&lt;/b&gt; 0 bajtova</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2496"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Kopirano:&lt;/b&gt; %1 od %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1623"/>
-        <source>Extracting files, please wait...</source>
-        <translation type="unfinished">Raspakujem fajlove, molim sačekajte ...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1624"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Arhiva:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1625"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Izvorište:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1626"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Odredište:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1627"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;Raspakovano:&lt;/b&gt; 0 od %1 files</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1630"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;Izvorište:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1631"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;Odredište:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1632"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;Raspakovano:&lt;/b&gt; %1 od %2 fajl(ova)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2386"/>
-        <source>Downloading files, please wait...</source>
-        <translation type="unfinished">Preuzimam fajlove, molim sačekajte ...</translation>
+        <translation>Kopiram fajl, molim sačekajte ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Izvorište:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;Izvorište:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Odredište:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Odredište:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1585"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation>&lt;b&gt;Kopirano:&lt;/b&gt; 0 bajtova</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1623"/>
+        <source>Extracting files, please wait...</source>
+        <translation>Raspakujem fajlove, molim sačekajte ...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1624"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Arhiva:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1625"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Izvorište:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1626"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Odredište:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1627"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation>&lt;b&gt;Raspakovano:&lt;/b&gt; 0 od %1 files</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1630"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation>&lt;b&gt;Izvorište:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1631"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation>&lt;b&gt;Odredište:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1632"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation>&lt;b&gt;Raspakovano:&lt;/b&gt; %1 od %2 fajl(ova)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2386"/>
+        <source>Downloading files, please wait...</source>
+        <translation>Preuzimam fajlove, molim sačekajte ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Preuzeto:&lt;/b&gt; 0 bajtova</translation>
+        <translation>&lt;b&gt;Preuzeto:&lt;/b&gt; 0 bajtova</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Preuzeto:&lt;/b&gt; %1 od %2</translation>
+        <translation>&lt;b&gt;Preuzeto:&lt;/b&gt; %1 od %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2496"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Kopirano:&lt;/b&gt; %1 od %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">Pretražujem &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Pretražujem &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 odgovarajućih pronađeno u &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 odgovarajućih pronađeno u &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 nije pronađen</translation>
+        <translation>%1 nije pronađen</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">%1 nije pronađen. Ovo je potrebno za %2 instalacioni mod.
+        <translation>%1 nije pronađen. Ovo je potrebno za %2 instalacioni mod.
 Instaliranje paketa &quot;%3&quot; ili ekvivalenta vaše distribucije.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation type="unfinished">(Trenutno)</translation>
+        <translation>(Trenutno)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation type="unfinished">(Učinjeno)</translation>
+        <translation>(Učinjeno)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">Podešavam grub2 na %1</translation>
+        <translation>Podešavam grub2 na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">Podešavam grldr za %1</translation>
+        <translation>Podešavam grldr za %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">Podešavam grub za %1</translation>
+        <translation>Podešavam grub za %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">Instaliram syslinux na %1</translation>
+        <translation>Instaliram syslinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">Instaliram extlinux na %1</translation>
+        <translation>Instaliram extlinux na %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">Sinhronizujem sistem fajlova</translation>
+        <translation>Sinhronizujem sistem fajlova</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">Posle ponovnog učitavanja sistema, odaberite </translation>
+        <translation>Posle ponovnog učitavanja sistema, odaberite </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">Posle ponovnog učitavanja sistema, odaberite opciju USB boot u BIOS boot meniju.%1
+        <translation>Posle ponovnog učitavanja sistema, odaberite opciju USB boot u BIOS boot meniju.%1
 Sada ponovo pokrenuti sistem?</translation>
     </message>
     <message>

@@ -13,138 +13,16 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2010-09-29 00:49-0400
-PO-Revision-Date: 2010-09-01 09:21+0000
-Last-Translator: Jiri Grönroos &lt;Unknown&gt;
+POT-Creation-Date: 2011-01-15 00:21-0500
+PO-Revision-Date: 2010-12-25 18:26+0000
+Last-Translator: Tomi Juntunen &lt;Unknown&gt;
 Language-Team: Finnish &lt;fi@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-10-06 20:32+0000
-X-Generator: Launchpad (build Unknown)
+X-Launchpad-Export-Date: 2011-01-15 16:41+0000
+X-Generator: Launchpad (build 12200)
 </translation>
-    </message>
-    <message>
-        <source>Copying file, please wait...</source>
-        <translation type="obsolete">Kopioidaan tiedostoa, odota...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Lähde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Kohde:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Kopioitu:&lt;/b&gt; 0 tavua</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">Puretaan tiedostoja, odota...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Arkisto:&lt;/b&gt;  %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Lähde:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Kohde:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="obsolete">&lt;b&gt;Purettu:&lt;/b&gt;  0 / %1 tiedostoa</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="obsolete">&lt;b&gt;Lähde:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;Kohde:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="obsolete">&lt;b&gt;Purettu:&lt;/b&gt; %1 / %2 tiedostoa</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">Ladataan tiedostoja, odota...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Ladattu:&lt;/b&gt; 0 tavua</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">USB-asema</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Ladattu:&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Kopioitu:&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">Haetaan: &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 ei löytynyt</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(Nykyinen)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(Valmis)</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <translation type="obsolete">Kiintolevy</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">Levyke</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">Määritetään grub2:n asetuksia: %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">Asennetaan syslinuxia: %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">Asennetaan extlinuxia: %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">Synkronoidaan tiedostojärjestelmiä</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <translation type="obsolete">Uudelleenkäynnistyksen jälkeen valitse </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <translation type="obsolete">Valitse USB-asema käynnistettäväksi mediaksi BIOS-valikosta uudelleenkäynnistyksen yhteydessä. %1
-Käynnistetäänkö kone uudelleen nyt?</translation>
     </message>
 </context>
 <context>
@@ -233,7 +111,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki tiedostot</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -275,7 +153,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Sinun täytyy ensin liittää USB-asema %1 liitospisteeseen. Useimmat jakeluversiot tekevät tämän automaattisesti kun poistat ja laitat USB-aseman takaisin paikoilleen.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
@@ -285,17 +163,17 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Sinun täytyy valita ladattava jakelu.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="671"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Valitse levykuva.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="672"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Sinun täytyy valita ladattava levykuva.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="686"/>
@@ -305,12 +183,12 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Sinun täytyy valita ladattava kernel ja/tai initrd-tiedosto.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>Levykuvaa ei löytynyt.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="702"/>
@@ -345,7 +223,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Tiedosto &apos;%1&apos; on jo olemassa. Valitse jokin seuraavista toiminnoista: Kyllä kaikkiin - korvaa kaikki aikaisemmat tiedostot; Kyllä - korvaa tiedostot yksi kerrallaan; Ei - säästä nykyinen versio.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
@@ -355,27 +233,27 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>Hakemistosta %1 on loppunut tila. Valitse jokin seuraavista toiminnoista: Kyllä - keskeytä asennus; Ei - hylkää tämä virheilmoitus ja yritä jatkaa asennusta; Ei kaikkiin - hylkää kaikki mahdolliset levytilaan liittyvät ilmoitukset jatkossa.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Paikallistetaan kerneltiedostoa kohteessa %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kopioidaan kerneltiedostoa kohteesta %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Paikallistetaan initrd-tiedostoa kohteessa %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Kopioidaan initrd-tiedostoa kohteesta %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
@@ -392,182 +270,187 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished">Kopioidaan tiedostoa, odota...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1585"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Kopioitu:&lt;/b&gt; 0 tavua</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2496"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Kopioitu:&lt;/b&gt; %1 / %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1623"/>
-        <source>Extracting files, please wait...</source>
-        <translation type="unfinished">Puretaan tiedostoja, odota...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1624"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Arkisto:&lt;/b&gt;  %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1625"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Lähde:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1626"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Kohde:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1627"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;Purettu:&lt;/b&gt;  0 / %1 tiedostoa</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1630"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;Lähde:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1631"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;Kohde:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1632"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;Purettu:&lt;/b&gt; %1 / %2 tiedostoa</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2386"/>
-        <source>Downloading files, please wait...</source>
-        <translation type="unfinished">Ladataan tiedostoja, odota...</translation>
+        <translation>Kopioidaan tiedostoa, odota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Lähde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;Lähde:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Kohde:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1585"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation>&lt;b&gt;Kopioitu:&lt;/b&gt; 0 tavua</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1623"/>
+        <source>Extracting files, please wait...</source>
+        <translation>Puretaan tiedostoja, odota...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1624"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Arkisto:&lt;/b&gt;  %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1625"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Lähde:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1626"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1627"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation>&lt;b&gt;Purettu:&lt;/b&gt;  0 / %1 tiedostoa</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1630"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation>&lt;b&gt;Lähde:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1631"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation>&lt;b&gt;Kohde:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1632"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation>&lt;b&gt;Purettu:&lt;/b&gt; %1 / %2 tiedostoa</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2386"/>
+        <source>Downloading files, please wait...</source>
+        <translation>Ladataan tiedostoja, odota...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Ladattu:&lt;/b&gt; 0 tavua</translation>
+        <translation>&lt;b&gt;Ladattu:&lt;/b&gt; 0 tavua</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Ladattu:&lt;/b&gt; %1 / %2</translation>
+        <translation>&lt;b&gt;Ladattu:&lt;/b&gt; %1 / %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2496"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Kopioitu:&lt;/b&gt; %1 / %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">Haetaan: &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Haetaan: &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 ei löytynyt</translation>
+        <translation>%1 ei löytynyt</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohdetta %1 ei löytynyt. Tämä tarvitaan asennustoiminnolle %2.
+Asenna ensin paketti &quot;%3&quot;, tai jokin muu linux-jakeluasi vastaava paketti.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation type="unfinished">(Nykyinen)</translation>
+        <translation>(Nykyinen)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation type="unfinished">(Valmis)</translation>
+        <translation>(Valmis)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">Määritetään grub2:n asetuksia: %1</translation>
+        <translation>Määritetään grub2:n asetuksia: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguroidaan grldr kohteessa %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguroidaan grub kohteessa %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">Asennetaan syslinuxia: %1</translation>
+        <translation>Asennetaan syslinuxia: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">Asennetaan extlinuxia: %1</translation>
+        <translation>Asennetaan extlinuxia: %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">Synkronoidaan tiedostojärjestelmiä</translation>
+        <translation>Synkronoidaan tiedostojärjestelmiä</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">Uudelleenkäynnistyksen jälkeen valitse </translation>
+        <translation>Uudelleenkäynnistyksen jälkeen valitse </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">Valitse USB-asema käynnistettäväksi mediaksi BIOS-valikosta uudelleenkäynnistyksen yhteydessä. %1
+        <translation>Valitse USB-asema käynnistettäväksi mediaksi BIOS-valikosta uudelleenkäynnistyksen yhteydessä. %1
 Käynnistetäänkö kone uudelleen nyt?</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*TÄRKEÄÄ* Ennen tietokoneen uudelleenkäynnistystä aseta Ubuntun vaihtoehtoisversion (alternate) asennustiedosto kiintolevysi tai USB-laitteesi juurikansioon. Tiedostot voi ladata osoitteesta cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*TÄRKEÄÄ* Uudelleenkäynnistyksen jälkeen ohita ja jätä huomiotta mahdolliset virheilmoitukset ja valitse &apos;takaisin&apos;, mikäli CD-levyä kysytään. Tämän jälkeen mene päävalikkoon, valitse &apos;Aloita asennus&apos; -toiminto, valitse lähteeksi &apos;Verkko&apos;, valitse protokollaksi &apos;HTTP&apos;, aseta palvelinta kysyessä arvoksi &apos;mirror.kernel.org&apos; ja kansiota kysyttäessä aseta arvoksi &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*TÄRKEÄÄ* Ennen uudelleenkäynnistysta aseta Debian -käyttöjärjestelmän iso-tyypin asennustiedosto kiintolevysi tai USB-asemasi juurikansioon. Tiedostot voi hankkia osoitteesta cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="364"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <translation></translation>
+        <translation>
+*TÄRKEÄÄ* Uudelleenkäynnistyksen jälkeen ohita ja jätä huomiotta mahdolliset virheilmoitukset ja valitse &apos;takaisin&apos;, mikäli CD-levyä kysytään. Tämän jälkeen mene päävalikkoon, valitse &apos;Aloita asennus&apos; -toiminto, valitse lähteeksi &apos;Verkko&apos;, valitse protokollaksi &apos;HTTP&apos;, aseta palvelinta kysyessä arvoksi &apos;download.fedora.redhat.com&apos; ja kansiota kysyttäessä aseta arvoksi &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="370"/>
@@ -607,32 +490,32 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Arch Linux on kevyt jakelu, joka keskittyy nopeuteen ja joustavuuteen.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Oletusversio mahdollistaa asennuksen internetiä käyttäen (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; BackTrack on verkkoanalysointiin ja tunkeutumistestaukseen tarkoitettu jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; BackTrack käynnistyy ja toimii live-tilassa; asennusta ei vaadita jakelun käyttämiseksi.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; CentOS on ilmainen Red Hat Enterprise Linux -klooni.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Oletusversio mahdollistaa asennuksen niin internetin (FTP) kautta kuin yhteydettömässäkin tilassa käyttäen etukäteen ladattuja ISO-tiedostoja.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; CloneZilla on varmuuskopiointiin ja levykuvien hallintaan tarkoitettu jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; CloneZilla käynnistyy ja toimii live-tilassa; sen käyttö ei vaadi asennusta.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="49"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Damn Small Linux on vanhoille tietokoneille suunnattu minimalistinen jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio lataa järjestelmän kokonaisuudessaan keskusmuistiin, joten asennus kiintolevylle ei ole välttämätöntä.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Debian on laajan yhteisön kehittämä Linux-jakelu. Debian tukee lukuisia arkkitehtuureja ja sen ohjelmistolähteet sisältävät paljon paketteja.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; NetInstall-versio mahdollistaa asennuksen verkon (FTP) kautta. Jos haluat käyttää ennalta ladattua install-versiota, käytä HdMedia-valintaa ja aseta install-version ISO-tiedosto USB-levyn/kiintolevyn juureen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -652,7 +535,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="75"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Fedora on Red Hatin sponsoroima yhteisöön perustuva jakelu, jossa on uusimpia avoimen lähdekoodin ohjelmistoja.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio mahdollistaa käynnistyksen live-tilaan, josta on mahdollista käynnistää asennusohjelma. NetInstall-versio mahdollistaa asennuksen niin internetin (FTP) kautta kuin yhteydettömässäkin tilassa käyttäen etukäteen ladattuja ISO-tiedostoja.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="80"/>
@@ -662,7 +545,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="85"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; FreeDOS on ilmainen MS-DOS-yhteensopiva käyttöjärjestelmä.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Lue asennustiedot projektin sivustolla olevasta &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;ohjekirjasta&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="90"/>
@@ -677,7 +560,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="100"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; F-Secure Rescue CD havaitsee ja poistaa haittaohjelmia koneella olevasta Windows-asennuksesta.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio käynnistyy live-tilaan, josta on mahdollista suorittaa haittaohjelmien etsintä.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="105"/>
@@ -697,12 +580,12 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="125"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Kaspersky Rescue Disk havaitsee ja poistaa haittaohjelmia koneella olevasta Windows-asennuksesta.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio käynnistyy live-tilaan, josta on mahdollista suorittaa haittaohjelmien etsintä.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Kubuntu on virallinen Ubuntu-johdannainen, jonka työpöytäympäristönä on KDE.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio on mahdollista käynnistää live-tilaan, josta on mahdollista suorittaa varsinainen asennus. NetInstall-versio mahdollistaa asennuksen verkon (FTP) kautta; sillä voi asentaa myös Ubuntun tai muun Ubuntu-johdannaisen. Jos haluat käyttää ennalta ladattua alternate-versiota (ei työpöytäversiota), käytä HdMedia-valintaa ja aseta alternate-version ISO-tiedosto USB-levyn/kiintolevyn juureen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="135"/>
@@ -742,12 +625,12 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="171"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; openSUSE on helppokäyttöinen Novellin sponsoroima jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Oletusversio mahdollistaa asennuksen internetin kautta (FTP:tä käyttäen) tai yhteydettömässä tilassa, jolloin käytetään ennalta ladattuja ISO-asennustiedostoja.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Ophcrack voi murtaa Windows-salasanoja.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Ophcrack käynnistyy live-tilassa; asennusta ei vaadita Ophcrackin käyttämiseksi.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="181"/>
@@ -762,7 +645,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="191"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Puppy Linux on vanhoille tietokoneilla suunnattu jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio lataa järjestelmän kokonaisuudessaan keskusmuistiin, joten asennus kiintolevylle ei ole välttämätöntä.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="196"/>
@@ -772,7 +655,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="201"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Slax on Slackwareen pohjautuva KDE-työpöydällä varustettu jakelu.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio mahdollistaa käynnistyksen live-tilaan, josta asennusohjelma on mahdollista käynnistää.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="206"/>
@@ -803,7 +686,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Ubuntu on helppokäyttöinen Debianiin pohjautuva jakelu. Ubuntu lienee suosituin Linux-jakelu työpöytäkäytössä.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio on mahdollista käynnistää live-tilaan, josta on mahdollista suorittaa varsinainen asennus. NetInstall-versio mahdollistaa asennuksen verkon (FTP) kautta; sillä voi asentaa myös Kubuntun tai muun Ubuntu-johdannaisen. Jos haluat käyttää ennalta ladattua alternate-versiota (ei työpöytäversiota), käytä HdMedia-valintaa ja aseta alternate-version ISO-tiedosto USB-levyn/kiintolevyn juureen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
@@ -813,7 +696,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Verkkosivusto:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Kuvaus:&lt;/b&gt; Xubuntu on virallinen Ubuntu-johdannainen, jonka työpöytäympäristönä on XFCE.&lt;br/&gt;&lt;b&gt;Asennustiedot:&lt;/b&gt; Live-versio on mahdollista käynnistää live-tilaan, josta on mahdollista suorittaa varsinainen asennus. NetInstall-versio mahdollistaa asennuksen verkon (FTP) kautta; sillä voi asentaa myös Kubuntun tai muun Ubuntu-johdannaisen. Jos haluat käyttää ennalta ladattua alternate-versiota (ei työpöytäversiota), käytä HdMedia-valintaa ja aseta alternate-version ISO-tiedosto USB-levyn/kiintolevyn juureen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="246"/>
@@ -967,7 +850,7 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="472"/>
         <location filename="unetbootin.ui" line="491"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Valitse kohdeasema, johon asennus suoritetaan</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="475"/>
@@ -1106,7 +989,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="343"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 on parhaillaan asennettu. Poistetaanko nykyinen versio?</translation>
     </message>
 </context>
 </TS>

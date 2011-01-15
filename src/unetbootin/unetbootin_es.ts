@@ -7,612 +7,16 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2010-09-29 00:49-0400
-PO-Revision-Date: 2010-08-18 02:41+0000
-Last-Translator: Vic One &lt;Unknown&gt;
+POT-Creation-Date: 2011-01-15 00:21-0500
+PO-Revision-Date: 2011-01-15 10:39+0000
+Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2010-10-06 20:32+0000
-X-Generator: Launchpad (build Unknown)
+X-Launchpad-Export-Date: 2011-01-15 16:40+0000
+X-Generator: Launchpad (build 12200)
 </translation>
-    </message>
-    <message>
-        <source>UNetbootin</source>
-        <translation type="obsolete">UNetbootin</translation>
-    </message>
-    <message>
-        <source>Distribution</source>
-        <translation type="obsolete">Distribución</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation type="obsolete">Personalizado</translation>
-    </message>
-    <message>
-        <source>Drive:</source>
-        <translation type="obsolete">Unidad:</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="obsolete">Tipo:</translation>
-    </message>
-    <message>
-        <source>Initrd:</source>
-        <translation type="obsolete">Initrd:</translation>
-    </message>
-    <message>
-        <source>Options:</source>
-        <translation type="obsolete">Opciones:</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <comment>#1</comment>
-        <translation type="obsolete">Disco Duro</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <comment>#2</comment>
-        <translation type="obsolete">Unidad USB</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <comment>#3</comment>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <comment>#4</comment>
-        <translation type="obsolete">Disquete</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <comment>#5</comment>
-        <translation type="obsolete">Inserta un pendrive (unidad USB)</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <comment>#6</comment>
-        <translation type="obsolete">No se encontró ningun pendrive (unidad USB). Si has introducido ya un pendrive, prueba a reformatearlo como FAT32.</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <comment>#7</comment>
-        <translation type="obsolete">%1 no está montado</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <comment>#8</comment>
-        <translation type="obsolete">Primero debes montar el pendrive: %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quites y vuelvas a insertar el pendrive.</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <comment>#9</comment>
-        <translation type="obsolete">Selecciona una distribución</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <comment>#10</comment>
-        <translation type="obsolete">Debes seleccionar una distribución para cargar.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <comment>#16</comment>
-        <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <comment>#17</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <comment>#18</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <comment>#19</comment>
-        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 archivos</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <comment>#20</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <comment>#21</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <comment>#22</comment>
-        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 archivos</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <comment>#24</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <comment>#25</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <comment>#26</comment>
-        <translation type="obsolete">&lt;b&gt;Descargado:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <comment>#27</comment>
-        <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <comment>#28</comment>
-        <translation type="obsolete">%1 no encontrado</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <comment>#29</comment>
-        <translation type="obsolete">%1 no encontrado. Este se requiere para el modo de instalación %2.
-Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <comment>#30</comment>
-        <translation type="obsolete">Después de reiniciar, selecciona el </translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <comment>#31</comment>
-        <translation type="obsolete">Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
-¿Reiniciar ahora?</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <comment>@default#1</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <comment>@default#2</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <comment>@default#3</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <comment>@default#4</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <comment>@default#5</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>Uninstallation Complete</source>
-        <comment>QObject#1</comment>
-        <translation type="obsolete">Desinstalación completa</translation>
-    </message>
-    <message>
-        <source>UNetbootin Uninstaller</source>
-        <translation type="obsolete">UNetbootin Desinstalador</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the </source>
-        <comment>QObject#3</comment>
-        <translation type="obsolete">Después de reiniciar, selecciona el </translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <comment>QObject#4</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <comment>QObject#5</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <comment>QObject#6</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/SL-OSS-factory/inst-source&apos; when asked for the folder.</source>
-        <comment>QObject#7</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/SL-OSS-factory/inst-source&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <comment>QObject#8</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>Must run as root</source>
-        <comment>QObject#9</comment>
-        <translation type="obsolete">Se debe ejecutar como superusuario (root)</translation>
-    </message>
-    <message>
-        <source>Insert a USB flash drive</source>
-        <comment>QObject#10</comment>
-        <translation type="obsolete">Inserta un pendrive (unidad USB)</translation>
-    </message>
-    <message>
-        <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <comment>QObject#11</comment>
-        <translation type="obsolete">No se encontró ningun pendrive (unidad USB). Si has introducido ya un pendrive, prueba a reformatearlo como FAT32.</translation>
-    </message>
-    <message>
-        <source>%1 not mounted</source>
-        <comment>QObject#12</comment>
-        <translation type="obsolete">%1 no está montado</translation>
-    </message>
-    <message>
-        <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <comment>QObject#13</comment>
-        <translation type="obsolete">Primero debes montar el pendrive: %1 en un punto de montaje. Muchas distribuciones harán esto automáticamente cuando quites y vuelvas a insertar el pendrive.</translation>
-    </message>
-    <message>
-        <source>Select a distro</source>
-        <comment>QObject#14</comment>
-        <translation type="obsolete">Selecciona una distribución</translation>
-    </message>
-    <message>
-        <source>You must select a distribution to load.</source>
-        <comment>QObject#15</comment>
-        <translation type="obsolete">Debes seleccionar una distribución para cargar.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <comment>QObject#21</comment>
-        <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <comment>QObject#22</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <comment>QObject#23</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <comment>QObject#24</comment>
-        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; 0 de %1 archivos</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <comment>QObject#25</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <comment>QObject#26</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <comment>QObject#27</comment>
-        <translation type="obsolete">&lt;b&gt;Extraido:&lt;/b&gt; %1 de %2 archivos</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <comment>QObject#29</comment>
-        <translation type="obsolete">&lt;b&gt;Fuente:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <comment>QObject#30</comment>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <comment>QObject#31</comment>
-        <translation type="obsolete">&lt;b&gt;Descargado:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <comment>QObject#32</comment>
-        <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <comment>QObject#33</comment>
-        <translation type="obsolete">%1 no encontrado</translation>
-    </message>
-    <message>
-        <source>%1 not found. This is required for %2 install mode.
-Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <comment>QObject#34</comment>
-        <translation type="obsolete">%1 no encontrado. Este se requiere para el modo de instalación %2.
-Instala el paquete &quot;%3&quot; o el equivalente en tu distribución.</translation>
-    </message>
-    <message>
-        <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
-Reboot now?</source>
-        <comment>QObject#35</comment>
-        <translation type="obsolete">Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la bios. %1
-¿Reiniciar ahora?</translation>
-    </message>
-    <message>
-        <source>Disk Image</source>
-        <translation type="obsolete">Imagen de Disco</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <comment>unetbootinui#14</comment>
-        <translation type="obsolete">Disco Duro</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <comment>unetbootinui#15</comment>
-        <translation type="obsolete">Unidad USB</translation>
-    </message>
-    <message>
-        <source>background-color: transparent;</source>
-        <translation type="obsolete">background-color: transparent;</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <comment>unetbootinui#21</comment>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <comment>unetbootinui#22</comment>
-        <translation type="obsolete">Disquete</translation>
-    </message>
-    <message>
-        <source>background: transparent;</source>
-        <translation type="obsolete">UNetbootin</translation>
-    </message>
-    <message>
-        <source>Uninstallation Complete</source>
-        <comment>uninstaller#1</comment>
-        <translation type="obsolete">Desinstalación completa</translation>
-    </message>
-    <message>
-        <source>Must run as root</source>
-        <comment>uninstaller#3</comment>
-        <translation type="obsolete">Se debe ejecutar como superusuario (root)</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <comment>unetbootin#75</comment>
-        <translation type="obsolete">Unidad USB</translation>
-    </message>
-    <message>
-        <source>Hard Disk</source>
-        <comment>unetbootin#76</comment>
-        <translation type="obsolete">Disco Duro</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <comment>unetbootin#77</comment>
-        <translation type="obsolete">Disquete</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <comment>unetbootin#78</comment>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
-        <comment>unetbootin#83</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;mirrors.kernel.org&quot; cuando te pregunten por un servidor, y pon &quot;/centos/%1/os%2&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
-        <comment>unetbootin#84</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/development/%1/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
-        <comment>unetbootin#85</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.fedora.redhat.com&quot; cuando te pregunten por un servidor, y pon &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>
-*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
-        <comment>unetbootin#87</comment>
-        <translation type="obsolete">
-*IMPORTANTE* Después de reiniciar, ignora cualquier mensaje de error y selecciona otra vez si te piden un CD, entoncés ves al menú principal, seleccionar la opción &quot;Empezar Instalación&quot; elige &quot;Red&quot; como la fuente, elige como protocolo: &quot;HTTP&quot;, entra &quot;download.opensuse.org&quot; cuando te pregunten por un servidor, y pon &quot;/distribution/%1/repo/oss&quot; cuando te pregunten por el directorio.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Descargados:&lt;/b&gt; %1 de %2 bytes</translation>
-    </message>
-    <message>
-        <source>Diskimage</source>
-        <translation type="obsolete">Imagen de disco</translation>
-    </message>
-    <message>
-        <source>Show All Drives (Use with Care)</source>
-        <translation type="obsolete">Mostrar todas las unidades (usar con cuidado)</translation>
-    </message>
-    <message>
-        <source>Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">Formatear la unidad (borra los datos)</translation>
-    </message>
-    <message>
-        <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The Unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; is installed. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del que puede lanzarse el instalador. Versión inestable, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está instalada. El instalador está basado en &lt;a ref=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode. The Unstable version does not support Hard Drive installations, though the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt; (not freely downloadable) does.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una distribución basada en Debian con el gestor de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt;La versión Live permite arrancar en modo directo. La versión inestable no es compatible con instalaciones en disco duro, la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;versión estable&lt;/a&gt; no está disponible para  descarga libre.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Debian es una distribución de Linux desarrollada por la comunidad que funciona en una gran variedad de arquitecturas y ofrece un gran repositorio de paquetes.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live arranca en modo directo pudiendo desde el cual se puede lanzar el instalador. La versión Netinstall permite su instalación a partir de FTP.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.remote-exploit.org/backtrack.html&quot;&gt;http://www.remote-exploit.org/backtrack.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; BackTrack es una distribución enfocada al análisis de redes y a pruebas de intrusión.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; BackTrack arranca y se ejecuta en modo «live» (directo); no es necesario instalarla para su uso.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Xubuntu and other official Ubuntu derivatives.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Kubuntu es un derivado oficial de Ubuntu con el escritorio KDE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo, a partir del cual se puede lanzar el instalador. La versión Netinstall permite la instalación a través de FTP, puede instalar también Xubuntu y otros derivados oficiales de Ubuntu.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP). If interested in a LiveUSB version, see FaunOS.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Arch Linux es una distribución ligera optimizada para velocidad y flexibilidad.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada le permite instalarla por internet (FTP). Si está interesado en una versión LiveUSB vea FaunOS.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Ubuntu is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_Ubuntu&quot;&gt;http://hacktolive.org/wiki/Super_Ubuntu&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt;Super Ubuntu es un derivado no oficial de Ubuntu que incluye software adicional de forma predeterminada. Requiere de una unidad USB de 2 GB.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo desde el que se puede lanzar el instalador.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Ubuntu es una distribución basada en Debian orientada al usuario. Siendo hoy en día la distribución de Linux para el escritorio más popular.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La versión Live permite arrancar en modo directo. La versión Netinstall permite instalaciones por FTP y puede instalar Kubuntu y otras derivadas oficiales de Ubuntu.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Xubuntu es una derivada oficial de Ubuntu que utiliza el escritorio XFCE.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live arranca en modo directo desde el que se puede lanzar el instalador. La versión Netinstall se utiliza para  la instalación a través de FTP y permite la instalación de Kubuntu y otras derivadas oficiales de Ubuntu.</translation>
-    </message>
-    <message>
-        <source>Kernel:</source>
-        <translation type="obsolete">Núcleo:</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. This installs the unstable version, not the &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Stable version&lt;/a&gt;.</source>
-        <translation type="obsolete">&lt;b&gt;Sitio Web:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Elive es una ditribución basada en Debian que incluye el administrador de ventanas Enlightenment.&lt;br/&gt;&lt;b&gt;Notas sobre la instalación:&lt;/b&gt; La versión Live permite iniciar en modo Live, desde el cual se puede iniciar el instalador de manera opcional. De esta manera se instala la versión inestable, no la &lt;a href=&quot;http://www.elivecd.org/Download/Stable&quot;&gt;Versión estable&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>Copying file, please wait...</source>
-        <translation type="obsolete">Copiando archivo, por favor, espere...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="obsolete">&lt;b&gt;Copiado:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <source>Extracting files, please wait...</source>
-        <translation type="obsolete">Extrayendo archivos, por favor espere...</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="obsolete">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="obsolete">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <source>Downloading files, please wait...</source>
-        <translation type="obsolete">Descargando archivos, por favor espere...</translation>
-    </message>
-    <message>
-        <source>USB Drive</source>
-        <translation type="obsolete">Unidad USB</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Descargado(s):&lt;/b&gt; %1 de %2</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="obsolete">&lt;b&gt;Copiado:&lt;/b&gt; %1 de %2</translation>
-    </message>
-    <message>
-        <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="obsolete">Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="obsolete">%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>%1 not found</source>
-        <translation type="obsolete">%1 no encontrado</translation>
-    </message>
-    <message>
-        <source>(Current)</source>
-        <translation type="obsolete">(Actual)</translation>
-    </message>
-    <message>
-        <source>(Done)</source>
-        <translation type="obsolete">(Hecho)</translation>
-    </message>
-    <message>
-        <source>Floppy</source>
-        <translation type="obsolete">Disquete</translation>
-    </message>
-    <message>
-        <source>ISO</source>
-        <translation type="obsolete">ISO</translation>
-    </message>
-    <message>
-        <source>Configuring grub2 on %1</source>
-        <translation type="obsolete">Configurando grub2 en %1</translation>
-    </message>
-    <message>
-        <source>Configuring grldr on %1</source>
-        <translation type="obsolete">Configurando grldr en %1</translation>
-    </message>
-    <message>
-        <source>Configuring grub on %1</source>
-        <translation type="obsolete">Configurando grub en %1</translation>
-    </message>
-    <message>
-        <source>Installing syslinux to %1</source>
-        <translation type="obsolete">Instalando syslinux en %1</translation>
-    </message>
-    <message>
-        <source>Installing extlinux to %1</source>
-        <translation type="obsolete">Instalando extlinux en %1</translation>
-    </message>
-    <message>
-        <source>Syncing filesystems</source>
-        <translation type="obsolete">Sincronizando el sistema de archivos</translation>
     </message>
 </context>
 <context>
@@ -701,7 +105,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los archivos</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -860,158 +264,158 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation type="unfinished">Copiando archivo, por favor, espere...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1585"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Copiado:&lt;/b&gt; 0 bytes</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2496"/>
-        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Copiado:&lt;/b&gt; %1 de %2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1623"/>
-        <source>Extracting files, please wait...</source>
-        <translation type="unfinished">Extrayendo archivos, por favor espere...</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1624"/>
-        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1625"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1626"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1627"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation type="unfinished">&lt;b&gt;Extraídos:&lt;/b&gt; 0 de %1 archivos</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1630"/>
-        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1631"/>
-        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="1632"/>
-        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation type="unfinished">&lt;b&gt;Extraídos:&lt;/b&gt; %1 de %2 archivos</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.cpp" line="2386"/>
-        <source>Downloading files, please wait...</source>
-        <translation type="unfinished">Descargando archivos, por favor espere...</translation>
+        <translation>Copiando archivo, por favor, espere...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
         <location filename="unetbootin.cpp" line="2387"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>&lt;b&gt;Origen:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation type="unfinished">&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Destino:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1585"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
+        <translation>&lt;b&gt;Copiado:&lt;/b&gt; 0 bytes</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1623"/>
+        <source>Extracting files, please wait...</source>
+        <translation>Extrayendo archivos, por favor espere...</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1624"/>
+        <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;Archivo:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1625"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Origen:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1626"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Destino:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1627"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
+        <translation>&lt;b&gt;Extraídos:&lt;/b&gt; 0 de %1 archivos</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1630"/>
+        <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
+        <translation>&lt;b&gt;Origen:&lt;/b&gt; %1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1631"/>
+        <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
+        <translation>&lt;b&gt;Destino:&lt;/b&gt; %1%2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="1632"/>
+        <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
+        <translation>&lt;b&gt;Extraídos:&lt;/b&gt; %1 de %2 archivos</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2386"/>
+        <source>Downloading files, please wait...</source>
+        <translation>Descargando archivos, por favor espere...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation type="unfinished">&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Descargados:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation type="unfinished">&lt;b&gt;Descargado(s):&lt;/b&gt; %1 de %2</translation>
+        <translation>&lt;b&gt;Descargado(s):&lt;/b&gt; %1 de %2</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.cpp" line="2496"/>
+        <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
+        <translation>&lt;b&gt;Copiado:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished">Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Buscando en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation type="unfinished">%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
+        <translation>%1/%2 coincidencias en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation type="unfinished">%1 no encontrado</translation>
+        <translation>%1 no encontrado</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation type="unfinished">%1 no encontrado. Es necesario para el modo de instalación %2.
+        <translation>%1 no encontrado. Es necesario para el modo de instalación %2.
 Instala el paquete «%3» o el equivalente en tu distribución.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation type="unfinished">(Actual)</translation>
+        <translation>(Actual)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation type="unfinished">(Hecho)</translation>
+        <translation>(Hecho)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
         <source>Configuring grub2 on %1</source>
-        <translation type="unfinished">Configurando grub2 en %1</translation>
+        <translation>Configurando grub2 en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3331"/>
         <source>Configuring grldr on %1</source>
-        <translation type="unfinished">Configurando grldr en %1</translation>
+        <translation>Configurando grldr en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3359"/>
         <source>Configuring grub on %1</source>
-        <translation type="unfinished">Configurando grub en %1</translation>
+        <translation>Configurando grub en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3544"/>
         <source>Installing syslinux to %1</source>
-        <translation type="unfinished">Instalando syslinux en %1</translation>
+        <translation>Instalando syslinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3579"/>
         <source>Installing extlinux to %1</source>
-        <translation type="unfinished">Instalando extlinux en %1</translation>
+        <translation>Instalando extlinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3685"/>
         <source>Syncing filesystems</source>
-        <translation type="unfinished">Sincronizando el sistema de archivos</translation>
+        <translation>Sincronizando el sistema de archivos</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3697"/>
         <source>After rebooting, select the </source>
-        <translation type="unfinished">Después de reiniciar, seleccione el </translation>
+        <translation>Después de reiniciar, seleccione el </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3701"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation type="unfinished">Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la BIOS.%1
+        <translation>Después de reiniciar, seleccionar la opción de arranque por USB en el menú de arranque de la BIOS.%1
 ¿Reiniciar ahora?</translation>
     </message>
     <message>

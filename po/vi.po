@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-29 00:49-0400\n"
-"PO-Revision-Date: 2010-10-06 13:54+0000\n"
+"POT-Creation-Date: 2011-01-15 00:21-0500\n"
+"PO-Revision-Date: 2011-01-15 15:14+0000\n"
 "Last-Translator: Lê Trường An <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-10-06 20:32+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
+"X-Generator: Launchpad (build 12200)\n"
 "X-Language: vi_VN\n"
 
 #. ts-context QObject
@@ -51,7 +51,7 @@ msgstr "Đĩa mềm"
 #: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
 #: unetbootin.cpp:240 unetbootin.cpp:252
 msgid "either"
-msgstr "hoặc"
+msgstr "khác"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
@@ -60,9 +60,8 @@ msgstr "Mở tập tin ảnh đĩa"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
-#, fuzzy
 msgid "All Files"
-msgstr ""
+msgstr "Tất cả tập tin"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
@@ -77,7 +76,7 @@ msgstr "Mở tập tin nhân"
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr ""
+msgstr "Mở tập tin Initrrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
@@ -101,7 +100,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:640
 msgid "%1 not mounted"
-msgstr "%1 chưa gắn vào"
+msgstr "%1 chưa được gắn vào"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:641
@@ -110,7 +109,7 @@ msgid ""
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
 "Trước hết bạn cần gắn ổ flash USB %1 vào. Hầu hết các bản phân phối sẽ tự "
-"động làm việc này khi bạn tháo và gắn lại ổ flash USB."
+"động làm việc này sau khi bạn tháo và gắn lại ổ flash USB."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:656
@@ -135,12 +134,12 @@ msgstr "Bạn phải chọn một tập tin ảnh đĩa."
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
-msgstr "Chọn nhân và/hay tập tin initrd"
+msgstr "Chọn nhân hoặc tập tin initrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
-msgstr "Bạn phải chọn một tập tin nhân và/hay tập tin initrd."
+msgstr "Bạn phải chọn một tập tin nhân hoặc tập tin initrd."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:701
@@ -150,7 +149,7 @@ msgstr "Không tìm thấy tập tin ảnh đĩa"
 #. ts-context unetbootin
 #: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
-msgstr "Xác định tập tin ảnh đĩa %1 không tồn tại."
+msgstr "Tập tin ảnh đĩa bạn đã xác định %1 không tồn tại."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
@@ -160,7 +159,7 @@ msgstr "Không tìm thấy tập tin nhân"
 #. ts-context unetbootin
 #: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
-msgstr "Xác định tập tin nhân %1 không tồn tại."
+msgstr "Tập tin nhân bạn đã xác định %1 không tồn tại."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:731
@@ -170,12 +169,12 @@ msgstr "Không tìm thấy tập tin initrd"
 #. ts-context unetbootin
 #: unetbootin.cpp:732
 msgid "The specified initrd file %1 does not exist."
-msgstr "Xác định tập tin initrd %1 không tồn tại."
+msgstr "Tập tin initrd bạn đã xác định %1 không tồn tại."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:836
 msgid "%1 exists, overwrite?"
-msgstr "%1 đã tồn tại, bạn có muốn ghi lên nó không?"
+msgstr "%1 đã tồn tại, bạn có muốn ghi đè lên nó không?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:837
@@ -185,8 +184,8 @@ msgid ""
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
 "Tập tin %1 đã tồn tại. Nhấn 'Yes to All' để ghi đè nó và không nhắc lại nữa, "
-"'Yes' để ghi đè tập tin, và 'No' để giữ lại tập tin đã tồn tại. Nếu nghi "
-"ngờ, nhấn 'Yes to All'."
+"'Yes' để ghi đè tập tin, và 'No' để giữ lại tập tin đã tồn tại. Nếu không "
+"chắc, nhấn 'Yes to All'."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:863
@@ -207,7 +206,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
-msgstr "Đang xác định tập tin nhân ở %1"
+msgstr "Đang xác định tập tin nhân tại %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
@@ -217,7 +216,7 @@ msgstr "Đang sao chép tập tin nhân từ %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
-msgstr "Đang xác định tập tin initrd ở %1"
+msgstr "Đang xác định tập tin initrd tại %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
@@ -236,185 +235,155 @@ msgstr "<b>Đang giải nén tập tin iso:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
-#, fuzzy
 msgid "Copying file, please wait..."
 msgstr "Đang sao chép tập tin, vui lòng chờ..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1585
-#, fuzzy
-msgid "<b>Copied:</b> 0 bytes"
-msgstr "<b>Đã sao chép:</b> 0 bytes"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2496
-#, fuzzy
-msgid "<b>Copied:</b> %1 of %2"
-msgstr "<b>Đã sao chép:</b> %1 trong số %2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1623
-#, fuzzy
-msgid "Extracting files, please wait..."
-msgstr "Đang giải nén các tập tin, vui lòng chờ.."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1624
-#, fuzzy
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Lưu trữ:</b> %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1625
-#, fuzzy
-msgid "<b>Source:</b>"
-msgstr "<b>Nguồn:</b>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1626
-#, fuzzy
-msgid "<b>Destination:</b>"
-msgstr "<b>Đích đến:</b>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1627
-#, fuzzy
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Đã giải nén:</b> 0 của các tập tin %1"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1630
-#, fuzzy
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Nguồn:</b> %1 (%2)"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1631
-#, fuzzy
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Đích đến:</b> %1%2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1632
-#, fuzzy
-msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Đã giải nén:</b> %1 của các tập tin %2"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:2386
-#, fuzzy
-msgid "Downloading files, please wait..."
-msgstr "Đang tải các tập tin, vui lòng đợi..."
-
-#. ts-context unetbootin
 #: unetbootin.cpp:1583 unetbootin.cpp:2387
-#, fuzzy
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Nguồn:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1584 unetbootin.cpp:2388
-#, fuzzy
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Đích đến:</b> %1"
 
 #. ts-context unetbootin
+#: unetbootin.cpp:1585
+msgid "<b>Copied:</b> 0 bytes"
+msgstr "<b>Đã sao chép:</b> 0 bytes"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1623
+msgid "Extracting files, please wait..."
+msgstr "Đang giải nén các tập tin, vui lòng chờ..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1624
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Lưu trữ:</b> %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1625
+msgid "<b>Source:</b>"
+msgstr "<b>Nguồn:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1626
+msgid "<b>Destination:</b>"
+msgstr "<b>Đích đến:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1627
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Đã giải nén:</b> 0 trong số %1 của các tập tin"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1630
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Nguồn:</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1631
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Đích đến:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1632
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>Đã giải nén:</b> %1 trong số %1 của các tập tin"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2386
+msgid "Downloading files, please wait..."
+msgstr "Đang tải các tập tin, vui lòng đợi..."
+
+#. ts-context unetbootin
 #: unetbootin.cpp:2389
-#, fuzzy
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Đã tải:</b> 0 bytes"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2466 unetbootin.cpp:2481
-#, fuzzy
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Đã tải:</b> %1 của %2"
+msgstr "<b>Đã tải:</b> %1 trong số %2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2496
+msgid "<b>Copied:</b> %1 of %2"
+msgstr "<b>Đã sao chép:</b> %1 trong số %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2572
-#, fuzzy
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Đang tìm ở <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2576
-#, fuzzy
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 phù hợp <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2761
-#, fuzzy
 msgid "%1 not found"
-msgstr "%1 không tìm thấy"
+msgstr "Không tìm thấy %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2762
-#, fuzzy
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
-"%1 không tìm thấy. Yêu cầu chế độ cài đặt %2.\n"
+"Không tìm thấy %1. Yêu cầu chế độ cài đặt %2.\n"
 "Đang cài đặt gói \"%3\" hoặc tương đương."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3051
-#, fuzzy
 msgid "(Current)"
 msgstr "(Hiện hành)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3052
-#, fuzzy
 msgid "(Done)"
 msgstr "(Xong)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3319
-#, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr "Đang cấu hình grub2 trên %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3331
-#, fuzzy
 msgid "Configuring grldr on %1"
 msgstr "Đang cấu hình grldr trên %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3359
-#, fuzzy
 msgid "Configuring grub on %1"
 msgstr "Đang cấu hình grub trên %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3544
-#, fuzzy
 msgid "Installing syslinux to %1"
 msgstr "Đang cài đặt syslinux vào%1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3579
-#, fuzzy
 msgid "Installing extlinux to %1"
 msgstr "Đang cài đặt extlinux vào %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3685
-#, fuzzy
 msgid "Syncing filesystems"
 msgstr "Đang đồng bộ các tập tin hệ thống"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3697
-#, fuzzy
 msgid "After rebooting, select the "
 msgstr "Sau khi khởi động lại, chọn "
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3701
-#, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -563,8 +532,8 @@ msgstr ""
 #: distrover.cpp:28
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Description:</b> "
-"Arch Linux is a lightweight distribution optimized for speed and "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
+"ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
@@ -577,26 +546,27 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:34
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
+"<b>Homepage:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
 "BackTrack is a distribution focused on network analysis and penetration "
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
-"<b>Trang chủ:</b> <a "
-"href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Mô "
-"tả:</b> BackTrack là một bản phân phối tập trung cho nghiên cứu và thử "
-"nghiệm thâm nhập mạng.<br/><b>Ghi chú cài đặt:</b> BackTrack chạy trực tiếp, "
-"không yêu cầu cài đặt."
+"<b>Trang chủ:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Mô tả:</b> BackTrack "
+"là một bản phân phối tập trung cho nghiên cứu và thử nghiệm thâm nhập "
+"mạng.<br/><b>Ghi chú cài đặt:</b> BackTrack chạy trực tiếp, không yêu cầu "
+"cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:39
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:</b> "
-"CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install Notes:</b> "
-"The default version allows for both installation over the internet (FTP), or "
-"offline installation using pre-downloaded installation ISO files."
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
+"</b> CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install "
+"Notes:</b> The default version allows for both installation over the "
+"internet (FTP), or offline installation using pre-downloaded installation "
+"ISO files."
 msgstr ""
 "<b>Trang chủ:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Mô tả:</b> "
@@ -608,14 +578,14 @@ msgstr ""
 #: distrover.cpp:44
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b> "
-"CloneZilla is a distribution used for disk backup and "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
+":</b> CloneZilla is a distribution used for disk backup and "
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
 "<b>Trang chủ:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description:</b> "
-"CloneZilla là một bản phân phối dùng cho việc sao lưu đĩa và chụp hình ổ "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Mô tả:</b> "
+"CloneZilla là một bản phân phối dùng cho việc sao lưu đĩa và chụp ảnh ổ "
 "đĩa.<br/><b>Ghi chú cài đặt:</b> CloneZilla được khởi động và chạy trực "
 "tiếp, không yêu cầu cài đặt."
 
@@ -623,9 +593,9 @@ msgstr ""
 #: distrover.cpp:49
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Description:</b> "
-"Damn Small Linux is a minimalist distribution designed for older "
-"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
+"ription:</b> Damn Small Linux is a minimalist distribution designed for "
+"older computers.<br/><b>Install Notes:</b> The Live version loads the entire "
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
@@ -640,8 +610,8 @@ msgstr ""
 #: distrover.cpp:54
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:</b> "
-"Debian is a community-developed Linux distribution that supports a wide "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
+"</b> Debian is a community-developed Linux distribution that supports a wide "
 "variety of architectures and offers a large repository of "
 "packages.<br/><b>Install Notes:</b> The NetInstall version allows for "
 "installation over FTP. If you would like to use a pre-downloaded install "
@@ -650,50 +620,51 @@ msgid ""
 msgstr ""
 "<b>Trang chủ:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Mô tả:</b> "
-"Debian là một bản Linux phát triển bởi cộng đồng, hỗ trợi rộng rãi các nền "
+"Debian là một bản Linux phát triển bởi cộng đồng, hỗ trợ rộng rãi các nền "
 "tảng phần cứng và cung cấp một kho lớn các gói phần mềm.<br/><b>Ghi chú cài "
 "đặt:</b> Phiên bản NetInstall cho phép cài đặt qua FTP. Nếu bạn muốn sử dụng "
-"tập tin ảnh .iso, sử dụng tùy chọn HdMediaThe, sau đó đặt nó vào thư mục gốc "
+"tập tin ảnh .iso, sử dụng tùy chọn HdMedia, sau đó đặt nó vào thư mục gốc "
 "của USB hoặc của đĩa cứng."
 
 #. ts-context unetbootin
 #: distrover.cpp:60
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Description:</b> "
-"Dreamlinux is a user-friendly Debian-based distribution.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Description:</b> Dreamlinux is a user-friendly Debian-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
 msgstr ""
 "<b>Trang chủ:</b> <a "
-"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><b>Mô "
-"tả:</b> Dreamlinux là một bản phân phối thân thiện với người dùng, dựa trên "
-"Debian.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép vào thẳng hệ "
-"điều hành, thông qua tùy chọn khởi động."
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Mô tả:</b> Dreamlinux là một bản phân phối thân thiện với người dùng, dựa "
+"trên Debian.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép vào thẳng "
+"hệ điều hành, thông qua tùy chọn khởi động."
 
 #. ts-context unetbootin
 #: distrover.cpp:65
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Description:</b> "
-"Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that "
-"broke due to malware.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which malware scans can be launched."
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to "
+"restore a system that broke due to malware.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which malware scans can "
+"be launched."
 msgstr ""
 "<b>Trang chủ:</b> <a "
-"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><br/><b>Mô "
-"tả:</b> Dr.Web AntiVirus là một công cụ cứu hộ diệt virus dùng để khôi phục "
-"hệ thống bị lỗi nghiêm trọng do malware.<br/><b>Ghi chú cài đặt:</b> Phiên "
-"bản Live cho phép quét malware."
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Mô tả:</b> Dr.Web AntiVirus là một công cụ cứu hộ diệt virus dùng để "
+"khôi phục hệ thống bị lỗi nghiêm trọng do malware.<br/><b>Ghi chú cài "
+"đặt:</b> Phiên bản Live cho phép quét malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:70
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
 "<b>Trang chủ:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Mô "
@@ -705,28 +676,28 @@ msgstr ""
 #: distrover.cpp:75
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Description:</b> "
-"Fedora is a Red Hat sponsored community distribution which showcases the "
-"latest cutting-edge free/open-source software.<br/><b>Install Notes:</b> The "
-"Live version allows for booting in Live mode, from which the installer can "
-"optionally be launched. The NetInstall version allows for both installation "
-"over the internet (FTP), or offline installation using pre-downloaded "
-"installation ISO files."
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
+"ption:</b> Fedora is a Red Hat sponsored community distribution which "
+"showcases the latest cutting-edge free/open-source software.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched. The NetInstall version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
 msgstr ""
 "<b>Trang chủ:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Mô "
 "tả:</b> Fedora là một bản phân phối của cộng đồng Red Hat, giới thiệu những "
-"tính năng tiên tiến miễn phí/phần mềm mã nguồn mở.<br/><b>Ghi chú cài "
-"đặt:</b> Phiên bản Live cho phép chạy trực tiếp, có thể tùy chỉnh khi khởi "
-"động. Phiên bản NetInstall version cho phép cài đặ thông qua internet (FTP), "
-"hoặc cài đặt offline bằng tập tin ISO."
+"phần mềm miễn phí hay mã nguồn mở với những công nghệ tiên tiến.<br/><b>Ghi "
+"chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, có thể tùy chỉnh "
+"khi khởi động. Phiên bản NetInstall cho phép cài đặt thông qua internet "
+"(FTP), hoặc cài đặt offline bằng tập tin ISO."
 
 #. ts-context unetbootin
 #: distrover.cpp:80
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Description:</b> "
-"FreeBSD is a general-purpose Unix-like operating system designed for "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
+"n:</b> FreeBSD is a general-purpose Unix-like operating system designed for "
 "scalability and performance.<br/><b>Install Notes:</b> The default version "
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
@@ -741,25 +712,25 @@ msgstr ""
 #: distrover.cpp:85
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Description:</b> "
-"FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
-"Notes:</b> See the <a "
-"href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> "
-"for installation details."
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
+"n:</b> FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
+"Notes:</b> See the <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
+"installation details."
 msgstr ""
 "<b>Trang chủ:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Mô "
 "tả:</b> FreeDOS là một hệ điều hành tích hợp MS-DOS tự do.<br/><b>Ghi chú "
-"cài đặt:</b> Xem <a "
-"href=\"http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> "
-"để biết chi tiết cài đặt."
+"cài đặt:</b> Xem <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> để biết "
+"chi tiết cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:90
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</b> "
-"FreeNAS is an embedded open source NAS (Network-Attached Storage) "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
+"b> FreeNAS is an embedded open source NAS (Network-Attached Storage) "
 "distribution based on FreeBSD.<br/><b>Install Notes:</b> The LiveCD version "
 "creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB "
 "key for saving the configuration file. The embedded version allows "
@@ -776,431 +747,641 @@ msgstr ""
 #: distrover.cpp:95
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:</b> "
-"Frugalware is a general-purpose Slackware-based distro for advanced "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
+"</b> Frugalware is a general-purpose Slackware-based distro for advanced "
 "users.<br/><b>Install Notes:</b> The default option allows for both "
-"installation over the internet (FTP), or offline installation using "
-"pre-downloaded installation ISO files."
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Mô tả:</b> "
+"Frugalware là một phiên bản dựa trên Slackware cho người dùng chuyên "
+"nghiệp.<br/><b>Ghi chú cài đặt:</b> Phiên bản mặc định cho phép cài đặt qua "
+"internet (FTP), hay sử dụng tập tin ISO."
 
 #. ts-context unetbootin
 #: distrover.cpp:100
 msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
+"<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
 "F-Secure Rescue CD detects and removes malware from your Windows "
 "installation.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which malware scans can be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a href=\"http://www.f-secure.com/linux-"
+"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Mô tả:</b> F-"
+"Secure Rescue CD phát hiện và loại bỏ phần mềm độc hại từ "
+"Windows.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, "
+"từ đó quét malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:105
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:</b> "
-"Gentoo is a flexible source-based distribution designed for advanced "
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
+"</b> Gentoo is a flexible source-based distribution designed for advanced "
 "users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
 "mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Mô tả:</b> "
+"Gentoo một hệ điều hành linh hoạt dành cho người dùng chuyên "
+"nghiệp.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, "
+"để chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:115
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-"gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free "
-"components removed.<br/><b>Install Notes:</b> The Live version allows for "
-"booting in Live mode, from which the installer can optionally be launched."
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with "
+"all non-free components removed.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Mô "
+"tả:</b> gNewSense là một bản phân phối được thông qua bởi tổ chức FSF và dựa "
+"trên Ubuntu, đã được gỡ bỏ các thành phần không mang tính tự do.<br/><b>Ghi "
+"chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài "
+"đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:120
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><b>Description:</b> "
-"Gujin is a graphical boot manager which can bootstrap various volumes and "
-"files.<br/><b>Install Notes:</b> Gujin simply boots and runs; no "
-"installation is required to use it."
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Description:</b> Gujin is a graphical boot manager which can bootstrap "
+"various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
+"runs; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Mô tả:</b> Gujin trình quản lí khởi động với giao diện đồ họa.<br/><b>Ghi "
+"chú cài đặt:</b> Gujin đơn giản là khởi động và chạy; không yêu cầu phải cài "
+"đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:125
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky.com/devbuilds/RescueDisk/</a><br/><b>Description:</b> "
-"Kaspersky Rescue Disk detects and removes malware from your Windows "
-"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which malware scans can be launched."
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Description:</b> Kaspersky Rescue Disk "
+"detects and removes malware from your Windows installation.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which "
+"malware scans can be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Mô tả:</b> Kaspersky Rescue Disk phát "
+"hiện và gỡ bỏ malware khỏi Windows.<br/><b>Ghi chú cài đặt:</b> Phiên bản "
+"Live cho phép chạy trực tiếp, để khởi động trình quét malware."
 
 #. ts-context unetbootin
 #: distrover.cpp:130
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Description:</b> "
-"Kubuntu is an official Ubuntu derivative featuring the KDE "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
+"n:</b> Kubuntu is an official Ubuntu derivative featuring the KDE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The "
 "NetInstall version allows for installation over FTP, and can install Kubuntu "
-"and other official Ubuntu derivatives. If you would like to use a "
-"pre-downloaded alternate (not desktop) install iso, use the HdMedia option, "
-"and then place the alternate install iso file on the root directory of your "
-"hard drive or USB drive"
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Mô "
+"tả:</b> Kubuntu là một biến thể của Ubuntu với môi trường desktop "
+"KDE.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, qua "
+"đó có thể chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao "
+"thức FTP,  và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu "
+"muốn cài đặt bằng hình thức alternate (không phải desktop) qua tập tin .iso, "
+"sử dụng tùy chọn HdMedia, và đặt tập tin cài đặt .iso vào thư mục gốc của ổ "
+"USB hoặc đĩa cứng."
 
 #. ts-context unetbootin
 #: distrover.cpp:135
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Description:</b> "
-"LinuxConsole is a desktop distro to play games, easy to install, easy to use "
-"and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is latest 1.0 "
-"release."
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
+"ion:</b> LinuxConsole is a desktop distro to play games, easy to install, "
+"easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is "
+"latest 1.0 release."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Mô "
+"tả:</b> LinuxConsole là một bản phân phối dành cho việc chơi game, dễ dàng "
+"trong việc cài đặt, sử dụng và khởi động nhanh .<br/><b>Ghi chú cài đặt:</b> "
+"Phiên bản 1.0.2009 là phiên bản 1.0 mới nhất."
 
 #. ts-context unetbootin
 #: distrover.cpp:140
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</b> "
-"Linux Mint is a user-friendly Ubuntu-based distribution which includes "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
+"b> Linux Mint is a user-friendly Ubuntu-based distribution which includes "
 "additional proprietary codecs and other software by default.<br/><b>Install "
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Mô tả:</b> "
+"Linux Mint là một bản phân phối thân thiện với người dùng được xây dựng dựa "
+"trên Ubuntu, mặc định bổ sung nhiều codec và phần mềm.<br/><b>Ghi chú cài "
+"đặt:</b> Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài "
+"đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:145
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Description:</b> "
-"Mandriva is a user-friendly distro formerly known as Mandrake "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
+"tion:</b> Mandriva is a user-friendly distro formerly known as Mandrake "
 "Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
 "mode, from which the installer can optionally be launched. The NetInstall "
-"version allows for installation over the internet (FTP) or via "
-"pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
+"version allows for installation over the internet (FTP) or via pre-"
+"downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Mô "
+"tả:</b> Mandriva là một bản phân phối thân thiện với người dùng còn được "
+"biết đến với cái tên Mandrake Linux.<br/><b>Ghi chú cài đặt:</b> Phiên bản "
+"Live cho phép khởi động và chạy trực tiếp, để chạy trình cài đặt. Phiên bản "
+"NetInstall cho phép cài đặt thông qua internet (FTP) hoặc thông qua <a "
+"href=\"http://www.mandriva.com/en/download\">tập tin ảnh đĩa \"Miễn "
+"phí\"</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:151
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</b> "
-"MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version "
-"based on KDE, while AntiX is a lightweight version for older "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
+"b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
+"version based on KDE, while AntiX is a lightweight version for older "
 "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
 "from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Mô tả:</b> "
+"MEPIS là một bản phân phối dựa trên Debian. SimplyMEPIS là một phiên bản "
+"thân thiện với người dùng với môi trường desktop KDE, trong khi AntiX là "
+"phiên bản gọn nhẹ dành cho các máy tính cũ.<br/><b>Ghi chú cài đặt:</b> "
+"MEPIS hỗ trợ khởi động trực tiếp, để chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:156
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:</b> "
-"NetBSD is a Unix-like operating system which focuses on "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
+"</b> NetBSD is a Unix-like operating system which focuses on "
 "portability.<br/><b>Install Notes:</b>The default version allows for both "
 "installation over the internet (FTP), or using pre-downloaded installation "
 "ISO files."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Mô tả:</b> "
+"NetBSD là một biến thể của Unix tập trung vào tính di động.<br/><b>Ghi chú "
+"cài đặt:</b>Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), "
+"hoặc sử dụng tập tin ISO."
 
 #. ts-context unetbootin
 #: distrover.cpp:161
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Description:</b> "
-"NimbleX is a small, versatile Slackware-based distribution. It is built "
-"using the linux-live scripts, and features the KDE desktop. It can be booted "
-"from CD or flash memory (USB pens or MP3 players), and can easily be "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Mô "
+"tả:</b> NimbleX là một bản phân phối linh hoạt và nhỏ gọn dựa trên "
+"Slackware. Nó được xây dựng trên các linux-live scripts, và sử dụng môi "
+"trường desktop KDE. Nó có thể khởi động từ đĩa CD hay bộ nhớ flash (bút nhớ "
+"USB hoặc máy MP3), và có thể dễ dàng tùy biến và mở rộng.<br/><b>Ghi chú cài "
+"đặt:</b> NimbleX khởi động trực tiếp."
 
 #. ts-context unetbootin
 #: distrover.cpp:166
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> "
-"The Offline NT Password and Registry Editor can reset Windows passwords and "
-"edit the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd "
-"is booted and run in live mode; no installation is required to use it."
+"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
+"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
+"Offline NT Password and Registry Editor can reset Windows passwords and edit "
+"the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd is "
+"booted and run in live mode; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
+"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Mô tả:</b> Offline NT "
+"Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh "
+"sửa registry của Windows 2000-Vista.<br/><b>Ghi chú cài đặt:</b> NTPasswd "
+"khởi động và chạy trực tiếp; không yêu cầu phải cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:171
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Description:</b> "
-"openSUSE is a user-friendly Novell sponsored distribution.<br/><b>Install "
-"Notes:</b> The default version allows for both installation over the "
-"internet (FTP), or offline installation using pre-downloaded installation "
-"ISO files."
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
+"ion:</b> openSUSE is a user-friendly Novell sponsored "
+"distribution.<br/><b>Install Notes:</b> The default version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Mô "
+"tả:</b> openSUSE là một bản phân phối thân thiện với người dùng từ, có sự "
+"tài trợ của Novell.<br/><b>Ghi chú cài đặt:</b> Phiên bản mặc định cho phép "
+"cài đặt qua internet (FTP), hoặc sử dụng tập tin ISO."
 
 #. ts-context unetbootin
 #: distrover.cpp:176
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/><b>Description:</b> "
-"Ophcrack can crack Windows passwords.<br/><b>Install Notes:</b> Ophcrack is "
-"booted and run in live mode; no installation is required to use it."
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Description:</b> Ophcrack can crack Windows "
+"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
+"mode; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Mô tả:</b> Ophcrack có thể lấy mật khẩu Windows.<br/><b>Ghi chú cài "
+"đặt:</b> Ophcrack khởi động và chạy trực tiếp; không yêu cầu phải cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:181
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Description:</b> "
-"Parted Magic includes the GParted partition manager and other system "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
+"n:</b> Parted Magic includes the GParted partition manager and other system "
 "utilities which can resize, copy, backup, and manipulate disk "
 "partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Mô "
+"tả:</b> Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các "
+"công cụ tối hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác các "
+"phân vùng đĩa.<br/><b>Ghi chú cài đặt:</b> Parted Magic khởi động và chạy "
+"trực tiếp; không cần phải cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:186
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Description:</b> "
-"PCLinuxOS is a user-friendly Mandriva-based distribution.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
+"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
+"ption:</b> PCLinuxOS is a user-friendly Mandriva-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Mô "
+"tả:</b> PCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên "
+"Mandriva.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực "
+"tiếp, để có thể chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:191
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Description:</b> "
-"Puppy Linux is a lightweight distribution designed for older "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
+"ription:</b> Puppy Linux is a lightweight distribution designed for older "
 "computers.<br/><b>Install Notes:</b> The Live version loads the entire "
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Mô "
+"tả:</b> Puppy Linux là một bản phân phối gọn nhẹ được thiết kế cho các máy "
+"tính cũ.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép tải hệ thống "
+"lên RAM và khởi động từ bộ nhớ, có thể không cần cài đặt nhưng đó là tùy "
+"chọn."
 
 #. ts-context unetbootin
 #: distrover.cpp:196
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>Description:</b> "
-"Sabayon Linux is a Gentoo-based Live DVD distribution which features the "
-"Entropy binary package manager in addition to the source-based "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which "
+"features the Entropy binary package manager in addition to the source-based "
 "Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The LiteMCE "
 "edition is 2 GB, while the full edition will need an 8 GB USB drive"
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Mô tả:</b> Sabayon Linux là một bản phân phối dựa trên Gentoo Live DVD với "
+"trình quản lí gói Entropy.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho "
+"phép chạy trực tiếp, để có thể chạy trình cài đặt. Phiên bản LiteMCE có dung "
+"lượng 2 GB, trong khi bản đầy đủ cần một ổ USB 8GB"
 
 #. ts-context unetbootin
 #: distrover.cpp:201
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b> "
-"Slax is a Slackware-based distribution featuring the KDE "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
+" Slax is a Slackware-based distribution featuring the KDE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Mô tả:</b> Slax "
+"là một bản phân phối dựa trên Slackware với môi trường desktop "
+"KDE.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, để "
+"chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:206
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
-"Notes:</b> The Live version loads the entire system into RAM and boots from "
-"memory, so installation is not required but optional."
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Mô "
+"tả:</b> SliTaz là một bản phân phối gọn nhẹ.<br/><b>Ghi chú cài đặt:</b> "
+"Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ, không yêu cầu "
+"cài đặt nhưng đó là tùy chọn."
 
 #. ts-context unetbootin
 #: distrover.cpp:211
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net/about.html</a><br/><b>Description:</b> "
-"Smart Boot Manager is a bootloader which can overcome some boot-related BIOS "
-"limitations and bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; "
-"no installation is required to use it."
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Description:</b> Smart Boot Manager is a bootloader "
+"which can overcome some boot-related BIOS limitations and "
+"bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
+"is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Mô tả:</b> Smart Boot Manager là một trình khởi động "
+"tốt hơn BIOS do BIOS tồn tại khá nhiều hạn chế và lỗi.<br/><b>Ghi chú cài "
+"đặt:</b> SBM đơn giản là khởi động và sử dụng; không yêu cầu cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:216 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b>Description:</b> "
-"Super Grub Disk is a bootloader which can perform a variety of MBR and "
-"bootloader recovery tasks.<br/><b>Install Notes:</b> SGD simply boots and "
-"runs; no installation is required to use it."
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Description:</b> Super Grub Disk is a bootloader which can perform a "
+"variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
+"simply boots and runs; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Mô tả:</b> Super Grub Disk là một trình khởi động có thể thực thi nhiều "
+"loại MBR và các tác vụ khôi phục trình khởi động.<br/><b>Ghi chú cài "
+"đặt:</b> SGD đơn giản chỉ là khởi động và chạy; không yêu cầu phải cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:221
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super_OS</a><br/><b>Description:</b> "
-"Super OS is an unofficial derivative of Ubuntu which includes additional "
-"software by default. Requires a 2GB USB drive to install.<br/><b>Install "
-"Notes:</b> The Live version allows for booting in Live mode, from which the "
-"installer can optionally be launched."
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Description:</b> Super OS is an unofficial derivative of "
+"Ubuntu which includes additional software by default. Requires a 2GB USB "
+"drive to install.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Mô tả:</b> Super OS là một bản phân phối dựa trên Ubuntu được "
+"bổ sung nhiều phần mềm mặc định. Yêu cầu một ổ USB 2GB để cài "
+"đặt.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, để "
+"chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:226
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Description:</b> "
-"SystemRescueCD includes various partition management and data recovery and "
-"backup tools.<br/><b>Install Notes:</b> SystemRescueCD is booted and run in "
-"live mode; no installation is required to use it."
+"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
+"tion:</b> SystemRescueCD includes various partition management and data "
+"recovery and backup tools.<br/><b>Install Notes:</b> SystemRescueCD is "
+"booted and run in live mode; no installation is required to use it."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Mô "
+"tả:</b> SystemRescueCD bao gồm các trình quản lí phân vùng khác nhau và các "
+"công cụ phục hồi và sao lưu dữ liệu.<br/><b>Ghi chú cài đặt:</b> "
+"SystemRescueCD khởi động và chạy trực tiếp; không yêu cầu phải cài đặt."
 
 #. ts-context unetbootin
 #: distrover.cpp:231
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:</b> "
-"Ubuntu is a user-friendly Debian-based distribution. It is currently the "
-"most popular Linux desktop distribution.<br/><b>Install Notes:</b> The Live "
-"version allows for booting in Live mode, from which the installer can "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
+"</b> Ubuntu is a user-friendly Debian-based distribution. It is currently "
+"the most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which the installer can "
 "optionally be launched. The NetInstall version allows for installation over "
 "FTP, and can install Kubuntu and other official Ubuntu derivatives. If you "
 "would like to use a pre-downloaded alternate (not desktop) install iso, use "
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Mô tả:</b> "
+"Ubuntu là một bản phân phối thân thiện với người dùng dựa trên "
+"Debian.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, "
+"để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao thức "
+"FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu sử dụng "
+"cách cài đặt alternate (không phải desktop), sử dụng tùy chọn HdMedia, và "
+"đặt tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng."
 
 #. ts-context unetbootin
 #: distrover.cpp:236
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Mô tả:</b> xPUD "
+"là một bản phân phối nhẹ, với một trình duyệt web và nghe nhạc.<br/><b>Ghi "
+"chú cài đặt:</b> Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ."
 
 #. ts-context unetbootin
 #: distrover.cpp:241
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Description:</b> "
-"Xubuntu is an official Ubuntu derivative featuring the XFCE "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
+"n:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched. The "
 "NetInstall version allows for installation over FTP, and can install Kubuntu "
-"and other official Ubuntu derivatives. If you would like to use a "
-"pre-downloaded alternate (not desktop) install iso, use the HdMedia option, "
-"and then place the alternate install iso file on the root directory of your "
-"hard drive or USB drive"
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Mô "
+"tả:</b> Xubuntu là một biến thể của Ubuntu sử dụng môi trường desktop "
+"XFCE.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực tiếp, để "
+"chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt bằng giao thức "
+"FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu cài đặt "
+"theo cách alternate (không phải desktop), sử dụng tùy chọn HdMedia, và đặt "
+"tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng."
 
 #. ts-context unetbootin
 #: distrover.cpp:246
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Description:</b> "
-"Zenwalk is a Slackware-based distribution featuring the XFCE "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
+"n:</b> Zenwalk is a Slackware-based distribution featuring the XFCE "
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Trang chủ:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Mô "
+"tả:</b> Zenwalk là một bản phân phối dựa trên Slackware sử dụng môi trường "
+"desktop XFCE.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live cho phép chạy trực "
+"tiếp, để chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:33
 msgid ""
 "<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Description:</b> "
-"EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the "
-"EeePC.<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
+"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
+"media is empty and formatted before proceeding with install."
 msgstr ""
 "<img src=\":/eeepclos.png\" /><br/><b>Trang chủ:</b> <a "
-"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>Mô "
-"tả:</b> EeePCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên "
-"PCLinuxOS cho EeePC.<br/><b>Ghi chú cài đặt:</b> Chắc rằng thiết bị cài đặt "
-"trống và định dạng trước khi tiến hành cài đặt."
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Mô tả:</b> EeePCLinuxOS là một bản phân phối thân thiện với người dùng dựa "
+"trên PCLinuxOS cho EeePC.<br/><b>Ghi chú cài đặt:</b> Chắc rằng thiết bị cài "
+"đặt trống và định dạng trước khi tiến hành cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:41
 msgid ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
-"<a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Description:</b> "
-"Ubuntu Eee is not only Ubuntu optimized for the Asus Eee PC. It's an "
-"operating system, using the Netbook Remix interface, which favors the best "
-"software available instead of open source alternatives (ie. Skype instead of "
-"Ekiga).<br/><b>Install Notes:</b> Make sure install media is empty and "
-"formatted before proceeding with install."
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
+"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
+"interface, which favors the best software available instead of open source "
+"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
+"sure install media is empty and formatted before proceeding with install."
 msgstr ""
 "<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Trang chủ:</b> "
-"<a "
-"href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-eee.com</a><br/><b>Mô "
-"tả:</b> Ubuntu Eee không phải là bản cải tiến của Ubuntu dành cho  Asus Eee "
-"PC. Nó là một hệ điều hành, sử dụng giao diện Netbook Remix, các phần mềm "
-"tốt nhất chứ không nhất định chọn các phần mềm nguồn mở (ví dụ Skype thay vì "
-"Ekiga).<br/><b>Install Notes:</b> Chắc rằng thiết bị cài đặt trống và định "
-"dạng trước khi tiến hành cài đặt."
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Mô tả:</b> Ubuntu Eee không phải là bản cải tiến của "
+"Ubuntu dành cho  Asus Eee PC. Nó là một hệ điều hành sử dụng giao diện "
+"Netbook Remix, các phần mềm tốt nhất chứ không nhất định chọn các phần mềm "
+"nguồn mở (ví dụ Skype thay vì Ekiga).<br/><b>Ghi chú cài đặt:</b> Chắc rằng "
+"thiết bị cài đặt trống và định dạng trước khi tiến hành cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:53
 msgid ""
 "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Description:</b> "
-"Elive is a Debian-based distribution featuring the Enlightenment window "
-"manager.<br/><b>Install Notes:</b> The Live version allows for booting in "
-"Live mode, from which the installer can optionally be launched."
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<img src=\":/elive.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Mô "
+"tả:</b> Elive là một bản phân phối dựa trên Debian.<br/><b>Ghi chú cài "
+"đặt:</b> Phiên bản Live cho phép khởi động trực tiếp, để chạy trình cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
 msgid ""
 "<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Description:</b> "
-"Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian "
-"and English speaking users.<br/><b>Install Notes:</b> Make sure install "
-"media is empty and formatted before proceeding with install."
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Descri"
+"ption:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, "
+"Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
+"install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Mô "
+"tả:</b> Kiwi Linux là một biến thể của Ubuntu cho người Rumani, Hungari và "
+"người dùng nói tiếng Anh.<br/><b>Ghi chú cài đặt:</b> Chắc rằng các thiết bị "
+"cài đặt trống và đã được định dạng trước khi cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:69
 msgid ""
 "<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Description:</b> "
-"gNewSense is a high-quality GNU/Linux distribution that extends and improves "
-"Ubuntu to create a completely free operating system without any binary blobs "
-"or package trees that contain proprietary software.<br/><b>Install "
-"Notes:</b> Make sure install media is empty and formatted before proceeding "
-"with install."
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is a high-quality GNU/Linux distribution that extends "
+"and improves Ubuntu to create a completely free operating system without any "
+"binary blobs or package trees that contain proprietary "
+"software.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
 msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Mô "
+"tả:</b> gNewSense là một bản phân phối GNU/Linux chất lượng cao với sự mở "
+"rộng và cải thiện Ubuntu, một hệ điều hành hoàn toàn miễn phí mà không có "
+"gói nhị phân hoặc có chứa phần mềm độc quyền.<br/><b>Ghi chú cài đặt:</b> "
+"Chắc rằng các thiết bị cài đặt trống và đã được định dạng trước khi tiến "
+"hành cài đặt."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:77
 msgid ""
 "<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Description:</b> "
-"NimbleX is a small, versatile Slackware-based distribution. It is built "
-"using the linux-live scripts, and features the KDE desktop. It can be booted "
-"from CD or flash memory (USB pens or MP3 players), and can easily be "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Mô "
+"tả:</b> NimbleX là một bản phân phối nhỏ, linh hoạt dựa trên Slackware. Được "
+"xây dựng dựa trên các linux-live scripts, và môi trường desktop KDE. Có thể "
+"khởi động từ CD hay bộ nhớ flash (bút nhớ USB hoặc máy MP3), và có thể dễ "
+"dàng tùy biến và mở rộng.<br/><b>Ghi chú cài đặt:</b> NimbleX khởi động trực "
+"tiếp."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:85
 msgid ""
 "<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Description:</b> "
-"SliTaz is a lightweight, desktop-oriented micro distribution.<br/><b>Install "
-"Notes:</b> The Live version loads the entire system into RAM and boots from "
-"memory, so installation is not required but optional. This installer is "
-"based on <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Mô "
+"tả:</b> SliTaz là một bản phân phối gọn nhẹ.<br/><b>Ghi chú cài đặt:</b> "
+"Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ, không yêu cầu "
+"cài đặt nhưng đó là tùy chọn. Trình cài đặt này được xây dựng trên <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:93
 msgid ""
 "<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b> "
-"xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Trang chủ:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Mô tả:</b> xPUD "
+"là một bản phân phối gọn nhẹ với giao diện đơn giản, gồm một trình duyệt web "
+"và trình nghe nhạc.<br/><b>Ghi chú cài đặt:</b> Phiên bản Live tải hệ thống "
+"lên RAM và khởi động từ bộ nhớ."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:20
@@ -1215,27 +1396,27 @@ msgstr "Chọn từ danh sách các bản phân phối được hỗ trợ"
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr "&Distribution"
+msgstr "&Bản phân phối"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr "Xác định tập tin ảnh đĩa"
+msgstr "Hãy chỉ định một tập tin ảnh đĩa"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr "Disk&image"
+msgstr "&Ảnh đĩa"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr "Xác định thủ công nhân và initrd"
+msgstr "Chỉ định bằng tay nhân và initrd"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
 msgid "&Custom"
-msgstr "&Custom"
+msgstr "&Tùy chọn"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:428
@@ -1245,31 +1426,31 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> option will format the "
-"selected drive, wiping out all data on it. It shouldn't be necessary if "
-"you're using a standard USB drive.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will format the selected "
+"drive, wiping out all data on it. It shouldn't be necessary if you're using "
+"a standard USB drive.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> tùy chọn sẽ định dạng lại ổ "
-"đĩa đã chọn, hãy sao lưu mọi dữ liệu trên đó. Nếu bạn đang sử dụng một ổ đĩa "
-"USB thì không cần thiết.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Tùy chọn  <span style=\" "
+"font-weight:600;\">nguy hiểm này</span> sẽ định dạng lại ổ đĩa đã chọn, hãy "
+"sao lưu mọi dữ liệu trên đó. Nếu bạn đang sử dụng một ổ đĩa USB thì không "
+"cần thiết.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:435
 msgid "&Format Drive (Wipes Out Data)"
-msgstr "&Format Drive (Xóa mọi dữ liệu)"
+msgstr "&Định dạng lại ổ đĩa (Xóa mọi dữ liệu)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:498
@@ -1329,7 +1510,7 @@ msgstr "Chọn ổ đĩa để cài đặt vào"
 #. ts-context unetbootinui
 #: unetbootin.ui:475
 msgid "Dri&ve:"
-msgstr "Dri&ve:"
+msgstr "Ổ đ&ĩa:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:446 unetbootin.ui:465
@@ -1339,7 +1520,7 @@ msgstr "Chọn loại ổ đĩa để cài đặt"
 #. ts-context unetbootinui
 #: unetbootin.ui:449
 msgid "&Type:"
-msgstr "&Type:"
+msgstr "&Loại:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
@@ -1395,7 +1576,7 @@ msgstr "Chọn tập tin syslinux.cfg hay isolinux.cfg"
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr "Xác định các thông số và tùy chọn để chuyển đến nhân"
+msgstr "Xác định các thông số và tùy chọn để bỏ qua thao tác chọn nhân"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:414
@@ -1405,12 +1586,12 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> option will show all drives "
-"in the drop-down box titled \"Drives\". Enable this only if you know what "
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
+"weight:600;\">potentially dangerous</span> option will show all drives in "
+"the drop-down box titled \"Drives\". Enable this only if you know what "
 "you're doing; if you use this option, the installation will likely fail, or "
 "can lead to system boot issues.</p></body></html>"
 msgstr ""
@@ -1419,24 +1600,25 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" "
-"font-weight:600;\">potentially dangerous</span> option will show all drives "
-"in the drop-down box titled \"Drives\". Enable this only if you know what "
-"you're doing; if you use this option, the installation will likely fail, or "
-"can lead to system boot issues.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Tùy chọn  <span style=\" "
+"font-weight:600;\">nguy hiểm này</span> sẽ hiển thị tất cả các ổ đĩa trong "
+"hộp thả xuống có tiêu đề \"ổ đĩa\". Kích hoạt tính năng này chỉ khi bạn biết "
+"những gì bạn đang làm; nếu bạn sử dụng tùy chọn này, việc cài đặt có thể sẽ "
+"thất bại, hoặc có thể dẫn đến các vấn đề khởi động của hệ "
+"thống.</p></body></html>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:421
 msgid "Show &All Drives (Use with Care)"
-msgstr "Hiện &All Drives (Cẩn thận khi dùng)"
+msgstr "Hiện &Tất cả ổ đĩa (Cẩn thận khi dùng)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr "&Kernel:"
+msgstr "&Nhân:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
@@ -1446,7 +1628,7 @@ msgstr "Init&rd:"
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr "&Options:"
+msgstr "Tùy &chỉnh:"
 
 #. ts-context uninstaller
 #: main.cpp:156
