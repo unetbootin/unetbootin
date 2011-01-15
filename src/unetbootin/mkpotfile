@@ -51,7 +51,7 @@ qtx11d = os.getcwd()+'/qt4-x11'
 call([qtx11d+'/bin/lupdate', 'unetbootin.pro'])
 call([qtx11d+'/bin/lrelease','unetbootin.pro'])
 potgendate = lstr(lcall(['date','+%Y-%m-%d %R%z']))
-potext = ocall(qtx11d+'/bin/lconvert -i unetbootin.ts -if ts -of po')
+potext = ocall(qtx11d+'/bin/lconvert --no-obsolete -i unetbootin.ts -if ts -of po')
 qtversion = fstrspl(tail1(ocall(qtx11d+'/bin/qmake --version')), '.', ' ')
 lineno = 0
 for x in potext:

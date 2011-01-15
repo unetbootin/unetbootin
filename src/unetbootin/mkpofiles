@@ -7,13 +7,13 @@ qtx11d="$(pwd)/qt4-x11"
 if [ "$1" != "" ]
 then
 cd ../../po
-$qtx11d/bin/lconvert -if ts -of po -i ../src/unetbootin/unetbootin_$1.ts -o $1.po
+$qtx11d/bin/lconvert --no-obsolete -if ts -of po -i ../src/unetbootin/unetbootin_$1.ts -o $1.po
 cd ../src/unetbootin
 exit 0
 fi
 
 cd ../../po
-for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do $qtx11d/bin/lconvert -if ts -of po -i $x -o $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
+for x in $(ls ../src/unetbootin/unetbootin_*.ts | grep -v custom); do $qtx11d/bin/lconvert --no-obsolete -if ts -of po -i $x -o $(echo $x | sed "s/\//\n/g" | tail -1 | sed "s/ts/po/" | sed "s/unetbootin_//" ) ; done
 cd ..
 tar -cvzf src/unetbootin/release/unetbootin-po-translations.tar.gz po
 cd src/unetbootin
