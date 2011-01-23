@@ -3535,7 +3535,7 @@ void unetbootin::replaceTextInFile(QString repfilepath, QRegExp replaceme, QStri
 
 QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 {
-	return QString(cfgfileCL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").trimmed();
+	return QString(cfgfileCL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").replace("pmedia=cd", "pmedia=usbflash").trimmed();
 }
 
 void unetbootin::runinstusb()
