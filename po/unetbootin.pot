@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 11:42-0500\n"
+"POT-Creation-Date: 2011-01-23 16:39-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1472,9 +1472,12 @@ msgstr ""
 #. ts-context uninstaller
 #: main.cpp:320
 #, fuzzy
+#| msgid ""
+#| "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#| "%1</b><br/>or:<br/><b>su -c '%1'</b>"
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
 
 #. ts-context uninstaller

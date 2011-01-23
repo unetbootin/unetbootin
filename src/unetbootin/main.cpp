@@ -317,7 +317,7 @@ int main(int argc, char **argv)
 			rootmsgb.setIcon(QMessageBox::Warning);
 			rootmsgb.setWindowTitle(uninstaller::tr("Must run as root"));
 			rootmsgb.setTextFormat(Qt::RichText);
-			rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
+			rootmsgb.setText(uninstaller::tr("%2 must be run as root. Close it, and re-run using either:<br/><b>sudo %1</b><br/>or:<br/><b>su - -c '%1'</b>").arg(app.applicationFilePath()).arg(UNETBOOTINB));
 			rootmsgb.setStandardButtons(QMessageBox::Ok);
 			switch (rootmsgb.exec())
 			{
