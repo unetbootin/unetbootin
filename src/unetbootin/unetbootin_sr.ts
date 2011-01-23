@@ -446,28 +446,28 @@ Sada ponovo pokrenuti sistem?</translation>
 *VAŽNO* Pre ponovnog pokretanja sistema, staviti Debian instalacioni iso fajl u koreni direktorijum vašeg tvrdog ili USB diska. Mogu se nabaviti sa cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="364"/>
+        <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *VAŽNO* Nakon ponovnog učitavanja sistema, ignoririsati poruke o greškama i odabrati povratak ako se pojavi upit za CD, nakon toga u glavnom meniju, odabrati opciju &apos;Pokrenuti Instalaciju&apos;, odabrati kao izvor &apos;Mreža&apos;, odbarati za protokol &apos;HTTP&apos;, uneti &apos;download.fedora.redhat.com&apos;, kada se pojavi upit o serveru unesite &apos;/pub/fedora/linux/development/%1/os&apos; kada se pojavi upit o direktorijumu.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="370"/>
+        <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *VAŽNO* Nakon ponovnog učitavanja sistema, ignoririsati poruke o greškama i odabrati povratak ako se pojavi upit za CD, nakon toga  u glavnom meniju, odabrati opciju &apos;Pokrenuti Instalaciju&apos;, odabrati kao izvor &apos;Mreža&apos;, odbarati za protokol &apos;HTTP&apos;, uneti  &apos;download.fedora.redhat.com&apos;, kada se pojavi upit o serveru unesite &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; kada se pojavi upit o direktorijumu.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="730"/>
+        <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VAŽNO* Nakon ponovnog učitavanja sistema,ignoririsati poruke o greškama i odabrati povratak ako se pojavi upit za CD, nakon toga  u glavnom meniju, odabrati opciju &apos;Pokrenuti Instalaciju&apos;, odabrati kao izvor &apos;Mreža&apos;, odbarati za protokol &apos;HTTP, uneti &apos;download.opensuse.com&apos;, kada se pojavi upit o serveru unesite &apos;/factory/repo/oss&apos; kada se pojavi upit o direktorijumu.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="736"/>
+        <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

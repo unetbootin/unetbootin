@@ -448,28 +448,28 @@ Starta om nu?</translation>
 *VIKTIGT* Innan omstart, lägg till en ISO-installationsfil av Debian i rootmappen på din hårddisk eller USB-minne. Dessa kan laddas ner från cdimage.debian.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="364"/>
+        <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.fedora.redhat.com&quot; när du tillfrågas om en server och ange &quot;/pub/fedora/linux/development/%1/os&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="370"/>
+        <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.fedora.redhat.com&quot; när du tillfrågas om en server och ange &quot;/pub/fedora/linux/releases/%1/Fedora/%2/os&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="730"/>
+        <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *VIKTIGT* Efter omstart, ignorera varenda felmeddelande och välj &quot;back&quot; om du blir tillfrågad om en cd. Gå sedan till huvudmenyn, välj alternativet &quot;Start Installation&quot;, välj &quot;Network&quot; som källa, välj &quot;HTTP&quot; som protokoll, ange &quot;download.opensuse.org&quot; när du tillfrågas om en server och ange &quot;/factory/repo/oss&quot; när du tillfrågas om mappen.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="736"/>
+        <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

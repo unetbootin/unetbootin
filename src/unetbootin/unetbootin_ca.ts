@@ -440,28 +440,28 @@ Reboot now?</translation>
 *IMPORTANT* Abans de reiniciar, col·loqueu la imatge ISO de Debian d&apos;arrencada al directori arrel del vostre disc dur o unitat USB. Aquest fitxer es pot obtenir des de cdimage.debian.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="364"/>
+        <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan si us demani el servidor i «/pub/fedora/linux/development/%1/os» quan si us demani el directori.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="370"/>
+        <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» en cas que si us indiqui inserir un CD.. Aleshores, des del menú principal, trieu «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan si us demani el servidor i «/pub/fedora/linux/releases/%1/Fedora/%2/os» quan si us demani el directori.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="730"/>
+        <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després de reiniciar, ignoreu qualsevol missatge d&apos;error i seleccioneu &apos;Enrera&apos; si se us requereix introduïr un CD, llavors aneu al menú principal, seleccioneu &apos;Inicia la instal·lació&apos;, escolliu &apos;En xarxa&apos; com a origen, escolliu &apos;HTTP&apos; com a protocol, quan se us demani el servidor escriviu &apos;download.opensuse.org&apos; i escriviu &apos;/factory/repo/oss&apos; quan se us demani el directori.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="736"/>
+        <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

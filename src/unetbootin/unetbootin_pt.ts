@@ -442,28 +442,28 @@ Reiniciar agora ?</translation>
 *IMPORTANTE* Antes de reiniciar, coloque um ficheiro de instalação do Debian no directório raiz do disco rígido ou do disco USB. Estes ficheiros podem ser obtidos em cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="364"/>
+        <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Depois de reiniciar, ignore quaisquer mensagens de erro e retroceda caso seja solicitado um CD. Vá até o menu principal, seleccione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Rede&apos; como fonte, escolha &apos;HTTP&apos; como protocolo, indique &apos;download.fedora.redhat.com&apos; quando perguntado sobre o servidor e &apos;/pub/fedora/linux/development/%1/os&apos; quando perguntado sobre pasta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="370"/>
+        <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Depois de reiniciar, ignore quaisquer mensagens de erro e retroceda caso seja solicitado um CD. Vá até o menu principal, seleccione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Rede&apos; como fonte, escolha &apos;HTTP&apos; como protocolo, indique &apos;download.fedora.redhat.com&apos; quando perguntado sobre o servidor e &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; quando perguntado sobre a pasta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="730"/>
+        <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANTE* Depois de reiniciar, ignore quaisquer mensagens de erro e retroceda caso seja solicitado um CD. Vá até o menu principal, seleccione a opção &apos;Iniciar Instalação&apos;, escolha &apos;Rede&apos; como fonte, escolha &apos;HTTP&apos; como protocolo, indique &apos;download.opensuse.org&apos; quando perguntado sobre o servidor e &apos;/factory/repo/oss&apos; quando perguntado sobre a pasta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="736"/>
+        <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

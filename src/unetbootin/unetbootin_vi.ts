@@ -440,28 +440,28 @@ Bạn có muốn khởi động lại ngay không?</translation>
 *QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh của Debian vào thư mục gốc của đĩa cứng hoặc ổ USB. Có thể tải tập tin ảnh Debian tại cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="364"/>
+        <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/development/%1/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="370"/>
+        <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="730"/>
+        <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.opensuse.org&apos; khi được nhắc, và nhập &apos;/factory/repo/oss&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="736"/>
+        <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
