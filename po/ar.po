@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
 "PO-Revision-Date: 2010-11-08 21:09+0000\n"
 "Last-Translator: Ahmed Mohammed <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: ar_SA\n"
 
 #. ts-context QObject
@@ -434,7 +434,7 @@ msgstr ""
 "أو ال USB.تلك الملفات ممكن الخصول عليها من cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -451,7 +451,7 @@ msgstr ""
 "تطالب بالمزود و '/pub/fedora/linux/development/%1/os' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -469,7 +469,7 @@ msgstr ""
 "المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -486,7 +486,7 @@ msgstr ""
 "'/factory/repo/oss' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1576,10 +1576,8 @@ msgstr "يجب التشغيل بستخدام صلاحية الجذر"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"يجب تشغيل %2 بستخدام صلاحية الجذر. لذلك قم بإقفاله ثم إعادة تشغيله "
-"بستخدام:<br/><b>sudo %1</b><br/>أو:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1656,6 +1654,13 @@ msgstr "%1 منصب حالياً, هل ترغب في إلغاء النسخة ا�
 
 #~ msgid "Diskimage"
 #~ msgstr "صورة القرص"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "يجب تشغيل %2 بستخدام صلاحية الجذر. لذلك قم بإقفاله ثم إعادة تشغيله "
+#~ "بستخدام:<br/><b>sudo %1</b><br/>أو:<br/><b>su -c '%1'</b>"
 
 #~ msgid "Show All Drives (Use with Care)"
 #~ msgstr "عرض جميع السواقات (إستخدم هذا الخيار بحذر)"

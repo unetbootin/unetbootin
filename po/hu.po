@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-10-06 23:13+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-03-17 20:28+0000\n"
+"Last-Translator: Úr Balázs <urbalazs@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: hu_HU\n"
 
 #. ts-context QObject
@@ -61,7 +61,7 @@ msgstr "Lemezképfájl megnyitása"
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "Minden fájl"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
@@ -433,7 +433,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -452,7 +452,7 @@ msgstr ""
 "'/pub/fedora/linux/development/%1/os'. (Mindkettőt idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -471,7 +471,7 @@ msgstr ""
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os'. (Mindkettőt idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -490,7 +490,7 @@ msgstr ""
 "idézőjelek nélkül.)"
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -545,8 +545,8 @@ msgid ""
 msgstr ""
 "<b>Honlap:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Leírás"
-":</b> Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és "
-"rugalmasságot hangsúlyozza.<br/><b>Telepítési jegyzetek:</b> Az "
+":</b> Az Arch Linux egy pehelysúlyú disztribúció, amely a gyorsaságra és a "
+"rugalmasságra lett optimalizálva.<br/><b>Telepítési megjegyzések:</b> Az "
 "alapváltozatot interneten keresztül lehet telepíteni (FTP)."
 
 #. ts-context unetbootin
@@ -558,6 +558,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Honlap:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Leírás:</b> A "
+"BackTrack egy hálózatelemzésre és behatolás tesztelésre kihegyezett "
+"disztribúció.<br/><b>Telepítési megjegyzések:</b> A BackTrack live módban "
+"indítható és futtatható; a használathoz nem szükséges telepíteni."
 
 #. ts-context unetbootin
 #: distrover.cpp:39
@@ -571,10 +576,9 @@ msgid ""
 msgstr ""
 "<b>Honlap:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Leírás:</b> "
-"A CentOS rendszer a Red Hat Enterprise Linux rendszer ingyen hasonmása. "
-"Vállalkozási alkalmazásokra célszerű.<br/><b>Telepítési jegyzetek:</b> Az "
-"alapváltozatot interneten keresztül (FTP) vagy már letöltött ISO "
-"lemezképekkel lehet telepíteni."
+"A CentOS rendszer a Red Hat Enterprise Linux rendszer ingyen "
+"hasonmása.<br/><b>Telepítési megjegyzések:</b> Az alapváltozatot interneten "
+"keresztül (FTP) vagy már letöltött ISO lemezképekkel lehet telepíteni."
 
 #. ts-context unetbootin
 #: distrover.cpp:44
@@ -1338,7 +1342,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:20
 msgid "Unetbootin"
-msgstr ""
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
@@ -1422,7 +1426,7 @@ msgstr "Mégsem"
 #. ts-context unetbootinui
 #: unetbootin.ui:511
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:556
@@ -1602,11 +1606,10 @@ msgstr "Adminisztrátorként kell futnia"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"A(z) %2 adminisztrátorként kell hogy fusson. Zárja be és indítsa el újból az "
-"alábbi parancsok egyikével: <br/><b>sudo %1</b><br/> vagy: <br/><b>su -c "
-"'%1'</b>"
+"%2 csak rendszergazdaként futtatható. Zárja be, majd futtassa ismét a "
+"következők egyikével:<br/><b>sudo %1</b><br/>vagy:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -2259,3 +2262,11 @@ msgstr "A(z) %1 jelenleg telepítve van. Eltávolítja a meglévő verziót?"
 #~ "megjegyzések:</b> A live verzióval betöltheti a rendszert live módban, "
 #~ "ahonnan a telepítőt bármikor elindíthatja. A NetInstall verzióval interneten "
 #~ "keresztül lehet telepíteni (FTP) akármelyik hivatalos Ubuntu származékot."
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "A(z) %2 adminisztrátorként kell hogy fusson. Zárja be és indítsa el újból az "
+#~ "alábbi parancsok egyikével: <br/><b>sudo %1</b><br/> vagy: <br/><b>su -c "
+#~ "'%1'</b>"

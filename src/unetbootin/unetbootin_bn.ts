@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2009-09-20 22:03+0000
-Last-Translator: Russell John &lt;russell.john@ubuntu.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-03-08 23:02+0000
+Last-Translator: Shoeb &lt;Unknown&gt;
 Language-Team: Bengali &lt;bn@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:41+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -30,7 +30,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>ডানে</translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@ X-Generator: Launchpad (build 12200)
         <location filename="unetbootin.cpp" line="3240"/>
         <location filename="unetbootin.cpp" line="3695"/>
         <source>Hard Disk</source>
-        <translation>হার্ড ডিস্ক</translation>
+        <translation>তথ্যথালা</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -80,7 +80,7 @@ X-Generator: Launchpad (build 12200)
         <location filename="unetbootin.cpp" line="572"/>
         <location filename="unetbootin.cpp" line="3146"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="192"/>
@@ -101,109 +101,109 @@ X-Generator: Launchpad (build 12200)
         <location filename="unetbootin.cpp" line="240"/>
         <location filename="unetbootin.cpp" line="252"/>
         <source>either</source>
-        <translation></translation>
+        <translation>হয়</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>তথ্যথালাচিত্র খোলো</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>সব ফাইল দেখি</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>সব ফাইল (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>শুধু &apos;কার্নেল&apos; ফাইল খোলো</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>শুধু &apos;Initrd&apos; ফাইল খোলো</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>বুটলোড কারুকাজের ফাইল খোলো</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>USB ফ্ল্যাশ ঢুকাও</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>USB ফ্ল্যাশ ড্রাইভ পাওয়া যায়নি, ড্রাইভ ঢুকানোর পরেও এই লেখা দেখলে বুঝতে হবে &apos;ফরম্যাট&apos; (FAT32 হিসেবে) করে USB ফ্ল্যাশ ড্রাইভটি পরিস্কার করা উচিত</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%১ চড়তে পারেনি</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>প্রথমে USB ফ্ল্যাশ ড্রাইভ %১ টিকে চুড়ায় চড়াতে হবে, একে খুলে ঢুকালে ডিস্ট্রিবিউশনকারী আপনা আপনি এটা করবে।</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>বেছে নিন পছন্দের &apos;distro&apos;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>ডিস্ট্রিবিউশনকারী বেছে নিতেই হবে আপনাকে</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="671"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>তথ্যথালাচিত্র বেছে নিন</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="672"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>তথ্যথালাচিত্রের ফাইল আপনাকে বেছে নিতেই হবে</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>কার্নেল অথবা/এবং &apos;initrd&apos; বেছে নিন</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>আপনাকে একটি কার্নেল অথবা/এবং &apos;initrd&apos; বেছে নিতেই হবে</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="701"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>তথ্যথালাচিত্র পাওয়া যায়নি</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="702"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>তথ্যথালাচিত্র %১ টি কথাওই নেই</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="716"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>কার্নেল ফাইল পাওয়া যায়নি</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>কার্নেল ফাইল %১ টি কথাওই নেই</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="731"/>
@@ -973,8 +973,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-12-22 16:50+0000
-Last-Translator: Vojtěch Trefný &lt;vojtech.trefny@gmail.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-02-15 15:05+0000
+Last-Translator: schunka &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:41+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:41+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -63,7 +63,7 @@ X-Generator: Launchpad (build 12200)
         <location filename="unetbootin.cpp" line="3244"/>
         <location filename="unetbootin.cpp" line="3699"/>
         <source>USB Drive</source>
-        <translation>Mechanika USB</translation>
+        <translation>USB disk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="191"/>
@@ -547,7 +547,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; FreeNAS je open source NAS (Network-Attached Storage / Síťové úložiště) distribuce založená na FreeBSD.&lt;br/&gt;&lt;b&gt;Instalační poznámky:&lt;/b&gt; Varianta LiveCD vytvoří pro FreeNAS RAM disk a použije flashdisk zformátovaný ve FAT na uložení konfigurace. Embedovaná varianta umožní instalaci na pevný disk.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="95"/>
@@ -582,7 +582,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Kubuntu je oficiální větev ubuntu používající KDE.&lt;br/&gt;&lt;b&gt;Instalační poznámky:&lt;/b&gt; Live varianta umožní nastartovat Live mód, z kterého je možné spustit instalátor. NetInstall umožní instalaci přes FTP a zvládne instalovat Kubuntu i další větve Ubuntu. Pokud byste chtěli použít předstažený alternativní (nedesktopový) ISO obraz, vyberte možnost HdMedia a pak vložte alternativní ISO obraz do kořenového adresáře vašeho disku nebo flashdisku</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="135"/>
@@ -612,7 +612,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; NimbleX je malá, všestranná distrubuce založená na Slackware. Je sestaven pomocí linux-live skriptů a používá KDE. Může startovat z CD nebo flashdisku, lze jej snadno upravvat a rozšiřovat&lt;br/&gt;&lt;b&gt;Instalační poznámky:&lt;/b&gt; NimbleX startuje v Live módu.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
@@ -693,7 +693,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Xubuntu je oficiální větev ubuntu používající XFCE.&lt;br/&gt;&lt;b&gt;Instalační poznámky:&lt;/b&gt; Live varianta umožní nastartovat Live mód, z kterého je možné spustit instalátor. NetInstall umožní instalaci přes FTP a zvládne instalovat Xubuntu i další větve Ubuntu. Pokud byste chtěli použít předstažený alternativní (nedesktopový) ISO obraz, vyberte možnost HdMedia a pak vložte alternativní ISO obraz do kořenového adresáře vašeho disku nebo flashdisku</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="246"/>
@@ -728,7 +728,7 @@ Restartovat nyní</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; NimbleX je malá, všestranná distrubuce založená na Slackware. Je sestaven pomocí linux-live skriptů a používá KDE. Může startovat z CD nebo flashdisku, lze jej snadno upravvat a rozšiřovat&lt;br/&gt;&lt;b&gt;Instalační poznámky:&lt;/b&gt; NimbleX startuje v Live módu.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -984,8 +984,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte za použití buď:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;, nebo:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 musí být spuštěn rootovskými právy. Zavřete jej a znovu spusťte použitím:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;nebo:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

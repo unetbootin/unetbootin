@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-10-06 23:13+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-03-17 20:28+0000
+Last-Translator: Úr Balázs &lt;urbalazs@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:40+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:41+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -105,7 +105,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Minden fájl</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -485,17 +485,17 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation>&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Arch Linux egy kevésbé igényes rendszer ami a gyorsaságot és rugalmasságot hangsúlyozza.&lt;br/&gt;&lt;b&gt;Telepítési jegyzetek:&lt;/b&gt; Az alapváltozatot interneten keresztül lehet telepíteni (FTP).</translation>
+        <translation>&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; Az Arch Linux egy pehelysúlyú disztribúció, amely a gyorsaságra és a rugalmasságra lett optimalizálva.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; Az alapváltozatot interneten keresztül lehet telepíteni (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A BackTrack egy hálózatelemzésre és behatolás tesztelésre kihegyezett disztribúció.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; A BackTrack live módban indítható és futtatható; a használathoz nem szükséges telepíteni.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A CentOS rendszer a Red Hat Enterprise Linux rendszer ingyen hasonmása. Vállalkozási alkalmazásokra célszerű.&lt;br/&gt;&lt;b&gt;Telepítési jegyzetek:&lt;/b&gt; Az alapváltozatot interneten keresztül (FTP) vagy már letöltött ISO lemezképekkel lehet telepíteni.</translation>
+        <translation>&lt;b&gt;Honlap:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Leírás:&lt;/b&gt; A CentOS rendszer a Red Hat Enterprise Linux rendszer ingyen hasonmása.&lt;br/&gt;&lt;b&gt;Telepítési megjegyzések:&lt;/b&gt; Az alapváltozatot interneten keresztül (FTP) vagy már letöltött ISO lemezképekkel lehet telepíteni.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
@@ -744,7 +744,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -813,7 +813,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
@@ -982,8 +982,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">A(z) %2 adminisztrátorként kell hogy fusson. Zárja be és indítsa el újból az alábbi parancsok egyikével: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt; vagy: &lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 csak rendszergazdaként futtatható. Zárja be, majd futtassa ismét a következők egyikével:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;vagy:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

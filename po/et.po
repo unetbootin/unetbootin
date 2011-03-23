@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
 "PO-Revision-Date: 2010-10-12 10:38+0000\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:40+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: et_EE\n"
 
 #. ts-context QObject
@@ -440,7 +440,7 @@ msgstr ""
 "ISO-failid leiab cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -451,7 +451,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -462,7 +462,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -473,7 +473,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1352,10 +1352,8 @@ msgstr "Tuleb käivitada juurkasutajana"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 tuleb käivitada juurkasutajana. Sulge see ning käivita uuesti kas "
-"käsuga<br /><b>sudo %1</b><br />või:<br /><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1411,3 +1409,10 @@ msgstr "Hetkel on paigaldatud %1. Kas eemalda olemasolev versioon?"
 #~ "vastupidavusele.<br/><b>Paigaldusemärkmed:</b>Tavaversioon lubab "
 #~ "paigaldamist internetist (FTP). Kui oled huvitatud LiveUSB versioonist, "
 #~ "vaata FaunOS´i."
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 tuleb käivitada juurkasutajana. Sulge see ning käivita uuesti kas "
+#~ "käsuga<br /><b>sudo %1</b><br />või:<br /><b>su -c '%1'</b>"

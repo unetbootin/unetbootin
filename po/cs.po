@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-12-22 16:50+0000\n"
-"Last-Translator: Vojtěch Trefný <vojtech.trefny@gmail.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-02-15 15:05+0000\n"
+"Last-Translator: schunka <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: cs_CZ\n"
 
 #. ts-context QObject
@@ -33,7 +33,7 @@ msgstr "Pevný disk"
 #: unetbootin.cpp:3073 unetbootin.cpp:3098 unetbootin.cpp:3244
 #: unetbootin.cpp:3699
 msgid "USB Drive"
-msgstr "Mechanika USB"
+msgstr "USB disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
@@ -435,7 +435,7 @@ msgstr ""
 "cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -452,7 +452,7 @@ msgstr ""
 "na adresář zadejte '/pub/fedora/linux/development/%1/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -469,7 +469,7 @@ msgstr ""
 "na adresář zadejte '/pub/fedora/linux/releases/%1/Fedora/%2/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -486,7 +486,7 @@ msgstr ""
 "adresář zadejte '/factory/repo/oss'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -732,6 +732,12 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Popis:</b> "
+"FreeNAS je open source NAS (Network-Attached Storage / Síťové úložiště) "
+"distribuce založená na FreeBSD.<br/><b>Instalační poznámky:</b> Varianta "
+"LiveCD vytvoří pro FreeNAS RAM disk a použije flashdisk zformátovaný ve FAT "
+"na uložení konfigurace. Embedovaná varianta umožní instalaci na pevný disk."
 
 #. ts-context unetbootin
 #: distrover.cpp:95
@@ -842,6 +848,15 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Popis:</b>"
+" Kubuntu je oficiální větev ubuntu používající KDE.<br/><b>Instalační "
+"poznámky:</b> Live varianta umožní nastartovat Live mód, z kterého je možné "
+"spustit instalátor. NetInstall umožní instalaci přes FTP a zvládne "
+"instalovat Kubuntu i další větve Ubuntu. Pokud byste chtěli použít "
+"předstažený alternativní (nedesktopový) ISO obraz, vyberte možnost HdMedia a "
+"pak vložte alternativní ISO obraz do kořenového adresáře vašeho disku nebo "
+"flashdisku"
 
 #. ts-context unetbootin
 #: distrover.cpp:135
@@ -939,6 +954,12 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Popis:</b>"
+" NimbleX je malá, všestranná distrubuce založená na Slackware. Je sestaven "
+"pomocí linux-live skriptů a používá KDE. Může startovat z CD nebo "
+"flashdisku, lze jej snadno upravvat a rozšiřovat<br/><b>Instalační "
+"poznámky:</b> NimbleX startuje v Live módu."
 
 #. ts-context unetbootin
 #: distrover.cpp:166
@@ -1200,6 +1221,15 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Domovská stránka:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Popis:</b>"
+" Xubuntu je oficiální větev ubuntu používající XFCE.<br/><b>Instalační "
+"poznámky:</b> Live varianta umožní nastartovat Live mód, z kterého je možné "
+"spustit instalátor. NetInstall umožní instalaci přes FTP a zvládne "
+"instalovat Xubuntu i další větve Ubuntu. Pokud byste chtěli použít "
+"předstažený alternativní (nedesktopový) ISO obraz, vyberte možnost HdMedia a "
+"pak vložte alternativní ISO obraz do kořenového adresáře vašeho disku nebo "
+"flashdisku"
 
 #. ts-context unetbootin
 #: distrover.cpp:246
@@ -1309,6 +1339,12 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>Domovská stránka:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Popis:</b>"
+" NimbleX je malá, všestranná distrubuce založená na Slackware. Je sestaven "
+"pomocí linux-live skriptů a používá KDE. Může startovat z CD nebo "
+"flashdisku, lze jej snadno upravvat a rozšiřovat<br/><b>Instalační "
+"poznámky:</b> NimbleX startuje v Live módu."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:85
@@ -1607,10 +1643,10 @@ msgstr "Spuštění s právy administrátora"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte za "
-"použití buď:<br/><b>sudo %1</b><br/>, nebo:<br/><b>su -c '%1'</b>"
+"%2 musí být spuštěn rootovskými právy. Zavřete jej a znovu spusťte "
+"použitím:<br/><b>sudo %1</b><br/>nebo:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1674,6 +1710,13 @@ msgstr "%1 je již nainstalovát. Přejete si existující verzi odstranit?"
 #~ "(Live) verze umožňuje spuštění systému přímo z CD s možností spuštění "
 #~ "instalace. Verze NetInstall umožňuje instalaci přes FTP, alternativně můžete "
 #~ "nainstalovat Kubuntu, Xubuntu nebo jiné oficální deriváty Ubuntu."
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 musí být spuštěn s právy administrátora. Zavřete jej a znovu spusťte za "
+#~ "použití buď:<br/><b>sudo %1</b><br/>, nebo:<br/><b>su -c '%1'</b>"
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "

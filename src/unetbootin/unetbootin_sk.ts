@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-01-29 07:58+0000
-Last-Translator: UNetbootin Team &lt;Unknown&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-02-22 11:40+0000
+Last-Translator: mmw64 &lt;Unknown&gt;
 Language-Team: Slovak &lt;sk@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:40+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -111,14 +111,14 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Všetky súbory</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Všetky súbory (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -238,28 +238,28 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="958"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Hľadám súbor s kernelom v %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="999"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kopírujem súbor s kernelom z %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1005"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Hľadám súbor s initrd v%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1046"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Kopírujem súbor s initrd z %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1052"/>
         <location filename="unetbootin.cpp" line="1112"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Extrahujem nastavenia bootloaderu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1327"/>
@@ -270,7 +270,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1582"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Kopírujem súbor, prosím počkajte...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1583"/>
@@ -287,7 +287,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Skopírované:&lt;/b&gt; 0 bajtov</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -348,7 +348,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Skopírované:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
@@ -475,13 +475,13 @@ Reštartovať teraz?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="652"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Vyberte Distribúciu ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Vyberte Verziu ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -491,12 +491,12 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Arch Linux je &quot;lightweight&quot; distribúcia optimalizovaná pre rýchlosť a flexibilitu.&lt;br/&gt;&lt;b&gt;Poznámky k inštalácii:&lt;/b&gt; Predvolená verzia povoľuje inštaláciu cez internet (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; BackTrack je distribúcia zameraná na analýzu siete and testovanie prieniku.&lt;br/&gt;&lt;b&gt;Poznámky k inštalácii:&lt;/b&gt; BackTrack bootuje a funguje v &quot;live&quot; režime; na používanie netreba žiadnu inštaláciu.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="39"/>
@@ -516,7 +516,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Debian je komunitou vyvíjáná Linuxová distribúcia, ktorá podporuje širokú škálu architektúr a ponúka veľký repozitár balíčkov.&lt;br/&gt;&lt;b&gt;Poznámky k Inštalácii:&lt;/b&gt; Verzia &quot;NetInstall&quot; povoľuje inštaláciu cez FTP. Pokiaľ chcete použiť už stiahnuté iso, použite verziu &quot;HdMedia&quot;, a potom vložte inštalačný iso súbor do koreňového adresára vášho pevného disku alebo USB flash disku.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -750,7 +750,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -761,7 +761,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribúcia</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -771,7 +771,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Disk&amp;obraz</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -781,7 +781,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Vlastné</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -799,7 +799,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation></translation>
+        <translation>&amp;Naformátovať disk (Zmaže všetky dáta)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
@@ -819,7 +819,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="511"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="556"/>
@@ -950,22 +950,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation></translation>
+        <translation>Zobraziť &amp;Všetky jednotky (Používajte rozumne)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Možnosti:</translation>
     </message>
 </context>
 <context>
@@ -988,8 +988,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 je potrebné spustiť ako root. Zatvorte a spustite s použitím nasledujúceho:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;alebo:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

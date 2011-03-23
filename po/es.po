@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2011-01-15 10:39+0000\n"
-"Last-Translator: Geza Kovacs <geza0kovacs@gmail.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-03-10 15:23+0000\n"
+"Last-Translator: dani186 <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:40+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: es_ES\n"
 
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "De izquierda a derecha"
+msgstr "IzquierdaADerecha"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
@@ -66,7 +66,7 @@ msgstr "Todos los archivos"
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr "Todos los Archivos"
+msgstr "Todos los archivos (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
@@ -440,7 +440,7 @@ msgstr ""
 "obtenerse desde cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -458,7 +458,7 @@ msgstr ""
 "se le pregunte por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -476,7 +476,7 @@ msgstr ""
 "cuando se le pregunte por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -494,7 +494,7 @@ msgstr ""
 "por la carpeta."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1695,10 +1695,10 @@ msgstr "Se debe ejecutar como administrador"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 se debe ejecutar como administrador. Ciérrelo, y vuelva a ejecutarlo "
-"usando:<br/><b>sudo %1</b><br/>o:<br/><b>su -c '%1'</b>"
+"%2 tiene que ser ejecutado como root. Ciérralo y vuélvelo a ejecutar usando "
+"o:<br/><b>sudo %1</b><br/>o:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -2871,6 +2871,13 @@ msgstr "Actualmente está instalado %1. ¿Eliminar la versión existente?"
 
 #~ msgid "Kernel:"
 #~ msgstr "Núcleo:"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 se debe ejecutar como administrador. Ciérrelo, y vuelva a ejecutarlo "
+#~ "usando:<br/><b>sudo %1</b><br/>o:<br/><b>su -c '%1'</b>"
 
 #~ msgctxt "#11"
 #~ msgid "Select a disk image file"

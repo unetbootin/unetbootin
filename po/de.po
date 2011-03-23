@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-10-27 14:38+0000\n"
-"Last-Translator: Valentin <Unknown>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-03-17 18:45+0000\n"
+"Last-Translator: Achim Richter <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: de_DE\n"
 
 #. ts-context QObject
@@ -61,7 +61,7 @@ msgstr "Abbild öffnen"
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "Alle Dateien"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
@@ -440,7 +440,7 @@ msgstr ""
 "diese von cdimage.debian.com herunterladen."
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -459,7 +459,7 @@ msgstr ""
 "gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -478,7 +478,7 @@ msgstr ""
 "Verzeichnis gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -496,7 +496,7 @@ msgstr ""
 "wenn Sie nach dem Verzeichnis gefragt werden."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1724,11 +1724,10 @@ msgstr "Muss als Systemverwalter ausgeführt werden"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 muss als Systemverwalter ausgeführt werden. Schließen Sie die Anwendung "
-"und starten Sie sie neu durch: <br/><b>sudo %1</b><br/> oder:<br/><b>su -c "
-"'%1'</b>"
+"%2 muss als root ausgeführt werden. Beenden und so erneut "
+"ausführen:<br/><b>sudo %1</b><br/>oder so:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -2060,6 +2059,14 @@ msgstr "%1 ist momentan installiert. Existierende Version entfernen?"
 #~ "aber aus dem Live-Modus möglich. Dadurch wird jedoch die experimentelle "
 #~ "Version installiert, nicht die <a "
 #~ "href=\"http://www.elivecd.org/Download/Stable\">stabile Version</a>."
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 muss als Systemverwalter ausgeführt werden. Schließen Sie die Anwendung "
+#~ "und starten Sie sie neu durch: <br/><b>sudo %1</b><br/> oder:<br/><b>su -c "
+#~ "'%1'</b>"
 
 #~ msgid ""
 #~ "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "

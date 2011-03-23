@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sl_SI">
+<TS version="2.0" language="sw_KE">
 <context>
     <name></name>
     <message>
         <source></source>
-        <translatorcomment>Slovenian translation for unetbootin
+        <translatorcomment>Swahili translation for unetbootin
 Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 This file is distributed under the same license as the unetbootin package.
 FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
@@ -14,13 +14,13 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
 POT-Creation-Date: 2011-01-23 16:52-0500
-PO-Revision-Date: 2010-05-01 21:02+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
-Language-Team: Slovenian &lt;sl@li.org&gt;
+PO-Revision-Date: 2010-11-11 04:07+0000
+Last-Translator: Emanuel Feruzi &lt;emanuel.feruzi@trilabs.co.tz&gt;
+Language-Team: Swahili &lt;sw@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:41+0000
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
 X-Generator: Launchpad (build 12633)
 </translation>
     </message>
@@ -47,7 +47,7 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="3240"/>
         <location filename="unetbootin.cpp" line="3695"/>
         <source>Hard Disk</source>
-        <translation>Trdi disk</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
@@ -69,7 +69,7 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="3244"/>
         <location filename="unetbootin.cpp" line="3699"/>
         <source>USB Drive</source>
-        <translation>Pogon USB</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="191"/>
@@ -80,7 +80,7 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="572"/>
         <location filename="unetbootin.cpp" line="3146"/>
         <source>ISO</source>
-        <translation>ISO</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="192"/>
@@ -91,7 +91,7 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="577"/>
         <location filename="unetbootin.cpp" line="3138"/>
         <source>Floppy</source>
-        <translation>Disketa</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="222"/>
@@ -111,24 +111,24 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Mafaili yote</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <location filename="unetbootin.cpp" line="594"/>
         <location filename="unetbootin.cpp" line="602"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Mafaili you (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Fungua faili la Kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Fungua faili la Initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
@@ -138,7 +138,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>Vstavite USB pomnilnik</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
@@ -148,7 +148,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="640"/>
         <source>%1 not mounted</source>
-        <translation>%1 ni priklopljen</translation>
+        <translation>%1  haijasimikwa</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="641"/>
@@ -158,7 +158,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="656"/>
         <source>Select a distro</source>
-        <translation>Izberite distribucijo</translation>
+        <translation>Chagua distro</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
@@ -168,7 +168,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="671"/>
         <source>Select a disk image file</source>
-        <translation>Izberi datoteko slike diska</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="672"/>
@@ -282,7 +282,7 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="1584"/>
         <location filename="unetbootin.cpp" line="2388"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Cilj:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
@@ -297,17 +297,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Arhiv:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Vir:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Cilj:&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
@@ -317,12 +317,12 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation>&lt;b&gt;Vir:&lt;/b&gt; %1 (%2)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1631"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation>&lt;b&gt;Cilj:&lt;/b&gt; %1%2</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
@@ -332,18 +332,18 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
         <source>Downloading files, please wait...</source>
-        <translation>Prenašanje datotek. Prosim, počakajte..</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Prenešeno:&lt;/b&gt; 0 bajtov</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
         <location filename="unetbootin.cpp" line="2481"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Prenešeno:&lt;/b&gt; %1 od %2</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2496"/>
@@ -353,7 +353,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2572"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Iskanje v &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2576"/>
@@ -363,7 +363,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2761"/>
         <source>%1 not found</source>
-        <translation>%1 ni bil najden</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2762"/>
@@ -374,12 +374,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(trenutno)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(končano)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
@@ -743,7 +743,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation>Unetbootin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
@@ -754,7 +754,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation>&amp;Distribucija</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
@@ -774,7 +774,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation>Po &amp;meri</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -793,7 +793,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="498"/>
         <source>OK</source>
-        <translation>V redu</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="501"/>
@@ -803,7 +803,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="508"/>
         <source>Cancel</source>
-        <translation>Prekliči</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="511"/>
@@ -823,22 +823,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="655"/>
         <source>1. Downloading Files</source>
-        <translation>1. Prenašanje datotek</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Razširjanje in kopiranje datotek</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="669"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Namestitev zaganjalnika</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="676"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Namestitev končana, ponovno zaženite</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="472"/>
@@ -860,12 +860,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="449"/>
         <source>&amp;Type:</source>
-        <translation>&amp;Vrsta:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation>Izberite verzijo distribucije</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
@@ -878,7 +878,7 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="375"/>
         <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="188"/>
@@ -935,12 +935,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation>Prikaži &amp;vsel pogone (bodite previdni)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation>&amp;Jedro:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-11-08 18:07+0000
-Last-Translator: André Gondim &lt;andregondim@ubuntu.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-02-09 20:40+0000
+Last-Translator: Matheus de Araújo &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:41+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:41+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -105,7 +105,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Todos os arquivos</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -976,8 +976,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 Deve ser executado como root. Feche, e re-execute usando: &lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 deve ser executado como root. Feche-o, e re-execute usando:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

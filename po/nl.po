@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-10-06 23:16+0000\n"
-"Last-Translator: Steven Avonds <steven.avonds@gmail.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-02-02 00:28+0000\n"
+"Last-Translator: Jeroen Roovers <jer@gentoo.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:40+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: nl_NL\n"
 
 #. ts-context QObject
@@ -33,7 +33,7 @@ msgstr "Harde schijf"
 #: unetbootin.cpp:3073 unetbootin.cpp:3098 unetbootin.cpp:3244
 #: unetbootin.cpp:3699
 msgid "USB Drive"
-msgstr "USB-schijf"
+msgstr "USB-station"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
@@ -61,7 +61,7 @@ msgstr "Open Disk Image-bestand"
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "Alle bestanden"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
@@ -76,12 +76,12 @@ msgstr "Open Kernel-bestand"
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr "Open Initrd-bestand"
+msgstr "Open initrd-bestand"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
 msgid "Open Bootloader Config File"
-msgstr "Open Bootloader configuratiebestand"
+msgstr "Open bootloader-configuratiebestand"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:624
@@ -94,8 +94,8 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"Er werden geen USB-schijven gevonden. Als je er wel één hebt aangesloten, "
-"probeer deze dan te formatteren als FAT32."
+"Er zijn geen USB-schijven gevonden. Als er wel één is aangesloten, "
+"formatteer deze dan als FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
@@ -437,7 +437,7 @@ msgstr ""
 "cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -455,7 +455,7 @@ msgstr ""
 "directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -473,7 +473,7 @@ msgstr ""
 "naar de directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -490,7 +490,7 @@ msgstr ""
 "'/factory/repo/oss' wanneer gevraagd wordt naar de directory."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -752,14 +752,6 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
-"<b>Webpagina:</b> <a "
-"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Omschrijving:<"
-"/b> FreeNAS is opensource en een geïntegreerde NAS(Network-Attached Storage)-"
-"distributie die gebaseerd is op FreeBSD.<br/><b>Installatieopmerkingen:</b> "
-"De Live-cdversie maakt een RAM-drive aan voor FreeNAS en gebruikt een FAT-"
-"geformatteerde floppy- of USB-disk om het configuratiebestand op te slaan. "
-"Met de zogeheten 'embedded' versie kunt u FreeNAS volledig installeren op uw "
-"harde schijf."
 
 #. ts-context unetbootin
 #: distrover.cpp:95
@@ -932,14 +924,6 @@ msgid ""
 "downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
-"<b>Website:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Beschri"
-"jving:</b> Mandriva is een gebruiksvriendelijke distributie, voorheen bekend "
-"als Mandrake Linux.<br/><b>Opmerkingen m.b.t. installatie:</b> Met de live "
-"versie kan worden opgestart naar Live modus, vanuit waar optioneel de "
-"installatie kan worden gestart. met de Netinstall versie kan over FTP worden "
-"geïnstalleerd, of via vooraf gedownloade <a "
-"href=\"http://www.mandriva.com/en/download\">\"vrije\" ISO bestanden</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:151
@@ -1533,12 +1517,12 @@ msgstr "Esc"
 #. ts-context unetbootinui
 #: unetbootin.ui:556
 msgid "Reboot Now"
-msgstr "Nu herstarten"
+msgstr "Nu opnieuw starten"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:563
 msgid "Exit"
-msgstr "Afsluiten"
+msgstr "Sluiten"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:655
@@ -1558,7 +1542,7 @@ msgstr "Bootloader installeren"
 #. ts-context unetbootinui
 #: unetbootin.ui:676
 msgid "4. Installation Complete, Reboot"
-msgstr "Installatie gereed. Opnieuw opstarten"
+msgstr "Installatie gereed. Opnieuw starten"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:472 unetbootin.ui:491
@@ -1598,7 +1582,7 @@ msgstr "..."
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr "Selecteer het disk-image type"
+msgstr "Selecteer het type disk-image"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
@@ -1707,10 +1691,8 @@ msgstr "Moet als root worden uitgevoerd"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 Moet als root worden uitgevoerd. Sluit het en start het opnieuw op deze "
-"manier:<br/><b>sudo %1</b><br/>of:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1823,6 +1805,13 @@ msgstr "%1 is momenteel geïnstalleerd. Huidige versie verwijderen?"
 
 #~ msgid "Format Drive (Wipes Out Data)"
 #~ msgstr "Formatteer schijf (Wist alle gegevens)"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 Moet als root worden uitgevoerd. Sluit het en start het opnieuw op deze "
+#~ "manier:<br/><b>sudo %1</b><br/>of:<br/><b>su -c '%1'</b>"
 
 #~ msgid "Initrd:"
 #~ msgstr "Initrd:"

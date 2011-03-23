@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-10-06 23:16+0000
-Last-Translator: Steven Avonds &lt;steven.avonds@gmail.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-02-02 00:28+0000
+Last-Translator: Jeroen Roovers &lt;jer@gentoo.org&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:40+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -63,7 +63,7 @@ X-Generator: Launchpad (build 12200)
         <location filename="unetbootin.cpp" line="3244"/>
         <location filename="unetbootin.cpp" line="3699"/>
         <source>USB Drive</source>
-        <translation>USB-schijf</translation>
+        <translation>USB-station</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="191"/>
@@ -105,7 +105,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Alle bestanden</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -122,12 +122,12 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="594"/>
         <source>Open Initrd File</source>
-        <translation>Open Initrd-bestand</translation>
+        <translation>Open initrd-bestand</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="602"/>
         <source>Open Bootloader Config File</source>
-        <translation>Open Bootloader configuratiebestand</translation>
+        <translation>Open bootloader-configuratiebestand</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="624"/>
@@ -137,7 +137,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="625"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Er werden geen USB-schijven gevonden. Als je er wel één hebt aangesloten, probeer deze dan te formatteren als FAT32.</translation>
+        <translation>Er zijn geen USB-schijven gevonden. Als er wel één is aangesloten, formatteer deze dan als FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="640"/>
@@ -547,7 +547,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation>&lt;b&gt;Webpagina:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Omschrijving:&lt;/b&gt; FreeNAS is opensource en een geïntegreerde NAS(Network-Attached Storage)-distributie die gebaseerd is op FreeBSD.&lt;br/&gt;&lt;b&gt;Installatieopmerkingen:&lt;/b&gt; De Live-cdversie maakt een RAM-drive aan voor FreeNAS en gebruikt een FAT-geformatteerde floppy- of USB-disk om het configuratiebestand op te slaan. Met de zogeheten &apos;embedded&apos; versie kunt u FreeNAS volledig installeren op uw harde schijf.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="95"/>
@@ -597,7 +597,7 @@ Nu herstarten?</translation>
     <message>
         <location filename="distrover.cpp" line="145"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Website:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschrijving:&lt;/b&gt; Mandriva is een gebruiksvriendelijke distributie, voorheen bekend als Mandrake Linux.&lt;br/&gt;&lt;b&gt;Opmerkingen m.b.t. installatie:&lt;/b&gt; Met de live versie kan worden opgestart naar Live modus, vanuit waar optioneel de installatie kan worden gestart. met de Netinstall versie kan over FTP worden geïnstalleerd, of via vooraf gedownloade &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;vrije&quot; ISO bestanden&lt;/a&gt;.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="151"/>
@@ -820,12 +820,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="556"/>
         <source>Reboot Now</source>
-        <translation>Nu herstarten</translation>
+        <translation>Nu opnieuw starten</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="563"/>
         <source>Exit</source>
-        <translation>Afsluiten</translation>
+        <translation>Sluiten</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="655"/>
@@ -845,7 +845,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="676"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>Installatie gereed. Opnieuw opstarten</translation>
+        <translation>Installatie gereed. Opnieuw starten</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="472"/>
@@ -890,7 +890,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation>Selecteer het disk-image type</translation>
+        <translation>Selecteer het type disk-image</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
@@ -984,8 +984,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 Moet als root worden uitgevoerd. Sluit het en start het opnieuw op deze manier:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;of:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

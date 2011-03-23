@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2010-10-06 23:34+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-03-16 00:13+0000
+Last-Translator: fontis &lt;Unknown&gt;
 Language-Team: Launchpad Swedish Translators &lt;lp-l10n-sv@lists.launchpad.net&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:40+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
+X-Generator: Launchpad (build 12633)
 X-Poedit-Bookmarks: 80,-1,-1,-1,-1,-1,-1,-1,-1,-1
 X-Poedit-Language: Swedish
 </translation>
@@ -113,7 +113,7 @@ X-Poedit-Language: Swedish
     <message>
         <location filename="unetbootin.cpp" line="568"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Alla filer</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="586"/>
@@ -520,7 +520,7 @@ Starta om nu?</translation>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian är en community-baserad Linux distribution som stödjer ett bred sortiment av arkitekturer och tillgodogör ett stort förråd med paket.&lt;br/&gt;&lt;b&gt;Installations anvisningar:&lt;/b&gt; Netinstall versionen möjliggör installation över FTP. Om du vill ladda ner en färdigladdad install iso, använd HdMedia valet, och sedan placerar du installations iso filen i root mappen på din hårddisk eller USB minne.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -984,8 +984,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 måste köras som root. Avsluta och starta om det med antingen:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>

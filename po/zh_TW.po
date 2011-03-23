@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
 "PO-Revision-Date: 2010-11-13 14:19+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: zh_TW\n"
 
 #. ts-context QObject
@@ -422,7 +422,7 @@ msgstr ""
 "*重要* 在重開機之前，請把 Debian 的安裝映像檔放到您的硬碟或 USB 磁碟機根目錄。這些檔案可以從 cdimage.debian.org 取得"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -437,7 +437,7 @@ msgstr ""
 "dora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/development/%1/os』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -452,7 +452,7 @@ msgstr ""
 "dora.redhat.com』, 資料夾則輸入『/pub/fedora/linux/releases/%1/Fedora/%2/os』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -467,7 +467,7 @@ msgstr ""
 "ensuse.org』, 資料夾則輸入『/factory/repo/oss』。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1538,10 +1538,8 @@ msgstr "必須以root角色執行"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 須以 root 權限執行。將其關閉並用以下方式執行：<br/><b>sudo %1</b><br/>或是：<br/><b>su -c "
-"'%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1768,3 +1766,10 @@ msgstr "%1 已安裝。要移除現有版本？"
 #~ "from which the installer can optionally be launched. The NetInstall version "
 #~ "allows for installation over FTP, and can install Xubuntu and other official "
 #~ "Ubuntu derivatives."
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 須以 root 權限執行。將其關閉並用以下方式執行：<br/><b>sudo %1</b><br/>或是：<br/><b>su -c "
+#~ "'%1'</b>"

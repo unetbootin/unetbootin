@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-01-29 07:58+0000\n"
-"Last-Translator: UNetbootin Team <Unknown>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-02-22 11:40+0000\n"
+"Last-Translator: mmw64 <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:40+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: sk_SK\n"
 
 #. ts-context QObject
@@ -66,12 +66,12 @@ msgstr "Výber súboru s obrazom disku"
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "Všetky súbory"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "Všetky súbory (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
@@ -212,27 +212,27 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:958
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "Hľadám súbor s kernelom v %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:999
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Kopírujem súbor s kernelom z %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1005
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "Hľadám súbor s initrd v%1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1046
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Kopírujem súbor s initrd z %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1052 unetbootin.cpp:1112
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "Extrahujem nastavenia bootloaderu"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1327 unetbootin.cpp:1353
@@ -242,7 +242,7 @@ msgstr "<b>Rozbaľovanie ISO obrazu:</b> %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1582
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Kopírujem súbor, prosím počkajte..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1583 unetbootin.cpp:2387
@@ -257,7 +257,7 @@ msgstr "<b>Cieľ:</b> %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1585
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Skopírované:</b> 0 bajtov"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1623
@@ -317,7 +317,7 @@ msgstr "<b>Stiahnuté:</b> %1 z %2"
 #. ts-context unetbootin
 #: unetbootin.cpp:2496
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Skopírované:</b> %1 z %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2572
@@ -433,7 +433,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -450,7 +450,7 @@ msgstr ""
 "dotaze na adresár zadajte '/pub/fedora/linux/development/%1/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -467,7 +467,7 @@ msgstr ""
 "dotaze na adresár zadajte '/pub/fedora/linux/releases/%1/Fedora/%2/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -484,7 +484,7 @@ msgstr ""
 "na adresár zadajte '/factory/repo/oss'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -503,12 +503,12 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:22 unetbootin.cpp:652
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "== Vyberte Distribúciu =="
 
 #. ts-context unetbootin
 #: distrover.cpp:22 distrover.cpp:26
 msgid "== Select Version =="
-msgstr ""
+msgstr "== Vyberte Verziu =="
 
 #. ts-context unetbootin
 #: distrover.cpp:23
@@ -534,6 +534,11 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Popis:"
+"</b> Arch Linux je \"lightweight\" distribúcia optimalizovaná pre rýchlosť a "
+"flexibilitu.<br/><b>Poznámky k inštalácii:</b> Predvolená verzia povoľuje "
+"inštaláciu cez internet (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:34
@@ -544,6 +549,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Homepage:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Popis:</b> BackTrack "
+"je distribúcia zameraná na analýzu siete and testovanie "
+"prieniku.<br/><b>Poznámky k inštalácii:</b> BackTrack bootuje a funguje v "
+"\"live\" režime; na používanie netreba žiadnu inštaláciu."
 
 #. ts-context unetbootin
 #: distrover.cpp:39
@@ -604,6 +614,14 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Popis:</b> "
+"Debian je komunitou vyvíjáná Linuxová distribúcia, ktorá podporuje širokú "
+"škálu architektúr a ponúka veľký repozitár balíčkov.<br/><b>Poznámky k "
+"Inštalácii:</b> Verzia \"NetInstall\" povoľuje inštaláciu cez FTP. Pokiaľ "
+"chcete použiť už stiahnuté iso, použite verziu \"HdMedia\", a potom vložte "
+"inštalačný iso súbor do koreňového adresára vášho pevného disku alebo USB "
+"flash disku."
 
 #. ts-context unetbootin
 #: distrover.cpp:60
@@ -1177,7 +1195,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:20
 msgid "Unetbootin"
-msgstr ""
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
@@ -1187,7 +1205,7 @@ msgstr "Vyberte z ponuky podporovaných distribúcií"
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "&Distribúcia"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
@@ -1197,7 +1215,7 @@ msgstr "Výber obrazu disku"
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "Disk&obraz"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
@@ -1207,7 +1225,7 @@ msgstr "Ručný výber jadra a initrd"
 #. ts-context unetbootinui
 #: unetbootin.ui:150
 msgid "&Custom"
-msgstr ""
+msgstr "&Vlastné"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:428
@@ -1241,7 +1259,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:435
 msgid "&Format Drive (Wipes Out Data)"
-msgstr ""
+msgstr "&Naformátovať disk (Zmaže všetky dáta)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:498
@@ -1261,7 +1279,7 @@ msgstr "Zrušiť"
 #. ts-context unetbootinui
 #: unetbootin.ui:511
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:556
@@ -1402,22 +1420,22 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:421
 msgid "Show &All Drives (Use with Care)"
-msgstr ""
+msgstr "Zobraziť &Všetky jednotky (Používajte rozumne)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr ""
+msgstr "&Kernel:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
 msgid "Init&rd:"
-msgstr ""
+msgstr "Init&rd:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "&Možnosti:"
 
 #. ts-context uninstaller
 #: main.cpp:156
@@ -1438,10 +1456,8 @@ msgstr "Je potrebné spustiť ako root"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 je potrebné spustiť ako root. Zatvorte a spustite s použitím "
-"nasledujúceho:<br/><b>sudo %1</b><br/>alebo:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1499,6 +1515,13 @@ msgstr "%1 je už nainštalované. Odstrániť súčasnú verziu?"
 
 #~ msgid "Format Drive (Wipes Out Data)"
 #~ msgstr "Formátovanie zariadenia (zničí všetky dáta)"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 je potrebné spustiť ako root. Zatvorte a spustite s použitím "
+#~ "nasledujúceho:<br/><b>sudo %1</b><br/>alebo:<br/><b>su -c '%1'</b>"
 
 #~ msgid ""
 #~ "<b>Homepage:</b> <a "

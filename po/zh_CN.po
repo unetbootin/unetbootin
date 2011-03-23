@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2010-10-06 23:39+0000\n"
-"Last-Translator: 英华 <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-02-14 00:37+0000\n"
+"Last-Translator: zhangmiao <mymzhang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: zh_CN\n"
 
 #. ts-context QObject
@@ -61,7 +61,7 @@ msgstr "打开磁盘镜像文件"
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "全部文件"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
@@ -422,7 +422,7 @@ msgstr ""
 "cdimage.debian.org 获取。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -437,7 +437,7 @@ msgstr ""
 "velopment/%1/os'。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -452,7 +452,7 @@ msgstr ""
 "leases/%1/Fedora/%2/os'。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -467,7 +467,7 @@ msgstr ""
 "示指定服务器时，输入“download.opensuse.org”；询问文件夹位置时，再输入“/factory/repo/oss”即可。"
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1544,9 +1544,9 @@ msgstr "必须以root的身份运行"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"必须以root的身份运行 %2。关闭它，并且选择二者之一重新运行：<br/><b>sudo %1</b><br/>or:<br/><b>su -c "
+"%2 必须以 root 身份运行。关闭它，并使用以下方法之一重新运行：<br/><b>sudo %1</b><br/>或：<br/><b>su - -c "
 "'%1'</b>"
 
 #. ts-context uninstaller
@@ -1768,6 +1768,13 @@ msgstr "%1 已经安装。是否移除现有的版本？"
 
 #~ msgid "Format Drive (Wipes Out Data)"
 #~ msgstr "格式化驱动器（擦除数据）"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "必须以root的身份运行 %2。关闭它，并且选择二者之一重新运行：<br/><b>sudo %1</b><br/>or:<br/><b>su -c "
+#~ "'%1'</b>"
 
 #~ msgctxt "#1"
 #~ msgid "<b>Extracting compressed iso:</b> %1"

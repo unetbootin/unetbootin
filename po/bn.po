@@ -7,28 +7,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
-"PO-Revision-Date: 2009-09-20 22:03+0000\n"
-"Last-Translator: Russell John <russell.john@ubuntu.com>\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
+"PO-Revision-Date: 2011-03-08 23:02+0000\n"
+"Last-Translator: Shoeb <Unknown>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:41+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:40+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: bn_BD\n"
 
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr ""
+msgstr "ডানে"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:189 unetbootin.cpp:261 unetbootin.cpp:262 unetbootin.cpp:329
 #: unetbootin.cpp:450 unetbootin.cpp:543 unetbootin.cpp:3069
 #: unetbootin.cpp:3082 unetbootin.cpp:3240 unetbootin.cpp:3695
 msgid "Hard Disk"
-msgstr "হার্ড ডিস্ক"
+msgstr "তথ্যথালা"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:190 unetbootin.cpp:244 unetbootin.cpp:258 unetbootin.cpp:259
@@ -44,7 +44,7 @@ msgstr "USB ড্রাইভ"
 #: unetbootin.cpp:191 unetbootin.cpp:208 unetbootin.cpp:209 unetbootin.cpp:297
 #: unetbootin.cpp:571 unetbootin.cpp:572 unetbootin.cpp:3146
 msgid "ISO"
-msgstr ""
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:192 unetbootin.cpp:204 unetbootin.cpp:205 unetbootin.cpp:302
@@ -56,42 +56,42 @@ msgstr "ফ্লপি"
 #: unetbootin.cpp:222 unetbootin.cpp:226 unetbootin.cpp:230 unetbootin.cpp:234
 #: unetbootin.cpp:240 unetbootin.cpp:252
 msgid "either"
-msgstr ""
+msgstr "হয়"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "তথ্যথালাচিত্র খোলো"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:568
 msgid "All Files"
-msgstr ""
+msgstr "সব ফাইল দেখি"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586 unetbootin.cpp:594 unetbootin.cpp:602
 msgid "All Files (*)"
-msgstr ""
+msgstr "সব ফাইল (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:586
 msgid "Open Kernel File"
-msgstr ""
+msgstr "শুধু 'কার্নেল' ফাইল খোলো"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:594
 msgid "Open Initrd File"
-msgstr ""
+msgstr "শুধু 'Initrd' ফাইল খোলো"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:602
 msgid "Open Bootloader Config File"
-msgstr ""
+msgstr "বুটলোড কারুকাজের ফাইল খোলো"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:624
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "USB ফ্ল্যাশ ঢুকাও"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:625
@@ -99,11 +99,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
+"USB ফ্ল্যাশ ড্রাইভ পাওয়া যায়নি, ড্রাইভ ঢুকানোর পরেও এই লেখা দেখলে বুঝতে হবে "
+"'ফরম্যাট' (FAT32 হিসেবে) করে USB ফ্ল্যাশ ড্রাইভটি পরিস্কার করা উচিত"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:640
 msgid "%1 not mounted"
-msgstr ""
+msgstr "%১ চড়তে পারেনি"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:641
@@ -111,56 +113,58 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
+"প্রথমে USB ফ্ল্যাশ ড্রাইভ %১ টিকে চুড়ায় চড়াতে হবে, একে খুলে ঢুকালে "
+"ডিস্ট্রিবিউশনকারী আপনা আপনি এটা করবে।"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:656
 msgid "Select a distro"
-msgstr ""
+msgstr "বেছে নিন পছন্দের 'distro'"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:657
 msgid "You must select a distribution to load."
-msgstr ""
+msgstr "ডিস্ট্রিবিউশনকারী বেছে নিতেই হবে আপনাকে"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:671
 msgid "Select a disk image file"
-msgstr ""
+msgstr "তথ্যথালাচিত্র বেছে নিন"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:672
 msgid "You must select a disk image file to load."
-msgstr ""
+msgstr "তথ্যথালাচিত্রের ফাইল আপনাকে বেছে নিতেই হবে"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Select a kernel and/or initrd file"
-msgstr ""
+msgstr "কার্নেল অথবা/এবং 'initrd' বেছে নিন"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:687
 msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
+msgstr "আপনাকে একটি কার্নেল অথবা/এবং 'initrd' বেছে নিতেই হবে"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:701
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "তথ্যথালাচিত্র পাওয়া যায়নি"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:702
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "তথ্যথালাচিত্র %১ টি কথাওই নেই"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Kernel file not found"
-msgstr ""
+msgstr "কার্নেল ফাইল পাওয়া যায়নি"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "কার্নেল ফাইল %১ টি কথাওই নেই"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:731
@@ -412,7 +416,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -423,7 +427,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -434,7 +438,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -445,7 +449,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1280,7 +1284,7 @@ msgstr ""
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
 
 #. ts-context uninstaller

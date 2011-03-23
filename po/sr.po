@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-15 00:21-0500\n"
+"POT-Creation-Date: 2011-01-23 16:52-0500\n"
 "PO-Revision-Date: 2010-12-21 20:15+0000\n"
 "Last-Translator: Kosava <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-15 16:40+0000\n"
-"X-Generator: Launchpad (build 12200)\n"
+"X-Launchpad-Export-Date: 2011-03-23 03:41+0000\n"
+"X-Generator: Launchpad (build 12633)\n"
 "X-Language: sr_CS\n"
 
 #. ts-context QObject
@@ -442,7 +442,7 @@ msgstr ""
 "cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:364
+#: distrolst.cpp:368
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -460,7 +460,7 @@ msgstr ""
 "pojavi upit o direktorijumu."
 
 #. ts-context unetbootin
-#: distrolst.cpp:370
+#: distrolst.cpp:374
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -478,7 +478,7 @@ msgstr ""
 "kada se pojavi upit o direktorijumu."
 
 #. ts-context unetbootin
-#: distrolst.cpp:730
+#: distrolst.cpp:734
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -496,7 +496,7 @@ msgstr ""
 "direktorijumu."
 
 #. ts-context unetbootin
-#: distrolst.cpp:736
+#: distrolst.cpp:740
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -1697,10 +1697,8 @@ msgstr "Morate startovati kao root"
 #: main.cpp:320
 msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-"%1</b><br/>or:<br/><b>su -c '%1'</b>"
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
-"%2 mora pokrenuti root. Zatvorite i ponovo pokrenite koristeći:<br/><b>sudo "
-"%1</b><br/>ili:<br/><b>su -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:342
@@ -1711,3 +1709,10 @@ msgstr "%1 Deinstaler"
 #: main.cpp:343
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr "%1 is trenutno instaliran. Ukloniti postojeću verziju?"
+
+#~ msgid ""
+#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
+#~ msgstr ""
+#~ "%2 mora pokrenuti root. Zatvorite i ponovo pokrenite koristeći:<br/><b>sudo "
+#~ "%1</b><br/>ili:<br/><b>su -c '%1'</b>"

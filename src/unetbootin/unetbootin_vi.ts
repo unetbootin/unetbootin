@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-15 00:21-0500
-PO-Revision-Date: 2011-01-15 15:14+0000
-Last-Translator: Lê Trường An &lt;Unknown&gt;
+POT-Creation-Date: 2011-01-23 16:52-0500
+PO-Revision-Date: 2011-02-20 15:07+0000
+Last-Translator: Lê Trường An &lt;xinemdungkhoc1@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-01-15 16:41+0000
-X-Generator: Launchpad (build 12200)
+X-Launchpad-Export-Date: 2011-03-23 03:40+0000
+X-Generator: Launchpad (build 12633)
 </translation>
     </message>
 </context>
@@ -132,7 +132,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="624"/>
         <source>Insert a USB flash drive</source>
-        <translation>Cắm một ổ flash USB vào</translation>
+        <translation>Yêu cầu một ổ flash USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="625"/>
@@ -147,32 +147,32 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="641"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Trước hết bạn cần gắn ổ flash USB %1 vào. Hầu hết các bản phân phối sẽ tự động làm việc này sau khi bạn tháo và gắn lại ổ flash USB.</translation>
+        <translation>Trước hết, bạn cần gắn kết (mount) ổ flash USB %1 vào. Hầu hết các bản phân phối sẽ tự động làm việc này sau khi bạn tháo và gắn lại ổ flash USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="656"/>
         <source>Select a distro</source>
-        <translation>Chọn một bản phân phối</translation>
+        <translation>Yêu cầu chọn một bản phân phối</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="657"/>
         <source>You must select a distribution to load.</source>
-        <translation>Bạn phải chọn một bản phân phối.</translation>
+        <translation>Bạn phải chọn một bản phân phối để tiến hành cài đặt.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="671"/>
         <source>Select a disk image file</source>
-        <translation>Chọn tập tin ảnh đĩa</translation>
+        <translation>Yêu cầu chọn tập tin ảnh đĩa</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="672"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Bạn phải chọn một tập tin ảnh đĩa.</translation>
+        <translation>Bạn phải chọn một tập tin ảnh đĩa để tiến hành cài đặt.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Chọn nhân hoặc tập tin initrd</translation>
+        <translation>Chọn tập tin nhân hoặc tập tin initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="687"/>
@@ -197,7 +197,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Tập tin nhân bạn đã xác định %1 không tồn tại.</translation>
+        <translation>Tập tin nhân mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="731"/>
@@ -207,7 +207,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="732"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Tập tin initrd bạn đã xác định %1 không tồn tại.</translation>
+        <translation>Tập tin initrd mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="836"/>
@@ -217,7 +217,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="837"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Tập tin %1 đã tồn tại. Nhấn &apos;Yes to All&apos; để ghi đè nó và không nhắc lại nữa, &apos;Yes&apos; để ghi đè tập tin, và &apos;No&apos; để giữ lại tập tin đã tồn tại. Nếu không chắc, nhấn &apos;Yes to All&apos;.</translation>
+        <translation>Tập tin %1 đã tồn tại. Chọn &apos;Yes to All&apos; để ghi đè nó và không nhắc lại nữa, chọn &apos;Yes&apos; để ghi đè tập tin, và &apos;No&apos; để giữ lại tập tin đã tồn tại. Nếu không chắc, chọn &apos;Yes to All&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="863"/>
@@ -227,7 +227,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="864"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Thư mục %1 không đủ dung lượng. Nhấn &apos;Yes&apos; để huỷ bỏ cài đặt, &apos;No&apos; để bỏ qua lỗi và cố gắng cài đặt tiếp, và &apos;No to All&apos; để bỏ qua mọi lỗi do thiếu dung lượng.</translation>
+        <translation>Thư mục %1 không đủ dung lượng. Chọn &apos;Yes&apos; để huỷ bỏ cài đặt, &apos;No&apos; để bỏ qua lỗi này và cố gắng cài đặt tiếp, và &apos;No to All&apos; để bỏ qua mọi lỗi do thiếu dung lượng.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="958"/>
@@ -281,7 +281,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1585"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1623"/>
@@ -291,7 +291,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1624"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Lưu trữ:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Tập tin nguồn:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1625"/>
@@ -306,7 +306,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; 0 trong số %1 của các tập tin</translation>
+        <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; 0 trong số %1 tập tin</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1630"/>
@@ -321,7 +321,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="1632"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; %1 trong số %1 của các tập tin</translation>
+        <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; %1 trong số %2 tập tin</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2386"/>
@@ -331,7 +331,7 @@ X-Generator: Launchpad (build 12200)
     <message>
         <location filename="unetbootin.cpp" line="2389"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Đã tải:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;Đã tải:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2466"/>
@@ -369,12 +369,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3051"/>
         <source>(Current)</source>
-        <translation>(Hiện hành)</translation>
+        <translation>(Đang thực hiện)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3052"/>
         <source>(Done)</source>
-        <translation>(Xong)</translation>
+        <translation>(Đã hoàn tất)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3319"/>
@@ -437,7 +437,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
-*QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh của Debian vào thư mục gốc của đĩa cứng hoặc ổ USB. Có thể tải tập tin ảnh Debian tại cdimage.debian.org</translation>
+*QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh của Debian (.iso) vào thư mục gốc của đĩa cứng hoặc ổ USB. Có thể tải tập tin ảnh của Debian tại cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="368"/>
@@ -482,7 +482,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Chào mừng bạn đã đến với &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, trình cài đặt bộ khởi động Universal Netboot Installer. Sử dụng:&lt;ol&gt;&lt;li&gt;Chọn một bản phân phối và phiên bản để tải từ danh sách trên, hay xác định các tập tin để nạp bên dưới.&lt;/li&gt;&lt;li&gt;Chọn kiểu cài đặt, và nhấn OK để bắt đầu cài đặt.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Chào mừng bạn đã đến với &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, trình cài đặt bộ khởi động Universal Netboot Installer. Hướng dẫn sử dụng:&lt;ol&gt;&lt;li&gt;Chọn một bản phân phối và phiên bản để tải từ danh sách trên, hoặc xác định các tập tin để nạp bên dưới.&lt;/li&gt;&lt;li&gt;Chọn kiểu cài đặt, và nhấn OK để bắt đầu cài đặt.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
@@ -507,12 +507,12 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="49"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Damn Small Linux là một bản phân phối được tối giản được thiết kế cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống vào RAM và khởi động từ bộ nhớ, không bắt buộc cài đặt nhưng vẫn có thể chọn nếu muốn.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Damn Small Linux là một bản phân phối được thiết kế tối giản cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống vào RAM và khởi động từ bộ nhớ, không bắt buộc cài đặt nhưng vẫn có thể chọn nếu muốn.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Debian là một bản Linux phát triển bởi cộng đồng, hỗ trợ rộng rãi các nền tảng phần cứng và cung cấp một kho lớn các gói phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản NetInstall cho phép cài đặt qua FTP. Nếu bạn muốn sử dụng tập tin ảnh .iso, sử dụng tùy chọn HdMedia, sau đó đặt nó vào thư mục gốc của USB hoặc của đĩa cứng.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Debian là một bản Linux được phát triển bởi cộng đồng, hỗ trợ rộng rãi các nền tảng phần cứng và cung cấp một kho lớn các gói phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản NetInstall cho phép cài đặt thông qua FTP. Nếu bạn muốn sử dụng tập tin ảnh .iso, sử dụng tùy chọn HdMedia, sau đó đặt nó vào thư mục gốc của USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -562,7 +562,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="105"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gentoo một hệ điều hành linh hoạt dành cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gentoo là một hệ điều hành linh hoạt dành cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="115"/>
@@ -572,7 +572,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="120"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gujin trình quản lí khởi động với giao diện đồ họa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Gujin đơn giản là khởi động và chạy; không yêu cầu phải cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gujin là trình quản lí khởi động với giao diện đồ họa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Gujin chỉ cần khởi động là có thể chạy được; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="125"/>
@@ -592,12 +592,12 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="140"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Linux Mint là một bản phân phối thân thiện với người dùng được xây dựng dựa trên Ubuntu, mặc định bổ sung nhiều codec và phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Linux Mint là một bản phân phối thân thiện với người dùng được xây dựng dựa trên Ubuntu, mặc định được bổ sung nhiều codec và phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="145"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Mandriva là một bản phân phối thân thiện với người dùng còn được biết đến với cái tên Mandrake Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép khởi động và chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP) hoặc thông qua &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;tập tin ảnh đĩa &quot;Miễn phí&quot;&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Mandriva là một bản phân phối thân thiện với người dùng, còn được biết đến với cái tên Mandrake Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép khởi động và chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP) hoặc thông qua &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;tập tin ảnh đĩa &quot;Miễn phí&quot;&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="151"/>
@@ -622,7 +622,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="171"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; openSUSE là một bản phân phối thân thiện với người dùng từ, có sự tài trợ của Novell.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; openSUSE là một bản phân phối thân thiện với người dùng, có sự tài trợ của Novell.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -632,7 +632,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các công cụ tối hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác các phân vùng đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Parted Magic khởi động và chạy trực tiếp; không cần phải cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các công cụ tối ưu hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác với các phân vùng đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Parted Magic khởi động và chạy trực tiếp; không cần phải cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -647,7 +647,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="196"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Sabayon Linux là một bản phân phối dựa trên Gentoo Live DVD với trình quản lí gói Entropy.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt. Phiên bản LiteMCE có dung lượng 2 GB, trong khi bản đầy đủ cần một ổ USB 8GB</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Sabayon Linux là một bản phân phối dựa trên Gentoo Live DVD với trình quản lí gói tin Entropy.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt. Phiên bản LiteMCE có dung lượng 2 GB, trong khi bản đầy đủ cần một ổ USB 8GB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="201"/>
@@ -668,7 +668,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <location filename="distrover.cpp" line="216"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super Grub Disk là một trình khởi động có thể thực thi nhiều loại MBR và các tác vụ khôi phục trình khởi động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SGD đơn giản chỉ là khởi động và chạy; không yêu cầu phải cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super Grub Disk là một trình khởi động có thể thực thi nhiều loại MBR và các tác vụ khôi phục trình khởi động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SGD chỉ cần khởi động và chạy; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="221"/>
@@ -703,7 +703,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; EeePCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên PCLinuxOS cho EeePC.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Chắc rằng thiết bị cài đặt trống và định dạng trước khi tiến hành cài đặt.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; EeePCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên PCLinuxOS cho EeePC.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Chắc rằng thiết bị cài đặt trống và đã được định dạng trước khi tiến hành cài đặt.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="41"/>
@@ -767,17 +767,17 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation>&amp;Ảnh đĩa</translation>
+        <translation>Ản&amp;h đĩa</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation>Chỉ định bằng tay nhân và initrd</translation>
+        <translation>Chỉ định bằng tay tập tin nhân và initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation>&amp;Tùy chọn</translation>
+        <translation>Tù&amp;y chọn</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="428"/>
@@ -790,17 +790,17 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tùy chọn  &lt;span style=&quot; font-weight:600;&quot;&gt;nguy hiểm này&lt;/span&gt; sẽ định dạng lại ổ đĩa đã chọn, hãy sao lưu mọi dữ liệu trên đó. Nếu bạn đang sử dụng một ổ đĩa USB thì không cần thiết.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tùy chọn này có thể &lt;span style=&quot; font-weight:600;&quot;&gt;nguy hiểm cho dữ liệu của bạn&lt;/span&gt; vì nó sẽ định dạng lại ổ đĩa đã chọn, hãy sao lưu mọi dữ liệu trên đó. Nếu bạn đang sử dụng một ổ đĩa USB thì không cần thiết.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="435"/>
         <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation>&amp;Định dạng lại ổ đĩa (Xóa mọi dữ liệu)</translation>
+        <translation>Định dạng lại ổ đĩa (&amp;Xóa mọi dữ liệu)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="498"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Bắt đầu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="501"/>
@@ -830,33 +830,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="655"/>
         <source>1. Downloading Files</source>
-        <translation>1. Đang tải các tập tin</translation>
+        <translation>1. Tải các tập tin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="662"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Đang giải nén và sao chép các tập tin</translation>
+        <translation>2. Giải nén và sao chép các tập tin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="669"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Đang cài đặt Trình khởi động</translation>
+        <translation>3. Cài đặt Trình khởi động</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="676"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Hoàn tất cài đặt. Khởi động lại</translation>
+        <translation>4. Hoàn tất cài đặt, Khởi động lại</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="472"/>
         <location filename="unetbootin.ui" line="491"/>
         <source>Select the target drive to install to</source>
-        <translation>Chọn ổ đĩa để cài đặt vào</translation>
+        <translation>Chọn ổ đĩa để cài đặt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="475"/>
         <source>Dri&amp;ve:</source>
-        <translation>Ổ đ&amp;ĩa:</translation>
+        <translation>Ổ đĩ&amp;a:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="446"/>
@@ -922,7 +922,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation>Chọn tập tin syslinux.cfg hay isolinux.cfg</translation>
+        <translation>Chọn tập tin syslinux.cfg hoặc isolinux.cfg</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
@@ -941,12 +941,12 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tùy chọn  &lt;span style=&quot; font-weight:600;&quot;&gt;nguy hiểm này&lt;/span&gt; sẽ hiển thị tất cả các ổ đĩa trong hộp thả xuống có tiêu đề &quot;ổ đĩa&quot;. Kích hoạt tính năng này chỉ khi bạn biết những gì bạn đang làm; nếu bạn sử dụng tùy chọn này, việc cài đặt có thể sẽ thất bại, hoặc có thể dẫn đến các vấn đề khởi động của hệ thống.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tùy chọn này có thể &lt;span style=&quot; font-weight:600;&quot;&gt;nguy hiểm&lt;/span&gt; vì nó sẽ hiển thị tất cả các ổ đĩa trong hộp thả xuống có tiêu đề &quot;Ổ đĩa&quot;. Kích hoạt tính năng này chỉ khi bạn biết những gì bạn đang làm; nếu bạn sử dụng tùy chọn này, việc cài đặt có thể sẽ thất bại, hoặc có thể dẫn đến các vấn đề khởi động của hệ thống.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="421"/>
         <source>Show &amp;All Drives (Use with Care)</source>
-        <translation>Hiện &amp;Tất cả ổ đĩa (Cẩn thận khi dùng)</translation>
+        <translation>Hiện &amp;tất cả Ổ đĩa (Cẩn thận khi chọn)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
@@ -984,13 +984,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="320"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <oldsource>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</oldsource>
-        <translation type="unfinished">%2 phải được chạy bởi người quản trị. Đóng lại, và chạy lại lệnh sử dụng:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su -c &apos;%1&apos;&lt;/b&gt;</translation>
+        <translation>%2 phải được chạy với quyền quản trị. Hãy đóng lại và sử dụng lệnh:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;hay:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="342"/>
         <source>%1 Uninstaller</source>
-        <translation>%1 Gỡ bỏ</translation>
+        <translation>Gỡ bỏ %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="343"/>
