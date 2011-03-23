@@ -2,6 +2,7 @@
 #define APP_MANIFEST 1
 
 APP_MANIFEST RT_MANIFEST unetbootin.exe.manifest
+IDI_ICON1 ICON DISCARDABLE "unetbootin.ico"
 
 1 VERSIONINFO
 FILEVERSION 1,1,1,1
