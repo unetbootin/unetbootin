@@ -9,3 +9,4 @@ Type=Application
 Name[en_US]=UNetbootin
 GenericName[en_US]=UNetbootin
 Comment[en_US]=Tool for creating Live USB drives
+Icon=unetbootin
