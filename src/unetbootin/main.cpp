@@ -359,6 +359,13 @@ int main(int argc, char **argv)
 	unetbootin.appNlang = tnapplang;
 	unetbootin.appDir = QDir::toNativeSeparators(QString("%1/").arg(app.applicationDirPath()));
 	unetbootin.appLoc = app.applicationFilePath();
+	QIcon icon;
+	icon.addFile(":/unetbootin_16.png", QSize(16,16));
+	icon.addFile(":/unetbootin_22.png", QSize(22,22));
+	icon.addFile(":/unetbootin_24.png", QSize(24,24));
+	icon.addFile(":/unetbootin_32.png", QSize(32,32));
+	icon.addFile(":/unetbootin_48.png", QSize(48,48));
+	unetbootin.setWindowIcon(icon);
 	bool automate = unetbootin.ubninitialize(oppairs);
 	unetbootin.show();
 	if (automate)

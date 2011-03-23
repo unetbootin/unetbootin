@@ -2,6 +2,11 @@
     <qresource prefix="/" >
         <file>memdisk</file>
         <file>menu.c32</file>
+        <file>unetbootin_16.png</file>
+        <file>unetbootin_22.png</file>
+        <file>unetbootin_24.png</file>
+        <file>unetbootin_32.png</file>
+        <file>unetbootin_48.png</file>
         <file>unetbootin_am.qm</file>
         <file>unetbootin_ar.qm</file>
         <file>unetbootin_ast.qm</file>
