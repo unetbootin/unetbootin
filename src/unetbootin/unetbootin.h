@@ -209,7 +209,6 @@ public:
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
 	QString dfcommand;
-	QString sfdiskcommand;
 	QString blkidcommand;
 	QString volidcommand;
 	QString syslinuxcommand;

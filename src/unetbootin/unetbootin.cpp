@@ -224,10 +224,6 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				dfcommand = "/bin/df";
 		else
 				dfcommand = locatecommand("df", tr("either"), "util-linux");
-	if (QFile::exists("/sbin/sfdisk"))
-		sfdiskcommand = "/sbin/sfdisk";
-	else
-		sfdiskcommand = locatecommand("sfdisk", tr("either"), "util-linux");
 	if (QFile::exists("/lib/udev/vol_id"))
 		volidcommand = "/lib/udev/vol_id";
 	else
@@ -930,7 +926,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 	bool outofspace = false;
 	#ifdef Q_OS_UNIX
 	struct statfs diskstatS;
-	if (!statfs(QString(destindir+"/.").toLocal8Bit(), &diskstatS))
+	if (!statfs(QString(destindir+"/.").toAscii(), &diskstatS))
 	{
 		if (diskstatS.f_bavail * diskstatS.f_bfree < 1024)
 			outofspace = true;
@@ -940,7 +936,7 @@ bool unetbootin::checkifoutofspace(QString destindir)
 	ULARGE_INTEGER FreeBytesAvailable;
 	ULARGE_INTEGER TotalNumberOfBytes;
 	ULARGE_INTEGER TotalNumberOfFreeBytes;
-	if (GetDiskFreeSpaceExA(destindir.toLocal8Bit(), &FreeBytesAvailable, &TotalNumberOfBytes, &TotalNumberOfFreeBytes))
+	if (GetDiskFreeSpaceExA(destindir.toAscii(), &FreeBytesAvailable, &TotalNumberOfBytes, &TotalNumberOfFreeBytes))
 	{
 		if (FreeBytesAvailable.QuadPart < 1024)
 			outofspace = true;
@@ -2884,7 +2880,7 @@ void unetbootin::installsvzip()
 
 void unetbootin::configsysEdit()
 {
-	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toLocal8Bit(), FILE_ATTRIBUTE_NORMAL);
+	SetFileAttributesA(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)).toAscii(), FILE_ATTRIBUTE_NORMAL);
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1config.sys").arg(targetPath));
 	QFile::copy(QDir::toNativeSeparators(QString("%1config.sys").arg(targetDrive)), QString("%1confignw.txt").arg(targetPath));
 	QFile confignwFile(QString("%1confignw.txt").arg(targetPath));
@@ -3581,20 +3577,45 @@ void unetbootin::runinstusb()
 		}
 		else
 			callexternapp(syslinuxcommand, targetDev);
-	if (rawtargetDev != targetDev)
-	{
-		callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
-		QFile usbmbrF(rawtargetDev);
-		QFile mbrbinF(":/mbr.bin");
-		#ifdef NOSTATIC
-		mbrbinF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
-		#endif
-		usbmbrF.open(QIODevice::WriteOnly);
-		mbrbinF.open(QIODevice::ReadOnly);
-		usbmbrF.write(mbrbinF.readAll());
-		mbrbinF.close();
-		usbmbrF.close();
-	}
+		if (rawtargetDev != targetDev)
+		{
+			// make active
+			bool isOk = false;
+			int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
+			if (isOk)
+			{
+				QProcess fdlprocess;
+				fdlprocess.start("fdisk", QStringList() << "-l");
+				fdlprocess.waitForFinished(-1);
+				QString output = fdlprocess.readAllStandardOutput();
+				QStringList outputL = output.split('\n');
+				outputL = outputL.filter(targetDev);
+				if (outputL.size() > 0)
+				{
+					outputL = outputL.filter("*");
+					bool isActive = outputL.size() > 0;
+					if (!isActive)
+					{
+						QProcess mkactiveprocess;
+						mkactiveprocess.start("fdisk", QStringList() << rawtargetDev);
+						mkactiveprocess.write("a\n");
+						mkactiveprocess.write((QString::number(partitionNumber) + "\n").toAscii().data());
+						mkactiveprocess.write("w\n");
+						mkactiveprocess.waitForFinished(-1);
+					}
+				}
+			}
+			QFile usbmbrF(rawtargetDev);
+			QFile mbrbinF(":/mbr.bin");
+			#ifdef NOSTATIC
+			mbrbinF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
+			#endif
+			usbmbrF.open(QIODevice::WriteOnly);
+			mbrbinF.open(QIODevice::ReadOnly);
+			usbmbrF.write(mbrbinF.readAll());
+			mbrbinF.close();
+			usbmbrF.close();
+		}
 	#endif
 #ifndef XPUD
 	if (!dontgeneratesyslinuxcfg)

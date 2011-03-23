@@ -37,37 +37,37 @@ X-Generator: Launchpad (build 12633)
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="189"/>
-        <location filename="unetbootin.cpp" line="261"/>
-        <location filename="unetbootin.cpp" line="262"/>
-        <location filename="unetbootin.cpp" line="329"/>
-        <location filename="unetbootin.cpp" line="450"/>
-        <location filename="unetbootin.cpp" line="543"/>
-        <location filename="unetbootin.cpp" line="3069"/>
-        <location filename="unetbootin.cpp" line="3082"/>
-        <location filename="unetbootin.cpp" line="3240"/>
-        <location filename="unetbootin.cpp" line="3695"/>
+        <location filename="unetbootin.cpp" line="257"/>
+        <location filename="unetbootin.cpp" line="258"/>
+        <location filename="unetbootin.cpp" line="325"/>
+        <location filename="unetbootin.cpp" line="446"/>
+        <location filename="unetbootin.cpp" line="539"/>
+        <location filename="unetbootin.cpp" line="3065"/>
+        <location filename="unetbootin.cpp" line="3078"/>
+        <location filename="unetbootin.cpp" line="3236"/>
+        <location filename="unetbootin.cpp" line="3716"/>
         <source>Hard Disk</source>
         <translation>Tvrdi disk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="190"/>
-        <location filename="unetbootin.cpp" line="244"/>
-        <location filename="unetbootin.cpp" line="258"/>
-        <location filename="unetbootin.cpp" line="259"/>
-        <location filename="unetbootin.cpp" line="331"/>
-        <location filename="unetbootin.cpp" line="454"/>
-        <location filename="unetbootin.cpp" line="548"/>
-        <location filename="unetbootin.cpp" line="620"/>
-        <location filename="unetbootin.cpp" line="636"/>
-        <location filename="unetbootin.cpp" line="890"/>
-        <location filename="unetbootin.cpp" line="1421"/>
-        <location filename="unetbootin.cpp" line="1483"/>
-        <location filename="unetbootin.cpp" line="2402"/>
-        <location filename="unetbootin.cpp" line="2444"/>
-        <location filename="unetbootin.cpp" line="3073"/>
-        <location filename="unetbootin.cpp" line="3098"/>
-        <location filename="unetbootin.cpp" line="3244"/>
-        <location filename="unetbootin.cpp" line="3699"/>
+        <location filename="unetbootin.cpp" line="240"/>
+        <location filename="unetbootin.cpp" line="254"/>
+        <location filename="unetbootin.cpp" line="255"/>
+        <location filename="unetbootin.cpp" line="327"/>
+        <location filename="unetbootin.cpp" line="450"/>
+        <location filename="unetbootin.cpp" line="544"/>
+        <location filename="unetbootin.cpp" line="616"/>
+        <location filename="unetbootin.cpp" line="632"/>
+        <location filename="unetbootin.cpp" line="886"/>
+        <location filename="unetbootin.cpp" line="1417"/>
+        <location filename="unetbootin.cpp" line="1479"/>
+        <location filename="unetbootin.cpp" line="2398"/>
+        <location filename="unetbootin.cpp" line="2440"/>
+        <location filename="unetbootin.cpp" line="3069"/>
+        <location filename="unetbootin.cpp" line="3094"/>
+        <location filename="unetbootin.cpp" line="3240"/>
+        <location filename="unetbootin.cpp" line="3720"/>
         <source>USB Drive</source>
         <translation>USB uređaj</translation>
     </message>
@@ -75,10 +75,10 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="191"/>
         <location filename="unetbootin.cpp" line="208"/>
         <location filename="unetbootin.cpp" line="209"/>
-        <location filename="unetbootin.cpp" line="297"/>
-        <location filename="unetbootin.cpp" line="571"/>
-        <location filename="unetbootin.cpp" line="572"/>
-        <location filename="unetbootin.cpp" line="3146"/>
+        <location filename="unetbootin.cpp" line="293"/>
+        <location filename="unetbootin.cpp" line="567"/>
+        <location filename="unetbootin.cpp" line="568"/>
+        <location filename="unetbootin.cpp" line="3142"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -86,10 +86,10 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="192"/>
         <location filename="unetbootin.cpp" line="204"/>
         <location filename="unetbootin.cpp" line="205"/>
-        <location filename="unetbootin.cpp" line="302"/>
-        <location filename="unetbootin.cpp" line="576"/>
-        <location filename="unetbootin.cpp" line="577"/>
-        <location filename="unetbootin.cpp" line="3138"/>
+        <location filename="unetbootin.cpp" line="298"/>
+        <location filename="unetbootin.cpp" line="572"/>
+        <location filename="unetbootin.cpp" line="573"/>
+        <location filename="unetbootin.cpp" line="3134"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
@@ -97,328 +97,327 @@ X-Generator: Launchpad (build 12633)
         <location filename="unetbootin.cpp" line="222"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="230"/>
-        <location filename="unetbootin.cpp" line="234"/>
-        <location filename="unetbootin.cpp" line="240"/>
-        <location filename="unetbootin.cpp" line="252"/>
+        <location filename="unetbootin.cpp" line="236"/>
+        <location filename="unetbootin.cpp" line="248"/>
         <source>either</source>
         <translation>ili</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="568"/>
+        <location filename="unetbootin.cpp" line="564"/>
         <source>Open Disk Image File</source>
         <translation>Otvoriti Datoteku disketnog image-a</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="568"/>
+        <location filename="unetbootin.cpp" line="564"/>
         <source>All Files</source>
         <translation>Sve datoteke</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
-        <location filename="unetbootin.cpp" line="594"/>
-        <location filename="unetbootin.cpp" line="602"/>
+        <location filename="unetbootin.cpp" line="582"/>
+        <location filename="unetbootin.cpp" line="590"/>
+        <location filename="unetbootin.cpp" line="598"/>
         <source>All Files (*)</source>
         <translation>Sve Datoteke (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="586"/>
+        <location filename="unetbootin.cpp" line="582"/>
         <source>Open Kernel File</source>
         <translation>Otvorena Kernel Datoteka</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="594"/>
+        <location filename="unetbootin.cpp" line="590"/>
         <source>Open Initrd File</source>
         <translation>Otvoriti Initrd Datoteku</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="602"/>
+        <location filename="unetbootin.cpp" line="598"/>
         <source>Open Bootloader Config File</source>
         <translation>Otvoriti Konfiguracijsku Datoteku Bootloadera</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="620"/>
         <source>Insert a USB flash drive</source>
         <translation>Umetnuti USB flash jedinicu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="625"/>
+        <location filename="unetbootin.cpp" line="621"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nisu nađene USB flash jedinice. Ako ste već umetnuli USB jedinicu, probajte ponovno formatirati kao FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="636"/>
         <source>%1 not mounted</source>
         <translation>%1 nije montirano</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="641"/>
+        <location filename="unetbootin.cpp" line="637"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Prvo morate mountati USB jedinicu %1 na točku montiranja. Većina distribucija će to učiniti automatski  nakon što izvadite i ponovno umetnete USB jedinicu.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="656"/>
+        <location filename="unetbootin.cpp" line="652"/>
         <source>Select a distro</source>
         <translation>Odabrati distribuciju</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="657"/>
+        <location filename="unetbootin.cpp" line="653"/>
         <source>You must select a distribution to load.</source>
         <translation>Morate odabrati distribuciju za učitavanje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="671"/>
+        <location filename="unetbootin.cpp" line="667"/>
         <source>Select a disk image file</source>
         <translation>Odabrati datoteku disk image-a</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="672"/>
+        <location filename="unetbootin.cpp" line="668"/>
         <source>You must select a disk image file to load.</source>
         <translation>Morate odabrati diskovni image za učitavanje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="686"/>
+        <location filename="unetbootin.cpp" line="682"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Odabrati kernel i/ili initrd datoteku</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="687"/>
+        <location filename="unetbootin.cpp" line="683"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Morate odabrati kernel i/ili initrd datoteku za učitavanje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="701"/>
+        <location filename="unetbootin.cpp" line="697"/>
         <source>Diskimage file not found</source>
         <translation>Datoteka diskovnog image-a nije nađena</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="702"/>
+        <location filename="unetbootin.cpp" line="698"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Zadani datoteka disk image-a %1 ne postoji.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="716"/>
+        <location filename="unetbootin.cpp" line="712"/>
         <source>Kernel file not found</source>
         <translation>Kernel datoteka nije nađena</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="717"/>
+        <location filename="unetbootin.cpp" line="713"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Zadana datoteka kernela %1 ne postoji.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="731"/>
+        <location filename="unetbootin.cpp" line="727"/>
         <source>Initrd file not found</source>
         <translation>Initrd nije nađen</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="732"/>
+        <location filename="unetbootin.cpp" line="728"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Zadana initrd datoteka %1 ne postoji.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="836"/>
+        <location filename="unetbootin.cpp" line="832"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 postoji, prepisati?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="837"/>
+        <location filename="unetbootin.cpp" line="833"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Datoteka %1 već postoji. Odabrati  &apos;Da za Sve&apos; za prepisivanje i spriječavanje daljnjih budućih upita, &apos;Da&apos; za prepisivanje datoteka na inidividualnoj bazi, i &apos;Ne&apos; za zadržavanje vaše postojeće inačice. Ako postoji sumnja, odaberite &apos;Da za Sve&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="863"/>
+        <location filename="unetbootin.cpp" line="859"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>%1 nema više mjesta, prekinuti instalaciju?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="864"/>
+        <location filename="unetbootin.cpp" line="860"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>Datoteka %1 nema više mjesta. Odabrati &apos;Da&apos; za prekid instalacije, &apos;Ne&apos; za ignoriranje ove greške i pokušaj nastavka instalacije, i &apos;Ne za Sve&apos; za ignoriranje svi grešaka izvan-prostora.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="958"/>
+        <location filename="unetbootin.cpp" line="954"/>
         <source>Locating kernel file in %1</source>
         <translation>Traženje kernel datoteke u %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="999"/>
+        <location filename="unetbootin.cpp" line="995"/>
         <source>Copying kernel file from %1</source>
         <translation>Kopiranje kernel datoteke iz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1005"/>
+        <location filename="unetbootin.cpp" line="1001"/>
         <source>Locating initrd file in %1</source>
         <translation>Traženje initrd datoteke u %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1046"/>
+        <location filename="unetbootin.cpp" line="1042"/>
         <source>Copying initrd file from %1</source>
         <translation>Kopiranje initrf datoteke iz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1052"/>
-        <location filename="unetbootin.cpp" line="1112"/>
+        <location filename="unetbootin.cpp" line="1048"/>
+        <location filename="unetbootin.cpp" line="1108"/>
         <source>Extracting bootloader configuration</source>
         <translation>Otpakiravanje konfiguracije bootloader-a</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1327"/>
-        <location filename="unetbootin.cpp" line="1353"/>
+        <location filename="unetbootin.cpp" line="1323"/>
+        <location filename="unetbootin.cpp" line="1349"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Otpakiravanje kompresiranog iso-a:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1582"/>
+        <location filename="unetbootin.cpp" line="1578"/>
         <source>Copying file, please wait...</source>
         <translation>Kopiranje datoteke, molimo pričekajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1583"/>
-        <location filename="unetbootin.cpp" line="2387"/>
+        <location filename="unetbootin.cpp" line="1579"/>
+        <location filename="unetbootin.cpp" line="2383"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Izvor:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1584"/>
-        <location filename="unetbootin.cpp" line="2388"/>
+        <location filename="unetbootin.cpp" line="1580"/>
+        <location filename="unetbootin.cpp" line="2384"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Odredište:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1585"/>
+        <location filename="unetbootin.cpp" line="1581"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Kopirano:&lt;/b&gt; 0 byte-ova</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1623"/>
+        <location filename="unetbootin.cpp" line="1619"/>
         <source>Extracting files, please wait...</source>
         <translation>Otpakiravanje datoteka, molimo pričekajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1624"/>
+        <location filename="unetbootin.cpp" line="1620"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Arhiva:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1625"/>
+        <location filename="unetbootin.cpp" line="1621"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Izvor:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1626"/>
+        <location filename="unetbootin.cpp" line="1622"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Odredište:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1627"/>
+        <location filename="unetbootin.cpp" line="1623"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Otpakirano:&lt;/b&gt;0 od %1 datoteka</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1630"/>
+        <location filename="unetbootin.cpp" line="1626"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Izvor:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1631"/>
+        <location filename="unetbootin.cpp" line="1627"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Odredište:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1632"/>
+        <location filename="unetbootin.cpp" line="1628"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Otpakirano:&lt;/b&gt; %1 od %2 datoteka</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2386"/>
+        <location filename="unetbootin.cpp" line="2382"/>
         <source>Downloading files, please wait...</source>
         <translation>Skidanje datoteka, molimo pričekajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2389"/>
+        <location filename="unetbootin.cpp" line="2385"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Skinuto:&lt;/b&gt; 0 byteova</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2466"/>
-        <location filename="unetbootin.cpp" line="2481"/>
+        <location filename="unetbootin.cpp" line="2462"/>
+        <location filename="unetbootin.cpp" line="2477"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Skinuto:&lt;/b&gt; %1 od %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2496"/>
+        <location filename="unetbootin.cpp" line="2492"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Kopirano:&lt;/b&gt; %1 od %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2572"/>
+        <location filename="unetbootin.cpp" line="2568"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Traženje u &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2576"/>
+        <location filename="unetbootin.cpp" line="2572"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 odgovarajućih nađeno u &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2761"/>
+        <location filename="unetbootin.cpp" line="2757"/>
         <source>%1 not found</source>
         <translation>%1 nije pronađen</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2762"/>
+        <location filename="unetbootin.cpp" line="2758"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nije nađen. To je potrebno za %2 install mode.
 Instaliranje &quot;%3&quot; paketa ili ekvivalent vaše distribucije.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3051"/>
+        <location filename="unetbootin.cpp" line="3047"/>
         <source>(Current)</source>
         <translation>(Trenutno)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3052"/>
+        <location filename="unetbootin.cpp" line="3048"/>
         <source>(Done)</source>
         <translation>(Napravljeno)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3319"/>
+        <location filename="unetbootin.cpp" line="3315"/>
         <source>Configuring grub2 on %1</source>
         <translation>Konfiguracija grub2 na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3331"/>
+        <location filename="unetbootin.cpp" line="3327"/>
         <source>Configuring grldr on %1</source>
         <translation>Konfiguriranje grldr na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3359"/>
+        <location filename="unetbootin.cpp" line="3355"/>
         <source>Configuring grub on %1</source>
         <translation>Konfiguriranje grub na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3544"/>
+        <location filename="unetbootin.cpp" line="3540"/>
         <source>Installing syslinux to %1</source>
         <translation>Konfiguriranje syslinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3579"/>
+        <location filename="unetbootin.cpp" line="3575"/>
         <source>Installing extlinux to %1</source>
         <translation>Instaliranje extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3685"/>
+        <location filename="unetbootin.cpp" line="3706"/>
         <source>Syncing filesystems</source>
         <translation>Synhronizacija datotečnih sustava</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3697"/>
+        <location filename="unetbootin.cpp" line="3718"/>
         <source>After rebooting, select the </source>
         <translation>Nakon restarta, odabrati </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3701"/>
+        <location filename="unetbootin.cpp" line="3722"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Nakon restarta, odabrati USB boot opciju u BIOS boot menu.%1
@@ -475,7 +474,7 @@ Restart odmah?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
-        <location filename="unetbootin.cpp" line="652"/>
+        <location filename="unetbootin.cpp" line="648"/>
         <source>== Select Distribution ==</source>
         <translation>== Odabrati Distribuciju ==</translation>
     </message>
