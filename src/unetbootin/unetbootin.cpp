@@ -174,6 +174,9 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	overwriteall = false;
 	searchsymlinks = false;
 	ignoreoutofspace = false;
+#ifdef Q_OS_MAC
+	ignoreoutofspace = true;
+#endif
 	dontgeneratesyslinuxcfg = false;
 	#ifdef Q_OS_UNIX
 	isext2 = false;
@@ -218,7 +221,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#endif
 	#include "customdistselect.cpp"
 #ifdef Q_OS_MAC
-	QDir resourceDir = QDir(QApplication::applicationDirPath());
+	resourceDir = QDir(QApplication::applicationDirPath());
 	resourceDir.cdUp();
 	resourceDir.cd("Resources");
 	syslinuxcommand = resourceDir.absoluteFilePath("syslinux-mac");
@@ -3650,7 +3653,7 @@ void unetbootin::runinstusb()
 		callexternapp(syslinuxcommand, targetDev);
 		callexternapp("diskutil", "umount "+targetDev);
 		QFile usbmbrF(rawtargetDev);
-		QFile mbrbinF(":/mbr.bin");
+		QFile mbrbinF(resourceDir.absoluteFilePath("mbr.bin"));
 		usbmbrF.open(QIODevice::WriteOnly);
 		mbrbinF.open(QIODevice::ReadOnly);
 		usbmbrF.write(mbrbinF.readAll());

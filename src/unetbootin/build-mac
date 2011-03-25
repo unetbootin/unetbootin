@@ -1,0 +1,6 @@
+#!/bin/bash
+
+lupdate unetbootin.pro
+lrelease unetbootin.pro
+qmake -spec macx-g++
+make

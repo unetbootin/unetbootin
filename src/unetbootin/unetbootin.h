@@ -215,6 +215,9 @@ public:
 	QString extlinuxcommand;
 	bool isext2;
 	#endif
+#ifdef Q_OS_MAC
+	QDir resourceDir;
+#endif
 	bool ubninitialize(QList<QPair<QString, QString> > oppairs);
 	QString displayfisize(quint64 fisize);
 	QPair<QPair<QStringList, QList<quint64> >, QStringList> listarchiveconts(QString archivefile);
