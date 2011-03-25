@@ -14,7 +14,7 @@ SOURCES += main.cpp \
 QT += core \
     gui \
     network
-ICON += unetbootin.icns
+ICON = unetbootin.icns
 TRANSLATIONS += unetbootin.ts \
     unetbootin_am.ts \
     unetbootin_ar.ts \

@@ -3131,9 +3131,6 @@ void unetbootin::runinst()
 #ifdef Q_OS_MAC
 	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
 #endif
-	qDebug() << "targetDrive is: " << targetDrive;
-	qDebug() << "targetDev is: " << targetDev;
-	qDebug() << "rawtargetDev is: " << rawtargetDev;
 	#endif
 	devluid = getdevluid(targetDev);
 	kernelLine = "kernel";
