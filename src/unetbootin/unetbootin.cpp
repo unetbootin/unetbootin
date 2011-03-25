@@ -217,6 +217,14 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#include "distrover.cpp"
 	#endif
 	#include "customdistselect.cpp"
+#ifdef Q_OS_MAC
+	QDir resourceDir = QDir(QApplication::applicationDirPath());
+	resourceDir.cdUp();
+	resourceDir.cd("Resources");
+	syslinuxcommand = resourceDir.absoluteFilePath("syslinux-mac");
+	sevzcommand = resourceDir.absoluteFilePath("7z-mac");
+	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
+#endif
 	#ifdef Q_OS_LINUX
 	if (QFile::exists("/sbin/fdisk"))
 		fdiskcommand = "/sbin/fdisk";
@@ -528,7 +536,7 @@ QStringList unetbootin::listalldrives()
 		fulldrivelist.append(QDir::toNativeSeparators(extdrivesList.at(i).path().toUpper()));
 	}
 	#endif
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 		QString fdisklusbdevsS = callexternapp(fdiskcommand, "-l");
 		QString dflusbdevsS = callexternapp(dfcommand, "");
 		fulldrivelist = QString(dflusbdevsS).split(" ").join("\n").split("\t").join("\n").split("\n").filter("/dev/");
@@ -539,6 +547,9 @@ QStringList unetbootin::listalldrives()
 				fulldrivelist.append(fulldrivelist2.at(i));
 		}
 	#endif
+#ifdef Q_OS_MAC
+		fulldrivelist = QDir("/dev/").entryList(QStringList() << "disk*");
+#endif
 	return fulldrivelist;
 }
 
@@ -638,6 +649,10 @@ void unetbootin::on_okbutton_clicked()
 				break;
 		}
 	}
+#ifdef Q_OS_MAC
+	if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
+		callexternapp("diskutil", "mount "+driveselect->currentText());
+#endif
 	#ifdef Q_OS_LINUX
 	else if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
 	{
@@ -2668,6 +2683,9 @@ QString unetbootin::getdevluid(QString voldrive)
 
 QString unetbootin::getlabel(QString voldrive)
 {
+#ifdef Q_OS_MAC
+	return "None"; // TODO haven't implemented
+#endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
 	wchar_t vollabel[50];
@@ -2682,7 +2700,7 @@ QString unetbootin::getlabel(QString voldrive)
 		return vollabelS;
 	}
 	#endif
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 	QString volidpS = "";
 	if (!volidcommand.isEmpty())
 		volidpS = QString(callexternapp(volidcommand, QString("-l %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
@@ -2705,6 +2723,9 @@ QString unetbootin::getlabel(QString voldrive)
 
 QString unetbootin::getuuid(QString voldrive)
 {
+#ifdef Q_OS_MAC
+	return "None"; // TODO haven't implemented
+#endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
 	DWORD volserialnum;
@@ -2723,7 +2744,7 @@ QString unetbootin::getuuid(QString voldrive)
 		return tvolsernum;
 	}
 	#endif
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 	QString volidpS = "";
 	if (!volidcommand.isEmpty())
 		volidpS = QString(callexternapp(volidcommand, QString("-u %1").arg(voldrive))).remove("\r").remove("\n").trimmed();
@@ -2795,11 +2816,7 @@ QString unetbootin::locatedevicenode(QString mountpoint)
 
 QString unetbootin::locatemountpoint(QString devicenode)
 {
-	QFile procmountsF("/proc/mounts");
-	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
-	QTextStream procmountsS(&procmountsF);
-	QStringList procmountsL;
-	procmountsL = procmountsS.readAll().split("\n").filter(devicenode);
+	QStringList procmountsL = callexternapp("mount", "").split("\n").filter(devicenode);
 	if (procmountsL.isEmpty())
 	{
 		return "NOT MOUNTED";
@@ -3564,7 +3581,7 @@ void unetbootin::runinstusb()
 		instIndvfl("ubnexlnx", extlinuxcommand);
 		QFile::setPermissions(extlinuxcommand, QFile::ReadOwner|QFile::ExeOwner|QFile::ReadGroup|QFile::ExeGroup|QFile::ReadOther|QFile::ExeOther|QFile::WriteOwner);
 	#endif
-	#ifdef Q_OS_UNIX
+#ifdef Q_OS_LINUX
 		isext2 = false;
 		if (!volidcommand.isEmpty())
 		{
@@ -3594,10 +3611,7 @@ void unetbootin::runinstusb()
 			int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
 			if (isOk)
 			{
-				QProcess fdlprocess;
-				fdlprocess.start("fdisk", QStringList() << "-l");
-				fdlprocess.waitForFinished(-1);
-				QString output = fdlprocess.readAllStandardOutput();
+				QString output = callexternapp("fdisk", "-l");
 				QStringList outputL = output.split('\n');
 				outputL = outputL.filter(targetDev);
 				if (outputL.size() > 0)
@@ -3626,7 +3640,43 @@ void unetbootin::runinstusb()
 			mbrbinF.close();
 			usbmbrF.close();
 		}
-	#endif
+#endif
+#ifdef Q_OS_MAC
+		callexternapp(syslinuxcommand, targetDev);
+		callexternapp("diskutil", "umount "+targetDev);
+		QFile usbmbrF(rawtargetDev);
+		QFile mbrbinF(":/mbr.bin");
+		usbmbrF.open(QIODevice::WriteOnly);
+		mbrbinF.open(QIODevice::ReadOnly);
+		usbmbrF.write(mbrbinF.readAll());
+		mbrbinF.close();
+		usbmbrF.close();
+		callexternapp("diskutil", "umount "+targetDev);
+		// make active
+		bool isOk = false;
+		int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
+		if (isOk)
+		{
+			QString output = callexternapp("diskutil", "list");
+			QStringList outputL = output.split('\n');
+			outputL = outputL.filter(QString(targetDev).replace("/dev/", ""));
+			if (outputL.size() > 0)
+			{
+				outputL = outputL.filter("*");
+				bool isActive = outputL.size() > 0;
+				if (!isActive)
+				{
+					QProcess mkactiveprocess;
+					mkactiveprocess.start("fdisk", QStringList() << "-e" << rawtargetDev);
+					mkactiveprocess.write(("flag "+QString::number(partitionNumber)+"\n").toAscii().data());
+					mkactiveprocess.write("write\n");
+					mkactiveprocess.write("quit\n");
+					mkactiveprocess.waitForFinished(-1);
+				}
+			}
+		}
+		callexternapp("diskutil", "mount "+targetDev);
+#endif
 #ifndef XPUD
 	if (!dontgeneratesyslinuxcfg)
 	{
