@@ -2654,9 +2654,12 @@ void unetbootin::sysreboot()
 	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
 	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
 	#endif
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 	callexternapp("init", "6 &");
 	#endif
+#ifdef Q_OS_MAC
+callexternapp("shutdown", "-r now &");
+#endif
 }
 
 QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
