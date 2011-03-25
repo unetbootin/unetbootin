@@ -2691,10 +2691,12 @@ QString unetbootin::getlabel(QString voldrive)
 {
 #ifdef Q_OS_MAC
 	QStringList diskutiloutput = callexternapp("diskutil", "info " + voldrive).split("\n");
-	QStringList labelLines = diskutiloutput.filter("Media Name");
+	QStringList labelLines = diskutiloutput.filter("Volume Name");
 	if (labelLines.size() == 0)
 		return "None";
 	QStringList labelAtEnd = labelLines.at(0).split(":");
+	if (labelAtEnd.size() < 2)
+		return "None";
 	return labelAtEnd.at(labelAtEnd.size()-1).trimmed();
 #endif
 	#ifdef Q_OS_WIN32
