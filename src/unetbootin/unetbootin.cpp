@@ -186,7 +186,9 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	overwriteall = false;
 	formatdrivecheckbox->setEnabled(false);
 	formatdrivecheckbox->hide();
+#ifndef Q_OS_MAC
 	typeselect->addItem(tr("Hard Disk"));
+#endif
 	typeselect->addItem(tr("USB Drive"));
 	diskimagetypeselect->addItem(tr("ISO"));
 	diskimagetypeselect->addItem(tr("Floppy"));
@@ -215,7 +217,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#include "distrover.cpp"
 	#endif
 	#include "customdistselect.cpp"
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 	if (QFile::exists("/sbin/fdisk"))
 		fdiskcommand = "/sbin/fdisk";
 	else
@@ -462,7 +464,7 @@ QStringList unetbootin::listsanedrives()
 			}
 		}
 		#endif
-				#ifdef Q_OS_UNIX
+				#ifdef Q_OS_LINUX
 				QDir devlstdir("/dev/disk/by-id/");
 				QFileInfoList usbfileinfoL = devlstdir.entryInfoList(QDir::NoDotAndDotDot|QDir::Files);
 				for (int i = 0; i < usbfileinfoL.size(); ++i)
@@ -503,6 +505,14 @@ QStringList unetbootin::listsanedrives()
 				}
 				*/
 		#endif
+#ifdef Q_OS_MAC
+QString diskutilList = callexternapp("diskutil", "list");
+QStringList usbdevsL = diskutilList.split("\n").filter("FAT").join(" ").split(" ").filter("disk");
+for (int i = 0; i < usbdevsL.size(); ++i)
+{
+	fulldrivelist.append("/dev/"+usbdevsL.at(i));
+}
+#endif
 	}
 	return fulldrivelist;
 }
@@ -628,7 +638,7 @@ void unetbootin::on_okbutton_clicked()
 				break;
 		}
 	}
-	#ifdef Q_OS_UNIX
+	#ifdef Q_OS_LINUX
 	else if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
 	{
 		QMessageBox merrordevnotmountedmsgbx;
