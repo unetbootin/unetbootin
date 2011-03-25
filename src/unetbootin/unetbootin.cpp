@@ -551,7 +551,7 @@ QStringList unetbootin::listalldrives()
 		}
 	#endif
 #ifdef Q_OS_MAC
-		fulldrivelist = QDir("/dev/").entryList(QStringList() << "disk*");
+		return listsanedrives();
 #endif
 	return fulldrivelist;
 }
@@ -2687,7 +2687,12 @@ QString unetbootin::getdevluid(QString voldrive)
 QString unetbootin::getlabel(QString voldrive)
 {
 #ifdef Q_OS_MAC
-	return "None"; // TODO haven't implemented
+	QStringList diskutiloutput = callexternapp("diskutil", "info " + voldrive).split("\n");
+	QStringList labelLines = diskutiloutput.filter("Media Name");
+	if (labelLines.size() == 0)
+		return "None";
+	QStringList labelAtEnd = labelLines.at(0).split(":");
+	return labelAtEnd.at(labelAtEnd.size()-1).trimmed();
 #endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
@@ -2727,7 +2732,37 @@ QString unetbootin::getlabel(QString voldrive)
 QString unetbootin::getuuid(QString voldrive)
 {
 #ifdef Q_OS_MAC
-	return "None"; // TODO haven't implemented
+	QStringList diskutiloutput = callexternapp("diskutil", "info " + voldrive).split("\n");
+	QStringList uuidList = diskutiloutput.filter("UUID"); // TODO untested
+	if (uuidList.size() > 0)
+	{
+		uuidList = uuidList.at(0).split(" ");
+		return uuidList.at(uuidList.size()-1).trimmed();
+	}
+	// otherwise FAT32 or FAT16; return serial number
+	bool isFat32 = diskutiloutput.filter("FAT32").size() > 0;
+	if (!isFat32)
+	{
+		if (diskutiloutput.filter("FAT16").size() == 0 && diskutiloutput.filter("FAT12").size() == 0)
+			return "None";
+	}
+	callexternapp("diskutil", "umount "+targetDev);
+	QFile rawDevice(voldrive);
+	rawDevice.open(QIODevice::ReadOnly);
+	if (isFat32)
+	{
+		rawDevice.seek(67);
+	}
+	else // FAT16 or FAT12
+	{
+		rawDevice.seek(39);
+	}
+	unsigned char pserial[4];
+	file.read((char*)pserial, 4);
+	QString serialNumber = QString::number(pserial[3], 16).rightJustified(2, '0')+QString::number(pserial[2], 16).rightJustified(2, '0')+"-"+QString::number(pserial[1], 16).rightJustified(2, '0')+QString::number(pserial[0], 16).rightJustified(2, '0');
+	rawDevice.close();
+	callexternapp("diskutil", "mount "+targetDev);
+	return serialNumber.toUpper();
 #endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
@@ -3117,10 +3152,12 @@ void unetbootin::runinst()
 			installDir = "boot/";
 			targetDev = devnboot;
 		}
+		devluid = getdevluid(targetDev);
 	}
 	if (installType == tr("USB Drive"))
 	{
 		targetDev = driveselect->currentText();
+		devluid = getdevluid(targetDev);
 		ginstallDir = "";
 		installDir = ginstallDir;
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
@@ -3132,7 +3169,6 @@ void unetbootin::runinst()
 	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
 #endif
 	#endif
-	devluid = getdevluid(targetDev);
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
