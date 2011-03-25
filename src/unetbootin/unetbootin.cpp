@@ -2761,7 +2761,7 @@ QString unetbootin::getuuid(QString voldrive)
 		rawDevice.seek(39);
 	}
 	unsigned char pserial[4];
-	file.read((char*)pserial, 4);
+	rawDevice.read((char*)pserial, 4);
 	QString serialNumber = QString::number(pserial[3], 16).rightJustified(2, '0')+QString::number(pserial[2], 16).rightJustified(2, '0')+"-"+QString::number(pserial[1], 16).rightJustified(2, '0')+QString::number(pserial[0], 16).rightJustified(2, '0');
 	rawDevice.close();
 	callexternapp("diskutil", "mount "+targetDev);
