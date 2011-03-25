@@ -2800,10 +2800,7 @@ QString unetbootin::locatecommand(QString commandtolocate, QString reqforinstall
 
 QString unetbootin::locatedevicenode(QString mountpoint)
 {
-	QFile procmountsF("/proc/mounts");
-	procmountsF.open(QIODevice::ReadOnly | QIODevice::Text);
-	QTextStream procmountsS(&procmountsF);
-	QStringList rawdeviceL = procmountsS.readAll().replace("\t", " ").split("\n").filter("/dev/").filter(QString(" %1 ").arg(mountpoint));
+	QStringList rawdeviceL = QString(callexternapp("mount", "")).replace("\t", " ").split("\n").filter("/dev/").filter(QString(" %1 ").arg(mountpoint));
 	if (rawdeviceL.isEmpty())
 	{
 		return "NOT FOUND";
@@ -2825,7 +2822,7 @@ QString unetbootin::locatemountpoint(QString devicenode)
 	{
 		if (procmountsL.at(0).split("\t").join(" ").split(" ").size() >= 2)
 		{
-						return procmountsL.at(0).split("\t").join(" ").split(" ")[1].replace("\\040", " ");
+						return procmountsL.at(0).split("\t").join(" ").split(" ")[2].replace("\\040", " ");
 		}
 		else
 		{
@@ -3125,7 +3122,15 @@ void unetbootin::runinst()
 		installDir = ginstallDir;
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 	}
+#ifdef Q_OS_LINUX
 	rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
+#endif
+#ifdef Q_OS_MAC
+	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
+#endif
+	qDebug() << "targetDrive is: " << targetDrive;
+	qDebug() << "targetDev is: " << targetDev;
+	qDebug() << "rawtargetDev is: " << rawtargetDev;
 	#endif
 	devluid = getdevluid(targetDev);
 	kernelLine = "kernel";
@@ -3654,7 +3659,7 @@ void unetbootin::runinstusb()
 		callexternapp("diskutil", "umount "+targetDev);
 		// make active
 		bool isOk = false;
-		int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
+		int partitionNumber = QString(targetDev).remove(rawtargetDev).remove("s").toInt(&isOk, 10);
 		if (isOk)
 		{
 			QString output = callexternapp("diskutil", "list");
