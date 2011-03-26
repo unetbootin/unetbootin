@@ -128,7 +128,6 @@ public:
 	void run();
 };
 
-#ifdef Q_OS_UNIX
 class callexternappWriteToStdinT : public QThread
 {
 public:
@@ -138,7 +137,6 @@ public:
 	QString retnValu;
 	void run();
 };
-#endif
 
 class copyfileT : public QThread
 {
@@ -203,6 +201,8 @@ public:
 	bool searchsymlinks;
 	bool ignoreoutofspace;
 	bool dontgeneratesyslinuxcfg;
+	int persistenceSpaceMB;
+	QString extraBootOptions;
 	QStringList locatedsyslinuxcfgfiles;
 	QString targetDrive;
 	QString targetPath;
@@ -225,6 +225,7 @@ public:
 	QString volidcommand;
 	QString syslinuxcommand;
 	QString extlinuxcommand;
+	QString mke2fscommand;
 	bool isext2;
 	#endif
 #ifdef Q_OS_MAC
@@ -274,9 +275,7 @@ public:
 	QPair<QString, int> filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
 	void sysreboot();
 	static QString callexternapp(QString xexecFile, QString xexecParm);
-#ifdef Q_OS_UNIX
 	static QString callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin);
-#endif
 	QString getdevluid(QString voldrive);
 	QString getlabel(QString voldrive);
 	QString getuuid(QString voldrive);
@@ -319,7 +318,6 @@ public:
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
-	void on_showalldrivescheckbox_clicked();
 	void on_typeselect_currentIndexChanged(int typeselectIndex);
 	void on_dverselect_currentIndexChanged();
 	void on_diskimagetypeselect_currentIndexChanged();

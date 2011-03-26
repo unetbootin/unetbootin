@@ -95,7 +95,6 @@ void callexternappT::run()
 	#endif
 }
 
-#ifdef Q_OS_UNIX
 void callexternappWriteToStdinT::run()
 {
 	QProcess lnexternapp;
@@ -105,7 +104,6 @@ void callexternappWriteToStdinT::run()
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
 }
-#endif
 
 void copyfileT::run()
 {
@@ -186,6 +184,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	overwriteall = false;
 	searchsymlinks = false;
 	ignoreoutofspace = false;
+	persistenceSpaceMB = 0;
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
 #endif
@@ -199,8 +198,6 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	firstlayer->show();
 	this->setWindowTitle(UNETBOOTINB);
 	overwriteall = false;
-	formatdrivecheckbox->setEnabled(false);
-	formatdrivecheckbox->hide();
 #ifndef Q_OS_MAC
 	typeselect->addItem(tr("Hard Disk"));
 #endif
@@ -262,6 +259,10 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	}
 	else
 		blkidcommand = "/sbin/blkid";
+	if (QFile::exists("/sbin/mke2fs"))
+		mke2fscommand = "/sbin/mke2fs";
+	else
+		mke2fscommand = locatecommand("mke2fs", tr("LiveUSB persistence"), "e2fsprogs");
 	syslinuxcommand = "/usr/bin/ubnsylnx";
 	extlinuxcommand = "/usr/bin/ubnexlnx";
 	#ifdef NOSTATIC
@@ -442,11 +443,6 @@ void unetbootin::on_distroselect_currentIndexChanged(int distroselectIndex)
 	radioDistro->setChecked(true);
 }
 
-void unetbootin::on_showalldrivescheckbox_clicked()
-{
-	refreshdriveslist();
-}
-
 void unetbootin::refreshdriveslist()
 {
 	driveselect->clear();
@@ -459,14 +455,7 @@ void unetbootin::refreshdriveslist()
 
 QStringList unetbootin::listcurdrives()
 {
-	if (showalldrivescheckbox->isChecked())
-	{
-		return listalldrives();
-	}
-	else
-	{
-		return listsanedrives();
-	}
+	return listsanedrives();
 }
 
 QStringList unetbootin::listsanedrives()
@@ -574,18 +563,6 @@ QStringList unetbootin::listalldrives()
 
 void unetbootin::on_typeselect_currentIndexChanged(int typeselectIndex)
 {
-	showalldrivescheckbox->setChecked(false);
-	formatdrivecheckbox->setChecked(false);
-	if (typeselectIndex == typeselect->findText(tr("Hard Disk")))
-	{
-		showalldrivescheckbox->setEnabled(false);
-		formatdrivecheckbox->setEnabled(false);
-	}
-	if (typeselectIndex == typeselect->findText(tr("USB Drive")))
-	{
-		showalldrivescheckbox->setEnabled(true);
-//		formatdrivecheckbox->setEnabled(true);
-	}
 	refreshdriveslist();
 }
 
@@ -2690,7 +2667,6 @@ QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 	return cxat.retnValu;
 }
 
-#ifdef Q_OS_UNIX
 QString unetbootin::callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin)
 {
 	QEventLoop cxaw;
@@ -2703,7 +2679,6 @@ QString unetbootin::callexternappWriteToStdin(QString xexecFile, QString xexecPa
 	cxaw.exec();
 	return cxat.retnValu;
 }
-#endif
 
 QString unetbootin::getdevluid(QString voldrive)
 {
@@ -3156,6 +3131,7 @@ void unetbootin::runinst()
 	tprogress->setValue(0);
 	installType = typeselect->currentText();
 	targetDrive = driveselect->currentText();
+	persistenceSpaceMB = this->persistencevalue->value();
 	QString ginstallDir;
 	QString installDir;
 	QString isotmpf = randtmpfile::getrandfilename(ubntmpf, "iso");
@@ -3332,6 +3308,14 @@ void unetbootin::runinst()
 	}
 	sdesc3->setText(QString("<b>%1 %2</b>").arg(sdesc3->text()).arg(trcurrent));
 	tprogress->setValue(0);
+	if (this->persistenceSpaceMB > 0)
+	{
+		this->kernelOpts += " persistent";
+		for (int i = 0; i < this->extraoptionsPL.second.second.size(); ++i)
+		{
+			this->extraoptionsPL.second.second[i] += " persistence";
+		}
+	}
 	instDetType();
 }
 
@@ -3839,6 +3823,37 @@ void unetbootin::fininstall()
 	pdesc1->setText(tr("Syncing filesystems"));
 	callexternapp("sync", "");
 	#endif
+	if (this->persistenceSpaceMB > 0)
+	{
+		pdesc1->setText(tr("Setting up persistence"));
+		this->tprogress->setMaximum(persistenceSpaceMB);
+		this->tprogress->setValue(0);
+#ifdef Q_OS_WIN32
+		QString mke2fscommand = instTempfl("mke2fs.exe", "exe");
+#endif
+		if (QFile::exists(QString("%1%2").arg(targetPath).arg("casper-rw")))
+		{
+			rmFile(QString("%1%2").arg(targetPath).arg("casper-rw"));
+		}
+		QFile persistenceFile(QString("%1%2").arg(targetPath).arg("casper-rw"));
+		persistenceFile.open(QFile::WriteOnly);
+		int bytesWritten = 1048576;
+		char writeEmpty[1048576];
+		memset(writeEmpty, 0, 1048576);
+		for (int i = 0; i < persistenceSpaceMB && bytesWritten == 1048576; ++i)
+		{
+			this->tprogress->setValue(i);
+			bytesWritten = persistenceFile.write(writeEmpty, 1048576);
+		}
+		this->tprogress->setValue(this->tprogress->maximum());
+#ifdef Q_OS_UNIX
+		callexternapp(mke2fscommand, QString("-F %1%2").arg(targetPath).arg("casper-rw"));
+#endif
+#ifdef Q_OS_WIN32
+		callexternappWriteToStdin(mke2fscommand, QString("%1%2").arg(targetPath).arg("casper-rw"), "\n");
+		rmFile(mke2fscommand);
+#endif
+	}
 	pdesc1->setText("");
 	progresslayer->setEnabled(false);
 	progresslayer->hide();
