@@ -95,6 +95,18 @@ void callexternappT::run()
 	#endif
 }
 
+#ifdef Q_OS_UNIX
+void callexternappWriteToStdinT::run()
+{
+	QProcess lnexternapp;
+	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
+	lnexternapp.write(writeToStdin.toAscii().data());
+	lnexternapp.closeWriteChannel();
+	lnexternapp.waitForFinished(-1);
+	retnValu = QString(lnexternapp.readAll());
+}
+#endif
+
 void copyfileT::run()
 {
 	QFile srcF(source);
@@ -250,14 +262,18 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	}
 	else
 		blkidcommand = "/sbin/blkid";
-	locatecommand("mtools", tr("USB Drive"), "mtools");
-		syslinuxcommand = "/usr/bin/ubnsylnx";
-		extlinuxcommand = "/usr/bin/ubnexlnx";
+	syslinuxcommand = "/usr/bin/ubnsylnx";
+	extlinuxcommand = "/usr/bin/ubnexlnx";
 	#ifdef NOSTATIC
+	if (QFile::exists("/usr/bin/syslinux"))
 		syslinuxcommand = "/usr/bin/syslinux";
+	else
+		syslinuxcommand = locatecommand("syslinux", tr("FAT32-formatted USB drive"), "syslinux");
+	if (QFile::exists("/usr/bin/extlinux"))
 		extlinuxcommand = "/usr/bin/extlinux";
+	else
+		extlinuxcommand = locatecommand("extlinux", tr("EXT2-formatted USB drive"), "syslinux");
 	#endif
-//	syslinuxcommand = locatecommand("syslinux", tr("USB Drive"), "syslinux");
 	sevzcommand = locatecommand("7z", tr("either"), "p7zip-full");
 	ubntmpf = "/tmp/";
 	#endif
@@ -2674,6 +2690,21 @@ QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 	return cxat.retnValu;
 }
 
+#ifdef Q_OS_UNIX
+QString unetbootin::callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin)
+{
+	QEventLoop cxaw;
+	callexternappWriteToStdinT cxat;
+	connect(&cxat, SIGNAL(finished()), &cxaw, SLOT(quit()));
+	cxat.execFile = xexecFile;
+	cxat.execParm = xexecParm;
+	cxat.writeToStdin = xwriteToStdin;
+	cxat.start();
+	cxaw.exec();
+	return cxat.retnValu;
+}
+#endif
+
 QString unetbootin::getdevluid(QString voldrive)
 {
 	QString uuidS = getuuid(voldrive);
@@ -3666,12 +3697,10 @@ void unetbootin::runinstusb()
 					bool isActive = outputL.size() > 0;
 					if (!isActive)
 					{
-						QProcess mkactiveprocess;
-						mkactiveprocess.start("fdisk", QStringList() << rawtargetDev);
-						mkactiveprocess.write("a\n");
-						mkactiveprocess.write((QString::number(partitionNumber) + "\n").toAscii().data());
-						mkactiveprocess.write("w\n");
-						mkactiveprocess.waitForFinished(-1);
+						QString fdiskWriteToStdin = "a\n";
+						fdiskWriteToStdin += (QString::number(partitionNumber) + "\n");
+						fdiskWriteToStdin += "w\n";
+						callexternappWriteToStdin("fdisk", rawtargetDev, fdiskWriteToStdin);
 					}
 				}
 			}
@@ -3712,12 +3741,10 @@ void unetbootin::runinstusb()
 				bool isActive = outputL.size() > 0;
 				if (!isActive)
 				{
-					QProcess mkactiveprocess;
-					mkactiveprocess.start("fdisk", QStringList() << "-e" << rawtargetDev);
-					mkactiveprocess.write(("flag "+QString::number(partitionNumber)+"\n").toAscii().data());
-					mkactiveprocess.write("write\n");
-					mkactiveprocess.write("quit\n");
-					mkactiveprocess.waitForFinished(-1);
+					QString fdiskWriteToStdin = ("flag "+QString::number(partitionNumber)+"\n");
+					fdiskWriteToStdin += "write\n";
+					fdiskWriteToStdin += "quit\n";
+					callexternappWriteToStdin("fdisk", "-e "+rawtargetDev, fdiskWriteToStdin);
 				}
 			}
 		}

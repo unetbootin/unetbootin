@@ -128,6 +128,18 @@ public:
 	void run();
 };
 
+#ifdef Q_OS_UNIX
+class callexternappWriteToStdinT : public QThread
+{
+public:
+	QString execFile;
+	QString execParm;
+	QString writeToStdin;
+	QString retnValu;
+	void run();
+};
+#endif
+
 class copyfileT : public QThread
 {
 	Q_OBJECT
@@ -262,6 +274,9 @@ public:
 	QPair<QString, int> filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
 	void sysreboot();
 	static QString callexternapp(QString xexecFile, QString xexecParm);
+#ifdef Q_OS_UNIX
+	static QString callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin);
+#endif
 	QString getdevluid(QString voldrive);
 	QString getlabel(QString voldrive);
 	QString getuuid(QString voldrive);
