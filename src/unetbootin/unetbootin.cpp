@@ -3313,7 +3313,7 @@ void unetbootin::runinst()
 		this->kernelOpts += " persistent";
 		for (int i = 0; i < this->extraoptionsPL.second.second.size(); ++i)
 		{
-			this->extraoptionsPL.second.second[i] += " persistence";
+			this->extraoptionsPL.second.second[i] += " persistent";
 		}
 	}
 	instDetType();
