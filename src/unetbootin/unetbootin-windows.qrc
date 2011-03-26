@@ -2,6 +2,7 @@
     <qresource prefix="/" >
         <file>emtxfile.exe</file>
         <file>syslinux.exe</file>
+        <file>mke2fs.exe</file>
         <file>ubnldr</file>
         <file>ubnldr.exe</file>
         <file>ubnldr.mbr</file>
