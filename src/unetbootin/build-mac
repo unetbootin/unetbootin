@@ -4,3 +4,4 @@ lupdate unetbootin.pro
 lrelease unetbootin.pro
 qmake -spec macx-g++
 make
+./fix-unetbootin-frameworkpaths.rb
