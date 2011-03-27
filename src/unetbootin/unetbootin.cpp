@@ -235,6 +235,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	resourceDir.cd("Resources");
 	syslinuxcommand = resourceDir.absoluteFilePath("syslinux-mac");
 	sevzcommand = resourceDir.absoluteFilePath("7z-mac");
+	mke2fscommand = resourceDir.absoluteFilePath("mke2fs");
 	fdiskcommand = locatecommand("fdisk", tr("either"), "util-linux");
 #endif
 	#ifdef Q_OS_LINUX
@@ -3867,6 +3868,13 @@ void unetbootin::fininstall()
 	}
 	if (installType == tr("USB Drive"))
 	{
+#ifndef Q_OS_MAC
 		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
+#endif
+#ifdef Q_OS_MAC
+		rebootmsgtext->setText(tr("The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
+		this->frebootbutton->setEnabled(false);
+		this->frebootbutton->hide();
+#endif
 	}
 }
