@@ -14,20 +14,9 @@ rm Makefile*
 rm release/*
 cp unetbootin.pro unetbootin-pro.bak
 sed -i '/^RESOURCES/d' unetbootin.pro
-lupdate-qt4 unetbootin.pro
 lrelease-qt4 unetbootin.pro
-qmake-qt4 "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
+qmake-qt4 -config release "DEFINES += NOSTATIC" "RESOURCES -= unetbootin.qrc"
 make
 mv unetbootin-pro.bak unetbootin.pro
 strip --strip-all unetbootin
-mv unetbootin debbuild/usr/bin/unetbootin
-cp unetbootin_*.qm debbuild/usr/share/unetbootin/
-cp debbuild/DEBIAN/control ./control-bak
-sed -i "s/amd64/$archname/" debbuild/DEBIAN/control
-debinstalledsize="$(du -ck debbuild | grep total | sed 's/ /\n/g' | sed 's/\t/\n/g' | head --lines 1)"
-sed -i "s/287/$rvern/" debbuild/DEBIAN/control
-sed -i "s/500/$debinstalledsize/" debbuild/DEBIAN/control
-dpkg-deb -b debbuild
-mv debbuild.deb unetbootin_$rvern\_$archname.deb
-mv ./control-bak debbuild/DEBIAN/control
 

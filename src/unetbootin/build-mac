@@ -1,7 +1,20 @@
 #!/bin/bash
 
-lupdate unetbootin.pro
+if [ ! -d release ]
+then
+mkdir release
+fi
+
+#lupdate unetbootin.pro
 lrelease unetbootin.pro
-qmake -spec macx-g++
+qmake -config release -spec macx-g++
 make
 ./fix-unetbootin-frameworkpaths.rb
+mv unetbootin.app unetbootin-old.app
+ditto --arch i386 unetbootin-old.app unetbootin.app
+rm -r unetbootin-old.app
+
+revno=$(./vcs-revno)
+zip -r unetbootin-mac-$revno.zip unetbootin.app
+mv unetbootin-mac-$revno.zip release
+

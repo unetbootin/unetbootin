@@ -1,32 +1,11 @@
 #!/bin/sh
 
-mingwb="$(ls /usr/ | grep mingw32 | grep -v amd64 | head --lines 1)"
-qtx11d="$(pwd)/qt4-x11"
-if [ ! -f "sevnz.dll" ] || [ ! -f "sevnz.exe" ]
-then
-svloc=$(wget "http://7-zip.org/" -O - | grep --ignore-case "a href=\"http://downloads.sourceforge.net/sevenzip/" | grep -v ".msi" | grep -v "x64" | tail --lines 1 | tr "<" "\n" | tr ">" "\n" | tr "\"" "\n" | grep "http://downloads.sourceforge.net/sevenzip/")
-wget "$svloc" -O sevenzip.exe
-svxloc=$(echo "$svloc" | sed 's/.exe/_extra.7z/')
-wget "$svxloc" -O sevenzip-extra.7z
-7z e sevenzip.exe 7z.exe 7z.dll
-mv 7z.exe sevnz.exe
-mv 7z.dll sevnz.dll
-7z e sevenzip-extra.7z 7zS.sfx
-fi
-rvern="$(./vcs-revno)"
 make clean
 rm Makefile*
 rm release/*
+
 ./mkpotfile
-./qmake-windows
-make
-$mingwb-strip --strip-all release/unetbootin.exe
-mv release/unetbootin.exe release/unetbootin-windows-$rvern.exe
-./upx --lzma release/unetbootin-windows-$rvern.exe
+./build-windows
 make clean
-./qmake-linux
-make
-$mingwb-strip --strip-all unetbootin
-mv unetbootin release/unetbootin-linux-$rvern
-./upx --lzma release/unetbootin-linux-$rvern
+./build-linux
 

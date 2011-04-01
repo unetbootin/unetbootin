@@ -4,31 +4,31 @@ vcsname="$(./vcs-name)"
 
 if [ "$vcsname" == "git" ]
 then
-git log --first-parent --pretty=oneline | wc -l
+git log --first-parent --pretty=oneline | wc -l | tr -d ' '
 exit 0
 fi
 
 if [ "$vcsname" == "hg" ]
 then
-hg log --follow-first --template='{node}\n' | wc -l
+hg log --follow-first --template='{node}\n' | wc -l | tr -d ' '
 exit 0
 fi
 
 if [ "$vcsname" == "bzr" ]
 then
-bzr revno
+bzr revno | tr -d ' '
 exit 0
 fi
 
 if [ "$(pwd | grep unetbootin-source-[0-9])" != "" ]
 then
-pwd | sed 's/\//\n/g' | grep 'unetbootin-source-' | sed "s/unetbootin-source-//"
+pwd | tr '/' '\n' | grep 'unetbootin-source-' | sed "s/unetbootin-source-//" | tr -d ' '
 exit 0
 fi
 
 if [ "$(pwd | grep unetbootin-[0-9])" != "" ]
 then
-pwd | sed 's/\//\n/g' | grep 'unetbootin-' | sed "s/unetbootin-//"
+pwd | tr '/' '\n' | grep 'unetbootin-' | sed "s/unetbootin-//" | tr -d ' '
 exit 0
 fi
 
