@@ -3663,7 +3663,7 @@ void unetbootin::runinstusb()
 		if (isext2)
 		{
 			pdesc1->setText(tr("Installing extlinux to %1").arg(targetDev));
-			callexternapp(extlinuxcommand, QString("-i %1").arg(targetPath));
+			callexternapp(extlinuxcommand, QString("-i \"%1\"").arg(targetPath));
 		}
 		else
 			callexternapp(syslinuxcommand, targetDev);
@@ -3849,10 +3849,10 @@ void unetbootin::fininstall()
 		}
 		this->tprogress->setValue(this->tprogress->maximum());
 #ifdef Q_OS_UNIX
-		callexternapp(mke2fscommand, QString("-F %1%2").arg(targetPath).arg("casper-rw"));
+		callexternapp(mke2fscommand, QString("-F \"%1%2\"").arg(targetPath).arg("casper-rw"));
 #endif
 #ifdef Q_OS_WIN32
-		callexternappWriteToStdin(mke2fscommand, QString("%1%2").arg(targetPath).arg("casper-rw"), "\n");
+		callexternappWriteToStdin(mke2fscommand, QString("\"%1%2\"").arg(targetPath).arg("casper-rw"), "\n");
 		rmFile(mke2fscommand);
 #endif
 	}

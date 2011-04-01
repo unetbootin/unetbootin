@@ -9,12 +9,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef debianrelnamereplace
 #define debianrelnamereplace \
-	relname.replace("unstable", "sid").replace("testing", "squeeze").replace("stable", "lenny");
+	relname \
+	.replace("unstable", "sid") \
+	.replace("testing", "wheezy") \
+	.replace("stable", "squeeze");
 #endif
 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
-	relname.replace("10.10", "maverick").replace("10.04", "lucid").replace("9.10", "karmic").replace("9.04", "jaunty").replace("8.10", "intrepid").replace("8.04", "hardy").replace("7.10", "gutsy").replace("7.04", "feisty").replace("6.10", "edgy").replace("6.06", "dapper");
+	relname \
+	.replace("11.04", "natty") \
+	.replace("10.10", "maverick") \
+	.replace("10.04", "lucid") \
+	.replace("9.10", "karmic") \
+	.replace("9.04", "jaunty") \
+	.replace("8.10", "intrepid") \
+	.replace("8.04", "hardy") \
+	.replace("7.10", "gutsy") \
+	.replace("7.04", "feisty") \
+	.replace("6.10", "edgy") \
+	.replace("6.06", "dapper");
 #endif
 
 #ifndef ubuntunetinst

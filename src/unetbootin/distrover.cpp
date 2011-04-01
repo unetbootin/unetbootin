@@ -16,6 +16,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "9.10_NetInstall" << "9.10_NetInstall_x64" << "9.10_HdMedia" << "9.10_HdMedia_x64" << "9.10_Live" << "9.10_Live_x64" << \
 "10.04_NetInstall" << "10.04_NetInstall_x64" << "10.04_HdMedia" << "10.04_HdMedia_x64" << "10.04_Live" << "10.04_Live_x64" << \
 "10.10_NetInstall" << "10.10_NetInstall_x64" << "10.10_HdMedia" << "10.10_HdMedia_x64" << "10.10_Live" << "10.10_Live_x64" << \
+"11.04_NetInstall" << "11.04_NetInstall_x64" << "11.04_HdMedia" << "11.04_HdMedia_x64" << "11.04_Live" << "11.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
