@@ -35,10 +35,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="289"/>
         <location filename="unetbootin.cpp" line="356"/>
         <location filename="unetbootin.cpp" line="465"/>
-        <location filename="unetbootin.cpp" line="3140"/>
-        <location filename="unetbootin.cpp" line="3153"/>
-        <location filename="unetbootin.cpp" line="3325"/>
-        <location filename="unetbootin.cpp" line="3865"/>
+        <location filename="unetbootin.cpp" line="3141"/>
+        <location filename="unetbootin.cpp" line="3154"/>
+        <location filename="unetbootin.cpp" line="3326"/>
+        <location filename="unetbootin.cpp" line="3866"/>
         <source>Hard Disk</source>
         <translation>القرص الصلب</translation>
     </message>
@@ -55,10 +55,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="1501"/>
         <location filename="unetbootin.cpp" line="2420"/>
         <location filename="unetbootin.cpp" line="2462"/>
-        <location filename="unetbootin.cpp" line="3144"/>
-        <location filename="unetbootin.cpp" line="3170"/>
-        <location filename="unetbootin.cpp" line="3329"/>
-        <location filename="unetbootin.cpp" line="3869"/>
+        <location filename="unetbootin.cpp" line="3145"/>
+        <location filename="unetbootin.cpp" line="3171"/>
+        <location filename="unetbootin.cpp" line="3330"/>
+        <location filename="unetbootin.cpp" line="3870"/>
         <source>USB Drive</source>
         <translation>مشغل USB</translation>
     </message>
@@ -69,7 +69,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="324"/>
         <location filename="unetbootin.cpp" line="585"/>
         <location filename="unetbootin.cpp" line="586"/>
-        <location filename="unetbootin.cpp" line="3223"/>
+        <location filename="unetbootin.cpp" line="3224"/>
         <source>ISO</source>
         <translation>ملف ISO</translation>
     </message>
@@ -80,7 +80,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="329"/>
         <location filename="unetbootin.cpp" line="590"/>
         <location filename="unetbootin.cpp" line="591"/>
-        <location filename="unetbootin.cpp" line="3215"/>
+        <location filename="unetbootin.cpp" line="3216"/>
         <source>Floppy</source>
         <translation>قرص مرن</translation>
     </message>
@@ -378,64 +378,64 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة &quot;%3&quot; أو مايكافئها في توزيعتك.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3121"/>
+        <location filename="unetbootin.cpp" line="3122"/>
         <source>(Current)</source>
         <translation>(حالي)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3122"/>
+        <location filename="unetbootin.cpp" line="3123"/>
         <source>(Done)</source>
         <translation>(أنتهى)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3404"/>
+        <location filename="unetbootin.cpp" line="3405"/>
         <source>Configuring grub2 on %1</source>
         <translation>يضبط جرب ٢ في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3416"/>
+        <location filename="unetbootin.cpp" line="3417"/>
         <source>Configuring grldr on %1</source>
         <translation>يضبط grldr في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3444"/>
+        <location filename="unetbootin.cpp" line="3445"/>
         <source>Configuring grub on %1</source>
         <translation>يضبط جرب في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3629"/>
+        <location filename="unetbootin.cpp" line="3630"/>
         <source>Installing syslinux to %1</source>
         <translation>يثبت syslinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3664"/>
+        <location filename="unetbootin.cpp" line="3665"/>
         <source>Installing extlinux to %1</source>
         <translation>يثبت extlinux في %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3824"/>
+        <location filename="unetbootin.cpp" line="3825"/>
         <source>Syncing filesystems</source>
         <translation>يزامن أنظمة الملفات</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3829"/>
+        <location filename="unetbootin.cpp" line="3830"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3867"/>
+        <location filename="unetbootin.cpp" line="3868"/>
         <source>After rebooting, select the </source>
         <translation>بعد إعادة التشغيل قم بإختيار </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3872"/>
+        <location filename="unetbootin.cpp" line="3873"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
 هل تريد إعادة التشغيل الأن؟</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3875"/>
+        <location filename="unetbootin.cpp" line="3876"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>

@@ -2863,22 +2863,23 @@ QString unetbootin::locatedevicenode(QString mountpoint)
 
 QString unetbootin::locatemountpoint(QString devicenode)
 {
-	QStringList procmountsL = callexternapp("mount", "").split("\n").filter(devicenode);
-	if (procmountsL.isEmpty())
+	QStringList procmountsL = callexternapp("mount", "").split("\n");
+	for (int i = 0; i < procmountsL.size(); ++i)
 	{
-		return "NOT MOUNTED";
+		QString mountinfo = procmountsL.at(i).split("\t").join(" ");
+		QStringList deviceAndRest = mountinfo.split(" on ");
+		if (deviceAndRest.size() < 2)
+			continue;
+		if (deviceAndRest.at(0).trimmed() != devicenode)
+			continue;
+		QStringList mountpointAndOptions = deviceAndRest.at(1).split(" (").join(" type ").split(" type ");
+		if (mountpointAndOptions.size() < 1)
+			continue;
+		QString mountpoint = mountpointAndOptions.at(0).trimmed();
+		if (QDir(mountpoint).exists())
+			return mountpoint;
 	}
-	else
-	{
-		if (procmountsL.at(0).split("\t").join(" ").split(" ").size() >= 2)
-		{
-						return procmountsL.at(0).split("\t").join(" ").split(" ")[2].replace("\\040", " ");
-		}
-		else
-		{
-			return "NOT MOUNTED";
-		}
-	}
+	return "NOT MOUNTED";
 }
 
 QString unetbootin::getGrubNotation(QString devicenode)

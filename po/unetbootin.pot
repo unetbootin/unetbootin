@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-26 22:17-0400\n"
+"POT-Creation-Date: 2011-04-01 15:10-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,8 @@ msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:202 unetbootin.cpp:288 unetbootin.cpp:289 unetbootin.cpp:356
-#: unetbootin.cpp:465 unetbootin.cpp:3140 unetbootin.cpp:3153
-#: unetbootin.cpp:3325 unetbootin.cpp:3865
+#: unetbootin.cpp:465 unetbootin.cpp:3141 unetbootin.cpp:3154
+#: unetbootin.cpp:3326 unetbootin.cpp:3866
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
@@ -30,22 +30,22 @@ msgstr ""
 #: unetbootin.cpp:204 unetbootin.cpp:285 unetbootin.cpp:286 unetbootin.cpp:358
 #: unetbootin.cpp:469 unetbootin.cpp:634 unetbootin.cpp:654 unetbootin.cpp:908
 #: unetbootin.cpp:1439 unetbootin.cpp:1501 unetbootin.cpp:2420
-#: unetbootin.cpp:2462 unetbootin.cpp:3144 unetbootin.cpp:3170
-#: unetbootin.cpp:3329 unetbootin.cpp:3869
+#: unetbootin.cpp:2462 unetbootin.cpp:3145 unetbootin.cpp:3171
+#: unetbootin.cpp:3330 unetbootin.cpp:3870
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:205 unetbootin.cpp:222 unetbootin.cpp:223 unetbootin.cpp:324
-#: unetbootin.cpp:585 unetbootin.cpp:586 unetbootin.cpp:3223
+#: unetbootin.cpp:585 unetbootin.cpp:586 unetbootin.cpp:3224
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:206 unetbootin.cpp:218 unetbootin.cpp:219 unetbootin.cpp:329
-#: unetbootin.cpp:590 unetbootin.cpp:591 unetbootin.cpp:3215
+#: unetbootin.cpp:590 unetbootin.cpp:591 unetbootin.cpp:3216
 #, fuzzy
 msgid "Floppy"
 msgstr ""
@@ -400,67 +400,67 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3121
+#: unetbootin.cpp:3122
 #, fuzzy
 msgid "(Current)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3122
+#: unetbootin.cpp:3123
 #, fuzzy
 msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3404
+#: unetbootin.cpp:3405
 #, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3416
+#: unetbootin.cpp:3417
 #, fuzzy
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3444
+#: unetbootin.cpp:3445
 #, fuzzy
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3629
+#: unetbootin.cpp:3630
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3664
+#: unetbootin.cpp:3665
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3824
+#: unetbootin.cpp:3825
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3829
+#: unetbootin.cpp:3830
 #, fuzzy
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3867
+#: unetbootin.cpp:3868
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3872
+#: unetbootin.cpp:3873
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -468,7 +468,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3875
+#: unetbootin.cpp:3876
 #, fuzzy
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "

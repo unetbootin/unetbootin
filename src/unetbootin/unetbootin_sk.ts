@@ -41,10 +41,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="289"/>
         <location filename="unetbootin.cpp" line="356"/>
         <location filename="unetbootin.cpp" line="465"/>
-        <location filename="unetbootin.cpp" line="3140"/>
-        <location filename="unetbootin.cpp" line="3153"/>
-        <location filename="unetbootin.cpp" line="3325"/>
-        <location filename="unetbootin.cpp" line="3865"/>
+        <location filename="unetbootin.cpp" line="3141"/>
+        <location filename="unetbootin.cpp" line="3154"/>
+        <location filename="unetbootin.cpp" line="3326"/>
+        <location filename="unetbootin.cpp" line="3866"/>
         <source>Hard Disk</source>
         <translation>Pevný disk</translation>
     </message>
@@ -61,10 +61,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="1501"/>
         <location filename="unetbootin.cpp" line="2420"/>
         <location filename="unetbootin.cpp" line="2462"/>
-        <location filename="unetbootin.cpp" line="3144"/>
-        <location filename="unetbootin.cpp" line="3170"/>
-        <location filename="unetbootin.cpp" line="3329"/>
-        <location filename="unetbootin.cpp" line="3869"/>
+        <location filename="unetbootin.cpp" line="3145"/>
+        <location filename="unetbootin.cpp" line="3171"/>
+        <location filename="unetbootin.cpp" line="3330"/>
+        <location filename="unetbootin.cpp" line="3870"/>
         <source>USB Drive</source>
         <translation>USB mechanika</translation>
     </message>
@@ -75,7 +75,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="324"/>
         <location filename="unetbootin.cpp" line="585"/>
         <location filename="unetbootin.cpp" line="586"/>
-        <location filename="unetbootin.cpp" line="3223"/>
+        <location filename="unetbootin.cpp" line="3224"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -86,7 +86,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="329"/>
         <location filename="unetbootin.cpp" line="590"/>
         <location filename="unetbootin.cpp" line="591"/>
-        <location filename="unetbootin.cpp" line="3215"/>
+        <location filename="unetbootin.cpp" line="3216"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
@@ -385,64 +385,64 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
 Nainštalujte balík &quot;%3&quot; alebo jeho ekvivalent.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3121"/>
+        <location filename="unetbootin.cpp" line="3122"/>
         <source>(Current)</source>
         <translation>(Aktuálny)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3122"/>
+        <location filename="unetbootin.cpp" line="3123"/>
         <source>(Done)</source>
         <translation>(Hotovo)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3404"/>
+        <location filename="unetbootin.cpp" line="3405"/>
         <source>Configuring grub2 on %1</source>
         <translation>grub2 sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3416"/>
+        <location filename="unetbootin.cpp" line="3417"/>
         <source>Configuring grldr on %1</source>
         <translation>grldr sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3444"/>
+        <location filename="unetbootin.cpp" line="3445"/>
         <source>Configuring grub on %1</source>
         <translation>grub sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3629"/>
+        <location filename="unetbootin.cpp" line="3630"/>
         <source>Installing syslinux to %1</source>
         <translation>syslinux sa inštaluje do %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3664"/>
+        <location filename="unetbootin.cpp" line="3665"/>
         <source>Installing extlinux to %1</source>
         <translation>extlinux sa inštaluje do %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3824"/>
+        <location filename="unetbootin.cpp" line="3825"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizácia súborových systémov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3829"/>
+        <location filename="unetbootin.cpp" line="3830"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3867"/>
+        <location filename="unetbootin.cpp" line="3868"/>
         <source>After rebooting, select the </source>
         <translation>Po reštarte zvoľte </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3872"/>
+        <location filename="unetbootin.cpp" line="3873"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po reštarte zvoľte v BIOSe zavádzanie systému z USB.%1
 Reštartovať teraz?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3875"/>
+        <location filename="unetbootin.cpp" line="3876"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
