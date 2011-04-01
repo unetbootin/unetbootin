@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-23 16:52-0500
+POT-Creation-Date: 2011-03-26 22:17-0400
 PO-Revision-Date: 2010-11-06 23:27+0000
 Last-Translator: Vitālijs Sikuriņecs &lt;Unknown&gt;
 Language-Team: Latvian &lt;lv@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:40+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -103,17 +103,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -427,7 +427,7 @@ Uzinstalējiet &quot;%3&quot; pakotni, vai Jūsu OS līdzīgu.</translation>
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -444,7 +444,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -806,17 +806,17 @@ Vai tagad pārstartēt datoru?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>

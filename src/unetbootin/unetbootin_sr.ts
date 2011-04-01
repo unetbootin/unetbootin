@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-23 16:52-0500
+POT-Creation-Date: 2011-03-26 22:17-0400
 PO-Revision-Date: 2010-12-21 20:15+0000
 Last-Translator: Kosava &lt;Unknown&gt;
 Language-Team: Serbian &lt;sr@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:41+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -103,17 +103,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -427,7 +427,7 @@ Instaliranje paketa &quot;%3&quot; ili ekvivalenta vaše distribucije.</translat
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -444,7 +444,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -808,20 +808,20 @@ Sada ponovo pokrenuti sistem?</translation>
         <translation>&amp;Prilagođeno</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ova &lt;span style=&quot; font-weight:600;&quot;&gt;potencijalno opasna&lt;/span&gt; opcija će formatizovati disk i obrisati sve podatke na njemu. Ovo nije neophodno ako koristite standardni USB disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="430"/>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <translation></translation>
     </message>
     <message>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">&amp;Formatiranje disk (uništava podatke)</translation>
+        <location filename="unetbootin.ui" line="417"/>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="440"/>
+        <source>MB</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -878,22 +878,6 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
         <translation>Odaberite ciljni disk na koji će ce vršiti instalacija</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="414"/>
-        <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="440"/>
-        <source>MB</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
@@ -971,22 +955,6 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Odredi parametre i opcije koje će biti predate kernel-u</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ova &lt;span style=&quot; font-weight:600;&quot;&gt;potencialno opasna&lt;/span&gt; opcija će prikazati sve diskove u padajućem meniju pod naslovom &quot;Drives&quot;. Omogućite ovo samo ako znate šta radite; ako koristite ovu opciju, instalacija će verovatno biti neuspešna, ili može dovesti do problema sa poizanjem sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="obsolete">Prikaži sve diskove (koristi pažljivo)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>

@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-23 16:52-0500
-PO-Revision-Date: 2010-12-25 18:26+0000
-Last-Translator: Tomi Juntunen &lt;Unknown&gt;
+POT-Creation-Date: 2011-03-26 22:17-0400
+PO-Revision-Date: 2011-03-27 10:15+0000
+Last-Translator: Jiri Grönroos &lt;Unknown&gt;
 Language-Team: Finnish &lt;fi@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:41+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:25+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -103,17 +103,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>FAT32-alustettu USB-asema</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>EXT2-alustettu USB-asema</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -427,7 +427,7 @@ Asenna ensin paketti &quot;%3&quot;, tai jokin muu linux-jakeluasi vastaava pake
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -444,7 +444,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -507,7 +507,7 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Tervetuloa käyttämään &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootinia&lt;/a&gt; (lyhenne sanoista Universal Netboot Installer). Käyttöohjeet:&lt;ol&gt;&lt;li&gt;Valitse jakelu ja jakelun versio pudotusvalikoista tai vaihtoehtoisesti määritä levykuva itse.&lt;/li&gt;&lt;li&gt;Valitse asennustapa ja napsauta OK aloittaaksesi asennuksen USB-levylle.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Tervetuloa käyttämään &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootinia&lt;/a&gt; (lyhenne sanoista Universal Netboot Installer). Käyttöohjeet:&lt;ol&gt;&lt;li&gt;Valitse jakelu ja jakelun versio pudotusvalikoista tai vaihtoehtoisesti määritä levykuva itse.&lt;/li&gt;&lt;li&gt;Valitse asennustapa ja napsauta OK aloittaaksesi asennuksen USB-asemalle.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
@@ -805,8 +805,20 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
         <translation>&amp;Mukautettu</translation>
     </message>
     <message>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">&amp;Alusta asema (poistaa tiedot!)</translation>
+        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="430"/>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="417"/>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="440"/>
+        <source>MB</source>
+        <translation>Mt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -863,22 +875,6 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
         <translation>Valitse kohdeasema, johon asennus suoritetaan</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="414"/>
-        <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="440"/>
-        <source>MB</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
@@ -958,10 +954,6 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
         <translation>Valitse kernelille välitettävät parametrit ja valinnat</translation>
     </message>
     <message>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="obsolete">Nä&amp;ytä kaikki asemat (käytä varoen!)</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
         <translation>&amp;Kernel:</translation>
@@ -992,12 +984,12 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
     <message>
         <location filename="main.cpp" line="319"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Vaatii suorituksen pääkäyttäjänä</translation>
     </message>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 on suoritettava pääkäyttäjän oikeuksin. Sulje sovellus ja käynnistä se uudelleen seuraavasti::&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;tai:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>

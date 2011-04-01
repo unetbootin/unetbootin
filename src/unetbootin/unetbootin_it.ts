@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-01-23 16:52-0500
-PO-Revision-Date: 2011-01-29 13:08+0000
+POT-Creation-Date: 2011-03-26 22:17-0400
+PO-Revision-Date: 2011-03-29 15:14+0000
 Last-Translator: bovirus &lt;roberto.boriotti@canon-europe.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:40+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -97,22 +97,22 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation>Persistenza LiveUSB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Unità formattata FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Unità formattata EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>Open Disk Image File</source>
-        <translation>Aprire file immagine</translation>
+        <translation>Apri file immagine</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -139,7 +139,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="616"/>
         <source>Open Bootloader Config File</source>
-        <translation>Aprire file configurazione bootloader</translation>
+        <translation>Apri file configurazione bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="638"/>
@@ -229,7 +229,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="855"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Il file %1 esiste già. Selezionare &apos;Si a tutti&apos; per sovrasciverlo e non ricevere ulteriori avvisi, &apos;Si&apos; per sovrascrivere i file individualmente, &apos;No&apos; per mantenere la versione esistente. Nel dubbio selezionare &apos;Si a tutti&apos;.</translation>
+        <translation>Il file %1 esiste già. Selezionare &lt;Si a tutti&gt; per sovrasciverlo e non ricevere ulteriori avvisi, &lt;Si&gt; per sovrascrivere i file individualmente, &lt;No&gt; per mantenere la versione esistente. Nel dubbio selezionare &lt;Si a tutti&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="881"/>
@@ -239,44 +239,44 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="882"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>La cartella %1 è piena. Selezionare &apos;Si&apos; per uscire dall&apos;installazione, &apos;No&apos; per ignorare questo avviso e provare a continuare l&apos;installazione, &apos;No a tutti&apos; per ignorare ulteriori avvisi di spazio insufficiente.</translation>
+        <translation>La cartella %1 è piena. Selezionare &lt;Si&gt; per uscire dall&apos;installazione, &lt;No&gt; per ignorare questo avviso e provare a continuare l&apos;installazione, &lt;No a tutti&gt; per ignorare ulteriori avvisi di spazio insufficiente.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="976"/>
         <source>Locating kernel file in %1</source>
-        <translation>Trovato file kernel in %1</translation>
+        <translation>Ricerca kernel file in %1...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1017"/>
         <source>Copying kernel file from %1</source>
-        <translation>Copia file kernel da%1</translation>
+        <translation>Copia file kernel da%1 ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1023"/>
         <source>Locating initrd file in %1</source>
-        <translation>Trovato file initrd in %1</translation>
+        <translation>ricerca initrd file in %1...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1064"/>
         <source>Copying initrd file from %1</source>
-        <translation>Copia file initrd da %1</translation>
+        <translation>Copia file initrd da %1 ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1070"/>
         <location filename="unetbootin.cpp" line="1130"/>
         <source>Extracting bootloader configuration</source>
-        <translation>Estrazione configurazione bootloader</translation>
+        <translation>Estrazione configurazione bootloader ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1345"/>
         <location filename="unetbootin.cpp" line="1371"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Estrazione file iso compresso:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Estrazione file iso compresso:&lt;/b&gt; %1...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1600"/>
         <source>Copying file, please wait...</source>
-        <translation>Copia file in corso, attendere...</translation>
+        <translation>Copia file...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1601"/>
@@ -298,7 +298,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="1641"/>
         <source>Extracting files, please wait...</source>
-        <translation>Estrazione file in corso, attendere prego...</translation>
+        <translation>Estrazione file...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1642"/>
@@ -338,7 +338,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2404"/>
         <source>Downloading files, please wait...</source>
-        <translation>Scaricamento file in corso, attendere...</translation>
+        <translation>Download file...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2407"/>
@@ -359,7 +359,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2590"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Ricerca in corso su &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Ricerca in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt; ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2594"/>
@@ -381,12 +381,12 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la distribuzione
     <message>
         <location filename="unetbootin.cpp" line="3121"/>
         <source>(Current)</source>
-        <translation>(Corrente)</translation>
+        <translation>(corrente)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3122"/>
         <source>(Done)</source>
-        <translation>(Completato)</translation>
+        <translation>(completato)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3404"/>
@@ -416,12 +416,12 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la distribuzione
     <message>
         <location filename="unetbootin.cpp" line="3824"/>
         <source>Syncing filesystems</source>
-        <translation>Sincronizzazione filesystems</translation>
+        <translation>Sincronizzazione filesystems...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione persistenza</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -432,62 +432,61 @@ Installare il pacchetto &quot;%3&quot; o l&apos;equivalente per la distribuzione
         <location filename="unetbootin.cpp" line="3872"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Dopo il riavvio selezionare nel BIOS l&apos;opzione di avvio da USB. %1
-Riavviare ora?</translation>
+        <translation>Dopo il riavvio selezionare nel BIOS l&apos;opzione di avvio da USB. Riavviare ora?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;unità USB creata non effettuerà il boot in Mac. Inserirla in un PC, e selezionare il boot da USB nel menu del BIOS.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
         <translation>
-*IMPORTANTE* Prima di riavviare, copiare un file ISO di installazione Ubuntu alternate (non desktop) nella cartella principale del disco fisso o dell&apos;unità USB. Questo file può essere scaricato da cdimage.ubuntu.com</translation>
+*IMPORTANTE*: prima di riavviare, copiare un file ISO di installazione Ubuntu alternate (non desktop) nella cartella principale del disco fisso o dell&apos;unità USB. Questo file può essere scaricato da cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="219"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &apos;Indietro&apos; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &apos;Inizia installazione&apos;, scegliere &apos;Rete&apos; come sorgente, &apos;HTTP&apos; come protocollo, inserire &apos;mirrors.kernel.org&apos; come server e inserire &apos;/centos/%1/os/%2&apos; quando è richiesta la cartella.</translation>
+*IMPORTANTE*: dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &lt;Indietro&gt; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &lt;Inizia installazione&gt;, scegliere &lt;Rete&gt; come sorgente, &lt;HTTP&gt; come protocollo, inserire &apos;mirrors.kernel.org&apos; come server e inserire &apos;/centos/%1/os/%2&apos; quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="275"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
-*IMPORTANTE* Prima di riavviare, copiare un file ISO di installazione Debian nella cartella principale del disco fisso o dell&apos;unità USB. Questo file può essere scaricato da cdimage.debian.org</translation>
+*IMPORTANTE*: prima di riavviare, copiare un file ISO di installazione Debian nella cartella principale del disco fisso o dell&apos;unità USB. Questo file può essere scaricato da cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="368"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &apos;Indietro&apos; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &apos;Inizia installazione&apos;, scegliere &apos;Rete&apos; come sorgente, &apos;HTTP&apos; come protocollo, inserire &apos;download.fedora.redhat.com&apos; come server e inserire &apos;/pub/fedora/linux/development/%1/os&apos; quando è richiesta la cartella.</translation>
+*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &lt;Indietro&gt; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &lt;Inizia installazione&gt;, scegliere &lt;Rete&gt; come sorgente, &lt;HTTP&gt; come protocollo, inserire &apos;download.fedora.redhat.com&apos; come server e inserire &apos;/pub/fedora/linux/development/%1/os&apos; quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="374"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &apos;Indietro&apos; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &apos;Inizia installazione&apos;, scegliere &apos;Rete&apos; come sorgente, &apos;HTTP&apos; come protocollo, inserire &apos;download.fedora.redhat.com&apos; come server e inserire &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; quando è richiesta la cartella.</translation>
+*IMPORTANTE*: dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &lt;Indietro&gt; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &lt;Inizia installazione&gt;, scegliere &lt;Rete&gt; come sorgente, &lt;HTTP&gt; come protocollo, inserire &apos;download.fedora.redhat.com&apos; come server e inserire &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="734"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &apos;Indietro&apos; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &apos;Inizia installazione&apos;, scegliere &apos;Rete&apos; come sorgente, &apos;HTTP&apos; come protocollo, inserire &apos;download.opensuse.org&apos; come server e inserire &apos;/factory/repo/oss&apos; quando è richiesta la cartella.</translation>
+*IMPORTANTE*: dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &lt;Indietro&gt; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &lt;Inizia installazione&gt;, scegliere &lt;Rete&gt; come sorgente, &lt;HTTP&gt; come protocollo, inserire &apos;download.opensuse.org&apos; come server e inserire &apos;/factory/repo/oss&apos; quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="740"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*IMPORTANTE* Dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &apos;Indietro&apos; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &apos;Inizia installazione&apos;, scegliere &apos;Rete&apos; come sorgente, &apos;HTTP&apos; come protocollo, inserire &apos;download.opensuse.org&apos; come server e inserire &apos;/distribution/%1/repo/oss&apos; quando è richiesta la cartella.</translation>
+*IMPORTANTE*: dopo il riavvio, ignorare qualsiasi messaggio d&apos;errore e selezionare &lt;Indietro&gt; se è richiesto un CD, dopodiché nel menù principale selezionare l&apos;opzione &lt;Inizia installazione&gt;, scegliere &lt;Rete&gt; come sorgente, &lt;HTTP&gt; come protocollo, inserire &apos;download.opensuse.org&apos; come server e inserire &apos;/distribution/%1/repo/oss&apos; quando è richiesta la cartella.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
@@ -504,7 +503,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation>Benvenuti in &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, il Netboot Installer universale. Uso:&lt;ol&gt;&lt;li&gt;Selezionare dalla lista qui sopra una distribuzione ed una versione, oppure specificare manualmente i file da caricare qui sotto.&lt;/li&gt;&lt;li&gt;Selezionare un tipo di installazione e fare clic su OK per avviare l&apos;operazione.&lt;/li&gt;&lt;/ol&gt;</translation>
+        <translation>Benvenuti in &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, il netboot installer universale. Uso:&lt;ol&gt;&lt;li&gt;selezionare dalla lista qui sopra una distribuzione ed una versione, oppure specificare manualmente i file da caricare qui sotto.&lt;/li&gt;&lt;li&gt;Selezionare un tipo di installazione e fare clic su OK per avviare l&apos;operazione.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="28"/>
@@ -519,7 +518,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; CentOS è un clone libero di Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione predefinita permette sia l&apos;installazione via internet (FTP) che l&apos;installazione da un&apos;immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; CentOS è un clone libero di Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione predefinita permette sia l&apos;installazione via internet (FTP) che l&apos;installazione da un&apos;immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="44"/>
@@ -534,7 +533,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriztione:&lt;/b&gt; Debian è una distribuzione Linux sviluppata dalla comunità e supporta una larga varietà di architetture e offre un grande varietà di pacchetti.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione NetInstall permette l&apos;installazione via FTP. Se volete usare un file di installazione ISO pre scaricato, usare l&apos;opzione HDMedia e copiare il file ISO di installazione nella cartella principale del disco fisso o dell&apos;unità USB</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriztione:&lt;/b&gt; Debian è una distribuzione Linux sviluppata dalla comunità e supporta una larga varietà di architetture e offre un grande varietà di pacchetti.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione NetInstall permette l&apos;installazione via FTP. Se volete usare un file di installazione ISO pre scaricato, usare l&apos;opzione HDMedia e copiare il file ISO di installazione nella cartella principale del disco fisso o dell&apos;unità USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="60"/>
@@ -564,7 +563,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="85"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeDOS è un sistema operativo libero compatibile con MS-DOS.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; Dai un&apos;occhiata a &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;Manuale&lt;/a&gt; per dettagli sull&apos;installazione.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeDOS è un sistema operativo libero compatibile con MS-DOS.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; dai un&apos;occhiata a &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;Manuale FreeDOS&lt;/a&gt; per dettagli sull&apos;installazione.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="90"/>
@@ -604,7 +603,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu è una distribuzione derivata di Ubuntu basata sul desktop KDE.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, dal quale è possibile avviare opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altre distribuzione derivate ufficiali. Se volete usare un file di installazione ISO di una distribuzione alternativa (non desktop) pre scaricata, usare l&apos;opzione HDMedia e copiare il file ISO di installazione della distribuzione alternativa nella cartella principale del disco fisso o dell&apos;unità USB</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Kubuntu è una distribuzione derivata di Ubuntu basata sul desktop KDE.&lt;br/&gt;&lt;b&gt;Note instalalzione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, dal quale è possibile avviare opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altre distribuzione derivate ufficiali. Se volete usare un file di installazione ISO di una distribuzione alternativa (non desktop) pre scaricata, usare l&apos;opzione HDMedia e copiare il file ISO di installazione della distribuzione alternativa nella cartella principale del disco fisso o dell&apos;unità USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="135"/>
@@ -629,7 +628,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="156"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NetBSD è un sistema operativo tipo Unix focalizzato sulla portabilità.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt;&gt; la versione di default permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NetBSD è un sistema operativo tipo Unix focalizzato sulla portabilità.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt;&gt; la versione predefinita permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="161"/>
@@ -644,7 +643,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="171"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; openSUSE è una distribuzione di facile uso sponsorizzata da Novell.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione di default permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; openSUSE è una distribuzione di facile uso sponsorizzata da Novell.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione predefinita permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -705,7 +704,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Ubuntu è una distribuzione con interfaccia molto intuitiva basata su Debian. E&apos; attualmente la distribuzione Linux desktop più popolare.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, da cui è possibile avviare opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altre distribuzione derivate ufficiali Ubuntu. Se volete usare un file ISO di una distribuzione alternativa (non desktop) pre scaricata, usate l&apos;opzione HdMedia, e copiate il file ISO dell&apos;installazione alternativa nella cartella principale del disco fisso o dell&apos;unità USB</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Ubuntu è una distribuzione con interfaccia molto intuitiva basata su Debian. E&apos; attualmente la distribuzione Linux desktop più popolare.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, da cui è possibile avviare opzionalmente l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altre distribuzione derivate ufficiali Ubuntu. Se volete usare un file ISO di una distribuzione alternativa (non desktop) pre scaricata, usate l&apos;opzione HdMedia, e copiate il file ISO dell&apos;installazione alternativa nella cartella principale del disco fisso o dell&apos;unità USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="236"/>
@@ -715,7 +714,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Xubuntu è una derivazione Ubuntu basata sul desktop XFCE.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, da cui opzionalmente è possibile lanciare l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altri derivati ufficiali Ubuntu. Se si vuole usare un file ISO di installazione alternativa pre-scaricata (non desktop), usare l&apos;opzione HDMedia, e posizionare un file ISO di installazione alternativa nella cartella principale del disco fisso o dell&apos;unità USB</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Xubuntu è una derivazione Ubuntu basata sul desktop XFCE.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, da cui opzionalmente è possibile lanciare l&apos;installazione. La versione NetInstall permette l&apos;installazione via FTP, e può installare Kubuntu e altri derivati ufficiali Ubuntu. Se si vuole usare un file ISO di installazione alternativa pre-scaricata (non desktop), usare l&apos;opzione HDMedia, e posizionare un file ISO di installazione alternativa nella cartella principale del disco fisso o dell&apos;unità USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="246"/>
@@ -735,7 +734,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, dal quale è possibile lanciare opzionalmente l&apos;installazione.</translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Elive è una distribuzione basata su Debian con il gestore finestre Enlightenment.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, dal quale è possibile lanciare opzionalmente l&apos;installazione.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -774,7 +773,7 @@ Riavviare ora?</translation>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation>Selezionare una distribuzione dalla lista di quelle supportate</translation>
+        <translation>Selezionare nell&apos;elenco una delle distribuzione supportate</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
@@ -784,7 +783,7 @@ Riavviare ora?</translation>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation>Specificare un file immagine di disco da caricare</translation>
+        <translation>Specificare un file immagine disco da caricare</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
@@ -802,16 +801,20 @@ Riavviare ora?</translation>
         <translation>&amp;Personalizzata</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Questa opzione &lt;span style=&quot; font-weight:600;&quot;&gt;potenzialmente pericolosa&lt;/span&gt; formatterà l&apos;unità selezionata cancellando tutti i dati. Potrebbe non essere necessaria se si sta usando una unità USB standard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="430"/>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <translation>Spazio da riservare per i file utente che verranno preservati nei vari riavvi. Funziona solo in LiveUSB per Ubuntu e suoi derivati. Se il valore eccede la capacità dell&apos;unità, verra impostato la spazio massimo disponibile.</translation>
     </message>
     <message>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">&amp;Formatta unità (azzeramento dati)</translation>
+        <location filename="unetbootin.ui" line="417"/>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <translation>Spazio usato per preservare i file nei diversi riavvi (solo Ubuntu):</translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="440"/>
+        <source>MB</source>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -846,17 +849,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation>1. Scaricamento dei file in corso</translation>
+        <translation>1. Download dei file...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. Estrazione e copia dei file in corso</translation>
+        <translation>2. Estrazione e copia dei file...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Installazione bootloader in corso</translation>
+        <translation>3. Installazione bootloader...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
@@ -868,22 +871,6 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
         <translation>Selezionare l&apos;unità in cui effettuare l&apos;installazione</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="414"/>
-        <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="440"/>
-        <source>MB</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
@@ -961,22 +948,6 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation>Specificare parametri e opzioni da passare al kernel</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Questa opzione &lt;span style=&quot; font-weight:600;&quot;&gt;potenzialmente pericolosa&lt;/span&gt; visualizzerà tutte le unità nella lista a discesa della finestra &quot;Unità&quot;. Abilitarla solo se si conosce cosa si sta facendo; se si usa questa opzione, l&apos;installazione facilmente fallirà, o si potrebbero avere problemi al boot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="obsolete">Visu&amp;alizza tutte le unità (usare con cautela)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>

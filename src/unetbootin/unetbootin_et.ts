@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-23 16:52-0500
+POT-Creation-Date: 2011-03-26 22:17-0400
 PO-Revision-Date: 2010-10-12 10:38+0000
 Last-Translator: Mihkel Tõnnov &lt;mihhkel@gmail.com&gt;
 Language-Team: Estonian &lt;et@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:40+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -103,17 +103,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -427,7 +427,7 @@ Paigalda &quot;%3&quot; pakett või distributsiooni vastava.</translation>
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -444,7 +444,7 @@ Kas taaskäivitada kohe?</translation>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -806,8 +806,20 @@ ISO-failid leiab cdimage.debian.org</translation>
         <translation>&amp;Kohandatud</translation>
     </message>
     <message>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">&amp;Vorminda ketas (kustutab andmed)</translation>
+        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="430"/>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="417"/>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="440"/>
+        <source>MB</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -864,22 +876,6 @@ ISO-failid leiab cdimage.debian.org</translation>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
         <translation>Vali sihtkoha ketas, kuhu paigaldada</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="414"/>
-        <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="440"/>
-        <source>MB</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
@@ -957,10 +953,6 @@ ISO-failid leiab cdimage.debian.org</translation>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="obsolete">Näidatakse &amp;kõiki kettaid (ole ettevaatlik)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>

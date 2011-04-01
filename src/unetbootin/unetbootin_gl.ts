@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-01-23 16:52-0500
-PO-Revision-Date: 2011-01-15 10:43+0000
+POT-Creation-Date: 2011-03-26 22:17-0400
+PO-Revision-Date: 2011-03-27 08:37+0000
 Last-Translator: Miguel Anxo Bouzada &lt;mbouzada@gmail.com&gt;
 Language-Team: Galician &lt;gl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-03-23 03:40+0000
-X-Generator: Launchpad (build 12633)
+X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Generator: Launchpad (build 12710)
 </translation>
     </message>
 </context>
@@ -103,17 +103,17 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation type="unfinished"></translation>
+        <translation>LiveUSB persistente</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="273"/>
         <source>FAT32-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo USBcon  formato FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>EXT2-formatted USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo USB con formato EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="582"/>
@@ -123,14 +123,14 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="582"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Todos os ficheiros</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="600"/>
         <location filename="unetbootin.cpp" line="608"/>
         <location filename="unetbootin.cpp" line="616"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Todos os ficheiros (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="600"/>
@@ -250,28 +250,28 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="976"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Localizando o ficheiro do kernel en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1017"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Copiando o ficheiro do kernel desde %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1023"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Localizando o ficheiro initrd en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1064"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Copiando o ficheiro initrd desde %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1070"/>
         <location filename="unetbootin.cpp" line="1130"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Extraendo a configuración do cargador de inicio (bootloader)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1345"/>
@@ -282,7 +282,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="1600"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Copiando o ficheiro, agarde...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1601"/>
@@ -299,7 +299,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="1603"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiado:&lt;/b&gt; 0 bytes</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1641"/>
@@ -360,7 +360,7 @@ X-Generator: Launchpad (build 12633)
     <message>
         <location filename="unetbootin.cpp" line="2514"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Copiado:&lt;/b&gt; %1 de %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2590"/>
@@ -427,7 +427,7 @@ Instale o paquete «%3»  ou o equivalente na sua distribución.</translation>
     <message>
         <location filename="unetbootin.cpp" line="3829"/>
         <source>Setting up persistence</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da persistencia</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3867"/>
@@ -444,7 +444,7 @@ Reiniciar agora?</translation>
     <message>
         <location filename="unetbootin.cpp" line="3875"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Os dispositivos USB creados non arrancan en Mac. Insirao nun PC e escolla a opción de arranque USB no menú do BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="27"/>
@@ -499,13 +499,13 @@ Reiniciar agora?</translation>
         <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="670"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Seleccionar a distribucion ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="22"/>
         <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Seleccionar a version ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
@@ -515,7 +515,7 @@ Reiniciar agora?</translation>
     <message>
         <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrición:&lt;/b&gt; Arch Linux é unha distribución lixeira optimizada para ser rápida e flexiíbel.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; A versión predeterminada permítelle instalala por Internet (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="34"/>
@@ -809,19 +809,20 @@ MEPIS é unha distribución baseada en Debian. SimplyMEPIS é unha opción fáci
         <translation>&amp;Personalizado</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will format the selected drive, wiping out all data on it. It shouldn&apos;t be necessary if you&apos;re using a standard USB drive.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; formatara a unidade escollida, borrando todos os datos que nela existan. Esta opción non debería ser precisa se vostede está a utilizar unha unidade USB estándar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <location filename="unetbootin.ui" line="414"/>
+        <location filename="unetbootin.ui" line="430"/>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <translation></translation>
     </message>
     <message>
-        <source>&amp;Format Drive (Wipes Out Data)</source>
-        <translation type="obsolete">&amp;Formatar unidade (destrúe os datos)</translation>
+        <location filename="unetbootin.ui" line="417"/>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="unetbootin.ui" line="440"/>
+        <source>MB</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -878,22 +879,6 @@ p, li { white-space: pre-wrap; }
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
         <translation>Escolla a unidade de destino onde instalar</translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="414"/>
-        <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="unetbootin.ui" line="440"/>
-        <source>MB</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
@@ -973,22 +958,6 @@ p, li { white-space: pre-wrap; }
         <translation>Indique os parametros e opcións a pasar ao kernel</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This &lt;span style=&quot; font-weight:600;&quot;&gt;potentially dangerous&lt;/span&gt; option will show all drives in the drop-down box titled &quot;Drives&quot;. Enable this only if you know what you&apos;re doing; if you use this option, the installation will likely fail, or can lead to system boot issues.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esta opción &lt;span style=&quot; font-weight:600;&quot;&gt;potencialmente perigosa&lt;/span&gt; amosará todas as unidades no cadro desplegable titulado «Unidade». Active esta opción só si sabe o que está a facer, se usa esta opción a instalación pode fallar ou crear problemas de arranque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Show &amp;All Drives (Use with Care)</source>
-        <translation type="obsolete">Mostrar &amp;todas as unidades (Usar con xeito)</translation>
-    </message>
-    <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
         <translation>&amp;Núcleo:</translation>
@@ -1024,7 +993,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 ten que ser executado como administrador (root). pécheo e volva a executalo empregando:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;ou:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>
