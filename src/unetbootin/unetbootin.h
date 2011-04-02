@@ -279,6 +279,10 @@ public:
 	QString getdevluid(QString voldrive);
 	QString getlabel(QString voldrive);
 	QString getuuid(QString voldrive);
+#ifdef Q_OS_MAC
+	QString getlabel(QString voldrive, QString diskutilinfo);
+	QString getuuid(QString voldrive, QString diskutilinfo);
+#endif
 	void refreshdriveslist();
 	QStringList listcurdrives();
 	QStringList listsanedrives();

@@ -1,15 +1,10 @@
 #!/usr/bin/ruby
 
 revno = `./vcs-revno`
-if Dir.exists?("release")
+if File.directory?("release")
 	`rm -r release`
 end
-if File.exists?("./release/unetbootin-source-#{revno}.zip")
-	File.delete("./release/unetbootin-source-#{revno}.zip")
-end
-if File.exists?("./release/unetbootin-source-#{revno}.tar.gz")
-	File.delete("./release/unetbootin-source-#{revno}.tar.gz")
-end
+Dir.mkdir("release")
 system("./build-src")
 macbuild = Thread.new {
 	system("./buildremote-mac.rb")

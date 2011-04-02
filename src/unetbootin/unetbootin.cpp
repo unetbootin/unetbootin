@@ -523,8 +523,8 @@ QStringList unetbootin::listsanedrives()
 				*/
 		#endif
 #ifdef Q_OS_MAC
-QString diskutilList = callexternapp("diskutil", "list");
-QStringList usbdevsL = diskutilList.split("\n").filter("FAT").join(" ").split(" ").filter("disk");
+QString diskutilList = callexternapp("disktool", "-l");
+QStringList usbdevsL = diskutilList.split("\n").filter("msdos").join("'").split("'").filter("disk");
 for (int i = 0; i < usbdevsL.size(); ++i)
 {
 	fulldrivelist.append("/dev/"+usbdevsL.at(i));
@@ -648,7 +648,7 @@ void unetbootin::on_okbutton_clicked()
 	}
 #ifdef Q_OS_MAC
 	if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
-		callexternapp("diskutil", "mount "+driveselect->currentText());
+		callexternapp("hdiutil", "mount "+driveselect->currentText());
 #endif
 	#ifdef Q_OS_LINUX
 	else if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
@@ -2683,6 +2683,19 @@ QString unetbootin::callexternappWriteToStdin(QString xexecFile, QString xexecPa
 
 QString unetbootin::getdevluid(QString voldrive)
 {
+#ifdef Q_OS_MAC
+	QString diskutilinfo = callexternapp("diskutil", "info " + voldrive);
+	QString uuidS = getuuid(voldrive, diskutilinfo);
+	if (uuidS == "None")
+	{
+		return QString("LABEL=%1").arg(getlabel(voldrive, diskutilinfo));
+	}
+	else
+	{
+		return QString("UUID=%1").arg(uuidS);
+	}
+#endif
+#ifndef Q_OS_MAC
 	QString uuidS = getuuid(voldrive);
 	if (uuidS == "None")
 	{
@@ -2692,12 +2705,13 @@ QString unetbootin::getdevluid(QString voldrive)
 	{
 		return QString("UUID=%1").arg(uuidS);
 	}
+#endif
 }
 
-QString unetbootin::getlabel(QString voldrive)
-{
 #ifdef Q_OS_MAC
-	QStringList diskutiloutput = callexternapp("diskutil", "info " + voldrive).split("\n");
+QString unetbootin::getlabel(QString voldrive, QString diskutilinfo)
+{
+	QStringList diskutiloutput = diskutilinfo.split("\n");
 	QStringList labelLines = diskutiloutput.filter("Volume Name");
 	if (labelLines.size() == 0)
 		return "None";
@@ -2705,6 +2719,13 @@ QString unetbootin::getlabel(QString voldrive)
 	if (labelAtEnd.size() < 2)
 		return "None";
 	return labelAtEnd.at(labelAtEnd.size()-1).trimmed();
+}
+#endif
+
+QString unetbootin::getlabel(QString voldrive)
+{
+#ifdef Q_OS_MAC
+	return getlabel(voldrive, callexternapp("diskutil", "info " + voldrive));
 #endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
@@ -2741,10 +2762,10 @@ QString unetbootin::getlabel(QString voldrive)
 	#endif
 }
 
-QString unetbootin::getuuid(QString voldrive)
-{
 #ifdef Q_OS_MAC
-	QStringList diskutiloutput = callexternapp("diskutil", "info " + voldrive).split("\n");
+QString unetbootin::getuuid(QString voldrive, QString diskutilinfo)
+{
+	QStringList diskutiloutput = diskutilinfo.split("\n");
 	QStringList uuidList = diskutiloutput.filter("UUID"); // TODO untested
 	if (uuidList.size() > 0)
 	{
@@ -2758,7 +2779,7 @@ QString unetbootin::getuuid(QString voldrive)
 		if (diskutiloutput.filter("FAT16").size() == 0 && diskutiloutput.filter("FAT12").size() == 0)
 			return "None";
 	}
-	callexternapp("diskutil", "umount "+targetDev);
+	callexternapp("hdiutil", "unmount "+targetDev);
 	QFile rawDevice(voldrive);
 	rawDevice.open(QIODevice::ReadOnly);
 	if (isFat32)
@@ -2773,8 +2794,16 @@ QString unetbootin::getuuid(QString voldrive)
 	rawDevice.read((char*)pserial, 4);
 	QString serialNumber = QString::number(pserial[3], 16).rightJustified(2, '0')+QString::number(pserial[2], 16).rightJustified(2, '0')+"-"+QString::number(pserial[1], 16).rightJustified(2, '0')+QString::number(pserial[0], 16).rightJustified(2, '0');
 	rawDevice.close();
-	callexternapp("diskutil", "mount "+targetDev);
+	callexternapp("hdiutil", "mount "+targetDev);
 	return serialNumber.toUpper();
+}
+
+#endif
+
+QString unetbootin::getuuid(QString voldrive)
+{
+#ifdef Q_OS_MAC
+	return getuuid(voldrive, callexternapp("diskutil", "info " + voldrive));
 #endif
 	#ifdef Q_OS_WIN32
 	voldrive.append("\\");
@@ -3704,7 +3733,7 @@ void unetbootin::runinstusb()
 #endif
 #ifdef Q_OS_MAC
 		callexternapp(syslinuxcommand, targetDev);
-		callexternapp("diskutil", "umount "+targetDev);
+		callexternapp("hdiutil", "unmount "+targetDev);
 		QFile usbmbrF(rawtargetDev);
 		QFile mbrbinF(resourceDir.absoluteFilePath("mbr.bin"));
 		usbmbrF.open(QIODevice::WriteOnly);
@@ -3712,7 +3741,7 @@ void unetbootin::runinstusb()
 		usbmbrF.write(mbrbinF.readAll());
 		mbrbinF.close();
 		usbmbrF.close();
-		callexternapp("diskutil", "umount "+targetDev);
+		callexternapp("hdiutil", "unmount "+targetDev);
 		// make active
 		bool isOk = false;
 		int partitionNumber = QString(targetDev).remove(rawtargetDev).remove("s").toInt(&isOk, 10);
@@ -3734,7 +3763,7 @@ void unetbootin::runinstusb()
 				}
 			}
 		}
-		callexternapp("diskutil", "mount "+targetDev);
+		callexternapp("hdiutil", "mount "+targetDev);
 #endif
 #ifndef XPUD
 	if (!dontgeneratesyslinuxcfg)
