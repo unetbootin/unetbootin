@@ -226,6 +226,8 @@ public:
 	QString syslinuxcommand;
 	QString extlinuxcommand;
 	QString mke2fscommand;
+	QString mlabelcommand;
+	QString e2labelcommand;
 	bool isext2;
 	#endif
 #ifdef Q_OS_MAC
@@ -289,6 +291,7 @@ public:
 	QStringList listalldrives();
 	void replaceTextInFile(QString repfilepath, QRegExp replaceme, QString replacewith);
 	QString fixkernelbootoptions(const QString &cfgfileCL);
+	void setLabel(QString devname, QString newlabel);
 	#ifdef Q_OS_UNIX
 	QString locatecommand(QString commandtolocate, QString reqforinstallmode, QString packagename);
 	QString locatedevicenode(QString mountpoint);

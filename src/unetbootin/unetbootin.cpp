@@ -264,6 +264,14 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		mke2fscommand = "/sbin/mke2fs";
 	else
 		mke2fscommand = locatecommand("mke2fs", tr("LiveUSB persistence"), "e2fsprogs");
+	if (QFile::exists("/sbin/e2label"))
+		e2labelcommand = "/sbin/e2label";
+	else
+		e2labelcommand = locatecommand("e2label", "Arch Linux", "e2fsprogs");
+	if (QFile::exists("/usr/bin/mlabel"))
+		mlabelcommand = "/usr/bin/mlabel";
+	else
+		mlabelcommand = locatecommand("mlabel", "Arch Linux", "mtools");
 	syslinuxcommand = "/usr/bin/ubnsylnx";
 	extlinuxcommand = "/usr/bin/ubnexlnx";
 	#ifdef NOSTATIC
@@ -3648,9 +3656,58 @@ void unetbootin::replaceTextInFile(QString repfilepath, QRegExp replaceme, QStri
 	//mvFile(nrepfilepath, repfilepath);
 }
 
+void unetbootin::setLabel(QString devname, QString newlabel)
+{
+#ifdef Q_OS_LINUX
+	if (isext2)
+	{
+		callexternapp(e2labelcommand, devname+" "+newlabel);
+	}
+	else
+	{
+		callexternapp(mlabelcommand, "-i "+devname+" ::"+newlabel);
+	}
+#endif
+#ifdef Q_OS_MAC
+	callexternapp("diskutil", "rename "+devname+" "+newlabel);
+#endif
+#ifdef Q_OS_WIN32
+	callexternapp("label", devname+" "+newlabel);
+#endif
+	this->devlabel = QString(newlabel);
+	if (this->devluid.startsWith("LABEL"))
+		this->devluid = this->getdevluid(this->targetDev);
+}
+
 QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 {
-	return QString(cfgfileCL).replace("rootfstype=iso9660", "rootfstype=auto").replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid)).replace("theme:sabayon", "theme:sabayon cdroot_type=vfat").replace("pmedia=cd", "pmedia=usbflash").trimmed();
+	if (cfgfileCL.contains("archisolabel=") && (this->devlabel == "" || this->devlabel == "None"))
+	{
+		this->devlabel = this->getlabel(this->targetDev);
+		if  (this->installType == tr("USB Drive") && (this->devlabel == "" || this->devlabel == "None"))
+		{
+			QString isolabelopt = QString(cfgfileCL).trimmed();
+			int startIdx = isolabelopt.indexOf("archisolabel=");
+			if (startIdx >= 0)
+			{
+				isolabelopt = isolabelopt.right(startIdx - startIdx - QString("archisolabel=").size()).trimmed();
+				int endIdx = isolabelopt.indexOf(" ");
+				if (endIdx > 0)
+				{
+					isolabelopt = isolabelopt.left(endIdx);
+					setLabel(this->targetDev, isolabelopt);
+				}
+			}
+		}
+	}
+	return QString(cfgfileCL)
+	.replace("rootfstype=iso9660", "rootfstype=auto")
+	.replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid))
+	.replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid))
+	.replace("theme:sabayon", "theme:sabayon cdroot_type=vfat")
+	.replace("pmedia=cd", "pmedia=usbflash")
+	.replace(QRegExp("archisolabel=\\S{0,}"), QString("archisolabel=%1").arg(devlabel))
+	.trimmed();
 }
 
 void unetbootin::runinstusb()
