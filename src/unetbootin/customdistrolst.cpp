@@ -33,7 +33,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro1site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 2"))
@@ -46,7 +46,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro2site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 3"))
@@ -59,7 +59,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro3site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 4"))
@@ -72,7 +72,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro4site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 5"))
@@ -85,7 +85,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro5site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 6"))
@@ -98,7 +98,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro6site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 7"))
@@ -111,7 +111,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro7site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 8"))
@@ -124,7 +124,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro8site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 	if (nameDistro == customver::tr("Distro Name 9"))
@@ -137,7 +137,7 @@ if (customver::tr("iscustomver-no") == "iscustomver-yes")
 		else
 		{
 			downloadfile(customver::tr("http://distro9site.org/distro-release-%1/distro-architecture%2.iso").arg(relname).arg(cpuarch), isotmpf);
-			extractiso(isotmpf, targetPath);
+			extractiso(isotmpf);
 		}
 	}
 }

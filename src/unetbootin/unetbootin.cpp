@@ -1344,7 +1344,7 @@ QStringList unetbootin::filteroutlistL(QStringList listofdata, QList<QRegExp> li
 	}
 }
 
-void unetbootin::extractiso(QString isofile, QString exoutputdir)
+void unetbootin::extractiso(QString isofile)
 {
 	if (!sdesc2->text().contains(trcurrent))
 	{
@@ -1359,11 +1359,11 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 		randtmpfile tmpoutsubarchive(ubntmpf, subarchivename.right(3));
 		pdesc1->setText(tr("<b>Extracting compressed iso:</b> %1").arg(subarchivename));
 		extractfile(subarchivename, tmpoutsubarchive.fileName(), isofile);
-		return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
+		return extractiso(tmpoutsubarchive.fileName());
 	}
 	if (listfilesizedirpair.first.first.contains(QDir::toNativeSeparators("rescue/KRD.VERSION"), Qt::CaseInsensitive))
 	{
-		return extractiso_krd10(isofile, exoutputdir);
+		return extractiso_krd10(isofile);
 	}
 	QFileInfo isofileFI(isofile);
 	qint64 isofileSize = isofileFI.size();
@@ -1385,7 +1385,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 					randtmpfile tmpoutsubarchive(ubntmpf, subarchivename.right(3));
 					pdesc1->setText(tr("<b>Extracting compressed iso:</b> %1").arg(subarchivename));
 					extractfile(subarchivename, tmpoutsubarchive.fileName(), isofile);
-					return extractiso(tmpoutsubarchive.fileName(), exoutputdir);
+					return extractiso(tmpoutsubarchive.fileName());
 				}
 			}
 		}
@@ -1476,14 +1476,14 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
 #ifndef NOEXTRACTKERNEL
-	extractkernel(isofile, QString("%1ubnkern").arg(exoutputdir), listfilesizedirpair.first);
+	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfilesizedirpair.first);
 #endif
 #ifndef NOEXTRACTINITRD
-	extractinitrd(isofile, QString("%1ubninit").arg(exoutputdir), listfilesizedirpair.first);
+	extractinitrd(isofile, QString("%1ubninit").arg(targetPath), listfilesizedirpair.first);
 #endif
 	}
 	QStringList createdpaths = makepathtree(targetDrive, directorypathnames);
-	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(targetPath)));
 	if (ubnpathlF.exists())
 	{
 		rmFile(ubnpathlF);
@@ -1496,7 +1496,7 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	ubnpathlF.close();
 	QStringList extractedfiles = extractallfiles(isofile, targetDrive, listfilesizedirpair.first, filepathnames);
-	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
 	if (ubnfilelF.exists())
 	{
 		rmFile(ubnfilelF);
@@ -1509,19 +1509,19 @@ void unetbootin::extractiso(QString isofile, QString exoutputdir)
 	}
 	ubnfilelF.close();
 #ifdef XPUD
-	rmFile(QString("%1boot.cat").arg(exoutputdir));
-	rmFile(QString("%1isolinux.bin").arg(exoutputdir));
-	rmFile(QString("%1syslinux.cfg").arg(exoutputdir));
-	QFile::rename(QString("%1isolinux.cfg").arg(exoutputdir), QString("%1syslinux.cfg").arg(exoutputdir));
+	rmFile(QString("%1boot.cat").arg(targetPath));
+	rmFile(QString("%1isolinux.bin").arg(targetPath));
+	rmFile(QString("%1syslinux.cfg").arg(targetPath));
+	QFile::rename(QString("%1isolinux.cfg").arg(targetPath), QString("%1syslinux.cfg").arg(targetPath));
 	if (installType == tr("USB Drive"))
 	{
-		rmFile(QString("%1ubnfilel.txt").arg(exoutputdir));
-		rmFile(QString("%1ubnpathl.txt").arg(exoutputdir));
+		rmFile(QString("%1ubnfilel.txt").arg(targetPath));
+		rmFile(QString("%1ubnpathl.txt").arg(targetPath));
 	}
 #endif
 }
 
-void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
+void unetbootin::extractiso_krd10(QString isofile)
 {
 	if (!sdesc2->text().contains(trcurrent))
 	{
@@ -1570,7 +1570,7 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 	if (!bootpaths.contains("rescue"))
 		bootpaths.append("rescue");
 	QStringList createdpaths = makepathtree(targetDrive, bootpaths);
-	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(exoutputdir)));
+	QFile ubnpathlF(QDir::toNativeSeparators(QString("%1ubnpathl.txt").arg(targetPath)));
 	if (ubnpathlF.exists())
 	{
 		rmFile(ubnpathlF);
@@ -1595,7 +1595,7 @@ void unetbootin::extractiso_krd10(QString isofile, QString exoutputdir)
 		extractedfiles.append(QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
 	//QFile::copy(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
 	copyfilegui(isofile, QString("%1rescue%2rescue.iso").arg(targetDrive).arg(QDir::toNativeSeparators("/")));
-	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(exoutputdir)));
+	QFile ubnfilelF(QDir::toNativeSeparators(QString("%1ubnfilel.txt").arg(targetPath)));
 	if (ubnfilelF.exists())
 	{
 		rmFile(ubnfilelF);
@@ -3268,11 +3268,11 @@ void unetbootin::runinst()
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("ISO")))
 		{
 			if (!FloppyPath->text().startsWith("http://") && !FloppyPath->text().startsWith("ftp://"))
-				extractiso(FloppyPath->text(), targetPath);
+				extractiso(FloppyPath->text());
 			else
 			{
 				downloadfile(FloppyPath->text(), isotmpf);
-				extractiso(isotmpf, targetPath);
+				extractiso(isotmpf);
 			}
 			if (QFile::exists(QString("%1sevnz.exe").arg(ubntmpf)))
 			{
@@ -3685,7 +3685,8 @@ void unetbootin::setLabel(QString devname, QString newlabel)
 	if (this->devluid.startsWith("LABEL="))
 		this->devluid = "LABEL="+newlabel;
 #ifdef Q_OS_MAC
-	this->targetPath = this->locatemountpoint(devname);
+	this->targetPath = this->locatemountpoint(devname) + "/";
+	this->targetDrive = this->targetPath;
 #endif
 }
 
