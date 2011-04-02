@@ -3677,6 +3677,7 @@ void unetbootin::setLabel(QString devname, QString newlabel)
 	this->devlabel = QString(newlabel);
 	if (this->devluid.startsWith("LABEL"))
 		this->devluid = this->getdevluid(this->targetDev);
+	this->targetPath = this->locatemountpoint(devname);
 }
 
 QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
