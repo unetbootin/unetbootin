@@ -25,11 +25,11 @@ unetbootin::tr("Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbo
 	"<ol><li>Select a distribution and version to download from the list above, or manually specify files to load below.</li>"
 	"<li>Select an installation type, and press OK to begin installing.</li></ol>") <<
 unetbootin::tr("== Select Version ==")));
-distroselect->addItem("Arch Linux", (QStringList() << "2008.03-1" <<
+distroselect->addItem("Arch Linux", (QStringList() << "2010.05-core" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/>"
 	"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 	"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") <<
-"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64"));
+"2010.05-core" << "2010.05-core_x64" << "2010.05-netinstall" << "2010.05-netinstall_x64"));
 //	"2007.08-2" << "2007.08-2_x64" << "2008.03-1" << "2008.03-1_x64" << "2008.06" << "2008.06_x64"));
 distroselect->addItem("BackTrack", (QStringList() << "4f" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/>"

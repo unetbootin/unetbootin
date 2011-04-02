@@ -197,18 +197,7 @@ if (nameDistro == "Arch Linux")
 	{
 		cpuarch = "i686";
 	}
-	if (relname.contains("2007.08"))
-	{
-		downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), isotmpf);
-	}
-	else if (relname.contains("2008.03"))
-	{
-		downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/%2/Archlinux-%2-%1-archboot.ftp.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), isotmpf);
-	}
-	else
-	{
-		downloadfile(QString("ftp://ftp.archlinux.org/iso/%3/archlinux-%1-ftp-%2.iso").arg(relname, cpuarch, QString(relname).remove(QRegExp("-\\d{0,}$"))), isotmpf);
-	}
+	downloadfile(QString("http://ftp.archlinux.org/iso/%3/archlinux-%1-%2.iso").arg(relname).arg(cpuarch).arg(QString(relname).remove("-core").remove("-netinstall")), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
