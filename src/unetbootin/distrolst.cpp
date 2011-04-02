@@ -197,7 +197,17 @@ if (nameDistro == "Arch Linux")
 	{
 		cpuarch = "i686";
 	}
-	downloadfile(QString("http://ftp.archlinux.org/iso/%3/archlinux-%1-%2.iso").arg(relname).arg(cpuarch).arg(QString(relname).remove("-core").remove("-netinstall")), isotmpf);
+	downloadfile(fileFilterNetDir(QStringList() <<
+	"http://mirrors.kernel.org/archlinux/iso/latest/" <<
+	"http://distro.ibiblio.org/archlinux/iso/latest/" <<
+	"http://mirror.rit.edu/archlinux/iso/latest/"
+	, 3072000, 2048576000, QList<QRegExp>() <<
+	QRegExp("^arch", Qt::CaseInsensitive) <<
+	QRegExp("^archlinux", Qt::CaseInsensitive) <<
+	QRegExp(".iso$", Qt::CaseInsensitive) <<
+	QRegExp(cpuarch, Qt::CaseInsensitive) <<
+	QRegExp(relname, Qt::CaseInsensitive)
+	), isotmpf);
 	extractiso(isotmpf, targetPath);
 }
 
