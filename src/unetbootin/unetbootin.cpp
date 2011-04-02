@@ -3700,7 +3700,7 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 			int startIdx = isolabelopt.indexOf("archisolabel=");
 			if (startIdx >= 0)
 			{
-				isolabelopt = isolabelopt.right(startIdx - startIdx - QString("archisolabel=").size()).trimmed();
+				isolabelopt = isolabelopt.right(isolabelopt.size() - startIdx - QString("archisolabel=").size()).trimmed();
 				int endIdx = isolabelopt.indexOf(" ");
 				if (endIdx > 0)
 				{
