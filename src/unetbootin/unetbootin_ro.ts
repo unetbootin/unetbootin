@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-03-26 22:17-0400
+POT-Creation-Date: 2011-04-01 15:37-0400
 PO-Revision-Date: 2011-02-11 12:53+0000
 Last-Translator: Florin Cătălin RUSSEN &lt;cfrussen@yahoo.co.uk&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Launchpad-Export-Date: 2011-04-02 17:48+0000
 X-Generator: Launchpad (build 12710)
 </translation>
     </message>
@@ -38,7 +38,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3178"/>
         <location filename="unetbootin.cpp" line="3191"/>
         <location filename="unetbootin.cpp" line="3363"/>
-        <location filename="unetbootin.cpp" line="3952"/>
+        <location filename="unetbootin.cpp" line="3953"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -58,8 +58,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3182"/>
         <location filename="unetbootin.cpp" line="3208"/>
         <location filename="unetbootin.cpp" line="3367"/>
-        <location filename="unetbootin.cpp" line="3687"/>
-        <location filename="unetbootin.cpp" line="3956"/>
+        <location filename="unetbootin.cpp" line="3688"/>
+        <location filename="unetbootin.cpp" line="3957"/>
         <source>USB Drive</source>
         <translation>Unitate USB</translation>
     </message>
@@ -405,39 +405,39 @@ Instalați pachetul „%3” sau pachetul echivalent din distribuția voastră.<
         <translation>Se configurează grub pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3716"/>
+        <location filename="unetbootin.cpp" line="3717"/>
         <source>Installing syslinux to %1</source>
         <translation>Se instalează syslinux pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3751"/>
+        <location filename="unetbootin.cpp" line="3752"/>
         <source>Installing extlinux to %1</source>
         <translation>Se instalează extlinux pe %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3911"/>
+        <location filename="unetbootin.cpp" line="3912"/>
         <source>Syncing filesystems</source>
         <translation>Se sincronizează sistemele de fișiere</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3916"/>
+        <location filename="unetbootin.cpp" line="3917"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3954"/>
+        <location filename="unetbootin.cpp" line="3955"/>
         <source>After rebooting, select the </source>
         <translation>După repornire, selectați </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3959"/>
+        <location filename="unetbootin.cpp" line="3960"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>După repornire, selectați opțiunea de pornire de pe USB din meniul de pornire din BIOS.%1
 Reporniți acum?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3962"/>
+        <location filename="unetbootin.cpp" line="3963"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -449,42 +449,42 @@ Reporniți acum?</translation>
 *IMPORTANT* Înainte de a reporni, puneți un fișier ISO Ubuntu alternate (nu „desktop”) în dosarul rădăcină al unității de disc sau USB. Acest fișier poate fi obținut de la cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="233"/>
+        <location filename="distrolst.cpp" line="222"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După repornirea sistemului, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea „Pornire instalare”, alegeți „Rețea” drept sursă, apoi „HTTP” drept protocol, introduceți „mirrors.kernel.org” cînd vi se va cere serverul, iar apoi „/centos/%1/os/%2” cînd vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="289"/>
+        <location filename="distrolst.cpp" line="278"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *IMPORTANT* Înainte de a reporni, puneți un fișier ISO Debian în dosarul rădăcină al unității de disc sau USB. Acest fișier poate fi obținut de la cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="382"/>
+        <location filename="distrolst.cpp" line="371"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După repornire, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea „Pornire instalare”, alegeți „Rețea” drept sursă, apoi „HTTP” drept protocol, introduceți „download.fedora.redhat.com” cînd vi se va cere serverul, iar apoi „/pub/fedora/linux/development/%1/os” cînd vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="388"/>
+        <location filename="distrolst.cpp" line="377"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După repornire, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea „Pornire instalare”, alegeți „Rețea” drept sursă, apoi „HTTP” drept protocol, introduceți „download.fedora.redhat.com” cînd vi se va cere serverul, iar apoi „/pub/fedora/linux/releases/%1/Fedora/%2/os” cînd vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="748"/>
+        <location filename="distrolst.cpp" line="737"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* După repornire, ignorați orice mesaj de eroare și selectați înapoi dacă vi se cere introducerea unui CD, apoi mergeți la meniul principal, selectați opțiunea „Pornire instalare”, alegeți „Rețea” drept sursă, apoi „HTTP” drept protocol, introduceți „download.opensuse.org” cînd vi se va cere serverul, iar apoi „/factory/repo/oss” cînd vi se va cere dosarul.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="754"/>
+        <location filename="distrolst.cpp" line="743"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>

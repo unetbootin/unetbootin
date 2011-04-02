@@ -13,14 +13,14 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-03-26 22:17-0400
+POT-Creation-Date: 2011-04-01 15:37-0400
 PO-Revision-Date: 2011-03-27 10:15+0000
 Last-Translator: Jiri Grönroos &lt;Unknown&gt;
 Language-Team: Finnish &lt;fi@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-01 18:25+0000
+X-Launchpad-Export-Date: 2011-04-02 17:48+0000
 X-Generator: Launchpad (build 12710)
 </translation>
     </message>
@@ -44,7 +44,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3178"/>
         <location filename="unetbootin.cpp" line="3191"/>
         <location filename="unetbootin.cpp" line="3363"/>
-        <location filename="unetbootin.cpp" line="3952"/>
+        <location filename="unetbootin.cpp" line="3953"/>
         <source>Hard Disk</source>
         <translation>Kiintolevy</translation>
     </message>
@@ -64,8 +64,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3182"/>
         <location filename="unetbootin.cpp" line="3208"/>
         <location filename="unetbootin.cpp" line="3367"/>
-        <location filename="unetbootin.cpp" line="3687"/>
-        <location filename="unetbootin.cpp" line="3956"/>
+        <location filename="unetbootin.cpp" line="3688"/>
+        <location filename="unetbootin.cpp" line="3957"/>
         <source>USB Drive</source>
         <translation>USB-asema</translation>
     </message>
@@ -411,39 +411,39 @@ Asenna ensin paketti &quot;%3&quot;, tai jokin muu linux-jakeluasi vastaava pake
         <translation>Konfiguroidaan grub kohteessa %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3716"/>
+        <location filename="unetbootin.cpp" line="3717"/>
         <source>Installing syslinux to %1</source>
         <translation>Asennetaan syslinuxia: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3751"/>
+        <location filename="unetbootin.cpp" line="3752"/>
         <source>Installing extlinux to %1</source>
         <translation>Asennetaan extlinuxia: %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3911"/>
+        <location filename="unetbootin.cpp" line="3912"/>
         <source>Syncing filesystems</source>
         <translation>Synkronoidaan tiedostojärjestelmiä</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3916"/>
+        <location filename="unetbootin.cpp" line="3917"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3954"/>
+        <location filename="unetbootin.cpp" line="3955"/>
         <source>After rebooting, select the </source>
         <translation>Uudelleenkäynnistyksen jälkeen valitse </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3959"/>
+        <location filename="unetbootin.cpp" line="3960"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Valitse USB-asema käynnistettäväksi mediaksi BIOS-valikosta uudelleenkäynnistyksen yhteydessä. %1
 Käynnistetäänkö kone uudelleen nyt?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3962"/>
+        <location filename="unetbootin.cpp" line="3963"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -455,40 +455,40 @@ Käynnistetäänkö kone uudelleen nyt?</translation>
 *TÄRKEÄÄ* Ennen tietokoneen uudelleenkäynnistystä aseta Ubuntun vaihtoehtoisversion (alternate) asennustiedosto kiintolevysi tai USB-laitteesi juurikansioon. Tiedostot voi ladata osoitteesta cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="233"/>
+        <location filename="distrolst.cpp" line="222"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *TÄRKEÄÄ* Uudelleenkäynnistyksen jälkeen ohita ja jätä huomiotta mahdolliset virheilmoitukset ja valitse &apos;takaisin&apos;, mikäli CD-levyä kysytään. Tämän jälkeen mene päävalikkoon, valitse &apos;Aloita asennus&apos; -toiminto, valitse lähteeksi &apos;Verkko&apos;, valitse protokollaksi &apos;HTTP&apos;, aseta palvelinta kysyessä arvoksi &apos;mirror.kernel.org&apos; ja kansiota kysyttäessä aseta arvoksi &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="289"/>
+        <location filename="distrolst.cpp" line="278"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *TÄRKEÄÄ* Ennen uudelleenkäynnistysta aseta Debian -käyttöjärjestelmän iso-tyypin asennustiedosto kiintolevysi tai USB-asemasi juurikansioon. Tiedostot voi hankkia osoitteesta cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="382"/>
+        <location filename="distrolst.cpp" line="371"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *TÄRKEÄÄ* Uudelleenkäynnistyksen jälkeen ohita ja jätä huomiotta mahdolliset virheilmoitukset ja valitse &apos;takaisin&apos;, mikäli CD-levyä kysytään. Tämän jälkeen mene päävalikkoon, valitse &apos;Aloita asennus&apos; -toiminto, valitse lähteeksi &apos;Verkko&apos;, valitse protokollaksi &apos;HTTP&apos;, aseta palvelinta kysyessä arvoksi &apos;download.fedora.redhat.com&apos; ja kansiota kysyttäessä aseta arvoksi &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="388"/>
+        <location filename="distrolst.cpp" line="377"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="748"/>
+        <location filename="distrolst.cpp" line="737"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="754"/>
+        <location filename="distrolst.cpp" line="743"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation></translation>

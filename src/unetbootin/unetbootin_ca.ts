@@ -7,14 +7,14 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-03-26 22:17-0400
-PO-Revision-Date: 2011-02-05 18:56+0000
+POT-Creation-Date: 2011-04-01 15:37-0400
+PO-Revision-Date: 2011-04-02 11:43+0000
 Last-Translator: FerranRius &lt;frius64@hotmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-01 18:24+0000
+X-Launchpad-Export-Date: 2011-04-02 17:48+0000
 X-Generator: Launchpad (build 12710)
 </translation>
     </message>
@@ -38,7 +38,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3178"/>
         <location filename="unetbootin.cpp" line="3191"/>
         <location filename="unetbootin.cpp" line="3363"/>
-        <location filename="unetbootin.cpp" line="3952"/>
+        <location filename="unetbootin.cpp" line="3953"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -58,8 +58,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3182"/>
         <location filename="unetbootin.cpp" line="3208"/>
         <location filename="unetbootin.cpp" line="3367"/>
-        <location filename="unetbootin.cpp" line="3687"/>
-        <location filename="unetbootin.cpp" line="3956"/>
+        <location filename="unetbootin.cpp" line="3688"/>
+        <location filename="unetbootin.cpp" line="3957"/>
         <source>USB Drive</source>
         <translation>Disc USB</translation>
     </message>
@@ -98,17 +98,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="266"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>Persistència al dispositiu USB autònom</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="281"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>Dispositiu USB amb format FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="285"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>Dispositiu USB amb format EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="590"/>
@@ -405,41 +405,41 @@ Instal·leu el paquet «%3» o l&apos;equivalent de la vostra distribució.</tra
         <translation>S&apos;està configurant el grub a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3716"/>
+        <location filename="unetbootin.cpp" line="3717"/>
         <source>Installing syslinux to %1</source>
         <translation>S&apos;està instal·lant syslinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3751"/>
+        <location filename="unetbootin.cpp" line="3752"/>
         <source>Installing extlinux to %1</source>
         <translation>S&apos;està instal·lant extlinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3911"/>
+        <location filename="unetbootin.cpp" line="3912"/>
         <source>Syncing filesystems</source>
         <translation>S&apos;està sincronitzant els fitxers de sistema</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3916"/>
+        <location filename="unetbootin.cpp" line="3917"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Configura la persistència</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3954"/>
+        <location filename="unetbootin.cpp" line="3955"/>
         <source>After rebooting, select the </source>
         <translation>Després d&apos;arrencar de nou, seleccioneu la </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3959"/>
+        <location filename="unetbootin.cpp" line="3960"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
 Arrencar de nou ara?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3962"/>
+        <location filename="unetbootin.cpp" line="3963"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>El dispositiu USB que s&apos;ha creat no arrencarà a un Mac. Inseriu-lo a un PC i seleccioneu l&apos;opció d&apos;engegada des del dispositiu USB a la BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="41"/>
@@ -449,42 +449,42 @@ Arrencar de nou ara?</translation>
 *IMPORTANT* Abans d&apos;arrencar de nou, col·loqueu el fitxer iso d&apos;instal·lació de l&apos;Ubuntu Alternate (no la versió d&apos;escriptori) a la carpeta arrel del disc dur o de la unitat USB. Es pot aconseguir a cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="233"/>
+        <location filename="distrolst.cpp" line="222"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» si es demana un CD. Tot seguit, des del menú principal, trieu l&apos;opció «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «mirrors.kernel.org» quan es demani el servidor i «/centos/%1/os/%2» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="289"/>
+        <location filename="distrolst.cpp" line="278"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *IMPORTANT* Abans d&apos;arrencar de nou, situeu el fitxer iso Debian d&apos;instal·lació a la carpeta arrel del disc dur o unitat USB. Es pot aconseguir de cdimage.debian.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="382"/>
+        <location filename="distrolst.cpp" line="371"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» si es demana un CD. Tot seguit, des del menú principal, trieu l&apos;opció «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan es demani el servidor i «/pub/fedora/linux/development/%1/os» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="388"/>
+        <location filename="distrolst.cpp" line="377"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» si es demana un CD. Tot seguit, des del menú principal, trieu l&apos;opció «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan es demani el servidor i «/pub/fedora/linux/releases/%1/Fedora/%2/os» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="748"/>
+        <location filename="distrolst.cpp" line="737"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» es demana un CD, tot seguit aneu al menú principal, seleccioneu l&apos;opció «Inicia la instal·lació», escolliu «En xarxa» com a origen, escolliu «HTTP» com a protocol, quan es demani el servidor introduïu «download.opensuse.org» i introduïu «/factory/repo/oss» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="754"/>
+        <location filename="distrolst.cpp" line="743"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -806,17 +806,17 @@ Arrencar de nou ara?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation></translation>
+        <translation>Espai que es reserva per fitxers de l&apos;usuari que es conserven entre arrencades Només funciona en dispositius USB autònoms per a Ubuntu i derivats. Si el valor excedeix la capacitat del dispositiu s&apos;utilitzarà el màxim disponible.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation></translation>
+        <translation>Espai utilitzat per conservar fitxers entre arrencades (només per a Ubuntu):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>

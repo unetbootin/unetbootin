@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-03-26 22:17-0400\n"
+"POT-Creation-Date: 2011-04-01 15:37-0400\n"
 "PO-Revision-Date: 2011-03-27 10:15+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-04-01 18:25+0000\n"
+"X-Launchpad-Export-Date: 2011-04-02 17:48+0000\n"
 "X-Generator: Launchpad (build 12710)\n"
 "X-Language: fi_FI\n"
 
@@ -25,8 +25,8 @@ msgstr "VasemmaltaOikealle"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:202 unetbootin.cpp:288 unetbootin.cpp:289 unetbootin.cpp:356
-#: unetbootin.cpp:465 unetbootin.cpp:3140 unetbootin.cpp:3153
-#: unetbootin.cpp:3325 unetbootin.cpp:3865
+#: unetbootin.cpp:465 unetbootin.cpp:3141 unetbootin.cpp:3154
+#: unetbootin.cpp:3326 unetbootin.cpp:3866
 msgid "Hard Disk"
 msgstr "Kiintolevy"
 
@@ -34,20 +34,20 @@ msgstr "Kiintolevy"
 #: unetbootin.cpp:204 unetbootin.cpp:285 unetbootin.cpp:286 unetbootin.cpp:358
 #: unetbootin.cpp:469 unetbootin.cpp:634 unetbootin.cpp:654 unetbootin.cpp:908
 #: unetbootin.cpp:1439 unetbootin.cpp:1501 unetbootin.cpp:2420
-#: unetbootin.cpp:2462 unetbootin.cpp:3144 unetbootin.cpp:3170
-#: unetbootin.cpp:3329 unetbootin.cpp:3869
+#: unetbootin.cpp:2462 unetbootin.cpp:3145 unetbootin.cpp:3171
+#: unetbootin.cpp:3330 unetbootin.cpp:3870
 msgid "USB Drive"
 msgstr "USB-asema"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:205 unetbootin.cpp:222 unetbootin.cpp:223 unetbootin.cpp:324
-#: unetbootin.cpp:585 unetbootin.cpp:586 unetbootin.cpp:3223
+#: unetbootin.cpp:585 unetbootin.cpp:586 unetbootin.cpp:3224
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:206 unetbootin.cpp:218 unetbootin.cpp:219 unetbootin.cpp:329
-#: unetbootin.cpp:590 unetbootin.cpp:591 unetbootin.cpp:3215
+#: unetbootin.cpp:590 unetbootin.cpp:591 unetbootin.cpp:3216
 msgid "Floppy"
 msgstr "Levyke"
 
@@ -359,57 +359,57 @@ msgstr ""
 "Asenna ensin paketti \"%3\", tai jokin muu linux-jakeluasi vastaava paketti."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3121
+#: unetbootin.cpp:3122
 msgid "(Current)"
 msgstr "(Nykyinen)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3122
+#: unetbootin.cpp:3123
 msgid "(Done)"
 msgstr "(Valmis)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3404
+#: unetbootin.cpp:3405
 msgid "Configuring grub2 on %1"
 msgstr "Määritetään grub2:n asetuksia: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3416
+#: unetbootin.cpp:3417
 msgid "Configuring grldr on %1"
 msgstr "Konfiguroidaan grldr kohteessa %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3444
+#: unetbootin.cpp:3445
 msgid "Configuring grub on %1"
 msgstr "Konfiguroidaan grub kohteessa %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3629
+#: unetbootin.cpp:3630
 msgid "Installing syslinux to %1"
 msgstr "Asennetaan syslinuxia: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3664
+#: unetbootin.cpp:3665
 msgid "Installing extlinux to %1"
 msgstr "Asennetaan extlinuxia: %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3824
+#: unetbootin.cpp:3825
 msgid "Syncing filesystems"
 msgstr "Synkronoidaan tiedostojärjestelmiä"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3829
+#: unetbootin.cpp:3830
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3867
+#: unetbootin.cpp:3868
 msgid "After rebooting, select the "
 msgstr "Uudelleenkäynnistyksen jälkeen valitse "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3872
+#: unetbootin.cpp:3873
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -419,14 +419,14 @@ msgstr ""
 "Käynnistetäänkö kone uudelleen nyt?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3875
+#: unetbootin.cpp:3876
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:27
+#: distrolst.cpp:41
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
@@ -439,7 +439,7 @@ msgstr ""
 "laitteesi juurikansioon. Tiedostot voi ladata osoitteesta cdimage.ubuntu.com"
 
 #. ts-context unetbootin
-#: distrolst.cpp:219
+#: distrolst.cpp:233
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -457,7 +457,7 @@ msgstr ""
 "'/centos/%1/os/%2'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:275
+#: distrolst.cpp:289
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -470,7 +470,7 @@ msgstr ""
 "voi hankkia osoitteesta cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:368
+#: distrolst.cpp:382
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -488,7 +488,7 @@ msgstr ""
 "'/pub/fedora/linux/development/%1/os'."
 
 #. ts-context unetbootin
-#: distrolst.cpp:374
+#: distrolst.cpp:388
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -499,7 +499,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:734
+#: distrolst.cpp:748
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -510,7 +510,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:740
+#: distrolst.cpp:754
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -521,17 +521,17 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:22 unetbootin.cpp:670
+#: distrover.cpp:23 unetbootin.cpp:670
 msgid "== Select Distribution =="
 msgstr "== Valitse jakelu =="
 
 #. ts-context unetbootin
-#: distrover.cpp:22 distrover.cpp:26
+#: distrover.cpp:23 distrover.cpp:27
 msgid "== Select Version =="
 msgstr "== Valitse versio =="
 
 #. ts-context unetbootin
-#: distrover.cpp:23
+#: distrover.cpp:24
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -547,7 +547,7 @@ msgstr ""
 "USB-asemalle.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:28
+#: distrover.cpp:29
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -562,7 +562,7 @@ msgstr ""
 "asennuksen internetiä käyttäen (FTP)."
 
 #. ts-context unetbootin
-#: distrover.cpp:34
+#: distrover.cpp:35
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -577,7 +577,7 @@ msgstr ""
 "tilassa; asennusta ei vaadita jakelun käyttämiseksi."
 
 #. ts-context unetbootin
-#: distrover.cpp:39
+#: distrover.cpp:40
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -594,7 +594,7 @@ msgstr ""
 "ladattuja ISO-tiedostoja."
 
 #. ts-context unetbootin
-#: distrover.cpp:44
+#: distrover.cpp:45
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -609,7 +609,7 @@ msgstr ""
 "tilassa; sen käyttö ei vaadi asennusta."
 
 #. ts-context unetbootin
-#: distrover.cpp:49
+#: distrover.cpp:50
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -626,7 +626,7 @@ msgstr ""
 "välttämätöntä."
 
 #. ts-context unetbootin
-#: distrover.cpp:54
+#: distrover.cpp:55
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -647,7 +647,7 @@ msgstr ""
 "levyn/kiintolevyn juureen."
 
 #. ts-context unetbootin
-#: distrover.cpp:60
+#: distrover.cpp:61
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -657,7 +657,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:65
+#: distrover.cpp:66
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -668,7 +668,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:70
+#: distrover.cpp:71
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -678,7 +678,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:75
+#: distrover.cpp:76
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -699,7 +699,7 @@ msgstr ""
 "ladattuja ISO-tiedostoja."
 
 #. ts-context unetbootin
-#: distrover.cpp:80
+#: distrover.cpp:81
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -710,7 +710,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:85
+#: distrover.cpp:86
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -727,7 +727,7 @@ msgstr ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">ohjekirjasta</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:90
+#: distrover.cpp:91
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -739,7 +739,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:95
+#: distrover.cpp:96
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -750,7 +750,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:100
+#: distrover.cpp:101
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
 "weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
@@ -765,7 +765,7 @@ msgstr ""
 "tilaan, josta on mahdollista suorittaa haittaohjelmien etsintä."
 
 #. ts-context unetbootin
-#: distrover.cpp:105
+#: distrover.cpp:106
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
@@ -775,7 +775,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:115
+#: distrover.cpp:116
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -786,7 +786,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:120
+#: distrover.cpp:121
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -796,7 +796,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:125
+#: distrover.cpp:126
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -813,7 +813,7 @@ msgstr ""
 "josta on mahdollista suorittaa haittaohjelmien etsintä."
 
 #. ts-context unetbootin
-#: distrover.cpp:130
+#: distrover.cpp:131
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -837,7 +837,7 @@ msgstr ""
 "alternate-version ISO-tiedosto USB-levyn/kiintolevyn juureen."
 
 #. ts-context unetbootin
-#: distrover.cpp:135
+#: distrover.cpp:136
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
@@ -847,7 +847,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:140
+#: distrover.cpp:141
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -858,7 +858,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:145
+#: distrover.cpp:146
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -871,7 +871,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:152
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -882,7 +882,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:157
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
@@ -893,7 +893,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:161
+#: distrover.cpp:162
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -905,7 +905,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:167
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
@@ -916,7 +916,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:171
+#: distrover.cpp:172
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -933,7 +933,7 @@ msgstr ""
 "käytetään ennalta ladattuja ISO-asennustiedostoja."
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:177
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -948,7 +948,7 @@ msgstr ""
 "asennusta ei vaadita Ophcrackin käyttämiseksi."
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:182
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -959,7 +959,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:187
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
@@ -969,7 +969,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:191
+#: distrover.cpp:192
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -986,7 +986,7 @@ msgstr ""
 "välttämätöntä."
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:197
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -998,7 +998,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:201
+#: distrover.cpp:202
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1013,7 +1013,7 @@ msgstr ""
 "live-tilaan, josta asennusohjelma on mahdollista käynnistää."
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:207
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1024,7 +1024,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:211
+#: distrover.cpp:212
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1035,7 +1035,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:216 distrovercust.cpp:12
+#: distrover.cpp:217 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1045,7 +1045,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:221
+#: distrover.cpp:222
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1056,7 +1056,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:226
+#: distrover.cpp:227
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
@@ -1066,7 +1066,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:231
+#: distrover.cpp:232
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1091,7 +1091,7 @@ msgstr ""
 "levyn/kiintolevyn juureen."
 
 #. ts-context unetbootin
-#: distrover.cpp:236
+#: distrover.cpp:237
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1101,7 +1101,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:241
+#: distrover.cpp:242
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1125,7 +1125,7 @@ msgstr ""
 "alternate-version ISO-tiedosto USB-levyn/kiintolevyn juureen."
 
 #. ts-context unetbootin
-#: distrover.cpp:246
+#: distrover.cpp:247
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
