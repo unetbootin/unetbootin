@@ -3682,8 +3682,8 @@ void unetbootin::setLabel(QString devname, QString newlabel)
 	callexternapp("label", devname+" "+newlabel);
 #endif
 	this->devlabel = QString(newlabel);
-	if (this->devluid.startsWith("LABEL"))
-		this->devluid = this->getdevluid(this->targetDev);
+	if (this->devluid.startsWith("LABEL="))
+		this->devluid = "LABEL="+newlabel;
 #ifdef Q_OS_MAC
 	this->targetPath = this->locatemountpoint(devname);
 #endif
