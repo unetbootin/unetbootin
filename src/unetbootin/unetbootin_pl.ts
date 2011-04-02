@@ -44,7 +44,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3185"/>
         <location filename="unetbootin.cpp" line="3198"/>
         <location filename="unetbootin.cpp" line="3370"/>
-        <location filename="unetbootin.cpp" line="3962"/>
+        <location filename="unetbootin.cpp" line="3963"/>
         <source>Hard Disk</source>
         <translation>Dysk twardy</translation>
     </message>
@@ -64,8 +64,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3189"/>
         <location filename="unetbootin.cpp" line="3215"/>
         <location filename="unetbootin.cpp" line="3374"/>
-        <location filename="unetbootin.cpp" line="3697"/>
-        <location filename="unetbootin.cpp" line="3966"/>
+        <location filename="unetbootin.cpp" line="3698"/>
+        <location filename="unetbootin.cpp" line="3967"/>
         <source>USB Drive</source>
         <translation>Napęd USB</translation>
     </message>
@@ -411,39 +411,39 @@ Zainstaluj pakiet &quot;%3&quot; lub odpowiednik dla Twojej dystrybucji.</transl
         <translation>Konfiguruję grub na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3726"/>
+        <location filename="unetbootin.cpp" line="3727"/>
         <source>Installing syslinux to %1</source>
         <translation>Instaluję syslinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3761"/>
+        <location filename="unetbootin.cpp" line="3762"/>
         <source>Installing extlinux to %1</source>
         <translation>Instaluję extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3921"/>
+        <location filename="unetbootin.cpp" line="3922"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizacja systemów plików</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3926"/>
+        <location filename="unetbootin.cpp" line="3927"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3964"/>
+        <location filename="unetbootin.cpp" line="3965"/>
         <source>After rebooting, select the </source>
         <translation>Po ponownym uruchomieniu komputera wybierz </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3969"/>
+        <location filename="unetbootin.cpp" line="3970"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po ponownym uruchomieniu komputera wybierz opcję bootowania z USB w menu bootowania znajdującym się w BIOSie.%1
 Uruchomić ponownie komputer?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3972"/>
+        <location filename="unetbootin.cpp" line="3973"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-02 14:16-0400\n"
+"POT-Creation-Date: 2011-04-02 19:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:202 unetbootin.cpp:296 unetbootin.cpp:297 unetbootin.cpp:364
 #: unetbootin.cpp:480 unetbootin.cpp:3185 unetbootin.cpp:3198
-#: unetbootin.cpp:3370 unetbootin.cpp:3962
+#: unetbootin.cpp:3370 unetbootin.cpp:3963
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
@@ -31,7 +31,7 @@ msgstr ""
 #: unetbootin.cpp:484 unetbootin.cpp:649 unetbootin.cpp:669 unetbootin.cpp:923
 #: unetbootin.cpp:1454 unetbootin.cpp:1516 unetbootin.cpp:2435
 #: unetbootin.cpp:2477 unetbootin.cpp:3189 unetbootin.cpp:3215
-#: unetbootin.cpp:3374 unetbootin.cpp:3697 unetbootin.cpp:3966
+#: unetbootin.cpp:3374 unetbootin.cpp:3698 unetbootin.cpp:3967
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
@@ -430,37 +430,37 @@ msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3726
+#: unetbootin.cpp:3727
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3761
+#: unetbootin.cpp:3762
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3921
+#: unetbootin.cpp:3922
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3926
+#: unetbootin.cpp:3927
 #, fuzzy
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3964
+#: unetbootin.cpp:3965
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3969
+#: unetbootin.cpp:3970
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -468,7 +468,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3972
+#: unetbootin.cpp:3973
 #, fuzzy
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
