@@ -583,7 +583,7 @@ if (nameDistro == "Linux Mint")
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
 		QRegExp("linuxmint", Qt::CaseInsensitive) <<
 		QRegExp(cpuarch, Qt::CaseInsensitive);
-	if (relname == "9")
+	if (relname == "9" || relname == "10")
 	{
 		mintregex.append(QRegExp("cd", Qt::CaseInsensitive));
 		mintregex.append(QRegExp("gnome", Qt::CaseInsensitive));
