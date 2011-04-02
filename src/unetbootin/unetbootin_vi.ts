@@ -34,11 +34,11 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="296"/>
         <location filename="unetbootin.cpp" line="297"/>
         <location filename="unetbootin.cpp" line="364"/>
-        <location filename="unetbootin.cpp" line="473"/>
-        <location filename="unetbootin.cpp" line="3178"/>
-        <location filename="unetbootin.cpp" line="3191"/>
-        <location filename="unetbootin.cpp" line="3363"/>
-        <location filename="unetbootin.cpp" line="3953"/>
+        <location filename="unetbootin.cpp" line="480"/>
+        <location filename="unetbootin.cpp" line="3185"/>
+        <location filename="unetbootin.cpp" line="3198"/>
+        <location filename="unetbootin.cpp" line="3370"/>
+        <location filename="unetbootin.cpp" line="3962"/>
         <source>Hard Disk</source>
         <translation>Đĩa cứng</translation>
     </message>
@@ -47,19 +47,19 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="293"/>
         <location filename="unetbootin.cpp" line="294"/>
         <location filename="unetbootin.cpp" line="366"/>
-        <location filename="unetbootin.cpp" line="477"/>
-        <location filename="unetbootin.cpp" line="642"/>
-        <location filename="unetbootin.cpp" line="662"/>
-        <location filename="unetbootin.cpp" line="916"/>
-        <location filename="unetbootin.cpp" line="1447"/>
-        <location filename="unetbootin.cpp" line="1509"/>
-        <location filename="unetbootin.cpp" line="2428"/>
-        <location filename="unetbootin.cpp" line="2470"/>
-        <location filename="unetbootin.cpp" line="3182"/>
-        <location filename="unetbootin.cpp" line="3208"/>
-        <location filename="unetbootin.cpp" line="3367"/>
-        <location filename="unetbootin.cpp" line="3688"/>
-        <location filename="unetbootin.cpp" line="3957"/>
+        <location filename="unetbootin.cpp" line="484"/>
+        <location filename="unetbootin.cpp" line="649"/>
+        <location filename="unetbootin.cpp" line="669"/>
+        <location filename="unetbootin.cpp" line="923"/>
+        <location filename="unetbootin.cpp" line="1454"/>
+        <location filename="unetbootin.cpp" line="1516"/>
+        <location filename="unetbootin.cpp" line="2435"/>
+        <location filename="unetbootin.cpp" line="2477"/>
+        <location filename="unetbootin.cpp" line="3189"/>
+        <location filename="unetbootin.cpp" line="3215"/>
+        <location filename="unetbootin.cpp" line="3374"/>
+        <location filename="unetbootin.cpp" line="3697"/>
+        <location filename="unetbootin.cpp" line="3966"/>
         <source>USB Drive</source>
         <translation>Ổ USB</translation>
     </message>
@@ -68,9 +68,9 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="222"/>
         <location filename="unetbootin.cpp" line="223"/>
         <location filename="unetbootin.cpp" line="332"/>
-        <location filename="unetbootin.cpp" line="593"/>
-        <location filename="unetbootin.cpp" line="594"/>
-        <location filename="unetbootin.cpp" line="3261"/>
+        <location filename="unetbootin.cpp" line="600"/>
+        <location filename="unetbootin.cpp" line="601"/>
+        <location filename="unetbootin.cpp" line="3268"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -79,9 +79,9 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="218"/>
         <location filename="unetbootin.cpp" line="219"/>
         <location filename="unetbootin.cpp" line="337"/>
-        <location filename="unetbootin.cpp" line="598"/>
-        <location filename="unetbootin.cpp" line="599"/>
-        <location filename="unetbootin.cpp" line="3253"/>
+        <location filename="unetbootin.cpp" line="605"/>
+        <location filename="unetbootin.cpp" line="606"/>
+        <location filename="unetbootin.cpp" line="3260"/>
         <source>Floppy</source>
         <translation>Đĩa mềm</translation>
     </message>
@@ -111,333 +111,333 @@ X-Generator: Launchpad (build 12710)
         <translation>Ổ USB đã được định dạng EXT2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="590"/>
+        <location filename="unetbootin.cpp" line="597"/>
         <source>Open Disk Image File</source>
         <translation>Mở tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="590"/>
+        <location filename="unetbootin.cpp" line="597"/>
         <source>All Files</source>
         <translation>Tất cả tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="608"/>
-        <location filename="unetbootin.cpp" line="616"/>
-        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="615"/>
+        <location filename="unetbootin.cpp" line="623"/>
+        <location filename="unetbootin.cpp" line="631"/>
         <source>All Files (*)</source>
         <translation>Tất cả tập tin (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="608"/>
+        <location filename="unetbootin.cpp" line="615"/>
         <source>Open Kernel File</source>
         <translation>Mở tập tin nhân</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="616"/>
+        <location filename="unetbootin.cpp" line="623"/>
         <source>Open Initrd File</source>
         <translation>Mở tập tin Initrrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="624"/>
+        <location filename="unetbootin.cpp" line="631"/>
         <source>Open Bootloader Config File</source>
         <translation>Mở tập tin cấu hình Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="646"/>
+        <location filename="unetbootin.cpp" line="653"/>
         <source>Insert a USB flash drive</source>
         <translation>Yêu cầu một ổ flash USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="647"/>
+        <location filename="unetbootin.cpp" line="654"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Không tìm thấy ổ flash USB nào. Nếu bạn đã cắm USB vào, hãy định dạng nó sang FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="666"/>
+        <location filename="unetbootin.cpp" line="673"/>
         <source>%1 not mounted</source>
         <translation>%1 chưa được gắn vào</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="667"/>
+        <location filename="unetbootin.cpp" line="674"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Trước hết, bạn cần gắn kết (mount) ổ flash USB %1 vào. Hầu hết các bản phân phối sẽ tự động làm việc này sau khi bạn tháo và gắn lại ổ flash USB.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="682"/>
+        <location filename="unetbootin.cpp" line="689"/>
         <source>Select a distro</source>
         <translation>Yêu cầu chọn một bản phân phối</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="683"/>
+        <location filename="unetbootin.cpp" line="690"/>
         <source>You must select a distribution to load.</source>
         <translation>Bạn phải chọn một bản phân phối để tiến hành cài đặt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="697"/>
+        <location filename="unetbootin.cpp" line="704"/>
         <source>Select a disk image file</source>
         <translation>Yêu cầu chọn tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="698"/>
+        <location filename="unetbootin.cpp" line="705"/>
         <source>You must select a disk image file to load.</source>
         <translation>Bạn phải chọn một tập tin ảnh đĩa để tiến hành cài đặt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="719"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Chọn tập tin nhân hoặc tập tin initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="713"/>
+        <location filename="unetbootin.cpp" line="720"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Bạn phải chọn một tập tin nhân hoặc tập tin initrd.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="727"/>
+        <location filename="unetbootin.cpp" line="734"/>
         <source>Diskimage file not found</source>
         <translation>Không tìm thấy tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="728"/>
+        <location filename="unetbootin.cpp" line="735"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Tập tin ảnh đĩa bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="742"/>
+        <location filename="unetbootin.cpp" line="749"/>
         <source>Kernel file not found</source>
         <translation>Không tìm thấy tập tin nhân</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="743"/>
+        <location filename="unetbootin.cpp" line="750"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Tập tin nhân mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="757"/>
+        <location filename="unetbootin.cpp" line="764"/>
         <source>Initrd file not found</source>
         <translation>Không tìm thấy tập tin initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="758"/>
+        <location filename="unetbootin.cpp" line="765"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Tập tin initrd mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="862"/>
+        <location filename="unetbootin.cpp" line="869"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 đã tồn tại, bạn có muốn ghi đè lên nó không?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="863"/>
+        <location filename="unetbootin.cpp" line="870"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Tập tin %1 đã tồn tại. Chọn &apos;Yes to All&apos; để ghi đè nó và không nhắc lại nữa, chọn &apos;Yes&apos; để ghi đè tập tin, và &apos;No&apos; để giữ lại tập tin đã tồn tại. Nếu không chắc, chọn &apos;Yes to All&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="889"/>
+        <location filename="unetbootin.cpp" line="896"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>%1 không đủ dung lượng, hủy bỏ cài đặt?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="890"/>
+        <location filename="unetbootin.cpp" line="897"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>Thư mục %1 không đủ dung lượng. Chọn &apos;Yes&apos; để huỷ bỏ cài đặt, &apos;No&apos; để bỏ qua lỗi này và cố gắng cài đặt tiếp, và &apos;No to All&apos; để bỏ qua mọi lỗi do thiếu dung lượng.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="984"/>
+        <location filename="unetbootin.cpp" line="991"/>
         <source>Locating kernel file in %1</source>
         <translation>Đang xác định tập tin nhân tại %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1025"/>
+        <location filename="unetbootin.cpp" line="1032"/>
         <source>Copying kernel file from %1</source>
         <translation>Đang sao chép tập tin nhân từ %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1031"/>
+        <location filename="unetbootin.cpp" line="1038"/>
         <source>Locating initrd file in %1</source>
         <translation>Đang xác định tập tin initrd tại %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1072"/>
+        <location filename="unetbootin.cpp" line="1079"/>
         <source>Copying initrd file from %1</source>
         <translation>Đang sao chép tập tin initrd từ %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1078"/>
-        <location filename="unetbootin.cpp" line="1138"/>
+        <location filename="unetbootin.cpp" line="1085"/>
+        <location filename="unetbootin.cpp" line="1145"/>
         <source>Extracting bootloader configuration</source>
         <translation>Đang giải nén cấu hình bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1353"/>
-        <location filename="unetbootin.cpp" line="1379"/>
+        <location filename="unetbootin.cpp" line="1360"/>
+        <location filename="unetbootin.cpp" line="1386"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Đang giải nén tập tin iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1608"/>
+        <location filename="unetbootin.cpp" line="1615"/>
         <source>Copying file, please wait...</source>
         <translation>Đang sao chép tập tin, vui lòng chờ...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1609"/>
-        <location filename="unetbootin.cpp" line="2413"/>
+        <location filename="unetbootin.cpp" line="1616"/>
+        <location filename="unetbootin.cpp" line="2420"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1610"/>
-        <location filename="unetbootin.cpp" line="2414"/>
+        <location filename="unetbootin.cpp" line="1617"/>
+        <location filename="unetbootin.cpp" line="2421"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1611"/>
+        <location filename="unetbootin.cpp" line="1618"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1649"/>
+        <location filename="unetbootin.cpp" line="1656"/>
         <source>Extracting files, please wait...</source>
         <translation>Đang giải nén các tập tin, vui lòng chờ...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1650"/>
+        <location filename="unetbootin.cpp" line="1657"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Tập tin nguồn:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1651"/>
+        <location filename="unetbootin.cpp" line="1658"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1652"/>
+        <location filename="unetbootin.cpp" line="1659"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1653"/>
+        <location filename="unetbootin.cpp" line="1660"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; 0 trong số %1 tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1656"/>
+        <location filename="unetbootin.cpp" line="1663"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1657"/>
+        <location filename="unetbootin.cpp" line="1664"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1658"/>
+        <location filename="unetbootin.cpp" line="1665"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; %1 trong số %2 tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2412"/>
+        <location filename="unetbootin.cpp" line="2419"/>
         <source>Downloading files, please wait...</source>
         <translation>Đang tải các tập tin, vui lòng đợi...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2415"/>
+        <location filename="unetbootin.cpp" line="2422"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Đã tải:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2492"/>
-        <location filename="unetbootin.cpp" line="2507"/>
+        <location filename="unetbootin.cpp" line="2499"/>
+        <location filename="unetbootin.cpp" line="2514"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Đã tải:&lt;/b&gt; %1 trong số %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2522"/>
+        <location filename="unetbootin.cpp" line="2529"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; %1 trong số %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2598"/>
+        <location filename="unetbootin.cpp" line="2605"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Đang tìm ở &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2602"/>
+        <location filename="unetbootin.cpp" line="2609"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 phù hợp &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2875"/>
+        <location filename="unetbootin.cpp" line="2882"/>
         <source>%1 not found</source>
         <translation>Không tìm thấy %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2876"/>
+        <location filename="unetbootin.cpp" line="2883"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>Không tìm thấy %1. Yêu cầu chế độ cài đặt %2.
 Đang cài đặt gói &quot;%3&quot; hoặc tương đương.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3159"/>
+        <location filename="unetbootin.cpp" line="3166"/>
         <source>(Current)</source>
         <translation>(Đang thực hiện)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3160"/>
+        <location filename="unetbootin.cpp" line="3167"/>
         <source>(Done)</source>
         <translation>(Đã hoàn tất)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3442"/>
+        <location filename="unetbootin.cpp" line="3449"/>
         <source>Configuring grub2 on %1</source>
         <translation>Đang cấu hình grub2 trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3454"/>
+        <location filename="unetbootin.cpp" line="3461"/>
         <source>Configuring grldr on %1</source>
         <translation>Đang cấu hình grldr trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3482"/>
+        <location filename="unetbootin.cpp" line="3489"/>
         <source>Configuring grub on %1</source>
         <translation>Đang cấu hình grub trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3717"/>
+        <location filename="unetbootin.cpp" line="3726"/>
         <source>Installing syslinux to %1</source>
         <translation>Đang cài đặt syslinux vào%1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3752"/>
+        <location filename="unetbootin.cpp" line="3761"/>
         <source>Installing extlinux to %1</source>
         <translation>Đang cài đặt extlinux vào %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3912"/>
+        <location filename="unetbootin.cpp" line="3921"/>
         <source>Syncing filesystems</source>
         <translation>Đang đồng bộ các tập tin hệ thống</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3917"/>
+        <location filename="unetbootin.cpp" line="3926"/>
         <source>Setting up persistence</source>
         <translation>Cài đặt lưu giữ</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3955"/>
+        <location filename="unetbootin.cpp" line="3964"/>
         <source>After rebooting, select the </source>
         <translation>Sau khi khởi động lại, chọn </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3960"/>
+        <location filename="unetbootin.cpp" line="3969"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Sau khi khởi động lại, chọn tuỳ chọn khởi động từ USB trong menu boot của BIOS.%1
 Bạn có muốn khởi động lại ngay không?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3963"/>
+        <location filename="unetbootin.cpp" line="3972"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>Thiết bị USB đã tạo sẽ không khởi động vào Mac. Hãy cắm nó vào máy tính, và chọn tùy chọn khởi động từ USB trong trình đơn khởi động BIOS.%1</translation>
     </message>
@@ -449,42 +449,42 @@ Bạn có muốn khởi động lại ngay không?</translation>
 *QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh đĩa Ubuntu alternate (không phải desktop) vào thư mục gốc của đĩa cứng hoặc USB. Có thể tải tập tin Ubuntu alternate từ cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="222"/>
+        <location filename="distrolst.cpp" line="232"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;mirrors.kernel.org&apos; khi được nhắc, và nhập &apos;/centos/%1/os/%2&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="278"/>
+        <location filename="distrolst.cpp" line="288"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh của Debian (.iso) vào thư mục gốc của đĩa cứng hoặc ổ USB. Có thể tải tập tin ảnh của Debian tại cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="371"/>
+        <location filename="distrolst.cpp" line="381"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/development/%1/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="377"/>
+        <location filename="distrolst.cpp" line="387"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="737"/>
+        <location filename="distrolst.cpp" line="747"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.opensuse.org&apos; khi được nhắc, và nhập &apos;/factory/repo/oss&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="743"/>
+        <location filename="distrolst.cpp" line="753"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -492,7 +492,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="23"/>
-        <location filename="unetbootin.cpp" line="678"/>
+        <location filename="unetbootin.cpp" line="685"/>
         <source>== Select Distribution ==</source>
         <translation>== Chọn bản phân phối ==</translation>
     </message>
@@ -513,213 +513,213 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Arch Linux là một bản phân phối gọn nhẹ được tối ưu hóa cho tốc độ và tính linh hoạt.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP).</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="35"/>
+        <location filename="distrover.cpp" line="34"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; BackTrack là một bản phân phối tập trung cho nghiên cứu và thử nghiệm thâm nhập mạng.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; BackTrack chạy trực tiếp, không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="40"/>
+        <location filename="distrover.cpp" line="39"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; CentOS là một phiên bản tự do của Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), hay cài đặt thông qua tập tin ISO đã tải sẵn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="45"/>
+        <location filename="distrover.cpp" line="44"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; CloneZilla là một bản phân phối dùng cho việc sao lưu đĩa và chụp ảnh ổ đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; CloneZilla được khởi động và chạy trực tiếp, không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="50"/>
+        <location filename="distrover.cpp" line="49"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Damn Small Linux là một bản phân phối được thiết kế tối giản cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống vào RAM và khởi động từ bộ nhớ, không bắt buộc cài đặt nhưng vẫn có thể chọn nếu muốn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="55"/>
+        <location filename="distrover.cpp" line="54"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Debian là một bản Linux được phát triển bởi cộng đồng, hỗ trợ rộng rãi các nền tảng phần cứng và cung cấp một kho lớn các gói phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản NetInstall cho phép cài đặt thông qua FTP. Nếu bạn muốn sử dụng tập tin ảnh .iso, sử dụng tùy chọn HdMedia, sau đó đặt nó vào thư mục gốc của USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="61"/>
+        <location filename="distrover.cpp" line="60"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Dreamlinux là một bản phân phối thân thiện với người dùng, dựa trên Debian.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép vào thẳng hệ điều hành, thông qua tùy chọn khởi động.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="66"/>
+        <location filename="distrover.cpp" line="65"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Dr.Web AntiVirus là một công cụ cứu hộ diệt virus dùng để khôi phục hệ thống bị lỗi nghiêm trọng do malware.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="71"/>
+        <location filename="distrover.cpp" line="70"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Elive là một bản phân phối dựa trên Debian hướng đến tính năng quản lí cửa sổ Enlightenment.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép vào thẳng hệ điều hành, thông qua tùy chọn khởi động.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="76"/>
+        <location filename="distrover.cpp" line="75"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Fedora là một bản phân phối của cộng đồng Red Hat, giới thiệu những phần mềm miễn phí hay mã nguồn mở với những công nghệ tiên tiến.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, có thể tùy chỉnh khi khởi động. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP), hoặc cài đặt offline bằng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="81"/>
+        <location filename="distrover.cpp" line="80"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeBSD là một hệ điều hành dựa trên Unix được thiết kế với mục tiêu khả năng mở rộng và hiệu suất.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc cài đặt sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="86"/>
+        <location filename="distrover.cpp" line="85"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeDOS là một hệ điều hành tích hợp MS-DOS tự do.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Xem &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; để biết chi tiết cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="91"/>
+        <location filename="distrover.cpp" line="90"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeNAS là một phiên bản nhúng và mã nguồn mở NAS (Network-Attached Storage) dựa trên FreeBSD.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản LiveCD tạo một phân vùng trên RAM cho FreeNAS, và sử dụng định dạng đĩa mềm FAT hoặc khóa USB để lưu các tập tin thiết lập. Phiên bản nhúng cho phép cài đặt lên đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="96"/>
+        <location filename="distrover.cpp" line="95"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Frugalware là một phiên bản dựa trên Slackware cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hay sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="101"/>
+        <location filename="distrover.cpp" line="100"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; F-Secure Rescue CD phát hiện và loại bỏ phần mềm độc hại từ Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, từ đó quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="106"/>
+        <location filename="distrover.cpp" line="105"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gentoo là một hệ điều hành linh hoạt dành cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="116"/>
+        <location filename="distrover.cpp" line="115"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; gNewSense là một bản phân phối được thông qua bởi tổ chức FSF và dựa trên Ubuntu, đã được gỡ bỏ các thành phần không mang tính tự do.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="121"/>
+        <location filename="distrover.cpp" line="120"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gujin là trình quản lí khởi động với giao diện đồ họa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Gujin chỉ cần khởi động là có thể chạy được; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="126"/>
+        <location filename="distrover.cpp" line="125"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Kaspersky Rescue Disk phát hiện và gỡ bỏ malware khỏi Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để khởi động trình quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="131"/>
+        <location filename="distrover.cpp" line="130"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Kubuntu là một biến thể của Ubuntu với môi trường desktop KDE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, qua đó có thể chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao thức FTP,  và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu muốn cài đặt bằng hình thức alternate (không phải desktop) qua tập tin .iso, sử dụng tùy chọn HdMedia, và đặt tập tin cài đặt .iso vào thư mục gốc của ổ USB hoặc đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="136"/>
+        <location filename="distrover.cpp" line="135"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; LinuxConsole là một bản phân phối dành cho việc chơi game, dễ dàng trong việc cài đặt, sử dụng và khởi động nhanh .&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản 1.0.2009 là phiên bản 1.0 mới nhất.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="141"/>
+        <location filename="distrover.cpp" line="140"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Linux Mint là một bản phân phối thân thiện với người dùng được xây dựng dựa trên Ubuntu, mặc định được bổ sung nhiều codec và phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="146"/>
+        <location filename="distrover.cpp" line="145"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Mandriva là một bản phân phối thân thiện với người dùng, còn được biết đến với cái tên Mandrake Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép khởi động và chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP) hoặc thông qua &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;tập tin ảnh đĩa &quot;Miễn phí&quot;&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="152"/>
+        <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; MEPIS là một bản phân phối dựa trên Debian. SimplyMEPIS là một phiên bản thân thiện với người dùng với môi trường desktop KDE, trong khi AntiX là phiên bản gọn nhẹ dành cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; MEPIS hỗ trợ khởi động trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="157"/>
+        <location filename="distrover.cpp" line="156"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NetBSD là một biến thể của Unix tập trung vào tính di động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt;Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="162"/>
+        <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NimbleX là một bản phân phối linh hoạt và nhỏ gọn dựa trên Slackware. Nó được xây dựng trên các linux-live scripts, và sử dụng môi trường desktop KDE. Nó có thể khởi động từ đĩa CD hay bộ nhớ flash (bút nhớ USB hoặc máy MP3), và có thể dễ dàng tùy biến và mở rộng.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NimbleX khởi động trực tiếp.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="167"/>
+        <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NTPasswd khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="172"/>
+        <location filename="distrover.cpp" line="171"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; openSUSE là một bản phân phối thân thiện với người dùng, có sự tài trợ của Novell.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="177"/>
+        <location filename="distrover.cpp" line="176"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Ophcrack có thể lấy mật khẩu Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Ophcrack khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="182"/>
+        <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các công cụ tối ưu hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác với các phân vùng đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Parted Magic khởi động và chạy trực tiếp; không cần phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="187"/>
+        <location filename="distrover.cpp" line="186"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; PCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên Mandriva.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="192"/>
+        <location filename="distrover.cpp" line="191"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Puppy Linux là một bản phân phối gọn nhẹ được thiết kế cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép tải hệ thống lên RAM và khởi động từ bộ nhớ, có thể không cần cài đặt nhưng đó là tùy chọn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="197"/>
+        <location filename="distrover.cpp" line="196"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Sabayon Linux là một bản phân phối dựa trên Gentoo Live DVD với trình quản lí gói tin Entropy.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt. Phiên bản LiteMCE có dung lượng 2 GB, trong khi bản đầy đủ cần một ổ USB 8GB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="202"/>
+        <location filename="distrover.cpp" line="201"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Slax là một bản phân phối dựa trên Slackware với môi trường desktop KDE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="207"/>
+        <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; SliTaz là một bản phân phối gọn nhẹ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ, không yêu cầu cài đặt nhưng đó là tùy chọn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="212"/>
+        <location filename="distrover.cpp" line="211"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Smart Boot Manager là một trình khởi động tốt hơn BIOS do BIOS tồn tại khá nhiều hạn chế và lỗi.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SBM đơn giản là khởi động và sử dụng; không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="217"/>
+        <location filename="distrover.cpp" line="216"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super Grub Disk là một trình khởi động có thể thực thi nhiều loại MBR và các tác vụ khôi phục trình khởi động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SGD chỉ cần khởi động và chạy; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="222"/>
+        <location filename="distrover.cpp" line="221"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super OS là một bản phân phối dựa trên Ubuntu được bổ sung nhiều phần mềm mặc định. Yêu cầu một ổ USB 2GB để cài đặt.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="227"/>
+        <location filename="distrover.cpp" line="226"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; SystemRescueCD bao gồm các trình quản lí phân vùng khác nhau và các công cụ phục hồi và sao lưu dữ liệu.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SystemRescueCD khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="232"/>
+        <location filename="distrover.cpp" line="231"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Ubuntu là một bản phân phối thân thiện với người dùng dựa trên Debian.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao thức FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu sử dụng cách cài đặt alternate (không phải desktop), sử dụng tùy chọn HdMedia, và đặt tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="237"/>
+        <location filename="distrover.cpp" line="236"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; xPUD là một bản phân phối nhẹ, với một trình duyệt web và nghe nhạc.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="242"/>
+        <location filename="distrover.cpp" line="241"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Xubuntu là một biến thể của Ubuntu sử dụng môi trường desktop XFCE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt bằng giao thức FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu cài đặt theo cách alternate (không phải desktop), sử dụng tùy chọn HdMedia, và đặt tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="247"/>
+        <location filename="distrover.cpp" line="246"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Zenwalk là một bản phân phối dựa trên Slackware sử dụng môi trường desktop XFCE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>

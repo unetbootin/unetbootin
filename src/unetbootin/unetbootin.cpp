@@ -398,6 +398,13 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		{
 			intromessage->setText(psecond);
 		}
+		else if (pfirst.contains("persistentspace", Qt::CaseInsensitive))
+		{
+			bool isInt = false;
+			int numMBpersistentSpace = psecond.toInt(&isInt, 10);
+			if (isInt)
+				this->persistencevalue->setValue(numMBpersistentSpace);
+		}
 		else if (pfirst.contains("autoinstall", Qt::CaseInsensitive))
 		{
 			if (psecond.contains('y', Qt::CaseInsensitive))
