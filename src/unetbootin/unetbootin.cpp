@@ -3227,6 +3227,9 @@ void unetbootin::runinst()
 	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
 #endif
 	#endif
+#ifndef Q_OS_UNIX
+	devluid = getdevluid(targetDev);
+#endif
 	kernelLine = "kernel";
 	kernelLoc = QString("/%1ubnkern").arg(ginstallDir);
 	initrdLine = "initrd";
