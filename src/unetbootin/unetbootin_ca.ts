@@ -37,8 +37,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="480"/>
         <location filename="unetbootin.cpp" line="3185"/>
         <location filename="unetbootin.cpp" line="3198"/>
-        <location filename="unetbootin.cpp" line="3370"/>
-        <location filename="unetbootin.cpp" line="3963"/>
+        <location filename="unetbootin.cpp" line="3373"/>
+        <location filename="unetbootin.cpp" line="3966"/>
         <source>Hard Disk</source>
         <translation>Disc dur</translation>
     </message>
@@ -57,9 +57,9 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="2477"/>
         <location filename="unetbootin.cpp" line="3189"/>
         <location filename="unetbootin.cpp" line="3215"/>
-        <location filename="unetbootin.cpp" line="3374"/>
-        <location filename="unetbootin.cpp" line="3698"/>
-        <location filename="unetbootin.cpp" line="3967"/>
+        <location filename="unetbootin.cpp" line="3377"/>
+        <location filename="unetbootin.cpp" line="3701"/>
+        <location filename="unetbootin.cpp" line="3970"/>
         <source>USB Drive</source>
         <translation>Disc USB</translation>
     </message>
@@ -70,7 +70,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="332"/>
         <location filename="unetbootin.cpp" line="600"/>
         <location filename="unetbootin.cpp" line="601"/>
-        <location filename="unetbootin.cpp" line="3268"/>
+        <location filename="unetbootin.cpp" line="3271"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -81,7 +81,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="337"/>
         <location filename="unetbootin.cpp" line="605"/>
         <location filename="unetbootin.cpp" line="606"/>
-        <location filename="unetbootin.cpp" line="3260"/>
+        <location filename="unetbootin.cpp" line="3263"/>
         <source>Floppy</source>
         <translation>Disquet</translation>
     </message>
@@ -390,54 +390,54 @@ Instal·leu el paquet «%3» o l&apos;equivalent de la vostra distribució.</tra
         <translation>(Fet)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3449"/>
+        <location filename="unetbootin.cpp" line="3452"/>
         <source>Configuring grub2 on %1</source>
         <translation>S&apos;està configurant el grub2 a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3461"/>
+        <location filename="unetbootin.cpp" line="3464"/>
         <source>Configuring grldr on %1</source>
         <translation>S&apos;està configurant el grldr a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3489"/>
+        <location filename="unetbootin.cpp" line="3492"/>
         <source>Configuring grub on %1</source>
         <translation>S&apos;està configurant el grub a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3727"/>
+        <location filename="unetbootin.cpp" line="3730"/>
         <source>Installing syslinux to %1</source>
         <translation>S&apos;està instal·lant syslinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3762"/>
+        <location filename="unetbootin.cpp" line="3765"/>
         <source>Installing extlinux to %1</source>
         <translation>S&apos;està instal·lant extlinux a %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3922"/>
+        <location filename="unetbootin.cpp" line="3925"/>
         <source>Syncing filesystems</source>
         <translation>S&apos;està sincronitzant els fitxers de sistema</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3927"/>
+        <location filename="unetbootin.cpp" line="3930"/>
         <source>Setting up persistence</source>
         <translation>Configura la persistència</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3965"/>
+        <location filename="unetbootin.cpp" line="3968"/>
         <source>After rebooting, select the </source>
         <translation>Després d&apos;arrencar de nou, seleccioneu la </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3970"/>
+        <location filename="unetbootin.cpp" line="3973"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
 Arrencar de nou ara?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3973"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>El dispositiu USB que s&apos;ha creat no arrencarà a un Mac. Inseriu-lo a un PC i seleccioneu l&apos;opció d&apos;engegada des del dispositiu USB a la BIOS.%1</translation>
     </message>
@@ -477,14 +477,14 @@ Arrencar de nou ara?</translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» si es demana un CD. Tot seguit, des del menú principal, trieu l&apos;opció «Inicia la instal·lació», «Xarxa» com a origen, «HTTP» com a protocol, «download.fedora.redhat.com» quan es demani el servidor i «/pub/fedora/linux/releases/%1/Fedora/%2/os» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="747"/>
+        <location filename="distrolst.cpp" line="753"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *IMPORTANT* Després d&apos;arrencar de nou, ignoreu qualsevol missatge d&apos;error i seleccioneu «Enrere» es demana un CD, tot seguit aneu al menú principal, seleccioneu l&apos;opció «Inicia la instal·lació», escolliu «En xarxa» com a origen, escolliu «HTTP» com a protocol, quan es demani el servidor introduïu «download.opensuse.org» i introduïu «/factory/repo/oss» quan es demani la carpeta.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="753"/>
+        <location filename="distrolst.cpp" line="759"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -583,143 +583,143 @@ Arrencar de nou ara?</translation>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; F-Secure Rescue CD detecta i suprimeix programari maliciós de la vostra instal·lació del Windows.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom i executar els escanejos de programari maliciós.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="105"/>
+        <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Gentoo és una distribució flexible basada en el codi font dissenyada per a usuaris avançat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="115"/>
+        <location filename="distrover.cpp" line="118"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; gNewSense és una distribució aprovada per la FSF basada en Ubuntu amb tots els components que no són lliures suprimits.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="120"/>
+        <location filename="distrover.cpp" line="123"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Gujin és un gestor d&apos;arrencada gràfic que pot arrencar diversos volums i fitxers.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; Gujin només arrenca i executa, no cal cap instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="125"/>
+        <location filename="distrover.cpp" line="128"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Kaspersky Rescue Disk detecta i suprimeix programari maliciós de la vostra instal·lació del Windows.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;b/&gt; La versió autònoma permet arrencar en mode autònom i executar els escanejos de programari maliciós.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="130"/>
+        <location filename="distrover.cpp" line="133"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Kubuntu és una distribució oficial derivada d&apos;Ubuntu que incorpora el gestor d&apos;escriptori KDE.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; El mode autònom permet provar Kubuntu sense instal·lar res al vostre ordinador, amb opció a ser també instal·lada. La versió «NetInstall» permet instal·lar Kubuntu i altres derivats oficials d&apos;Ubuntu mitjançant FTP. Si desitgeu instal·lar-la des d&apos;una imatge iso prèviament descarregada, seleccioneu l&apos;opció «HdMedia» i copieu el fitxer iso a l&apos;arrel de la unitat USB o disc dur que emprareu per a la instal·lació.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="135"/>
+        <location filename="distrover.cpp" line="138"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; LinuxConsole és una distribució per jugar, fàcil d&apos;instal·lar i d&apos;utilitzar i que es carrega ràpid. &lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La darrera versió 1.0 és la 1.0.2009.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="140"/>
+        <location filename="distrover.cpp" line="143"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció: Linux Mint és una distribució amigable basada en Ubuntu que inclou per defecte còdecs no lliures i d&apos;altre programari addicionals.&lt;/b&gt; &lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="145"/>
+        <location filename="distrover.cpp" line="148"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Mandriva és una distribució amigable coneguda prèviament com a Mandrake Linux.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador. La versió NetInstall permet la instal·lació utilitzant internet (FTP) o amb fitxers ISO «gratuïts» descarregats prèviament &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="151"/>
+        <location filename="distrover.cpp" line="154"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; MEPIS és una distribució basada en Debian. SimplyMEPIS és una versió amigable basada en KDE i AntiX és una versió lleugera per a ordinadors antics.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; MEPIS permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="156"/>
+        <location filename="distrover.cpp" line="159"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; NetBSD és un sistema operatiu semblant a Unix que se centra en la portabilitat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt;La versió predeterminada permet la instal·lació utilitzant internet (FTP) o fora de línia amb fitxers ISO descarregats prèviament.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="161"/>
+        <location filename="distrover.cpp" line="164"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; NimbleX és una distribució petita i versàtil basada en Slackware. Està contruïda utilitzant els sripts linux-live i té un escriptori KDE. Es pot arrencar des d&apos;un CD o d&apos;una memòria flash (dispositius USB o reproductors MP3) i es pot personalitzar i ampliar fàcilment. &lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; NimbleX arrenca en mode autònom.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="166"/>
+        <location filename="distrover.cpp" line="169"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; L&apos;Offline NT Password and Registry Editor pot reinicialitzar les contrasenyes del Windows i editar el registre a Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; NTPasswd s&apos;arrenca i s&apos;executa en mode autònom, no cal instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="171"/>
+        <location filename="distrover.cpp" line="174"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; openSUSE és una distribució amigable patrocinada per Novell.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió predeterminada permet la instal·lació utilitzant internet (FTP) o fora de línia amb fitxers ISO descarregats prèviament.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="176"/>
+        <location filename="distrover.cpp" line="179"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Ophcrack pot desxifrar contrasenyes del Windows.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; Ophcrack arrenca i s&apos;executa, no cal cap instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="181"/>
+        <location filename="distrover.cpp" line="184"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Parted Magic inclou el gestor de particions GParted i d&apos;altres eines del sistema que poden redimensionar, copiar, fe còpies de seguretat i manipular particions de disc.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; Parted Magic arrenca i s&apos;executa en mode autònom, no cal instal·lació per utilitzar-la.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="186"/>
+        <location filename="distrover.cpp" line="189"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; PCLinuxOS és una distribució amigable basada en Mandriva.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="191"/>
+        <location filename="distrover.cpp" line="194"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Puppy Linux és una distribució lleugera dissenyada per a ordinadors antics.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma carrega tot el sistema a la RAM i arrenca des de la memòria, per tant la instal·lació no és necessària sinó opcional.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="196"/>
+        <location filename="distrover.cpp" line="199"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Sabayon Linux és una distribució basada en Gentoo que implementa el gestor de paquets binaris Entropy, a més del gestor basat en codi font Portage.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador. L&apos;edició LiteMCE ocupa 2 GB, per a la versió completa cal un dispositiu USB de 8GB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="201"/>
+        <location filename="distrover.cpp" line="204"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Slax és una distribució basada en Slackware-based amb l&apos;escriptori KDE.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="206"/>
+        <location filename="distrover.cpp" line="209"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; SliTaz és una distribució lleugera pensada per a l&apos;ordinador de taula.&lt;br/&gt;&lt;b&gt;Notes de la &apos;instal·lació:&lt;/b&gt; La versió autònoma carrega tot el sistema a la RAM i arrenca des de la memòria, per tant la instal·lació no és necessària sinó opcional.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="211"/>
+        <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Smart Boot Manager és un carregador de l&apos;arrencada que pot evitar algunes limitacions i errors de la BIOS.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; SBM només arrenca i executa, no cal cap instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="216"/>
+        <location filename="distrover.cpp" line="219"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Super Grub Disk és un carregador de l&apos;arrencada que pot fer diverses tasques de recuperació del MBR i del carregador d&apos;arrencada.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; SGD només arrenca i executa, no cal cap instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="221"/>
+        <location filename="distrover.cpp" line="224"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Super OS és una distribució no oficial derivada d&apos;Ubuntu que incorpora aplicacions adicionals. És necessari una unitat USB amb 2GB d&apos;espai per poder ser instal·lada.&lt;br/&gt;&lt;b&gt;Notes de la Instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="226"/>
+        <location filename="distrover.cpp" line="229"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; SystemRescueCD inclou diverses eines de gestió de particions, recuperació de dades i còpia de seguretat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; SystemRescueCD arrenca i s&apos;executa en mode autònom i no cal instal·lació per utilitzar-la.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="231"/>
+        <location filename="distrover.cpp" line="234"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Ubuntu és una distribució amigable basada en Debian. Actualment és una de les distribucions més populars de Linux.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador. La versió «NetInstall» permet instal·lar Ubuntu i altres derivats com ara Kubuntu mitjançant FTP. Si desitgeu instal·lar-la des d&apos;una imatge iso prèviament descarregada, seleccioneu l&apos;opció «HdMedia» i copieu el fitxer iso a l&apos;arrel de la unitat USB o disc dur que emprareu per a la instal·lació.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="236"/>
+        <location filename="distrover.cpp" line="239"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; xPUD és una distribució lleugera amb una interfície senzilla tipus quiosc, amb un navegador i un reproductor multimèdia.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma carrega tot el sistema a la RAM i arrenca des de la memòria.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="241"/>
+        <location filename="distrover.cpp" line="244"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Xubuntu és una distribució oficial derivada d&apos;Ubuntu que incorpora el gestor d&apos;escriptori XFCE.&lt;br/&gt;&lt;b&gt;Notes de la Instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador. La versió «NetInstall» permet instal·lar Xubuntu i altres derivats oficials d&apos;Ubuntu mitjançant FTP. Si desitgeu instal·lar-la des d&apos;una imatge iso prèviament descarregada, seleccioneu l&apos;opció «HdMedia» i copieu el fitxer iso a l&apos;arrel del dispositiu USB o disc dur que utilizeu per a la instal·lació.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="246"/>
+        <location filename="distrover.cpp" line="249"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Zenwalk és una distribució basada en Slackware que utilitza l&apos;escriptori XFCE.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
     </message>

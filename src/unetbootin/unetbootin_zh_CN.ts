@@ -37,8 +37,8 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="480"/>
         <location filename="unetbootin.cpp" line="3185"/>
         <location filename="unetbootin.cpp" line="3198"/>
-        <location filename="unetbootin.cpp" line="3370"/>
-        <location filename="unetbootin.cpp" line="3963"/>
+        <location filename="unetbootin.cpp" line="3373"/>
+        <location filename="unetbootin.cpp" line="3966"/>
         <source>Hard Disk</source>
         <translation>硬盘</translation>
     </message>
@@ -57,9 +57,9 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="2477"/>
         <location filename="unetbootin.cpp" line="3189"/>
         <location filename="unetbootin.cpp" line="3215"/>
-        <location filename="unetbootin.cpp" line="3374"/>
-        <location filename="unetbootin.cpp" line="3698"/>
-        <location filename="unetbootin.cpp" line="3967"/>
+        <location filename="unetbootin.cpp" line="3377"/>
+        <location filename="unetbootin.cpp" line="3701"/>
+        <location filename="unetbootin.cpp" line="3970"/>
         <source>USB Drive</source>
         <translation>USB 驱动器</translation>
     </message>
@@ -70,7 +70,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="332"/>
         <location filename="unetbootin.cpp" line="600"/>
         <location filename="unetbootin.cpp" line="601"/>
-        <location filename="unetbootin.cpp" line="3268"/>
+        <location filename="unetbootin.cpp" line="3271"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -81,7 +81,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="337"/>
         <location filename="unetbootin.cpp" line="605"/>
         <location filename="unetbootin.cpp" line="606"/>
-        <location filename="unetbootin.cpp" line="3260"/>
+        <location filename="unetbootin.cpp" line="3263"/>
         <source>Floppy</source>
         <translation>软盘</translation>
     </message>
@@ -390,54 +390,54 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>(完成)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3449"/>
+        <location filename="unetbootin.cpp" line="3452"/>
         <source>Configuring grub2 on %1</source>
         <translation>正在配置 %1 上的 grub2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3461"/>
+        <location filename="unetbootin.cpp" line="3464"/>
         <source>Configuring grldr on %1</source>
         <translation>正在配置 %1 上的 grldr</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3489"/>
+        <location filename="unetbootin.cpp" line="3492"/>
         <source>Configuring grub on %1</source>
         <translation>正在配置 %1 上的 grub</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3727"/>
+        <location filename="unetbootin.cpp" line="3730"/>
         <source>Installing syslinux to %1</source>
         <translation>正在安装 syslinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3762"/>
+        <location filename="unetbootin.cpp" line="3765"/>
         <source>Installing extlinux to %1</source>
         <translation>正在安装 extlinux 到 %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3922"/>
+        <location filename="unetbootin.cpp" line="3925"/>
         <source>Syncing filesystems</source>
         <translation>正在同步文件系统</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3927"/>
+        <location filename="unetbootin.cpp" line="3930"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3965"/>
+        <location filename="unetbootin.cpp" line="3968"/>
         <source>After rebooting, select the </source>
         <translation>重启后，选择 </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3970"/>
+        <location filename="unetbootin.cpp" line="3973"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>重启后，在 BIOS 启动菜单里选择 USB 启动 选项。%1
 现在重启吗？</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3973"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -477,14 +477,14 @@ Reboot now?</source>
 *重要* 重启后, 如果提示 CD 引导忽略任何错误信息，然后定位到主菜单，选择 &apos;开始安装&apos; 选项，来源选择 &apos;网络模式&apos;，协议选择 &apos;HTTP&apos;，当提示登陆服务器时输入&apos;download.fedora.redhat.com&apos;，当询问文件夹时输入&apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="747"/>
+        <location filename="distrolst.cpp" line="753"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *重要提示* 重启动后，不要理会任何错误提示信息。如果提示要求插入CD光盘，请选择“返回”，然后回到主菜单，选择“开始安装”，安装源选“网络”，协议选“HTTP”。当提示指定服务器时，输入“download.opensuse.org”；询问文件夹位置时，再输入“/factory/repo/oss”即可。</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="753"/>
+        <location filename="distrolst.cpp" line="759"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -583,143 +583,143 @@ Reboot now?</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt;&lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; F-Secure Rescue CD从你的Windows安装程序中，检测并删除malware杀毒软件。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版允许以Live模式启动，启动后可以运行malware杀毒软件进行扫描。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="105"/>
+        <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Gentoo 是一个为高级用户设计的基于灵活源码的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="115"/>
+        <location filename="distrover.cpp" line="118"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; gNewSense是一个遵循FSF标准的Ubuntu衍生版，它移除了所有的非自由软件。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版以Live模式启动，启动后可以进行安装。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="120"/>
+        <location filename="distrover.cpp" line="123"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Gujin 是一个可以引导各卷和文件的图形化启动管理器。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; Gujin 启动和运行简单；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="125"/>
+        <location filename="distrover.cpp" line="128"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Kaspersky Rescue Disk从你的Windows安装程序中，检测并删除malware杀毒软件。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版允许以Live模式启动，启动后可以运行malware杀毒软件进行扫描。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="130"/>
+        <location filename="distrover.cpp" line="133"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;简介：&lt;/b&gt; Kubuntu 是以 KDE 为桌面环境的 Ubuntu 官方衍生版。&lt;br/&gt;&lt;b&gt;安装提示：&lt;/b&gt; Live版本允许以 Live 模式启动，从中可以选择安装程序。NetInstall 版本支持通过FTP安装，并可以安装 Xubuntu 或其他 Ubuntu 官方衍生版。如果您想使用预先下载的 alternate(不是 Desktop)镜像，请使用 HdMedia 选项，然后再将 alternate 安装镜像文件移动至您硬盘驱动器或USB驱动器的根目录。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="135"/>
+        <location filename="distrover.cpp" line="138"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; LinuxConsole 是一个用来玩游戏的、安装使用简单、启动速度快的桌面发行版。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;1.0.2009 版是最新的 1.0 发布版本。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="140"/>
+        <location filename="distrover.cpp" line="143"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Linux Mint 是一个在默认情况下包括额外的专有编解码器和其它软件的用户友好的基于 Ubuntu 分发版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="145"/>
+        <location filename="distrover.cpp" line="148"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Mandriva 是一个如同Mandrake Linux的用户友好的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。 NetInstall 版本允许通过 FTP 安装或者预先下载 &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;免费&quot; iso 镜像文件&lt;/a&gt;。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="151"/>
+        <location filename="distrover.cpp" line="154"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; MEPIS是一个基于Debian的发行版。SimplyMEPIS有改良过的KDE界面，另外AntiX是一个轻量级版本，适合硬件配置较低的旧电脑。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; MEPIS支持以Live模式启动，启动后可以进行安装。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="156"/>
+        <location filename="distrover.cpp" line="159"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; NetBSD 是一个重点于可携服务的类Unix操作系统。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;默认版本允许网络安装方式（FTP），或者用预先下载安装的ISO文件进行离线安装。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="161"/>
+        <location filename="distrover.cpp" line="164"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;描述：&lt;/b&gt; NimbleX 是一个小型、多功能的基于 Slackware 的发行版。它使用 linux-live 脚本构建，使用 KDE 桌面环境。它可以通过 CD 或闪存(USB 盘或 MP3 播放器)启动，定制和扩展都很方便。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; NimbleX 以 Live 模式启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="166"/>
+        <location filename="distrover.cpp" line="169"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; The Offline NT Password and Registry Editor 能够重置 Windows 密码和编辑 Windows2000-Vista 的注册表。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; NTPasswd 启动采用实模式启动；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="171"/>
+        <location filename="distrover.cpp" line="174"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; openSUSE 是一个由Novell公司赞助的用户友好型分发版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 默认版本允许网络安装方式（FTP），或者用预先下载安装的ISO文件进行离线安装。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="176"/>
+        <location filename="distrover.cpp" line="179"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Ophcrack 能够破解 Windows 密码。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; Ophcrack 启动采用实模式启动；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="181"/>
+        <location filename="distrover.cpp" line="184"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Parted Magic 包括 GParted partition manager 及其他可以调整，复制，备份和操纵磁盘分区的系统工具。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; Parted Magic 启动和运行简单；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="186"/>
+        <location filename="distrover.cpp" line="189"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; PCLinuxOS 是一个基于Mandriva的用户友好型分发版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="191"/>
+        <location filename="distrover.cpp" line="194"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Puppy Linux 是一个为老电脑设计的轻量级的分发版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本加载系统到 RAM 并且从内存启动，所以安装可选并不是必需的。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="196"/>
+        <location filename="distrover.cpp" line="199"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Sabayon Linux是一个基于Gentoo的Live DVD发行版，它有独特的二进制软件包管理程序，来管理基于源码的Portage特色软件包。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版本允许以Live模式启动，启动后可以选择进行安装。LiteMCE版本需要至少2G容量的USB设备，完整版需要至少8G。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="201"/>
+        <location filename="distrover.cpp" line="204"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Slax 是一个以采用KDE桌面为特色的基于Slackware的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="206"/>
+        <location filename="distrover.cpp" line="209"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; SliTaz 是一个轻量级，桌面导向微型发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本加载系统到 RAM 并且从内存启动，所以安装可选并不是必需的。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="211"/>
+        <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Smart Boot Manager 是一个能够不受制于 BIOS 启动限制和错误影响的启动加载器。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; SBM 启动和运行简单；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="216"/>
+        <location filename="distrover.cpp" line="219"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Super Grub Disk 是一个能够执行MBR种类引导加载和引导恢复任务引导加载器。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; SGD 启动和运行简单；不用安装就可以使用它。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="221"/>
+        <location filename="distrover.cpp" line="224"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;简介：&lt;/b&gt;Super_OS 是一个非官方的 Ubuntu 衍生版，默认情况下包含了一些额外的软件。它需要一个2GB 的 U 盘来安装。&lt;br/&gt;&lt;b&gt;安装提示：&lt;/b&gt;Live 版本允许以 Live 模式启动，启动后可以从中选择执行安装程序。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="226"/>
+        <location filename="distrover.cpp" line="229"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; SystemRescueCD包含多种磁盘分区管理，数据恢复，系统备份软件。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;SystemRescueCD以Live模式启动和运行，不安装也能使用。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="231"/>
+        <location filename="distrover.cpp" line="234"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;简介：&lt;/b&gt; Ubuntu是一个用户友好的基于 Debian的发行版。这是目前最流行的 Linux 桌面发行版。&lt;br/&gt;&lt;b&gt;安装提示：&lt;/b&gt; Live 版本允许以 Live 模式启动，启动后可以从中选择执行安装程序。NetInstall 版本支持通过 FTP 安装，并可以安装 Kubuntu 或其他官方 Ubuntu 的衍生版本。如果您想使用一个预先下载的alternate(不是 Desktop)镜像文件安装，请使用 HdMedia 选项，然后再将 alternate 镜像文件移动至您硬盘驱动器或USB驱动器的根目录下。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="236"/>
+        <location filename="distrover.cpp" line="239"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; xPUD是一个轻量级的发行版，它有简单的类似kiosk风格的界面，并自带浏览器和媒体播放器。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt;Live版本启动过程：把全部系统载入RAM内存中，然后从内存启动。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="241"/>
+        <location filename="distrover.cpp" line="244"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;简介：&lt;/b&gt; Xubuntu  是一个 Ubuntu 官方发行的以 XFCE 为桌面环境的轻量级发行版。&lt;br/&gt;&lt;b&gt;安装提示：&lt;/b&gt;  Live 版本允许以 Live 模式启动，启动后可以从中选择执行安装程序。NetInstall 版本支持通过 FTP 安装，并可以安装 Kubuntu 或其他官方 Ubuntu 的衍生版本。如果您想使用一个预先下载的 alternate(不是Desktop) 镜像文件安装，请使用 HdMedia 选项，然后再将 alternate 镜像文件移动至您硬盘驱动器或USB驱动器的根目录下。</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="246"/>
+        <location filename="distrover.cpp" line="249"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;主页：&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;说明：&lt;/b&gt; Zenwalk 是一个以采用XFCE桌面为特色的基于Slackware的发行版本。&lt;br/&gt;&lt;b&gt;安装说明：&lt;/b&gt; 该实时版本允许采用有选择地加载模式进行实模式启动。</translation>
     </message>

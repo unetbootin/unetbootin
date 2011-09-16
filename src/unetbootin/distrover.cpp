@@ -100,7 +100,10 @@ distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/>"
 	"<b>Description:</b> F-Secure Rescue CD detects and removes malware from your Windows installation.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
-"Latest_Live"));
+                                             "Latest_Live"));
+distroselect->addItem("GeeXboX", (QStringList() << "2.0-i386" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/>"
+               "<b>Description:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>") << "2.0-i386" << "2.0-x86_64"));
 distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
 	"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"

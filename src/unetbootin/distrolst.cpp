@@ -486,6 +486,12 @@ if (nameDistro == "GAG")
 	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gag-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
 }
 
+if (nameDistro == "GeeXboX")
+{
+        downloadfile(QString("http://www.geexbox.org/wp-content/plugins/download-monitor/download.php?id=geexbox-%1.iso").arg(relname), isotmpf);
+	extractiso(isotmpf);
+}
+
 if (nameDistro == "Gentoo")
 {
 	if (isarch64)

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-02 19:42-0400\n"
+"POT-Creation-Date: 2011-09-15 22:40-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:202 unetbootin.cpp:296 unetbootin.cpp:297 unetbootin.cpp:364
 #: unetbootin.cpp:480 unetbootin.cpp:3185 unetbootin.cpp:3198
-#: unetbootin.cpp:3370 unetbootin.cpp:3963
+#: unetbootin.cpp:3373 unetbootin.cpp:3966
 #, fuzzy
 msgid "Hard Disk"
 msgstr ""
@@ -31,21 +31,21 @@ msgstr ""
 #: unetbootin.cpp:484 unetbootin.cpp:649 unetbootin.cpp:669 unetbootin.cpp:923
 #: unetbootin.cpp:1454 unetbootin.cpp:1516 unetbootin.cpp:2435
 #: unetbootin.cpp:2477 unetbootin.cpp:3189 unetbootin.cpp:3215
-#: unetbootin.cpp:3374 unetbootin.cpp:3698 unetbootin.cpp:3967
+#: unetbootin.cpp:3377 unetbootin.cpp:3701 unetbootin.cpp:3970
 #, fuzzy
 msgid "USB Drive"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:205 unetbootin.cpp:222 unetbootin.cpp:223 unetbootin.cpp:332
-#: unetbootin.cpp:600 unetbootin.cpp:601 unetbootin.cpp:3268
+#: unetbootin.cpp:600 unetbootin.cpp:601 unetbootin.cpp:3271
 #, fuzzy
 msgid "ISO"
 msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:206 unetbootin.cpp:218 unetbootin.cpp:219 unetbootin.cpp:337
-#: unetbootin.cpp:605 unetbootin.cpp:606 unetbootin.cpp:3260
+#: unetbootin.cpp:605 unetbootin.cpp:606 unetbootin.cpp:3263
 #, fuzzy
 msgid "Floppy"
 msgstr ""
@@ -412,55 +412,55 @@ msgid "(Done)"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3449
+#: unetbootin.cpp:3452
 #, fuzzy
 msgid "Configuring grub2 on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3461
+#: unetbootin.cpp:3464
 #, fuzzy
 msgid "Configuring grldr on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3489
+#: unetbootin.cpp:3492
 #, fuzzy
 msgid "Configuring grub on %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3727
+#: unetbootin.cpp:3730
 #, fuzzy
 msgid "Installing syslinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3762
+#: unetbootin.cpp:3765
 #, fuzzy
 msgid "Installing extlinux to %1"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3922
+#: unetbootin.cpp:3925
 #, fuzzy
 msgid "Syncing filesystems"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3927
+#: unetbootin.cpp:3930
 #, fuzzy
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3965
+#: unetbootin.cpp:3968
 #, fuzzy
 msgid "After rebooting, select the "
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3970
+#: unetbootin.cpp:3973
 #, fuzzy
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
@@ -468,7 +468,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3973
+#: unetbootin.cpp:3976
 #, fuzzy
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
@@ -532,7 +532,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:747
+#: distrolst.cpp:753
 #, fuzzy
 msgid ""
 "\n"
@@ -544,7 +544,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrolst.cpp:753
+#: distrolst.cpp:759
 #, fuzzy
 msgid ""
 "\n"
@@ -771,7 +771,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:105
+#: distrover.cpp:108
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -782,7 +782,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:115
+#: distrover.cpp:118
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -793,7 +793,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:120
+#: distrover.cpp:123
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -804,7 +804,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:125
+#: distrover.cpp:128
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -815,7 +815,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:130
+#: distrover.cpp:133
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -831,7 +831,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:135
+#: distrover.cpp:138
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -842,7 +842,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:140
+#: distrover.cpp:143
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -854,7 +854,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:145
+#: distrover.cpp:148
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -868,7 +868,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:154
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -880,7 +880,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:159
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -892,7 +892,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:161
+#: distrover.cpp:164
 #, fuzzy
 #| msgid ""
 #| "<b>Homepage:</b> <a "
@@ -912,7 +912,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:169
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -923,7 +923,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:171
+#: distrover.cpp:174
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -935,7 +935,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:179
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -945,7 +945,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:184
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -957,7 +957,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:189
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -968,7 +968,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:191
+#: distrover.cpp:194
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -980,7 +980,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:199
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -993,7 +993,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:201
+#: distrover.cpp:204
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1004,7 +1004,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:209
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1015,7 +1015,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:211
+#: distrover.cpp:214
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1026,7 +1026,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:216 distrovercust.cpp:12
+#: distrover.cpp:219 distrovercust.cpp:12
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1037,7 +1037,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:221
+#: distrover.cpp:224
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1049,7 +1049,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:226
+#: distrover.cpp:229
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1060,7 +1060,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:231
+#: distrover.cpp:234
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1076,7 +1076,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:236
+#: distrover.cpp:239
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1087,7 +1087,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:241
+#: distrover.cpp:244
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
@@ -1103,7 +1103,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:246
+#: distrover.cpp:249
 #, fuzzy
 msgid ""
 "<b>Homepage:</b> <a "
