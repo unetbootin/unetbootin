@@ -639,8 +639,8 @@ Bạn có muốn khởi động lại ngay không?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="169"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NTPasswd khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NTPasswd khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="174"/>

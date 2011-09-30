@@ -166,7 +166,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.nimblex.net/\">http://www.
 	"<b>Install Notes:</b> NimbleX boots in Live mode.") <<
 "Latest_Live"));
 distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html</a><br/>"
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpasswd/</a><br/>"
 	"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"
 	"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it.") <<
 "2008.05.26"));
