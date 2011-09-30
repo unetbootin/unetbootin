@@ -165,11 +165,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.nimblex.net/\">http://www.
 	"<b>Description:</b> NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.<br/>"
 	"<b>Install Notes:</b> NimbleX boots in Live mode.") <<
 "Latest_Live"));
-distroselect->addItem("NTPasswd", (QStringList() << "2008.05.26" <<
+distroselect->addItem("NTPasswd", (QStringList() << "2011.05.11" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpasswd/</a><br/>"
 	"<b>Description:</b> The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.<br/>"
 	"<b>Install Notes:</b> NTPasswd is booted and run in live mode; no installation is required to use it.") <<
-"2008.05.26"));
+"2008.05.26" << "2011.05.11"));
 	distroselect->addItem("openSUSE", (QStringList() << "11.1" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 	"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
