@@ -639,8 +639,8 @@ Reboot now?</source>
     </message>
     <message>
         <location filename="distrover.cpp" line="169"/>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&quot;&gt;http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; עורך רישומי המערכת וסיסמאות ה־NT יכול לאפס סיסמאות של Windows ולערוך את רישומי המערכת של Windows 2000-ויסטה &lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NTPasswd מתאתחל ומופעל במצב חי; לא נדרשת התקנה כדי להשתמש בו.</translation>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; עורך רישומי המערכת וסיסמאות ה־NT יכול לאפס סיסמאות של Windows ולערוך את רישומי המערכת של Windows 2000-ויסטה &lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NTPasswd מתאתחל ומופעל במצב חי; לא נדרשת התקנה כדי להשתמש בו.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="174"/>
