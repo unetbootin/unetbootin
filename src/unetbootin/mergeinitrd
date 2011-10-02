@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Merges pairs of initrd files into a single initrd.
+# Used for merging initrd.cgz and scsi.cgz in NTPasswd.
+
+fileone=`readlink -f $1`
+filetwo=`readlink -f $2`
+mkdir initrd-tmp
+cd initrd-tmp
+gunzip < $fileone | sudo cpio -i --make-directories
+gunzip < $filetwo | sudo cpio -i --make-directories
+find ./ | sudo cpio -H newc -o > initrdmerged
+mv initrdmerged ..
+cd ..
+sudo rm -r initrd-tmp
+gzip initrdmerged
