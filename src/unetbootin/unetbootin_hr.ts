@@ -41,10 +41,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="297"/>
         <location filename="unetbootin.cpp" line="364"/>
         <location filename="unetbootin.cpp" line="480"/>
-        <location filename="unetbootin.cpp" line="3185"/>
-        <location filename="unetbootin.cpp" line="3198"/>
-        <location filename="unetbootin.cpp" line="3373"/>
-        <location filename="unetbootin.cpp" line="3966"/>
+        <location filename="unetbootin.cpp" line="3192"/>
+        <location filename="unetbootin.cpp" line="3205"/>
+        <location filename="unetbootin.cpp" line="3380"/>
+        <location filename="unetbootin.cpp" line="3973"/>
         <source>Hard Disk</source>
         <translation>Tvrdi disk</translation>
     </message>
@@ -59,13 +59,13 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="923"/>
         <location filename="unetbootin.cpp" line="1454"/>
         <location filename="unetbootin.cpp" line="1516"/>
-        <location filename="unetbootin.cpp" line="2435"/>
-        <location filename="unetbootin.cpp" line="2477"/>
-        <location filename="unetbootin.cpp" line="3189"/>
-        <location filename="unetbootin.cpp" line="3215"/>
-        <location filename="unetbootin.cpp" line="3377"/>
-        <location filename="unetbootin.cpp" line="3701"/>
-        <location filename="unetbootin.cpp" line="3970"/>
+        <location filename="unetbootin.cpp" line="2442"/>
+        <location filename="unetbootin.cpp" line="2484"/>
+        <location filename="unetbootin.cpp" line="3196"/>
+        <location filename="unetbootin.cpp" line="3222"/>
+        <location filename="unetbootin.cpp" line="3384"/>
+        <location filename="unetbootin.cpp" line="3708"/>
+        <location filename="unetbootin.cpp" line="3977"/>
         <source>USB Drive</source>
         <translation>USB uređaj</translation>
     </message>
@@ -76,7 +76,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="332"/>
         <location filename="unetbootin.cpp" line="600"/>
         <location filename="unetbootin.cpp" line="601"/>
-        <location filename="unetbootin.cpp" line="3271"/>
+        <location filename="unetbootin.cpp" line="3278"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -87,7 +87,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="337"/>
         <location filename="unetbootin.cpp" line="605"/>
         <location filename="unetbootin.cpp" line="606"/>
-        <location filename="unetbootin.cpp" line="3263"/>
+        <location filename="unetbootin.cpp" line="3270"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
@@ -287,13 +287,13 @@ X-Generator: Launchpad (build 12710)
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1616"/>
-        <location filename="unetbootin.cpp" line="2420"/>
+        <location filename="unetbootin.cpp" line="2427"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Izvor:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1617"/>
-        <location filename="unetbootin.cpp" line="2421"/>
+        <location filename="unetbootin.cpp" line="2428"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Odredište:&lt;/b&gt; %1</translation>
     </message>
@@ -343,107 +343,107 @@ X-Generator: Launchpad (build 12710)
         <translation>&lt;b&gt;Otpakirano:&lt;/b&gt; %1 od %2 datoteka</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2419"/>
+        <location filename="unetbootin.cpp" line="2426"/>
         <source>Downloading files, please wait...</source>
         <translation>Skidanje datoteka, molimo pričekajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2422"/>
+        <location filename="unetbootin.cpp" line="2429"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Skinuto:&lt;/b&gt; 0 byteova</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2499"/>
-        <location filename="unetbootin.cpp" line="2514"/>
+        <location filename="unetbootin.cpp" line="2506"/>
+        <location filename="unetbootin.cpp" line="2521"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Skinuto:&lt;/b&gt; %1 od %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2529"/>
+        <location filename="unetbootin.cpp" line="2536"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Kopirano:&lt;/b&gt; %1 od %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2605"/>
+        <location filename="unetbootin.cpp" line="2612"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Traženje u &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2609"/>
+        <location filename="unetbootin.cpp" line="2616"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 odgovarajućih nađeno u &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2882"/>
+        <location filename="unetbootin.cpp" line="2889"/>
         <source>%1 not found</source>
         <translation>%1 nije pronađen</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2883"/>
+        <location filename="unetbootin.cpp" line="2890"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 nije nađen. To je potrebno za %2 install mode.
 Instaliranje &quot;%3&quot; paketa ili ekvivalent vaše distribucije.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3166"/>
+        <location filename="unetbootin.cpp" line="3173"/>
         <source>(Current)</source>
         <translation>(Trenutno)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3167"/>
+        <location filename="unetbootin.cpp" line="3174"/>
         <source>(Done)</source>
         <translation>(Napravljeno)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3452"/>
+        <location filename="unetbootin.cpp" line="3459"/>
         <source>Configuring grub2 on %1</source>
         <translation>Konfiguracija grub2 na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3464"/>
+        <location filename="unetbootin.cpp" line="3471"/>
         <source>Configuring grldr on %1</source>
         <translation>Konfiguriranje grldr na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3492"/>
+        <location filename="unetbootin.cpp" line="3499"/>
         <source>Configuring grub on %1</source>
         <translation>Konfiguriranje grub na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3730"/>
+        <location filename="unetbootin.cpp" line="3737"/>
         <source>Installing syslinux to %1</source>
         <translation>Konfiguriranje syslinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3765"/>
+        <location filename="unetbootin.cpp" line="3772"/>
         <source>Installing extlinux to %1</source>
         <translation>Instaliranje extlinux na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3925"/>
+        <location filename="unetbootin.cpp" line="3932"/>
         <source>Syncing filesystems</source>
         <translation>Synhronizacija datotečnih sustava</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3930"/>
+        <location filename="unetbootin.cpp" line="3937"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3968"/>
+        <location filename="unetbootin.cpp" line="3975"/>
         <source>After rebooting, select the </source>
         <translation>Nakon restarta, odabrati </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3973"/>
+        <location filename="unetbootin.cpp" line="3980"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Nakon restarta, odabrati USB boot opciju u BIOS boot menu.%1
 Restart odmah?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3976"/>
+        <location filename="unetbootin.cpp" line="3983"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -483,14 +483,14 @@ Restart odmah?</translation>
 *BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju &apos;Pokrenuti Instalaciju&apos;, odabrati &apos;Mreža&apos; kao izvor, odbarati &apos;HTTP&apos; kao protokol, ući u &apos;download.fedora.redhat.com&apos;, kada se pojavi upit o serveru, unijeti &apos;/pub/fedora/linux/development/%1/Fedora/%2/os&apos; kada se pojavi upit o mapi.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="753"/>
+        <location filename="distrolst.cpp" line="759"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *BITNO* Nakon restarta, ignorirati poruke o greškama i odabrati natrag ako se pojavi upit za CD, nakon toga otići u glavni meni, odabrati opciju &apos;Pokrenuti Instalaciju&apos;, odabrati &apos;Mreža&apos; kao izvor, odbarati &apos;HTTP&apos; kao protokol, ući u &apos;download.opensuse.com&apos;, kada se pojavi upit o serveru, unijeti &apos;/factory/repo/oss&apos; kada se pojavi upit o mapi.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="759"/>
+        <location filename="distrolst.cpp" line="765"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -590,6 +590,11 @@ Restart odmah?</translation>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  F-Secure Rescue CD otkriva i uklanja malware iz vaše Windows instalacije.&lt;br/&gt;&lt;b&gt;Primjedba Instalacije:&lt;/b&gt; The Live version dozvoljava boot u Live mode, iz kojega se može pokrenuti pretraživanje na malware.</translation>
     </message>
     <message>
+        <location filename="distrover.cpp" line="105"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Gentoo je fleksibil ilna distribucija bazirana na izvornom kodu napravljena za napredne korisnike.&lt;br/&gt;&lt;b&gt;Primjedba Instalacije:&lt;/b&gt; The Live inačica dozvoljava boot u Live mode, iz kojega može dodatno pokrenuti instaler.</translation>
@@ -636,97 +641,102 @@ Restart odmah?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="159"/>
+        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="distrover.cpp" line="164"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  NetBSD je Unix-like operativni sustav koji se fokusira naportabilnost.&lt;br/&gt;&lt;b&gt;Napomena Instalacije:&lt;/b&gt;Podrazumijevana inačica dozvoljava instalaciju preko interneta (FTP), ili korištenjem prije skinutih installation ISO datoteka.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="164"/>
+        <location filename="distrover.cpp" line="169"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  NimbleX je mala, svestrana Slackware-based distribucija. Napravljena je korištenjem linux-live skripti, i sadrži KDE desktop. Može se boot-ati sa CD ili flash memorije (USB stikovi ili MP3 playeri),  i može se jednostavn prilagođavati i proširivati.&lt;br/&gt;&lt;b&gt;Napomena Instalacije:&lt;/b&gt;  NimbleX se boot-a u Live mode.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="169"/>
+        <location filename="distrover.cpp" line="174"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; The Offline NT Password i Registry Editor mogu Windows zaporke vratiti u početno stanje i izmjeniti zapisnik u Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; NTPasswd se pokreće u Live načinu rada; za uporabu nije potrebno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="174"/>
+        <location filename="distrover.cpp" line="179"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; openSUSE je inačica prilagođena zabpočetnike, čiji je pokrovitelj Novell.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Osnovna inačica omogućuje postavljanje putem mreže (FTP), ili izvan mreže korištenjem ISO datoteka.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="179"/>
+        <location filename="distrover.cpp" line="184"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Ophcrack može otkriti Windows zaporke.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Ophcrack se pokreće u Live načinu rada; za uporabu nije potrebno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="184"/>
+        <location filename="distrover.cpp" line="189"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Parted Magic uključuje GParted upravitelja odjeljcima i drugim alatima sustava koji mogu mijenjati veličinu, preslikavati, izrađivati sigurnosne preslike, i upravljati odjeljcima diska.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Parted Magic se pokreće u Live načinu rada; za uporabu nije potrebno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="189"/>
+        <location filename="distrover.cpp" line="194"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; PCLinuxOS je inačica prilagođena za početnike,a zasniva se na Mandriva-i.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Pokretanjem u Live načinu rada nije potrebno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="194"/>
+        <location filename="distrover.cpp" line="199"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Puppy Linux je lagana distribucija stvirena za starija računala.&lt;br/&gt;&lt;b&gt;Bilješka Instalacije:&lt;/b&gt; The Live inačica učitava cijeli sustav u RAM i boot-a iz memorije, dakle instalacija nije potrebna ali moguća.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="199"/>
+        <location filename="distrover.cpp" line="204"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Sabayon Linux se zasniva na Gentoo Live DVD inačici koja ističe binarnog upravitelja paketima Entropy, zajedno s sustavom Portage.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje Live načina rada, iz kojeg  se može pokrenuti postavljanje. LiteMCE je inačica od 2 GB, dok je za cijelo izdanje potreban 8 GB USB medij.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="204"/>
+        <location filename="distrover.cpp" line="209"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Slax se zasniva na Slackware-u, a odlikuje ga KDE sučelje.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje Live načina rada, iz kojeg  se može pokrenuti postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="209"/>
+        <location filename="distrover.cpp" line="214"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  SliTaz je malena, desktop-orientirana micro distribucija.&lt;br/&gt;&lt;b&gt;Napomena instalacije:&lt;/b&gt; The Live inačica učitava cijeli sustav u RAM i boot-a iz  memorije, dakle instalacija nije potrebna ali opcionalna.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="214"/>
+        <location filename="distrover.cpp" line="219"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Smart Boot Manager je bootloader koji može rješiti neka boot-related BIOS ograničenja i greške.&lt;br/&gt;&lt;b&gt;Napomena instalacije:&lt;/b&gt; SBM se jednostavno boot-a i radi; instalacija nije nužna za korištenje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="219"/>
+        <location filename="distrover.cpp" line="224"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Super Grub Disk je pokretač sustava koji može izvoditi razne MBR i pokretačke zadatke za oporavak.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; SGD se jednostavno pokreće, nije potrebno prethodno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="224"/>
+        <location filename="distrover.cpp" line="229"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Super OS je neslužbena inačica Ubuntu-a koja standardno uključuje dodatnu programsku podršku. Zahtjeva 2GB USB medij za postavljanje.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje u Live načinu rada, iz kojeg je moguće naknadno pokrenuti postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="229"/>
+        <location filename="distrover.cpp" line="234"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; SystemRescueCD uključuje razne alate za upravljanje odjeljcima diska, povrat podataka, te izradu sigurnosnih preslika.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; SystemRescueCD se pokreće u Live načinu rada; nije potrebno prethodno postavljanje.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="234"/>
+        <location filename="distrover.cpp" line="239"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Ubuntu je inačica prilagođena za početnike, zasnivana na Debian-u. Trenutno je najpoznatija desktop inačica Linux-a.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje u Live načinu rada, iz kojeg je moguće naknadno pokrenuti postavljanje. NetInstall inačica omogućava postavljanje putem FTP-a, a može postaviti Kubuntu i druge službene Ubuntu inačice. Ukoliko želite koristiti preuzetu zamjensku (ne desktop) ISO datoteku, koristite HdMedia mogućnost, i tada stavite zamjensku ISO datoteku u korjenski direktorij vašeg čvrstog diska ili USB diska</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="239"/>
+        <location filename="distrover.cpp" line="244"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; xPUD je lagana inačica koja predstavlja jednostavno kiosk sučelje s web preglednikom i medijskim izvođačem.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica učita cijeli sustav u RAM i pokreće se iz RAM-a.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="244"/>
+        <location filename="distrover.cpp" line="249"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Xubuntu je neslužbena Ubuntu inačica sa XFCE sučeljem.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje u Live načinu rada, iz kojeg je moguće naknadno pokrenuti postavljanje. NetInstall inačica omogućava postavljanje putem FTP-a, a može postaviti Kubuntu i druge službene Ubuntu inačice. Ukoliko želite koristiti preuzetu zamjensku (ne desktop) ISO datoteku, koristite HdMedia mogućnost, i tada stavite zamjensku ISO datoteku u korjenski direktorij vašeg čvrstog diska ili USB diska</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="249"/>
+        <location filename="distrover.cpp" line="254"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Početna stranica:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Zenwalk je inačica zasnovana na Slackware-u sa XFCE sučeljem.&lt;br/&gt;&lt;b&gt;Upute za postavljanje na računalo:&lt;/b&gt; Live inačica omogućava pokretanje u Live načinu rada, iz kojeg je moguće naknadno pokrenuti postavljanje.</translation>
     </message>

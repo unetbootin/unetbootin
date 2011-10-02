@@ -155,6 +155,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.me
 	"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
 	"<b>Install Notes:</b> MEPIS supports booting in Live mode, from which the installer can optionally be launched.") <<
 	"SimplyMEPIS" << "SimplyMEPIS_x64" << "AntiX"));
+distroselect->addItem("NetbootCD", (QStringList() << "Latest" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><br/>"
+	"<b>Description:</b> NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.<br/>"
+	"<b>Install Notes:</b> NetbootCD boots and runs in live mode.") <<
+"Latest"));
 distroselect->addItem("NetBSD", (QStringList() << "4.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
 	"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"

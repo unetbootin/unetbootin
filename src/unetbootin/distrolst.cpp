@@ -698,6 +698,12 @@ if (nameDistro == "MEPIS")
 	extractiso(isotmpf);
 }
 
+if (nameDistro == "NetbootCD")
+{
+	downloadfile("http://download.tuxfamily.org/netbootcd/NetbootCD-current.iso", isotmpf);
+	extractiso(isotmpf);
+}
+
 if (nameDistro == "NetBSD")
 {
 	if (isarch64)
