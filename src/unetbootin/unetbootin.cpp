@@ -184,6 +184,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	overwriteall = false;
 	searchsymlinks = false;
 	ignoreoutofspace = false;
+	downloadFailed = false;
 	persistenceSpaceMB = 0;
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
@@ -2470,6 +2471,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 			dloutfile.close();
 			rmFile(dloutfile);
 			downloadfile(dlresponse.value("Location"), targetfile);
+			return;
 		}
 	}
 	if (isftp)
@@ -2484,6 +2486,19 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	if (installType == tr("USB Drive"))
 	{
 		dloutfile.rename(targetfile);
+	}
+	if (QFile(targetfile).size() < 1024*512)
+	{
+		// download failed
+		progresslayer->setEnabled(false);
+		progresslayer->hide();
+		rebootlayer->setEnabled(true);
+		rebootlayer->show();
+		rebootmsgtext->setText(tr("Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.").arg(nameDistro).arg(nameVersion).arg(fileurl));
+		this->frebootbutton->setEnabled(false);
+		this->frebootbutton->hide();
+		this->downloadFailed = true;
+		return;
 	}
 	pdesc4->setText("");
 	pdesc3->setText("");
@@ -3348,6 +3363,10 @@ void unetbootin::runinst()
 		if (QFile::exists(QString("%1\\7z.dll").arg(ubntmpf)))
 		{
 			rmFile(QString("%1\\7z.dll").arg(ubntmpf));
+		}
+		if (downloadFailed)
+		{
+			return;
 		}
 	}
 	if (!sdesc1->text().contains(trdone))

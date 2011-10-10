@@ -201,6 +201,7 @@ public:
 	bool searchsymlinks;
 	bool ignoreoutofspace;
 	bool dontgeneratesyslinuxcfg;
+	bool downloadFailed;
 	int persistenceSpaceMB;
 	QString extraBootOptions;
 	QStringList locatedsyslinuxcfgfiles;
