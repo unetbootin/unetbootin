@@ -18,6 +18,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+	.replace("11.10", "oneiric") \
 	.replace("11.04", "natty") \
 	.replace("10.10", "maverick") \
 	.replace("10.04", "lucid") \
@@ -213,7 +214,15 @@ if (nameDistro == "Arch Linux")
 
 if (nameDistro == "BackTrack")
 {
-	downloadfile(QString("http://www.backtrack-linux.org/download.php?fname=bt%1").arg(relname), isotmpf);
+	if (isarch64)
+	{
+		cpuarch = "64";
+	}
+	else
+	{
+		cpuarch = "32";
+	}
+	downloadfile(QString("http://www.backtrack-linux.org/ajax/download_redirect.php?id=BT%1-%2.iso").arg(nameVersion).arg(cpuarch), isotmpf);
 	extractiso(isotmpf);
 }
 
@@ -784,14 +793,21 @@ if (nameDistro == "Parted Magic")
 	}
 	else
 	{
+		if (isarch64)
+		{
+			cpuarch = "x86_64";
+		}
+		else
+		{
+			cpuarch = "i686";
+		}
 		downloadfile(fileFilterNetDir(QStringList() << 
 		"http://exo.enarel.eu/mirror/partedmagic/" << 
-		"ftp://ftp.mirrorservice.org/sites/ftp.sourceforge.net/pub/sourceforge/p/pa/partedmagic/" <<
-		"http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/p/pa/partedmagic/" <<
 		"http://fulloffacts.com/get/partedmagic/" <<
 		"http://www.digitalincursion.net/partedmagic/"
 		, 10485760, 209715200, QList<QRegExp>() << 
 		QRegExp("^pmagic", Qt::CaseInsensitive) << 
+		QRegExp(cpuarch, Qt::CaseInsensitive) <<
 		QRegExp(".iso.zip$", Qt::CaseInsensitive) << 
 		QRegExp("\\d.iso.zip$", Qt::CaseInsensitive) << 
 		QRegExp("^pmagic-\\d", Qt::CaseInsensitive)

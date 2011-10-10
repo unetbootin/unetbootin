@@ -17,6 +17,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "10.04_NetInstall" << "10.04_NetInstall_x64" << "10.04_HdMedia" << "10.04_HdMedia_x64" << "10.04_Live" << "10.04_Live_x64" << \
 "10.10_NetInstall" << "10.10_NetInstall_x64" << "10.10_HdMedia" << "10.10_HdMedia_x64" << "10.10_Live" << "10.10_Live_x64" << \
 "11.04_NetInstall" << "11.04_NetInstall_x64" << "11.04_HdMedia" << "11.04_HdMedia_x64" << "11.04_Live" << "11.04_Live_x64" << \
+"11.10_NetInstall" << "11.10_NetInstall_x64" << "11.10_HdMedia" << "11.10_HdMedia_x64" << "11.10_Live" << "11.10_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -30,11 +31,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.archlinux.org/\">http://ww
 	"<b>Description:</b> Arch Linux is a lightweight distribution optimized for speed and flexibility.<br/>"
 	"<b>Install Notes:</b> The default version allows for installation over the internet (FTP).") <<
 "core" << "core_x64" << "netinstall" << "netinstall_x64"));
-distroselect->addItem("BackTrack", (QStringList() << "4f" <<
+distroselect->addItem("BackTrack", (QStringList() << "5R1-GNOME" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">http://www.backtrack-linux.org/</a><br/>"
 	"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 	"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
-"3" << "4f"));
+"5R1-GNOME" << "5R1-GNOME_x64" << "5R1-KDE" << "5R1-KDE_x64"));
 distroselect->addItem("CentOS", (QStringList() << "5" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 	"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
@@ -189,7 +190,7 @@ distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
-"2.1_Live" << "Latest_Live"));
+"2.1_Live" << "Latest_Live" << "Latest_Live_x64"));
 distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
@@ -230,11 +231,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_OS\"
 	"<b>Description:</b> Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Latest_Live"));
-distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/>"
-	"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
-	"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") <<
-"Latest_Live"));
+//distroselect->addItem("SystemRescueCD", (QStringList() << "Latest_Live" <<
+//unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/>"
+//	"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
+//	"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") <<
+//"Latest_Live"));
 distroselect->addItem("Ubuntu", (QStringList() << "10.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 	"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
