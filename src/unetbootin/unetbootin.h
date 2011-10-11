@@ -202,6 +202,8 @@ public:
 	bool ignoreoutofspace;
 	bool dontgeneratesyslinuxcfg;
 	bool downloadFailed;
+	bool exitOnCompletion;
+	bool testingDownload;
 	int persistenceSpaceMB;
 	QString extraBootOptions;
 	QStringList locatedsyslinuxcfgfiles;
@@ -323,6 +325,7 @@ public:
 	void rmFile(QFile &fn);
 	void mvFile(const QString &fn, const QString &outfn);
 	void mvFile(QFile &fn, QFile &outfn);
+	void showDownloadFailedScreen(const QString &fileurl);
 
 private slots:
 	void on_distroselect_currentIndexChanged(int distroselectIndex);
@@ -342,6 +345,7 @@ public slots:
 	void dlprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void cpprogressupdate64(qint64 dlbytes, qint64 maxbytes);
 	void on_okbutton_clicked();
+	void killApplication();
 };
 
 #endif

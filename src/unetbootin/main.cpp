@@ -378,9 +378,10 @@ int main(int argc, char **argv)
 	icon.addFile(":/unetbootin_32.png", QSize(32,32));
 	icon.addFile(":/unetbootin_48.png", QSize(48,48));
 	unetbootin.setWindowIcon(icon);
+	QObject::connect(&app, SIGNAL(lastWindowClosed()), &unetbootin, SLOT(killApplication()));
 	bool automate = unetbootin.ubninitialize(oppairs);
 	unetbootin.show();
 	if (automate)
-		unetbootin.on_okbutton_clicked();
+		QTimer::singleShot(0, &unetbootin, SLOT(on_okbutton_clicked()));
 	return app.exec();
 }

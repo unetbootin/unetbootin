@@ -185,6 +185,8 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	searchsymlinks = false;
 	ignoreoutofspace = false;
 	downloadFailed = false;
+	exitOnCompletion = false;
+	testingDownload = false;
 	persistenceSpaceMB = 0;
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
@@ -406,10 +408,50 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 			if (isInt)
 				this->persistencevalue->setValue(numMBpersistentSpace);
 		}
+		else if (pfirst.contains("testingdownload", Qt::CaseInsensitive))
+		{
+			if (psecond.contains('y', Qt::CaseInsensitive))
+			{
+				testingDownload = true;
+				exitOnCompletion = true;
+			}
+		}
+		else if (pfirst.contains("exitoncompletion", Qt::CaseInsensitive))
+		{
+			if (psecond.contains('y', Qt::CaseInsensitive))
+			{
+				exitOnCompletion = true;
+			}
+		}
 		else if (pfirst.contains("autoinstall", Qt::CaseInsensitive))
 		{
 			if (psecond.contains('y', Qt::CaseInsensitive))
+			{
+				exitOnCompletion = true;
+				overwriteall = true;
 				return true;
+			}
+		}
+		else if (pfirst.contains("action", Qt::CaseInsensitive))
+		{
+			if (psecond.contains("listdistros", Qt::CaseInsensitive))
+			{
+				for (int i = 1; i < this->distroselect->count(); ++i)
+				{
+					printf("%s\n", this->distroselect->itemText(i).toAscii().constData());
+				}
+				QApplication::exit();
+				exit(0);
+			}
+			else if (psecond.contains("listversions", Qt::CaseInsensitive))
+			{
+				for (int i = 1; i < this->dverselect->count(); ++i)
+				{
+					printf("%s\n", this->dverselect->itemText(i).toAscii().constData());
+				}
+				QApplication::exit();
+				exit(0);
+			}
 		}
 	}
 	if (hideCustom)
@@ -2409,7 +2451,10 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 void unetbootin::downloadfile(QString fileurl, QString targetfile)
 {
 	if (fileurl.isEmpty())
+	{
+		showDownloadFailedScreen(fileurl);
 		return;
+	}
 	if (QFile::exists(targetfile))
 	{
 		rmFile(targetfile);
@@ -2490,14 +2535,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	if (QFile(targetfile).size() < 1024*512)
 	{
 		// download failed
-		progresslayer->setEnabled(false);
-		progresslayer->hide();
-		rebootlayer->setEnabled(true);
-		rebootlayer->show();
-		rebootmsgtext->setText(tr("Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.").arg(nameDistro).arg(nameVersion).arg(fileurl));
-		this->frebootbutton->setEnabled(false);
-		this->frebootbutton->hide();
-		this->downloadFailed = true;
+		showDownloadFailedScreen(fileurl);
 		return;
 	}
 	pdesc4->setText("");
@@ -2505,6 +2543,31 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	pdesc2->setText("");
 	pdesc1->setText("");
 	tprogress->setValue(0);
+	if (testingDownload)
+	{
+		// Note that this only tests that the first download succeeds
+		printf("exitstatus:downloadcomplete\n");
+		QApplication::exit();
+		exit(0);
+	}
+}
+
+void unetbootin::showDownloadFailedScreen(const QString &fileurl)
+{
+	progresslayer->setEnabled(false);
+	progresslayer->hide();
+	rebootlayer->setEnabled(true);
+	rebootlayer->show();
+	rebootmsgtext->setText(tr("Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.").arg(nameDistro).arg(nameVersion).arg(fileurl));
+	this->frebootbutton->setEnabled(false);
+	this->frebootbutton->hide();
+	this->downloadFailed = true;
+	if (exitOnCompletion)
+	{
+		printf("exitstatus:downloadfailed\n");
+		QApplication::exit();
+		exit(0);
+	}
 }
 
 void unetbootin::dlprogressupdate(int dlbytes, int maxbytes)
@@ -3944,6 +4007,11 @@ void unetbootin::runinstusb()
 	fininstall();
 }
 
+void unetbootin::killApplication()
+{
+	exit(0);
+}
+
 void unetbootin::fininstall()
 {
 	#ifdef Q_OS_UNIX
@@ -4003,5 +4071,11 @@ void unetbootin::fininstall()
 		this->frebootbutton->setEnabled(false);
 		this->frebootbutton->hide();
 #endif
+	}
+	if (exitOnCompletion)
+	{
+		printf("exitstatus:success\n");
+		QApplication::exit();
+		exit(0);
 	}
 }
