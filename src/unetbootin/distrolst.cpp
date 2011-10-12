@@ -560,7 +560,7 @@ if (nameDistro == "Kaspersky Rescue Disk")
 if (nameDistro == "Gujin")
 {
 	instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gujin-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath));
+	downloadfile(QString("http://downloads.sourceforge.net/sourceforge/lubi/gujin-%1.img.gz").arg(relname), QString("%1ubninit").arg(targetPath), 81920);
 }
 
 if (nameDistro == "LinuxConsole")

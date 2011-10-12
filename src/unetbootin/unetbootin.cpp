@@ -445,7 +445,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 			}
 			else if (psecond.contains("listversions", Qt::CaseInsensitive))
 			{
-				for (int i = 1; i < this->dverselect->count(); ++i)
+				for (int i = 0; i < this->dverselect->count(); ++i)
 				{
 					printf("%s\n", this->dverselect->itemText(i).toAscii().constData());
 				}
@@ -2448,7 +2448,7 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 	return QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> >();
 }
 
-void unetbootin::downloadfile(QString fileurl, QString targetfile)
+void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=524288)
 {
 	if (fileurl.isEmpty())
 	{
@@ -2515,7 +2515,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 		{
 			dloutfile.close();
 			rmFile(dloutfile);
-			downloadfile(dlresponse.value("Location"), targetfile);
+			downloadfile(dlresponse.value("Location"), targetfile, minsize);
 			return;
 		}
 	}
@@ -2532,7 +2532,7 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile)
 	{
 		dloutfile.rename(targetfile);
 	}
-	if (QFile(targetfile).size() < 1024*512)
+	if (QFile(targetfile).size() < minsize)
 	{
 		// download failed
 		showDownloadFailedScreen(fileurl);
@@ -2660,7 +2660,22 @@ QStringList unetbootin::lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, 
 QStringList unetbootin::lstHttpDirFiles(QString ldfDirStringUrl)
 {
 	QStringList relativefilelinksL;
-	QStringList relativelinksL = downloadpagecontents(ldfDirStringUrl).replace(">", ">\n").replace("<", "\n<").split("\n").filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">", Qt::CaseInsensitive)).replaceInStrings(QRegExp("<a href=\"", Qt::CaseInsensitive), "").replaceInStrings("\">", "");
+	QStringList relativelinksLPreFilter =
+		downloadpagecontents(ldfDirStringUrl)
+		.replace(">", ">\n")
+		.replace("<", "\n<")
+		.split("\n");
+	QStringList relativelinksLPart1 =
+		relativelinksLPreFilter
+		.filter(QRegExp("<a href=\"(?!\\?)\\S{1,}\">", Qt::CaseInsensitive))
+		.replaceInStrings(QRegExp("<a href=\"", Qt::CaseInsensitive), "")
+		.replaceInStrings("\">", "");
+	QStringList relativelinksLPart2 =
+		relativelinksLPreFilter
+		.filter(QRegExp("<a href=\'(?!\\?)\\S{1,}\'>", Qt::CaseInsensitive))
+		.replaceInStrings(QRegExp("<a href=\'", Qt::CaseInsensitive), "")
+		.replaceInStrings("\'>", "");
+	QStringList relativelinksL = relativelinksLPart1 << relativelinksLPart2;
 	for (int i = 0; i < relativelinksL.size(); ++i)
 	{
 		if (!relativelinksL.at(i).endsWith('/'))

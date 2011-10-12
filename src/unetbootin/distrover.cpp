@@ -9,10 +9,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
-"6.06_NetInstall" << "6.06_NetInstall_x64" << "6.06_HdMedia" << "6.06_HdMedia_x64" << "6.06_Live" << "6.06_Live_x64" << \
 "8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_HdMedia" << "8.04_HdMedia_x64" << "8.04_Live" << "8.04_Live_x64" << \
-"8.10_NetInstall" << "8.10_NetInstall_x64" << "8.10_HdMedia" << "8.10_HdMedia_x64" << "8.10_Live" << "8.10_Live_x64" << \
-"9.04_NetInstall" << "9.04_NetInstall_x64" << "9.04_HdMedia" << "9.04_HdMedia_x64" << "9.04_Live" << "9.04_Live_x64" << \
 "9.10_NetInstall" << "9.10_NetInstall_x64" << "9.10_HdMedia" << "9.10_HdMedia_x64" << "9.10_Live" << "9.10_Live_x64" << \
 "10.04_NetInstall" << "10.04_NetInstall_x64" << "10.04_HdMedia" << "10.04_HdMedia_x64" << "10.04_Live" << "10.04_Live_x64" << \
 "10.10_NetInstall" << "10.10_NetInstall_x64" << "10.10_HdMedia" << "10.10_HdMedia_x64" << "10.10_Live" << "10.10_Live_x64" << \
@@ -71,12 +68,12 @@ distroselect->addItem("Elive", (QStringList() << "Stable_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/>"
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-"Stable_Live" << "Unstable_Live"));
+"Stable_Live"));
 distroselect->addItem("Fedora", (QStringList() << "15_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"7_NetInstall" << "7_NetInstall_x64" << "8_NetInstall" << "8_NetInstall_x64" << "8_Live" << "8_Live_x64" << "9_NetInstall" << "9_NetInstall_x64" << "9_Live" << "9_Live_x64" << "10_NetInstall" << "10_NetInstall_x64" << "10_Live" << "10_Live_x64" << "11_NetInstall" << "11_NetInstall_x64" << "11_Live" << "11_Live_x64" << "12_NetInstall" << "12_NetInstall_x64" << "12_Live" << "12_Live_x64" << "13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+	"13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -91,25 +88,25 @@ distroselect->addItem("FreeNAS", (QStringList() << "0.7.4919" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://freenas.org/\">http://www.freenas.org</a><br/>"
 	"<b>Description:</b> FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.<br/>"
 	"<b>Install Notes:</b> The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.") <<
-"0.7.4919" << "0.7.4919_x64" << "0.7.1.5024_Live" << "0.7.1.4997_Live_x64"));
+"0.7.1.5024_Live" << "0.7.1.4997_Live_x64"));
 distroselect->addItem("Frugalware", (QStringList() << "Stable" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://frugalware.org/\">http://frugalware.org</a><br/>"
 	"<b>Description:</b> Frugalware is a general-purpose Slackware-based distro for advanced users.<br/>"
 	"<b>Install Notes:</b> The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
 "Stable" << "Stable_x64" << "Testing" << "Testing_x64" << "Current" << "Current_x64"));
-distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/>"
-	"<b>Description:</b> F-Secure Rescue CD detects and removes malware from your Windows installation.<br/>"
-	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
-                                             "Latest_Live"));
+//distroselect->addItem("F-Secure Rescue CD", (QStringList() << "Latest_Live" <<
+//unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-weblog/\">http://www.f-secure.com/linux-weblog/</a><br/>"
+//	"<b>Description:</b> F-Secure Rescue CD detects and removes malware from your Windows installation.<br/>"
+//	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
+//                                             "Latest_Live"));
 distroselect->addItem("GeeXboX", (QStringList() << "2.0-i386" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/>"
                "<b>Description:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>") << "2.0-i386" << "2.0-x86_64"));
-distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
-	"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"
-	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-"2007.0_Live" << "2007.0_Live_x64" << "2008.0_Live" << "2008.0_x64_Live"));
+//distroselect->addItem("Gentoo", (QStringList() << "2008.0_Live" <<
+//unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/>"
+//	"<b>Description:</b> Gentoo is a flexible source-based distribution designed for advanced users.<br/>"
+//	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
+//"2007.0_Live" << "2007.0_Live_x64" << "2008.0_Live" << "2008.0_x64_Live"));
 //	distroselect->addItem("GAG", (QStringList() << "4.9" <<
 //	tr("<b>Homepage:</b> <a href=\"http://gag.sourceforge.net/\">http://gag.sourceforge.net</a><br/>"
 //		"<b>Description:</b> GAG is a user-friendly graphical boot manager.<br/>"
@@ -149,8 +146,7 @@ distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 	"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>.") <<
-"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
-//	"2007.1_NetInstall" << "2007.1_NetInstall_x64" << "2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.0_Live" << "2008.1_NetInstall" << "2008.1_NetInstall_x64" << "2008.1_Live"));
+"2008.0_NetInstall" << "2008.0_NetInstall_x64" << "2008.1_NetInstall" << "2008.1_NetInstall_x64"));
 distroselect->addItem("MEPIS", (QStringList() << "SimplyMEPIS" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/>"
 	"<b>Description:</b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.<br/>"
@@ -161,11 +157,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://netbootcd.tuxfamily.org/\">htt
 	"<b>Description:</b> NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.<br/>"
 	"<b>Install Notes:</b> NetbootCD boots and runs in live mode.") <<
 "Latest"));
-distroselect->addItem("NetBSD", (QStringList() << "4.0" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
-	"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
-	"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") <<
-"4.0"));
+//distroselect->addItem("NetBSD", (QStringList() << "4.0" <<
+//unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/>"
+//	"<b>Description:</b> NetBSD is a Unix-like operating system which focuses on portability.<br/>"
+//	"<b>Install Notes:</b>The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.") <<
+//"4.0"));
 distroselect->addItem("NimbleX", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/>"
 	"<b>Description:</b> NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.<br/>"
@@ -180,7 +176,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://pogostick.net/~pnh/ntpasswd/\"
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/>"
 	"<b>Description:</b> openSUSE is a user-friendly Novell sponsored distribution.<br/>"
 	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"10.2" << "10.2_x64" << "10.3" << "10.3_x64" << "11.0" << "11.0_x64" << "11.1" << "11.1_x64" << "Factory" << "Factory_x64"));
+	"11.1" << "11.1_x64" << "Factory" << "Factory_x64"));
 distroselect->addItem("Ophcrack", (QStringList() << "XP-LiveCD-2.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a><br/>"
 	"<b>Description:</b> Ophcrack can crack Windows passwords.<br/>"
@@ -191,11 +187,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://part
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
 "2.1_Live" << "Latest_Live" << "Latest_Live_x64"));
-distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
-unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
-	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
-	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-"KDE 2010" << "Gnome 2010" << "LXDE 2010" << "MiniMe 2010" << "E17 2010"));
+//distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
+//unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
+//	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"
+//	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
+//"KDE 2010" << "Gnome 2010" << "LXDE 2010" << "MiniMe 2010" << "E17 2010"));
 distroselect->addItem("Puppy Linux", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/>"
 	"<b>Description:</b> Puppy Linux is a lightweight distribution designed for older computers.<br/>"

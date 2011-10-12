@@ -270,7 +270,7 @@ public:
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforincludesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	QString searchforgrub2includesfile(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > searchforgrub2includesfileL(QString includesfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes);
-	void downloadfile(QString fileurl, QString targetfile);
+	void downloadfile(QString fileurl, QString targetfile, int minsize);
 	QString downloadpagecontents(QString pageurl);
 	QStringList lstFtpDirFiles(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize);
 	QStringList lstHttpDirFiles(QString ldfDirStringUrl);
