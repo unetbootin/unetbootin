@@ -377,6 +377,9 @@ int main(int argc, char **argv)
 	icon.addFile(":/unetbootin_24.png", QSize(24,24));
 	icon.addFile(":/unetbootin_32.png", QSize(32,32));
 	icon.addFile(":/unetbootin_48.png", QSize(48,48));
+#ifdef Q_OS_LINUX
+	icon.addFile("/usr/share/pixmaps/unetbootin.png");
+#endif
 	unetbootin.setWindowIcon(icon);
 	QObject::connect(&app, SIGNAL(lastWindowClosed()), &unetbootin, SLOT(killApplication()));
 	bool automate = unetbootin.ubninitialize(oppairs);
