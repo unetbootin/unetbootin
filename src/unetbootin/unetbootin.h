@@ -223,6 +223,7 @@ public:
 	QMap<QString, QString> grub2vars;
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
+	QString sfdiskcommand;
 	QString dfcommand;
 	QString blkidcommand;
 	QString volidcommand;

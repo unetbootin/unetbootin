@@ -31,35 +31,35 @@ X-Generator: Launchpad (build 12710)
     <name>unetbootin</name>
     <message>
         <location filename="unetbootin.cpp" line="205"/>
-        <location filename="unetbootin.cpp" line="299"/>
-        <location filename="unetbootin.cpp" line="300"/>
-        <location filename="unetbootin.cpp" line="367"/>
-        <location filename="unetbootin.cpp" line="523"/>
-        <location filename="unetbootin.cpp" line="3285"/>
-        <location filename="unetbootin.cpp" line="3298"/>
-        <location filename="unetbootin.cpp" line="3477"/>
-        <location filename="unetbootin.cpp" line="4075"/>
+        <location filename="unetbootin.cpp" line="303"/>
+        <location filename="unetbootin.cpp" line="304"/>
+        <location filename="unetbootin.cpp" line="371"/>
+        <location filename="unetbootin.cpp" line="527"/>
+        <location filename="unetbootin.cpp" line="3289"/>
+        <location filename="unetbootin.cpp" line="3302"/>
+        <location filename="unetbootin.cpp" line="3481"/>
+        <location filename="unetbootin.cpp" line="4085"/>
         <source>Hard Disk</source>
         <translation>Đĩa cứng</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="207"/>
-        <location filename="unetbootin.cpp" line="296"/>
-        <location filename="unetbootin.cpp" line="297"/>
-        <location filename="unetbootin.cpp" line="369"/>
-        <location filename="unetbootin.cpp" line="527"/>
-        <location filename="unetbootin.cpp" line="692"/>
-        <location filename="unetbootin.cpp" line="712"/>
-        <location filename="unetbootin.cpp" line="966"/>
-        <location filename="unetbootin.cpp" line="1497"/>
-        <location filename="unetbootin.cpp" line="1559"/>
-        <location filename="unetbootin.cpp" line="2488"/>
-        <location filename="unetbootin.cpp" line="2531"/>
-        <location filename="unetbootin.cpp" line="3289"/>
-        <location filename="unetbootin.cpp" line="3315"/>
-        <location filename="unetbootin.cpp" line="3481"/>
-        <location filename="unetbootin.cpp" line="3805"/>
-        <location filename="unetbootin.cpp" line="4079"/>
+        <location filename="unetbootin.cpp" line="300"/>
+        <location filename="unetbootin.cpp" line="301"/>
+        <location filename="unetbootin.cpp" line="373"/>
+        <location filename="unetbootin.cpp" line="531"/>
+        <location filename="unetbootin.cpp" line="696"/>
+        <location filename="unetbootin.cpp" line="716"/>
+        <location filename="unetbootin.cpp" line="970"/>
+        <location filename="unetbootin.cpp" line="1501"/>
+        <location filename="unetbootin.cpp" line="1563"/>
+        <location filename="unetbootin.cpp" line="2492"/>
+        <location filename="unetbootin.cpp" line="2535"/>
+        <location filename="unetbootin.cpp" line="3293"/>
+        <location filename="unetbootin.cpp" line="3319"/>
+        <location filename="unetbootin.cpp" line="3485"/>
+        <location filename="unetbootin.cpp" line="3809"/>
+        <location filename="unetbootin.cpp" line="4089"/>
         <source>USB Drive</source>
         <translation>Ổ USB</translation>
     </message>
@@ -67,10 +67,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="208"/>
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
-        <location filename="unetbootin.cpp" line="335"/>
-        <location filename="unetbootin.cpp" line="643"/>
-        <location filename="unetbootin.cpp" line="644"/>
-        <location filename="unetbootin.cpp" line="3371"/>
+        <location filename="unetbootin.cpp" line="339"/>
+        <location filename="unetbootin.cpp" line="647"/>
+        <location filename="unetbootin.cpp" line="648"/>
+        <location filename="unetbootin.cpp" line="3375"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
@@ -78,10 +78,10 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="209"/>
         <location filename="unetbootin.cpp" line="221"/>
         <location filename="unetbootin.cpp" line="222"/>
-        <location filename="unetbootin.cpp" line="340"/>
-        <location filename="unetbootin.cpp" line="648"/>
-        <location filename="unetbootin.cpp" line="649"/>
-        <location filename="unetbootin.cpp" line="3363"/>
+        <location filename="unetbootin.cpp" line="344"/>
+        <location filename="unetbootin.cpp" line="652"/>
+        <location filename="unetbootin.cpp" line="653"/>
+        <location filename="unetbootin.cpp" line="3367"/>
         <source>Floppy</source>
         <translation>Đĩa mềm</translation>
     </message>
@@ -90,359 +90,360 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="248"/>
         <location filename="unetbootin.cpp" line="252"/>
         <location filename="unetbootin.cpp" line="256"/>
-        <location filename="unetbootin.cpp" line="262"/>
-        <location filename="unetbootin.cpp" line="290"/>
+        <location filename="unetbootin.cpp" line="260"/>
+        <location filename="unetbootin.cpp" line="266"/>
+        <location filename="unetbootin.cpp" line="294"/>
         <source>either</source>
         <translation>khác</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="269"/>
+        <location filename="unetbootin.cpp" line="273"/>
         <source>LiveUSB persistence</source>
         <translation>Lưu các thiết lập trên LiveUSB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="284"/>
+        <location filename="unetbootin.cpp" line="288"/>
         <source>FAT32-formatted USB drive</source>
         <translation>Ổ USB đã được định dạng FAT32</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="288"/>
+        <location filename="unetbootin.cpp" line="292"/>
         <source>EXT2-formatted USB drive</source>
         <translation>Ổ USB đã được định dạng EXT2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="644"/>
         <source>Open Disk Image File</source>
         <translation>Mở tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="640"/>
+        <location filename="unetbootin.cpp" line="644"/>
         <source>All Files</source>
         <translation>Tất cả tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="658"/>
-        <location filename="unetbootin.cpp" line="666"/>
-        <location filename="unetbootin.cpp" line="674"/>
+        <location filename="unetbootin.cpp" line="662"/>
+        <location filename="unetbootin.cpp" line="670"/>
+        <location filename="unetbootin.cpp" line="678"/>
         <source>All Files (*)</source>
         <translation>Tất cả tập tin (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="658"/>
+        <location filename="unetbootin.cpp" line="662"/>
         <source>Open Kernel File</source>
         <translation>Mở tập tin nhân</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="666"/>
+        <location filename="unetbootin.cpp" line="670"/>
         <source>Open Initrd File</source>
         <translation>Mở tập tin Initrrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="674"/>
+        <location filename="unetbootin.cpp" line="678"/>
         <source>Open Bootloader Config File</source>
         <translation>Mở tập tin cấu hình Bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="696"/>
+        <location filename="unetbootin.cpp" line="700"/>
         <source>Insert a USB flash drive</source>
         <translation>Yêu cầu một ổ flash USB</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="697"/>
+        <location filename="unetbootin.cpp" line="701"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Không tìm thấy ổ flash USB nào. Nếu bạn đã cắm USB vào, hãy định dạng nó sang FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="716"/>
+        <location filename="unetbootin.cpp" line="720"/>
         <source>%1 not mounted</source>
         <translation>%1 chưa được gắn vào</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="717"/>
+        <location filename="unetbootin.cpp" line="721"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Trước hết, bạn cần gắn kết (mount) ổ flash USB %1 vào. Hầu hết các bản phân phối sẽ tự động làm việc này sau khi bạn tháo và gắn lại ổ flash USB.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="732"/>
+        <location filename="unetbootin.cpp" line="736"/>
         <source>Select a distro</source>
         <translation>Yêu cầu chọn một bản phân phối</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="733"/>
+        <location filename="unetbootin.cpp" line="737"/>
         <source>You must select a distribution to load.</source>
         <translation>Bạn phải chọn một bản phân phối để tiến hành cài đặt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="747"/>
+        <location filename="unetbootin.cpp" line="751"/>
         <source>Select a disk image file</source>
         <translation>Yêu cầu chọn tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="748"/>
+        <location filename="unetbootin.cpp" line="752"/>
         <source>You must select a disk image file to load.</source>
         <translation>Bạn phải chọn một tập tin ảnh đĩa để tiến hành cài đặt.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="762"/>
+        <location filename="unetbootin.cpp" line="766"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Chọn tập tin nhân hoặc tập tin initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="763"/>
+        <location filename="unetbootin.cpp" line="767"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Bạn phải chọn một tập tin nhân hoặc tập tin initrd.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="777"/>
+        <location filename="unetbootin.cpp" line="781"/>
         <source>Diskimage file not found</source>
         <translation>Không tìm thấy tập tin ảnh đĩa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="778"/>
+        <location filename="unetbootin.cpp" line="782"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Tập tin ảnh đĩa bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="792"/>
+        <location filename="unetbootin.cpp" line="796"/>
         <source>Kernel file not found</source>
         <translation>Không tìm thấy tập tin nhân</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="793"/>
+        <location filename="unetbootin.cpp" line="797"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Tập tin nhân mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="807"/>
+        <location filename="unetbootin.cpp" line="811"/>
         <source>Initrd file not found</source>
         <translation>Không tìm thấy tập tin initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="808"/>
+        <location filename="unetbootin.cpp" line="812"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Tập tin initrd mà bạn đã xác định %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="912"/>
+        <location filename="unetbootin.cpp" line="916"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 đã tồn tại, bạn có muốn ghi đè lên nó không?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="913"/>
+        <location filename="unetbootin.cpp" line="917"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Tập tin %1 đã tồn tại. Chọn &apos;Yes to All&apos; để ghi đè nó và không nhắc lại nữa, chọn &apos;Yes&apos; để ghi đè tập tin, và &apos;No&apos; để giữ lại tập tin đã tồn tại. Nếu không chắc, chọn &apos;Yes to All&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="939"/>
+        <location filename="unetbootin.cpp" line="943"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>%1 không đủ dung lượng, hủy bỏ cài đặt?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="940"/>
+        <location filename="unetbootin.cpp" line="944"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>Thư mục %1 không đủ dung lượng. Chọn &apos;Yes&apos; để huỷ bỏ cài đặt, &apos;No&apos; để bỏ qua lỗi này và cố gắng cài đặt tiếp, và &apos;No to All&apos; để bỏ qua mọi lỗi do thiếu dung lượng.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1034"/>
+        <location filename="unetbootin.cpp" line="1038"/>
         <source>Locating kernel file in %1</source>
         <translation>Đang xác định tập tin nhân tại %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1075"/>
+        <location filename="unetbootin.cpp" line="1079"/>
         <source>Copying kernel file from %1</source>
         <translation>Đang sao chép tập tin nhân từ %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1081"/>
+        <location filename="unetbootin.cpp" line="1085"/>
         <source>Locating initrd file in %1</source>
         <translation>Đang xác định tập tin initrd tại %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1122"/>
+        <location filename="unetbootin.cpp" line="1126"/>
         <source>Copying initrd file from %1</source>
         <translation>Đang sao chép tập tin initrd từ %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1128"/>
-        <location filename="unetbootin.cpp" line="1188"/>
+        <location filename="unetbootin.cpp" line="1132"/>
+        <location filename="unetbootin.cpp" line="1192"/>
         <source>Extracting bootloader configuration</source>
         <translation>Đang giải nén cấu hình bootloader</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1403"/>
-        <location filename="unetbootin.cpp" line="1429"/>
+        <location filename="unetbootin.cpp" line="1407"/>
+        <location filename="unetbootin.cpp" line="1433"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Đang giải nén tập tin iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1658"/>
+        <location filename="unetbootin.cpp" line="1662"/>
         <source>Copying file, please wait...</source>
         <translation>Đang sao chép tập tin, vui lòng chờ...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1659"/>
-        <location filename="unetbootin.cpp" line="2473"/>
+        <location filename="unetbootin.cpp" line="1663"/>
+        <location filename="unetbootin.cpp" line="2477"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1660"/>
-        <location filename="unetbootin.cpp" line="2474"/>
+        <location filename="unetbootin.cpp" line="1664"/>
+        <location filename="unetbootin.cpp" line="2478"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1661"/>
+        <location filename="unetbootin.cpp" line="1665"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1699"/>
+        <location filename="unetbootin.cpp" line="1703"/>
         <source>Extracting files, please wait...</source>
         <translation>Đang giải nén các tập tin, vui lòng chờ...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1700"/>
+        <location filename="unetbootin.cpp" line="1704"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Tập tin nguồn:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1701"/>
+        <location filename="unetbootin.cpp" line="1705"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1702"/>
+        <location filename="unetbootin.cpp" line="1706"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1703"/>
+        <location filename="unetbootin.cpp" line="1707"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; 0 trong số %1 tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1706"/>
+        <location filename="unetbootin.cpp" line="1710"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Nguồn:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1707"/>
+        <location filename="unetbootin.cpp" line="1711"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Đích đến:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1708"/>
+        <location filename="unetbootin.cpp" line="1712"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Đã giải nén:&lt;/b&gt; %1 trong số %2 tập tin</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2472"/>
+        <location filename="unetbootin.cpp" line="2476"/>
         <source>Downloading files, please wait...</source>
         <translation>Đang tải các tập tin, vui lòng đợi...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2475"/>
+        <location filename="unetbootin.cpp" line="2479"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Đã tải:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2561"/>
+        <location filename="unetbootin.cpp" line="2565"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2584"/>
-        <location filename="unetbootin.cpp" line="2599"/>
+        <location filename="unetbootin.cpp" line="2588"/>
+        <location filename="unetbootin.cpp" line="2603"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Đã tải:&lt;/b&gt; %1 trong số %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2614"/>
+        <location filename="unetbootin.cpp" line="2618"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Đã sao chép:&lt;/b&gt; %1 trong số %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2705"/>
+        <location filename="unetbootin.cpp" line="2709"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Đang tìm ở &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2709"/>
+        <location filename="unetbootin.cpp" line="2713"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 phù hợp &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2982"/>
+        <location filename="unetbootin.cpp" line="2986"/>
         <source>%1 not found</source>
         <translation>Không tìm thấy %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2983"/>
+        <location filename="unetbootin.cpp" line="2987"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>Không tìm thấy %1. Yêu cầu chế độ cài đặt %2.
 Đang cài đặt gói &quot;%3&quot; hoặc tương đương.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3266"/>
+        <location filename="unetbootin.cpp" line="3270"/>
         <source>(Current)</source>
         <translation>(Đang thực hiện)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3267"/>
+        <location filename="unetbootin.cpp" line="3271"/>
         <source>(Done)</source>
         <translation>(Đã hoàn tất)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3556"/>
+        <location filename="unetbootin.cpp" line="3560"/>
         <source>Configuring grub2 on %1</source>
         <translation>Đang cấu hình grub2 trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3568"/>
+        <location filename="unetbootin.cpp" line="3572"/>
         <source>Configuring grldr on %1</source>
         <translation>Đang cấu hình grldr trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3596"/>
+        <location filename="unetbootin.cpp" line="3600"/>
         <source>Configuring grub on %1</source>
         <translation>Đang cấu hình grub trên %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3834"/>
+        <location filename="unetbootin.cpp" line="3838"/>
         <source>Installing syslinux to %1</source>
         <translation>Đang cài đặt syslinux vào%1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3869"/>
+        <location filename="unetbootin.cpp" line="3873"/>
         <source>Installing extlinux to %1</source>
         <translation>Đang cài đặt extlinux vào %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4034"/>
+        <location filename="unetbootin.cpp" line="4044"/>
         <source>Syncing filesystems</source>
         <translation>Đang đồng bộ các tập tin hệ thống</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4039"/>
+        <location filename="unetbootin.cpp" line="4049"/>
         <source>Setting up persistence</source>
         <translation>Cài đặt lưu giữ</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4077"/>
+        <location filename="unetbootin.cpp" line="4087"/>
         <source>After rebooting, select the </source>
         <translation>Sau khi khởi động lại, chọn </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4082"/>
+        <location filename="unetbootin.cpp" line="4092"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Sau khi khởi động lại, chọn tuỳ chọn khởi động từ USB trong menu boot của BIOS.%1
 Bạn có muốn khởi động lại ngay không?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4085"/>
+        <location filename="unetbootin.cpp" line="4095"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>Thiết bị USB đã tạo sẽ không khởi động vào Mac. Hãy cắm nó vào máy tính, và chọn tùy chọn khởi động từ USB trong trình đơn khởi động BIOS.%1</translation>
     </message>
@@ -497,7 +498,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="21"/>
-        <location filename="unetbootin.cpp" line="728"/>
+        <location filename="unetbootin.cpp" line="732"/>
         <source>== Select Distribution ==</source>
         <translation>== Chọn bản phân phối ==</translation>
     </message>

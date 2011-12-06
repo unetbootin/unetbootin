@@ -250,6 +250,10 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 				dfcommand = "/bin/df";
 		else
 				dfcommand = locatecommand("df", tr("either"), "util-linux");
+	if (QFile::exists("/sbin/sfdisk"))
+		sfdiskcommand = "/sbin/sfdisk";
+	else
+		sfdiskcommand = locatecommand("sfdisk", tr("either"), "silent");
 	if (QFile::exists("/lib/udev/vol_id"))
 		volidcommand = "/lib/udev/vol_id";
 	else
@@ -3874,23 +3878,29 @@ void unetbootin::runinstusb()
 		if (rawtargetDev != targetDev)
 		{
 			// make active
-			bool isOk = false;
-			int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
-			if (isOk)
-			{
-				QString output = callexternapp("fdisk", "-l");
-				QStringList outputL = output.split('\n');
-				outputL = outputL.filter(targetDev);
-				if (outputL.size() > 0)
+			if (sfdiskcommand != "") {
+				// use sfdisk if available
+				callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
+			} else {
+				// use fdisk if sfdisk is unavailable
+				bool isOk = false;
+				int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
+				if (isOk)
 				{
-					outputL = outputL.filter("*");
-					bool isActive = outputL.size() > 0;
-					if (!isActive)
+					QString output = callexternapp("fdisk", "-l");
+					QStringList outputL = output.split('\n');
+					outputL = outputL.filter(targetDev);
+					if (outputL.size() > 0)
 					{
-						QString fdiskWriteToStdin = "a\n";
-						fdiskWriteToStdin += (QString::number(partitionNumber) + "\n");
-						fdiskWriteToStdin += "w\n";
-						callexternappWriteToStdin("fdisk", rawtargetDev, fdiskWriteToStdin);
+						outputL = outputL.filter("*");
+						bool isActive = outputL.size() > 0;
+						if (!isActive)
+						{
+							QString fdiskWriteToStdin = "a\n";
+							fdiskWriteToStdin += (QString::number(partitionNumber) + "\n");
+							fdiskWriteToStdin += "w\n";
+							callexternappWriteToStdin("fdisk", rawtargetDev, fdiskWriteToStdin);
+						}
 					}
 				}
 			}
