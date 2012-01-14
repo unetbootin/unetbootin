@@ -69,11 +69,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "15_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "16_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+	"13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "16_NetInstall" << "16_NetInstall_x64" << "16_Live" << "16_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
