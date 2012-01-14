@@ -586,7 +586,7 @@ QStringList unetbootin::listsanedrives()
 		#endif
 #ifdef Q_OS_MAC
 QString diskutilList = callexternapp("diskutil", "list");
-QStringList usbdevsL = diskutilList.split("\n").filter("FAT").join(" ").split(" ").filter("disk");
+QStringList usbdevsL = diskutilList.split("\n").filter(QRegExp("(FAT|Microsoft)")).join(" ").split(" ").filter("disk");
 for (int i = 0; i < usbdevsL.size(); ++i)
 {
 	fulldrivelist.append("/dev/"+usbdevsL.at(i));
