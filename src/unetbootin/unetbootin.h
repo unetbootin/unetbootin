@@ -204,6 +204,8 @@ public:
 	bool downloadFailed;
 	bool exitOnCompletion;
 	bool testingDownload;
+	bool issalt;
+	QString saltRootDir;
 	int persistenceSpaceMB;
 	QString extraBootOptions;
 	QStringList locatedsyslinuxcfgfiles;

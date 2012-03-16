@@ -63,6 +63,8 @@ static const QList<QRegExp> ignoredtypeskernelRL = QList<QRegExp>()
 static const QList<QRegExp> ignoredtypesinitrdRL = QList<QRegExp>()
 << QRegExp("bzImage$", Qt::CaseInsensitive);
 
+static const QString SALT_DETECTED = "*SaLT*";
+
 void callexternappT::run()
 {
 	#ifdef Q_OS_WIN32
@@ -187,6 +189,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	downloadFailed = false;
 	exitOnCompletion = false;
 	testingDownload = false;
+	issalt = false;
 	persistenceSpaceMB = 0;
 #ifdef Q_OS_MAC
 	ignoreoutofspace = true;
@@ -1036,6 +1039,15 @@ bool unetbootin::checkifoutofspace(QString destindir)
 QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<quint64> > archivefileconts)
 {
 	pdesc1->setText(tr("Locating kernel file in %1").arg(archivefile));
+	if (issalt) {
+		// The grub2 boot loader is return,
+		// it is prepended with a Linux header,
+		// so that syslinux can chainload to it.
+		// The embeded configuration file will find the correct prefix using the .live file at the root of the USB key.
+		return "boot/grub2-linux.img";
+	}
+	else
+	{
 	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud" << "bzI" << "kexec";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
@@ -1069,6 +1081,7 @@ QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<q
 	}
 	pdesc1->setText("");
 	return "";
+}
 }
 
 bool unetbootin::extractkernel(QString archivefile, QString kernoutputfile, QPair<QStringList, QList<quint64> > archivefileconts)
@@ -1130,10 +1143,26 @@ bool unetbootin::extractinitrd(QString archivefile, QString kernoutputfile, QPai
 QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts)
 {
 	pdesc1->setText(tr("Extracting bootloader configuration"));
+	QString saltpcfg;
 	QString grubpcfg;
 	QString syslinuxpcfg;
+	QStringList saltdetectfiles = QStringList() << "boot/grub2-linux.img" << "boot/grub/salt.env";
 	QStringList grubcfgtypes = QStringList() << "menu.lst" << "grub.conf";
 	QStringList mlstfoundfiles;
+	int saltDetected = 0; // must be equals to saltdetectfiles.size() to be considered as detected
+	for (int i = 0; i < saltdetectfiles.size(); ++i)
+	{
+		mlstfoundfiles = archivefileconts.filter(saltdetectfiles.at(i), Qt::CaseInsensitive);
+		if (!mlstfoundfiles.isEmpty())
+		{
+			saltDetected++;
+		}
+	}
+	if (saltDetected == saltdetectfiles.size()) {
+		saltpcfg = SALT_DETECTED; // not a real config, but used to inform that SaLT has been detected.
+	}
+	else
+	{
 	for (int i = 0; i < grubcfgtypes.size(); ++i)
 	{
 		mlstfoundfiles = archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive);
@@ -1177,7 +1206,11 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 		if (!syslinuxpcfg.isEmpty())
 			break;
 	}
-	if (syslinuxpcfg.isEmpty())
+	}
+	if (!saltpcfg.isEmpty()) {
+		return saltpcfg;
+	}
+	else if (syslinuxpcfg.isEmpty())
 	{
 		return grubpcfg;
 	}
@@ -1521,12 +1554,34 @@ void unetbootin::extractiso(QString isofile)
 	if (!dontgeneratesyslinuxcfg)
 	{
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
+	issalt = (kernelOpts == SALT_DETECTED);
+	if (issalt)
+	{
+		QStringList mlstfoundfiles = listfilesizedirpair.second.filter(QRegExp("/modules$", Qt::CaseInsensitive));
+		if (!mlstfoundfiles.isEmpty())
+		{
+      QString match = mlstfoundfiles.at(0);
+			saltRootDir = match.replace(QRegExp("(.*)/modules"), "\\1");
+		}
+		kernelLine = "linux";
+		kernelOpts = "";
+		initrdLoc = "";
+	  initrdOpts = "";
+	  initrdLine = "";
+	  slinitrdLine = "";
+	}
+	else
+	{
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
+	}
 #ifndef NOEXTRACTKERNEL
 	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfilesizedirpair.first);
 #endif
 #ifndef NOEXTRACTINITRD
+	if (!issalt)
+	{
 	extractinitrd(isofile, QString("%1ubninit").arg(targetPath), listfilesizedirpair.first);
+	}
 #endif
 	}
 	QStringList createdpaths = makepathtree(targetDrive, directorypathnames);
@@ -3465,7 +3520,7 @@ void unetbootin::runinst()
 	}
 	sdesc3->setText(QString("<b>%1 %2</b>").arg(sdesc3->text()).arg(trcurrent));
 	tprogress->setValue(0);
-	if (this->persistenceSpaceMB > 0)
+	if (this->persistenceSpaceMB > 0 && !issalt)
 	{
 		this->kernelOpts += " persistent";
 		for (int i = 0; i < this->extraoptionsPL.second.second.size(); ++i)
@@ -4049,14 +4104,21 @@ void unetbootin::fininstall()
 		pdesc1->setText(tr("Setting up persistence"));
 		this->tprogress->setMaximum(persistenceSpaceMB);
 		this->tprogress->setValue(0);
+		QString persfile = "casper-rw";
+		if (issalt && !saltRootDir.isEmpty()) {
+			QStringList persistencedir;
+			persistencedir.append("persistence");
+			makepathtree(QString("%1%2").arg(targetPath).arg(saltRootDir), persistencedir);
+			persfile = QString("%1/persistence/%1.save").arg(saltRootDir);
+		}
 #ifdef Q_OS_WIN32
 		QString mke2fscommand = instTempfl("mke2fs.exe", "exe");
 #endif
-		if (QFile::exists(QString("%1%2").arg(targetPath).arg("casper-rw")))
+		if (QFile::exists(QString("%1%2").arg(targetPath).arg(persfile)))
 		{
-			rmFile(QString("%1%2").arg(targetPath).arg("casper-rw"));
+			rmFile(QString("%1%2").arg(targetPath).arg(persfile));
 		}
-		QFile persistenceFile(QString("%1%2").arg(targetPath).arg("casper-rw"));
+		QFile persistenceFile(QString("%1%2").arg(targetPath).arg(persfile));
 		persistenceFile.open(QFile::WriteOnly);
 		int bytesWritten = 1048576;
 		char writeEmpty[1048576];
@@ -4068,10 +4130,10 @@ void unetbootin::fininstall()
 		}
 		this->tprogress->setValue(this->tprogress->maximum());
 #ifdef Q_OS_UNIX
-		callexternapp(mke2fscommand, QString("-F \"%1%2\"").arg(targetPath).arg("casper-rw"));
+		callexternapp(mke2fscommand, QString("-F \"%1%2\"").arg(targetPath).arg(persfile));
 #endif
 #ifdef Q_OS_WIN32
-		callexternappWriteToStdin(mke2fscommand, QString("\"%1%2\"").arg(targetPath).arg("casper-rw"), "\n");
+		callexternappWriteToStdin(mke2fscommand, QString("\"%1%2\"").arg(targetPath).arg(persfile), "\n");
 		rmFile(mke2fscommand);
 #endif
 	}

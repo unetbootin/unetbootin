@@ -202,6 +202,18 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.sabayonlinux.org/\">http:/
 	"<b>Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive") <<
 	"5.1" << "5.1_x64" << "5.2" << "5.2_x64"));
+distroselect->addItem("Salix", (QStringList() << "13.37_Live_Xfce" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://salixos.org\">http://salixos.org</a><br/>"
+	"<b>Description:</b> Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.<br/>"
+	"Like a bonsai, Salix is small, light & the product of infinite care.<br/>"
+	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.<br/>"
+	"Default root password is <b>live</b>.") <<
+	"13.0.2a_HdMedia" << "13.0.2a_HdMedia_x64" <<
+  "13.1.2_HdMedia_Fluxbox" << "13.1.2_HdMedia_Fluxbox_x64" << "13.1.2_HdMedia_KDE" << "13.1.2_HdMedia_KDE_x64" << "13.1.2_HdMedia_LXDE" << "13.1.2_HdMedia_LXDE_x64" << "13.1.2_HdMedia_Xfce" << "13.1.2_HdMedia_Xfce_x64" <<
+  "13.37_HdMedia_Fluxbox" << "13.37_HdMedia_Fluxbox_x64" << "13.37_HdMedia_KDE" << "13.37_HdMedia_KDE_x64" << "13.37_HdMedia_LXDE" << "13.37_HdMedia_LXDE_x64" << "13.37_HdMedia_Ratpoison" << "13.37_HdMedia_Ratpoison_x64" << "13.37_HdMedia_Xfce" << "13.37_HdMedia_Xfce_x64" <<
+  "13.37_Live_Xfce" << "13.37_Live_Xfce_x64" <<
+  "Latest_HdMedia_Fluxbox" << "Latest_HdMedia_Fluxbox_x64" << "Latest_HdMedia_KDE" << "Latest_HdMedia_KDE_x64" << "Latest_HdMedia_LXDE" << "Latest_HdMedia_LXDE_x64" << "Latest_HdMedia_Ratpoison" << "Latest_HdMedia_Ratpoison_x64" << "Latest_HdMedia_Xfce" << "Latest_HdMedia_Xfce_x64" <<
+  "Latest_Live_Fluxbox" << "Latest_Live_Fluxbox_x64" << "Latest_Live_KDE" << "Latest_Live_KDE_x64" << "Latest_Live_LXDE" << "Latest_Live_LXDE_x64" << "Latest_Live_Ratpoison" << "Latest_Live_Ratpoison_x64" << "Latest_Live_Xfce" << "Latest_Live_Xfce_x64"));
 distroselect->addItem("Slax", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.slax.org/\">http://www.slax.org</a><br/>"
 	"<b>Description:</b> Slax is a Slackware-based distribution featuring the KDE desktop.<br/>"

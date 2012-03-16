@@ -886,6 +886,89 @@ if (nameDistro == "Sabayon Linux")
         extractiso(isotmpf);
 }
 
+if (nameDistro == "Salix")
+{
+	QString edition = "NONE"; // for old Salix
+	if (relname.contains("_xfce"))
+	{
+		relname.remove("_xfce");
+		edition = "xfce";
+	}
+	else if (relname.contains("_lxde"))
+	{
+		relname.remove("_lxde");
+		edition = "lxde";
+	}
+	else if (relname.contains("_kde"))
+	{
+		relname.remove("_kde");
+		edition = "kde";
+	}
+	else if (relname.contains("_fluxbox"))
+	{
+		relname.remove("_fluxbox");
+		edition = "fluxbox";
+	}
+	else if (relname.contains("_ratpoison"))
+	{
+		relname.remove("_ratpoison");
+		edition = "ratpoison";
+	}
+	// relname should only contains the version from there, i.e. 13.0.2a, 13.1.2, 13.37, 14.0, ... or latest
+    QString version = relname;
+	if (version == "latest") {
+        QString archfolder;
+        if (isarch64)
+        {
+            archfolder = "x86_64";
+            cpuarch = "64";
+        }
+        else
+        {
+            archfolder = "i486";
+            cpuarch = "";
+        }
+		if (islivecd) {
+            downloadfile(QString("http://latestsalix.enialis.net/%1/salixlive%2-%3.iso").arg(archfolder).arg(cpuarch).arg(edition), isotmpf);
+        }
+        else
+        {
+            downloadfile(QString("http://latestsalix.enialis.net/%1/salix%2-%3.iso").arg(archfolder).arg(cpuarch).arg(edition), isotmpf);
+        }
+    } else {
+        QStringList decomposedVersion = version.split(".");
+        QString simpleversion = decomposedVersion.at(0); // simple version contains only the two first numbers, i.e. 13.1 not 13.1.2
+        if (decomposedVersion.size() > 1) {
+            simpleversion.append(".").append(decomposedVersion.at(1));
+        }
+		if (islivecd) {
+            if (isarch64)
+            {
+                cpuarch = "64";
+            }
+            else
+            {
+                cpuarch = "32";
+            }
+            downloadfile(QString("http://downloads.sourceforge.net/salix/%1/salixlive-%4-%2-%3.iso").arg(simpleversion).arg(version).arg(cpuarch).arg(edition), isotmpf);
+        } else {
+            if (isarch64)
+            {
+                cpuarch = "64";
+            }
+            else
+            {
+                cpuarch = "";
+            }
+            if (edition == "NONE") { // Salix 13.0 does not have any edition, Xfce was the default.
+                downloadfile(QString("http://downloads.sourceforge.net/salix/%1/salix%3-%2.iso").arg(simpleversion).arg(version).arg(cpuarch), isotmpf);
+            } else {
+                downloadfile(QString("http://downloads.sourceforge.net/salix/%1/salix%3-%4-%2.iso").arg(simpleversion).arg(version).arg(cpuarch).arg(edition), isotmpf);
+            }
+        }
+    }
+	extractiso(isotmpf);
+}
 if (nameDistro == "Slax")
 {
 	downloadfile("http://www.slax.org/get_slax.php?download=iso", isotmpf);
