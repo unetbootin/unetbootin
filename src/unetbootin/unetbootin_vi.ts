@@ -448,138 +448,138 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation>Thiết bị USB đã tạo sẽ không khởi động vào Mac. Hãy cắm nó vào máy tính, và chọn tùy chọn khởi động từ USB trong trình đơn khởi động BIOS.%1</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="42"/>
+        <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
         <translation>
 *QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh đĩa Ubuntu alternate (không phải desktop) vào thư mục gốc của đĩa cứng hoặc USB. Có thể tải tập tin Ubuntu alternate từ cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="241"/>
+        <location filename="distrolst.cpp" line="242"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;mirrors.kernel.org&apos; khi được nhắc, và nhập &apos;/centos/%1/os/%2&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="297"/>
+        <location filename="distrolst.cpp" line="298"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *QUAN TRỌNG* Trước khi khởi động lại, đặt tập tin ảnh của Debian (.iso) vào thư mục gốc của đĩa cứng hoặc ổ USB. Có thể tải tập tin ảnh của Debian tại cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="390"/>
+        <location filename="distrolst.cpp" line="391"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/development/%1/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="396"/>
+        <location filename="distrolst.cpp" line="397"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.fedora.redhat.com&apos; khi được nhắc, và nhập &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="768"/>
+        <location filename="distrolst.cpp" line="769"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.opensuse.org&apos; khi được nhắc, và nhập &apos;/factory/repo/oss&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="774"/>
+        <location filename="distrolst.cpp" line="775"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *QUAN TRỌNG* Sau khi khởi động lại, bỏ qua bất kì thông báo lỗi nào và chọn quay lại nếu nhắc nhở cho CD, sau đó trở lại menu chính, chọn &apos;Start Installation&apos;, chọn &apos;Network&apos; là nguồn, chọn &apos;HTTP&apos; là giao thức, nhập &apos;download.opensuse.org&apos; khi được nhắc, và nhập &apos;/distribution/%1/repo/oss&apos; khi được hỏi thư mục.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="21"/>
+        <location filename="distrover.cpp" line="22"/>
         <location filename="unetbootin.cpp" line="735"/>
         <source>== Select Distribution ==</source>
         <translation>== Chọn bản phân phối ==</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="21"/>
-        <location filename="distrover.cpp" line="25"/>
+        <location filename="distrover.cpp" line="22"/>
+        <location filename="distrover.cpp" line="26"/>
         <source>== Select Version ==</source>
         <translation>== Chọn phiên bản ==</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="22"/>
+        <location filename="distrover.cpp" line="23"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
         <translation>Chào mừng bạn đã đến với &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, trình cài đặt bộ khởi động Universal Netboot Installer. Hướng dẫn sử dụng:&lt;ol&gt;&lt;li&gt;Chọn một bản phân phối và phiên bản để tải từ danh sách trên, hoặc xác định các tập tin để nạp bên dưới.&lt;/li&gt;&lt;li&gt;Chọn kiểu cài đặt, và nhấn OK để bắt đầu cài đặt.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="27"/>
+        <location filename="distrover.cpp" line="28"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Arch Linux là một bản phân phối gọn nhẹ được tối ưu hóa cho tốc độ và tính linh hoạt.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP).</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="32"/>
+        <location filename="distrover.cpp" line="33"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; BackTrack là một bản phân phối tập trung cho nghiên cứu và thử nghiệm thâm nhập mạng.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; BackTrack chạy trực tiếp, không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="37"/>
+        <location filename="distrover.cpp" line="38"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; CentOS là một phiên bản tự do của Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), hay cài đặt thông qua tập tin ISO đã tải sẵn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="42"/>
+        <location filename="distrover.cpp" line="43"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; CloneZilla là một bản phân phối dùng cho việc sao lưu đĩa và chụp ảnh ổ đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; CloneZilla được khởi động và chạy trực tiếp, không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="47"/>
+        <location filename="distrover.cpp" line="48"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Damn Small Linux là một bản phân phối được thiết kế tối giản cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống vào RAM và khởi động từ bộ nhớ, không bắt buộc cài đặt nhưng vẫn có thể chọn nếu muốn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="52"/>
+        <location filename="distrover.cpp" line="53"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Debian là một bản Linux được phát triển bởi cộng đồng, hỗ trợ rộng rãi các nền tảng phần cứng và cung cấp một kho lớn các gói phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản NetInstall cho phép cài đặt thông qua FTP. Nếu bạn muốn sử dụng tập tin ảnh .iso, sử dụng tùy chọn HdMedia, sau đó đặt nó vào thư mục gốc của USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="58"/>
+        <location filename="distrover.cpp" line="59"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Dreamlinux là một bản phân phối thân thiện với người dùng, dựa trên Debian.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép vào thẳng hệ điều hành, thông qua tùy chọn khởi động.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="63"/>
+        <location filename="distrover.cpp" line="64"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Dr.Web AntiVirus là một công cụ cứu hộ diệt virus dùng để khôi phục hệ thống bị lỗi nghiêm trọng do malware.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="68"/>
+        <location filename="distrover.cpp" line="69"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Elive là một bản phân phối dựa trên Debian hướng đến tính năng quản lí cửa sổ Enlightenment.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép vào thẳng hệ điều hành, thông qua tùy chọn khởi động.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="73"/>
+        <location filename="distrover.cpp" line="74"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Fedora là một bản phân phối của cộng đồng Red Hat, giới thiệu những phần mềm miễn phí hay mã nguồn mở với những công nghệ tiên tiến.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, có thể tùy chỉnh khi khởi động. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP), hoặc cài đặt offline bằng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="78"/>
+        <location filename="distrover.cpp" line="79"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeBSD là một hệ điều hành dựa trên Unix được thiết kế với mục tiêu khả năng mở rộng và hiệu suất.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc cài đặt sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="83"/>
+        <location filename="distrover.cpp" line="84"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeDOS là một hệ điều hành tích hợp MS-DOS tự do.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Xem &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; để biết chi tiết cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="88"/>
+        <location filename="distrover.cpp" line="89"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
         <translation type="unfinished">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeNAS là một phiên bản nhúng và mã nguồn mở NAS (Network-Attached Storage) dựa trên FreeBSD.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản LiveCD tạo một phân vùng trên RAM cho FreeNAS, và sử dụng định dạng đĩa mềm FAT hoặc khóa USB để lưu các tập tin thiết lập. Phiên bản nhúng cho phép cài đặt lên đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="93"/>
+        <location filename="distrover.cpp" line="94"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Frugalware là một phiên bản dựa trên Slackware cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hay sử dụng tập tin ISO.</translation>
     </message>
@@ -588,7 +588,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; F-Secure Rescue CD phát hiện và loại bỏ phần mềm độc hại từ Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, từ đó quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="103"/>
+        <location filename="distrover.cpp" line="104"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -597,48 +597,48 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gentoo là một hệ điều hành linh hoạt dành cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="116"/>
+        <location filename="distrover.cpp" line="117"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; gNewSense là một bản phân phối được thông qua bởi tổ chức FSF và dựa trên Ubuntu, đã được gỡ bỏ các thành phần không mang tính tự do.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="121"/>
+        <location filename="distrover.cpp" line="122"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gujin là trình quản lí khởi động với giao diện đồ họa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Gujin chỉ cần khởi động là có thể chạy được; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="126"/>
+        <location filename="distrover.cpp" line="127"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Kaspersky Rescue Disk phát hiện và gỡ bỏ malware khỏi Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để khởi động trình quét malware.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="131"/>
+        <location filename="distrover.cpp" line="132"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Kubuntu là một biến thể của Ubuntu với môi trường desktop KDE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, qua đó có thể chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao thức FTP,  và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu muốn cài đặt bằng hình thức alternate (không phải desktop) qua tập tin .iso, sử dụng tùy chọn HdMedia, và đặt tập tin cài đặt .iso vào thư mục gốc của ổ USB hoặc đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="136"/>
+        <location filename="distrover.cpp" line="137"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
         <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
         <translation type="unfinished">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; LinuxConsole là một bản phân phối dành cho việc chơi game, dễ dàng trong việc cài đặt, sử dụng và khởi động nhanh .&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản 1.0.2009 là phiên bản 1.0 mới nhất.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="141"/>
+        <location filename="distrover.cpp" line="142"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Linux Mint là một bản phân phối thân thiện với người dùng được xây dựng dựa trên Ubuntu, mặc định được bổ sung nhiều codec và phần mềm.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="146"/>
+        <location filename="distrover.cpp" line="147"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Mandriva là một bản phân phối thân thiện với người dùng, còn được biết đến với cái tên Mandrake Linux.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép khởi động và chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt thông qua internet (FTP) hoặc thông qua &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;tập tin ảnh đĩa &quot;Miễn phí&quot;&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="151"/>
+        <location filename="distrover.cpp" line="152"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; MEPIS là một bản phân phối dựa trên Debian. SimplyMEPIS là một phiên bản thân thiện với người dùng với môi trường desktop KDE, trong khi AntiX là phiên bản gọn nhẹ dành cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; MEPIS hỗ trợ khởi động trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="156"/>
+        <location filename="distrover.cpp" line="157"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -647,27 +647,27 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NetBSD là một biến thể của Unix tập trung vào tính di động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt;Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="166"/>
+        <location filename="distrover.cpp" line="167"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NimbleX là một bản phân phối linh hoạt và nhỏ gọn dựa trên Slackware. Nó được xây dựng trên các linux-live scripts, và sử dụng môi trường desktop KDE. Nó có thể khởi động từ đĩa CD hay bộ nhớ flash (bút nhớ USB hoặc máy MP3), và có thể dễ dàng tùy biến và mở rộng.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NimbleX khởi động trực tiếp.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="171"/>
+        <location filename="distrover.cpp" line="172"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NTPasswd khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="176"/>
+        <location filename="distrover.cpp" line="177"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; openSUSE là một bản phân phối thân thiện với người dùng, có sự tài trợ của Novell.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="181"/>
+        <location filename="distrover.cpp" line="182"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ophcrack can crack Windows passwords.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Ophcrack is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://ophcrack.sourceforge.net/&quot;&gt;http://ophcrack.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Ophcrack có thể lấy mật khẩu Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Ophcrack khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="186"/>
+        <location filename="distrover.cpp" line="187"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Parted Magic is booted and run in live mode; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các công cụ tối ưu hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác với các phân vùng đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Parted Magic khởi động và chạy trực tiếp; không cần phải cài đặt.</translation>
     </message>
@@ -676,43 +676,43 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; PCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên Mandriva.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="196"/>
+        <location filename="distrover.cpp" line="197"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Puppy Linux là một bản phân phối gọn nhẹ được thiết kế cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép tải hệ thống lên RAM và khởi động từ bộ nhớ, có thể không cần cài đặt nhưng đó là tùy chọn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="201"/>
+        <location filename="distrover.cpp" line="202"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Sabayon Linux is a Gentoo-based Live DVD distribution which features the Entropy binary package manager in addition to the source-based Portage.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The LiteMCE edition is 2 GB, while the full edition will need an 8 GB USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sabayonlinux.org/&quot;&gt;http://www.sabayonlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Sabayon Linux là một bản phân phối dựa trên Gentoo Live DVD với trình quản lí gói tin Entropy.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt. Phiên bản LiteMCE có dung lượng 2 GB, trong khi bản đầy đủ cần một ổ USB 8GB</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="206"/>
+        <location filename="distrover.cpp" line="207"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="218"/>
+        <location filename="distrover.cpp" line="219"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Slax là một bản phân phối dựa trên Slackware với môi trường desktop KDE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="223"/>
+        <location filename="distrover.cpp" line="224"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; SliTaz là một bản phân phối gọn nhẹ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ, không yêu cầu cài đặt nhưng đó là tùy chọn.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="228"/>
+        <location filename="distrover.cpp" line="229"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Smart Boot Manager is a bootloader which can overcome some boot-related BIOS limitations and bugs.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SBM simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://btmgr.sourceforge.net/about.html&quot;&gt;http://btmgr.sourceforge.net/about.html&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Smart Boot Manager là một trình khởi động tốt hơn BIOS do BIOS tồn tại khá nhiều hạn chế và lỗi.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SBM đơn giản là khởi động và sử dụng; không yêu cầu cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="233"/>
+        <location filename="distrover.cpp" line="234"/>
         <location filename="distrovercust.cpp" line="12"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super Grub Disk is a bootloader which can perform a variety of MBR and bootloader recovery tasks.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SGD simply boots and runs; no installation is required to use it.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.supergrubdisk.org&quot;&gt;http://www.supergrubdisk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super Grub Disk là một trình khởi động có thể thực thi nhiều loại MBR và các tác vụ khôi phục trình khởi động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SGD chỉ cần khởi động và chạy; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="238"/>
+        <location filename="distrover.cpp" line="239"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super OS là một bản phân phối dựa trên Ubuntu được bổ sung nhiều phần mềm mặc định. Yêu cầu một ổ USB 2GB để cài đặt.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
@@ -721,22 +721,22 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; SystemRescueCD bao gồm các trình quản lí phân vùng khác nhau và các công cụ phục hồi và sao lưu dữ liệu.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SystemRescueCD khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="248"/>
+        <location filename="distrover.cpp" line="249"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Ubuntu là một bản phân phối thân thiện với người dùng dựa trên Debian.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt qua giao thức FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu sử dụng cách cài đặt alternate (không phải desktop), sử dụng tùy chọn HdMedia, và đặt tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="253"/>
+        <location filename="distrover.cpp" line="254"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; xPUD là một bản phân phối nhẹ, với một trình duyệt web và nghe nhạc.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live tải hệ thống lên RAM và khởi động từ bộ nhớ.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="258"/>
+        <location filename="distrover.cpp" line="259"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Xubuntu là một biến thể của Ubuntu sử dụng môi trường desktop XFCE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt. Phiên bản NetInstall cho phép cài đặt bằng giao thức FTP, và có thể cài đặt Kubuntu và các biến thể khác của Ubuntu. Nếu cài đặt theo cách alternate (không phải desktop), sử dụng tùy chọn HdMedia, và đặt tập tin iso cài đặt vào thư mục gốc của ổ USB hoặc của đĩa cứng.</translation>
     </message>
     <message>
-        <location filename="distrover.cpp" line="263"/>
+        <location filename="distrover.cpp" line="264"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Zenwalk là một bản phân phối dựa trên Slackware sử dụng môi trường desktop XFCE.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
     </message>
