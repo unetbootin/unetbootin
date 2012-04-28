@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-28 02:34-0400\n"
+"POT-Creation-Date: 2012-04-28 02:59-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1261,19 +1261,20 @@ msgstr ""
 #, fuzzy
 #| msgid ""
 #| "Space to reserve for user files which are preserved across reboots. Works "
-#| "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
-#| "capacity, the maximum space available will be used."
+#| "only for LiveUSBs for Ubuntu and derivatives, and SaLT-based "
+#| "distributions. If value exceeds drive capacity, the maximum space "
+#| "available will be used."
 msgid ""
 "Space to reserve for user files which are preserved across reboots. Works "
-"only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. "
-"If value exceeds drive capacity, the maximum space available will be used."
+"only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
+"capacity, the maximum space available will be used."
 msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 #, fuzzy
-#| msgid "Space used to preserve files across reboots (Ubuntu only):"
-msgid "Space used to preserve files across reboots (Ubuntu and SaLT only):"
+#| msgid "Space used to preserve files across reboots (Ubuntu and SaLT only):"
+msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
 
 #. ts-context unetbootinui

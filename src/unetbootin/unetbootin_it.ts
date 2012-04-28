@@ -821,14 +821,14 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
         <translation type="unfinished">Spazio da riservare per i file utente che verranno preservati nei vari riavvi. Funziona solo in LiveUSB per Ubuntu e suoi derivati. Se il valore eccede la capacità dell&apos;unità, verra impostato la spazio massimo disponibile.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu and SaLT only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu only):</oldsource>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
         <translation type="unfinished">Spazio usato per preservare i file nei diversi riavvi (solo Ubuntu):</translation>
     </message>
     <message>

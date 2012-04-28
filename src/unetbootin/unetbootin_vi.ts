@@ -822,14 +822,14 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
-        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
+        <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
+        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
         <translation type="unfinished">Không gian trống để lưu trữ các tập tin người dùng sẽ được lưu sau khi khởi động lại . Chỉ làm việc với LiveUSB cho Ubuntu và các bản dẫn xuất. Nếu giá trị vượt quá khả năng của ổ đĩa, dung lượng còn trống sẽ được sử dụng.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
-        <source>Space used to preserve files across reboots (Ubuntu and SaLT only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu only):</oldsource>
+        <source>Space used to preserve files across reboots (Ubuntu only):</source>
+        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
         <translation type="unfinished">Dung lượng để lưu giữ các tập tin người dùng sau khi khởi động lại (chỉ dành cho Ubuntu):</translation>
     </message>
     <message>

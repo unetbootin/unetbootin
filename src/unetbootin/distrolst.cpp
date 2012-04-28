@@ -800,7 +800,7 @@ if (nameDistro == "Parted Magic")
 		}
 		else
 		{
-			cpuarch = "i686";
+			cpuarch = "i\\d86";
 		}
 		downloadfile(fileFilterNetDir(QStringList() << 
 		"http://exo.enarel.eu/mirror/partedmagic/" << 
