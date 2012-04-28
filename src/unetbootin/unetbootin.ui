@@ -411,10 +411,10 @@
         <item>
          <widget class="QLabel" name="persistencelabel">
           <property name="toolTip">
-           <string>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</string>
+           <string>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</string>
           </property>
           <property name="text">
-           <string>Space used to preserve files across reboots (Ubuntu and SaLT only):</string>
+           <string>Space used to preserve files across reboots (Ubuntu only):</string>
           </property>
          </widget>
         </item>
@@ -427,7 +427,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</string>
+           <string>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</string>
           </property>
           <property name="maximum">
            <number>9999</number>
