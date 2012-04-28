@@ -9,11 +9,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
-"8.04_NetInstall" << "8.04_NetInstall_x64" << "8.04_HdMedia" << "8.04_HdMedia_x64" << "8.04_Live" << "8.04_Live_x64" << \
-"9.10_NetInstall" << "9.10_NetInstall_x64" << "9.10_HdMedia" << "9.10_HdMedia_x64" << "9.10_Live" << "9.10_Live_x64" << \
 "10.04_NetInstall" << "10.04_NetInstall_x64" << "10.04_HdMedia" << "10.04_HdMedia_x64" << "10.04_Live" << "10.04_Live_x64" << \
-"10.10_NetInstall" << "10.10_NetInstall_x64" << "10.10_HdMedia" << "10.10_HdMedia_x64" << "10.10_Live" << "10.10_Live_x64" << \
 "11.04_NetInstall" << "11.04_NetInstall_x64" << "11.04_HdMedia" << "11.04_HdMedia_x64" << "11.04_Live" << "11.04_Live_x64" << \
+"11.10_NetInstall" << "11.10_NetInstall_x64" << "11.10_HdMedia" << "11.10_HdMedia_x64" << "11.10_Live" << "11.10_Live_x64" << \
+"12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
+"Daily_Live" << "Daily_Live_x64"
+#endif
+
+#ifndef lubverlist
+#define lubverlist \
 "11.10_NetInstall" << "11.10_NetInstall_x64" << "11.10_HdMedia" << "11.10_HdMedia_x64" << "11.10_Live" << "11.10_Live_x64" << \
 "12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
@@ -143,6 +147,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxm
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 	"3.1_Live" << "4.0_Live" << "5_Live" << "5_Live_x64" << "6_Live" << "6_Live_x64" << "7_Live" << "7_Live_x64" << "8_Live" << "8_Live_x64" << "9_Live" << "9_Live_x64" << "10_Live" << "10_Live_x64"));
+distroselect->addItem("Lubuntu", (QStringList() << "12.04_Live" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/>"
+	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
+	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
+lubverlist));
 distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 	"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"
