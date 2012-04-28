@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-01 15:37-0400\n"
-"PO-Revision-Date: 2010-11-08 21:09+0000\n"
-"Last-Translator: Ahmed Mohammed <Unknown>\n"
+"POT-Creation-Date: 2012-03-25 16:01-0400\n"
+"PO-Revision-Date: 2012-04-27 18:57+0000\n"
+"Last-Translator: aymhenry <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-04-02 17:48+0000\n"
-"X-Generator: Launchpad (build 12710)\n"
+"X-Launchpad-Export-Date: 2012-04-28 07:32+0000\n"
+"X-Generator: Launchpad (build 15149)\n"
 "X-Language: ar_SA\n"
 
 #. ts-context QObject
@@ -19,91 +19,91 @@ msgid "LeftToRight"
 msgstr "من الشِمال إلى اليمين"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:202 unetbootin.cpp:288 unetbootin.cpp:289 unetbootin.cpp:356
-#: unetbootin.cpp:465 unetbootin.cpp:3141 unetbootin.cpp:3154
-#: unetbootin.cpp:3326 unetbootin.cpp:3866
+#: unetbootin.cpp:208 unetbootin.cpp:306 unetbootin.cpp:307 unetbootin.cpp:374
+#: unetbootin.cpp:530 unetbootin.cpp:3344 unetbootin.cpp:3357
+#: unetbootin.cpp:3536 unetbootin.cpp:4147
 msgid "Hard Disk"
-msgstr "القرص الصلب"
+msgstr "القرص الصّلب"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:204 unetbootin.cpp:285 unetbootin.cpp:286 unetbootin.cpp:358
-#: unetbootin.cpp:469 unetbootin.cpp:634 unetbootin.cpp:654 unetbootin.cpp:908
-#: unetbootin.cpp:1439 unetbootin.cpp:1501 unetbootin.cpp:2420
-#: unetbootin.cpp:2462 unetbootin.cpp:3145 unetbootin.cpp:3171
-#: unetbootin.cpp:3330 unetbootin.cpp:3870
+#: unetbootin.cpp:210 unetbootin.cpp:303 unetbootin.cpp:304 unetbootin.cpp:376
+#: unetbootin.cpp:534 unetbootin.cpp:699 unetbootin.cpp:719 unetbootin.cpp:973
+#: unetbootin.cpp:1534 unetbootin.cpp:1618 unetbootin.cpp:2547
+#: unetbootin.cpp:2590 unetbootin.cpp:3348 unetbootin.cpp:3374
+#: unetbootin.cpp:3540 unetbootin.cpp:3864 unetbootin.cpp:4151
 msgid "USB Drive"
 msgstr "مشغل USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:205 unetbootin.cpp:222 unetbootin.cpp:223 unetbootin.cpp:324
-#: unetbootin.cpp:585 unetbootin.cpp:586 unetbootin.cpp:3224
+#: unetbootin.cpp:211 unetbootin.cpp:228 unetbootin.cpp:229 unetbootin.cpp:342
+#: unetbootin.cpp:650 unetbootin.cpp:651 unetbootin.cpp:3430
 msgid "ISO"
 msgstr "ملف ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:206 unetbootin.cpp:218 unetbootin.cpp:219 unetbootin.cpp:329
-#: unetbootin.cpp:590 unetbootin.cpp:591 unetbootin.cpp:3216
+#: unetbootin.cpp:212 unetbootin.cpp:224 unetbootin.cpp:225 unetbootin.cpp:347
+#: unetbootin.cpp:655 unetbootin.cpp:656 unetbootin.cpp:3422
 msgid "Floppy"
 msgstr "قرص مرن"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:239 unetbootin.cpp:245 unetbootin.cpp:249 unetbootin.cpp:253
-#: unetbootin.cpp:259 unetbootin.cpp:279
+#: unetbootin.cpp:245 unetbootin.cpp:251 unetbootin.cpp:255 unetbootin.cpp:259
+#: unetbootin.cpp:263 unetbootin.cpp:269 unetbootin.cpp:297
 msgid "either"
 msgstr "احد الامرين"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:266
+#: unetbootin.cpp:276
 msgid "LiveUSB persistence"
-msgstr ""
+msgstr "قرص USB صالح للاقلاع منة"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:273
+#: unetbootin.cpp:291
 msgid "FAT32-formatted USB drive"
-msgstr ""
+msgstr "قرص USB مهيأ بنظام FAT32"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:277
+#: unetbootin.cpp:295
 msgid "EXT2-formatted USB drive"
-msgstr ""
+msgstr "قرص USB مهيأ بنظام EXT2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:582
+#: unetbootin.cpp:647
 msgid "Open Disk Image File"
 msgstr "إفتح ملف صورة القرص"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:582
+#: unetbootin.cpp:647
 msgid "All Files"
 msgstr "كل الملفات"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:600 unetbootin.cpp:608 unetbootin.cpp:616
+#: unetbootin.cpp:665 unetbootin.cpp:673 unetbootin.cpp:681
 msgid "All Files (*)"
 msgstr "كلّ الملفات (*)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:600
+#: unetbootin.cpp:665
 msgid "Open Kernel File"
 msgstr "إفتح ملف النواة"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:608
+#: unetbootin.cpp:673
 msgid "Open Initrd File"
 msgstr "إفتح ملف قرص الذاكرة العشوائية المبدئي (initrd)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:616
+#: unetbootin.cpp:681
 msgid "Open Bootloader Config File"
 msgstr "إفتح ملف تهيئة محمل الإقلاع"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:638
+#: unetbootin.cpp:703
 msgid "Insert a USB flash drive"
 msgstr "أدخل ذاكرة فلاش يو إس بي"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:639
+#: unetbootin.cpp:704
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -112,89 +112,90 @@ msgstr ""
 "بمحاولة إعادة تهيئتها إلى نوع ملفات FAT32."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:658
+#: unetbootin.cpp:723
 msgid "%1 not mounted"
 msgstr "%1 لم يركب"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:659
+#: unetbootin.cpp:724
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم "
-"التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي."
+"يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في مدخل USB بالكمبيوتر , مع العلم "
+"أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس "
+"بي."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:674
+#: unetbootin.cpp:739
 msgid "Select a distro"
 msgstr "إختر توزيعة"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:675
+#: unetbootin.cpp:740
 msgid "You must select a distribution to load."
 msgstr "يجب عليك إختيار توزيعة ليتم تحميلها"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:689
+#: unetbootin.cpp:754
 msgid "Select a disk image file"
 msgstr "إختر ملف صورة القرص"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:690
+#: unetbootin.cpp:755
 msgid "You must select a disk image file to load."
 msgstr "يجب عليك إختيار ملف صورة القرص ليتم تحميلها"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:704
+#: unetbootin.cpp:769
 msgid "Select a kernel and/or initrd file"
 msgstr "قم بإختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:705
+#: unetbootin.cpp:770
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
 "يجب عليك إختيار ملف نواة و/أو ملف قرص الذاكرة العشوائية المبدئي (initrd) "
 "ليتم تحميلها."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:719
+#: unetbootin.cpp:784
 msgid "Diskimage file not found"
 msgstr "لم يتم العثور على ملف صورة القرص"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:720
+#: unetbootin.cpp:785
 msgid "The specified diskimage file %1 does not exist."
 msgstr "ملف صورة القرص %1 اللذي تم تحديده غير موجود."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:734
+#: unetbootin.cpp:799
 msgid "Kernel file not found"
 msgstr "لم يتم العثور على ملف النواة"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:735
+#: unetbootin.cpp:800
 msgid "The specified kernel file %1 does not exist."
 msgstr "ملف النواة %1 اللذي تم تحديده غير موجود."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:749
+#: unetbootin.cpp:814
 msgid "Initrd file not found"
 msgstr "لم يتم العثور على ملف قرص الذاكرة المؤقته المبدئية (initrd)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:750
+#: unetbootin.cpp:815
 msgid "The specified initrd file %1 does not exist."
 msgstr ""
 "ملف قرص الذاكرة المؤقته المبدئية (initrd) %1 اللذي تم تحديده غير موجود."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:854
+#: unetbootin.cpp:919
 msgid "%1 exists, overwrite?"
 msgstr "%1 موجود, هل تريد إستبداله؟"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:855
+#: unetbootin.cpp:920
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -206,12 +207,12 @@ msgstr ""
 "مرتاباً في ماتختار فقم بالضغط على 'نعم للجميع'."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:881
+#: unetbootin.cpp:946
 msgid "%1 is out of space, abort installation?"
 msgstr "نفذت مساحة %1، أجهِض التثبيت؟"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:882
+#: unetbootin.cpp:947
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -221,132 +222,139 @@ msgstr ""
 "متابعة التثبيت، و 'لا للجميع' لتجاهل جميع اخطأ المساحات النافذة."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:976
+#: unetbootin.cpp:1041
 msgid "Locating kernel file in %1"
 msgstr "تحديد ملف kernal في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1017
+#: unetbootin.cpp:1092
 msgid "Copying kernel file from %1"
 msgstr "نسخ ملف kernal من %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1023
+#: unetbootin.cpp:1098
 msgid "Locating initrd file in %1"
 msgstr "تحديد ملف initrd في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1064
+#: unetbootin.cpp:1139
 msgid "Copying initrd file from %1"
 msgstr "نسخ ملف initrd من %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1070 unetbootin.cpp:1130
+#: unetbootin.cpp:1145 unetbootin.cpp:1225
 msgid "Extracting bootloader configuration"
 msgstr "استخراج اعدادات الاقلاع"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1345 unetbootin.cpp:1371
+#: unetbootin.cpp:1440 unetbootin.cpp:1466
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>يتم إستخراج ملف الأي إس أو المضغوط:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1600
+#: unetbootin.cpp:1717
 msgid "Copying file, please wait..."
 msgstr "نسخ الملف, يرجى الانتظار..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1601 unetbootin.cpp:2405
+#: unetbootin.cpp:1718 unetbootin.cpp:2532
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>المصدر:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1602 unetbootin.cpp:2406
+#: unetbootin.cpp:1719 unetbootin.cpp:2533
 msgid "<b>Destination:</b> %1"
 msgstr "<b>الوجهة:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1603
+#: unetbootin.cpp:1720
 msgid "<b>Copied:</b> 0 bytes"
 msgstr "<b>نسخ:</b> 0 بايت"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1641
+#: unetbootin.cpp:1758
 msgid "Extracting files, please wait..."
 msgstr "يتم إستخراج الملفات, انتظر من فضلك..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1642
+#: unetbootin.cpp:1759
 msgid "<b>Archive:</b> %1"
 msgstr "<b>الارشيف:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1643
+#: unetbootin.cpp:1760
 msgid "<b>Source:</b>"
 msgstr "<b>المصدر:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1644
+#: unetbootin.cpp:1761
 msgid "<b>Destination:</b>"
 msgstr "<b>الوجهة:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1645
+#: unetbootin.cpp:1762
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>تم إستخراج:</b> 0 من ملفات %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1648
+#: unetbootin.cpp:1765
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>المصدر:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1649
+#: unetbootin.cpp:1766
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>الوجهة:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1650
+#: unetbootin.cpp:1767
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>إستخراج:</b> %1 من ملفات %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2404
+#: unetbootin.cpp:2531
 msgid "Downloading files, please wait..."
 msgstr "يتم تنزيل الملفات, إنتظر من فضلك..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2407
+#: unetbootin.cpp:2534
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>تم تنزيل:</b> 0 بايت"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2484 unetbootin.cpp:2499
+#: unetbootin.cpp:2620
+msgid ""
+"Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
+"the website directly and supply it via the diskimage option."
+msgstr ""
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2643 unetbootin.cpp:2658
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>تمّ تحميل:</b> %1 من %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2514
+#: unetbootin.cpp:2673
 msgid "<b>Copied:</b> %1 of %2"
 msgstr "<b>نسخ:</b> %1 من %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2590
+#: unetbootin.cpp:2764
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "يتم البحث في <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2594
+#: unetbootin.cpp:2768
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 تطابق في <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2838
+#: unetbootin.cpp:3041
 msgid "%1 not found"
 msgstr "لم يتم العثور %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2839
+#: unetbootin.cpp:3042
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -355,83 +363,89 @@ msgstr ""
 "\"%3\" أو مايكافئها في توزيعتك."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3122
+#: unetbootin.cpp:3325
 msgid "(Current)"
 msgstr "(حالي)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3123
+#: unetbootin.cpp:3326
 msgid "(Done)"
 msgstr "(أنتهى)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3405
+#: unetbootin.cpp:3615
 msgid "Configuring grub2 on %1"
 msgstr "يضبط جرب ٢ في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3417
+#: unetbootin.cpp:3627
 msgid "Configuring grldr on %1"
 msgstr "يضبط grldr في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3445
+#: unetbootin.cpp:3655
 msgid "Configuring grub on %1"
 msgstr "يضبط جرب في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3630
+#: unetbootin.cpp:3893
 msgid "Installing syslinux to %1"
 msgstr "يثبت syslinux في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3665
+#: unetbootin.cpp:3928
 msgid "Installing extlinux to %1"
 msgstr "يثبت extlinux في %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3825
+#: unetbootin.cpp:4099
 msgid "Syncing filesystems"
 msgstr "يزامن أنظمة الملفات"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3830
+#: unetbootin.cpp:4104
 msgid "Setting up persistence"
-msgstr ""
+msgstr "أعداد ملفات الاقلاع"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3868
+#: unetbootin.cpp:4149
 msgid "After rebooting, select the "
 msgstr "بعد إعادة التشغيل قم بإختيار "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3873
+#: unetbootin.cpp:4154
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
-"بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة "
-"الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1\n"
-"هل تريد إعادة التشغيل الأن؟"
+"بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة USB في قائمة الإقلاع "
+"الموجودة في نظام الادخال و الاخراج الأساسي (USB).%1\n"
+" هل تريد إعادة التشغيل الأن؟"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3876
+#: unetbootin.cpp:4157
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"جهاز USB الذى تم أعدادة لم يقوم باقلاع اجهزة MAC. أدخل الجهاز فى مقبص جهاز "
+"شخصى، أختار الاقلاع من جهاز USB  و ذلك من قائمة BIOS برنامج الاقلاع فى "
+"جهازك.  %1"
 
 #. ts-context unetbootin
-#: distrolst.cpp:41
+#: distrolst.cpp:42
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*هام* قبل اﻻقﻻع، ضع نسخة من ملف ISO لنظام يوبنتو (او بديﻻ لة) على الدليل "
+"الجذر للقرص الصلب او لجهاز USB. و يمكن أن تقوم بذلك من cdimage.ubuntu.com."
 
 #. ts-context unetbootin
-#: distrolst.cpp:233
+#: distrolst.cpp:241
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -448,7 +462,7 @@ msgstr ""
 "بالمزود و '/centos/%1/os/%2' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:289
+#: distrolst.cpp:297
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -460,7 +474,7 @@ msgstr ""
 "أو ال USB.تلك الملفات ممكن الخصول عليها من cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:382
+#: distrolst.cpp:390
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -477,7 +491,7 @@ msgstr ""
 "تطالب بالمزود و '/pub/fedora/linux/development/%1/os' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:388
+#: distrolst.cpp:396
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -495,7 +509,7 @@ msgstr ""
 "المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:748
+#: distrolst.cpp:768
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -512,7 +526,7 @@ msgstr ""
 "'/factory/repo/oss' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrolst.cpp:754
+#: distrolst.cpp:774
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -529,17 +543,17 @@ msgstr ""
 "بالمزود و '/distribution/%1/repo/oss' عندما تسئل عن المجلد."
 
 #. ts-context unetbootin
-#: distrover.cpp:23 unetbootin.cpp:670
+#: distrover.cpp:21 unetbootin.cpp:735
 msgid "== Select Distribution =="
 msgstr "== إختيار التوزيعة =="
 
 #. ts-context unetbootin
-#: distrover.cpp:23 distrover.cpp:27
+#: distrover.cpp:21 distrover.cpp:25
 msgid "== Select Version =="
 msgstr "== إختيار الإصدار =="
 
 #. ts-context unetbootin
-#: distrover.cpp:24
+#: distrover.cpp:22
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -554,7 +568,7 @@ msgstr ""
 "قم بإختيار نوع التنصيب والضغط على زر موافق لبدء التنصيب.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:29
+#: distrover.cpp:27
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -562,9 +576,14 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>الصفحة الرئيسية:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>الوصف:"
+"</b> Arch Linux هى توزيعة مختصرة تم تصميمها لتكون اﻻكتر سرعة و اﻻكثر "
+"مرونة.<br/><b>تعليمات اﻻعداد:</b> النسخة اﻻعتيادية يمكن أعدادعا من خﻻل "
+"اﻻنترنت بواسطة (FTP)."
 
 #. ts-context unetbootin
-#: distrover.cpp:35
+#: distrover.cpp:32
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -572,9 +591,14 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>الصفحة الرئيسية:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>الوصف:</b> BackTrack "
+"هى توزيعة تركز على تحليل الشبكات و أختبارات penetration الخاصة "
+"بالشبكات.<br/><b>تعليمات اﻻعداد:</b> BackTrack يمكن أن تعمل باالاسلوب "
+"الحىlive mode; ﻻ أعدادات مطلوبة ﻻستخدام التوزيعة."
 
 #. ts-context unetbootin
-#: distrover.cpp:40
+#: distrover.cpp:37
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -591,7 +615,7 @@ msgstr ""
 "التنصيب الأي إس أو اللتي تم تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:45
+#: distrover.cpp:42
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -606,7 +630,7 @@ msgstr ""
 "لذلك لا يحتاج إلى تنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:50
+#: distrover.cpp:47
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -623,7 +647,7 @@ msgstr ""
 "وليس إلزامي."
 
 #. ts-context unetbootin
-#: distrover.cpp:55
+#: distrover.cpp:52
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -634,9 +658,16 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>الصفحة الرئيسية:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>الوصف:</b> "
+"Debian  هى جمعية لتطوير توزيعات اللينكس التى تدعم نظاق واسع من الهياكل "
+"البرمجية و توفر مستودعات كبيرة من الحزم البرمجية .<br/><b>تعليمات "
+"اﻻعداد:</b> نسخةNetInstall تسمح بعمل أعداد خﻻل اﻻنترنت بواسطة FTP. اذا كنت "
+"تفضل اشتخدام نسخة محملة من الشبكة سلفا بصورة ملف iso, أستخدم خيار HdMedia, "
+"ثم ضع الملف على الدليل الجذر فى القرص الصلب او على جهاز USB"
 
 #. ts-context unetbootin
-#: distrover.cpp:61
+#: distrover.cpp:58
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -651,7 +682,7 @@ msgstr ""
 "الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة."
 
 #. ts-context unetbootin
-#: distrover.cpp:66
+#: distrover.cpp:63
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -667,7 +698,7 @@ msgstr ""
 "بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة."
 
 #. ts-context unetbootin
-#: distrover.cpp:71
+#: distrover.cpp:68
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -677,7 +708,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:76
+#: distrover.cpp:73
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -697,7 +728,7 @@ msgstr ""
 "التنصيب عن طريق ملفات الأي إس أو اللتي تم تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:81
+#: distrover.cpp:78
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -714,7 +745,7 @@ msgstr ""
 "طريق ملفات التنصيب الأي إس أو اللتي تم تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:86
+#: distrover.cpp:83
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -731,7 +762,7 @@ msgstr ""
 "عملية التنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:91
+#: distrover.cpp:88
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -743,7 +774,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:96
+#: distrover.cpp:93
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -760,34 +791,12 @@ msgstr ""
 "تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:101
-msgid ""
-"<b>Homepage:</b> <a href=\"http://www.f-secure.com/linux-"
-"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>Description:</b> "
-"F-Secure Rescue CD detects and removes malware from your Windows "
-"installation.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which malware scans can be launched."
-msgstr ""
-"<b>الصفحة الرئيسية:</b> <a href=\"http://www.f-secure.com/linux-"
-"weblog/\">http://www.f-secure.com/linux-weblog/</a><br/><b>الوصف:</b> تقوم "
-"إسطوانة أمان إف للإنقاذ بإكتشاف وإزالة البرمجيات الخبيثة من تنصيبة "
-"وندوز.<br/><b>ملاحظات التثبيت:</b> تسمح النسخة الحية من الإقلاع إلى الوضع "
-"الحي اللذي يمكن من داخله بدء البحث عن البرمجيات الخبيثة."
-
-#. ts-context unetbootin
-#: distrover.cpp:106
+#: distrover.cpp:103
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>Description:"
-"</b> Gentoo is a flexible source-based distribution designed for advanced "
-"users.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
-"mode, from which the installer can optionally be launched."
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
+"n:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
 msgstr ""
-"<b>الصفحة الرئيسية:</b> <a "
-"href=\"http://www.gentoo.org/\">http://www.gentoo.org</a><br/><b>الوصف:</b> "
-"توزيعة Gentoo هي توزيعة مبنية على مصادر مرنة مصممة للمستخدمين المتقدمين. "
-"<br/><b>ملاحظات التثبيت:</b> تسمح النسخة الحية  بالإقلاع إلى الوضع الحي "
-"اللذي يمكن من داخله بدء برنامج التثبيت عند الرغبة."
 
 #. ts-context unetbootin
 #: distrover.cpp:116
@@ -858,8 +867,9 @@ msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
 "ion:</b> LinuxConsole is a desktop distro to play games, easy to install, "
-"easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2009 is "
-"latest 1.0 release."
+"easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2010 is "
+"latest 1.0, now available on rolling release (run liveuptate to update "
+"modules and kernel)."
 msgstr ""
 
 #. ts-context unetbootin
@@ -901,7 +911,7 @@ msgstr ""
 "اللتي تم تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:152
+#: distrover.cpp:151
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -919,23 +929,17 @@ msgstr ""
 "الرغبة."
 
 #. ts-context unetbootin
-#: distrover.cpp:157
+#: distrover.cpp:156
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>Description:"
-"</b> NetBSD is a Unix-like operating system which focuses on "
-"portability.<br/><b>Install Notes:</b>The default version allows for both "
-"installation over the internet (FTP), or using pre-downloaded installation "
-"ISO files."
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Description:</b> NetbootCD is a small boot CD that downloads and boots "
+"network-based installers for other distributions.<br/><b>Install Notes:</b> "
+"NetbootCD boots and runs in live mode."
 msgstr ""
-"<b>الصفحة الرئيسية:</b> <a "
-"href=\"http://www.netbsd.org/\">http://www.netbsd.org</a><br/><b>الوصف:</b> "
-"يعد NetBSD نظام تشغيل شبيه بينيكس مركز على إمكانية التنقل.<br/><b>ملاحظات "
-"التنصيب:</b> تسمح النسخة الإفتراضية بالتنصيب عن طريق الشبكة العالمية (FTP) "
-"أو التنصيب عن طريق ملفات الأي إس أو اللتي تم تنزيلها مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:162
+#: distrover.cpp:166
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -947,24 +951,18 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:167
+#: distrover.cpp:171
 msgid ""
 "<b>Homepage:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
-"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>Description:</b> The "
-"Offline NT Password and Registry Editor can reset Windows passwords and edit "
-"the registry on Windows 2000-Vista.<br/><b>Install Notes:</b> NTPasswd is "
-"booted and run in live mode; no installation is required to use it."
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>Description:</b> The Offline NT Password and Registry Editor "
+"can reset Windows passwords and edit the registry on Windows 2000-"
+"Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
+"installation is required to use it."
 msgstr ""
-"<b>الصفحة الرئيسية:</b> <a "
-"href=\"http://home.eunet.no/pnordahl/ntpasswd/bootdisk.html\">http://home.eun"
-"et.no/pnordahl/ntpasswd/bootdisk.html</a><br/><b>الوصف:</b> يستطيع محرر "
-"كلمات السر والسجلات إن تي تصفير كلمات سر وندوز وتحرير سجلات الإعدادات "
-"الموجودة في وندوز ٢٠٠٠ إلى وندوز فيستا.  <br/><b>ملاحظات التثبيت:</b> يقلع "
-"ويعمل NTPasswd في الوضع الحي بدون الحاجة إلى تنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:172
+#: distrover.cpp:176
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -981,7 +979,7 @@ msgstr ""
 "مسبقاً."
 
 #. ts-context unetbootin
-#: distrover.cpp:177
+#: distrover.cpp:181
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -995,7 +993,7 @@ msgstr ""
 "التثبيت:</b> يقلع ويعمل Ophcrack في الوضع الحي بدون الحاجة إلى تنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:182
+#: distrover.cpp:186
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -1012,22 +1010,7 @@ msgstr ""
 "بدون الحاجة إلى تنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:187
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>Descri"
-"ption:</b> PCLinuxOS is a user-friendly Mandriva-based "
-"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
-"in Live mode, from which the installer can optionally be launched."
-msgstr ""
-"<b>الصفحة الرئيسية:</b> <a "
-"href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/><b>الوصف:"
-"</b> هي توزيعة سهلة الإستعمال مرتكزة على توزيعة Mandriva. <br/><b>ملاحظات "
-"التنصيب:</b> تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله "
-"بدء برنامج التنصيب عند الرغبة."
-
-#. ts-context unetbootin
-#: distrover.cpp:192
+#: distrover.cpp:196
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1043,7 +1026,7 @@ msgstr ""
 "(RAM) والإقلاع من الذاكرة, لذلك التنصيب إختياري وليس إلزامي."
 
 #. ts-context unetbootin
-#: distrover.cpp:197
+#: distrover.cpp:201
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1063,7 +1046,19 @@ msgstr ""
 "يو إس بي بحجم ٨ جيجا."
 
 #. ts-context unetbootin
-#: distrover.cpp:202
+#: distrover.cpp:206
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
+"Salix is a GNU/Linux distribution based on Slackware (fully compatible) that "
+"is simple, fast and easy to use.<br/>Like a bonsai, Salix is small, light & "
+"the product of infinite care.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched.<br/>Default root password is <b>live</b>."
+msgstr ""
+
+#. ts-context unetbootin
+#: distrover.cpp:218
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1078,7 +1073,7 @@ msgstr ""
 "اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة."
 
 #. ts-context unetbootin
-#: distrover.cpp:207
+#: distrover.cpp:223
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1095,7 +1090,7 @@ msgstr ""
 "إلزامي."
 
 #. ts-context unetbootin
-#: distrover.cpp:212
+#: distrover.cpp:228
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1112,7 +1107,7 @@ msgstr ""
 "إلى التنصيب."
 
 #. ts-context unetbootin
-#: distrover.cpp:217 distrovercust.cpp:12
+#: distrover.cpp:233 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1127,7 +1122,7 @@ msgstr ""
 "ويعمل قرص قرب الخارق مباشرة بدون الحاجة إلى التثبيت."
 
 #. ts-context unetbootin
-#: distrover.cpp:222
+#: distrover.cpp:238
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1138,22 +1133,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:227
-msgid ""
-"<b>Homepage:</b> <a "
-"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>Descrip"
-"tion:</b> SystemRescueCD includes various partition management and data "
-"recovery and backup tools.<br/><b>Install Notes:</b> SystemRescueCD is "
-"booted and run in live mode; no installation is required to use it."
-msgstr ""
-"<b>الصفحة الرئيسية:</b> <a "
-"href=\"http://www.sysresccd.org\">http://www.sysresccd.org</a><br/><b>الوصف:<"
-"/b> يشتمل SystemRescueCD على العديد من أدوات إدارة التجزئة و إسترداد "
-"البيانات والحصول على نسخ إحتياطية.  <br/><b>ملاحظات التثبيت:</b> يقلع ويعمل "
-"SystemRescueCD في الوضع الحي حيث لا يحتاج إلى التثبيت."
-
-#. ts-context unetbootin
-#: distrover.cpp:232
+#: distrover.cpp:248
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1168,7 +1148,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:237
+#: distrover.cpp:253
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1183,7 +1163,7 @@ msgstr ""
 "ذاكرة الوصول العشوائي (RAM) والإقلاع من الذاكرة."
 
 #. ts-context unetbootin
-#: distrover.cpp:242
+#: distrover.cpp:258
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1198,7 +1178,7 @@ msgid ""
 msgstr ""
 
 #. ts-context unetbootin
-#: distrover.cpp:247
+#: distrover.cpp:263
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1376,13 +1356,13 @@ msgstr "&تخصيص"
 #: unetbootin.ui:414 unetbootin.ui:430
 msgid ""
 "Space to reserve for user files which are preserved across reboots. Works "
-"only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
-"capacity, the maximum space available will be used."
+"only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. "
+"If value exceeds drive capacity, the maximum space available will be used."
 msgstr ""
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
-msgid "Space used to preserve files across reboots (Ubuntu only):"
+msgid "Space used to preserve files across reboots (Ubuntu and SaLT only):"
 msgstr ""
 
 #. ts-context unetbootinui
@@ -1562,396 +1542,3 @@ msgstr "مزيل تنصيب %1"
 #: main.cpp:354
 msgid "%1 is currently installed. Remove the existing version?"
 msgstr "%1 منصب حالياً, هل ترغب في إلغاء النسخة الموجودة؟"
-
-#~ msgid ""
-#~ "<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-#~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
-#~ "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-#~ "booting in Live mode, from which the installer can optionally be launched. "
-#~ "The Unstable version, not the <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> is "
-#~ "installed. This installer is based on <a "
-#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-#~ msgstr ""
-#~ "<img src=\":/elive.png\" /><br/><b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>الوصف:</b>"
-#~ " تعد Elive توزيعة مبنية على نظام التشغيل Debian متسمة بمدير النوافذ "
-#~ "Enlightenment. <br/><b>ملاحظات التثبيت:</b> تسمح النسخة الحية بالإقلاع إلى "
-#~ "الوضع الحي اللذى يمكن من داخله بدء برنامج التثبيت عند الرغبة. لم يتم تثبيت "
-#~ "<a href=\"http://www.elivecd.org/Download/Stable\">النسخة المستقرة</a> بل تم "
-#~ "تثبيت النسخة غير المستقرة. برنامج التثبيت مبني على <a "
-#~ "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
-#~ "</b> Debian is a community-developed Linux distribution that supports a wide "
-#~ "variety of architectures and offers a large repository of "
-#~ "packages.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>الوصف:</b> "
-#~ "توزيعة Debian هي توزيعة لينيكس تم تطويرها من قبل المجتمع حيث تدعم تشكيلة "
-#~ "واسعة من البنئ وتقدم مستودع ضخم من الحزم. <br/><b>ملاحظات التثبيت:</b> تسمح "
-#~ "النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التثبيت "
-#~ "عند الرغبة, وتسمح نسخة NetInstall بالتثبيت من خلال FTP."
-
-#~ msgid "Downloading files, plese wait..."
-#~ msgstr "يتم تنزيل الملفات, الرجاء الإنتظار..."
-
-#~ msgid "UNetbootin"
-#~ msgstr "UNetbootin"
-
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>تم تنزيل:</b> %1 من %2 بايت"
-
-#~ msgid "Distribution"
-#~ msgstr "التوزيعة"
-
-#~ msgid "Custom"
-#~ msgstr "مخصص"
-
-#~ msgid "Drive:"
-#~ msgstr "السواقة:"
-
-#~ msgid "Type:"
-#~ msgstr "النوع:"
-
-#~ msgid "Kernel:"
-#~ msgstr "النواة:"
-
-#~ msgid "Initrd:"
-#~ msgstr "ملف قرص الذاكرة المؤقته المبدئية (initrd):"
-
-#~ msgid "Diskimage"
-#~ msgstr "صورة القرص"
-
-#~ msgid ""
-#~ "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
-#~ "%1</b><br/>or:<br/><b>su -c '%1'</b>"
-#~ msgstr ""
-#~ "يجب تشغيل %2 بستخدام صلاحية الجذر. لذلك قم بإقفاله ثم إعادة تشغيله "
-#~ "بستخدام:<br/><b>sudo %1</b><br/>أو:<br/><b>su -c '%1'</b>"
-
-#~ msgid "Show All Drives (Use with Care)"
-#~ msgstr "عرض جميع السواقات (إستخدم هذا الخيار بحذر)"
-
-#~ msgid "Options:"
-#~ msgstr "الخيارات:"
-
-#~ msgid "Format Drive (Wipes Out Data)"
-#~ msgstr "تهيئة السواقة (ستمحو كافة البيانات)"
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
-#~ "ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
-#~ "flexibility.<br/><b>Install Notes:</b> The default version allows for "
-#~ "installation over the internet (FTP). If interested in a LiveUSB version, "
-#~ "see FaunOS."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>الوصف:"
-#~ "</b> يعد آرك لينيكس توزيعة خفيفة تم ضبط إعداداتها للحصول على أفضل سرعة "
-#~ "ومرونة. <br/><b>ملاحظات التنصيب:</b> تسمح النسخة الإفتراضية بالتنصيب عن طريق "
-#~ "الشبكة العالمية (FTP), وإذا كنت مهتماً بنسخة اليو إس بي الحية قم بالإطلاع "
-#~ "على FaunOS."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a href=\"http://www.remote-"
-#~ "exploit.org/backtrack.html\">http://www.remote-"
-#~ "exploit.org/backtrack.html</a><br/><b>Description:</b> BackTrack is a "
-#~ "distribution focused on network analysis and penetration "
-#~ "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
-#~ "no installation is required to use it."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a href=\"http://www.remote-"
-#~ "exploit.org/backtrack.html\">http://www.remote-"
-#~ "exploit.org/backtrack.html</a><br/><b>الوصف:</b> توزيعة BackTrack تركز على "
-#~ "تحليل الشبكة واختبار إمكانية الاختراق. <br/><b>ملاحظات التنصيب:</b> يقلع "
-#~ "BackTrack ويعمل في الوضعية الحية حيث ان إستخدامه لايحتاج إلى تنصيب."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
-#~ "n:</b> Kubuntu is an official Ubuntu derivative featuring the KDE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP, and can install Xubuntu "
-#~ "and other official Ubuntu derivatives."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>الوصف:</b>"
-#~ " تعد توزيعة كىوبنتو توزيعة مشتقة رسمياً من أوبنتو متسمة ببيئة سطح المكتب كى "
-#~ "دي إي. >ملاحظات التثبيت:</b> تسمح النسخة الحية من الإقلاع إلى الوضع الحي "
-#~ "اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة, و تسمح نسخة التنصيب "
-#~ "الشبكي بالتنصيب عن طريق الشبكة العالمية (FTP) وبستطاعتها إيضاً تنصيب توزيعة "
-#~ "إكسبونتوا والمشتقات الرسمية الأخرى لأوبنتو."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>Description:"
-#~ "</b> FaunOS is a distribution based on Arch Linux.<br/><b>Install Notes:</b> "
-#~ "The Live version allows for booting in Live mode, from which the installer "
-#~ "can optionally be launched."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.faunos.com/\">http://www.faunos.com</a><br/><b>الوصف:</b> "
-#~ "هي توزيعة مبنية على توزيعة آرتش لينكس.<br/><b>ملاحظات التنصيب:</b> تسمح "
-#~ "النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب "
-#~ "عند الرغبة."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
-#~ "n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
-#~ "window manager.<br/><b>Install Notes:</b> The Live version allows for "
-#~ "booting in Live mode. The Unstable version does not support Hard Drive "
-#~ "installations, though the <a "
-#~ "href=\"http://www.elivecd.org/Download/Stable\">Stable version</a> (not "
-#~ "freely downloadable) does."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>الوصف:</b>"
-#~ " هي توزيعة مبنية على توزيعة دبيان متسمة بمدير النوافذ تنوير "
-#~ "(Enlightenment).<br/><b>ملاحظات التنصيب:</b> تسمح النسخة الحية بالإقلاع إلى "
-#~ "الوضع الحي, مع العلم أن النسخة غير المستقرة لاتدعم التنصيب عن طريق القرص "
-#~ "الصلب بينما <a href=\"http://www.elivecd.org/Download/Stable\">النسخة "
-#~ "المستقرة</a> (not freely downloadable) تدعم ذلك."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
-#~ "n:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE "
-#~ "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
-#~ "Live mode, from which the installer can optionally be launched. The "
-#~ "NetInstall version allows for installation over FTP, and can install Kubuntu "
-#~ "and other official Ubuntu derivatives."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>الوصف:</b>"
-#~ " هي توزيعة مشتقة رسمياً من توزيعة أوبنتو متسمة ببيئة سطح المكتب إكسفس "
-#~ "(XFCE).>ملاحظات التنصيب:</b> تسمح النسخة الحية من الإقلاع إلى الوضع الحي "
-#~ "اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة, و تسمح نسخة التنصيب "
-#~ "الشبكي بالتنصيب عن طريق الشبكة العالمية (FTP) وبستطاعتها إيضاً تنصيب توزيعة "
-#~ "كوبونتو والمشتقات الرسمية الأخرى لأوبنتو."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
-#~ "</b> Ubuntu is a user-friendly Debian-based distribution. It is currently "
-#~ "the most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
-#~ "Live version allows for booting in Live mode, from which the installer can "
-#~ "optionally be launched. The NetInstall version allows for installation over "
-#~ "FTP, and can install Kubuntu and other official Ubuntu derivatives."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>الوصف:</b> "
-#~ "هي توزيعة سهلة الإستعمال مرتكزة على ديبيان, وفي الوقت الحالي هي أكثر توزيعات "
-#~ "لينيكس المستخدمة في حواسيب سطح المكتب شعبية.>ملاحظات التنصيب:</b> تسمح "
-#~ "النسخة الحية من الإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج "
-#~ "التنصيب عند الرغبة, و تسمح نسخة التنصيب الشبكي بالتنصيب عن طريق الشبكة "
-#~ "العالمية (FTP) وبستطاعتها إيضاً تنصيب توزيعة كوبونتو والمشتقات الرسمية "
-#~ "الأخرى لأوبنتو."
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-#~ "weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-#~ "weight:600;\">potentially dangerous</span> option will format the selected "
-#~ "drive, wiping out all data on it. It shouldn't be necessary if you're using "
-#~ "a standard USB drive.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-#~ "weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">سيقوم خيار <span style=\" "
-#~ "font-weight:600;\">تنطوي على خطر</span> بإعادة تهيئة السواقة المختارة ومحو "
-#~ "كافة البيانات الموجودة فيها. لايوجد حاجة إلى هذا الخيار إذا كنت تستخدم ذاكرة "
-#~ "اليو إس بي العادية.</p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-#~ "weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">This <span style=\" font-"
-#~ "weight:600;\">potentially dangerous</span> option will show all drives in "
-#~ "the drop-down box titled \"Drives\". Enable this only if you know what "
-#~ "you're doing; if you use this option, the installation will likely fail, or "
-#~ "can lead to system boot issues.</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-#~ "weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">سيقوم خيار <span style=\" "
-#~ "font-weight:600;\">منطوي على خطر</span> بعرض كافة السواقات في الصندوق "
-#~ "المنسدل المعنون بعنوان \"سواقات\". قم بتفعيل هذا الخيار فقط إذا كنت على علم "
-#~ "بما تفعل, لان إستخدام هذا الخيار قد يؤدي إلى فشل عملية التنصيب أو مشكلات في "
-#~ "عملية إقلاع النظام."
-
-#~ msgid ""
-#~ "<b>Homepage:</b> <a "
-#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-#~ "uper_Ubuntu</a><br/><b>Description:</b> Super Ubuntu is an unofficial "
-#~ "derivative of Ubuntu which includes additional software by default. Requires "
-#~ "a 2GB USB drive to install.<br/><b>Install Notes:</b> The Live version "
-#~ "allows for booting in Live mode, from which the installer can optionally be "
-#~ "launched."
-#~ msgstr ""
-#~ "<b>الصفحة الرئيسية:</b> <a "
-#~ "href=\"http://hacktolive.org/wiki/Super_Ubuntu\">http://hacktolive.org/wiki/S"
-#~ "uper_Ubuntu</a><br/><b>الوصف:</b> هو مشتق غير رسمي من أوبنتو مشتمل على "
-#~ "برمجيات إضافية في نسخته الإفتراضية, ويحتاج ذاكرة يو إس بي بحجم ٢ جيجا من أجل "
-#~ "عملية التنصيب.<br/><b>ملاحظات التنصيب:</b> تسمح النسخة الحية بالإقلاع إلى "
-#~ "الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة."
-
-#~ msgctxt "#1"
-#~ msgid "<b>Extracting compressed iso:</b> %1"
-#~ msgstr "<b>يتم إستخراج ملف الأي إس أو المضغوط:</b> %1"
-
-#~ msgctxt "#2"
-#~ msgid "Extracting files, please wait..."
-#~ msgstr "يتم إستخراج الملفات, انتظر من فضلك..."
-
-#~ msgctxt "#3"
-#~ msgid "<b>Archive:</b> %1"
-#~ msgstr "<b>الارشيف:</b> %1"
-
-#~ msgctxt "#4"
-#~ msgid "<b>Source:</b>"
-#~ msgstr "<b>المصدر:</b>"
-
-#~ msgctxt "#5"
-#~ msgid "<b>Destination:</b>"
-#~ msgstr "<b>الوجهة:</b>"
-
-#~ msgctxt "#6"
-#~ msgid "<b>Extracted:</b> 0 of %1 files"
-#~ msgstr "<b>تم إستخراج:</b> 0 من ملفات %1"
-
-#~ msgctxt "#7"
-#~ msgid "<b>Source:</b> %1 (%2)"
-#~ msgstr "<b>المصدر:</b> %1 (%2)"
-
-#~ msgctxt "#8"
-#~ msgid "<b>Destination:</b> %1%2"
-#~ msgstr "<b>الوجهة:</b> %1%2"
-
-#~ msgctxt "#9"
-#~ msgid "<b>Extracted:</b> %1 of %2 files"
-#~ msgstr "<b>إستخراج:</b> %1 من ملفات %2"
-
-#~ msgctxt "#10"
-#~ msgid "Downloading files, please wait..."
-#~ msgstr "يتم تنزيل الملفات, إنتظر من فضلك..."
-
-#~ msgctxt "#11"
-#~ msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-#~ msgstr "<b>المصدر:</b> <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#12"
-#~ msgid "<b>Destination:</b> %1"
-#~ msgstr "<b>الوجهة:</b> %1"
-
-#~ msgctxt "#13"
-#~ msgid "<b>Downloaded:</b> 0 bytes"
-#~ msgstr "<b>تم تنزيل:</b> 0 بايت"
-
-#~ msgctxt "#14"
-#~ msgid "USB Drive"
-#~ msgstr "ّذاكرة يو إس بي"
-
-#~ msgctxt "#15"
-#~ msgid "<b>Downloaded:</b> %1 of %2 bytes"
-#~ msgstr "<b>تم تنزيل:</b> %1 من %2 بايت"
-
-#~ msgctxt "#16"
-#~ msgid "Searching in <a href=\"%1\">%1</a>"
-#~ msgstr "يتم البحث في <a href=\"%1\">%1</a>"
-
-#~ msgctxt "#17"
-#~ msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-#~ msgstr "%1/%2 تطابق في <a href=\"%3\">%3</a>"
-
-#~ msgctxt "#18"
-#~ msgid "%1 not found"
-#~ msgstr "لم يتم العثور %1"
-
-#~ msgctxt "#19"
-#~ msgid ""
-#~ "%1 not found. This is required for %2 install mode.\n"
-#~ "Install the \"%3\" package or your distribution's equivalent."
-#~ msgstr ""
-#~ "لم يتم العثور على %1. و ﻷنه مطلوب من إجل وضعية تنصيب %2 قم بتنصيب حزمة "
-#~ "\"%3\" أو مايكافئها في توزيعتك."
-
-#~ msgctxt "#20"
-#~ msgid "Hard Disk"
-#~ msgstr "القرص الصلب"
-
-#~ msgctxt "#21"
-#~ msgid "Floppy"
-#~ msgstr "قرص فلوبي"
-
-#~ msgctxt "#22"
-#~ msgid "ISO"
-#~ msgstr "ملف آي إس أو"
-
-#~ msgctxt "#23"
-#~ msgid "After rebooting, select the "
-#~ msgstr "بعد إعادة التشغيل قم بإختيار "
-
-#~ msgctxt "#24"
-#~ msgid ""
-#~ "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
-#~ "Reboot now?"
-#~ msgstr ""
-#~ "بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة "
-#~ "الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1\n"
-#~ "هل تريد إعادة التشغيل الأن؟"
-
-#~ msgctxt "unetbootin#6"
-#~ msgid "Hard Disk"
-#~ msgstr "القرص الصلب"
-
-#~ msgctxt "unetbootin#7"
-#~ msgid "USB Drive"
-#~ msgstr "ّذاكرة يو إس بي"
-
-#~ msgctxt "unetbootin#8"
-#~ msgid "ISO"
-#~ msgstr "ملف آي إس أو"
-
-#~ msgctxt "unetbootin#9"
-#~ msgid "Floppy"
-#~ msgstr "قرص فلوبي"
-
-#~ msgid "Show &All Drives (Use with Care)"
-#~ msgstr "إظهار &كل السواقات (استخدم بحذر)"
-
-#~ msgid "&Format Drive (Wipes Out Data)"
-#~ msgstr "تهيئة قرص (مسح بيانات)"

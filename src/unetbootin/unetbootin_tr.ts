@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-01-01 16:25+0000
-Last-Translator: zeugma &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-04-18 13:08+0000
+Last-Translator: efecan &lt;efecanerdur@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -104,12 +104,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32-formatlı USB sürücü</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2-formatlı USB sürücü</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -161,7 +161,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>İlk olarak USB sürücü %1&apos;i bir bağlama noktasına bağlamalısınız. Birçok dağıtım bu işlemi USB sürücüsünü çıkarıp tekrar taktığınızda otomatik olarak yapmaktadır.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
@@ -201,7 +201,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="785"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Belirtilen disk kalıbı %1 bulunamadı.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="799"/>
@@ -211,7 +211,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Belirtilen çekirdek dosyası %1 bulunamadı.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="814"/>
@@ -221,7 +221,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="815"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>Belirtilen initrd dosyası %1 bulunamadı.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="919"/>
@@ -231,12 +231,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="920"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>%1 dosyası zaten var. Tekrar uyarılmadan üstüne yazılması için &apos;Tümüne Evet&apos;i, sadece sorulan dosyayı üzerine yazmak için &apos;Evet&apos;i, varolan dosyasının kalması için ise &apos;Hayır&apos;ı tıklayın. Emin değilseniz &apos;Tümüne Evet&apos;i tıklayın.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>%1 üzerinde yeterli alan yok, kurulum iptal edilsin mi?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="947"/>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -568,7 +568,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -578,7 +578,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -603,8 +603,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -629,7 +628,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -669,7 +668,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>

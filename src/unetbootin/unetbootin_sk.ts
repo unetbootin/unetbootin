@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-03-24 08:12+0000
-Last-Translator: Tomáš Vadina &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-11-18 14:58+0000
+Last-Translator: Prescott_SK &lt;prescott66@gmail.com&gt;
 Language-Team: Slovak &lt;sk@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -105,17 +105,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>LiveUSB trvácnosť</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32-formátovaný USB kľúč</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2-formátovaný USB kľúč</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sťahovanie %1 %2 z %3 zlyhalo. Prosím, skúste stiahnuť ISO súbor priamo zo stránky a otvorte ho cez možnosť Obraz disku.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -434,7 +434,7 @@ Nainštalujte balík &quot;%3&quot; alebo jeho ekvivalent.</translation>
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Nastavenie trvácnosti</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
@@ -451,13 +451,14 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>Vytvorené USB zariadenie nebude bootovať na Macu. Vlož ho do PC, a vyber možnosť bootovania z USB v bootovacej ponuke BIOSU.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*DÔLEŽITÉ* Pred reštartom PC, umiestni alternatívny (nie desktopový) inštalačný iso súbor Ubuntu do koreňového adresára tvojho hardisku alebo USB kľúča. Tieto môžu byť získané z cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="242"/>
@@ -470,7 +471,8 @@ Reštartovať teraz?</translation>
         <location filename="distrolst.cpp" line="298"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*DÔLEŽITÉ* Pred reštartom PC, umiestni inštalačný iso súbor Debianu do koreňového adresára tvojho hardisku alebo USB kľúča. Tieto môžu byť získané z cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="391"/>
@@ -560,7 +562,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="73"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribúcia založená na Debiane obsahujúca správu okien Enlightenment.&lt;br/&gt;&lt;b&gt;Inštalačné poznámky:&lt;/b&gt; Live verzia dovoľuje bootovanie v Live móde, z ktorého môže byť voliteľne spustený inštalátor.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="78"/>
@@ -580,22 +582,22 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; FreeNAS je vstavaná open sourcová NAS (datové úložisko na sieti) distribúcia založená na FreeBSD.&lt;br/&gt;&lt;b&gt;Inštalačné poznámky:&lt;/b&gt; LiveCD verzia vytvára RAM disk pre FreeNAS, a používa FAT-formátovanú floppy disketu alebo USB kľúč pre uloženie konfiguračného súboru. Vstavaná verzia dovoľuje inštaláciu na hardisk.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Frugalware je mnohostranne využiteľná distribúcia založená na Slackware pre pokročilých používateľov.&lt;br/&gt;&lt;b&gt;Inštalačné poznámky:&lt;/b&gt; Predvolená možnosť dovoľuje obidve inštalácie, prostredníctvom internetu (FTP), alebo offline inštaláciu s použitím vopred stiahnutých inštalačných ISO súborov.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; GeeXboX je vnorená distribúcia Linux Media Center.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is an FSF-endorsed distribution based on Ubuntu with all non-free components removed.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; gNewSense je distribúcia, schválena FSF, založená na Ubuntu, obsahujúca výhradne free komponenty.&lt;br/&gt;&lt;b&gt;Inštalačné poznámky:&lt;/b&gt; Live verzia dovoľuje bootovanie v Live režime, z ktorého môže byť voliteľne spustený inštalátor.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="126"/>
@@ -610,13 +612,12 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="136"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Kubuntu je oficiálny derivát Ubuntu vybavené prostredím KDE.&lt;br/&gt;&lt;b&gt;Poznámky k inštalácii:&lt;/b&gt; Live verzia umožňuje zavádzanie v Live režime, z ktorého môže byť voliteľne spustený inštalátor. Verzia NetInstall umožňuje inštaláciu cez FTP a môže inštalovať Kubuntu a iné oficiálne deriváty Ubuntu. Ak chcete použiť vopred stiahnuté alternatívne(nie desktop) inštalačné iso, použite možnosť HdMedia a potom umiestnite alternatívny(alternate) inštalačný iso súbor do koreňového adresára vášho pevného disku alebo USB jednotky.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -641,7 +642,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -681,7 +682,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -742,7 +743,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; Elive je distribúcia založená na Debian-e, obsahujúca odľahčeného správcu okien.&lt;br/&gt;&lt;b&gt;Poznámky k inštalácii:&lt;/b&gt; Live verzia umožňuje zavádzanie v Live režime, z ktorého môže byť voliteľne spustený inštalátor.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -757,7 +758,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Domovská stránka:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Popis:&lt;/b&gt; NimbleX je malá pružná dsitribúcia založená na Slackware. Je zostavená pužitím linux-live scriptov a je vybavená prostredím KDE. Môže byť spustená z CD alebo pamäte flash(USB kľúče alebo MP3 prehrávače) a môže byť jednoducho prispôsobená a rozšírená.&lt;br/&gt;&lt;b&gt;Poznámky k inštalácii:&lt;/b&gt; NimbleX sa zavádza v Live režime.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
@@ -824,7 +825,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -834,7 +835,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Návrat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
@@ -995,7 +996,7 @@ Reštartovať teraz?</translation>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 musí byť spustené ako root. Zavri ho, a znovu spusti buď použitím:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;alebo:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>

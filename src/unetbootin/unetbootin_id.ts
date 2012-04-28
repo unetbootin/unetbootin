@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-01-15 10:46+0000
-Last-Translator: Ivan S.M &lt;ivan90112@gmail.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2012-04-04 10:09+0000
+Last-Translator: zaenalarifin &lt;Unknown&gt;
 Language-Team: Indonesian &lt;id@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -105,22 +105,22 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>Keteguhan UsbLive</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>Menformat-FAT32 perangkat USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>Menformat-EXT2 perangkat USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation>Buka file iso</translation>
+        <translation>Buka flie image</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -147,7 +147,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="681"/>
         <source>Open Bootloader Config File</source>
-        <translation>Buka file konfigurasi biitloader</translation>
+        <translation>Buka file konfigurasi bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="703"/>
@@ -157,17 +157,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Tidak ada USB flash drive yang ditemukan. Jika Anda telah memasukkan USB drive, cobalah format ke FAT32.</translation>
+        <translation>FlashDisk tidak terdeteksi , jika Flashdisk telah terpasang coba format ke FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="723"/>
         <source>%1 not mounted</source>
-        <translation>%1 tidak ter-mount</translation>
+        <translation>%1 Tidak terpasang</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Anda harus me-mount USB drive %1 dahulu ke mountpoint. Sebagian besar distro akan otomatis setelah Anda melepas dan memasang kembali USB drive.</translation>
+        <translation>Pasang dulu USB drive %1 , System akan otomatis mendeteksi setelah anda lepas &amp; pasang kembali USB Drive.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
@@ -177,17 +177,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="740"/>
         <source>You must select a distribution to load.</source>
-        <translation>Anda harus memilih distribusi untuk memulai</translation>
+        <translation>Pilih Distro untuk di muat</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="754"/>
         <source>Select a disk image file</source>
-        <translation>Pilih file iso</translation>
+        <translation>Pilih File Image</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="755"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Anda harus memilih file iso untuk memulai</translation>
+        <translation>Anda harus memilih file image untuk di muat</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="769"/>
@@ -207,7 +207,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="785"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>Disk image file %1 tidak sesuai.</translation>
+        <translation>File Image %1 Tidak di temukan.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="799"/>
@@ -232,12 +232,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="919"/>
         <source>%1 exists, overwrite?</source>
-        <translation>sudah ada 1% ,timpa?</translation>
+        <translation>%1 sudah ada , di timpa?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="920"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>File sudah ada sebelumnya . Tekan &apos;Ya untuk Semua&apos; untuk menimpanya, &apos;Ya&apos; untuk menimpa file-file secara individual, dan &apos;Tidak&apos; untuk mempertahankan versi yang ada. Jika ragu, tekan &quot;Ya untuk Semua &apos;.</translation>
+        <translation>File %1 sudah ada . Tekan &quot; Yes to All &quot; utk menimpa,&apos; Yes &apos; utk menimpa secara individu,&apos;No&apos; utk menggunakan versi yg sudah ada. jika ragu tekan &apos;Yes to All&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
@@ -257,34 +257,34 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1092"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Menggandakan berkas kernel dari %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1098"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Lokasi initrd berkas dalam %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1139"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Menggandakan initrd berkas dalam %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1145"/>
         <location filename="unetbootin.cpp" line="1225"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>mengEkstrak konfigurasi bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1440"/>
         <location filename="unetbootin.cpp" line="1466"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;mengEkstrak kompresan iso:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1717"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Menyalin berkas, mohon tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1718"/>
@@ -301,7 +301,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1720"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Menggandakan:&lt;/b&gt; 0 bite</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1758"/>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -438,7 +438,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation>Setelah booting-ulang, pilihlah </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4154"/>
@@ -549,7 +549,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="63"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;HalamanRumah:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux adalah suatu user-friendly Debian-based distribusi.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live-versi membolehkan untuk mem-booting dalam mode Langsung, yangmana pemasangannya dapat bebas memilih untuk diluncurkan.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="68"/>
@@ -579,7 +579,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -589,7 +589,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -614,8 +614,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -640,7 +639,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -680,7 +679,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>

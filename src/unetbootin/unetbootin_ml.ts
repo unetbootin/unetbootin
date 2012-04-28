@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2010-05-10 02:25+0000
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-06-13 07:07+0000
+Last-Translator: Dibu Krishnan &lt;dibu.krishnan@gmail.com&gt;
 Language-Team: Malayalam &lt;ml@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -46,7 +46,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3536"/>
         <location filename="unetbootin.cpp" line="4147"/>
         <source>Hard Disk</source>
-        <translation></translation>
+        <translation>ഹാര്‍ഡ് ഡിസ്ക്</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
@@ -67,7 +67,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3864"/>
         <location filename="unetbootin.cpp" line="4151"/>
         <source>USB Drive</source>
-        <translation></translation>
+        <translation>യുഎസ്ബി ഡ്രൈവ്</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="211"/>
@@ -78,7 +78,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="651"/>
         <location filename="unetbootin.cpp" line="3430"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>ഐ എസ് ഒ</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="212"/>
@@ -89,7 +89,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="656"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <source>Floppy</source>
-        <translation></translation>
+        <translation>ഫ്ലോപ്പി</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="245"/>
@@ -100,79 +100,79 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="269"/>
         <location filename="unetbootin.cpp" line="297"/>
         <source>either</source>
-        <translation></translation>
+        <translation>ഒന്നുകില്‍</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>സജീവമായ യുഎസ്ബിയുടെ സ്ഥിരത</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32- സങ്കേതമുപയോഗിച്ച് ഘടനാ മാറ്റം വരുത്തിയ യുഎസ്ബി ഡ്രൈവ്</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2- സങ്കേതമുപയോഗിച്ച് ഘടനാ മാറ്റം വരുത്തിയ യുഎസ്ബി ഡ്രൈവ്</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>ഡിസ്ക് ഇമേജ് ഫയല്‍ തുറക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>എല്ലാ ഫയലുകളും</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <location filename="unetbootin.cpp" line="673"/>
         <location filename="unetbootin.cpp" line="681"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>എല്ലാ ഫയലുകളും(*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>കെര്‍ണല്‍ ഫയല്‍ തുറക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="673"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Initrd ഫയല്‍ തുറക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="681"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>ബൂട്ട് ലോഡര്‍ രൂപരേഖ ഫയല്‍ തുറക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="703"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>ഒരു യുഎസ്ബി ഡ്രൈവ് ബന്ധിപ്പിക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>യുഎസ്ബി ഡ്രൈവുകള്‍ യാതൊന്നും തന്നെ കണ്ടെത്താന്‍ കഴിഞ്ഞില്ല. നിങ്ങള്‍ നേരത്തെ തന്നെ യുഎസ്ബി ഡ്രൈവ്  ബന്ധിപ്പിച്ചിട്ടുണ്ടെങ്കില്‍, FAT32 സങ്കേതത്തില്‍ അതിനെ വീണ്ടും ഘടനാ മാറ്റം വരുത്തി ശ്രമിച്ചു നോക്കുക.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="723"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 ഘടിപ്പിച്ചിട്ടില്ല</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>നിങ്ങള്‍ യുഎസ്ബി ഡ്രൈവ് %1 ഒരു സ്ഥലത്ത് ഘടിപ്പിക്കേണ്ടത് അത്യാവശ്യമാണ്. ഏതാണ്ടെല്ലാ വിതരണങ്ങളും നിങ്ങള്‍ യുഎസ്ബി ഡ്രൈവ് വിടുവിക്കുകയും വീണ്ടും ബന്ധപ്പെടുത്തുകയും ചെയ്യുന്ന സമയത്ത് ഈ പ്രക്രിയ സ്വയമേ ചെയ്യുന്നതാണ്</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>ഒരു വിതരണം തെരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="740"/>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -573,7 +573,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -583,7 +583,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -608,8 +608,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -634,7 +633,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -674,7 +673,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-03-10 15:23+0000
-Last-Translator: dani186 &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-11-12 05:26+0000
+Last-Translator: puroh &lt;diego68314@yahoo.es&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -99,17 +99,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>Persistencia del LiveUSB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>Unidad USB con formato FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>Unidad USB con formato EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Descarga de %1 %2 de %3 fallo. por favor descargue el archivo ISO de el sitio web directamente y suministre la ruta en la opción imagen de disco.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -428,7 +428,7 @@ Instala el paquete «%3» o el equivalente en tu distribución.</translation>
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Ajustando persistencia</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
@@ -445,7 +445,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>El dispositivo USB creado no arrancará en un Mac. Insertalo en un PC, y selecciona la opción de arranque USB en el menu de la BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
@@ -576,7 +576,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Página del Proyecto:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeNAS es una distribución NAS (Network-Attached Storage)de código abierto basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión LiveCD crea una unidad RAM para FreeNAS, y usa un disquete o unidad de memoria USB con formato FAT para almacenar el archivo de configuración. La versión incluida permite su instalación a disco duro.</translation>
+        <translation>&lt;b&gt;Página del Proyecto:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; FreeNAS es una distribución NAS (Network-Attached Storage)de código abierto basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión LiveCD crea una unidad RAM para FreeNAS, y usa un disquete o unidad de memoria USB con formato FAT para almacenar el archivo de configuración. La versión incluida permite su instalación a disco duro.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -584,17 +584,9 @@ Reboot now?</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Frugalware es una distribución basada en Slackaware de propósito general para usuarios avanzados.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La opción predeterminada permite la instalación por internet (FTP), o instalación desconectado usando las imágenes ISO descargadas previamente.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; F-Secure Rescue CD detecta y elimina programas maliciosos en su instalación Windows.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo a partir del cual se puede lanzar la exploración de malware.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Gentoo es una distribución muy flexible basada en fuentes diseñada para usuarios avanzados.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión Live permite el arranque en modo directo a partir del cual se puede lanzar el instalador.</translation>
+        <translation>&lt;b&gt;Pagina principal:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX es una distribución multimedia embebida de linux .&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -619,8 +611,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt;  LinuxConsole es una distribución para jugar, fácil de instalar, fácil de usar y que carga rápido.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La 1.0.2009 es la última versión 1.0 .</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -646,11 +637,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; NetBSD es un sistema operativo de tipo UNIX que se especializa en la portabilidad.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; La versión predeterminada permite la instalación por internet (FTP), o usando los archivos ISO de instalación previamente descargados.</translation>
+        <translation>&lt;b&gt;Pagina principal:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD es un pequeño CD de booteo que descarga y arranque de red basado en instaladores para otras distribuciones.&lt;br/&gt;&lt;b&gt;]Notas de instalacions:&lt;/b&gt; NetbootCD  inicia y corre en modo live-USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -660,7 +647,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; El disco de arranque NT Password and Registry Editor puede restaurar las contraseñas de Windows y editar el registro en Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; NTPasswd arranca y se ejecuta en modo Live (directo) no se necesita su instalación para usarlo.</translation>
+        <translation>&lt;b&gt;Pagina de inicio:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor pueden resetear contraseñas de windows y editar el registro en windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notas de Instalacion:&lt;/b&gt; NTPasswd es iniciado y corre en modo live_USB; no se necesita instalar para usarlo.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -678,10 +665,6 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Parted Magic incluye el administrador de particiones Gparted y otras utilidades de sistema que pueden redimensionar, copiar, hacer copias de seguridad y manipular particiones de disco.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt;Parted Magic se arranca y funciona en modo Live, no se necesita ninguna instalación para usarlo.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; PCLinuxOS es una distribución basada en Mandriva orientada al usuario.&lt;br/&gt;&lt;b&gt;Notas de instalación&lt;/b&gt; La versión Live permite arrancar en modo directo.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Página web:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Puppy Linux es una distribución ligera para equipos antiguos.&lt;br/&gt;&lt;b&gt;Notas de instalación:&lt;/b&gt; En la versión Live todo el sistema se carga en la memoria RAM y arranca desde la memoria, de modo que la instalación, siendo opcional, no es necesaria.</translation>
@@ -694,7 +677,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -721,10 +704,6 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; Super OS es un derivado no oficial de Ubuntu que incluye software adicionar por defecto. Requiere una unidad USB de 2GB para instalarse.&lt;br/&gt;&lt;b&gt;Notas de la instalación:&lt;/b&gt; La versión Live le permite iniciar en modo vivo, desde el cual se puede iniciar el instalador de forma opcional.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Página de inicio:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripción:&lt;/b&gt; SystemRescueCD incluye varios gestores de particiones y recuperación de datos, así como herramientas de copias seguridad.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD arranca y se ejecuta en modo Live (directo) no es necesaria la instalación para su uso.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>
@@ -841,7 +820,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -984,7 +963,7 @@ MEPIS es una distribución basada en Debian. SimplyMEPIS es una opción fácil d
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation>Initrd:</translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>

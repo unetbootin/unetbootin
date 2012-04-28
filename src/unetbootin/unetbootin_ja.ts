@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-01-05 01:02+0000
-Last-Translator: bigriver9 &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-06-01 12:35+0000
+Last-Translator: ribbon &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -104,12 +104,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32形式のUSBドライブ</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2形式のUSBドライブ</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -161,7 +161,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>マウントポイントにUSBドライブ%1を最初にマウントする必要があります。多くのディストリビューションはUSBドライブを抜いて再度差し込むと自動的にこれを行います。</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
@@ -246,7 +246,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1041"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>%1中にカーネルイメージを配置中</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1092"/>
@@ -256,7 +256,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1098"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>%1中にinitrdファイルを配置中</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1139"/>
@@ -320,7 +320,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1762"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;解凍済み:&lt;/b&gt; 0 of %1 files</translation>
+        <translation>&lt;b&gt;解凍済み:&lt;/b&gt; 0 of %1 ファイル</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1765"/>
@@ -345,18 +345,18 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2534"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt; 0 bytes</translation>
+        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt; 0 バイト</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
         <location filename="unetbootin.cpp" line="2658"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt; %1 of %2</translation>
+        <translation>&lt;b&gt;ダウンロード済:&lt;/b&gt;%2中の%1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2673"/>
@@ -388,12 +388,12 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3325"/>
         <source>(Current)</source>
-        <translation>(Current)</translation>
+        <translation>作業中</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3326"/>
         <source>(Done)</source>
-        <translation>(Done)</translation>
+        <translation>（終了)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3615"/>
@@ -439,18 +439,20 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <location filename="unetbootin.cpp" line="4154"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>再起動後、BIOSブートメニュー%1中でUSBブートオプションを選択してください。
+今再起動しますか?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>作成されたUSBデバイスはMacではブートしません。PCに差し込み、BIOSブートメニュー中のUSBオプションを選んでください。%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*重要* 再起動の前にUbuntu alternate(デスクトップ版でない)のインストールイメージをハードディスクかUSBドライブのrootディレクトリにおいてください。ファイルはcdimage.ubuntu.comから入手できます</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="242"/>
@@ -462,7 +464,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="298"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*重要* 再起動の前にDebianのインストールイメージをハードディスクかUSBドライブのrootディレクトリにおいてください。isoファイルはcdimage.debian.orgから入手できます</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="391"/>
@@ -503,7 +506,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>ようこそユニバーサルなネットブートインストーラー&lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;へ。 利用法:&lt;ol&gt;&lt;li&gt;上記のリストからディストリビューションとバージョンを選択、 または手動でロードするファイルを指定。&lt;/li&gt;&lt;li&gt;インストールのタイプを選択し、OKボタンを押すとインストールが始まります。&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>
@@ -538,7 +541,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="63"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;ホームページ:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;概要:&lt;/b&gt; DreamlinuxはユーザーフレンドリーなDebianベースのディストリビューションです。&lt;br/&gt;&lt;b&gt;インストールノート:&lt;/b&gt; LiveバージョンではLiveモードで起動でき、オプションでインストーラーを開始できます。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="68"/>
@@ -568,7 +571,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;ホームページ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;概要:&lt;/b&gt; FreeNASはNAS (Network-Attached Storage)を組み込んだオープンソースのFreeBSDベースのディストリビューションです.&lt;br/&gt;&lt;b&gt;インストールノート:&lt;/b&gt; LiveCDバージョンはRAMドライブをFreeNASのために作成し、FATでフォーマットされたフロッピーディスク、またはUSBキーを設定ファイルを保存するために使います。 組み込みのバージョンはハードディスクにインストールすることができます。</translation>
+        <translation>&lt;b&gt;ホームページ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;概要:&lt;/b&gt; FreeNASはNAS (Network-Attached Storage)を組み込んだオープンソースのFreeBSDベースのディストリビューションです.&lt;br/&gt;&lt;b&gt;インストールノート:&lt;/b&gt; LiveCDバージョンはRAMドライブをFreeNASのために作成し、FATでフォーマットされたフロッピーディスク、またはUSBキーを設定ファイルを保存するために使います。 組み込みのバージョンはハードディスクにインストールすることができます。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -578,7 +581,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -603,8 +606,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -629,7 +631,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -669,12 +671,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;ホームページ:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;概要:&lt;/b&gt; SlaxはSlackwareベースのディストリビューションでKDEデスクトップを使うように出来ています。&lt;br/&gt;&lt;b&gt;インストールノート:&lt;/b&gt;ライブなージョンはライブモードでのブートが出来、インストーラはそこから起動することが可能です。</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="233"/>
@@ -812,7 +814,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -955,7 +957,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
@@ -973,7 +975,7 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 はアンインストールされました。</translation>
     </message>
     <message>
         <location filename="main.cpp" line="319"/>
@@ -983,7 +985,7 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2はrootで動かす必要があります。これをクローズし、&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;か&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;のどちらかを使って再起動してください</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>

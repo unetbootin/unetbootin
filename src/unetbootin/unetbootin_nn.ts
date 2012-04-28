@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2010-10-06 23:16+0000
-Last-Translator: Geza Kovacs &lt;geza0kovacs@gmail.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-11-18 23:09+0000
+Last-Translator: Andreas N. &lt;Unknown&gt;
 Language-Team: Norwegian Nynorsk &lt;nn@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -105,27 +105,27 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>LiveUSB-lagring</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32-formatert USB-eining</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2-formatert USB-eining</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation>Opne biletfil</translation>
+        <translation>Opna diskbiletfil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Alle filer</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
@@ -182,12 +182,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="754"/>
         <source>Select a disk image file</source>
-        <translation>Vel biletfil</translation>
+        <translation>Vel ei diskbiletfil</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="755"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Du må velje biletfila som skal brukast.</translation>
+        <translation>Du må velja diskbiletfila som skal brukast.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="769"/>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klarte ikkje laste ned %1 %2 frå %3. Prøv å lasta ned ISO-fila direkte frå nettstaden, og vel den med diskbilete-alternativet.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -434,31 +434,31 @@ Installer &quot;%3&quot;-pakken tilsvarande din distribusjon.</translation>
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Set opp vedvarande lagring</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
         <source>After rebooting, select the </source>
-        <translation>Etter omstart, velg </translation>
+        <translation>Etter omstart, vel </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4154"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>Etter omstart, vel alternativet for USB-boot i BIOS-oppstartsmenyen.%1
+        <translation>Etter omstart, vel USB som oppstartsmetode i BIOS-menyen. %1
 Starte på nytt no?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>USB-eininga vil ikkje starta opp frå ein Mac. Kopla den til ein PC og vel USB-oppstartsvalet i BIOS-menyen.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
         <translation>
-*VIKTIG* Før omstart, må du plassere iso-fila Ubuntu alternate (ikkje desktop) i øverste mappa på harddisken eller USB-disken. Denne fila finn du på cdimage.ubuntu.com</translation>
+*VIKTIG* Før omstart må du plassere eit diskbilete (ISO) av den alternative Ubuntu-versjonen (ikkje skrivebordsversjonen) i øvste mappa på harddisken eller USB-disken. Desse filene finn du på cdimage.ubuntu.com.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="242"/>
@@ -522,42 +522,42 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; Arch Linux er ein lett distribusjon laga for å vera rask og fleksibel.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Standardversjonen tillèt installasjon over internett (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; BackTrack er ein distribusjon med fokus på nettverksanalyse og gjennomtrengingstesting.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; BackTrack vert køyrt direkte frå minnepinnen; installasjon er ikkje nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="42"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; CentOS er ein gratis versjon av Red Hat Enterprise Linux.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Standardversjonen tillèt installasjon over internett (FTP) og lokal installasjon ved hjelp av førehandsnedlasta ISO-filer.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="47"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; Clonezilla er ein distribusjon brukt til tryggleikskopiering og spegling av harddisk.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Clonezilla vert køyrt direkte frå minnepinnen; installasjon er ikkje nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="52"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; Damn Small Linux er ein minimal distribusjon laga for eldre datamaskiner.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Live-versjonen lastar heile systemet inn i RAM og startar opp frå minnet. Installasjon er valfritt og ikkje nødvendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="57"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt;Debian er ein fellesskaputvikla Linux-distribusjon som støttar mange arkitekturarar og som tilbyr eit stort pakkearkiv.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt;NetInstall-versjonen tillèt installasjon over FTP. Dersom du vil bruka ein førehandsnedlasta iso-fil, kan du bruka HdMedia-alternativet, og plassere iso-fila i øvste mappa på harddisken eller USB-stasjonen.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="63"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; Dreamlinux er ein brukarvenleg distribusjon basert på Debian.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Live-versjonen kan starta opp direkte frå USB-stasjonen, der installasjonsprogrammet kan startast.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="68"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nettstad:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Skildring:&lt;/b&gt; Dr.Web AntiVirus er eit anitvirusverktøy for gjenoppretting av system øydelagd av skadeleg programvare.&lt;br/&gt;&lt;b&gt;Installasjonsnotat:&lt;/b&gt; Live-versjonen kan starta opp direkte frå USB-stasjonen, der ein kan søkja etter skadeleg programvare.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="73"/>
@@ -582,7 +582,7 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -592,7 +592,7 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -617,8 +617,7 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -643,7 +642,7 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -683,7 +682,7 @@ Starte på nytt no?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -777,38 +776,38 @@ Starte på nytt no?</translation>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Vel frå ei liste over støtta distribusjonar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribusjon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Vel diskbiletfila som skal brukast</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Disk&amp;bilete</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Vel kjerne og initrd som skal brukast</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Sjølvvald</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="414"/>
@@ -826,89 +825,89 @@ Starte på nytt no?</translation>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MiB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="516"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Escape</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="561"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Start på nytt no</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="568"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Avslutt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Lastar ned filer</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Pakkar ut og kopierer filer</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Installerer oppstartslastar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Installasjon ferdig, omstart</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="477"/>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Vel eininga som skal installerast til</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;Eining:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="451"/>
         <location filename="unetbootin.ui" line="470"/>
         <source>Select the installation target type</source>
-        <translation></translation>
+        <translation>Vel type installasjonsmål</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Type:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Vel distribusjonsversjon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Vel diskbiletfil</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="286"/>
@@ -916,65 +915,65 @@ Starte på nytt no?</translation>
         <location filename="unetbootin.ui" line="375"/>
         <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
-        <translation></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Vel type diskbilete</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Vel diskett/harddiskbiletet eller CD-biletfila (ISO) som skal brukast</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="207"/>
         <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Vel kjernefila som skal brukast</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation></translation>
+        <translation>Vel kjernefil</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="293"/>
         <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
-        <translation></translation>
+        <translation>Vel initrd-fila som skal brukast</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="372"/>
         <source>Select initrd file</source>
-        <translation></translation>
+        <translation>Vel initrd-fil</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
+        <translation>Vel fila syslinux.cfg eller isolinux.cfg</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
+        <translation>Vel parameter og val som skal sendast til kjerna</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kjerne:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Innstillingar</translation>
     </message>
 </context>
 <context>
@@ -982,32 +981,32 @@ Starte på nytt no?</translation>
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Avinstallasjon fullført</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 er avinstallert.</translation>
     </message>
     <message>
         <location filename="main.cpp" line="319"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Må køyrast som root</translation>
     </message>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 må køyrast som root. Lukk den og køyr på nytt, ved å bruka anten:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;eller&lt;br/&gt;&lt;b&gt;su - -c «%1»&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>Avinstallasjon av %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="354"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 er installert. Fjerna den noverande versjonen?</translation>
     </message>
 </context>
 </TS>

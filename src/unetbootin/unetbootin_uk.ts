@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2010-11-07 21:57+0000
-Last-Translator: Taras Romaniv &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2012-03-18 12:39+0000
+Last-Translator: Maks Lyashuk aka Ma)(imuM &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -99,17 +99,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>Збереження LiveUSB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>USB-накопичувач форматований у FAT-32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>USB-накопичувач форматований у EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -119,7 +119,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Всі файли</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -428,7 +428,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Налаштування збереження</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
@@ -445,7 +445,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>Створений USB-пристрій не завантажеться на комп&apos;ютерах Mac. Вставте його в ПК і виберіть у BIOS опцію &apos;Завантаження з USB-пристрою&apos;</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
@@ -566,7 +566,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="83"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation></translation>
+        <translation>&lt;b&gt; Домашня сторінка: &lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt; Опис: &lt;/ b&gt; FreeBSD - універсальна операційна система сімейства Unix, орієнтована на масштабованість і високу продуктивність. &lt;br/&gt; &lt;b&gt;Примітки до встановлення:&lt;/b&gt;Версія за замовчуванням дозволяє встановлення як через Інтернет (FTP), так і автономно, з попередньо завантажених образів ISO.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="88"/>
@@ -576,7 +576,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -586,7 +586,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -601,7 +601,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="131"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt;&lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Kaspersky Rescue Disk виявляє і видаляє шкідливі програми з вашої встановленої Windows. &lt;br/&gt;&lt;b&gt; Примітки до встановлення: &lt;/b&gt;Live-версія дозволяє завантажуватись в режимі Live, щоб розпочати сканування шкідливих програм.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="136"/>
@@ -611,13 +611,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; Linux Mint - зручний у використанні дистрибутив, заснований на Ubuntu. За замовчуванням включає в себе додаткові закриті кодеки та програмне забезпечення.&lt;br/&gt;&lt;b&gt;Примітки до встановлення:&lt;/b&gt; Live-версія дозволяє завантажитись в Live Mode, звідки можна запустити встановлення системи.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="151"/>
@@ -637,7 +636,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -677,7 +676,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -713,17 +712,17 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="263"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www.xpud.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Домашня сторінка &lt;/b&gt; &lt;a href=&quot;http://www.xpud.org/&quot;&gt;http://www. xpud.org&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Опис &lt;/b&gt; xPUD - це легкий дистрибутив, який являє собою простий кіоско-подібний інтерфейс з веб-браузером і медіа програвачем&lt;br/&gt;&lt;b&gt;Примітки до встановлення:&lt;/b&gt; Live-версія завантажується і працює в оперативній пам’яті.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="268"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt; Домашня сторінка: &lt;/ b&gt; &lt;a href=&quot;http://www.xubuntu.com/&quot;&gt; http://www.xubuntu.com &lt;/&gt; &lt;br/&gt; &lt;b&gt; Опис: &lt;/ B&gt; Xubuntu - це дружня до користувача операційна система на базі Ubuntu, що використовує робочий стіл XFCE&lt;br/&gt; &lt;b&gt; Примітки до встановлення: &lt;/ B&gt; Версія NetInstall пропонує установку через FTP .. Якщо ви бажаєте використовувати попередньо завантажений інсталяційний образ диска, то користуйтесь опцією HdMedia, а потім помістіть інсталяційний образ диска в кореневу директорію вашого жорсткого диска або USB-накопичувача.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="273"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt; Домашня сторінка: &lt;/ b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt; http://www.zenwalk.org &lt;/ a&gt; &lt;br/&gt; &lt;b&gt; Опис: &lt;/ b&gt; Zenwalk - заснований на Slackware дистрибутив c встановленим XFCE. &lt;br/&gt; &lt;b&gt; Примітки до встановлення: &lt;/ b&gt; Live-версія дозволяє завантажитися в режимі Live Mode, звідки можна запустити установку системи.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
@@ -738,7 +737,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="53"/>
         <source>&lt;img src=&quot;:/elive.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/elive.png&quot; /&gt; &lt;br/&gt; &lt;b&gt; Домашня сторінка: &lt;/ b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt; http://www. elivecd.org &lt;/ a&gt; &lt;br/&gt; &lt;b&gt; Опис: &lt;/ b&gt; Elive - це дистрибутив заснований на Debian, що включає менеджер вікон Enlightenment. &lt;br/&gt; &lt;b&gt; Примітки до встановлення: &lt;/ b&gt; Live-версія дозволяє завантажуватися в режимі Live, з якого може бути запущений інсталятор.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
@@ -753,12 +752,12 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
         <source>&lt;img src=&quot;:/nimblex.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt;http://www.nimblex.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NimbleX is a small, versatile Slackware-based distribution. It is built using the linux-live scripts, and features the KDE desktop. It can be booted from CD or flash memory (USB pens or MP3 players), and can easily be customized and extended.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NimbleX boots in Live mode.</source>
-        <translation></translation>
+        <translation>&lt;img src=&quot;:/nimblex.png&quot; /&gt; виробника &lt;br/&gt; &lt;b&gt; Домашня сторінка: &lt;/ b&gt; &lt;a href=&quot;http://www.nimblex.net/&quot;&gt; http://www. nimblex.net &lt;/&gt; &lt;br/&gt; &lt;b&gt; Опис: &lt;/ B&gt; NimbleX - це невеликий, багатофункціональний дистрибутив заснований на Slackware. Він побудований з використанням Linux-Live скриптів, і включає робочий стіл KDE. Він може бути завантажений з компакт-диска або флеш(USB-брелка або MP3-плеєрів), і може бути легко налаштований і розширений.&lt;br/&gt; &lt;b&gt; Примітки до встановлення. &lt;/ B&gt; NimbleX завантажується в режимі Live.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня страница:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; SliTaz - полегшений, орієнтований на настільні системи мікродистрибутив.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; У версії Live система цілком завантажується в оперативну пам’ять та запускається звідти, тому встановлення не обов’язкове. Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Домашня сторінка:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Опис:&lt;/b&gt; SliTaz - полегшений, орієнтований на настільні системи мікродистрибутив.&lt;br/&gt;&lt;b&gt;Примітка щодо встановлення:&lt;/b&gt; У версії Live система цілком завантажується в оперативну пам’ять та запускається звідти, тому встановлення не обов’язкове. Цей встановлювач оснований на &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="93"/>
@@ -792,12 +791,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>&amp;Образ диску</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Виберіть ядро та initrd для завантаження вручну</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
@@ -820,7 +819,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>МБ</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -865,7 +864,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. Встановлення загрузчика</translation>
+        <translation>3. Встановлення завантажувача</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
@@ -963,12 +962,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation>&amp;Настройки:</translation>
+        <translation>&amp;Налаштування:</translation>
     </message>
 </context>
 <context>
@@ -986,17 +985,17 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="319"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Необхідно запустити від імені адміністратора</translation>
     </message>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 має бути запущено від імені адміністратора. Закрийте його, а потім перезапустіть, використовуючи&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;або ж&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>Деінсталятор %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="354"/>

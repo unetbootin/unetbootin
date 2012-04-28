@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2009-09-20 22:03+0000
-Last-Translator: Iñigo Varela &lt;malditoastur@gmail.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-07-07 01:16+0000
+Last-Translator: Xuacu Saturio &lt;xuacusk8@gmail.com&gt;
 Language-Team: Asturian &lt;ast@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -110,44 +110,44 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>Preséu USB con formatu FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>Preséu USB con formatu EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Abrir ficheru d&apos;imaxe de discu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Tolos ficheros</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <location filename="unetbootin.cpp" line="673"/>
         <location filename="unetbootin.cpp" line="681"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Tolos ficheros (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Abrir ficheru de kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="673"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Abrir ficheru initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="681"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Abrir ficheru de configuración del cargador d&apos;arranque</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="703"/>
@@ -162,42 +162,42 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="723"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 nun ta montáu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Primero tienes de montar el preséu %1 nún puntu de montaxe. N&apos;abondes distribuciones se fai de mou automáticu sacando y volviendo a inxertar el preséu USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Escoyer distribución</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="740"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Tienes d&apos;escoyer una distribución pa cargar.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="754"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Escueyi un ficheru d&apos;imaxe de discu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="755"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Tienes d&apos;escoyer un ficheru d&apos;imaxe de discu pa cargar.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="769"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Escueyi un ficheru de kernel y/o initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="770"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Tienes d&apos;escoyer un ficheru de kernel y/o initrd pa cargar</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="784"/>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -573,7 +573,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -583,7 +583,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -608,8 +608,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -634,7 +633,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -674,7 +673,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>

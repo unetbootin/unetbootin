@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
+POT-Creation-Date: 2012-03-25 16:01-0400
 PO-Revision-Date: 2011-02-11 12:53+0000
 Last-Translator: Florin Cătălin RUSSEN &lt;cfrussen@yahoo.co.uk&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -576,7 +576,7 @@ Reporniți acum?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS este o distribuție încorporată cu sursă deschisă de NAS (Network-Attached Storage) bazată pe FreeBSD.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea LiveCD creează un disc RAM pentru FreeNAS și utilizează o dischetă formatată cu FAT sau cheie USB pentru salvarea fișierelor de configurație. Versiunea încorporată permite instalarea pe discul dur.</translation>
+        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS este o distribuție încorporată cu sursă deschisă de NAS (Network-Attached Storage) bazată pe FreeBSD.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea LiveCD creează un disc RAM pentru FreeNAS și utilizează o dischetă formatată cu FAT sau cheie USB pentru salvarea fișierelor de configurație. Versiunea încorporată permite instalarea pe discul dur.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -584,17 +584,9 @@ Reporniți acum?</translation>
         <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Frugalware este o distribuție cu caracter general bazată pe Slackware și destinată utilizatorilor avansați.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Opțiunea implicită permite atît instalarea prin Internet (FTP), cît și prin intermediul fișierelor ISO de instalare descărcate în prealabil.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere: &lt;/b&gt; F-Secure Rescue CD găsește și îndepărtează programele malițioase aflate într-un PC pe care rulează Windows.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea Live permite pornirea în mod Live de unde se pot lansa scanări pentru programele malițioase existente.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Gentoo este o distribuție cu sursă deschisă extrem de flexibilă, special concepută pentru utilizatori avansați.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea Live permite pornirea în modul Live de unde se poate lansa instalatorul în mod opțional.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -619,8 +611,7 @@ Reporniți acum?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole este o distribuție dedicată jocurilor, cu încărcare rapidă, ușor de instalat și de utilizat.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea 1.0.2009 este cea mai recentă ediție 1.0.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -645,11 +636,7 @@ Reporniți acum?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; NetBSD este un sistem de operare de tip Unix și care pune accent pe portabilitate.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt;Versiunea standard permite atît instalarea prin Internet (FTP), cît și instalarea prin intermediul fișierelor ISO de instalare descărcate în prealabil.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -659,7 +646,7 @@ Reporniți acum?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Editorul de regiștri și parole NT în mod deconectat poate reinițializa parolele unei instalări Windows și poate edita regiștrii versiunilor Windows 2000, XP și Vista.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; NTPasswd pornește și rulează în modul Live; nu necesită instalare pentru a fi utilizat.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -677,10 +664,6 @@ Reporniți acum?</translation>
         <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Parted Magic include gestionarul de partiționare GParted și alte utilitare sistem care pot redimensiona, copia, crea copii de siguranță și manipula partițiile de pe disc.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Parted Magic pornește și în modul Live; nu necesită instalare pentru a fi utilizat.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; PCLinuxOS este o distribuție prietenoasă bazată pe Mandriva.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea Live permite pornirea în modul Live, de unde se poate lansa instalarea, în mod opțional.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Puppy Linux  este o distribuție lejeră proiectată pentru calculatoare mai vechi.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; Versiunea Live încarcă tot sistemul în memoria RAM și pornește din memorie, astfel încît instalarea nu este necesară ci opțională.</translation>
@@ -693,7 +676,7 @@ Reporniți acum?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -720,10 +703,6 @@ Reporniți acum?</translation>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; Super OS este o derivată neoficială de Ubuntu care include aplicații suplimentare în mod implicit. Necesită un disc USB de 2 Go pentru instalare.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; TVersiunea Live permite utilizarea distribuției, fără instalare, direct de pe mediul de pornire. Instalarea poate fi lansată ulterior, în mod opțional.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Pagina de Internet:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descriere:&lt;/b&gt; SystemRescueCD include diverse unelte pentru gestionarea partițiilor, de recuperarea datelor și pentru crearea copiilor de siguranță.&lt;br/&gt;&lt;b&gt;Note de instalare:&lt;/b&gt; SystemRescueCD pornirea în modul Live, de unde se poate lansa instalarea, în mod opțional.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>

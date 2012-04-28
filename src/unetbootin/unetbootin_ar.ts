@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2010-11-08 21:09+0000
-Last-Translator: Ahmed Mohammed &lt;Unknown&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2012-04-27 18:57+0000
+Last-Translator: aymhenry &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -40,7 +40,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3536"/>
         <location filename="unetbootin.cpp" line="4147"/>
         <source>Hard Disk</source>
-        <translation>القرص الصلب</translation>
+        <translation>القرص الصّلب</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
@@ -99,17 +99,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="276"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>قرص USB صالح للاقلاع منة</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>قرص USB مهيأ بنظام FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>قرص USB مهيأ بنظام EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -161,7 +161,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في نقطة ركوب, مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
+        <translation>يجب عليك أولاً تركيب ذاكرة اليو إس بي %1 في مدخل USB بالكمبيوتر , مع العلم أن معظم التوزيعات تقوم بفعل ذالك ألياً بعد إزالة وإعادة إدخال ذاكرة اليو إس بي.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -427,7 +427,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>أعداد ملفات الاقلاع</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
@@ -438,19 +438,20 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <location filename="unetbootin.cpp" line="4154"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة اليو إس بي في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (البيوس).%1
-هل تريد إعادة التشغيل الأن؟</translation>
+        <translation>بعد إعادة التشغيل قم بإختيار خيار الإقلاع من ذاكرة USB في قائمة الإقلاع الموجودة في نظام الادخال و الاخراج الأساسي (USB).%1
+ هل تريد إعادة التشغيل الأن؟</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>جهاز USB الذى تم أعدادة لم يقوم باقلاع اجهزة MAC. أدخل الجهاز فى مقبص جهاز شخصى، أختار الاقلاع من جهاز USB  و ذلك من قائمة BIOS برنامج الاقلاع فى جهازك.  %1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*هام* قبل اﻻقﻻع، ضع نسخة من ملف ISO لنظام يوبنتو (او بديﻻ لة) على الدليل الجذر للقرص الصلب او لجهاز USB. و يمكن أن تقوم بذلك من cdimage.ubuntu.com.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="242"/>
@@ -514,12 +515,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; Arch Linux هى توزيعة مختصرة تم تصميمها لتكون اﻻكتر سرعة و اﻻكثر مرونة.&lt;br/&gt;&lt;b&gt;تعليمات اﻻعداد:&lt;/b&gt; النسخة اﻻعتيادية يمكن أعدادعا من خﻻل اﻻنترنت بواسطة (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; BackTrack is a distribution focused on network analysis and penetration testing.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; BackTrack is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.backtrack-linux.org/&quot;&gt;http://www.backtrack-linux.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; BackTrack هى توزيعة تركز على تحليل الشبكات و أختبارات penetration الخاصة بالشبكات.&lt;br/&gt;&lt;b&gt;تعليمات اﻻعداد:&lt;/b&gt; BackTrack يمكن أن تعمل باالاسلوب الحىlive mode; ﻻ أعدادات مطلوبة ﻻستخدام التوزيعة.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="42"/>
@@ -539,7 +540,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="57"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; Debian  هى جمعية لتطوير توزيعات اللينكس التى تدعم نظاق واسع من الهياكل البرمجية و توفر مستودعات كبيرة من الحزم البرمجية .&lt;br/&gt;&lt;b&gt;تعليمات اﻻعداد:&lt;/b&gt; نسخةNetInstall تسمح بعمل أعداد خﻻل اﻻنترنت بواسطة FTP. اذا كنت تفضل اشتخدام نسخة محملة من الشبكة سلفا بصورة ملف iso, أستخدم خيار HdMedia, ثم ضع الملف على الدليل الجذر فى القرص الصلب او على جهاز USB</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="63"/>
@@ -574,7 +575,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -582,17 +583,9 @@ Reboot now?</source>
         <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هي توزيعة للأغراض العامة مشتقة من توزيعة Slackware للمستخدمين المتقدمين.&lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الإفتراضية بالتنصيب عن طريق الشبكة العالمية (FTP) أو التنصيب عن طريق ملفات الأي إس أو اللتي تم تنزيلها مسبقاً.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; تقوم إسطوانة أمان إف للإنقاذ بإكتشاف وإزالة البرمجيات الخبيثة من تنصيبة وندوز.&lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; تسمح النسخة الحية من الإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء البحث عن البرمجيات الخبيثة.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; توزيعة Gentoo هي توزيعة مبنية على مصادر مرنة مصممة للمستخدمين المتقدمين. &lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; تسمح النسخة الحية  بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التثبيت عند الرغبة.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -617,8 +610,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -643,11 +635,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; يعد NetBSD نظام تشغيل شبيه بينيكس مركز على إمكانية التنقل.&lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الإفتراضية بالتنصيب عن طريق الشبكة العالمية (FTP) أو التنصيب عن طريق ملفات الأي إس أو اللتي تم تنزيلها مسبقاً.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -657,7 +645,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; يستطيع محرر كلمات السر والسجلات إن تي تصفير كلمات سر وندوز وتحرير سجلات الإعدادات الموجودة في وندوز ٢٠٠٠ إلى وندوز فيستا.  &lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; يقلع ويعمل NTPasswd في الوضع الحي بدون الحاجة إلى تنصيب.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -675,10 +663,6 @@ Reboot now?</source>
         <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هي توزيعة مشتملة على مدير التجزئة (GParted) وخدمات النظام الأخرى اللتي بوسعها تغيير حجم ونسخ وصنع نسخة إحتياطية من وتعديل أجزاء القرص.&lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; يقلع ويعمل Parted Magic في الوضع الحي بدون الحاجة إلى تنصيب.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هي توزيعة سهلة الإستعمال مرتكزة على توزيعة Mandriva. &lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تسمح النسخة الحية بالإقلاع إلى الوضع الحي اللذي يمكن من داخله بدء برنامج التنصيب عند الرغبة.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; هي توزيعة خفيفة مصممة للإستعمال مع الحواسيب القديمة. &lt;br/&gt;&lt;b&gt;ملاحظات التنصيب:&lt;/b&gt; تقوم النسخة الحية بتحميل كامل النظام إلى ذاكرة الوصول العشوائي (RAM) والإقلاع من الذاكرة, لذلك التنصيب إختياري وليس إلزامي.</translation>
@@ -691,7 +675,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -718,10 +702,6 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;الصفحة الرئيسية:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;الوصف:&lt;/b&gt; يشتمل SystemRescueCD على العديد من أدوات إدارة التجزئة و إسترداد البيانات والحصول على نسخ إحتياطية.  &lt;br/&gt;&lt;b&gt;ملاحظات التثبيت:&lt;/b&gt; يقلع ويعمل SystemRescueCD في الوضع الحي حيث لا يحتاج إلى التثبيت.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>

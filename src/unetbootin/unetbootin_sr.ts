@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
+POT-Creation-Date: 2012-03-25 16:01-0400
 PO-Revision-Date: 2010-12-21 20:15+0000
 Last-Translator: Kosava &lt;Unknown&gt;
 Language-Team: Serbian &lt;sr@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -356,7 +356,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -582,7 +582,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  FreeNAS je ugrađena NAS (Network-Attached Storage) distribucija otvorenog koda, bazirana na FreeBSD.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija LiveCD kreira RAM disk za FreeNAS, i koristi a FAT formatizovanu disketu ili USB disk za snimanje fala sa podašavanjima. Ugrađena verzija omogućava instalaciju na tvrdi disk.</translation>
+        <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  FreeNAS je ugrađena NAS (Network-Attached Storage) distribucija otvorenog koda, bazirana na FreeBSD.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija LiveCD kreira RAM disk za FreeNAS, i koristi a FAT formatizovanu disketu ili USB disk za snimanje fala sa podašavanjima. Ugrađena verzija omogućava instalaciju na tvrdi disk.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -590,17 +590,9 @@ Sada ponovo pokrenuti sistem?</translation>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  Frugalware je distribucija op[te namene bazirana na Slackware i namenjena naprednim korisnicima.&lt;br/&gt;&lt;b&gt;Primjedba Instalacije:&lt;/b&gt; Podrazumijevane opcije omogućavaju instalaciju preko interneta (FTP) i ako niste povezani na mrežu instalacijom ranije preuzetih ISO instalacionih fajlova.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  F-Secure Rescue CD otkriva i uklanja zloćudne programe iz vaše Windows instalacije.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija &quot;Live&quot;omogućava korišćenje i podizanje sistema uživo, nakon čega je moguće pokrenuti pretragu za zloćudnim programima.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Gentoo je fleksibilna distribucija koja je bazirana na izvornom kodu i namenjena je naprednim korisnicima.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija &quot;Live&quot; omogućava korišćenje i podizanje sistema uživo, iz kojeg je po potrebi moguće pokrenuti instalacioni program.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -625,8 +617,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  LinuxConsole je distribucija  za igranje igara, jednostava za instalaciju i korišćenje i brzo podizanje.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; 1.0.2009 je najnovije 1.0 izdanje.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -651,11 +642,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt;  NetBSD je Unix-oliki operativni sisitem sa fokusom na prenosivost.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Podrazumevana verzija omogućava instalaciju preko interneta (FTP), ili korišćenjem ranije preuzetih ISO instalacionih fajlova.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -665,7 +652,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Web stranica::&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Offline NT Password i Registry Editor mogu ponovo postaviti Windows lozinke izmeniti registry fajl u Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; NTPasswd se podiže i koristi uživo; za korišćenje nije potrebna instalacija.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -683,10 +670,6 @@ Sada ponovo pokrenuti sistem?</translation>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Parted Magic sadrži GParted upravljač particijama i druge sistemske alate koji mogu da promene veličinu, kopiraju, naprave sigurnosne kopije i manipulišu particijama diska.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija &quot;Live&quot; omogućava korišćenje i podizanje sistema uživo, iz kojeg je, po potrebi moguće pokrenuti instalacioni program.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; PCLinuxOS je korisnički orijentisana distribucija bazirana na Mandriva distribuciji.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija &quot;Live&quot; omogućava korišćenje i podizanje sistema uživo, iz kojeg je, po potrebi moguće pokrenuti instalacioni program.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=\&quot;http://www.puppylinux.com/\&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Puppy Linux je lagana distribucija namenjena starijim računarima.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Verzija &quot;Live&quot; omogućava korišćenje i podizanje sistema uživo, kompletni sistem smešta u RAM i startuje u memoriji, instalacija nije potrebna, ali je moguća.</translation>
@@ -699,7 +682,7 @@ Sada ponovo pokrenuti sistem?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -726,10 +709,6 @@ Sada ponovo pokrenuti sistem?</translation>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Super OS je nezvanični derivat Ubuntu distribucije koji sadrži dodatne programe. Potreban je 2GB USB disk za instalaciju.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; Omogućava podizanje sistema uživo iz kojeg je po potrebi moguće pokrenuti instalacioni program.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; SystemRescueCD sadrži različite upravljače particijama, kao i alatima za povraćaj podataka i izradu sigurnosnih kopija.&lt;br/&gt;&lt;b&gt;Instalaciona napomena:&lt;/b&gt; SystemRescueCD se podiže i koristi uživo; za korišćenje nije potrebna instalacija.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>

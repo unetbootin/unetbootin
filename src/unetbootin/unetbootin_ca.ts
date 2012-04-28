@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-04-02 11:43+0000
-Last-Translator: FerranRius &lt;frius64@hotmail.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-11-01 19:44+0000
+Last-Translator: Ferran Rius &lt;frius64@hotmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -114,7 +114,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation>Obre el fitxer d&apos;imatge de disc</translation>
+        <translation>Obre un fitxer d&apos;imatge de disc</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -151,7 +151,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>No s&apos;ha trobat cap unitat flash USB . Si heu inserit un dispositiu USB, proveu de formatar-la com a FAT32.</translation>
+        <translation>No s&apos;ha trobat cap unitat flash USB . Si heu inserit un dispositiu USB, proveu de formatar-lo com a FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="723"/>
@@ -161,7 +161,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Primer munteu la unitat USB %1 a un punt de muntatge. La majoria de les distribucions ho fan automàticament si el retireu i el torneu a inserir.</translation>
+        <translation>Primer munteu la unitat USB %1 a un punt de muntatge. La majoria de les distribucions ho fan automàticament si la retireu i la torneu a inserir.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
@@ -278,7 +278,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1717"/>
         <source>Copying file, please wait...</source>
-        <translation>S&apos;estan copiant els fitxers...</translation>
+        <translation>S&apos;està copiant els fitxers...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1718"/>
@@ -300,7 +300,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1758"/>
         <source>Extracting files, please wait...</source>
-        <translation>S&apos;estan extraient els fitxers, espereu...</translation>
+        <translation>S&apos;està extraient els fitxers, espereu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1759"/>
@@ -340,7 +340,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2531"/>
         <source>Downloading files, please wait...</source>
-        <translation>S&apos;estan descarregant els fitxers...</translation>
+        <translation>S&apos;està descarregant els fitxers, espereu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2534"/>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha fallat la descàrrega de %1 %2 de %3. Intenteu baixar-vos el fitxer ISO directament des del lloc web i subministreu-lo mitjançant l&apos;opció «diskimage».</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -440,7 +440,7 @@ Instal·leu el paquet «%3» o l&apos;equivalent de la vostra distribució.</tra
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Després d&apos;arrencar de nou, seleccioneu l&apos;opció d&apos;arrencada des de l&apos;USB al menú de la BIOS.%1
-Arrencar de nou ara?</translation>
+Voleu arrencar de nou ara?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
@@ -576,7 +576,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; FreeNAS és una distribució NAS (Network-Attached Storage) de codi obert basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; La versió de disc autònom crea una unitat RAM per al FreeNAS i utilitza un disquet o un disc USB en format FAT per desar el fitxer de configuració. La versió incorporada permet la instal·lació al disc dur.</translation>
+        <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; FreeNAS és una distribució NAS (Network-Attached Storage) de codi obert basada en FreeBSD.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; La versió de disc autònom crea una unitat RAM per al FreeNAS i utilitza un disquet o un disc USB en format FAT per desar el fitxer de configuració. La versió incorporada permet la instal·lació al disc dur.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -584,17 +584,9 @@ Arrencar de nou ara?</translation>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Frugalware és una distribució d&apos;ús general basada en Slackware per a usuaris avançats.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; L&apos;opció predeterminada permet la instal·lació utilitzant internet (FTP) o fora de línia amb fitxers ISO descarregats prèviament.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; F-Secure Rescue CD detecta i suprimeix programari maliciós de la vostra instal·lació del Windows.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom i executar els escanejos de programari maliciós.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Gentoo és una distribució flexible basada en el codi font dissenyada per a usuaris avançat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
+        <translation>&lt;b&gt;Pàgina inicial:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; GeeXboX és una distribució amb el Linux Media Center incrustat.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -619,8 +611,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; LinuxConsole és una distribució per jugar, fàcil d&apos;instal·lar i d&apos;utilitzar i que es carrega ràpid. &lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La darrera versió 1.0 és la 1.0.2009.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -645,11 +636,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; NetBSD és un sistema operatiu semblant a Unix que se centra en la portabilitat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt;La versió predeterminada permet la instal·lació utilitzant internet (FTP) o fora de línia amb fitxers ISO descarregats prèviament.</translation>
+        <translation>&lt;b&gt;Pàgina inicial:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; NetbootCD és un CD d&apos;arrencada petit que descarrega i arrenca instal·ladors basats en la xarxa per a altres distribucions.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; NetbootCD arrenca i s&apos;executa en mode autònom.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -659,7 +646,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; L&apos;Offline NT Password and Registry Editor pot reinicialitzar les contrasenyes del Windows i editar el registre a Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; NTPasswd s&apos;arrenca i s&apos;executa en mode autònom, no cal instal·lació per utilitzar-lo.</translation>
+        <translation>&lt;b&gt;Pàgina inicial:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Offline NT Password and Registry Editor pot reiniciar els passaports del Windows i editar el registre de Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Notes d&apos;instal·lació:&lt;/b&gt; NTPasswd arrenca i s&apos;executa en mode autònom; no cal cap instal·lació per utilitzar-lo.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -677,10 +664,6 @@ Arrencar de nou ara?</translation>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Parted Magic inclou el gestor de particions GParted i d&apos;altres eines del sistema que poden redimensionar, copiar, fe còpies de seguretat i manipular particions de disc.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; Parted Magic arrenca i s&apos;executa en mode autònom, no cal instal·lació per utilitzar-la.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; PCLinuxOS és una distribució amigable basada en Mandriva.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Puppy Linux és una distribució lleugera dissenyada per a ordinadors antics.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; La versió autònoma carrega tot el sistema a la RAM i arrenca des de la memòria, per tant la instal·lació no és necessària sinó opcional.</translation>
@@ -693,7 +676,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -720,10 +703,6 @@ Arrencar de nou ara?</translation>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; Super OS és una distribució no oficial derivada d&apos;Ubuntu que incorpora aplicacions adicionals. És necessari una unitat USB amb 2GB d&apos;espai per poder ser instal·lada.&lt;br/&gt;&lt;b&gt;Notes de la Instal·lació:&lt;/b&gt; La versió autònoma permet arrencar en mode autònom, des d&apos;on hi ha l&apos;opció d&apos;executar l&apos;instal·lador.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Pàgina web:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descripció:&lt;/b&gt; SystemRescueCD inclou diverses eines de gestió de particions, recuperació de dades i còpia de seguretat.&lt;br/&gt;&lt;b&gt;Notes de la instal·lació:&lt;/b&gt; SystemRescueCD arrenca i s&apos;executa en mode autònom i no cal instal·lació per utilitzar-la.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>
@@ -812,7 +791,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation>&amp;Image de dic</translation>
+        <translation>&amp;Imatge de dic</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -829,13 +808,13 @@ Arrencar de nou ara?</translation>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
         <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished">Espai que es reserva per fitxers de l&apos;usuari que es conserven entre arrencades Només funciona en dispositius USB autònoms per a Ubuntu i derivats. Si el valor excedeix la capacitat del dispositiu s&apos;utilitzarà el màxim disponible.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
         <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished">Espai utilitzat per conservar fitxers entre arrencades (només per a Ubuntu):</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
@@ -865,7 +844,7 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="unetbootin.ui" line="561"/>
         <source>Reboot Now</source>
-        <translation>Arrenca de nou ara</translation>
+        <translation>Reinicia ara</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="568"/>
@@ -875,17 +854,17 @@ Arrencar de nou ara?</translation>
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation>1. S&apos;estan descarregant fitxers</translation>
+        <translation>1. Descàrrega dels fitxers</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation>2. S&apos;estan extraient i copiant els fitxers</translation>
+        <translation>2. Extracció i còpia dels fitxers</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation>3. S&apos;està instal·lant el carregador de l&apos;arrencada</translation>
+        <translation>3. Instal·lació del carregador de l&apos;arrencada</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-03-28 12:38+0000
-Last-Translator: Lê Trường An &lt;xinemdungkhoc1@gmail.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-12-30 05:14+0000
+Last-Translator: Lê Trường An &lt;pinkyfinger111@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -350,7 +350,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tải %1 %2 từ %3 thất bại. Vui lòng tải tập tin ISO từ trang web và thêm nó qua tùy chọn ảnh đĩa.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -576,7 +576,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeNAS là một phiên bản nhúng và mã nguồn mở NAS (Network-Attached Storage) dựa trên FreeBSD.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản LiveCD tạo một phân vùng trên RAM cho FreeNAS, và sử dụng định dạng đĩa mềm FAT hoặc khóa USB để lưu các tập tin thiết lập. Phiên bản nhúng cho phép cài đặt lên đĩa cứng.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; FreeNAS là một phiên bản nhúng và mã nguồn mở NAS (Network-Attached Storage) dựa trên FreeBSD.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản LiveCD tạo một phân vùng trên RAM cho FreeNAS, và sử dụng định dạng đĩa mềm FAT hoặc khóa USB để lưu các tập tin thiết lập. Phiên bản nhúng cho phép cài đặt lên đĩa cứng.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -584,17 +584,9 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Frugalware là một phiên bản dựa trên Slackware cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản mặc định cho phép cài đặt qua internet (FTP), hay sử dụng tập tin ISO.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; F-Secure Rescue CD phát hiện và loại bỏ phần mềm độc hại từ Windows.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, từ đó quét malware.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Gentoo là một hệ điều hành linh hoạt dành cho người dùng chuyên nghiệp.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -619,8 +611,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; LinuxConsole là một bản phân phối dành cho việc chơi game, dễ dàng trong việc cài đặt, sử dụng và khởi động nhanh .&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản 1.0.2009 là phiên bản 1.0 mới nhất.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -645,11 +636,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NetBSD là một biến thể của Unix tập trung vào tính di động.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt;Phiên bản mặc định cho phép cài đặt thông qua internet (FTP), hoặc sử dụng tập tin ISO.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; NetbootCD có khả năng tải và khởi động các bản phân phối khác từ Internet.&lt;br/&gt;&lt;b&gt;Hướng dẫn cài đặt:&lt;/b&gt; NetbootCD khởi động và chạy trực tiếp.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -659,7 +646,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; NTPasswd khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
+        <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Offline NT Password và Registry Editor có thể thiết lập lại mật khẩu Windows và chỉnh sửa registry của Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Hướng dẫn cài đặt:&lt;/b&gt; NTPasswd yêu cầu chạy trực tiếp, không cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -677,10 +664,6 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Parted Magic bao gồm chương trình phân vùng ổ đĩa GParted và các công cụ tối ưu hệ thống khác như thay đổi, sao chép, sao lưu, và thao tác với các phân vùng đĩa.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Parted Magic khởi động và chạy trực tiếp; không cần phải cài đặt.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; PCLinuxOS là một bản phân phối thân thiện với người dùng dựa trên Mandriva.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để có thể chạy trình cài đặt.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Puppy Linux là một bản phân phối gọn nhẹ được thiết kế cho các máy tính cũ.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép tải hệ thống lên RAM và khởi động từ bộ nhớ, có thể không cần cài đặt nhưng đó là tùy chọn.</translation>
@@ -693,7 +676,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -720,10 +703,6 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; Super OS là một bản phân phối dựa trên Ubuntu được bổ sung nhiều phần mềm mặc định. Yêu cầu một ổ USB 2GB để cài đặt.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; Phiên bản Live cho phép chạy trực tiếp, để chạy trình cài đặt.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Trang chủ:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Mô tả:&lt;/b&gt; SystemRescueCD bao gồm các trình quản lí phân vùng khác nhau và các công cụ phục hồi và sao lưu dữ liệu.&lt;br/&gt;&lt;b&gt;Ghi chú cài đặt:&lt;/b&gt; SystemRescueCD khởi động và chạy trực tiếp; không yêu cầu phải cài đặt.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>
@@ -829,13 +808,13 @@ Bạn có muốn khởi động lại ngay không?</translation>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
         <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished">Không gian trống để lưu trữ các tập tin người dùng sẽ được lưu sau khi khởi động lại . Chỉ làm việc với LiveUSB cho Ubuntu và các bản dẫn xuất. Nếu giá trị vượt quá khả năng của ổ đĩa, dung lượng còn trống sẽ được sử dụng.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
         <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished">Dung lượng để lưu giữ các tập tin người dùng sau khi khởi động lại (chỉ dành cho Ubuntu):</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
@@ -845,7 +824,7 @@ Bạn có muốn khởi động lại ngay không?</translation>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation>Bắt đầu</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>

@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2010-06-03 00:33+0000
-Last-Translator: m4ntUs &lt;iuri@m4ntus.com&gt;
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2011-05-13 06:46+0000
+Last-Translator: Michael Moroni &lt;michael.moroni@mailoo.org&gt;
 Language-Team: Esperanto &lt;eo@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -30,7 +30,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation></translation>
+        <translation>Maldekstre dekstren</translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3864"/>
         <location filename="unetbootin.cpp" line="4151"/>
         <source>USB Drive</source>
-        <translation></translation>
+        <translation>Poŝmemorilo</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="211"/>
@@ -78,7 +78,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="651"/>
         <location filename="unetbootin.cpp" line="3430"/>
         <source>ISO</source>
-        <translation></translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="212"/>
@@ -100,7 +100,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="269"/>
         <location filename="unetbootin.cpp" line="297"/>
         <source>either</source>
-        <translation>cxu</translation>
+        <translation>ĉu</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="276"/>
@@ -110,325 +110,326 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>FAT32-aranĝita poŝmemorilo</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>EXT2-aranĝita poŝmemorilo</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation></translation>
+        <translation>Malfermi diskbilddosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Ĉiuj dosieroj</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <location filename="unetbootin.cpp" line="673"/>
         <location filename="unetbootin.cpp" line="681"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="665"/>
         <source>Open Kernel File</source>
-        <translation></translation>
+        <translation>Malfermi kerndosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="673"/>
         <source>Open Initrd File</source>
-        <translation></translation>
+        <translation>Malfermi initrd-dosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="681"/>
         <source>Open Bootloader Config File</source>
-        <translation></translation>
+        <translation>Malfermi praŝargilan agorddosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="703"/>
         <source>Insert a USB flash drive</source>
-        <translation></translation>
+        <translation>Enmeti poŝmemorilon</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="704"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation></translation>
+        <translation>Neniu poŝmemorilo estis trovita. Se vi jam enmetis poŝmemorilon, klopodu rearanĝi ĝin kiel FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="723"/>
         <source>%1 not mounted</source>
-        <translation></translation>
+        <translation>%1 ne surmetita</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation></translation>
+        <translation>Vi unue devu surmeti la poŝmemorilon %1 en surmetingo. Multaj distribuaĵoj faros ĝin aŭtomate post, ke vi demetis kaj reenmetis la poŝmemorilon.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
         <source>Select a distro</source>
-        <translation></translation>
+        <translation>Elekti distribuaĵon</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="740"/>
         <source>You must select a distribution to load.</source>
-        <translation></translation>
+        <translation>Vi devu elekti ŝargendan distribuaĵon.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="754"/>
         <source>Select a disk image file</source>
-        <translation></translation>
+        <translation>Elekti la diskbilddosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="755"/>
         <source>You must select a disk image file to load.</source>
-        <translation></translation>
+        <translation>Vi devu elekti ŝargendan diskbilddosieron.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="769"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation></translation>
+        <translation>Elekti kern- kaj/aŭ initrd- dosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="770"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation></translation>
+        <translation>Vi devu elekti ŝargendan kern- kaj/aŭ initrd- dosieron.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="784"/>
         <source>Diskimage file not found</source>
-        <translation></translation>
+        <translation>Diskbilddosiero ne trovita</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="785"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation></translation>
+        <translation>La specifita diskbilddosiero %1 ne ekzistas.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="799"/>
         <source>Kernel file not found</source>
-        <translation></translation>
+        <translation>Kerndosiero ne trovita</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation></translation>
+        <translation>La specifita kerndosiero %1 ne ekzistas.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="814"/>
         <source>Initrd file not found</source>
-        <translation></translation>
+        <translation>Initrd-dosiero ne trovita</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="815"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation></translation>
+        <translation>La specifita initrd-dosiero %1 ne ekzistas.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="919"/>
         <source>%1 exists, overwrite?</source>
-        <translation></translation>
+        <translation>%1 ekzistas, ĉu anstataŭigi?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="920"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>La dosiero %1 jam ekzistas. Alklaku &apos;Jes por ĉiuj&apos; per anstataŭigi ĝin kaj ĝi ne estas plu montrita, &apos;Jes&apos; por anstataŭigi solajn dosierojn kaj &apos;Ne&apos; por manteni aktualan version. Se vi dubas, alklaku &apos;Jes por ĉiuj&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation></translation>
+        <translation>Spaco en %1 finita, ĉu nuligi instaladon?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="947"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation></translation>
+        <translation>La dosierujo %1 finis spacon. Alklaku &apos;Jes&apos; por nuligi instaladon, &apos;Ne&apos; por ignori ĉi tiun eraron kaj klopodi daŭrigi la instaladon kaj &apos;Ne por ĉiuj&apos; poi ignori ĉiujn erarojn pri finita spaco.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1041"/>
         <source>Locating kernel file in %1</source>
-        <translation></translation>
+        <translation>Trovanta kerndosieron en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1092"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Kopianta kerndosieron de %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1098"/>
         <source>Locating initrd file in %1</source>
-        <translation></translation>
+        <translation>Trovanta initrd-dosieron en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1139"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Kopianta initrd-dosieron de %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1145"/>
         <location filename="unetbootin.cpp" line="1225"/>
         <source>Extracting bootloader configuration</source>
-        <translation></translation>
+        <translation>Eltiranta praŝargilajn agordojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1440"/>
         <location filename="unetbootin.cpp" line="1466"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>bonvolu atendi....</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1717"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Kopianta dosierojn, bonvolu atendi...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1718"/>
         <location filename="unetbootin.cpp" line="2532"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Fonto:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1719"/>
         <location filename="unetbootin.cpp" line="2533"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Celo:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1720"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopiataj:&lt;/b&gt; 0 bajtojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1758"/>
         <source>Extracting files, please wait...</source>
-        <translation></translation>
+        <translation>Eltiranta dosierojn, bonvolu atendi...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1759"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Arkivo:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1760"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Fonto:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1761"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Celo:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1762"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Eltirataj:&lt;/b&gt; 0 el %1 dosierojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1765"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Fonto:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1766"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Celo:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1767"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Eltirataj:&lt;/b&gt; %1 el %2 dosierojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2531"/>
         <source>Downloading files, please wait...</source>
-        <translation></translation>
+        <translation>Elŝutanta dosierojn, bonvolu atendi...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2534"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Elŝutataj:&lt;/b&gt; 0 bajtojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
         <location filename="unetbootin.cpp" line="2658"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Elŝutataj:&lt;/b&gt; %1 el %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2673"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopiataj:&lt;/b&gt; %1 of %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2764"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Serĉanta en &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2768"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 kongruoj en &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3041"/>
         <source>%1 not found</source>
-        <translation></translation>
+        <translation>%1 ne trovita</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3042"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>%1 ne trovita. Ĉi tio necesas por &quot;%2&quot;-instalreĝimo.
+Instalu la pakaĵon &quot;%3&quot; aŭ similaĵo por la via distribuaĵo.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3325"/>
         <source>(Current)</source>
-        <translation></translation>
+        <translation>(aktuala)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3326"/>
         <source>(Done)</source>
-        <translation></translation>
+        <translation>(farita)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3615"/>
         <source>Configuring grub2 on %1</source>
-        <translation></translation>
+        <translation>Agordanta grub2 en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3627"/>
         <source>Configuring grldr on %1</source>
-        <translation></translation>
+        <translation>Agordanta grldr en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3655"/>
         <source>Configuring grub on %1</source>
-        <translation></translation>
+        <translation>Agordanta grub en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3893"/>
         <source>Installing syslinux to %1</source>
-        <translation></translation>
+        <translation>Instalanta syslinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3928"/>
         <source>Installing extlinux to %1</source>
-        <translation></translation>
+        <translation>Instalanta extlinux en %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4099"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Sinkroniganta dosiersistemojn</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4104"/>
@@ -438,13 +439,14 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4149"/>
         <source>After rebooting, select the </source>
-        <translation></translation>
+        <translation>Post restartigo, elektu la </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4154"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Post restartigo, elektu la USB-praŝargan opcion en la praŝarga menuo de BIOS.%1
+Ĉu restarti nun?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4157"/>
@@ -497,13 +499,13 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="26"/>
         <location filename="unetbootin.cpp" line="735"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Elekti distribuaĵon ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <location filename="distrover.cpp" line="30"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Elekti version ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
@@ -573,7 +575,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -583,7 +585,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -608,8 +610,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -634,7 +635,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -674,7 +675,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -768,38 +769,38 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="20"/>
         <source>Unetbootin</source>
-        <translation></translation>
+        <translation>Unetbootin</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Elekti el listo de subtenataj distribuaĵoj</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribuaĵo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Specifi ŝargendan diskbilddosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>Diskb&amp;ildo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Mane specifi ŝargendajn kern- kaj initrd- dosierojn</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>Propra</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="414"/>
@@ -817,89 +818,89 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>Bone</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Antaŭen</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Nuligi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="516"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Escapo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="561"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Restartu nun</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="568"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Eliri</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Elŝutanta dosierojn</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Eltiranta kaj kopianta dosierojn</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Instalanta praŝargilon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Instalado finiĝis, restarti</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="477"/>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Elekti celdiskilon en kiu instali</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Diskilo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="451"/>
         <location filename="unetbootin.ui" line="470"/>
         <source>Select the installation target type</source>
-        <translation></translation>
+        <translation>Elekti la tipon de instaladcelo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tipo:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Elekti la version de distribuaĵo</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Elekti la diskbilddosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="286"/>
@@ -907,65 +908,65 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="375"/>
         <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Elekti la diskbildtipon</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Elekti ŝargendan disketan/fiksdiskan bilddosieron aŭ KD-bilddosieron (ISO)</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="207"/>
         <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Elekti ŝargendan kerndosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation></translation>
+        <translation>Elekti kerndosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="293"/>
         <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
-        <translation></translation>
+        <translation>Elekti ŝargendan initrd-dosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="372"/>
         <source>Select initrd file</source>
-        <translation></translation>
+        <translation>Elekti initrd-dosieron</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
+        <translation>Elekti dosieron syslinux.cfg aŭ isolinux.cfg</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
+        <translation>Specifi pasendajn parametrojn kaj opciojn al kerno</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kerno:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opcioj:</translation>
     </message>
 </context>
 <context>
@@ -973,32 +974,32 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Malinstalado finiĝis</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 estis malinstalita.</translation>
     </message>
     <message>
         <location filename="main.cpp" line="319"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Devu ruli kiel ĉefuzanto</translation>
     </message>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 devu esti la ĉefuzanto. Fermu ĝin kaj reruli per aŭ:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;aŭ:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>Malinstalilo de %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="354"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 estas aktuale instalita. Ĉu forigi la ekzistantan version?</translation>
     </message>
 </context>
 </TS>

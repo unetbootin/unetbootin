@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2011-04-01 15:37-0400
-PO-Revision-Date: 2011-03-29 15:14+0000
+POT-Creation-Date: 2012-03-25 16:01-0400
+PO-Revision-Date: 2012-04-18 05:14+0000
 Last-Translator: bovirus &lt;roberto.boriotti@canon-europe.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2011-04-02 17:48+0000
-X-Generator: Launchpad (build 12710)
+X-Launchpad-Export-Date: 2012-04-28 07:32+0000
+X-Generator: Launchpad (build 15149)
 </translation>
     </message>
 </context>
@@ -40,7 +40,7 @@ X-Generator: Launchpad (build 12710)
         <location filename="unetbootin.cpp" line="3536"/>
         <location filename="unetbootin.cpp" line="4147"/>
         <source>Hard Disk</source>
-        <translation>Disco fisso</translation>
+        <translation>Disco rigido</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="210"/>
@@ -104,17 +104,17 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="291"/>
         <source>FAT32-formatted USB drive</source>
-        <translation>Unità formattata FAT32</translation>
+        <translation>Unità USB formattata FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="295"/>
         <source>EXT2-formatted USB drive</source>
-        <translation>Unità formattata EXT2</translation>
+        <translation>Unità USB formattata EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
         <source>Open Disk Image File</source>
-        <translation>Apri file immagine</translation>
+        <translation>Apri File Immagine</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="647"/>
@@ -161,12 +161,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="724"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>E&apos; necessario prima montare l&apos;unità USB %1 ad un punto di montaggio. La maggior parte delle distribuzioni farà questa operazione automaticamente dopo che avrete rimosso e reinserito l&apos;unità USB.</translation>
+        <translation>E&apos; necessario prima montare l&apos;unità USB %1 in un punto di montaggio. La maggior parte delle distribuzioni eseguirà questa operazione automaticamente dopo aver rimosso e reinserito l&apos;unità USB.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="739"/>
         <source>Select a distro</source>
-        <translation>Selezionare una distribuzione</translation>
+        <translation>Selezionare una distribuzione Linux</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="740"/>
@@ -176,7 +176,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="754"/>
         <source>Select a disk image file</source>
-        <translation>Selezionare un file immagine</translation>
+        <translation>Selezionare un File Immagine</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="755"/>
@@ -196,7 +196,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="784"/>
         <source>Diskimage file not found</source>
-        <translation>File immagine disco non trovato</translation>
+        <translation>Disco di File Immagine non trovato</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="785"/>
@@ -211,7 +211,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="800"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Il file kernel %1 non esiste.</translation>
+        <translation>Il file kernel %1 indicato non esiste</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="814"/>
@@ -231,12 +231,12 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="920"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>Il file %1 esiste già. Selezionare &lt;Si a tutti&gt; per sovrasciverlo e non ricevere ulteriori avvisi, &lt;Si&gt; per sovrascrivere i file individualmente, &lt;No&gt; per mantenere la versione esistente. Nel dubbio selezionare &lt;Si a tutti&gt;.</translation>
+        <translation>Il file %1 già esiste. Scegliere &lt;Si a tutti&gt; per sovrasciverlo e non ricevere ulteriori avvisi, &lt;Si&gt; per sovrascrivere i file singolarmente, &lt;No&gt; per mantenere la versione esistente. Nel dubbio, scegliere &lt;Si a tutti&gt;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="946"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 non ha spazio sufficiente. Uscire dall&apos;installazione?</translation>
+        <translation>%1 non ha spazio sufficiente. Interrompere l&apos;installazione?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="947"/>
@@ -251,7 +251,7 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="1092"/>
         <source>Copying kernel file from %1</source>
-        <translation>Copia file kernel da%1 ...</translation>
+        <translation>Copia del file kernel da %1 ...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1098"/>
@@ -350,7 +350,8 @@ X-Generator: Launchpad (build 12710)
     <message>
         <location filename="unetbootin.cpp" line="2620"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Download si %1 %2 da %3 fallito. 
+Prova a scaricare direttamente l&apos;immagine ISO dal sito web e usala attraverso l&apos;opzione disco immagine.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2643"/>
@@ -575,7 +576,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeNAS è una distribuzione embedded open source per NAS (Network-Attached Storage) ed è basata su FreeBSD.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione LiveCD crea un disco RAM per FreeNAS, e usa un floppy formattato FAT o una unità USB per salvare il file di configurazione. La versione embedded permette l&apos;installazione su disco fisso.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; FreeNAS è una distribuzione embedded open source per NAS (Network-Attached Storage) ed è basata su FreeBSD.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione LiveCD crea un disco RAM per FreeNAS, e usa un floppy formattato FAT o una unità USB per salvare il file di configurazione. La versione embedded permette l&apos;installazione su disco fisso.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>
@@ -583,17 +584,9 @@ Reboot now?</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Frugalware è una distribuzione basata su Slackware per utenti avanzati.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione predefinita permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.f-secure.com/linux-weblog/&quot;&gt;http://www.f-secure.com/linux-weblog/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; F-Secure Rescue CD trova e rimuove malware dall&apos;installazione di Windows.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette di fare il boot in modalità Live, dalla quale può essere lanciata la scansione di malware.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gentoo is a flexible source-based distribution designed for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gentoo.org/&quot;&gt;http://www.gentoo.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Gentoo è una distribuzione flessibile basata su sorgenti studiata per utenti avanzati.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; GeeXboX è una distribuzione Linux con integrato un Media center.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -618,8 +611,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <oldsource>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2009 is latest 1.0 release.</oldsource>
-        <translation type="unfinished">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; LinuxConsole è una distribuzione desktop pensata per giocare, semplice da installare, semplice da usare e veloce nell&apos;avvio.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione 1.0.2009 è la versione 1.xx più recente.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; LinuxConsole è una distribuzione desktop per giocare, facile da installare, facile da usare e veloce nell&apos;avvio.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione 1.0.2010 iè la più recente 1.0 ora disponibile (avvia liveuptate per aggiornare moudli e kernel).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -644,11 +636,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetBSD is a Unix-like operating system which focuses on portability.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt;The default version allows for both installation over the internet (FTP), or using pre-downloaded installation ISO files.</source>
-        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.netbsd.org/&quot;&gt;http://www.netbsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NetBSD è un sistema operativo tipo Unix focalizzato sulla portabilità.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt;&gt; la versione predefinita permette sia l&apos;installazione da internet (FTP), sia l&apos;installazione da un file immagine ISO scaricabile da internet.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; NetbootCD è un CD ridotto che scarica e avvia il processo di installazione via rete per altre distribuzioni.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; NetbootCD si avvia e esegue in modo live.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -658,7 +646,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; The Offline NT Password and Registry Editor è in grado di ripristinare le password di Windows e modificare il registry su Windows 2000 e Vista.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; NTPasswd viene avviato in modo Live, non è necessaria nessuna installazione per usarlo.</translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Offline NT Password e Registry Editor possono ripristinare la password di Windows e modificare il registry di Windows Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; NTPasswd si avvia e esegue in modo live; non è richiesta nessuna installazione per usarlo.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -676,10 +664,6 @@ Reboot now?</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://partedmagic.com/&quot;&gt;http://partedmagic.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Parted Magic include il gestore di partizioni GParted ed altre utilità di sistema che permettono di copiare, ridimensionare, fare backup e manipolare dischi e partizioni.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; Parted Magic viene avviato in modo Live e non necessita di nessuna installazione.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; PCLinuxOS is a user-friendly Mandriva-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.pclinuxos.com/&quot;&gt;http://www.pclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; PCLinuxOS è una distribuzione di facile uso basata su Mandriva.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live dal quale può essere lanciata opzionalmente l&apos;installazione.</translation>
-    </message>
-    <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Puppy Linux è una distribuzione leggera e studiata per i computer meno recenti.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live carica l&apos;intero sistema nella RAM e si avvia dalla memoria, perciò l&apos;installazione non è richiesta ma opzionale.</translation>
@@ -692,7 +676,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Salix è una distribuzione GNU/Linux basata su Slackware (pienamente compatibile) ed è semplice, veloce e facile da usare.&lt;br/&gt;Come un bonsai Salix è piccola, leggere e il prodotto di un infinita cura.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; La versione Live permette l&apos;avvio in modo Live, dal quale può essere avviato l&apos;installer.&lt;br/&gt;La password predefinita per root è &lt;b&gt;live&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -719,10 +703,6 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
         <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; Super OS è uan distribuzione derivata non ufficiale di Ubuntu e include software aggiuntivi rispetto alla cversione originale. Richiede una unità USB da almeno 2 GB per essere installata.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; la versione Live permette l&apos;avvio in modo Live, da cui è possibile avviare opzionalmente l&apos;installazione.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SystemRescueCD includes various partition management and data recovery and backup tools.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; SystemRescueCD is booted and run in live mode; no installation is required to use it.</source>
-        <translation type="obsolete">&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.sysresccd.org&quot;&gt;http://www.sysresccd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Descrizione:&lt;/b&gt; SystemRescueCD includi diversi strumenti di gestione partizioni, recupero dati e backup.&lt;br/&gt;&lt;b&gt;Note installazione:&lt;/b&gt; SystemRescueCD si avvia e usa in modo Live; non è richiesta nessuna installazione per poterla usare.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>
@@ -828,13 +808,13 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
         <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished">Spazio da riservare per i file utente che verranno preservati nei vari riavvi. Funziona solo in LiveUSB per Ubuntu e suoi derivati. Se il valore eccede la capacità dell&apos;unità, verra impostato la spazio massimo disponibile.</translation>
+        <translation type="unfinished">Spazio usato per preservare i file nei diversi riavvi. Funziona solo per LiveUSB per Ubuntu e derivati, e distribuzioni basste su SaLT. Se lo spazio eccede la capacità dell&apos;unità, verrà usato il massimo spazio disponibile.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
         <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished">Spazio usato per preservare i file nei diversi riavvi (solo Ubuntu):</translation>
+        <translation type="unfinished">Spazio usato per preservare i file nei diversi riavvi (solo per Ubuntu e SaLT):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
