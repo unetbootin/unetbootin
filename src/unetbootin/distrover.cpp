@@ -38,11 +38,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">htt
 	"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 	"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
 "5R1-GNOME" << "5R1-GNOME_x64" << "5R1-KDE" << "5R1-KDE_x64"));
-distroselect->addItem("CentOS", (QStringList() << "5" <<
+distroselect->addItem("CentOS", (QStringList() << "6" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 	"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-"4" << "4_x64" << "5" << "5_x64"));
+"4" << "4_x64" << "5" << "5_x64" << "6" << "6_x64"));
 distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/>"
 	"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"
@@ -74,11 +74,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "16_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "17_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-	"13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "16_NetInstall" << "16_NetInstall_x64" << "16_Live" << "16_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+    "13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "16_NetInstall" << "16_NetInstall_x64" << "16_Live" << "16_Live_x64" << "17_NetInstall" << "17_NetInstall_x64" << "17_Live" << "17_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
