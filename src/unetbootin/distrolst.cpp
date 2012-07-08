@@ -237,10 +237,26 @@ if (nameDistro == "CentOS")
 	{
 		cpuarch = "i386";
 	}
-	downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
-	downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
-	postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/%1/os/%2' when asked for the folder.").arg(nameVersion, cpuarch);
-	kernelOpts = "splash=silent showopts";
+	if (islivecd)
+	{
+		downloadfile(fileFilterNetDir(QStringList() <<
+		QString("http://mirrors.kernel.org/centos/%1/isos/%2/").arg(relname, cpuarch) <<
+		QString("http://mirror.stanford.edu/yum/pub/centos/%1/isos/%2/").arg(relname, cpuarch) <<
+		QString("http://ftp.osuosl.org/pub/centos/%1/isos/%2/").arg(relname, cpuarch) <<
+		QString("http://mirrors.usc.edu/pub/linux/distributions/centos/%1/isos/%2/").arg(relname, cpuarch)
+		, 524288000, 1048576000, QList<QRegExp>() <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("LiveCD\\S{0,}.iso$", Qt::CaseInsensitive)
+		), isotmpf);
+		extractiso(isotmpf);
+	}
+	else
+	{
+		downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/vmlinuz").arg(relname, cpuarch), QString("%1ubnkern").arg(targetPath));
+		downloadfile(QString("http://isoredirect.centos.org/centos/%1/os/%2/images/pxeboot/initrd.img").arg(relname, cpuarch), QString("%1ubninit").arg(targetPath));
+		postinstmsg = unetbootin::tr("\n*IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the 'Start Installation' option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter 'mirrors.kernel.org' when prompted for a server, and enter '/centos/%1/os/%2' when asked for the folder.").arg(nameVersion, cpuarch);
+		kernelOpts = "splash=silent showopts";
+	}
 }
 
 if (nameDistro == "CloneZilla")

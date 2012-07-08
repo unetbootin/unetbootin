@@ -38,11 +38,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.backtrack-linux.org/\">htt
 	"<b>Description:</b> BackTrack is a distribution focused on network analysis and penetration testing.<br/>"
 	"<b>Install Notes:</b> BackTrack is booted and run in live mode; no installation is required to use it.") <<
 "5R1-GNOME" << "5R1-GNOME_x64" << "5R1-KDE" << "5R1-KDE_x64"));
-distroselect->addItem("CentOS", (QStringList() << "6" <<
+distroselect->addItem("CentOS", (QStringList() << "6_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.centos.org/\">http://www.centos.org</a><br/>"
 	"<b>Description:</b> CentOS is a free Red Hat Enterprise Linux clone.<br/>"
 	"<b>Install Notes:</b> The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-"4" << "4_x64" << "5" << "5_x64" << "6" << "6_x64"));
+"4" << "4_x64" << "5" << "5_x64" << "6" << "6_x64" << "6_Live" << "6_Live_x64"));
 distroselect->addItem("CloneZilla", (QStringList() << "1.1.0-8" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/>"
 	"<b>Description:</b> CloneZilla is a distribution used for disk backup and imaging.<br/>"

@@ -377,10 +377,21 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 		}
 		else if (pfirst.contains("targetdrive", Qt::CaseInsensitive))
 		{
+#ifdef Q_OS_WIN32
+			if (!psecond.endsWith('\\'))
+			{
+				psecond = psecond + '\\';
+			}
+#endif
 			int driveidx = this->driveselect->findText(psecond, Qt::MatchFixedString);
 			if (driveidx != -1)
 			{
 				this->driveselect->setCurrentIndex(driveidx);
+			}
+			else
+			{
+				this->driveselect->addItem(psecond);
+				this->driveselect->setCurrentIndex(this->driveselect->findText(psecond, Qt::MatchFixedString));
 			}
 		}
 		else if (pfirst.contains("showcustom", Qt::CaseInsensitive))
