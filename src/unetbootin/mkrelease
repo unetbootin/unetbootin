@@ -1,0 +1,11 @@
+#!/bin/bash
+
+revn=`./vcs-revno`
+git tag $revn
+git push origin master --tags
+rsync -e ssh release/unetbootin-source-$revn.tar.gz gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+rsync -e ssh release/unetbootin-source-$revn.zip gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+rsync -e ssh release/unetbootin-linux-$revn gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+rsync -e ssh release/unetbootin-windows-$revn.exe gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+rsync -e ssh release/unetbootin-mac-$revn.zip gezakovacs@frs.sourceforge.net:/home/frs/project/unetbootin/UNetbootin/$revn/
+

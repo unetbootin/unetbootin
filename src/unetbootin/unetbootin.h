@@ -205,6 +205,8 @@ public:
 	bool exitOnCompletion;
 	bool testingDownload;
 	bool issalt;
+    bool redundanttopleveldir;
+    QString redundantrootdirname;
 	QString saltRootDir;
 	int persistenceSpaceMB;
 	QString extraBootOptions;

@@ -179,6 +179,7 @@ unetbootin::unetbootin(QWidget *parent)
 
 bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 {
+    redundanttopleveldir = false;
 	isarch64 = false;
 	islivecd = false;
 	isnetinstall = false;
@@ -1122,7 +1123,7 @@ QString unetbootin::locateinitrd(QString archivefile, QPair<QStringList, QList<q
 //		{
 //			continue;
 //		}
-		if (archivefileconts.second.at(i) >= 128000 && archivefileconts.second.at(i) < 209715200) // between 128 KB and 200 MB
+        if (archivefileconts.second.at(i) >= 128000 && archivefileconts.second.at(i) < 314572800) // between 128 KB and 300 MB
 		{
 			tnarchivefileconts.append(archivefileconts.first.at(i));
 		}
@@ -1301,6 +1302,16 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		return syslinuxpcfg;
 	}
 	*/
+#ifdef NOINITRD
+    for (int i = 0; i < combinedcfgPL.first.second.size(); ++i)
+    {
+        combinedcfgPL.first.second[i] = "";
+    }
+    for (int i = 0; i < combinedcfgPL.second.second.size(); ++i)
+    {
+        combinedcfgPL.second.second[i] = "";
+    }
+#endif
 	for (int i = 0; i < combinedcfgPL.first.first.size(); ++i)
 	{
 		bool isduplicate = false;
@@ -1348,17 +1359,21 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			filteredcfgPL.second.second.append(combinedcfgPL.second.second.at(i));
 		}
 	}
-#ifdef NOINITRD
-	for (int i = 0; i < combinedcfgPL.first.second.size(); ++i)
-	{
-		combinedcfgPL.first.second[i] = "";
-	}
-	for (int i = 0; i < combinedcfgPL.second.second.size(); ++i)
-	{
-		combinedcfgPL.second.second[i] = "";
-	}
-#endif
-	return filteredcfgPL;
+    if (redundanttopleveldir && !redundantrootdirname.isEmpty())
+    {
+        for (int i = 0; i < filteredcfgPL.first.second.size(); ++i)
+        {
+            if (filteredcfgPL.first.second.at(i).startsWith(redundantrootdirname))
+            {
+                filteredcfgPL.first.second[i] = filteredcfgPL.first.second[i].mid(redundantrootdirname.length());
+            }
+            if (filteredcfgPL.first.second.at(i).startsWith("/" + redundantrootdirname))
+            {
+                filteredcfgPL.first.second[i] = filteredcfgPL.first.second[i].mid(redundantrootdirname.length() + 1);
+            }
+        }
+    }
+    return filteredcfgPL;
 }
 
 QString unetbootin::getfullarchivepath(QString relativefilepath, QStringList archivefile)
@@ -1485,8 +1500,8 @@ void unetbootin::extractiso(QString isofile)
 	QStringList directorypathnames;
 	if (listfilesizedirpair.second.size() > 0)
 	{
-		bool redundanttopleveldir = true;
-		QString redundantrootdirname = listfilesizedirpair.second.at(0);
+        redundanttopleveldir = true;
+        redundantrootdirname = listfilesizedirpair.second.at(0);
 		for (int i = 0; i < listfilesizedirpair.second.size(); ++i)
 		{
 			if (listfilesizedirpair.second.at(i).size() < redundantrootdirname.size())
