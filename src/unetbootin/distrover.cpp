@@ -196,7 +196,7 @@ distroselect->addItem("Parted Magic", (QStringList() << "Latest_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/>"
 	"<b>Description:</b> Parted Magic includes the GParted partition manager and other system utilities which can resize, copy, backup, and manipulate disk partitions.<br/>"
 	"<b>Install Notes:</b> Parted Magic is booted and run in live mode; no installation is required to use it.") <<
-"2.1_Live" << "Latest_Live" << "Latest_Live_x64"));
+"2.1_Live" << "Latest_Live"));
 //distroselect->addItem("PCLinuxOS", (QStringList() << "KDE 2010" <<
 //unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.pclinuxos.com/\">http://www.pclinuxos.com</a><br/>"
 //	"<b>Description:</b> PCLinuxOS is a user-friendly Mandriva-based distribution.<br/>"

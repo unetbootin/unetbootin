@@ -36,420 +36,420 @@ X-Generator: Launchpad (build 15149)
 <context>
     <name>unetbootin</name>
     <message>
-        <location filename="unetbootin.cpp" line="208"/>
-        <location filename="unetbootin.cpp" line="306"/>
+        <location filename="unetbootin.cpp" line="209"/>
         <location filename="unetbootin.cpp" line="307"/>
-        <location filename="unetbootin.cpp" line="374"/>
-        <location filename="unetbootin.cpp" line="530"/>
-        <location filename="unetbootin.cpp" line="3344"/>
-        <location filename="unetbootin.cpp" line="3357"/>
-        <location filename="unetbootin.cpp" line="3536"/>
-        <location filename="unetbootin.cpp" line="4147"/>
+        <location filename="unetbootin.cpp" line="308"/>
+        <location filename="unetbootin.cpp" line="375"/>
+        <location filename="unetbootin.cpp" line="542"/>
+        <location filename="unetbootin.cpp" line="3409"/>
+        <location filename="unetbootin.cpp" line="3422"/>
+        <location filename="unetbootin.cpp" line="3604"/>
+        <location filename="unetbootin.cpp" line="4215"/>
         <source>Hard Disk</source>
         <translation>Pevný disk</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="210"/>
-        <location filename="unetbootin.cpp" line="303"/>
+        <location filename="unetbootin.cpp" line="211"/>
         <location filename="unetbootin.cpp" line="304"/>
-        <location filename="unetbootin.cpp" line="376"/>
-        <location filename="unetbootin.cpp" line="534"/>
-        <location filename="unetbootin.cpp" line="699"/>
-        <location filename="unetbootin.cpp" line="719"/>
-        <location filename="unetbootin.cpp" line="973"/>
-        <location filename="unetbootin.cpp" line="1534"/>
-        <location filename="unetbootin.cpp" line="1618"/>
-        <location filename="unetbootin.cpp" line="2547"/>
-        <location filename="unetbootin.cpp" line="2590"/>
-        <location filename="unetbootin.cpp" line="3348"/>
-        <location filename="unetbootin.cpp" line="3374"/>
-        <location filename="unetbootin.cpp" line="3540"/>
-        <location filename="unetbootin.cpp" line="3864"/>
-        <location filename="unetbootin.cpp" line="4151"/>
+        <location filename="unetbootin.cpp" line="305"/>
+        <location filename="unetbootin.cpp" line="377"/>
+        <location filename="unetbootin.cpp" line="546"/>
+        <location filename="unetbootin.cpp" line="712"/>
+        <location filename="unetbootin.cpp" line="732"/>
+        <location filename="unetbootin.cpp" line="986"/>
+        <location filename="unetbootin.cpp" line="1561"/>
+        <location filename="unetbootin.cpp" line="1645"/>
+        <location filename="unetbootin.cpp" line="2574"/>
+        <location filename="unetbootin.cpp" line="2617"/>
+        <location filename="unetbootin.cpp" line="3413"/>
+        <location filename="unetbootin.cpp" line="3439"/>
+        <location filename="unetbootin.cpp" line="3608"/>
+        <location filename="unetbootin.cpp" line="3932"/>
+        <location filename="unetbootin.cpp" line="4219"/>
         <source>USB Drive</source>
         <translation>USB mechanika</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="211"/>
-        <location filename="unetbootin.cpp" line="228"/>
+        <location filename="unetbootin.cpp" line="212"/>
         <location filename="unetbootin.cpp" line="229"/>
-        <location filename="unetbootin.cpp" line="342"/>
-        <location filename="unetbootin.cpp" line="650"/>
-        <location filename="unetbootin.cpp" line="651"/>
-        <location filename="unetbootin.cpp" line="3430"/>
+        <location filename="unetbootin.cpp" line="230"/>
+        <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="663"/>
+        <location filename="unetbootin.cpp" line="664"/>
+        <location filename="unetbootin.cpp" line="3498"/>
         <source>ISO</source>
         <translation>ISO</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="212"/>
-        <location filename="unetbootin.cpp" line="224"/>
+        <location filename="unetbootin.cpp" line="213"/>
         <location filename="unetbootin.cpp" line="225"/>
-        <location filename="unetbootin.cpp" line="347"/>
-        <location filename="unetbootin.cpp" line="655"/>
-        <location filename="unetbootin.cpp" line="656"/>
-        <location filename="unetbootin.cpp" line="3422"/>
+        <location filename="unetbootin.cpp" line="226"/>
+        <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="668"/>
+        <location filename="unetbootin.cpp" line="669"/>
+        <location filename="unetbootin.cpp" line="3490"/>
         <source>Floppy</source>
         <translation>Disketa</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="245"/>
-        <location filename="unetbootin.cpp" line="251"/>
-        <location filename="unetbootin.cpp" line="255"/>
-        <location filename="unetbootin.cpp" line="259"/>
-        <location filename="unetbootin.cpp" line="263"/>
-        <location filename="unetbootin.cpp" line="269"/>
-        <location filename="unetbootin.cpp" line="297"/>
+        <location filename="unetbootin.cpp" line="246"/>
+        <location filename="unetbootin.cpp" line="252"/>
+        <location filename="unetbootin.cpp" line="256"/>
+        <location filename="unetbootin.cpp" line="260"/>
+        <location filename="unetbootin.cpp" line="264"/>
+        <location filename="unetbootin.cpp" line="270"/>
+        <location filename="unetbootin.cpp" line="298"/>
         <source>either</source>
         <translation>obidva</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="276"/>
+        <location filename="unetbootin.cpp" line="277"/>
         <source>LiveUSB persistence</source>
         <translation>LiveUSB trvácnosť</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="291"/>
+        <location filename="unetbootin.cpp" line="292"/>
         <source>FAT32-formatted USB drive</source>
         <translation>FAT32-formátovaný USB kľúč</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="295"/>
+        <location filename="unetbootin.cpp" line="296"/>
         <source>EXT2-formatted USB drive</source>
         <translation>EXT2-formátovaný USB kľúč</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="647"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <source>Open Disk Image File</source>
         <translation>Výber súboru s obrazom disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="647"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <source>All Files</source>
         <translation>Všetky súbory</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
-        <location filename="unetbootin.cpp" line="673"/>
-        <location filename="unetbootin.cpp" line="681"/>
+        <location filename="unetbootin.cpp" line="678"/>
+        <location filename="unetbootin.cpp" line="686"/>
+        <location filename="unetbootin.cpp" line="694"/>
         <source>All Files (*)</source>
         <translation>Všetky súbory (*)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="665"/>
+        <location filename="unetbootin.cpp" line="678"/>
         <source>Open Kernel File</source>
         <translation>Výber súboru s jadrom</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="673"/>
+        <location filename="unetbootin.cpp" line="686"/>
         <source>Open Initrd File</source>
         <translation>Výber súboru s initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="681"/>
+        <location filename="unetbootin.cpp" line="694"/>
         <source>Open Bootloader Config File</source>
         <translation>Výber súboru s nastaveniami zavádzača</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="703"/>
+        <location filename="unetbootin.cpp" line="716"/>
         <source>Insert a USB flash drive</source>
         <translation>Vložte USB flash disk</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="704"/>
+        <location filename="unetbootin.cpp" line="717"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
         <translation>Nenašli sa žiadne USB flash disky. Ak je predsa USB flash disk zapojený, skúste ho naformátovať na FAT32.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="723"/>
+        <location filename="unetbootin.cpp" line="736"/>
         <source>%1 not mounted</source>
         <translation>%1 nie je pripojený</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="724"/>
+        <location filename="unetbootin.cpp" line="737"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
         <translation>Najskôr je potrebné pripojiť USB disk %1 k prípojnému bodu. Väčšina distribúcií to urobí automaticky po odpojení a opätovnom zapojení USB disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="739"/>
+        <location filename="unetbootin.cpp" line="752"/>
         <source>Select a distro</source>
         <translation>Vyberte distribúciu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="740"/>
+        <location filename="unetbootin.cpp" line="753"/>
         <source>You must select a distribution to load.</source>
         <translation>Pre spustenie musíte vybrať distribúciu.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="754"/>
+        <location filename="unetbootin.cpp" line="767"/>
         <source>Select a disk image file</source>
         <translation>Vyberte súbor s obrazom disku</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="755"/>
+        <location filename="unetbootin.cpp" line="768"/>
         <source>You must select a disk image file to load.</source>
         <translation>Pre spustenie musíte vybrať súbor s obrazom disku.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="769"/>
+        <location filename="unetbootin.cpp" line="782"/>
         <source>Select a kernel and/or initrd file</source>
         <translation>Vyberte jadro a/alebo súbor initrd</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="770"/>
+        <location filename="unetbootin.cpp" line="783"/>
         <source>You must select a kernel and/or initrd file to load.</source>
         <translation>Pre spustenie musíte vybrať jadro a/alebo súbor initrd.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="784"/>
+        <location filename="unetbootin.cpp" line="797"/>
         <source>Diskimage file not found</source>
         <translation>Súbor obrazu disku sa nenašiel.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="785"/>
+        <location filename="unetbootin.cpp" line="798"/>
         <source>The specified diskimage file %1 does not exist.</source>
         <translation>Zvolený obraz disku %1 neexistuje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="799"/>
+        <location filename="unetbootin.cpp" line="812"/>
         <source>Kernel file not found</source>
         <translation>Súbor jadra sa nenašiel.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="800"/>
+        <location filename="unetbootin.cpp" line="813"/>
         <source>The specified kernel file %1 does not exist.</source>
         <translation>Zvolený súbor jadra %1 neexistuje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="814"/>
+        <location filename="unetbootin.cpp" line="827"/>
         <source>Initrd file not found</source>
         <translation>Súbor initrd sa nenašiel</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="815"/>
+        <location filename="unetbootin.cpp" line="828"/>
         <source>The specified initrd file %1 does not exist.</source>
         <translation>Zvolený súbor initrd %1 neexistuje.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="919"/>
+        <location filename="unetbootin.cpp" line="932"/>
         <source>%1 exists, overwrite?</source>
         <translation>%1 existuje, prepísať?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="920"/>
+        <location filename="unetbootin.cpp" line="933"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
         <translation>Súbor %1 už existuje. Zvolte &apos;Áno pre všetky&apos; pre jeho prepísanie a prepísanie ďalších bez opýtania, &apos;Áno&apos; pre prepísanie súboru a &apos;Nie&apos; pre zachovanie súčasnej verzie. Ak neviete, zvoľte &apos;Áno pre všetky&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="946"/>
+        <location filename="unetbootin.cpp" line="959"/>
         <source>%1 is out of space, abort installation?</source>
         <translation>Na %1 už nie je dostatok miesta, prerušiť inštaláciu?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="947"/>
+        <location filename="unetbootin.cpp" line="960"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
         <translation>V adresári %1 nie je dostatok miesta. Pre prerušenie inštalácie zvoľte &apos;Áno&apos;, pre ignorovanie tejto chyby a  pre pokračovanie inštalácie  zvoľte &apos;Nie&apos; a pre ignorovanie všetkých chýb o nedostatku miesta zvoľte &apos;Nie pre všetky&apos;.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1041"/>
+        <location filename="unetbootin.cpp" line="1054"/>
         <source>Locating kernel file in %1</source>
         <translation>Hľadám súbor s kernelom v %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1092"/>
+        <location filename="unetbootin.cpp" line="1105"/>
         <source>Copying kernel file from %1</source>
         <translation>Kopírujem súbor s kernelom z %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1098"/>
+        <location filename="unetbootin.cpp" line="1111"/>
         <source>Locating initrd file in %1</source>
         <translation>Hľadám súbor s initrd v%1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1139"/>
+        <location filename="unetbootin.cpp" line="1152"/>
         <source>Copying initrd file from %1</source>
         <translation>Kopírujem súbor s initrd z %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1145"/>
-        <location filename="unetbootin.cpp" line="1225"/>
+        <location filename="unetbootin.cpp" line="1158"/>
+        <location filename="unetbootin.cpp" line="1238"/>
         <source>Extracting bootloader configuration</source>
         <translation>Extrahujem nastavenia bootloaderu</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1440"/>
-        <location filename="unetbootin.cpp" line="1466"/>
+        <location filename="unetbootin.cpp" line="1467"/>
+        <location filename="unetbootin.cpp" line="1493"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Rozbaľovanie ISO obrazu:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1717"/>
+        <location filename="unetbootin.cpp" line="1744"/>
         <source>Copying file, please wait...</source>
         <translation>Kopírujem súbor, prosím počkajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1718"/>
-        <location filename="unetbootin.cpp" line="2532"/>
+        <location filename="unetbootin.cpp" line="1745"/>
+        <location filename="unetbootin.cpp" line="2559"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt; &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1719"/>
-        <location filename="unetbootin.cpp" line="2533"/>
+        <location filename="unetbootin.cpp" line="1746"/>
+        <location filename="unetbootin.cpp" line="2560"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Cieľ:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1720"/>
+        <location filename="unetbootin.cpp" line="1747"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Skopírované:&lt;/b&gt; 0 bajtov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1758"/>
+        <location filename="unetbootin.cpp" line="1785"/>
         <source>Extracting files, please wait...</source>
         <translation>Rozbaľovanie súborov, prosím čakajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1759"/>
+        <location filename="unetbootin.cpp" line="1786"/>
         <source>&lt;b&gt;Archive:&lt;/b&gt; %1</source>
         <translation>&lt;b&gt;Archív:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1760"/>
+        <location filename="unetbootin.cpp" line="1787"/>
         <source>&lt;b&gt;Source:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1761"/>
+        <location filename="unetbootin.cpp" line="1788"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Cieľ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1762"/>
+        <location filename="unetbootin.cpp" line="1789"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
         <translation>&lt;b&gt;Rozbalené:&lt;/b&gt; 0 z %1 súborov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1765"/>
+        <location filename="unetbootin.cpp" line="1792"/>
         <source>&lt;b&gt;Source:&lt;/b&gt; %1 (%2)</source>
         <translation>&lt;b&gt;Zdroj:&lt;/b&gt; %1 (%2)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1766"/>
+        <location filename="unetbootin.cpp" line="1793"/>
         <source>&lt;b&gt;Destination:&lt;/b&gt; %1%2</source>
         <translation>&lt;b&gt;Cieľ:&lt;/b&gt; %1%2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="1767"/>
+        <location filename="unetbootin.cpp" line="1794"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
         <translation>&lt;b&gt;Rozbalené:&lt;/b&gt; %1 z %2 súborov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2531"/>
+        <location filename="unetbootin.cpp" line="2558"/>
         <source>Downloading files, please wait...</source>
         <translation>Sťahovanie súborov, prosím čakajte...</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2534"/>
+        <location filename="unetbootin.cpp" line="2561"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
         <translation>&lt;b&gt;Stiahnuté:&lt;/b&gt; 0 bajtov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2620"/>
+        <location filename="unetbootin.cpp" line="2685"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
         <translation>Sťahovanie %1 %2 z %3 zlyhalo. Prosím, skúste stiahnuť ISO súbor priamo zo stránky a otvorte ho cez možnosť Obraz disku.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2643"/>
-        <location filename="unetbootin.cpp" line="2658"/>
+        <location filename="unetbootin.cpp" line="2708"/>
+        <location filename="unetbootin.cpp" line="2723"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Stiahnuté:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2673"/>
+        <location filename="unetbootin.cpp" line="2738"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
         <translation>&lt;b&gt;Skopírované:&lt;/b&gt; %1 z %2</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2764"/>
+        <location filename="unetbootin.cpp" line="2829"/>
         <source>Searching in &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
         <translation>Hľadá sa v &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="2768"/>
+        <location filename="unetbootin.cpp" line="2833"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
         <translation>%1/%2 zhôd v &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3041"/>
+        <location filename="unetbootin.cpp" line="3106"/>
         <source>%1 not found</source>
         <translation>%1 sa nenašlo</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3042"/>
+        <location filename="unetbootin.cpp" line="3107"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
         <translation>%1 sa nenašlo. Toto je požadované pre %2 inštalačný režim.
 Nainštalujte balík &quot;%3&quot; alebo jeho ekvivalent.</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3325"/>
+        <location filename="unetbootin.cpp" line="3390"/>
         <source>(Current)</source>
         <translation>(Aktuálny)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3326"/>
+        <location filename="unetbootin.cpp" line="3391"/>
         <source>(Done)</source>
         <translation>(Hotovo)</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3615"/>
+        <location filename="unetbootin.cpp" line="3683"/>
         <source>Configuring grub2 on %1</source>
         <translation>grub2 sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3627"/>
+        <location filename="unetbootin.cpp" line="3695"/>
         <source>Configuring grldr on %1</source>
         <translation>grldr sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3655"/>
+        <location filename="unetbootin.cpp" line="3723"/>
         <source>Configuring grub on %1</source>
         <translation>grub sa nastavuje na %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3893"/>
+        <location filename="unetbootin.cpp" line="3961"/>
         <source>Installing syslinux to %1</source>
         <translation>syslinux sa inštaluje do %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3928"/>
+        <location filename="unetbootin.cpp" line="3996"/>
         <source>Installing extlinux to %1</source>
         <translation>extlinux sa inštaluje do %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4099"/>
+        <location filename="unetbootin.cpp" line="4167"/>
         <source>Syncing filesystems</source>
         <translation>Synchronizácia súborových systémov</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4104"/>
+        <location filename="unetbootin.cpp" line="4172"/>
         <source>Setting up persistence</source>
         <translation>Nastavenie trvácnosti</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4149"/>
+        <location filename="unetbootin.cpp" line="4217"/>
         <source>After rebooting, select the </source>
         <translation>Po reštarte zvoľte </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4154"/>
+        <location filename="unetbootin.cpp" line="4222"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Po reštarte zvoľte v BIOSe zavádzanie systému z USB.%1
 Reštartovať teraz?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4157"/>
+        <location filename="unetbootin.cpp" line="4225"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>Vytvorené USB zariadenie nebude bootovať na Macu. Vlož ho do PC, a vyber možnosť bootovania z USB v bootovacej ponuke BIOSU.%1</translation>
     </message>
@@ -461,42 +461,42 @@ Reštartovať teraz?</translation>
 *DÔLEŽITÉ* Pred reštartom PC, umiestni alternatívny (nie desktopový) inštalačný iso súbor Ubuntu do koreňového adresára tvojho hardisku alebo USB kľúča. Tieto môžu byť získané z cdimage.ubuntu.com</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="242"/>
+        <location filename="distrolst.cpp" line="257"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
 *DÔLEŽITÉ* Po reštarte ignorujte všetky chybové hlásenia, ak ste vyzvaný  k vloženiu CD, zvoľte späť, potom z hlavného menu vyberte &apos;Začiatok inštalácie&apos;, ako zdroj vyberte &apos;Sieť&apos;, ako protokol vyberte &apos;HTTP&apos;, pri výzve k zadaniu adresy servera zadajte &apos;mirrors.kernel.org&apos; a pri dotaze na adresár zadajte &apos;/centos/%1/os/%2&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="298"/>
+        <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
         <translation>
 *DÔLEŽITÉ* Pred reštartom PC, umiestni inštalačný iso súbor Debianu do koreňového adresára tvojho hardisku alebo USB kľúča. Tieto môžu byť získané z cdimage.debian.org</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="391"/>
+        <location filename="distrolst.cpp" line="407"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
 *DÔLEŽITÉ* Po reštarte ignorujte všetky chybové hlásenia, ak ste vyzvaný  k vloženiu CD, zvoľte späť, potom z hlavného menu vyberte &apos;Začiatok inštalácie&apos;, ako zdroj vyberte &apos;Sieť&apos;, ako protokol vyberte &apos;HTTP&apos;, pri výzve k zadaniu adresy servera zadajte &apos;download.fedora.redhat.com&apos; a pri dotaze na adresár zadajte &apos;/pub/fedora/linux/development/%1/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="397"/>
+        <location filename="distrolst.cpp" line="413"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
 *DÔLEŽITÉ* Po reštarte ignorujte všetky chybové hlásenia, ak ste vyzvaný  k vloženiu CD, zvoľte späť, potom z hlavného menu vyberte &apos;Začiatok inštalácie&apos;, ako zdroj vyberte &apos;Sieť&apos;, ako protokol vyberte &apos;HTTP&apos;, pri výzve k zadaniu adresy servera zadajte &apos;download.fedora.redhat.com&apos; a pri dotaze na adresár zadajte &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="769"/>
+        <location filename="distrolst.cpp" line="785"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
 *DÔLEŽITÉ* Po reštarte ignorujte všetky chybové hlásenia, ak ste vyzvaný  k vloženiu CD, zvoľte späť, potom z hlavného menu vyberte &apos;Začiatok inštalácie&apos;, ako zdroj vyberte &apos;Sieť&apos;, ako protokol vyberte &apos;HTTP&apos;, pri výzve k zadaniu adresy servera zadajte &apos;download.opensuse.org&apos; a pri dotaze na adresár zadajte &apos;/factory/repo/oss&apos;.</translation>
     </message>
     <message>
-        <location filename="distrolst.cpp" line="775"/>
+        <location filename="distrolst.cpp" line="791"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
@@ -504,7 +504,7 @@ Reštartovať teraz?</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
-        <location filename="unetbootin.cpp" line="735"/>
+        <location filename="unetbootin.cpp" line="748"/>
         <source>== Select Distribution ==</source>
         <translation>== Vyberte Distribúciu ==</translation>
     </message>

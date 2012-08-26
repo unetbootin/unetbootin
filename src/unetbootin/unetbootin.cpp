@@ -567,8 +567,9 @@ QStringList unetbootin::listsanedrives()
 //                    {
 //                        fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 //                    }
-					if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")))
-					{
+                    if (usbfileinfoL.at(i).fileName().contains(QRegExp("^usb-\\S{1,}$")) ||
+                        usbfileinfoL.at(i).fileName().contains(QRegExp("^mmc-\\S{1,}$")))
+                    {
 						if (!volidcommand.isEmpty())
 						{
 							if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4)")))
@@ -2617,6 +2618,44 @@ void unetbootin::downloadfile(QString fileurl, QString targetfile, int minsize=5
 	{
 		dloutfile.rename(targetfile);
 	}
+    if (QFile(targetfile).size() <= 4096)
+    {
+        QString redirectTargetURL;
+        QFile seeRedirect(targetfile);
+        seeRedirect.open(QIODevice::ReadOnly | QIODevice::Text);
+        QTextStream seeRedirectTextStream(&seeRedirect);
+        while (!seeRedirectTextStream.atEnd())
+        {
+            QString curline = seeRedirectTextStream.readLine();
+            if (curline.contains("content=\"0;url="))
+            {
+                int urlstartidx = curline.indexOf("content=\"0;url=") + QString("content=\"0;url=").size();
+                redirectTargetURL = curline.mid(urlstartidx);
+                if (redirectTargetURL.contains("\""))
+                {
+                    redirectTargetURL = redirectTargetURL.left(redirectTargetURL.indexOf("\""));
+                }
+                break;
+            }
+            if (curline.contains("content='0;url="))
+            {
+                int urlstartidx = curline.indexOf("content='0;url=") + QString("content='0;url=").size();
+                redirectTargetURL = curline.mid(urlstartidx);
+                if (redirectTargetURL.contains("'"))
+                {
+                    redirectTargetURL = redirectTargetURL.left(redirectTargetURL.indexOf("'"));
+                }
+                break;
+            }
+        }
+        seeRedirect.close();
+        if (!redirectTargetURL.isEmpty())
+        {
+            rmFile(targetfile);
+            downloadfile(redirectTargetURL, targetfile, minsize);
+            return;
+        }
+    }
 	if (QFile(targetfile).size() < minsize)
 	{
 		// download failed
@@ -3406,7 +3445,10 @@ void unetbootin::runinst()
 		targetDrive = QString("%1/").arg(locatemountpoint(targetDev));
 	}
 #ifdef Q_OS_LINUX
-	rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
+	if (targetDev.contains(QRegExp("p\\d$")))
+		rawtargetDev = QString(targetDev).remove(QRegExp("p\\d$"));
+	else
+		rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
 #endif
 #ifdef Q_OS_MAC
 	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));

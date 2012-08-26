@@ -810,25 +810,7 @@ if (nameDistro == "Parted Magic")
 	}
 	else
 	{
-		if (isarch64)
-		{
-			cpuarch = "x86_64";
-		}
-		else
-		{
-			cpuarch = "i\\d86";
-		}
-		downloadfile(fileFilterNetDir(QStringList() << 
-		"http://exo.enarel.eu/mirror/partedmagic/" << 
-		"http://fulloffacts.com/get/partedmagic/" <<
-		"http://www.digitalincursion.net/partedmagic/"
-		, 10485760, 209715200, QList<QRegExp>() << 
-		QRegExp("^pmagic", Qt::CaseInsensitive) << 
-		QRegExp(cpuarch, Qt::CaseInsensitive) <<
-		QRegExp(".iso.zip$", Qt::CaseInsensitive) << 
-		QRegExp("\\d.iso.zip$", Qt::CaseInsensitive) << 
-		QRegExp("^pmagic-\\d", Qt::CaseInsensitive)
-		), isotmpf);
+        downloadfile("http://partedmagic.com/partedmagic-latest.iso", isotmpf);
 		extractiso(isotmpf);
 	}
 }
