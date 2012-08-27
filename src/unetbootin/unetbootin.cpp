@@ -4003,11 +4003,11 @@ void unetbootin::runinstusb()
 			// make active
 			if (sfdiskcommand != "") {
 				// use sfdisk if available
-				callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev)));
+                callexternapp(sfdiskcommand, QString("%1 -A%2").arg(rawtargetDev, QString(targetDev).remove(rawtargetDev).remove("p")));
 			} else {
 				// use fdisk if sfdisk is unavailable
 				bool isOk = false;
-				int partitionNumber = QString(targetDev).remove(rawtargetDev).toInt(&isOk, 10);
+                int partitionNumber = QString(targetDev).remove(rawtargetDev).remove("p").toInt(&isOk, 10);
 				if (isOk)
 				{
 					QString output = callexternapp("fdisk", "-l");
