@@ -657,7 +657,7 @@ void unetbootin::on_diskimagetypeselect_currentIndexChanged()
 
 void unetbootin::on_FloppyFileSelector_clicked()
 {
-	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("All Files") + " (*)"));
+	QString nameFloppy = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this, tr("Open Disk Image File"), QDir::homePath(), tr("All Files") + " (*);;" + tr("ISO") + " (*.iso);;" + tr("Floppy") + " (*.img)"));
 	if (QFileInfo(nameFloppy).completeSuffix().contains("iso", Qt::CaseInsensitive))
 	{
 		if (diskimagetypeselect->findText(tr("ISO")) != -1)
