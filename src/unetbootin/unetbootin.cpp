@@ -3945,11 +3945,26 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 			}
 		}
 	}
-	return QString(cfgfileCL)
+    if (this->devlabel == "" || this->devlabel == "None")
+    {
+        setLabel(this->targetDev, "LIVE");
+    }
+    QString ncfgfileCL = cfgfileCL;
+    if (ncfgfileCL.contains("root=live:CDLABEL"))
+    {
+        ncfgfileCL = QString(ncfgfileCL)
+        .replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=live:%1").arg(devluid))
+        .replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=live:%1").arg(devluid));
+    }
+    else
+    {
+        ncfgfileCL = QString(ncfgfileCL)
+        .replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid))
+        .replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid));
+    }
+    return QString(ncfgfileCL)
 	.replace("rootfstype=iso9660", "rootfstype=auto")
-	.replace(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"), QString("root=%1").arg(devluid))
-	.replace(QRegExp("root=\\S{0,}LABEL=\\S{0,}"), QString("root=%1").arg(devluid))
-	.replace("theme:sabayon", "theme:sabayon cdroot_type=vfat")
+    .replace("theme:sabayon", "theme:sabayon cdroot_type=vfat")
 	.replace("pmedia=cd", "pmedia=usbflash")
 	.replace(QRegExp("archisolabel=\\S{0,}"), QString("archisolabel=%1").arg(devlabel))
 	.trimmed();
