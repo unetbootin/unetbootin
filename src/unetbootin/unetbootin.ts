@@ -20,7 +20,7 @@
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41,7 +41,7 @@
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50,6 +50,7 @@
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -61,6 +62,7 @@
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -392,38 +394,38 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation type="unfinished"></translation>
     </message>

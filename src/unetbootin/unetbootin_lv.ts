@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-03-25 16:01-0400
-PO-Revision-Date: 2010-11-06 23:27+0000
-Last-Translator: Vitālijs Sikuriņecs &lt;Unknown&gt;
+POT-Creation-Date: 2012-08-26 12:44-0700
+PO-Revision-Date: 2012-10-19 16:40+0000
+Last-Translator: tuxmaniack &lt;Unknown&gt;
 Language-Team: Latvian &lt;lv@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-04-28 07:32+0000
-X-Generator: Launchpad (build 15149)
+X-Launchpad-Export-Date: 2012-12-24 08:08+0000
+X-Generator: Launchpad (build 16378)
 </translation>
     </message>
 </context>
@@ -44,9 +44,9 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
-        <translation>Cietais Disks</translation>
+        <translation>Cietais disks</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="211"/>
@@ -65,15 +65,16 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
-        <translation>USB dzinis</translation>
+        <translation>USB ierīce</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="212"/>
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -85,6 +86,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -125,14 +127,14 @@ X-Generator: Launchpad (build 15149)
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Visi faili</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="678"/>
         <location filename="unetbootin.cpp" line="686"/>
         <location filename="unetbootin.cpp" line="694"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Visi faili (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="678"/>
@@ -417,39 +419,39 @@ Uzinstalējiet &quot;%3&quot; pakotni, vai Jūsu OS līdzīgu.</translation>
         <translation>Konfigurēju grub uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation>Instalēju syslinux uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation>Intalēju extlinux uz %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation>Sinhronizēju failu sistēmas</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation>Pēc pārstartēšanaas, izvēlieties </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Pēc pārstartēšanas, izvēlaties USB boot opciju, iekš BIOS boot izvēlnes.%1
 Vai tagad pārstartēt datoru?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -501,18 +503,18 @@ Vai tagad pārstartēt datoru?</translation>
         <location filename="distrover.cpp" line="26"/>
         <location filename="unetbootin.cpp" line="748"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>== Izvēlēties distribūciju ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <location filename="distrover.cpp" line="30"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>== Izvēlēties versiju ==</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>Laipni lūdzam &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt; - universālā Netboot instalatorā. Pielietojums:&lt;ol&gt;&lt;li&gt;Izvēlieties distribūciju un versiju, kuru lejupielādēt vai pašrocīgi izvēlieties failu apakšā.&lt;/li&gt;&lt;li&gt;Lai sāktu instalēšanu, izvēlieties instalācijas tipu un nospiediet &apos;Labi&apos;.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>
@@ -622,7 +624,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -777,22 +779,22 @@ Vai tagad pārstartēt datoru?</translation>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Izvēlieties no saraksta ar atbalstītajām distribūcijām</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribūcija</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Norādiet diska attēla failu, kuru ielādēt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>D&amp;iska attēls</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
@@ -808,14 +810,12 @@ Vai tagad pārstartēt datoru?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Vieta, kuru rezervēt failiem starp restartiem. Strādā tikai uz Ubuntu LiveUSB un citām Ubuntu balstītām distribūcijām. Ja vērtība pārsniedz diska ietilpību, maksimāli pieejamā vieta tiks izmantota.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Vieta, kur saglabāt failus starp restartiem (tikai Ubuntu):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
@@ -825,7 +825,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>Labi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>
@@ -835,7 +835,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="unetbootin.ui" line="513"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Atcelt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="516"/>
@@ -876,28 +876,28 @@ Vai tagad pārstartēt datoru?</translation>
         <location filename="unetbootin.ui" line="477"/>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Izvēlieties mērķa ierīci, kurā instalēt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>&amp;Dzinis:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="451"/>
         <location filename="unetbootin.ui" line="470"/>
         <source>Select the installation target type</source>
-        <translation></translation>
+        <translation>Izvēlieties instalācijas mērķa tipu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tips:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Izvēlieties distribūcijas versiju</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
@@ -915,12 +915,12 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Izvēlieties diska attēla tipu</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Norādiet disketes/cietā diska attēla, vai CD attēla (ISO) failu, kuru ielādēt</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="207"/>
@@ -968,7 +968,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opcijas:</translation>
     </message>
 </context>
 <context>
@@ -976,7 +976,7 @@ Vai tagad pārstartēt datoru?</translation>
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Atinstalēšana pabeigta</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-03-25 16:01-0400
-PO-Revision-Date: 2012-02-25 17:16+0000
-Last-Translator: RedGuff &lt;domsau2@yahoo.fr&gt;
+POT-Creation-Date: 2012-08-26 12:44-0700
+PO-Revision-Date: 2012-11-25 01:10+0000
+Last-Translator: cyrbil &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-04-28 07:32+0000
-X-Generator: Launchpad (build 15149)
+X-Launchpad-Export-Date: 2012-12-24 08:08+0000
+X-Generator: Launchpad (build 16378)
 </translation>
     </message>
 </context>
@@ -38,7 +38,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
         <translation>Disque dur</translation>
     </message>
@@ -59,7 +59,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
         <translation>Lecteur USB</translation>
     </message>
@@ -68,6 +68,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -79,6 +80,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -411,39 +413,39 @@ Installation du paquet &quot;%3&quot;  ou l&apos;équivalent de votre distributi
         <translation>Configuration de grub sur %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation>Installation de syslinux sur %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation>Installation de extlinux sur %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation>Synchronisation des systèmes de fichiers</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation>Configurer la persistance</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation>Après avoir redémarré, choisissez le </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Après avoir redémarré, choisissez l&apos;option &quot;démarrez depuis un périphérique USB&quot; dans le menu de démarrage du BIOS. %1
 Redémarrer immédiatement?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>Le dispositif USB créé ne s&apos;amorcera pas sur un Mac. Insérez-le dans un PC, et sélectionnez l&apos;option de démarrage sur USB dans le menu de démarrage du BIOS.%1</translation>
     </message>
@@ -611,7 +613,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil :&lt;/ b&gt;&lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description :&lt;/b&gt; LinuxConsole est une distribution de bureau pour jouer à des jeux, facile à installer, facile à utiliser et rapide à démarrer.&lt;br/&gt; &lt;b&gt;Notes d&apos;installation :&lt;/b&gt; La version 1.0.2010 est la dernière version 1.0, courante maintenant disponible (exécutez liveuptate pour mettre à jour les modules et le noyau).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -621,7 +623,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu est dérivé officiel d&apos;Ubuntu avec le bureau LXDE (LXDE desktop).&lt;br/&gt;&lt;b&gt;Notes d&apos;Installation:&lt;/b&gt; La version Live permet le démarrage en mode Live, depuis lequel l&apos;installeur peut être lancé falcutativement. La version NetInstall permet l&apos;installation par  FTP, peut installer Kubuntu et d&apos;autres dérivés officiels Ubuntu. Si vous souhaitez utiliser une alternative pré-téléchargée (non bureau) installer l&apos;iso, utilisez l&apos;option HdMedia, et placez ensuite le fichier d&apos;installation iso alternatif à la racine de votre disque dur ou clé USB.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -676,7 +678,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Page d&apos;accueil:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix est une distribution GNU/Linux basée en Slackware (entièrement compatible) c&apos;est simple, rapide et facile à utiliser.&lt;br/&gt;Commein bonsaï, Salix est petit, léger &amp; le produit d&apos;infinies précautions.&lt;br/&gt;&lt;b&gt;Instructions d&apos;Installation:&lt;/b&gt; La version Live permet le démarrage en mode Live, à partir duquel peut être lancé facultativement l&apos;installeur.&lt;br/&gt;Le mot de passe root par défaut est &lt;b&gt;live&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -807,14 +809,12 @@ Redémarrer immédiatement?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Espace à réserver pour les fichiers de l&apos;utilisateur qui seront préservés même après redémarrage. Fonctionne uniquement sur les clés USB Live d&apos;Ubuntu et dérivées. Si la valeur excède la capacité du support, l&apos;espace disque maximal disponible sera alors utilisé.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Espace utilisé pour préserver les fichiers même après redémarrage (Ubuntu uniquement) :</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
@@ -869,7 +869,7 @@ Redémarrer immédiatement?</translation>
     <message>
         <location filename="unetbootin.ui" line="681"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation>4. Intallation terminée, redémarrage</translation>
+        <translation>4. Installation terminée, redémarrage</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="477"/>

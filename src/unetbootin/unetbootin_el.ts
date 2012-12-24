@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-03-25 16:01-0400
-PO-Revision-Date: 2011-12-06 00:34+0000
-Last-Translator: George Christofis &lt;geochr22@gmail.com&gt;
+POT-Creation-Date: 2012-08-26 12:44-0700
+PO-Revision-Date: 2012-09-24 07:02+0000
+Last-Translator: Basilis Thomopoulos &lt;kolxoz83@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-04-28 07:32+0000
-X-Generator: Launchpad (build 15149)
+X-Launchpad-Export-Date: 2012-12-24 08:08+0000
+X-Generator: Launchpad (build 16378)
 </translation>
     </message>
 </context>
@@ -38,7 +38,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
         <translation>Σκληρός Δίσκος</translation>
     </message>
@@ -59,7 +59,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
         <translation>Δισκος USB</translation>
     </message>
@@ -68,6 +68,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -79,6 +80,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -119,14 +121,14 @@ X-Generator: Launchpad (build 15149)
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>All Files</source>
-        <translation></translation>
+        <translation>Όλα τα Αρχεία</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="678"/>
         <location filename="unetbootin.cpp" line="686"/>
         <location filename="unetbootin.cpp" line="694"/>
         <source>All Files (*)</source>
-        <translation></translation>
+        <translation>Όλα τα αρχεία (*)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="678"/>
@@ -410,38 +412,38 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>Ρύθμιση grub στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation>Εγκατάσταση syslinux στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation>Εγκατάσταση extlinux στο %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation>Συγχρονισμός συστημάτων αρχείων</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation>Μετά την επανεκκίνηση επιλέξετε το </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Αφού γίνει επανεκκίνηση, επιλέξετε απο το BIOS του υπολογιστή σας να ξεκινήσει απο USB.%1￼Να γίνει επανεκκίνηση τωρα;</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -612,7 +614,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -798,19 +800,17 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>ΜΒ</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -820,7 +820,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
@@ -830,7 +830,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="516"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="561"/>
@@ -882,7 +882,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Τύπος:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
@@ -948,17 +948,17 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Πυρήνας:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Επιλογές:</translation>
     </message>
 </context>
 <context>

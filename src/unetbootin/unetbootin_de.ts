@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-03-25 16:01-0400
-PO-Revision-Date: 2012-04-11 17:59+0000
+POT-Creation-Date: 2012-08-26 12:44-0700
+PO-Revision-Date: 2012-11-18 13:26+0000
 Last-Translator: Dennis Baudys &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-04-28 07:32+0000
-X-Generator: Launchpad (build 15149)
+X-Launchpad-Export-Date: 2012-12-24 08:08+0000
+X-Generator: Launchpad (build 16378)
 </translation>
     </message>
 </context>
@@ -43,7 +43,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
         <translation>Festplatte</translation>
     </message>
@@ -64,7 +64,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
         <translation>USB-Laufwerk</translation>
     </message>
@@ -73,6 +73,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -84,6 +85,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -411,39 +413,39 @@ Installieren Sie das Paket »%3« oder das entsprechende Paket Ihrer Distributio
         <translation>Konfiguriere Grub auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation>Installiere Syslinux auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation>Installiere Extlinux auf %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation>Gleiche Dateisysteme ab</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation>Einstellen der Persistenz</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation>Wählen Sie nach dem Neustart </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>Wählen Sie nach dem Neustart die USB-Startoption im BIOS-Startmenü aus.%1
 Jetzt neustarten?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation>Das erstellte USB Gerät wird nicht auf einem Mac booten. Schließen Sie es an einem PC an und wählen sie die USB-Boot-Option im BIOS-Menü.%1</translation>
     </message>
@@ -531,17 +533,17 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="47"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CloneZilla is a distribution used for disk backup and imaging.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; CloneZilla is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; CloneZilla ist eine Distribution für Festplatten-Backups und -Abbilder.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://clonezilla.org/&quot;&gt;http://clonezilla.org/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; CloneZilla ist eine Distribution für Festplattensicherungen und -Abbilder.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="52"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Damn Small Linux ist eine minimalistische Distribution für ältere Computer.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Damn Small Linux ist eine minimalistische Distribution für ältere Rechner.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="57"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Debian is a community-developed Linux distribution that supports a wide variety of architectures and offers a large repository of packages.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The NetInstall version allows for installation over FTP. If you would like to use a pre-downloaded install iso, use the HdMedia option, and then place the install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Debian ist eine gemeinschaftlich entwickelte Linux-Distribution und bietet eine große Auswahl an Architekturen und Softwarepaketen.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; Die NetInstall-Version ermöglicht die Installation über das Internet (FTP). Wenn Sie eine zuvor heruntergeladene Abbild-Datei benutzen wollen, wählen Sie die HdMedia-Option und speichern Sie die Abbild-Datei im Stammverzeichnis der Festplatte oder des USB-Laufwerks.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.debian.org/&quot;&gt;http://www.debian.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Debian ist eine gemeinschaftlich entwickelte Linux-Distribution und bietet eine große Auswahl an Architekturen und Software-Paketen.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; Die NetInstall-Version ermöglicht die Installation über das Internet (FTP). Wenn Sie eine zuvor heruntergeladene Abbild-Datei benutzen wollen, wählen Sie die HdMedia-Option und speichern Sie die Abbild-Datei im Stammverzeichnis der Festplatte oder des USB-Laufwerks.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="63"/>
@@ -551,12 +553,12 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="68"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dr.Web AntiVirus is an anti-virus emergency kit to restore a system that broke due to malware.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Dr.Web AntiVirus ist ein Antivirus-Notfallpaket um ein System wiederherzustellen, das durch Malware beschädigt wurde.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch und die Durchführung von Malware-Scans nicht notwendig, aber aus dem Live-Modus möglich.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.freedrweb.com/livecd&quot;&gt;http://www.freedrweb.com/livecd&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Dr.Web AntiVirus ist ein Antivirus-Notfallpaket, um ein System wiederherzustellen, das durch Malware beschädigt wurde.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch und die Suche nach Schad-Software (Malware) nicht notwendig, aber aus dem Live-Modus möglich.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="73"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Elive ist eine auf Debian basierende Distribution, die den Enlightenment Fenstermanager als Arbeitsumgebung benutzt.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Elive läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Elive ist eine auf Debian basierende Distribution, die den Fenstermanager Enlightenment als Arbeitsumgebung benutzt.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Elive läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="78"/>
@@ -586,7 +588,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; GeeXboX ist eine Embedded Linux-Media-Center-Distribution.&lt;br/&gt;</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; GeeXboX ist eine Embedded Linux-Media-Center-Distribution.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -596,12 +598,12 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="126"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Gujin is a graphical boot manager which can bootstrap various volumes and files.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Gujin simply boots and runs; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Gujin ist ein grafischer Startmanager, der verschiedene Laufwerke und Dateien starten kann.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Gujin läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://gujin.sourceforge.net/&quot;&gt;http://gujin.sourceforge.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Gujin ist eine grafische Auswahl zum Start von Betriebssystemen, die verschiedene Laufwerke und Dateien starten kann.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Gujin läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="131"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kaspersky Rescue Disk detects and removes malware from your Windows installation.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which malware scans can be launched.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Die Kaspersky Rescue Disk findet und entfernt Malware von Ihrer Windows-Installation.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Die Kaspersky Rescue Disk läuft im Live-Modus; eine Installation ist für den Gebrauch und die Durchführung von Malware-Scans nicht notwendig.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://ftp.kaspersky.com/devbuilds/RescueDisk/&quot;&gt;http://ftp.kaspersky.com/devbuilds/RescueDisk/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Die Kaspersky Rescue Disk findet und entfernt Schad-Software (Malware) von Ihrer Windows-Installation.&lt;br/&gt;&lt;b&gt;Installationshinweis:&lt;/b&gt; Die Kaspersky Rescue Disk läuft im Live-Modus; eine Installation ist für den Gebrauch und die Durchführung von Malware-Scans nicht notwendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="136"/>
@@ -621,7 +623,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Lubuntu ist ein offizielles Ubuntu-Derivat mit LXDE als Arbeitsumgebung.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich. Die NetInstall-Version ermöglicht die Installation über das Internet (FTP, kann auch andere offizielle Ubuntu-Derivate installieren, wie z.B. Kubuntu) oder durch zuvor heruntergeladene Abbild-Dateien. Wenn Sie ein Alternate-Abbild (nicht Desktop) benutzen wollen, wählen Sie die HdMedia-Option und speichern Sie die Abbild-Datei im Stammverzeichnis der Festplatte oder des USB-Laufwerks.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -631,12 +633,12 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="161"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly version based on KDE, while AntiX is a lightweight version for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; MEPIS supports booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS ist eine auf Debian basierende Distribution. SimplyMEPIS ist eine benutzerfreundliche Version basierend auf KDE, während  AntiX eine schlanke Version für ältere Computer ist.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://www.mepis.org/&quot;&gt;http://www.mepis.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; MEPIS ist eine auf Debian basierende Distribution. SimplyMEPIS ist eine benutzerfreundliche Version basierend auf KDE, während  AntiX eine schlanke Version für ältere Rechner ist.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; Diese Distribution läuft im Live-Modus; eine Installation ist für den Gebrauch nicht notwendig, aber aus dem Live-Modus möglich.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; NetbootCD ist eine kleine Boot-CD, die netzwerkbasierte Installationsprogramme für andere Distributionen herunterlädt und bootet.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; NetbootCD bootet und läuft im Live-Modus.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; NetbootCD ist eine kleine Boot-CD, die netzwerkbasierte Installationsprogramme für andere Distributionen herunterlädt und bootet.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; NetbootCD bootet und läuft im Live-Modus.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -646,7 +648,7 @@ Jetzt neustarten?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Der Offline NT Passwort- und Registrierdatenbank-Editor kann Windows-Passwörter zurücksetzen und die Registrierdatenbank von Windows 2000-Vista bearbeiten.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; NTPasswd wird gebootet und läuft im Live-Modus; zum Verwenden ist keine Installation notwendig.</translation>
+        <translation>&lt;b&gt;Webseite:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beschreibung:&lt;/b&gt; Der Offline NT Passwort- und Registrierdatenbank-Editor kann Windows-Passwörter zurücksetzen und die Registrierdatenbank von Windows 2000-Vista bearbeiten.&lt;br/&gt;&lt;b&gt;Installationshinweise:&lt;/b&gt; NTPasswd wird gebootet und läuft im Live-Modus; zum Verwenden ist keine Installation notwendig.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -807,14 +809,12 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished">Speicherplatz, der für Benutzerdateien reserviert wird, die über Neustarts hinweg erhalten bleiben. Dies funktioniert nur bei LiveUSBs für Ubuntu, dessen Derivate und SaLT-basierten Distributionen. Wenn der Wert den verfügbaren Speicherplatz des Wechseldatenträgers überschreitet, wird der maximal zur Verfügung stehende Speicherplatz verwendet.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished">Speicherplatz für das Aufbewahren von Dateien zwischen Neustarts (nur für Ubuntu und SaLT):</translation>
+        <translation>Platz um Dateien zwischen Neustarts zu erhalten (nur Ubuntu):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>

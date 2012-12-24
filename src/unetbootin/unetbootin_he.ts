@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-03-25 16:01-0400
-PO-Revision-Date: 2010-11-15 22:03+0000
+POT-Creation-Date: 2012-08-26 12:44-0700
+PO-Revision-Date: 2012-12-19 15:15+0000
 Last-Translator: Yaron &lt;sh.yaron@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-04-28 07:32+0000
-X-Generator: Launchpad (build 15149)
+X-Launchpad-Export-Date: 2012-12-24 08:08+0000
+X-Generator: Launchpad (build 16378)
 </translation>
     </message>
 </context>
@@ -38,7 +38,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3409"/>
         <location filename="unetbootin.cpp" line="3422"/>
         <location filename="unetbootin.cpp" line="3604"/>
-        <location filename="unetbootin.cpp" line="4215"/>
+        <location filename="unetbootin.cpp" line="4230"/>
         <source>Hard Disk</source>
         <translation>כונן קשיח</translation>
     </message>
@@ -59,7 +59,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="3439"/>
         <location filename="unetbootin.cpp" line="3608"/>
         <location filename="unetbootin.cpp" line="3932"/>
-        <location filename="unetbootin.cpp" line="4219"/>
+        <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
         <translation>כונן USB</translation>
     </message>
@@ -68,6 +68,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="229"/>
         <location filename="unetbootin.cpp" line="230"/>
         <location filename="unetbootin.cpp" line="343"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="663"/>
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
@@ -79,6 +80,7 @@ X-Generator: Launchpad (build 15149)
         <location filename="unetbootin.cpp" line="225"/>
         <location filename="unetbootin.cpp" line="226"/>
         <location filename="unetbootin.cpp" line="348"/>
+        <location filename="unetbootin.cpp" line="660"/>
         <location filename="unetbootin.cpp" line="668"/>
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
@@ -104,12 +106,12 @@ X-Generator: Launchpad (build 15149)
     <message>
         <location filename="unetbootin.cpp" line="292"/>
         <source>FAT32-formatted USB drive</source>
-        <translation></translation>
+        <translation>כונן USB בפריסת FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="296"/>
         <source>EXT2-formatted USB drive</source>
-        <translation></translation>
+        <translation>כונן USB בפריסת EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
@@ -411,39 +413,39 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
         <translation>הגדרת grub על %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3961"/>
+        <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
         <translation>התקנת syslinux אל %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="3996"/>
+        <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
         <translation>התקנת extlinux אל %1</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4167"/>
+        <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
         <translation>סנכרון מערכות קבצים</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4172"/>
+        <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4217"/>
+        <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
         <translation>לאחר האתחול, יש לבחור ב־ </translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4222"/>
+        <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
         <translation>לאחר ההפעלה מחדש, יש לבחור באפשרות ההפעלה מ־USB בתפריט ההפעלה של ה־BIOS.‏ %1
 האם הפעיל מחדש כעת?</translation>
     </message>
     <message>
-        <location filename="unetbootin.cpp" line="4225"/>
+        <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
         <translation></translation>
     </message>
@@ -516,7 +518,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="32"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Arch Linux is a lightweight distribution optimized for speed and flexibility.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for installation over the internet (FTP).</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ Arch Linux היא הפצה קלילה המותאמת למהירות ולגמישות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP).</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.archlinux.org/&quot;&gt;http://www.archlinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ Arch Linux היא הפצה קלילה המותאמת למהירות ולגמישות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת בררת המחדל מאפשרת התקנה דרך האינטרנט (FTP).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="37"/>
@@ -526,7 +528,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="42"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; CentOS is a free Red Hat Enterprise Linux clone.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ CentOS הנה כפילה חופשית של Red Hat Enterprise Linux.&lt;br/&gt;‏&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.centos.org/&quot;&gt;http://www.centos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;‏ CentOS הנה כפילה חופשית של Red Hat Enterprise Linux.&lt;br/&gt;‏&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת בררת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="47"/>
@@ -536,7 +538,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="52"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Damn Small Linux is a minimalist distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Damn Small Linux הינה הפצה פשטנית המיועדת למחשבים ישנים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה טוענת את המערכת כולה אל זיכרון ה־RAM ומאתחלת מהזיכרון, כך שלא נדרשת התקנה אך היא אפשרית.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://damnsmalllinux.org/&quot;&gt;http://damnsmalllinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Damn Small Linux הנה הפצה פשטנית המיועדת למחשבים ישנים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה טוענת את המערכת כולה אל זיכרון ה־RAM ומאתחלת מהזיכרון, כך שלא נדרשת התקנה אך היא אפשרית.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="57"/>
@@ -546,7 +548,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="63"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Dreamlinux is a user-friendly Debian-based distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Dreamlinux הינה הפצה ידידותית למשתמש מבוססת דביאן.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.dreamlinux.com.br/&quot;&gt;http://www.dreamlinux.com.br&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Dreamlinux הנה הפצה ידידותית למשתמש מבוססת דביאן.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="68"/>
@@ -561,17 +563,17 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="78"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt;  &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Fedora הינה הפצה קהילתית הממומנת על ידי Red Hat המציגה את התוכנה החופשית/חינמית העדכנית ביותר.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה. גירסת התקנת הרשת מאפשרת התקנה דרך האינטרנט (FTP), או התקנה באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt;  &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Fedora הנה הפצה קהילתית הממומנת על ידי Red Hat המציגה את התכנה החופשית/חינמית העדכנית ביותר.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה. גרסת התקנת הרשת מאפשרת התקנה דרך האינטרנט (FTP), או התקנה באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="83"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; FreeBSD הינה מערכת דמויית יוניקס לשימוש כללי המתוכננת לריבוי שינויים וביצועים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גירסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.freebsd.org/&quot;&gt;http://www.freebsd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; FreeBSD הנה מערכת דמויית יוניקס לשימוש כללי המתוכננת לריבוי שינויים וביצועים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת בררת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="88"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeDOS is a free MS-DOS compatible operating system.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; See the &lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;manual&lt;/a&gt; for installation details.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; FreeDOS הינה מערכת הפעלה תואמת MS-DOS&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; עיין ב&lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;מדריך למשתמש&lt;/a&gt; לפרטים אודות ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.freedos.org/&quot;&gt;http://www.freedos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; FreeDOS הנה מערכת הפעלה תואמת MS-DOS&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; ניתן לעיין ב&lt;a href=&quot;http://fd-doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall&quot;&gt;מדריך למשתמש&lt;/a&gt; לפרטים על ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="93"/>
@@ -581,12 +583,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="98"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Frugalware is a general-purpose Slackware-based distro for advanced users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default option allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Frugalware הנה הפצה המבוססת על Slackware לשימוש כללי.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; אפשרות ברירת המחדל מאפשרת התקנה דרך האינטרנט, או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://frugalware.org/&quot;&gt;http://frugalware.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Frugalware הנה הפצה המבוססת על Slackware לשימוש כללי.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; אפשרות בררת המחדל מאפשרת התקנה דרך האינטרנט, או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="108"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; GeeXboX is an Embedded Linux Media Center Distribution.&lt;br/&gt;</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.geexbox.org/&quot;&gt;http://www.geexbox.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; GeeXboX הנה הפצה המבוססת על לינוקס להתקנים משובצים לצורך מרכז מולטימדיה.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="121"/>
@@ -606,7 +608,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="136"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kubuntu is an official Ubuntu derivative featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;http://www.kubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;Kubuntu הנה נגזרת רשמית של Ubuntu עם סביבת שולחן העבודה KDE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="141"/>
@@ -616,17 +618,17 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="146"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Linux Mint הינה הפצה ידידותית למשתמש המבוססת על אובונטו הכוללת מפענחים ותוכנות נוספות קנייניים כברירת מחדל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt;הגירסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן לטעון את תכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxmint.com/&quot;&gt;http://linuxmint.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Linux Mint הנה הפצה ידידותית למשתמש המבוססת על אובונטו הכוללת מפענחים ותוכנות נוספות קנייניים כבררת מחדל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt;הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן לטעון את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.org/&quot;&gt;http://www.lubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;Lubuntu הנה נגזרת רשמית של Ubuntu עם סביבת שולחן העבודה LXDE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Mandriva is a user-friendly distro formerly known as Mandrake Linux.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over the internet (FTP) or via pre-downloaded &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;&quot;Free&quot; iso image files&lt;/a&gt;.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Mandriva הינה הפצה ידידותית למשתמש שבעברה נודעה בשם מנדרייק לינוקס.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת אתחול במצב חי, ממנו ניתן לטעון את תוכנית ההתקנה. גירסת ההתקנה מהרשת מאפשרת התקנה דרך האינטרנט או דרך &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;קובצי דמות ISO &quot;חופשיים&quot;&lt;/a&gt;.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.mandriva.com/&quot;&gt;http://www.mandriva.com/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Mandriva הנה הפצה ידידותית למשתמש שבעברה נודעה בשם מנדרייק לינוקס.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן לטעון את תוכנית ההתקנה. גרסת ההתקנה מהרשת מאפשרת התקנה דרך האינטרנט או דרך &lt;a href=&quot;http://www.mandriva.com/en/download&quot;&gt;קובצי דמות ISO „חופשיים“&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="161"/>
@@ -651,7 +653,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="186"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; openSUSE is a user-friendly Novell sponsored distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The default version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; openSUSE הינה הפצה ידידותית למשתמש הממומנת על ידי נובל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גירסת ברירת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.opensuse.org/&quot;&gt;http://www.opensuse.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; openSUSE הנה הפצה ידידותית למשתמש הממומנת על ידי נובל&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסת בררת המחדל מאפשרת התקנה דרך האינטרנט (FTP), או התקנה לא מקוונת באמצעות קובצי ISO שאוחזרו מראש.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="191"/>
@@ -666,7 +668,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="206"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Puppy Linux is a lightweight distribution designed for older computers.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Puppy Linux הינה הפצה קלת משקל המיועדת למחשבים ישנים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה טוענת את המערכת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה על אף שזה אפשרי.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.puppylinux.com/&quot;&gt;http://www.puppylinux.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Puppy Linux הנה הפצה קלת משקל המיועדת למחשבים ישנים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה טוענת את המערכת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה על אף שזה אפשרי.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="211"/>
@@ -681,12 +683,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="228"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Slax is a Slackware-based distribution featuring the KDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Slax הינה הפצה המבוססת על Slackware המציגה את שולחן העבודה KDE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.slax.org/&quot;&gt;http://www.slax.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Slax הנה הפצה המבוססת על Slackware הכוללת את שולחן העבודה KDE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="233"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; SliTaz הינה מיקרו הפצה קלת משקל המיועדת למחשבים שולחניים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה נטענת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה אך ניתן לבצע אותה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; SliTaz הנה מיקרו הפצה קלת משקל המיועדת למחשבים שולחניים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה נטענת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה אך ניתן לבצע אותה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="238"/>
@@ -702,12 +704,12 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="248"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Super OS is an unofficial derivative of Ubuntu which includes additional software by default. Requires a 2GB USB drive to install.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Super OS הנה נגזרת בלתי רשמית של אובונטו הכוללת תוכנות נוספות כברירת מחדל. יש צורך בכונן USB בנפח של 2 ג&quot;ב כדי להתקין.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://hacktolive.org/wiki/Super_OS&quot;&gt;http://hacktolive.org/wiki/Super_OS&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Super OS הנה נגזרת בלתי רשמית של אובונטו הכוללת תוכנות נוספות כבררת מחדל. יש צורך בכונן USB בנפח של 2 ג״ב כדי להתקין.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="258"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;http://www.ubuntu.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;Ubuntu הנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="263"/>
@@ -717,17 +719,17 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="268"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Ubuntu iהנה הפצה ידידותית מבוססת דביאן. נכון לעכשיו זוהי הפצת הלינוקס הנפוצה ביותר למחשבים אישיים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.xubuntu.org/&quot;&gt;http://www.xubuntu.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt;Xubuntu הנה נגזרת רשמית של Ubuntu עם סביבת שולחן העבודה XFCE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת הפעלה במצב חי ממנה ניתן להפעיל את ההתקנה. גרסת ההתקנה המקוונת (NetInstall) מאפשרת להתקין דרך FTP, וניתן דרכה להתקין קובונטו ונגזרות רשמיות נוספות של אובונטו. אם ברצונך להשתמש בקובץ ה־iso להתקנה החלופית (ללא שולחן עבודה) יש להשתמש באפשרות ה־HdMedia, ואז להציב את קובץ ה־iso של ההתקנה החלופית בכונן הקשיח או בכונן ה־USB שלך.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="273"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Zenwalk is a Slackware-based distribution featuring the XFCE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Zenwalk הינה הפצה המבוססת על Slackware המציגה את שולחן העבודה XFCE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה מאפשרת איתחול במצב חי, ממנו ניתן להפעיל את תוכנית ההתקנה.</translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.zenwalk.org/&quot;&gt;http://www.zenwalk.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Zenwalk הנה הפצה המבוססת על Slackware הכוללת את שולחן העבודה XFCE.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת אתחול במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="33"/>
         <source>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; EeePCLinuxOS is a user-friendly PCLinuxOS based distribution for the EeePC.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; EeePCLinuxOS הינה הפצה ידידותית למשתמש המבוססת על PCLinuxOS עבור EeePC.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא שהמדיה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
+        <translation>&lt;img src=&quot;:/eeepclos.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.eeepclinuxos.com/&quot;&gt;http://www.eeepclinuxos.com&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; EeePCLinuxOS הנה הפצה ידידותית למשתמש המבוססת על PCLinuxOS עבור EeePC.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא שהמדיה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="41"/>
@@ -742,12 +744,12 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="61"/>
         <source>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Kiwi Linux is an Ubuntu derivative primarily made for Romanian, Hungarian and English speaking users.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Kiwi Linux הינה הפצת לינוקס שנגזרה מאובונטו ומיועד בעיקר לדוברי רומנית, הונגרית ואנגלית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא שהמדיה המשמשת להתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
+        <translation>&lt;img src=&quot;:/kiwi_logo_ro.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.kiwilinux.org/&quot;&gt;http://www.kiwilinux.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Kiwi Linux הנה הפצת לינוקס שנגזרה מאובונטו ומיועדת בעיקר לדוברי רומנית, הונגרית ואנגלית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא שהמדיה המשמשת להתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="69"/>
         <source>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; gNewSense is a high-quality GNU/Linux distribution that extends and improves Ubuntu to create a completely free operating system without any binary blobs or package trees that contain proprietary software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; Make sure install media is empty and formatted before proceeding with install.</source>
-        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; gNewSense הינה הפצת GNU/לינוקס המרחיבה ומשפרת את אובונטו ליצירת מערכת הפעלה חופשית לגמרי ללא כתמים בינאריים או עצי חבילות המכילים תוכנה קניינית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא כי מדיית ההתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
+        <translation>&lt;img src=&quot;:/gnewsense.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://www.gnewsense.org/&quot;&gt;http://www.gnewsense.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; gNewSense הנה הפצת GNU/לינוקס המרחיבה ומשפרת את אובונטו ליצירת מערכת הפעלה חופשית לגמרי ללא כתמים בינאריים או עצי חבילות המכילים תכנה קניינית.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; יש לוודא כי מדיית ההתקנה ריקה ומפורמטת בטרם המשך ההתקנה.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="77"/>
@@ -757,7 +759,7 @@ Reboot now?</source>
     <message>
         <location filename="distrovercust.cpp" line="85"/>
         <source>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.slitaz.org/en/&quot;&gt;http://www.slitaz.org/en&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; SliTaz is a lightweight, desktop-oriented micro distribution.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version loads the entire system into RAM and boots from memory, so installation is not required but optional. This installer is based on &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</source>
-        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; SliTaz הינה מיקרו הפצה קלת משקל המיועדת למחשבים שולחניים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגירסה החיה נטענת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה אך ניתן לבצע אותה. תוכנית התקנה זו מבוססת על &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
+        <translation>&lt;img src=&quot;:/slitaz.png&quot; /&gt;&lt;br/&gt;&lt;b&gt;דף הבית:&lt;/b&gt; &lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; SliTaz הנה מיקרו הפצה קלת משקל המיועדת למחשבים שולחניים.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה נטענת כולה אל זיכרון ה־RAM ומתאתחלת מהזיכרון, כך שאין צורך בהתקנה אך ניתן לבצע אותה. תכנית התקנה זו מבוססת על &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="distrovercust.cpp" line="93"/>
@@ -807,19 +809,17 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <oldsource>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. If value exceeds drive capacity, the maximum space available will be used.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <oldsource>Space used to preserve files across reboots (Ubuntu and SaLT only):</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>מ״ב</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
@@ -990,7 +990,7 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>יש להריץ את %2 כמשתמש על. יש לסגור את היישום, ולהפעיל אותו מחדש באחת הצורות הבאות:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;או:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>

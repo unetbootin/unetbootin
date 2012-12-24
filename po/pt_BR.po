@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-25 16:01-0400\n"
-"PO-Revision-Date: 2012-04-20 00:15+0000\n"
+"POT-Creation-Date: 2012-08-26 12:44-0700\n"
+"PO-Revision-Date: 2012-05-15 19:58+0000\n"
 "Last-Translator: Felipe Rozelio <feliperozelio@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-28 07:32+0000\n"
-"X-Generator: Launchpad (build 15149)\n"
+"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
+"X-Generator: Launchpad (build 16378)\n"
 "X-Language: pt_BR\n"
 
 #. ts-context QObject
@@ -19,91 +19,91 @@ msgid "LeftToRight"
 msgstr "Da esquerda para a direita"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:208 unetbootin.cpp:306 unetbootin.cpp:307 unetbootin.cpp:374
-#: unetbootin.cpp:530 unetbootin.cpp:3344 unetbootin.cpp:3357
-#: unetbootin.cpp:3536 unetbootin.cpp:4147
+#: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
+#: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
+#: unetbootin.cpp:3604 unetbootin.cpp:4215
 msgid "Hard Disk"
 msgstr "Disco Rígido"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:210 unetbootin.cpp:303 unetbootin.cpp:304 unetbootin.cpp:376
-#: unetbootin.cpp:534 unetbootin.cpp:699 unetbootin.cpp:719 unetbootin.cpp:973
-#: unetbootin.cpp:1534 unetbootin.cpp:1618 unetbootin.cpp:2547
-#: unetbootin.cpp:2590 unetbootin.cpp:3348 unetbootin.cpp:3374
-#: unetbootin.cpp:3540 unetbootin.cpp:3864 unetbootin.cpp:4151
+#: unetbootin.cpp:211 unetbootin.cpp:304 unetbootin.cpp:305 unetbootin.cpp:377
+#: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
+#: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
+#: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
 msgid "USB Drive"
 msgstr "Unidade USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:211 unetbootin.cpp:228 unetbootin.cpp:229 unetbootin.cpp:342
-#: unetbootin.cpp:650 unetbootin.cpp:651 unetbootin.cpp:3430
+#: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
+#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:212 unetbootin.cpp:224 unetbootin.cpp:225 unetbootin.cpp:347
-#: unetbootin.cpp:655 unetbootin.cpp:656 unetbootin.cpp:3422
+#: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
+#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
 msgstr "Disquete"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:245 unetbootin.cpp:251 unetbootin.cpp:255 unetbootin.cpp:259
-#: unetbootin.cpp:263 unetbootin.cpp:269 unetbootin.cpp:297
+#: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
+#: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
 msgid "either"
 msgstr "qualquer"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:276
+#: unetbootin.cpp:277
 msgid "LiveUSB persistence"
 msgstr "LiveUSB Persistente"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:291
+#: unetbootin.cpp:292
 msgid "FAT32-formatted USB drive"
 msgstr "Drive USB formatado em FAT32"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:295
+#: unetbootin.cpp:296
 msgid "EXT2-formatted USB drive"
 msgstr "Drive USB formatado em EXT2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:647
+#: unetbootin.cpp:660
 msgid "Open Disk Image File"
 msgstr "Abrir Imagem inicializável"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:647
+#: unetbootin.cpp:660
 msgid "All Files"
 msgstr "Todos os Arquivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:665 unetbootin.cpp:673 unetbootin.cpp:681
+#: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
 msgid "All Files (*)"
 msgstr "Todos os arquivos (*)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:665
+#: unetbootin.cpp:678
 msgid "Open Kernel File"
 msgstr "Abrir Arquivo do Kernel"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:673
+#: unetbootin.cpp:686
 msgid "Open Initrd File"
 msgstr "Abrir Arquivo Initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:681
+#: unetbootin.cpp:694
 msgid "Open Bootloader Config File"
 msgstr "Abrir Arquivo de Configuração do BootLoader"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:703
+#: unetbootin.cpp:716
 msgid "Insert a USB flash drive"
 msgstr "Insira uma unidade removível (pendrive)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:704
+#: unetbootin.cpp:717
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
@@ -112,12 +112,12 @@ msgstr ""
 "tente reformatá-la como FAT32."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:723
+#: unetbootin.cpp:736
 msgid "%1 not mounted"
 msgstr "%1 não montado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:724
+#: unetbootin.cpp:737
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -127,74 +127,74 @@ msgstr ""
 "dispositivo USB"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:739
+#: unetbootin.cpp:752
 msgid "Select a distro"
 msgstr "Selecione uma distribuição"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:740
+#: unetbootin.cpp:753
 msgid "You must select a distribution to load."
 msgstr "Você tem que selecionar uma distribuição para ser carregada."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:754
+#: unetbootin.cpp:767
 msgid "Select a disk image file"
 msgstr "Selecione uma imagem de disco"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:755
+#: unetbootin.cpp:768
 msgid "You must select a disk image file to load."
 msgstr "É necessário selecionar um arquivo de imagem de disco para carregar."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:769
+#: unetbootin.cpp:782
 msgid "Select a kernel and/or initrd file"
 msgstr "Selecione um arquivo de kernel e/ou initrd"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:770
+#: unetbootin.cpp:783
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
 "É necessário selecionar um arquivo de kernel e/ou arquivo de initrd para "
 "carregar."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:784
+#: unetbootin.cpp:797
 msgid "Diskimage file not found"
 msgstr "Arquivo de Imagem de Disco não encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:785
+#: unetbootin.cpp:798
 msgid "The specified diskimage file %1 does not exist."
 msgstr "O arquivo de imagem de disco %1 especificado, não existe."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:799
+#: unetbootin.cpp:812
 msgid "Kernel file not found"
 msgstr "Arquivo de Kernel não encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:800
+#: unetbootin.cpp:813
 msgid "The specified kernel file %1 does not exist."
 msgstr "O arquivo de kernel %1 especificado, não existe."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:814
+#: unetbootin.cpp:827
 msgid "Initrd file not found"
 msgstr "Arquivo de initrd não encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:815
+#: unetbootin.cpp:828
 msgid "The specified initrd file %1 does not exist."
 msgstr "O arquivo de initrd %1 especificado, não existe."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:919
+#: unetbootin.cpp:932
 msgid "%1 exists, overwrite?"
 msgstr "%1 existe, escrever em cima?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:920
+#: unetbootin.cpp:933
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -206,12 +206,12 @@ msgstr ""
 "existente. No caso de dúvida, pressione 'Yes to All (Sim para Todos)."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:946
+#: unetbootin.cpp:959
 msgid "%1 is out of space, abort installation?"
 msgstr "%1 Contém espaço insuficiente, deseja abortar a instalação?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:947
+#: unetbootin.cpp:960
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -222,107 +222,107 @@ msgstr ""
 "todos' para ignorar todos os erros de 'sem espaço'."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1041
+#: unetbootin.cpp:1054
 msgid "Locating kernel file in %1"
 msgstr "Localizando kernel em %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1092
+#: unetbootin.cpp:1105
 msgid "Copying kernel file from %1"
 msgstr "Copiando kernel de %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1098
+#: unetbootin.cpp:1111
 msgid "Locating initrd file in %1"
 msgstr "Localizando initrd em %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1139
+#: unetbootin.cpp:1152
 msgid "Copying initrd file from %1"
 msgstr "Copiando initrd de %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1145 unetbootin.cpp:1225
+#: unetbootin.cpp:1158 unetbootin.cpp:1238
 msgid "Extracting bootloader configuration"
 msgstr "Extraindo as configurações do bootlooader"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1440 unetbootin.cpp:1466
+#: unetbootin.cpp:1467 unetbootin.cpp:1493
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>Extraindo iso comprimido:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1717
+#: unetbootin.cpp:1744
 msgid "Copying file, please wait..."
 msgstr "Copiando arquivo, por favor aguarde..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1718 unetbootin.cpp:2532
+#: unetbootin.cpp:1745 unetbootin.cpp:2559
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Fonte:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1719 unetbootin.cpp:2533
+#: unetbootin.cpp:1746 unetbootin.cpp:2560
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Destino:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1720
+#: unetbootin.cpp:1747
 msgid "<b>Copied:</b> 0 bytes"
 msgstr "<b>Copiado:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1758
+#: unetbootin.cpp:1785
 msgid "Extracting files, please wait..."
 msgstr "Extraindo arquivos, aguarde por favor..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1759
+#: unetbootin.cpp:1786
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Arquivo:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1760
+#: unetbootin.cpp:1787
 msgid "<b>Source:</b>"
 msgstr "<b>Fonte:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1761
+#: unetbootin.cpp:1788
 msgid "<b>Destination:</b>"
 msgstr "<b>Destino:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1762
+#: unetbootin.cpp:1789
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Extraído(s):</b> 0 de um total de %1 arquivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1765
+#: unetbootin.cpp:1792
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Origem</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1766
+#: unetbootin.cpp:1793
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Destino:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1767
+#: unetbootin.cpp:1794
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>Extraído:</b> %1 de um total de %2 arquivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2531
+#: unetbootin.cpp:2558
 msgid "Downloading files, please wait..."
 msgstr "Baixando arquivos, por favor espere..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2534
+#: unetbootin.cpp:2561
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>Baixado:</b> 0 bytes"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2620
+#: unetbootin.cpp:2685
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
@@ -332,32 +332,32 @@ msgstr ""
 "imagem."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2643 unetbootin.cpp:2658
+#: unetbootin.cpp:2708 unetbootin.cpp:2723
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "Baixado: %1 de %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2673
+#: unetbootin.cpp:2738
 msgid "<b>Copied:</b> %1 of %2"
 msgstr "<b>Copiado:</b> %1 de %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2764
+#: unetbootin.cpp:2829
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "Procurando em <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2768
+#: unetbootin.cpp:2833
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "%1/%2 incidências (acertos) em <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3041
+#: unetbootin.cpp:3106
 msgid "%1 not found"
 msgstr "%1 não foi encontrado"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3042
+#: unetbootin.cpp:3107
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -366,57 +366,57 @@ msgstr ""
 "Por favor instale o pacote \"%3\" ou sua distribuição equivalente."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3325
+#: unetbootin.cpp:3390
 msgid "(Current)"
 msgstr "(Atual)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3326
+#: unetbootin.cpp:3391
 msgid "(Done)"
 msgstr "(Finalizado)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3615
+#: unetbootin.cpp:3683
 msgid "Configuring grub2 on %1"
 msgstr "Configurando grub2 no %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3627
+#: unetbootin.cpp:3695
 msgid "Configuring grldr on %1"
 msgstr "Configurando drldr no %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3655
+#: unetbootin.cpp:3723
 msgid "Configuring grub on %1"
 msgstr "Configurando grub no %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3893
+#: unetbootin.cpp:3961
 msgid "Installing syslinux to %1"
 msgstr "Instalando syslinux no %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3928
+#: unetbootin.cpp:3996
 msgid "Installing extlinux to %1"
 msgstr "Instalando extlinux no %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4099
+#: unetbootin.cpp:4167
 msgid "Syncing filesystems"
 msgstr "Sincronizando sistema de arquivos"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4104
+#: unetbootin.cpp:4172
 msgid "Setting up persistence"
 msgstr "Configurando persistência"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4149
+#: unetbootin.cpp:4217
 msgid "After rebooting, select the "
 msgstr "Após reiniciar, selecione o "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4154
+#: unetbootin.cpp:4222
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -425,7 +425,7 @@ msgstr ""
 "Reiniciar Agora?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4157
+#: unetbootin.cpp:4225
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
@@ -434,7 +434,7 @@ msgstr ""
 "e escolha a opção \"USB Boot\" no menu da Bios. %1"
 
 #. ts-context unetbootin
-#: distrolst.cpp:42
+#: distrolst.cpp:43
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
@@ -447,7 +447,7 @@ msgstr ""
 "drive USB. Este arquivo pode ser obtido em cdimage.ubuntu.com"
 
 #. ts-context unetbootin
-#: distrolst.cpp:241
+#: distrolst.cpp:257
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -465,7 +465,7 @@ msgstr ""
 "'/centos/%1/os/%2' quando perguntado sobre a pasta (folder)."
 
 #. ts-context unetbootin
-#: distrolst.cpp:297
+#: distrolst.cpp:314
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -478,7 +478,7 @@ msgstr ""
 "ser obtido em cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:390
+#: distrolst.cpp:407
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -497,7 +497,7 @@ msgstr ""
 "(folder)."
 
 #. ts-context unetbootin
-#: distrolst.cpp:396
+#: distrolst.cpp:413
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -516,7 +516,7 @@ msgstr ""
 "pasta (folder)."
 
 #. ts-context unetbootin
-#: distrolst.cpp:768
+#: distrolst.cpp:785
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -534,7 +534,7 @@ msgstr ""
 "'/factory/repo/oss'  quando perguntado sobre a pasta (folder)."
 
 #. ts-context unetbootin
-#: distrolst.cpp:774
+#: distrolst.cpp:791
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -552,17 +552,17 @@ msgstr ""
 "'/distribution/%1/repo/oss'  quando perguntado sobre a pasta (folder)."
 
 #. ts-context unetbootin
-#: distrover.cpp:21 unetbootin.cpp:735
+#: distrover.cpp:26 unetbootin.cpp:748
 msgid "== Select Distribution =="
 msgstr "== Selecione a Distribuição =="
 
 #. ts-context unetbootin
-#: distrover.cpp:21 distrover.cpp:25
+#: distrover.cpp:26 distrover.cpp:30
 msgid "== Select Version =="
 msgstr "== Selecione a Versão =="
 
 #. ts-context unetbootin
-#: distrover.cpp:22
+#: distrover.cpp:27
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -577,7 +577,7 @@ msgstr ""
 "instalacão, e pressione OK para iniciar a instalacão.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:27
+#: distrover.cpp:32
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -592,7 +592,7 @@ msgstr ""
 "instalação pela internet (FTP)."
 
 #. ts-context unetbootin
-#: distrover.cpp:32
+#: distrover.cpp:37
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -607,7 +607,7 @@ msgstr ""
 "em modo live; não é necessário instalar para usá-la."
 
 #. ts-context unetbootin
-#: distrover.cpp:37
+#: distrover.cpp:42
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -623,7 +623,7 @@ msgstr ""
 "usando FTP ou instalação off-line usando arquivos ISO baixados previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:42
+#: distrover.cpp:47
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -638,7 +638,7 @@ msgstr ""
 "\"live\"; nenhuma instalação é necessária para executa-lo."
 
 #. ts-context unetbootin
-#: distrover.cpp:47
+#: distrover.cpp:52
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -655,7 +655,7 @@ msgstr ""
 "a partir da memória, assim, uma instalacão não é obrigatória e sim optativa."
 
 #. ts-context unetbootin
-#: distrover.cpp:52
+#: distrover.cpp:57
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -676,7 +676,7 @@ msgstr ""
 "ou drive USB."
 
 #. ts-context unetbootin
-#: distrover.cpp:58
+#: distrover.cpp:63
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -692,7 +692,7 @@ msgstr ""
 "lançado(executado)."
 
 #. ts-context unetbootin
-#: distrover.cpp:63
+#: distrover.cpp:68
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -709,7 +709,7 @@ msgstr ""
 "Live da qual scans por malwares podem ser iniciados."
 
 #. ts-context unetbootin
-#: distrover.cpp:68
+#: distrover.cpp:73
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -724,7 +724,7 @@ msgstr ""
 "o boot modo Live, do qual o instalador pode ser executado opcionalmente."
 
 #. ts-context unetbootin
-#: distrover.cpp:73
+#: distrover.cpp:78
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -746,7 +746,7 @@ msgstr ""
 "off-line usando arquivos ISO baixados previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:78
+#: distrover.cpp:83
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -763,7 +763,7 @@ msgstr ""
 "off-line usando arquivos ISO descarregados previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:83
+#: distrover.cpp:88
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -780,7 +780,7 @@ msgstr ""
 "detalhes de instalação."
 
 #. ts-context unetbootin
-#: distrover.cpp:88
+#: distrover.cpp:93
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -799,7 +799,7 @@ msgstr ""
 "A versão incorporada possibilita a instalação para o HD."
 
 #. ts-context unetbootin
-#: distrover.cpp:93
+#: distrover.cpp:98
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -816,7 +816,7 @@ msgstr ""
 "off-line usando arquivos ISO baixados previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:103
+#: distrover.cpp:108
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
@@ -827,7 +827,7 @@ msgstr ""
 "</b> GeeXboX é uma Distribuição de Centro de Mídia Linux Integrado.<br/>"
 
 #. ts-context unetbootin
-#: distrover.cpp:116
+#: distrover.cpp:121
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -844,7 +844,7 @@ msgstr ""
 "o instalador possa opcionalmente ser inicializado."
 
 #. ts-context unetbootin
-#: distrover.cpp:121
+#: distrover.cpp:126
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -860,7 +860,7 @@ msgstr ""
 "instalá-lo para ser usado."
 
 #. ts-context unetbootin
-#: distrover.cpp:126
+#: distrover.cpp:131
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -877,7 +877,7 @@ msgstr ""
 "por malware podem ser iniciados."
 
 #. ts-context unetbootin
-#: distrover.cpp:131
+#: distrover.cpp:136
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -902,7 +902,7 @@ msgstr ""
 "alternate no diretório raiz de seu disco rigido ou disco USB."
 
 #. ts-context unetbootin
-#: distrover.cpp:136
+#: distrover.cpp:141
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
@@ -920,7 +920,7 @@ msgstr ""
 "kernel)."
 
 #. ts-context unetbootin
-#: distrover.cpp:141
+#: distrover.cpp:146
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -938,7 +938,32 @@ msgstr ""
 "lançado(executado)."
 
 #. ts-context unetbootin
-#: distrover.cpp:146
+#: distrover.cpp:151
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
+"n:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
+msgstr ""
+"<b>Página Inicial:</ b> <a href=\"http://www.lubuntu.net/\"> "
+"http://www.lubuntu.net </a><br/><b> Descrição:</b> Lubuntu é um derivado "
+"oficial do Ubuntu com o ambiente de trabalho LXDE<br/><b>Notas de "
+"Instalação:</b>a versão Live permite inicializar em modo Live, a partir do "
+"qual o instalador pode, opcionalmente, ser lançado. A versão NetInstall "
+"permite a instalação por FTP, e pode instalar o Kubuntu e outros derivados "
+"oficiais do Ubuntu. Se você gostaria de usar uma de iso de instalação pré-"
+"baixados alternativo (sem ambiente de trabalho), use a opção HdMedia, e em "
+"seguida, coloque o suplente de instalação iso no diretório raiz do seu disco "
+"rígido ou drive USB"
+
+#. ts-context unetbootin
+#: distrover.cpp:156
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -959,7 +984,7 @@ msgstr ""
 "href=\"http://www.mandriva.com/en/download\"> \"Gratuitos\" ISO imagens</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:161
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -976,7 +1001,7 @@ msgstr ""
 "execução em modo live, do qual o instalador pode ser opcionalmente lançado."
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:166
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
@@ -992,7 +1017,7 @@ msgstr ""
 "em modo Live."
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:176
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -1011,7 +1036,7 @@ msgstr ""
 "NimbleX inicializa em modo live."
 
 #. ts-context unetbootin
-#: distrover.cpp:171
+#: distrover.cpp:181
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
@@ -1028,7 +1053,7 @@ msgstr ""
 "modo Live; nenhuma instalação é necessária para utilizá-lo."
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:186
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -1045,7 +1070,7 @@ msgstr ""
 "arquivos ISO descarregados previamente."
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:191
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -1060,7 +1085,7 @@ msgstr ""
 "live; nenhuma instalação é necessária para usa-lo."
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:196
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -1077,7 +1102,7 @@ msgstr ""
 "e executado em modo live; nenhuma instalação é necessária para usa-lo."
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:206
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1094,7 +1119,7 @@ msgstr ""
 "sim opcional."
 
 #. ts-context unetbootin
-#: distrover.cpp:201
+#: distrover.cpp:211
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1114,7 +1139,7 @@ msgstr ""
 "versão completa necessita de uma unidade USB de 8 GB"
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:216
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
@@ -1134,7 +1159,7 @@ msgstr ""
 "root padrão é <b>live</b>"
 
 #. ts-context unetbootin
-#: distrover.cpp:218
+#: distrover.cpp:228
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1149,7 +1174,7 @@ msgstr ""
 "instalador opcionalmente pode ser executado."
 
 #. ts-context unetbootin
-#: distrover.cpp:223
+#: distrover.cpp:233
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1166,7 +1191,7 @@ msgstr ""
 "obrigatória e sim optativa."
 
 #. ts-context unetbootin
-#: distrover.cpp:228
+#: distrover.cpp:238
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1183,7 +1208,7 @@ msgstr ""
 "executa; não é necessário instalar o programa para se usar."
 
 #. ts-context unetbootin
-#: distrover.cpp:233 distrovercust.cpp:12
+#: distrover.cpp:243 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1199,7 +1224,7 @@ msgstr ""
 "necessário instalar o programa para se usar."
 
 #. ts-context unetbootin
-#: distrover.cpp:238
+#: distrover.cpp:248
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1217,7 +1242,7 @@ msgstr ""
 "inicializado."
 
 #. ts-context unetbootin
-#: distrover.cpp:248
+#: distrover.cpp:258
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1242,7 +1267,7 @@ msgstr ""
 "alternate no diretório raiz de seu disco rigido ou disco USB"
 
 #. ts-context unetbootin
-#: distrover.cpp:253
+#: distrover.cpp:263
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1258,7 +1283,7 @@ msgstr ""
 "memória RAM."
 
 #. ts-context unetbootin
-#: distrover.cpp:258
+#: distrover.cpp:268
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1283,7 +1308,7 @@ msgstr ""
 "alternate no diretório raiz de seu disco rigido ou disco USB"
 
 #. ts-context unetbootin
-#: distrover.cpp:263
+#: distrover.cpp:273
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1476,20 +1501,19 @@ msgstr "&Personalizar"
 #: unetbootin.ui:414 unetbootin.ui:430
 msgid ""
 "Space to reserve for user files which are preserved across reboots. Works "
-"only for LiveUSBs for Ubuntu and derivatives, and SaLT-based distributions. "
-"If value exceeds drive capacity, the maximum space available will be used."
+"only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
+"capacity, the maximum space available will be used."
 msgstr ""
-"Espaço reservado para arquivos de usuário que são preservados entre as "
-"reinicializações. Funciona somente para Versões LiveUSB do Ubuntu e "
-"derivados, e distribuições baseadas no SaLT. Se o valor exceder a capacidade "
-"do dispositivo, o espaço máximo disponível será utilizado."
+"Espaço de reserva para os arquivos do usuário que são preservados entre as "
+"reinicializações. Funciona somente para LiveUSBs para o Ubuntu e derivados. "
+"Se o valor excede a capacidade do disco, o espaço máximo disponível será "
+"usado."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
-msgid "Space used to preserve files across reboots (Ubuntu and SaLT only):"
+msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
-"Espaço usado para preservar arquivos entre reinicializações (somente Ubuntu "
-"e SaLT):"
+"Espaço usado para preservar os arquivos nas reinicializações (Ubuntu apenas):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440
