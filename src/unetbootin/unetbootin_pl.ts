@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-03-31 13:34+0000
-Last-Translator: Kajetan Kaczmarek &lt;kajetan@linuxmail.org&gt;
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-02-23 09:08+0000
+Last-Translator: Piotr Skup &lt;metodyk@gmail.com&gt;
 Language-Team: Polish &lt;pl@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -619,7 +619,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole to dystrybucja do gier, łatwa w instalacji, użyciu i szybko się uruchamiająca.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt; 1.0.2010 to najnowsze 1.0, teraz dostępne jako rolling release (uruchom liveupdate żeby zaktuaktualizować moduły i kernel).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -629,7 +629,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="distrover.cpp" line="151"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://www.lubuntu.net/&quot;&gt;http://www.lubuntu.net&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Lubuntu to oficjalna pochodna Ubuntu wyposażona w LXDE desktop.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt; Wersja Live umożliwia uruchomienie w Live mode, w którym można uruchomić instalator. Wersja NetInstall umożliwia instalację przez FTP i może zainstalować Kubuntu i inne oficjalne pochodne Ubuntu. Jeśli chcesz użyć wcześniej pobranego alternatywnego obrazu iso (nie desktop), użyj opcji HdMedia i umieść alternatywny instalacyjny  plik iso w katalogu root swojego dysku twardego lub nośnika usb</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="156"/>
@@ -644,7 +644,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; NetbootCD to mały boot CD który ściąga i uruchamia instalatory innych dystrybucji.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt; NetbootCD uruchamia się i działa w live mode.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -654,7 +654,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Offline NT Password and Registry Editor może resetować hasła Windows i edytować rejestr w Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt; NTPasswd jest uruchamiany i działa w live mode; instalacja nie jest wymagana do użycia.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -684,7 +684,7 @@ Uruchomić ponownie komputer?</translation>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Strona domowa:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Salix to dystrybucja GNU/Linux oparta na Slackware (w pełni kompatybilna), prosta, szybka i łatwa w użyciu.&lt;br/&gt;Jak bonsai, Salix jest mały, lekki i wymaga ciągłej troski.&lt;br/&gt;&lt;b&gt;Instalacja:&lt;/b&gt;Wersja Live umożliwia uruchomienie w Live mode, w którym można uruchomić instalator.&lt;/br&gt;Domyślne hasło root to &lt;b&gt;live&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -815,12 +815,12 @@ Uruchomić ponownie komputer?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation></translation>
+        <translation>Przestrzeń do zachowania plików w trakcie restartu. Działa tylko z LiveUSB Ubuntu i  pochodnymi. Jeśli wartość przekracza wielkość dysku, będzie użyta maksymalna dostępna przestrzeń.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation></translation>
+        <translation>Przestrzeń używana do zachowania plików w trakcie restartu (tylko Ubuntu):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>

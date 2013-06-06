@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-12-19 15:15+0000
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2012-12-27 08:33+0000
 Last-Translator: Yaron &lt;sh.yaron@gmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -101,7 +101,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>שימור עם LiveUSB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
@@ -352,7 +352,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="2685"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation></translation>
+        <translation>ההורדה של %1 %2 מ־%3 נכשלה. נא לנסות להוריד את קובץ ה־ISO ישירות מהאתר ולספק אותו דרך אפשרות דמות הכונן.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2708"/>
@@ -430,7 +430,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>הגדרת שימור</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4232"/>
@@ -447,7 +447,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>התקן ה־USB שנוצר לא יכול לשמש לצורך אתחול Mac. יש להכניס את ההתקן למחשב ולבחור באפשרות האתחול באמצעות USB מתפריט האתחול של ה־BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
@@ -613,7 +613,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="141"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://linuxconsole.org/&quot;&gt;http://linuxconsole.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; LinuxConsole הנה הפצה לשולחן העבודה לצורכי משחקים, פשוטה להתקנה, קלה לשימוש ועולה מהר .&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; גרסה 1.0.2010 הנה העדכנית ביותר לסדרה 1.0, זמינה כעת בהפצה מתגלגלת (יש להריץ liveupdate כדי לעדכן את המודולים והליבה).</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="146"/>
@@ -638,7 +638,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="166"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; NetbootCD is a small boot CD that downloads and boots network-based installers for other distributions.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NetbootCD boots and runs in live mode.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://netbootcd.tuxfamily.org/&quot;&gt;http://netbootcd.tuxfamily.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; NetbootCD הנו תקליטור קטן שמוריד ומפעיל תכניות התקנה מבוססות אינטרנט לשלל הפצות.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NetbootCD פועל ורץ במצב חי.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="176"/>
@@ -648,7 +648,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="181"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; The Offline NT Password and Registry Editor can reset Windows passwords and edit the registry on Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; NTPasswd is booted and run in live mode; no installation is required to use it.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://pogostick.net/~pnh/ntpasswd/&quot;&gt;http://pogostick.net/~pnh/ntpasswd/&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; עורך ססמאות NT ורישומי מערכת בלתי מקוונים יכול לאפס ולערוך את רישומי המערכת של Windows 2000-Vista.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; NTPasswd מופעל ורץ במצב חי; לא נדרשת התקנה כדי להשתמש בכלי הזה.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="186"/>
@@ -678,7 +678,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="216"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Salix is a GNU/Linux distribution based on Slackware (fully compatible) that is simple, fast and easy to use.&lt;br/&gt;Like a bonsai, Salix is small, light &amp; the product of infinite care.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.&lt;br/&gt;Default root password is &lt;b&gt;live&lt;/b&gt;.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;דף הבית:&lt;/b&gt; &lt;a href=&quot;http://salixos.org&quot;&gt;http://salixos.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;תיאור:&lt;/b&gt; Salix הנה הפצת גנו/לינוקס המבוססת על Slackware (עם תאימות מלאה) והיא גם מערכת פשוטה, מהירה ונוחה לשימוש.&lt;br/&gt;ממש כמו עץ בונזאי, Salix הנה קטנה, קלילה ותוצר של טיפוח אינסופי.&lt;br/&gt;&lt;b&gt;הערות התקנה:&lt;/b&gt; הגרסה החיה מאפשרת לעבוד במצב חי, ממנו ניתן להפעיל את תכנית ההתקנה לבחירתך.&lt;br/&gt;ססמת העל (root) כבררת מחדל הנה &lt;b&gt;live&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="228"/>
@@ -809,12 +809,12 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation></translation>
+        <translation>שטח לשימור קובצי משתמש כדי שניתן יהיה להשתמש בהן גם לאחר הפעלה מחדש. עובד רק עבור התקני LiveUSB של אובונטו ונגזרותיה. אם הערך חורג מגודל הכונן ייעשה שימוש בשטח הגדול ביותר הזמין.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation></translation>
+        <translation>השטח המשמש לשימור קבצים בין הפעלות מחדש (אובונטו בלבד):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>

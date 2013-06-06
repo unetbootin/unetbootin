@@ -7,24 +7,16 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-11-18 13:26+0000
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-01-27 14:48+0000
 Last-Translator: Dennis Baudys &lt;Unknown&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <location filename="main.cpp" line="266"/>
-        <source>LeftToRight</source>
-        <translation>LinksNachRechts</translation>
     </message>
 </context>
 <context>
@@ -768,6 +760,14 @@ Jetzt neustarten?</translation>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <location filename="main.cpp" line="266"/>
+        <source>LeftToRight</source>
+        <translation>LinksNachRechts</translation>
+    </message>
+</context>
+<context>
     <name>unetbootinui</name>
     <message>
         <location filename="unetbootin.ui" line="20"/>
@@ -809,7 +809,7 @@ Jetzt neustarten?</translation>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation></translation>
+        <translation>Reservierter Speicherplatz für Benutzerdateien, die zwischen Neustarts erhalten bleiben. Funktioniert nur bei LiveUSBs für Ubuntu und dessen Derivate. Wenn der Wert die Kapazität des Mediums überschreitet, wird der maximal verfügbare Speicher verwendet.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>

@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2011-04-18 13:08+0000
-Last-Translator: efecan &lt;efecanerdur@gmail.com&gt;
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-01-20 00:49+0000
+Last-Translator: Yusuf B. &lt;drukyul@yandex.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -297,7 +297,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1747"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Kopyalanan:&lt;/b&gt; 0 bayt</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1785"/>
@@ -424,7 +424,7 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Dosya sistemleri senkronize ediliyor</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4187"/>
@@ -505,7 +505,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>&lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer&apos;a hoşgeldiniz. Kullanım:&lt;ol&gt;&lt;li&gt;Yukarıdaki listeden indirmek için bir dağıtım ve sürüm seçin veya yüklemek için elle aşağıdan dosyalar belirleyin.&lt;/li&gt;&lt;li&gt;Bir kurulum çeşidi seçin ve kuruluma başlamak için Tamam&apos;a basın.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>

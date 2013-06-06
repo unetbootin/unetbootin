@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2012-12-19 15:15+0000\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2012-12-27 08:33+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: he_IL\n"
 
 #. ts-context QObject
@@ -21,7 +21,7 @@ msgstr "RightToLeft"
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "כונן קשיח"
 
@@ -30,19 +30,19 @@ msgstr "כונן קשיח"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
 msgstr "כונן USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
 msgstr "דיסקט"
 
@@ -55,7 +55,7 @@ msgstr "או"
 #. ts-context unetbootin
 #: unetbootin.cpp:277
 msgid "LiveUSB persistence"
-msgstr ""
+msgstr "שימור עם LiveUSB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:292
@@ -322,6 +322,8 @@ msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
 msgstr ""
+"ההורדה של %1 %2 מ־%3 נכשלה. נא לנסות להוריד את קובץ ה־ISO ישירות מהאתר ולספק "
+"אותו דרך אפשרות דמות הכונן."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2708 unetbootin.cpp:2723
@@ -383,32 +385,32 @@ msgid "Configuring grub on %1"
 msgstr "הגדרת grub על %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
 msgstr "התקנת syslinux אל %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
 msgstr "התקנת extlinux אל %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
 msgstr "סנכרון מערכות קבצים"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
-msgstr ""
+msgstr "הגדרת שימור"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
 msgstr "לאחר האתחול, יש לבחור ב־ "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -418,11 +420,13 @@ msgstr ""
 "האם הפעיל מחדש כעת?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"התקן ה־USB שנוצר לא יכול לשמש לצורך אתחול Mac. יש להכניס את ההתקן למחשב "
+"ולבחור באפשרות האתחול באמצעות USB מתפריט האתחול של ה־BIOS.%1"
 
 #. ts-context unetbootin
 #: distrolst.cpp:43
@@ -878,6 +882,12 @@ msgid ""
 "latest 1.0, now available on rolling release (run liveuptate to update "
 "modules and kernel)."
 msgstr ""
+"<b>דף הבית:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>תיאור:</"
+"b> LinuxConsole הנה הפצה לשולחן העבודה לצורכי משחקים, פשוטה להתקנה, קלה "
+"לשימוש ועולה מהר .<br/><b>הערות התקנה:</b> גרסה 1.0.2010 הנה העדכנית ביותר "
+"לסדרה 1.0, זמינה כעת בהפצה מתגלגלת (יש להריץ liveupdate כדי לעדכן את "
+"המודולים והליבה)."
 
 #. ts-context unetbootin
 #: distrover.cpp:146
@@ -962,6 +972,11 @@ msgid ""
 "network-based installers for other distributions.<br/><b>Install Notes:</b> "
 "NetbootCD boots and runs in live mode."
 msgstr ""
+"<b>דף הבית:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>תיאור:</b> NetbootCD הנו תקליטור קטן שמוריד ומפעיל תכניות התקנה "
+"מבוססות אינטרנט לשלל הפצות.<br/><b>הערות התקנה:</b> NetbootCD פועל ורץ במצב "
+"חי."
 
 #. ts-context unetbootin
 #: distrover.cpp:176
@@ -991,6 +1006,11 @@ msgid ""
 "Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
 "installation is required to use it."
 msgstr ""
+"<b>דף הבית:</b> <a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>תיאור:</b> עורך ססמאות NT ורישומי מערכת בלתי מקוונים יכול "
+"לאפס ולערוך את רישומי המערכת של Windows 2000-Vista.<br/><b>הערות התקנה:</b> "
+"NTPasswd מופעל ורץ במצב חי; לא נדרשת התקנה כדי להשתמש בכלי הזה."
 
 #. ts-context unetbootin
 #: distrover.cpp:186
@@ -1084,6 +1104,13 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched.<br/>Default root password is <b>live</b>."
 msgstr ""
+"<b>דף הבית:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>תיאור:</b> Salix "
+"הנה הפצת גנו/לינוקס המבוססת על Slackware (עם תאימות מלאה) והיא גם מערכת "
+"פשוטה, מהירה ונוחה לשימוש.<br/>ממש כמו עץ בונזאי, Salix הנה קטנה, קלילה "
+"ותוצר של טיפוח אינסופי.<br/><b>הערות התקנה:</b> הגרסה החיה מאפשרת לעבוד במצב "
+"חי, ממנו ניתן להפעיל את תכנית ההתקנה לבחירתך.<br/>ססמת העל (root) כבררת מחדל "
+"הנה <b>live</b>."
 
 #. ts-context unetbootin
 #: distrover.cpp:228
@@ -1413,11 +1440,14 @@ msgid ""
 "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
 "capacity, the maximum space available will be used."
 msgstr ""
+"שטח לשימור קובצי משתמש כדי שניתן יהיה להשתמש בהן גם לאחר הפעלה מחדש. עובד רק "
+"עבור התקני LiveUSB של אובונטו ונגזרותיה. אם הערך חורג מגודל הכונן ייעשה "
+"שימוש בשטח הגדול ביותר הזמין."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 msgid "Space used to preserve files across reboots (Ubuntu only):"
-msgstr ""
+msgstr "השטח המשמש לשימור קבצים בין הפעלות מחדש (אובונטו בלבד):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440

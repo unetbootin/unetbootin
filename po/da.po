@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2011-10-20 00:15+0000\n"
-"Last-Translator: r4113 <Unknown>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2013-03-08 17:47+0000\n"
+"Last-Translator: Martin Finnerup <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: da_DK\n"
 
 #. ts-context QObject
@@ -26,7 +26,7 @@ msgstr "Venstre mod Højre"
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "Harddisk"
 
@@ -35,19 +35,19 @@ msgstr "Harddisk"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
 msgstr "USB-drev"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
 msgstr "Diskette"
 
@@ -60,7 +60,7 @@ msgstr "enten"
 #. ts-context unetbootin
 #: unetbootin.cpp:277
 msgid "LiveUSB persistence"
-msgstr ""
+msgstr "LiveUSB vedholdenhed"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:292
@@ -393,32 +393,32 @@ msgid "Configuring grub on %1"
 msgstr "Konfigurerer grub på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
 msgstr "Installerer syslinux på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
 msgstr "Installerer extlinux på %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
 msgstr "Synkroniserer filsystemer"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
-msgstr ""
+msgstr "Opsætning af vedholdenhed"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
 msgstr "Efter genstart, vælg "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -427,11 +427,13 @@ msgstr ""
 "Genstart nu?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"Den oprettede USB enhed vil ikke kunne starte op fra en Mac. Indsæt den i en "
+"PC, og vælg USB opstartsmulighed i BIOS opstartsmenuen.%1"
 
 #. ts-context unetbootin
 #: distrolst.cpp:43
@@ -711,6 +713,11 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Forside:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Beskrivels"
+"e:</b> Elive er en Debian-baseret distribution med Enlightenment vindues "
+"håndtering.<br/><b>Installationsnoter:</b> Live versionen tillader opstart i "
+"Live mode, hvor installationsprogrammet eventuelt kan startes."
 
 #. ts-context unetbootin
 #: distrover.cpp:78
@@ -777,6 +784,13 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Forside:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Beskrivelse:</"
+"b> FreeNAS er en indlejret open source NAS (Network-Attached Storage) "
+"distribution baseret på FreeBSD.<br/><b>Installationsnoter:</b> LiveCD "
+"versionen opretter et RAM drev til FreeNAS, og bruger en FAT formatteret "
+"floppy disk eller USB nøgle til at gemme konfigurationsfilen. Den indlejrede "
+"version tillader installation til hard disk."
 
 #. ts-context unetbootin
 #: distrover.cpp:98

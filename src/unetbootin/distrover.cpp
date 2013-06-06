@@ -9,17 +9,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
-"10.04_NetInstall" << "10.04_NetInstall_x64" << "10.04_HdMedia" << "10.04_HdMedia_x64" << "10.04_Live" << "10.04_Live_x64" << \
-"11.04_NetInstall" << "11.04_NetInstall_x64" << "11.04_HdMedia" << "11.04_HdMedia_x64" << "11.04_Live" << "11.04_Live_x64" << \
-"11.10_NetInstall" << "11.10_NetInstall_x64" << "11.10_HdMedia" << "11.10_HdMedia_x64" << "11.10_Live" << "11.10_Live_x64" << \
 "12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
-"Daily_Live" << "Daily_Live_x64"
-#endif
-
-#ifndef lubverlist
-#define lubverlist \
-"11.10_NetInstall" << "11.10_NetInstall_x64" << "11.10_HdMedia" << "11.10_HdMedia_x64" << "11.10_Live" << "11.10_Live_x64" << \
-"12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
+"12.10_NetInstall" << "12.10_NetInstall_x64" << "12.10_HdMedia" << "12.10_HdMedia_x64" << "12.10_Live" << "12.10_Live_x64" << \
+"13.04_NetInstall" << "13.04_NetInstall_x64" << "13.04_HdMedia" << "13.04_HdMedia_x64" << "13.04_Live" << "13.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -74,11 +66,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "17_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "18_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-    "13_NetInstall" << "13_NetInstall_x64" << "13_Live" << "13_Live_x64" << "14_NetInstall" << "14_NetInstall_x64" << "14_Live" << "14_Live_x64" << "15_NetInstall" << "15_NetInstall_x64" << "15_Live" << "15_Live_x64" << "16_NetInstall" << "16_NetInstall_x64" << "16_Live" << "16_Live_x64" << "17_NetInstall" << "17_NetInstall_x64" << "17_Live" << "17_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+    "17_NetInstall" << "17_NetInstall_x64" << "17_Live" << "17_Live_x64" << "18_NetInstall" << "18_NetInstall_x64" << "18_Live" << "18_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -142,16 +134,16 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxconsole.org/\">http://lin
  "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
  "<b>Install Notes:</b> The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).") <<
  "1.0.2010-cd"));
-	distroselect->addItem("Linux Mint", (QStringList() << "10_Live" <<
+    distroselect->addItem("Linux Mint", (QStringList() << "13_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-	"3.1_Live" << "4.0_Live" << "5_Live" << "5_Live_x64" << "6_Live" << "6_Live_x64" << "7_Live" << "7_Live_x64" << "8_Live" << "8_Live_x64" << "9_Live" << "9_Live_x64" << "10_Live" << "10_Live_x64"));
+    "13_Live" << "13_Live_x64" << "14_Live" << "14_Live_x64" << "15_Live" << "15_Live_x64"));
 distroselect->addItem("Lubuntu", (QStringList() << "12.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/>"
 	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
-lubverlist));
+ubuntuverlist));
 distroselect->addItem("Mandriva", (QStringList() << "2008.1_NetInstall" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/>"
 	"<b>Description:</b> Mandriva is a user-friendly distro formerly known as Mandrake Linux.<br/>"

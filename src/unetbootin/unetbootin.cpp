@@ -52,8 +52,9 @@ static const QList<QRegExp> ignoredtypesbothRL = QList<QRegExp>()
 << QRegExp(".cat$", Qt::CaseInsensitive)
 << QRegExp(".txt$", Qt::CaseInsensitive)
 << QRegExp(".tar$", Qt::CaseInsensitive)
-<< QRegExp(".efi$", Qt::CaseInsensitive)
 << QRegExp(".exe$", Qt::CaseInsensitive)
+<< QRegExp(".deb$", Qt::CaseInsensitive)
+<< QRegExp(".udeb$", Qt::CaseInsensitive)
 << QRegExp("system.map", Qt::CaseInsensitive);
 
 static const QList<QRegExp> ignoredtypeskernelRL = QList<QRegExp>()
@@ -1061,7 +1062,7 @@ QString unetbootin::locatekernel(QString archivefile, QPair<QStringList, QList<q
 	}
 	else
 	{
-	QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud" << "bzI" << "kexec";
+        QStringList kernelnames = QStringList() << "vmlinuz" << "vmlinux" << "bzImage" << "kernel" << "sabayon" << "gentoo" << "linux26" << "linux24" << "bsd" << "unix" << "linux" << "rescue" << "xpud" << "bzI" << "kexec" << "vmlinuz.efi";
 	QStringList tnarchivefileconts;
 	QStringList narchivefileconts;
 	QString curarcitm;
@@ -3945,7 +3946,7 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 			}
 		}
 	}
-    if (this->devlabel == "" || this->devlabel == "None")
+    if ((this->devlabel == "" || this->devlabel == "None") && devluid.contains("LABEL") && (cfgfileCL.contains(QRegExp("root=\\S{0,}LABEL=\\S{0,}")) || cfgfileCL.contains(QRegExp("root=\\S{0,}CDLABEL=\\S{0,}"))))
     {
         setLabel(this->targetDev, "LIVE");
     }

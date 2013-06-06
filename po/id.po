@@ -7,26 +7,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2012-04-04 10:09+0000\n"
-"Last-Translator: zaenalarifin <Unknown>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2012-12-27 11:58+0000\n"
+"Last-Translator: Namaku Jiro <namaku0@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: id_ID\n"
 
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "kiri ke kanan"
+msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "Hard Disk"
 
@@ -35,19 +35,19 @@ msgstr "Hard Disk"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
-msgstr "Kotak pemuat USB"
+msgstr "Drive USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
-msgstr "ISO (sistem ISO 9660 media CD-ROM)"
+msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
 msgstr "Disket"
 
@@ -60,22 +60,22 @@ msgstr "Salah Satu"
 #. ts-context unetbootin
 #: unetbootin.cpp:277
 msgid "LiveUSB persistence"
-msgstr "Keteguhan UsbLive"
+msgstr "Keutuhan LiveUSB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:292
 msgid "FAT32-formatted USB drive"
-msgstr "Menformat-FAT32 perangkat USB"
+msgstr "USB Drive terformat FAT32"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:296
 msgid "EXT2-formatted USB drive"
-msgstr "Menformat-EXT2 perangkat USB"
+msgstr "USB Drive terformat EXT2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:660
 msgid "Open Disk Image File"
-msgstr "Buka flie image"
+msgstr "Buka berkas citra disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:660
@@ -90,22 +90,22 @@ msgstr "Semua Berkas (*)"
 #. ts-context unetbootin
 #: unetbootin.cpp:678
 msgid "Open Kernel File"
-msgstr "Buka file kernel"
+msgstr "Buka berkas kernel"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Open Initrd File"
-msgstr "Buka file Initrd"
+msgstr "Buka berkas initrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:694
 msgid "Open Bootloader Config File"
-msgstr "Buka file konfigurasi bootloader"
+msgstr "Buka berkas konfigurasi bootloader"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Insert a USB flash drive"
-msgstr "Masukkan USB flash drive"
+msgstr "Masukkan USB drive"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
@@ -113,13 +113,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"FlashDisk tidak terdeteksi , jika Flashdisk telah terpasang coba format ke "
-"FAT32."
+"USB drive tidak ditemukan.  Jika USB drive telah terpasang coba format "
+"sebagai FAT32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:736
 msgid "%1 not mounted"
-msgstr "%1 Tidak terpasang"
+msgstr "%1 tidak terikat (mounted)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:737
@@ -127,74 +127,74 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Pasang dulu USB drive %1 , System akan otomatis mendeteksi setelah anda "
-"lepas & pasang kembali USB Drive."
+"Ikat (mount) dulu USB drive %1 pada titik ikat (mount point). Kebanyakan "
+"distribusi Linux melakukannya secara otomatis setelah USB drive dicopot dan "
+"dipasang kembali."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:752
 msgid "Select a distro"
-msgstr "Pilih salah satu Distro"
+msgstr "Pilih distribusi"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:753
 msgid "You must select a distribution to load."
-msgstr "Pilih Distro untuk di muat"
+msgstr "Anda harus memilih distribusi untuk dimuat."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:767
 msgid "Select a disk image file"
-msgstr "Pilih File Image"
+msgstr "Pilih berkas citra disk"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:768
 msgid "You must select a disk image file to load."
-msgstr "Anda harus memilih file image untuk di muat"
+msgstr "Anda harus memilih berkas citra disk untuk dimuat."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:782
 msgid "Select a kernel and/or initrd file"
-msgstr "Pilih salah satu  kernel dan/atau file initrd"
+msgstr "Pilih berkas kernel dan/atau intrd"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:783
 msgid "You must select a kernel and/or initrd file to load."
-msgstr ""
-"Anda harus memilih salah satu kernel dan/atau file initrd untuk memulai"
+msgstr "Anda harus memilih berkas kernel dan/atau initrd."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:797
 msgid "Diskimage file not found"
-msgstr "Diskimage tidak ditemukan"
+msgstr "Berkas citra disk tidak ditemukan"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:798
 msgid "The specified diskimage file %1 does not exist."
-msgstr "File Image %1 Tidak di temukan."
+msgstr "Berkas citra disk %1 tidak ada."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:812
 msgid "Kernel file not found"
-msgstr "File Kernel tidak ditemukan"
+msgstr "Berkas kernel tidak ditemukan"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:813
 msgid "The specified kernel file %1 does not exist."
-msgstr "Kernel file %1 tidak sesuai."
+msgstr "Berkas kernel %1 tidak ada."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:827
 msgid "Initrd file not found"
-msgstr "File initrd tidak ditemukan"
+msgstr "Berkas initrd tidak ditemukan"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:828
 msgid "The specified initrd file %1 does not exist."
-msgstr "Initrd file %1 tidak sesuai."
+msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:932
 msgid "%1 exists, overwrite?"
-msgstr "%1 sudah ada , di timpa?"
+msgstr "%1 sudah ada, timpa?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:933
@@ -203,14 +203,14 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"File %1 sudah ada . Tekan \" Yes to All \" utk menimpa,' Yes ' utk menimpa "
-"secara individu,'No' utk menggunakan versi yg sudah ada. jika ragu tekan "
-"'Yes to All'."
+"Berkas %1 sudah ada. Tekan \"Ya untuk Semua\" untuk menimpanya dan tidak "
+"ditanya lagi, 'Ya' untuk menimpa berkas satu per satu, 'Tidak' untuk "
+"mempertahankan berkas yang sudah ada. Jika ragu pilih 'Ya untuk Semua'."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:959
 msgid "%1 is out of space, abort installation?"
-msgstr "%1 kehabisan space, batalkan instalasi ?"
+msgstr "%1 kehabisan ruang, batalkan pemasangan?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:960
@@ -219,39 +219,40 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
-"Direktori %1 kehabisan memori. Tekan 'Ya' utk membatalkan, 'Tidak' utk "
-"mengabaikan pesan ini dan melanjutkan instalasi, dan 'Tidak utk Semua' utk "
-"mengabaikan semua pesan error."
+"Direktori %1 kehabisan ruang. Tekan 'Ya' untuk membatalkan pemasangan, "
+"'Tidak' untuk mengabaikan pesan kesalahan dan mencoba melanjutkan "
+"pemasangan, dan 'Tidak untuk Semua' untuk mengabaikan semua pesan kesalahan "
+"kehabisan ruang."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1054
 msgid "Locating kernel file in %1"
-msgstr "Menemukan kernel file di %1"
+msgstr "Menemukan berkas kernel di %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1105
 msgid "Copying kernel file from %1"
-msgstr "Menggandakan berkas kernel dari %1"
+msgstr "Menyalin berkas kernel dari %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1111
 msgid "Locating initrd file in %1"
-msgstr "Lokasi initrd berkas dalam %1"
+msgstr "Menemukan berkas initrd di %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1152
 msgid "Copying initrd file from %1"
-msgstr "Menggandakan initrd berkas dalam %1"
+msgstr "Menyalin berkas initrd dari %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1158 unetbootin.cpp:1238
 msgid "Extracting bootloader configuration"
-msgstr "mengEkstrak konfigurasi bootloader"
+msgstr "Mengekstrak konfigurasi bootloader"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1467 unetbootin.cpp:1493
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>mengEkstrak kompresan iso:</b> %1"
+msgstr "<b>Mengekstrak berkas ISO terkompres:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1744
@@ -271,12 +272,12 @@ msgstr "<b>Tujuan:</b> %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1747
 msgid "<b>Copied:</b> 0 bytes"
-msgstr "<b>Menggandakan:</b> 0 bite"
+msgstr "<b>Tersalin:</b> 0 byte"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1785
 msgid "Extracting files, please wait..."
-msgstr "Mengekstrak file, mohon tunggu..."
+msgstr "Mengekstrak berkas, mohon tunggu..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1786
@@ -296,7 +297,7 @@ msgstr "<b>Tujuan:</b>"
 #. ts-context unetbootin
 #: unetbootin.cpp:1789
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Mengekstrak:</b> 0 dari %1 file"
+msgstr "<b>Terekstrak:</b> 0 dari %1 berkas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1792
@@ -311,17 +312,17 @@ msgstr "<b>Tujuan:</b> %1 %2"
 #. ts-context unetbootin
 #: unetbootin.cpp:1794
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Mengekstrak:</b> 1% dari %2 file"
+msgstr "<b>Terekstrak:</b> 1% dari %2 berkas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2558
 msgid "Downloading files, please wait..."
-msgstr "Mendownload file, mohon tunggu..."
+msgstr "Mengunduh berkas, mohon tunggu..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2561
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Mendownload:</b> 0 byte"
+msgstr "<b>Terunduh:</b> 0 byte"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2685
@@ -329,16 +330,18 @@ msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
 msgstr ""
+"Unduhan %1 %1 dari %3 gagal. Silahkan mencoba mengunduh berkas ISO langsung "
+"dari situs Web dan masukkan pada isian Citra Disk."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2708 unetbootin.cpp:2723
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Mendownload:</b> %1 dari %2"
+msgstr "<b>Terunduh:</b> %1 dari %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2738
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Tersalin:</b> %1 dari %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2829
@@ -348,7 +351,7 @@ msgstr "Mencari di  <a href=\"%1\">%1</a>"
 #. ts-context unetbootin
 #: unetbootin.cpp:2833
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
+msgstr "%1/%2 sesuai dengan <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3106
@@ -361,6 +364,8 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
+"%1 tidak ditemukan. Ini diperlukan untuk mode pemasangan %2.\n"
+"Pasang paket \"%3\" atau yang sesuai distribusi anda."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3390
@@ -388,43 +393,49 @@ msgid "Configuring grub on %1"
 msgstr "Mengkonfigurasi grub pada %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
-msgstr "menginstall syslinux pada %1"
+msgstr "Memasang syslinux pada %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
-msgstr "menginstall extlinux pada %1"
+msgstr "Memasang extlinux pada %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
-msgstr ""
+msgstr "Mengsinkronisasikan sistem berkas"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
-msgstr ""
+msgstr "Mengatur keutuhan"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
-msgstr "Setelah booting-ulang, pilihlah "
+msgstr "Setelah <i>reboot</i>, pilih "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
+"Setelah <i>reboot</i>, pilih opsi <i>boot</i> dari USB pada menu <i>boot</i> "
+"BIOS.%1\n"
+"<i>Reboot</i> sekarang?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"Perangkat USB yang dibuat tidak bisa dijalankan pada komputer Mac. Pasang "
+"pada komputer PC, dan pilih opsi <i>boot</i> dari USB pada menu <i>boot</i> "
+"BIOS.%1"
 
 #. ts-context unetbootin
 #: distrolst.cpp:43
@@ -434,6 +445,11 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*PENTING* Sebelum <i>reboot</i> tempatkan berkas ISO instalasi Ubuntu "
+"<i>alternate</i> (bukan <i>desktop</i) pada direktori <i>root hard disk</i> "
+"atau USB drive anda. Berkas tersebut bisa didapatkan dari "
+"http://cdimage.ubuntu.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:257
@@ -446,12 +462,11 @@ msgid ""
 "'/centos/%1/os/%2' when asked for the folder."
 msgstr ""
 "\n"
-"*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan "
-"dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, "
-"pilihlah pilihan 'Start Installation', kemudian pilih 'Network' sebagai "
-"sumbernya, pilih 'HTTP' sebagai protokol dan masukkan 'mirror.kernel.org' "
-"ketika diminta memasukkan server lalu masukkan '/centos/%1/os/%2' untuk "
-"isian foldernya."
+"*PENTING* setelah <i>reboot</i> abaikan semua pesan kesalahan dan pilih "
+"'Back' jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi "
+"'Start Installation', pilih 'Network' sebagai sumber, pilih 'HTTP' sebagai "
+"protokol, masukkan 'mirrors.kernel.org' ketika <i>server</i> diminta, dan "
+"masukkan '/centos/%1/os/%2' ketika direktori diminta."
 
 #. ts-context unetbootin
 #: distrolst.cpp:314
@@ -461,6 +476,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*PENTING* Sebelum <i>reboot</i> tempatkan berkas ISO instalasi Debian pada "
+"direktori <i>root hard disk</i> atau USB drive anda. Berkas tersebut bisa "
+"didapatkan dari http://cdimage.debian.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:407
@@ -473,12 +492,12 @@ msgid ""
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
 "\n"
-"*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan "
-"dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, "
-"pilihlah pilihan 'Start Installation', kemudian pilih 'Network' sebagai "
-"sumbernya, pilih 'HTTP' sebagai protokol dan masukkan "
-"'download.fedora.redhat.com' ketika diminta memasukkan server lalu masukkan "
-"'/pub/fedora/linux/development/%1/os' untuk isian foldernya."
+"*PENTING* Setelah <i>reboot</i> abaikan semua pesan kesalahan dan pilih "
+"'Back' jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi "
+"'Start Installation', pilih 'Network' sebagai sumber, pilih 'HTTP' sebagai "
+"protokol, masukkan 'download.fedora.redhat.com' ketika <i>server</i> "
+"diminta, dan masukkan '/pub/fedora/linux/development/%1/os' ketika direktori "
+"diminta."
 
 #. ts-context unetbootin
 #: distrolst.cpp:413
@@ -491,12 +510,12 @@ msgid ""
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
 "\n"
-"*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan "
-"dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, "
-"pilihlah pilihan 'Start Installation', kemudian pilih 'Network' sebagai "
-"sumbernya, pilih 'HTTP' sebagai protokol dan masukkan "
-"'download.fedora.redhat.com' ketika diminta memasukkan server lalu masukkan "
-"'/pub/fedora/linux/releases/%1/Fedora/%2/os' untuk isian foldernya."
+"*PENTING* Setelah <i>reboot</i> abaikan semua pesan kesalahan dan pilih "
+"'Back' jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi "
+"'Start Installation', pilih 'Network' sebagai sumber, pilih 'HTTP' sebagai "
+"protokol, masukkan 'download.fedora.redhat.com' ketika <i>server</i> "
+"diminta, dan masukkan '/pub/fedora/linux/releases/%1/Fedora/%2/os' ketika "
+"direktori diminta."
 
 #. ts-context unetbootin
 #: distrolst.cpp:785
@@ -509,12 +528,11 @@ msgid ""
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
 "\n"
-"*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan "
-"dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, "
-"pilihlah pilihan 'Start Installation', kemudian pilih 'Network' sebagai "
-"sumbernya, pilih 'HTTP' sebagai protokol dan masukkan "
-"'download.opensuse.org' ketika diminta memasukkan server lalu masukkan "
-"'/factory/repo/oss' untuk isian foldernya."
+"*PENTING* Setelah <i>reboot</i> abaikan semua pesan kesalahan dan pilih "
+"'Back' jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi "
+"'Start Installation', pilih 'Network' sebagai sumber, pilih 'HTTP' sebagai "
+"protokol, masukkan 'download.opensuse.org' ketika <i>server</i> diminta, dan "
+"masukkan '/factory/repo/oss' ketika direktori diminta."
 
 #. ts-context unetbootin
 #: distrolst.cpp:791
@@ -527,22 +545,21 @@ msgid ""
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
 "\n"
-"*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan "
-"dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, "
-"pilihlah pilihan 'Start Installation', kemudian pilih 'Network' sebagai "
-"sumbernya, pilih 'HTTP' sebagai protokol dan masukkan "
-"'download.opensuse.org' ketika diminta memasukkan server lalu masukkan "
-"'/distribution/%1/repo/oss' untuk isian foldernya."
+"*PENTING* Setelah <i>reboot</i> abaikan semua pesan kesalahan dan pilih "
+"'Back' jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi "
+"'Start Installation', pilih 'Network' sebagai sumber, pilih 'HTTP' sebagai "
+"protokol, masukkan 'download.opensuse.org' ketika <i>server</i> diminta, dan "
+"masukkan '/distribution/%1/repo/oss' ketika direktori diminta."
 
 #. ts-context unetbootin
 #: distrover.cpp:26 unetbootin.cpp:748
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "Pilih Distribusi"
 
 #. ts-context unetbootin
 #: distrover.cpp:26 distrover.cpp:30
 msgid "== Select Version =="
-msgstr ""
+msgstr "Pilih Versi"
 
 #. ts-context unetbootin
 #: distrover.cpp:27
@@ -555,10 +572,10 @@ msgid ""
 msgstr ""
 "Selamat datang di <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
-"Netboot Installer.\n"
-"<ol><li>Pilih distro dan versi yang akan didownload dari daftar berikut, "
-"atau pilih file yang aka diproses secara manual.</li><li>Pilih tipe "
-"instalasi dan klik OK untuk memulai menginstall.</li></ol>"
+"Netboot Installer.\r\n"
+"<ol><li>Pilih distribusi dan versi yang akan diunduh dari daftar di atas, "
+"atau pilih berkas yang akan diproses secara manual.</li><li>Pilih tipe "
+"instalasi dan klik OK untuk memulai memasang.</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:32
@@ -1154,27 +1171,27 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr ""
+msgstr "Pilih dari daftar distribusi yang tersedia"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "&Distribusi"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Tentukan berkas citra disk untuk dimuat"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "C&itra disk"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr ""
+msgstr "Secara manual tentukan berkas kernel dan initrd untuk dimuat"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
@@ -1188,171 +1205,177 @@ msgid ""
 "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
 "capacity, the maximum space available will be used."
 msgstr ""
+"Ruang dicadangkan untuk mempertahankan berkas-berkas pengguna setelah "
+"<i>reboot</i>. Bekerja hanya pada LiveUSB dari Ubuntu dan turunannya. Jika "
+"ukuran ruang melebihi kapasitas media penyimpanan maka ruang sisa maksimal "
+"akan digunakan."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
+"Ruang digunakan untuk mempertahankan berkas-berkas setelah <i>reboot</i> "
+"(hanya Ubuntu):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:503
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:506
 msgid "Return"
-msgstr ""
+msgstr "Kembali"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:513
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:516
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:561
 msgid "Reboot Now"
-msgstr ""
+msgstr "<i>Reboot</i> Sekarang"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:568
 msgid "Exit"
-msgstr ""
+msgstr "Keluar"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:660
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Mengunduh Berkas-Berkas"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:667
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Mengekstrak dan Menyalin Berkas-Berkas"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Memasang <i>Bootloader</i>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Instalasi Selesai, <i>Reboot</i>"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:477 unetbootin.ui:496
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Pilih <i>drive</i> tujuan untuk instalasi"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:480
 msgid "Dri&ve:"
-msgstr ""
+msgstr "Dri&ve"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:451 unetbootin.ui:470
 msgid "Select the installation target type"
-msgstr ""
+msgstr "Pilih tipe tujuan instalasi"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:454
 msgid "&Type:"
-msgstr ""
+msgstr "&Tipe:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Pilih versi distribusi"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr ""
+msgstr "Pilih berkas citra disk"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr ""
+msgstr "Pilih tipe citra disk"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
-msgstr ""
+msgstr "Tentukan citra disket/hard disk, atau citra CD (ISO) untuk dimuat"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
-msgstr ""
+msgstr "Tentukan berkas kernel untuk dimuat"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:283
 msgid "Select kernel file"
-msgstr ""
+msgstr "Pilih berkas kernel"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
-msgstr ""
+msgstr "Tentukan berkas initrd untuk dimuat"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:372
 msgid "Select initrd file"
-msgstr ""
+msgstr "Pilih berkas initrd"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr ""
+msgstr "Pilih berkas syslinux.cfg atau isolinux.cfg"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr ""
+msgstr "tentukan paramater dan opsi untuk kernel"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr ""
+msgstr "&Kernel"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
 msgid "Init&rd:"
-msgstr ""
+msgstr "Init&rd:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "&Opsi:"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr ""
+msgstr "Pencopotan Selesai"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "%1 telah dicopot."
 
 #. ts-context uninstaller
 #: main.cpp:319
 msgid "Must run as root"
-msgstr ""
+msgstr "Harus dijalankan sebagai <i>root</i>"
 
 #. ts-context uninstaller
 #: main.cpp:321
@@ -1360,13 +1383,15 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
+"%2 harus dijalankan sebagai <i>root</i>. Tutup, dan jalankan kembali "
+"menggunakan:<br/><b>sudo %1</b><br/>atau:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:353
 msgid "%1 Uninstaller"
-msgstr ""
+msgstr "Pencopot %1"
 
 #. ts-context uninstaller
 #: main.cpp:354
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr ""
+msgstr "%1 sudah terpasang. Hapus versi yang sudah ada?"

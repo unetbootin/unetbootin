@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2012-03-31 13:34+0000\n"
-"Last-Translator: Kajetan Kaczmarek <kajetan@linuxmail.org>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2013-02-23 09:08+0000\n"
+"Last-Translator: Piotr Skup <metodyk@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: pl_PL\n"
 
 #. ts-context QObject
@@ -26,7 +26,7 @@ msgstr "od lewej do prawej"
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "Dysk twardy"
 
@@ -35,19 +35,19 @@ msgstr "Dysk twardy"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
 msgstr "Napęd USB"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
 msgstr "Plik ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
 msgstr "Dyskietka"
 
@@ -392,32 +392,32 @@ msgid "Configuring grub on %1"
 msgstr "Konfiguruję grub na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
 msgstr "Instaluję syslinux na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
 msgstr "Instaluję extlinux na %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
 msgstr "Synchronizacja systemów plików"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
 msgstr "Ustawianie trwałości"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
 msgstr "Po ponownym uruchomieniu komputera wybierz "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -427,7 +427,7 @@ msgstr ""
 "Uruchomić ponownie komputer?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
@@ -911,6 +911,12 @@ msgid ""
 "latest 1.0, now available on rolling release (run liveuptate to update "
 "modules and kernel)."
 msgstr ""
+"<b>Strona domowa:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
+"ion:</b> LinuxConsole to dystrybucja do gier, łatwa w instalacji, użyciu i "
+"szybko się uruchamiająca.<br/><b>Instalacja:</b> 1.0.2010 to najnowsze 1.0, "
+"teraz dostępne jako rolling release (uruchom liveupdate żeby "
+"zaktuaktualizować moduły i kernel)."
 
 #. ts-context unetbootin
 #: distrover.cpp:146
@@ -944,6 +950,15 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Strona domowa:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
+"n:</b> Lubuntu to oficjalna pochodna Ubuntu wyposażona w LXDE "
+"desktop.<br/><b>Instalacja:</b> Wersja Live umożliwia uruchomienie w Live "
+"mode, w którym można uruchomić instalator. Wersja NetInstall umożliwia "
+"instalację przez FTP i może zainstalować Kubuntu i inne oficjalne pochodne "
+"Ubuntu. Jeśli chcesz użyć wcześniej pobranego alternatywnego obrazu iso (nie "
+"desktop), użyj opcji HdMedia i umieść alternatywny instalacyjny  plik iso w "
+"katalogu root swojego dysku twardego lub nośnika usb"
 
 #. ts-context unetbootin
 #: distrover.cpp:156
@@ -992,6 +1007,11 @@ msgid ""
 "network-based installers for other distributions.<br/><b>Install Notes:</b> "
 "NetbootCD boots and runs in live mode."
 msgstr ""
+"<b>Strona domowa:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Opis:</b> NetbootCD to mały boot CD który ściąga i uruchamia "
+"instalatory innych dystrybucji.<br/><b>Instalacja:</b> NetbootCD uruchamia "
+"się i działa w live mode."
 
 #. ts-context unetbootin
 #: distrover.cpp:176
@@ -1022,6 +1042,12 @@ msgid ""
 "Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
 "installation is required to use it."
 msgstr ""
+"<b>Strona domowa:</b> <a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>Opis:</b> Offline NT Password and Registry Editor może "
+"resetować hasła Windows i edytować rejestr w Windows 2000-"
+"Vista.<br/><b>Instalacja:</b> NTPasswd jest uruchamiany i działa w live "
+"mode; instalacja nie jest wymagana do użycia."
 
 #. ts-context unetbootin
 #: distrover.cpp:186
@@ -1121,6 +1147,13 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched.<br/>Default root password is <b>live</b>."
 msgstr ""
+"<b>Strona domowa:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Opis:</b> Salix to "
+"dystrybucja GNU/Linux oparta na Slackware (w pełni kompatybilna), prosta, "
+"szybka i łatwa w użyciu.<br/>Jak bonsai, Salix jest mały, lekki i wymaga "
+"ciągłej troski.<br/><b>Instalacja:</b>Wersja Live umożliwia uruchomienie w "
+"Live mode, w którym można uruchomić instalator.</br>Domyślne hasło root to "
+"<b>live</b>."
 
 #. ts-context unetbootin
 #: distrover.cpp:228
@@ -1474,11 +1507,15 @@ msgid ""
 "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
 "capacity, the maximum space available will be used."
 msgstr ""
+"Przestrzeń do zachowania plików w trakcie restartu. Działa tylko z LiveUSB "
+"Ubuntu i  pochodnymi. Jeśli wartość przekracza wielkość dysku, będzie użyta "
+"maksymalna dostępna przestrzeń."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
+"Przestrzeń używana do zachowania plików w trakcie restartu (tylko Ubuntu):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440

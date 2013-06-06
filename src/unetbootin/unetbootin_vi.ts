@@ -7,15 +7,15 @@
         <source></source>
         <translation>Project-Id-Version: PACKAGE VERSION
 Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2012-08-26 12:44-0700
+POT-Creation-Date: 2012-12-24 00:10-0800
 PO-Revision-Date: 2012-08-29 01:22+0000
 Last-Translator: Huynh Trong Nghia &lt;Nghia.HT@hotmail.com&gt;
 Language-Team: LANGUAGE &lt;LL@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>

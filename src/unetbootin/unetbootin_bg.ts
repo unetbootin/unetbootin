@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-05-17 17:04+0000
-Last-Translator: Evgeni Shehtov &lt;Unknown&gt;
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-01-27 21:18+0000
+Last-Translator: Костадин Костадинов &lt;thekoceto@mail.bg&gt;
 Language-Team: Bulgarian &lt;bg@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -67,7 +67,7 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="3932"/>
         <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
-        <translation>Устройство с USB</translation>
+        <translation>USB устройство</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="212"/>
@@ -91,7 +91,7 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="669"/>
         <location filename="unetbootin.cpp" line="3490"/>
         <source>Floppy</source>
-        <translation>Дискета</translation>
+        <translation>Флопи</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="246"/>
@@ -159,7 +159,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>Не беше намерено USB устройство. Ако устройството вече е включено, пробвайте да го форматирате във FAT32 файлова система.</translation>
+        <translation>Не беше намерено USB устройство.  Ако устройството вече е включено, пробвайте да го форматирате във FAT32 файлова система.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="736"/>
@@ -169,7 +169,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="737"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</translation>
+        <translation>Първо трябва да монтирате устройството USB 1% към точка за монтиране. Повечето дистрибуции ще направи това автоматично, след като премахнете и поставете отново USB устройството.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="752"/>
@@ -239,7 +239,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="933"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation></translation>
+        <translation>Файлът %1 вече съществува. Натиснете &quot;Да за всички&quot;, за да се презапише текущия и всички останали файлове,  &quot;Да&quot;, за да се запише само текущия и &quot;Не&quot;, за да се запази съществуващата версия. В случай на съмнение, натиснете &quot;Да за всички&quot;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="959"/>
@@ -259,7 +259,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1105"/>
         <source>Copying kernel file from %1</source>
-        <translation></translation>
+        <translation>Копирам kernel файла от %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1111"/>
@@ -269,7 +269,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1152"/>
         <source>Copying initrd file from %1</source>
-        <translation></translation>
+        <translation>Копирам initrd файла от %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1158"/>
@@ -281,12 +281,12 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="1467"/>
         <location filename="unetbootin.cpp" line="1493"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;Извличане от компресирания iso-файла:&lt;/b&gt; %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1744"/>
         <source>Copying file, please wait...</source>
-        <translation></translation>
+        <translation>Копиране на файл, моля изчакайте...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1745"/>
@@ -303,7 +303,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1747"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Копирани:&lt;/b&gt; 0 байта</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1785"/>
@@ -472,7 +472,8 @@ Reboot now?</source>
         <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*ВАЖНО* Преди рестарирането, сложете  Debian install iso файла на главната директория на хард диска или USB устройството. Може да бъде свалено от cdimage.debian.org</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="407"/>
@@ -502,18 +503,18 @@ Reboot now?</source>
         <location filename="distrover.cpp" line="26"/>
         <location filename="unetbootin.cpp" line="748"/>
         <source>== Select Distribution ==</source>
-        <translation>== Изберете дистрибуция</translation>
+        <translation>= Изберете дистрибуция =</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <location filename="distrover.cpp" line="30"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>= Изберете версия =</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
-        <translation></translation>
+        <translation>Здравейте от &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt; - Universal Netboot Installer . Използване:&lt;ol&gt;&lt;li&gt;Изберете дистрибуция и версия за изтегляне от списъка по-горе, или ръчно да укажете файлове за зареждане по-долу.&lt;/li&gt;&lt;li&gt; Изберете типа на инсталацията, и натиснете OK, за да започне инсталирането .&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>
@@ -803,7 +804,7 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="150"/>
         <source>&amp;Custom</source>
-        <translation></translation>
+        <translation>&amp;Потребителски</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="414"/>
@@ -819,57 +820,57 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>МБ</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Връщане</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Отказ</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="516"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Ескейп</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="561"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>Рестартирай сега</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="568"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Изход</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Сваляне на файлове</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Извличане и копиране на файлове</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Инсталиране на Bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Инсталирането завърши, рестартирайте</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="477"/>
@@ -891,12 +892,12 @@ Reboot now?</source>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Тип:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Изберете версията на дистрибуцията</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>

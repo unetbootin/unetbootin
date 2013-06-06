@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2009-09-20 22:03+0000\n"
-"Last-Translator: Izumi <Unknown>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2013-03-21 00:00+0000\n"
+"Last-Translator: SamdinyS <art.arch.aras@gmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: lt_LT\n"
 
 #. ts-context QObject
@@ -26,7 +26,7 @@ msgstr "Iš kairės į dešinę"
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "Standusis diskas"
 
@@ -35,27 +35,27 @@ msgstr "Standusis diskas"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
 msgstr "USB diskas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
-msgstr "ISO"
+msgstr "ISO atvaizdas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
-msgstr "Lankstus diskelis"
+msgstr "Diskelis"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
 #: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
 msgid "either"
-msgstr ""
+msgstr "arba"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:277
@@ -65,47 +65,47 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:292
 msgid "FAT32-formatted USB drive"
-msgstr ""
+msgstr "USB diskas suformatuotas į FAT32 failų sistemą"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:296
 msgid "EXT2-formatted USB drive"
-msgstr ""
+msgstr "USB diskas formatuotas į EXT2 failų sistemą"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:660
 msgid "Open Disk Image File"
-msgstr ""
+msgstr "Atverti disko atvaizdo rinkmeną"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:660
 msgid "All Files"
-msgstr ""
+msgstr "Visos rinkmenos"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
 msgid "All Files (*)"
-msgstr ""
+msgstr "Visos rinkmenos (*)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:678
 msgid "Open Kernel File"
-msgstr ""
+msgstr "Atverti branduolio rinkmeną"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:686
 msgid "Open Initrd File"
-msgstr ""
+msgstr "Atvetri Initrd rinkmeną"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:694
 msgid "Open Bootloader Config File"
-msgstr ""
+msgstr "Atverti pradinės paleisties programos konfigūracinę rinkmeną"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:716
 msgid "Insert a USB flash drive"
-msgstr ""
+msgstr "Prijungti USB diską"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
@@ -113,11 +113,13 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
+"USB diskas nerastas. Jei Jūs tikrai prijungėte USB diską, pamėginkite jį "
+"suformuoti į FAT32 failų sistemą."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:736
 msgid "%1 not mounted"
-msgstr ""
+msgstr "%1 nėra pajungtas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:737
@@ -125,71 +127,75 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
+"Iš pradžių primontuokite %1 USB diską. Dauguma operacinių sistemų, "
+"prijungiant ar atjungiant USB diską, tai daro be vartotojo pagalbos."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:752
 msgid "Select a distro"
-msgstr ""
+msgstr "Pasirinkite distributyvą"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:753
 msgid "You must select a distribution to load."
-msgstr ""
+msgstr "Jūs turite pasirinkti distributyvą, kad jį užkrauti."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:767
 msgid "Select a disk image file"
-msgstr ""
+msgstr "Pasirinkite disko atvaizdo rinkmeną"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:768
 msgid "You must select a disk image file to load."
-msgstr ""
+msgstr "Jūs turite pasirinkti disko atvaizdo rinkmeną, kad ją užkrauti."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:782
 msgid "Select a kernel and/or initrd file"
-msgstr ""
+msgstr "Pasirinkite branduolio ir (arba) initrd rinkmeną (-as)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:783
 msgid "You must select a kernel and/or initrd file to load."
 msgstr ""
+"Jūs turite pasirinkti branduolio ir (arba) initdr rinkmeną(-as), kad ją "
+"(jas) užkrauti."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:797
 msgid "Diskimage file not found"
-msgstr ""
+msgstr "Disko atvaizdo rinkmena nerasta."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:798
 msgid "The specified diskimage file %1 does not exist."
-msgstr ""
+msgstr "Nurodyta disko atvaizdo rinkmena %1 neegzistuoja (sugadinta)."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:812
 msgid "Kernel file not found"
-msgstr ""
+msgstr "Branduolio rinkmena nerasta."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:813
 msgid "The specified kernel file %1 does not exist."
-msgstr ""
+msgstr "Nurodyta branduolio rinkmena %1 neegzistuoja (sugadinta)."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:827
 msgid "Initrd file not found"
-msgstr ""
+msgstr "Initrd rinkmena nerasta."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:828
 msgid "The specified initrd file %1 does not exist."
-msgstr ""
+msgstr "Nurodyta Initrd rinkmena %1 neegzistuoja (sugadinta)."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:932
 msgid "%1 exists, overwrite?"
-msgstr ""
+msgstr "Rinkmena %1 jau egzistuoja, ar norite ją pakeisti?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:933
@@ -198,11 +204,15 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
+"Rinkmena %1 jau egzistuoja. Spustelėkite \"Taip, viską\", kad pakeisti ją "
+"(jas) ir toliau daugiau nebeklausti to, \"Taip\", kad pakeisti ją (jas) "
+"kiekvieną individualiai, arba \"Ne\", kad palikti esamą. Jei abejojate, "
+"paspauskite \"Taip, viską\"."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:959
 msgid "%1 is out of space, abort installation?"
-msgstr ""
+msgstr "%1 trūksta vietos, nutraukti diegimą?"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:960
@@ -211,56 +221,62 @@ msgid ""
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
+"Segtuve %1 trūksta vietos. Spustelėkite \"Taip\", kad nutraukti diegimą, "
+"\"Ne\", kad nekreiptumėte į šį klaidos pranešimą ir pabandytumėte tęsti "
+"diegimą, arba \"Ne, viskam\", kad ignoruoti visus \"trūksta vietos\" klaidų "
+"pranešimus."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1054
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "Į %1 talpinama branduolio rinkmena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1105
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Iš %1 kopijuojama branduolio rinkmena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1111
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "Į %1 talpinama Initrd rinkmena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1152
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Iš %1 kopijuojama Initrd rinkmena"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1158 unetbootin.cpp:1238
 msgid "Extracting bootloader configuration"
 msgstr ""
+"Išskleidžiama pradinės paleisties programos (bootloader) konfigūracinė "
+"rinkmena."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1467 unetbootin.cpp:1493
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Išskleidžiamas ISO atvaizdas:</b> %1"
+msgstr "<b>Išskleidžiamas suglaudintas ISO atvaizdas:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1744
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Kopijuojama rinkmena, prašome palaukti..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1745 unetbootin.cpp:2559
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "<b>Šaltinis:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1746 unetbootin.cpp:2560
 msgid "<b>Destination:</b> %1"
-msgstr ""
+msgstr "<b>Paskirtis:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1747
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Nukopijuota:</b> 0 baitų"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1785
@@ -280,12 +296,12 @@ msgstr "<b>Šaltinis:</b>"
 #. ts-context unetbootin
 #: unetbootin.cpp:1788
 msgid "<b>Destination:</b>"
-msgstr ""
+msgstr "<b>Paskirtis:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1789
 msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Išskleista:<b/> 0 iš %1 bylų"
+msgstr "<b>Išskleista:</b> 0 of %1 rinkmenų"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1792
@@ -295,22 +311,22 @@ msgstr "<b>Šaltinis:</b> %1 (%2)"
 #. ts-context unetbootin
 #: unetbootin.cpp:1793
 msgid "<b>Destination:</b> %1%2"
-msgstr ""
+msgstr "<b>Paskirtis:</b> %1%2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1794
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
+msgstr "<b>Išskleista:</b> %1 iš %2 rinkmenų"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2558
 msgid "Downloading files, please wait..."
-msgstr "Parsiunčiamos bylos, prašome palaukti..."
+msgstr "Parsiunčiamos rinkmenos, prašome palaukti..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2561
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Parsiųsta:</b> 0 baitų"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2685
@@ -318,31 +334,33 @@ msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
 msgstr ""
+"Parsisiųsti %1 %2 iš %3 nepavyko. Prašome pabandyti parsisiųsti ISO rinkmeną "
+"tiesiogiai iš svetainės ir pateikti ją kaip disko atvaizdo variantą."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2708 unetbootin.cpp:2723
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Parsiųsta:</b> %1 iš %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2738
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Nukopijuota:</b> %1 iš %2"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2829
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "ieškoma <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:2833
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
+msgstr "%1/%2 atitikmenų <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3106
 msgid "%1 not found"
-msgstr ""
+msgstr "%1 nerasta"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3107
@@ -350,70 +368,77 @@ msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
+"%1 nerastas. Jis reikalingas %2 įdiegti.\n"
+"Įdiekite \"%3\" paketą arba savo distributyvo atitikmenį."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3390
 msgid "(Current)"
-msgstr ""
+msgstr "(Dabartinis)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3391
 msgid "(Done)"
-msgstr ""
+msgstr "(Baigta)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3683
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "%1 grub2 konfigūravimas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3695
 msgid "Configuring grldr on %1"
-msgstr ""
+msgstr "%1 grldr konfigūravimas"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3723
 msgid "Configuring grub on %1"
-msgstr ""
+msgstr "%1 grub konfigūravimas"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "Į %1 diegiamas syslinux"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
-msgstr ""
+msgstr "Į %1 diegiamas extlinux"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
-msgstr ""
+msgstr "Failų sistema sinchronizuojama"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
-msgstr ""
+msgstr "Nustatomas gajumas"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
-msgstr ""
+msgstr "Po pakartotinės sistemos paleisties, pasirinkite "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
+"Po pakartotinės sistemos paleisties, pasirinkite USB įkrovos parinktį BIOS "
+"įkrovos meniu.%1\n"
+"Dabar pakartotinai paleisti kompiuterį iš naujo?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"Sukurtas USB diskas negali paleisti Mac kompiuterio. Prijunkite jį prie PC "
+"mašinos ir pasirinkite USB įkrovos parinktį BIOS įkrovos meniu.%1"
 
 #. ts-context unetbootin
 #: distrolst.cpp:43
@@ -423,6 +448,10 @@ msgid ""
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*SVARBU* Prieš tai, kad iš naujo paleisti kompiuterį, patalpinkite "
+"šakniniame standaus ar USB disko segtuve alternatyvų Ubuntu (Desktop) "
+"diegimo ISO disko atvaizdą. Jį galima gauti cdimage.ubuntu.com"
 
 #. ts-context unetbootin
 #: distrolst.cpp:257
@@ -434,6 +463,13 @@ msgid ""
 "'mirrors.kernel.org' when prompted for a server, and enter "
 "'/centos/%1/os/%2' when asked for the folder."
 msgstr ""
+"\n"
+"*SVARBU* Po pakartotinės sistemos paleisties, nekreipkite dėmesio į bet "
+"kokius klaidų pranešimus ir pasirinkite sugrįžti atgal į CD, nueikite į "
+"pagrindinį meniu, parinkite \"Pradėti diegimą\" parinktį, pažymėkite "
+"\"Tinklas\", kaip šaltinis, pažymėkite \"HTTP\", kaip protokolas, įveskite "
+"\"mirrors.kernel.org\", kai paprašys nurodyti serverio adresą, ir įveskite "
+"\"/centos/%1/os/%2\", kai paprašys nurodyti paskirties segtuvą."
 
 #. ts-context unetbootin
 #: distrolst.cpp:314
@@ -443,6 +479,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*SVARBU* Prieš tai, kad iš naujo paleisti kompiuterį, patalpinkite "
+"šakniniame standaus ar USB disko segtuve alternatyvų Debian diegimo ISO "
+"disko atvaizdą. Jį galima gauti cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:407
@@ -454,6 +494,14 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
+"\n"
+"*SVARBU* Po pakartotinės sistemos paleisties, nekreipkite dėmesio į bet "
+"kokius klaidų pranešimus ir pasirinkite sugrįžti atgal į CD, nueikite į "
+"pagrindinį meniu, parinkite \"Pradėti diegimą\" parinktį, pažymėkite "
+"\"Tinklas\", kaip šaltinis, pažymėkite \"HTTP\", kaip protokolas, įveskite "
+"\"download.fedora.redhat.com\", kai paprašys nurodyti serverio adresą, ir "
+"įveskite \"/pub/fedora/linux/development/%1/os\", kai paprašys nurodyti "
+"paskirties segtuvą."
 
 #. ts-context unetbootin
 #: distrolst.cpp:413
@@ -465,6 +513,14 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
+"\n"
+"*SVARBU* Po pakartotinės sistemos paleisties, nekreipkite dėmesio į bet "
+"kokius klaidų pranešimus ir pasirinkite sugrįžti atgal į CD, nueikite į "
+"pagrindinį meniu, parinkite \"Pradėti diegimą\" parinktį, pažymėkite "
+"\"Tinklas\", kaip šaltinis, pažymėkite \"HTTP\", kaip protokolas, įveskite "
+"\"download.fedora.redhat.com\", kai paprašys nurodyti serverio adresą, ir "
+"įveskite \"/pub/fedora/linux/releases/%1/Fedora/%2/os\", kai paprašys "
+"nurodyti paskirties segtuvą."
 
 #. ts-context unetbootin
 #: distrolst.cpp:785
@@ -476,6 +532,13 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*SVARBU* Po pakartotinės sistemos paleisties, nekreipkite dėmesio į bet "
+"kokius klaidų pranešimus ir pasirinkite sugrįžti atgal į CD, nueikite į "
+"pagrindinį meniu, parinkite \"Pradėti diegimą\" parinktį, pažymėkite "
+"\"Tinklas\", kaip šaltinis, pažymėkite \"HTTP\", kaip protokolas, įveskite "
+"\"download.opensuse.org\", kai paprašys nurodyti serverio adresą, ir "
+"įveskite \"/factory/repo/oss\", kai paprašys nurodyti paskirties segtuvą."
 
 #. ts-context unetbootin
 #: distrolst.cpp:791
@@ -487,16 +550,24 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*SVARBU* Po pakartotinės sistemos paleisties, nekreipkite dėmesio į bet "
+"kokius klaidų pranešimus ir pasirinkite sugrįžti atgal į CD, nueikite į "
+"pagrindinį meniu, parinkite \"Pradėti diegimą\" parinktį, pažymėkite "
+"\"Tinklas\", kaip šaltinis, pažymėkite \"HTTP\", kaip protokolas, įveskite "
+"\"download.opensuse.org\", kai paprašys nurodyti serverio adresą, ir "
+"įveskite \"/distribution/%1/repo/oss\", kai paprašys nurodyti paskirties "
+"segtuvą."
 
 #. ts-context unetbootin
 #: distrover.cpp:26 unetbootin.cpp:748
 msgid "== Select Distribution =="
-msgstr ""
+msgstr "== Pasirinkite Distributyvą =="
 
 #. ts-context unetbootin
 #: distrover.cpp:26 distrover.cpp:30
 msgid "== Select Version =="
-msgstr ""
+msgstr "== Pasirinkite Versiją =="
 
 #. ts-context unetbootin
 #: distrover.cpp:27
@@ -507,6 +578,12 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
+"Sveiki atvykę į <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
+"Netboot Installer tinklapį. Naudojimas:<ol><li>Pasirinkite iš sąrašo "
+"distribuciją ir versiją, kad ją parsisiųsti, ar pasirinkite įkelti Jūsų "
+"nurodytą rinkmeną.</li><li>Pažymėkite diegimo būdą ir nuspausdami \"Taip\", "
+"pradėkite diegimą.</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:32
@@ -517,6 +594,11 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Aprašy"
+"mas:</b> Arch Linux yra mažai vietos užimantis distributyvas, greitas ir "
+"lankstus.<br/><b>Diegimo pastabos:</b> Pagal nutylėjimą leidžia diegti "
+"tiesiogiai siunčiantis iš interneto (FTP)."
 
 #. ts-context unetbootin
 #: distrover.cpp:37
@@ -527,6 +609,11 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Namų tinklapis:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Aprašymas:</b> "
+"BackTrack, distributyvas, paruoštas tinklo analizei ir skverbčiai "
+"testuoti.<br/><b>Diegimo pastabos:</b> BackTrack paleidžiamas <i>gyvu</i> "
+"būdu; jo naudojimui nereikalingas diegimas."
 
 #. ts-context unetbootin
 #: distrover.cpp:42
@@ -538,6 +625,12 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Aprašymas:</"
+"b> CentOS yra nemokamas Red Hat Enterprise Linux klonas.<br/><b>Diegimo "
+"pastabos:</b> Pagal nutylėjimą leidžia diegti tiesiogiai siunčiantis iš "
+"interneto (FTP), arba atsijungus nuo tinklo, prieš tai parsisiuntus ISO "
+"diegimo rinkmeną."
 
 #. ts-context unetbootin
 #: distrover.cpp:47
@@ -548,6 +641,11 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Aprašymas:<"
+"/b> CloneZilla, tai distributyvas, skirtas disko atsarginių kopijų ir "
+"atvaizdų rinkmenų paruošimui.<br/><b>Diegimo pastabos:</b> CloneZilla  "
+"paleidžiamas <i>gyvu</i> būdu; jo naudojimui nereikalingas diegimas."
 
 #. ts-context unetbootin
 #: distrover.cpp:52
@@ -559,6 +657,12 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Apra"
+"šymas:</b> Damn Small Linux - minimalistinis distributyvas, paruoštas "
+"naudoti senuose kompiuteriuose.<br/><b>Diegimo pastabos:</b> ,i>Gyva</> "
+"versija užkrauna sistemą į RAM ir pasileidžia iš operatyviosios atminties, "
+"todėl diegimas nereikalingas, bet įmanoma įdiegti ir į standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:57
@@ -572,6 +676,14 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Aprašymas:</"
+"b> Debian - kūrėjų bendruomenės Linux distributyvas, kurie palaiko didelę "
+"architektūrų įvairovę ir turi didelę paketų saugyklą.<br/><b>Diegimo "
+"pastabos:</b> Tinklinė (NetInstall) versija leidžia diegti siunčiantis "
+"tiesiai iš FTP. Jei Jūs mėgstate naudotis iš anksto parsisiųsta ISO diegimo "
+"rinkmena, pasirinkite HdMedia būdą, ir patalpinkite ISO rinkmeną šakniniame "
+"standžiojo ar USB disko segtuve."
 
 #. ts-context unetbootin
 #: distrover.cpp:63
@@ -582,6 +694,12 @@ msgid ""
 "distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Aprašymas:</b> Dreamlinux - tai draugiškas vartotojui, Debian pagrindu "
+"paruoštas distributyvas.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija "
+"leidžia pasileisti kompiuterį <i>gyvai</i>, nediegiant, iš kurio po to "
+"galima ir įdiegti į standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:68
@@ -593,6 +711,12 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Aprašymas:</b> Dr.Web AntiVirus yra antivirusinės pagalbos rinkinys, "
+"kuris leidžia atstatyti <i>malware</i> sugadintą sistemą.<br/><b>Diegimo "
+"pastabos:</b> <i>Gyva</i> versija leidžia paleidus kompiuterį iš laikmenos "
+"patikrinti jo standųjį diską dėl kenkėjiškų (malware) programų."
 
 #. ts-context unetbootin
 #: distrover.cpp:73
@@ -603,6 +727,12 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Aprašymas:"
+"</b> Elive - tai Debian pagrindu paruoštas distributyvas, kurio ypatybė - "
+"Enlightenment langų failų tvarkyklė.<br/><b>Diegimo pastabos:</b> "
+"<i>Gyva</i> versija leidžia pasileisti kompiuterį <i>gyvai</i>, nediegiant, "
+"iš kurio po to galima ir įdiegti į standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:78
@@ -616,6 +746,15 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Aprašy"
+"mas:</b> Fedora - tai Red Hat išlaikomos bendruomenės distributyvas,  kuris "
+"naudoja naujausią/pažangiausią nemokamą/atvirojo kodo programinę "
+"įrangą.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia pasileisti "
+"kompiuterį <i>gyvai</i>, nediegiant, iš kurio po to galima ir įdiegti į "
+"standųjį diską. Tinklinė(NetInstall) versija leidžia diegti abiem būdais: "
+"tiesiogiai siunčiantis iš interneto (FTP), ar atsijungus, naudojant prieš "
+"tai parsisiųstas diegimo ISO rinkmenas."
 
 #. ts-context unetbootin
 #: distrover.cpp:83
@@ -627,6 +766,13 @@ msgid ""
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Aprašymas:"
+"</b> FreeBSD yra bendros paskirties Unix šeimos operacinė sistema, "
+"suprojektuota masteliavimui (scalability) ir efektyvumui.<br/><b>Diegimo "
+"pastabos:</b> Galima diegti abiem būdais: tiesiogiai siunčiantis iš "
+"interneto (FTP), ar atsijungus, naudojant prieš tai parsisiųstas diegimo ISO "
+"rinkmenas."
 
 #. ts-context unetbootin
 #: distrover.cpp:88
@@ -638,6 +784,12 @@ msgid ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
 "installation details."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Aprašymas:"
+"</b> FreeDOS yra nemokama MS-DOS suderinama operacinė "
+"sistema.<br/><b>Diegimo pastabos:</b> Daugiau apie diegimą žiūrėkite <a "
+"href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">vadovą</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:93
@@ -650,6 +802,13 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Aprašymas:</b>"
+" FreeNAS yra integruota atvirojo kodo NAS (Network-Attached Storage) "
+"distribucija, kuri remiasi FreeBSD.<br/><b>Diegimo pastabos:</b> LiveCD "
+"versija sukuria RAM diską FreeNAS sistemai ir naudoja FAT failų sistema "
+"suformatuotą diskelį ar USB diską, kuriame saugoja konfigūracinę rinkmeną. "
+"Integruotoji versija leidžia įdiegti į standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:98
@@ -661,6 +820,12 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Aprašymas:</"
+"b> Frugalware  - tai bendros paskirties Slackware paremta distribucija "
+"pažengusiems vartotojams.<br/><b>Diegimo pastabos:</b> Galima diegti abiem "
+"būdais: tiesiogiai siunčiantis iš interneto (FTP), ar atsijungus, naudojant "
+"prieš tai parsisiųstas diegimo ISO rinkmenas."
 
 #. ts-context unetbootin
 #: distrover.cpp:108
@@ -669,6 +834,9 @@ msgid ""
 "href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
 "n:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Aprašymas:"
+"</b> GeeXboX - tai integruota Linux Media Center Distribucija.<br/>"
 
 #. ts-context unetbootin
 #: distrover.cpp:121
@@ -680,6 +848,12 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Aprašy"
+"mas:</b> gNewSense - tai FSF patvirtinta distribucija, paremta Ubuntu, iš "
+"kurios pašalinti visi mokami komponentai.<br/><b>Diegimo pastabos:</b> "
+"<i>Gyva</i> (Live) versija leidžia paleisti kompiuterį <i>gyvai</i>, iš "
+"kurios galima paleisti diegimą."
 
 #. ts-context unetbootin
 #: distrover.cpp:126
@@ -690,6 +864,11 @@ msgid ""
 "various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
 "runs; no installation is required to use it."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Aprašymas:</b> Gujin - tai grafinė paleidimo tvarkyklė, kuri paleidžia "
+"įvairius disko skirsnius ir rinkmenas.<br/><b>Diegimo pastabos:</b> Gujin "
+"paprastai pasileidžia ir veikia; nereikalauja diegimo."
 
 #. ts-context unetbootin
 #: distrover.cpp:131
@@ -701,6 +880,13 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which "
 "malware scans can be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Aprašymas:</b> Kaspersky Rescue Disk "
+"aptinka ir pašalina kenkėjiškas (malware) programas Jūsų Windows "
+"sistemoje.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia "
+"pasileisti kompiuterį iš laikmenos ir išvalyti kompiuterį nuo kenkėjiškų "
+"(malware) programėlių."
 
 #. ts-context unetbootin
 #: distrover.cpp:136
@@ -716,6 +902,17 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Aprašymas:"
+"</b> Kubuntu - tai oficialus Ubuntu darinys su KDE "
+"darbastaliu.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia "
+"paleisti kompiuterį iš laikmenos ir naudotis sistema, ar iš jos paleisti "
+"diegimą. <i>Tinklinė</i> (NetInstall) versija leidžia diegti tiesiogiai "
+"siunčiantis iš interneto (FTP) kaip Kubuntu, taip ir kitus oficialius Ubuntu "
+"darinius. Jei Jūs mėgstate diegimui naudoti iš anksto parsiųstas "
+"alternatyvias diegimo ISO rinkmenas, pasirinkite HdMedia būdą ir "
+"patalpinkite atitinkamą alternatyvią ISO rinkmeną šakniniame standžiojo ar "
+"USB disko segtuve."
 
 #. ts-context unetbootin
 #: distrover.cpp:141
@@ -727,6 +924,13 @@ msgid ""
 "latest 1.0, now available on rolling release (run liveuptate to update "
 "modules and kernel)."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Aprašyma"
+"s:</b> LinuxConsole - tai namų kompiuterio distributyvas, skirtas žaisti "
+"žaidimus, paprastai įdiegti ir naudoti, bei greitai paleisti kompiuterį "
+".<br/><b>Diegimo pastabos:</b> 1.0.2010 versija yra paskutinis 1.0 leidimas, "
+"dabar pasiekiamas <i>rolling</i> leidimas (paleiskite liveupdate, kad "
+"atnaujinti modulius ir branduolį)."
 
 #. ts-context unetbootin
 #: distrover.cpp:146
@@ -738,6 +942,13 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Aprašymas:</b>"
+" Linux Mint yra patogus Ubuntu paremtas distributyvas, pagal nutylėjimą "
+"papildytas kitokios nuosavybės kodekais ir kita programine "
+"įranga.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia pasileisti "
+"kompiuterį iš laikmenos ir naudotis sistema, ar iš jos paleisti diegimą į "
+"standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:151
@@ -753,6 +964,17 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Aprašymas:"
+"</b> Lubuntu yra oficialus Ubuntu darinys su LXDE "
+"darbastaliu.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia "
+"pasileisti kompiuterį iš laikmenos ir naudotis sistema ar iš jos paleisti "
+"diegimą į standųjį diską. <i>Tinklinė</i> (NetInstall) versija leidžia "
+"diegti tiesiogiai siunčiantis iš interneto (FTP) kaip Lubuntu, taip ir kitus "
+"oficialius Ubuntu darinius. Jei Jūs mėgstate diegimui naudoti iš anksto "
+"parsiųstas alternatyvias diegimo ISO rinkmenas, pasirinkite HdMedia būdą ir "
+"patalpinkite atitinkamą alternatyvią ISO rinkmeną šakniniame standžiojo ar "
+"USB disko segtuve."
 
 #. ts-context unetbootin
 #: distrover.cpp:156
@@ -766,6 +988,14 @@ msgid ""
 "downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Aprašym"
+"as:</b> Mandriva yra patogus distributyvas, dar kitaip žinomas kaip Mandrake "
+"Linux.<br/><b>Diegimo pastabos:</b> <i>Gyva</i> versija leidžia pasileisti "
+"kompiuterį iš laikmenos ir naudotis sistema ar iš jos paleisti diegimą į "
+"standųjį diską. <i>Tinklinė</i> (NetInstall) versija leidžia diegti "
+"tiesiogiai siunčiantis iš interneto (FTP) ar iš anksto parsisiųsta <a "
+"href=\"http://www.mandriva.com/en/download\">\"Free\" iso rinkmena</a>."
 
 #. ts-context unetbootin
 #: distrover.cpp:161
@@ -777,6 +1007,13 @@ msgid ""
 "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
 "from which the installer can optionally be launched."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Aprašymas:</b>"
+" MEPIS yra Debian paremta distribucija. SimplyMEPIS yra vartotojui patogi "
+"versija, naudojanti KDE darbastalį, kai AntiX yra nedaug vietos (lengva) "
+"versija, skirta seniems kompiuteriams.<br/><b>Diegimo pastabos:</b> MEPIS "
+"leidžia pasileisti kompiuterį iš laikmenos <i>gyvai</i> ir naudotis sistema, "
+"ar iš jos paleisti diegimą į standųjį diską."
 
 #. ts-context unetbootin
 #: distrover.cpp:166
@@ -787,6 +1024,12 @@ msgid ""
 "network-based installers for other distributions.<br/><b>Install Notes:</b> "
 "NetbootCD boots and runs in live mode."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Aprašymas:</b> NetbootCD mažas kompiuterio paleidimo CD, kuris "
+"paleidžia sistemą, parsisiunčia ir paleidžia kitų distribucijų tinklinius "
+"įdiegėjus.<br/><b>Diegimo pastabos:</b> NetbootCD pasileidžia ir veikia "
+"<i>gyvai</i> (live mode)."
 
 #. ts-context unetbootin
 #: distrover.cpp:176
@@ -799,6 +1042,13 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<b>Namų tinklapis:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Aprašymas:"
+"</b> NimbleX yra maža, universali Slackware paremta distribucija. Ji "
+"surinkta naudojant linux-live skriptais ir funkcijonuoja KDE. Ji gali "
+"pasileisti iš CD ar flash laikmenos (USB disko ar MP3 grotuvo) ir gali būti "
+"lengvai pritaikoma ir praplečiama.<br/><b>Diegimo pastabos:</b> NimbleX "
+"pasileidžia ir veikia <i>gyvai</i> (live mode)."
 
 #. ts-context unetbootin
 #: distrover.cpp:181
@@ -1072,32 +1322,32 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:20
 msgid "Unetbootin"
-msgstr ""
+msgstr "Unetbootin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr ""
+msgstr "Pasirinkite iš palaikomų distribucijų sąrašo"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr ""
+msgstr "&Distribucija"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Nurodykite įkelti disko atvaizdo rinkmeną"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "Disko&atvaizdas"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr ""
+msgstr "Patys parinkite įkelti branduolio ir initrd rinkmenas"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
@@ -1125,87 +1375,87 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:503
 msgid "OK"
-msgstr ""
+msgstr "Gerai"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:506
 msgid "Return"
-msgstr ""
+msgstr "Grąžinti"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:513
 msgid "Cancel"
-msgstr ""
+msgstr "Atšaukti"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:516
 msgid "Esc"
-msgstr ""
+msgstr "Gr(Esc)"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:561
 msgid "Reboot Now"
-msgstr ""
+msgstr "Tučtuojau paleisti iš naujo"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:568
 msgid "Exit"
-msgstr ""
+msgstr "Išeiti"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:660
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Parsiunčiamos rinkmenos"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:667
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Išskleidžiamos ir kopijuojamos rinkmenos"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Diegiama pradinės paleisties programa"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Diegimas baigtas, perleisti iš naujo"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:477 unetbootin.ui:496
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Pasirinkti diegimo paskirties diską"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:480
 msgid "Dri&ve:"
-msgstr ""
+msgstr "Dis&kas:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:451 unetbootin.ui:470
 msgid "Select the installation target type"
-msgstr ""
+msgstr "Pasirinkti diegimo tipą"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:454
 msgid "&Type:"
-msgstr ""
+msgstr "&Tipas:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Parinkti distributyvo versiją"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr ""
+msgstr "Pasirinkite disko atvaizdo rinkmeną"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:188
@@ -1250,32 +1500,32 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr ""
+msgstr "&Branduolys:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
 msgid "Init&rd:"
-msgstr ""
+msgstr "Init&rd"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "&Opcijos"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr ""
+msgstr "Baigtas išdiegimas"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "Išdiegtas %1."
 
 #. ts-context uninstaller
 #: main.cpp:319
 msgid "Must run as root"
-msgstr ""
+msgstr "Turi būti paleistas administratoriaus teisėmis"
 
 #. ts-context uninstaller
 #: main.cpp:321
@@ -1283,13 +1533,15 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
+"%2 turi būti paleistas administratoriaus teisėmis. Užverkite ir paleiskite "
+"iš naujo, įvesdami:<br/><b>sudo %1</b><br/>arba:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:353
 msgid "%1 Uninstaller"
-msgstr ""
+msgstr "%1 išdiegėjas"
 
 #. ts-context uninstaller
 #: main.cpp:354
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr ""
+msgstr "%1 jau yra įdiegtas. Išdiegti esamą versiją?"

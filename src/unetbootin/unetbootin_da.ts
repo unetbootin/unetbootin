@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2011-10-20 00:15+0000
-Last-Translator: r4113 &lt;Unknown&gt;
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-03-08 17:47+0000
+Last-Translator: Martin Finnerup &lt;Unknown&gt;
 Language-Team: Danish &lt;da@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -107,7 +107,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>LiveUSB persistence</source>
-        <translation></translation>
+        <translation>LiveUSB vedholdenhed</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
@@ -436,7 +436,7 @@ Installer &quot;%3&quot; pakken eller den tilsvarende for din distribution.</tra
     <message>
         <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Opsætning af vedholdenhed</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4232"/>
@@ -453,7 +453,7 @@ Genstart nu?</translation>
     <message>
         <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>Den oprettede USB enhed vil ikke kunne starte op fra en Mac. Indsæt den i en PC, og vælg USB opstartsmulighed i BIOS opstartsmenuen.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
@@ -564,7 +564,7 @@ Genstart nu?</translation>
     <message>
         <location filename="distrover.cpp" line="73"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Elive is a Debian-based distribution featuring the Enlightenment window manager.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Forside:&lt;/b&gt; &lt;a href=&quot;http://www.elivecd.org/&quot;&gt;http://www.elivecd.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; Elive er en Debian-baseret distribution med Enlightenment vindues håndtering.&lt;br/&gt;&lt;b&gt;Installationsnoter:&lt;/b&gt; Live versionen tillader opstart i Live mode, hvor installationsprogrammet eventuelt kan startes.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="78"/>
@@ -584,7 +584,7 @@ Genstart nu?</translation>
     <message>
         <location filename="distrover.cpp" line="93"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; FreeNAS is an embedded open source NAS (Network-Attached Storage) distribution based on FreeBSD.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The LiveCD version creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB key for saving the configuration file. The embedded version allows installation to hard disk.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Forside:&lt;/b&gt; &lt;a href=&quot;http://freenas.org/&quot;&gt;http://www.freenas.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Beskrivelse:&lt;/b&gt; FreeNAS er en indlejret open source NAS (Network-Attached Storage) distribution baseret på FreeBSD.&lt;br/&gt;&lt;b&gt;Installationsnoter:&lt;/b&gt; LiveCD versionen opretter et RAM drev til FreeNAS, og bruger en FAT formatteret floppy disk eller USB nøgle til at gemme konfigurationsfilen. Den indlejrede version tillader installation til hard disk.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="98"/>

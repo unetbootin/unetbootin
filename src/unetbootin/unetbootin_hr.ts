@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2010.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-10-28 00:51+0000
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2013-01-03 17:34+0000
 Last-Translator: gogo &lt;trebelnik2@gmail.com&gt;
 Language-Team: Croatian &lt;hr@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -569,7 +569,7 @@ Reboot now?</source>
     <message>
         <location filename="distrover.cpp" line="78"/>
         <source>&lt;b&gt;Homepage:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Description:&lt;/b&gt; Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.&lt;br/&gt;&lt;b&gt;Install Notes:&lt;/b&gt; The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.</source>
-        <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Fedora je Red Hat distribucija sponzorirana od strane zajednice koja dolazi sa testnim inačicama softvara slobodnog/otvorenog kôda.&lt;br/&gt;&lt;b&gt;Napomena instalacije:&lt;/b&gt; Live inačica dopušta pokretanje u Live načinu rada, iz kojega se instalacija može pokrenuti prema potrebi. NetInstall inačica omogućuje instalaciju putem interneta (FTP) ili instalaciju bez priključka na internet koristeći prije preuzete instalacijske ISO datoteke.</translation>
+        <translation>&lt;b&gt;Web stranica:&lt;/b&gt; &lt;a href=&quot;http://fedoraproject.org/&quot;&gt;http://fedoraproject.org&lt;/a&gt;&lt;br/&gt;&lt;b&gt;Opis:&lt;/b&gt; Fedora je Red Hat distribucija sponzorirana od strane zajednice koja dolazi sa testnim inačicama softvera slobodnog/otvorenog kôda.&lt;br/&gt;&lt;b&gt;Napomena instalacije:&lt;/b&gt; Live inačica dopušta pokretanje u Live načinu rada, iz kojega se instalacija može pokrenuti prema potrebi. NetInstall inačica omogućuje instalaciju putem interneta (FTP) ili instalaciju bez priključka na internet koristeći prije preuzete instalacijske ISO datoteke.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="83"/>

@@ -18,6 +18,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+    .replace("13.04", "raring") \
+    .replace("12.10", "quantal") \
 	.replace("12.04", "precise") \
 	.replace("11.10", "oneiric") \
 	.replace("11.04", "natty") \
@@ -366,37 +368,21 @@ if (nameDistro == "Elive")
 
 if (nameDistro == "Fedora")
 {
+    QString minorarch = "";
 	if (isarch64)
 	{
 		cpuarch = "x86_64";
+        minorarch = "x86_64";
 	}
 	else
 	{
 		cpuarch = "i386";
+        minorarch = "i686";
 	}
 	if (islivecd)
 	{
-		if (!isarch64)
-		{
-			cpuarch = "i686";
-		}
-		if (relname == "8")
-		{
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-Live-%2.iso").arg(relname, cpuarch), isotmpf);
-		}
-		else if (relname == "10")
-		{
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/F%1-%2-Live.iso").arg(relname, cpuarch), isotmpf);
-		}
-		else if (relname == "11" || relname == "12" || relname == "13")
-		{
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live.iso").arg(relname, cpuarch), isotmpf);
-		}
-		else
-		{
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%2-Live-Desktop.iso").arg(relname, cpuarch), isotmpf);
-		}
-		extractiso(isotmpf);
+        downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%3-Live-Desktop.iso").arg(relname).arg(cpuarch).arg(minorarch), isotmpf);
+        extractiso(isotmpf);
 	}
 	else
 	{
@@ -588,37 +574,20 @@ if (nameDistro == "LinuxConsole")
 
 if (nameDistro == "Linux Mint")
 {
-	if (relname == "9" || relname == "10")
-	{
-		if (isarch64)
-		{
-			cpuarch = "amd64";
-		}
-		else
-		{
-			cpuarch = "i386";
-		}
-	}
+    if (isarch64)
+    {
+        cpuarch = "64";
+    }
 	else
-	{
-		if (isarch64)
-		{
-			cpuarch = "-x64";
-		}
-		else
-		{
-			cpuarch = "";
-		}
+    {
+        cpuarch = "32";
 	}
 	QList<QRegExp> mintregex = QList<QRegExp>() <<
 		QRegExp(".iso$", Qt::CaseInsensitive) <<
 		QRegExp("linuxmint", Qt::CaseInsensitive) <<
-		QRegExp(cpuarch, Qt::CaseInsensitive);
-	if (relname == "9" || relname == "10")
-	{
-		mintregex.append(QRegExp("cd", Qt::CaseInsensitive));
-		mintregex.append(QRegExp("gnome", Qt::CaseInsensitive));
-	}
+        QRegExp(cpuarch, Qt::CaseInsensitive) <<
+        QRegExp("^((?!nocodecs).)*$", Qt::CaseInsensitive) <<
+        QRegExp("cinnamon", Qt::CaseInsensitive);
 	downloadfile(fileFilterNetDir(QStringList() <<
 	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://mira.sunsite.utk.edu/linuxmint/stable/%1/").arg(relname) <<

@@ -64,5 +64,7 @@ TRANSLATIONS += unetbootin.ts \
     unetbootin_sr.ts \
     unetbootin_sv.ts \
     unetbootin_sw.ts \
-    unetbootin_pl.ts
+    unetbootin_pl.ts \
+    unetbootin_fa.ts \
+    unetbootin_si.ts
 RESOURCES += unetbootin.qrc

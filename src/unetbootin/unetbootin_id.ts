@@ -13,15 +13,15 @@ FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, 2009.
 </translatorcomment>
         <translation>Project-Id-Version: unetbootin
 Report-Msgid-Bugs-To: FULL NAME &lt;EMAIL@ADDRESS&gt;
-POT-Creation-Date: 2012-08-26 12:44-0700
-PO-Revision-Date: 2012-04-04 10:09+0000
-Last-Translator: zaenalarifin &lt;Unknown&gt;
+POT-Creation-Date: 2012-12-24 00:10-0800
+PO-Revision-Date: 2012-12-27 11:58+0000
+Last-Translator: Namaku Jiro &lt;namaku0@gmail.com&gt;
 Language-Team: Indonesian &lt;id@li.org&gt;
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Launchpad-Export-Date: 2012-12-24 08:08+0000
-X-Generator: Launchpad (build 16378)
+X-Launchpad-Export-Date: 2013-06-06 06:04+0000
+X-Generator: Launchpad (build 16667)
 </translation>
     </message>
 </context>
@@ -30,7 +30,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="main.cpp" line="266"/>
         <source>LeftToRight</source>
-        <translation>kiri ke kanan</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="3932"/>
         <location filename="unetbootin.cpp" line="4234"/>
         <source>USB Drive</source>
-        <translation>Kotak pemuat USB</translation>
+        <translation>Drive USB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="212"/>
@@ -79,7 +79,7 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="664"/>
         <location filename="unetbootin.cpp" line="3498"/>
         <source>ISO</source>
-        <translation>ISO (sistem ISO 9660 media CD-ROM)</translation>
+        <translation>ISO</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="213"/>
@@ -107,22 +107,22 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="277"/>
         <source>LiveUSB persistence</source>
-        <translation>Keteguhan UsbLive</translation>
+        <translation>Keutuhan LiveUSB</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="292"/>
         <source>FAT32-formatted USB drive</source>
-        <translation>Menformat-FAT32 perangkat USB</translation>
+        <translation>USB Drive terformat FAT32</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="296"/>
         <source>EXT2-formatted USB drive</source>
-        <translation>Menformat-EXT2 perangkat USB</translation>
+        <translation>USB Drive terformat EXT2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
         <source>Open Disk Image File</source>
-        <translation>Buka flie image</translation>
+        <translation>Buka berkas citra disk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="660"/>
@@ -139,149 +139,149 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="678"/>
         <source>Open Kernel File</source>
-        <translation>Buka file kernel</translation>
+        <translation>Buka berkas kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="686"/>
         <source>Open Initrd File</source>
-        <translation>Buka file Initrd</translation>
+        <translation>Buka berkas initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="694"/>
         <source>Open Bootloader Config File</source>
-        <translation>Buka file konfigurasi bootloader</translation>
+        <translation>Buka berkas konfigurasi bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="716"/>
         <source>Insert a USB flash drive</source>
-        <translation>Masukkan USB flash drive</translation>
+        <translation>Masukkan USB drive</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="717"/>
         <source>No USB flash drives were found. If you have already inserted a USB drive, try reformatting it as FAT32.</source>
-        <translation>FlashDisk tidak terdeteksi , jika Flashdisk telah terpasang coba format ke FAT32.</translation>
+        <translation>USB drive tidak ditemukan.  Jika USB drive telah terpasang coba format sebagai FAT32.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="736"/>
         <source>%1 not mounted</source>
-        <translation>%1 Tidak terpasang</translation>
+        <translation>%1 tidak terikat (mounted)</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="737"/>
         <source>You must first mount the USB drive %1 to a mountpoint. Most distributions will do this automatically after you remove and reinsert the USB drive.</source>
-        <translation>Pasang dulu USB drive %1 , System akan otomatis mendeteksi setelah anda lepas &amp; pasang kembali USB Drive.</translation>
+        <translation>Ikat (mount) dulu USB drive %1 pada titik ikat (mount point). Kebanyakan distribusi Linux melakukannya secara otomatis setelah USB drive dicopot dan dipasang kembali.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="752"/>
         <source>Select a distro</source>
-        <translation>Pilih salah satu Distro</translation>
+        <translation>Pilih distribusi</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="753"/>
         <source>You must select a distribution to load.</source>
-        <translation>Pilih Distro untuk di muat</translation>
+        <translation>Anda harus memilih distribusi untuk dimuat.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="767"/>
         <source>Select a disk image file</source>
-        <translation>Pilih File Image</translation>
+        <translation>Pilih berkas citra disk</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="768"/>
         <source>You must select a disk image file to load.</source>
-        <translation>Anda harus memilih file image untuk di muat</translation>
+        <translation>Anda harus memilih berkas citra disk untuk dimuat.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="782"/>
         <source>Select a kernel and/or initrd file</source>
-        <translation>Pilih salah satu  kernel dan/atau file initrd</translation>
+        <translation>Pilih berkas kernel dan/atau intrd</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="783"/>
         <source>You must select a kernel and/or initrd file to load.</source>
-        <translation>Anda harus memilih salah satu kernel dan/atau file initrd untuk memulai</translation>
+        <translation>Anda harus memilih berkas kernel dan/atau initrd.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="797"/>
         <source>Diskimage file not found</source>
-        <translation>Diskimage tidak ditemukan</translation>
+        <translation>Berkas citra disk tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="798"/>
         <source>The specified diskimage file %1 does not exist.</source>
-        <translation>File Image %1 Tidak di temukan.</translation>
+        <translation>Berkas citra disk %1 tidak ada.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="812"/>
         <source>Kernel file not found</source>
-        <translation>File Kernel tidak ditemukan</translation>
+        <translation>Berkas kernel tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="813"/>
         <source>The specified kernel file %1 does not exist.</source>
-        <translation>Kernel file %1 tidak sesuai.</translation>
+        <translation>Berkas kernel %1 tidak ada.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="827"/>
         <source>Initrd file not found</source>
-        <translation>File initrd tidak ditemukan</translation>
+        <translation>Berkas initrd tidak ditemukan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="828"/>
         <source>The specified initrd file %1 does not exist.</source>
-        <translation>Initrd file %1 tidak sesuai.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="932"/>
         <source>%1 exists, overwrite?</source>
-        <translation>%1 sudah ada , di timpa?</translation>
+        <translation>%1 sudah ada, timpa?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="933"/>
         <source>The file %1 already exists. Press &apos;Yes to All&apos; to overwrite it and not be prompted again, &apos;Yes&apos; to overwrite files on an individual basis, and &apos;No&apos; to retain your existing version. If in doubt, press &apos;Yes to All&apos;.</source>
-        <translation>File %1 sudah ada . Tekan &quot; Yes to All &quot; utk menimpa,&apos; Yes &apos; utk menimpa secara individu,&apos;No&apos; utk menggunakan versi yg sudah ada. jika ragu tekan &apos;Yes to All&apos;.</translation>
+        <translation>Berkas %1 sudah ada. Tekan &quot;Ya untuk Semua&quot; untuk menimpanya dan tidak ditanya lagi, &apos;Ya&apos; untuk menimpa berkas satu per satu, &apos;Tidak&apos; untuk mempertahankan berkas yang sudah ada. Jika ragu pilih &apos;Ya untuk Semua&apos;.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="959"/>
         <source>%1 is out of space, abort installation?</source>
-        <translation>%1 kehabisan space, batalkan instalasi ?</translation>
+        <translation>%1 kehabisan ruang, batalkan pemasangan?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="960"/>
         <source>The directory %1 is out of space. Press &apos;Yes&apos; to abort installation, &apos;No&apos; to ignore this error and attempt to continue installation, and &apos;No to All&apos; to ignore all out-of-space errors.</source>
-        <translation>Direktori %1 kehabisan memori. Tekan &apos;Ya&apos; utk membatalkan, &apos;Tidak&apos; utk mengabaikan pesan ini dan melanjutkan instalasi, dan &apos;Tidak utk Semua&apos; utk mengabaikan semua pesan error.</translation>
+        <translation>Direktori %1 kehabisan ruang. Tekan &apos;Ya&apos; untuk membatalkan pemasangan, &apos;Tidak&apos; untuk mengabaikan pesan kesalahan dan mencoba melanjutkan pemasangan, dan &apos;Tidak untuk Semua&apos; untuk mengabaikan semua pesan kesalahan kehabisan ruang.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1054"/>
         <source>Locating kernel file in %1</source>
-        <translation>Menemukan kernel file di %1</translation>
+        <translation>Menemukan berkas kernel di %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1105"/>
         <source>Copying kernel file from %1</source>
-        <translation>Menggandakan berkas kernel dari %1</translation>
+        <translation>Menyalin berkas kernel dari %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1111"/>
         <source>Locating initrd file in %1</source>
-        <translation>Lokasi initrd berkas dalam %1</translation>
+        <translation>Menemukan berkas initrd di %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1152"/>
         <source>Copying initrd file from %1</source>
-        <translation>Menggandakan initrd berkas dalam %1</translation>
+        <translation>Menyalin berkas initrd dari %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1158"/>
         <location filename="unetbootin.cpp" line="1238"/>
         <source>Extracting bootloader configuration</source>
-        <translation>mengEkstrak konfigurasi bootloader</translation>
+        <translation>Mengekstrak konfigurasi bootloader</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1467"/>
         <location filename="unetbootin.cpp" line="1493"/>
         <source>&lt;b&gt;Extracting compressed iso:&lt;/b&gt; %1</source>
-        <translation>&lt;b&gt;mengEkstrak kompresan iso:&lt;/b&gt; %1</translation>
+        <translation>&lt;b&gt;Mengekstrak berkas ISO terkompres:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1744"/>
@@ -303,12 +303,12 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1747"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Menggandakan:&lt;/b&gt; 0 bite</translation>
+        <translation>&lt;b&gt;Tersalin:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1785"/>
         <source>Extracting files, please wait...</source>
-        <translation>Mengekstrak file, mohon tunggu...</translation>
+        <translation>Mengekstrak berkas, mohon tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1786"/>
@@ -328,7 +328,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1789"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; 0 of %1 files</source>
-        <translation>&lt;b&gt;Mengekstrak:&lt;/b&gt; 0 dari %1 file</translation>
+        <translation>&lt;b&gt;Terekstrak:&lt;/b&gt; 0 dari %1 berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="1792"/>
@@ -343,33 +343,33 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="1794"/>
         <source>&lt;b&gt;Extracted:&lt;/b&gt; %1 of %2 files</source>
-        <translation>&lt;b&gt;Mengekstrak:&lt;/b&gt; 1% dari %2 file</translation>
+        <translation>&lt;b&gt;Terekstrak:&lt;/b&gt; 1% dari %2 berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2558"/>
         <source>Downloading files, please wait...</source>
-        <translation>Mendownload file, mohon tunggu...</translation>
+        <translation>Mengunduh berkas, mohon tunggu...</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2561"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; 0 bytes</source>
-        <translation>&lt;b&gt;Mendownload:&lt;/b&gt; 0 byte</translation>
+        <translation>&lt;b&gt;Terunduh:&lt;/b&gt; 0 byte</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2685"/>
         <source>Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.</source>
-        <translation></translation>
+        <translation>Unduhan %1 %1 dari %3 gagal. Silahkan mencoba mengunduh berkas ISO langsung dari situs Web dan masukkan pada isian Citra Disk.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2708"/>
         <location filename="unetbootin.cpp" line="2723"/>
         <source>&lt;b&gt;Downloaded:&lt;/b&gt; %1 of %2</source>
-        <translation>&lt;b&gt;Mendownload:&lt;/b&gt; %1 dari %2</translation>
+        <translation>&lt;b&gt;Terunduh:&lt;/b&gt; %1 dari %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2738"/>
         <source>&lt;b&gt;Copied:&lt;/b&gt; %1 of %2</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Tersalin:&lt;/b&gt; %1 dari %2</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="2829"/>
@@ -379,7 +379,7 @@ X-Generator: Launchpad (build 16378)
     <message>
         <location filename="unetbootin.cpp" line="2833"/>
         <source>%1/%2 matches in &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>%1/%2 sesuai dengan &lt;a href=&quot;%3&quot;&gt;%3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3106"/>
@@ -390,7 +390,8 @@ X-Generator: Launchpad (build 16378)
         <location filename="unetbootin.cpp" line="3107"/>
         <source>%1 not found. This is required for %2 install mode.
 Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</source>
-        <translation></translation>
+        <translation>%1 tidak ditemukan. Ini diperlukan untuk mode pemasangan %2.
+Pasang paket &quot;%3&quot; atau yang sesuai distribusi anda.</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="3390"/>
@@ -420,103 +421,106 @@ Install the &quot;%3&quot; package or your distribution&apos;s equivalent.</sour
     <message>
         <location filename="unetbootin.cpp" line="3976"/>
         <source>Installing syslinux to %1</source>
-        <translation>menginstall syslinux pada %1</translation>
+        <translation>Memasang syslinux pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4011"/>
         <source>Installing extlinux to %1</source>
-        <translation>menginstall extlinux pada %1</translation>
+        <translation>Memasang extlinux pada %1</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4182"/>
         <source>Syncing filesystems</source>
-        <translation></translation>
+        <translation>Mengsinkronisasikan sistem berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4187"/>
         <source>Setting up persistence</source>
-        <translation></translation>
+        <translation>Mengatur keutuhan</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4232"/>
         <source>After rebooting, select the </source>
-        <translation>Setelah booting-ulang, pilihlah </translation>
+        <translation>Setelah &lt;i&gt;reboot&lt;/i&gt;, pilih </translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4237"/>
         <source>After rebooting, select the USB boot option in the BIOS boot menu.%1
 Reboot now?</source>
-        <translation></translation>
+        <translation>Setelah &lt;i&gt;reboot&lt;/i&gt;, pilih opsi &lt;i&gt;boot&lt;/i&gt; dari USB pada menu &lt;i&gt;boot&lt;/i&gt; BIOS.%1
+&lt;i&gt;Reboot&lt;/i&gt; sekarang?</translation>
     </message>
     <message>
         <location filename="unetbootin.cpp" line="4240"/>
         <source>The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1</source>
-        <translation></translation>
+        <translation>Perangkat USB yang dibuat tidak bisa dijalankan pada komputer Mac. Pasang pada komputer PC, dan pilih opsi &lt;i&gt;boot&lt;/i&gt; dari USB pada menu &lt;i&gt;boot&lt;/i&gt; BIOS.%1</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="43"/>
         <source>
 *IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.ubuntu.com</source>
-        <translation></translation>
+        <translation>
+*PENTING* Sebelum &lt;i&gt;reboot&lt;/i&gt; tempatkan berkas ISO instalasi Ubuntu &lt;i&gt;alternate&lt;/i&gt; (bukan &lt;i&gt;desktop&lt;/i) pada direktori &lt;i&gt;root hard disk&lt;/i&gt; atau USB drive anda. Berkas tersebut bisa didapatkan dari http://cdimage.ubuntu.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="257"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;mirrors.kernel.org&apos; when prompted for a server, and enter &apos;/centos/%1/os/%2&apos; when asked for the folder.</source>
         <translation>
-*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;mirror.kernel.org&apos; ketika diminta memasukkan server lalu masukkan &apos;/centos/%1/os/%2&apos; untuk isian foldernya.</translation>
+*PENTING* setelah &lt;i&gt;reboot&lt;/i&gt; abaikan semua pesan kesalahan dan pilih &apos;Back&apos; jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi &apos;Start Installation&apos;, pilih &apos;Network&apos; sebagai sumber, pilih &apos;HTTP&apos; sebagai protokol, masukkan &apos;mirrors.kernel.org&apos; ketika &lt;i&gt;server&lt;/i&gt; diminta, dan masukkan &apos;/centos/%1/os/%2&apos; ketika direktori diminta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="314"/>
         <source>
 *IMPORTANT* Before rebooting, place a Debian install iso file on the root directory of your hard drive or USB drive. These can be obtained from cdimage.debian.org</source>
-        <translation></translation>
+        <translation>
+*PENTING* Sebelum &lt;i&gt;reboot&lt;/i&gt; tempatkan berkas ISO instalasi Debian pada direktori &lt;i&gt;root hard disk&lt;/i&gt; atau USB drive anda. Berkas tersebut bisa didapatkan dari http://cdimage.debian.com</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="407"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/development/%1/os&apos; when asked for the folder.</source>
         <translation>
-*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.fedora.redhat.com&apos; ketika diminta memasukkan server lalu masukkan &apos;/pub/fedora/linux/development/%1/os&apos; untuk isian foldernya.</translation>
+*PENTING* Setelah &lt;i&gt;reboot&lt;/i&gt; abaikan semua pesan kesalahan dan pilih &apos;Back&apos; jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi &apos;Start Installation&apos;, pilih &apos;Network&apos; sebagai sumber, pilih &apos;HTTP&apos; sebagai protokol, masukkan &apos;download.fedora.redhat.com&apos; ketika &lt;i&gt;server&lt;/i&gt; diminta, dan masukkan &apos;/pub/fedora/linux/development/%1/os&apos; ketika direktori diminta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="413"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.fedora.redhat.com&apos; when prompted for a server, and enter &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; when asked for the folder.</source>
         <translation>
-*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.fedora.redhat.com&apos; ketika diminta memasukkan server lalu masukkan &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; untuk isian foldernya.</translation>
+*PENTING* Setelah &lt;i&gt;reboot&lt;/i&gt; abaikan semua pesan kesalahan dan pilih &apos;Back&apos; jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi &apos;Start Installation&apos;, pilih &apos;Network&apos; sebagai sumber, pilih &apos;HTTP&apos; sebagai protokol, masukkan &apos;download.fedora.redhat.com&apos; ketika &lt;i&gt;server&lt;/i&gt; diminta, dan masukkan &apos;/pub/fedora/linux/releases/%1/Fedora/%2/os&apos; ketika direktori diminta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="785"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/factory/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.opensuse.org&apos; ketika diminta memasukkan server lalu masukkan &apos;/factory/repo/oss&apos; untuk isian foldernya.</translation>
+*PENTING* Setelah &lt;i&gt;reboot&lt;/i&gt; abaikan semua pesan kesalahan dan pilih &apos;Back&apos; jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi &apos;Start Installation&apos;, pilih &apos;Network&apos; sebagai sumber, pilih &apos;HTTP&apos; sebagai protokol, masukkan &apos;download.opensuse.org&apos; ketika &lt;i&gt;server&lt;/i&gt; diminta, dan masukkan &apos;/factory/repo/oss&apos; ketika direktori diminta.</translation>
     </message>
     <message>
         <location filename="distrolst.cpp" line="791"/>
         <source>
 *IMPORTANT* After rebooting, ignore any error messages and select back if prompted for a CD, then go to the main menu, select the &apos;Start Installation&apos; option, choose &apos;Network&apos; as the source, choose &apos;HTTP&apos; as the protocol, enter &apos;download.opensuse.org&apos; when prompted for a server, and enter &apos;/distribution/%1/repo/oss&apos; when asked for the folder.</source>
         <translation>
-*PENTING* setelah komputer di booting ulang, abaikan semua pesan kesalahan dan pilih tombol back jika diminta memasukkan CD, lalu pergi ke menu utama, pilihlah pilihan &apos;Start Installation&apos;, kemudian pilih &apos;Network&apos; sebagai sumbernya, pilih &apos;HTTP&apos; sebagai protokol dan masukkan &apos;download.opensuse.org&apos; ketika diminta memasukkan server lalu masukkan &apos;/distribution/%1/repo/oss&apos; untuk isian foldernya.</translation>
+*PENTING* Setelah &lt;i&gt;reboot&lt;/i&gt; abaikan semua pesan kesalahan dan pilih &apos;Back&apos; jika diminta memasukkan CD, lalu menuju ke menu utama, pilih opsi &apos;Start Installation&apos;, pilih &apos;Network&apos; sebagai sumber, pilih &apos;HTTP&apos; sebagai protokol, masukkan &apos;download.opensuse.org&apos; ketika &lt;i&gt;server&lt;/i&gt; diminta, dan masukkan &apos;/distribution/%1/repo/oss&apos; ketika direktori diminta.</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <location filename="unetbootin.cpp" line="748"/>
         <source>== Select Distribution ==</source>
-        <translation></translation>
+        <translation>Pilih Distribusi</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="26"/>
         <location filename="distrover.cpp" line="30"/>
         <source>== Select Version ==</source>
-        <translation></translation>
+        <translation>Pilih Versi</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="27"/>
         <source>Welcome to &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, the Universal Netboot Installer. Usage:&lt;ol&gt;&lt;li&gt;Select a distribution and version to download from the list above, or manually specify files to load below.&lt;/li&gt;&lt;li&gt;Select an installation type, and press OK to begin installing.&lt;/li&gt;&lt;/ol&gt;</source>
         <translation>Selamat datang di &lt;a href=&quot;http://unetbootin.sourceforge.net/&quot;&gt;UNetbootin&lt;/a&gt;, Universal Netboot Installer.
-&lt;ol&gt;&lt;li&gt;Pilih distro dan versi yang akan didownload dari daftar berikut, atau pilih file yang aka diproses secara manual.&lt;/li&gt;&lt;li&gt;Pilih tipe instalasi dan klik OK untuk memulai menginstall.&lt;/li&gt;&lt;/ol&gt;</translation>
+&lt;ol&gt;&lt;li&gt;Pilih distribusi dan versi yang akan diunduh dari daftar di atas, atau pilih berkas yang akan diproses secara manual.&lt;/li&gt;&lt;li&gt;Pilih tipe instalasi dan klik OK untuk memulai memasang.&lt;/li&gt;&lt;/ol&gt;</translation>
     </message>
     <message>
         <location filename="distrover.cpp" line="32"/>
@@ -781,27 +785,27 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="44"/>
         <location filename="unetbootin.ui" line="65"/>
         <source>Select from a list of supported distributions</source>
-        <translation></translation>
+        <translation>Pilih dari daftar distribusi yang tersedia</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="47"/>
         <source>&amp;Distribution</source>
-        <translation></translation>
+        <translation>&amp;Distribusi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="131"/>
         <source>Specify a disk image file to load</source>
-        <translation></translation>
+        <translation>Tentukan berkas citra disk untuk dimuat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="134"/>
         <source>Disk&amp;image</source>
-        <translation></translation>
+        <translation>C&amp;itra disk</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="147"/>
         <source>Manually specify a kernel and initrd to load</source>
-        <translation></translation>
+        <translation>Secara manual tentukan berkas kernel dan initrd untuk dimuat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="150"/>
@@ -812,99 +816,99 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="414"/>
         <location filename="unetbootin.ui" line="430"/>
         <source>Space to reserve for user files which are preserved across reboots. Works only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive capacity, the maximum space available will be used.</source>
-        <translation></translation>
+        <translation>Ruang dicadangkan untuk mempertahankan berkas-berkas pengguna setelah &lt;i&gt;reboot&lt;/i&gt;. Bekerja hanya pada LiveUSB dari Ubuntu dan turunannya. Jika ukuran ruang melebihi kapasitas media penyimpanan maka ruang sisa maksimal akan digunakan.</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="417"/>
         <source>Space used to preserve files across reboots (Ubuntu only):</source>
-        <translation></translation>
+        <translation>Ruang digunakan untuk mempertahankan berkas-berkas setelah &lt;i&gt;reboot&lt;/i&gt; (hanya Ubuntu):</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="440"/>
         <source>MB</source>
-        <translation></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="503"/>
         <source>OK</source>
-        <translation></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="506"/>
         <source>Return</source>
-        <translation></translation>
+        <translation>Kembali</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="513"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="516"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="561"/>
         <source>Reboot Now</source>
-        <translation></translation>
+        <translation>&lt;i&gt;Reboot&lt;/i&gt; Sekarang</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="568"/>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Keluar</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="660"/>
         <source>1. Downloading Files</source>
-        <translation></translation>
+        <translation>1. Mengunduh Berkas-Berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="667"/>
         <source>2. Extracting and Copying Files</source>
-        <translation></translation>
+        <translation>2. Mengekstrak dan Menyalin Berkas-Berkas</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="674"/>
         <source>3. Installing Bootloader</source>
-        <translation></translation>
+        <translation>3. Memasang &lt;i&gt;Bootloader&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="681"/>
         <source>4. Installation Complete, Reboot</source>
-        <translation></translation>
+        <translation>4. Instalasi Selesai, &lt;i&gt;Reboot&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="477"/>
         <location filename="unetbootin.ui" line="496"/>
         <source>Select the target drive to install to</source>
-        <translation></translation>
+        <translation>Pilih &lt;i&gt;drive&lt;/i&gt; tujuan untuk instalasi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="480"/>
         <source>Dri&amp;ve:</source>
-        <translation></translation>
+        <translation>Dri&amp;ve</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="451"/>
         <location filename="unetbootin.ui" line="470"/>
         <source>Select the installation target type</source>
-        <translation></translation>
+        <translation>Pilih tipe tujuan instalasi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="454"/>
         <source>&amp;Type:</source>
-        <translation></translation>
+        <translation>&amp;Tipe:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="81"/>
         <source>Select the distribution version</source>
-        <translation></translation>
+        <translation>Pilih versi distribusi</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="347"/>
         <source>Select disk image file</source>
-        <translation></translation>
+        <translation>Pilih berkas citra disk</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="286"/>
@@ -912,65 +916,65 @@ Reboot now?</source>
         <location filename="unetbootin.ui" line="375"/>
         <location filename="unetbootin.ui" line="400"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="188"/>
         <source>Select the disk image type</source>
-        <translation></translation>
+        <translation>Pilih tipe citra disk</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="243"/>
         <source>Specify a floppy/hard disk image, or CD image (ISO) file to load</source>
-        <translation></translation>
+        <translation>Tentukan citra disket/hard disk, atau citra CD (ISO) untuk dimuat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="207"/>
         <location filename="unetbootin.ui" line="258"/>
         <source>Specify a kernel file to load</source>
-        <translation></translation>
+        <translation>Tentukan berkas kernel untuk dimuat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="283"/>
         <source>Select kernel file</source>
-        <translation></translation>
+        <translation>Pilih berkas kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="293"/>
         <location filename="unetbootin.ui" line="312"/>
         <source>Specify an initrd file to load</source>
-        <translation></translation>
+        <translation>Tentukan berkas initrd untuk dimuat</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="372"/>
         <source>Select initrd file</source>
-        <translation></translation>
+        <translation>Pilih berkas initrd</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="397"/>
         <source>Select syslinux.cfg or isolinux.cfg file</source>
-        <translation></translation>
+        <translation>Pilih berkas syslinux.cfg atau isolinux.cfg</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="226"/>
         <location filename="unetbootin.ui" line="321"/>
         <source>Specify parameters and options to pass to the kernel</source>
-        <translation></translation>
+        <translation>tentukan paramater dan opsi untuk kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="210"/>
         <source>&amp;Kernel:</source>
-        <translation></translation>
+        <translation>&amp;Kernel</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="296"/>
         <source>Init&amp;rd:</source>
-        <translation></translation>
+        <translation>Init&amp;rd:</translation>
     </message>
     <message>
         <location filename="unetbootin.ui" line="229"/>
         <source>&amp;Options:</source>
-        <translation></translation>
+        <translation>&amp;Opsi:</translation>
     </message>
 </context>
 <context>
@@ -978,32 +982,32 @@ Reboot now?</source>
     <message>
         <location filename="main.cpp" line="156"/>
         <source>Uninstallation Complete</source>
-        <translation></translation>
+        <translation>Pencopotan Selesai</translation>
     </message>
     <message>
         <location filename="main.cpp" line="157"/>
         <source>%1 has been uninstalled.</source>
-        <translation></translation>
+        <translation>%1 telah dicopot.</translation>
     </message>
     <message>
         <location filename="main.cpp" line="319"/>
         <source>Must run as root</source>
-        <translation></translation>
+        <translation>Harus dijalankan sebagai &lt;i&gt;root&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="321"/>
         <source>%2 must be run as root. Close it, and re-run using either:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;or:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</source>
-        <translation></translation>
+        <translation>%2 harus dijalankan sebagai &lt;i&gt;root&lt;/i&gt;. Tutup, dan jalankan kembali menggunakan:&lt;br/&gt;&lt;b&gt;sudo %1&lt;/b&gt;&lt;br/&gt;atau:&lt;br/&gt;&lt;b&gt;su - -c &apos;%1&apos;&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="main.cpp" line="353"/>
         <source>%1 Uninstaller</source>
-        <translation></translation>
+        <translation>Pencopot %1</translation>
     </message>
     <message>
         <location filename="main.cpp" line="354"/>
         <source>%1 is currently installed. Remove the existing version?</source>
-        <translation></translation>
+        <translation>%1 sudah terpasang. Hapus versi yang sudah ada?</translation>
     </message>
 </context>
 </TS>

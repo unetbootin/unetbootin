@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-08-26 12:44-0700\n"
-"PO-Revision-Date: 2012-05-17 17:04+0000\n"
-"Last-Translator: Evgeni Shehtov <Unknown>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2013-01-27 21:18+0000\n"
+"Last-Translator: Костадин Костадинов <thekoceto@mail.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-24 08:08+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
 "X-Language: bg_BG\n"
 
 #. ts-context QObject
@@ -26,7 +26,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
 #: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4215
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
 msgid "Hard Disk"
 msgstr "Твърд диск"
 
@@ -35,21 +35,21 @@ msgstr "Твърд диск"
 #: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
 #: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
 #: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4219
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
 msgid "USB Drive"
-msgstr "Устройство с USB"
+msgstr "USB устройство"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
 msgid "Floppy"
-msgstr "Дискета"
+msgstr "Флопи"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
@@ -113,8 +113,8 @@ msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"Не беше намерено USB устройство. Ако устройството вече е включено, пробвайте "
-"да го форматирате във FAT32 файлова система."
+"Не беше намерено USB устройство.  Ако устройството вече е включено, "
+"пробвайте да го форматирате във FAT32 файлова система."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:736
@@ -127,8 +127,9 @@ msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"You must first mount the USB drive %1 to a mountpoint. Most distributions "
-"will do this automatically after you remove and reinsert the USB drive."
+"Първо трябва да монтирате устройството USB 1% към точка за монтиране. "
+"Повечето дистрибуции ще направи това автоматично, след като премахнете и "
+"поставете отново USB устройството."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:752
@@ -202,6 +203,10 @@ msgid ""
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
+"Файлът %1 вече съществува. Натиснете \"Да за всички\", за да се презапише "
+"текущия и всички останали файлове,  \"Да\", за да се запише само текущия и "
+"\"Не\", за да се запази съществуващата версия. В случай на съмнение, "
+"натиснете \"Да за всички\"."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:959
@@ -228,7 +233,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1105
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Копирам kernel файла от %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1111
@@ -238,7 +243,7 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1152
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "Копирам initrd файла от %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1158 unetbootin.cpp:1238
@@ -248,12 +253,12 @@ msgstr ""
 #. ts-context unetbootin
 #: unetbootin.cpp:1467 unetbootin.cpp:1493
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Извличане от компресирания iso-файла:</b> %1"
+msgstr ""
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1744
 msgid "Copying file, please wait..."
-msgstr ""
+msgstr "Копиране на файл, моля изчакайте..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1745 unetbootin.cpp:2559
@@ -268,7 +273,7 @@ msgstr "<b>Крайна цел:</b> %1"
 #. ts-context unetbootin
 #: unetbootin.cpp:1747
 msgid "<b>Copied:</b> 0 bytes"
-msgstr ""
+msgstr "<b>Копирани:</b> 0 байта"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1785
@@ -387,32 +392,32 @@ msgid "Configuring grub on %1"
 msgstr "Настройване на grub на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3961
+#: unetbootin.cpp:3976
 msgid "Installing syslinux to %1"
 msgstr "Инсталиране на syslinux в(ъв) %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3996
+#: unetbootin.cpp:4011
 msgid "Installing extlinux to %1"
 msgstr "Инсталиране на extlinux в(ъв) %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4167
+#: unetbootin.cpp:4182
 msgid "Syncing filesystems"
 msgstr "Синхронизиране на файловите системи"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4172
+#: unetbootin.cpp:4187
 msgid "Setting up persistence"
 msgstr ""
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4217
+#: unetbootin.cpp:4232
 msgid "After rebooting, select the "
 msgstr "След рестартиране изберете "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4222
+#: unetbootin.cpp:4237
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -421,7 +426,7 @@ msgstr ""
 "Рестартиране сега?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4225
+#: unetbootin.cpp:4240
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
@@ -459,6 +464,10 @@ msgid ""
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*ВАЖНО* Преди рестарирането, сложете  Debian install iso файла на главната "
+"директория на хард диска или USB устройството. Може да бъде свалено от "
+"cdimage.debian.org"
 
 #. ts-context unetbootin
 #: distrolst.cpp:407
@@ -507,12 +516,12 @@ msgstr ""
 #. ts-context unetbootin
 #: distrover.cpp:26 unetbootin.cpp:748
 msgid "== Select Distribution =="
-msgstr "== Изберете дистрибуция"
+msgstr "= Изберете дистрибуция ="
 
 #. ts-context unetbootin
 #: distrover.cpp:26 distrover.cpp:30
 msgid "== Select Version =="
-msgstr ""
+msgstr "= Изберете версия ="
 
 #. ts-context unetbootin
 #: distrover.cpp:27
@@ -523,6 +532,11 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
+"Здравейте от <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a> - "
+"Universal Netboot Installer . Използване:<ol><li>Изберете дистрибуция и "
+"версия за изтегляне от списъка по-горе, или ръчно да укажете файлове за "
+"зареждане по-долу.</li><li> Изберете типа на инсталацията, и натиснете OK, "
+"за да започне инсталирането .</li></ol>"
 
 #. ts-context unetbootin
 #: distrover.cpp:32
@@ -1118,7 +1132,7 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:150
 msgid "&Custom"
-msgstr ""
+msgstr "&Потребителски"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:414 unetbootin.ui:430
@@ -1136,57 +1150,57 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:440
 msgid "MB"
-msgstr ""
+msgstr "МБ"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:503
 msgid "OK"
-msgstr ""
+msgstr "ОК"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:506
 msgid "Return"
-msgstr ""
+msgstr "Връщане"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:513
 msgid "Cancel"
-msgstr ""
+msgstr "Отказ"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:516
 msgid "Esc"
-msgstr ""
+msgstr "Ескейп"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:561
 msgid "Reboot Now"
-msgstr ""
+msgstr "Рестартирай сега"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:568
 msgid "Exit"
-msgstr ""
+msgstr "Изход"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:660
 msgid "1. Downloading Files"
-msgstr ""
+msgstr "1. Сваляне на файлове"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:667
 msgid "2. Extracting and Copying Files"
-msgstr ""
+msgstr "2. Извличане и копиране на файлове"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr ""
+msgstr "3. Инсталиране на Bootloader"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
 msgid "4. Installation Complete, Reboot"
-msgstr ""
+msgstr "4. Инсталирането завърши, рестартирайте"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:477 unetbootin.ui:496
@@ -1206,12 +1220,12 @@ msgstr ""
 #. ts-context unetbootinui
 #: unetbootin.ui:454
 msgid "&Type:"
-msgstr ""
+msgstr "&Тип:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr ""
+msgstr "Изберете версията на дистрибуцията"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347

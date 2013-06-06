@@ -1,0 +1,1686 @@
+# Sinhalese translation for unetbootin
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the unetbootin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unetbootin\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-12-24 00:10-0800\n"
+"PO-Revision-Date: 2013-06-03 15:19+0000\n"
+"Last-Translator: djchar <djchar89@gmail.com>\n"
+"Language-Team: Sinhalese <si@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
+
+#. ts-context QObject
+#: main.cpp:266
+msgid "LeftToRight"
+msgstr "දක්ෂිණාවර්තව"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
+#: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
+#: unetbootin.cpp:3604 unetbootin.cpp:4230
+msgid "Hard Disk"
+msgstr "දෘඪ තැටිය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:211 unetbootin.cpp:304 unetbootin.cpp:305 unetbootin.cpp:377
+#: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
+#: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
+#: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
+#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
+msgid "USB Drive"
+msgstr "USB ෆ්ලෑෂ් ධාවකය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
+#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+msgid "ISO"
+msgstr "ISO"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
+#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+msgid "Floppy"
+msgstr "නම්‍ය තැටිය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
+#: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
+msgid "either"
+msgstr "හෝ"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:277
+msgid "LiveUSB persistence"
+msgstr "සජීවීUSB පැවැත්ම"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:292
+msgid "FAT32-formatted USB drive"
+msgstr "FAT32 -හැඩතලිත USB ධාවකය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:296
+msgid "EXT2-formatted USB drive"
+msgstr "EXT2-හැඩතලිත USB ධාවකය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:660
+msgid "Open Disk Image File"
+msgstr "ඩිස්ක රූප කොපිය විවෘත කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:660
+msgid "All Files"
+msgstr "සියළුම ගොනු"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
+msgid "All Files (*)"
+msgstr "සියලු දාමගත ගොනු"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:678
+msgid "Open Kernel File"
+msgstr "කර්නලය විවෘත කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:686
+msgid "Open Initrd File"
+msgstr "Initrd ගොනුව විවෘත කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:694
+msgid "Open Bootloader Config File"
+msgstr "Bootloader වින්‍යාස ගොනුව විවෘත කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:716
+msgid "Insert a USB flash drive"
+msgstr "USB ෆ්ලෑෂ් ධාවකය ඇතුළු කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:717
+msgid ""
+"No USB flash drives were found. If you have already inserted a USB drive, "
+"try reformatting it as FAT32."
+msgstr ""
+"USB ෆ්ලෑෂ් ධාවකය සොයා ගත නොහැක. ඔබ මීට පෙර USB ෆ්ලෑෂ් ධාවකය ඇතුල් කර තිබේ "
+"නම් නැවත FAT32 ආකාරයට ප්‍රති-ආකෘතිකරණය කරන්න."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:736
+msgid "%1 not mounted"
+msgstr "1% රාමු ගත කොට නැත"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:737
+msgid ""
+"You must first mount the USB drive %1 to a mountpoint. Most distributions "
+"will do this automatically after you remove and reinsert the USB drive."
+msgstr ""
+"ඔබ පළමුව USB ෆ්ලෑෂ් ධාවකය 1% ක් රාමු ස්ථානයට රාමු ගත කිරීම සිදු කල යුතුය. ඔබ "
+"USB ෆ්ලෑෂ් ධාවකය ඉවත් කර නැවත ඇතුලත් කිරීමේදී බොහෝ බෙදාහැරීම වර්ග ඉබේම මෙය "
+"සිදු කරයි."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:752
+msgid "Select a distro"
+msgstr "බෙදාහැරීම වර්ගය තෝරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:753
+msgid "You must select a distribution to load."
+msgstr "ප්‍රවේශනය කිරීම සදහා ඔබ බෙදාහැරීම වර්ගය තෝරා ගැනීම අනිවාර්ය වේ."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:767
+msgid "Select a disk image file"
+msgstr "ඩිස්ක රූප කොපිය තෝරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:768
+msgid "You must select a disk image file to load."
+msgstr "ප්‍රවේශනය කිරීම සදහා ඔබ ඩිස්ක රූප කොපිය තෝරා ගත යුතුය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:782
+msgid "Select a kernel and/or initrd file"
+msgstr "කර්නලය හෝ Initrd ගොනුව තෝරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:783
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "ඔබ කර්නලය හෝ Initrd ගොනුව තෝරා ගත යුතුය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:797
+msgid "Diskimage file not found"
+msgstr "ඩිස්ක රූප කොපි ගොනුව සොයා ගත නොහැක"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:798
+msgid "The specified diskimage file %1 does not exist."
+msgstr "නිරූපිත ඩිස්ක රූප කොපි ගොනුව තුල 1% ක් නොපවතී."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:812
+msgid "Kernel file not found"
+msgstr "කර්නල ගොනුව සොයා ගත නොහැක"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:813
+msgid "The specified kernel file %1 does not exist."
+msgstr "නිරූපිත කර්නල ගොනුව තුල 1% ක් නොපවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:827
+msgid "Initrd file not found"
+msgstr "Initrd ගොනුව සොයා ගත නොහැක"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:828
+msgid "The specified initrd file %1 does not exist."
+msgstr "නිරූපිත initrd ගොනුව තුල 1% නොපවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:932
+msgid "%1 exists, overwrite?"
+msgstr "1% ක් පවතී, උඩින් ලිවීම සිදු කල යුතුද ?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:933
+msgid ""
+"The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
+"prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
+"retain your existing version. If in doubt, press 'Yes to All'."
+msgstr ""
+"ගොනුවෙහි 1% ක් දැනටමත් පවතී.  උඩින් ලිවීම සිදු කිරීම හා නැවත ප්‍රේරක නොවීමට "
+"'සියල්ලටම ඔව්' ඔබන්න. තනි තනි වශයෙන් උඩින් ලිවීම සිදු කිරීම සදහා 'ඔව්' ඔබන්න "
+"හෝ පවත්නා අනුවාදය රඳවා ගැනීම සදහා 'නැත' ඔබන්න.  සැකයක් තිබේ නම් සියල්ලටම "
+"ඔව්' ඔබන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:959
+msgid "%1 is out of space, abort installation?"
+msgstr "%1 ක් ඉඩ නොමැත, පිහිටැවුම රෝධනය සිදු කල යුතුද?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:960
+msgid ""
+"The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
+"ignore this error and attempt to continue installation, and 'No to All' to "
+"ignore all out-of-space errors."
+msgstr ""
+"ඩිරෙක්ටරිය තුල %1 ක් ඉඩ නොමැත. පිහිටැවුම රෝධනය සිදු කිරීම සදහා 'ඔව්' ඔබන්න. "
+"මෙම දෝෂය ප්‍රතික්ෂේප කර පිහිටැවුම නොකඩවාම කරගෙන යෑමට 'නැත' ඔබන්න. ඉඩ නොමැති "
+"කමින් ඇති වෙන දෝෂ සියල්ල ප්‍රතික්ෂේප කිරීම සදහා 'සියල්ල නැත' ඔබන්න."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1054
+msgid "Locating kernel file in %1"
+msgstr "කර්නල ගොනුව 1% ක් ස්ථාන ගත කරමින් පවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1105
+msgid "Copying kernel file from %1"
+msgstr "කර්නල ගොනුව 1% ක් පිටපත් කරමින් පවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1111
+msgid "Locating initrd file in %1"
+msgstr "initrd ගොනුව 1% ක් ස්ථාන ගත කරමින් පවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1152
+msgid "Copying initrd file from %1"
+msgstr "initrd ගොනුව 1% පිටපත් කරමින් පවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1158 unetbootin.cpp:1238
+msgid "Extracting bootloader configuration"
+msgstr "Bootloader වින්‍යාසය උද්ධෘත කරමින් පවතී"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1467 unetbootin.cpp:1493
+msgid "<b>Extracting compressed iso:</b> %1"
+msgstr "<b>සංකුචිත ISO ගොනුව උද්ධෘත කරමින් පවතී:</b> %1ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1744
+msgid "Copying file, please wait..."
+msgstr "ගොනුව පිටපත් කරමින් පවතී, කරුණා කර රැදී සිටින්න..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1745 unetbootin.cpp:2559
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>මූලය:</b> <a href=\\\"%1\\\">%1ක් </a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1746 unetbootin.cpp:2560
+msgid "<b>Destination:</b> %1"
+msgstr "<b>ඉලක්කය:</b> %1ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1747
+msgid "<b>Copied:</b> 0 bytes"
+msgstr "<b>පිටපත් කොට ඇත:</b> 0 බයිට"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1785
+msgid "Extracting files, please wait..."
+msgstr "ගොනුව උද්ධෘත කරමින් පවතී, කරුණා කර රැදී සිටින්න..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1786
+msgid "<b>Archive:</b> %1"
+msgstr "<b>සංරක්ෂිතය:</b> %1ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1787
+msgid "<b>Source:</b>"
+msgstr "<b>මූලය:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1788
+msgid "<b>Destination:</b>"
+msgstr "<b>ඉලක්කය:</b>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1789
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>උද්ධෘත කල:</b> 0 න් %1 ක් ගොනු"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1792
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>මූලය:</b> %1 (%2)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1793
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>ඉලක්කය:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1794
+msgid "<b>Extracted:</b> %1 of %2 files"
+msgstr "<b>උද්ධෘත කල:</b> %1 න් %2 ක් ගොනු"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2558
+msgid "Downloading files, please wait..."
+msgstr "බා ගත කරමින් පවතී. කරුණා කර රැදී සිටින්න..."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2561
+msgid "<b>Downloaded:</b> 0 bytes"
+msgstr "<b>බා ගත කල:</b> 0 බයිට"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2685
+msgid ""
+"Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
+"the website directly and supply it via the diskimage option."
+msgstr ""
+"බා ගත කොට ඇති 3% න්  %1 %2 ක් අසමත් වී ඇත. කරුණාකර වෙබ් අඩවියට කෙලින්ම ගොස් "
+"ISO ගොනුව බාගත කර ගන්න. ඉන් අනතුරුව ඩිස්ක රූප කොපි විකල්පය හරහා එය සපයන්න."
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2708 unetbootin.cpp:2723
+msgid "<b>Downloaded:</b> %1 of %2"
+msgstr "<b>බා ගත කල:</b> %1 න් %2 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2738
+msgid "<b>Copied:</b> %1 of %2"
+msgstr "<b>පිටපත් කොට ඇත:</b> %1 න් %2 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2829
+msgid "Searching in <a href=\"%1\">%1</a>"
+msgstr "සොයමින් පවතී <a href=\\\"%1\\\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:2833
+msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
+msgstr "%1/%2 ගැලපෙමින් පවතී <a href=\\\"%3\\\">%3</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3106
+msgid "%1 not found"
+msgstr "%1 ක් සොයා ගත නොහැක"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3107
+msgid ""
+"%1 not found. This is required for %2 install mode.\n"
+"Install the \"%3\" package or your distribution's equivalent."
+msgstr ""
+"%1 ක් සොයා ගත නොහැක. මේ සදහා %2 පිහිටැවුම් මාර්ගයක් අවශ්‍ය වේ.\\n\n"
+" පැකේජයෙන් \\\"%3\\\" ක පිහිටැවුමක් හෝ ඔබගේ බෙදාහැරීම් වර්ගයට සමාන විය යුතුය"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3390
+msgid "(Current)"
+msgstr "(දැනට පවත්නා)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3391
+msgid "(Done)"
+msgstr "(සිදු කර අවසන්)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3683
+msgid "Configuring grub2 on %1"
+msgstr "grub2 වින්‍යාස ගත කිරීම %1 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3695
+msgid "Configuring grldr on %1"
+msgstr "grldr වින්‍යාස ගත කිරීම %1 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3723
+msgid "Configuring grub on %1"
+msgstr "grub වින්‍යාස ගත කිරීම %1 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3976
+msgid "Installing syslinux to %1"
+msgstr "syslinux ස්ථාපනය කිරීම %1 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4011
+msgid "Installing extlinux to %1"
+msgstr "extlinux ස්ථාපනය කිරීම %1 ක්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4182
+msgid "Syncing filesystems"
+msgstr "ගොනු පද්ධති සමමුහුර්තක කරමින්"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4187
+msgid "Setting up persistence"
+msgstr "ස්ථාවර තත්වයට පත් කරන්න"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4232
+msgid "After rebooting, select the "
+msgstr "යළි ඇරඹීමෙන් අනතුරුව මෙය තෝරන්න "
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4237
+msgid ""
+"After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
+"Reboot now?"
+msgstr ""
+"යළි ඇරඹීමෙන් අනතුරුව BIOS ඇරඹීම් ක්‍රම මෙනුව තුල ඇති USB ධාවක ඇරඹීම් ක්‍රමය "
+"තෝරන්න.%1 ක් \\n\n"
+"නැවත යළි ඇරඹීම සිදු කරන්නෙහිද?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:4240
+msgid ""
+"The created USB device will not boot off a Mac. Insert it into a PC, and "
+"select the USB boot option in the BIOS boot menu.%1"
+msgstr ""
+"සාදන ලද USB ධාවකය Mac තුලින් ආරම්භය නොවේ.  යළි ඇරඹීමෙන් අනතුරුව BIOS ඇරඹීම් "
+"ක්‍රම මෙනුව තුල ඇති USB ධාවක ඇරඹීම් ක්‍රමය තෝරන්න.%1 ක්"
+
+#. ts-context unetbootin
+#: distrolst.cpp:43
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
+"install iso file on the root directory of your hard drive or USB drive. "
+"These can be obtained from cdimage.ubuntu.com"
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පෙර, උබුන්ටු අනුකල්පය (වැඩතලය නොවේ) iso ගොනුව දෘඪ තැටියේ "
+"හෝ USB ෆෑල්‍ෂ් ධාවකයේ මූල ඩිරෙක්ටරිය තුල  ස්ථාපනය කරන්න. මෙය "
+"​cdimage.ubuntu.com මගින් ලබා ගත හැක"
+
+#. ts-context unetbootin
+#: distrolst.cpp:257
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'mirrors.kernel.org' when prompted for a server, and enter "
+"'/centos/%1/os/%2' when asked for the folder."
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පසු , පැමිණෙන ඕනෑම වැරදි පණිවිඩ සහ ප්‍රේරක ලෙස සුසංහිත "
+"ඩිස්කය විමසන විට ආපසු තෝරන්න, ඉන්පසු ප්‍රධාන මෙනුව කරා ගොස් 'ස්ථාපනය ආරම්භ "
+"කිරීම' තෝරන්න, ජාලය මූලය ලෙස තෝරන්න, ප්‍රොටෝකෝලය ලෙස 'HTTP' තෝරන්න, ප්‍රේරක "
+"සේවාදායකය ලෙස 'mirrors.kernel.org' ඇතුල් කරන්න සහ ෆෝල්ඩරය ගැන විමසන විට "
+"'/centos/%1/os/%2' ලෙස ඇතුල් කරන්න"
+
+#. ts-context unetbootin
+#: distrolst.cpp:314
+msgid ""
+"\n"
+"*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
+"directory of your hard drive or USB drive. These can be obtained from "
+"cdimage.debian.org"
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පෙර, ඩේබියන් ස්ථාපන iso ගොනුව දෘඪ තැටියේ හෝ USB ෆෑල්‍ෂ් "
+"ධාවකයේ මූල ඩිරෙක්ටරිය තුල ස්ථාපනය කරන්න. මෙය ​cdimage.debian.org මගින් ලබා "
+"ගත හැක"
+
+#. ts-context unetbootin
+#: distrolst.cpp:407
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/development/%1/os' when asked for the folder."
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පසු , පැමිණෙන ඕනෑම වැරදි පණිවිඩ සහ ප්‍රේරක ලෙස සුසංහිත "
+"ඩිස්කය විමසන විට ආපසු තෝරන්න, ඉන්පසු ප්‍රධාන මෙනුව කරා ගොස් 'ස්ථාපනය ආරම්භ "
+"කිරීම' තෝරන්න, ජාලය මූලය ලෙස තෝරන්න, ප්‍රොටෝකෝලය ලෙස 'HTTP' තෝරන්න, ප්‍රේරක "
+"සේවාදායකය ලෙස 'download.fedora.redhat.com' ඇතුල් කරන්න සහ ෆෝල්ඩරය ගැන විමසන "
+"විට '/pub/fedora/linux/development/%1/os' ලෙස ඇතුල් කරන්න"
+
+#. ts-context unetbootin
+#: distrolst.cpp:413
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.fedora.redhat.com' when prompted for a server, and enter "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පසු , පැමිණෙන ඕනෑම වැරදි පණිවිඩ සහ ප්‍රේරක ලෙස සුසංහිත "
+"ඩිස්කය විමසන විට ආපසු තෝරන්න, ඉන්පසු ප්‍රධාන මෙනුව කරා ගොස් 'ස්ථාපනය ආරම්භ "
+"කිරීම' තෝරන්න, ජාලය මූලය ලෙස තෝරන්න, ප්‍රොටෝකෝලය ලෙස 'HTTP' තෝරන්න, ප්‍රේරක "
+"සේවාදායකය ලෙස 'download.fedora.redhat.com' ඇතුල් කරන්න සහ ෆෝල්ඩරය ගැන විමසන "
+"විට '/pub/fedora/linux/releases/%1/Fedora/%2/os' ලෙස ඇතුල් කරන්න"
+
+#. ts-context unetbootin
+#: distrolst.cpp:785
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/factory/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පසු , පැමිණෙන ඕනෑම වැරදි පණිවිඩ සහ ප්‍රේරක ලෙස සුසංහිත "
+"ඩිස්කය විමසන විට ආපසු තෝරන්න, ඉන්පසු ප්‍රධාන මෙනුව කරා ගොස් 'ස්ථාපනය ආරම්භ "
+"කිරීම' තෝරන්න, ජාලය මූලය ලෙස තෝරන්න, ප්‍රොටෝකෝලය ලෙස 'HTTP' තෝරන්න, ප්‍රේරක "
+"සේවාදායකය ලෙස 'download.opensuse.org' ඇතුල් කරන්න සහ ෆෝල්ඩරය ගැන විමසන විට "
+"'/factory/repo/oss' ලෙස ඇතුල් කරන්න."
+
+#. ts-context unetbootin
+#: distrolst.cpp:791
+msgid ""
+"\n"
+"*IMPORTANT* After rebooting, ignore any error messages and select back if "
+"prompted for a CD, then go to the main menu, select the 'Start Installation' "
+"option, choose 'Network' as the source, choose 'HTTP' as the protocol, enter "
+"'download.opensuse.org' when prompted for a server, and enter "
+"'/distribution/%1/repo/oss' when asked for the folder."
+msgstr ""
+"\n"
+"\\n\n"
+"*වැදගත්* යලි ඇරඹීමට පසු , පැමිණෙන ඕනෑම වැරදි පණිවිඩ සහ ප්‍රේරක ලෙස සුසංහිත "
+"ඩිස්කය විමසන විට ආපසු තෝරන්න, ඉන්පසු ප්‍රධාන මෙනුව කරා ගොස් 'ස්ථාපනය ආරම්භ "
+"කිරීම' තෝරන්න, ජාලය මූලය ලෙස තෝරන්න, ප්‍රොටෝකෝලය ලෙස 'HTTP' තෝරන්න, ප්‍රේරක "
+"සේවාදායකය ලෙස 'download.opensuse.org' ඇතුල් කරන්න සහ ෆෝල්ඩරය ගැන විමසන විට "
+"'/distribution/%1/repo/oss' ලෙස ඇතුල් කරන්න."
+
+#. ts-context unetbootin
+#: distrover.cpp:26 unetbootin.cpp:748
+msgid "== Select Distribution =="
+msgstr "== බෙදාහැරීම් වර්ගය තෝරන්න =="
+
+#. ts-context unetbootin
+#: distrover.cpp:26 distrover.cpp:30
+msgid "== Select Version =="
+msgstr "== අනුවාදය තෝරන්න =="
+
+#. ts-context unetbootin
+#: distrover.cpp:27
+msgid ""
+"Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
+"version to download from the list above, or manually specify files to load "
+"below.</li><li>Select an installation type, and press OK to begin "
+"installing.</li></ol>"
+msgstr ""
+"<a href=\\\"http://unetbootin.sourceforge.net/\\\">UNetbootin</a> වෙත "
+"සාදරයෙන් පිළිගන්නවා, සර්ව ජාල ආරම්භ ස්ථාපකය. භාවිතාව:<ol><li>\\tඉහත "
+"ලැයිස්තුව තුලින් බා ගත කිරීමට අදාල බෙදාහැරීම් අනුවාදය හෝ වර්ගය තෝරන්න, "
+"නැතහොත් තමන් විසින් තනියෙම ප්‍රවේශනය කිරීමට අදාල ගොනු පහලින් "
+"තෝරන්න.</li><li>ස්ථාපනය කිරීමට අදාල ක්‍රමය තෝරන්න, ඉන්පසුව ස්ථාපනය ආරම්භ "
+"කිරීමට හරි ඔබන්න.</li></ol>"
+
+#. ts-context unetbootin
+#: distrover.cpp:32
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
+"ption:</b> Arch Linux is a lightweight distribution optimized for speed and "
+"flexibility.<br/><b>Install Notes:</b> The default version allows for "
+"installation over the internet (FTP)."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.archlinux.org/\\"
+"\">http://www.archlinux.org</a><br/><b>විස්තරය:</b> Arch Linux යනු සරල  "
+"බෙදාහැරීම් වර්ගය, වේගවත් සහ නම්‍යශීලි භාවිතයන් සදහා වඩා යහපත් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> සාමාන්‍ය අනුවාදය අන්තර්ජාලය හරහා (FTP) ස්ථාපනය "
+"කිරීම සදහා අවසර දේ"
+
+#. ts-context unetbootin
+#: distrover.cpp:37
+msgid ""
+"<b>Homepage:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
+"BackTrack is a distribution focused on network analysis and penetration "
+"testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
+"no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.backtrack-linux.org/\\"
+"\">http://www.backtrack-linux.org/</a><br/><b>විස්තරය:</b> BackTrack "
+"බෙදාහැරීම් වර්ගය ජාල විශ්ලේෂණය සහ විනිවිද යාම පරීක්ෂා කිරීම් සදහා වැඩි "
+"වශයෙන් යොදා ගැනේ.<br/><b>ස්ථාපන සටහන:</b> BackTrack පෙර ආරම්භ කර ඇති අතර එය "
+"ජීව ආකාරයට ද ධාවන කෙරේ; භාවිතා කිරීමට ස්ථාපනය කිරීම අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:42
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
+"</b> CentOS is a free Red Hat Enterprise Linux clone.<br/><b>Install "
+"Notes:</b> The default version allows for both installation over the "
+"internet (FTP), or offline installation using pre-downloaded installation "
+"ISO files."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.centos.org/\\"
+"\">http://www.centos.org</a><br/><b>විස්තරය:</b> CentOS යනු නොමිලේ ලබා ගත "
+"හැකි Red Hat Enterprise Linux හි ක්ලෝනයකි.<br/><b>ස්ථාපන සටහන:</b>  සාමාන්‍ය "
+"අනුවාදය අන්තර්ජාලය හරහා (FTP) ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා "
+"ගත කල ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:47
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
+":</b> CloneZilla is a distribution used for disk backup and "
+"imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://clonezilla.org/\\"
+"\">http://clonezilla.org/</a><br/><b>විස්තරය:</b> CloneZilla බෙදාහැරීම් "
+"වර්ගය ඩිස්ක උපස්ථය සහ රූප කොපි නිර්මාණය කිරීම සදහා යොදා ගැනේ.<br/><b>ස්ථාපන "
+"සටහන:</b> CloneZilla පෙර ආරම්භ කර ඇති අතර එය ජීව ආකාරයට ද ධාවන කෙරේ; භාවිතා "
+"කිරීමට ස්ථාපනය කිරීම අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:52
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
+"ription:</b> Damn Small Linux is a minimalist distribution designed for "
+"older computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://damnsmalllinux.org/\\"
+"\">http://damnsmalllinux.org</a><br/><b>විස්තරය:</b> Damn Small Linux යනු "
+"පරණ පරිගණක සදහා නිර්මාණය වූ අවම බෙදාහැරීම් වර්ගයකි.<br/><b>ස්ථාපන සටහන:</b>  "
+"එය ජීව ආකාරයට ද ධාවනය වන විට සම්පුර්ණ පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් "
+"ආරම්භ කෙරේ, එම නිසා ස්ථාපන අවශ්‍ය නැත නමුත් එය විකල්පයක් පමණි"
+
+#. ts-context unetbootin
+#: distrover.cpp:57
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
+"</b> Debian is a community-developed Linux distribution that supports a wide "
+"variety of architectures and offers a large repository of "
+"packages.<br/><b>Install Notes:</b> The NetInstall version allows for "
+"installation over FTP. If you would like to use a pre-downloaded install "
+"iso, use the HdMedia option, and then place the install iso file on the root "
+"directory of your hard drive or USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.debian.org/\\"
+"\">http://www.debian.org</a><br/><b>විස්තරය:</b> Debian යනු ප්‍රජාව මගින් "
+"ගොඩ නැගුණු Linux බෙදාහැරීම් වර්ගයක් වන අතර එය පුළුල් විචලනය සහිත පද්ධති "
+"නිර්මිතියයන් සදහා අනුබල දීම සහ පැකේජය සහිත විශාල ගබඩාවන් ලබා දීමද සිදු "
+"කරයි.<br/><b>ස්ථාපන සටහන:</b> NetInstall අනුවාදය FTP හරහා  ස්ථාපනය කිරීම "
+"සදහා අවසර දේ, මීට අමතරව කලින් බා ගත කල ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත "
+"නොවූ ක්‍රමයට ස්ථාපන කල හැක, මේ සදහා HdMedia විකල්පය යොදා ගන්න, ඉන් පසුව "
+"ස්ථාපන iso ගොනුව ඔබගේ දෘඪ තැටියේ හෝ USB ෆ්ලෑෂ් ධාවකයේ ඇති මූල ඩිරෙක්ටරිය තුල "
+"පිහිටුවන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:63
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Description:</b> Dreamlinux is a user-friendly Debian-based "
+"distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
+"in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.dreamlinux.com.br/\\"
+"\">http://www.dreamlinux.com.br</a><br/><b>විස්තරය:</b> Dreamlinux යනු "
+"Debian-මූලික වූ පරිශිලක මිත්‍ර බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන "
+"සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් "
+"ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:68
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Description:</b> Dr.Web AntiVirus is an anti-virus emergency kit to "
+"restore a system that broke due to malware.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which malware scans can "
+"be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.freedrweb.com/livecd\\"
+"\">http://www.freedrweb.com/livecd</a><br/><b>විස්තරය:</b> Dr.Web AntiVirus "
+"යනු අනිෂ්ට මෘදුකාංග නිසා හානියට පත්වූ පද්ධතියක් නැවත යථා තත්වයට පත් කරන "
+"ප්‍රතිවයිරස හදිසි අවස්ථා සදහා යොදා ගන්නා කට්ටලයකි.<br/><b>ස්ථාපන සටහන:</b> "
+"ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර,එමගින් අනිෂ්ට මෘදුකාංග "
+"පිරික්සීම දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:73
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.elivecd.org/\\"
+"\">http://www.elivecd.org</a><br/><b>විස්තරය:</b> Elive යනු Debian-මූලික වූ "
+"කවුළු කළමනාකරණ ආලෝකනය සහිත බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> "
+"ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය "
+"විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:78
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
+"ption:</b> Fedora is a Red Hat sponsored community distribution which "
+"showcases the latest cutting-edge free/open-source software.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched. The NetInstall version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://fedoraproject.org/\\"
+"\">http://fedoraproject.org</a><br/><b>විස්තරය:</b> Fedora යනු Red Hat "
+"අනුග්‍රාහකත්වය දරන ප්‍රජාව මගින් ගොඩ නැගුණු බෙදාහැරීම් වර්ගයක් වන අතර එහි "
+"නවතම නිදහස් හා විවෘත මූලාශ්‍ර මෘදුකාංග අන්තර්ගත වේ.<br/><b>ස්ථාපන සටහන:</b>  "
+"ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය "
+"විකල්පයක් වශයෙන් දියත් කර හැක. NetInstall අනුවාද අන්තර්ජාලය හරහා (FTP) "
+"ස්ථාපනය කිරීම හා කලින් බා ගත කල ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත නොවූ "
+"ක්‍රමය යන ක්‍රම දෙකටම ට ස්ථාපනය කල හැක."
+
+#. ts-context unetbootin
+#: distrover.cpp:83
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
+"n:</b> FreeBSD is a general-purpose Unix-like operating system designed for "
+"scalability and performance.<br/><b>Install Notes:</b> The default version "
+"allows for both installation over the internet (FTP), or offline "
+"installation using pre-downloaded installation ISO files."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.freebsd.org/\\"
+"\">http://www.freebsd.org</a><br/><b>විස්තරය:</b> FreeBSD යනු සාමාන්‍ය "
+"භාවිතයන් සදහා නිර්මාණය වූ Unix වලට සමාන පරිමාපීය සහ ක්‍රියාකාරී මෙහෙයුම් "
+"පද්ධතියකි.<br/><b>ස්ථාපන සටහන:</b>  සාමාන්‍ය අනුවාදය අන්තර්ජාලය හරහා (FTP) "
+"ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා ගත කල ස්ථාපනය වූ ISO ගොනු "
+"මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:88
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
+"n:</b> FreeDOS is a free MS-DOS compatible operating system.<br/><b>Install "
+"Notes:</b> See the <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
+"installation details."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.freedos.org/\\"
+"\">http://www.freedos.org</a><br/><b>විස්තරය:</b> FreeDOS යනු MS-DOS වලට "
+"අනුකූල නිදහස් මෙහෙයුම් පද්ධතියකි.<br/><b>ස්ථාපන සටහන:</b> ස්ථාපන තොරතුරු "
+"සදහා <a href=\\\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\\\">අත්පොත</a> යොදා "
+"ගන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:93
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
+"b> FreeNAS is an embedded open source NAS (Network-Attached Storage) "
+"distribution based on FreeBSD.<br/><b>Install Notes:</b> The LiveCD version "
+"creates a RAM drive for FreeNAS, and uses a FAT formatted floppy disk or USB "
+"key for saving the configuration file. The embedded version allows "
+"installation to hard disk."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://freenas.org/\\"
+"\">http://www.freenas.org</a><br/><b>විස්තරය:</b> FreeNAS යනු නිහිත විවෘත "
+"මූලාශ්‍ර සහිත NAS ( ජාලගත සංචිත) FreeBSD ගණයට අයත් වෙන බෙදාහැරීම් වර්ගයක් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය FreeNAS හි ක්‍රියාකාරිත්වය සදහා "
+"RAM ධාවකයක් සාදයි. ඊට අමතරව එය වින්‍යාස ගොනුව සුරැකීම සදහා FAT ආකෘතික නම්‍ය "
+"ඩිස්කය හෝ USB ෆ්ලෑෂ් ධාවක යොදා ගනී. නිහිත අනුවාදය දෘඨ තැටිය තුල ස්ථාපනය "
+"කිරීමට අවස්ථාව ලබා දේ"
+
+#. ts-context unetbootin
+#: distrover.cpp:98
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
+"</b> Frugalware is a general-purpose Slackware-based distro for advanced "
+"users.<br/><b>Install Notes:</b> The default option allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://frugalware.org/\\"
+"\">http://frugalware.org</a><br/><b>විස්තරය:</b> Frugalware යනු විශේෂ "
+"පරිශීලකයන්ගේ පොදු අවශ්‍යතාවයන් සදහා ගොඩ නැගුනු Slackware-මූලික වූ බෙදාහැරීම් "
+"වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> සාමාන්‍ය අනුවාදය අන්තර්ජාලය හරහා (FTP) "
+"ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා ගත කල ස්ථාපනය වූ ISO ගොනු "
+"මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:108
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
+"n:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a "
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>විස්තරය:</"
+"b> GeeXboX යනු නිහිත පද්ධති සහිත Linux Media Center බෙදාහැරීම් වර්ගයක් "
+"වේ.<br/>"
+
+#. ts-context unetbootin
+#: distrover.cpp:121
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is an FSF-endorsed distribution based on Ubuntu with "
+"all non-free components removed.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.gnewsense.org/\\"
+"\">http://www.gnewsense.org</a><br/><b>විස්තරය:</b> gNewSense යනු  Ubuntu හි "
+"නොමිලේ ලබා නොදෙන සියලුම සංරචක ඉවත් කරන ලද FSF-අනුමත කරන ලද බෙදාහැරීමක් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර "
+"දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:126
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Description:</b> Gujin is a graphical boot manager which can bootstrap "
+"various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
+"runs; no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://gujin.sourceforge.net/\\"
+"\">http://gujin.sourceforge.net</a><br/><b>විස්තරය:</b> Gujin හට විවිද පරිමා "
+"සහ ගොනු වල ස්වාරාම්භ චිත්‍රක මුල ආරම්භ කළමනාකරු වශයෙන් ක්‍රියා කල "
+"හැක.<br/><b>ස්ථාපන සටහන:</b> Gujin පහසුවෙන් මුල ආරම්භය සහ වැඩ කිරීම සිදු වේ; "
+"භාවිත කිරීමට ස්ථාපනයක් අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:131
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Description:</b> Kaspersky Rescue Disk "
+"detects and removes malware from your Windows installation.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which "
+"malware scans can be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\"
+"\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\\\">http://ftp.kaspersky.com"
+"/devbuilds/RescueDisk/</a><br/><b>විස්තරය:</b> Kaspersky  බේරා ගැනීමේ CD "
+"මගින් වින්ඩෝස් මෙහෙයුම් පද්ධතියේ අනිෂ්ට මෘදුකාංග හදුනා ගැනීම හා ඒවා ඉවත් "
+"කිරීම සිදු කරයි.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය "
+"කිරීමට අවසර දෙන අතර,එමගින් අනිෂ්ට මෘදුකාංග පිරික්සීම දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:136
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
+"n:</b> Kubuntu is an official Ubuntu derivative featuring the KDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.kubuntu.org/\\"
+"\">http://www.kubuntu.org</a><br/><b>විස්තරය:</b> Kubuntu යනු KDE වැඩතලය "
+"සහිත නිල Ubuntu ව්‍යුත්පන්නය ලක්ෂණය ඇතුලත් බෙදාහැරීම් වර්ගයක් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර "
+"දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක. NetInstall අනුවාදය "
+"FTP හරහා  ස්ථාපනය කිරීම සදහා අවසර දේ, Kubuntu සහ අනිත් නිල Ubuntu "
+"ව්‍යුත්පන්නයන් ස්ථාපනය කිරීම ද සිදු කල හැක. මීට අමතරව කලින් බා ගත කල විකල්ප "
+"(වැඩතලය නොවේ) ස්ථාපනය වූ iso ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක, "
+"මේ සදහා HdMedia විකල්පය යොදා ගන්න, ඉන් පසුව ස්ථාපන iso ගොනුව ඔබගේ දෘඪ තැටියේ "
+"හෝ USB ෆ්ලෑෂ් ධාවකයේ ඇති මූල ඩිරෙක්ටරිය තුල පිහිටුවන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:141
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
+"ion:</b> LinuxConsole is a desktop distro to play games, easy to install, "
+"easy to use and fast to boot .<br/><b>Install Notes:</b> The 1.0.2010 is "
+"latest 1.0, now available on rolling release (run liveuptate to update "
+"modules and kernel)."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://linuxconsole.org/\\"
+"\">http://linuxconsole.org</a><br/><b>විස්තරය:</b> LinuxConsole යනු ක්‍රීඩා "
+"තරග කිරීම් සදහා, පහසුවෙන් ස්ථාපනය කිරීම, පහසුවෙන් වැඩ කිරීම හා ඉක්මන් මුල "
+"ආරම්භය සිදු වන වැඩතල බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> 1.0.2009 "
+"යනු 1.0 හි නවතම මුදාහැරිම වේ"
+
+#. ts-context unetbootin
+#: distrover.cpp:146
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
+"b> Linux Mint is a user-friendly Ubuntu-based distribution which includes "
+"additional proprietary codecs and other software by default.<br/><b>Install "
+"Notes:</b> The Live version allows for booting in Live mode, from which the "
+"installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://linuxmint.com/\\"
+"\">http://linuxmint.com</a><br/><b>විස්තරය:</b> Linux Mint යනු Ubuntu-මූලික "
+"වූ පරිශීලක මිත්‍ර බෙදාහැරීම් වර්ගයක් වේ. එහි අමතර හිමිකාරත්වය සහිත කොඩෙක්ස් "
+"සහ තවත් සාමාන්‍ය මෘදුකාංග ඇතුලත් වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර "
+"අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් "
+"වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:151
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
+"n:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>විස්තරය:</"
+"b> Lubuntu යනු LXDE වැඩතලය සහිත නිල Ubuntu ව්‍යුත්පන්නය ලක්ෂණය ඇතුලත් "
+"බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට "
+"ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක. "
+"NetInstall අනුවාදය FTP හරහා ස්ථාපනය කිරීම සදහා අවසර දේ, Kubuntu සහ අනිත් නිල "
+"Ubuntu ව්‍යුත්පන්නයන් ස්ථාපනය කිරීම ද සිදු කල හැක. මීට අමතරව කලින් බා ගත කල "
+"විකල්ප (වැඩතලය නොවේ) ස්ථාපනය වූ iso ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන "
+"කල හැක, මේ සදහා HdMedia විකල්පය යොදා ගන්න, ඉන් පසුව ස්ථාපන iso ගොනුව ඔබගේ "
+"දෘඪ තැටියේ හෝ USB ෆ්ලෑෂ් ධාවකයේ ඇති මූල ඩිරෙක්ටරිය තුල පිහිටුවන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:156
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
+"tion:</b> Mandriva is a user-friendly distro formerly known as Mandrake "
+"Linux.<br/><b>Install Notes:</b> The Live version allows for booting in Live "
+"mode, from which the installer can optionally be launched. The NetInstall "
+"version allows for installation over the internet (FTP) or via pre-"
+"downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
+"image files</a>."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.mandriva.com/\\"
+"\">http://www.mandriva.com/</a><br/><b>විස්තරය:</b> Mandriva යනු පරිශීලක "
+"මිත්‍ර බෙදාහැරීම් වර්ගයක් වේ මීට පෙර එය Mandrake Linux ලෙස හදුන්වනු "
+"ලැබුණි.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට "
+"අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක. NetInstall "
+"අනුවාදය අන්තර්ජාල (FTP) හරහා  ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා "
+"ගත කල <a href=\\\"http://www.mandriva.com/en/download\\\">\\\"නිදහස්\\\" iso "
+"ගොනු මගින් ද ස්ථාපනය කල හැක.</a>"
+
+#. ts-context unetbootin
+#: distrover.cpp:161
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
+"b> MEPIS is a Debian-based distribution. SimplyMEPIS is a user-friendly "
+"version based on KDE, while AntiX is a lightweight version for older "
+"computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
+"from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.mepis.org/\\"
+"\">http://www.mepis.org</a><br/><b>විස්තරය:</b> MEPIS යනු Debian-මූලික වූ "
+"බෙදාහැරීම් වර්ගයක් වේ. SimplyMEPIS  යනු KDE පාදක වූ පරිශීලක මිත්‍ර "
+"අනුවාදයකි, ඊට අමතරව AntiX යනු පරණ පරිගණක සදහා නිර්මාණය වූ සැහැල්ලු  "
+"අනුවාදයකි.<br/><b>ස්ථාපන සටහන:</b> MEPIS හි ජීව ආකාර අනුවාදය ජීව ආකාරයට "
+"ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:166
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Description:</b> NetbootCD is a small boot CD that downloads and boots "
+"network-based installers for other distributions.<br/><b>Install Notes:</b> "
+"NetbootCD boots and runs in live mode."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>විස්තරය:</b> NetbootCD යනු කුඩා ආරම්භක CD සහිත වේ. එය බාගත කිරීම් හා "
+"ජාල ගත  අනෙක්  බෙදාහැරීම් වර්ග සදහා ස්ථාපක ලෙසද ක්‍රියා කරයි.<br/><b>ස්ථාපන "
+"සටහන:</b> NetbootCD හට ජීව ආකාරයට මූල ආරම්භයක් ලබා ගැනීම සිදු කල හැක."
+
+#. ts-context unetbootin
+#: distrover.cpp:176
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.nimblex.net/\\"
+"\">http://www.nimblex.net</a><br/><b>විස්තරය:</b> NimbleX යනු විශේෂ කුඩා , "
+"බහුනිපුණ Slackware-මූලික වූ බෙදාහැරීම් වර්ගයක් වේ. එය සාදා ඇත්තේ linux-ජිව "
+"පිටපත් වලින් වන අතර එහි KDE වැඩතලය තුල අඩංගු ලක්ෂණ ඇතුලත් වේ. එය CD හෝ  USB "
+"ෆ්ලෑෂ් ධාවකය (USB පෑන හෝ MP3 ධාවකය), එය ඉතා පහසුවෙන් වෙනස් කිරීමට හා දිගු "
+"කිරීමට පුළුවන.<br/><b>ස්ථාපන සටහන:</b> NimbleX හට ජීව ආකාරයට මූල ආරම්භයක් "
+"ලබා ගැනීම සිදු කල හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:181
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>Description:</b> The Offline NT Password and Registry Editor "
+"can reset Windows passwords and edit the registry on Windows 2000-"
+"Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
+"installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b><a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>විස්තරය:</b> මාර්ග අපගත NT වින්ඩෝස් මුරපද හා Registry "
+"සංස්කරණය මගින් වින්ඩෝස් 2000-Vista හි වින්ඩෝස් මුරපද වෙනස් කිරීම සහ වින්ඩෝස් "
+"registry සංස්කරණය කල හැක. <br/><b>ස්ථාපන සටහන:</b> NTPasswd පෙර ආරම්භ කර ඇති "
+"අතර එය ජීව ආකාරයට ද ධාවන කෙරේ; භාවිතා කිරීමට ස්ථාපනය කිරීම අවශ්‍ය නැත."
+
+#. ts-context unetbootin
+#: distrover.cpp:186
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
+"ion:</b> openSUSE is a user-friendly Novell sponsored "
+"distribution.<br/><b>Install Notes:</b> The default version allows for both "
+"installation over the internet (FTP), or offline installation using pre-"
+"downloaded installation ISO files."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.opensuse.org/\\"
+"\">http://www.opensuse.org</a><br/><b>විස්තරය:</b> openSUSE යනු Novell පාදක "
+"වූ පරිශීලක මිත්‍ර බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> සාමාන්‍ය "
+"අනුවාදය අන්තර්ජාලය හරහා (FTP) ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා "
+"ගත කල ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:191
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Description:</b> Ophcrack can crack Windows "
+"passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://ophcrack.sourceforge.net/\\"
+"\">http://ophcrack.sourceforge.net</a><br/><b>විස්තරය:</b> Ophcrack හට "
+"වින්ඩෝස් මෙහෙයුම් පද්ධතියේ මුරපද බීද දැමීම සිදු කල හැක.<br/><b>ස්ථාපන "
+"සටහන:</b> Ophcrack පෙර ආරම්භ කර ඇති අතර එය ජීව ආකාරයට ද ධාවන කෙරේ; භාවිතා "
+"කිරීමට ස්ථාපනය කිරීම අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:196
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
+"n:</b> Parted Magic includes the GParted partition manager and other system "
+"utilities which can resize, copy, backup, and manipulate disk "
+"partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
+"mode; no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://partedmagic.com/\\"
+"\">http://partedmagic.com</a><br/><b>විස්තරය:</b> Parted Magic තුල GParted "
+"ඩිස්ක බෙදුම් කළමණාකරු සහ ප්‍රමාණය වෙනස් කරන, පිටපත් කරන, උපස්ථ කිරීම, සහ "
+"ඩිස්ක බෙදුම් මෙහෙයවීම සදහා අවශ්‍ය තවත් පද්ධති උපයෝගීතා කට්ටල අඩංගු "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> Parted Magic පෙර ආරම්භ කර ඇති අතර එය ජීව ආකාරයට "
+"ද ධාවන කෙරේ; භාවිතා කිරීමට ස්ථාපනය කිරීම අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:206
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
+"ription:</b> Puppy Linux is a lightweight distribution designed for older "
+"computers.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.puppylinux.com/\\"
+"\">http://www.puppylinux.com</a><br/><b>විස්තරය:</b> Puppy Linux යනු පරණ "
+"පරිගණක සදහා නිර්මාණය වූ සැහැල්ලු  අනුවාදයකි.<br/><b>ස්ථාපන සටහන:</b> එය ජීව "
+"ආකාරයට ද ධාවනය වන විට සම්පුර්ණ පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් ආරම්භ "
+"කෙරේ, එම නිසා ස්ථාපන අවශ්‍ය නැත නමුත් එය විකල්පයක් පමණි"
+
+#. ts-context unetbootin
+#: distrover.cpp:211
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Description:</b> Sabayon Linux is a Gentoo-based Live DVD distribution which "
+"features the Entropy binary package manager in addition to the source-based "
+"Portage.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The LiteMCE "
+"edition is 2 GB, while the full edition will need an 8 GB USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.sabayonlinux.org/\\"
+"\">http://www.sabayonlinux.org</a><br/><b>විස්තරය:</b> Sabayon Linux යනු "
+"Gentoo පාදක වූ  ජීව ආකාර DVD බෙදාහැරීම් වර්ගයක් වේ. ඊට අමතරව මූලාශ්‍ර-පාදක "
+"වූ ගෙන යෑම් වලට අමතරව එන්ට්‍රෝපි ද්ව්මය පැකේජ කළමනාකරු ලෙසද ක්‍රියා "
+"කරයි.<br/><b>ස්ථාපන සටහන:</b> එහි ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට "
+"අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක. LiteMCE සංස්කරණය "
+"ගිගා බයිට 2 ක් ද, මිට අමතරව සම්පුර්ණ සංස්කරණය සදහා ගිගා බයිට 8 ක් සහිත USB "
+"ෆ්ලෑෂ් ධාවකයක් අවශ්‍ය වේ"
+
+#. ts-context unetbootin
+#: distrover.cpp:216
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
+"Salix is a GNU/Linux distribution based on Slackware (fully compatible) that "
+"is simple, fast and easy to use.<br/>Like a bonsai, Salix is small, light & "
+"the product of infinite care.<br/><b>Install Notes:</b> The Live version "
+"allows for booting in Live mode, from which the installer can optionally be "
+"launched.<br/>Default root password is <b>live</b>."
+msgstr ""
+"<b>Homepage:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
+"Salix යනු සරල, වේගවත් සහ පහසුවෙන් පාවිච්චි කල හැකි Slackware පාදක වූ "
+"(සම්පුර්ණ වශයෙන් අනුරූප) GNU/Linux බෙදාහැරීම් වර්ගයකි.<br/>bonsai මෙන් Salix "
+"යනු කුඩා, සැහැල්ලු සහ අපරිමිත ආරක්ෂාවකින් යුක්ත වේ.<br/><b>Install "
+"Notes:</b> එහි ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් "
+"ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක.<br/>සාමාන්‍ය මූල මුරපදය <b>live</b> "
+"වේ."
+
+#. ts-context unetbootin
+#: distrover.cpp:228
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
+" Slax is a Slackware-based distribution featuring the KDE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.slax.org/\\"
+"\">http://www.slax.org</a><br/><b>විස්තරය:</b> Slax යනු KDE වැඩතලය සහිත "
+"Slackware-පාදක වූ බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> එහි ජීව "
+"ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් "
+"වශයෙන් දියත් කර හැක."
+
+#. ts-context unetbootin
+#: distrover.cpp:233
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.slitaz.org/en/\\"
+"\">http://www.slitaz.org/en</a><br/><b>විස්තරය:</b> SliTaz යනු සැහැල්ලු, "
+"වැඩතලය-දිශානති වූ කුඩා බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> එය ජීව "
+"ආකාරයට ද ධාවනය වන විට සම්පුර්ණ පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් ආරම්භ "
+"කෙරේ, එම නිසා ස්ථාපන අවශ්‍ය නැත නමුත් එය විකල්පයක් පමණි"
+
+#. ts-context unetbootin
+#: distrover.cpp:238
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Description:</b> Smart Boot Manager is a bootloader "
+"which can overcome some boot-related BIOS limitations and "
+"bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
+"is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://btmgr.sourceforge.net/about.html\\"
+"\">http://btmgr.sourceforge.net/about.html</a><br/><b>විස්තරය:</b> Smart "
+"ආරම්භක කළමනාකරු යනු bootloader කි, එමගින් ආරම්භයේදී ඇතිවන BIOS මුලික වූ "
+"ප්‍රශ්න හා දෝෂ නිරාකරණ කිරීම සදහා යොදා ගනී.<br/><b>ස්ථාපන සටහන:</b> SBM පෙර "
+"ආරම්භ කර ඇති අතර ධාවනය කිරීම සිදු වෙයි; භාවිතා කිරීමට ස්ථාපනය කිරීම අවශ්‍ය "
+"නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:243 distrovercust.cpp:12
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
+">Description:</b> Super Grub Disk is a bootloader which can perform a "
+"variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
+"simply boots and runs; no installation is required to use it."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.supergrubdisk.org\\"
+"\">http://www.supergrubdisk.org</a><br/><b>විස්තරය:</b> Super Grub Disk යනු "
+"bootloader ආරම්භක කළමනාකරු යනු bootloader කි, එමගින් විවිධ වර්ගයේ MBR සහ "
+"bootloader ප්‍රතිසාධනය කටයුතු ඉටු කිරීම සදහා යොදා ගනී.<br/><b>ස්ථාපන "
+"සටහන:</b> SGD පෙර ආරම්භ කර ඇති අතර ධාවනය කිරීම සිදු වෙයි; භාවිතා කිරීමට "
+"ස්ථාපනය කිරීම අවශ්‍ය නැත"
+
+#. ts-context unetbootin
+#: distrover.cpp:248
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Description:</b> Super OS is an unofficial derivative of "
+"Ubuntu which includes additional software by default. Requires a 2GB USB "
+"drive to install.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://hacktolive.org/wiki/Super_OS\\"
+"\">http://hacktolive.org/wiki/Super_OS</a><br/><b>විස්තරය:</b> Super OS යනු "
+"නිල නොලත් Ubuntu ව්‍යුත්පන්නය ලක්ෂණය වලින් සමන්විත අමතර මෘදුකාංග ඇතුලත් "
+"බෙදාහැරීම් වර්ගයක් වේ. ස්ථාපනය සදහා ගිගා බයිට 2 ක් සහිත USB ෆ්ලෑෂ් ධාවකයක් "
+"අවශ්‍ය වේ.<br/><b>ස්ථාපන සටහන:</b> එහි ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය "
+"කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrover.cpp:258
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
+"</b> Ubuntu is a user-friendly Debian-based distribution. It is currently "
+"the most popular Linux desktop distribution.<br/><b>Install Notes:</b> The "
+"Live version allows for booting in Live mode, from which the installer can "
+"optionally be launched. The NetInstall version allows for installation over "
+"FTP, and can install Kubuntu and other official Ubuntu derivatives. If you "
+"would like to use a pre-downloaded alternate (not desktop) install iso, use "
+"the HdMedia option, and then place the alternate install iso file on the "
+"root directory of your hard drive or USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.ubuntu.com/\\"
+"\">http://www.ubuntu.com</a><br/><b>විස්තරය:</b> Ubuntu යනු පරිශීලක මිත්‍ර "
+"Debian-පාදක වූ බෙදාහැරීම් වර්ගයක් වේ. මේ මොහොත වන විට ලෝකයේ ජනප්‍රියම Linux "
+"වැඩතලය සහිත බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය "
+"ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් "
+"කර හැක. NetInstall අනුවාදය FTP හරහා  ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව "
+"කලින් බා ගත කල (වැඩතලය නොවේ) ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට "
+"ස්ථාපන කල හැක, මේ සදහා HdMedia විකල්පය යොදා ගන්න, ඉන් පසුව ස්ථාපන iso ගොනුව "
+"ඔබගේ දෘඪ තැටියේ හෝ USB ෆ්ලෑෂ් ධාවකයේ ඇති මූල ඩිරෙක්ටරිය තුල පිහිටුවන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:263
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.xpud.org/\\"
+"\">http://www.xpud.org</a><br/><b>විස්තරය:</b> xPUD යනු සරල kiosk අනුරූපී "
+"අතුරුමුහුණතක වෙබ් බ්‍රව්සරයක් හා මාධ්‍ය වාදකයක් සහිත සැහැල්ලු බෙදාහැරීම් "
+"වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> එය ජීව ආකාරයට ද ධාවනය වන විට සම්පුර්ණ "
+"පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් ආරම්භ කෙරේ"
+
+#. ts-context unetbootin
+#: distrover.cpp:268
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
+"n:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched. The "
+"NetInstall version allows for installation over FTP, and can install Kubuntu "
+"and other official Ubuntu derivatives. If you would like to use a pre-"
+"downloaded alternate (not desktop) install iso, use the HdMedia option, and "
+"then place the alternate install iso file on the root directory of your hard "
+"drive or USB drive"
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.xubuntu.org/\\"
+"\">http://www.xubuntu.org</a><br/><b>විස්තරය:</b> Xubuntu යනු XFCE වැඩතලය "
+"සහිත නිල Ubuntu ව්‍යුත්පන්නය ලක්ෂණය ඇතුලත් බෙදාහැරීම් වර්ගයක් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර "
+"දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක. NetInstall අනුවාදය "
+"FTP හරහා  ස්ථාපනය කිරීම සදහා අවසර දේ, මීට අමතරව කලින් බා ගත කල (වැඩතලය නොවේ) "
+"ස්ථාපනය වූ ISO ගොනු මගින් මාර්ගගත නොවූ ක්‍රමයට ස්ථාපන කල හැක, මේ සදහා "
+"HdMedia විකල්පය යොදා ගන්න, ඉන් පසුව ස්ථාපන iso ගොනුව ඔබගේ දෘඪ තැටියේ හෝ USB "
+"ෆ්ලෑෂ් ධාවකයේ ඇති මූල ඩිරෙක්ටරිය තුල පිහිටුවන්න"
+
+#. ts-context unetbootin
+#: distrover.cpp:273
+msgid ""
+"<b>Homepage:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
+"n:</b> Zenwalk is a Slackware-based distribution featuring the XFCE "
+"desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
+"Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<b>මුල් පිටුව:</b> <a href=\\\"http://www.zenwalk.org/\\"
+"\">http://www.zenwalk.org</a><br/><b>විස්තරය:</b> Zenwalk යනු Slackware පාදක "
+"වූ XFCE වැඩතලය සහිත බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර "
+"අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් "
+"වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:33
+msgid ""
+"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
+"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
+"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
+"media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\\\":/eeepclos.png\\\" /><br/><b>මුල් පිටුව:</b> <a \\n\r\n"
+"href=\\\"http://www.eeepclinuxos.com/\\"
+"\">http://www.eeepclinuxos.com</a><br/><b>විස්තරය:</b> EeePCLinuxOS යනු "
+"පරිශීලක මිත්‍ර PCLinuxOS-පාදක වූ EeePC සදහා නිර්මාණය කෙරුණු බෙදාහැරීම් "
+"වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> අනිවාර්යයෙන්ම ස්ථාපන මාධ්‍යය ශූන්‍ය "
+"කිරීම හා ස්ථාපනය ආරම්භ කිරීමට පෙර හැඩතල ගැන්වීම සිදු කරන්න"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:41
+msgid ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Homepage:</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Description:</b> Ubuntu Eee is not only Ubuntu optimized "
+"for the Asus Eee PC. It's an operating system, using the Netbook Remix "
+"interface, which favors the best software available instead of open source "
+"alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
+"sure install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\\\":/eeeubuntu.png\\\" style=\\\"float:left;\\\" /><br/><b>මුල් "
+"පිටුව:</b> <a href=\\\"http://www.ubuntu-eee.com/\\\">http://www.ubuntu-"
+"eee.com</a><br/><b>විස්තරය:</b> Ubuntu Eee යනු Asus Eee පරිගණකය සදහා යොදා "
+"ගන්නා එකම Ubuntu වලට වඩාත් යහපත් වූ මෘදුකාංගයක් නොවේ. එය Netbook Remix "
+"interface සහිත මෙහෙයුම් පද්ධතියකි, මෙය විවෘත මූලාශ්‍ර වෙනුවට විකල්පය ලෙස "
+"දැනට පවතින හොදම මෘදුකාංග සදහා අනුග්‍රහය ලබා දේ. (උදාහරණයක් ලෙස Ekiga වෙනුවට "
+"Skype).<br/><b>ස්ථාපන සටහන:</b> අනිවාර්යයෙන්ම ස්ථාපන මාධ්‍යය ශූන්‍ය කිරීම හා "
+"ස්ථාපනය ආරම්භ කිරීමට පෙර හැඩතල ගැන්වීම සිදු කරන්න"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:53
+msgid ""
+"<img src=\":/elive.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
+"n:</b> Elive is a Debian-based distribution featuring the Enlightenment "
+"window manager.<br/><b>Install Notes:</b> The Live version allows for "
+"booting in Live mode, from which the installer can optionally be launched."
+msgstr ""
+"<img src=\\\":/elive.png\\\" /><br/><b>මුල් පිටුව:</b> <a href=\\"
+"\"http://www.elivecd.org/\\\">http://www.elivecd.org</a><br/><b>විස්තරය:</b> "
+"Elive යනු Debian-මූලික වූ කවුළු කළමනාකරණ ආලෝකනය සහිත බෙදාහැරීම් වර්ගයක් "
+"වේ.<br/><b>ස්ථාපන සටහන:</b> ජීව ආකාර අනුවාදය ජීව ආකාරයට ධාවනය කිරීමට අවසර "
+"දෙන අතර, එමගින් ස්ථාපකය විකල්පයක් වශයෙන් දියත් කර හැක"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:61
+msgid ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Descri"
+"ption:</b> Kiwi Linux is an Ubuntu derivative primarily made for Romanian, "
+"Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
+"install media is empty and formatted before proceeding with install."
+msgstr ""
+"<img src=\\\":/kiwi_logo_ro.png\\\" /><br/><b>මුල් පිටුව:</b> <a href=\\"
+"\"http://www.kiwilinux.org/\\"
+"\">http://www.kiwilinux.org</a><br/><b>විස්තරය:</b> Kiwi Linux යනු Ubuntu "
+"ව්‍යුත්පන්නය ලක්ෂණය ඇතුලත් විශේෂයෙන් රොමේනියානු, හංගේරියානු සහ ඉංග්‍රීසි "
+"පරිශීලකයන් සදහාම  සකසන ලද බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> "
+"අනිවාර්යයෙන්ම ස්ථාපන මාධ්‍යය ශූන්‍ය කිරීම හා ස්ථාපනය ආරම්භ කිරීමට පෙර හැඩතල "
+"ගැන්වීම සිදු කරන්න"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:69
+msgid ""
+"<img src=\":/gnewsense.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
+"ption:</b> gNewSense is a high-quality GNU/Linux distribution that extends "
+"and improves Ubuntu to create a completely free operating system without any "
+"binary blobs or package trees that contain proprietary "
+"software.<br/><b>Install Notes:</b> Make sure install media is empty and "
+"formatted before proceeding with install."
+msgstr ""
+"<img src=\\\":/gnewsense.png\\\" /><br/><b>මුල් පිටුව:</b> <a href=\\"
+"\"http://www.gnewsense.org/\\"
+"\">http://www.gnewsense.org</a><br/><b>විස්තරය:</b> gNewSense යනු අධි ගුණ "
+"වලින් යුක්ත Ubuntu වල පවතින හිමිකාර මෘදුකාංග වල ද්ව්‍මය blobs හෝ පැකේජ ගස් "
+"වලින් තොර සම්පුර්ණයෙන්ම නිදහස් මෙහෙයුම් පද්ධතියක් ලෙස වැඩි දියුණු කරන ලද "
+"GNU/Linux බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> අනිවාර්යයෙන්ම "
+"ස්ථාපන මාධ්‍යය ශූන්‍ය කිරීම හා ස්ථාපනය ආරම්භ කිරීමට පෙර හැඩතල ගැන්වීම සිදු "
+"කරන්න."
+
+#. ts-context unetbootin
+#: distrovercust.cpp:77
+msgid ""
+"<img src=\":/nimblex.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
+"n:</b> NimbleX is a small, versatile Slackware-based distribution. It is "
+"built using the linux-live scripts, and features the KDE desktop. It can be "
+"booted from CD or flash memory (USB pens or MP3 players), and can easily be "
+"customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
+"mode."
+msgstr ""
+"<img src=\\\":/nimblex.png\\\" /><b>මුල් පිටුව:</b> <a href=\\"
+"\"http://www.nimblex.net/\\\">http://www.nimblex.net</a><br/><b>විස්තරය:</b> "
+"NimbleX යනු විශේෂ කුඩා , බහුනිපුණ Slackware-මූලික වූ බෙදාහැරීම් වර්ගයක් වේ. "
+"එය සාදා ඇත්තේ linux-ජිව පිටපත් වලින් වන අතර එහි KDE වැඩතලය තුල අඩංගු ලක්ෂණ "
+"ඇතුලත් වේ. එය CD හෝ  USB ෆ්ලෑෂ් ධාවකය (USB පෑන හෝ MP3 ධාවකය), එය ඉතා "
+"පහසුවෙන් වෙනස් කිරීමට හා දිගු කිරීමට පුළුවන.<br/><b>ස්ථාපන සටහන:</b> NimbleX "
+"හට ජීව ආකාරයට මූල ආරම්භයක් ලබා ගැනීම සිදු කල හැක"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:85
+msgid ""
+"<img src=\":/slitaz.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
+"ption:</b> SliTaz is a lightweight, desktop-oriented micro "
+"distribution.<br/><b>Install Notes:</b> The Live version loads the entire "
+"system into RAM and boots from memory, so installation is not required but "
+"optional. This installer is based on <a "
+"href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
+msgstr ""
+"<img src=\\\":/slitaz.png\\\" /><br/><b>මුල් පිටුව:</b> <a href=\\"
+"\"http://www.slitaz.org/en/\\"
+"\">http://www.slitaz.org/en</a><br/><b>විස්තරය:</b> SliTaz යනු සැහැල්ලු, "
+"වැඩතලය-දිශානති වූ කුඩා බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> එය ජීව "
+"ආකාරයට ද ධාවනය වන විට සම්පුර්ණ පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් ආරම්භ "
+"කෙරේ, එම නිසා ස්ථාපන අවශ්‍ය නැත නමුත් එය විකල්පයක් පමණි. මෙම ස්ථාපකය <a "
+"href=\\\"http://unetbootin.sourceforge.net/\\\">UNetbootin</a>පාදක වී ඇත"
+
+#. ts-context unetbootin
+#: distrovercust.cpp:93
+msgid ""
+"<img src=\":/xpud.png\" /><br/><b>Homepage:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
+" xPUD is a lightweight distribution featuring a simple kiosk-like interface "
+"with a web browser and media player.<br/><b>Install Notes:</b> The Live "
+"version loads the entire system into RAM and boots from memory."
+msgstr ""
+"<img src=\\\":/xpud.png\\\" /><br/><b>Homepage:</b> <a href=\\"
+"\"http://www.xpud.org/\\\">http://www.xpud.org</a><br/><b>විස්තරය:</b> xPUD "
+"යනු සරල kiosk අනුරූපී අතුරුමුහුණතක වෙබ් බ්‍රව්සරයක් හා මාධ්‍ය වාදකයක් සහිත "
+"සැහැල්ලු බෙදාහැරීම් වර්ගයක් වේ.<br/><b>ස්ථාපන සටහන:</b> එය ජීව ආකාරයට ද "
+"ධාවනය වන විට සම්පුර්ණ පද්ධතිය RAM එක යොදා ගෙන එහි මතකයෙන් ආරම්භ කෙරේ"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:20
+msgid "Unetbootin"
+msgstr "Unetbootin"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:44 unetbootin.ui:65
+msgid "Select from a list of supported distributions"
+msgstr "ලැයිස්තුව තුලින් අනුග්‍රාහක බෙදාහැරීම් වර්ගය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:47
+msgid "&Distribution"
+msgstr "&බෙදාහැරීම් වර්ගය"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:131
+msgid "Specify a disk image file to load"
+msgstr "ප්‍රවේශනය කිරීමට අවශ්‍ය ඩිස්ක රූප කොපිය නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:134
+msgid "Disk&image"
+msgstr "ඩිස්ක&රූප කොපිය"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:147
+msgid "Manually specify a kernel and initrd to load"
+msgstr ""
+"ප්‍රවේශනය කිරීමට අවශ්‍ය කර්නලය හා initrd තමා විසින්ම නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:150
+msgid "&Custom"
+msgstr "&අභිරුචි"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:414 unetbootin.ui:430
+msgid ""
+"Space to reserve for user files which are preserved across reboots. Works "
+"only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
+"capacity, the maximum space available will be used."
+msgstr ""
+"යළි ඇරඹීම් හරහා ආරක්ෂණය කරන ලද පරිශීලක ගොනු වෙනුවෙන් වෙන් කිරීම්ට අවැසි ඉඩ.  "
+"උබුන්ටු සහ එහි ව්‍යුත්පන්න වෙනුවෙන් වෙත පමණක් ක්‍රියා කරයි.  අගය ධාවකයේ "
+"ධාරිතාවය ඉක්මවා යයි නම්, තිබෙන උපරිම ඉඩ භාවිතා කරනු ඇත."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:417
+msgid "Space used to preserve files across reboots (Ubuntu only):"
+msgstr "යළි ඇරඹීමේ දී මෙම ඉඩ කඩ ගොනු ආරක්ෂා කිරීම සිදු කරයි.(Ubuntu පමණයි)"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:440
+msgid "MB"
+msgstr "මෙගා බයිට"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:503
+msgid "OK"
+msgstr "හරි"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:506
+msgid "Return"
+msgstr "ආපසු යෑම"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:513
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:516
+msgid "Esc"
+msgstr "Esc"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:561
+msgid "Reboot Now"
+msgstr "දැන් යළි ඇරඹීම සිදු කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:568
+msgid "Exit"
+msgstr "පිටවීම"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:660
+msgid "1. Downloading Files"
+msgstr "1. ගොනු බා ගත කරමින් පවතී"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:667
+msgid "2. Extracting and Copying Files"
+msgstr "2. උද්ධෘත කරමින් හා ගොනු පිටපත් කරමින් පවතී"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:674
+msgid "3. Installing Bootloader"
+msgstr "3. Bootloader ස්ථාපනය කරමින් පවතී"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:681
+msgid "4. Installation Complete, Reboot"
+msgstr "4. ස්ථාපනය සම්පුර්ණයි. යළි ඇරඹීම සිදු කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:477 unetbootin.ui:496
+msgid "Select the target drive to install to"
+msgstr "ස්ථාපනය සදහා ඉලක්ක ධාවකය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:480
+msgid "Dri&ve:"
+msgstr "ධාව&කය:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:451 unetbootin.ui:470
+msgid "Select the installation target type"
+msgstr "ඉලක්ක ස්ථාපන වර්ගය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:454
+msgid "&Type:"
+msgstr "&වර්ගය:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:81
+msgid "Select the distribution version"
+msgstr "බෙදාහැරීම් වර්ගය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:347
+msgid "Select disk image file"
+msgstr "ඩිස්ක රූප කොපිය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
+msgid "..."
+msgstr "..."
+
+#. ts-context unetbootinui
+#: unetbootin.ui:188
+msgid "Select the disk image type"
+msgstr "ඩිස්ක රූප කොපිය වර්ගය තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:243
+msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
+msgstr ""
+"ප්‍රවේශනය කිරීමට අදාල සුනම්‍ය තැටිය/ඩිස්ක රූප කොපිය, හෝ CD රූප කොපිය (ISO) "
+"ගොනුව නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:207 unetbootin.ui:258
+msgid "Specify a kernel file to load"
+msgstr "ප්‍රවේශනය කිරීමට අදාල කර්නල ගොනුව නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:283
+msgid "Select kernel file"
+msgstr "කර්නල ගොනුව තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:293 unetbootin.ui:312
+msgid "Specify an initrd file to load"
+msgstr "ප්‍රවේශනය කිරීමට අදාල initrd ගොනුව නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:372
+msgid "Select initrd file"
+msgstr "initrd ගොනුව තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:397
+msgid "Select syslinux.cfg or isolinux.cfg file"
+msgstr "syslinux.cfg හෝ isolinux.cfg තෝරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:226 unetbootin.ui:321
+msgid "Specify parameters and options to pass to the kernel"
+msgstr "කර්නලයට යවන පරාමිතියන් සහ විකල්පයන් නියම වශයෙන් සඳහන් කරන්න"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:210
+msgid "&Kernel:"
+msgstr "&කර්නලය:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:296
+msgid "Init&rd:"
+msgstr "Init&rd:"
+
+#. ts-context unetbootinui
+#: unetbootin.ui:229
+msgid "&Options:"
+msgstr "&විකල්ප:"
+
+#. ts-context uninstaller
+#: main.cpp:156
+msgid "Uninstallation Complete"
+msgstr "අස්ථාපනය කිරීම සම්පූර්ණයි"
+
+#. ts-context uninstaller
+#: main.cpp:157
+msgid "%1 has been uninstalled."
+msgstr "%1ක් අස්ථාපනය කොට ඇත"
+
+#. ts-context uninstaller
+#: main.cpp:319
+msgid "Must run as root"
+msgstr "මුල ආරම්භය අනිවාර්ය වේ"
+
+#. ts-context uninstaller
+#: main.cpp:321
+msgid ""
+"%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
+"%1</b><br/>or:<br/><b>su - -c '%1'</b>"
+msgstr ""
+"%2 ක මුල ආරම්භය අනිවාර්ය වේ. එය වසා දමන්න, අනතුරුව එය නැවත ආරම්භ "
+"කරන්න:<br/><b>sudo %1</b><br/>or:<br/><b>su -c '%1'</b>"
+
+#. ts-context uninstaller
+#: main.cpp:353
+msgid "%1 Uninstaller"
+msgstr "%1 ක් අස්ථාපනය"
+
+#. ts-context uninstaller
+#: main.cpp:354
+msgid "%1 is currently installed. Remove the existing version?"
+msgstr "%1ක් ස්ථාපනය කර අවසන්. කලින් තිබූ අනුවාදය ඉවත් කරනෙහිද?"
