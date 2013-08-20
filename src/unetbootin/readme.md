@@ -1,13 +1,17 @@
 UNetbootin
-==========
+----------
 
 ### Homepage and Downloads
 
 http://unetbootin.sourceforge.net/
 
+### Github
+
+https://github.com/gkovacs/unetbootin
+
 ### Source
 
-https://github.com/gkovacs/unetbootin/tree/master/src/unetbootin
+See the src/unetbootin directory, ie https://github.com/gkovacs/unetbootin/tree/master/src/unetbootin
 
 ### Bug Tracker
 
