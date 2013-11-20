@@ -573,7 +573,7 @@ QStringList unetbootin::listsanedrives()
                     {
 						if (!volidcommand.isEmpty())
 						{
-							if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4)")))
+							if (QString(callexternapp(volidcommand, QString("-t %2").arg(usbfileinfoL.at(i).canonicalFilePath()))).contains(QRegExp("(vfat|ext2|ext3|ext4|ntfs)")))
 								fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 						}
 						else
@@ -581,7 +581,7 @@ QStringList unetbootin::listsanedrives()
 							QString tstrblk = QString(callexternapp(blkidcommand, QString("-s TYPE %2").arg(usbfileinfoL.at(i).canonicalFilePath())));
 							if (tstrblk.contains('='))
 							{
-								if (tstrblk.section('=', -1, -1).remove('"').contains(QRegExp("(vfat|ext2|ext3|ext4)")))
+								if (tstrblk.section('=', -1, -1).remove('"').contains(QRegExp("(vfat|ext2|ext3|ext4|ntfs)")))
 									fulldrivelist.append(usbfileinfoL.at(i).canonicalFilePath());
 							}
 						}
