@@ -1638,7 +1638,7 @@ void unetbootin::extractiso(QString isofile)
     logText(QString("appDir: %1").arg(QApplication::applicationDirPath()));
     logText(QString("isofile: %1").arg(isofile));
     logText(QString("kernelOpts: %1").arg(kernelOpts));
-    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.length()));
+    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.size()));
 
 #ifndef NOEXTRACTKERNEL
 	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfilesizedirpair.first);
@@ -4023,7 +4023,6 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 
 void unetbootin::logText(const QString &text)
 {
-    qDebug() << text << endl;
     if (targetPath.isNull() || targetPath.isEmpty())
     {
         loggedLinesNotYetWritten.append(text);
@@ -4031,23 +4030,20 @@ void unetbootin::logText(const QString &text)
     }
     if (logStream == 0)
     {
-        qDebug() << QString("%1unetbootin-log.txt").arg(targetPath) << endl;
         logFile = new QFile(QString("%1unetbootin-log.txt").arg(targetPath));
         logFile->open(QIODevice::WriteOnly | QIODevice::Text);
         logStream = new QTextStream(logFile);
-        for (int i = 0; i < loggedLinesNotYetWritten.length(); ++i)
+        for (int i = 0; i < loggedLinesNotYetWritten.size(); ++i)
         {
             *logStream << loggedLinesNotYetWritten.at(i) << endl;
         }
         loggedLinesNotYetWritten.clear();
-        qDebug() << "done opening file" << endl;
     }
     *logStream << text << endl;
 }
 
 void unetbootin::finishLogging()
 {
-    qDebug() << "finishLogging" << endl;
     if (logFile != 0)
     {
         logFile->close();
@@ -4212,7 +4208,7 @@ void unetbootin::runinstusb()
 	}
     writeTextToFile(syslinuxcfgtxt, QString("%1syslinux.cfg").arg(targetPath));
     logText(QString("kernelOpts: %1").arg(kernelOpts));
-    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.length()));
+    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.size()));
 	}
 	else
 	{
