@@ -9,10 +9,10 @@ fi
 origdir=$(pwd)
 
 cd ../../po
-tpofiles=$(tar -atf $1 | grep "\.po$")
+tpofiles=$(tar -ztf $1 | grep "\.po$")
 for x in $tpofiles
 do
-tar -axf $1 $x --to-stdout > $(echo $x | sed "s/unetbootin-/\n/" | tail --lines 1)
+tar -zxf $1 $x --to-stdout > $(echo $x | sed "s/unetbootin-/\n/" | tail --lines 1)
 done
 
 cd $origdir
