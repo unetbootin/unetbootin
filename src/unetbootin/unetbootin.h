@@ -193,6 +193,7 @@ public:
 	QString ubntmpf;
 	QString nameDistro;
 	QString nameVersion;
+    bool skipExtraction;
 	bool isarch64;
 	bool islivecd;
 	bool isnetinstall;
@@ -225,6 +226,9 @@ public:
 	QString sevzcommand;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > extraoptionsPL;
 	QMap<QString, QString> grub2vars;
+    QFile *logFile;
+    QTextStream *logStream;
+    QStringList loggedLinesNotYetWritten;
 	#ifdef Q_OS_UNIX
 	QString fdiskcommand;
 	QString sfdiskcommand;
@@ -325,6 +329,9 @@ public:
 	#endif
 	void runinsthdd();
 	void runinstusb();
+    void logText(const QString &text);
+    void finishLogging();
+    void writeTextToFile(const QString &text, const QString &filePath);
 	void fininstall();
 	void rmFile(const QString &fn);
 	void rmFile(QFile &fn);

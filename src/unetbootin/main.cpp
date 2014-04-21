@@ -284,11 +284,14 @@ int main(int argc, char **argv)
 		if (QString(whoamip.readAll()).remove("\r").remove("\n") != "root")
 		{
 			QString argsconc = "";
+            QString argsconcSingleQuote = "";
 			for (int i = 1; i < allappargs.size(); ++i)
 			{
 				argsconc += QString("\"%1\" ").arg(allappargs.at(i));
+                argsconcSingleQuote += QString("'%1' ").arg(allappargs.at(i));
 			}
-			argsconc += "'rootcheck=no'";
+            argsconc += "\"rootcheck=no\"";
+            argsconcSingleQuote += "'rootcheck=no'";
 #ifdef Q_OS_LINUX
 			QString gksulocation = checkforgraphicalsu("gksu");
 			if (gksulocation != "REQCNOTFOUND")
@@ -329,12 +332,17 @@ int main(int argc, char **argv)
 			}
 #endif
 #ifdef Q_OS_MAC
+            /*
 			QProcess osascriptProc;
 			osascriptProc.start("osascript");
 			osascriptProc.write(QString("do shell script \""+app.applicationFilePath()+"\" with administrator privileges\n").toAscii().data());
 			osascriptProc.closeWriteChannel();
 			osascriptProc.waitForFinished(-1);
-			return 0;
+            */
+            //qDebug() << QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc);
+            //QProcess::startDetached(QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc));
+            QProcess::startDetached("osascript", QStringList() << "-e" << QString("do shell script \"%1 %2\" with administrator privileges").arg(app.applicationFilePath()).arg(argsconcSingleQuote));
+            return 0;
 #endif
 		}
 	}
