@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
 revno = `./vcs-revno`.strip
-if File.exists?("./release/unetbootin-windows-#{revno}".exe)
-	File.delete("./release/unetbootin-windows-#{revno}".exe)
+if File.exists?("./release/unetbootin-windows-#{revno}.exe")
+	File.delete("./release/unetbootin-windows-#{revno}.exe")
 end
 if !File.exists?("./release/unetbootin-source-#{revno}.zip")
 	system("./build-src")
@@ -38,6 +38,7 @@ ssh unetbootin-build-linux <<EOT
 unzip unetbootin-source-#{revno}.zip -d unetbootin-#{revno}
 cd unetbootin-#{revno}
 ln -s ~/qt4-win
+ln -s ~/qt4-x11
 ./build-windows
 EOT
 EOR
@@ -47,7 +48,7 @@ system(build)
 download = <<EOR
 sftp unetbootin-build-linux <<EOT
 cd unetbootin-#{revno}/release
-get unetbootin-linux-#{revno}
+get unetbootin-windows-#{revno}.exe
 EOT
 EOR
 
