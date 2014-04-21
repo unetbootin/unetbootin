@@ -13,6 +13,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "12.10_NetInstall" << "12.10_NetInstall_x64" << "12.10_HdMedia" << "12.10_HdMedia_x64" << "12.10_Live" << "12.10_Live_x64" << \
 "13.04_NetInstall" << "13.04_NetInstall_x64" << "13.04_HdMedia" << "13.04_HdMedia_x64" << "13.04_Live" << "13.04_Live_x64" << \
 "13.10_NetInstall" << "13.10_NetInstall_x64" << "13.10_HdMedia" << "13.10_HdMedia_x64" << "13.10_Live" << "13.10_Live_x64" << \
+"14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -67,11 +68,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "19_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "20_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-    "17_NetInstall" << "17_NetInstall_x64" << "17_Live" << "17_Live_x64" << "18_NetInstall" << "18_NetInstall_x64" << "18_Live" << "18_Live_x64" << "19_NetInstall" << "19_NetInstall_x64" << "19_Live" << "19_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+    "19_NetInstall" << "19_NetInstall_x64" << "19_Live" << "19_Live_x64" << "20_NetInstall" << "20_NetInstall_x64" << "20_Live" << "20_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -125,7 +126,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://ftp.kaspersky.com/devbuilds/Re
 	"<b>Description:</b> Kaspersky Rescue Disk detects and removes malware from your Windows installation.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which malware scans can be launched.") <<
 "10_Live" << "8_Live"));
-	distroselect->addItem("Kubuntu", (QStringList() << "12.04_Live" <<
+    distroselect->addItem("Kubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/>"
 	"<b>Description:</b> Kubuntu is an official Ubuntu derivative featuring the KDE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
@@ -140,7 +141,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxm
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
     "13_Live" << "13_Live_x64" << "14_Live" << "14_Live_x64" << "15_Live" << "15_Live_x64" << "16_Live" << "16_Live_x64"));
-distroselect->addItem("Lubuntu", (QStringList() << "12.04_Live" <<
+distroselect->addItem("Lubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/>"
 	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
@@ -247,7 +248,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_OS\"
 //	"<b>Description:</b> SystemRescueCD includes various partition management and data recovery and backup tools.<br/>"
 //	"<b>Install Notes:</b> SystemRescueCD is booted and run in live mode; no installation is required to use it.") <<
 //"Latest_Live"));
-distroselect->addItem("Ubuntu", (QStringList() << "12.04_Live" <<
+distroselect->addItem("Ubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 	"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
@@ -257,7 +258,7 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpu
 	"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
 	"<b>Install Notes:</b> The Live version loads the entire system into RAM and boots from memory.") <<
 "Stable_Live" << "Unstable_Live"));
-distroselect->addItem("Xubuntu", (QStringList() << "12.04_Live" <<
+distroselect->addItem("Xubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/>"
 	"<b>Description:</b> Xubuntu is an official Ubuntu derivative featuring the XFCE desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<

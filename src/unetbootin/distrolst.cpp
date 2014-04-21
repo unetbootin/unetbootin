@@ -11,8 +11,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-	.replace("testing", "wheezy") \
-	.replace("stable", "squeeze");
+    .replace("testing", "jessie") \
+    .replace("stable", "wheezy");
 #endif
 
 #ifndef ubunturelnamereplace
@@ -383,16 +383,8 @@ if (nameDistro == "Fedora")
 	}
 	if (islivecd)
 	{
-        if (relname == "19")
-        {
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-Live-Desktop-%3-%1-1.iso").arg(relname).arg(cpuarch).arg(minorarch), isotmpf);
-            extractiso(isotmpf);
-        }
-        else
-        {
-            downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-%1-%3-Live-Desktop.iso").arg(relname).arg(cpuarch).arg(minorarch), isotmpf);
-            extractiso(isotmpf);
-        }
+        downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-Live-Desktop-%3-%1-1.iso").arg(relname).arg(cpuarch).arg(minorarch), isotmpf);
+        extractiso(isotmpf);
 	}
 	else
 	{

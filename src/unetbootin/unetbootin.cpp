@@ -3395,19 +3395,16 @@ void unetbootin::vistabcdEdit()
 
 void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 {
-	if (QFile::exists(dstfName))
-	{
-		if (!overwritefileprompt(dstfName))
-			return;
-	}
-	QFile dstF(dstfName);
-	dstF.open(QIODevice::WriteOnly);
 	QFile srcF(QString(":/%1").arg(srcfName));
 	#ifdef NOSTATIC
 	if (srcfName == "memdisk")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
 	else if (srcfName == "menu.c32")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/menu.c32") ? "/usr/share/syslinux/menu.c32" : "/usr/lib/syslinux/menu.c32");
+    else if (srcfName == "libutil.c32")
+                srcF.setFileName(QFile::exists("/usr/share/syslinux/libutil.c32") ? "/usr/share/syslinux/libutil.c32" : "/usr/lib/syslinux/libutil.c32");
+    else if (srcfName == "libcom32.c32")
+                srcF.setFileName(QFile::exists("/usr/share/syslinux/libcom32.c32") ? "/usr/share/syslinux/libcom32.c32" : "/usr/lib/syslinux/libcom32.c32");
 	else if (srcfName == "mbr.bin")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 	else if (srcfName == "ubnsylnx")
@@ -3415,7 +3412,18 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 //	else
 //		srcF.setFileName(QString("/usr/lib/unetbootin/%1").arg(srcfName));
 	#endif
-	srcF.open(QIODevice::ReadOnly);
+    if (!srcF.exists())
+    {
+        return;
+    }
+    if (QFile::exists(dstfName))
+    {
+        if (!overwritefileprompt(dstfName))
+            return;
+    }
+    QFile dstF(dstfName);
+    dstF.open(QIODevice::WriteOnly);
+    srcF.open(QIODevice::ReadOnly);
 	dstF.write(srcF.readAll());
 	dstF.close();
 	srcF.close();
@@ -4226,6 +4234,8 @@ void unetbootin::runinstusb()
 			if (!abssyslpathloc.startsWith("/"))
 				abssyslpathloc.prepend("/");
 			instIndvfl("menu.c32", QString("%1%2menu.c32").arg(targetPath).arg(syslpathloc));
+            instIndvfl("libutil.c32", QString("%1%2libutil.c32").arg(targetPath).arg(syslpathloc));
+            instIndvfl("libcom32.c32", QString("%1%2libcom32.c32").arg(targetPath).arg(syslpathloc));
 			QString syslrealcfgloc = QString(locatedsyslinuxcfgfiles.at(j)).replace("isolinux.cfg", "syslinux.cfg").replace("extlinux.conf", "syslinux.cfg");
 			if (syslrealcfgloc != locatedsyslinuxcfgfiles.at(j))
 			{
@@ -4249,7 +4259,11 @@ void unetbootin::runinstusb()
 			QFile::copy(QString("%1syslinux.cfg").arg(targetPath), QString("%1extlinux.conf").arg(targetPath));
 		#endif
 		if (!dontgeneratesyslinuxcfg)
-			instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
+        {
+            instIndvfl("menu.c32", QString("%1menu.c32").arg(targetPath));
+            instIndvfl("libutil.c32", QString("%1libutil.c32").arg(targetPath));
+            instIndvfl("libcom32.c32", QString("%1libcom32.c32").arg(targetPath));
+        }
 	fininstall();
 }
 
