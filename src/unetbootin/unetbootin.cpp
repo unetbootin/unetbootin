@@ -1192,16 +1192,13 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	}
 	else
 	{
-    logText("archivefileconts:" + archivefileconts.join(","));
     for (int i = 0; i < grubcfgtypes.size(); ++i)
 	{
-        logText("grubcfgtype:" + grubcfgtypes.at(i));
 		mlstfoundfiles = archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive);
 		if (!mlstfoundfiles.isEmpty())
 		{
 			for (int j = 0; j < mlstfoundfiles.size(); ++j)
 			{
-                logText("mlstfoundfile:" + mlstfoundfiles.at(j));
 				randtmpfile mlstftf(ubntmpf, "lst");
 				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
 				grubpcfg = getgrubcfgargs(mlstftf.fileName()).trimmed();
@@ -1217,13 +1214,11 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 	QStringList lcfgfoundfiles;
 	for (int i = 0; i < syslinuxcfgtypes.size(); ++i)
 	{
-        logText("syslinuxcfgtype:" + syslinuxcfgtypes.at(i));
 		lcfgfoundfiles = archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive);
 		if (!lcfgfoundfiles.isEmpty())
 		{
 			for (int j = 0; j < lcfgfoundfiles.size(); ++j)
 			{
-                logText("lcfgfoundfile:" + lcfgfoundfiles.at(j));
 				randtmpfile ccfgftf(ubntmpf, "cfg");
 				extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
 				if (lcfgfoundfiles.at(j).contains("grubenv"))
@@ -1241,9 +1236,6 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 			break;
 	}
 	}
-    logText("saltpcfg:" + saltpcfg);
-    logText("syslinuxpcfg:" + syslinuxpcfg);
-    logText("grubpcfg:" + grubpcfg);
 	if (!saltpcfg.isEmpty()) {
 		return saltpcfg;
 	}
@@ -1259,7 +1251,6 @@ QString unetbootin::extractcfg(QString archivefile, QStringList archivefileconts
 
 QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetbootin::extractcfgL(QString archivefile, QStringList archivefileconts)
 {
-    logText(archivefileconts.join(","));
 	pdesc1->setText(tr("Extracting bootloader configuration"));
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > grubpcfgPL;
 	QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > syslinuxpcfgPL;
@@ -1274,7 +1265,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 		{
 			for (int j = 0; j < mlstfoundfiles.size(); ++j)
 			{
-                logText(mlstfoundfiles.at(j));
 				randtmpfile mlstftf(ubntmpf, "lst");
 				extractfile(archivefileconts.filter(grubcfgtypes.at(i), Qt::CaseInsensitive).at(j), mlstftf.fileName(), archivefile);
 				grubpcfgPL = getgrubcfgargsL(mlstftf.fileName());
@@ -1300,8 +1290,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 			for (int j = 0; j < lcfgfoundfiles.size(); ++j)
 			{
 				randtmpfile ccfgftf(ubntmpf, "cfg");
-                logText("ubntmpf:" + ubntmpf);
-                logText("tmpoutputcfgf:" + ccfgftf.fileName());
                 extractfile(archivefileconts.filter(syslinuxcfgtypes.at(i), Qt::CaseInsensitive).at(j), ccfgftf.fileName(), archivefile);
 				if (lcfgfoundfiles.at(j).contains("grubenv"))
 					loadgrub2env(ccfgftf.fileName());
@@ -1606,15 +1594,12 @@ void unetbootin::extractiso(QString isofile)
 			}
 		}
 	}
-    logText("will start generating syslinux?");
 	if (!dontgeneratesyslinuxcfg)
 	{
-    logText("generate syslinux cfg");
 	kernelOpts = extractcfg(isofile, listfilesizedirpair.first.first);
 	issalt = (kernelOpts == SALT_DETECTED);
 	if (issalt)
 	{
-        logText("is salt");
 		QStringList mlstfoundfiles = listfilesizedirpair.second.filter(QRegExp("/modules$", Qt::CaseInsensitive));
 		if (!mlstfoundfiles.isEmpty())
 		{
@@ -1630,15 +1615,8 @@ void unetbootin::extractiso(QString isofile)
 	}
 	else
 	{
-    logText("is not salt");
 	extraoptionsPL = extractcfgL(isofile, listfilesizedirpair.first.first);
 	}
-
-    logText(QString("appFile: %1").arg(QApplication::applicationFilePath()));
-    logText(QString("appDir: %1").arg(QApplication::applicationDirPath()));
-    logText(QString("isofile: %1").arg(isofile));
-    logText(QString("kernelOpts: %1").arg(kernelOpts));
-    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.size()));
 
 #ifndef NOEXTRACTKERNEL
 	extractkernel(isofile, QString("%1ubnkern").arg(targetPath), listfilesizedirpair.first);
@@ -2207,7 +2185,6 @@ QPair<QPair<QStringList, QStringList>, QPair<QStringList, QStringList> > unetboo
 
 QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QStringList archivefileconts, QStringList visitedincludes)
 {
-    logText("getcfgkernargs:" + cfgfile + "," + archivefile + "archivefileconts:" + archivefileconts.join(",") + "visitedincludes:" + visitedincludes.join(","));
 	QFile cfgfileF(cfgfile);
 	cfgfileF.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream cfgfileS(&cfgfileF);
@@ -2217,7 +2194,6 @@ QString unetbootin::getcfgkernargs(QString cfgfile, QString archivefile, QString
 	while (!cfgfileS.atEnd())
 	{
 		cfgfileCL = cfgfileS.readLine().trimmed();
-        logText("cfgfileCL:" + cfgfileCL);
 		if (cfgfileCL.contains("#"))
 		{
 			cfgfileCL = cfgfileCL.left(cfgfileCL.indexOf("#")).trimmed();
@@ -4023,6 +3999,8 @@ QString unetbootin::fixkernelbootoptions(const QString &cfgfileCL)
 
 void unetbootin::logText(const QString &text)
 {
+    return;
+    /*
     if (targetPath.isNull() || targetPath.isEmpty())
     {
         loggedLinesNotYetWritten.append(text);
@@ -4040,6 +4018,7 @@ void unetbootin::logText(const QString &text)
         loggedLinesNotYetWritten.clear();
     }
     *logStream << text << endl;
+    */
 }
 
 void unetbootin::finishLogging()
@@ -4148,8 +4127,17 @@ void unetbootin::runinstusb()
 		}
 #endif
 #ifdef Q_OS_MAC
-		callexternapp(syslinuxcommand, targetDev);
-		callexternapp("diskutil", "umount "+targetDev);
+        callexternapp("sync", "");
+        callexternapp("diskutil", "umount "+targetDev);
+        callexternapp("sync", "");
+        callexternapp("hdiutil", "unmount "+targetDev);
+        callexternapp("sync", "");
+        callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
+        callexternapp("sync", "");
+        callexternapp("diskutil", "umount "+targetDev);
+        callexternapp("sync", "");
+        callexternapp("hdiutil", "unmount "+targetDev);
+        callexternapp("sync", "");
 		QFile usbmbrF(rawtargetDev);
 		QFile mbrbinF(resourceDir.absoluteFilePath("mbr.bin"));
 		usbmbrF.open(QIODevice::WriteOnly);
@@ -4157,29 +4145,9 @@ void unetbootin::runinstusb()
 		usbmbrF.write(mbrbinF.readAll());
 		mbrbinF.close();
 		usbmbrF.close();
-		callexternapp("diskutil", "umount "+targetDev);
-		// make active
-		bool isOk = false;
-		int partitionNumber = QString(targetDev).remove(rawtargetDev).remove("s").toInt(&isOk, 10);
-		if (isOk)
-		{
-			QString output = callexternapp("diskutil", "list");
-			QStringList outputL = output.split('\n');
-			outputL = outputL.filter(QString(targetDev).replace("/dev/", ""));
-			if (outputL.size() > 0)
-			{
-				outputL = outputL.filter("*");
-				bool isActive = outputL.size() > 0;
-				if (!isActive)
-				{
-					QString fdiskWriteToStdin = ("flag "+QString::number(partitionNumber)+"\n");
-					fdiskWriteToStdin += "write\n";
-					fdiskWriteToStdin += "quit\n";
-					callexternappWriteToStdin("fdisk", "-e "+rawtargetDev, fdiskWriteToStdin);
-				}
-			}
-		}
+        callexternapp("sync", "");
 		callexternapp("diskutil", "mount "+targetDev);
+        callexternapp("sync", "");
 #endif
 #ifndef XPUD
 	if (!dontgeneratesyslinuxcfg)
@@ -4207,8 +4175,6 @@ void unetbootin::runinstusb()
 		}
 	}
     writeTextToFile(syslinuxcfgtxt, QString("%1syslinux.cfg").arg(targetPath));
-    logText(QString("kernelOpts: %1").arg(kernelOpts));
-    logText(QString("optsLength: %1").arg(extraoptionsPL.first.first.size()));
 	}
 	else
 	{
