@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-24 00:10-0800\n"
-"PO-Revision-Date: 2013-01-20 00:49+0000\n"
-"Last-Translator: Yusuf B. <drukyul@yandex.com>\n"
+"POT-Creation-Date: 2013-06-06 02:10-0400\n"
+"PO-Revision-Date: 2014-02-24 15:45+0000\n"
+"Last-Translator: Volkan Gezer <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2014-04-21 06:44+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "X-Language: tr_TR\n"
 
 #. ts-context QObject
@@ -19,105 +19,105 @@ msgid "LeftToRight"
 msgstr "SoldanSağa"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
-#: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4230
+#: unetbootin.cpp:210 unetbootin.cpp:308 unetbootin.cpp:309 unetbootin.cpp:376
+#: unetbootin.cpp:543 unetbootin.cpp:3410 unetbootin.cpp:3423
+#: unetbootin.cpp:3605 unetbootin.cpp:4231
 msgid "Hard Disk"
 msgstr "Sabit Disk"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:211 unetbootin.cpp:304 unetbootin.cpp:305 unetbootin.cpp:377
-#: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
-#: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
-#: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
+#: unetbootin.cpp:212 unetbootin.cpp:305 unetbootin.cpp:306 unetbootin.cpp:378
+#: unetbootin.cpp:547 unetbootin.cpp:713 unetbootin.cpp:733 unetbootin.cpp:987
+#: unetbootin.cpp:1562 unetbootin.cpp:1646 unetbootin.cpp:2575
+#: unetbootin.cpp:2618 unetbootin.cpp:3414 unetbootin.cpp:3440
+#: unetbootin.cpp:3609 unetbootin.cpp:3933 unetbootin.cpp:4235
 msgid "USB Drive"
 msgstr "USB Sürücü"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:213 unetbootin.cpp:230 unetbootin.cpp:231 unetbootin.cpp:344
+#: unetbootin.cpp:661 unetbootin.cpp:664 unetbootin.cpp:665 unetbootin.cpp:3499
 msgid "ISO"
-msgstr "İSO"
+msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:214 unetbootin.cpp:226 unetbootin.cpp:227 unetbootin.cpp:349
+#: unetbootin.cpp:661 unetbootin.cpp:669 unetbootin.cpp:670 unetbootin.cpp:3491
 msgid "Floppy"
 msgstr "Disket Sürücü"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
-#: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
+#: unetbootin.cpp:247 unetbootin.cpp:253 unetbootin.cpp:257 unetbootin.cpp:261
+#: unetbootin.cpp:265 unetbootin.cpp:271 unetbootin.cpp:299
 msgid "either"
-msgstr ""
+msgstr "ikisinden biri"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:277
+#: unetbootin.cpp:278
 msgid "LiveUSB persistence"
-msgstr ""
+msgstr "ÇalışanUSB sürekliliği"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:292
+#: unetbootin.cpp:293
 msgid "FAT32-formatted USB drive"
-msgstr "FAT32-formatlı USB sürücü"
+msgstr "FAT32-biçimli USB sürücü"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:296
+#: unetbootin.cpp:297
 msgid "EXT2-formatted USB drive"
-msgstr "EXT2-formatlı USB sürücü"
+msgstr "EXT2-biçimli USB sürücü"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "Open Disk Image File"
-msgstr "Disk İmaj Dosyası Aç"
+msgstr "Disk Kalıp Dosyası Aç"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
+#: unetbootin.cpp:679 unetbootin.cpp:687 unetbootin.cpp:695
 msgid "All Files (*)"
 msgstr "Tüm Dosyalar (*)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678
+#: unetbootin.cpp:679
 msgid "Open Kernel File"
 msgstr "Kernel Dosyası Aç"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:686
+#: unetbootin.cpp:687
 msgid "Open Initrd File"
 msgstr "Initrd Dosyası Aç"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:695
 msgid "Open Bootloader Config File"
-msgstr "Bootloader Config Dosyası Aç"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:716
-msgid "Insert a USB flash drive"
-msgstr "USB Flash Sürücü Takın"
+msgstr "Bootloader Yapılandırma Dosyası Aç"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
+msgid "Insert a USB flash drive"
+msgstr "USB Bellek Sürücü Takın"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:718
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
 "USB Flash sürücü bulunamadı. Eğer USB sürücü taktıysanız FAT32 olarak "
-"formatlayın."
+"biçimlendirin."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:736
+#: unetbootin.cpp:737
 msgid "%1 not mounted"
 msgstr "%1 bağlanmadı"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:737
+#: unetbootin.cpp:738
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -127,72 +127,72 @@ msgstr ""
 "yapmaktadır."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:752
-msgid "Select a distro"
-msgstr "Bir  Dağıtım Seçin"
-
-#. ts-context unetbootin
 #: unetbootin.cpp:753
-msgid "You must select a distribution to load."
-msgstr "Bir dağıtım seçmelisin"
+msgid "Select a distro"
+msgstr "Bir dağıtım seçin"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:767
-msgid "Select a disk image file"
-msgstr "Disk İmaj Dosyası Seçin"
+#: unetbootin.cpp:754
+msgid "You must select a distribution to load."
+msgstr "Yüklemek üzere bir dağıtım seçmelisiniz."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:768
-msgid "You must select a disk image file to load."
-msgstr "Bir Disk imajı seçmelisin"
+msgid "Select a disk image file"
+msgstr "Bir disk kalıp dosyası seçin"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:782
-msgid "Select a kernel and/or initrd file"
-msgstr "Bir Kernel ve/veya initrd Dosyası Seçin"
+#: unetbootin.cpp:769
+msgid "You must select a disk image file to load."
+msgstr "Bir disk kalıp dosyası seçmelisiniz"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:783
-msgid "You must select a kernel and/or initrd file to load."
-msgstr "Kernel ve/veya initrd dosyası seçmelisin"
+msgid "Select a kernel and/or initrd file"
+msgstr "Bir kernel ve/veya initrd dosyası seçin"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:797
-msgid "Diskimage file not found"
-msgstr "Disk İmaj Dosyası Bulunamadı"
+#: unetbootin.cpp:784
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "Yüklemek üzere bir kernel ve/veya initrd dosyası seçmelisiniz."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:798
+msgid "Diskimage file not found"
+msgstr "Disk kalıp dosyası bulunamadı"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:799
 msgid "The specified diskimage file %1 does not exist."
 msgstr "Belirtilen disk kalıbı %1 bulunamadı."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:812
+#: unetbootin.cpp:813
 msgid "Kernel file not found"
-msgstr "Kernel Dosyası Bulunamadı"
+msgstr "Kernel dosyası bulunamadı"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:813
+#: unetbootin.cpp:814
 msgid "The specified kernel file %1 does not exist."
 msgstr "Belirtilen çekirdek dosyası %1 bulunamadı."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:827
+#: unetbootin.cpp:828
 msgid "Initrd file not found"
 msgstr "Initrd dosyası bulunamadı"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:828
+#: unetbootin.cpp:829
 msgid "The specified initrd file %1 does not exist."
 msgstr "Belirtilen initrd dosyası %1 bulunamadı."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:932
+#: unetbootin.cpp:933
 msgid "%1 exists, overwrite?"
 msgstr "%1 mevcut, üzerine yazılsın mı?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:933
+#: unetbootin.cpp:934
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -204,232 +204,250 @@ msgstr ""
 "Evet'i tıklayın."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:959
+#: unetbootin.cpp:960
 msgid "%1 is out of space, abort installation?"
 msgstr "%1 üzerinde yeterli alan yok, kurulum iptal edilsin mi?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:960
+#: unetbootin.cpp:961
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
+"%1 dizini disk alanı dolu. Kurulumu sonlandırmak için 'Evet'e, bu hatayı "
+"yoksayıp kuruluma devam etme girişimi için 'Hayır'a, tüm disk alanı dolu "
+"hatalarını yoksaymak için 'Tümüne Hayır'a basın."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1054
+#: unetbootin.cpp:1055
 msgid "Locating kernel file in %1"
-msgstr ""
+msgstr "Çekirdek dosyası %1 içine yerleştiriliyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1105
+#: unetbootin.cpp:1106
 msgid "Copying kernel file from %1"
-msgstr ""
+msgstr "Çekirdek dosyası %1 içinden kopyalanıyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1111
+#: unetbootin.cpp:1112
 msgid "Locating initrd file in %1"
-msgstr ""
+msgstr "initrd dosyası %1 içine yerleştiriliyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1152
+#: unetbootin.cpp:1153
 msgid "Copying initrd file from %1"
-msgstr ""
+msgstr "initrd dosyası %1 içinden kopyalanıyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1158 unetbootin.cpp:1238
+#: unetbootin.cpp:1159 unetbootin.cpp:1239
 msgid "Extracting bootloader configuration"
-msgstr ""
+msgstr "Önyükleme yükleyicisi yapılandırıcısı çıkarılıyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1467 unetbootin.cpp:1493
+#: unetbootin.cpp:1468 unetbootin.cpp:1494
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr ""
+msgstr "<b>Sıkıştırılmış iso çıkarılıyor:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1744
+#: unetbootin.cpp:1745
 msgid "Copying file, please wait..."
-msgstr "Dosya kopyalanıyor,lütfen bekleyin..."
+msgstr "Dosya kopyalanıyor, lütfen bekleyin..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1745 unetbootin.cpp:2559
+#: unetbootin.cpp:1746 unetbootin.cpp:2560
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>Kaynak:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1746 unetbootin.cpp:2560
+#: unetbootin.cpp:1747 unetbootin.cpp:2561
 msgid "<b>Destination:</b> %1"
 msgstr "<b>Hedef:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1747
+#: unetbootin.cpp:1748
 msgid "<b>Copied:</b> 0 bytes"
 msgstr "<b>Kopyalanan:</b> 0 bayt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1785
+#: unetbootin.cpp:1786
 msgid "Extracting files, please wait..."
 msgstr "Dosyalar açılıyor, lütfen bekleyiniz..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1786
+#: unetbootin.cpp:1787
 msgid "<b>Archive:</b> %1"
 msgstr "<b>Arşiv:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1787
+#: unetbootin.cpp:1788
 msgid "<b>Source:</b>"
 msgstr "<b>Kaynak:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1788
+#: unetbootin.cpp:1789
 msgid "<b>Destination:</b>"
 msgstr "<b>Hedef:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1789
+#: unetbootin.cpp:1790
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>Çıkarılan:</b> 0 , toplam %1 dosya"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1792
+#: unetbootin.cpp:1793
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>Kaynak:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1793
+#: unetbootin.cpp:1794
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>Hedef:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1794
+#: unetbootin.cpp:1795
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr ""
+msgstr "<b>Çıkarılan:</b> %2 / %1 dosya"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2558
+#: unetbootin.cpp:2559
 msgid "Downloading files, please wait..."
 msgstr "Dosyalar indiriliyor, lütfen bekleyin..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2561
+#: unetbootin.cpp:2562
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>İndirilen:</b> 0 bytes"
+msgstr "<b>İndirilen:</b> 0 bayt"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2685
+#: unetbootin.cpp:2686
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
 msgstr ""
+"%3 kaynağından %1 %2 indirme işlemi başarısız. Lütfen ISO dosyasını doğrudan "
+"web sitesinden indirmeyi ya da bunu disk kalıbı seçeneğiyle sağlamayı "
+"deneyin."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2708 unetbootin.cpp:2723
+#: unetbootin.cpp:2709 unetbootin.cpp:2724
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>İndirilen:</b> %1, toplam %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2738
+#: unetbootin.cpp:2739
 msgid "<b>Copied:</b> %1 of %2"
-msgstr ""
+msgstr "<b>Kopyalanan:</b> %1 / %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2829
+#: unetbootin.cpp:2830
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "<a href=\"%1\">%1</a> içinde aranıyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2833
+#: unetbootin.cpp:2834
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr ""
+msgstr "<a href=\"%3\">%3</a> içinde %1/%2 eşleşme"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3106
+#: unetbootin.cpp:3107
 msgid "%1 not found"
 msgstr "%1 bulunamadı"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3107
+#: unetbootin.cpp:3108
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
+"%1 bulunamadı. Bu %2 yükleme kipi için gerekli.\n"
+"\"%3\" paketini ya da dağıtımınızdaki eşdeğerini yükleyin."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3390
+#: unetbootin.cpp:3391
 msgid "(Current)"
 msgstr "(Geçerli)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3391
+#: unetbootin.cpp:3392
 msgid "(Done)"
 msgstr "(Tamam)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3683
+#: unetbootin.cpp:3684
 msgid "Configuring grub2 on %1"
-msgstr ""
+msgstr "%1 üzerinde grub2 yapılandırılıyor."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3695
+#: unetbootin.cpp:3696
 msgid "Configuring grldr on %1"
-msgstr ""
+msgstr "%1 üzerinde grldr yapılandırılıyor."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3723
+#: unetbootin.cpp:3724
 msgid "Configuring grub on %1"
-msgstr ""
+msgstr "%1 üzerinde grub yapılandırılıyor."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3976
+#: unetbootin.cpp:3977
 msgid "Installing syslinux to %1"
-msgstr ""
+msgstr "syslinux %1 içine kuruluyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4011
+#: unetbootin.cpp:4012
 msgid "Installing extlinux to %1"
-msgstr ""
+msgstr "extlinux %1 içine kuruluyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4182
+#: unetbootin.cpp:4183
 msgid "Syncing filesystems"
-msgstr "Dosya sistemleri senkronize ediliyor"
+msgstr "Dosya sistemleri eşitleniyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4187
+#: unetbootin.cpp:4188
 msgid "Setting up persistence"
-msgstr ""
+msgstr "Süreklilik ayarlanıyor"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4232
+#: unetbootin.cpp:4233
 msgid "After rebooting, select the "
-msgstr ""
+msgstr "Yeniden başlatma sonrasında şunu seçin "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4237
+#: unetbootin.cpp:4238
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
+"Yeniden başlatma sonrasında BIOS önyükleme menüsünden USB önyükleme "
+"seçeneğini seçin.%1\n"
+"Şimdi yeniden başlatılsın mı?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4240
+#: unetbootin.cpp:4241
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"Oluşturulan USB aygıtı bir Mac üzerinde önyükleme yapamaz. Aygıtı bir PC'ye "
+"yerleştirin, ardından BIOS önyükleme menüsünde USB önyükleme seçeneğini "
+"seçin.%1"
 
 #. ts-context unetbootin
-#: distrolst.cpp:43
+#: distrolst.cpp:44
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
 "install iso file on the root directory of your hard drive or USB drive. "
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlatmadan önce sabit diskinizin ya da USB sürücünüzün kök "
+"dizinine bir Ubuntu değişimli (masaüstü değil) kurulum iso dosyası "
+"yerleştirin. Bu cdimage.ubuntu.com adresinden edinilebilir."
 
 #. ts-context unetbootin
-#: distrolst.cpp:257
+#: distrolst.cpp:258
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -441,22 +459,27 @@ msgstr ""
 "\n"
 "*ÖNEMLİ*Sistemi yeniden başlattıktan sonra, hiç bir hata mesajını "
 "önemsemeyin ve eğer bir CD yerleştirmeniz istenirse geri seçeneğini "
-"tıklayın, ardından da ana menüye gidin, 'Kurulumu Başlat'  seçeneğini seçin, "
-"ardından kaynak olarak 'Ağ' seçeneğini, protokol olarak 'HTTP' seçeneğini "
-"seçin, eğer bir sunucu adresi girmeniz istenirse 'mirror.kernel.org' yazın "
-"ve bir dizin ismi girmeniz istenildiğinde '/centos/%1/os/%2' yazın."
+"tıklayın, ardından da ana menüye gidin, 'Yüklemeyi Başlat'  seçeneğini "
+"seçin, ardından kaynak olarak 'Ağ' seçeneğini, protokol olarak 'HTTP' "
+"seçeneğini seçin, eğer bir sunucu adresi girmeniz istenirse "
+"'mirror.kernel.org' yazın ve bir dizin ismi girmeniz istenildiğinde "
+"'/centos/%1/os/%2' yazın."
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:315
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
 "directory of your hard drive or USB drive. These can be obtained from "
 "cdimage.debian.org"
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlatmadan önce sabit diskinizin ya da USB sürücünüzün kök "
+"dizinine bir Debian kurulum iso dosyası yerleştirin. Bu cdimage.debian.org "
+"adresinden edinilebilir."
 
 #. ts-context unetbootin
-#: distrolst.cpp:407
+#: distrolst.cpp:408
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -465,9 +488,15 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlattıktan sonra, herhangi bir hata mesajını yoksayın ve "
+"eğer CD isteniyorsa geri gelin. Ardından ana menüye gelip, 'Yüklemeyi "
+"Başlat' ı seçin, kaynak olarak 'Ağ', protokol olarak da 'HTTP' yi seçin. "
+"Server için istendiğinde 'download.fedora.redhat.com' girin ve klasör için "
+"sorulduğunda '/pub/fedora/linux/development/%1/os' girin."
 
 #. ts-context unetbootin
-#: distrolst.cpp:413
+#: distrolst.cpp:414
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -476,9 +505,15 @@ msgid ""
 "'download.fedora.redhat.com' when prompted for a server, and enter "
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlattıktan sonra, herhangi bir hata mesajını yoksayın ve "
+"eğer CD isteniyorsa geri gelin. Ardından ana menüye gelip, 'Yüklemeyi "
+"Başlat' ı seçin, kaynak olarak 'Ağ', protokol olarak da 'HTTP' yi seçin. "
+"Server için istendiğinde 'download.fedora.redhat.com' girin ve klasör için "
+"sorulduğunda '/pub/fedora/linux/releases/%1/Fedora/%2/os' girin."
 
 #. ts-context unetbootin
-#: distrolst.cpp:785
+#: distrolst.cpp:786
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -487,9 +522,15 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlattıktan sonra, herhangi bir hata mesajını yoksayın ve "
+"eğer CD isteniyorsa geri gelin. Ardından ana menüye gelip, 'Yüklemeyi "
+"Başlat' ı seçin, kaynak olarak 'Ağ', protokol olarak da 'HTTP' yi seçin. "
+"Server için istendiğinde 'download.opensuse.org' girin ve klasör için "
+"sorulduğunda '/factory/repo/oss' girin."
 
 #. ts-context unetbootin
-#: distrolst.cpp:791
+#: distrolst.cpp:792
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -498,19 +539,25 @@ msgid ""
 "'download.opensuse.org' when prompted for a server, and enter "
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
+"\n"
+"*ÖNEMLİ* Yeniden başlattıktan sonra, herhangi bir hata mesajını yoksayın ve "
+"eğer CD isteniyorsa geri gelin. Ardından ana menüye gelip, 'Yüklemeyi "
+"Başlat' ı seçin, kaynak olarak 'Ağ', protokol olarak da 'HTTP' yi seçin. "
+"Server için istendiğinde 'download.opensuse.org'  girin ve klasör için "
+"sorulduğunda '/distribution/%1/repo/oss'  girin."
 
 #. ts-context unetbootin
-#: distrover.cpp:26 unetbootin.cpp:748
+#: distrover.cpp:27 unetbootin.cpp:749
 msgid "== Select Distribution =="
 msgstr "== Dağıtımı Seçin =="
 
 #. ts-context unetbootin
-#: distrover.cpp:26 distrover.cpp:30
+#: distrover.cpp:27 distrover.cpp:31
 msgid "== Select Version =="
 msgstr "== Sürüm Seçin =="
 
 #. ts-context unetbootin
-#: distrover.cpp:27
+#: distrover.cpp:28
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -519,13 +566,13 @@ msgid ""
 "installing.</li></ol>"
 msgstr ""
 "<a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, Universal "
-"Netboot Installer'a hoşgeldiniz. Kullanım:<ol><li>Yukarıdaki listeden "
+"Netboot Installer'a hoş geldiniz. Kullanım:<ol><li>Yukarıdaki listeden "
 "indirmek için bir dağıtım ve sürüm seçin veya yüklemek için elle aşağıdan "
 "dosyalar belirleyin.</li><li>Bir kurulum çeşidi seçin ve kuruluma başlamak "
 "için Tamam'a basın.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:32
+#: distrover.cpp:33
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -533,9 +580,14 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Tanım:"
+"</b> Arch Linux hız ve esneklik için iyileştirilmiş hafif bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Varsayılan sürüm internet üzerinden "
+"(FTP) kuruluma izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:37
+#: distrover.cpp:38
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -543,9 +595,14 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Tanım:</b> BackTrack "
+"ağ çözümlemesi ve nüfuz testine odaklanmış bir dağıtımdır.<br/><b>Kurulum "
+"notları:</b> BackTrack canlı modda önyükleme yapılır ve çalıştırılır; "
+"kullanmak için kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:42
+#: distrover.cpp:43
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -554,9 +611,15 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Tanım:</b> "
+"CentOS ücretsiz bir Red Hat Enterprise Linux klonudur.<br/><b>Kurulum "
+"notları:</b> Varsayılan sürüm hem internet üzerinden (FTP) kuruluma hem de "
+"önceden indirilmiş kurulum ISO dosyalarını kullanarak kuruluma izin "
+"vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:47
+#: distrover.cpp:48
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -564,9 +627,14 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Tanım:</b> "
+"CloneZilla disk yedekleme ve kalıp alma için kullanılan bir "
+"dağıtımdır.<br/><b>Kurulum notları:</b> CloneZilla canlı kipte önyükleme "
+"yapılır ve çalıştırılır; kullanmak için kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:52
+#: distrover.cpp:53
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -575,9 +643,15 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Tanı"
+"m:</b> Damn Small Linux  eski bilgisayarlar için tasarlanmış minimalist bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b>Canlı sürüm tüm sistemi RAM'e yükler "
+"ve bellekten önyükleme yapar, bu yüzden kurulum gerekli değil isteğe "
+"bağlıdır."
 
 #. ts-context unetbootin
-#: distrover.cpp:57
+#: distrover.cpp:58
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -588,9 +662,17 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Tanım:</b> "
+"Debian topluluk tarafından geliştirilen, çok çeşitli mimarileri destekleyen "
+"ve geniş paket deposu sunan bir Linux dağıtımıdır.<br/><b>Kurulum "
+"Notları:</b> NetInstall sürümü FTP üzerinden kurluma izin verir. Önceden "
+"indirilmiş iso kurlumu kullanmak istiyorsanız HdMedia seçeneğini seçin ve "
+"ardından iso dosyasını hard diskinizin ya da USB sürücünüzün kök dizinine "
+"yerleştirin."
 
 #. ts-context unetbootin
-#: distrover.cpp:63
+#: distrover.cpp:64
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -598,9 +680,14 @@ msgid ""
 "distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
+"b>Tanım:</b> Dreamlinux kullanıcı dostu Debian tabanlı bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı kipte önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:68
+#: distrover.cpp:69
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -609,9 +696,15 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
+"br/><b>Tanım:</b> Dr.Web AntiVirus zararlı yazılımlardan iflas etmiş "
+"sistemleri yenileyen bir anti-virüs acil durum kitidir.<br/><b>Kurulum "
+"Notları:</b> Canlı sürüm zararlı yazılım taramalarının erişilebildiği Canlı "
+"kipte önyüklemeye izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:73
+#: distrover.cpp:74
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -619,9 +712,14 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Tanım:</b>"
+" Elive, Enlightenment pencere yöneticisinin eşlik ettiği Debian tabanlı "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı kipte önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:78
+#: distrover.cpp:79
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -632,9 +730,17 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Ana Sayfa:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Açıkla"
+"ma:</b> Fedora bir Red Hat destekli her zaman en son özgür/açık kaynak "
+"yazılımı sunan topluluk dağıtımıdır.<br/><b>Kurulum Notları:</b> Canlı "
+"sürümü (Live), yükleyicinin isteğe bağlı olarak çalıştırılabileceği Canlı "
+"kipte önyüklemeye izin verir. NetInstall sürümü hem internet (FTP) üzerinden "
+"hem de daha önceden indirilmiş ISO kurulum dosyaları ile çevrimdışı kuruluma "
+"izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:83
+#: distrover.cpp:84
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -643,9 +749,15 @@ msgid ""
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Tanım:</b>"
+" FreeBSD ölçeklenebilirlik ve performans için tasarlanmış bir genel amaçlı "
+"Unix-benzeri işletim sistemidir..<br/><b>Kurulum Notları:</b> Varsayılan "
+"sürüm hem internet üzerinden (FTP) kuruluma hem de önceden indirilmiş "
+"kurulum ISO dosyalarını kullanarak kuruluma izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:88
+#: distrover.cpp:89
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -654,9 +766,15 @@ msgid ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
 "installation details."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Tanım:</b>"
+" FreeDOS MS-DOS uyumlu özgür bir işletim sistemidir.<br/><b>Kurulum "
+"Notları:</b> Detaylar için <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">el kılavuzu</a>'na "
+"bakın"
 
 #. ts-context unetbootin
-#: distrover.cpp:93
+#: distrover.cpp:94
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -666,9 +784,16 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Tanım:</b> "
+"FreeNAS, FreeBSD tabanlı bir gömülü açık kaynak NAS (Ağa İlişik Depo) "
+"dağıtımıdır.<br/><b>Kurulum Notları:</b> CanlıCD sürümü FreeNAS için RAM "
+"oluşturur ve yapılandırma dosyasını kaydetmek için FAT formatlı floppy disk "
+"ya da USB anahtarı kullanır. Gömülü sürüm sabit diske kuruluma izin "
+"vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:98
+#: distrover.cpp:99
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -677,17 +802,26 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Tanım:</b> "
+"Frugalware ileri düzey kullanıcılar için genel amaçlı Slackware tabanlı bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Varsayılan sürüm hem internet "
+"üzerinden (FTP) kuruluma hem de önceden indirilmiş kurulum ISO dosyalarını "
+"kullanarak kuruluma izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:108
+#: distrover.cpp:109
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
 "n:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Tanım:</b>"
+" GeeXboX bir Gömülü Linux Medya Merkezi Dağıtımıdır.<br/>"
 
 #. ts-context unetbootin
-#: distrover.cpp:121
+#: distrover.cpp:122
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -696,9 +830,15 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Tanım:"
+"</b> gNewSense özgür olmayan tüm bileşenlerin kaldırıldığı Ubuntu tabanlı, "
+"FSF tasdikli bir dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, "
+"yükleyicinin isteğe bağlı olarak erişilebildiği Canlı modda önyükleme "
+"yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:126
+#: distrover.cpp:127
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -706,9 +846,14 @@ msgid ""
 "various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
 "runs; no installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
+"b>Tanım:</b> Gujin çeşitli hacim ve dosyaları önyükleyebilen bir grafiksel "
+"önyükleyici yöneticisidir.<br/><b>Kurulum Notları:</b> Gujin kolayca "
+"önyükleyip çalıştırır; kullanmak için kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:131
+#: distrover.cpp:132
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -717,9 +862,15 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which "
 "malware scans can be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
+"com/devbuilds/RescueDisk/</a><br/><b>Tanım:</b> Kaspersky Rescue Disk "
+"Windows kurulumunuzda zararlı yazılımları tespit eder ve "
+"kaldırır.<br/><b>Kurulum Notları:</b> Canlı sürüm zararlı yazılım "
+"taramalarının erişilebildiği Canlı modda önyüklemeye izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:136
+#: distrover.cpp:137
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -732,9 +883,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Tanım:</b>"
+" Kubuntu KDE masaüstü eşliğindeki bir resmi Ubuntu türevidir.<br/><b>Kurulum "
+"Notları:</b> Canlı sürüm, yükleyicinin isteğe bağlı olarak erişilebildiği "
+"Canlı modda önyükleme yapmaya izin verir. NetInstall sürümü FTP üzerinden "
+"kuruluma izin vermektedir ve Kubuntu ve diğer resmi Ubuntu türevlerini "
+"kurabilmektedir. Önceden indirilmiş değişimli (masaüstü değil) kurulum "
+"iso'sunu kullanmak istiyorsanız HdMedia seçeneğini kullanın ve değişimli "
+"kurulum iso dosyasını sabit diskinizin ya da USB sürücünüzün kök dizinine "
+"yerleştirin."
 
 #. ts-context unetbootin
-#: distrover.cpp:141
+#: distrover.cpp:142
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
@@ -743,9 +904,15 @@ msgid ""
 "latest 1.0, now available on rolling release (run liveuptate to update "
 "modules and kernel)."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Tanım:</"
+"b> LinuxConsole oyun oynamak için, kurulumu kolay, kullanımı kolay ve "
+"önyüklemesi hızlı bir masaüstü dağıtımıdır.<br/><b>Kurulum Notları:</b> "
+"1.0.2010, 1.0'ın sonuncusu, şu an yuvarlama sürüm (modülleri ve çekirdeği "
+"güncellemek için liveupdate'i çalıştırın) olarak mevcuttur."
 
 #. ts-context unetbootin
-#: distrover.cpp:146
+#: distrover.cpp:147
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -754,9 +921,15 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Tanım:</b> "
+"Linux Mint tescilli ek kodeklerin ve diğer yazılımların varsayılan olarak "
+"içerildiği, kullanıcı dostu bir Ubuntu tabanlı dağıtımdır.<br/><b>Kurulum "
+"Notları:</b> Canlı sürüm, yükleyicinin isteğe bağlı olarak erişilebildiği "
+"Canlı modda önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:152
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
@@ -769,9 +942,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Tanım:</b>"
+" Lubuntu, LXDE masaüstü eşliğindeki bir resmi Ubuntu "
+"türevidir.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir. "
+"NetInstall sürümü FTP üzerinden kuruluma izin vermektedir ve Kubuntu ve "
+"diğer resmi Ubuntu türevlerini kurabilmektedir. Önceden indirilmiş değişimli "
+"(masaüstü değil) kurulum iso'sunu kullanmak istiyorsanız HdMedia seçeneğini "
+"kullanın ve değişimli kurulum iso dosyasını sabit diskinizin ya da USB "
+"sürücünüzün kök dizinine yerleştirin."
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:157
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -782,9 +965,17 @@ msgid ""
 "downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Tanım:<"
+"/b> Mandriva, önceden Mandrake Linux olarak bilinen kullanıcı dostu bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin "
+"verir.NetInstall sürümü FTP üzerinden kuruluma veya önceden indirilmiş <a "
+"href=\"http://www.mandriva.com/en/download\">\"Özgür\" iso imaj "
+"dosyasıyla</a> kuruluma izin vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:161
+#: distrover.cpp:162
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -793,9 +984,15 @@ msgid ""
 "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
 "from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Tanım:</b> "
+"MEPIS Debian tabanlı bir dağıtımdır. AntiX daha eski bilgisayarlar için "
+"hafif sürümü iken SimplyMEPIS KDE tabanlı kullanıcı dostu bir "
+"sürümdür.<br/><b>Kurulum Notları:</b> MEPIS  yükleyicinin isteğe bağlı "
+"olarak erişilebildiği Canlı modda önyüklemeyi desteklemektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:167
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
@@ -803,9 +1000,14 @@ msgid ""
 "network-based installers for other distributions.<br/><b>Install Notes:</b> "
 "NetbootCD boots and runs in live mode."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Tanım:</b> NetbootCD diğer dağıtımlar için ağ tabanlı yükleyicileri "
+"indiren ve önyükleme yapan küçük bir önyükleme CD'sidir.<br/><b>Kurulum "
+"Notları:</b> NetbootCD canlı modda önyükleme yapılır ve çalıştırılır."
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:177
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -815,9 +1017,16 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Tanım:</b>"
+" NimbleX küçük, çok yönlü Slackware tabanlı bir dağıtımdır. Canlı-Linux "
+"betiklerini kullanarak oluşturulmuştur ve KDE masaüstünü içerir. CD ya da "
+"flash hafıza (USB sürücüsü ya da MP3 çalar) kullanılarak önyüklenebilir ve "
+"kolaylıkla özelleştirilip genişletilebilir.<br/><b>Kurulum Notları:</b> "
+"NimbleX Canlı modda önyükleme yapmaktadır."
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:182
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
@@ -826,9 +1035,16 @@ msgid ""
 "Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
 "installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>Tanım:</b> Çevrimdışı NT Şifre ve Kayıt Defteri "
+"Düzenleyicisi, Windows şifrelerini sıfırlayıp düzenleyebilir ve Windows 2000-"
+"Vista'da kayıt defterinin düzenleyebilir.<br/><b>Kurulum Notları:</b> "
+"NTPasswd canlı modda önyükleme yapılır ve çalıştırılır; kullanmak için "
+"kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:187
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -837,9 +1053,15 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Tanım:</"
+"b> openSUSE, Novell sponsorlu kullanıcı dostu bir dağıtımdır.<br/><b>Kurulum "
+"Notları:</b> Varsayılan sürüm hem internet üzerinden (FTP) kuruluma hem de "
+"önceden indirilmiş kurulum ISO dosyalarını kullanarak kuruluma izin "
+"vermektedir."
 
 #. ts-context unetbootin
-#: distrover.cpp:191
+#: distrover.cpp:192
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -847,9 +1069,14 @@ msgid ""
 "passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
+"<br/><b>Tanım:</b> Ophcrack Windows şifrelerini kırabilir.<br/><b>Kurulum "
+"Notları:</b> Ophcrack canlı modda önyükleme yapılır ve çalıştırılır; "
+"kullanmak için kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:197
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -858,9 +1085,16 @@ msgid ""
 "partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Tanım:</b>"
+" Parted Magic GParted bölümlendirme yöneticisini ve disk bölümlerini yeniden "
+"boyutlandırabilen, kopyalayabilen, yedekleyebilen ve değiştirebilen sistem "
+"yardımcı programlarını içerir.<br/><b>Kurulum Notları:</b> Parted Magic "
+"canlı modda önyükleme yapılır ve çalıştırılır; kullanmak için kurulum "
+"gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:207
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -869,9 +1103,15 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Tanı"
+"m:</b> Puppy Linux eski bilgisayarlar için tasarlanmış hafif bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm tüm sistemi RAM'e yükler "
+"ve bellekten önyükleme yapar, bu yüzden kurulum gerekli değil isteğe "
+"bağlıdır."
 
 #. ts-context unetbootin
-#: distrover.cpp:211
+#: distrover.cpp:212
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -881,9 +1121,16 @@ msgid ""
 "Live mode, from which the installer can optionally be launched. The LiteMCE "
 "edition is 2 GB, while the full edition will need an 8 GB USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
+"Tanım:</b> Sabayon Linux, kaynak tabanlı Portage'a ek olarak Entropy ikili "
+"paket yöneticisini içeren Gentoo tabanlı bir Canlı DVD "
+"dağıtımıdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir. Tam "
+"sürüm 8 GB USB sürücüye ihtiyaç duyarken  LiteMCE sürümğ 2 GB'tır."
 
 #. ts-context unetbootin
-#: distrover.cpp:216
+#: distrover.cpp:217
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
@@ -893,9 +1140,16 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched.<br/>Default root password is <b>live</b>."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Tanım:</b> Salix "
+"Slackware tabanlı (tam uyumlu), basit, hızlı ve kullanımı kolay bir "
+"GNU/Linux dağıtımıdır<br/>Bonsai gibi, Salix küçük, hafif ve sonsuz "
+"özeninürünüdür.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin "
+"verir.<br/>Varsayılan yönetici şifresi <b>live</b>'dır."
 
 #. ts-context unetbootin
-#: distrover.cpp:228
+#: distrover.cpp:229
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -903,9 +1157,14 @@ msgid ""
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Tanım:</b> Slax "
+"KDE masaüstü eşliğindeki Slackware tabalı bir dağıtımdır.<br/><b>Kurulum "
+"Notları:</b> Canlı sürüm, yükleyicinin isteğe bağlı olarak erişilebildiği "
+"Canlı modda önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:233
+#: distrover.cpp:234
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -914,9 +1173,14 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Tanım:"
+"</b> SliTaz masaüstü yönelimli hafif bir mikro dağıtımdır.<br/><b>Kurulum "
+"Notları:</b> Canlı sürüm tüm sistemi RAM'e yükler ve bellekten önyükleme "
+"yapar, bu yüzden kurulum gerekli değil isteğe bağlıdır."
 
 #. ts-context unetbootin
-#: distrover.cpp:238
+#: distrover.cpp:239
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -925,9 +1189,15 @@ msgid ""
 "bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
 "is required to use it."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
+"/about.html</a><br/><b>Tanım:</b> Smart Önyükleme Yöneticisi önyükleme ile "
+"ilgili bazı sınırlandırmaların ve hataların üstesinden gelebilen bir "
+"önyükleme yükleyicisidir.<br/><b>Kurulum Notları:</b> SBM kolayca önyükleyip "
+"çalıştırır; kullanmak için kurulum gerektirmez."
 
 #. ts-context unetbootin
-#: distrover.cpp:243 distrovercust.cpp:12
+#: distrover.cpp:244 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -942,7 +1212,7 @@ msgstr ""
 "simply boots and runs; no installation is required to use it."
 
 #. ts-context unetbootin
-#: distrover.cpp:248
+#: distrover.cpp:249
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -951,9 +1221,15 @@ msgid ""
 "drive to install.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
+"_OS</a><br/><b>Tanım:</b> Super OS is varsayılan olarak ek yazılımlar içeren "
+"resmi olmayan bir Ubuntu türevidir. Kurulum için 2 GB USB sürücüsü "
+"gereklidir.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
-#: distrover.cpp:258
+#: distrover.cpp:259
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -966,9 +1242,19 @@ msgid ""
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Tanım:</b> "
+"Ubuntu kullanıcı dostu, Debian tabanlı bir dağıtımdır.<br/><b>Kurulum "
+"Notları:</b> anlı sürüm, yükleyicinin isteğe bağlı olarak erişilebildiği "
+"Canlı modda önyükleme yapmaya izin verir. NetInstall sürümü FTP üzerinden "
+"kuruluma izin vermektedir ve Kubuntu ve diğer resmi Ubuntu türevlerini "
+"kurabilmektedir. Önceden indirilmiş değişimli (masaüstü değil) kurulum "
+"iso'sunu kullanmak istiyorsanız HdMedia seçeneğini kullanın ve değişimli "
+"kurulum iso dosyasını sabit diskinizin ya da USB sürücünüzün kök dizinine "
+"yerleştirin."
 
 #. ts-context unetbootin
-#: distrover.cpp:263
+#: distrover.cpp:264
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -976,9 +1262,14 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Tanım:</b> xPUD "
+"web tarayıcısı ve ortam yürütücüsüne sahip basit bir kiosk benzeri arayüz "
+"eşliğindeki hafif bir dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm "
+"tüm sistemi RAM'e yükler ve bellekten önyükleme yapar."
 
 #. ts-context unetbootin
-#: distrover.cpp:268
+#: distrover.cpp:269
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -991,9 +1282,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Tanım:</b>"
+" Xubuntu XFCE masaüstü eşliğindeki bir resmi Ubuntu "
+"türevidir.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir. "
+"NetInstall sürümü FTP üzerinden kuruluma izin vermektedir ve Kubuntu ve "
+"diğer resmi Ubuntu türevlerini kurabilmektedir. Önceden indirilmiş değişimli "
+"(masaüstü değil) kurulum iso'sunu kullanmak istiyorsanız HdMedia seçeneğini "
+"kullanın ve değişimli kurulum iso dosyasını sabit diskinizin ya da USB "
+"sürücünüzün kök dizinine yerleştirin."
 
 #. ts-context unetbootin
-#: distrover.cpp:273
+#: distrover.cpp:274
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1001,6 +1302,11 @@ msgid ""
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<b>Anasayfa:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Tanım:</b>"
+" Zenwalk XFCE masaüstü eşliğinde Slackware tabanlı bir "
+"dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:33
@@ -1011,11 +1317,11 @@ msgid ""
 "distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
 "media is empty and formatted before proceeding with install."
 msgstr ""
-"<img src=\":/eeepclos.png\" /><br/><b>Homepage:</b> <a "
+"<img src=\":/eeepclos.png\" /><br/><b>Anasayfa:</b> <a "
 "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"Description:</b> EeePCLinuxOS is a user-friendly PCLinuxOS based "
-"distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
-"media is empty and formatted before proceeding with install."
+"Tanım:</b> EeePCLinuxOS, EeePC için PCLinuxOS tabanlı kullanıcı dostu bir "
+"dağıtımdır.<br/><b>Yükleme Notları:</b> Yükleme ile ilerlemeden önce, "
+"yükleme ortamının boş ve formatlanmış olduğundan emin olun."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:41
@@ -1028,6 +1334,14 @@ msgid ""
 "alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Anasayfa:</b> "
+"<a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Tanım:</b> Ubuntu Eee, Asus Eee PC için sadece optimize "
+"edilmiş bir Ubuntu değildir. O bir işletim sistemidir, açık kaynak "
+"alternatiflerinin yerine en iyi yazılımı uygun gören Netbook Remix arayüzü "
+"mevcut. (örneğin Ekiga yerine Skype).<br/><b>Yükeleme Notları:</b> Yükleme "
+"ile ilerlemeden önce, yükleme ortamının boş ve formatlanmış olduğundan emin "
+"olun."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:53
@@ -1038,6 +1352,11 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
+"<img src=\":/elive.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Tanım:</b>"
+" Elive,  Enlightenment pencere yöneticisi eşliğinde gelen Debain tabanlı "
+"dağıtımdır.<br/><b>Yükleme Notları:</b> Canlı sürüm, yükleyicinin isteğe "
+"bağlı olarak erişilebildiği Canlı modda önyükleme yapmaya izin verir."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1048,6 +1367,12 @@ msgid ""
 "Hungarian and English speaking users.<br/><b>Install Notes:</b> Make sure "
 "install media is empty and formatted before proceeding with install."
 msgstr ""
+"<img src=\":/kiwi_logo_ro.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>Tanım:"
+"</b> Kiwi Linux, ağırlıklı olarak Romance, Macarca ve İngilizce konuşan "
+"kullanıcılar için yapılmış bir Ubuntu türevidir.<br/><b>Yükleme Notları:</b> "
+"Yükleme ile ilerlemeden önce, yükleme ortamının boş ve formatlanmış "
+"olduğundan emin olun."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:69
@@ -1060,6 +1385,13 @@ msgid ""
 "software.<br/><b>Install Notes:</b> Make sure install media is empty and "
 "formatted before proceeding with install."
 msgstr ""
+"<img src=\":/gnewsense.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Tanım:"
+"</b> gNewSense, tescilli yazılım içeren ikili paket ağaçlar ya da damlalar "
+"olmadan tamamen özgür işletim sistemi yaratmak için Ubuntu' yu genişleten ve "
+"geliştiren yüksek kalite bir GNU/Linux dağıtımıdır.<br/><b>Yükleme "
+"Notları:</b> Yükleme ile ilerlemeden önce, yükleme ortamının boş ve "
+"formatlanmış olduğundan emin olun."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:77
@@ -1072,6 +1404,14 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
+"<img src=\":/nimblex.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Tanım:</b>"
+" NimbleX küçük, çok yönlü Slackware tabanlı bir dağıtımdır. Linux-canlı "
+"betikleri kullanılarak yapılır, ve KDE masaüstü özelliklerini taşır. CD' den "
+"ya da flash hafızadan önyükleme yapılabilir (USB kalemleri ya da MP3 "
+"oynatıcılar), ve kolaylıkla ihtiyaca uygun biçimde düzenlenebilir ve "
+"genişletilebilir.<br/><b>Yükleme Notları:</b> NimbleX Canlı modda önyükleme "
+"yapar."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:85
@@ -1084,6 +1424,13 @@ msgid ""
 "optional. This installer is based on <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
+"<img src=\":/slitaz.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Tanım:"
+"</b> SliTaz hafif, masaüstüne yönelik küçük bir dağıtımdır.<br/><b>Yükleme "
+"Notları:</b> Canlı sürüm tüm sistemi RAM' e yükler ve hafızadan önyükleme "
+"yapar, dolayısıyla yükleme gerekli değildir fakat isteğe bağlıdır. Bu "
+"yükleyici <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin "
+"tabanlıdır</a>."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:93
@@ -1094,6 +1441,11 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
+"<img src=\":/xpud.png\" /><br/><b>Anasayfa:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Tanım:</b> xPUD "
+"web tarayıcısı ve ortam yürütücüsüne sahip basit bir kiosk benzeri arayüz "
+"eşliğindeki hafif bir dağıtımdır.<br/><b>Kurulum Notları:</b> Canlı sürüm "
+"tüm sistemi RAM'e yükler ve bellekten önyükleme yapar."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:20
@@ -1113,17 +1465,17 @@ msgstr "&Dağıtım"
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr ""
+msgstr "Yükleme için bir disk kalıbı belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr ""
+msgstr "Disk&kalıbı"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr ""
+msgstr "Yüklemek için elle bir çekirdek ve initrd belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
@@ -1137,16 +1489,21 @@ msgid ""
 "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
 "capacity, the maximum space available will be used."
 msgstr ""
+"Kullanıcı dosyaları için ayrılan, yeniden başlatmalarda korunan alan. Sadece "
+"Ubuntu ve türevleri için ÇalışanUSB'lerde çalışır. Eğer değer disk "
+"kapasitesini aşarsa azami uygun alan kullanılacak."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
+"Yeniden başlatmalarda dosyaları korumak için kullanılacak alan (Sadece "
+"Ubuntu):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:503
@@ -1156,7 +1513,7 @@ msgstr "Tamam"
 #. ts-context unetbootinui
 #: unetbootin.ui:506
 msgid "Return"
-msgstr ""
+msgstr "Geri dön"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:513
@@ -1181,17 +1538,17 @@ msgstr "Çıkış"
 #. ts-context unetbootinui
 #: unetbootin.ui:660
 msgid "1. Downloading Files"
-msgstr "Dosyalar indiriliyor"
+msgstr "1. Dosyalar İndiriliyor"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:667
 msgid "2. Extracting and Copying Files"
-msgstr "2. Dosyalar açılıp kopyalanıyor"
+msgstr "2. Dosyalar Açılıyor ve Kopyalanıyor"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr "3. Bootloader kuruluyor"
+msgstr "3. Önyükleyici kuruluyor"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
@@ -1201,17 +1558,17 @@ msgstr "4. Kurulum tamamlandı. Yeniden başlat"
 #. ts-context unetbootinui
 #: unetbootin.ui:477 unetbootin.ui:496
 msgid "Select the target drive to install to"
-msgstr ""
+msgstr "Kurulum yapılacak hedef sürücüyü seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:480
 msgid "Dri&ve:"
-msgstr ""
+msgstr "Sürü&cü:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:451 unetbootin.ui:470
 msgid "Select the installation target type"
-msgstr ""
+msgstr "Kurulum hedef türünü seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:454
@@ -1221,12 +1578,12 @@ msgstr "&Tür:"
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr "Dağıtım versiyonunu seçin"
+msgstr "Dağıtım sürümünü seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr "Disk imaj dosyasını seçin"
+msgstr "Disk kalıp dosyasını seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
@@ -1236,32 +1593,33 @@ msgstr "..."
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr ""
+msgstr "Disk kalıp türünü seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
+"Yükleme için bir disket/sabit disk kalıbı ya da CD kalıbı (ISO) belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
-msgstr ""
+msgstr "Yükleme için bir çekirdek belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:283
 msgid "Select kernel file"
-msgstr "Kernel dosyası seçin"
+msgstr "Çekirdek dosyası seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
-msgstr ""
+msgstr "Yükleme için bir initrd belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:372
 msgid "Select initrd file"
-msgstr ""
+msgstr "initrd dosyası seçin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:397
@@ -1271,7 +1629,7 @@ msgstr "Syslinux.cfg veya isolinux.cfg dosyası seçin"
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr ""
+msgstr "Çekirdeğe geçirilecek parametre ve seçenekleri belirtin"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
@@ -1281,27 +1639,27 @@ msgstr "&Çekirdek:"
 #. ts-context unetbootinui
 #: unetbootin.ui:296
 msgid "Init&rd:"
-msgstr ""
+msgstr "Init&rd:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr ""
+msgstr "&Seçenekler:"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr "Kaldırma tamamlandı"
+msgstr "Kaldırma Tamamlandı"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr ""
+msgstr "%1 kaldırıldı."
 
 #. ts-context uninstaller
 #: main.cpp:319
 msgid "Must run as root"
-msgstr "Yönetici olarak çalıştırmalısın"
+msgstr "Yönetici olarak çalıştırılmalıdır"
 
 #. ts-context uninstaller
 #: main.cpp:321
@@ -1309,11 +1667,13 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
+"%2 yönetici olarak çalıştırılmalıdır. Kapatın ve <br/><b>sudo %1</b><br/>ya "
+"da<br/><b>su - -c '%1'</b><br/>kullanarak tekrar çalıştırın."
 
 #. ts-context uninstaller
 #: main.cpp:353
 msgid "%1 Uninstaller"
-msgstr ""
+msgstr "%1 Kaldırıcı"
 
 #. ts-context uninstaller
 #: main.cpp:354

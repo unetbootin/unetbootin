@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-24 00:10-0800\n"
-"PO-Revision-Date: 2012-04-29 03:13+0000\n"
-"Last-Translator: luyikei <luyikei@live.jp>\n"
+"POT-Creation-Date: 2013-06-06 02:10-0400\n"
+"PO-Revision-Date: 2013-08-20 12:31+0000\n"
+"Last-Translator: OKANO Takayoshi <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2014-04-21 06:44+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "X-Language: ja_JP\n"
 
 #. ts-context QObject
@@ -19,103 +19,103 @@ msgid "LeftToRight"
 msgstr "左から右へ"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
-#: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4230
+#: unetbootin.cpp:210 unetbootin.cpp:308 unetbootin.cpp:309 unetbootin.cpp:376
+#: unetbootin.cpp:543 unetbootin.cpp:3410 unetbootin.cpp:3423
+#: unetbootin.cpp:3605 unetbootin.cpp:4231
 msgid "Hard Disk"
 msgstr "ハードディスク"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:211 unetbootin.cpp:304 unetbootin.cpp:305 unetbootin.cpp:377
-#: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
-#: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
-#: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
+#: unetbootin.cpp:212 unetbootin.cpp:305 unetbootin.cpp:306 unetbootin.cpp:378
+#: unetbootin.cpp:547 unetbootin.cpp:713 unetbootin.cpp:733 unetbootin.cpp:987
+#: unetbootin.cpp:1562 unetbootin.cpp:1646 unetbootin.cpp:2575
+#: unetbootin.cpp:2618 unetbootin.cpp:3414 unetbootin.cpp:3440
+#: unetbootin.cpp:3609 unetbootin.cpp:3933 unetbootin.cpp:4235
 msgid "USB Drive"
 msgstr "USB ドライブ"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:213 unetbootin.cpp:230 unetbootin.cpp:231 unetbootin.cpp:344
+#: unetbootin.cpp:661 unetbootin.cpp:664 unetbootin.cpp:665 unetbootin.cpp:3499
 msgid "ISO"
 msgstr "ISO"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:214 unetbootin.cpp:226 unetbootin.cpp:227 unetbootin.cpp:349
+#: unetbootin.cpp:661 unetbootin.cpp:669 unetbootin.cpp:670 unetbootin.cpp:3491
 msgid "Floppy"
 msgstr "フロッピー"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
-#: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
+#: unetbootin.cpp:247 unetbootin.cpp:253 unetbootin.cpp:257 unetbootin.cpp:261
+#: unetbootin.cpp:265 unetbootin.cpp:271 unetbootin.cpp:299
 msgid "either"
 msgstr "一方の"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:277
+#: unetbootin.cpp:278
 msgid "LiveUSB persistence"
 msgstr "LiveUSBの永続性"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:292
+#: unetbootin.cpp:293
 msgid "FAT32-formatted USB drive"
 msgstr "FAT32形式のUSBドライブ"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:296
+#: unetbootin.cpp:297
 msgid "EXT2-formatted USB drive"
 msgstr "EXT2形式のUSBドライブ"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "Open Disk Image File"
 msgstr "ディスクのイメージファイルを開く"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "All Files"
 msgstr "すべてのファイル"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
+#: unetbootin.cpp:679 unetbootin.cpp:687 unetbootin.cpp:695
 msgid "All Files (*)"
 msgstr "すべてのファイル (*)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678
+#: unetbootin.cpp:679
 msgid "Open Kernel File"
 msgstr "カーネルファイルを開く"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:686
+#: unetbootin.cpp:687
 msgid "Open Initrd File"
 msgstr "Initrdファイルを開く"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:695
 msgid "Open Bootloader Config File"
 msgstr "ブートローダーの設定ファイルを開く"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:716
+#: unetbootin.cpp:717
 msgid "Insert a USB flash drive"
 msgstr "USBメモリーを挿入してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:717
+#: unetbootin.cpp:718
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr "USBメモリーが見つかりません。もし既に挿入しているなら、FAT32形式にフォーマットし直してみてください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:736
+#: unetbootin.cpp:737
 msgid "%1 not mounted"
 msgstr "マウントされていない %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:737
+#: unetbootin.cpp:738
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
@@ -124,72 +124,72 @@ msgstr ""
 "います。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:752
+#: unetbootin.cpp:753
 msgid "Select a distro"
 msgstr "ディストリビューションを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:753
+#: unetbootin.cpp:754
 msgid "You must select a distribution to load."
 msgstr "読み込むディストリビューションを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:767
+#: unetbootin.cpp:768
 msgid "Select a disk image file"
 msgstr "ディスクのイメージファイルを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:768
+#: unetbootin.cpp:769
 msgid "You must select a disk image file to load."
 msgstr "読み込むディスクのイメージファイルを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:782
+#: unetbootin.cpp:783
 msgid "Select a kernel and/or initrd file"
 msgstr "カーネルファイルと/もしくはInitrdファイルを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:783
+#: unetbootin.cpp:784
 msgid "You must select a kernel and/or initrd file to load."
 msgstr "読み込むカーネルファイルと/もしくはInitrdファイルを選択してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:797
+#: unetbootin.cpp:798
 msgid "Diskimage file not found"
 msgstr "ディスクのイメージファイルが見つかりません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:798
+#: unetbootin.cpp:799
 msgid "The specified diskimage file %1 does not exist."
 msgstr "指定されたディスクイメージ %1 が存在しません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:812
+#: unetbootin.cpp:813
 msgid "Kernel file not found"
 msgstr "カーネルファイルが見つかりません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:813
+#: unetbootin.cpp:814
 msgid "The specified kernel file %1 does not exist."
 msgstr "指定されたカーネルファイル %1 が存在しません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:827
+#: unetbootin.cpp:828
 msgid "Initrd file not found"
 msgstr "Initrdファイルが見つかりません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:828
+#: unetbootin.cpp:829
 msgid "The specified initrd file %1 does not exist."
 msgstr "指定されたInitrdファイル %1 が存在しません。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:932
+#: unetbootin.cpp:933
 msgid "%1 exists, overwrite?"
 msgstr "%1 は存在します。上書きしますか？"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:933
+#: unetbootin.cpp:934
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
@@ -200,12 +200,12 @@ msgstr ""
 "ければ、'Yes to All'を押してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:959
+#: unetbootin.cpp:960
 msgid "%1 is out of space, abort installation?"
 msgstr "%1 のためのスペースがありません。インストールを中止しますか？"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:960
+#: unetbootin.cpp:961
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
@@ -216,107 +216,107 @@ msgstr ""
 "No to All'を押すと、スペース不足のエラーを全て無視します。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1054
+#: unetbootin.cpp:1055
 msgid "Locating kernel file in %1"
 msgstr "%1中にカーネルイメージを配置中"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1105
+#: unetbootin.cpp:1106
 msgid "Copying kernel file from %1"
 msgstr "%1からカーネルファイルをコピーしています"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1111
+#: unetbootin.cpp:1112
 msgid "Locating initrd file in %1"
 msgstr "%1中にinitrdファイルを配置中"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1152
+#: unetbootin.cpp:1153
 msgid "Copying initrd file from %1"
 msgstr "initrdファイルを%1からコピーしています"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1158 unetbootin.cpp:1238
+#: unetbootin.cpp:1159 unetbootin.cpp:1239
 msgid "Extracting bootloader configuration"
 msgstr "ブートローダーの設定を抽出しています"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1467 unetbootin.cpp:1493
+#: unetbootin.cpp:1468 unetbootin.cpp:1494
 msgid "<b>Extracting compressed iso:</b> %1"
 msgstr "<b>圧縮されたISOファイルを解凍:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1744
+#: unetbootin.cpp:1745
 msgid "Copying file, please wait..."
 msgstr "ファイルをコピーしています お待ちください..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1745 unetbootin.cpp:2559
+#: unetbootin.cpp:1746 unetbootin.cpp:2560
 msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
 msgstr "<b>ソース:</b> <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1746 unetbootin.cpp:2560
+#: unetbootin.cpp:1747 unetbootin.cpp:2561
 msgid "<b>Destination:</b> %1"
 msgstr "<b>解凍先:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1747
+#: unetbootin.cpp:1748
 msgid "<b>Copied:</b> 0 bytes"
 msgstr "<b>コピー完了:</b> 0 バイト"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1785
+#: unetbootin.cpp:1786
 msgid "Extracting files, please wait..."
 msgstr "ファイルを解凍しています、しばらくお待ちください..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1786
+#: unetbootin.cpp:1787
 msgid "<b>Archive:</b> %1"
 msgstr "<b>解凍元:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1787
+#: unetbootin.cpp:1788
 msgid "<b>Source:</b>"
 msgstr "<b>ソース:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1788
+#: unetbootin.cpp:1789
 msgid "<b>Destination:</b>"
 msgstr "<b>解凍先:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1789
+#: unetbootin.cpp:1790
 msgid "<b>Extracted:</b> 0 of %1 files"
 msgstr "<b>解凍済み:</b> 0 of %1 ファイル"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1792
+#: unetbootin.cpp:1793
 msgid "<b>Source:</b> %1 (%2)"
 msgstr "<b>ソース:</b> %1 (%2)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1793
+#: unetbootin.cpp:1794
 msgid "<b>Destination:</b> %1%2"
 msgstr "<b>解凍先:</b> %1%2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1794
+#: unetbootin.cpp:1795
 msgid "<b>Extracted:</b> %1 of %2 files"
 msgstr "<b>解凍済み:</b> %1 of %2 files"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2558
+#: unetbootin.cpp:2559
 msgid "Downloading files, please wait..."
 msgstr "ファイルをダウンロードしています、しばらくお待ちください..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2561
+#: unetbootin.cpp:2562
 msgid "<b>Downloaded:</b> 0 bytes"
 msgstr "<b>ダウンロード済:</b> 0 バイト"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2685
+#: unetbootin.cpp:2686
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
@@ -324,32 +324,32 @@ msgstr ""
 "%3から%1 %2のダウンロードに失敗しました。直接ウェブサイトからISOファイルをダウンロードよるディスクイメージのオプションを利用してください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2708 unetbootin.cpp:2723
+#: unetbootin.cpp:2709 unetbootin.cpp:2724
 msgid "<b>Downloaded:</b> %1 of %2"
 msgstr "<b>ダウンロード済:</b>%2中の%1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2738
+#: unetbootin.cpp:2739
 msgid "<b>Copied:</b> %1 of %2"
 msgstr "<b>コピー完了:</b> %2中%1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2829
+#: unetbootin.cpp:2830
 msgid "Searching in <a href=\"%1\">%1</a>"
 msgstr "<a href=\"%1\">%1</a> を検索中"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2833
+#: unetbootin.cpp:2834
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
 msgstr "<a href=\"%3\">%3</a> で %1/%2 がマッチ"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3106
+#: unetbootin.cpp:3107
 msgid "%1 not found"
 msgstr "%1 が見つかりません"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3107
+#: unetbootin.cpp:3108
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
@@ -358,57 +358,57 @@ msgstr ""
 "\"%3\"パッケージか、同等のパッケージをインストールしてください。"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3390
+#: unetbootin.cpp:3391
 msgid "(Current)"
 msgstr "作業中"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3391
+#: unetbootin.cpp:3392
 msgid "(Done)"
 msgstr "（終了)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3683
+#: unetbootin.cpp:3684
 msgid "Configuring grub2 on %1"
 msgstr "%1のgrub2を設定"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3695
+#: unetbootin.cpp:3696
 msgid "Configuring grldr on %1"
 msgstr "%1のgrldrを設定"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3723
+#: unetbootin.cpp:3724
 msgid "Configuring grub on %1"
 msgstr "%1のgrubを設定"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3976
+#: unetbootin.cpp:3977
 msgid "Installing syslinux to %1"
 msgstr "%1にsyslinuxをインストール"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4011
+#: unetbootin.cpp:4012
 msgid "Installing extlinux to %1"
 msgstr "%1にextlinuxをインストール"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4182
+#: unetbootin.cpp:4183
 msgid "Syncing filesystems"
 msgstr "ファイルシステムを同期"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4187
+#: unetbootin.cpp:4188
 msgid "Setting up persistence"
 msgstr "永続性を設定する"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4232
+#: unetbootin.cpp:4233
 msgid "After rebooting, select the "
 msgstr "再起動後に選んでください "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4237
+#: unetbootin.cpp:4238
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
@@ -417,14 +417,14 @@ msgstr ""
 "今再起動しますか?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4240
+#: unetbootin.cpp:4241
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr "作成されたUSBデバイスはMacではブートしません。PCに差し込み、BIOSブートメニュー中のUSBオプションを選んでください。%1"
 
 #. ts-context unetbootin
-#: distrolst.cpp:43
+#: distrolst.cpp:44
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
@@ -437,7 +437,7 @@ msgstr ""
 "age.ubuntu.comから入手できます"
 
 #. ts-context unetbootin
-#: distrolst.cpp:257
+#: distrolst.cpp:258
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -453,7 +453,7 @@ msgstr ""
 "2\""
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:315
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -466,7 +466,7 @@ msgstr ""
 "bian.orgから入手できます"
 
 #. ts-context unetbootin
-#: distrolst.cpp:407
+#: distrolst.cpp:408
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -482,7 +482,7 @@ msgstr ""
 "dora/linux/development/%1/os\""
 
 #. ts-context unetbootin
-#: distrolst.cpp:413
+#: distrolst.cpp:414
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -495,10 +495,10 @@ msgstr ""
 "*重要* 再起動後、エラーメッセージを無視して、CDのプロンプトが表示されたら戻って選択し、メインメニューに移動し\"Start "
 "Installation\"オプションを選択し、\"Network\"でソースを選択し、プロトコルとして\"HTTP\"を選択し、サーバー用のプロンプトが"
 "表示されたら、\"download.fedora.redhat.com\"と入力し、フォルダを尋ねられたとき次のように入力してください。\"/pub/fe"
-"dora/linux/development/%2/os\""
+"dora/linux/releases/%1/Fedora/%2/os\""
 
 #. ts-context unetbootin
-#: distrolst.cpp:785
+#: distrolst.cpp:786
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -514,7 +514,7 @@ msgstr ""
 "o/oss\""
 
 #. ts-context unetbootin
-#: distrolst.cpp:791
+#: distrolst.cpp:792
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -530,17 +530,17 @@ msgstr ""
 "n/%1/repo/oss\""
 
 #. ts-context unetbootin
-#: distrover.cpp:26 unetbootin.cpp:748
+#: distrover.cpp:27 unetbootin.cpp:749
 msgid "== Select Distribution =="
 msgstr "== ディストリビューションを選択 =="
 
 #. ts-context unetbootin
-#: distrover.cpp:26 distrover.cpp:30
+#: distrover.cpp:27 distrover.cpp:31
 msgid "== Select Version =="
 msgstr "== バージョンを選択 =="
 
 #. ts-context unetbootin
-#: distrover.cpp:27
+#: distrover.cpp:28
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -554,7 +554,7 @@ msgstr ""
 "または手動でロードするファイルを指定。</li><li>インストールのタイプを選択し、OKボタンを押すとインストールが始まります。</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:32
+#: distrover.cpp:33
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -568,7 +568,7 @@ msgstr ""
 "デフォルトのバージョンは、インターネット(FTP)経由でインストールできます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:37
+#: distrover.cpp:38
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -582,7 +582,7 @@ msgstr ""
 "BackTrackはliveモードで起動、そして動作します。これを使うのにインストールは必要ありません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:42
+#: distrover.cpp:43
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -597,7 +597,7 @@ msgstr ""
 "デフォルトのバージョンはインターネット(FTP)経由で、またはダウンロードしておいたISOファイルを使い、オフラインでインストールの両方が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:47
+#: distrover.cpp:48
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -611,7 +611,7 @@ msgstr ""
 "CloneZilla はliveモードで起動・実行されます。 使うのにインストールは必要ありません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:52
+#: distrover.cpp:53
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -627,7 +627,7 @@ msgstr ""
 "Liveバージョンはシステム全体をRAMに入れて、メモリから起動します。なのでインストールはオプションで、必要ありません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:57
+#: distrover.cpp:58
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -646,7 +646,7 @@ msgstr ""
 "トールISOファイルを置いてください。"
 
 #. ts-context unetbootin
-#: distrover.cpp:63
+#: distrover.cpp:64
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -661,7 +661,7 @@ msgstr ""
 "LiveバージョンではLiveモードで起動でき、オプションでインストーラーを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:68
+#: distrover.cpp:69
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -677,7 +677,7 @@ msgstr ""
 "このLiveバージョンはLiveモードで起動でき、マルウェアのスキャンを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:73
+#: distrover.cpp:74
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -691,7 +691,7 @@ msgstr ""
 "/b> このLiveバージョンはLiveモードで起動でき、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:78
+#: distrover.cpp:79
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -710,7 +710,7 @@ msgstr ""
 "、事前にダウンロードしたインストールISOを使ってオフラインでインストールの両方が可能です。"
 
 #. ts-context unetbootin
-#: distrover.cpp:83
+#: distrover.cpp:84
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -727,7 +727,7 @@ msgstr ""
 "方が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:88
+#: distrover.cpp:89
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -743,7 +743,7 @@ msgstr ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">マニュアル</a>を見てください。"
 
 #. ts-context unetbootin
-#: distrover.cpp:93
+#: distrover.cpp:94
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -761,7 +761,7 @@ msgstr ""
 "るために使います。 組み込みのバージョンはハードディスクにインストールすることができます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:98
+#: distrover.cpp:99
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -777,7 +777,7 @@ msgstr ""
 "が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:108
+#: distrover.cpp:109
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
@@ -788,7 +788,7 @@ msgstr ""
 "XboXは組み込み向けのLinuxベースのマルチメディアプレーヤーシステムです。<br/>"
 
 #. ts-context unetbootin
-#: distrover.cpp:121
+#: distrover.cpp:122
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -803,7 +803,7 @@ msgstr ""
 "インストールノート:</b> このLiveバージョンはLiveモードで起動でき、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:126
+#: distrover.cpp:127
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -818,7 +818,7 @@ msgstr ""
 "Gujinはシンプルにブートし使用できます。使用する際インストールを必要としません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:131
+#: distrover.cpp:132
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -834,7 +834,7 @@ msgstr ""
 "このLiveバージョンはLiveモードで起動でき、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:136
+#: distrover.cpp:137
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -856,7 +856,7 @@ msgstr ""
 "用して、ハードドライブまたはUSBドライブのルートディレクトリに別のインストールisoファイルを配置してください。"
 
 #. ts-context unetbootin
-#: distrover.cpp:141
+#: distrover.cpp:142
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
@@ -872,7 +872,7 @@ msgstr ""
 "1.0.2010は、ローリングリリースで利用できる最新の1.0です。（モジュールとカーネルを更新するliveuptateを実行します）"
 
 #. ts-context unetbootin
-#: distrover.cpp:146
+#: distrover.cpp:147
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -887,7 +887,7 @@ msgstr ""
 "r/><b>インストールノート:</b> このLiveバージョンはLiveモードで起動でき、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:152
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
@@ -907,7 +907,7 @@ msgstr ""
 "が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:157
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -927,7 +927,7 @@ msgstr ""
 "href=\"http://www.mandriva.com/en/download\">\"Free\" iso image files</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:161
+#: distrover.cpp:162
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -943,7 +943,7 @@ msgstr ""
 "インストールノート:</b> MEPISはLiveモードで起動をサポートしており、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:167
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
@@ -958,7 +958,7 @@ msgstr ""
 "インストールノート:</b> NetbootCDはliveモードで起動し使用出来ます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:177
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -975,7 +975,7 @@ msgstr ""
 "かつ容易にカスタマイズおよび拡張することができます。<br/><b>インストールノート:</b> NimbleXはliveモードで起動します。"
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:182
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
@@ -985,14 +985,14 @@ msgid ""
 "installation is required to use it."
 msgstr ""
 "<b>ホームページ:</b> <a "
-"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://frugalware.org</a><br/><b"
-">概要:</b> The Offline NT Password and Registry "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>概要:</b> The Offline NT Password and Registry "
 "Editorは、Windowsのパスワードをリセットして、Windows "
 "2000からVistaまでのWindowsでレジストリを編集することができます。<br/><b>インストールノート:</b> "
 "NTPasswdはliveモードで起動し使用できます。インストールは必要としません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:187
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -1008,7 +1008,7 @@ msgstr ""
 "が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:191
+#: distrover.cpp:192
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -1022,7 +1022,7 @@ msgstr ""
 "Ophcrackはliveモードで起動し使用できます。インストールは必要としません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:197
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -1040,7 +1040,7 @@ msgstr ""
 "が利用できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:207
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1055,7 +1055,7 @@ msgstr ""
 "Liveバージョンではシステム全体をRAMにロードし、メモリーからブートします。なのでインストールはオプションで必要ありません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:211
+#: distrover.cpp:212
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1074,7 +1074,7 @@ msgstr ""
 "GBのUSBドライブを必要とする一方LiteMCE版は2 GBです。"
 
 #. ts-context unetbootin
-#: distrover.cpp:216
+#: distrover.cpp:217
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
@@ -1093,7 +1093,7 @@ msgstr ""
 "は<b>live</b>です。"
 
 #. ts-context unetbootin
-#: distrover.cpp:228
+#: distrover.cpp:229
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1107,7 +1107,7 @@ msgstr ""
 "なージョンはライブモードでのブートが出来、インストーラはそこから起動することが可能です。"
 
 #. ts-context unetbootin
-#: distrover.cpp:233
+#: distrover.cpp:234
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1118,11 +1118,11 @@ msgid ""
 msgstr ""
 "<b>ホームページ:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>概要:</b"
-"> FSliTazは、軽量、デスクトップ指向のマイクロディストリビューションです。<br/><b>インストールノート:</b> "
+"> SliTazは、軽量、デスクトップ指向のマイクロディストリビューションです。<br/><b>インストールノート:</b> "
 "ライブバージョンはRAMとメモリから起動したシステム全体をロードするので、インストールは必須のオプションではありません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:238
+#: distrover.cpp:239
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1138,7 +1138,7 @@ msgstr ""
 "Smart Boot Managerはliveモードで起動し使用できます。インストールは必要としません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:243 distrovercust.cpp:12
+#: distrover.cpp:244 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1153,7 +1153,7 @@ msgstr ""
 "Super Grub Diskはliveモードで起動し使用できます。インストールは必要としません。"
 
 #. ts-context unetbootin
-#: distrover.cpp:248
+#: distrover.cpp:249
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1170,7 +1170,7 @@ msgstr ""
 "このLiveバージョンはLiveモードで起動でき、オプションでインストールを開始できます。"
 
 #. ts-context unetbootin
-#: distrover.cpp:258
+#: distrover.cpp:259
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1192,7 +1192,7 @@ msgstr ""
 "オプションを使用して、ハードドライブまたはUSBドライブのルートディレクトリに別のインストールisoファイルを配置してください。"
 
 #. ts-context unetbootin
-#: distrover.cpp:263
+#: distrover.cpp:264
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1206,7 +1206,7 @@ msgstr ""
 "トールノート:</b> ライブバージョンは、メモリからRAMとブートに、システム全体をロードします。"
 
 #. ts-context unetbootin
-#: distrover.cpp:268
+#: distrover.cpp:269
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1228,7 +1228,7 @@ msgstr ""
 "用して、ハードドライブまたはUSBドライブのルートディレクトリに別のインストールisoファイルを配置してください。"
 
 #. ts-context unetbootin
-#: distrover.cpp:273
+#: distrover.cpp:274
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1299,7 +1299,7 @@ msgid ""
 msgstr ""
 "<img src=\":/kiwi_logo_ro.png\" /><br/><b>ホームページ:</b> <a "
 "href=\"http://www.kiwilinux.org/\">http://www.kiwilinux.org</a><br/><b>概要:</b"
-"> Kixi "
+"> Kiwi "
 "Linuxは主にルーマニア語、ハンガリー語と英語を話すユーザーのために作らたUbuntuの派生である。<br/><b>インストールノート:</b> "
 "インストールメディアが、インストールを続行する前に空でフォーマットされていることを確認します。"
 

@@ -7,431 +7,435 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unetbootin\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-12-24 00:10-0800\n"
-"PO-Revision-Date: 2010-12-21 20:15+0000\n"
-"Last-Translator: Kosava <Unknown>\n"
+"POT-Creation-Date: 2013-06-06 02:10-0400\n"
+"PO-Revision-Date: 2013-08-21 09:34+0000\n"
+"Last-Translator: Иван Старчевић <ivanstar61@gmail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-06 06:04+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2014-04-21 06:44+0000\n"
+"X-Generator: Launchpad (build 16985)\n"
 "X-Language: sr_CS\n"
 
 #. ts-context QObject
 #: main.cpp:266
 msgid "LeftToRight"
-msgstr "SaLevaNaDesno"
+msgstr "С лева на десно"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:209 unetbootin.cpp:307 unetbootin.cpp:308 unetbootin.cpp:375
-#: unetbootin.cpp:542 unetbootin.cpp:3409 unetbootin.cpp:3422
-#: unetbootin.cpp:3604 unetbootin.cpp:4230
+#: unetbootin.cpp:210 unetbootin.cpp:308 unetbootin.cpp:309 unetbootin.cpp:376
+#: unetbootin.cpp:543 unetbootin.cpp:3410 unetbootin.cpp:3423
+#: unetbootin.cpp:3605 unetbootin.cpp:4231
 msgid "Hard Disk"
-msgstr "Tvrdi disk"
+msgstr "Чврсти диск"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:211 unetbootin.cpp:304 unetbootin.cpp:305 unetbootin.cpp:377
-#: unetbootin.cpp:546 unetbootin.cpp:712 unetbootin.cpp:732 unetbootin.cpp:986
-#: unetbootin.cpp:1561 unetbootin.cpp:1645 unetbootin.cpp:2574
-#: unetbootin.cpp:2617 unetbootin.cpp:3413 unetbootin.cpp:3439
-#: unetbootin.cpp:3608 unetbootin.cpp:3932 unetbootin.cpp:4234
+#: unetbootin.cpp:212 unetbootin.cpp:305 unetbootin.cpp:306 unetbootin.cpp:378
+#: unetbootin.cpp:547 unetbootin.cpp:713 unetbootin.cpp:733 unetbootin.cpp:987
+#: unetbootin.cpp:1562 unetbootin.cpp:1646 unetbootin.cpp:2575
+#: unetbootin.cpp:2618 unetbootin.cpp:3414 unetbootin.cpp:3440
+#: unetbootin.cpp:3609 unetbootin.cpp:3933 unetbootin.cpp:4235
 msgid "USB Drive"
-msgstr "USB disk"
+msgstr "УСБ диск"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:212 unetbootin.cpp:229 unetbootin.cpp:230 unetbootin.cpp:343
-#: unetbootin.cpp:660 unetbootin.cpp:663 unetbootin.cpp:664 unetbootin.cpp:3498
+#: unetbootin.cpp:213 unetbootin.cpp:230 unetbootin.cpp:231 unetbootin.cpp:344
+#: unetbootin.cpp:661 unetbootin.cpp:664 unetbootin.cpp:665 unetbootin.cpp:3499
 msgid "ISO"
-msgstr "ISO"
+msgstr "ИСО"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:213 unetbootin.cpp:225 unetbootin.cpp:226 unetbootin.cpp:348
-#: unetbootin.cpp:660 unetbootin.cpp:668 unetbootin.cpp:669 unetbootin.cpp:3490
+#: unetbootin.cpp:214 unetbootin.cpp:226 unetbootin.cpp:227 unetbootin.cpp:349
+#: unetbootin.cpp:661 unetbootin.cpp:669 unetbootin.cpp:670 unetbootin.cpp:3491
 msgid "Floppy"
-msgstr "Disketna jedinica"
+msgstr "Дискета"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:246 unetbootin.cpp:252 unetbootin.cpp:256 unetbootin.cpp:260
-#: unetbootin.cpp:264 unetbootin.cpp:270 unetbootin.cpp:298
+#: unetbootin.cpp:247 unetbootin.cpp:253 unetbootin.cpp:257 unetbootin.cpp:261
+#: unetbootin.cpp:265 unetbootin.cpp:271 unetbootin.cpp:299
 msgid "either"
-msgstr "ili"
+msgstr "или"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:277
+#: unetbootin.cpp:278
 msgid "LiveUSB persistence"
-msgstr ""
+msgstr "Сталност живог УСБ-а"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:292
+#: unetbootin.cpp:293
 msgid "FAT32-formatted USB drive"
-msgstr ""
+msgstr "УСБ диск форматиран у ФАТ-32"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:296
+#: unetbootin.cpp:297
 msgid "EXT2-formatted USB drive"
-msgstr ""
+msgstr "УСБ диск форматиран у ЕКСТ2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "Open Disk Image File"
-msgstr "Učitaj fajl sa slikom diska"
+msgstr "Отвори датотеку слике диска"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:660
+#: unetbootin.cpp:661
 msgid "All Files"
-msgstr "Сви фајлови"
+msgstr "Све датотеке"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678 unetbootin.cpp:686 unetbootin.cpp:694
+#: unetbootin.cpp:679 unetbootin.cpp:687 unetbootin.cpp:695
 msgid "All Files (*)"
-msgstr "Svi fajlovi (*)"
+msgstr "Све датотеке (*)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:678
+#: unetbootin.cpp:679
 msgid "Open Kernel File"
-msgstr "Otvori fajl Kernel"
+msgstr "Отвори датотеку језгра"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:686
+#: unetbootin.cpp:687
 msgid "Open Initrd File"
-msgstr "Otvori fajl Initrd"
+msgstr "Отвори датотеку инитрд-а"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:694
+#: unetbootin.cpp:695
 msgid "Open Bootloader Config File"
-msgstr "Otvoriti konfiguracioni fajl Bootloadera"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:716
-msgid "Insert a USB flash drive"
-msgstr "Umetnite USB flеš disk"
+msgstr "Отвори датотеку подешавања подизача система"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:717
+msgid "Insert a USB flash drive"
+msgstr "Уметните УСБ диск"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:718
 msgid ""
 "No USB flash drives were found. If you have already inserted a USB drive, "
 "try reformatting it as FAT32."
 msgstr ""
-"Fleš disk nije pronađen. Ako ste ga već umetnuli, probajte da ga ponovo "
-"formatizujete kao FAT32."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:736
-msgid "%1 not mounted"
-msgstr "%1 nije montiran"
+"Нисам пронашао УСБ дискове. Ако сте већ уметнули УСБ диск, покушајте да га "
+"преформатирате у ФАТ32."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:737
+msgid "%1 not mounted"
+msgstr "%1 није прикачен"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:738
 msgid ""
 "You must first mount the USB drive %1 to a mountpoint. Most distributions "
 "will do this automatically after you remove and reinsert the USB drive."
 msgstr ""
-"Prvo morate montirati USB disk %1 na tačku priključenja.Većina distribucija "
-"će to učiniti automatski nakon što izvadite i ponovno umetnete USB disk."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:752
-msgid "Select a distro"
-msgstr "Odaberite distribuciju"
+"Прво морате монтирати %1 УСБ уређај у тачки монтирања. Већина дистрибуција "
+"ће то учинити аутоматски након што уклоните и поновно уметнете УСБ уређај."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:753
-msgid "You must select a distribution to load."
-msgstr "Morate odabrati distribuciju za učitavanje."
+msgid "Select a distro"
+msgstr "Изаберите дистрибуцију"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:767
-msgid "Select a disk image file"
-msgstr "Odaberite fajl slike diska"
+#: unetbootin.cpp:754
+msgid "You must select a distribution to load."
+msgstr "Морате одабрати дистрибуцију за учитате."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:768
-msgid "You must select a disk image file to load."
-msgstr "Morate odabrati sliku diska za učitavanje."
+msgid "Select a disk image file"
+msgstr "Одабери датотеку слике диска"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:782
-msgid "Select a kernel and/or initrd file"
-msgstr "Odaberite kernel i/ili initrd fajl"
+#: unetbootin.cpp:769
+msgid "You must select a disk image file to load."
+msgstr "Морате одабрати слику диска за учитавање."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:783
-msgid "You must select a kernel and/or initrd file to load."
-msgstr "Morate odabrati kernel i/ili initrd fajl za učitavanje."
+msgid "Select a kernel and/or initrd file"
+msgstr "Одабери језгро и/или initrd датотеку"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:797
-msgid "Diskimage file not found"
-msgstr "Slika diska nije pronađena"
+#: unetbootin.cpp:784
+msgid "You must select a kernel and/or initrd file to load."
+msgstr "Морате да изаберете језгро и / или initrd  датотеку да се учита."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:798
-msgid "The specified diskimage file %1 does not exist."
-msgstr "Navedeni fajl slike diska %1 ne postoji."
+msgid "Diskimage file not found"
+msgstr "Датотека слике диска није пронађена"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:812
-msgid "Kernel file not found"
-msgstr "Kernel fajl nije pronađen"
+#: unetbootin.cpp:799
+msgid "The specified diskimage file %1 does not exist."
+msgstr "Наведена %1 датотека слике диска не постоји."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:813
-msgid "The specified kernel file %1 does not exist."
-msgstr "Navedeni kernel fajl %1 ne postoji."
+msgid "Kernel file not found"
+msgstr "Датотека језгра није пронађена"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:827
-msgid "Initrd file not found"
-msgstr "Initrd fajl nije pronađen"
+#: unetbootin.cpp:814
+msgid "The specified kernel file %1 does not exist."
+msgstr "Наведена %1 датотека језгра не постоји."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:828
-msgid "The specified initrd file %1 does not exist."
-msgstr "Navedeni initrd fajl %1 ne postoji."
+msgid "Initrd file not found"
+msgstr "Initrd датотека није пронађена"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:932
-msgid "%1 exists, overwrite?"
-msgstr "%1 postoji, da ga prebrišem?"
+#: unetbootin.cpp:829
+msgid "The specified initrd file %1 does not exist."
+msgstr "Наведена %1 initrd датотека не постоји."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:933
+msgid "%1 exists, overwrite?"
+msgstr "%1 постоји, замени?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:934
 msgid ""
 "The file %1 already exists. Press 'Yes to All' to overwrite it and not be "
 "prompted again, 'Yes' to overwrite files on an individual basis, and 'No' to "
 "retain your existing version. If in doubt, press 'Yes to All'."
 msgstr ""
-"Fajl %1 već postoji. Odaberite 'Da za Sve' da bi prebrisali i sprečili "
-"naredne upite, 'Da' da bi prebrisali pojedinačno, i 'Ne' da bi zadržali vaše "
-"postojeće verzije. Ako ste u nedoumici, odaberite 'Da za Sve'."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:959
-msgid "%1 is out of space, abort installation?"
-msgstr "nema više mjesta za %1, prekinuti instalaciju?"
+"Датотека %1 већ постоји. Одаберите 'Да за све' за замену и без будућих "
+"упита, 'Да' за замену датотека на појединачној основи, и 'Не' за задржавање "
+"ваше постојеће варијанте. Ако сте у недоумици, одаберите 'Да за све'."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:960
+msgid "%1 is out of space, abort installation?"
+msgstr "%1 је без слободног простора, прекидате инсталацију?"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:961
 msgid ""
 "The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to "
 "ignore this error and attempt to continue installation, and 'No to All' to "
 "ignore all out-of-space errors."
 msgstr ""
-"Nema više mesta za direktorijum %1. Odaberite 'Da' za prekid instalacije, "
-"'Ne' za ignoriranje ove greške i pokušaj nastavka instalacije i 'Ne za Sve' "
-"za ignoriranje svih grešaka u vezi nedostatka prostora."
+"%1 директоријуму  је понестало слободног простора. Притисни 'Да' за прекид "
+"инсталације, 'Не' за занемаривање ове грешке и покушај наставак инсталације "
+"и 'Не за све' за занемаривање свих грешака недостатка слободног простора."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1054
+#: unetbootin.cpp:1055
 msgid "Locating kernel file in %1"
-msgstr "Tražim kernel fajl u %1"
+msgstr "Проналажење датотеке језгра у %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1105
+#: unetbootin.cpp:1106
 msgid "Copying kernel file from %1"
-msgstr "Kopiram kernel fajl sa %1"
+msgstr "Копирање датотеке језгра из %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1111
+#: unetbootin.cpp:1112
 msgid "Locating initrd file in %1"
-msgstr "Tražim initrd fajl u %1"
+msgstr "Тражење initrd датотеке у %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1152
+#: unetbootin.cpp:1153
 msgid "Copying initrd file from %1"
-msgstr "Kopiram initrd fajl sa %1"
+msgstr "Копирање initrd датотеке из %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1158 unetbootin.cpp:1238
+#: unetbootin.cpp:1159 unetbootin.cpp:1239
 msgid "Extracting bootloader configuration"
-msgstr "Raspakujem bootloader konfiguraciju"
+msgstr "Подешавање издвајања покретачког програма"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1467 unetbootin.cpp:1493
+#: unetbootin.cpp:1468 unetbootin.cpp:1494
 msgid "<b>Extracting compressed iso:</b> %1"
-msgstr "<b>Raspakujem komprimovani iso:</b> %1"
+msgstr "<b>Издвајање сабијеног ISO-а:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1744
+#: unetbootin.cpp:1745
 msgid "Copying file, please wait..."
-msgstr "Kopiram fajl, molim sačekajte ..."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1745 unetbootin.cpp:2559
-msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
-msgstr "<b>Izvorište:</b> <a href=\"%1\">%1</a>"
+msgstr "Копирање датотеке, сачекајте..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1746 unetbootin.cpp:2560
+msgid "<b>Source:</b> <a href=\"%1\">%1</a>"
+msgstr "<b>Извор:</b> <a href=\"%1\">%1</a>"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1747 unetbootin.cpp:2561
 msgid "<b>Destination:</b> %1"
-msgstr "<b>Odredište:</b> %1"
+msgstr "<b>Одредиште:</b> %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1747
+#: unetbootin.cpp:1748
 msgid "<b>Copied:</b> 0 bytes"
-msgstr "<b>Kopirano:</b> 0 bajtova"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:1785
-msgid "Extracting files, please wait..."
-msgstr "Raspakujem fajlove, molim sačekajte ..."
+msgstr "<b>Умножено је:</b> 0 бајта"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1786
-msgid "<b>Archive:</b> %1"
-msgstr "<b>Arhiva:</b> %1"
+msgid "Extracting files, please wait..."
+msgstr "Распакујем датотеке, молим сачекајте..."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1787
-msgid "<b>Source:</b>"
-msgstr "<b>Izvorište:</b>"
+msgid "<b>Archive:</b> %1"
+msgstr "<b>Архива:</b> %1"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1788
-msgid "<b>Destination:</b>"
-msgstr "<b>Odredište:</b>"
+msgid "<b>Source:</b>"
+msgstr "<b>Извор:</b>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1789
-msgid "<b>Extracted:</b> 0 of %1 files"
-msgstr "<b>Raspakovano:</b> 0 od %1 files"
+msgid "<b>Destination:</b>"
+msgstr "<b>Одредиште:</b>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:1792
-msgid "<b>Source:</b> %1 (%2)"
-msgstr "<b>Izvorište:</b> %1 (%2)"
+#: unetbootin.cpp:1790
+msgid "<b>Extracted:</b> 0 of %1 files"
+msgstr "<b>Распаковано је:</b> 0 од %1 датотеке"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1793
-msgid "<b>Destination:</b> %1%2"
-msgstr "<b>Odredište:</b> %1%2"
+msgid "<b>Source:</b> %1 (%2)"
+msgstr "<b>Извор:</b> %1 (%2)"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:1794
+msgid "<b>Destination:</b> %1%2"
+msgstr "<b>Одредиште:</b> %1%2"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:1795
 msgid "<b>Extracted:</b> %1 of %2 files"
-msgstr "<b>Raspakovano:</b> %1 od %2 fajl(ova)"
+msgstr "<b>Распаковано је:</b> %1 од %2 датотека"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2558
+#: unetbootin.cpp:2559
 msgid "Downloading files, please wait..."
-msgstr "Preuzimam fajlove, molim sačekajte ..."
+msgstr "Преузимам датотеке, молим сачекајте..."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2561
+#: unetbootin.cpp:2562
 msgid "<b>Downloaded:</b> 0 bytes"
-msgstr "<b>Preuzeto:</b> 0 bajtova"
+msgstr "<b>Преузето је:</b> 0 бајта"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2685
+#: unetbootin.cpp:2686
 msgid ""
 "Download of %1 %2 from %3 failed. Please try downloading the ISO file from "
 "the website directly and supply it via the diskimage option."
 msgstr ""
+"Преузимање %1 %2 са %3 није успело. Покушајте преузети ISO датотеку  "
+"директно са веб странице и додајте је путем слике диска избора."
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2708 unetbootin.cpp:2723
+#: unetbootin.cpp:2709 unetbootin.cpp:2724
 msgid "<b>Downloaded:</b> %1 of %2"
-msgstr "<b>Preuzeto:</b> %1 od %2"
+msgstr "<b>Преузето је:</b> %1 од %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2738
+#: unetbootin.cpp:2739
 msgid "<b>Copied:</b> %1 of %2"
-msgstr "<b>Kopirano:</b> %1 od %2"
+msgstr "<b>Умножено је:</b> %1 од %2"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2829
+#: unetbootin.cpp:2830
 msgid "Searching in <a href=\"%1\">%1</a>"
-msgstr "Pretražujem <a href=\"%1\">%1</a>"
+msgstr "Тражим у <a href=\"%1\">%1</a>"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:2833
+#: unetbootin.cpp:2834
 msgid "%1/%2 matches in <a href=\"%3\">%3</a>"
-msgstr "%1/%2 odgovarajućih pronađeno u <a href=\"%3\">%3</a>"
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3106
-msgid "%1 not found"
-msgstr "%1 nije pronađen"
+msgstr "%1/%2 одговарајућих у <a href=\"%3\">%3</a>"
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3107
+msgid "%1 not found"
+msgstr "нисам пронашао %1"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3108
 msgid ""
 "%1 not found. This is required for %2 install mode.\n"
 "Install the \"%3\" package or your distribution's equivalent."
 msgstr ""
-"%1 nije pronađen. Ovo je potrebno za %2 instalacioni mod.\n"
-"Instaliranje paketa \"%3\" ili ekvivalenta vaše distribucije."
-
-#. ts-context unetbootin
-#: unetbootin.cpp:3390
-msgid "(Current)"
-msgstr "(Trenutno)"
+"%1 није пронађен. То је потребно за %2 начин инсталације.\n"
+"Инсталирајте \"%3\" пакет или еквивалент ваше дистрибуције."
 
 #. ts-context unetbootin
 #: unetbootin.cpp:3391
+msgid "(Current)"
+msgstr "(Тренутно)"
+
+#. ts-context unetbootin
+#: unetbootin.cpp:3392
 msgid "(Done)"
-msgstr "(Učinjeno)"
+msgstr "(Урађено)"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3683
+#: unetbootin.cpp:3684
 msgid "Configuring grub2 on %1"
-msgstr "Podešavam grub2 na %1"
+msgstr "Подешавам груб2 на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3695
+#: unetbootin.cpp:3696
 msgid "Configuring grldr on %1"
-msgstr "Podešavam grldr za %1"
+msgstr "Подешавам грлдр на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3723
+#: unetbootin.cpp:3724
 msgid "Configuring grub on %1"
-msgstr "Podešavam grub za %1"
+msgstr "Подешавам груб на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:3976
+#: unetbootin.cpp:3977
 msgid "Installing syslinux to %1"
-msgstr "Instaliram syslinux na %1"
+msgstr "Инсталирам „syslinux“ на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4011
+#: unetbootin.cpp:4012
 msgid "Installing extlinux to %1"
-msgstr "Instaliram extlinux na %1"
+msgstr "Инсталирам „extlinux“ на %1"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4182
+#: unetbootin.cpp:4183
 msgid "Syncing filesystems"
-msgstr "Sinhronizujem sistem fajlova"
+msgstr "Усаглашавам системе датотека"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4187
+#: unetbootin.cpp:4188
 msgid "Setting up persistence"
-msgstr ""
+msgstr "Постављање додатног слободног простора"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4232
+#: unetbootin.cpp:4233
 msgid "After rebooting, select the "
-msgstr "Posle ponovnog učitavanja sistema, odaberite "
+msgstr "Након препокретања, одаберите "
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4237
+#: unetbootin.cpp:4238
 msgid ""
 "After rebooting, select the USB boot option in the BIOS boot menu.%1\n"
 "Reboot now?"
 msgstr ""
-"Posle ponovnog učitavanja sistema, odaberite opciju USB boot u BIOS boot "
-"meniju.%1\n"
-"Sada ponovo pokrenuti sistem?"
+"Након препокретања, одаберите могућност подизања са УСБ-а у BIOS изборнику "
+".%1\n"
+"Препокрени, одмах?"
 
 #. ts-context unetbootin
-#: unetbootin.cpp:4240
+#: unetbootin.cpp:4241
 msgid ""
 "The created USB device will not boot off a Mac. Insert it into a PC, and "
 "select the USB boot option in the BIOS boot menu.%1"
 msgstr ""
+"Направљени УСБ се неће подићи са Mac рачунара. Ставите га у ЛР и одаберите "
+"могућност подизања са УСБ-а у BIOS изборнику подизања.%1"
 
 #. ts-context unetbootin
-#: distrolst.cpp:43
+#: distrolst.cpp:44
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place an Ubuntu alternate (not desktop) "
@@ -439,12 +443,12 @@ msgid ""
 "These can be obtained from cdimage.ubuntu.com"
 msgstr ""
 "\n"
-"*VAŽNO* Pre ponovnog pokretanja sistema, postaviti Ubutnu alternativnu (ne "
-"desktop) instalacioni iso fajl u koreni direktorijum vašeg tvrdog ili USB "
-"diska. Mogu nabaviti sa cdimage.ubuntu.com"
+"*УПОЗОРЕЊЕ* Пре поновног покретања, ставите Ubutnu алтернативну (не радну "
+"површину) инсталацијску ISO датотеку у почетну фасциклу вашег тврдог диска "
+"или УСБ уређаја. Можете их набавити на 'cdimage.ubuntu.com'"
 
 #. ts-context unetbootin
-#: distrolst.cpp:257
+#: distrolst.cpp:258
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -454,15 +458,14 @@ msgid ""
 "'/centos/%1/os/%2' when asked for the folder."
 msgstr ""
 "\n"
-"*VAŽNO* Nakon ponovnog pokretanja sistema, ignorirati bilo kakve poruke o "
-"greškama i odabrati povratak ako se pojavi upit za CD, zatim u glavnom "
-"meniju, odabrati opciju 'Pokrenuti Instalaciju', odaberite 'Mrežu' kao "
-"izvor, odaberite 'HTTP' za protokol, unesite 'mirrors.kernel.org' kada se "
-"pojavi upit za server, i unesite '/centos/%1/os/%2' kada se pojavi upit za "
-"folder."
+"*УПОЗОРЕЊЕ* Пре поновног покретања, занемарите све поруке грешака и "
+"одаберите назад ако се појави упит за ЦД, затим идите у главни изборник, "
+"одаберите могућност 'Покрени инсталацију', одаберите 'Мрежа' као извор, "
+"одаберите 'HTTP' као протокол, унесите 'mirrors.kernel.org' када се појави "
+"одзив послужитеља и унесите '/centos/%1/os/%2' када пита за фасциклу"
 
 #. ts-context unetbootin
-#: distrolst.cpp:314
+#: distrolst.cpp:315
 msgid ""
 "\n"
 "*IMPORTANT* Before rebooting, place a Debian install iso file on the root "
@@ -470,12 +473,12 @@ msgid ""
 "cdimage.debian.org"
 msgstr ""
 "\n"
-"*VAŽNO* Pre ponovnog pokretanja sistema, staviti Debian instalacioni iso "
-"fajl u koreni direktorijum vašeg tvrdog ili USB diska. Mogu se nabaviti sa "
-"cdimage.debian.org"
+"*УПОЗОРЕЊЕ* Пре поновног покретања, ставите Debian инсталацијску ISO "
+"датотеку у почетну фасциклу вашег тврдог диска или УСБ уређаја. Можете их "
+"набавити на cdimage.debian.org"
 
 #. ts-context unetbootin
-#: distrolst.cpp:407
+#: distrolst.cpp:408
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -485,15 +488,15 @@ msgid ""
 "'/pub/fedora/linux/development/%1/os' when asked for the folder."
 msgstr ""
 "\n"
-"*VAŽNO* Nakon ponovnog učitavanja sistema, ignoririsati poruke o greškama i "
-"odabrati povratak ako se pojavi upit za CD, nakon toga u glavnom meniju, "
-"odabrati opciju 'Pokrenuti Instalaciju', odabrati kao izvor 'Mreža', "
-"odbarati za protokol 'HTTP', uneti 'download.fedora.redhat.com', kada se "
-"pojavi upit o serveru unesite '/pub/fedora/linux/development/%1/os' kada se "
-"pojavi upit o direktorijumu."
+"*УПОЗОРЕЊЕ* Пре поновног покретања, занемарите све поруке грешака и "
+"одаберите назад ако се појави упит за ЦД, затим идите у главни изборник, "
+"одаберите могућност 'Покрени инсталацију', одаберите 'Мрежа' као извор, "
+"одаберите 'HTTP' као протокол, унесите 'download.fedora.redhat.com', када се "
+"појави одабир послужитеља и унесите '/pub/fedora/linux/development/%1/os' "
+"када упита за фасциклу."
 
 #. ts-context unetbootin
-#: distrolst.cpp:413
+#: distrolst.cpp:414
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -503,15 +506,15 @@ msgid ""
 "'/pub/fedora/linux/releases/%1/Fedora/%2/os' when asked for the folder."
 msgstr ""
 "\n"
-"*VAŽNO* Nakon ponovnog učitavanja sistema, ignoririsati poruke o greškama i "
-"odabrati povratak ako se pojavi upit za CD, nakon toga  u glavnom meniju, "
-"odabrati opciju 'Pokrenuti Instalaciju', odabrati kao izvor 'Mreža', "
-"odbarati za protokol 'HTTP', uneti  'download.fedora.redhat.com', kada se "
-"pojavi upit o serveru unesite '/pub/fedora/linux/releases/%1/Fedora/%2/os' "
-"kada se pojavi upit o direktorijumu."
+"*УПОЗОРЕЊЕ* Пре поновног покретања, занемарите све поруке грешака и "
+"одаберите назад ако се појави упит за ЦД, затим идите у главни изборник, "
+"одаберите могућност 'Покрени инсталацију', одаберите 'Мрежа' као извор, "
+"одаберите 'HTTP' као протокол, унесите 'download.fedora.redhat.com', када се "
+"појави одабир послужитеља и унесите "
+"'/pub/fedora/linux/releases/%1/Fedora/%2/os' када упита за фасциклу."
 
 #. ts-context unetbootin
-#: distrolst.cpp:785
+#: distrolst.cpp:786
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -521,15 +524,15 @@ msgid ""
 "'/factory/repo/oss' when asked for the folder."
 msgstr ""
 "\n"
-"*VAŽNO* Nakon ponovnog učitavanja sistema,ignoririsati poruke o greškama i "
-"odabrati povratak ako se pojavi upit za CD, nakon toga  u glavnom meniju, "
-"odabrati opciju 'Pokrenuti Instalaciju', odabrati kao izvor 'Mreža', "
-"odbarati za protokol 'HTTP, uneti 'download.opensuse.com', kada se pojavi "
-"upit o serveru unesite '/factory/repo/oss' kada se pojavi upit o "
-"direktorijumu."
+"*УПОЗОРЕЊЕ* Пре поновног покретања, занемарите све поруке грешака и "
+"одаберите назад ако се појави упит за ЦД, затим идите у главни изборник, "
+"одаберите могућност 'Покрени инсталацију', одаберите 'Мрежа' као извор, "
+"одаберите 'HTTP' као протокол, унесите 'download.opensuse.org', када се "
+"појави одабир послужитеља и унесите '/factory/repo/oss' када упита за "
+"фасциклу."
 
 #. ts-context unetbootin
-#: distrolst.cpp:791
+#: distrolst.cpp:792
 msgid ""
 "\n"
 "*IMPORTANT* After rebooting, ignore any error messages and select back if "
@@ -539,25 +542,25 @@ msgid ""
 "'/distribution/%1/repo/oss' when asked for the folder."
 msgstr ""
 "\n"
-"*VAŽNO* Nakon ponovnog učitavanja sistema,ignoririsati poruke o greškama i "
-"odabrati povratak ako se pojavi upit za CD, nakon toga  u glavnom meniju, "
-"odabrati opciju 'Pokrenuti Instalaciju', odabrati kao izvor 'Mreža', "
-"odbarati za protokol 'HTTP, uneti 'download.opensuse.org', kada se pojavi "
-"upit o serveru unesite '/distribution/%1/repo/oss' kada se pojavi upit o "
-"direktorijumu."
+"*УПОЗОРЕЊЕ* Пре поновног покретања, занемарите све поруке грешака и "
+"одаберите назад ако се појави упит за ЦД, затим идите у главни изборник, "
+"одаберите могућност 'Покрени инсталацију', одаберите 'Мрежа' као извор, "
+"одаберите 'HTTP' као протокол, унесите 'download.opensuse.org', када се "
+"појави одабир послужитеља и унесите '/distribution/%1/repo/oss' када упита "
+"за фасциклу."
 
 #. ts-context unetbootin
-#: distrover.cpp:26 unetbootin.cpp:748
+#: distrover.cpp:27 unetbootin.cpp:749
 msgid "== Select Distribution =="
-msgstr "== Odaberite distribuciju =="
+msgstr "== Изабери дистрибуцију =="
 
 #. ts-context unetbootin
-#: distrover.cpp:26 distrover.cpp:30
+#: distrover.cpp:27 distrover.cpp:31
 msgid "== Select Version =="
-msgstr "== Odaberite verziju =="
+msgstr "== Изабери издање =="
 
 #. ts-context unetbootin
-#: distrover.cpp:27
+#: distrover.cpp:28
 msgid ""
 "Welcome to <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
 "the Universal Netboot Installer. Usage:<ol><li>Select a distribution and "
@@ -565,14 +568,14 @@ msgid ""
 "below.</li><li>Select an installation type, and press OK to begin "
 "installing.</li></ol>"
 msgstr ""
-"Dobrodošli u <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
-"the Univerzalni Netboot instoler. Korišćenje:<ol><li>Odabrati distribuciju i "
-"verziju za preuzimanje iz gornje liste, ili ručno odrediti fajlove za "
-"preuzimnaje niže</li><li>Odabrati tip instalacije, i pritisnuti OK za "
-"početak instalacije.</li></ol>"
+"Добродошли у <a href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>, "
+"универзални мрежни покретачки инсталер. Употреба:<ol><li>Одаберите "
+"дистрибуцију и издање за преузимање са спискаа изнад или ручно одаберите "
+"датотеке за учитавање испод</li><li>Одаберите врсту инсталације и притисните "
+"У реду за почетак инсталације.</li></ol>"
 
 #. ts-context unetbootin
-#: distrover.cpp:32
+#: distrover.cpp:33
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Descri"
@@ -580,14 +583,14 @@ msgid ""
 "flexibility.<br/><b>Install Notes:</b> The default version allows for "
 "installation over the internet (FTP)."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Opis:<"
-"/b> Arch Linux je lightweight distribucija optimizovana za brzinu i "
-"fleksibilnost.<br/><b>Instalaciona napomena:</b> Podrazumevana verzija "
-"omogućava instalaciju preko internet-a (FTP)."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.archlinux.org/\">http://www.archlinux.org</a><br/><b>Опис:<"
+"/b> Arch Linux је једноставна дистрибуција прилагођена брзини и "
+"флексибилности.<br/><b>Напомена инсталације:</b> Основно издање омогућује "
+"инсталацију путем интернета (FTP)."
 
 #. ts-context unetbootin
-#: distrover.cpp:37
+#: distrover.cpp:38
 msgid ""
 "<b>Homepage:</b> <a href=\"http://www.backtrack-"
 "linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Description:</b> "
@@ -595,14 +598,14 @@ msgid ""
 "testing.<br/><b>Install Notes:</b> BackTrack is booted and run in live mode; "
 "no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a href=\"http://www.backtrack-"
-"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Opis:</b>  BackTrack "
-"je distribucija sa fokusom na analizu mreže i provjeru mogućnosti "
-"upada.<br/><b>Instalaciona napomena:</b> BackTrack se pokreće i koristi "
-"uživo; za korišćenje nije potrebna instalacija."
+"<b>Почетна страница:</b> <a href=\"http://www.backtrack-"
+"linux.org/\">http://www.backtrack-linux.org/</a><br/><b>Опис:</b> BackTrack "
+"је дистрибуција усресређена на анализу мреже и проверу пропусности "
+"исте.<br/><b>Напомена инсталације:</b> BackTrack се подиже и покреће уживо, "
+"инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:42
+#: distrover.cpp:43
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Description:"
@@ -611,15 +614,14 @@ msgid ""
 "internet (FTP), or offline installation using pre-downloaded installation "
 "ISO files."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Opis:</b>  "
-"CentOS je besplatan Red Hat Enterprise Linux klon.<br/><b>Instalaciona "
-"napomena:</b> Podrazumevana verzija omogućava instalaciju preko interneta "
-"(FTP), ili ako niste povezani na mrežu instalacijom ranije preuzetih ISO "
-"instalacionih fajlova."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.centos.org/\">http://www.centos.org</a><br/><b>Опис:</b> "
+"CentOS је бесплатан Red Hat Enterprise Linux дупликат.<br/><b>Напомена "
+"инсталације:</b> Подразумевано издање омогућује инсталацију путем интернета "
+"(FTP) или инсталацију са раније преузетих ISO датотека."
 
 #. ts-context unetbootin
-#: distrover.cpp:47
+#: distrover.cpp:48
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Description"
@@ -627,14 +629,14 @@ msgid ""
 "imaging.<br/><b>Install Notes:</b> CloneZilla is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Opis:</b> "
-"CloneZilla je ditribucija koja se koristi za izradu sigurnosnih kopija diska "
-"i pravljenje slika diska.<br/><b>Instalaciona napomena:</b> CloneZilla se "
-"pokreće i koristi uživo; za korišćenje nije potrebna instalacija."
+"<b>Почетна страница:</b> <a "
+"href=\"http://clonezilla.org/\">http://clonezilla.org/</a><br/><b>Опис:</b> "
+"CloneZilla дистрибуција се користи за прављење причувне "
+"диска.<br/><b>Напомена инсталације:</b> CloneZilla се подиже и покреће "
+"уживо, инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:52
+#: distrover.cpp:53
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Desc"
@@ -643,15 +645,15 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Opis"
-":</b>  Damn Small Linux je minimalistička distribucija stvorena za starije "
-"računare.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, kompletni sistem smešta u RAM i "
-"startuje u memoriji, instalacija nije potrebna, ali je moguća."
+"<b>Почетна страница:</b> <a "
+"href=\"http://damnsmalllinux.org/\">http://damnsmalllinux.org</a><br/><b>Опис"
+":</b> Damn Small Linux је мала дистрибуција направљена за старије "
+"рачунаре.<br/><b>Напомена инсталације:</b> Уживо издање начина рада учитава "
+"цели систем у RAM и покреће се из меморије, дакле инсталација није потребна "
+"већ је препуштена избору."
 
 #. ts-context unetbootin
-#: distrover.cpp:57
+#: distrover.cpp:58
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Description:"
@@ -662,17 +664,17 @@ msgid ""
 "iso, use the HdMedia option, and then place the install iso file on the root "
 "directory of your hard drive or USB drive"
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Opis:</b>  "
-"Debian je Linux distribucija razvijena od strane zajednice, koja podržava "
-"puno različitih arhitektura i nudi veliki broj paketa.<br/><b>Instalaciona "
-"napomena:</b> The NetInstall verzija omogućava instalaciju preko FTP. Ako "
-"želite koristiti unapred preuzete instalacione ISO fajlove, koristitite "
-"HdMedia opciju, i zatim postavite instalacioni ISO file u koreni "
-"direktorijum vašeg tvrdog ili USB diska."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.debian.org/\">http://www.debian.org</a><br/><b>Опис:</b> "
+"Debian је Linux дистрибуција развијена од стране заједнице која подржава "
+"разноврсне архитектуре и нуди велико складиште за пакете.<br/><b>Напомене "
+"инсталације:</b> NetInstall верзија допушта инсталацију путем FTP-а. Ако "
+"желите користити инсталацију са раније преузетих ISO датотека, користите "
+"HdMedia могућност и затим ставите ISO инсталацијску датотеку у основну "
+"фасциклуј вашег тврдог диска или УСБ уређаја."
 
 #. ts-context unetbootin
-#: distrover.cpp:63
+#: distrover.cpp:64
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
@@ -680,15 +682,15 @@ msgid ""
 "distribution.<br/><b>Install Notes:</b> The Live version allows for booting "
 "in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://www.dreamlinux.com.br/\">http://www.dreamlinux.com.br</a><br/><"
-"b>Opis:</b>  Dreamlinux je korisnički prijateljska Debian bazirana "
-"distribucija.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, iz kojeg je po potrebi moguće "
-"pokrenuti instalacioni program."
+"b>Опис:</b> Dreamlinux је онова Debian  дистрибуција прилагођена корисницима "
+"за једноставније кориштење.<br/><b>Напомена инсталације:</b> Уживо издање "
+"допушта покретање у Уживо, из којега се инсталација може покренути према "
+"потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:68
+#: distrover.cpp:69
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
@@ -697,16 +699,15 @@ msgid ""
 "Live version allows for booting in Live mode, from which malware scans can "
 "be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://www.freedrweb.com/livecd\">http://www.freedrweb.com/livecd</a><"
-"br/><b>Opis:</b>  Dr.Web AntiVirus je anti-virusna prva pomoć za "
-"rekonstruisanje sistema koji je oštećen zbog zloćudnog "
-"programa.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" dozvoljava "
-"korišćenje i podizanje sistema uživo, nakon čega je moguće pokrenuti "
-"pretragu za zloćudnim programima."
+"br/><b>Опис:</b> Dr.Web AntiVirus је антивирус за хитно спашавање система "
+"који се срушио због злонамерног кода.<br/><b>Напомена инсталације:</b> Уживо "
+"издање допушта покретање Уживо, из којег се може покренути претраживање "
+"злонамерних кодова."
 
 #. ts-context unetbootin
-#: distrover.cpp:73
+#: distrover.cpp:74
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Descriptio"
@@ -714,15 +715,14 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Opis:</b> "
-" Elive je bazirana na Debian linuksu i koristi Enlightenment upravljač "
-"prozora.<br/><b>Instalaciona napomena:</b> Verzija \"Live\"omogućava "
-"korišćenje i podizanje sistema uživo,  iz kojeg je po potrebi moguće "
-"pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Опис:</b> "
+"Elive је дистрибуција заснована на Debianu која промовише Enlightenment "
+"радно окружење.<br/><b>Напомена инсталације:</b> Уживо издање допушта "
+"покретање Уживо, из којега се инсталација може покренути према потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:78
+#: distrover.cpp:79
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Descri"
@@ -733,18 +733,17 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Opis:<"
-"/b>  Fedora je distribucija kojoj je sponzor Red Hat i u kojoj se nalaze "
-"najnoviji besplatni i programi otvorenog koda.<br/><b>Instalaciona "
-"napomena:</b>  Verzija \"Live\" omogućava korišćenje i podizanje sistema "
-"uživo,  iz kojeg je po potrebi moguće pokrenuti instalacioni program. "
-"Verzija \"NetInstall\" omogućava instalaciju preko interneta (FTP), ili ako "
-"niste povezani na mrežu instalacijom ranije preuzetih ISO instalacionih "
-"fajlova."
+"<b>Почетна страница:</b> <a "
+"href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/><b>Опис:<"
+"/b> Fedora је Red Hat дистрибуција спонзорисана од стране заједнице која "
+"приказује најновији врхунски  софтвер слободног/отвореног "
+"кôда.<br/><b>Напомена инсталације:</b> Уживо издање допушта покретање Уживо, "
+"из којега се инсталација може покренути према потреби. NetInstall издање "
+"омогућује инсталацију путем интернета (FTP) или инсталацију без прикључка на "
+"интернет користећи раније преузете инсталацијске ISO датотеке."
 
 #. ts-context unetbootin
-#: distrover.cpp:83
+#: distrover.cpp:84
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Descriptio"
@@ -753,16 +752,15 @@ msgid ""
 "allows for both installation over the internet (FTP), or offline "
 "installation using pre-downloaded installation ISO files."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Opis:</b> "
-" FreeBSD je opšti Unix-oliki operativni sistem koji je izrađen tako da bude "
-"proširiv i visokih performansi.<br/><b>Instalaciona napomena:</b>  "
-"Podrazumevana verzija omogućava instalaciju preko interneta (FTP), ili ako "
-"niste povezani na mrežu instalacijom ranije preuzetih ISO instalacionih "
-"fajlova."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/><b>Опис:</b> "
+"FreeBSD је Униксолики оперативни систем опште намене дизајниран у сврху "
+"проширивости и перформанси.<br/><b>Напомена инсталације:</b> Подразумевано "
+"издање омогућује инсталацију преко интернета (FTP) или инсталацију без "
+"прикључка на интернет користећи раније преузете инсталацијске ISO датотеке."
 
 #. ts-context unetbootin
-#: distrover.cpp:88
+#: distrover.cpp:89
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Descriptio"
@@ -771,15 +769,15 @@ msgid ""
 "doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">manual</a> for "
 "installation details."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Opis:</b> "
-" FreeDOS je besplatni MS-DOS kompatibilni operativni "
-"sistem.<br/><b>Instalaciona napomena:</b> Pogledajte <a href=\\\"http://fd-"
-"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\\\">uputstvo</a>  za "
-"detalje u vezi instalacije."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.freedos.org/\">http://www.freedos.org</a><br/><b>Опис:</b> "
+"FreeDOS је бесплатан MS-DOS компатибилини оперативни систем.<br/><b>Напомена "
+"инсталације:</b> Погледајте <a href=\"http://fd-"
+"doc.sourceforge.net/wiki/index.php?n=FdDocEn.FdInstall\">упутство</a> за "
+"појединости инсталације."
 
 #. ts-context unetbootin
-#: distrover.cpp:93
+#: distrover.cpp:94
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Description:</"
@@ -789,16 +787,16 @@ msgid ""
 "key for saving the configuration file. The embedded version allows "
 "installation to hard disk."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Opis:</b>  "
-"FreeNAS je ugrađena NAS (Network-Attached Storage) distribucija otvorenog "
-"koda, bazirana na FreeBSD.<br/><b>Instalaciona napomena:</b> Verzija LiveCD "
-"kreira RAM disk za FreeNAS, i koristi a FAT formatizovanu disketu ili USB "
-"disk za snimanje fala sa podašavanjima. Ugrađena verzija omogućava "
-"instalaciju na tvrdi disk."
+"<b>Почетна страница:</b> <a "
+"href=\"http://freenas.org/\">http://www.freenas.org</a><br/><b>Опис:</b> "
+"FreeNAS има уграђени NAS (Network-Attached Storage) отвореног кода, то је "
+"дистрибуција заснована на FreeBSD-у.<br/><b>Напомена инсталације:</b> Живо "
+"издање ствара RAM диск за FreeNAS и користи FAT форматирану дискету или УСБ "
+"уређај за чување датотека подешавања. Уграђена верзија допушта инсталацију "
+"на тврди диск."
 
 #. ts-context unetbootin
-#: distrover.cpp:98
+#: distrover.cpp:99
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Description:"
@@ -807,23 +805,26 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Opis:</b>  "
-"Frugalware je distribucija op[te namene bazirana na Slackware i namenjena "
-"naprednim korisnicima.<br/><b>Primjedba Instalacije:</b> Podrazumijevane "
-"opcije omogućavaju instalaciju preko interneta (FTP) i ako niste povezani na "
-"mrežu instalacijom ranije preuzetih ISO instalacionih fajlova."
+"<b>Почетна страница:</b> <a "
+"href=\"http://frugalware.org/\">http://frugalware.org</a><br/><b>Опис:</b> "
+"Frugalware је дистрибуција опште намене заснована на Slackware за напредне "
+"кориснике.<br/><b>Напомена инсталације:</b>Подразумевана могућност омогућује "
+"инсталацију преко интернета (FTP) или инсталацију без прикључка на интернет "
+"користећи раније преузете инсталацијске ISO датотеке."
 
 #. ts-context unetbootin
-#: distrover.cpp:108
+#: distrover.cpp:109
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Descriptio"
 "n:</b> GeeXboX is an Embedded Linux Media Center Distribution.<br/>"
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.geexbox.org/\">http://www.geexbox.org</a><br/><b>Опис:</b> "
+"GeeXboX је дистрибуција са уграђеним Linux Медијским центром.<br/>"
 
 #. ts-context unetbootin
-#: distrover.cpp:121
+#: distrover.cpp:122
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Descri"
@@ -832,15 +833,15 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Opis:<"
-"/b> gNewSense je FSF-odobrena distribucija bazirana na Ubuntu sa uklonjenim "
-"svim componentama koje nisu slobodne.<br/><b>Instalaciona napomena:</b> "
-"Verzija \"Live\" omogućava korišćenje i podizanje sistema uživo, iz kojeg je "
-"po potrebi moguće pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Опис:<"
+"/b> gNewSense је FSF-подржана дистрибуција заснована на Ubuntu са уклоњеним "
+"свим неслободним компонентама.<br/><b>Напомена инсталације:</b> Живо издање "
+"допушта покретање у Живом начину рада из којега се инсталација може "
+"покренути према потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:126
+#: distrover.cpp:127
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
@@ -848,14 +849,15 @@ msgid ""
 "various volumes and files.<br/><b>Install Notes:</b> Gujin simply boots and "
 "runs; no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://gujin.sourceforge.net/\">http://gujin.sourceforge.net</a><br/><"
-"b>Opis:</b>  Gujin je grafički boot manager koji može raditi bootstrap "
-"raznih i particija i datoteka.<br/><b>Instalaciona napomena:</b> Gujin se "
-"jednostavno startuje i pokreće; instalacije nije neophodna za korišćenje."
+"b>Опис:</b> Gujin је графички управљач покретања оперативних система који "
+"може покретати системе са различитих уређаја и датотека.<br/><b>Напомена "
+"инсталације:</b> Gujin се једноставно подигне и покрене, инсталација није "
+"потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:131
+#: distrover.cpp:132
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
@@ -864,16 +866,15 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which "
 "malware scans can be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a   "
 "href=\"http://ftp.kaspersky.com/devbuilds/RescueDisk/\">http://ftp.kaspersky."
-"com/devbuilds/RescueDisk/</a><br/><b>Opis:</b>  Kaspersky Rescue disk "
-"otkriva i uklanja zloćudne programe iz vaše Windows "
-"installacije.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" dozvoljava "
-"korišćenje i podizanje sistema uživo, nakon čega je moguće pokrenuti "
-"pretragu za zloćudnim programima."
+"com/devbuilds/RescueDisk/</a><br/><b>Опис:</b> Kaspersky Rescue Диск открива "
+"и уклања штеточине из ваше Windows инсталације.<br/><b>Напомена "
+"инсталације:</b> Уживо издање допушта покретање Уживо из које се може "
+"покренути претраживање злонамерног кода."
 
 #. ts-context unetbootin
-#: distrover.cpp:136
+#: distrover.cpp:137
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Descriptio"
@@ -886,19 +887,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Opis:</b> "
-" Kubuntu je zvanični Ubuntu derivat koji je baziran na "
-"KDE.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava korišćenje "
-"i podizanje sistema uživo, iz kojeg je, ako je potrebno, moguće pokrenuti "
-"instalacioni program. Verzija NetInstall omogućava instalaciju preko FTP i "
-"može instalirati Kubuntu i druge zvanične Ubuntu derivate. Ako želite da "
-"koristiti unapred preuzete alternativne instalacione ISO verzije, koristite "
-"HdMedia opciju, i zatim postavite odgovarajući ISO fajl u koreni "
-"direktorijum vašeg tvrdog ili USB diska."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.kubuntu.org/\">http://www.kubuntu.org</a><br/><b>Опис:</b> "
+"Kubuntu  је службени Ubuntu дериват који долази са KDE радним "
+"окружењем.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада из којега се инсталација може касније покренути према "
+"потреби. NetInstall издање допушта инсталацију преко FTP-а и може "
+"инсталирати Kubuntu и друге службене Ubuntu деривате. Ако желите користити "
+"раније преузету алтернативну (не стону) инсталацијску ISO датотеку, "
+"користитите HdMedia могућност и затим ставите алтернативну ISO датотеку у "
+"почетни директоријум вашег тврдог диска или УСБ уређаја."
 
 #. ts-context unetbootin
-#: distrover.cpp:141
+#: distrover.cpp:142
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Descript"
@@ -907,9 +908,15 @@ msgid ""
 "latest 1.0, now available on rolling release (run liveuptate to update "
 "modules and kernel)."
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://linuxconsole.org/\">http://linuxconsole.org</a><br/><b>Опис:</b"
+"> LinuxConsole је дистрибуција с радним окружењем намењена игрању, лака за "
+"инсталацију и брзо се покреће.<br/><b>Напомена инсталације:</b> 1.0.2010 је "
+"последње издање 1.0, сада је доступно као 'померајуће' издање (покрените "
+"'уживо ажурирај за ажурирање модула и језгра)."
 
 #. ts-context unetbootin
-#: distrover.cpp:146
+#: distrover.cpp:147
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Description:</"
@@ -918,16 +925,16 @@ msgid ""
 "Notes:</b> The Live version allows for booting in Live mode, from which the "
 "installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Opis:</b>  "
-"Linux Mint je korisnički orijentisana distribucija bazirana na Ubuntu, koja "
-"sadrži dodatne vlasničke kodeke i druge software "
-"podrazumijevano.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" "
-"omogućava korišćenje i podizanje sistema uživo, iz kojeg je, po potrebi "
-"moguće pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/><b>Опис:</b> "
+"Linux Mint је заснован на Ubuntu  дистрибуцији прилагођена је корисницима за "
+"једноставније коришћење која садржи додатне власничке кодеке и остали "
+"софтвер.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начин рада из којега се инсталација може касније покренути према "
+"потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:151
+#: distrover.cpp:152
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Descriptio"
@@ -940,9 +947,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/><b>Опис:</b> "
+"Lubuntu је службени Ubuntu дериват који долази са LXDE радним "
+"окружјем.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада из којега се инсталација може касније покренути према "
+"потреби. NetInstall издање дозвољава инсталацију преко FTP-а и може "
+"инсталирати Lubuntu и друге службене Ubuntu деривате. Ако желите користити "
+"раније преузету алтернативну (не стоно) инсталацијску ISO датотеку, "
+"користитите HdMedia могућност и затим ставите алтернативну ISO датотеку у "
+"почетни директориј вашег тврдог диска или УСБ уређаја."
 
 #. ts-context unetbootin
-#: distrover.cpp:156
+#: distrover.cpp:157
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Descrip"
@@ -953,17 +970,19 @@ msgid ""
 "downloaded <a href=\"http://www.mandriva.com/en/download\">\"Free\" iso "
 "image files</a>."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Opis:</"
-"b>  Mandriva je korisnički orijentisana distribucija poznata kao Mandrake "
-"Linux.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, iz kojeg je, po potrebi moguće "
-"pokrenuti instalacioni program. Verzija NetInstall omogućava instalaciju "
-"preko FTP ili korišćenjem unapred preuzetih \"slobodnih\" ISO slika sa <a "
-"href=\"http://www.mandriva.com/en/download\"></a>."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.mandriva.com/\">http://www.mandriva.com/</a><br/><b>Опис:</"
+"b> Mandriva је дистрибуција прилагођена корисницима за једноставније "
+"коришћење, раније позната као Mandrake Linux.<br/><b>Напомена "
+"инсталације:</b> Уживо издање допушта покретање Уживо из којега се "
+"инсталација може касније покренути према потреби. NetInstall издање "
+"омогућује инсталацију путем интернета (FTP) или инсталацију без прикључка на "
+"интернет користећи раније преузете <a "
+"href=\"http://www.mandriva.com/en/download\">\"Бесплатне\" инсталацијске ISO "
+"датотеке</a>."
 
 #. ts-context unetbootin
-#: distrover.cpp:161
+#: distrover.cpp:162
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Description:</"
@@ -972,15 +991,16 @@ msgid ""
 "computers.<br/><b>Install Notes:</b> MEPIS supports booting in Live mode, "
 "from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Opis:</b> "
-"MEPIS je bazirana na Debian distribuciji. SimplyMEPIS je korisnički "
-"orijentisana verzija bazirana na KDE, AntiX je lagana verzija za starije "
-"računare.<br/><b>Instalaciona napomena:</b>MEPIS podržava podizanje sistema "
-"uživo iz kojeg je po potrebi moguće pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.mepis.org/\">http://www.mepis.org</a><br/><b>Опис:</b> "
+"MEPIS је заснован на Debian  дистрибуцији. SimplyMEPIS је дистрибуција "
+"прилагођена корисницима за једноставније коришћење, заснована на KDE радном "
+"окружењу, док је AntiX једноставније издање намењено старијим "
+"рачуналима.<br/><b>Напомена инсталације:</b> MEPIS подржава покретање у "
+"Живом начину рада из којег се инсталација може касније покренути."
 
 #. ts-context unetbootin
-#: distrover.cpp:166
+#: distrover.cpp:167
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
@@ -988,9 +1008,15 @@ msgid ""
 "network-based installers for other distributions.<br/><b>Install Notes:</b> "
 "NetbootCD boots and runs in live mode."
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://netbootcd.tuxfamily.org/\">http://netbootcd.tuxfamily.org</a><b"
+"r/><b>Опис:</b> NetbootCD је мали CD за  покретање дистрибуција, који "
+"преузима и покреће мрежно засноване инсталације "
+"дистрибуција.<br/><b>Напомена инсталације:</b> NetbootCD се подиже и покреће "
+"у Живом начину рада."
 
 #. ts-context unetbootin
-#: distrover.cpp:176
+#: distrover.cpp:177
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Descriptio"
@@ -1000,16 +1026,16 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Opis:</b> "
-" NimbleX je mala, svestrana distribucija bazirana na Slackware linuksu. "
-"Napravljena korištenjem linux-live skripti i sadrži KDE. Može se pokretati "
-"sa CD ili fleš memorije (USB ili muzičkih plejer) i može se jednostavno "
-"prilagoditi i proširiti.<br/><b>Instalaciona napomena:</b>  NimbleX se "
-"podiže uživo."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Опис:</b> "
+"NimbleX је мала свестрана на Slackware заснована  дистрибуција. Направљена "
+"је кориштењем linux-live скрипти и садржи KDE радно окружење. Може се "
+"покренути са CD-a или флеш меморије (УСБ уређаја или MP3 пуштача) и може се "
+"с лакоћом прилагођавати и проширивати.<br/><b>Напомена инсталације:</b> "
+"NimbleX се покреће у Живом  начину рада."
 
 #. ts-context unetbootin
-#: distrover.cpp:181
+#: distrover.cpp:182
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
@@ -1018,9 +1044,15 @@ msgid ""
 "Vista.<br/><b>Install Notes:</b> NTPasswd is booted and run in live mode; no "
 "installation is required to use it."
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://pogostick.net/~pnh/ntpasswd/\">http://pogostick.net/~pnh/ntpass"
+"wd/</a><br/><b>Опис:</b> Без мрежни NT уређивач лозинки и регистра може "
+"поништити Windows лозинке и уређивати регистре на Windows 2000-"
+"Vista.<br/><b>Напомена инсталације:</b> NTPasswd се подиже и покреће у Живом "
+"начину рада, инсталација није потребна за коришћење"
 
 #. ts-context unetbootin
-#: distrover.cpp:186
+#: distrover.cpp:187
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Descript"
@@ -1029,15 +1061,16 @@ msgid ""
 "installation over the internet (FTP), or offline installation using pre-"
 "downloaded installation ISO files."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Opis:</b"
-"> openSUSE je korisnički orijentisana distribucija sa Novell "
-"podrškom.<br/><b>Instalaciona napomena:</b> Podrazumevana verzija omogućava "
-"instalaciju preko interneta (FTP), ili ako niste povezani na mrežu "
-"instalacijom ranije preuzetih ISO instalacionih fajlova."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.opensuse.org/\">http://www.opensuse.org</a><br/><b>Опис:</b"
+"> openSUSE дистрибуција је прилагођена корисницима за једноставније "
+"коришћење спонзорисана од стране Novella.<br/><b>Напомена инсталације:</b> "
+"Подразумевана варијанта омогућује инсталацију преко интернета (FTP) или "
+"инсталацију без прикључка на интернет користећи раније преузете "
+"инсталацијске ISO датотеке."
 
 #. ts-context unetbootin
-#: distrover.cpp:191
+#: distrover.cpp:192
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
@@ -1045,14 +1078,14 @@ msgid ""
 "passwords.<br/><b>Install Notes:</b> Ophcrack is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://ophcrack.sourceforge.net/\">http://ophcrack.sourceforge.net</a>"
-"<br/><b>Opis:</b> Ophcrack može razbiti Windows lozinke.<br/><b>Instalaciona "
-"napomena:</b> Ophcrack se pokreće i koristi uživo; za korišćenje nije "
-"potrebna instalacija."
+"<br/><b>Опис:</b> Ophcrack може открити Windows лозинке.<br/><b>Напомена "
+"инсталације:</b> Ophcrack се подиже и покреће у Живом начину рада, "
+"инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:196
+#: distrover.cpp:197
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Descriptio"
@@ -1061,16 +1094,15 @@ msgid ""
 "partitions.<br/><b>Install Notes:</b> Parted Magic is booted and run in live "
 "mode; no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Opis:</b> "
-"Parted Magic sadrži GParted upravljač particijama i druge sistemske alate "
-"koji mogu da promene veličinu, kopiraju, naprave sigurnosne kopije i "
-"manipulišu particijama diska.<br/><b>Instalaciona napomena:</b> Verzija "
-"\"Live\" omogućava korišćenje i podizanje sistema uživo, iz kojeg je, po "
-"potrebi moguće pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://partedmagic.com/\">http://partedmagic.com</a><br/><b>Опис:</b> "
+"Parted Magic укључује GParted управљача партицијама и друге алате система "
+"који могу мењати величину, копирати, израђивати причувне и управљати "
+"партицијама диска.<br/><b>Напомена инсталације:</b> Parted Magic се подиже и "
+"покреће у Живом начину рада, инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:206
+#: distrover.cpp:207
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Desc"
@@ -1079,15 +1111,15 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
-"<b>Web stranica:</b> <a href=\\\"http://www.puppylinux.com/\\"
-"\">http://www.puppylinux.com</a><br/><b>Opis:</b> Puppy Linux je lagana "
-"distribucija namenjena starijim računarima.<br/><b>Instalaciona "
-"napomena:</b> Verzija \"Live\" omogućava korišćenje i podizanje sistema "
-"uživo, kompletni sistem smešta u RAM i startuje u memoriji, instalacija nije "
-"potrebna, ali je moguća."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.puppylinux.com/\">http://www.puppylinux.com</a><br/><b>Опис"
+":</b> Puppy Linux је дистрибуција прилагођена корисницима за једноставније "
+"коришћење намењена старијим рачунарима.<br/><b>Напомена инсталације:</b> "
+"Живо издање начина рада учитава цели систем у RAM и покреће се из меморије, "
+"дакле инсталација није потребна већ је препуштена избору."
 
 #. ts-context unetbootin
-#: distrover.cpp:211
+#: distrover.cpp:212
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
@@ -1097,17 +1129,16 @@ msgid ""
 "Live mode, from which the installer can optionally be launched. The LiteMCE "
 "edition is 2 GB, while the full edition will need an 8 GB USB drive"
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://www.sabayonlinux.org/\">http://www.sabayonlinux.org</a><br/><b>"
-"Opis:</b> Sabayon je \"Live\" DVD distribucija bazirana Gentoo linuksu sa "
-"Entropy binarnim upravljačem paketa kao dodatku paketima baziranim na "
-"izvornom kodu.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, iz kojeg je po potrebi moguće "
-"pokrenuti instalacioni program. LiteMCE edicija je 2GB, a za punu ediciju je "
-"je potreban USB disk od 8GB."
+"Опис:</b> Sabayon Linux је заснован на Gentoo Live DVD дистрибуцији која се "
+"истиче Entropy бинарним управљачем пакетима заснована на "
+"Portageu.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада, из којега се инсталација може покренути према потреби. "
+"LiteMCE је издање од 2 GB док је за цело издање потребан 8 GB УСБ уређај."
 
 #. ts-context unetbootin
-#: distrover.cpp:216
+#: distrover.cpp:217
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://salixos.org\">http://salixos.org</a><br/><b>Description:</b> "
@@ -1117,9 +1148,17 @@ msgid ""
 "allows for booting in Live mode, from which the installer can optionally be "
 "launched.<br/>Default root password is <b>live</b>."
 msgstr ""
+"<b>Почетна страница:</b> <a "
+"href=\"http://salixos.org\">http://salixos.org</a><br/><b>Опис:</b> Salix је "
+"GNU/Linux дистрибуција заснована на Slackware-у (потпуно компатибилна) због "
+"тога је једноставна, брза и лагана за коришћење.<br/>Попут бонсаиа, Salix је "
+"мала, једноставна дистрибуција и пружа неограничену подршку "
+"производима.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање "
+"у Живом начину рада, из којега се инсталација може покренути према "
+"потреби.<br/>Подразумевана почетна лозинка је <b>live</b>."
 
 #. ts-context unetbootin
-#: distrover.cpp:228
+#: distrover.cpp:229
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Description:</b>"
@@ -1127,14 +1166,14 @@ msgid ""
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Opis:</b> Slax "
-"je distribucija bazirana na Slackware linuksu sa KDE.<br/><b>Instalaciona "
-"napomena:</b> Verzija \"Live\" omogućava korišćenje i podizanje sistema "
-"uživo, iz kojeg je po potrebi moguće pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.slax.org/\">http://www.slax.org</a><br/><b>Опис:</b> Slax "
+"је дистрибуција заснована на Slackware, која долази са KDE радним "
+"окружењем.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада, из којега се инсталација може покренути према потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:233
+#: distrover.cpp:234
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Descri"
@@ -1143,14 +1182,15 @@ msgid ""
 "system into RAM and boots from memory, so installation is not required but "
 "optional."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Opis:<"
-"/b>  SliTaz je lagana, micro distribucija orijentisana ka radnoj "
-"površini.<br/><b>Instalaciona napomena:</b>Verzija \"Live\" kompletni sistem "
-"smešta u RAM i startuje u memoriji, instalacija nije potrebna, ali je moguća."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Опис:<"
+"/b> SliTaz је једноставна микро дистрибуција усмерена на радно "
+"окружење.<br/><b>Напомена инсталације:</b> Живо издање начина рада учитава "
+"цели систем у RAM и покреће се из меморије, дакле инсталација није потребна "
+"већ је препуштена избору."
 
 #. ts-context unetbootin
-#: distrover.cpp:238
+#: distrover.cpp:239
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
@@ -1159,15 +1199,14 @@ msgid ""
 "bugs.<br/><b>Install Notes:</b> SBM simply boots and runs; no installation "
 "is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://btmgr.sourceforge.net/about.html\">http://btmgr.sourceforge.net"
-"/about.html</a><br/><b>Opis:</b> Smart Boot Manager je bootloader koji može "
-"rešiti neka ograničenja i greške koje se odnose na podizanje sistema i "
-"BIOS.<br/><b>Instalaciona napomena:</b> SBM se jednostavno podiže i koristi; "
-"za korišćenje instalacija nije neophodna."
+"/about.html</a><br/><b>Опис:</b> Smart Boot Manager је покретач система који "
+"може решити нека BIOS ограничења и грешке.<br/><b>Напомена инсталације:</b> "
+"SBM се једноставно подигне и покрене, инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:243 distrovercust.cpp:12
+#: distrover.cpp:244 distrovercust.cpp:12
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
@@ -1175,14 +1214,14 @@ msgid ""
 "variety of MBR and bootloader recovery tasks.<br/><b>Install Notes:</b> SGD "
 "simply boots and runs; no installation is required to use it."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://www.supergrubdisk.org\">http://www.supergrubdisk.org</a><br/><b"
-">Opis:</b> Super Grub Disk je bootloader koji može uraditi niz akcija za "
-"oporavak MBR i bootloader-a.<br/><b>Instalaciona napomena:</b> SGD se "
-"jednostavno podiže i koristi; za korišćenje instalacija nije neophodna."
+">Опис:</b> Super Grub Disk је покретач система који може изводити разне - "
+"MBR и покретач ОС - задатке опоравка.<br/><b>Напомена инсталације:</b> SGD "
+"се једноставно подигне и покрене, инсталација није потребна за коришћење."
 
 #. ts-context unetbootin
-#: distrover.cpp:248
+#: distrover.cpp:249
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
@@ -1191,15 +1230,15 @@ msgid ""
 "drive to install.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
+"<b>Почетна страница:</b> <a "
 "href=\"http://hacktolive.org/wiki/Super_OS\">http://hacktolive.org/wiki/Super"
-"_OS</a><br/><b>Opis:</b> Super OS je nezvanični derivat Ubuntu distribucije "
-"koji sadrži dodatne programe. Potreban je 2GB USB disk za "
-"instalaciju.<br/><b>Instalaciona napomena:</b> Omogućava podizanje sistema "
-"uživo iz kojeg je po potrebi moguće pokrenuti instalacioni program."
+"_OS</a><br/><b>Опис:</b> Super OS је неслужбени дериват Ubuntu која укључује "
+"додатни софтвер подразумевано. Захтева 2GB УСБ уређаја за "
+"инсталацију.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање "
+"у Живом начину рада, из којега се инсталација може покренути према потреби."
 
 #. ts-context unetbootin
-#: distrover.cpp:258
+#: distrover.cpp:259
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Description:"
@@ -1212,20 +1251,20 @@ msgid ""
 "the HdMedia option, and then place the alternate install iso file on the "
 "root directory of your hard drive or USB drive"
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Opis:</b> "
-"Ubuntu is a je korisnički prijateljska Debian bazirana distribucija. "
-"Trenutno je najpopularnija distribucija za radne "
-"površine.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, iz kojeg je po potrebi moguće "
-"pokrenuti instalacioni program. Verzija \"NetInstall\" omogućava instalaciju "
-"preko interneta (FTP) i može instalirati Kubuntu i ostale zvanične Ubuntu "
-"derivate. Ako želite da koristiti unapred preuzete alternativne instalacione "
-"ISO verzije, koristite HdMedia opciju, i zatim postavite odgovarajući ISO "
-"fajl u koreni direktorijum vašeg tvrdog ili USB diska."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/><b>Опис:</b> "
+"Ubuntu је једноставна дистрибуција заснована на Debian. Тренутно је "
+"најпопуларнија Linux дистрибуција са радним окружењем.<br/><b>Напомена "
+"инсталације:</b> Живо издање допушта покретање у Живом начину рада, из "
+"којега се инсталација може покренути према потреби. NetInstall  издање "
+"дозвољава инсталацију преко FTP-a и може инсталирати Kubuntu и друге "
+"службене Ubuntu деривате. Ако желите користити раније преузету алтернативну "
+"(не стону) инсталацијску ISO датотеку, користитите HdMedia могућност и затим "
+"ставите алтернативну ISO датотеку у почетни директоријум вашег тврдог диска "
+"или УСБ уређаја."
 
 #. ts-context unetbootin
-#: distrover.cpp:263
+#: distrover.cpp:264
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Description:</b>"
@@ -1233,14 +1272,15 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Opis:</b> xPUD "
-"je laka distribucija sa jednostavnim interfejsom, web čitačem i media "
-"plejerom.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" se smešta u RAM "
-"i startuje u memoriji."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Опис:</b> xPUD "
+"је једноставна дистрибуција која се одликује једноставним сучељем киоск "
+"изгледа са веб прегледачем и медијским пуштачем.<br/><b>Напомена "
+"инсталације:</b> Живо издање  учитава цео систем у RAM и покреће се из "
+"меморије."
 
 #. ts-context unetbootin
-#: distrover.cpp:268
+#: distrover.cpp:269
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Descriptio"
@@ -1253,19 +1293,19 @@ msgid ""
 "then place the alternate install iso file on the root directory of your hard "
 "drive or USB drive"
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Opis:</b> "
-"Xubuntu je zvanični Ubuntu derivat baziran na XFCE.<br/><b>Instalaciona "
-"napomena:</b> Verzija \"Live\" omogućava korišćenje i podizanje sistema "
-"uživo, iz kojeg je, ako je potrebno, moguće pokrenuti instalacioni program. "
-"Verzija NetInstall omogućava instalaciju preko FTP i može instalirati "
-"Kubuntu i druge zvanične Ubuntu derivate. Ako želite da koristiti unapred "
-"preuzete alternativne instalacione ISO verzije, koristite HdMedia opciju, i "
-"zatim postavite odgovarajući ISO fajl u koreni direktorijum vašeg tvrdog ili "
-"USB diska."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.xubuntu.org/\">http://www.xubuntu.org</a><br/><b>Опис:</b> "
+"Xubuntu је службени Ubuntu дериват који долази са XFCE радним "
+"окружењем.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада из којега се инсталација може касније покренути према "
+"потреби. NetInstall  издање допушта инсталацију преко FTP-а и може "
+"инсталирати Xubuntu и друге службене Ubuntu деривате. Ако желите користити "
+"раније преузету алтернативну (не стону) инсталацијску ISO датотеку, "
+"користитите HdMedia могућност и затим ставите алтернативну  ISO датотеку у "
+"почетни директоријум вашег тврдог диска или УСБ уређаја."
 
 #. ts-context unetbootin
-#: distrover.cpp:273
+#: distrover.cpp:274
 msgid ""
 "<b>Homepage:</b> <a "
 "href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Descriptio"
@@ -1273,12 +1313,11 @@ msgid ""
 "desktop.<br/><b>Install Notes:</b> The Live version allows for booting in "
 "Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Opis:</b> "
-"Zenwalk je baziran na Slackware distribuciji i koristi XFCE za radnu "
-"površinu.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" omogućava "
-"korišćenje i podizanje sistema uživo, iz kojeg je po potrebi moguće "
-"pokrenuti instalacioni program."
+"<b>Почетна страница:</b> <a "
+"href=\"http://www.zenwalk.org/\">http://www.zenwalk.org</a><br/><b>Опис:</b> "
+"Zenwalk је дистрибуција базирана на Slackware са XFCE радним "
+"окружењем.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада, из којега се инсталација може покренути према потреби."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:33
@@ -1289,11 +1328,11 @@ msgid ""
 "distribution for the EeePC.<br/><b>Install Notes:</b> Make sure install "
 "media is empty and formatted before proceeding with install."
 msgstr ""
-"<img src=\":/eeepclos.png\" /><br/><b>Web stranica:</b> <a "
+"<img src=\":/eeepclos.png\" /><br/><b>Почетна страница:</b> <a "
 "href=\"http://www.eeepclinuxos.com/\">http://www.eeepclinuxos.com</a><br/><b>"
-"Opis:</b>  EeePCLinuxOS je korisnički prijateljska distribucija bazirana na "
-"PCLinuxOS za EeePC.<br/><b>Instalaciona napomena:</b> Pre nego što počnete "
-"sa instalacijom, obezbedite prazan i formatizovan  instalacioni medijum."
+"Опис:</b> EeePCLinuxOS је кориснички једноставна дистрибуција базирана на "
+"PCLinuxOS за EeePC.<br/><b>Напомена инсталације:</b> Осигурајте да је медиј "
+"празан и форматиран пре почетка инсталације."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:41
@@ -1306,14 +1345,13 @@ msgid ""
 "alternatives (ie. Skype instead of Ekiga).<br/><b>Install Notes:</b> Make "
 "sure install media is empty and formatted before proceeding with install."
 msgstr ""
-"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Web "
-"stranica:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
-"eee.com</a><br/><b>Opis:</b>  Ubuntu Eee nije samo Ubuntu optimizovan za "
-"Asus Eee PC. To je operativni sistem, koji koristi Netbook Remix interfejs, "
-"koji favorizuje najbolje raspoložive programe umesto alternativa otvorenog "
-"koda (npr. Skype umjesto Ekiga).<br/><b>Instalaciona napomena:</b> Pre nego "
-"što počnete sa instalacijom, obezbedite da instalacioni medijum bude prazan "
-"i formatizovan."
+"<img src=\":/eeeubuntu.png\" style=\"float:left;\" /><br/><b>Почетна "
+"страница:</b> <a href=\"http://www.ubuntu-eee.com/\">http://www.ubuntu-"
+"eee.com</a><br/><b>Опис:</b> Ubuntu Eee није само Ubuntu прилагођен за Asus "
+"Eee PC. То је оперативни систем, који користи Netbook Remix сучеље, који "
+"укључује најбоље што софтвер може понудити на уштрб алтернативи отвореног "
+"кода (нпр. Skype уместо Ekiga).<br/><b>Напомена инсталације:</b> Осигурајте "
+"да је медиј празан и форматиран пре почетка инсталације."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:53
@@ -1324,12 +1362,11 @@ msgid ""
 "window manager.<br/><b>Install Notes:</b> The Live version allows for "
 "booting in Live mode, from which the installer can optionally be launched."
 msgstr ""
-"<b>Web stranica:</b> <a "
-"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Opis:</b> "
-" Elive je distribucija zasnovana na Debian linuksu koja se oslanja na "
-"upravljanje prozorima pod Eghtenment.<br/><b>Instalaciona napomena:</b> "
-"Verzija \"Live\" omogućava korišćenje i podizanje sistema uživo, iz kojeg je "
-"po potrebi moguće pokrenuti instalacioni program."
+"<img src=\":/elive.png\" /><br/><b>Почетна страница:</b> <a "
+"href=\"http://www.elivecd.org/\">http://www.elivecd.org</a><br/><b>Опис:</b> "
+"Elive је дистрибуција заснована на Debian која укључује Enlightenment радно "
+"окружење.<br/><b>Напомена инсталације:</b> Живо издање допушта покретање у "
+"Живом начину рада, из којега се инсталација може покренути према потреби."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:61
@@ -1357,13 +1394,13 @@ msgid ""
 "software.<br/><b>Install Notes:</b> Make sure install media is empty and "
 "formatted before proceeding with install."
 msgstr ""
-"<img src=\":/gnewsense.png\" /><br/><b>Web stranica:</b> <a "
-"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Opis:<"
-"/b>  gNewSense je visokokvalitetna GNU/Linux distribucija koja proširuje i "
-"poboljšava Ubuntu stvarajući potpuno slobodan operativni sistem bez "
-"bilokakvih binarnih krupnih objekata (blob) ili paketa koji sadrže vlasničke "
-"programe.<br/><b>Napomena Instalacije:</b> Pre nego što počnete sa "
-"instalacijom, obezbedite prazan i formatizovan  instalacioni medijum."
+"<img src=\":/gnewsense.png\" /><br/><b>Почетна страница:</b> <a "
+"href=\"http://www.gnewsense.org/\">http://www.gnewsense.org</a><br/><b>Опис:<"
+"/b> gNewSense је високо квалитетна GNU/Linux дистрибуција која проширује и "
+"побољшава Ubuntu стварајући потпуно слободан операцијски систем без било "
+"каквих бинарних грешака или пакета који садрже власнички "
+"софтвер.<br/><b>Напомена инсталације:</b> Осигурајте празан и форматирани "
+"медиј пре наставка инсталације."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:77
@@ -1376,13 +1413,13 @@ msgid ""
 "customized and extended.<br/><b>Install Notes:</b> NimbleX boots in Live "
 "mode."
 msgstr ""
-"<img src=\\\":/nimblex.png\\\" /><br/><b>Web stranica:</b>  <a href=\\"
-"\"http://www.nimblex.net/\\\">http://www.nimblex.net</a><br/><b>Opis:</b>  "
-"NimbleX je lagana, univerzalna distribucija bazirana na Slackware linuksu. "
-"Kreirana je korišćenjem linux-live skripti, i koristi KDE. Može se podizati "
-"sa CD ili fleš memorije (USB disk ili audio plejeri) i može se jednostavno "
-"prilagođavati i proširivati.<br/><b>Instalaciona napomena:</b>  NimbleX se "
-"podiže u uživo."
+"<img src=\":/nimblex.png\" /><br/><b>Почетна страница:</b> <a "
+"href=\"http://www.nimblex.net/\">http://www.nimblex.net</a><br/><b>Опис:</b> "
+"NimbleX је мала разноврсна на Slackware заснована дистрибуција. Створена је "
+"коришћењем linux-live скрипти и изгледа као KDE радно окружење. Може бити "
+"покренута са ЦД или флеш меморије (УСБ уређаја или МП3 пуштача) и "
+"једноставно се може прилагодити и проширити.<br/><b>Напомена "
+"инсталације:</b> NimbleX се покреће из Живог начина рада."
 
 #. ts-context unetbootin
 #: distrovercust.cpp:85
@@ -1395,12 +1432,12 @@ msgid ""
 "optional. This installer is based on <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 msgstr ""
-"<img src=\\\":slitaz.png\" /><br/><b>Web stranica:</b> <a "
-"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Opis:<"
-"/b>  SliTaz jwe lagana mikro distribucija okrenuta ka radnoj "
-"površini.<br/><b>Instalaciona napomena:</b> Verzija \"Live\" učitava "
-"kompletan sistem u RAM i startuje se iz memorije, tako da instalacija nije "
-"neophodna, ali je moguća. Ovaj installer se zasniva na <a "
+"<img src=\":/slitaz.png\" /><br/><b>Почетна страница:</b> <a "
+"href=\"http://www.slitaz.org/en/\">http://www.slitaz.org/en</a><br/><b>Опис:<"
+"/b> SliTaz је једноставна микро дистрибуција усмерена на радно "
+"окружење.<br/><b>Напомене инсталације:</b> Живо издање начина рада учитава "
+"цели систем у RAM и покреће се из меморије, дакле инсталација није потребна "
+"већ је препуштена избору. Овај инсталер је базиран на <a "
 "href=\"http://unetbootin.sourceforge.net/\">UNetbootin</a>."
 
 #. ts-context unetbootin
@@ -1412,11 +1449,12 @@ msgid ""
 "with a web browser and media player.<br/><b>Install Notes:</b> The Live "
 "version loads the entire system into RAM and boots from memory."
 msgstr ""
-"<img src=\\\":/xpud.png\\\" /><br/><b>Web stranica:</b> <a "
-"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Opis:</b> xPUD "
-"je lagana distribucija sa jednostavnim interfejsom, web čitačem i media "
-"plejerom.<br/><b>Napomena Instalacije:</b> Verzija \"Live\" kompletni sistem "
-"smešta u RAM i startuje u memoriji."
+"<img src=\":/xpud.png\" /><br/><b>Почетна страница:</b> <a "
+"href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/><b>Опис:</b> xPUD "
+"је једноставна дистрибуција која се одликује једноставним сучељем киоск "
+"изгледа са веб прегледачем и медијским пуштачем.<br/><b>Напомена "
+"инсталације:</b> Живо издање  учитава цели систем у RAM и покреће се из "
+"меморије."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:20
@@ -1426,32 +1464,32 @@ msgstr "Unetbootin"
 #. ts-context unetbootinui
 #: unetbootin.ui:44 unetbootin.ui:65
 msgid "Select from a list of supported distributions"
-msgstr "Odaberi iz liste podržanih distribucija"
+msgstr "Изабери са списка подржаних дистрибуција"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:47
 msgid "&Distribution"
-msgstr "&Distribucija"
+msgstr "&Дистрибуција"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:131
 msgid "Specify a disk image file to load"
-msgstr "Odredi sliku diska za učitavanje"
+msgstr "Наведите датотеку слике диска за учитавање"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:134
 msgid "Disk&image"
-msgstr "&Slika diska"
+msgstr "&Слика диска"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:147
 msgid "Manually specify a kernel and initrd to load"
-msgstr "Odredi kernel i initrd za učitavanje"
+msgstr "Ручно одредите језгро и initrd за учитавање"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:150
 msgid "&Custom"
-msgstr "&Prilagođeno"
+msgstr "&Произвољно"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:414 unetbootin.ui:430
@@ -1460,96 +1498,101 @@ msgid ""
 "only for LiveUSBs for Ubuntu and derivatives. If value exceeds drive "
 "capacity, the maximum space available will be used."
 msgstr ""
+"Додатни простор који се користи за чување датотека при поновном покретању. "
+"Ради само на LiveUSB за Ubuntu и дериватима. Ако вредност прелази капацитет "
+"диска искористи ће се максимално расположиви простор."
 
 #. ts-context unetbootinui
 #: unetbootin.ui:417
 msgid "Space used to preserve files across reboots (Ubuntu only):"
 msgstr ""
+"Додатни простор који се користи за чување датотека при поновном покретању "
+"(само Ubuntu):"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:440
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:503
 msgid "OK"
-msgstr "U redu"
+msgstr "У реду"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:506
 msgid "Return"
-msgstr "Povratak"
+msgstr "Врати"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:513
 msgid "Cancel"
-msgstr "Odustani"
+msgstr "Откажи"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:516
 msgid "Esc"
-msgstr "Esc"
+msgstr "Изађи"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:561
 msgid "Reboot Now"
-msgstr "Sada ponovo pokreni sistem"
+msgstr "Поново покрени сада"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:568
 msgid "Exit"
-msgstr "Izlaz"
+msgstr "Напусти"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:660
 msgid "1. Downloading Files"
-msgstr "1. Preuzimam fajlove"
+msgstr "1. Преузимам датотеке"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:667
 msgid "2. Extracting and Copying Files"
-msgstr "2. Raspakujem i kopiram fajlove"
+msgstr "2. Распакујем и умножавам датотеке"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr "3. Instaliram Bootloader"
+msgstr "3. Инсталирам подизач система"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
 msgid "4. Installation Complete, Reboot"
-msgstr "4. Instalacija završena, ponovo podižem sistem"
+msgstr "4. Инсталација је завршена, поново подижем систем"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:477 unetbootin.ui:496
 msgid "Select the target drive to install to"
-msgstr "Odaberite ciljni disk na koji će ce vršiti instalacija"
+msgstr "Изабери одредишни диск за инсталацију"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:480
 msgid "Dri&ve:"
-msgstr "Disk"
+msgstr "&Диск"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:451 unetbootin.ui:470
 msgid "Select the installation target type"
-msgstr "Odaberi vrstu ciljne instalacije"
+msgstr "Изаберите врсту одредишта  инсталације"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:454
 msgid "&Type:"
-msgstr "&Tip:"
+msgstr "&Врста:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:81
 msgid "Select the distribution version"
-msgstr "Odaberi vrstu distribucije"
+msgstr "Изаберите издање дистрибуције"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:347
 msgid "Select disk image file"
-msgstr "Odaberi fajla sa slikom diska"
+msgstr "Изабери датотеку слике диска"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:286 unetbootin.ui:350 unetbootin.ui:375 unetbootin.ui:400
@@ -1559,74 +1602,73 @@ msgstr "..."
 #. ts-context unetbootinui
 #: unetbootin.ui:188
 msgid "Select the disk image type"
-msgstr "Odaberite vrstu slike diska"
+msgstr "Изаберите врсту слике диска"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:243
 msgid "Specify a floppy/hard disk image, or CD image (ISO) file to load"
 msgstr ""
-"Odredi sliku disketne jedinice/tvrdog diska ili fajl slike CD-a (ISO) za "
-"učitavanje"
+"Наведите слику дискете/тврдог диска или датотеку CD слике (ISO) за учитавање"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:207 unetbootin.ui:258
 msgid "Specify a kernel file to load"
-msgstr "Odaberi kernel fajl za učitavanje"
+msgstr "Наведите  датотеку језгра за учитавање"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:283
 msgid "Select kernel file"
-msgstr "Odaberi kernel fajl"
+msgstr "Изаберите датотеку језгра"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:293 unetbootin.ui:312
 msgid "Specify an initrd file to load"
-msgstr "Odaberi initrd fajl za učitavanje"
+msgstr "Наведите initrd датотеку за учитавање"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:372
 msgid "Select initrd file"
-msgstr "Odaberi initrd fajl"
+msgstr "Изабери initrd датотеку"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:397
 msgid "Select syslinux.cfg or isolinux.cfg file"
-msgstr "Odaberi syslinux.cfg ili isolinux.cfg fajl"
+msgstr "Изаберите датотеку „syslinux.cfg“ или „isolinux.cfg“"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:226 unetbootin.ui:321
 msgid "Specify parameters and options to pass to the kernel"
-msgstr "Odredi parametre i opcije koje će biti predate kernel-u"
+msgstr "Наведите параметре и могућности који ће се послати језгру"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:210
 msgid "&Kernel:"
-msgstr "&Kernel:"
+msgstr "&Језгро:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:296
 msgid "Init&rd:"
-msgstr "Init&rd:"
+msgstr "Инит&рд:"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:229
 msgid "&Options:"
-msgstr "&Opcije:"
+msgstr "&Избори:"
 
 #. ts-context uninstaller
 #: main.cpp:156
 msgid "Uninstallation Complete"
-msgstr "Završena deinstalacija"
+msgstr "Деинсталација је завршена"
 
 #. ts-context uninstaller
 #: main.cpp:157
 msgid "%1 has been uninstalled."
-msgstr "%1 je deinstaliran."
+msgstr "%1 је деинсталиран."
 
 #. ts-context uninstaller
 #: main.cpp:319
 msgid "Must run as root"
-msgstr "Morate startovati kao root"
+msgstr "Морате покренути као администратор"
 
 #. ts-context uninstaller
 #: main.cpp:321
@@ -1634,13 +1676,15 @@ msgid ""
 "%2 must be run as root. Close it, and re-run using either:<br/><b>sudo "
 "%1</b><br/>or:<br/><b>su - -c '%1'</b>"
 msgstr ""
+"%2 мора бити покренути као Изворни. Затворите га и поновно покрените "
+"користећи га или:<br/><b>sudo %1</b><br/>или:<br/><b>su - -c '%1'</b>"
 
 #. ts-context uninstaller
 #: main.cpp:353
 msgid "%1 Uninstaller"
-msgstr "%1 Deinstaler"
+msgstr "%1 деинсталер"
 
 #. ts-context uninstaller
 #: main.cpp:354
 msgid "%1 is currently installed. Remove the existing version?"
-msgstr "%1 is trenutno instaliran. Ukloniti postojeću verziju?"
+msgstr "%1 је тренутно инсталиран. Да уклоним постојеће издање?"
