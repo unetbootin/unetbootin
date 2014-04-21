@@ -341,7 +341,7 @@ int main(int argc, char **argv)
             */
             //qDebug() << QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc);
             //QProcess::startDetached(QString("osascript -e 'do shell script \"%1 %2\" with administrator privileges'").arg(app.applicationFilePath()).arg(argsconc));
-            QProcess::startDetached("osascript", QStringList() << "-e" << QString("do shell script \"%1 %2\" with administrator privileges").arg(app.applicationFilePath()).arg(argsconcSingleQuote));
+            QProcess::startDetached("osascript", QStringList() << "-e" << QString("do shell script \"'%1' %2\" with administrator privileges").arg(app.applicationFilePath()).arg(argsconcSingleQuote));
             return 0;
 #endif
 		}

@@ -92,7 +92,7 @@ void callexternappT::run()
 	#endif
 	#ifdef Q_OS_UNIX
 	QProcess lnexternapp;
-	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
+    lnexternapp.start("\"" + execFile + "\" " + execParm);
 	lnexternapp.waitForFinished(-1);
 	retnValu = QString(lnexternapp.readAll());
 	#endif
@@ -101,7 +101,7 @@ void callexternappT::run()
 void callexternappWriteToStdinT::run()
 {
 	QProcess lnexternapp;
-	lnexternapp.start(QString("%1 %2").arg(execFile).arg(execParm));
+    lnexternapp.start("\"" + execFile + "\" " + execParm);
 	lnexternapp.write(writeToStdin.toAscii().data());
 	lnexternapp.closeWriteChannel();
 	lnexternapp.waitForFinished(-1);
@@ -896,7 +896,7 @@ QPair<QPair<QStringList, QList<quint64> >, QStringList> unetbootin::listarchivec
 	QTextStream tmplsS(&tmplsF);
 	#endif
 	#ifdef Q_OS_UNIX
-	QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l \"%2\"").arg(QFileInfo(archivefile).absoluteFilePath()));
+    QString sevzlcommandout = callexternapp(sevzcommand, QString("-bd -slt l \"%1\"").arg(QFileInfo(archivefile).absoluteFilePath()));
 	QTextStream tmplsS(&sevzlcommandout);
 	#endif
 	QString tmplsL;

@@ -4,7 +4,7 @@ echo "mkbootable"
 if [ $EUID -ne 0 ]; then
 echo "need admin privileges"
 osascript << EOQ
-do shell script "$0 $1" with administrator privileges
+do shell script "\'$0\' $1" with administrator privileges
 EOQ
 else
 echo "$syslinuxcmd $1"
