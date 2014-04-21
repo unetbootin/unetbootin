@@ -303,7 +303,7 @@ bool unetbootin::ubninitialize(QList<QPair<QString, QString> > oppairs)
 	#endif
 	ubntmpf = QDir::toNativeSeparators(QString("%1/").arg(QDir::tempPath()));
     #ifdef Q_OS_LINUX
-    if (ubntmpf.isEmpty() || ubntmpf == '/')
+    if (ubntmpf.isEmpty() || ubntmpf == "/")
     {
         ubntmpf = "/tmp/";
     }
