@@ -5,7 +5,7 @@ nativrev="$(./vcs-native-revno)"
 printf "UNetbootin Source Revision $rvern\r\nCopyright Geza Kovacs\r\nHomepage at http://unetbootin.sourceforge.net\r\nLicensed under the GNU GPL v2 and above, components from other projects are licensed under their respective licenses\r\nBuild generated on $(date)\r\n\r\nDownload using git:\r\ngit clone https://github.com/gkovacs/unetbootin.git\r\ncd unetbootin\r\ngit checkout $nativrev\r\n\r\nDownload using bzr:\r\nbzr branch http://bazaar.launchpad.net/~vcs-imports/unetbootin/trunk -r$rvern\r\n\r\nBuild instructions at http://sourceforge.net/apps/trac/unetbootin/wiki/compile\r\n\r\nsed -i '/^RESOURCES/d' unetbootin.pro\r\nlupdate-qt4 unetbootin.pro\r\nlrelease-qt4 unetbootin.pro\r\nqmake-qt4 \"DEFINES += NOSTATIC\" \"RESOURCES -= unetbootin.qrc\"\r\nmake\r\n" > README.TXT
 zip release/unetbootin-source-$rvern.zip README.TXT $(./vcs-ls)
 cp unetbootin.pro unetbootin-pro.bak
-sed -i '/^RESOURCES/d' unetbootin.pro
+cat unetbootin-pro.bak | grep -v RESOURCES > unetbootin.pro
 echo "DEFINES += NOSTATIC" >> unetbootin.pro
 tar -cvzf release/unetbootin-source-$rvern.tar.gz $(./vcs-ls | grep '\.cpp$') $(./vcs-ls | grep '\.h$') $(./vcs-ls | grep '\.ui$') $(./vcs-ls | grep '\.pro$') $(./vcs-ls | grep '\.ts$') $(./vcs-ls | grep '\.png$' | grep 'unetbootin_') $(./vcs-ls | grep '\.svg$') unetbootin.desktop build-nostatic vcs-revno vcs-name INSTALL README.TXT
 mv unetbootin-pro.bak unetbootin.pro
