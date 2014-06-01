@@ -136,11 +136,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxconsole.org/\">http://lin
  "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
  "<b>Install Notes:</b> The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).") <<
  "1.0.2010-cd"));
-    distroselect->addItem("Linux Mint", (QStringList() << "13_Live" <<
+    distroselect->addItem("Linux Mint", (QStringList() << "17_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-    "13_Live" << "13_Live_x64" << "14_Live" << "14_Live_x64" << "15_Live" << "15_Live_x64" << "16_Live" << "16_Live_x64"));
+    "13_Live" << "13_Live_x64" << "14_Live" << "14_Live_x64" << "15_Live" << "15_Live_x64" << "16_Live" << "16_Live_x64" << "17_Live" << "17_Live_x64"));
 distroselect->addItem("Lubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/>"
 	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"

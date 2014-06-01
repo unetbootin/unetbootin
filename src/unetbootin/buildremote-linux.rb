@@ -47,7 +47,7 @@ system(build)
 download = <<EOR
 sftp unetbootin-build-linux <<EOT
 cd unetbootin-#{revno}/release
-get unetbootin-linux-#{revno}
+get unetbootin-linux-#{revno}.bin
 EOT
 EOR
 

@@ -14,6 +14,6 @@ $qtx11d/bin/lrelease unetbootin.pro
 ./qmake-linux
 make
 $mingwb-strip --strip-all unetbootin
-mv unetbootin release/unetbootin-linux-$rvern
-./upx --lzma release/unetbootin-linux-$rvern
+mv unetbootin release/unetbootin-linux-$rvern.bin
+./upx --lzma release/unetbootin-linux-$rvern.bin
 
