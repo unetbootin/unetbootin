@@ -10,7 +10,11 @@ else
 echo "$syslinuxcmd $1"
 syslinuxcmd=`echo "$0" | sed s/mkbootable/syslinux-mac/g`
 "$syslinuxcmd" "$1"
+sync
+diskutil umount "$1"
+sync
 hdiutil unmount "$1"
+sync
 rawdev=`echo "$1" | sed "s/s[^s]*$//"`
 partnum=`echo "$1" | perl -l -ne '/s[0-9]+(?!.*s)/ && print $&' | perl -l -ne '/[0-9]+/ && print $&'`
 echo "partnum: $partnum rawdev: $rawdev"
@@ -22,6 +26,11 @@ quit
 EOR
 echo "writing mbr from $mbrfile to $rawdev"
 mbrfile=`echo "$0" | sed s/mkbootable/mbr.bin/g`
+sync
+diskutil umount "$1"
+sync
+hdiutil unmount "$1"
+sync
 dd if="$mbrfile" of="$rawdev"
 echo "done writing mbr"
 fi
