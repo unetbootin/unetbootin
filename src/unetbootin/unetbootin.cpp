@@ -3381,7 +3381,7 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
                 srcF.setFileName(QFile::exists("/usr/share/syslinux/libutil.c32") ? "/usr/share/syslinux/libutil.c32" : "/usr/lib/syslinux/libutil.c32");
     else if (srcfName == "libcom32.c32")
                 srcF.setFileName(QFile::exists("/usr/share/syslinux/libcom32.c32") ? "/usr/share/syslinux/libcom32.c32" : "/usr/lib/syslinux/libcom32.c32");
-	else if (srcfName == "mbr.bin")
+    else if (srcfName == "mbr.bin")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
 	else if (srcfName == "ubnsylnx")
 		srcF.setFileName("/usr/bin/syslinux");
@@ -4133,6 +4133,7 @@ void unetbootin::runinstusb()
         callexternapp("hdiutil", "unmount "+targetDev);
         callexternapp("sync", "");
         callexternapp(resourceDir.absoluteFilePath("mkbootable"), targetDev);
+        /*
         callexternapp("sync", "");
         callexternapp("diskutil", "umount "+targetDev);
         callexternapp("sync", "");
@@ -4145,6 +4146,7 @@ void unetbootin::runinstusb()
 		usbmbrF.write(mbrbinF.readAll());
 		mbrbinF.close();
 		usbmbrF.close();
+        */
         callexternapp("sync", "");
 		callexternapp("diskutil", "mount "+targetDev);
         callexternapp("sync", "");

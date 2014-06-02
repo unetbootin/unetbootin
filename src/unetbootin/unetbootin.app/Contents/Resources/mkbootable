@@ -4,15 +4,15 @@ echo "mkbootable"
 if [ $EUID -ne 0 ]; then
 echo "need admin privileges"
 osascript << EOQ
-do shell script "\'$0\' $1" with administrator privileges
+do shell script "'$0' $1" with administrator privileges
 EOQ
 else
 echo "$syslinuxcmd $1"
 syslinuxcmd=`echo "$0" | sed s/mkbootable/syslinux-mac/g`
 "$syslinuxcmd" "$1"
 hdiutil unmount "$1"
-partnum=`echo "$1" | tr 's' '\n' | tail -n 1`
-rawdev=`echo "$1" | sed "s/s$partnum//"`
+rawdev=`echo "$1" | sed "s/s[^s]*$//"`
+partnum=`echo "$1" | perl -l -ne '/s[0-9]+(?!.*s)/ && print $&' | perl -l -ne '/[0-9]+/ && print $&'`
 echo "partnum: $partnum rawdev: $rawdev"
 fdisk -y -e "$rawdev" << EOR
 flag $partnum
@@ -20,4 +20,8 @@ write
 y
 quit
 EOR
+echo "writing mbr from $mbrfile to $rawdev"
+mbrfile=`echo "$0" | sed s/mkbootable/mbr.bin/g`
+dd if="$mbrfile" of="$rawdev"
+echo "done writing mbr"
 fi
