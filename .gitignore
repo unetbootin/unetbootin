@@ -1,3 +1,5 @@
+src/unetbootin/unetbootin.app/Contents/MacOS/
+.DS_Store
 dist
 initkern/*
 winbuild/nsis
@@ -15,8 +17,6 @@ src/unetbootin/sevenzip.exe
 src/unetbootin/sevenzip-extra.7z
 src/unetbootin/qrc_unetbootin*.cpp
 src/unetbootin/ui_unetbootin.h
-src/unetbootin/sevnz.dll
-src/unetbootin/sevnz.exe
 src/unetbootin/asgd.img
 src/unetbootin/Makefile
 src/unetbootin/Makefile.Release

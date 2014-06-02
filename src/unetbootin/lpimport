@@ -12,7 +12,7 @@ cd ../../po
 tpofiles=$(tar -ztf $1 | grep "\.po$")
 for x in $tpofiles
 do
-tar -zxf $1 $x --to-stdout > $(echo $x | sed "s/unetbootin-/\n/" | tail --lines 1)
+tar -zxf $1 $x --to-stdout > $(echo $x | sed "s/unetbootin-/\n/" | tail -n 1)
 done
 
 cd $origdir
