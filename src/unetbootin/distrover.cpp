@@ -254,6 +254,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.u
 	"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
 ubuntuverlist));
+distroselect->addItem("Ubuntu-GNOME", (QStringList() << "14.04_Live" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://ubuntugnome.org/\">http://ubuntugnome.org</a><br/>"
+	"<b>Description:</b> Ubuntu-GNOME is an official Ubuntu derivative featuring the GNOME3 desktop.<br/>"
+	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
+ubuntuverlist));
 distroselect->addItem("xPUD", (QStringList() << "Stable_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.xpud.org/\">http://www.xpud.org</a><br/>"
 	"<b>Description:</b> xPUD is a lightweight distribution featuring a simple kiosk-like interface with a web browser and media player.<br/>"
