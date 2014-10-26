@@ -18,6 +18,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
+	.replace("14.10", "vivid") \
+	.replace("14.10", "utopic") \
 	.replace("14.04", "trusty") \
 	.replace("13.10", "saucy") \
 	.replace("13.04", "raring") \
@@ -1112,6 +1114,47 @@ if (nameDistro == "Lubuntu")
 			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) <<
 			QRegExp("lubuntu\\S{0,}"+relname+"\\S{0,}desktop\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
 			QRegExp("lubuntu-"+relname+"\\S{0,}-desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+			), isotmpf);
+			extractiso(isotmpf);
+		}
+	}
+	ubuntunetinst
+}
+
+if (nameDistro == "Ubuntu-GNOME")
+{
+	if (isarch64)
+	{
+		cpuarch = "amd64";
+	}
+	else
+	{
+		cpuarch = "i386";
+	}
+	if (relname == "daily")
+	{
+		downloadfile(fileFilterNetDir(QStringList() <<
+		"http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/"
+		, 61440000, 1048576000, QList<QRegExp>() <<
+		QRegExp(".iso$", Qt::CaseInsensitive) <<
+		QRegExp("desktop\\S{0,}.iso$", Qt::CaseInsensitive) <<
+		QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
+		), isotmpf);
+		extractiso(isotmpf);
+	}
+	else
+	{
+		if (islivecd)
+		{
+			downloadfile(fileFilterNetDir(QStringList() <<
+			"http://cdimage.ubuntu.com/ubuntu-gnome/releases/"+relname+"/release"
+			, 524288000, 1048576000, QList<QRegExp>() <<
+			QRegExp(".iso$", Qt::CaseInsensitive) <<
+			QRegExp(cpuarch+".iso$", Qt::CaseInsensitive) <<
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) <<
+			QRegExp("desktop-"+cpuarch+".iso$", Qt::CaseInsensitive) <<
+			QRegExp("ubuntu-gnome\\S{0,}"+relname+"\\S{0,}desktop\\S{0,}"+cpuarch+"\\S{0,}.iso$", Qt::CaseInsensitive) <<
+			QRegExp("ubuntu-gnome-"+relname+"\\S{0,}-desktop-"+cpuarch+".iso$", Qt::CaseInsensitive)
 			), isotmpf);
 			extractiso(isotmpf);
 		}

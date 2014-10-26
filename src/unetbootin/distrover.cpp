@@ -14,6 +14,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 "13.04_NetInstall" << "13.04_NetInstall_x64" << "13.04_HdMedia" << "13.04_HdMedia_x64" << "13.04_Live" << "13.04_Live_x64" << \
 "13.10_NetInstall" << "13.10_NetInstall_x64" << "13.10_HdMedia" << "13.10_HdMedia_x64" << "13.10_Live" << "13.10_Live_x64" << \
 "14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
+"14.10_NetInstall" << "14.10_NetInstall_x64" << "14.10_HdMedia" << "14.10_HdMedia_x64" << "14.10_Live" << "14.10_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
@@ -251,6 +252,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://hacktolive.org/wiki/Super_OS\"
 distroselect->addItem("Ubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.ubuntu.com/\">http://www.ubuntu.com</a><br/>"
 	"<b>Description:</b> Ubuntu is a user-friendly Debian-based distribution. It is currently the most popular Linux desktop distribution.<br/>"
+	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
+ubuntuverlist));
+distroselect->addItem("Ubuntu-GNOME", (QStringList() << "14.04_Live" <<
+unetbootin::tr("<b>Homepage:</b> <a href=\"http://ubuntugnome.org/\">http://ubuntugnome.org</a><br/>"
+	"<b>Description:</b> Ubuntu-GNOME is an official Ubuntu derivative featuring the GNOME3 desktop.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for installation over FTP, and can install Kubuntu and other official Ubuntu derivatives. If you would like to use a pre-downloaded alternate (not desktop) install iso, use the HdMedia option, and then place the alternate install iso file on the root directory of your hard drive or USB drive") <<
 ubuntuverlist));
 distroselect->addItem("xPUD", (QStringList() << "Stable_Live" <<
