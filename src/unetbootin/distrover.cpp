@@ -10,10 +10,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #ifndef ubuntuverlist
 #define ubuntuverlist \
 "12.04_NetInstall" << "12.04_NetInstall_x64" << "12.04_HdMedia" << "12.04_HdMedia_x64" << "12.04_Live" << "12.04_Live_x64" << \
-"12.10_NetInstall" << "12.10_NetInstall_x64" << "12.10_HdMedia" << "12.10_HdMedia_x64" << "12.10_Live" << "12.10_Live_x64" << \
-"13.04_NetInstall" << "13.04_NetInstall_x64" << "13.04_HdMedia" << "13.04_HdMedia_x64" << "13.04_Live" << "13.04_Live_x64" << \
-"13.10_NetInstall" << "13.10_NetInstall_x64" << "13.10_HdMedia" << "13.10_HdMedia_x64" << "13.10_Live" << "13.10_Live_x64" << \
 "14.04_NetInstall" << "14.04_NetInstall_x64" << "14.04_HdMedia" << "14.04_HdMedia_x64" << "14.04_Live" << "14.04_Live_x64" << \
+"14.10_NetInstall" << "14.10_NetInstall_x64" << "14.10_HdMedia" << "14.10_HdMedia_x64" << "14.10_Live" << "14.10_Live_x64" << \
+"15.04_NetInstall" << "15.04_NetInstall_x64" << "15.04_HdMedia" << "15.04_HdMedia_x64" << "15.04_Live" << "15.04_Live_x64" << \
 "Daily_Live" << "Daily_Live_x64"
 #endif
 
