@@ -3392,13 +3392,29 @@ void unetbootin::instIndvfl(QString srcfName, QString dstfName)
 	if (srcfName == "memdisk")
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
 	else if (srcfName == "menu.c32")
+	{
 				srcF.setFileName(QFile::exists("/usr/share/syslinux/menu.c32") ? "/usr/share/syslinux/menu.c32" : "/usr/lib/syslinux/menu.c32");
+				if (QFile::exists("/usr/lib/syslinux/modules/bios/menu.c32"))
+					srcF.setFileName("/usr/lib/syslinux/modules/bios/menu.c32");
+	}
     else if (srcfName == "libutil.c32")
+	{
                 srcF.setFileName(QFile::exists("/usr/share/syslinux/libutil.c32") ? "/usr/share/syslinux/libutil.c32" : "/usr/lib/syslinux/libutil.c32");
+		if (QFile::exists("/usr/lib/syslinux/modules/bios/libutil.c32"))
+			srcF.setFileName("/usr/lib/syslinux/modules/bios/libutil.c32");
+	}
     else if (srcfName == "libcom32.c32")
+	{
                 srcF.setFileName(QFile::exists("/usr/share/syslinux/libcom32.c32") ? "/usr/share/syslinux/libcom32.c32" : "/usr/lib/syslinux/libcom32.c32");
+		if (QFile::exists("/usr/lib/syslinux/modules/bios/libcom32.c32"))
+			srcF.setFileName("/usr/lib/syslinux/modules/bios/libcom32.c32");
+	}
     else if (srcfName == "mbr.bin")
-				srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
+	{
+			srcF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
+		if (QFile::exists("/usr/lib/syslinux/mbr/mbr.bin"))
+			srcF.setFileName("/usr/lib/syslinux/mbr/mbr.bin");
+	}
 	else if (srcfName == "ubnsylnx")
 		srcF.setFileName("/usr/bin/syslinux");
 //	else
@@ -4134,6 +4150,8 @@ void unetbootin::runinstusb()
 			QFile mbrbinF(":/mbr.bin");
 			#ifdef NOSTATIC
 			mbrbinF.setFileName(QFile::exists("/usr/share/syslinux/mbr.bin") ? "/usr/share/syslinux/mbr.bin" : "/usr/lib/syslinux/mbr.bin");
+			if (QFile::exists("/usr/lib/syslinux/mbr/mbr.bin"))
+				mbrbinF.setFileName("/usr/lib/syslinux/mbr/mbr.bin");
 			#endif
 			usbmbrF.open(QIODevice::WriteOnly);
 			mbrbinF.open(QIODevice::ReadOnly);
