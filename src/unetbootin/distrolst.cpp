@@ -386,7 +386,14 @@ if (nameDistro == "Fedora")
 	}
 	if (islivecd)
 	{
-        downloadfile(QString("http://download.fedoraproject.org/pub/fedora/linux/releases/%1/Live/%2/Fedora-Live-Desktop-%3-%1-1.iso").arg(relname).arg(cpuarch).arg(minorarch), isotmpf);
+        downloadfile(fileFilterNetDir(QStringList() <<
+        "http://download.fedoraproject.org/pub/fedora/linux/releases/"+relname+"/Live/"+cpuarch+"/"
+        , 524288000, 2233125376, QList<QRegExp>() <<
+        QRegExp(".iso$", Qt::CaseInsensitive) <<
+        QRegExp("Fedora", Qt::CaseInsensitive) <<
+        QRegExp("Live", Qt::CaseInsensitive) <<
+        QRegExp("LXDE", Qt::CaseInsensitive)
+        ), isotmpf);
         extractiso(isotmpf);
 	}
 	else

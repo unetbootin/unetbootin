@@ -741,7 +741,7 @@ void unetbootin::on_cancelbutton_clicked()
 
 void unetbootin::on_okbutton_clicked()
 {
-	if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty())
+    if (typeselect->currentIndex() == typeselect->findText(tr("USB Drive")) && driveselect->currentText().isEmpty() && !testingDownload)
 	{
 		QMessageBox unotenoughinputmsgb;
 		unotenoughinputmsgb.setIcon(QMessageBox::Information);
@@ -757,7 +757,7 @@ void unetbootin::on_okbutton_clicked()
 		}
 	}
 #ifdef Q_OS_MAC
-	if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED")
+    if (locatemountpoint(driveselect->currentText()) == "NOT MOUNTED" && !testingDownload)
 		callexternapp("diskutil", "mount "+driveselect->currentText());
 #endif
 	#ifdef Q_OS_LINUX

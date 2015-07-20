@@ -67,11 +67,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.elivecd.org/\">http://www.
 	"<b>Description:</b> Elive is a Debian-based distribution featuring the Enlightenment window manager.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
 "Stable_Live"));
-distroselect->addItem("Fedora", (QStringList() << "20_Live" <<
+distroselect->addItem("Fedora", (QStringList() << "22_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://fedoraproject.org/\">http://fedoraproject.org</a><br/>"
 	"<b>Description:</b> Fedora is a Red Hat sponsored community distribution which showcases the latest cutting-edge free/open-source software.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched. The NetInstall version allows for both installation over the internet (FTP), or offline installation using pre-downloaded installation ISO files.") <<
-    "19_NetInstall" << "19_NetInstall_x64" << "19_Live" << "19_Live_x64" << "20_NetInstall" << "20_NetInstall_x64" << "20_Live" << "20_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
+    "21_NetInstall" << "21_NetInstall_x64" << "21_Live" << "21_Live_x64" << "22_NetInstall" << "22_NetInstall_x64" << "22_Live" << "22_Live_x64" << "Rawhide_NetInstall" << "Rawhide_NetInstall_x64"));
 distroselect->addItem("FreeBSD", (QStringList() << "8.0" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.freebsd.org/\">http://www.freebsd.org</a><br/>"
 	"<b>Description:</b> FreeBSD is a general-purpose Unix-like operating system designed for scalability and performance.<br/>"
@@ -135,11 +135,11 @@ unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxconsole.org/\">http://lin
  "<b>Description:</b> LinuxConsole is a desktop distro to play games, easy to install, easy to use and fast to boot .<br/>"
  "<b>Install Notes:</b> The 1.0.2010 is latest 1.0, now available on rolling release (run liveuptate to update modules and kernel).") <<
  "1.0.2010-cd"));
-    distroselect->addItem("Linux Mint", (QStringList() << "17_Live" <<
+    distroselect->addItem("Linux Mint", (QStringList() << "17.2_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://linuxmint.com/\">http://linuxmint.com</a><br/>"
 	"<b>Description:</b> Linux Mint is a user-friendly Ubuntu-based distribution which includes additional proprietary codecs and other software by default.<br/>"
 	"<b>Install Notes:</b> The Live version allows for booting in Live mode, from which the installer can optionally be launched.") <<
-    "13_Live" << "13_Live_x64" << "14_Live" << "14_Live_x64" << "15_Live" << "15_Live_x64" << "16_Live" << "16_Live_x64" << "17_Live" << "17_Live_x64"));
+    "17_Live" << "17_Live_x64" << "17.1_Live" << "17.1_Live_x64" << "17.2_Live" << "17.2_Live_x64"));
 distroselect->addItem("Lubuntu", (QStringList() << "14.04_Live" <<
 unetbootin::tr("<b>Homepage:</b> <a href=\"http://www.lubuntu.net/\">http://www.lubuntu.net</a><br/>"
 	"<b>Description:</b> Lubuntu is an official Ubuntu derivative featuring the LXDE desktop.<br/>"
