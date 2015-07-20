@@ -1,0 +1,17 @@
+#!/bin/bash
+
+rvern="$(./vcs-revno)"
+qtx11d="$(pwd)/qt4-x11"
+
+if [ ! -d release ]
+then
+mkdir release
+fi
+
+$qtx11d/bin/lrelease unetbootin.pro
+./qmake-linux64
+make
+strip --strip-all unetbootin
+mv unetbootin release/unetbootin-linux64-$rvern.bin
+./upx64 --lzma release/unetbootin-linux64-$rvern.bin
+
