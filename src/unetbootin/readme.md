@@ -19,11 +19,11 @@ https://github.com/unetbootin/unetbootin/issues
 
 ### Building
 
-http://sourceforge.net/apps/trac/unetbootin/wiki/compile
+https://sourceforge.net/p/unetbootin/wiki/compile/
 
 ### Contributing
 
-http://sourceforge.net/apps/trac/unetbootin/wiki/development
+https://sourceforge.net/p/unetbootin/wiki/development/
 
 ### Licence
 
