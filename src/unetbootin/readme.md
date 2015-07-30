@@ -3,15 +3,15 @@ UNetbootin
 
 ### Homepage and Downloads
 
-http://unetbootin.sourceforge.net/
+http://unetbootin.github.io/
 
 ### Github
 
-https://github.com/gkovacs/unetbootin
+https://github.com/unetbootin/unetbootin
 
 ### Source
 
-See the src/unetbootin directory, ie https://github.com/gkovacs/unetbootin/tree/master/src/unetbootin
+See the src/unetbootin directory, ie https://github.com/unetbootin/unetbootin/tree/master/src/unetbootin
 
 ### Bug Tracker
 
@@ -31,5 +31,5 @@ GNU GPL v2 and above
 
 ### Contact
 
-[Geza Kovacs](http://gkovacs.github.com)
+[Geza Kovacs](http://gkovacs.com)
 
