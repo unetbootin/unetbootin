@@ -1567,7 +1567,7 @@ msgstr "2. Extraction et copie des fichiers"
 #. ts-context unetbootinui
 #: unetbootin.ui:674
 msgid "3. Installing Bootloader"
-msgstr "3. Installer le gestionnaire de démarrage"
+msgstr "3. Installation du gestionnaire de démarrage"
 
 #. ts-context unetbootinui
 #: unetbootin.ui:681
