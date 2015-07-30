@@ -15,7 +15,7 @@ See the src/unetbootin directory, ie https://github.com/unetbootin/unetbootin/tr
 
 ### Bug Tracker
 
-http://launchpad.net/unetbootin
+https://github.com/unetbootin/unetbootin/issues
 
 ### Building
 
