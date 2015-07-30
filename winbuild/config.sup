@@ -1,8 +1,0 @@
-[menu]
-menucolor=15,0
-menuitem=windows,Windows
-menuitem=grub,UNetbootin-replacewithubnversion
-menudefault=windows,30
-[grub]
-device=ubnldr.exe
-[windows]

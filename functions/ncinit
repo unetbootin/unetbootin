@@ -1,8 +1,0 @@
-#!/bin/sh
-
-sed -i "s/cp \.\/ubninit/\#/g" $1
-
-if [ "$1" = ./winbuild/menu.lst ]
-then
-sed -i 's/File "ubninit"//g' ./winbuild/unetbootin.nsi
-fi

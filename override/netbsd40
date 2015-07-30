@@ -1,5 +1,0 @@
-#!/bin/sh
-
-./functions/kernpar $1 '' 'kernel --type=netbsd'
-./functions/ncinit $1
-./functions/rminit $1

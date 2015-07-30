@@ -1,8 +1,0 @@
-#!/bin/sh
-
-isodlurl="http:\/\/www.pclosusers.com\/pclosusers\/isos\/livecd\/pclinuxos-minime-2008.iso"
-
-./functions/kernpar $1 'livecd=livecd root=\/dev\/rd\/3 acpi=on vga=788 keyb=us splash=silent fstab=rw,noauto'
-./functions/nckern $1
-./functions/ncinit $1
-./functions/isoboot $1 "$isodlurl"

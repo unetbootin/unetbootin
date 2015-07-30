@@ -1,3 +1,0 @@
-#!/bin/sh
-
-./functions/kernpar $1 'ubnkern load_ramdisk=1 prompt_ramdisk=0 ramdisk_size=32000 rw root=\/dev\/ram'
