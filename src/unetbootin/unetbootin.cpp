@@ -990,7 +990,7 @@ bool unetbootin::ignoreoutofspaceprompt(QString destindir)
 	overwritefilemsgbx.setIcon(QMessageBox::Warning);
 	overwritefilemsgbx.setWindowTitle(QString(tr("%1 is out of space, abort installation?")).arg(destindir));
 	overwritefilemsgbx.setText(QString(tr("The directory %1 is out of space. Press 'Yes' to abort installation, 'No' to ignore this error and attempt to continue installation, and 'No to All' to ignore all out-of-space errors.")).arg(destindir));
-	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No);
+	overwritefilemsgbx.setStandardButtons(QMessageBox::Yes | QMessageBox::NoToAll | QMessageBox::No);
 	switch (overwritefilemsgbx.exec())
 	{
 		case QMessageBox::Yes:
