@@ -349,7 +349,6 @@ private slots:
 	void on_InitrdFileSelector_clicked();
 	void on_CfgFileSelector_clicked();
 	void on_cancelbutton_clicked();
-	void on_frebootbutton_clicked();
 	void on_fexitbutton_clicked();
 
 public slots:

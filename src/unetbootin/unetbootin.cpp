@@ -878,11 +878,6 @@ void unetbootin::on_fexitbutton_clicked()
 	close();
 }
 
-void unetbootin::on_frebootbutton_clicked()
-{
-	sysreboot();
-}
-
 QString unetbootin::displayfisize(quint64 fisize)
 {
 	if (fisize < 10000)
@@ -2718,8 +2713,6 @@ void unetbootin::showDownloadFailedScreen(const QString &fileurl)
 	rebootlayer->setEnabled(true);
 	rebootlayer->show();
 	rebootmsgtext->setText(tr("Download of %1 %2 from %3 failed. Please try downloading the ISO file from the website directly and supply it via the diskimage option.").arg(nameDistro).arg(nameVersion).arg(fileurl));
-	this->frebootbutton->setEnabled(false);
-	this->frebootbutton->hide();
 	this->downloadFailed = true;
 	if (exitOnCompletion)
 	{
@@ -2910,25 +2903,6 @@ QPair<QString, int> unetbootin::filterBestMatch(QStringList ufStringList, QList<
 	return qMakePair(hRegxMatchString, hRegxMatch);
 }
 
-void unetbootin::sysreboot()
-{
-	#ifdef Q_OS_WIN32
-	HANDLE hToken;
-	TOKEN_PRIVILEGES tkp;
-	OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken);
-	LookupPrivilegeValue(NULL, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid);
-	tkp.PrivilegeCount = 1;
-	tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
-	AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, (PTOKEN_PRIVILEGES)NULL, 0);
-	ExitWindowsEx(EWX_REBOOT, EWX_FORCE);
-	#endif
-	#ifdef Q_OS_LINUX
-	callexternapp("init", "6 &");
-	#endif
-#ifdef Q_OS_MAC
-callexternapp("shutdown", "-r now &");
-#endif
-}
 
 QString unetbootin::callexternapp(QString xexecFile, QString xexecParm)
 {
@@ -4324,17 +4298,15 @@ void unetbootin::fininstall()
 	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
 	if (installType == tr("Hard Disk"))
 	{
-		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
 	}
 	if (installType == tr("USB Drive"))
 	{
 #ifndef Q_OS_MAC
-		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1\nReboot now?").arg(postinstmsg));
+		rebootmsgtext->setText(tr("After rebooting, select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
 #endif
 #ifdef Q_OS_MAC
 		rebootmsgtext->setText(tr("The created USB device will not boot off a Mac. Insert it into a PC, and select the USB boot option in the BIOS boot menu.%1").arg(postinstmsg));
-		this->frebootbutton->setEnabled(false);
-		this->frebootbutton->hide();
 #endif
 	}
     finishLogging();
