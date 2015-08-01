@@ -287,7 +287,6 @@ public:
 	QPair<QString, int> weightedFilterNetDir(QString ldfDirStringUrl, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
 	QString fileFilterNetDir(QStringList ldfDirStringUrlList, int ldfMinSize, int ldfMaxSize, QList<QRegExp> ldfFileMatchExp);
 	QPair<QString, int> filterBestMatch(QStringList ufStringList, QList<QRegExp> filterExpList);
-	void sysreboot();
 	static QString callexternapp(QString xexecFile, QString xexecParm);
 	static QString callexternappWriteToStdin(QString xexecFile, QString xexecParm, QString xwriteToStdin);
 	QString getdevluid(QString voldrive);
