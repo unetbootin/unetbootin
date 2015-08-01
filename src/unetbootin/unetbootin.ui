@@ -556,13 +556,6 @@
             <number>300</number>
            </property>
            <item>
-            <widget class="QPushButton" name="frebootbutton">
-             <property name="text">
-              <string>Reboot Now</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QPushButton" name="fexitbutton">
              <property name="text">
               <string>Exit</string>
@@ -678,7 +671,7 @@
         <item>
          <widget class="QLabel" name="sdesc4">
           <property name="text">
-           <string>4. Installation Complete, Reboot</string>
+           <string>4. Installation Complete</string>
           </property>
          </widget>
         </item>
