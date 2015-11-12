@@ -3520,6 +3520,28 @@ void unetbootin::runinst()
 	}
 	if (radioFloppy->isChecked())
 	{
+		QMessageBox msgDDOrNot;
+		msgDDOrNot.setText("If you would like to indirectly write the USB with the ISO, press yes (recommended for normal computer users). Otherwise, press no for the direct write (direct is far better for advanced users than beginners. If you are a beginner, press YES, AND DO *NOT* PRESS NO).");
+		msgDDOrNot.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+		msgDDOrNot.setDefaultButton(QMessageBox::Yes);
+		int ret = msgDDOrNot.exec();
+		
+		switch (ret) {
+			case QMessageBox::Yes:
+				break;
+			case QMessageBox::No:
+				#ifdef Q_OS_WIN32
+				system(strcat(strcat("dd.exe if=", targetPath), strcat(strcat(" of=", targetDev)))));
+				#else
+				system(strcat(strcat("dd if=", targetPath), strcat(strcat(" of=", targetDev)))));
+				#endif
+				
+				return;
+				break;
+			default:
+				break;
+		}
+		
 		if (diskimagetypeselect->currentIndex() == diskimagetypeselect->findText(tr("Floppy")))
 		{
 			instIndvfl("memdisk", QString("%1ubnkern").arg(targetPath));
